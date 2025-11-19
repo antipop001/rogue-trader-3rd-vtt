@@ -60,9 +60,11 @@ export class ForceFieldData {
         }
 
         const html = await renderTemplate('systems/rogue-trader-3rd/templates/chat/force-field-roll-chat.hbs', this);
+        const actorData = this.rollData.actor;
+        const actor = game.actors.get(actorData._id);
         let chatData = {
             user: game.user.id,
-            speaker: ChatMessage.getSpeaker({ actor: this.actor }),
+            speaker: ChatMessage.getSpeaker({ actor}),
             rollMode: game.settings.get('core', 'rollMode'),
             content: html,
             type: CONST.CHAT_MESSAGE_STYLES.OTHER,
