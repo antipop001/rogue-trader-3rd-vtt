@@ -47,7 +47,7 @@ export async function roll1d100() {
 
 export async function sendActionDataToChat(actionData) {
     const html = await renderTemplate(actionData.template, actionData);
-    const actorData = actionData.rollData.actor;
+    const actorData = actionData.rollData.actor ? actionData.rollData.actor : actionData.rollData.sourceActor;
     const actor = game.actors.get(actorData._id);
     let chatData = {
         user: game.user.id,
