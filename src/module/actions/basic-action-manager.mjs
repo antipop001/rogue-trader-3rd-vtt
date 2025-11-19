@@ -253,6 +253,7 @@ export class BasicActionManager {
         const html = await renderTemplate('systems/rogue-trader-3rd/templates/chat/item-vocalize-chat.hbs', data);
         let chatData = {
             user: game.user.id,
+            speaker: ChatMessage.getSpeaker({ actor: this.actor }),
             content: html,
             rollMode: game.settings.get('core', 'rollMode'),
             type: CONST.CHAT_MESSAGE_TYPES.IC,

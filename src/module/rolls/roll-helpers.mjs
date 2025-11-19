@@ -49,6 +49,7 @@ export async function sendActionDataToChat(actionData) {
     const html = await renderTemplate(actionData.template, actionData);
     let chatData = {
         user: game.user.id,
+        speaker: ChatMessage.getSpeaker({ actor: this.actor }),
         rollMode: game.settings.get('core', 'rollMode'),
         content: html,
         type: CONST.CHAT_MESSAGE_STYLES.OTHER,

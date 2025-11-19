@@ -28,6 +28,7 @@ export async function sendActiveEffectMessage(activeContext) {
     const html = await renderTemplate(activeContext.template, activeContext);
     let chatData = {
         user: game.user.id,
+        speaker: ChatMessage.getSpeaker({ actor: this.actor }),
         rollMode: game.settings.get('core', 'rollMode'),
         content: html,
         type: CONST.CHAT_MESSAGE_TYPES.ROLL,
