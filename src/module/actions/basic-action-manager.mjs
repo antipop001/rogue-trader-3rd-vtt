@@ -251,7 +251,7 @@ export class BasicActionManager {
      */
     async sendItemVocalizeChat(data) {
         const html = await renderTemplate('systems/rogue-trader-3rd/templates/chat/item-vocalize-chat.hbs', data);
-        const actorData = this.rollData.actor;
+        const actorData = data.actor;
         const actor = game.actors.get(actorData._id);
         let chatData = {
             user: game.user.id,

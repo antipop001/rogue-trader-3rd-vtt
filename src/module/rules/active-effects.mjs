@@ -26,7 +26,7 @@ export async function handleOnFire(actor) {
 
 export async function sendActiveEffectMessage(activeContext) {
     const html = await renderTemplate(activeContext.template, activeContext);
-    const actorData = this.rollData.actor;
+    const actorData = activeContext.actor;
     const actor = game.actors.get(actorData._id);
     let chatData = {
         user: game.user.id,
