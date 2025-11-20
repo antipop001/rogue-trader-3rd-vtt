@@ -55,13 +55,15 @@ export class AssignDamageData {
 
             const targetedComponents = [];
             this.actor.items.forEach ((item) => {
-                if ((item.type === 'shipWeapon' || item.type === 'shipComponent') && (item.system.location === voidshipHitLocation)) {
+                if ((item.type === 'shipWeapon' || item.type === 'shipComponent') && (item.system.location === voidshipHitLocation) &&
+                    (item.system.hitPoints > 0 && !item.system.isDestroyed)) {
                     targetedComponents.push(item);
                 }
             })
             if (targetedComponents.length < 1) {
                 this.actor.items.forEach ((item) => {
-                    if ((item.type === 'shipWeapon' || item.type === 'shipComponent') && (item.system.location === "Main")) {
+                    if ((item.type === 'shipWeapon' || item.type === 'shipComponent') && (item.system.location === "Main") &&
+                        (item.system.hitPoints > 0 && !item.system.isDestroyed)) {
                         targetedComponents.push(item);
                     }
                 })
@@ -178,6 +180,11 @@ export class AssignDamageData {
                 this.criticalEffect = this.criticalEffect + '\n' + component.name + ': ' + getVoidshipCriticalDamage(type, component.system.componentType);
             }
         }
+        component.update({
+            system: {
+                hitPoints: component.system.hitPoints - 1
+            }
+        })
     }
 
     async performActionAndSendToChat() {
@@ -187,6 +194,12 @@ export class AssignDamageData {
                 system: {
                     hull: {
                         value: this.actor.system.hull.value - this.voidshipHullDamage
+                    },
+                    crew: {
+                        value: this.actor.system.crew.value - this.voidshipHullDamage
+                    },
+                    morale: {
+                        value: this.actor.system.morale.value - this.voidshipHullDamage
                     }
                 }
             });
