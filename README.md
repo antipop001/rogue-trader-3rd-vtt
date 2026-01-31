@@ -19,7 +19,7 @@ It offers extensive support for character sheets, compendium packs, and automate
 
 ## Install
  - Go to the setup page and choose _Game Systems_.
- - Click the _Install System_ button, and paste in this manifest link: `https://raw.githubusercontent.com/MortarionUA/rogue-trader-3rd-vtt/main/src/system.json`
+ - Click the _Install System_ button, and paste in this manifest link: `https://raw.githubusercontent.com/antipop001/rogue-trader-3rd-vtt/main/src/system.json`
  - Create a Game World using the "Rogue Trader 3rd Edition" system.
 
 ## Links
