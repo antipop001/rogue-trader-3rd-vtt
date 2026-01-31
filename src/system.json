@@ -1,16 +1,17 @@
 {
   "id": "rogue-trader-3rd",
   "title": "Rogue Trader 3rd Edition",
-  "description": "Rogue Trader 3rd Edition - Foundry VTT",
+  "description": "Unofficial Rogue Trader 3rd Edition system for Foundry VTT with extensive character sheet support, automated combat, compendium packs, and inventory management.",
   "version": "0.1.0",
   "compatibility": {
     "minimum": 12,
-    "verified": "12.331",
-    "maximum": 12
+    "verified": "13",
+    "maximum": 13
   },
   "authors": [
     {
-      "name": "MortarionUA"
+      "name": "MortarionUA",
+      "url": "https://github.com/MortarionUA"
     }
   ],
   "esmodules": [
@@ -26,104 +27,91 @@
       "system": "rogue-trader-3rd",
       "label": "Ammo",
       "path": "./packs/ammo.db",
-      "type": "Item",
-      "entity": "Item"
+      "type": "Item"
     },
     {
       "name": "aptitudes",
       "system": "rogue-trader-3rd",
       "label": "Aptitudes",
       "path": "./packs/aptitudes.db",
-      "type": "Item",
-      "entity": "Item"
+      "type": "Item"
     },
     {
       "name": "armour",
       "system": "rogue-trader-3rd",
       "label": "Armour",
       "path": "./packs/armour.db",
-      "type": "Item",
-      "entity": "Item"
+      "type": "Item"
     },
     {
       "name": "attack-specials",
       "system": "rogue-trader-3rd",
       "label": "Specials",
       "path": "./packs/attack-specials.db",
-      "type": "Item",
-      "entity": "Item"
+      "type": "Item"
     },
     {
       "name": "consumables",
       "system": "rogue-trader-3rd",
       "label": "Drugs and Consumables",
       "path": "./packs/consumables.db",
-      "type": "Item",
-      "entity": "Item"
+      "type": "Item"
     },
     {
       "name": "cybernetics",
       "system": "rogue-trader-3rd",
       "label": "Cybernetics",
       "path": "./packs/cybernetics.db",
-      "type": "Item",
-      "entity": "Item"
+      "type": "Item"
     },
     {
       "name": "psychic-powers",
       "system": "rogue-trader-3rd",
       "label": "Psychic Powers",
       "path": "./packs/psychic-powers.db",
-      "type": "Item",
-      "entity": "Item"
+      "type": "Item"
     },
     {
       "name": "tables",
       "system": "rogue-trader-3rd",
       "label": "Tables",
       "path": "./packs/tables.db",
-      "type": "RollTable",
-      "entity": "RollTable"
+      "type": "RollTable"
     },
     {
       "name": "talents",
       "system": "rogue-trader-3rd",
       "label": "Talents",
       "path": "./packs/talents.db",
-      "type": "Item",
-      "entity": "Item"
+      "type": "Item"
     },
     {
       "name": "tools",
       "system": "rogue-trader-3rd",
       "label": "Tools",
       "path": "./packs/tools.db",
-      "type": "Item",
-      "entity": "Item"
+      "type": "Item"
     },
     {
       "name": "traits",
       "system": "rogue-trader-3rd",
       "label": "Traits",
       "path": "./packs/traits.db",
-      "type": "Item",
-      "entity": "Item"
+      "type": "Item"
     },
     {
       "name": "weapons",
       "system": "rogue-trader-3rd",
       "label": "Weapons",
       "path": "./packs/weapons.db",
-      "type": "Item",
-      "entity": "Item"
+      "type": "Item"
     },
     {
       "name": "weapon-mods",
       "system": "rogue-trader-3rd",
       "label": "Weapon Mods",
       "path": "./packs/weapon-mods.db",
-      "type": "Item",
-      "entity": "Item"
+      "type": "Item"
     }
   ],
   "grid": {
@@ -133,8 +121,27 @@
   "primaryTokenAttribute": "wounds",
   "secondaryTokenAttribute": "fate",
   "url": "https://github.com/MortarionUA/rogue-trader-3rd-vtt",
-  "manifest": "https://github.com/MortarionUA/rogue-trader-3rd-vtt/releases/download/0.1.0/system.json",
+  "manifest": "https://raw.githubusercontent.com/MortarionUA/rogue-trader-3rd-vtt/main/src/system.json",
   "download": "https://github.com/MortarionUA/rogue-trader-3rd-vtt/releases/download/0.1.0/rogue-trader-3rd-vtt-0.1.0.zip",
+  "readme": "https://github.com/MortarionUA/rogue-trader-3rd-vtt/blob/main/README.md",
   "license": "LICENSE.txt",
-  "bugs": "https://github.com/MortarionUA/rogue-trader-3rd-vtt/issues"
+  "bugs": "https://github.com/MortarionUA/rogue-trader-3rd-vtt/issues",
+  "media": [
+    {
+      "type": "cover",
+      "url": "https://raw.githubusercontent.com/MortarionUA/rogue-trader-3rd-vtt/main/.github/char_sheet.png"
+    },
+    {
+      "type": "screenshot",
+      "url": "https://raw.githubusercontent.com/MortarionUA/rogue-trader-3rd-vtt/main/.github/weapon_sheet.png"
+    },
+    {
+      "type": "screenshot",
+      "url": "https://raw.githubusercontent.com/MortarionUA/rogue-trader-3rd-vtt/main/.github/attack_prompt.png"
+    },
+    {
+      "type": "screenshot",
+      "url": "https://raw.githubusercontent.com/MortarionUA/rogue-trader-3rd-vtt/main/.github/damage_chat.png"
+    }
+  ]
 }
