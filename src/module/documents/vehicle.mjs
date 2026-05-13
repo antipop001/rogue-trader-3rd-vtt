@@ -6,11 +6,11 @@ export class RogueTraderVehicle extends RogueTraderBaseActor {
     async _preCreate(data, options, user) {
         await super._preCreate(data, options, user);
         let initData = {
-            "token.bar1": { "attribute": "integrity" },
-            "token.displayName": CONST.TOKEN_DISPLAY_MODES.OWNER_HOVER,
-            "token.displayBars": CONST.TOKEN_DISPLAY_MODES.OWNER_HOVER,
-            "token.disposition": CONST.TOKEN_DISPOSITIONS.NEUTRAL,
-            "token.name": data.name
+            "prototypeToken.bar1": { "attribute": "integrity" },
+            "prototypeToken.displayName": CONST.TOKEN_DISPLAY_MODES.OWNER_HOVER,
+            "prototypeToken.displayBars": CONST.TOKEN_DISPLAY_MODES.OWNER_HOVER,
+            "prototypeToken.disposition": CONST.TOKEN_DISPOSITIONS.NEUTRAL,
+            "prototypeToken.name": data.name
         }
         this.updateSource(initData)
     }

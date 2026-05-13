@@ -300,8 +300,8 @@ export class ActorContainerSheet extends ActorSheet {
     async _effectCreate(event) {
         event.preventDefault();
         return this.actor.createEmbeddedDocuments('ActiveEffect', [{
-            label: 'New Effect',
-            icon: 'icons/svg/aura.svg',
+            name: 'New Effect',
+            img: 'icons/svg/aura.svg',
             origin: this.actor.uuid,
             disabled: true
         }], { renderSheet: true })

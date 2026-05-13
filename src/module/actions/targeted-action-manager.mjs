@@ -10,17 +10,18 @@ export class TargetedActionManager {
     initializeHooks() {
         // Initialize Scene Control Buttons
         Hooks.on('getSceneControlButtons', (controls) => {
-            const bar = controls.find((c) => c.name === 'token');
+            const tokens = controls.tokens;
+            if (!tokens) return;
             try {
                 if (!game.settings.get(SYSTEM_ID, RogueTraderSettings.SETTINGS.simpleAttackRolls)) {
-                    bar.tools.push({
-                        name: 'Attack',
+                    tokens.tools['attack'] = {
+                        name: 'attack',
                         title: 'Attack',
                         icon: 'fas fa-swords',
                         visible: true,
-                        onClick: async () => DHTargetedActionManager.performWeaponAttack(),
                         button: true,
-                    });
+                        onChange: () => DHTargetedActionManager.performWeaponAttack(),
+                    };
                 }
             } catch (error) {
                 game.rt.log('Unable to add game bar icon.', error)

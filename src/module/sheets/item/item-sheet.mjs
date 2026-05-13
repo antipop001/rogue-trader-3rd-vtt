@@ -73,8 +73,8 @@ export class DarkHeresyItemSheet extends ItemSheet {
     async _effectCreate(event) {
         event.preventDefault();
         return this.item.createEmbeddedDocuments('ActiveEffect', [{
-            label: 'New Effect',
-            icon: 'icons/svg/aura.svg',
+            name: 'New Effect',
+            img: 'icons/svg/aura.svg',
             origin: this.item.uuid,
             disabled: true
         }], { renderSheet: true })

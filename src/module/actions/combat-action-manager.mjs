@@ -35,9 +35,9 @@ export class CombatActionManager {
             if(currentCombatant.actor && currentCombatant.actor.effects) {
                 for(const effect of currentCombatant.actor.effects.contents) {
                     // On Fire!
-                    if(effect.label === 'Burning') {
+                    if(effect.name === 'Burning') {
                         await handleOnFire(currentCombatant.actor);
-                    } else if (effect.label === 'Bleeding') {
+                    } else if (effect.name === 'Bleeding') {
                         await handleBleeding(currentCombatant.actor);
                     }
                 }

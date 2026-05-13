@@ -7,24 +7,24 @@ export class RogueTraderBaseActor extends Actor {
     async _preCreate(data, options, user) {
         await super._preCreate(data, options, user);
         let initData = {
-            'token.bar1': { 'attribute': 'wounds' },
-            'token.bar2': { 'attribute': 'fate' },
-            'token.displayName': CONST.TOKEN_DISPLAY_MODES.OWNER_HOVER,
-            'token.displayBars': CONST.TOKEN_DISPLAY_MODES.OWNER_HOVER,
-            'token.disposition': CONST.TOKEN_DISPOSITIONS.NEUTRAL,
-            'token.name': data.name,
+            'prototypeToken.bar1': { 'attribute': 'wounds' },
+            'prototypeToken.bar2': { 'attribute': 'fate' },
+            'prototypeToken.displayName': CONST.TOKEN_DISPLAY_MODES.OWNER_HOVER,
+            'prototypeToken.displayBars': CONST.TOKEN_DISPLAY_MODES.OWNER_HOVER,
+            'prototypeToken.disposition': CONST.TOKEN_DISPOSITIONS.NEUTRAL,
+            'prototypeToken.name': data.name,
         };
         if (data.type === 'vehicle') {
-            initData['token.bar1'] = { 'attribute': 'integrity' };
-            initData['token.bar2'] = undefined;
+            initData['prototypeToken.bar1'] = { 'attribute': 'integrity' };
+            initData['prototypeToken.bar2'] = { 'attribute': '' };
         }
         if (data.type === 'voidship') {
-            initData['token.bar1'] = { 'attribute': 'hull' };
-            initData['token.bar2'] = undefined;
+            initData['prototypeToken.bar1'] = { 'attribute': 'hull' };
+            initData['prototypeToken.bar2'] = { 'attribute': '' };
         }
         if (data.type === 'acolyte') {
-            initData['token.vision'] = true;
-            initData['token.actorLink'] = true;
+            initData['prototypeToken.sight.enabled'] = true;
+            initData['prototypeToken.actorLink'] = true;
         }
         this.updateSource(initData);
     }

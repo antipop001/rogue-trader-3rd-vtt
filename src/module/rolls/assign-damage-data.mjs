@@ -226,7 +226,7 @@ export class AssignDamageData {
             speaker: ChatMessage.getSpeaker({ actor}),
             rollMode: game.settings.get('core', 'rollMode'),
             content: html,
-            type: CONST.CHAT_MESSAGE_STYLES.OTHER,
+            style: CONST.CHAT_MESSAGE_STYLES.OTHER,
         };
         if (['gmroll', 'blindroll'].includes(chatData.rollMode)) {
             chatData.whisper = ChatMessage.getWhisperRecipients('GM');

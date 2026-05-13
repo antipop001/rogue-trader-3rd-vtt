@@ -13,26 +13,28 @@ export class BasicActionManager {
 
     initializeHooks() {
         // Add show/hide support for chat messages
-        Hooks.on('renderChatMessage', async (message, html, data) => {
-            game.rt.log('renderChatMessage', { message, html, data });
-            html.find('.roll-control__hide-control').click(async (ev) => await this._toggleExpandChatMessage(ev));
-            html.find('.roll-control__refund').click(async (ev) => await this._refundResources(ev));
-            html.find('.roll-control__fate-reroll').click(async (ev) => await this._fateReroll(ev));
-            html.find('.roll-control__assign-damage').click(async (ev) => await this._assignDamage(ev));
-            html.find('.roll-control__apply-damage').click(async (ev) => await this._applyDamage(ev));
+        Hooks.on('renderChatMessageHTML', async (message, html, data) => {
+            game.rt.log('renderChatMessageHTML', { message, html, data });
+            const $html = $(html);
+            $html.find('.roll-control__hide-control').click(async (ev) => await this._toggleExpandChatMessage(ev));
+            $html.find('.roll-control__refund').click(async (ev) => await this._refundResources(ev));
+            $html.find('.roll-control__fate-reroll').click(async (ev) => await this._fateReroll(ev));
+            $html.find('.roll-control__assign-damage').click(async (ev) => await this._assignDamage(ev));
+            $html.find('.roll-control__apply-damage').click(async (ev) => await this._applyDamage(ev));
         });
 
         // Initialize Scene Control Buttons
         Hooks.on('getSceneControlButtons', (controls) => {
-            const bar = controls.find((c) => c.name === 'token');
-            bar.tools.push({
-                name: 'Assign Damage',
+            const tokens = controls.tokens;
+            if (!tokens) return;
+            tokens.tools['assign-damage'] = {
+                name: 'assign-damage',
                 title: 'Assign Damage',
                 icon: 'fas fa-shield',
                 visible: true,
-                onClick: async () => DHBasicActionManager.assignDamageTool(),
                 button: true,
-            });
+                onChange: () => DHBasicActionManager.assignDamageTool(),
+            };
         });
     }
 
@@ -258,7 +260,7 @@ export class BasicActionManager {
             speaker: ChatMessage.getSpeaker({ actor}),
             content: html,
             rollMode: game.settings.get('core', 'rollMode'),
-            type: CONST.CHAT_MESSAGE_TYPES.IC,
+            style: CONST.CHAT_MESSAGE_STYLES.IC,
         };
         if (['gmroll', 'blindroll'].includes(chatData.rollMode)) {
             chatData.whisper = ChatMessage.getWhisperRecipients('GM');
