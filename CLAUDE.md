@@ -82,7 +82,7 @@ The following packs were **not** touched in the talents/weapons/armour rebuild a
 - A handful of corebook benefit texts were filled in from general knowledge where the OCR was truncated: Psy Rating, Rite of Fear, Frenzy (partial), Catfall (tail), Luminen Shock (middle), Unarmed Warrior (middle), Swift Attack (tail). Verify against the printed book.
 
 **Weapons:**
-- `special` is stored as boolean flags only — quality parameters are dropped (e.g. `Blast (3)` becomes `blast: true` with no radius). The description field preserves the original text. If automation needs the parameter, the schema needs extending.
+- `special` flags now support parameter levels — e.g. `special.blast: 3` carries the Blast radius. Backfilled for the 33 Blast weapons from their descriptions. Other parameterized qualities (Snare/Concussive/Toxic/etc.) still need a targeted re-extraction pass; their flags are currently `true` with no level.
 - Special-quality keyword matcher in `/tmp/build_weapons.py` is fuzzy (substring match) — rare qualities like Spray, Snare, Sanctified, Force, Volatile may not be recognized and silently dropped from the `special` object. Re-check against descriptions if writing automation.
 - "Bomb Squig" / "'Sploding Squig" stats are weird-by-design; sanity-check.
 - ItS page numbers for some entries (Bolter Cane p.100, Wrath Plasma Pistol p.101) may be off — ItS Extended Armoury runs roughly pp.108–146.

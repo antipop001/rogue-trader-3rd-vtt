@@ -940,7 +940,9 @@
             "templates": ["physicalItem", "itemDescription", "container", "backpack", "armourPoints"],
             "container": true,
             "containerTypes": ["armourModification"],
-            "maxAgility": 0
+            "maxAgility": 0,
+            "protectionRating": 0,
+            "overloadOn": 0
         },
         "armourModification": {
             "templates": ["physicalItem", "itemDescription", "backpack"]

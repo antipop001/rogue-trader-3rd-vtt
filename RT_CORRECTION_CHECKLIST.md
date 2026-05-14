@@ -165,8 +165,9 @@ Current skill list is hybrid. For RT 1e fidelity (vs. DH2 consolidations):
 
 - [ ] Decide on `DarkHeresy*` class names — rename to `RogueTrader*` for clarity, or leave as-is (purely cosmetic)
 - [ ] Add page numbers to talent `source:` fields (NotebookLM omits them; do a targeted re-query)
-- [ ] Extend `weapon.special` schema to capture parameter values for parameterized qualities (Blast `(X)`, Snare `(X)`, Felling `(X)`, Force, etc.) — currently `special: { blast: true }` loses the `(X)`
-- [ ] Add `forceField.protectionRating` schema or fold into `armour.protectionRating` (currently embedded in description text only)
+- [x] `weapon.special` now supports parameter values: `special.blast` etc. is `boolean | number`, where a number `>= 1` carries the quality level. 33 Blast weapons backfilled with their `(X)` radii. Existing automation reading `if (special.tearing)` still works (both `true` and any number are truthy); new automation can read the integer for parameterized qualities like Blast/Snare/Felling/Concussive/Hallucinogenic/Haywire/Toxic.
+- [x] Added `protectionRating` and `overloadOn` int fields to the `armour` item type. 8 force fields in `armour.yml` backfilled with PR values from descriptions.
+- [ ] Backfill non-Blast parameterized qualities (Snare, Smoke, Concussive, Toxic, etc.) — current descriptions don't carry the `(X)` values reliably; needs targeted re-extraction from RT-DOCS.
 - [ ] Add a `npc.threatLevel` encounter-budget tool — or remove the field (DH2-only concept; RT relies on GM judgment)
 - [ ] Document deviations explicitly in CLAUDE.md (e.g. "Parry kept as skill", "consolidated Stealth retained")
 - [ ] Add a system migration script (`src/module/rogue-trader-migrations.mjs` exists — extend it) for any breaking schema changes above
