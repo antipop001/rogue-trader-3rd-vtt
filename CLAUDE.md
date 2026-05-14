@@ -1,8 +1,10 @@
 # Rogue Trader 3rd Edition (Foundry VTT)
 
-Unofficial Foundry VTT system for **FFG's Rogue Trader 1e** content using **Dark Heresy 2nd Edition mechanics** as its rules base. The "3rd Edition" in the name refers to the system iteration, not a game edition — there is only one printed RT edition.
+Unofficial Foundry VTT system for **FFG's Rogue Trader 1e** content using **Dark Heresy 2nd Edition mechanics** as its rules base, progressively migrated to RT 1e canon mechanics. The "3rd Edition" in the name refers to the system iteration, not a game edition — there is only one printed RT edition.
 
-Forked from mrkeathley's Dark Heresy 2 system. Authored by MortarionUA. Compatible with Foundry VTT v12–v14.
+Forked from mrkeathley's Dark Heresy 2 system. Authored by MortarionUA. Compatible with Foundry VTT v13–v14.
+
+**Current version: 0.4.0** (released 2026-05-14). See https://github.com/antipop001/rogue-trader-3rd-vtt/releases/tag/0.4.0 for release notes.
 
 ## Test environment (foundrySB)
 
@@ -39,24 +41,19 @@ Armour items: `armourPoints: {head, leftArm, rightArm, body, leftLeg, rightLeg}`
 
 Item type registry is in `src/template.json`.
 
-## Compendium canon (as of 2026-05-13)
+## Compendium canon (as of 2026-05-14, version 0.4.0)
 
-The `talents`, `weapons`, and `armour` packs were rebuilt to contain **only** content from:
+All 14 packs are sourced exclusively from:
 
 1. FFG **Rogue Trader Core Rulebook** (2009)
 2. **Into the Storm** supplement
 3. **Rogue Trader Living Errata v1.4**
 
-Errata corrections are baked into the data; affected entries note the change in their description/source field. Items from other supplements (Hostile Acquisitions, Faith and Coin, Edge of the Abyss, etc.) and any DH-2e-only items have been removed from these three packs.
+Errata corrections are baked into the data; affected entries note the change in their description/source field. Items from other supplements (Hostile Acquisitions, Faith and Coin, Edge of the Abyss, etc.) and any DH-2e-only items have been removed.
 
-Data was extracted from the user's NotebookLM RT notebook (`cd87d917-4cea-45b3-b27c-a149070b1826`). Stats came from OCR'd PDFs via NotebookLM JSON-formatted queries — expect occasional minor transcription errors and spot-check before relying for play.
+Data extraction now prefers local RT-DOCS markdown (see "Content extraction pipeline" below). NotebookLM (notebook `cd87d917-4cea-45b3-b27c-a149070b1826`) is the fallback for synthesis or image OCR.
 
-Counts:
-- `talents.yml` — 195 (170 corebook + 25 Into the Storm)
-- `weapons.yml` — 202 (104 corebook + 98 Into the Storm)
-- `armour.yml` — 42 (22 corebook + 20 Into the Storm, includes force fields)
-
-Build scripts that generated each YAML live at `/tmp/build_talents.py`, `/tmp/build_weapons.py`, `/tmp/build_armor.py` (with intermediate JSON in `/tmp/rt_data/`). These are not committed — if the data needs to be regenerated, re-query NotebookLM and rebuild.
+Extraction scripts live in `/tmp/rt_ship/` during a working session (not committed). To regenerate a pack, re-run the corresponding script and rebuild.
 
 ## Not yet done
 
@@ -267,12 +264,12 @@ Future work: auto-roll the Psychic Phenomena and Perils of the Warp tables (in `
 - `penetration: 99` is a sentinel for "Ignores Armour" (Psychic Scream).
 - Errata corrections from v1.4 are baked into the descriptions (with `Errata:` prefix when an entry was modified).
 
-### Bottom line
+### Bottom line (as of 0.4.0)
 
-The repo is a **DH2 engine + RT-rebuilt content for talents/weapons/armour/psychic-powers**. To become a "good workable RT" system, three layers need attention, roughly in order:
+The repo is now a **DH2-derived engine with RT 1e mechanics + RT-canon content across all 14 compendia**. Three layers, two done:
 
-1. **Combat math fixes** (action modifiers in `combat-actions.mjs`) — small file edits, high gameplay impact.
-2. **Content gaps** in the un-rebuilt packs — psychic-powers ✓ 2026-05-13, voidship ✓ 2026-05-14, attack-specials/weapon-mods/ammo/tools/consumables/cybernetics/traits all refreshed and aptitudes dropped ✓ 2026-05-14. Only `tables` remains DH2-flavored (sparse — 3 RollTables; RT-specific GM tables like Stars of Inequity exploration tables would be additive).
-3. **Schema/engine** — decide whether to keep the DH2 character-creation pipeline (Home World/Background/Role/Aptitudes) as a flavored layer, or rip it out for an RT Origin Path + Career advance-table model. This is the biggest call and the largest amount of work.
+1. **Combat math fixes** ✓ 2026-05-14. All 6 audit fixes plus 2 the audit missed (Semi-Auto Burst type, Stun type). Evasion split into Dodge/Parry.
+2. **Content rebuild** ✓ 2026-05-14. ~881 entries across 14 packs. Only `tables` is still sparse (3 DH2 RollTables); Stars of Inequity / Edge of the Abyss supplements are not local, so adding RT-specific GM tables would need re-extraction.
+3. **Character creation Path A vs B** — **OPEN, next major decision**. The DH2 creation pipeline (Home World × Background × Role × Aptitudes) still ships in `src/module/rules/{homeworlds,backgrounds,roles,divinations}.mjs` and `acolyte.aptitudes` is still in `template.json`. Decide whether to (A) replace the data in those modules with RT equivalents but keep the 3-axis UI, or (B) rip the lot out and build an Origin Path + Career advance-table model with a creation wizard.
 
-See `RT_CORRECTION_CHECKLIST.md` for a prioritized punch list.
+See `RT_CORRECTION_CHECKLIST.md` for the punch list with completed items checked off.
