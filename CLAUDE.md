@@ -179,8 +179,8 @@ All combat-action modifiers and types match RT 1e corebook Table 9-1 (pp.147-148
 | `ship-weapons` | 18 | RT Core (10) + ItS (8) | **Clean as of 2026-05-14.** Macrobatteries, lances, archeotech weaponry. |
 | `ship-traits` | 34 | RT Core (28) + ItS (6) | **Clean as of 2026-05-14.** 14 hull patterns + 10 Machine Spirit Oddities + 10 Past Histories. Hulls embed full stat block in description (no `shipHull` item type). |
 | `attack-specials` | 26 | RT Core (25) + ItS (1) | **Clean as of 2026-05-14.** All 25 corebook weapon qualities + ItS `Force`. |
-| `weapon-mods` | 33 | RT Core | **Refreshed 2026-05-14.** Corebook weapon upgrades + craftsmanship sub-entries. Worth a manual review pass — some entries are sub-rules nested under parents. |
-| `ammo` | 3 | RT Core | **Refreshed 2026-05-14.** Just RT specialty rounds (Inferno Shells, Man-Stopper Bullets, Tempest Bolt Shells). RT corebook doesn't catalogue ammo separately from weapons; pack is intentionally minimal. |
+| `weapon-mods` | 36 | RT Core (33) + ItS (3) | **Refreshed 2026-05-14.** Corebook weapon upgrades + ItS Ch.III additions (Calamity Vents, Exterminator Cartridge, Tox Dispenser). Some entries are craftsmanship sub-rules nested under parents — worth a manual review pass. |
+| `ammo` | 12 | RT Core (3) + ItS (9) | **Refreshed 2026-05-14.** RT specialty rounds + ItS Ch.III Unusual Ammunition (Acid Shells, Airtorch Canister, Microburst Flask, Nephium Fuel Tank, Organgrinder Rounds, Snare Shells, Toxic Shot, Tracer Shells, Void Rounds). |
 | `tools` | 47 | RT Core | **Refreshed 2026-05-14.** Clothing, void suits, gear, tools, equipment from corebook Ch.V. |
 | `consumables` | 21 | RT Core | **Refreshed 2026-05-14.** Drugs, stimms, recaf, sacred unguents, etc. from corebook Ch.V. |
 | `cybernetics` | 25 | RT Core | **Refreshed 2026-05-14.** Bionic Replacement Limbs + Implant Systems + Mechadendrites from corebook p.131+. |
