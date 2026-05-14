@@ -102,7 +102,7 @@ export class ActionData {
 
                 // All Out Attack
                 if (this.rollData.action === 'All Out Attack') {
-                    this.addEffect('All Out Attack', 'The character cannot attempt Evasion reactions until the beginning of his next turn.');
+                    this.addEffect('All Out Attack', 'The character cannot attempt Dodge or Parry Reactions until the beginning of his next turn.');
                 }
 
                 // Stun Action

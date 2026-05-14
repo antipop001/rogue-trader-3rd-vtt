@@ -1,1469 +1,2857 @@
 data:
-    aptitudes: Weapon Skill, Ballistic Skill
-    benefit: The penalty for  attacks with both weapons in the same turn drops to -10.
+    aptitudes: ''
+    benefit: 'You gain one of the following mutations: Brute, Clawed/Fanged, Feels
+        No Pain, Nightsider, Tough Hide, or Venomous; or one of the following Traits:
+        Regeneration, Sonar Sense, or Sturdy. (Errata v1.4: Multiple Arms and Winged
+        are NOT available with this Talent.)'
     cost: 0
-    prerequisites: ''
-    source: PG 123 CB
+    prerequisites: Genetor Alternate Career
+    source: Into the Storm p.213
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: A Machine of Flesh
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: The Explorer was born to command, either motivating or terrifying those
+        under his charge. On a successful Command Test, the Explorer may affect a
+        number of targets equal to 1d10 plus his Fellowship Bonus. This Talent has
+        no effect on hostile targets, and only affects NPCs.
+    cost: 0
+    prerequisites: Fellowship 30
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Air of Authority
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: 'This Talent does not represent true ambidexterity so much as sufficient
+        training with both hands to make the distinction moot. The Explorer can use
+        either hand equally well for any task, and does not suffer the -20 penalty
+        for actions using his off hand. Special: When combined with a Two-Weapon Wielder
+        Talent, the penalty for making attacks with both weapons in the same Turn
+        drops to -10.'
+    cost: 0
+    prerequisites: Agility 30
+    source: Rogue Trader Core Rulebook
     tier: '1'
 img: systems/rogue-trader-3rd/icons/items/swords/swords_01_b.png
 name: Ambidextrous
 type: talent
 ---
 data:
-    aptitudes: Perception, Fieldcraft
-    benefit: Ignores all penalties for fighting with a melee weapon while suffering
-        from obscured vision
+    aptitudes: ''
+    benefit: The Shaper's rituals are attuned to asking the warrior spirits of his
+        ancestors for aid in battle. The Kroot may affect himself and a number of
+        Kroot equal to his Willpower Bonus. The Shaper may apply the benefits to non-Kroot
+        allies, but he must first pass a Challenging (+0) Willpower Test. Those who
+        benefit gain a +2 bonus to melee damage rolls for a number of rounds equal
+        to the Shaper's Willpower Bonus. This ability may be used only once per day.
+    cost: 0
+    prerequisites: Shamanic Powers
+    source: Into the Storm p.130
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Ancestral Blessing
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: The Explorer's hatred of all the impure armours his soul against malign
+        influence. Whenever the Explorer gains Corruption Points, reduce the total
+        by 1, to a minimum of 0. With a successful Willpower Test, taken as a Free
+        Action, he may ignore the effects of accumulated Corruption Points for 1 Round.
+    cost: 0
+    prerequisites: Willpower 40
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Armour of Contempt
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: The Explorer's natural agility and graceful martial forms turn him into
+        a dervish of death on the battlefield. After making a melee attack, a successful
+        Acrobatics Test allows him to move at half rate as a Free Action. The Explorer's
+        opponent does not receive a free attack resulting from this move. He may only
+        take this additional move once per Round.
+    cost: 0
+    prerequisites: Agility 40, Acrobatics
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/gr_10.PNG
+name: Assassin Strike
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: The ancient and blessed technology of the Mechanicus or some corrupt
+        xeno tech flows through the Explorer's blood. These miniscule machines repair
+        minor injuries and speed healing. When applying healing, he is always considered
+        Lightly Wounded, and heals at an increased rate, removing 2 points of Damage
+        per day.
     cost: 0
     prerequisites: ''
-    source: PG 123 CB
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Autosanguine
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: The Explorer has received Basic Weapon Training in the Bolt group of
+        weapons, and can use them without penalty. When a character attempts to use
+        a weapon he does not have the correct Weapon Training Talent for, he suffers
+        a -20 penalty to any relevant Weapon Skill or Ballistic Skill Test.
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Basic Weapon Training (Bolt)
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: The Explorer has received Basic Weapon Training in the Las group of weapons,
+        and can use them without penalty. When a character attempts to use a weapon
+        he does not have the correct Weapon Training Talent for, he suffers a -20
+        penalty to any relevant Weapon Skill or Ballistic Skill Test.
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Basic Weapon Training (Las)
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: The Explorer has received Basic Weapon Training in the Launcher group
+        of weapons, and can use them without penalty. When a character attempts to
+        use a weapon he does not have the correct Weapon Training Talent for, he suffers
+        a -20 penalty to any relevant Weapon Skill or Ballistic Skill Test.
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Basic Weapon Training (Launcher)
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: The Explorer has received Basic Weapon Training in the Primitive group
+        of weapons, and can use them without penalty. When a character attempts to
+        use a weapon he does not have the correct Weapon Training Talent for, he suffers
+        a -20 penalty to any relevant Weapon Skill or Ballistic Skill Test.
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Basic Weapon Training (Primitive)
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: The Explorer has received Basic Weapon Training in the SP group of weapons,
+        and can use them without penalty. When a character attempts to use a weapon
+        he does not have the correct Weapon Training Talent for, he suffers a -20
+        penalty to any relevant Weapon Skill or Ballistic Skill Test.
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Basic Weapon Training (SP)
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: The Explorer has received Basic Weapon Training in the Universal group
+        of weapons, and can use them without penalty. The Universal group includes
+        the Bolt, Las, Launcher, Melta, Plasma, and SP groups. When a character attempts
+        to use a weapon he does not have the correct Weapon Training Talent for, he
+        suffers a -20 penalty to any relevant Weapon Skill or Ballistic Skill Test.
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Basic Weapon Training (Universal)
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: The Explorer's sheer willpower and psychic focus have become one and
+        the same over years of practice and training, such that their combined use
+        is second nature. He doubles his defensive Psy Rating on any Opposed Test
+        involving the Psyniscience Skill or Psychic Techniques.
+    cost: 0
+    prerequisites: Psy Rating, Strong Minded, Willpower 40
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/psykana/protect-blue-2.jpg
+name: Bastion of Iron Will
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: Long experience and indomitable will have allowed the Explorer to master
+        the beast within, directing its rage while keeping a level head. He can Parry
+        while Frenzied.
+    cost: 0
+    prerequisites: Frenzy
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/psykana/evil-eye-red-1.jpg
+name: Battle Rage
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: The Explorer has learned to put the whole force of his momentum behind
+        his weapon blows. When he charges into combat, few can stand before him. If
+        he uses the Charge Action, he gains a +20 bonus to Weapon Skill instead of
+        +10.
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Berserk Charge
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: Whenever making an Opposed Pilot Test, if the Flight Marshal and his
+        opponent both make the same number of degrees of success, the Flight Marshal
+        counts as winning the Test (he wins ties). The Flight Marshal also wins ties
+        when making any opposed Interaction Skill Tests with other members of the
+        Imperial Navy.
+    cost: 0
+    prerequisites: Pilot (Flyers and Space Craft) +20, Pilot (Personal) +10
+    source: Into the Storm p.209
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Best of the Best
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: The Explorer has optimised his use of Techna-Lingua for controlling servitors.
+        He receives a +10 bonus to any attempt to communicate with servitors, and
+        any vessel upon which he serves receives a +1 bonus to Crew Morale due to
+        increased servitor efficiency.
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Binary Chatter
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: The Explorer's mastery of bladed weapons and their martial disciplines
+        has no peer. When attacking with any bladed weapon, including chain weapons,
+        power axes, and power swords, he may re-roll one missed attack per Round.
+    cost: 0
+    prerequisites: Weapon Skill 30, Melee Weapon Training (any)
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/items/swords/swords_06_b.PNG
+name: Blademaster
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: The Explorer's holiness shines out, allowing all to see the truth of
+        their own souls. Where he treads, those who follow need have no fear of the
+        darkness, nor suffer the predations of the blasphemous. When spending a Fate
+        Point to activate the Pure Faith Talent, the Explorer extends the immunity
+        to daemonic presence to a number of targets equal to twice his Willpower Bonus.
+    cost: 0
+    prerequisites: Purge the Unclean, Divine Ministration, the Emperor Protects, or
+        Wrath of the Righteous
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Blessed Radiance
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: Years of practice and development of the Explorer's other senses allows
+        him to fight in close combat without the benefit of sight. This Talent reduces
+        all penalties for obscured vision by half, permitting the character to fight
+        in fog, smoke, or darkness.
+    cost: 0
+    prerequisites: Perception 30
+    source: Rogue Trader Core Rulebook
     tier: '1'
 img: systems/rogue-trader-3rd/icons/talents/blue/b_02.png
 name: Blind Fighting
 type: talent
 ---
 data:
-    aptitudes: Agility, Defence
-    benefit: After an enemy makes a successful attack against an ally, the character
-        may use a Reaction to move up to his Half Move distance in order to interpose
-        himself between the attacker and target. The attack is then resolved against the
-        character instead of the originaltarget. In the case of a melee attack, the character
-        may also attempt to Parry the attack as part of his Reaction.
+    aptitudes: ''
+    benefit: The Kroot may apply this Talent to himself and a number of Kroot equal
+        to his Willpower Bonus. The Shaper may apply the benefits to non-Kroot allies,
+        but he must first pass a Challenging (+0) Willpower Test. Those who benefit
+        gain an additional degree of success on any passed Concealment, Shadowing,
+        or Silent Move Tests.
     cost: 0
-    prerequisites: ''
-    source: PG 60 EB
+    prerequisites: Shamanic Powers
+    source: Into the Storm p.131
     tier: '1'
-img: systems/rogue-trader-3rd/icons/items/armor/helmet_s05.png
-name: Bodyguard
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Blood of the Stalker
 type: talent
 ---
 data:
-    aptitudes: Agility, Fieldcraft
-    benefit: Reduces the effective distance of all falls by a number of metres equal
-        to his Agility bonus. Also adds +20 to his Acrobatics skill tests when using Jump
+    aptitudes: ''
+    benefit: The Explorer is an experienced and cunning bounty hunter who commands
+        the highest price for bringing in a quarry dead or alive. When turning in
+        a fugitive for bounty, the character's group gains a bonus of +100 Objective
+        Points towards Military or Criminal Objectives.
     cost: 0
     prerequisites: ''
-    source: PG 124 CB
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Bloodtracker
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: Whereas a weaker man would be sent flying when using powerful weapons,
+        the Explorer's strong physique allows him to remain standing. He can fire
+        heavy weapons using Semi-Auto Burst or Full Auto Burst without bracing, and
+        he does not suffer the -30 penalty for failing to brace.
+    cost: 0
+    prerequisites: Strength 45
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Bulging Biceps
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: Gymnastic ability and natural balance enables the Explorer to fall far
+        greater distances without harm than the common man. Whenever he falls, he
+        may take an Agility Test as a Free Action. Success, and each additional Degree
+        of Success, reduces the distance fallen by a number of metres equal to the
+        character's Agility Bonus for the purposes of determining the total fall.
+    cost: 0
+    prerequisites: Agility 30
+    source: Rogue Trader Core Rulebook
     tier: '1'
 img: systems/rogue-trader-3rd/icons/psykana/wind-grasp-magenta-1.jpg
 name: Catfall
 type: talent
 ---
 data:
-    aptitudes: General, Social
-    benefit: Once per day, he can re-roll a test made to gather information from a group
-        of people. Can be used to re-roll Inquiry tests for Acquisition (not Commerce tests).
+    aptitudes: ''
+    benefit: Either chemical and surgical treatments or sheer will has rendered the
+        Explorer immune to most mundane temptations. Seduction attempts against him
+        automatically fail, and Charm Tests increase their Difficulty by one level.
+        Taking this Talent causes one Insanity Point.
     cost: 0
     prerequisites: ''
-    source: PG 124 CB
+    source: Rogue Trader Core Rulebook
     tier: '1'
 img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
-name: Clues from the Crowds
+name: Chem Geld
 type: talent
 ---
 data:
-    aptitudes: Willpower, Defence
-    benefit: Test Willpower to avoid Fatigue from Blood Loss with a Challenging (+0)
-        Willpower test.
+    aptitudes: ''
+    benefit: The Explorer can control the flow of molten promethium like no other,
+        manipulating flame like an old accomplice. The targets of his flamer attacks
+        take a -20 penalty to their Agility Tests to escape its effects.
+    cost: 0
+    prerequisites: Flame Weapon Training (Universal)
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Cleanse and Purify
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: The Explorer has directed his comrades to be prepared for danger, planning
+        out their actions for many contingencies if attacked. Before rolling initiative,
+        all other members of the group may choose to use the character's Intelligence
+        Bonus for all initiative rolls rather than individual Agility Bonuses.
+    cost: 0
+    prerequisites: Intelligence 40
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Combat Formation
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: The Explorer's weapon seems to be everywhere at once, keeping many more
+        opponents at bay in close combat than even skilled fighters. Opponents gain
+        no bonuses for outnumbering the character in hand-to-hand combat.
+    cost: 0
+    prerequisites: Weapon Skill 30
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/items/armor/helmet_s10.png
+name: Combat Master
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: The Explorer has the ability to consciously recognise the proddings of
+        his subconscious as it reacts to his preternaturally sharp senses, giving
+        the character an edge that mere speed cannot match. He can use his Perception
+        Bonus in place of his Agility Bonus when rolling Initiative.
+    cost: 0
+    prerequisites: Perception 40
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Combat Sense
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: The character's flesh or augmetics conceals a small compartment. This
+        might be a pouch hidden under a flap of flesh, or a chamber fitted into a
+        cybernetic enhancement. The Explorer may conceal one small item, no larger
+        than a closed fist, within this cavity. Discovering this compartment requires
+        success on a Difficult (-10) Search Test. If using a medicae scanner or auspex,
+        the Difficulty is reduced to Ordinary (+10).
     cost: 0
     prerequisites: ''
-    source: PG 125 CB
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Concealed Cavity
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: The Explorer's lightning ripostes are things of beauty—if they were slow
+        enough to be seen. After successfully Parrying an opponent's attack, he may
+        immediately make an attack against that opponent using the Parry weapon as
+        a Free Action. This attack suffers a -20 penalty.
+    cost: 0
+    prerequisites: Weapon Skill 40
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Counter Attack
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: 'The Explorer can place his shots where they will inflict more harm:
+        at creases, gaps, or joints in armour. When his ranged attack causes Critical
+        Damage, add +2 to the Damage.'
+    cost: 0
+    prerequisites: Ballistic Skill 40
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Crack Shot
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: The Explorer can land blows precisely where they will inflict the most
+        harm, cutting into seams or hammering at weak points. When the character's
+        melee attack causes Critical Damage, add +4 Damage.
+    cost: 0
+    prerequisites: Weapon Skill 50
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Crippling Strike
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: The Explorer has the ability to focus his entire body into close combat
+        attacks, adding +2 to damage inflicted in melee.
+    cost: 0
+    prerequisites: Strength 40
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/items/maces/mace_09_b.png
+name: Crushing Blow
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: The Ork has become sufficiently familiar with non-Orks that he draws
+        a measure of confidence from their presence. When determining the bonus to
+        Willpower gained from the Mob Rule trait, the Ork counts every two non-Orks
+        (excluding machines and lesser creatures) within 10m as an Ork.
+    cost: 0
+    prerequisites: Ork, Mob Rule
+    source: Into the Storm p.163
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Da Nekst Best Fing
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: Prolonged exposure to darkness has acted as an inoculation against all
+        that is foul, granting the Explorer resilience against corruption. Whenever
+        he makes a Malignancy Test, he takes half the normal penalty.
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_32.png
+name: Dark Soul
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: The Explorer's rock-steady hand and hawk-like eyesight make him a dreaded
+        marksman. No target, however precise, can escape his crosshairs. When making
+        a called shot, the character takes a -10 penalty instead of -20.
+    cost: 0
+    prerequisites: Ballistic Skill 30
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Deadeye Shot
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: Through conditioning or long years of abuse, the Explorer has built up
+        a tolerance to many inebriants, drugs, and chemicals. When drinking alcohol
+        or similar beverages, he does not pass out until he has failed a number of
+        Toughness Tests equal to twice his Toughness Bonus. The character also gains
+        a +10 bonus to resist the effects of addiction.
+    cost: 0
+    prerequisites: Toughness 30
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Decadence
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: The Ork is extremely resilient. When suffering from Blood Loss, the Ork
+        needs only test to avoid death every five rounds instead of every round. Additionally,
+        the Ork may re-roll any failed Toughness Tests to avoid dying immediately
+        due to a Critical Damage.
+    cost: 0
+    prerequisites: Ork, 'Ard, Toughness 50
+    source: Into the Storm p.167
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Ded 'Ard
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: During any turn in which the Ork Kommando begins unseen by his enemy
+        and chooses to reveal itself and attack them, he counts as having the Fear
+        (1) Trait — or if he already has the Fear Trait, he counts his Fear Trait
+        as one higher than normal.
+    cost: 0
+    prerequisites: Ork, Concealment +10, Silent Move +10
+    source: Into the Storm p.232
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Ded Sneaky
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: Through either willpower or sheer stubbornness, the Explorer refuses
+        to cross into shadow. When he suffers from blood loss, the character may roll
+        twice to avoid death.
+    cost: 0
+    prerequisites: Willpower 40
+    source: Rogue Trader Core Rulebook
     tier: '1'
 img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
 name: Die Hard
 type: talent
 ---
 data:
-    aptitudes: Weapon Skill, Defence
-    benefit: As a Full Action, may make an Opposed Weapon Skill test and force opponent
-        to drop weapon. If 3 or more DoS, can steal weapon.
+    aptitudes: ''
+    benefit: The Explorer can wrest weapons from an opponent's hands through practiced
+        technique or brute force. If in close combat, he may use a Full Action to
+        disarm his foe by making an Opposed Weapon Skill Test. If he wins the Test,
+        the opponent drops his weapon at his feet. If the character scores three or
+        more Degrees of Success, he takes his opponent's weapon.
     cost: 0
-    prerequisites: ''
-    source: PG 125 CB
+    prerequisites: Agility 30
+    source: Rogue Trader Core Rulebook
     tier: '1'
 img: systems/rogue-trader-3rd/icons/items/armor/gloves_s08.png
 name: Disarm
 type: talent
 ---
 data:
-    aptitudes: General, Offence
-    benefit: Gain additional +10 for outnumbering opponent.
+    aptitudes: ''
+    benefit: The Explorer's voice has particularly baleful or menacing qualities,
+        causing others to quail before it. He gains +10 bonus to all Intimidate or
+        Interrogation Tests when he employs this Talent, but suffers a -10 penalty
+        to Fellowship Tests when dealing with others in a non-threatening manner,
+        such as animals, children, or the easily startled.
     cost: 0
     prerequisites: ''
-    source: PG 126 CB
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Disturbing Voice
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: The Explorer is a vessel for the Emperor's mercy and beneficence, his
+        faith in his divinity can heal where no mere skill can. Spend a Fate Point
+        to remove Fatigue or heal.
+    cost: 0
+    prerequisites: Pure Faith
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Divine Ministration
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: The Explorer has the experience from many mass combats and swirling melees
+        under his belt. When ganging up on an opponent, he gains an additional +10
+        bonus to Weapon Skill Tests. If both characters have this Talent, both gain
+        an additional +10 bonus, for a total of +20. This bonus is in addition to
+        the normal bonus gained from outnumbering opponents.
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
     tier: '1'
 img: systems/rogue-trader-3rd/icons/talents/violet/p_29.PNG
 name: Double Team
 type: talent
 ---
 data:
-    aptitudes: General, Social
-    benefit: Suffers a -10 times X penalty to Fellowship and Influence tests when dealing
-        with group.
+    aptitudes: ''
+    benefit: The Explorer's skill with guns is such that he can target two shots on
+        exactly the same point. When armed with two pistols, he can fire both simultaneously
+        as a Full Action. Make a single Ballistic Skill Test, and if successful he
+        hits his target with both shots. As the character is firing both guns as a
+        single attack, he may take an Aim Action before firing to get a +10 or +20
+        bonus to the BS Test, and a red-dot laser sight mounted on any one of the
+        weapons will provide its +10 bonus. The Explorer does not suffer from the
+        normal -20 BS penalty for wielding two weapons. If he hits, the target's Armour
+        gets applied as normal to both hits individually, but Toughness only counts
+        once against the combined Damage rolls of both hits. A single successful Dodge
+        Test from the target will avoid both shots.
+    cost: 0
+    prerequisites: Agility 40, Two-Weapon Wielder (Ballistic)
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Dual Shot
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: The Explorer's skill with melee weapons can place two blows together
+        to maximise damage. When armed with two melee weapons, he can attack with
+        both simultaneously as a Full Action. Make a single Weapon Skill Test, and
+        if successful, he hits the target with both weapons. As he is swinging both
+        weapons as a single attack, the character may take an Aim Action before attacking
+        to get a +10 or +20 bonus to the WS Test. He does not suffer from the normal
+        -20 WS penalty for wielding two weapons. If he hits, the target's Armour gets
+        applied as normal to both hits individually, but Toughness only counts once
+        against the combined Damage rolls of both hits. A single successful Dodge
+        or Parry Test from the target will avoid both blows.
+    cost: 0
+    prerequisites: Agility 40, Two-Weapon Wielder (Melee)
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Dual Strike
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: The Explorer's will or faith can sustain him when his flesh is weak.
+        He ignores the effects of injury, Fatigue, and Stunning during combat. This
+        Talent does not prevent the Damage, but allows the character to temporarily
+        ignore its effects for the duration of the combat. Death still affects him
+        normally.
+    cost: 0
+    prerequisites: Willpower 45
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Duty Unto Death
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: The Explorer can channel the sacred flow of energy from his Potentia
+        Coil or other energy source to replenish his flesh. Whilst in contact with
+        a functioning, powered machine, or fully charged battery or power cell, the
+        character may make an Ordinary (+10) Toughness Test. Success removes one level
+        of Fatigue plus one additional level of Fatigue for each additional Degree
+        of Success. This takes one minute of meditation and ritual incantation.
+    cost: 0
+    prerequisites: Mechanicus Implants
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Electrical Succour
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: 'The Explorer may use his Electro Graft to access data ports and commune
+        with machine spirits. This grants a +10 bonus to Common Lore, Inquiry, or
+        Tech-Use Tests whilst connected to a data port. (Errata v1.4: prerequisite
+        corrected to Mechanicus Implants.)'
+    cost: 0
+    prerequisites: Mechanicus Implants
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Electro Graft Use
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: 'The opposite of Good Reputation, the Explorer is particularly despised
+        by a specific social group or organisation. He suffers an additional -10 penalty
+        to Fellowship Tests when dealing with this group. This Talent is cumulative
+        with the Rival Talent, for a total -20 penalty. The GM and player may agree
+        to award this Talent when appropriate to the adventure or campaign. This Talent
+        can be removed with an Elite Advance and the approval of the GM if the Explorer
+        has redeemed himself with the group in question. Talent Groups: Academics,
+        Adepta Sororitas, Adeptus Arbites, Adeptus Mechanicus, Administratum, Astropaths,
+        Ecclesiarchy, Government, Imperial Guard, Imperial Navy, Inquisition, Military,
+        Navigators, Nobility, Rogue Trader, Underworld, Workers.'
     cost: 0
     prerequisites: ''
-    source: PG 126 CB
+    source: Rogue Trader Core Rulebook
     tier: '1'
 img: systems/rogue-trader-3rd/icons/talents/violet/p_21.PNG
 name: Enemy
 type: talent
 ---
 data:
-    aptitudes: Willpower, Tech
-    benefit: Can summon larger metallic objects up to 2 kilograms per point of his Willpower
-        bonus, and can summon such objects up to 40 metres.
+    aptitudes: ''
+    benefit: The Explorer has learned to focus the power stored within his Potentia
+        Coil with greater efficiency. He no longer gains Fatigue from using Luminen
+        Charge, Luminen Shock, and Luminen Blast.
+    cost: 0
+    prerequisites: Mechanicus Implants
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Energy Cache
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: The Explorer's already impressive bionic body structure is steadied by
+        a gyro-array guided by a targeting system linked to the machine-spirit. The
+        Explorer gains the Auto-stabilised Trait.
+    cost: 0
+    prerequisites: Machinator Array
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Enhanced Bionic Frame
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: The Explorer has received Exotic Weapon Training in a single Exotic Weapon,
+        and can use it without penalty. This Talent may be taken multiple times, choosing
+        a different Exotic Weapon each time.
     cost: 0
     prerequisites: ''
-    source: PG 127 CB
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/items/spear/stave_04_b.png
+name: Exotic Weapon Training
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: Whenever a Focus Power Test results in Psychic Phenomena, the Explorer
+        may roll twice on that table and take the more favourable result.
+    cost: 0
+    prerequisites: Willpower 35
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Favoured by the Warp
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: Through hard experience with horrifying situations, fear no longer commands
+        the Explorer's actions. He is immune to the effects of Fear and Pinning, but
+        disengaging from combat or backing down from a fight requires a successful
+        Willpower Test.
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Fearless
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: The Explorer can haywire his vox synthesisers, causing a hideous blast
+        of noise that shocks and distracts others. All unprotected creatures within
+        a 30-metre radius who have the ability to hear must make a Willpower Test
+        or lose a Half Action on their next Turn as they involuntarily react to the
+        cacophonous shriek.
+    cost: 0
+    prerequisites: Mechanicus Implants
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Feedback Screech
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: The Explorer can cause an unsecured metal object within his field of
+        vision to fly into his hand. The object may mass up to 1 kilogram per point
+        of the character's Willpower Bonus, and must lie within 20 metres. Using this
+        Talent requires a Full Action and a successful Willpower Test.
+    cost: 0
+    prerequisites: Mechanicus Implants
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Ferric Lure
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: The Explorer can call an unsecured metal object to his hand as with Ferric
+        Lure, but he may summon objects of up to 2 kilograms per point of his Willpower
+        Bonus. The object may be up to 40 metres distant. The character must spend
+        a Full Action and succeed on a Willpower Test to enact this rite.
+    cost: 0
+    prerequisites: Mechanicus Implants, Ferric Lure
+    source: Rogue Trader Core Rulebook
     tier: '1'
 img: systems/rogue-trader-3rd/icons/talents/blue/b_02.png
 name: Ferric Summons
 type: talent
 ---
 data:
-    aptitudes: Offence, Toughness
-    benefit: a Full Action, suffering 1d5-2 for +10 WP.
+    aptitudes: ''
+    benefit: You have dedicated your pain to the Emperor. Each day, you must spend
+        twenty minutes praying and inflicting 1 point of Damage upon yourself (which
+        cannot be healed). Once castigated, you gain a +10 bonus to Willpower Tests
+        made to resist mind control or Malignancy. If you have the Frenzy Talent,
+        you may enter a frenzied state as a Free Action. Should you fail to flagellate
+        yourself, you take a -5 penalty to all Tests due to shame and guilt.
     cost: 0
     prerequisites: ''
-    source: PG 57 EI
+    source: Into the Storm p.73
     tier: '1'
 img: systems/rogue-trader-3rd/icons/items/flail/flail_03_t.PNG
 name: Flagellant
 type: talent
 ---
 data:
-    aptitudes: Strength, Offence
-    benefit: May spend one full round to enter Frenzy gaining +10 bonus to Weapon Skill,
-        Strength, Toughness, and Willpower, but suffering a 20 penalty to Ballistic Skill,
-        Intelligence, and Fellowship and is immune to Fear, Pinning, Stunning effects,
-        and the effects of Fatigue; he cannot Parry, retreat, or flee. He remains Frenzied
-        for the duration of the combat, and cannot  use psychic powers while Frenzied.
-        After combat ends can make a Willpower test to snap out and cannot Frenzy again
-        for at least an hour.
+    aptitudes: ''
+    benefit: The sight of flaming streams of promethium brings joy to the Explorer's
+        heart and dread to his foes. He has mastered the art of a wide variety of
+        flamer weapons. The Universal Talent group encompasses all non-Exotic weapons
+        with the Flame special quality.
     cost: 0
     prerequisites: ''
-    source: PG 127 CB
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Flame Weapon Training (Universal)
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: Logic and analysis do for the Explorer what Tarot and the bones claim
+        to do for the superstitious masses. By careful consideration of all the possible
+        consequences, and examination of all evidence and information, he can identify
+        the best path for success. By spending ten minutes studying or analysing a
+        problem, he gains a +10 bonus to his next Intelligence Test.
+    cost: 0
+    prerequisites: Intelligence 30
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Foresight
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: The Explorer may work himself into a frenzy with one minute of preparation.
+        While Frenzied, he is immune to Fear, Pinning, stunning effects, the effects
+        of Fatigue, and gains a +10 bonus to Weapon Skill, Strength, Toughness, and
+        Willpower. However, he suffers a -20 penalty to Ballistic Skill, Intelligence,
+        and Fellowship, may not Parry, retreat, or flee, and must use the All-Out
+        Attack Action in melee combat if possible. He remains Frenzied for the duration
+        of the combat. Unless the character has a Talent that allows him to do so,
+        he may not use Psychic Techniques whilst in Frenzy. After ending his Frenzy,
+        the Explorer cannot Frenzy again for at least an hour.
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
     tier: '1'
 img: systems/rogue-trader-3rd/icons/talents/red/r_08.png
 name: Frenzy
 type: talent
 ---
 data:
-    aptitudes: Ballistic Skill, Finesse
-    benefit: When the character misses with a thrown weapon or weapon with the Blast
-        quality, he may reduce the distance it scatters by a number of metres up to half
-        his BS bonus
+    aptitudes: ''
+    benefit: The Explorer's speed and martial prowess allow him to land several blows
+        where lesser combatants land one. If he successfully hits his target using
+        the All Out Attack Action, he may spend his Reaction to make an additional
+        attack using the same bonuses or penalties as the original attack.
     cost: 0
-    prerequisites: ''
-    source: PG 62 EO
+    prerequisites: Weapon Skill 35
+    source: Rogue Trader Core Rulebook
     tier: '1'
-img: systems/rogue-trader-3rd/icons/items/grenade/grenade_04.png
-name: Grenadier
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Furious Assault
 type: talent
 ---
 data:
-    aptitudes: Toughness, Defence
-    benefit: Test Challenging (+0)  Toughness Test to overcome Stunning.
+    aptitudes: ''
+    benefit: The Ork uses his Shoota with great enthusiasm, forcing the enemy to keep
+        their heads down. The Ork may use Suppressive Fire as a Half Action instead
+        of a Full Action.
+    cost: 0
+    prerequisites: Ork, Bulging Biceps, Strength 50
+    source: Into the Storm p.168
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Give it Sum Dakka!
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: 'The Explorer''s reputation precedes him in interactions with a specific
+        group or organisation, opening doors that might otherwise remain closed. The
+        Explorer gains an additional +10 bonus to Fellowship Tests when dealing with
+        this group. This Talent is cumulative with Peer, for a total bonus of +20.
+        Talent Groups: Academics, Adeptus Arbites, Adeptus Mechanicus, Administratum,
+        Astropaths, Ecclesiarchy, Feral Worlders, Government, Hivers, Imperial Guard,
+        Imperial Navy, Inquisition, Middle Classes, Nobility, the Insane, Underworld,
+        Void Born, Workers.'
+    cost: 0
+    prerequisites: Fellowship 50, Peer
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Good Reputation
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: The mercenary fights all the harder to gain his reward, and lets nothing
+        stand in his way. The character may re-roll any failed Willpower Test to avoid
+        Fear and Pinning.
+    cost: 0
+    prerequisites: Mercenary Trait
+    source: Into the Storm p.133
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Greed is Good
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: Years of serving as a bodyguard allow the Explorer to put himself in
+        the line of fire, or to take a murderous attack that was intended for another.
+        He may sacrifice all of his Actions for the next Round to switch places with
+        an ally within 2 metres (as long as there is no obstruction in the way). This
+        may be done at any time, even interrupting another action. The character becomes
+        the target of any attacks previously targeting the ally. This Talent may not
+        be used more than once per combat.
+    cost: 0
+    prerequisites: Agility 40
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Guardian
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: Using the Explorer's sacred ability to subtly affect ferrous materials,
+        he can un-jam a number of weapons equal to his Intelligence Bonus, so long
+        as they are within a 10-metre radius. A successful Intelligence Test indicates
+        the character has appeased the spirits of the weapons. This blessing requires
+        a Full Action.
+    cost: 0
+    prerequisites: Mechanicus Implants
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Gun Blessing
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: The Explorer has trained with pistols for so long that they are like
+        extensions of his own body, barely requiring conscious thought to aim and
+        fire. When armed with two pistols, he reduces the penalty for Two-Weapon Fighting
+        by -10. If he also possesses the Ambidextrous Talent, the penalty is reduced
+        to 0.
+    cost: 0
+    prerequisites: Ballistic Skill 40, Two-Weapon Wielder
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Gunslinger
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: The Explorer's shrewd negotiations and bartering skills are without peer,
+        and he has a knack for seeing opportunities for profit where others see nothing.
+        Whenever Profit Factor is awarded for completing an Endeavour, you gain a
+        bonus of +1 Profit Factor to the group's total.
     cost: 0
     prerequisites: ''
-    source: PG 128 CB
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Hard Bargain
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: Light on his feet, the Explorer dodges and weaves as he moves, skills
+        learned from long years in the line of fire. When he selects the Charge or
+        Run Actions, opponents suffer a -20 penalty to Ballistic Skill Tests made
+        to hit the character with a ranged weapon. This penalty continues until the
+        start of the Explorer's next Turn.
+    cost: 0
+    prerequisites: Agility 40
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Hard Target
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: The Explorer's constitution rebounds quickly from shock or injury. When
+        undergoing medical treatment or healing from injuries, he recovers Damage
+        as if Lightly Wounded.
+    cost: 0
+    prerequisites: Toughness 40
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Hardy
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: 'A group, organisation or race has wronged the Explorer in the past,
+        fuelling this animosity. When fighting opponents of that group in close combat,
+        he gains a +10 bonus to all Weapon Skill Tests made against them. (Errata
+        v1.4: The effects of the Hatred Talent never stack — multiple Hatred Talents
+        do not combine, and the bonus to Weapon Skill Tests can never exceed +10.)
+        Talent Groups: Criminals, Mutants, Pirates, Psykers, Rogue Trader (specific),
+        Xenos (specific).'
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Hatred
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: The Explorer can use Bolt heavy weapons without penalty. When a character
+        attempts to use a weapon and he does not have the correct Weapon Training
+        Talent for, he suffers a -20 penalty to any relevant Weapon Skill or Ballistic
+        Skill Test.
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Heavy Weapon Training (Bolt)
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: The Explorer can use Flame heavy weapons without penalty. When a character
+        attempts to use a weapon and he does not have the correct Weapon Training
+        Talent for, he suffers a -20 penalty to any relevant Weapon Skill or Ballistic
+        Skill Test.
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Heavy Weapon Training (Flame)
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: The Explorer can use Las heavy weapons without penalty. When a character
+        attempts to use a weapon and he does not have the correct Weapon Training
+        Talent for, he suffers a -20 penalty to any relevant Weapon Skill or Ballistic
+        Skill Test.
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Heavy Weapon Training (Las)
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: The Explorer can use Launcher heavy weapons without penalty. When a character
+        attempts to use a weapon and he does not have the correct Weapon Training
+        Talent for, he suffers a -20 penalty to any relevant Weapon Skill or Ballistic
+        Skill Test.
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Heavy Weapon Training (Launcher)
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: The Explorer can use Melta heavy weapons without penalty. When a character
+        attempts to use a weapon and he does not have the correct Weapon Training
+        Talent for, he suffers a -20 penalty to any relevant Weapon Skill or Ballistic
+        Skill Test.
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Heavy Weapon Training (Melta)
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: The Explorer can use Plasma heavy weapons without penalty. When a character
+        attempts to use a weapon and he does not have the correct Weapon Training
+        Talent for, he suffers a -20 penalty to any relevant Weapon Skill or Ballistic
+        Skill Test.
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Heavy Weapon Training (Plasma)
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: The Explorer can use Primitive heavy weapons without penalty. When a
+        character attempts to use a weapon and he does not have the correct Weapon
+        Training Talent for, he suffers a -20 penalty to any relevant Weapon Skill
+        or Ballistic Skill Test.
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Heavy Weapon Training (Primitive)
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: The Explorer can use SP heavy weapons without penalty. When a character
+        attempts to use a weapon and he does not have the correct Weapon Training
+        Talent for, he suffers a -20 penalty to any relevant Weapon Skill or Ballistic
+        Skill Test.
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Heavy Weapon Training (SP)
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: Either genetics or augmetics have made the Explorer's sight superior
+        to others. He gains a +10 bonus to any Tests specifically involving sight.
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Heightened Senses (Sight)
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: Either genetics or augmetics have made the Explorer's sense of smell
+        superior to others. He gains a +10 bonus to any Tests specifically involving
+        smell.
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Heightened Senses (Smell)
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: Either genetics or augmetics have made the Explorer's hearing superior
+        to others. He gains a +10 bonus to any Tests specifically involving sound.
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Heightened Senses (Sound)
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: Either genetics or augmetics have made the Explorer's sense of taste
+        superior to others. He gains a +10 bonus to any Tests specifically involving
+        taste.
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Heightened Senses (Taste)
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: Either genetics or augmetics have made the Explorer's sense of touch
+        superior to others. He gains a +10 bonus to any Tests specifically involving
+        touch.
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Heightened Senses (Touch)
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: The Explorer's prowess with ranged weapons is such that he can still
+        fire accurately without using the sights. As a Full Action, the character
+        may both move up to his Full Move rate and make a single attack with a ranged
+        weapon. This attack can only be a single shot—no automatic fire.
+    cost: 0
+    prerequisites: Ballistic Skill 40, Agility 40
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Hip Shooting
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: The Explorer can pilot vehicles as if they were extensions of his own
+        body. He may only select this Talent if he has obtained one Pilot Skill as
+        an Advanced Skill. The character treats all other Pilot skills as Basic Skills,
+        and receives a +10 bonus to the Pilot Skills he already possesses.
+    cost: 0
+    prerequisites: Any Pilot Skill, Agility 40
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Hotshot Pilot
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: The Kroot's metabolism is sped up, improving his raw muscle speed, reflexes,
+        and reaction time. The Kroot gains one additional Reaction per round. When
+        taking the Full Move action, the Kroot may move an extra number of metres
+        equal to his unmodified Agility Bonus. When taking the Run action, he may
+        double his movement for one Round. He gains one level of Fatigue if he uses
+        this Talent in two consecutive Turns unless he passes a Challenging (+0) Toughness
+        Test.
+    cost: 0
+    prerequisites: Kroot
+    source: Into the Storm p.133
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Hyperactive Nymune Organ
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: The Explorer can now see the warp and physical universe side by side,
+        no longer taking any concentration on his part. After gaining this Talent,
+        the character may use the Psyniscience Skill as a Free Action.
+    cost: 0
+    prerequisites: Warp Sense
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Improved Warp Sense
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: The Explorer has developed his peripheral vision and situational awareness
+        to a point where he can fire in two directions within a split second. When
+        firing two weapons as part of a single action, the targets need not be less
+        than 10 metres apart.
+    cost: 0
+    prerequisites: Ballistic Skill 40
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Independent Targeting
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: The Explorer has been infused with a great wealth of lore and knowledge,
+        either through punishing noetic techniques or by arcane methods kept secret
+        by the guardians of technology and knowledge. The Explorer treats all Common
+        and Scholastic Lore Skills as untrained Basic Skills. This Talent also provides
+        a +10 bonus to any Tests involving Common or Scholastic Lore for which he
+        already possesses the Skill.
+    cost: 0
+    prerequisites: Intelligence 40
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Infused Knowledge
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: The Explorer knows just the turn of phrase that incites individuals or
+        groups to rage against others. His rhetoric grants +20 to Interaction Tests
+        when inspiring hatred or anger, and double the number of individuals affected.
+        This Talent can be combined with Master Orator to further increase the number
+        of listeners affected.
+    cost: 0
+    prerequisites: Fellowship 30
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Inspire Wrath
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: The Explorer inspires loyalty and devotion in his followers such that
+        they would follow him into the warp or on a boarding action against xenos
+        corsairs. In personal combat, while visible to them, they are immune to Fear
+        and Pinning. While the character is known to be on board a ship in which he
+        serves, the ship has a +5 bonus to its Morale.
+    cost: 0
+    prerequisites: Iron Discipline
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Into the Jaws of Hell
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: Iron sharpens iron. The Explorer does not coddle his crew, nor motivate
+        them through kindness. His stalwart example and stern leadership exhorts them
+        with steel instead of spoils. If the character is visible to his followers,
+        either in person or via vox- or pict-caster, they may re-roll failed Willpower
+        Tests made to resist Fear and Pinning. Iron Discipline can affect a number
+        of targets equal to the character's Willpower Bonus, who must be under his
+        command. PCs can benefit from Iron Discipline if the character with this Talent
+        is the official group leader. If the Explorer is leading a boarding action,
+        he gains a +10 bonus to his Command Tests.
+    cost: 0
+    prerequisites: Willpower 30, Command
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Iron Discipline
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: The Explorer has taken blows from Orks and given back as good as he got.
+        He can bounce back from most strikes without ill effects. If ever Stunned,
+        a successful Toughness Test allows him to ignore the effects.
+    cost: 0
+    prerequisites: Toughness 40
+    source: Rogue Trader Core Rulebook
     tier: '1'
 img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
 name: Iron Jaw
 type: talent
 ---
 data:
-    aptitudes: Willpower, Defence
-    benefit: The Explorer’s wide travels have shown him both wonders and horrors beyond the ken 
-        of most. The galaxy has thrown its worst at him and he has yet to flinch. Mundane events, from 
-        gruesome mass killings to torture without compare, do not force him to gain Insanity points or 
-        make Fear tests. He ignores the Fear Rating of Xenosbeasts, however, “normal” Xenos are treated 
-        as one rating lower (on a Fear (0), the Explorer ignores the Fear Trait). Exposure to certain 
-        scenarios may even allow for the Explorer to avoid such trials in future, as his psychological 
-        barriers are now prepared for what lies ahead. What qualifies as Mundane is at the GM's discretion.
+    aptitudes: ''
+    benefit: The Explorer's wide travels have shown both wonders and horrors beyond
+        the ken of most. The galaxy has thrown its worst at him and he has yet to
+        flinch. Outrageous events, from death's horrific visage to xenos abominations,
+        will not cause Insanity Points or Fear Tests. Terrors of the Warp still affect
+        the character normally.
     cost: 0
-    prerequisites: ''
-    source: PG 128 CB
+    prerequisites: Willpower 30
+    source: Rogue Trader Core Rulebook
     tier: '1'
 img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
 name: Jaded
 type: talent
 ---
 data:
-    aptitudes: Perception, Social
-    benefit: Can retry Awareness test once with 10 modifier.
+    aptitudes: ''
+    benefit: When taking the Charge action, the Kroot can ignore obstacles between
+        him and his target by making a Running Vertical Jump. This Talent may only
+        be used if there is room for the Kroot to land next to his target and if there
+        is enough overhead space. If the Kroot successfully strikes his target whilst
+        using this Talent, he may make a Knock-Down Action against the target as a
+        Free Action.
     cost: 0
-    prerequisites: ''
-    source: PG 129 CB
+    prerequisites: Kroot, Strength 45, Agility 45
+    source: Into the Storm p.134
     tier: '1'
 img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
-name: Keen Intuition
+name: Kroot Leap
 type: talent
 ---
 data:
-    aptitudes: Agility, General
-    benefit: Stand as a Free Action.
+    aptitudes: ''
+    benefit: The Explorer has developed a sixth sense about hails of gunfire, allowing
+        him to sense gaps and pauses in the lethal rain. He is immune to Pinning by
+        Pistols and Basic Weapons, and adds +1 AP to the value of any cover protecting
+        him from ranged attacks.
     cost: 0
-    prerequisites: ''
-    source: PG 129 CB
+    prerequisites: Nerves of Steel
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Last Man Standing
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: A combination of athletic ability and speed allow the Explorer to spring
+        to his feet in virtually any circumstance. He may stand up as a Free Action.
+    cost: 0
+    prerequisites: Agility 30
+    source: Rogue Trader Core Rulebook
     tier: '1'
 img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
 name: Leap Up
 type: talent
 ---
 data:
-    aptitudes: Agility, Defence
-    benefit: When he would make an Agility test to avoid attacks from weapons with the
-        Spray quality, he may make the test using his Dodge (Ag) skill instead.
+    aptitudes: ''
+    benefit: Your name is known on hundreds of worlds. Any successful Influence Tests
+        the Explorer makes using Profit Factor automatically gain an additional two
+        'bonus' degrees of success. In a Social Challenge, any successful Interaction
+        Skill Tests made by the Explorer automatically gain an additional two 'bonus'
+        degrees of success. In Combat, the Explorer counts as having the Fear (1)
+        Trait.
     cost: 0
-    prerequisites: ''
-    source: PG 63 EO
+    prerequisites: Legend of the Expanse Alternate Career
+    source: Into the Storm p.227
     tier: '1'
 img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
-name: Leaping Dodge
+name: Legendary
 type: talent
 ---
 data:
-    aptitudes: Weapon Skill /Ballistic Skill, Offence
-    benefit: Reduces any penalty for making attacks (Melee or Ranged) from a moving
-        vehicle or mount by 10 for each advance.
+    aptitudes: ''
+    benefit: The slightest change in conditions or disturbance brings the Explorer
+        from sleep to full awareness, remaining alert even in slumber. He is always
+        assumed to be awake, even when asleep, for the purposes of Awareness Tests
+        or surprise. Unfortunately, the character's sleep is not deep and can be frequently
+        interrupted, resulting in a less-than-cheery disposition when awake.
     cost: 0
-    prerequisites: ''
-    source: PG 58 EI
+    prerequisites: Perception 30
+    source: Rogue Trader Core Rulebook
     tier: '1'
 img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
-name: Mounted Warrior
+name: Light Sleeper
 type: talent
 ---
 data:
-    aptitudes: Perception, Offence
-    benefit: Can add DoS from the attack to reduce armour value of cover.
+    aptitudes: ''
+    benefit: The Explorer's speed with weapons is legendary, allowing him to launch
+        flurries of attacks. As a Full Action, the character may make three melee
+        attacks on his Turn. The effects of this Talent replace those of Swift Attack
+        rather than adding to them. The use of Lightning Attack may not be combined
+        with Dual Strike. If the Explorer has the Two-Weapon Wielder Talent and is
+        wielding two melee weapons, he gets the advantage of Lightning Attack with
+        only one of the weapons, and a single attack with the other. If he has the
+        Two-Weapon Wielder Talent and is wielding a melee weapon in one hand and a
+        gun in the other, he gets the advantage of Lightning Attack with the melee
+        weapon and a single attack with the gun.
     cost: 0
-    prerequisites: ''
-    source: PG 130 CB
+    prerequisites: Swift Attack
+    source: Rogue Trader Core Rulebook
     tier: '1'
-img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
-name: Nowhere to Hide
+img: systems/rogue-trader-3rd/icons/psykana/enchant-sky-2.jpg
+name: Lightning Attack
 type: talent
 ---
 data:
-    aptitudes: Fellowship, Social
-    benefit: Character has good reputation amongst chosen group with bonus to Fellowship
-        tests increases to +10 times X. Additionally, when the character acquires his
-        talent, changes Explorers reputation in this organization by 10 and Profit Factor by 1.
+    aptitudes: ''
+    benefit: The Explorer always expects trouble, even in the most innocuous situations,
+        allowing him to act quickly when needed. The character adds twice his Agility
+        Bonus when rolling for Initiative. If he has Unnatural Agility, add +1 to
+        the multiplier before factoring the bonus into the Initiative roll.
     cost: 0
     prerequisites: ''
-    source: PG 130 CB
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Lightning Reflexes
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: The Ork may use his Might Makes Right rule with any allies, not just
+        Greenskins. Additionally, he may affect a number of creatures with Might Makes
+        Right equal to ten times his Strength bonus.
+    cost: 0
+    prerequisites: Ork, Might Makes Right, Intimidate +10
+    source: Into the Storm p.170
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Lissen Ta Me, Cos I'z Da Biggest
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: The Explorer's belief in the righteousness of his hatred is so ingrained
+        that he can rouse others to join his crusade. As a Full Action, the character
+        may make a Charm Test to extend the effects of his Hatred Talent to any allies
+        in the immediate vicinity. Success on the Test confers a +10 bonus to Weapon
+        Skill when fighting hated foes to one target per point of the Explorer's Fellowship
+        Bonus. The effects last for the duration of the encounter.
+    cost: 0
+    prerequisites: Hatred (any)
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Litany of Hate
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: The Explorer may use analytical circuits to calculate trajectory possible
+        outcomes lets him anticipate the movement of his opponents. By using his Reaction
+        for the Round, the character may make a Tech-Use Test to make use of this
+        Talent. He gains a +10 bonus to all Weapon Skill and Ballistic Skill Tests
+        until the end of his next Turn. The Explorer must pass a Toughness Test when
+        he uses this ability or gain a level of Fatigue.
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Logis Implant
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: 'The Omnissiah has blessed the Explorer with augmetic conduits that parallel
+        the bones of his arms. By reciting the proper litany, he can channel the energy
+        stored in his Potentia Coil down these channels and direct it at his enemies.
+        Success on a Ballistic Skill Test allows him to direct this energy against
+        a single target within 10 metres. The target takes 1d10 plus the Explorer''s
+        Willpower Bonus in Energy Damage. The character must pass a Toughness Test
+        when using this ability or gain a level of Fatigue. Talent Use: Half Action
+        Attack.'
+    cost: 0
+    prerequisites: Mechanicus Implants
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/psykana/lighting-eerie-3.jpg
+name: Luminen Blast
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: 'The Explorer has mastered the union between his holy mechanical elements
+        and his mortal flesh, allowing the former to power the latter. With a successful
+        Toughness Test the character may recharge or power machinery with his internal
+        coils. This requires one minute of meditation and ritual incantation. The
+        difficulty of the Toughness Test varies depending on the nature of the powered
+        system: Ordinary (+10) Simple Power Cell, Illuminator; Challenging (+0) Weapon
+        Charge Pack, Data Slate, Bridge Terminal; Difficult (-10) Hotshot Charge Pack,
+        Shuttle Electronics, Servo-Skull; Hard (-20) Lascannon Charge Pack, Servitor,
+        Bridge Hololith; Very Hard (-30) Ship''s Cogitator Core, Reactor Machine Spirit,
+        Xenos Tech. The Explorer must pass a Toughness Test when he uses this ability
+        or gain a level of Fatigue. No matter the power bestowed by the Omnissiah,
+        some systems are either too large or too alien for this Talent—the GM will
+        be the final judge.'
+    cost: 0
+    prerequisites: Mechanicus Implants
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Luminen Charge
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: 'The power of the Explorer''s Potentia Coil flows through a network of
+        inductors within his flesh, allowing him to channel this energy into his blows.
+        In close combat, a successful Weapon Skill Test or Grapple delivers the shock.
+        The Luminen Shock inflicts 1d10+3 Energy Damage with the Shocking Quality.
+        The Explorer must pass a Toughness Test when using this ability or gain a
+        level of Fatigue. Talent Use: Half Action Attack.'
+    cost: 0
+    prerequisites: Mechanicus Implants
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/psykana/lighting-eerie-2.jpg
+name: Luminen Shock
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: The Explorer has returned to the crèches of the Mechanicus so they can
+        bring him closer to the most holy of forms, adding an extensive machinator
+        array to his existing augmetics. The Explorer's Strength and Toughness Characteristics
+        are increased by +10, and his Agility and Fellowship are reduced by -5. His
+        mass increases to three times that of a normal person, and he may no longer
+        stay afloat or swim in water or similar liquids. The character may mount a
+        single pistol type or close combat weapon on any Ballistic Mechadendrites
+        he possesses. He must still have the proper Talent to use the mounted weapon.
+    cost: 0
+    prerequisites: Mechanicus Implants
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Machinator Array
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: The Explorer has proven his devotion to the Machine God by lacing augmetic
+        coils through every portion of his body. Using a Half Action, he may hover
+        20–30 centimetres off the ground for a number of minutes equal to 2d10 plus
+        his Toughness Bonus. The Explorer must employ a Half Action each round to
+        concentrate on maintaining this rite, but any Move Action allows him to move
+        up to his running speed. He can slow his rate of descent when falling so long
+        as this rite is active when he reaches the ground, taking no falling damage.
+        Each time he enacts this rite, it drains 50% of his Potentia Coil.
+    cost: 0
+    prerequisites: Mechanicus Implants, Maglev Grace
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Maglev Transcendence
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: The Explorer's steady hand and eagle eye allows him to keep crosshairs
+        steady on any target, regardless of range. Distance is no protection against
+        his fire. The Explorer suffers no penalties for Ballistic Skill Tests at long
+        or extended range.
+    cost: 0
+    prerequisites: Ballistic Skill 35
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/items/rifles/rifle_03.png
+name: Marksman
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: There can be only one commander of a vessel, and the Explorer's guiding
+        hand, stern judgment, and sage leadership have captained his crew through
+        countless conflicts. By spending a Half Action in combat to direct the efforts
+        of his allies, none of them suffer the penalties for ganging up until his
+        next Turn. If defending against a boarding action, a Half Action directs the
+        efforts of his armsmen, granting them a +10 bonus in combat.
+    cost: 0
+    prerequisites: Intelligence 35, Fellowship 35
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Master & Commander
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: The Explorer's advanced medical skills enable him to knit flesh with
+        deft mastery. His exceptional education in use of the Narthecium, Med-Slate,
+        and supplemental drugs gives his patients an enormous advantage. The Explorer
+        gains a +10 bonus on all Medicae Tests. If treating a Heavily or Critically
+        Wounded patient, a successful Test heals 2 points of Damage instead of 1.
+        If the patient is in danger of losing a limb from a Critical Hit, the Explorer
+        provides him with a +20 bonus to the Toughness Test to prevent limb loss.
+    cost: 0
+    prerequisites: Medicae +10
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Master Chirurgeon
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: 'The Explorer''s knowledge of starships and their machine spirits surpasses
+        all his planet-bound brethren. The character can almost feel the plasma pulsing
+        through the ship''s conduits as if it were his own veins. He may spend a Fate
+        Point for automatic success on a Tech-Use Test for enhancement, repair, or
+        upgrade of starship systems, taking the minimum amount of time possible on
+        the task. (Errata v1.4: prerequisite corrected from Tech-Use +10 to Tech-Use
+        +20.)'
+    cost: 0
+    prerequisites: Tech-Use +20, Mechanicus Implants
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Master Enginseer
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: The Explorer has learned the techniques required to influence large audiences.
+        His Fellowship Tests and Fellowship-based Skill Tests affect 10 times the
+        normal number of targets.
+    cost: 0
+    prerequisites: Fellowship 30
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Master Orator
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: Utility Mechadendrites — including Machine Spirit Interface, Manipulator,
+        Medicae, Utility, Optical, and countless others — generally require less hardy
+        mountings, but all interface with the Cyber Mantle in a similar manner. The
+        Explorer can use Utility Mechadendrites without penalty.
+    cost: 0
+    prerequisites: Mechanicus Implants
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Mechadendrite Use (Utility)
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: Weapon Mechadendrites end in either ranged or close combat weapons, and
+        have the supplemental support and strength necessary for combat. The Explorer
+        can use Weapon Mechadendrites without penalty.
+    cost: 0
+    prerequisites: Mechanicus Implants
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Mechadendrite Use (Weapon)
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: The Explorer has mastered his body and its reactions by prayer to the
+        Emperor, shutting down unnecessary functions to refresh his body and mind.
+        Success on a Willpower Test and 10 minutes without interruptions removes one
+        level of Fatigue.
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Meditation
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: The Explorer has trained with hand-to-hand Primitive weaponry, becoming
+        proficient in the use of those weapons. When a character attempts to use a
+        weapon he does not have the correct Weapon Training Talent for, he suffers
+        a -20 penalty to any relevant Weapon Skill or Ballistic Skill Test.
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Melee Weapon Training (Primitive)
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: The Explorer has trained extensively with hand-to-hand weaponry, becoming
+        proficient in the use of virtually all hand-held close combat arms. The Universal
+        group includes the Chain, Shock, and Power groups, and allows proficient use
+        of all those weapon types. When a character attempts to use a weapon he does
+        not have the correct Weapon Training Talent for, he suffers a -20 penalty
+        to any relevant Weapon Skill or Ballistic Skill Test.
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Melee Weapon Training (Universal)
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: Kroot mercenaries may make a roll against the group's Profit Factor instead
+        of his Willpower when attempting to resist Fear and Pinning. All Kroot start
+        with this Talent.
+    cost: 0
+    prerequisites: Kroot
+    source: Into the Storm p.135
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Mercenary
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: The Explorer knows the weak points in every armour and material, and
+        has the skill to place shots exactly where they will do the most damage. He
+        adds +2 to Damage with a ranged weapon.
+    cost: 0
+    prerequisites: Ballistic Skill 40
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Mighty Shot
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: Vox synthesisers, training or innate abilities allow the Explorer to
+        accurately mimic the voice of another. He must study the voice patterns of
+        his target for at least one hour for proper imitation, and speak the same
+        language. He cannot accurately copy the voice of a xeno due to the difference
+        in physiology and the subtle complexities of most alien languages. Listeners
+        must succeed on a Difficult (-10) Scrutiny Test to penetrate the deception.
+        If the character studies used vox recordings, or comm-link conversations rather
+        than in-person observation, the Difficulty of the Scrutiny Test is reduced
+        to Challenging (+0). His deception automatically fails if the listener can
+        clearly see he is not the imitated individual.
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Mimic
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: When outnumbered in melee, the Ork gains the same bonus to hit as his
+        enemies would. This bonus applies even if he has the Combat Master Talent
+        (which normally denies his enemies the outnumbering bonus).
+    cost: 0
+    prerequisites: Ork, Weapon Skill 40
+    source: Into the Storm p.170
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: More fer Me!
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: 'The Explorer was born with the Navigator gene, either of the Navis Nobilite
+        or in the shadowed ranks of the unlicensed. The Warp Eye stares balefully
+        from his forehead, allowing him to perceive the ebbs and flows of the empyrean.
+        See Chapter 7: Navigator Powers.'
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Navigator
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: The Explorer's trainers or natural ability allows use of an additional
+        Navigator Power. This Talent may be chosen multiple times, each selection
+        granting a new Power.
+    cost: 0
+    prerequisites: Navigator
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Navigator Power
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: Long years on the battlefield enable the Explorer to remain calm as fire
+        impacts all around. He may re-roll failed Willpower Tests to avoid or recover
+        from Pinning.
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Nerves of Steel
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: A liturgical circuit has been implanted within the Explorer's skull,
+        allowing him to focus on the prayers recited by the proxy unit when his mental
+        fortitude is in peril. He receives a +20 bonus to Willpower Tests made to
+        resist mind control or interrogation.
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Orthoproxy
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: The Explorer knows that danger lurks behind every corner and knows the
+        galaxy will hit him as soon as he lets his guard down. The character gains
+        a +2 bonus on Initiative rolls, and the GM may secretly Test his Perception
+        to notice hidden threats. The price of his eternal vigilance is a twitchy
+        disposition and the inability to relax.
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Paranoia
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: 'The Explorer is adept at dealing with a particular social group or organisation.
+        He gains a +10 bonus to all Fellowship Tests when interacting with the chosen
+        group. Talent Groups: Academics, Adeptus Arbites, Adeptus Mechanicus, Administratum,
+        Government, Hivers, Inquisition, Middle Classes, Military, Nobility, the Insane,
+        Underworld, Void Born, Workers.'
+    cost: 0
+    prerequisites: Fellowship 30
+    source: Rogue Trader Core Rulebook
     tier: '1'
 img: systems/rogue-trader-3rd/icons/psykana/evil-eye-eerie-2.jpg
 name: Peer
 type: talent
 ---
 data:
-    aptitudes: Agility, Finesse
-    benefit: Draw weapon as Free Action.
+    aptitudes: ''
+    benefit: Similar to the Explorator Talent The Flesh is Weak, this Talent grants
+        the Explorer one level of the Machine Trait. This Talent can only be taken
+        up to three times, gaining one additional level of the Machine Trait each
+        time. Additionally, the Explorer's Wounds may be healed with the Tech-Use
+        Skill in place of Medicae (though Tech-Use Tests to do so suffer a -20 penalty
+        due to the esoteric nature of the augmentations).
+    cost: 0
+    prerequisites: Augmenticist Alternate Career
+    source: Into the Storm p.199
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Physical Perfection
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: The Explorer is proficient with Primitive pistols. When a character attempts
+        to use a weapon he does not have the correct Weapon Training Talent for, he
+        suffers a -20 penalty to any relevant Weapon Skill or Ballistic Skill Test.
     cost: 0
     prerequisites: ''
-    source: PG 131 CB
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Pistol Weapon Training (Primitive)
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: The Explorer has practiced with nearly every single-handed ranged weapon
+        within the confines of the Imperium, and no small number without. The Universal
+        group confers proficiency with most pistol weapons, including the Bolt, Las,
+        Launcher, Melta, Plasma, and SP groups. When a character attempts to use a
+        weapon he does not have the correct Weapon Training Talent for, he suffers
+        a -20 penalty to any relevant Weapon Skill or Ballistic Skill Test.
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Pistol Weapon Training (Universal)
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: The Explorer has an innate ability to derive meaning from unknown languages
+        and make himself understood using this intuitive grasp. He treats all languages
+        as Basic Skills. This is not the same as true knowledge of the language, and
+        tests using this Talent suffer a -10 penalty due to the simplistic nature
+        of translation.
+    cost: 0
+    prerequisites: Intelligence 30, Fellowship 30
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Polyglot
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: The Explorer's eye, hand, and weapon act seamlessly together, placing
+        blows exactly where the attacker intends. When making a called shot with a
+        melee weapon, the Explorer does not incur the -20 penalty.
+    cost: 0
+    prerequisites: Weapon Skill 40, Sure Strike
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Precise Blow
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: The Kroot may enter a trance during his normal sleep cycle to receive
+        a vision granting foreknowledge. The Kroot may re-roll one failed Test during
+        the next 24 hours. In addition, the GM may (if he chooses) describe a vision
+        that is granted to the Shaper, providing a hint or a clue as to significant
+        future events.
+    cost: 0
+    prerequisites: Shamanic Powers
+    source: Into the Storm p.135
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Prophetic Dreams
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: Through the Explorer's iron will or via appeals to the Omnissiah, he
+        is able to speed the function of his Autosanguinators. By spending 10 minutes
+        in meditation and ritual incantation, the character may make a Tech-Use Test,
+        and if successful, remove 1d5 points of Damage. If he rolls a 96–100, he overstrains
+        his implants, losing the ability to use them for one week. During that week,
+        the Explorer may use neither the Autosanguine nor Prosanguine Talents.
+    cost: 0
+    prerequisites: Autosanguine
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Prosanguine
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: The Explorer is a psyker, and his innate command of warp energies reflects
+        the strength of his powers. Each selection of this Talent grants the Explorer
+        +1 Psy Rating, to a maximum of Psy Rating 10. A character must purchase each
+        successive level in sequence (i.e. Psy Rating 1, 2, 3, etc.). Psy Rating governs
+        the strength and range of Psychic Techniques.
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Psy Rating
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: 'The Explorer gains access to a new Psychic Discipline, and may select
+        techniques from this new field of study as his abilities increase. Psykers
+        may access a maximum of three separate Disciplines. For further details, see
+        Chapter VI: Psychic Powers.'
+    cost: 0
+    prerequisites: Psy Rating
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Psychic Discipline
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: 'Either through training or natural development, the Explorer has learned
+        an additional Psychic Technique. Once this Talent has been selected, the Explorer
+        must select one new Psychic Technique in any Discipline he possesses that
+        has an xp cost equal to or lower than the xp cost of the Talent. Then, the
+        Explorer spends xp equal to the cost of the Technique selected (if the Explorer
+        cannot spend this xp for any reason, he may not select this Talent). Note:
+        this Talent is unique in that the Explorer will not spend the xp cost listed
+        in the Advance Tables of his Career in order to purchase it, but the xp cost
+        of the Technique itself. The xp cost listed in the Advance Tables is provided
+        solely to determine which Psychic Techniques may be selected via that particular
+        Talent. (Errata v1.4: description rewritten as above.) This Talent may be
+        chosen multiple times, each selection granting an additional Technique.'
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Psychic Technique
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: 'The Explorer''s faith in the God Emperor of Mankind, his divine power
+        and grace, is total and complete. This faith wraps around him and suffuses
+        his soul, armouring him against the foul influences and weapons of the heretic.
+        Pure Faith provides all of the following benefits: The Explorer is always
+        immune to the effects of Daemonic Presence including the negative modifiers
+        to his Willpower. The Explorer may spend a Fate Point to not take Fear Tests,
+        not acquire Insanity Points, and not gain any Corruption Points. These safeguards
+        remain for the duration of the encounter. The Explorer may burn a Fate Point
+        to resist the effects of any single daemonic or psychic attack, effectively
+        allowing him to emerge unscathed as if by a miracle.'
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Pure Faith
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: The Explorer can focus his faith through words, gestures, and force of
+        will such that a daemon may be cowed or cast out by the power of the Emperor.
+        As a Half Action, the Explorer may spend a Fate Point to intone holy words
+        to repel a warp entity. Make an opposed Willpower Test against the warp entity.
+        If the Test succeeds, the warp creature is repelled a distance of metres away
+        equal to twice the character's Willpower Bonus. It cannot approach closer
+        than this distance for 2d5 Rounds.
+    cost: 0
+    prerequisites: Pure Faith
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Purge the Unclean
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: The Explorer has practised so frequently with his weapons that they practically
+        leap into his hands, ready for action. He can Ready as a Free Action when
+        armed with a Pistol or Basic class ranged weapon, or a melee weapon that can
+        be wielded in one hand.
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
     tier: '1'
 img: systems/rogue-trader-3rd/icons/items/pistols/pistols_18.png
 name: Quick Draw
 type: talent
 ---
 data:
-    aptitudes: Agility, Fieldcraft
-    benefit: Reduce reload time by half time.
+    aptitudes: ''
+    benefit: The Explorer has honed his reactions to a razor's edge, allowing him
+        to act while most stand dumbfounded. When surprised or ambushed, a successful
+        Agility Test allows him to act normally.
+    cost: 0
+    prerequisites: Agility 40
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Rapid Reaction
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: The practice bays aboard the Explorer's vessel are like a second home,
+        and he has reloaded countless magazines or power cells for his weapons until
+        he can replace them with his eyes closed. The Explorer halves all reload times,
+        rounding down. Thus, Half Action reloads become a Free Action, a Full Action
+        reload becomes a Half Action, and so on.
     cost: 0
     prerequisites: ''
-    source: PG 131 CB
+    source: Rogue Trader Core Rulebook
     tier: '1'
 img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
 name: Rapid Reload
 type: talent
 ---
 data:
-    aptitudes: Toughness, Defence
-    benefit: Gain +10 bonus to particular resistance test.
+    aptitudes: ''
+    benefit: The Explorer's Warrant of Trade is ancient and hallowed, signed before
+        the Imperium knew of the Expanse, and garners the respect of merchants and
+        officials alike. The character gains a +10 bonus to Interaction Skill Tests
+        with those who understand the importance of the warrant, such as other traders
+        and Imperial officials.
     cost: 0
     prerequisites: ''
-    source: PG 131 CB
+    source: Rogue Trader Core Rulebook
     tier: '1'
 img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
-name: Resistance
+name: Renowned Warrant
 type: talent
 ---
 data:
-    aptitudes: Agility, Fieldcraft
-    benefit: Whenever the character would be thrown from or tossed about within his
-        vehicle, he makes an Ordinary (+10) Agility test. If he succeeds, the character
-        may choose to either land safely on his feet or retain in his original position
-        in the vehicle. In addition, once per round the character can attempt an Ordinary
-        (+10) Agility test to Mount or Dismount a vehicle as a Free Action.
+    aptitudes: ''
+    benefit: The Explorer's background, experience, training, exposure, or plain stubbornness
+        has inured him to cold environments. He gains a +10 bonus to Toughness Tests
+        to resist the effects of cold.
     cost: 0
     prerequisites: ''
-    source: PG 63 EO
+    source: Rogue Trader Core Rulebook
     tier: '1'
 img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
-name: Skilled Rider
+name: Resistance (Cold)
 type: talent
 ---
 data:
-    aptitudes: Toughness, General
-    benefit: Gain an additional wound.
+    aptitudes: ''
+    benefit: Through long experience the Explorer is inured to fear. He gains a +10
+        bonus to Willpower Tests to resist Fear.
     cost: 0
     prerequisites: ''
-    source: PG 131 CB
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Resistance (Fear)
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: The Explorer's background, experience, training, exposure, or plain stubbornness
+        has inured him to heat. He gains a +10 bonus to Toughness Tests to resist
+        the effects of heat.
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Resistance (Heat)
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: The Explorer's background, experience, training, exposure, or plain stubbornness
+        has inured him to poisons. He gains a +10 bonus to Toughness Tests to resist
+        poisons and Toxic weapons.
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Resistance (Poisons)
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: The Explorer has gained the discipline or augmentation to resist psychic
+        intrusion. He gains a +10 bonus to Willpower Tests to resist Psychic Techniques.
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Resistance (Psychic Techniques)
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: The Omnissiah has augmetically blessed the Explorer's voice box, allowing
+        him to recite infrasonic liturgies that trigger awe and fear. All humans,
+        regardless of their ability to hear, within a 50-metre radius feel a sense
+        of dread and take a -10 penalty to their next Skill Test. Characters may ignore
+        these effects with a successful Willpower Test. Whilst incanting the rite,
+        the character may not talk or communicate with others. The rite requires two
+        minutes of litanies, and it is considered very bad form to break off the recitation
+        before completion. Humans without auditory implants cannot hear infrasonic
+        sound, and though still affected, will not know the Explorer is speaking.
+    cost: 0
+    prerequisites: Explorator
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Rite of Awe
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: By spending a Half Action and uttering a sub-vocal litany of fear via
+        his vox synthesisers, the Explorer projects an aura of dread. All non-Mechanicus
+        creatures within a 50-metre radius treat the Explorer as if he had the Fear
+        (1) Trait for 2 minutes.
+    cost: 0
+    prerequisites: Mechanicus Implants
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Rite of Fear
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: The Explorer has replaced the creative half of his brain with sacred
+        cranial circuitry. He can no longer feel emotion, and instead embraces the
+        crystal purity of logic, making him immune to Fear, Pinning and any effects
+        that stem from emotional disturbance. The GM will remove any Mental Disorders
+        that no longer apply, and grant appropriate new ones of equal severity. The
+        character's fellow Explorers may find him somewhat cold, though other followers
+        of the Omnissiah will rejoice in his newfound freedom.
+    cost: 0
+    prerequisites: Explorator
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Rite of Pure Thought
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: The Explorer has been brought before the Emperor and has received a miniscule
+        fraction of His awesome strength, making the character far more resistant
+        to the predations of the Warp. Choose one result on the Psychic Phenomena
+        chart (other than Perils of the Warp). When rolling for Psychic Phenomena,
+        the Explorer may substitute his trademark result for the effect rolled on
+        the table, so long as he does not roll Perils of the Warp.
+    cost: 0
+    prerequisites: Psy Rating, Special
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Rite of Sanctioning
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: 'Essentially the opposite of Peer, this Talent represents aggressive
+        competition and some animosity with a particular social group or organisation.
+        The Explorer suffers a -10 penalty to all Fellowship Tests when interacting
+        with the group in question. The GM and player may agree to award this Talent
+        when appropriate to the storyline. This Talent may be removed with an Elite
+        Advance and the approval of the GM if the player has taken suitable actions
+        to earn the trust of the group. Talent Groups: Academics, Adepta Sororitas,
+        Adeptus Arbites, Adeptus Mechanicus, Administratum, Astropaths, Ecclesiarchy,
+        Government, Imperial Guard, Imperial Navy, Inquisition, Middle Class, Military,
+        Navigators, Nobility, Rogue Traders, Underworld, Workers.'
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Rival
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: The Ork has a number of Runts (Attack Squigs, Gretchin, or Snotlings)
+        in his impromptu entourage equal to the number of times he has taken this
+        Talent. Snotlings count as half a Runt. Should any die, a new one will take
+        its place at the next GM-appropriate opportunity. Runts follow commands and
+        are subject to the Might Makes Right rule.
+    cost: 0
+    prerequisites: Ork
+    source: Into the Storm p.172
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Runtz
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: The Explorer's steady hand and eagle eye allow him to place shots exactly
+        where he wants. When making a called shot, he does not incur the normal -20
+        penalty. This Talent replaces the effects of Deadeye Shot.
+    cost: 0
+    prerequisites: Ballistic Skill 40, Deadeye Shot
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Sharpshooter
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: The Explorer gains an additional Wound. He may purchase this Talent multiple
+        times in accordance with his Career Advances. In this case note the number
+        of times it's been taken after the Talent, such as Sound Constitution 3.
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
     tier: '1'
 img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
 name: Sound Constitution
 type: talent
 ---
 data:
-    aptitudes: Weapon Skill, Offence
-    benefit: Make special attack to stun opponent.
+    aptitudes: ''
+    benefit: The Explorer's fleet feet can propel him faster than his comrades. When
+        taking the Full Move Action, the character can move an extra number of metres
+        equal to his Agility Bonus. When taking the Run Action, he may double his
+        movement for one Round. The Explorer gains one level of Fatigue if he uses
+        this Talent two Turns in a row.
     cost: 0
     prerequisites: ''
-    source: PG 132 CB
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Sprint
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: The Explorer can sway his body out of the path of an attack, causing
+        it to pass through thin air. He may make an additional Dodge once per Round.
+        In effect this gives him a second Reaction that may only be used to Dodge,
+        allowing two Dodges in a Turn. However, he may still only attempt a single
+        Dodge against one attack.
+    cost: 0
+    prerequisites: Agility 40, Dodge
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Step Aside
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: The Explorer's mind acts as a fortress against psychic attacks. He may
+        re-roll failed Willpower Tests to resist any Psychic Techniques that affect
+        his mind. Psychic Techniques that have a physical effect, such as Telekinesis,
+        are unaffected by this Talent.
+    cost: 0
+    prerequisites: Willpower 30, Resistance (Psychic Techniques)
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/red/r_27.png
+name: Strong Minded
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: The Explorer can direct his blows far better than most, giving him some
+        control over where they land. When determining hit location for a melee attack,
+        he may use the dice as he rolled them or reverse them, choosing the location
+        he prefers.
+    cost: 0
+    prerequisites: Weapon Skill 30
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Sure Strike
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: The Torchbearer's ability to thrive in the most inhospitable and desolate
+        areas allows him to continue his holy mission where others would fall. The
+        character may re-roll all failed Survival, Tracking, and Wrangling Skill Tests,
+        although each check can only be re-rolled once.
+    cost: 0
+    prerequisites: Toughness 40
+    source: Into the Storm p.246
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Survival Master
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: The Explorer's speed and martial ability allow him to land flurries of
+        blows. As a Full Action, he may make two melee attacks on his Turn. If he
+        has the Two-Weapon Wielder Talent and is wielding two melee weapons, he gets
+        the advantage of Swift Attack with only one of the weapons, and a single attack
+        with the other. If he has the Two-Weapon Wielder Talent and is wielding a
+        melee weapon in one hand and a gun in the other, he gets the advantage of
+        Swift Attack with the melee weapon and a single attack with the gun.
+    cost: 0
+    prerequisites: Weapon Skill 35
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Swift Attack
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: As a Half Action the Explorer may declare that he is attempting a takedown
+        before testing Weapon Skill. If he hits and would have done at least 1 point
+        of Damage, then ignore the Damage and the opponent must make a Toughness Test
+        or be stunned for 1 Round. When performing a Stun Action, the character does
+        not suffer a -20 penalty to his Weapon Skill.
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
     tier: '1'
 img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
 name: Takedown
 type: talent
 ---
 data:
-    aptitudes: Intelligence, Tech
-    benefit: Un-jam gun as Half Action.
+    aptitudes: ''
+    benefit: The Explorer has a natural affinity for a particular Skill. He chooses
+        any one Skill and gains +10 bonus to Tests made using that Skill.
     cost: 0
     prerequisites: ''
-    source: PG 132 CB
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Talented
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: Either through the ease of long practice, or the proper ritual to appease
+        a weapon's machine spirit, the Explorer can clear stoppages in weapons. He
+        may un-jam any gun as a Half Action, but may only perform this rite on one
+        weapon per Round. He must touch the weapon to enact this rite.
+    cost: 0
+    prerequisites: Intelligence 30
+    source: Rogue Trader Core Rulebook
     tier: '1'
 img: systems/rogue-trader-3rd/icons/talents/blue/b_21.png
 name: Technical Knock
 type: talent
 ---
 data:
-    aptitudes: Perception, Psyker
-    benefit: Allows Psyniscience test as Free Action.
+    aptitudes: ''
+    benefit: The power of the Emperor flows through the Explorer, protecting the faithful
+        and emboldening them to heroism in the face of terrible things. Spend a Fate
+        Point to inspire fearlessness and heroism.
+    cost: 0
+    prerequisites: Pure Faith
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: The Emperor Protects
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: The Explorer's body has undergone significant bionic replacement to the
+        point where he is far more machine than man. This Talent grants the Explorer
+        the Machine Trait with Armour Points equal to the number of times this Talent
+        has been taken. The Explorer may purchase this Talent multiple times in accordance
+        with his Career Advances. In this case, note the number of times this Talent
+        has been taken, such as The Flesh is Weak 3.
+    cost: 0
+    prerequisites: Mechanicus Implants
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: The Flesh is Weak
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: The Explorer's mastery of the balance, spin, and weight of thrown weapons
+        makes him a formidable foe at any distance, even if only armed with a knife.
+        The Universal group includes all thrown weapons from the Primitive, Chain,
+        Shock, and Power groups. When a character attempts to use a weapon he does
+        not have the correct Weapon Training Talent for, he suffers a -20 penalty
+        to any relevant Weapon Skill or Ballistic Skill Test.
     cost: 0
     prerequisites: ''
-    source: PG 133 CB
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Thrown Weapon Training
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: The character gains a +20 bonus on all Toughness Tests to resist the
+        effects of heat, cold, vacuum, suffocation, disease, poison and any other
+        adverse environmental conditions which require a Toughness Test to resist.
+    cost: 0
+    prerequisites: Ork, 'Ard, Toughness 50
+    source: Into the Storm p.173
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Too 'Ard Ta Care
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: Mental conditioning or augmetics enable the Explorer to record and recall
+        great amounts of information, effectively granting him a perfect memory. He
+        can automatically remember trivial facts or pieces of information that might
+        feasibly have picked up in the past. When dealing with more detailed, complex,
+        or obscure facts, such as the deck plans of a space hulk or a complex xeno
+        pictograph, the GM may require an Intelligence Test.
+    cost: 0
+    prerequisites: Intelligence 30
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Total Recall
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: The Explorer is able to shrug off wounds that would fell lesser men.
+        Whenever he suffers Critical Damage, halve the result (rounding up).
+    cost: 0
+    prerequisites: Toughness 40
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: True Grit
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: Years of training allow the Explorer to use a gun in each hand when needed.
+        When armed with two pistols, he may spend a Full Action to attack with both.
+        Both tests made to attack with the weapons suffer a -20 penalty.
+    cost: 0
+    prerequisites: Ballistic Skill 35, Agility 35
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Two-Weapon Wielder (Ballistic)
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: Years of training allow the Explorer to use a melee weapon in each hand
+        when needed. When armed with two melee weapons, he may spend a Full Action
+        to attack with both. Both tests made to attack with the weapons suffer a -20
+        penalty. He must possess Two-Weapon Wielder (Melee) and Two-Weapon Wielder
+        (Ballistic) if he wishes to use a gun and hand weapon together.
+    cost: 0
+    prerequisites: Weapon Skill 35, Agility 35
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Two-Weapon Wielder (Melee)
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: The Explorer has developed unequalled mastery of unarmed combat techniques.
+        His unarmed combat attacks do 1d10+SB (I) Damage and his attacks no longer
+        have the Primitive quality.
+    cost: 0
+    prerequisites: Weapon Skill 45, Agility 40, Unarmed Warrior
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Unarmed Master
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: Due to extensive training in unarmed combat, the Explorer's unarmed combat
+        attacks do 1d10-3+SB Damage and have the Primitive quality. As a result of
+        his advanced training against both armed and unarmed foes, he does not count
+        as Unarmed when making attacks against armed opponents.
+    cost: 0
+    prerequisites: Weapon Skill 35, Agility 35
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Unarmed Warrior
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: The Explorer has mastered the art of blending into any crowd by adopting
+        its mannerisms. Attempts to notice the character when amongst other people,
+        or attempts to describe him or recall details, incur a -20 penalty.
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Unremarkable
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: The Explorer's confidence in the Emperor and his abilities is so strong
+        that he can face any danger. He may re-roll any failed Willpower Tests to
+        avoid the effects of Fear.
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Unshakeable Faith
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: The Explorer's ability to conceptualise three-dimensional space gives
+        him an advantage in starship combat, granting a +10 bonus to Ballistic Skill
+        Tests made to fire a starship's guns in combat.
+    cost: 0
+    prerequisites: Intelligence 35
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Void Tactician
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: The Ork hurls itself into melee with reckless abandon. If he successfully
+        hits his target using the Charge Action, he may spend his Reaction to make
+        an additional attack using the same bonuses or penalties as the original attack.
+    cost: 0
+    prerequisites: Ork, Berserk Charge, Furious Assault, Weapon Skill 40
+    source: Into the Storm p.173
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: WAAAGH!
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: The Explorer's skill with blades is so profound that the merest hint
+        of attack allows him to assume a defensive position. He may make one additional
+        Parry per Round, in effect granting a second Reaction that may only be used
+        to Parry. He may only attempt a single Parry against any one attack.
+    cost: 0
+    prerequisites: Agility 35
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Wall of Steel
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: The Explorer has a special connection to the warp, allowing him to occasionally
+        sense and avoid its less desirable effects as he channels its power. The character
+        may not select this Talent if he has undergone the Rite of Sanctioning. When
+        rolling for Psychic Phenomenon, the Explorer may discard the die roll, suffer
+        1d5 Corruption Points, and then re-roll with no modifiers.
+    cost: 0
+    prerequisites: Psy Rating, Special
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Warp Affinity
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: The sheer power of the Explorer's mind allows him to channel much more
+        warp energy than his peers. When pushing, he may add a +1 bonus to his Psy
+        Rating and subtract -10 on any resultant Psychic Phenomenon rolls.
+    cost: 0
+    prerequisites: Psy Rating, Strong Minded, Willpower 50
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Warp Conduit
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: The Explorer's senses have evolved to perceive the warp in parallel with
+        the physical world, though it requires some concentration to do so. After
+        gaining this Talent, using the Psyniscience Skill requires a Half Action instead
+        of a Full Action.
+    cost: 0
+    prerequisites: Navigator or Psy Rating, Psyniscience Skill, Perception 30
+    source: Rogue Trader Core Rulebook
     tier: '1'
 img: systems/rogue-trader-3rd/icons/psykana/evil-eye-eerie-3.jpg
 name: Warp Sense
 type: talent
 ---
 data:
-    aptitudes: General, Finesse
-    benefit: Use Weapon Group without penalty.
+    aptitudes: ''
+    benefit: You are constantly wary of attack from all sides. As long as you are
+        conscious and your senses are not impaired (such as by drugs or a blindfold
+        — the GM has final arbitration of this), you cannot be Surprised.
     cost: 0
-    prerequisites: ''
-    source: PG 133 CB
+    prerequisites: Awareness, Light Sleeper, Paranoia, Perception 40
+    source: Into the Storm p.228
     tier: '1'
 img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
-name: Weapon Training
+name: Watchful For Betrayal
 type: talent
 ---
 data:
-    aptitudes: Intelligence, Tech
-    benefit: May enhance any Melta, Plasma, Power, or Exotic weapon by  increases the
-        weapons damage and penetration by an amount equal to the characters Intelligence
-        bonus until the end of the round once per encounter.
+    aptitudes: ''
+    benefit: Such is the Explorer's reputation for having ears everywhere aboard the
+        ship and a finely tuned network of invisible informants that the crew no longer
+        even bothers to keep secrets from him. The Explorer receives a +10 bonus to
+        any Skill Test for Investigation or the Interview special use of the Inquiry
+        Skill.
     cost: 0
-    prerequisites: ''
-    source: PG 133 CB
+    prerequisites: Intelligence 40, Fellowship 30
+    source: Rogue Trader Core Rulebook
     tier: '1'
 img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
-name: Weapon-Tech
+name: Whispers
 type: talent
 ---
 data:
-    aptitudes: Perception, Social
-    benefit: Any penalty to Interaction skill tests for dealing with xenos or non-Imperial
-        NPCs by 20. In addition, once per encounter, he can reroll a failed Interaction
-        skill test when interacting with such an NPC.
+    aptitudes: ''
+    benefit: An Ork with this Talent counts all Ork-made weapons as Reliable. The
+        Ork may also attempt a Tech-Use Test to quickly 'kustomise' any device. For
+        weapons, this takes a number of half actions equal to its normal reload time;
+        on a success, craftsmanship improves by one step until its next reload, at
+        which point it breaks. For other devices, all tests to use the object gain
+        a +5 bonus for a number of hours equal to the Ork's Willpower Bonus, at which
+        point it ceases functioning. A failed test immediately breaks the device.
     cost: 0
-    prerequisites: ''
-    source: PG 62 EO
-    tier: '2'
+    prerequisites: Ork, Tech-Use +10, Willpower 30
+    source: Into the Storm p.240
+    tier: '1'
 img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
-name: Ambassador Imperialis
+name: Worky Gubbinz
 type: talent
 ---
 data:
-    aptitudes: Knowledge, Social
-    benefit: A Scholastic Lore or Forbidden Lore test utilising sources of recorded
-        information of any sort can re-roll with -10.
+    aptitudes: ''
+    benefit: The Explorer is a killing angel, and he visits the Emperor's righteous
+        fury on those who deny His dominion over the stars, or who profane that which
+        is sacred. When making an attack, the Explorer may spend a Fate Point to deal
+        an additional 1d5 points of Damage.
     cost: 0
-    prerequisites: ''
-    source: PG 62 EO
-    tier: '2'
+    prerequisites: Pure Faith
+    source: Rogue Trader Core Rulebook
+    tier: '1'
 img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
-name: Archivator
+name: Wrath of the Righteous
 type: talent
 ---
 data:
-    aptitudes: Intelligence, Tech
-    benefit: The character gains an extra amount of Armour points equal to his Intelligence bonus, which he can distribute to any locations that his armour would normally cover, as long as he has at least an hour each day to clean and repair it or make minor modifications. This bonus applies only to armour when the Acolyte is wearing it, as it combines his training with his skill at armoury.
+    aptitudes: ''
+    benefit: Orks instinctively know how to wield a basic range of weaponry. The Ork
+        is proficient in the use of, and can use without penalty, Shootas, Sluggas,
+        Big Choppas, Choppas and all Primitive Melee Weapons.
     cost: 0
-    prerequisites: ''
-    source: PG 123 CB
-    tier: '2'
-img: systems/rogue-trader-3rd/icons/talents/blue/b_07.png
-name: Armor-Monger
-type: talent
----
-data:
-    aptitudes: Strength, Defence
-    benefit: Can Parry while Frenzied, and can re-roll a failed test to snap out of
-        Frenzy or resist entering Frenzy if they choose.
-    cost: 0
-    prerequisites: ''
-    source: PG 123 CB
-    tier: '2'
-img: systems/rogue-trader-3rd/icons/psykana/evil-eye-red-1.jpg
-name: Battle Rage
-type: talent
----
-data:
-    aptitudes: Strength, Offence
-    benefit: Remove bracing requirement from Heavy weapons, and +20 to his Athletics
-        skill test when using Heft.
-    cost: 0
-    prerequisites: ''
-    source: PG 123 CB
-    tier: '2'
+    prerequisites: Ork
+    source: Into the Storm p.174
+    tier: '1'
 img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
-name: Bulging Biceps
-type: talent
----
-data:
-    aptitudes: Defence, Willpower
-    benefit: When passing a Fear test caused by a Daemon, the Daemon suffers 1 Energy
-        damage ignoring armour and Toughness bonus for each degree of success on the Fear
-        test.
-    cost: 0
-    prerequisites: ''
-    source: PG 60 EB
-    tier: '2'
-img: systems/rogue-trader-3rd/icons/psykana/haste-sky-3.jpg
-name: Bulwark of Faith
-type: talent
----
-data:
-    aptitudes: Weapon Skill, Defence
-    benefit: Opponents get no bonus for outnumbering the character.
-    cost: 0
-    prerequisites: ''
-    source: PG 124 CB
-    tier: '2'
-img: systems/rogue-trader-3rd/icons/items/armor/helmet_s10.png
-name: Combat Master
-type: talent
----
-data:
-    aptitudes: Perception, Defence
-    benefit: Can use Per or Int instead of Ag for Initiative rolls, and rolls two dice
-        (picking higher) for the result.
-    cost: 0
-    prerequisites: ''
-    source: PG 124 CB
-    tier: '2'
-img: systems/rogue-trader-3rd/icons/psykana/evil-eye-eerie-1.jpg
-name: Constant Vigilance
-type: talent
----
-data:
-    aptitudes: Fellowship, Leadership
-    benefit: The character gains a bonus to Inquiry tests equal to Commerce ranks.
-    cost: 0
-    prerequisites: ''
-    source: PG 124 CB
-    tier: '2'
-img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
-name: Contact Network
-type: talent
----
-data:
-    aptitudes: Intelligence, Social
-    benefit: Has a+10 bonus to all Interrogate tests, additional +5 for others who also
-        have Coordinated Interrogation
-    cost: 0
-    prerequisites: ''
-    source: PG 124 CB
-    tier: '2'
-img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
-name: Coordinated Interrogation
-type: talent
----
-data:
-    aptitudes: Weapon Skill, Defence
-    benefit: May make a Standard Attack after successful Parry with -20 to Weapon Skill.
-    cost: 0
-    prerequisites: ''
-    source: PG 125 CB
-    tier: '2'
-img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
-name: Counter Attack
-type: talent
----
-data:
-    aptitudes: Offence, Willpower
-    benefit: May re-roll failed Awareness and Psyniscience Tests to detect the presence
-        of Daemons. In addition, his attacks against Daemons gain the Proven (3) quality.
-    cost: 0
-    prerequisites: ''
-    source: PG 60 EB
-    tier: '2'
-img: systems/rogue-trader-3rd/icons/talents/red/r_36.png
-name: Daemonhunter
-type: talent
----
-data:
-    aptitudes: Psyker, Willpower
-    benefit: When the character takes the Focus Power action and the target of the psychic
-        power is a Daemon, he gains a +10 bonus to the Focus Power test. At the GMs discretion,
-        this bonus may apply to other tests, such as rituals to summon or bind a Daemon.
-    cost: 0
-    prerequisites: ''
-    source: PG 60 EB
-    tier: '2'
-img: systems/rogue-trader-3rd/icons/talents/red/r_29.png
-name: Daemonologist
-type: talent
----
-data:
-    aptitudes: Willpower, Defence
-    benefit: Can use Willpower to Evade against psychic attacks.
-    cost: 0
-    prerequisites: ''
-    source: PG 125 CB
-    tier: '2'
-img: systems/rogue-trader-3rd/icons/psykana/haste-royal-2.jpg
-name: Deny the Witch
-type: talent
----
-data:
-    aptitudes: Weapon Skill, Offence
-    benefit: Successful All Out Attack grants, may make a second All Out Attack once
-        per turn.
-    cost: 0
-    prerequisites: ''
-    source: PG 125 CB
-    tier: '2'
-img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
-name: Devastating Assault
-type: talent
----
-data:
-    aptitudes: Finesse, Offence
-    benefit: A second ranged attack against the same target, grants a+20 bonus if scored
-        1 or more DoS.
-    cost: 0
-    prerequisites: ''
-    source: PG 125 CB
-    tier: '2'
-img: systems/rogue-trader-3rd/icons/items/pistols/pistols_13.png
-name: Double Tap
-type: talent
----
-data:
-    aptitudes: Intelligence, Finesse
-    benefit: Gain proficiency with one exotic weapon type.
-    cost: 0
-    prerequisites: ''
-    source: PG 127 CB
-    tier: '2'
-img: systems/rogue-trader-3rd/icons/items/spear/stave_04_b.png
-name: Exotic Weapon Training
-type: talent
----
-data:
-    aptitudes: Fellowship, Social
-    benefit: Can use Fellowship instead of Agility when Shadowing.
-    cost: 0
-    prerequisites: ''
-    source: PG 127 CB
-    tier: '2'
-img: systems/rogue-trader-3rd/icons/talents/green/g_11.png
-name: Face in a Crowd
-type: talent
----
-data:
-    aptitudes: Ballistic Skill/Weapon Skill, Knowledge
-    benefit: When using the Called Shot action with a melee or ranged attack (depending
-        on the Specialisation) against a target for which the character has the appropriate
-        Forbidden Lore (Xenos) skill, he makes a Medicae (WS) or Medicae (BS) test in
-        place of the normal Weapon Skill or Ballistic Skill test.
-    cost: 0
-    prerequisites: ''
-    source: PG 62 EO
-    tier: '2'
-img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
-name: Field Vivisection
-type: talent
----
-data:
-    aptitudes: Agility, Defence
-    benefit: 20 to hit character when he Charges or Runs.
-    cost: 0
-    prerequisites: ''
-    source: PG 128 CB
-    tier: '2'
-img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
-name: Hard Target
-type: talent
----
-data:
-    aptitudes: Defence, Willpower
-    benefit: Whenever the character would gain Corruption points, he may reduce the
-        amount gained by half (rounded up) and gain Insanity points equal to the amount
-        reduced.
-    cost: 0
-    prerequisites: ''
-    source: PG 61 EB
-    tier: '2'
-img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
-name: Harden Soul
-type: talent
----
-data:
-    aptitudes: Toughness, Defence
-    benefit: Character always heals as if Lightly Damaged.
-    cost: 0
-    prerequisites: ''
-    source: PG 128 CB
-    tier: '2'
-img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
-name: Hardy
-type: talent
----
-data:
-    aptitudes: Weapon Skill, Social
-    benefit: Gain +10 bonus to attack Weapon Skill tests. Must make a Challenging (+0)
-        Willpower test to retreat or surrender.
-    cost: 0
-    prerequisites: ''
-    source: PG 128 CB
-    tier: '2'
-img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
-name: Hatred
-type: talent
----
-data:
-    aptitudes: Ballistic Skill, Finesse
-    benefit: As a Full Action, can both move up to his Full Move rate and make a single
-        shot attack with a ranged weapon per weapon.
-    cost: 0
-    prerequisites: ''
-    source: PG 128 CB
-    tier: '2'
-img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
-name: Hip Shooting
-type: talent
----
-data:
-    aptitudes: Agility, Tech
-    benefit: On an succesful Operate test, he may voluntarily suffer 1 level of Fatigue
-        to add a number of DoS equal to half of his Agility bonus. When failed an Operate
-        test, he may voluntarily suffer 1 level of Fatigue in order to reduce the degrees
-        of failure by an amount equal to his Agility bonus, to a minimum of 1.
-    cost: 0
-    prerequisites: ''
-    source: PG 62 EO
-    tier: '2'
-img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
-name: Hotshot Pilot
-type: talent
----
-data:
-    aptitudes: Ballistic Skill, Finesse
-    benefit: Fire at multiple targets more than 10 metres apart when firing two weapons.
-    cost: 0
-    prerequisites: ''
-    source: PG 128 CB
-    tier: '2'
-img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
-name: Independent Targeting
-type: talent
----
-data:
-    aptitudes: Weapon Skill /Ballistic Skill, Finesse
-    benefit: This talent applies to Melee or Ranged attacks, depending on the Speciality
-        chosen. After making a successful attack test of the appropriate type as part of
-        an All Out Attack, Called Shot, Charge, Standard Attack, or Stun action, the character
-        imposes a penalty on all evasion attempts (Dodge or Parry tests) made against this
-        attack. The target subtracts Degrees of Success from a successful test equal to the
-        total degrees of success scored on the attack test to a maximum of the character's
-        Weapon Skill Bonus for Melee or Ballistic Skill Bonus for Ranged. If the target will
-        have a 0 or less Degrees of Success, he fails the test with 1 Degree of Failure. This
-        talent works only once per Round, so it can’t be used with Whirlwind Attack,
-        Two-Weapon Wielder or attacking as a Reaction.
-    cost: 0
-    prerequisites: ''
-    source: PG 128 CB
-    tier: '2'
-img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
-name: Inescapable Attack
-type: talent
----
-data:
-    aptitudes: Leadership, Willpower
-    benefit: can affect allies of any kind with the Terrify special use for the Command
-        skill (pg 101 CB). This need not represent threats and intimidation, but might
-        represent inspiring words, encouragement, or sheer steadfastness in the face of
-        terrifying foes.
-    cost: 0
-    prerequisites: ''
-    source: PG 61 EB
-    tier: '2'
-img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
-name: Inspiring Aura
-type: talent
----
-data:
-    aptitudes: Defence, Willpower
-    benefit: After failing a Fear or Pinning test, the character can re-roll the test
-        with a 10 modifier.
-    cost: 0
-    prerequisites: ''
-    source: PG 61 EB
-    tier: '2'
-img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
-name: Iron Resolve
-type: talent
----
-data:
-    aptitudes: Weapon Skill, Offence
-    benefit: At the beginning of each of his turns, the character may spend a Fate point 
-        to make one of his melee Standard attacks unavoidable with the Dodge and Parry 
-        skills. The attack must be chosen before the roll. If Two Weapon Fighter is used, 
-        the weapon must as well be chosen before the roll. Other means of avoiding or 
-        stopping attacks (such as displacer fields or alien protective devices) are unaffected.
-    cost: 0
-    prerequisites: ''
-    source: PG 129 CB
-    tier: '2'
-img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
-name: Killing Strike
-type: talent
----
-data:
-    aptitudes: Intelligence, Knowledge
-    benefit: The character can attempt any Linguistics skill in which he is not trained
-        as an untrained skill test as if it were not a Specialist skill.
-    cost: 0
-    prerequisites: ''
-    source: PG 63 EO
-    tier: '2'
-img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
-name: Lexographer
-type: talent
----
-data:
-    aptitudes: Weapon Skill, Tech
-    benefit: Counts as a melee weapon that inflicts 1d10 plus his WPB in Energy damage,
-        with Pen 0 and the Shocking quality. Must pass a Toughness test or suffer 1 level
-        of Fatigue after attack.
-    cost: 0
-    prerequisites: ''
-    source: PG 129 CB
-    tier: '2'
-img: systems/rogue-trader-3rd/icons/psykana/lighting-eerie-2.jpg
-name: Luminen Shock
-type: talent
----
-data:
-    aptitudes: Intelligence, Tech
-    benefit: Can hover for a number of minutes equal to 1d10 plus twice his Toughness
-        bonus. He can move his Run speed when making a Half Move action and suffers no
-        damage from falling if the coils are active. Each use drains half the power stored
-        in the coils (can use the coils twice before recharging them).
-    cost: 0
-    prerequisites: ''
-    source: PG 129 CB
-    tier: '2'
-img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
-name: Maglev Transcendence
-type: talent
----
-data:
-    aptitudes: Ballistic Skill, Finesse
-    benefit: No penalties for firing at long or extreme range.
-    cost: 0
-    prerequisites: ''
-    source: PG 130 CB
-    tier: '2'
-img: systems/rogue-trader-3rd/icons/items/rifles/rifle_03.png
-name: Marksman
-type: talent
----
-data:
-    aptitudes: Intelligence, Tech
-    benefit: Gain ability to use certain Mechadendrites. Weapon or Utility.
-    cost: 0
-    prerequisites: ''
-    source: PG 130 CB
-    tier: '2'
-img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
-name: Mechadendrite Use
-type: talent
----
-data:
-    aptitudes: Finesse, Weapon Skill
-    benefit: When fighting a single enemy in melee combat, the character scores extra
-        degrees of success on successful Weapon Skill tests equal to half of his Weapon
-        Skill bonus (rounded down).
-    cost: 0
-    prerequisites: ''
-    source: PG 61 EB
-    tier: '2'
-img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
-name: One-on-One
-type: talent
----
-data:
-    aptitudes: Psyker, Defence
-    benefit: psyker or ally within 10 metres target of a psychic power suffer any number
-        of levels of Fatigue, each level grants +10 to opposed test to resist or avoid.
-    cost: 0
-    prerequisites: ''
-    source: PG 58 EI
-    tier: '2'
-img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
-name: Penitent Psyker
-type: talent
----
-data:
-    aptitudes: Ballistic Skill/Weapon Skill, Finesse
-    benefit: No penalty to making Called Shot in either Ranged or Melee Combat.
-    cost: 0
-    prerequisites: ''
-    source: PG 130 CB
-    tier: '2'
-img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
-name: Precision Killer
-type: talent
----
-data:
-    aptitudes: Toughness, Tech
-    benefit: Spend 10 minutes and make a Tech-Use test to heal 1d5 damage. Rolls 96
-        or higher, loses the ability for one week.
-    cost: 0
-    prerequisites: ''
-    source: PG 131 CB
-    tier: '2'
-img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
-name: Prosanguine
-type: talent
----
-data:
-    aptitudes: Offence, Willpower
-    benefit: Attacks gain the Vengeful (9) quality against opponents of Hatred group.
-    cost: 0
-    prerequisites: ''
-    source: PG 58 EI
-    tier: '2'
-img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
-name: Purity of Hatred
-type: talent
----
-data:
-    aptitudes: Offence, Willpower
-    benefit: Once per round as a Half Action, the character may speak the litanies and
-        invocations to disrupt Daemons. Until the beginning of his next turn, Daemons
-        within a distance equal to twice the characters Willpower bonus in meters suffer
-        a 10 penalty to Willpower tests.
-    cost: 0
-    prerequisites: ''
-    source: PG 61 EB
-    tier: '2'
-img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
-name: Rites of Banishment
-type: talent
----
-data:
-    aptitudes: Willpower, Defence
-    benefit: May reroll failed WP tests to resist psychic powers.
-    cost: 0
-    prerequisites: ''
-    source: PG 131 CB
-    tier: '2'
-img: systems/rogue-trader-3rd/icons/talents/red/r_27.png
-name: Strong Minded
-type: talent
----
-data:
-    aptitudes: Weapon Skill, Finesse
-    benefit: May make multiple melee attacks.
-    cost: 0
-    prerequisites: ''
-    source: PG 131 CB
-    tier: '2'
-img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
-name: Swift Attack
-type: talent
----
-data:
-    aptitudes: Knowledge, Psyker
-    benefit: When making a Focus Power test, the character may gain a number of Corruption
-        points up to his psy rating. For each point he gains in this way, he gains a +10
-        bonus but adds +5 to rolls on Table 6-2 Psychic Phenomena
-    cost: 0
-    prerequisites: ''
-    source: PG 58 EI
-    tier: '2'
-img: systems/rogue-trader-3rd/icons/psykana/horror-red-3.jpg
-name: Tainted Psyker
-type: talent
----
-data:
-    aptitudes: Weapon Skill/Ballistic Skill, Finesse
-    benefit: Attacks with two weapons count as being part of the same Half Action, and
-        both tests made to attack with the weapons suer a 20 penalty.
-    cost: 0
-    prerequisites: ''
-    source: PG 132 CB
-    tier: '2'
-img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
-name: Two-Weapon Wielder
-type: talent
----
-data:
-    aptitudes: Strength, Offence
-    benefit: When fighting unarmed, attacks hit as Deadly Natural Weapons and user can
-        re-roll damage.
-    cost: 0
-    prerequisites: ''
-    source: PG 132 CB
-    tier: '2'
-img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
-name: Unarmed Specialist
-type: talent
----
-data:
-    aptitudes: Willpower, Psyker
-    benefit: 'Spend Fate point to add 1d5 to psy rating however he adds +30 to rolls
-        on Table 62: Psychic Phenomena'
-    cost: 0
-    prerequisites: ''
-    source: PG 132 CB
-    tier: '2'
-img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
-name: Warp Conduit
-type: talent
----
-data:
-    aptitudes: Weapon Skill, Finesse
-    benefit: As a Half Action, may make one Standard Attack action with a melee weapon
-        against a foe, plus one additional Standard Attack action with the same weapon
-        targeting each other foe also engaged in melee combat with the character beyond
-        the rst (to a maximum number of attacks up to his Weapon Skill bonus).
-    cost: 0
-    prerequisites: ''
-    source: PG 133 CB
-    tier: '2'
-img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
-name: Whirlwind of Death
-type: talent
----
-data:
-    aptitudes: Knowledge, Perception
-    benefit: Counts as possessing the Psyniscience skill at Rank 1 (Known), even though
-        he is not a psyker.
-    cost: 0
-    prerequisites: ''
-    source: PG 58 EI
-    tier: '2'
-img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
-name: Witch Finder
-type: talent
----
-data:
-    aptitudes: Intelligence, Knowledge
-    benefit: The character can attempt any Forbidden Lore (Xenos) test in which he is
-        not trained as an untrained skill test as if it were not a Specialist skill.
-    cost: 0
-    prerequisites: ''
-    source: PG 63 EO
-    tier: '2'
-img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
-name: Xenosavant
-type: talent
----
-data:
-    aptitudes: Willpower, Defence
-    benefit: Subtract Willpower bonus from his degrees of failure on a failed Fear or
-        Pinning test. If this reduces the result to zero or less, he counts as having
-        passed the Fear test with 1 degree of success.
-    cost: 0
-    prerequisites: ''
-    source: PG 123 CB
-    tier: '3'
-img: systems/rogue-trader-3rd/icons/talents/violet/p_06.png
-name: Adamantium Faith
-type: talent
----
-data:
-    aptitudes: Defence, Leadership
-    benefit: Character or an ally within 10 metres gains Corruption, reduce the amount by 1 to a min of 0. In addition, an ally within 10 metres can spend a Fate point to gain 0 Corruption instead. These effects do not stack when there are multiple characters with this talent within range.
-    cost: 0
-    prerequisites: 'Shared Destiny, Shield of Contempt, Hatred (any)'
-    source: PG 57 EI
-    tier: '3'
-img: systems/rogue-trader-3rd/icons/psykana/link-eerie-1.jpg
-name: Aegis of Contempt
-type: talent
----
-data:
-    aptitudes: Weapon Skill, Fieldcraft
-    benefit: After a melee attack, a Challenging (+0) Acrobatics skill test allows to
-        move at half rate as a Free Action. Only once per round, and opponent does not
-        receive a free attack.
-    cost: 0
-    prerequisites: ''
-    source: PG 123 CB
-    tier: '3'
-img: systems/rogue-trader-3rd/icons/talents/blue/gr_10.PNG
-name: Assassin Strike
-type: talent
----
-data:
-    aptitudes: Willpower, Psyker
-    benefit: Adds 5 x his psy rating to any Opposed test when defending against psychic
-        powers.
-    cost: 0
-    prerequisites: ''
-    source: PG 123 CB
-    tier: '3'
-img: systems/rogue-trader-3rd/icons/psykana/protect-blue-2.jpg
-name: Bastion of Iron Will
-type: talent
----
-data:
-    aptitudes: Weapon Skill, Finesse
-    benefit: When attacking with any bladed weapon, can re-roll one missed attack per
-        round.
-    cost: 0
-    prerequisites: ''
-    source: PG 123 CB
-    tier: '3'
-img: systems/rogue-trader-3rd/icons/items/swords/swords_06_b.PNG
-name: Blademaster
-type: talent
----
-data:
-    aptitudes: Weapon Skill, Offence
-    benefit: Add half WS bonus (Round up) to damage inflicted in melee.
-    cost: 0
-    prerequisites: ''
-    source: PG 125 CB
-    tier: '3'
-img: systems/rogue-trader-3rd/icons/items/maces/mace_09_b.png
-name: Crushing Blow
-type: talent
----
-data:
-    aptitudes: Willpower, General
-    benefit: Whenever a creature with the Warp Instability trait makes a successful
-        attack test against this character, it must immediately test for Warp Instability
-        after resolving the attack.
-    cost: 0
-    prerequisites: ''
-    source: PG 60 EB
-    tier: '3'
-img: systems/rogue-trader-3rd/icons/talents/violet/p_19.PNG
-name: Daemonic Disruption
-type: talent
----
-data:
-    aptitudes: Toughness, Willpower
-    benefit: When the character would test to gain a mutation as a result of increasing
-        Corruption, he may choose to automatically pass the test. If he does, he also
-        gains a Malignancy and increases his Corruption total by 1d10.
-    cost: 0
-    prerequisites: ''
-    source: PG 60 EB
-    tier: '3'
-img: systems/rogue-trader-3rd/icons/talents/blue/b_32.png
-name: Dark Soul
-type: talent
----
-data:
-    aptitudes: Perception, Finesse
-    benefit: 'The Acolyte can place his hits where they inflict maximum harm, such as gaps or joints in armour. When this talent is taken, the character selects the Specialisation that matches the prerequisite used in purchase (Melee with Weapon Skill, Ranged with Ballistic Skill). When the character’s attack in that combat type inflicts Critical damage, he adds his Perception bonus to the damage result.'
-    cost: 0
-    prerequisites: ''
-    source: PG 125 CB
-    tier: '3'
-img: systems/rogue-trader-3rd/icons/items/rifles/rifle_06.png
-name: Deathdealer
-type: talent
----
-data:
-    aptitudes: Intelligence, Social
-    benefit: Whenever the Explorer’s dealings would decrease the group’s Reputation, 
-        at GM’s discretion, the amount of Reputation lost is reduced by d4. If this results in 
-        a negative number, the Explorer’s skilled efforts increase the group’s Reputation by 1.
-    cost: 0
-    prerequisites: 'Deceive, Fellowship 50'
-    source: PG 125 CB
-    tier: '3'
-img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
-name: Delicate Dealings
-type: talent
----
-data:
-    aptitudes: General, Finesse
-    benefit: Attacks using Spray quality only effects enemies.
-    cost: 0
-    prerequisites: ''
-    source: PG 57 EI
-    tier: '3'
-img: systems/rogue-trader-3rd/icons/psykana/heal-sky-3.jpg
-name: Divine Protection
-type: talent
----
-data:
-    aptitudes: Ballistic Skill, Offence
-    benefit: Spend 1 Fate point to add the number of  DoS scored on the attack test
-        to damage and Penetration.
-    cost: 0
-    prerequisites: ''
-    source: PG 127 CB
-    tier: '3'
-img: systems/rogue-trader-3rd/icons/psykana/evil-eye-red-3.jpg
-name: Eye of Vengeance
-type: talent
----
-data:
-    aptitudes: Willpower, Psyker
-    benefit: Roll twice for Psychic Phenomena and choose result.
-    cost: 0
-    prerequisites: ''
-    source: PG 127 CB
-    tier: '3'
-img: systems/rogue-trader-3rd/icons/talents/green/g_23.PNG
-name: Favored by the Warp
-type: talent
----
-data:
-    aptitudes: Perception, Knowledge
-    benefit: Spend 1 Fate point to reveal a clue.
-    cost: 0
-    prerequisites: ''
-    source: PG 127 CB
-    tier: '3'
-img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
-name: Flash of Insight
-type: talent
----
-data:
-    aptitudes: Fellowship, Leadership
-    benefit: Affect NPCs within 100xFelB metres with Social skills.
-    cost: 0
-    prerequisites: ''
-    source: PG 127 CB
-    tier: '3'
-img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
-name: Halo of Command
-type: talent
----
-data:
-    aptitudes: Strength, Offence
-    benefit: When he uses an All Out Attack action to make a single attack, he can add
-        half his Strength bonus (rounded up) to the weapons penetration. The attack also
-        counts as having the Concussive (2) weapon quality.
-    cost: 0
-    prerequisites: ''
-    source: PG 128 CB
-    tier: '3'
-img: systems/rogue-trader-3rd/icons/items/maces/mace_02_b.png
-name: Hammer Blow
-type: talent
----
-data:
-    aptitudes: Agility, Fieldcraft
-    benefit: When the character takes a vehicle combat action with the Movement subtype,
-        his vehicle or steed counts the value of its Size trait as being one lower for
-        purposes of attack modifiers and the benefits of cover until the start of his
-        next turn.
-    cost: 0
-    prerequisites: ''
-    source: PG 62 EO
-    tier: '3'
-img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
-name: Hull Down
-type: talent
----
-data:
-    aptitudes: Leadership, Willpower
-    benefit: Character or an ally within 10 metres gains Insanity, reduce the amount
-        by 1 to a min of 0.
-    cost: 0
-    prerequisites: ''
-    source: PG 57 EI
-    tier: '3'
-img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
-name: Indomitable Conviction
-type: talent
----
-data:
-    aptitudes: Intelligence, Knowledge
-    benefit: counts as having all Common Lore and Scholastic Lore skills at rank 1 (Known).
-    cost: 0
-    prerequisites: ''
-    source: PG 128 CB
-    tier: '3'
-img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
-name: Infused Knowledge
-type: talent
----
-data:
-    aptitudes: Offence, Willpower
-    benefit: After making a successful attack against a Daemon (this can include striking
-        it with a psychic power), the character may spend a Fate point to increase the
-        damage of the first hit he inflicts as part of that attack by an amount equal
-        to twice his Willpower bonus. This additional damage ignores armour and Toughness
-        bonus.
-    cost: 0
-    prerequisites: ''
-    source: PG 61 EB
-    tier: '3'
-img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
-name: Instrument of His Will
-type: talent
----
-data:
-    aptitudes: Leadership, Willpower
-    benefit: Subtract the fellowship bonus from DoF for failed Fear or Pinning test.
-    cost: 0
-    prerequisites: ''
-    source: PG 57 EI
-    tier: '3'
-img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
-name: Into the Jaws of Hell
-type: talent
----
-data:
-    aptitudes: Defence, Willpower
-    benefit: The character is immune to the effects of the Baneful Presence trait.
-    cost: 0
-    prerequisites: ''
-    source: PG 61 EB
-    tier: '3'
-img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
-name: Iron Faith
-type: talent
----
-data:
-    aptitudes: Weapon Skill, Finesse
-    benefit: Character may make many melee attacks with single roll.
-    cost: 0
-    prerequisites: ''
-    source: PG 129 CB
-    tier: '3'
-img: systems/rogue-trader-3rd/icons/psykana/enchant-sky-2.jpg
-name: Lightning Attack
-type: talent
----
-data:
-    aptitudes: Ballistic Skill, Tech
-    benefit: Counts as being equipped with a single shot Pistol weapon with a 10m range
-        and deals 1d10 plus twice his Willpower bonus in Energy damage. Must pass a Toughness
-        test or suffer 1 level of Fatigue after attack.
-    cost: 0
-    prerequisites: ''
-    source: PG 129 CB
-    tier: '3'
-img: systems/rogue-trader-3rd/icons/psykana/lighting-eerie-3.jpg
-name: Luminen Blast
-type: talent
----
-data:
-    aptitudes: Intelligence, Knowledge
-    benefit: May spend Fate point to succeed on test if the final modifier to his skill
-        test is Challenging (+0) or better, score a number of degrees of success equal
-        to the characteristic bonus.
-    cost: 0
-    prerequisites: ''
-    source: PG 130 CB
-    tier: '3'
-img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
-name: Mastery
-type: talent
----
-data:
-    aptitudes: Ballistic Skill, Offence
-    benefit: Add half BS (rounding up) bonus to ranged damage rolls.
-    cost: 0
-    prerequisites: ''
-    source: PG 130 CB
-    tier: '3'
-img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
-name: Mighty Shot
-type: talent
----
-data:
-    aptitudes: Toughness, Defence
-    benefit: Ignore penalties from Critical damage by spending Fate point. Once the
-        encounter ends, the effects trigger as normal.
-    cost: 0
-    prerequisites: ''
-    source: PG 130 CB
-    tier: '3'
-img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
-name: Never Die
-type: talent
----
-data:
-    aptitudes: Agility, Offence
-    benefit: Double speed when charging.
-    cost: 0
-    prerequisites: ''
-    source: PG 130 CB
-    tier: '3'
-img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
-name: Preternatural Speed
-type: talent
----
-data:
-    aptitudes: Perception, Tech
-    benefit: 'Once per round, the character may add +20 to an Operate test  however,
-        if he fails the test by 4 or more degrees of failure, immediately roll 1d5 on
-        Table 732: Motive Systems Critical Hit effects and apply the result. If he is
-        riding a living mount, roll 1d5 on Table 718: Impact Critical effects  Leg'
-    cost: 0
-    prerequisites: ''
-    source: PG 63 EO
-    tier: '3'
-img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
-name: Push the Limit
-type: talent
----
-data:
-    aptitudes: Psyker, Willpower
-    benefit: When the character triggers Psychic Phenomena when manifesting a power
-        from the Sanctic Daemonology discipline, he may spend a Fate point in order to
-        negate the result entirely.
-    cost: 0
-    prerequisites: ''
-    source: PG 61 EB
-    tier: '3'
-img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
-name: Sanctic Purity
-type: talent
----
-data:
-    aptitudes: Defence, Weapon Skill
-    benefit: When armed with a shield, the character can re-roll one failed Evasion
-        test to Parry an attack per round.
-    cost: 0
-    prerequisites: ''
-    source: PG 61 EB
-    tier: '3'
-img: systems/rogue-trader-3rd/icons/talents/blue/b_19.PNG
-name: Shield Wall
-type: talent
----
-data:
-    aptitudes: Agility, Fieldcraft
-    benefit: Move more quickly in combat.
-    cost: 0
-    prerequisites: ''
-    source: PG 131 CB
-    tier: '3'
-img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
-name: Sprint
-type: talent
----
-data:
-    aptitudes: Agility, Defence
-    benefit: Can make additional Dodge or Parry attempt per round.
-    cost: 0
-    prerequisites: ''
-    source: PG 131 CB
-    tier: '3'
-img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
-name: Step Aside
-type: talent
----
-data:
-    aptitudes: Intelligence, Fieldcraft
-    benefit: Gain +20 to Medicae tests, bonuses to first aid tests and only suffers
-        a 10 penalty for those suffering Critical damage.
-    cost: 0
-    prerequisites: ''
-    source: PG 131 CB
-    tier: '3'
-img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
-name: Superior Chirurgeon
-type: talent
----
-data:
-    aptitudes: Ballistic Skill, Finesse
-    benefit: May shoot into melee without penalty. Also an Aim action beforehand, prevents
-        any chance of hitting friendly targets as well.
-    cost: 0
-    prerequisites: ''
-    source: PG 132 CB
-    tier: '3'
-img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
-name: Target Selection
-type: talent
----
-data:
-    aptitudes: Strength, Offence
-    benefit: Break enemies with armoured charge.
-    cost: 0
-    prerequisites: ''
-    source: PG 132 CB
-    tier: '3'
-img: systems/rogue-trader-3rd/icons/psykana/lighting-acid-2.jpg
-name: Thunder Charge
-type: talent
----
-data:
-    aptitudes: Toughness, Defence
-    benefit: Reduce Critical damage taken.
-    cost: 0
-    prerequisites: ''
-    source: PG 132 CB
-    tier: '3'
-img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
-name: True Grit
-type: talent
----
-data:
-    aptitudes: Finesse, Offence
-    benefit: No penalties when fighting with two single handed weapons.
-    cost: 0
-    prerequisites: ''
-    source: PG 132 CB
-    tier: '3'
-img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
-name: Two-Weapon Master
-type: talent
----
-data:
-    aptitudes: Willpower, Psyker
-    benefit: Ignore Psychic Phenomenon once per session. Suers 1d5 Energy damage to
-        the Head location (not reduced by Armour or Toughness) as a result, and cannot
-        make any Focus Power tests or sustain other psychic powers until the beginning
-        of his next turn.
-    cost: 0
-    prerequisites: ''
-    source: PG 133 CB
-    tier: '3'
-img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
-name: Warp Lock
-type: talent
----
-data:
-    aptitudes: Intelligence, Finesse
-    benefit: The character reduces the penalty for using a weapon without the proper
-        training by 10.
-    cost: 0
-    prerequisites: ''
-    source: PG 63 EO
-    tier: '3'
-img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
-name: Weapon Intuition
+name: Xenos Weapon Proficiency (Ork)
 type: talent

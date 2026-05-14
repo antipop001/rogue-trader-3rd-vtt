@@ -87,9 +87,9 @@ function allCombatActions() {
             name: 'All Out Attack',
             type: ['Full'],
             subtype: ['Attack', 'Melee'],
-            description: "Give up that round's Evasion reaction to gain +30 WS.",
+            description: "Give up Dodge and Parry Reactions this Round to gain +20 WS.",
             attack: {
-                modifier: 30,
+                modifier: 20,
             },
         },
         {
@@ -111,9 +111,9 @@ function allCombatActions() {
             name: 'Charge',
             type: ['Full'],
             subtype: ['Attack', 'Melee', 'Movement'],
-            description: 'Move up to 3x AgB (last 4m in straight line at enemy), +20 to WS.',
+            description: 'Move up to 3x AgB (last 4m in a straight line at the enemy), then make a single melee attack with +10 WS.',
             attack: {
-                modifier: 20,
+                modifier: 10,
             },
         },
         {
@@ -124,9 +124,9 @@ function allCombatActions() {
         },
         {
             name: 'Delay',
-            type: ['Full'],
+            type: ['Half'],
             subtype: ['Miscellaneous'],
-            description: "May take any Half Action at any time before character's next turn. Attacks count as being part of the next turn.",
+            description: "Take any Half Action at any time before the character's next turn. Attacks count as being part of the next turn.",
         },
         {
             name: 'Disengage',
@@ -135,11 +135,18 @@ function allCombatActions() {
             description: 'Break from melee without incurring a free attack.',
         },
         {
-            name: 'Evasion',
+            name: 'Dodge',
             type: ['Reaction'],
             subtype: ['Movement'],
             description:
-                'Attempt to avoid an attack by using Dodge (ranged or melee) or Parry (melee) skills. Evading an area of effect attack requires the character be able to escape the radius by moving no further than a Half Move.',
+                'Attempt to avoid an incoming ranged or melee attack with an Agility-based Dodge test. To evade an area-of-effect attack the character must be able to escape the radius by moving no further than a Half Move.',
+        },
+        {
+            name: 'Parry',
+            type: ['Reaction'],
+            subtype: ['Melee'],
+            description:
+                'Attempt to parry an incoming melee attack with a Weapon Skill test. Some weapons grant a bonus or penalty to the Parry test; the Defensive quality grants +10, Unwieldy weapons cannot Parry.',
         },
         {
             name: 'Feint',
@@ -149,11 +156,11 @@ function allCombatActions() {
         },
         {
             name: 'Full Auto Burst',
-            type: ['Half'],
+            type: ['Full'],
             subtype: ['Attack', 'Ranged'],
-            description: 'Grants -10 BS, one hit for every DoS; Jam on 94+ result; 2m spread.',
+            description: 'Grants +20 BS, one hit plus one additional hit per Degree of Success (up to the weapon\'s Full RoF); Jam on 94+ result.',
             attack: {
-                modifier: -10,
+                modifier: 20,
             },
         },
         {
@@ -164,9 +171,9 @@ function allCombatActions() {
         },
         {
             name: 'Guarded Action',
-            type: ['Half'],
+            type: ['Full'],
             subtype: ['Concentration'],
-            description: 'Grants -10 to WS or BS, +10 to all Evasion tests until start of next turn.',
+            description: 'Make one attack at -10 WS or BS. Until the start of your next turn, gain +10 to all Dodge and Parry tests.',
         },
         {
             name: 'Jump or Leap',
@@ -221,9 +228,9 @@ function allCombatActions() {
             name: 'Semi-Auto Burst',
             type: ['Half'],
             subtype: ['Attack', 'Ranged'],
-            description: 'Grants +0 BS, additional hit for every two additional DoS; jam on 94+; 2m spread.',
+            description: 'Grants +10 BS, one hit plus one additional hit per two Degrees of Success (up to the weapon\'s Semi RoF); jam on 94+.',
             attack: {
-                modifier: 0,
+                modifier: 10,
             },
         },
         {
@@ -264,12 +271,6 @@ function allCombatActions() {
             attack: {
                 modifier: 0,
             },
-        },
-        {
-            name: 'Tactical Advance',
-            type: ['Full'],
-            subtype: ['Concentration', 'Movement'],
-            description: 'Make a Half Move from one cover to another. Continue to take bonus from previous cover until reaching new one.',
         },
     ];
 }
