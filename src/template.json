@@ -121,7 +121,8 @@
                     "rating": 0,
                     "sustained": 0,
                     "defaultPR": 0,
-                    "class": "bound",
+                    "class": "sanctioned",
+                    "strength": "unfettered",
                     "cost": 0,
                     "hasFocus": false
                 },

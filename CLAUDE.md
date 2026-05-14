@@ -207,12 +207,17 @@ All combat-action modifiers and types match RT 1e corebook Table 9-1 (pp.147-148
 - No `profitFactor` field anywhere. No `acquisition` action/macro. RT uses a group-wide Profit Factor + Acquisition Test as its sole economy; this is unimplemented.
 - The DH2 Influence + Requisition mechanic is *also* not coded — `influence` is just a characteristic with no associated test machinery. So in practice neither game's economy works automatically.
 
-### H. Psychic mechanic — partial
+### H. Psychic mechanic — DONE 2026-05-14
 
-- `src/module/rolls/roll-data.mjs:374-458` (PsychicRollData) supports a current-PR vs. max-PR delta with a +10/step bonus (loosely covers Fettered casting). There is **no explicit Fettered/Unfettered/Push toggle** and **no Phenomena/Perils trigger** (doubles on Push, etc.).
-- Push caps differ: RT allows +3 (Sanctioned) and +4 (Unsanctioned) over PR; DH2 caps at +2 / +3. Neither is enforced.
-- `psy.class` is a free-text string on the sheet rather than an enum (`bound`/`unbound`/`sanctioned`/`unsanctioned`).
-- `pr` and `currentRating` are tracked, plus `sustained` count. Adequate for manual play; not a full automation.
+`PsychicRollData` (src/module/rolls/roll-data.mjs:374) and `checkForPerils` (src/module/rolls/action-data.mjs:25) now implement RT 1e Fettered/Unfettered/Push behaviour:
+
+- **`psy.strength` enum** on the actor sheet (`fettered` / `unfettered` / `push`) sets the default PR for the roll prompt — Fettered = ⌈rating/2⌉, Unfettered = rating, Push = rating + pushCap.
+- **`psy.class` is a select** on the actor sheet (`sanctioned` / `unsanctioned` / `bound` / `unbound`). DH2 bound/unbound are kept as legacy aliases so existing actors don't break.
+- **Push cap** (`PsychicRollData.pushCap` getter) — Sanctioned +3, Unsanctioned +4 per RT corebook.
+- **Phenomena trigger:** Fettered (`pr < rating`) skips Phenomena entirely; Unfettered (`pr === rating`) triggers on doubles; Push (`pr > rating`) triggers on any non-doubles.
+- The existing `+10 per step below max PR` bonus and `-10 per step above max PR` penalty are preserved (they were already correct).
+
+Future work: auto-roll the Psychic Phenomena and Perils of the Warp tables (in `src/packs/tables/`) when phenomena trigger, instead of just flagging in chat.
 
 ### I. Other observations
 

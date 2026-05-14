@@ -381,10 +381,21 @@ export class PsychicRollData extends RollData {
 
     maxPr = 0;
     pr = 0;
+    strength = 'unfettered';
 
     constructor() {
         super();
         this.template = 'systems/rogue-trader-3rd/templates/chat/action-roll-chat.hbs';
+    }
+
+    /**
+     * Maximum push points beyond Psy Rating, per the psyker's class.
+     * RT 1e: Sanctioned +3, Unsanctioned +4.
+     */
+    get pushCap() {
+        const cls = (this.sourceActor?.psy?.class ?? 'sanctioned').toLowerCase();
+        // DH2 "bound"/"unbound" aliased to Sanctioned/Unsanctioned for migration.
+        return (cls === 'unsanctioned' || cls === 'unbound') ? 4 : 3;
     }
 
     initialize() {
@@ -392,7 +403,15 @@ export class PsychicRollData extends RollData {
         this.modifiers['bonus'] = 0;
         this.modifiers['difficulty'] = 0;
         this.modifiers['modifier'] = 0;
-        this.pr = this.sourceActor.psy.rating ?? 0;
+        const rating = this.sourceActor.psy.rating ?? 0;
+        this.strength = (this.sourceActor.psy.strength ?? 'unfettered').toLowerCase();
+        if (this.strength === 'fettered') {
+            this.pr = Math.max(1, Math.ceil(rating / 2));
+        } else if (this.strength === 'push') {
+            this.pr = rating + this.pushCap;
+        } else {
+            this.pr = rating;
+        }
         this.hasFocus = !!this.sourceActor.psy.hasFocus;
 
         this.powerSelect = this.psychicPowers.length > 1;

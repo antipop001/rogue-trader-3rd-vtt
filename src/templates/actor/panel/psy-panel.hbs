@@ -16,6 +16,19 @@
     </div>
     <div class="rt-field__wrapper">
         <div class="rt-field__header">Class</div>
-        <input class="rt-field__input" type="text" name="system.psy.class" value="{{actor.psy.class}}" />
+        <select class="rt-field__input" name="system.psy.class">
+            {{option "sanctioned" actor.psy.class "Sanctioned"}}
+            {{option "unsanctioned" actor.psy.class "Unsanctioned"}}
+            {{option "bound" actor.psy.class "Bound (legacy)"}}
+            {{option "unbound" actor.psy.class "Unbound (legacy)"}}
+        </select>
+    </div>
+    <div class="rt-field__wrapper">
+        <div class="rt-field__header">Default Strength</div>
+        <select class="rt-field__input" name="system.psy.strength">
+            {{option "fettered" actor.psy.strength "Fettered"}}
+            {{option "unfettered" actor.psy.strength "Unfettered"}}
+            {{option "push" actor.psy.strength "Push"}}
+        </select>
     </div>
 </div>

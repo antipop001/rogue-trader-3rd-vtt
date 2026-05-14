@@ -23,14 +23,22 @@ export class ActionData {
     }
 
     async checkForPerils() {
-        if (this.rollData.power) {
-            if(this.rollData.sourceActor.psy.rating < this.rollData.pr) {
-                if (!/^(.)\1+$/.test(this.rollData.roll.total)) {
-                    this.addEffect('Psychic Phenomena', 'The warp convulses with energy!');
-                }
-            } else if (/^(.)\1+$/.test(this.rollData.roll.total)) {
-                this.addEffect('Psychic Phenomena', 'The warp convulses with energy!');
+        if (!this.rollData.power) return;
+        const rating = this.rollData.sourceActor.psy.rating ?? 0;
+        const pr = this.rollData.pr ?? 0;
+        const isDoubles = /^(.)\1+$/.test(this.rollData.roll.total);
+        // RT 1e: Fettered (pr < rating) never triggers Psychic Phenomena.
+        if (pr < rating) {
+            return;
+        }
+        // Unfettered (pr === rating): trigger on doubles.
+        // Push (pr > rating): trigger on any non-doubles.
+        if (pr > rating) {
+            if (!isDoubles) {
+                this.addEffect('Psychic Phenomena', 'The warp convulses with energy! (Push)');
             }
+        } else if (isDoubles) {
+            this.addEffect('Psychic Phenomena', 'The warp convulses with energy!');
         }
     }
 

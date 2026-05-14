@@ -144,16 +144,15 @@ The repo has *neither* a working DH2 Requisition system *nor* an RT Acquisition 
 - [ ] Decide: drop entirely (Path B above), or keep as flavor (Path A — leave the field, ignore for advancement-cost logic). Document the choice in CLAUDE.md.
 - [ ] If dropping: remove `aptitudes` field from talent schema (currently `aptitudes: ''` is convention) and the `aptitudes` compendium pack.
 
-### Psychic mechanic — formalize Fettered/Unfettered/Push
+### Psychic mechanic — DONE 2026-05-14
 
-`src/module/rolls/roll-data.mjs:374-458` has rough mechanics but no explicit toggle.
-
-- [ ] Add `psy.strength` enum field: `fettered` | `unfettered` | `push`
-- [ ] On Fettered: skip Phenomena check; cast at ⌈PR/2⌉
-- [ ] On Unfettered: Phenomena on doubles
-- [ ] On Push: Phenomena on **any** non-doubles roll; per-point penalty −10 to Focus Power; cap Sanctioned +3, Unsanctioned +4 (RT values, not DH2 +2/+3)
-- [ ] Add `psy.class` enum: `bound` | `unbound` | `sanctioned` | `unsanctioned` (currently free text)
-- [ ] Wire up `src/packs/tables/tables.yml` Psychic Phenomena and Perils of the Warp tables to the cast flow
+- [x] Added `psy.strength` enum: `fettered` | `unfettered` | `push` (defaults to unfettered)
+- [x] Fettered (`pr < rating`): skips Phenomena check; default PR = ⌈rating/2⌉
+- [x] Unfettered (`pr === rating`): Phenomena on doubles
+- [x] Push (`pr > rating`): Phenomena on any non-doubles; -10 per push point (via existing modifier formula); default PR = rating + pushCap
+- [x] Push cap: Sanctioned +3, Unsanctioned +4 (PsychicRollData.pushCap getter; bound/unbound aliased)
+- [x] `psy.class` converted from free-text input to select (sanctioned/unsanctioned/bound/unbound)
+- [ ] Wire up `src/packs/tables/tables.yml` Psychic Phenomena and Perils of the Warp tables to auto-roll on trigger (currently just flagged in chat)
 
 ### Skill list — DH1/RT split vs DH2 consolidations
 
