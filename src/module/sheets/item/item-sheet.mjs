@@ -21,6 +21,28 @@ export class DarkHeresyItemSheet extends ItemSheet {
         return context;
     }
 
+    _getHeaderButtons() {
+        const buttons = super._getHeaderButtons();
+        const sys = this.item.system ?? {};
+        // Show Acquire button for any physical item with an availability or craftsmanship field.
+        if (sys.availability || sys.craftsmanship) {
+            buttons.unshift({
+                label: 'Acquire',
+                class: 'acquire',
+                icon: 'fas fa-coins',
+                onclick: () => {
+                    if (!game.rt?.acquisition) return;
+                    return game.rt.acquisition({
+                        itemName: this.item.name,
+                        availability: String(sys.availability ?? 'average').toLowerCase(),
+                        craftsmanship: String(sys.craftsmanship ?? 'common').toLowerCase(),
+                    });
+                },
+            });
+        }
+        return buttons;
+    }
+
     activateListeners(html) {
         super.activateListeners(html);
         if (!this.isEditable) return;

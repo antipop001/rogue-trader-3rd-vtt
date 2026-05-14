@@ -212,7 +212,7 @@ RT's group-wide Profit Factor + Acquisition Test (corebook p.270) is now impleme
 
 DH2 Influence + Requisition remains unimplemented (correct — RT uses PF instead).
 
-**Future work:** wire up `availability` / `craftsmanship` fields on item sheets so right-clicking an item could pre-populate the Acquisition dialog from that item.
+**Sheet integration:** any item with an `availability` or `craftsmanship` field (weapons, armour, ammo, tools, etc.) now shows an "Acquire" button in its sheet header. Clicking it opens the Acquisition Test dialog with the item's name, availability, and craftsmanship pre-filled.
 
 ### H. Psychic mechanic — DONE 2026-05-14
 

@@ -95,15 +95,6 @@
                         "modifier": 0,
                         "unnatural": 0,
                         "cost": 0
-                    },
-                    "influence": {
-                        "label": "Influence",
-                        "short": "Inf",
-                        "base": 0,
-                        "advance": 0,
-                        "modifier": 0,
-                        "unnatural": 0,
-                        "cost": 0
                     }
                 }
             },

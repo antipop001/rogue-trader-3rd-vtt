@@ -132,9 +132,9 @@ Currently the engine carries the full DH2 creation flow (Home World × Backgroun
 - [x] `profitFactor` as a world setting (default 30), GM-editable in Configure Settings
 - [x] `game.rt.acquisition()` opens an Acquisition Test dialog (`src/module/rules/acquisition.mjs`)
 - [x] Modifier tables: Availability, Craftsmanship, Scale — RT corebook p.270
-- [ ] Pre-populate dialog from a right-clicked item's availability/craftsmanship (would need a sheet button or context-menu integration)
+- [x] Pre-populate dialog from an item — "Acquire" button on every item sheet with availability/craftsmanship fields
 - [ ] Endeavours tracker for PF awards
-- [ ] Remove `characteristics.influence` from `src/template.json` (replaced by group PF — left in place for back-compat; safe to remove later)
+- [x] Removed `characteristics.influence` from `src/template.json` and the `'influence': 'Inf'` entry from `config.mjs`. Existing actors retain the field as data-flag carryover but it's no longer schema-defined.
 
 ### Aptitudes system — drop or formalize as flavor
 
