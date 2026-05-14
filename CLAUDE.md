@@ -181,8 +181,8 @@ All combat-action modifiers and types match RT 1e corebook Table 9-1 (pp.147-148
 | `attack-specials` | 26 | RT Core (25) + ItS (1) | **Clean as of 2026-05-14.** All 25 corebook weapon qualities + ItS `Force`. |
 | `weapon-mods` | 36 | RT Core (33) + ItS (3) | **Refreshed 2026-05-14.** Corebook weapon upgrades + ItS Ch.III additions (Calamity Vents, Exterminator Cartridge, Tox Dispenser). Some entries are craftsmanship sub-rules nested under parents — worth a manual review pass. |
 | `ammo` | 12 | RT Core (3) + ItS (9) | **Refreshed 2026-05-14.** RT specialty rounds + ItS Ch.III Unusual Ammunition (Acid Shells, Airtorch Canister, Microburst Flask, Nephium Fuel Tank, Organgrinder Rounds, Snare Shells, Toxic Shot, Tracer Shells, Void Rounds). |
-| `tools` | 47 | RT Core | **Refreshed 2026-05-14.** Clothing, void suits, gear, tools, equipment from corebook Ch.V. |
-| `consumables` | 21 | RT Core | **Refreshed 2026-05-14.** Drugs, stimms, recaf, sacred unguents, etc. from corebook Ch.V. |
+| `tools` | 77 | RT Core (47) + ItS (30) | **Refreshed 2026-05-14.** Clothing, void suits, gear, tools, equipment from corebook Ch.V + ItS Ch.III Gear/Tools (Aquila Magnificus, Targeting Monocle, Glidewing, Stasis Pod, Promethium, Psycrystal, etc.). |
+| `consumables` | 29 | RT Core (21) + ItS (8) | **Refreshed 2026-05-14.** Drugs, stimms, recaf, sacred unguents + ItS additions (Blush, Ploin Juice, Raenka, Attention Spanner, Cold Fire, Spur, White Void, Wideawake). |
 | `cybernetics` | 25 | RT Core | **Refreshed 2026-05-14.** Bionic Replacement Limbs + Implant Systems + Mechadendrites from corebook p.131+. |
 | `traits` | 33 | RT Core | **Refreshed 2026-05-14.** Creature/character traits from corebook Ch.XIV — Auto-Stabilised, Bestial, Daemonic, From Beyond, Phase, Warp Instability, Mechanicus Implants, etc. Replaces the DH2 fork content. |
 | `aptitudes` | — | DROPPED | **Removed 2026-05-14.** DH2-only concept; no RT 1e equivalent. Pack unregistered from system.json. |
