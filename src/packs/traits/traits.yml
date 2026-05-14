@@ -1,364 +1,230 @@
 data:
-    description: May increase or decrease its Size trait value by 1 as a Free Action.
-        Also has the Crawler trait.
-    level: 0
-img: systems/rogue-trader-3rd/icons/talents/blue/b_33.png
-name: Amorphous
-type: trait
+    description: 'The creature always counts as braced when firing heavy weapons and may fire on semi- or full-automatic as a half action. A creature with this Trait suffers no penalties for moving and firing on semi- or full-automatic.'
+    source: 'Rogue Trader Core Rulebook'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Auto-Stabilised'
+type: 'trait'
 ---
 data:
-    description: Gain additional Armor points to all locations and stacks with worn
-        armour, but not with the Machine trait.
-    level: 0
-img: systems/rogue-trader-3rd/icons/talents/blue/b_33.png
-name: Natural Armor
-type: trait
+    description: 'A creature with this Trait is animalistic, tending to behave instinctively rather than rationally. No matter how high its Intelligence score is, it is still bestial. A creature with this Trait never needs to make a Survival Test whilst in its natural habitat. Unless starving or desperate, a bestial creature must make a Willpower Test when frightened, startled or injured. On a failed test, the creature flees.'
+    source: 'Rogue Trader Core Rulebook'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Bestial'
+type: 'trait'
 ---
 data:
-    description: Creature can breathe underwater.
-    level: 0
-img: systems/rogue-trader-3rd/icons/talents/blue/b_33.png
-name: Amphibious
-type: trait
+    description: 'Blind creatures automatically fail all tests based on vision and automatically fail all Ballistic Skill Tests. Such creatures take a –30 penalty to Weapon Skill Tests and most other tests that ordinarily involve or are benefited by vision.'
+    source: 'Rogue Trader Core Rulebook'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Blind'
+type: 'trait'
 ---
 data:
-    description: Counts as being armed even when not wielding weapons, with attacks
-        deal 1d10 points of damage plus its SB. Can make attacks with its Natural Weapons
-        using its Weapon Skill, though it cannot Parry with its natural weapons, nor can
-        it be disarmed unless, of course, its limbs are hacked o. In general, creatures
-        with Natural Weapons are immune to the Power Field quality, as it is assumed they
-        have enough teeth, claws, or spines to ignore a few being removed. Natural weapons
-        have the Primitive (7) weapon quality unless stated otherwise in the prole.
-    level: 0
-img: systems/rogue-trader-3rd/icons/talents/blue/b_33.png
-name: Natural Weapons
-type: trait
+    description: 'A creature with this Trait deals an extra 3 points of damage with attacks made while charging.'
+    source: 'Rogue Trader Core Rulebook'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Brutal Charge'
+type: 'trait'
 ---
 data:
-    description: Always counts as braced.
-    level: 0
-img: systems/rogue-trader-3rd/icons/talents/blue/b_33.png
-name: Auto-stabilized
-type: trait
+    description: 'A creature with this Trait can move through solid objects by burrowing through them. This Trait always includes a number to indicate speed. Such creatures can burrow through soil, rock, sand, and so on, though some (expressed in the creature entry) can burrow through metal. When a creature burrows, it leaves behind a tunnel. Creatures at least one size smaller than the creature that created the tunnel can enter these areas without impediment. There''s a 50% chance each round that the tunnel collapses behind the creature.'
+    source: 'Rogue Trader Core Rulebook'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Burrower'
+type: 'trait'
 ---
 data:
-    description: Switch between incorporeal and corporeal as a Half Action.
-    level: 0
-img: systems/rogue-trader-3rd/icons/talents/blue/b_33.png
-name: Phase
-type: trait
+    description: 'Worms, serpents, and similar creatures crawl and slither rather than walk. The base move for a creature with this Trait is half their Agility Bonus (rounded up), but they do not take penalties for moving over difficult terrain.'
+    source: 'Rogue Trader Core Rulebook'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Crawler'
+type: 'trait'
 ---
 data:
-    description: All suer a 10 penalty to Willpower tests taken while within X metres
-        of the creature.
-    level: 0
-img: systems/rogue-trader-3rd/icons/talents/blue/b_33.png
-name: Baneful Presence
-type: trait
+    description: 'Daemonic creatures are creatures of the Warp, but can manifest in realspace either through sheer strength of will, hunger, or occult rituals. Creatures with this Trait double their Toughness Bonus against all damage, except for damage inflicted by force weapons, psychic powers, holy attacks, or other creatures with this Trait. Daemonic creatures are also immune to poison and disease.'
+    source: 'Rogue Trader Core Rulebook'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Daemonic'
+type: 'trait'
 ---
 data:
-    description: Creature has a psy rating of 1 or more.
-    level: 0
-img: systems/rogue-trader-3rd/icons/talents/blue/b_33.png
-name: Psyker
-type: trait
+    description: 'A creature with this Trait sees normally even in areas of total darkness, and never takes a penalty for fighting in areas of dim or no lighting.'
+    source: 'Rogue Trader Core Rulebook'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Dark Sight'
+type: 'trait'
 ---
 data:
-    description: Automatically passes Survival skill tests, test a Challenging (+0)
-        Willpower test when frightened, startled, or injured. If it fails, the creature
-        ees.
-    level: 0
-img: systems/rogue-trader-3rd/icons/talents/blue/b_33.png
-name: Bestial
-type: trait
+    description: 'Incorporeal creatures are insubstantial and weightless, able to pass through solid objects such as walls and weapons. An incorporeal creature gains a +30 bonus on Concealment Tests'
+    source: 'Rogue Trader Core Rulebook'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Incorporeal'
+type: 'trait'
 ---
 data:
-    description: Movement equals AB2. With more than four legs may gain this trait as
-        well, increasing their movement as indicated above but adding an additional 2
-    level: 0
-img: systems/rogue-trader-3rd/icons/talents/blue/b_33.png
-name: Quadruped
-type: trait
+    description: 'A creature with this Trait has an unnerving appearance. The fear of it always has an associated rating (1–4) to reflect just how awful the creature is to behold. The higher the Fear Rating the harder it is for others to resist going insane from the encounter, as shown on the following chart.'
+    source: 'Rogue Trader Core Rulebook'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Fear'
+type: 'trait'
 ---
 data:
-    description: Cannot see. The Blind Fighting talent reduces the penalty to Weapon
-        Skill tests as normal for Blind creatures, from 30 to 15.
-    level: 0
-img: systems/rogue-trader-3rd/icons/talents/blue/b_33.png
-name: Blind
-type: trait
+    description: 'A creature with this Trait has the natural ability to fly, whether with broad leathery wings, strange Warp energies, or inflatable gas sacs. This Trait always includes a number to indicate at what speeds it moves when it flies. This number replaces your agility bonus for Movement Actions. For more details on flying, see Chapter IX: Playing the Game.'
+    source: 'Rogue Trader Core Rulebook'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Flyer'
+type: 'trait'
 ---
 data:
-    description: Each round, at the start of its turn, the creature can make a Toughness
-        test to remove an amount of damage indicated in the parentheses after the trait.
-    level: 0
-img: systems/rogue-trader-3rd/icons/talents/blue/b_33.png
-name: Regeneration
-type: trait
+    description: 'The mind of a creature with this Trait is beyond the petty frailties and precarious sanity of a mortal mind. It is immune to Fear, Pinning, Insanity Points, and psychic powers used to cloud, control, or delude its mind.'
+    source: 'Rogue Trader Core Rulebook'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'From Beyond'
+type: 'trait'
 ---
 data:
-    description: Deals an extra (X) points of damage on each hit it inicts that turn.
-    level: 0
-img: systems/rogue-trader-3rd/icons/talents/blue/b_33.png
-name: Brutal Charge
-type: trait
+    description: 'A creature with the Machine Trait is fashioned from inorganic materials and is generally more rigorous than fleshy folks. Machines do not'
+    source: 'Rogue Trader Core Rulebook'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Machine'
+type: 'trait'
 ---
 data:
-    description: Avoid Corruption from Psyker elite advance; start at psy rating 2.
-    level: 0
-img: systems/rogue-trader-3rd/icons/talents/blue/b_33.png
-name: Sanctioned
-type: trait
+    description: 'This creature has more than one pair of arms. It increases its Toughness Characteristic by +10 and gains a +10 bonus on Strength Tests involving movement such as Climb and Swim. Finally, the creature may use the Multiple Attack action to gain two attacks on its turn.'
+    source: 'Rogue Trader Core Rulebook'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Multiple Arms'
+type: 'trait'
 ---
 data:
-    description: The number in parentheses (X) indicates its speed when burrowing. Can
-        burrow through soil, rock, sand. When burrows, it leaves behind a tunnel. Characters
-        with a Size trait value lower than the borrower can enter these areas without
-        impediment. At the end of each round after the borrower passes, roll 1d10; on
-        a result of 5 or lower, the tunnel collapses behind.
-    level: 0
-img: systems/rogue-trader-3rd/icons/talents/blue/b_33.png
-name: Burrower
-type: trait
+    description: 'This creature has a naturally tough hide or an exoskeleton, affording it some protection against attacks. This Trait always includes a numeric value to indicate how many Armour Points the creature gains to all locations.'
+    source: 'Rogue Trader Core Rulebook'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Natural Armour'
+type: 'trait'
 ---
 data:
-    description: Determines creature size and benefits.
-    level: 0
-img: systems/rogue-trader-3rd/icons/talents/blue/b_33.png
-name: Size
-type: trait
+    description: 'This creature has sharp claws, teeth, spines or some other natural weapon to attack its foes. It counts as being armed even when not wielding weapons. Its attacks deal 1d10 points of damage plus its Strength Bonus. The creature may make attacks with its Natural Weapons using its Weapon Skill, though it cannot parry with its natural weapons, nor can it be disarmed—unless, of course, you hack off its limbs! Natural weapons always count as Primitive.'
+    source: 'Rogue Trader Core Rulebook'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Natural Weapons'
+type: 'trait'
 ---
 data:
-    description: The base move for a creature with this trait is half its normal movement
-        rate (roundup) as determined by its Agility bonus, but it does not take penalties
-        for moving over dicult terrain.
-    level: 0
-img: systems/rogue-trader-3rd/icons/talents/blue/b_33.png
-name: Crawler
-type: trait
+    description: 'A creature with this Trait can transform its body into an insubstantial state, passing ghost-like through solid objects or barriers of any sort. This Trait functions exactly like the Incorporeal Trait, except the creature may become solid or insubstantial by spending a half action. Phase carries additional limitations. A creature in a phased state cannot cross psychically charged barriers, holy wards, or energy fields designed to flux space or manipulate the Warp such as a Gellar Field or a Void Shield.'
+    source: 'Rogue Trader Core Rulebook'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Phase'
+type: 'trait'
 ---
 data:
-    description: Perceive surroundings flawlessly within 30 meters. Other within this
-        30 metre range that succeed on a Dicult (10) Awareness skill can detect the echoing.
-    level: 0
-img: systems/rogue-trader-3rd/icons/talents/blue/b_33.png
-name: Sonar Sense
-type: trait
+    description: 'Quadrupeds are much quicker over a distance than their bipedal counterparts. To calculate their movement, double their Agility Bonus. This Trait is intended to cover creatures with hind legs and forepaws. Creatures with more than four legs may gain this Trait, but they increase the Agility Bonus by 1 multiplier for every extra set of legs (six legs equals AB × 3, eight legs AB × 4, and so on).'
+    source: 'Rogue Trader Core Rulebook'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Quadruped'
+type: 'trait'
 ---
 data:
-    description: With this trait increase their Toughness bonus against all damage by
-        the number indicated in the parentheses (X), in the same manner as an Unnatural
-        Characteristic, and stack if the latter also increases Toughness. This increase
-        is negated by damage inicted from force weapons, psychic powers, holy attacks,
-        or other creatures with this trait. Daemonic creatures also have the Undying trait,
-        and gain benets when using psychic powers.
-    level: 0
-img: systems/rogue-trader-3rd/icons/talents/blue/b_33.png
-name: Daemonic
-type: trait
+    description: 'Creatures with this Trait heal very quickly. Each round, at the start of its turn the creature tests Toughness to remove 1 point of damage. It loses this Trait when slain.'
+    source: 'Rogue Trader Core Rulebook'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Regeneration'
+type: 'trait'
 ---
 data:
-    description: 'Bound to a particular group or creatures in exchange for certain benefits.
-        Upon becoming soul-bound, the psyker must choose one of the following eects: 3d10
-        Insanity points, the permanent loss of his sight, permanent loss of 1d10 points
-        from one characteristic, or a random mutation.'
-    level: 0
-img: systems/rogue-trader-3rd/icons/talents/blue/b_33.png
-name: Soul Bound
-type: trait
+    description: '**Trait Groups:** Miniscule, Puny, Scrawny, Hulking, Enormous, Massive Creatures come in one of seven different size categories, as shown on the following chart. Size affects movement and how easy or hard it is to strike that creature in combat. (When calculating a creatures movement, apply the size modifier first, and then other modifiers from other Traits or talents. Base movement can never be reduced below 1.) For the purposes of comparison, a human is an average-sized creature.'
+    source: 'Rogue Trader Core Rulebook'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Size'
+type: 'trait'
 ---
 data:
-    description: Can see in darkness and never takes a penalty for ghting in areas of
-        dim or no lighting.
-    level: 0
-img: systems/rogue-trader-3rd/icons/talents/blue/b_33.png
-name: Dark-sight
-type: trait
+    description: 'A creature with this Trait perceives its surroundings by emitting a frequency noise, allowing the creature to locate the position of any solid object within 30 metres. Other creatures within range, and that succeed on a Difficult (-10) Awareness Test, may detect the curious keening.'
+    source: 'Rogue Trader Core Rulebook'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Sonar Sense'
+type: 'trait'
 ---
 data:
-    description: Failed Willpower test causes creature to flee, trampling anything in
-        its path. Anyone in the way suers a single hit from the creatures Natural Weapons
-        (or 1d5+SB Impact damage if it does not have that trait). One stampeding creature
-        automatically causes all other creatures with the same trait within sight to stampede
-        as well. The stampede lasts until the source of danger is no longer visible or
-        for 1d10 minutes, whichever occurs last.
-    level: 0
-img: systems/rogue-trader-3rd/icons/talents/blue/b_33.png
-name: Stampede
-type: trait
+    description: 'The soul of this creature is bound to a higher purpose or being, in return for a measure of protection. When this Trait is first gained, the entity to which the soul is bound must be decided. Many Imperial psykers, especially astropaths, are soul-bound to the Emperor, for example, whereas Chaos sorcerers may be bound to one of the Ruinous Powers. A soul-bound psyker rolls an additional d10 when forced to roll on Table 6-3: Perils of the Warp on page 161, discarding whichever one he chooses to get a more favourable result. Upon becoming soul-bound, a character must choose one of the following effects: 1d10 Insanity Points, the permanent loss of sight, the permanent loss of 1d10 from one Characteristic or a random mutation (only if soul-bound to the Ruinous Powers). In addition, a soul-bound character is permanently indebted to the entity, which undoubtedly entails all manner of other duties and consequences.'
+    source: 'Rogue Trader Core Rulebook'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Soul-Bound'
+type: 'trait'
 ---
 data:
-    description: Gains all the benets of the Natural Weapons trait, except that its
-        attacks no longer have the Primitive weapon quality.
-    level: 0
-img: systems/rogue-trader-3rd/icons/talents/blue/b_33.png
-name: Deadly Natural Weapons
-type: trait
+    description: 'A creature with this Trait has an unusual, alien, or altogether bizarre anatomy. All hits count as Body hits and death results when damage equals or exceeds the creature''s Wounds.'
+    source: 'Rogue Trader Core Rulebook'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Strange Physiology'
+type: 'trait'
 ---
 data:
-    description: Become immune to most conditions that would harm normal creatures.
-        Count as having the Undying trait, and are completely immune to most environmental
-        hazards, Blood Loss, and Stunning. They also ignore any Critical Eect other than
-        one that would destroy them outright, unless it was caused by a psychic power,
-        force weapon, or holy attack.
-    level: 0
-img: systems/rogue-trader-3rd/icons/talents/blue/b_33.png
-name: Stuff of Nightmares
-type: trait
+    description: 'Some Warp entities are so terribly powerful that the will perpetuating their bodies in our reality is almost impossible to break or disrupt. Such entities are completely immune to the effects of poisons, diseases, the need to breathe, most environmental hazards, bleeding, stunning, and any critical result other than one that would destroy them outright, unless caused by a psychic power, force weapon, or holy attack.'
+    source: 'Rogue Trader Core Rulebook'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'The Stuff of Nightmares'
+type: 'trait'
 ---
 data:
-    description: 'Always has an associated rating (14). This is indicated by the number
-        in parentheses (X). When a character encounters a creature with this trait, must
-        make a Willpower test with a penalty based on the creatures Fear rating. If he
-        succeeds, the character suers no ill eects; if he fails, he must roll on Table
-        8-11: Shock, adding +10 to the roll for every degree of failure on the test.'
-    level: 0
-img: systems/rogue-trader-3rd/icons/talents/blue/b_33.png
-name: Fear
-type: trait
+    description: 'Sturdy creatures are hard to move and gain a +20 bonus to tests made to resist grappling and the Takedown talent.'
+    source: 'Rogue Trader Core Rulebook'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Sturdy'
+type: 'trait'
 ---
 data:
-    description: +20 bonus to resist grapple, Knock Down, and Takedown.
-    level: 0
-img: systems/rogue-trader-3rd/icons/talents/blue/b_33.png
-name: Sturdy
-type: trait
+    description: 'A creature with this Trait is poisonous. A target hit by its natural weapons must make a Toughness Test. The toxins might instead be delivered by contact with the creature''s skin or by inhaling its stench, in which case a Toughness Test must be made upon coming into contact or proximity. A failed Toughness Test indicates the victim has been poisoned. A typical poison deals 1d10 points of damage, ignoring Armour Points. Variations, if present, are included in the creature''s description.'
+    source: 'Rogue Trader Core Rulebook'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Toxic'
+type: 'trait'
 ---
 data:
-    description: Fly and enter any altitude. (X) indicates its speed when ying. This
-        number replaces the creatures Agility bonus for movement actions while airborne.
-    level: 0
-img: systems/rogue-trader-3rd/icons/talents/blue/b_33.png
-name: Flyer
-type: trait
+    description: 'One or more of the creature''s Characteristics is unnatural. Each time this Trait is gained, select a Characteristic, and double its bonus. For example, a creature with a Strength of 41 normally has a 4 Strength Bonus. With this Trait, its Strength Bonus increases to 8. The Trait may be gained multiple times. Each time, you may select a new Characteristic or one chosen previously. Each time you apply this Trait to the same Characteristic, the Bonus multiplier increases by 1. For example, one selection multiplies the Characteristic Bonus by ×2, two selections by ×3, and three selections by ×4. Note this Trait does not modify the creature''s movement. Movement is based on a creature''s unmodified Agility Bonus. During Opposed Characteristic Tests, on a success, the bonus multiplier is added to the degree of success.'
+    source: 'Rogue Trader Core Rulebook'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Unnatural Characteristic'
+type: 'trait'
 ---
 data:
-    description: NPC has Fate points.
-    level: 0
-img: systems/rogue-trader-3rd/icons/talents/blue/b_33.png
-name: Touched by the Fates
-type: trait
+    description: 'The creature can perceive its surroundings using senses other than sight or hearing, using special organs, fine hairs, or some other disturbing Trait to make itself aware of what''s around it. This Trait always includes a range, usually 15 metres.'
+    source: 'Rogue Trader Core Rulebook'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Unnatural Senses'
+type: 'trait'
 ---
 data:
-    description: Their minds are beyond the petty frailties and precarious sanity of
-        a mortal mind. Such a creature is immune to Fear, Pinning, Insanity points, and
-        psychic powers used to cloud, control, or delude its mind.
-    level: 0
-img: systems/rogue-trader-3rd/icons/talents/blue/b_33.png
-name: From Beyond
-type: trait
+    description: 'The creature moves with incredible speed. For the purposes of determining movement, the creature doubles its Agility Bonus (after modifiers from other Traits and factors, specifically size).'
+    source: 'Rogue Trader Core Rulebook'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Unnatural Speed'
+type: 'trait'
 ---
 data:
-    description: Gain poisonous attack. When damaged must make a Toughness test at the
-        end of his turn with a penalty equal to 10 times the number in parentheses (X),
-        or suer 1d10 points of Energy damage not reduced by Armour or Toughness.
-    level: 0
-img: systems/rogue-trader-3rd/icons/talents/blue/b_33.png
-name: Toxic
-type: trait
+    description: 'Most Warp-entities have a tenuous hold on our reality, often maintained only by horror and bloodshed, and may be disrupted if sufficient harm can be done to their manifested forms. If a creature with this Trait takes damage and does not deal damage or Insanity Points to other creatures by the end of its next turn, it must make a Willpower Test. The creature takes 1 damage for failure, plus 1 damage for each degree of failure. If this would deal damage equal to or in excess of the creature''s Wounds, it is cast back into the Warp.'
+    source: 'Rogue Trader Core Rulebook'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Warp Instability'
+type: 'trait'
 ---
 data:
-    description: Fly and enter the hover altitude ying no higher than two metres. The
-        number in parentheses (X) indicates its speed when hovering; this number replaces
-        its Agility bonus for purposes of calculating Movement while airborne.
-    level: 0
-img: systems/rogue-trader-3rd/icons/talents/blue/b_33.png
-name: Hoverer
-type: trait
+    description: 'Creatures with this Trait have weapons that are partially insubstantial, able to ignore such mundane things as armour or cover. Natural weapons and attacks made by a creature with this Trait ignore physical armour unless it is created from psychoactive materials or carries the holy quality. Force fields still work against these attacks normally.'
+    source: 'Rogue Trader Core Rulebook'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Warp Weapon'
+type: 'trait'
 ---
 data:
-    description: It cannot be harmed by diseases, poisons, or toxic eects. It also has
-        no need to breathe, and thus can survive unaided in a vacuum.
-    level: 0
-img: systems/rogue-trader-3rd/icons/talents/blue/b_33.png
-name: Undying
-type: trait
+    description: 'Creatures with this Trait have a limited capability for flight, flying no higher than two metres. As with the Flyer trait, this Trait always includes a number to indicate speed. For more details on flying, see Chapter VII: Playing the Game.'
+    source: 'Rogue Trader Core Rulebook'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Hoverer'
+type: 'trait'
 ---
 data:
-    description: Insubstantial and weightless, cannot be affected by mundane weaponry.
-        Gain the Hoverer (6) trait and a +30 bonus on Stealth tests due to their ability
-        to merge with objects and nearly silent movement. Also immune to normal weapons,
-        which simply pass ineectually through its body. Daemons, psychic powers, Warp
-        creatures, other Incorporeal creatures, and opponents armed with force weapons
-        can all injure an Incorporeal creature normally. An Incorporeal creature cannot
-        usually aect the mortal world, and thus cannot damage normal opponents unless
-        it has a suitable special ability or talent.
-    level: 0
-img: systems/rogue-trader-3rd/icons/talents/blue/b_33.png
-name: Incorporeal
-type: trait
----
-data:
-    description: Increases one characteristic bonus.
-    level: 0
-img: systems/rogue-trader-3rd/icons/talents/blue/b_33.png
-name: Unnatural Characteristic
-type: trait
----
-data:
-    description: Machines do not breathe, are immune to vacuum, extremes of cold, and
-        mind-inuencing psychic eects. Machines have a certain number of Armour points
-        (indicated by the number in parentheses). This armour stacks with worn armour,
-        but not with the Natural Armour trait, and can damage from Fire
-    level: 0
-img: systems/rogue-trader-3rd/icons/talents/blue/b_33.png
-name: Machine
-type: trait
----
-data:
-    description: Perceive surroundings by uncanny means. Includes a range in metres
-        indicated by the number in parentheses (X).
-    level: 0
-img: systems/rogue-trader-3rd/icons/talents/blue/b_33.png
-name: Unnatural Senses
-type: trait
----
-data:
-    description: Character has mechanical augmentations. Cranial circuitry, Cyber-mantle,
-        Electro-Graft, Electoo Inductors, and Potenia Coil.
-    level: 0
-img: systems/rogue-trader-3rd/icons/talents/blue/b_33.png
-name: Mechanicus Implants
-type: trait
----
-data:
-    description: If a creature with this trait takes damage and does not deal any damage
-        or Insanity points to another creature by the end of its next turn, it must make
-        a Willpower test. The creature suers 1 point of damage for failing, plus 1 additional
-        point of damage for each degree of failure. If this would deal damage equal to
-        (or in excess of) the creatures wounds, it is cast back into the Warp.
-    level: 0
-img: systems/rogue-trader-3rd/icons/talents/blue/b_33.png
-name: Warp Instability
-type: trait
----
-data:
-    description: If faced with a situation outside of its programming and with no recognised
-        master to issue orders, the creature must pass a Routine (+20) Intelligence test
-        or be Stunned for 1 round.
-    level: 0
-img: systems/rogue-trader-3rd/icons/talents/blue/b_33.png
-name: Mind Lock
-type: trait
----
-data:
-    description: Creature's attacks ignore armor, unless the armour is created from
-        psychoactive materials or is somehow warded against the Warp. Force elds still
-        work against these attacks normally.
-    level: 0
-img: systems/rogue-trader-3rd/icons/talents/blue/b_33.png
-name: Warp Weapons
-type: trait
----
-data:
-    description: exact number of arms is indicated in parentheses (X), so with Multiple
-        Arms (4) has four arms total. It gains a +10 bonus on Athletics tests involving
-        climbing and swimming. In addition, for each full pair of arms it has (the Multiple
-        Arms value divided by 2) it can make an additional attack as if wielding multiple
-        melee weapons. In this case, the creature must either have natural weapons or
-        actual melee weapons to wield for this to take eect. Note that a creature still
-        requires the Two-Weapon Wielder talent to make multiple attacks in the same turn.
-    level: 0
-img: systems/rogue-trader-3rd/icons/talents/blue/b_33.png
-name: Multiple Arms
-type: trait
+    description: 'You have been judged a suitable vessel for the following implants:'
+    source: 'Rogue Trader Core Rulebook'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Mechanicus Implants'
+type: 'trait'

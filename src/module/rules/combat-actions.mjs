@@ -226,7 +226,7 @@ function allCombatActions() {
         },
         {
             name: 'Semi-Auto Burst',
-            type: ['Half'],
+            type: ['Full'],
             subtype: ['Attack', 'Ranged'],
             description: 'Grants +10 BS, one hit plus one additional hit per two Degrees of Success (up to the weapon\'s Semi RoF); jam on 94+.',
             attack: {
@@ -235,7 +235,7 @@ function allCombatActions() {
         },
         {
             name: 'Stun',
-            type: ['Half'],
+            type: ['Full'],
             subtype: ['Attack', 'Melee'],
             description:
                 'Using melee weapon, WS test with -20. Success is 1d10+SB, vs targets TB+(AP on head). If success, target is stunned for the number of rounds equal to difference.',

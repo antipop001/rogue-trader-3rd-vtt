@@ -11,24 +11,23 @@ Tick a box once done. Notes in italics belong inline.
 
 ---
 
-## P0 — Mechanical correctness
-
-Combat-action modifiers carry DH2 numbers and will produce wrong outcomes at the table.
+## P0 — Mechanical correctness — DONE
 
 ### `src/module/rules/combat-actions.mjs`
 
-- [ ] **All Out Attack** — change `attack.modifier` from `30` to `20` (RT corebook p.241)
-- [ ] **Charge** — change `attack.modifier` from `20` to `10`
-- [ ] **Full Auto Burst** — change `attack.modifier` from `-10` to `20`
-- [ ] **Semi-Auto Burst** — change `attack.modifier` from `0` to `10`
-- [ ] **Delay** — change `type` from `['Full']` to `['Half']`
-- [ ] **Guarded Action** — change `type` from `['Half']` to `['Full']`
-- [ ] **Tactical Advance** — remove entirely (DH2-only action, has no RT analogue)
-- [ ] Verify **Standard Attack** `+10`, **Called Shot** `-20`, **Stun** `-20`, **Aim** Half `+10` / Full `+20`, **Suppressing Fire** `-20` against RT corebook pp.241–247 (currently look correct)
+- [x] **All Out Attack** — `attack.modifier` 30 → 20 (RT corebook p.241)
+- [x] **Charge** — `attack.modifier` 20 → 10
+- [x] **Full Auto Burst** — `attack.modifier` -10 → 20
+- [x] **Semi-Auto Burst** — `attack.modifier` 0 → 10; also `type` Half → Full (caught 2026-05-14, audit missed it)
+- [x] **Stun** — `type` Half → Full (caught 2026-05-14, audit missed it)
+- [x] **Delay** — `type` Full → Half
+- [x] **Guarded Action** — `type` Half → Full (RT corebook calls this "Guarded Attack"; name kept for back-compat)
+- [x] **Tactical Advance** — removed (DH2-only)
+- [x] Verified Standard Attack +10, Called Shot -20, Aim Half +10 / Full +20, Suppressing Fire -20 against RT corebook pp.147-148
 
-### `src/module/rules/combat-actions.mjs` — Evasion split
+### `src/module/rules/combat-actions.mjs` — Evasion split — DONE
 
-- [ ] Replace the single **Evasion** Reaction with two distinct Reactions: **Dodge** (Ag-based, ranged + melee) and **Parry** (WS-based, melee only — no skill rank). Update any prompts/macros that consume the unified action.
+- [x] Single Evasion Reaction replaced with separate **Dodge** (Ag-based, ranged + melee) and **Parry** (WS-based, melee only) Reactions.
 
 ### Skill list — Parry is a Reaction in RT, not a skill
 
@@ -42,40 +41,54 @@ Combat-action modifiers carry DH2 numbers and will produce wrong outcomes at the
 
 ## P1 — Content gaps that block play
 
-### Psychic powers — entire pack is wrong-source
+### Psychic powers — DONE 2026-05-13
 
-`src/packs/psychic-powers/psychic-powers.yml` is **all DH2 / DH2-supplement** content (DH2, EBY, EWI, TNP, ToF prefixes). Zero RT-sourced powers.
+`src/packs/psychic-powers/psychic-powers.yml` rebuilt from RT Core Rulebook Ch.VI + Into the Storm + Errata v1.4. 79 entries.
 
-- [ ] Rebuild from RT Core Rulebook pp.156–181: Biomancy, Divination, Pyromancy, Telekinesis, Telepathy (full discipline trees)
-- [ ] Add **Navigator powers** (Lidless Stare, Locus Control, etc. — corebook Ch.VI Navigator section)
-- [ ] Add **Astropathic Choirs** powers (Astropath Transcendent's signature powers)
-- [ ] Drop or relabel: **Sanctic Daemonology**, **Malefic Daemonology**, **Chrono**, **Void Frost**, **Minor** (DH2/supplement-only)
-- [ ] Cross-check `discipline:` field values against RT canonical spelling
-- [ ] Use the same NotebookLM source pipeline that built talents/weapons/armour (notebook `cd87d917-4cea-45b3-b27c-a149070b1826`)
+- [x] Rebuild from RT Core Rulebook Ch.VI: **Telepathy, Divination, Telekinesis** (the corebook only has these 3 disciplines, NOT 5 — the earlier "Biomancy, Pyromancy" entries in this checklist were wrong; those are DH2-supplement only)
+- [x] Add **Navigator powers** (corebook pp.223–234 + ItS p.189)
+- [x] **Astropathic Choirs** is NOT a power — it's a relay-assistance rule (corebook p.162; Errata v1.4 raised max bonus +5→+10). The only Astropath-exclusive technique is Astral Telepathy (in Telepathy discipline).
+- [x] No daemonology/chrono/void-frost imported (they're not in RT corebook or ItS)
+- [x] Theosophamy discipline added (ItS p.197 — 7 sanctioned-psyker faith powers)
+- [x] Errata v1.4 corrections baked into descriptions
 
-### Voidship content — code exists but compendia are empty
+**Remaining caveats** (see CLAUDE.md "Psychic-powers rebuild" section for full list):
+- [ ] Schema extension: `damage` is currently `int` — extend to support `1d10+PR` formulas so automation can roll
+- [ ] Targeted re-query for Navigator XP costs (currently all `0` — RT Navigator powers tie to Lineage talents)
+- [ ] Decide whether Astropath/Navigator Starship Actions belong in `psychic-powers` (current home) or a separate `ship-actions` pack
 
-The voidship sheet, critical damage table, hit locations, prompts, and crew-roll flow all exist in `src/module/`. But there are **zero ship components, ship weapons, or ship traits** in any compendium pack.
+### Voidship content — DONE 2026-05-14
 
-- [ ] Build a `ship-components` pack (or split: `ship-components`, `ship-essential-components`, `ship-supplemental-components`) covering RT corebook Ch.VII pp.182–229 + ItS Ch.IV (~80 components: Plasma Drives, Warp Engines, Geller Fields, Void Shields, Bridges, Life Sustainers, Crew Quarters, Augur Arrays, holds, supplementals)
-- [ ] Build a `ship-weapons` pack covering Macrocannons, Lances, Torpedoes, Bombardment Cannons, Nova Cannons + ItS additions (~30 weapons)
-- [ ] Build a `ship-traits` pack covering Hull traits, Past Histories, Machine Spirit Oddities, Drive Aphorisms, Warp Engine Caprices (corebook pp.196–202)
-- [ ] Add hull-class presets (Transport, Raider, Frigate, Light Cruiser, Cruiser, Grand Cruiser, Battleship + ItS classes) — could be either pre-built voidship actors in a compendium or a "hull pattern" item type
-- [ ] Verify the existing `voidship-critical-damage.mjs` and `voidship-hit-locations.mjs` match the corebook tables (pp.222–223)
-- [ ] Apply errata for Excess Void Armour / Overload Shield Generators / Null Bay where relevant
+3 new packs built from RT-DOCS markdown (no NotebookLM needed — tabular stats live in CoreBook part 2 and ItS part 2 as proper markdown tables):
 
-### Other un-rebuilt packs (same pattern: DH2 fork, no RT sourcing)
+- [x] `ship-components` — 73 entries (36 essential + 18 supplemental + 14 archeotech + 5 xenotech), registered in `system.json`
+- [x] `ship-weapons` — 18 entries (macrobatteries, lances, archeotech weaponry from corebook + ItS)
+- [x] `ship-traits` — 34 entries (14 hull patterns + 10 Machine Spirit Oddities + 10 Past Histories)
+- [x] Hull patterns embedded in `ship-traits` (no `shipHull` item type) with full stat block in description
 
-For each, rebuild from RT corebook + Into the Storm via the NotebookLM pipeline used for talents/weapons/armour:
+**Caveats:**
+- [ ] Multi-variant components (21 of them — e.g. Combat Bridge differs across hull sizes) have first variant's stats in fields and a "Hull-size variants:" appendix in the description. Could split into per-variant entries later for cleaner drag-and-drop installation.
+- [ ] `shipWeapon.damage` is stored as `int` (parses base from `1d10+X`); full dice formula lives in description. Schema extension needed for proper damage rolling.
+- [ ] `voidship-critical-damage.mjs` and `voidship-hit-locations.mjs` audit vs. corebook tables (pp.222–223) — not yet performed.
+- [ ] Errata for Excess Void Armour / Overload Shield Generators / Null Bay — not yet applied (these components are in the `ship-components` pack but the errata pass against ItS Ch.IV wasn't run).
 
-- [ ] `cybernetics` → **Bionic Replacements** (RT corebook p.131; much shorter list than DH2)
-- [ ] `ammo` → RT specialty ammunition (RT corebook pp.136–137; apply errata for Backpack Ammo Pack p.135)
-- [ ] `consumables` → drugs/stimms/recaf etc. (RT corebook Ch.V Gear section)
-- [ ] `tools` → general gear (RT corebook Ch.V, pp.149–155)
-- [ ] `weapon-mods` → weapon upgrades (RT corebook pp.133–135 + ItS Ch.III)
-- [ ] `attack-specials` → universal qualities (RT corebook pp.142–145). Verify presence/spec of: Tearing, Storm, Spray, Snare, Tangle, Volley, Boarding Action, Felling, Twin-linked, Smoke, Toxic, Force (parameter rules differ from DH2)
-- [ ] `traits` → creature/character traits (RT corebook traits chapter). Spot-check Brute, Daemonic, From Beyond, Phase, Quadruped, Sanctioned, Stuff of Nightmares, Touched by the Fates
-- [ ] `tables` → add RT GM tables (Stars of Inequity systems, Endeavour tables, mutation tables, Twist of Fate) — corebook is sparse but Stars of Inequity supplement has many
+### Other un-rebuilt packs — DONE 2026-05-14
+
+All rebuilt from RT corebook via RT-DOCS markdown:
+
+- [x] `cybernetics` → **Bionic Replacements** + Implant Systems (25 entries from corebook p.131+)
+- [x] `ammo` → 3 specialty rounds (Inferno Shells, Man-Stopper, Tempest Bolt). RT doesn't catalogue ammo as a separate category — pack is intentionally minimal.
+- [x] `consumables` → drugs/stimms/recaf (21 entries from corebook Ch.V)
+- [x] `tools` → general gear + clothing (47 entries from corebook Ch.V)
+- [x] `weapon-mods` → weapon upgrades (33 entries; includes craftsmanship sub-entries that warrant a manual review)
+- [x] `attack-specials` → 25 universal qualities from corebook + Force from ItS (26 total)
+- [x] `traits` → 33 creature/character traits from corebook Ch.XIV (replaces DH2 fork content)
+- [x] `aptitudes` → DROPPED (DH2-only concept, no RT 1e equivalent)
+- [ ] `tables` → only 3 RollTables present; corebook is sparse but Stars of Inequity supplement has many (not available locally; would need re-extraction)
+
+**Caveats:**
+- [ ] `weapon-mods` came in at 33 (vs ~14 expected) because h2 sub-headers like "Best/Good/Poor" craftsmanship variants got picked up. Manual review may want to consolidate or filter.
+- [ ] ItS additions for `weapon-mods` (Calamity Vent, Exterminator Cartridge, additional drugs, etc.) not yet extracted — corebook-only pass.
 
 ### Errata sweep (Living Errata v1.4)
 

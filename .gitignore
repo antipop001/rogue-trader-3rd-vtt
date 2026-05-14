@@ -22,3 +22,7 @@ docker-data
 ## Docker Development
 docker-compose.yml
 conf
+
+## Reference / local-only
+.claude
+RT-DOCS

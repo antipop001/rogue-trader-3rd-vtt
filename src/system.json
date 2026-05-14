@@ -21,19 +21,19 @@
     "css/rogue-trader-3rd.css"
   ],
   "scripts": [],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
   "packs": [
     {
       "name": "ammo",
       "system": "rogue-trader-3rd",
       "label": "Ammo",
       "path": "./packs/ammo.db",
-      "type": "Item"
-    },
-    {
-      "name": "aptitudes",
-      "system": "rogue-trader-3rd",
-      "label": "Aptitudes",
-      "path": "./packs/aptitudes.db",
       "type": "Item"
     },
     {
@@ -111,6 +111,27 @@
       "system": "rogue-trader-3rd",
       "label": "Weapon Mods",
       "path": "./packs/weapon-mods.db",
+      "type": "Item"
+    },
+    {
+      "name": "ship-components",
+      "system": "rogue-trader-3rd",
+      "label": "Ship Components",
+      "path": "./packs/ship-components.db",
+      "type": "Item"
+    },
+    {
+      "name": "ship-weapons",
+      "system": "rogue-trader-3rd",
+      "label": "Ship Weapons",
+      "path": "./packs/ship-weapons.db",
+      "type": "Item"
+    },
+    {
+      "name": "ship-traits",
+      "system": "rogue-trader-3rd",
+      "label": "Ship Traits & Hulls",
+      "path": "./packs/ship-traits.db",
       "type": "Item"
     }
   ],

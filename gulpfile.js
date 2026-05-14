@@ -25,6 +25,7 @@ const STATIC_FILES = [
   "!src/module/foundry-core/**",
   "src/templates/**/*",
   "src/images/**/*",
+  "src/lang/**/*.json",
   "src/*.json",
   "src/packs/*.db"
 ];
@@ -43,7 +44,14 @@ function compilePacks() {
 
   // process each folder into a compendium db
   const packs = folders.map((folder) => {
-    const db = new Datastore({ filename: path.resolve(__dirname, BUILD_DIR, "packs", `${folder}.db`), autoload: true });
+    const dbPath = path.resolve(__dirname, BUILD_DIR, "packs", `${folder}.db`);
+    // If the folder has YAML, treat YAML as the sole source-of-truth: wipe any
+    // .db that copyFiles may have placed there from src/packs/*.db (the upstream
+    // DH2 fork still ships stale pre-built .db files at that path). Without this,
+    // NeDB autoload merges old fork content on top of the YAML.
+    const hasYaml = fs.readdirSync(path.join(PACK_SRC, folder)).some((f) => f.endsWith(".yml"));
+    if (hasYaml && fs.existsSync(dbPath)) fs.unlinkSync(dbPath);
+    const db = new Datastore({ filename: dbPath, autoload: true });
     return gulp.src(path.join(PACK_SRC, folder, "/**/*.yml")).pipe(
         through2.obj((file, enc, cb) => {
           try {

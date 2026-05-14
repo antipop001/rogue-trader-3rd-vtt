@@ -4,6 +4,22 @@ Unofficial Foundry VTT system for **FFG's Rogue Trader 1e** content using **Dark
 
 Forked from mrkeathley's Dark Heresy 2 system. Authored by MortarionUA. Compatible with Foundry VTT v12–v14.
 
+## Test environment (foundrySB)
+
+Proxmox LXC for live-testing this system in Foundry.
+
+| Property | Value |
+|---|---|
+| CTID | 211 (foundrySB) |
+| IP | 192.168.11.36 |
+| Foundry | v14.361 |
+| Node.js | v24.15.0 |
+| App path | /opt/foundry |
+| Data path | /var/lib/foundrydata |
+| Log | /var/log/foundry.log |
+| URL | http://192.168.11.36:30000 |
+| SSH | `ssh -i ~/.ssh/foundry_test project@192.168.11.36` |
+
 ## Build
 
 - `npm run build` — full build into `build/rogue-trader-3rd/`
@@ -92,26 +108,40 @@ The errata document was queried for talent and armor changes. **Weapon errata wa
 - For Into the Storm entries: `source: "Into the Storm, p.XX"`.
 - Page numbers come from NotebookLM; some are approximate where the OCR was poor.
 
+## Content extraction pipeline
+
+Two sources for RT content; prefer the local one:
+
+1. **`RT-DOCS/`** (local, fast) — pre-extracted markdown of CoreBook (split as `CoreBook-1-200.pdf/markdown.md` + `CoreBook-201-401.pdf/markdown.md`), Into the Storm, and Errata v1.4. Each PDF also has a `pages/page-N/` directory for per-page lookups. `grep` and direct `Read` work here, no API latency. Use this first for any new content pass.
+2. **NotebookLM** (notebook `cd87d917-4cea-45b3-b27c-a149070b1826`) — only when you need synthesis across sources or the markdown OCR is too noisy for a specific extract. Auth via `nlm login --manual --file /home/ahermon/cookies.txt`; if `cookies.json` ends up corrupt, see `notebooklm_mcp_setup.md` memory for the flat-dict-rewrite fix.
+
+### RT-DOCS quirks (learned the hard way)
+
+- **CoreBook-1-200.pdf has descriptions only.** Tabular stat blocks were dropped by the PDF→markdown converter on pp.1–200. Hulls came through fine because their stats are in prose form, not tables.
+- **CoreBook-201-401.pdf has the actual stat tables** as proper markdown tables (`| col | col |`). TABLE 8-3 (essential components), supplemental, weapons, archeotech, xenotech — all parseable. Same goes for ItS part 2.
+- **Component stats live in part 2, descriptions in part 1** for early Ch.VIII components (drives, engines, shields, bridges). Any parser must search across both files.
+- **Some section headers lose their `#` prefix** in conversion (e.g. macrobattery entries on p.202 appear as plain text). Plain-line fallback (name on its own line with blank lines around) works.
+- **British/American spelling drift** appears between table cells and descriptive headers (Gellar/Geller, compartmentalised/compartmentalized). Build a spelling-variant matcher when name matching fails.
+
 ---
 
 ## 2026-05-13 — System audit findings ("what needs correction for a workable RT")
 
 A read-only audit of the code + schema + packs against the DH2→RT mechanical-delta reference (`DH2_to_RT_Mechanical_Changes.md`). The repo's *content* in talents/weapons/armour was rebuilt for RT, but the *engine* is largely an unmodified DH2 fork. Below are concrete drift points to fix.
 
-### A. Combat-action modifiers (drift from DH2) — `src/module/rules/combat-actions.mjs`
+### A. Combat-action modifiers — DONE 2026-05-13 (commit c67c9ca) + 2026-05-14
 
-The hardcoded action table still carries DH2 numbers. Six values need flipping to RT 1e:
+All combat-action modifiers and types match RT 1e corebook Table 9-1 (pp.147-148):
 
-| Action | Current (DH2) | RT 1e | Line |
-|---|---|---|---|
-| All Out Attack | +30 WS | **+20 WS** | 92 |
-| Charge | +20 WS | **+10 WS** | 116 |
-| Full Auto Burst | −10 BS | **+20 BS** | 156 |
-| Semi-Auto Burst | 0 BS | **+10 BS** | 226 |
-| Delay | type `['Full']` | type **`['Half']`** | 127 |
-| Guarded Action | type `['Half']` | type **`['Full']`** | 167 |
-
-Also: `Tactical Advance` (lines 268–273) is DH2-only — RT has no such action; remove it. `Evasion` (line 137) is the unified DH2 Reaction — RT splits this into separate Dodge and Parry Reactions (Parry is **not** a skill in RT, it uses WS directly).
+- All Out Attack: +20 WS ✓
+- Charge: +10 WS ✓
+- Full Auto Burst: +20 BS, type Full ✓
+- Semi-Auto Burst: +10 BS, type Full (fixed 2026-05-14 — the audit missed the type)
+- Stun: -20 WS, type Full (fixed 2026-05-14 — the audit missed the type)
+- Delay: type Half ✓
+- Guarded Action: type Full ✓ (note: RT calls this "Guarded Attack" — name kept as "Guarded Action" for now to avoid breaking saved character data)
+- Tactical Advance: removed (DH2-only) ✓
+- Evasion split into Dodge (Ag) and Parry (WS) Reactions ✓
 
 ### B. Characteristic + skill schema (`src/template.json`)
 
@@ -144,7 +174,18 @@ Also: `Tactical Advance` (lines 268–273) is DH2-only — RT has no such action
 | `talents` | 195 | 170 RT Core + 25 ItS | **Clean** (per CLAUDE.md) |
 | `weapons` | 202 | 104 RT Core + 98 ItS | **Clean** |
 | `armour` | 42 | 22 RT Core + 20 ItS | **Clean** |
-| `psychic-powers` | ~108 | **All DH2/DH2-supplement** (DH2, EBY=Enemies Beyond, EWI=Enemies Within, TNP, ToF) — zero RT-sourced | **Not converted.** Disciplines present: Telekinesis, Divination, Minor, Biomancy, Telepathy, Pyromancy, Chrono, Sanctic Daemonology, Malefic Daemonology, Void Frost, Astropath. Need: rebuild from RT corebook pp.156–181 (the 5 core disciplines), add Navigator powers, Astropathic Choirs. Daemonology/Chrono/Void Frost are DH2-supplement-only and should be dropped or relabeled. |
+| `psychic-powers` | 79 | RT Core (39) + ItS (40) | **Clean as of 2026-05-13.** Rebuilt from RT corebook Ch.VI + Into the Storm + Errata v1.4. See "Psychic-powers rebuild" section below for breakdown and caveats. |
+| `ship-components` | 73 | RT Core (48) + ItS (25) | **Clean as of 2026-05-14.** Essential, supplemental, archeotech, xenotech. |
+| `ship-weapons` | 18 | RT Core (10) + ItS (8) | **Clean as of 2026-05-14.** Macrobatteries, lances, archeotech weaponry. |
+| `ship-traits` | 34 | RT Core (28) + ItS (6) | **Clean as of 2026-05-14.** 14 hull patterns + 10 Machine Spirit Oddities + 10 Past Histories. Hulls embed full stat block in description (no `shipHull` item type). |
+| `attack-specials` | 26 | RT Core (25) + ItS (1) | **Clean as of 2026-05-14.** All 25 corebook weapon qualities + ItS `Force`. |
+| `weapon-mods` | 33 | RT Core | **Refreshed 2026-05-14.** Corebook weapon upgrades + craftsmanship sub-entries. Worth a manual review pass — some entries are sub-rules nested under parents. |
+| `ammo` | 3 | RT Core | **Refreshed 2026-05-14.** Just RT specialty rounds (Inferno Shells, Man-Stopper Bullets, Tempest Bolt Shells). RT corebook doesn't catalogue ammo separately from weapons; pack is intentionally minimal. |
+| `tools` | 47 | RT Core | **Refreshed 2026-05-14.** Clothing, void suits, gear, tools, equipment from corebook Ch.V. |
+| `consumables` | 21 | RT Core | **Refreshed 2026-05-14.** Drugs, stimms, recaf, sacred unguents, etc. from corebook Ch.V. |
+| `cybernetics` | 25 | RT Core | **Refreshed 2026-05-14.** Bionic Replacement Limbs + Implant Systems + Mechadendrites from corebook p.131+. |
+| `traits` | 33 | RT Core | **Refreshed 2026-05-14.** Creature/character traits from corebook Ch.XIV — Auto-Stabilised, Bestial, Daemonic, From Beyond, Phase, Warp Instability, Mechanicus Implants, etc. Replaces the DH2 fork content. |
+| `aptitudes` | — | DROPPED | **Removed 2026-05-14.** DH2-only concept; no RT 1e equivalent. Pack unregistered from system.json. |
 | `aptitudes` | 19 | DH2 | **Drop entirely** if going pure RT 1e (or leave as documentation-only). |
 | `traits` | 41 | No `source:` field — unmodified DH2 fork | Most traits port to RT, but no RT-specific entries (Auto-Stabilised gun mount, Brute, Daemonic, From Beyond, Phase, Quadruped, Sanctioned, Stuff of Nightmares, Touched by the Fates — all present but unverified). Spot-check against RT corebook traits chapter. |
 | `tools` | ~50 | No `source:` field | Mix of DH2 tools (Combi-tool, Auspex, Multi Compass, Glow-globe). Most overlap with RT gear (Ch.V) but not verified. |
@@ -190,12 +231,36 @@ Also: `Tactical Advance` (lines 268–273) is DH2-only — RT has no such action
 - Many sheet class names still say `DarkHeresy*` (e.g. `DarkHeresyPsychicPowerSheet`, `DarkHeresyItemContainerSheet`) — purely cosmetic but reflects fork origin.
 - Three uncommitted modifications: `src/packs/armour/armour.yml`, `src/packs/talents/talents.yml`, `src/packs/weapons/weapons.yml` — the canon-rebuilt content not yet committed.
 
+### Psychic-powers rebuild (2026-05-13)
+
+79 powers across 7 discipline tags:
+
+| Discipline | Count | Source |
+|---|---|---|
+| Telepathy | 22 | Core 18 + ItS 4 |
+| Telekinesis | 12 | Core 8 + ItS 4 |
+| Divination | 12 | Core 9 + ItS 3 |
+| Navigator | 18 | Core 9 + ItS 9 |
+| Theosophamy | 7 | ItS only (sanctioned-psyker faith discipline) |
+| Astropath Starship Action | 5 | ItS — ship combat actions, not strictly psychic powers |
+| Navigator Starship Action | 3 | ItS — ditto |
+
+**Important corrections to the earlier audit notes:**
+- **RT corebook has only 3 player psyker disciplines** (Telepathy, Divination, Telekinesis), NOT 5. Biomancy and Pyromancy are DH2/supplement-only and were correctly absent from RT 1e — the prior CLAUDE.md/RT_CORRECTION_CHECKLIST.md text saying "5 core disciplines" was wrong.
+- **Astropathic Choirs is a relay-assistance rule** (corebook p.162; Errata v1.4 raised max bonus from +5 to +10), not a purchasable power — not extracted as a compendium entry. The only Astropath-exclusive power is **Astral Telepathy** which is in the Telepathy discipline.
+
+**Schema caveats:**
+- `damage` is stored as `0` for every attack power — the actual `1d10+PR` formulas live in the description because the schema field is just `int`. Automation needs the schema extended.
+- Navigator XP costs are `0` placeholders — RT Navigator powers are tied to Lineage talents/career advances, not flat XP. Worth a targeted re-query.
+- `penetration: 99` is a sentinel for "Ignores Armour" (Psychic Scream).
+- Errata corrections from v1.4 are baked into the descriptions (with `Errata:` prefix when an entry was modified).
+
 ### Bottom line
 
-The repo is a **DH2 engine + RT-rebuilt talent/weapon/armour content**. To become a "good workable RT" system, three layers need attention, roughly in order:
+The repo is a **DH2 engine + RT-rebuilt content for talents/weapons/armour/psychic-powers**. To become a "good workable RT" system, three layers need attention, roughly in order:
 
 1. **Combat math fixes** (action modifiers in `combat-actions.mjs`) — small file edits, high gameplay impact.
-2. **Content gaps** in the un-rebuilt packs — most impactful: `psychic-powers` (entirely wrong source) and missing **ship components/weapons** for void combat.
+2. **Content gaps** in the un-rebuilt packs — psychic-powers ✓ 2026-05-13, voidship ✓ 2026-05-14, attack-specials/weapon-mods/ammo/tools/consumables/cybernetics/traits all refreshed and aptitudes dropped ✓ 2026-05-14. Only `tables` remains DH2-flavored (sparse — 3 RollTables; RT-specific GM tables like Stars of Inequity exploration tables would be additive).
 3. **Schema/engine** — decide whether to keep the DH2 character-creation pipeline (Home World/Background/Role/Aptitudes) as a flavored layer, or rip it out for an RT Origin Path + Career advance-table model. This is the biggest call and the largest amount of work.
 
 See `RT_CORRECTION_CHECKLIST.md` for a prioritized punch list.

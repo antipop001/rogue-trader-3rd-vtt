@@ -1,381 +1,751 @@
 data:
-    availability: Extremely Rare
-    craftsmanship: Common
-    description: Place it onto the alien computer, lock, or other interface device that
-        he wishes to crack, and make a Hard (20) Security (Int) test. If successful, the
-        engine accesses the alien device, and treats it like any other electronic lock
-        for the purposes of additional tests. An Adaptive Logis-Engine takes 5 minutes
-        to access a basic alien system, less 30 seconds for each degree of success on
-        the users Security test (to a minimum of 30 seconds).
-    weight: 4
-img: systems/rogue-trader-3rd/icons/talents/red/gr_08.png
-name: Adaptive Logis-Engine
-type: tool
----
-data:
-    availability: Scarce
-    craftsmanship: Common
-    description: When used grants +20 to awareness tests and counts as a Free Action
-        once per turn. With aTech-Usecan see through walls less than 50 cm, has a range
-        of 50 meters.
+    craftsmanship: 'common'
+    availability: 'common'
     weight: 0
-img: systems/rogue-trader-3rd/icons/talents/red/gr_08.png
-name: Auspex/Scanner
-type: tool
+    equipped: false
+    inBackpack: false
+    description: 'A personal carrying device can take many forms, but is usually some kind of bag with attached straps for ease of carrying. A backpack can usually carry approximately 50 kilograms.'
+    source: 'Rogue Trader Core Rulebook'
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_02.png'
+name: 'Backpack'
+type: 'tool'
 ---
 data:
-    availability: Scarce
-    craftsmanship: Common
-    description: Grants +10 to recording data
+    craftsmanship: 'common'
+    availability: 'common'
     weight: 0
-img: systems/rogue-trader-3rd/icons/talents/red/gr_08.png
-name: Auto Quill
-type: tool
+    equipped: false
+    inBackpack: false
+    description: 'Cameleoline material is made up of mimic fibres that blend the colouration of the wearer into their surroundings. A character wearing a cameleoline cloak gains a +20 bonus to Concealment Tests. If the wearer remains stationary, he counts as being one Range Bracket further away (see Chapter IX: Playing the Game, page 247) when targeted by ranged weapons.'
+    source: 'Rogue Trader Core Rulebook'
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_02.png'
+name: 'Cameleoline Cloak'
+type: 'tool'
 ---
 data:
-    availability: Common
-    craftsmanship: Common
-    description: Grants +30 to Climb tests and cannot fall if failed.
-    weight: 2
-img: systems/rogue-trader-3rd/icons/talents/red/gr_08.png
-name: Clip/Drop Harness
-type: tool
----
-data:
-    availability: Rare
-    craftsmanship: Common
-    description: Grants +10 to Tech-Use
-    weight: 1
-img: systems/rogue-trader-3rd/icons/talents/red/gr_08.png
-name: Combi-tool
-type: tool
----
-data:
-    availability: Very Rare
-    craftsmanship: Common
-    description: Can hack a transmission with Tech-Use. Usable for minutes equal to
-        Degrees of Success
-    weight: 1
-img: systems/rogue-trader-3rd/icons/talents/red/gr_08.png
-name: Comm Leech
-type: tool
----
-data:
-    availability: Common
-    craftsmanship: Common
-    description: The iPad's of the future.
+    craftsmanship: 'common'
+    availability: 'common'
     weight: 0
-img: systems/rogue-trader-3rd/icons/talents/red/gr_08.png
-name: Dataslate
-type: tool
+    equipped: false
+    inBackpack: false
+    description: 'A charm is a keepsake, holy relic or good luck token that is intended to draw the benevolent eye of the Emperor to the wearer. They take myriad forms including such things as saintly finger bones, fragments of blessed bolter casings, water from holy rivers, and even corpse hair woven into significant patterns. Throughout the Imperium, there is no shortage of folk who will sell such items, though discerning true relics from the false is an almost impossible task (thus the cost of a charm is entirely up to the GM and how well the Explorer can haggle with the seller). Charms have no tangible benefits. However, when the unfolding plot calls for something bad to happen to a random character, at the GM''s discretion a character with a charm will be exempt. If all the characters carry charms (as all Emperor-fearing citizens should) then it is up to the GM to choose which charms are the most potent.'
+    source: 'Rogue Trader Core Rulebook'
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_02.png'
+name: 'Charm'
+type: 'tool'
 ---
 data:
-    availability: Very Rare
-    craftsmanship: Common
-    description: 'Allows for setup of demo devices. Contains: Five demolition charges
-        (count as Krak Grenades), 100 meter det-cord (burns at 10 sec per meter), and
-        pressure detonator.'
-    weight: 4
-img: systems/rogue-trader-3rd/icons/talents/red/gr_08.png
-name: Demolition Kit
-type: tool
----
-data:
-    availability: Rare
-    craftsmanship: Common
-    description: Grants +20 to Medicae or Perception  to determine proper treatment.
-    weight: 4
-img: systems/rogue-trader-3rd/icons/talents/red/gr_08.png
-name: Diagnostor
-type: tool
----
-data:
-    availability: Very Rare
-    craftsmanship: Common
-    description: Make you look like someone else. +10 to deceive tests.
-    weight: 2
-img: systems/rogue-trader-3rd/icons/talents/red/gr_08.png
-name: Disguise Kit
-type: tool
----
-data:
-    availability: Very Rare
-    craftsmanship: Common
-    description: Grants +20 to Interrogation tests.
-    weight: 2
-img: systems/rogue-trader-3rd/icons/talents/red/gr_08.png
-name: Excruciator Kit
-type: tool
----
-data:
-    availability: Average
-    craftsmanship: Common
-    description: Provides +30 to Medicae tests to stop Blood Loss.
+    craftsmanship: 'common'
+    availability: 'common'
     weight: 0
-img: systems/rogue-trader-3rd/icons/talents/red/gr_08.png
-name: Field Suture
-type: tool
+    equipped: false
+    inBackpack: false
+    description: 'Chronos are hand-held or wrist-worn timepieces, generally dependable and simple to use. |  Name | kg | Availability  | | --- | --- | --- | |  Backpack | 1 | Plentiful  | |  Cameleoline Cloak | 0.5 | Rare  | |  Charm | — | Average  | |  Chrono | — | Abundant  | |  Clip Harness/Drop Harness | 2 | Common  | |  Clothing and Adornment (Common) | — | Abundant†  | |  Clothing and Adornment (Merchant Guilder) | — | Average†  | |  Clothing and Adornment (Noble) | — | Scarce†  | |  Filtration Plugs | — | Common  | |  Night Cloak | 2 | Average  | |  Photo-visors/Photo-contacts | 0.5 | Scarce  | |  Preysense Goggles | 0.5 | Rare  | |  Rebreather | 1 | Scarce  | |  Recoil Gloves | 0.5 | Rare  | |  Respirator/Gas Mask | 0.5 | Average  | |  Shifting Fabric | — | Very Rare  | |  Survival Suit | — | Plentiful  | |  Synskin | 2 | Extremely Rare  | |  Void Suit | 8 | Plentiful  | |  Void Suit (Selenite-pattern) | 25 | Scarce  | † Clothing and Adornment may have any appropriate Availability. There is always a way to spend more on appearance, to find yet more exclusive fabrics, clothiers, and jewelers, and otherwise display the ways that your wealth glitters more brightly than that of your rivals.'
+    source: 'Rogue Trader Core Rulebook'
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_02.png'
+name: 'Chrono'
+type: 'tool'
 ---
 data:
-    availability: Abundant
-    craftsmanship: Common
-    description: It's a Flashlight.
+    craftsmanship: 'common'
+    availability: 'common'
     weight: 0
-img: systems/rogue-trader-3rd/icons/talents/red/gr_08.png
-name: Glow-globe/stab light
-type: tool
+    equipped: false
+    inBackpack: false
+    description: 'A compact spool-stored safety line, with a magnetic or hooked clasp. A character using a clip harness to descend a vertical surface gains a +30 bonus to Climb Tests and cannot fall if he fails.'
+    source: 'Rogue Trader Core Rulebook'
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_02.png'
+name: 'Clip Harness/Drop Harness'
+type: 'tool'
 ---
 data:
-    availability: Common
-    craftsmanship: Common
-    description: A Clip-harness and Gas powered pistol to shoot a hook and line 100
-        m away.
-    weight: 2
-img: systems/rogue-trader-3rd/icons/talents/red/gr_08.png
-name: Grapnel and Line
-type: tool
----
-data:
-    availability: Rare
-    craftsmanship: Common
-    description: Pass a Challenging (+0) Agility test or Routine (+20) Operate (Aeronautica)
-        test, and allows for a safe, guided fall from any height; otherwise counts as
-        having fallen two metres for each degree of failure
-    weight: 15
-img: systems/rogue-trader-3rd/icons/talents/red/gr_08.png
-name: Grav Chute
-type: tool
----
-data:
-    availability: Scarce
-    craftsmanship: Common
-    description: Grants another +20 to their next Ballistic Skill when using weapons
-        with Indirect quality.
+    craftsmanship: 'common'
+    availability: 'common'
     weight: 0
-img: systems/rogue-trader-3rd/icons/talents/red/gr_08.png
-name: Hand-Held Targeter
-type: tool
+    equipped: false
+    inBackpack: false
+    description: 'The citizens of the Imperium wear a staggering range of clothing, jewellery, and other forms of adornment. All manner of styles imaginable exist to illustrate the role or importance of the individual. Explorers might wear bodygloves and rings, the best in noble finery, wigs, ship-suits, practical hive world clothes, military uniforms and dress weapons, scholarly robes, tattoos, or religious garb from any one of a thousand temples, depending on taste, profession, and background. The Availability of clothing and adornment is determined by how much an Explorer chooses to spend on his apparel, from basic rags up to exquisite and expensive attire far beyond even lesser nobles.'
+    source: 'Rogue Trader Core Rulebook'
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_02.png'
+name: 'Clothing and Adornment'
+type: 'tool'
 ---
 data:
-    availability: Very Rare
-    craftsmanship: Common
-    description: Firing a holo-spectus into the air requires a Challenging (+0) Tech-Use
-        test, after which the user gains a visual representation of the area below the
-        hovering pict-recorder out for several kilometres. Can zoom and highlight parts
-        allowing to survey the area around in great detail, and grants a +20 bonus to
-        Navigate (Surface), Survival (Tracking), and Scrutiny tests. The recorder can
-        stay airborne for 5 hours before its power cell is exhausted
-    weight: 6
-img: systems/rogue-trader-3rd/icons/talents/red/gr_08.png
-name: Holo-Spectus
-type: tool
----
-data:
-    availability: Common
-    craftsmanship: Common
-    description: Holds drugs that can be administered as a Half Action.
+    craftsmanship: 'common'
+    availability: 'common'
     weight: 0
-img: systems/rogue-trader-3rd/icons/talents/red/gr_08.png
-name: Inhaler/Injector
-type: tool
+    equipped: false
+    inBackpack: false
+    description: 'These are simple plugs worn in each nostril to screen out most pollutants and harmful gases. A character wearing filtration plugs gains a +20 bonus to any Toughness Test made to resist the effects of gas.'
+    source: 'Rogue Trader Core Rulebook'
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_02.png'
+name: 'Filtration Plugs'
+type: 'tool'
 ---
 data:
-    availability: Average
-    craftsmanship: Common
-    description: Cuts or welds 10 cm of metal and counts as a Heavy weapon on targets
-        within 2 meters.
-    weight: 4
-img: systems/rogue-trader-3rd/icons/talents/red/gr_08.png
-name: Lascutter
-type: tool
----
-data:
-    availability: Scarce
-    craftsmanship: Common
-    description: Megaphone of space.
-    weight: 4
-img: systems/rogue-trader-3rd/icons/talents/red/gr_08.png
-name: Laud Hailer
-type: tool
----
-data:
-    availability: Rare
-    craftsmanship: Common
-    description: Reduces Agility bonus by 2 but allows to grip to metallic surfaces.
-    weight: 2
-img: systems/rogue-trader-3rd/icons/talents/red/gr_08.png
-name: Magboots
-type: tool
----
-data:
-    availability: Average
-    craftsmanship: Common
-    description: Telescope.
+    craftsmanship: 'common'
+    availability: 'common'
     weight: 0
-img: systems/rogue-trader-3rd/icons/talents/red/gr_08.png
-name: Magnoculars
-type: tool
+    equipped: false
+    inBackpack: false
+    description: 'Normally fashioned into a large cloak, or more rarely a stormcoat complete with hood, a night cloak will absorb almost all ambient light and emit almost no heat. When the hood is completely furled the user can disappear into the dark, hidden even from infrared sensors. It gets very hot inside the cloak from the internalised heat, and a wearer must pass a Challenging (+0) Toughness Test or suffer a fatigue level after every hour of heavy exertion. The cloak grants the user a +30 bonus to Concealment Skill Tests when in the dark, even when there is no applicable terrain.'
+    source: 'Rogue Trader Core Rulebook'
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_02.png'
+name: 'Night Cloak'
+type: 'tool'
 ---
 data:
-    availability: Plentiful
-    craftsmanship: Common
-    description: Handcuffs.
-    weight: 1
-img: systems/rogue-trader-3rd/icons/talents/red/gr_08.png
-name: Manacles
-type: tool
----
-data:
-    availability: Common
-    craftsmanship: Common
-    description: Grants +10 bonus to Medicae tests.
-    weight: 2
-img: systems/rogue-trader-3rd/icons/talents/red/gr_08.png
-name: Medi-kit
-type: tool
----
-data:
-    availability: Average
-    craftsmanship: Common
-    description: Can talk to others up to 1 km away.
+    craftsmanship: 'common'
+    availability: 'common'
     weight: 0
-img: systems/rogue-trader-3rd/icons/talents/red/gr_08.png
-name: Micro-bead
-type: tool
+    equipped: false
+    inBackpack: false
+    description: 'Relatively simple devices, Preysense goggles allow the wearer to see thermal images from warm bodies, revealing hiding enemies at night. A character wearing Preysense goggles suffers no penalties due to darkness and gains a +20 bonus to vision-based Perception Tests at night.'
+    source: 'Rogue Trader Core Rulebook'
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_02.png'
+name: 'Preysense Goggles'
+type: 'tool'
 ---
 data:
-    availability: Rare
-    craftsmanship: Common
-    description: 'Floating skulls that have a single function. Auger: Grants benefits
-        of a Auspex Illumination: Lights up a 20 meter area.Land Hailer: Records speech
-        and amplifies voice.Medicae: Counts as a Medi-kit. Utility: Counts as a Combi-tool'
-    weight: 2
-img: systems/rogue-trader-3rd/icons/talents/red/gr_08.png
-name: Monotask Servo-Skull
-type: tool
----
-data:
-    availability: Near Unique
-    craftsmanship: Common
-    description: Grants a +20 bonus to all Survival and Navigation (Surface) tests.
-    weight: 4
-img: systems/rogue-trader-3rd/icons/talents/red/gr_08.png
-name: Multi Compass
-type: tool
----
-data:
-    availability: Scarce
-    craftsmanship: Common
-    description: Gains a +30 bonus to Security test when trying to open locks.
+    craftsmanship: 'common'
+    availability: 'common'
     weight: 0
-img: systems/rogue-trader-3rd/icons/talents/red/gr_08.png
-name: Multikey
-type: tool
+    equipped: false
+    inBackpack: false
+    description: 'Advanced lenses designed to enhance the low-level light available on even the darkest nights. Users can see in the dark almost as well as in daylight with them. Characters wearing these gain the Dark Sight trait. Good Craftsmanship visors also dampen the effects of photon flash grenades, making the wearer immune to their effects.'
+    source: 'Rogue Trader Core Rulebook'
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_02.png'
+name: 'Photo-Visors/Photo-Contacts'
+type: 'tool'
 ---
 data:
-    availability: Near Unique
-    craftsmanship: Common
-    description: Dampen the powers of any psykers within 2d10 metres, causing them to
-        take all tests to use any of their psychic powers with a 30 penalty. Also offer
-        protection from psychic attacks by a +30 bonus to resist any psychic power that
-        directly affects him.
-    weight: 1
-img: systems/rogue-trader-3rd/icons/talents/red/gr_08.png
-name: Null Rod
-type: tool
----
-data:
-    availability: Average
-    craftsmanship: Common
-    description: Camcorder
-    weight: 1
-img: systems/rogue-trader-3rd/icons/talents/red/gr_08.png
-name: Pict Recorder
-type: tool
----
-data:
-    availability: Average
-    craftsmanship: Common
-    description: Grants +10 to Focus Power Tests
+    craftsmanship: 'common'
+    availability: 'common'
     weight: 0
-img: systems/rogue-trader-3rd/icons/talents/red/gr_08.png
-name: Psy Focus
-type: tool
+    equipped: false
+    inBackpack: false
+    description: 'Consisting of a mask or helmet, rebreathers contain their own air supply and are designed to preserve the user in even the most toxic atmospheres. A character wearing a rebreather is immune to the effects of gases and can even survive underwater. However, rebreathers typically have air canisters that last for about one hour and then must be replaced. Replacing a canister is a Full Action.'
+    source: 'Rogue Trader Core Rulebook'
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_02.png'
+name: 'Rebreather'
+type: 'tool'
 ---
 data:
-    availability: Plentiful
-    craftsmanship: Common
-    description: Chess in the future and takes 1d5 hours. Can grant +10 to fellowship
-        with the opponent the following day.
-    weight: 1
-img: systems/rogue-trader-3rd/icons/talents/red/gr_08.png
-name: Regicide Set
-type: tool
+    craftsmanship: 'common'
+    availability: 'common'
+    weight: 0
+    equipped: false
+    inBackpack: false
+    description: 'These gloves have interlocking plates connected with memory wire. When the user grips a weapon, it locks together into a rigid strut around the hand and wrist, thus preventing wrist or arm damage when the weapon discharges. A character using a recoil glove can fire a Basic weapon with one hand without the normal –20 penalty. In addition, Pistol weapons that require two hands can be used one-handed without penalty.'
+    source: 'Rogue Trader Core Rulebook'
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_02.png'
+name: 'Recoil Gloves'
+type: 'tool'
 ---
 data:
-    availability: Scarce
-    craftsmanship: Common
-    description: Activate by Tech-use test. It has a perception of 75 for detecting
-        movement and when triggered sounds an alarm.
-    weight: 2
-img: systems/rogue-trader-3rd/icons/talents/red/gr_08.png
-name: Screamer
-type: tool
+    craftsmanship: 'common'
+    availability: 'common'
+    weight: 0
+    equipped: false
+    inBackpack: false
+    description: 'This is a breathing mask that covers the nose and mouth or entire face, and offers much better protection than filtration plugs. A character wearing a respirator or gas mask gains a +30 bonus to Toughness Tests made to resist the effects of gas, and may re-roll failed results.'
+    source: 'Rogue Trader Core Rulebook'
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_02.png'
+name: 'Respirator/Gas Mask'
+type: 'tool'
 ---
 data:
-    availability: Rare
-    craftsmanship: Common
-    description: Jams other transmissions within 1km.
-    weight: 2
-img: systems/rogue-trader-3rd/icons/talents/red/gr_08.png
-name: Signal Jammer
-type: tool
+    craftsmanship: 'common'
+    availability: 'common'
+    weight: 0
+    equipped: false
+    inBackpack: false
+    description: 'This exotic material is fashionable in the pleasure zones of the Drusus Marches—the more so for its great expense and rarity. The raw fibres are imported from the Koronus Expanse and, when woven into fabric, react ambient light, altering colours and patterns in an ever-changing stylised display. Some claim it also reacts to the wearer''s mental state, though opinions vary. Either way shifting fabric clothing is surprisingly comfortable, stylish, and certain to make an impression.'
+    source: 'Rogue Trader Core Rulebook'
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_02.png'
+name: 'Shifting Fabric'
+type: 'tool'
 ---
 data:
-    availability: Extremely Rare
-    craftsmanship: Common
-    description: Hold anything with a Size trait of 7 or lower that does not possess
-        the Incorporeal trait for five hours (if using the battery pack.  Inside cannot
-        take any actions, and outside of cannot attack or interact with anything inside.
-        Compacts into a flat plate 3 meters across.
-    weight: 6
-img: systems/rogue-trader-3rd/icons/talents/red/gr_08.png
-name: Stasis Cage.
-type: tool
+    craftsmanship: 'common'
+    availability: 'common'
+    weight: 0
+    equipped: false
+    inBackpack: false
+    description: 'When working in harsh, extreme conditions, survival suits are a must. No matter whether it is too hot or too cold, the suit can maintain proper body temperature via excellent insulation capabilities. Using the differential between body temperature and outside temperature to drive power cells, its reclamation systems produce drinking water for the wearer. Most suits come complete with a hood and goggles to protect the head and face. While it will not sustain life indefinitely, it is usually enough to allow survivors to wait for rescue. The suit grants the wearer a +20 bonus to any Toughness Tests against the effects of extreme environments.'
+    source: 'Rogue Trader Core Rulebook'
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_02.png'
+name: 'Survival Suit'
+type: 'tool'
 ---
 data:
-    availability: Very Rare
-    craftsmanship: Common
-    description: Broadcast static to all comm systems within 30 meters
-    weight: 3
-img: systems/rogue-trader-3rd/icons/talents/red/gr_08.png
-name: Static Generator
-type: tool
+    craftsmanship: 'common'
+    availability: 'common'
+    weight: 0
+    equipped: false
+    inBackpack: false
+    description: 'Synskin is a bio-reactive bodyglove with an inert non-reflective surface that moulds itself to the wearer''s form. Synskin adds 2 Armour Points to all locations (these Armour Points do not stack with other worn armour) and the wearer gains a +10 bonus to Concealment and Silent Move Tests. In addition, synskin renders the wearer invisible to the effects of Preysense goggles and Dark Sight. Synskin does not stack with other armour. If worn under other armour, the wearer does not benefit from the bonus to Concealment and Silent Move Tests, but is still rendered invisible to infa-red goggles and Dark Sight unless he is wearing power armour.'
+    source: 'Rogue Trader Core Rulebook'
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_02.png'
+name: 'Synskin'
+type: 'tool'
 ---
 data:
-    availability: Average
-    craftsmanship: Common
-    description: Dampens sound and grants +30 to Stealth test. Last for 20 minutes before
-        needing to be recharged.
-    weight: 2
-img: systems/rogue-trader-3rd/icons/talents/red/gr_08.png
-name: Stummer
-type: tool
+    craftsmanship: 'common'
+    availability: 'common'
+    weight: 0
+    equipped: false
+    inBackpack: false
+    description: 'These sealed suits are intended to preserve the wearer in the most hostile environments. A void suit incorporates a rebreather and allows the wearer to survive in vacuum. Many incorporate simple void-kits that include tether lines, void-steel clamps, and similar small pieces of useful equipment. However, poor void suits may not adequately shield the wearer from the energies of the void over long periods of exposure, leading to sickness or death.'
+    source: 'Rogue Trader Core Rulebook'
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_02.png'
+name: 'Void Suit'
+type: 'tool'
 ---
 data:
-    availability: Scarce
-    craftsmanship: Common
-    description: Offers communication to up to 100 km
-    weight: 4
-img: systems/rogue-trader-3rd/icons/talents/red/gr_08.png
-name: Vox-caster
-type: tool
+    craftsmanship: 'common'
+    availability: 'common'
+    weight: 0
+    equipped: false
+    inBackpack: false
+    description: 'A truly ancient design and a relic of the sacred STC, the Selenite-pattern is perhaps the most common heavy void suit used in the Imperium. Intended for use by voidwalkers, belt miners, and the like, the suit''s insulated ceramic-fibre weave provides much better protection than a simple sealed suit from the hazards of space such as temperature extremes, radiation, and micro-fragment impact. Widely fabricated and hugely durable, some Selenite suits are treasured relics of the void born families and star vessels, and may have served many generations in a particular ship''s crew. The Selenite can sustain life in hard vacuum for up to ten hours before the dual re-breather cells of its life support system must be replaced (which may even be done without removing the suit). A fully functioning suit in good order also contains an internal vox-link, a seal patching kit, a compact grapnel/clasp plus ten metres of line, and a photo-visor. The suit''s reinforced structure provides 3 Armour Points to the Body, Arms and Legs and 4 Armour Points from the helmet to the Head. The suit however is quite bulky and imposes a -10 penalty on all Agility Tests whilst worn. Selenite suits appear in several local variants and are subject to the rules for Armour Quality. Selenite suits common to Port Wander and Footfall are fitted with impellor units, allowing the wearer to propel himself through open space in zero or reduced gravity conditions with a Movement of 6 (they are not powerful enough to use in a normal gravity environment, however).'
+    source: 'Rogue Trader Core Rulebook'
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_02.png'
+name: 'Void Suit (Selenite-Pattern)'
+type: 'tool'
 ---
 data:
-    availability: Plentiful
-    craftsmanship: Common
-    description: Pen and paper.
-    weight: 2
-img: systems/rogue-trader-3rd/icons/talents/red/gr_08.png
-name: Writing Kit
-type: tool
+    craftsmanship: 'common'
+    availability: 'common'
+    weight: 0
+    equipped: false
+    inBackpack: false
+    description: 'Commonly found in the hands of member of the Adeptus Mechanicus, combi-tools are versatile, if somewhat bizarre, mechanical devices. A character using a combi-tool gains a +10 bonus to Tech-Use Tests.'
+    source: 'Rogue Trader Core Rulebook'
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_02.png'
+name: 'Combi-Tool'
+type: 'tool'
+---
+data:
+    craftsmanship: 'common'
+    availability: 'common'
+    weight: 0
+    equipped: false
+    inBackpack: false
+    description: 'Data-slates are commonplace in the Imperium, the primary means of storing and reading printed text and other media such as video or audio recordings. They are so cheap and easy to make that many contain a single media recording, such as text, and can only play that single file. Others can re-record new information, or transmit and receive data from other devices.'
+    source: 'Rogue Trader Core Rulebook'
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_02.png'
+name: 'Data-Slate'
+type: 'tool'
+---
+data:
+    craftsmanship: 'common'
+    availability: 'common'
+    weight: 0
+    equipped: false
+    inBackpack: false
+    description: 'A demolition charge is a simple explosive device, commonly used for blowing open doors, breaching bulkheads, and destroying infrastructure. The listed weight for a demolition charge represents 1 kg of explosives, though it is possible to rig charges together—thus increasing their destructive potential. When a demolition charge explodes, anyone (or anything) caught within its blast radius takes 3d10 Explosive Damage plus an additional 2 points of Damage for every kilogram used. The blast radius of the charge is 5 metres for each kilogram used. For setting and defusing explosives see the Demolition Skill in Chapter III: Skills, page 80.'
+    source: 'Rogue Trader Core Rulebook'
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_02.png'
+name: 'Demolition Charge'
+type: 'tool'
+---
+data:
+    craftsmanship: 'common'
+    availability: 'common'
+    weight: 0
+    equipped: false
+    inBackpack: false
+    description: 'The diagnostic is a sophisticated medical device used among high ranking planetary officials and other powerful individuals. It can detect and diagnose almost every ailment known to the Imperium, and can be incorporated into medical kits, servo-skulls, and other dedicated servitors. Rogue Traders who are often away from proper medical assistance feel that such devices are essential on their voyages. A Diagnostic provides +20 to Medicae or Perception Tests to determine an ailment. Any success indicates the proper medical countermeasures.'
+    source: 'Rogue Trader Core Rulebook'
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_02.png'
+name: 'Diagnostor'
+type: 'tool'
+---
+data:
+    craftsmanship: 'common'
+    availability: 'common'
+    weight: 0
+    equipped: false
+    inBackpack: false
+    description: 'A common source of light at night or in darkened areas, these handy devices can illuminate an area a dozen or more metres in diameter. A typical glow-globe or lamp pack lasts 1d5 hours before it needs to be recharged or have its power cell replaced.'
+    source: 'Rogue Trader Core Rulebook'
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_02.png'
+name: 'Glow-Globe/Lamp Pack'
+type: 'tool'
+---
+data:
+    craftsmanship: 'common'
+    availability: 'common'
+    weight: 0
+    equipped: false
+    inBackpack: false
+    description: 'A small launcher or gun that fires a hooked or magnetic grapnel, connected to the launcher with a thin but strong 100m wire. Once the grapnel attaches to the desired spot, such as a rooftop, the user can manually climb the line or activate a powered winch. In a pinch they can also be used as a crude—and messy—projectile weapon, counting as a single-shot crossbow.'
+    source: 'Rogue Trader Core Rulebook'
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_02.png'
+name: 'Grapnel'
+type: 'tool'
+---
+data:
+    craftsmanship: 'common'
+    availability: 'common'
+    weight: 0
+    equipped: false
+    inBackpack: false
+    description: 'Aerial machines fashioned in the shape of avian predators, Grapplehawks are an unusual form of cyber-familiar used by some Adeptus Arbites squads and wealthy bounty-hunters (see page 375 for details). Once launched into the air a Grapplehawk glides in search of its target before swooping to strike with metallic claws and stunning electrical discharges. Potent internal suspensors provide enough lift for a Grapplehawk to carry a man''s weight through the air for short distances.'
+    source: 'Rogue Trader Core Rulebook'
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_02.png'
+name: 'Grapplehawk'
+type: 'tool'
+---
+data:
+    craftsmanship: 'common'
+    availability: 'common'
+    weight: 0
+    equipped: false
+    inBackpack: false
+    description: 'A smaller version of a jump pack, these rely on suspensor fields to counter gravity to slow descent. Two small jets on either side above the shoulders offer extra braking as well. Unlike a jump pack it is designed to allow the user to land safely from a long fall—such as combat drop from a transport—rather than leap into the air. The grav chute allows for a safe, guided fall from any height. The user can hover in place for up to a minute at a time if so desired. After an hour of use, the power supply must be replaced.'
+    source: 'Rogue Trader Core Rulebook'
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_02.png'
+name: 'Grav Chute'
+type: 'tool'
+---
+data:
+    craftsmanship: 'common'
+    availability: 'common'
+    weight: 0
+    equipped: false
+    inBackpack: false
+    description: 'A limited data-engine and geometric display that has proven useful to those faced with challenging problems of logic or fragmentary information. It gives a +10 bonus to Logic skill Tests, and at the GM''s discretion may reduce the time taken for research or investigations, provided that the investigator has the Tech-Use skill.'
+    source: 'Rogue Trader Core Rulebook'
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_02.png'
+name: 'Hadd-Pattern Data-Loom'
+type: 'tool'
+---
+data:
+    craftsmanship: 'common'
+    availability: 'common'
+    weight: 0
+    equipped: false
+    inBackpack: false
+    description: 'Jump packs are large backpacks containing powerful turbofan or rocket engines. A user triggers a jump pack to lift high into the air and then swoop down as part of their assault. Jump packs are also useful in leaping over high obstacles and reaching rooftops in a single bound, but without training most users will seriously injure themselves in crashes. Though bulky, loud, and somewhat dangerous to use they are ideal for the maximum in personal mobility on the ground or even in the void. Jump packs require the operator to have the Pilot (Personal) skill. A standard jump pack allows for a safe, guided fall from any height and, with a thruster boost, make an unlimited series of short jumps (landing at the end of each Round''s movement). Alternatively, the pack can duplicate the Flyer (12) trait for up to a minute at a time. A jump pack''s power supply will last for about an hour of strenuous operation before requiring replacement.'
+    source: 'Rogue Trader Core Rulebook'
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_02.png'
+name: 'Lathe-Pattern Jump Pack'
+type: 'tool'
+---
+data:
+    craftsmanship: 'common'
+    availability: 'common'
+    weight: 0
+    equipped: false
+    inBackpack: false
+    description: 'Many officers of the Imperial Navy carry one of these short rods as an insignia of rank and station. Most are highly engraved and ornamented with the heraldry of their ship and fleet. Underlings refer to them dismissively as "Calixian Crutches" or worse, seeing them only as another symbol of their oppression. What most do not know—and only find out too late—is that naval batons are often strongly reinforced and can easily shatter bones. Some even contain specialised micro-cogitators or datavaults—for example, the bridge baton of the Rogue Trader ship Aigsarn contains the codeprayers for the bridge machine spirits. It is ceremoniously re-inserted into the main helm station as part of each shift change in an elaborate ceremony of phrases and counterphrases. Failure to properly perform this ritual results in the lockdown of all command systems—a means of preventing piracy or mutiny.'
+    source: 'Rogue Trader Core Rulebook'
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_02.png'
+name: 'Lord-Captain''s Baton'
+type: 'tool'
+---
+data:
+    craftsmanship: 'common'
+    availability: 'common'
+    weight: 0
+    equipped: false
+    inBackpack: false
+    description: 'Heavy and bulky, these oversized boots contain electromagnets that allow the wearer to adhere to metallic surfaces such as exterior hull plating and are often found in void-ship emergency lockers. Magboots reduce Movement and AB by half when used, but otherwise allow normal movement in low- or zero-gravity areas provided there is a suitable surface to walk upon.'
+    source: 'Rogue Trader Core Rulebook'
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_02.png'
+name: 'Magboots'
+type: 'tool'
+---
+data:
+    craftsmanship: 'common'
+    availability: 'common'
+    weight: 0
+    equipped: false
+    inBackpack: false
+    description: 'These are powerful vision aids that magnify distant objects. More advanced, high-quality magnoculars can also do such things as give range read-outs, detect heat sources, calculate target location positioning, and take pict-captures of a view for later analysis.'
+    source: 'Rogue Trader Core Rulebook'
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_02.png'
+name: 'Magnoculars'
+type: 'tool'
+---
+data:
+    craftsmanship: 'common'
+    availability: 'common'
+    weight: 0
+    equipped: false
+    inBackpack: false
+    description: 'These are solid restraints often used by bounty hunters and enforcers—and can also be found in the hands of more nefarious individuals or used for darker purposes.'
+    source: 'Rogue Trader Core Rulebook'
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_02.png'
+name: 'Manacles'
+type: 'tool'
+---
+data:
+    craftsmanship: 'common'
+    availability: 'common'
+    weight: 0
+    equipped: false
+    inBackpack: false
+    description: 'A tome or data-slate containing a thrice-blessed collection of catechisms, castigations, and psalms first assembled by Pius Mefonte in the 4th century M41. These are some of the best-known verses of the Calixian Ministorum, and the work itself—ornamented, gilded, and set with flowing pennons of scripture—is a sign that he who owns it is holy and well-versed in the God-Emperor''s teachings. It grants a +10 bonus to Charm Tests involving religious oratory or inspiration and an Imperial audience.'
+    source: 'Rogue Trader Core Rulebook'
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_02.png'
+name: 'Mefonte''s Orthodoxy'
+type: 'tool'
+---
+data:
+    craftsmanship: 'common'
+    availability: 'common'
+    weight: 0
+    equipped: false
+    inBackpack: false
+    description: 'Melta bombs are affixed to their target with mag-adhesives designed to quickly adhere to metallic surfaces. They detonate with a powerful shaped charge of intense heat akin to a melta-gun beam, and are ideal for destroying bulkheads, vehicle hulls, and other heavily armoured targets. Melta bombs are typically unwieldy and not designed to be thrown, only placed in contact with their target material to ensure the charge explodes to maximum effect. When a melta bomb explodes it deals 6d10 E Damage to anything within two metres with a Penetration of 12. Anything surviving must take an Agility Test or catch on fire.'
+    source: 'Rogue Trader Core Rulebook'
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_02.png'
+name: 'Melta Bomb'
+type: 'tool'
+---
+data:
+    craftsmanship: 'common'
+    availability: 'common'
+    weight: 0
+    equipped: false
+    inBackpack: false
+    description: 'A micro-bead or comm-bead is a short-range communication device worn in the ear, good for communication out to about one kilometre. Bad weather, dense terrain, and intervening rock or plasteel can greatly reduce this range, however.'
+    source: 'Rogue Trader Core Rulebook'
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_02.png'
+name: 'Micro-Bead'
+type: 'tool'
+---
+data:
+    craftsmanship: 'common'
+    availability: 'common'
+    weight: 0
+    equipped: false
+    inBackpack: false
+    description: 'As it can open most standard Imperial locks, the multikey is not a standard item for most honest Imperial citizens. For the same reason though, they are widely sought after by criminals and other disreputable elements. A character with a multikey gains a +30 bonus to any Security Test when trying to open locks. When exploring new worlds, a device of this ancient tech-pattern is indispensable—but few have the means or influence to acquire one. After a few seconds of analysing planetary data, a multicompass can display directions, show topographical maps, point out compass bearings, indicate altitude, and much more. Even the Mechanicus Calixis do not fully understand all the capabilities of such a rare and hallowed device. Possessing a multicompass adds a +10 bonus to all Survival and Navigation (Land) Tests.'
+    source: 'Rogue Trader Core Rulebook'
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_02.png'
+name: 'Multikey'
+type: 'tool'
+---
+data:
+    craftsmanship: 'common'
+    availability: 'common'
+    weight: 0
+    equipped: false
+    inBackpack: false
+    description: 'These are perhaps some of the most valuable items an Explorer can possess, as they outline safe routes through the warp, or at least as safe as warp travel can get. Some cover jump locations and travel times known to many, but others can reveal translation timetable plots known only to a few who guard their secrets with their lives. Even rarer are those maps presumed lost, describing jump passages thought forgotten or only known as hearsay or legend. These are all items that can spur decades-long quests, either establishing new fortunes and houses or wrecking them utterly. These items are exceptionally rare and can be the goals of lifelong pursuits to chase down even the faintest rumour of such a map. Common-Craftsmanship examples of this item grant no bonus, but Good-Craftsmanship primas grant a +10 to Navigation (Stellar) Tests. Best-Craftsmanship primas increase this bonus to +20.'
+    source: 'Rogue Trader Core Rulebook'
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_02.png'
+name: 'Navis Prima'
+type: 'tool'
+---
+data:
+    craftsmanship: 'common'
+    availability: 'common'
+    weight: 0
+    equipped: false
+    inBackpack: false
+    description: 'Pict recorders (or simply picters) are relatively simple live-media recording devices, and some have holographic capabilities. Most also allow for playback as well as recording, and some are even built into dedicated pict-servitors so they can capture important archaeological quests, weapons tests, alien interrogations, and other dangerous events.'
+    source: 'Rogue Trader Core Rulebook'
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_02.png'
+name: 'Pict Recorder'
+type: 'tool'
+---
+data:
+    craftsmanship: 'common'
+    availability: 'common'
+    weight: 0
+    equipped: false
+    inBackpack: false
+    description: 'Pyskers often use devices to help them focus their powers. A psy-focus could be a sacred bone, carved wytch stave, blessed icon, or a chain of crystals. When a Psyker with a Psy-focus makes an Invocation Skill Test (see Chapter III: Skills, page 83) he gains a +10 bonus.'
+    source: 'Rogue Trader Core Rulebook'
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_02.png'
+name: 'Psy-Focus'
+type: 'tool'
+---
+data:
+    craftsmanship: 'common'
+    availability: 'common'
+    weight: 0
+    equipped: false
+    inBackpack: false
+    description: 'A tool and symbol of status for wealthy factors and brokers, the optics and prongs of this heavy device rapidly stack, count, and assay the worth of diverse currencies. Any attempt to cheat by Sleight of Hand or similar method of distraction suffers a -30 penalty where a Remuneration Engine is used. Its temperamental machine spirit requires the constant attention of tech-adepts, however.'
+    source: 'Rogue Trader Core Rulebook'
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_02.png'
+name: 'Remuneration Engine'
+type: 'tool'
+---
+data:
+    craftsmanship: 'common'
+    availability: 'common'
+    weight: 0
+    equipped: false
+    inBackpack: false
+    description: 'Screamers are proximity alarms that detect motion or sound—depending on the model—and alert their users to incoming dangers by making a horrendous noise. To use a screamer, you must succeed on a Tech-Use Test. The GM rolls this test in secret so you are not sure of whether or not the device will work properly. Once set, a screamer has a Perception of 75 for the purposes of detecting sounds or motions. If it detects an intruder, it sounds its alarm, which can be heard anywhere out to one kilometre. Doors, walls and other barriers may reduce the alarm''s range.'
+    source: 'Rogue Trader Core Rulebook'
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_02.png'
+name: 'Screamer'
+type: 'tool'
+---
+data:
+    craftsmanship: 'common'
+    availability: 'common'
+    weight: 0
+    equipped: false
+    inBackpack: false
+    description: 'Even the most secure and reliable ship possesses emergency kits on most decks—though often decks can measure in the kilometres. Some work crews will also carry smaller versions in case of hull beaches or bulkhead failure. A standard kit weighs roughly 20kg and can include: - **Glowstick**: Good for 1d5 hours of steady illumination. - **Universal Power Cell**: Using either integral plugs or adaptor leads, it can power a glowstick or emergency vox for 1d5 hours or a laspistol for 5 shots. - **Ration pack and water canister**: Contains enough to provide sustenance for roughly 1 day, because if rescue doesn''t come by then it probably won''t come at all. - **Emergency Vox**: Usually pre-tuned to the ship''s vox, but advanced models are more versatile, and may also be capable of issuing automatic distress cants such as the standard "Voidfarer''s Prayer for Aid." - **Air bottle &amp; mask**: Contains roughly 30 minutes of air, usually enough to get through toxic passageways. - **Anti-radiation tablets**: Essential when exposed to plasma drive leaks or the raw energies of the void. - **Hull sealant spray-gel**: This foul-smelling gel can be sprayed onto vents and bulkheads to seal against the void. Each tube can cover 20 or so small (10 sq cm) punctures.'
+    source: 'Rogue Trader Core Rulebook'
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_02.png'
+name: 'Shipboard Emergency Kit'
+type: 'tool'
+---
+data:
+    craftsmanship: 'common'
+    availability: 'common'
+    weight: 0
+    equipped: false
+    inBackpack: false
+    description: 'A servitor is an automaton whose controlling components are organic and mostly human in origin. Some are grown in vats, while others are formed from the aged bodies of honoured tech-priests or despised criminals whose punishment is to serve the Imperium in this fashion. The process of creating a servitor purges higher brain functions and psychic pattern of the subject, rendering him a blank slate for reprogramming. The most common forms of servitor are mindless labour drones, dedicated to a small selection of simple tasks, and fitted with devices necessary to this toil. Some are not even mobile, being built into the machinery they control. Examples familiar to voidfarers include bridge servitors, pilot servitors, and the hulking monotask servitors that transport cargo pallets in Imperial docking transepts. More complex or specialised servitors are less common, and have correspondingly more rare Availabilities—where the Mechanicus Calixis agree to provide them at all (see Page 374 for details).'
+    source: 'Rogue Trader Core Rulebook'
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_02.png'
+name: 'Servitor'
+type: 'tool'
+---
+data:
+    craftsmanship: 'common'
+    availability: 'common'
+    weight: 0
+    equipped: false
+    inBackpack: false
+    description: 'A human skull—often that of a favoured servant or lowly tech-adept—that has been fitted with a rudimentary machine-spirit, support systems, and a suspensor device to allow it to float through the air. These limited constructs are devoted to a particular task and have the basic equipment to carry out their purpose. Their small size and manoeuvrability allows them to enter otherwise inaccessible spaces and act as eyes and ears for their masters. The servo-skull is synonymous with the Adeptus Mechanicus, whom these creations serve faithfully. Servo-skulls can also be found as cyber-familiars, weapon-bearing guardians, librarium functionaries, medical assistants, lumen-bearers, proclaimers, and scroll-carriers in the greater Imperium. Servo-skull equipment is usually one pair of simple manipulator pincers, a weapon, pict-capture device, surgical implements, stab-light, or loudhailer, but many other functions and servo-skull patterns exist (see page 375 for details).'
+    source: 'Rogue Trader Core Rulebook'
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_02.png'
+name: 'Servo-Skull'
+type: 'tool'
+---
+data:
+    craftsmanship: 'common'
+    availability: 'common'
+    weight: 0
+    equipped: false
+    inBackpack: false
+    description: 'The reverse of a screamer, stummers generate sound waves to cancel out ambient sounds and noises made by moving personnel in a small area. A character carrying an active stummer gains a +30 bonus to Silent Move Tests. A stummer typically has enough power for 20 minutes of continuous use before needing to be recharged—a process that takes about one hour.'
+    source: 'Rogue Trader Core Rulebook'
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_02.png'
+name: 'Stummer'
+type: 'tool'
+---
+data:
+    craftsmanship: 'common'
+    availability: 'common'
+    weight: 0
+    equipped: false
+    inBackpack: false
+    description: 'A tool of assassins and dangerous nobility, the ring contains a small reservoir compartment that discretely opens with the right muscle movements of the finger bearing it. It gives a –20 penalty to any Test required to notice that the ring-wearer is introducing a substance into food or drink.'
+    source: 'Rogue Trader Core Rulebook'
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_02.png'
+name: 'Venom Ring'
+type: 'tool'
+---
+data:
+    craftsmanship: 'common'
+    availability: 'common'
+    weight: 0
+    equipped: false
+    inBackpack: false
+    description: 'A vox-caster is a simple communication device that can be used to send signals over great distances, up to and including ships in orbit from a planet''s surface. Using a vox to receive or transmit signals through interference or other unusual conditions requires a successful Ordinary (+10) Tech-Use Test.'
+    source: 'Rogue Trader Core Rulebook'
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_02.png'
+name: 'Vox-Caster'
+type: 'tool'

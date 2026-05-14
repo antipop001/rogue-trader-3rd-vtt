@@ -1,384 +1,824 @@
 data:
-    availability: Rare
-    craftsmanship: Common
-    description: Canfire either the launcher or the weaponattached to, but not both.
-        Range of 45 meters with Damg and Pen ofthe loaded grenade, and can be fired Indirectly.
-        Cannot reload during combat.
-    installed: false
-    upgrades: Any Las, Solid Projectile, or Bolt weapons of the Basic class
+    craftsmanship: 'common'
+    availability: 'common'
     weight: 0
-img: systems/rogue-trader-3rd/icons/items/ammo/ammo_13.png
-name: Auxiliary Grenade Launcher
-type: weaponModification
+    equipped: false
+    inBackpack: false
+    description: 'Compact weapons are smaller versions of pistol and basic weapons favoured by those who prefer concealment over stopping power. This upgrade halves the weight of the weapon but also halves its clip size and range as well as reducing its |  Name | Weight | Availability  | | --- | --- | --- | |  Compact | x1/2 | Average  | |  Fire Selector | +1 kg | Scarce  | |  Forearm Weapon Mounting | +1 kg | Scarce  | |  Melee Attachment | +2 kg | Plentiful  | |  Mono | +0 kg | Scarce  | |  Motion Predictor | +0.5 kg | Very Rare  | |  Photo-scope | +0.5 kg | Very Rare  | |  Preysense-scope | +0.5 kg | Very Rare  | |  Omni-scope | +2 kg | Near Unique  | |  Overcharge Pack | +0.5 kg | Common  | |  Red-Dot Laser Sight | +0.5 kg | Scarce  | |  Silencer | +0.5 kg | Plentiful  | |  Suspensors | x1/2 | Extremely Rare  | |  Telescopic Sight | +1 kg | Average  | |  Vox Operated | +0.5 kg | Rare  | Damage by 1. Anyone attempting to find a concealed weapon with the Compact upgrade suffers a –20 penalty to any related Skill Test (e.g., Awareness, Search). Upgrades: Any Pistol or Basic Las, Solid Projectile, Flame, Bolt or Plasma weapon.'
+    source: 'Rogue Trader Core Rulebook'
+    damage: ''
+    damageType: ''
+    penetration: ''
+    special: {}
+    range: ''
+    attackType: ''
+    attackBonus: 0
+    rateOfFire:
+        single: 1
+        burst: 0
+        full: 0
+    backpack:
+        inBackpack: false
+img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_03.png'
+name: 'Compact'
+type: 'weaponModification'
 ---
 data:
-    availability: Scarce
-    craftsmanship: Common
-    description: Increases the clip size of the weapon to five times its current clip
-        size, but it cannot be reloaded in combat.
-    installed: false
-    upgrades: Any Bolt, Flame, Las, Melta, Plasma, and Solid Projectile weapon.
+    craftsmanship: 'common'
+    availability: 'common'
     weight: 0
-img: systems/rogue-trader-3rd/icons/items/ammo/ammo_13.png
-name: Backpack Ammo Supply
-type: weaponModification
+    equipped: false
+    inBackpack: false
+    description: 'For weapons that can use differing ammunition rounds, a shot selector can be fitted for ease of switching from one type to another. A weapon with a fire selector can have up to three different clips added. At the start of the shooter''s Turn, he can use his fire selector to choose which clip he wishes to draw ammo from that round. Upgrades: (Bolt) and (SP) Pistols or (SP) and (Bolt) Basic Weapons.'
+    source: 'Rogue Trader Core Rulebook'
+    damage: ''
+    damageType: ''
+    penetration: ''
+    special: {}
+    range: ''
+    attackType: ''
+    attackBonus: 0
+    rateOfFire:
+        single: 1
+        burst: 0
+        full: 0
+    backpack:
+        inBackpack: false
+img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_03.png'
+name: 'Fire Selector'
+type: 'weaponModification'
 ---
 data:
-    availability: Average
-    craftsmanship: Common
-    description: Halves the weight, Clip size, and range and reduces damage by 1. 20
-        to attempt to find.
-    installed: false
-    upgrades: Any Pistol or any Las, Solid Projectile, Flame, Bolt, or Plasma weapon
-        of the Basic class.
+    craftsmanship: 'common'
+    availability: 'common'
     weight: 0
-img: systems/rogue-trader-3rd/icons/items/ammo/ammo_13.png
-name: Compact
-type: weaponModification
+    equipped: false
+    inBackpack: false
+    description: 'This heavy bracing allows a single ranged weapon to be mounted along the arm, with specific hand movements triggering the weapon. It allows the user to keep both hands free, and can have a strong visual impression on their foes as fire seems to appear from the user''s outstretched arms. This upgrade reduces the Weapon''s range by 30%. Upgrades: Primitive, Las, Solid Projectile, Bolt, or Melta pistol.'
+    source: 'Rogue Trader Core Rulebook'
+    damage: ''
+    damageType: ''
+    penetration: ''
+    special: {}
+    range: ''
+    attackType: ''
+    attackBonus: 0
+    rateOfFire:
+        single: 1
+        burst: 0
+        full: 0
+    backpack:
+        inBackpack: false
+img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_03.png'
+name: 'Forearm Weapon Mounting'
+type: 'weaponModification'
 ---
 data:
-    availability: Rare
-    craftsmanship: Common
-    description: Grants +5 to any BS or WS for owner and -5 of all others.
-    installed: false
-    upgrades: Any weapon
+    craftsmanship: 'common'
+    availability: 'common'
     weight: 0
-img: systems/rogue-trader-3rd/icons/items/ammo/ammo_13.png
-name: Custom Grip
-type: weaponModification
+    equipped: false
+    inBackpack: false
+    description: 'Bayonets, chain blades, and other long-bladed combat attachments can be fitted to most ranged weapons, making them more useful in assaults. A weapon with a melee attachment counts as a spear in close combat. Upgrades: Any Basic ranged weapon can have melee attachments. V·ARTICULO'
+    source: 'Rogue Trader Core Rulebook'
+    damage: ''
+    damageType: ''
+    penetration: ''
+    special: {}
+    range: ''
+    attackType: ''
+    attackBonus: 0
+    rateOfFire:
+        single: 1
+        burst: 0
+        full: 0
+    backpack:
+        inBackpack: false
+img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_03.png'
+name: 'Melee Attachment'
+type: 'weaponModification'
 ---
 data:
-    availability: Rare
-    craftsmanship: Common
-    description: May Ready another weapon or draw another item as part of the same action.
-    installed: false
-    upgrades: Any weapon
+    craftsmanship: 'common'
+    availability: 'common'
     weight: 0
-img: systems/rogue-trader-3rd/icons/items/ammo/ammo_13.png
-name: Deactivated Safety Features
-type: weaponModification
+    equipped: false
+    inBackpack: false
+    description: 'Mono weapons have specially fashioned blades with superfine edges that can easily cut through armour and never lose their edge. Mono weapons no longer count as Primitive and add a +2 bonus to their Penetration. The Mono upgrade can be applied to a power weapon, but it has no effect whilst the power field is active. If the power field is ever lost or deactivated, the Mono upgrade''s bonuses will then apply. **Note:** The Mono upgrade may be applied to any primitive melee weapon, but when applied to close-combat weapons that do not use an edge (e.g., hammers, mauls, etc.), it is treated differently. Game Masters are encouraged to come up with interesting definitions for non-edged weapons with the Mono upgrade. For example, a hammer with the Mono upgrade could be defined as having a pneumo-shock enhancement. The in-game effects remain the same. **Upgrades:** Any primitive close combat weapon.'
+    source: 'Rogue Trader Core Rulebook'
+    damage: ''
+    damageType: ''
+    penetration: ''
+    special: {}
+    range: ''
+    attackType: ''
+    attackBonus: 0
+    rateOfFire:
+        single: 1
+        burst: 0
+        full: 0
+    backpack:
+        inBackpack: false
+img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_03.png'
+name: 'Mono'
+type: 'weaponModification'
 ---
 data:
-    availability: Scarce
-    craftsmanship: Common
-    description: Increasesclip sizeby half (rounded up)
-    installed: false
-    upgrades: Ranged weapons
+    craftsmanship: 'common'
+    availability: 'common'
     weight: 0
-img: systems/rogue-trader-3rd/icons/items/ammo/ammo_13.png
-name: Expanded Magazine
-type: weaponModification
+    equipped: false
+    inBackpack: false
+    description: 'A complex target-tracking cogitator in this device is activated once the user has sighted the desired target. The Predictor then tracks the target, and when the trigger is pulled will chase the target with all the rounds in a clip in one long burst. A Motion Predictor adds a +10% bonus to Ballistic Skill Tests, but only functions when the weapon is fired on semi-automatic or fully automatic modes. **Upgrades:** Any non-primitive ranged weapon capable of Semi-Auto or Full Auto fire.'
+    source: 'Rogue Trader Core Rulebook'
+    damage: ''
+    damageType: ''
+    penetration: ''
+    special: {}
+    range: ''
+    attackType: ''
+    attackBonus: 0
+    rateOfFire:
+        single: 1
+        burst: 0
+        full: 0
+    backpack:
+        inBackpack: false
+img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_03.png'
+name: 'Motion Predictor'
+type: 'weaponModification'
 ---
 data:
-    availability: Common
-    craftsmanship: Common
-    description: Rather than firing the weapon as normal, can use as a half action.
-        Counts as a Standard Attack with a flamer
-    installed: false
-    upgrades: Any weapon except Pistol or Thrown.
+    craftsmanship: 'common'
+    availability: 'common'
     weight: 0
-img: systems/rogue-trader-3rd/icons/items/ammo/ammo_13.png
-name: Exterminator
-type: weaponModification
+    equipped: false
+    inBackpack: false
+    description: 'A vastly expensive and rare device normally found only in the hands of legendary assassins or bounty hunters, the Omni-scope is a cluster of finely-tuned sensor wands linked to a precision lens. Some of these scopes plug directly into a bionic cranial port, allowing the user to shoot around corners without exposing himself—the scope becomes a “third eye.” The Omni-scope combines the benefits of a Preysense Sight, Red-Dot-Laser Sight, and Telescopic Sight. **Upgrades:** Any Basic-class Las, Solid Projectile, Bolt, Primitive or Plasma weapon. An Omni-scope counts as a sight and a gun may only have one sight.'
+    source: 'Rogue Trader Core Rulebook'
+    damage: ''
+    damageType: ''
+    penetration: ''
+    special: {}
+    range: ''
+    attackType: ''
+    attackBonus: 0
+    rateOfFire:
+        single: 1
+        burst: 0
+        full: 0
+    backpack:
+        inBackpack: false
+img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_03.png'
+name: 'Omni-Scope'
+type: 'weaponModification'
 ---
 data:
-    availability: Rare
-    craftsmanship: Common
-    description: Swap ammotypes withoutreloading. Can hold 3 different ammo's
-    installed: false
-    upgrades: Any Bolt, Launcher, and Solid Projectile weapon of the Pistol or Basic
-        class.
+    craftsmanship: 'common'
+    availability: 'common'
     weight: 0
-img: systems/rogue-trader-3rd/icons/items/ammo/ammo_13.png
-name: Fire Selector
-type: weaponModification
+    equipped: false
+    inBackpack: false
+    description: 'This is an enhanced power pack for a las weapon that increases the strength of its fire. An overcharge pack adds 1 to the weapon''s Damage. Unfortunately the increased output of damage reduces the number of shots and so the clip size is halved. **Upgrades:** Any Pistol (Las) or Basic weapon (Las).'
+    source: 'Rogue Trader Core Rulebook'
+    damage: ''
+    damageType: ''
+    penetration: ''
+    special: {}
+    range: ''
+    attackType: ''
+    attackBonus: 0
+    rateOfFire:
+        single: 1
+        burst: 0
+        full: 0
+    backpack:
+        inBackpack: false
+img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_03.png'
+name: 'Overcharge Pack'
+type: 'weaponModification'
 ---
 data:
-    availability: Rare
-    craftsmanship: Common
-    description: When using Semi-Auto Burst, counts as scoring one additional DoS. Also
-        reload increased by Half Action.
-    installed: false
-    upgrades: Any ranged weapon capable of Semi-Automatic fore.
+    craftsmanship: 'common'
+    availability: 'common'
     weight: 0
-img: systems/rogue-trader-3rd/icons/items/ammo/ammo_13.png
-name: Fluid Action
-type: weaponModification
+    equipped: false
+    inBackpack: false
+    description: 'This is a weapon sight that enhances ambient light levels, improving the user''s vision and ability to see in the dark. A character using a Photo Sight suffers no penalties due to darkness. **Upgrades:** Any Basic ranged Las, Solid Projectile, Bolt, Primitive or Plasma weapon. A photo sight counts as a sight and a gun may only have one sight.'
+    source: 'Rogue Trader Core Rulebook'
+    damage: ''
+    damageType: ''
+    penetration: ''
+    special: {}
+    range: ''
+    attackType: ''
+    attackBonus: 0
+    rateOfFire:
+        single: 1
+        burst: 0
+        full: 0
+    backpack:
+        inBackpack: false
+img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_03.png'
+name: 'Photo Sight'
+type: 'weaponModification'
 ---
 data:
-    availability: Scarce
-    craftsmanship: Common
-    description: Upgrade reduces range by 1/3.
-    installed: false
-    upgrades: Any Las, Low-Tech, Solid Projectile, Bolt, or Melta of the Pistol class.
+    craftsmanship: 'common'
+    availability: 'common'
     weight: 0
-img: systems/rogue-trader-3rd/icons/items/ammo/ammo_13.png
-name: Forearm Weapon Mounting
-type: weaponModification
+    equipped: false
+    inBackpack: false
+    description: 'This is a weapon sight that shows thermal images and reveals the hiding places of enemies who lurk in the darkness. A character using a Preysense sight suffers no penalties due to darkness and gains a +20 bonus to vision-based Perception Tests at night. **Upgrades:** Any Basic ranged Las, Solid Projectile, Bolt, Primitive or Plasma weapon. A preysense sight counts as a sight and a gun may only have one sight.'
+    source: 'Rogue Trader Core Rulebook'
+    damage: ''
+    damageType: ''
+    penetration: ''
+    special: {}
+    range: ''
+    attackType: ''
+    attackBonus: 0
+    rateOfFire:
+        single: 1
+        burst: 0
+        full: 0
+    backpack:
+        inBackpack: false
+img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_03.png'
+name: 'Preysense Sight'
+type: 'weaponModification'
 ---
 data:
-    availability: Plentiful
-    craftsmanship: Common
-    description: The ranged weapon counts as a spear when used in melee combat.
-    installed: false
-    upgrades: Any Basic ranged weapon.
+    craftsmanship: 'common'
+    availability: 'common'
     weight: 0
-img: systems/rogue-trader-3rd/icons/items/ammo/ammo_13.png
-name: Melee Attachment
-type: weaponModification
+    equipped: false
+    inBackpack: false
+    description: 'This is a laser sight that grants a +10 bonus to Ballistic Skill Tests when the weapon is fired on single shot. **Upgrades:** Any Pistol- or Basic-class Las, Solid Projectile, Bolt, Primitive or Plasma weapon. A red-dot laser sight counts as a sight and a gun may only have one sight.'
+    source: 'Rogue Trader Core Rulebook'
+    damage: ''
+    damageType: ''
+    penetration: ''
+    special: {}
+    range: ''
+    attackType: ''
+    attackBonus: 0
+    rateOfFire:
+        single: 1
+        burst: 0
+        full: 0
+    backpack:
+        inBackpack: false
+img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_03.png'
+name: 'Red-Dot Laser Sight'
+type: 'weaponModification'
 ---
 data:
-    availability: Scarce
-    craftsmanship: Common
-    description: Gains +2 bonus on a Half Action or +4 bonus for a Full Action for aim.
-    installed: false
-    upgrades: Any Weapon
+    craftsmanship: 'common'
+    availability: 'common'
     weight: 0
-img: systems/rogue-trader-3rd/icons/items/ammo/ammo_13.png
-name: Modified Stock
-type: weaponModification
+    equipped: false
+    inBackpack: false
+    description: 'Silencers lower the noise from a weapon''s discharge, preventing detection of the shot. Awareness Tests to hear shots made with a silenced weapon suffer an additional -20 penalty and can only be attempted at half the normal distance. **Upgrades:** Stub revolver, stub automatic, hand cannon, autogun, and hunting rifle.'
+    source: 'Rogue Trader Core Rulebook'
+    damage: ''
+    damageType: ''
+    penetration: ''
+    special: {}
+    range: ''
+    attackType: ''
+    attackBonus: 0
+    rateOfFire:
+        single: 1
+        burst: 0
+        full: 0
+    backpack:
+        inBackpack: false
+img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_03.png'
+name: 'Silencer'
+type: 'weaponModification'
 ---
 data:
-    availability: Scarce
-    craftsmanship: Common
-    description: Loses the Primitive quality (if it had it) and has its penetration
-        increased by 2. No effect when power field is active.
-    installed: false
-    upgrades: Any Low-Tech or Power Melee weapon.
+    craftsmanship: 'common'
+    availability: 'common'
     weight: 0
-img: systems/rogue-trader-3rd/icons/items/ammo/ammo_13.png
-name: Mono
-type: weaponModification
+    equipped: false
+    inBackpack: false
+    description: 'These anti-grav plates and studs attach to a weapon or equipment, making the use of heavy or cumbersome devices much easier by offsetting some of their weight. They are often used by elite troops on their heavy weapons. Suspensors reduce the weight of a weapon by one-half. When firing a weapon with suspensors, the operator counts as having the Auto-stabilized Trait—he always counts as braced and may fire the weapon on semi- or full-automatic as a Half Action. **Upgrade:** Any Heavy weapon.'
+    source: 'Rogue Trader Core Rulebook'
+    damage: ''
+    damageType: ''
+    penetration: ''
+    special: {}
+    range: ''
+    attackType: ''
+    attackBonus: 0
+    rateOfFire:
+        single: 1
+        burst: 0
+        full: 0
+    backpack:
+        inBackpack: false
+img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_03.png'
+name: 'Suspensors'
+type: 'weaponModification'
 ---
 data:
-    availability: Very Rare
-    craftsmanship: Common
-    description: Gains +10 BS to Semi-Auto Burst or Full Auto.
-    installed: false
-    upgrades: Any Ranged weapon (except Low-Tech) Capable of Semi-Auto or Full Auto.
+    craftsmanship: 'common'
+    availability: 'common'
     weight: 0
-img: systems/rogue-trader-3rd/icons/items/ammo/ammo_13.png
-name: Motion Predictor
-type: weaponModification
+    equipped: false
+    inBackpack: false
+    description: 'Telescopic sights magnify the target''s image making it easy to see. This is especially useful for long-range shots that need to hit a very specific target location. A weapon with a telescopic sight ignores penalties for long and extreme range as long as the shooter takes a Full Action to Aim. Upgrades: Any Basic Las, Solid Projectile, Bolt, Primitive or Plasma weapon. A telescopic sight counts as a sight and a gun may only have one sight.'
+    source: 'Rogue Trader Core Rulebook'
+    damage: ''
+    damageType: ''
+    penetration: ''
+    special: {}
+    range: ''
+    attackType: ''
+    attackBonus: 0
+    rateOfFire:
+        single: 1
+        burst: 0
+        full: 0
+    backpack:
+        inBackpack: false
+img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_03.png'
+name: 'Telescopic Sight'
+type: 'weaponModification'
 ---
 data:
-    availability: Very Rare
-    craftsmanship: Common
-    description: Combines the benefits of a preysense sight, red-dot laser sight, and
-        telescopic sight.
-    installed: false
-    upgrades: Any ranged Las, Solid Projectile, Bolt, Low-Tech or Plasma weapon of the
-        Basic class.
+    craftsmanship: 'common'
+    availability: 'common'
     weight: 0
-img: systems/rogue-trader-3rd/icons/items/ammo/ammo_13.png
-name: Omni-Scope
-type: weaponModification
+    equipped: false
+    inBackpack: false
+    description: 'Specially coded vox receivers are integrated into the weapon''s trigger mechanisms, so that they user can operate it by voice if needed. Users can also operate the shot selector and switch firing modes where applicable merely by speaking the appropriate command. For security reasons each receiver is usually keyed to just one voice pattern. Additionally, if the weapon is equipped with a fire selector, the operation of that upgrade may also be controlled simply by speaking aloud. Upgrade: Any non-primitive Pistol, Basic, Grenade, or Heavy weapon.'
+    source: 'Rogue Trader Core Rulebook'
+    damage: ''
+    damageType: ''
+    penetration: ''
+    special: {}
+    range: ''
+    attackType: ''
+    attackBonus: 0
+    rateOfFire:
+        single: 1
+        burst: 0
+        full: 0
+    backpack:
+        inBackpack: false
+img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_03.png'
+name: 'Vox-Operated'
+type: 'weaponModification'
 ---
 data:
-    availability: Very Rare
-    craftsmanship: Common
-    description: No penalties due to darkness.
-    installed: false
-    upgrades: Any ranged Las, Solid Projectile, Bolt, Low-Tech or Plasma weapon of the
-        Basic class.
+    craftsmanship: 'common'
+    availability: 'common'
     weight: 0
-img: systems/rogue-trader-3rd/icons/items/ammo/ammo_13.png
-name: Photo Sight
-type: weaponModification
+    equipped: false
+    inBackpack: false
+    description: 'Arrows and quarrels come in a variety of shapes, sizes and materials ranging from crude wooden shafts with flint tips to steel darts with razor-sharp points. Used With: Bows, crossbows and hand bows.'
+    source: 'Rogue Trader Core Rulebook'
+    damage: ''
+    damageType: ''
+    penetration: ''
+    special: {}
+    range: ''
+    attackType: ''
+    attackBonus: 0
+    rateOfFire:
+        single: 1
+        burst: 0
+        full: 0
+    backpack:
+        inBackpack: false
+img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_03.png'
+name: 'Arrows/Quarrels'
+type: 'weaponModification'
 ---
 data:
-    availability: Rare
-    craftsmanship: Common
-    description: Can be wielded in one hand without -20 penalty. Range is halved.
-    installed: false
-    upgrades: Any Basic ranged weapon.
+    craftsmanship: 'common'
+    availability: 'common'
     weight: 0
-img: systems/rogue-trader-3rd/icons/items/ammo/ammo_13.png
-name: Pistol Grip
-type: weaponModification
+    equipped: false
+    inBackpack: false
+    description: 'Shot is solid lead or stone balls and a powder charge used in primitive blackpowder weapons. Used With: Flintlock pistol and musket.'
+    source: 'Rogue Trader Core Rulebook'
+    damage: ''
+    damageType: ''
+    penetration: ''
+    special: {}
+    range: ''
+    attackType: ''
+    attackBonus: 0
+    rateOfFire:
+        single: 1
+        burst: 0
+        full: 0
+    backpack:
+        inBackpack: false
+img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_03.png'
+name: 'Shot'
+type: 'weaponModification'
 ---
 data:
-    availability: Very Rare
-    craftsmanship: Common
-    description: Suffers no penalties due to darkness and gains a +20 bonus to vision-based
-        Perception tests in the dark.
-    installed: false
-    upgrades: Any ranged Las, Solid Projectile, Bolt, Low-Tech or Plasma weapon of the
-        Basic class.
+    craftsmanship: 'common'
+    availability: 'common'
     weight: 0
-img: systems/rogue-trader-3rd/icons/items/ammo/ammo_13.png
-name: Preysense Sight
-type: weaponModification
+    equipped: false
+    inBackpack: false
+    description: 'Many weapons require larger ammunition sources to function during large battles or when the wearer is away from an extended supply line. A backpack power pack is worn like a normal backpack. For energy weapons, it is a portable source of power in the form of a massive battery or charge-unit. For flame weapons, it is composed of tanks of volatile promethium. Other ammunition packs are simply stacks of regular stubber or bolt rounds with a feeder line that links into the weapon itself. These items hold 80 rounds of ammunition for Plasma, Melta, and Las weapons, 200 rounds of ammunition for SP or Bolt weapons, and 60 shots for Flame weapons. A weapon connected to a backpack power pack uses the power pack for its ammunition and ignores its normal clip size. Backpack ammo packs or power packs weigh 25 kg. |  Name | Availability  | | --- | --- | |  Arrows/Quarrels | Common  | |  Backpack Power Pack | Rare  | |  Shot | Common  | |  Bullets | Plentiful  | |  Shells | Common  | |  Charge Pack (pistol) | Common  | |  Charge Pack (basic) | Common  | |  Charge Pack (heavy) | Rare  | |  Fuel (pistol) | Scarce  | |  Fuel (basic) | Scarce  | |  Fuel (heavy) | Scarce  | |  Bolt Shells | Rare  | |  Melta Canister (pistol) | Very Rare  | |  Melta Canister (basic) | Very Rare  | |  Melta Canister (heavy) | Very Rare  | |  Plasma Flask (pistol) | Rare  | |  Plasma Flask (basic) | Rare  | |  Plasma Flask (heavy) | Very Rare  | |  Exotic | Very Rare  | |  Name | Availability  | | --- | --- | |  Amputator Shells | Extremely Rare  | |  Bleeder Rounds | Rare  | |  Dumdum Bullets | Scarce  | |  Expander Rounds | Scarce  | |  Explosive Arrows/Quarrels | Scarce  | |  Hot-Shot Charge Pack | Scarce  | |  Inferno Shells | Rare  | |  Man-stopper Bullets | Scarce  | |  Tempest Bolt Shells | Near Unique  |'
+    source: 'Rogue Trader Core Rulebook'
+    damage: ''
+    damageType: ''
+    penetration: ''
+    special: {}
+    range: ''
+    attackType: ''
+    attackBonus: 0
+    rateOfFire:
+        single: 1
+        burst: 0
+        full: 0
+    backpack:
+        inBackpack: false
+img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_03.png'
+name: 'Backpack Ammo Pack/Power Pack'
+type: 'weaponModification'
 ---
 data:
-    availability: Rare
-    craftsmanship: Common
-    description: The weapon reduced by a Half Action,to a minimum of a Half Action.
-    installed: false
-    upgrades: Any ranged weapon.
+    craftsmanship: 'common'
+    availability: 'common'
     weight: 0
-img: systems/rogue-trader-3rd/icons/items/ammo/ammo_13.png
-name: Quick-Release
-type: weaponModification
+    equipped: false
+    inBackpack: false
+    description: 'Hard rounds are common for many weapons within the Imperium and vary greatly in calibre and design. Bullets from one kind of firearm cannot be used in another unless they are very similar in make. So for example you could use bullets bought for a stub revolver in a stub automatic, but not in an autogun. Used With: Autopistols, stub revolvers, stub automatics, hand cannons, autoguns, hunting rifles and heavy stubbers.'
+    source: 'Rogue Trader Core Rulebook'
+    damage: ''
+    damageType: ''
+    penetration: ''
+    special: {}
+    range: ''
+    attackType: ''
+    attackBonus: 0
+    rateOfFire:
+        single: 1
+        burst: 0
+        full: 0
+    backpack:
+        inBackpack: false
+img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_03.png'
+name: 'Bullets'
+type: 'weaponModification'
 ---
 data:
-    availability: Scarce
-    craftsmanship: Common
-    description: Gains +10 to BS when firing a single shot.
-    installed: false
-    upgrades: Any ranged Las, Solid Projectile, Bolt, Low-Tech or Plasma weapon of the
-        Basic class.
+    craftsmanship: 'common'
+    availability: 'common'
     weight: 0
-img: systems/rogue-trader-3rd/icons/items/ammo/ammo_13.png
-name: Red-Dot Laser Sight
-type: weaponModification
+    equipped: false
+    inBackpack: false
+    description: 'Shells contain dozens of tiny balls and are designed to scatter over a wide area when fired, making them ideal for close-in work where accuracy is less important. Used With: Any shotgun.'
+    source: 'Rogue Trader Core Rulebook'
+    damage: ''
+    damageType: ''
+    penetration: ''
+    special: {}
+    range: ''
+    attackType: ''
+    attackBonus: 0
+    rateOfFire:
+        single: 1
+        burst: 0
+        full: 0
+    backpack:
+        inBackpack: false
+img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_03.png'
+name: 'Shells'
+type: 'weaponModification'
 ---
 data:
-    availability: Scarce
-    craftsmanship: Common
-    description: Weapon weight increased by 20%. Ranged weapons receives +1 bonus to
-        damage when used as an improvised weapon. Only destroyed on a result of 41 or
-        higher when Parried by a weapon with the Power Field quality.
-    installed: false
-    upgrades: Any Weapon
+    craftsmanship: 'common'
+    availability: 'common'
     weight: 0
-img: systems/rogue-trader-3rd/icons/items/ammo/ammo_13.png
-name: Reinforced
-type: weaponModification
+    equipped: false
+    inBackpack: false
+    description: 'Charge packs are powerful batteries used almost exclusively by las weapons. The cost of a charge pack varies depending on the class of the weapon. In all cases, it provides shots equal to the weapon''s full clip value. Used With: Laspistols, lascarbines, lasguns, long-las, MP lascannons.'
+    source: 'Rogue Trader Core Rulebook'
+    damage: ''
+    damageType: ''
+    penetration: ''
+    special: {}
+    range: ''
+    attackType: ''
+    attackBonus: 0
+    rateOfFire:
+        single: 1
+        burst: 0
+        full: 0
+    backpack:
+        inBackpack: false
+img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_03.png'
+name: 'Charge Pack'
+type: 'weaponModification'
 ---
 data:
-    availability: Scarce
-    craftsmanship: Common
-    description: Gains a +10 bonus to Pinning tests.
-    installed: false
-    upgrades: Any Weapon
+    craftsmanship: 'common'
+    availability: 'common'
     weight: 0
-img: systems/rogue-trader-3rd/icons/items/ammo/ammo_13.png
-name: Sacred Inscriptions
-type: weaponModification
+    equipped: false
+    inBackpack: false
+    description: 'Flame weapons use liquid fuel, which can vary greatly in composition and quality from purest promethium to crude flammable alcohols. The cost of fuel varies depending on the class of the weapon. In all cases, it provides shots equal to the weapon''s full clip value. Used With: Hand flamers, flamers, and heavy flamers.'
+    source: 'Rogue Trader Core Rulebook'
+    damage: ''
+    damageType: ''
+    penetration: ''
+    special: {}
+    range: ''
+    attackType: ''
+    attackBonus: 0
+    rateOfFire:
+        single: 1
+        burst: 0
+        full: 0
+    backpack:
+        inBackpack: false
+img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_03.png'
+name: 'Fuel'
+type: 'weaponModification'
 ---
 data:
-    availability: Plentiful
-    craftsmanship: Common
-    description: Tests to hear shots made suffer -20 and can only attempt at half the
-        normal distance.
-    installed: false
-    upgrades: Any Solid Projectile weapon of the Basic or Pistol class.
+    craftsmanship: 'common'
+    availability: 'common'
     weight: 0
-img: systems/rogue-trader-3rd/icons/items/ammo/ammo_13.png
-name: Silencer
-type: weaponModification
+    equipped: false
+    inBackpack: false
+    description: 'The mass-reactive explosive bolt shell is among the deadliest kind of round in the Imperial arsenal. However the difficulty and cost of its manufacture restricts its use to all but the most wealthy or well connected. Used With: Bolt pistols, bolters, and heavy bolters.'
+    source: 'Rogue Trader Core Rulebook'
+    damage: ''
+    damageType: ''
+    penetration: ''
+    special: {}
+    range: ''
+    attackType: ''
+    attackBonus: 0
+    rateOfFire:
+        single: 1
+        burst: 0
+        full: 0
+    backpack:
+        inBackpack: false
+img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_03.png'
+name: 'Bolt Shells'
+type: 'weaponModification'
 ---
 data:
-    availability: Extremely Rare
-    craftsmanship: Common
-    description: Counts as having the Auto-stabilized traitand so always counts as being
-        braced.
-    installed: false
-    upgrades: Any Heavy Weapon
+    craftsmanship: 'common'
+    availability: 'common'
     weight: 0
-img: systems/rogue-trader-3rd/icons/items/ammo/ammo_13.png
-name: Suspensors
-type: weaponModification
+    equipped: false
+    inBackpack: false
+    description: 'Meltaguns use specially refined chemicals injected into highly pressurised canisters. The cost of a delta canister varies depending on the class of the weapon. In all cases, it provides shots equal to the weapon''s full clip value. Used With: Inferno pistols, meltaguns, and multi-meltas.'
+    source: 'Rogue Trader Core Rulebook'
+    damage: ''
+    damageType: ''
+    penetration: ''
+    special: {}
+    range: ''
+    attackType: ''
+    attackBonus: 0
+    rateOfFire:
+        single: 1
+        burst: 0
+        full: 0
+    backpack:
+        inBackpack: false
+img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_03.png'
+name: 'Melta Canister'
+type: 'weaponModification'
 ---
 data:
-    availability: Rare
-    craftsmanship: Common
-    description: If there is a final penalty to a BS test when using a weapon with a
-        targeter, it is reduced by ten.
-    installed: false
-    upgrades: Any Las, Solid Projectile, Bolt, or Heavy weapon.
+    craftsmanship: 'common'
+    availability: 'common'
     weight: 0
-img: systems/rogue-trader-3rd/icons/items/ammo/ammo_13.png
-name: Targeter
-type: weaponModification
+    equipped: false
+    inBackpack: false
+    description: 'Raw plasma weapon fuel consists of highly dangerous and volatile photonic hydrogen, compressed and contained within reinforced flasks. In all cases, it provides shots equal to the weapon''s full clip value. Used With: Plasma pistols, plasma guns, and plasma cannons.'
+    source: 'Rogue Trader Core Rulebook'
+    damage: ''
+    damageType: ''
+    penetration: ''
+    special: {}
+    range: ''
+    attackType: ''
+    attackBonus: 0
+    rateOfFire:
+        single: 1
+        burst: 0
+        full: 0
+    backpack:
+        inBackpack: false
+img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_03.png'
+name: 'Plasma Flask'
+type: 'weaponModification'
 ---
 data:
-    availability: Average
-    craftsmanship: Common
-    description: Ignores penalties for Long and Extreme range, as long as the shooter
-        is benefitting from a Full Action to Aim.
-    installed: false
-    upgrades: Any ranged Las, Solid Projectile, Bolt, Low-Tech or Plasma weapon of the
-        Basic class.
+    craftsmanship: 'common'
+    availability: 'common'
     weight: 0
-img: systems/rogue-trader-3rd/icons/items/ammo/ammo_13.png
-name: Telescopic Sight
-type: weaponModification
+    equipped: false
+    inBackpack: false
+    description: 'There are many kinds of weapons in the Imperium that use unusual types of ammunition, from the viscous gel of a webber to the finely crafted darts of a needle pistol. Used With: Needle pistols, needle rifles, and any other exotic ranged weapons.'
+    source: 'Rogue Trader Core Rulebook'
+    damage: ''
+    damageType: ''
+    penetration: ''
+    special: {}
+    range: ''
+    attackType: ''
+    attackBonus: 0
+    rateOfFire:
+        single: 1
+        burst: 0
+        full: 0
+    backpack:
+        inBackpack: false
+img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_03.png'
+name: 'Exotic'
+type: 'weaponModification'
 ---
 data:
-    availability: Rare
-    craftsmanship: Common
-    description: Gain the Toxic (2) quality for one round. A tox dispenser can be used
-        10 times before requiring refilling.
-    installed: false
-    upgrades: Any Low-Tech or Chain Melee Weapon
+    craftsmanship: 'common'
+    availability: 'common'
     weight: 0
-img: systems/rogue-trader-3rd/icons/items/ammo/ammo_13.png
-name: Tox Dispenser
-type: weaponModification
+    equipped: false
+    inBackpack: false
+    description: 'Not all munitions are created equal, and there are many enhanced or unusual choices beyond the standard fare open to militants—a modest variety are presented here. Each type of unusual ammo can only be used with certain weapons as detailed in its description, and only one kind of ammunition can be used at a time (i.e. their effects can''t be combined). Ammo weight is not listed; should it be important to know how much ammunition weighs, consider a weapon''s full clip to weigh 10% of the weight of the weapon itself.'
+    source: 'Rogue Trader Core Rulebook'
+    damage: ''
+    damageType: ''
+    penetration: ''
+    special: {}
+    range: ''
+    attackType: ''
+    attackBonus: 0
+    rateOfFire:
+        single: 1
+        burst: 0
+        full: 0
+    backpack:
+        inBackpack: false
+img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_03.png'
+name: 'Unusual Ammo'
+type: 'weaponModification'
 ---
 data:
-    availability: Average
-    craftsmanship: Common
-    description: Bipods and tripods allow a weapon to be braced anywhere there is a
-        reasonably flat surface. A weapon braced on a bipod has a 90 fire arc, while one
-        on a tripod has a 180 arc.
-    installed: false
-    upgrades: Any Basic or Heavy weapon.
+    craftsmanship: 'common'
+    availability: 'common'
     weight: 0
-img: systems/rogue-trader-3rd/icons/items/ammo/ammo_13.png
-name: Tripod/Bipod
-type: weaponModification
+    equipped: false
+    inBackpack: false
+    description: 'Filled with explosive micro-shrapnel, these bullets are designed to shear flesh and shatter bone, causing limbs to be blown away. Effects: Amputator Shells add 2 to the weapon''s Damage. Used With: Stub revolvers, stub automatics, shotguns (all types), hand cannons, autopistols, and autoguns.'
+    source: 'Rogue Trader Core Rulebook'
+    damage: ''
+    damageType: ''
+    penetration: ''
+    special: {}
+    range: ''
+    attackType: ''
+    attackBonus: 0
+    rateOfFire:
+        single: 1
+        burst: 0
+        full: 0
+    backpack:
+        inBackpack: false
+img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_03.png'
+name: 'Amputator Shells'
+type: 'weaponModification'
 ---
 data:
-    availability: Very Rare
-    craftsmanship: Common
-    description: Grants its wielder a bonus to tests to Parry the attacks of foes with
-        the Daemonic trait equal to 5 times the wielders Willpower bonus.
-    installed: false
-    upgrades: Any Low-Tech melee weapon.
+    craftsmanship: 'common'
+    availability: 'common'
     weight: 0
-img: systems/rogue-trader-3rd/icons/items/ammo/ammo_13.png
-name: Truesilver Gilding
-type: weaponModification
+    equipped: false
+    inBackpack: false
+    description: 'This ammunition is treated with toxins to prevent coagulation and keep wounds bleeding freely. These shells are designed to burst on penetration and spread the anti-coagulants quickly. Effect: Bleeder rounds add 3 to the weapon''s Damage against living ''biological'' targets (targets with the Daemonic or Machine Traits do not suffer the additional Damage). Used With: Stub revolvers, stub automatics, hand cannons, autopistols, and autoguns.'
+    source: 'Rogue Trader Core Rulebook'
+    damage: ''
+    damageType: ''
+    penetration: ''
+    special: {}
+    range: ''
+    attackType: ''
+    attackBonus: 0
+    rateOfFire:
+        single: 1
+        burst: 0
+        full: 0
+    backpack:
+        inBackpack: false
+img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_03.png'
+name: 'Bleeder Rounds'
+type: 'weaponModification'
 ---
 data:
-    availability: Extremely Rare
-    craftsmanship: Common
-    description: Does not upgrade the weapon, but the ammunition the weapon uses. The
-        modification requires a skilled artisan and upgrades one clip at a time. Whenever
-        a target with the Daemonic trait attempts to Dodge an attack made with a weapon
-        using ammunition upgraded with Truesilver weaving, the target suffers a penalty
-        to the Dodge test equal to 5 times the attackers Willpower bonus.
-    installed: false
-    upgrades: Any Launcher, Low-Tech, or Solid Projectile ranged weapon.
+    craftsmanship: 'common'
+    availability: 'common'
     weight: 0
-img: systems/rogue-trader-3rd/icons/items/ammo/ammo_13.png
-name: Truesilver Weaving
-type: weaponModification
+    equipped: false
+    inBackpack: false
+    description: 'These heavy blunt bullets are designed to cause maximum tissue damage and can tear apart soft targets, though they are less effective against armour. Effect: Dumdum bullets add 2 to the weapon''s Damage, however Armour Points count double against them. Used With: Stub revolvers, stub automatics, and hand cannons.'
+    source: 'Rogue Trader Core Rulebook'
+    damage: ''
+    damageType: ''
+    penetration: ''
+    special: {}
+    range: ''
+    attackType: ''
+    attackBonus: 0
+    rateOfFire:
+        single: 1
+        burst: 0
+        full: 0
+    backpack:
+        inBackpack: false
+img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_03.png'
+name: 'Dumdum Bullets'
+type: 'weaponModification'
 ---
 data:
-    availability: Rare
-    craftsmanship: Common
-    description: With spoken commands, the operator can fire his gun, switch firing
-        modes, and also change ammunition (should it be fitted with a fire selector).
-    installed: false
-    upgrades: Any Pistol, Basic, Launcher, or Heavy weapon that is not of the Low-Tech
-        type
+    craftsmanship: 'common'
+    availability: 'common'
     weight: 0
-img: systems/rogue-trader-3rd/icons/items/ammo/ammo_13.png
-name: Vox-Operated
-type: weaponModification
+    equipped: false
+    inBackpack: false
+    description: 'Vicious and outlawed on some worlds, these dense shells are designed to shred open after impact, creating huge exit wounds. Effect: Shots fired with these rounds add 1 to both Damage and Penetration. Used With: Stub revolvers, stub automatics, autopistols, and autoguns.'
+    source: 'Rogue Trader Core Rulebook'
+    damage: ''
+    damageType: ''
+    penetration: ''
+    special: {}
+    range: ''
+    attackType: ''
+    attackBonus: 0
+    rateOfFire:
+        single: 1
+        burst: 0
+        full: 0
+    backpack:
+        inBackpack: false
+img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_03.png'
+name: 'Expander Rounds'
+type: 'weaponModification'
 ---
 data:
-    availability: Very Rare
-    craftsmanship: Common
-    description: Gains the Crippling (2) quality against targets with the Daemonic trait.
-        Each canister contains enough liquid to last for 40 rounds.
-    installed: false
-    upgrades: Any Solid Projectile weapon without a silencer.
+    craftsmanship: 'common'
+    availability: 'common'
     weight: 0
-img: systems/rogue-trader-3rd/icons/items/ammo/ammo_13.png
-name: Warpleech Canister
-type: weaponModification
+    equipped: false
+    inBackpack: false
+    description: 'Explosive arrows and quarrels might be crudely tipped with shells, or treated with one of a variety of unstable alchemical compounds. Effects: Attacks are made with a -10 penalty, the weapon''s Damage type becomes Explosive, and the weapon loses the Primitive quality. Used With: Bows, crossbows, and hand bows.'
+    source: 'Rogue Trader Core Rulebook'
+    damage: ''
+    damageType: ''
+    penetration: ''
+    special: {}
+    range: ''
+    attackType: ''
+    attackBonus: 0
+    rateOfFire:
+        single: 1
+        burst: 0
+        full: 0
+    backpack:
+        inBackpack: false
+img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_03.png'
+name: 'Explosive Arrows and Quarrels'
+type: 'weaponModification'
+---
+data:
+    craftsmanship: 'common'
+    availability: 'common'
+    weight: 0
+    equipped: false
+    inBackpack: false
+    description: 'This is a powerful charge pack for a las weapon, favoured by snipers in some Imperial Guard regiments. Each hot-shot charge pack is good for only a single shot. Effects: A weapon using a hot-shot charge adds 1 to its Damage, rolls two dice for its Damage and picks the highest, and gains a Penetration of 4. However the weapon loses its Reliable special quality, and its clip is reduced to 1. Used With: Laspistols, lascarbines, lasguns, and long-las.'
+    source: 'Rogue Trader Core Rulebook'
+    damage: ''
+    damageType: ''
+    penetration: ''
+    special: {}
+    range: ''
+    attackType: ''
+    attackBonus: 0
+    rateOfFire:
+        single: 1
+        burst: 0
+        full: 0
+    backpack:
+        inBackpack: false
+img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_03.png'
+name: 'Hot-Shot Charge Pack'
+type: 'weaponModification'

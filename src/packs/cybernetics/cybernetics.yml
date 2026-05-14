@@ -1,459 +1,349 @@
 data:
-  armourPoints:
-    body: 0
-    head: 0
-    leftArm: 0
-    leftLeg: 0
-    rightArm: 0
-    rightLeg: 0
-  availability: Rare
-  craftsmanship: Common
-  description: 'These implanted devices duplicate the effects of sensor systems that go beyond normal human senses. In all cases, their use requires concentration and a Half Action. Common systems function identically to a standard hand-held auspex device. Poor systems possess only a single detection ability (heat, radiation, electromagnetics, or very rarely daemonic taint) and have the limited range of 20 metres. If the augur is set to detect daemonic taint, it has the possibility to be overwhelmed and malfunction should a Warp-denizen get too close. Good systems function as a full auspex, but also allow the character to re-roll all Perception-based tests.'
-  weight: 0
-  equipped: false
-img: systems/rogue-trader-3rd/icons/talents/blue/b_35.png
-name: Augur Array
-type: cybernetic
+    craftsmanship: 'common'
+    availability: 'common'
+    weight: 0
+    equipped: false
+    inBackpack: false
+    description: 'Common versions of these systems mirror the function of the human arm and hand exactly, retaining strength, dexterity, and sense of touch. Poor versions halve the owner''s Agility score where matters of fine dexterity are involved and Weapon Skill and Ballistic Skill Tests suffer a –10 penalty when using the limb. Good bionic arms provide a +10 bonus on Agility Tests requiring delicate manipulation (such as Sleight of Hand) and add a +10 bonus to Strength Tests using the arm.'
+    source: 'Rogue Trader Core Rulebook'
+    backpack:
+        inBackpack: false
+img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_04.png'
+name: 'Bionic Arm'
+type: 'cybernetic'
 ---
 data:
-  armourPoints:
-    body: 0
-    head: 0
-    leftArm: 0
-    leftLeg: 0
-    rightArm: 0
-    rightLeg: 0
-  availability: Very Rare
-  craftsmanship: Common
-  description: 'This ancient and blessed microscopic technology flows as a metallic liquid within the character’s bloodstream, repairing minor injuries and accelerating healing. It repairs minor injuries and speeds recovery. When applying healing, the character is always considered Lightly Damaged, and heals at an increased rate, removing 2 points of damage per day instead of 1.'
-  weight: 0
-  equipped: false
-img: systems/rogue-trader-3rd/icons/talents/blue/b_35.png
-name: Autosanguine
-type: cybernetic
+    craftsmanship: 'common'
+    availability: 'common'
+    weight: 0
+    equipped: false
+    inBackpack: false
+    description: 'Common locomotion bionics must be fully integrated into the spine and nervous system to function properly; basic models accomplish this without any loss of function over the human norm. Poor versions halve the character''s Movement Rates—round up—and such characters that attempt to run must succeed on an Agility Test or fall at the end of their movement. Good versions of these systems grant the owner the Sprint talent. In addition they add a +20 bonus to Tests made to jump or leap.'
+    source: 'Rogue Trader Core Rulebook'
+    backpack:
+        inBackpack: false
+img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_04.png'
+name: 'Bionic Locomotion (legs, Hips, Pelvis, Etc.)'
+type: 'cybernetic'
 ---
 data:
-  armourPoints:
-    body: 0
-    head: 0
-    leftArm: 0
-    leftLeg: 0
-    rightArm: 0
-    rightLeg: 0
-  availability: Near Unique
-  craftsmanship: Common
-  description: 'A character with this implant has a weapon in his eye that counts as a hot-shot laspistol (see page 154) with a range of 10m. The baleful eye can be fired even if the character’s hands are full. It has no clip size, however a jam result causes the character to lose sight in the eye for a number of rounds equal to the degrees of failure on the attack.'
-  weight: 0
-  equipped: false
-img: systems/rogue-trader-3rd/icons/talents/blue/b_35.png
-name: Baleful Eye
-type: cybernetic
+    craftsmanship: 'common'
+    availability: 'common'
+    weight: 0
+    equipped: false
+    inBackpack: false
+    description: 'Common bionic lungs and implanted respiratory systems mimic the action of human lungs and keep the body supplied with oxygen. Such characters gain a +20 bonus to Toughness Tests made to resist airborne toxins and gas weapons. Poor bionic lungs offer the same benefits as the Common system. However, they are raucously loud affairs and characters suffer a –20 penalty to all Silent Move checks. A generally poor oxygen supply to the body means all tests involving strenuous physical activity are increased by one level of Difficulty. Good bionic lungs count as a full life support system—thus if for any reason the user''s own respiratory system fails, his bionic lungs will keep his blood oxygenated—and their presence may be unnoticeable if designed to be so.'
+    source: 'Rogue Trader Core Rulebook'
+    backpack:
+        inBackpack: false
+img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_04.png'
+name: 'Bionic Respiratory System'
+type: 'cybernetic'
 ---
 data:
-  armourPoints:
-    body: 0
-    head: 0
-    leftArm: 0
-    leftLeg: 0
-    rightArm: 0
-    rightLeg: 0
-  availability: Scarce
-  craftsmanship: Common
-  description: 'Bionic arms are a common replacement, and Common models can mimic normal hand and arm functions, including dexterity and even sense of touch. Poor craftsmanship versions are more cumbersome and visibly artificial; halve the owner’s Agility characteristic (rounded up) where matters of fine dexterity are involved. In addition, Weapon Skill and Ballistic Skill tests made when using the limb suffer a –5 penalty. Good craftsmanship bionic arms improve on natural design and provide a +10 bonus on Agility tests requiring delicate manipulation. Best craftsmanship bionic arms provide a +10 bonus on Agility tests requiring delicate manipulation and add a +10 bonus to Strength tests using the arm. They can be also used to store small items (such as pistol ammo clips) inside concealed interior compartments within the arm.'
-  weight: 0
-  equipped: false
-img: systems/rogue-trader-3rd/icons/talents/blue/b_35.png
-name: Bionic Arm
-type: cybernetic
+    craftsmanship: 'common'
+    availability: 'common'
+    weight: 0
+    equipped: false
+    inBackpack: false
+    description: 'What follows are some of the more widely used bionic and cybernetic implants desired to improve or salvage the human body. Implants usually serve to grant a human some ability he did not already possess, or integrate external devices into his body. Note: Mechadendrites are cybernetic limbs that are usually mounted on the back or shoulder. The maximum number of Mechadendrites a character may have mounted upon his body is equal to his Toughness bonus.'
+    source: 'Rogue Trader Core Rulebook'
+    backpack:
+        inBackpack: false
+img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_04.png'
+name: 'Implant Systems'
+type: 'cybernetic'
 ---
 data:
-  armourPoints:
-    body: 1
-    head: 0
-    leftArm: 0
-    leftLeg: 0
-    rightArm: 0
-    rightLeg: 0
-  availability: Very Rare
-  craftsmanship: Common
-  description: 'The paranoid (or the prepared) are ever-willing to replace crude flesh with more durable, armoured materials—the light armour shielding of a bionic heart provides a last line of defence. Superior models can be triggered to pump more rapidly to increase physical capacity, though this risks bodily strain as the rest of the circulatory system is put under pressure. A character with this implant gains +1 Armour point to the Body location—this bonus stacks with any armour worn—and gains the Sprint talent.'
-  weight: 0
-  equipped: false
-img: systems/rogue-trader-3rd/icons/talents/blue/b_35.png
-name: Bionic Heart
-type: cybernetic
+    craftsmanship: 'common'
+    availability: 'common'
+    weight: 0
+    equipped: false
+    inBackpack: false
+    description: 'These implanted devices duplicate the effects of sensor systems that go beyond normal human senses. In all cases their use requires concentration and a Half Action. Common systems function identically to a standard handheld auspex device (see page 143). Poor systems possess only a single detection ability (either heat, radiation, or electromagnetics) and have the limited range of 20 metres. Good systems function as a full auspex but also allow rerolls on all Perception based Tests when using its functions.'
+    source: 'Rogue Trader Core Rulebook'
+    backpack:
+        inBackpack: false
+img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_04.png'
+name: 'Auger Arrays'
+type: 'cybernetic'
 ---
 data:
-  armourPoints:
-    body: 0
-    head: 0
-    leftArm: 0
-    leftLeg: 0
-    rightArm: 0
-    rightLeg: 0
-  availability: Scarce
-  craftsmanship: Common
-  description: 'These bionics are fully integrated into the hip with a spinal link, and Common versions allow the user to walk, run, and climb at normal human levels. Poor craftsmanship models are lumbering affairs that reduce a character’s Movement rate by 1, and when running, the user must succeed on an Ordinary (+10) Agility test or fall Prone at the end of his movement. Good craftsmanship bionic legs grant the owner the Sprint talent, and add a +20 bonus to Agility tests that he makes when attempting to jump or leap.'
-  weight: 0
-  equipped: false
-img: systems/rogue-trader-3rd/icons/talents/blue/b_35.png
-name: Bionic Legs
-type: cybernetic
+    craftsmanship: 'common'
+    availability: 'common'
+    weight: 0
+    equipped: false
+    inBackpack: false
+    description: 'This catch-all category can include additional aural and scent receptors, atmospheric pressure detectors, sonar imaging systems, and more depending on the type of implant desired. These can work in concert with existing bionics or even natural senses. This implant grants the Heightened Senses Talent for any one sense (sight, smell, etc.).'
+    source: 'Rogue Trader Core Rulebook'
+    backpack:
+        inBackpack: false
+img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_04.png'
+name: 'Augmented Senses'
+type: 'cybernetic'
 ---
 data:
-  armourPoints:
-    body: 0
-    head: 0
-    leftArm: 0
-    leftLeg: 0
-    rightArm: 0
-    rightLeg: 0
-  availability: Rare
-  craftsmanship: Common
-  description: 'Common bionic lungs and implanted respiratory systems mimic the action of human lungs and keep the body supplied with oxygen. Such characters gain a +20 bonus to Toughness tests made to resist airborne toxins and gas weapons. Poor bionic lungs offer the same benefits as the Common system, but are raucously loud affairs and characters suffer a –20 penalty to Stealth tests. Their generally poor oxygen supply to the body means that the character suffers a –10 penalty on all tests involving strenuous physical activity. Good bionic lungs count as a full life support system—if for any reason the user’s own respiratory system fails, his bionic lungs keep his blood oxygenated—and can be designed to be unnoticeable if desired.'
-  weight: 0
-  equipped: false
-img: systems/rogue-trader-3rd/icons/talents/blue/b_35.png
-name: Bionic Respiratory System
-type: cybernetic
+    craftsmanship: 'common'
+    availability: 'common'
+    weight: 0
+    equipped: false
+    inBackpack: false
+    description: 'A legendary archeotech bionic eye pattern that incorporates a tiny las weapon, sacrificing some of the normal abilities of a cybernetic vision implant in order to include this device. Each baleful eye has been passed from recipient to recipient across centuries or millennia, reclaimed by the Machine Cult whenever its present owner dies. As might be imagined, it is very intimidating when used as a part of negotiations with primitive societies. A character with this implant has a weapon equal to a hellpistol in his eye with a range of 10m. The baleful eye can be fired even if the character''s hands are full, and the baleful eye may be used as a pistol in melee. The baleful eye of Sebastian Winterscale is said to have contained a much more potent weapon, but it has been lost for centuries.'
+    source: 'Rogue Trader Core Rulebook'
+    backpack:
+        inBackpack: false
+img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_04.png'
+name: 'Baleful Eye'
+type: 'cybernetic'
 ---
 data:
-  armourPoints:
-    body: 0
-    head: 0
-    leftArm: 0
-    leftLeg: 0
-    rightArm: 0
-    rightLeg: 0
-  availability: Rare
-  craftsmanship: Common
-  description: 'Eyes, ears, and even noses are often lost through combat or accident, and replacement versions use cranial interfaces to allow a very close approximation to natural senses. Bionic eyes in particular are frequently seen amongst senior Imperial Guard officers, Rogue Traders, and other powerful individuals. Common systems, while usually clearly artificial and often oversized, manage to more or less duplicate the approximate human range of senses adequately and have no further game effects. Poor quality cybernetic senses are problem-ridden imitations of the real thing. Hearing might be troubled by static, for example, or vision rendered in low-resolution monochrome. A character with this system suffers a –20 penalty to tests made involving the cybernetic sense. Good cybernetic senses grant a +10 bonus to tests using that particular sense, and a +20 bonus to tests made to resist attacks on the sense itself, such as deafening noises and blinding flashes. Advanced cybernetic eyes can also incorporate magnifying lenses, a full photo-visor, or a system granting the Dark-sight trait (see page 135). Advanced cybernetic ears can also include an internal micro-bead system. Each additional upgrade requires a separate Requisition test to be fitted into existing cybernetic senses.'
-  weight: 0
-  equipped: false
-img: systems/rogue-trader-3rd/icons/talents/blue/b_35.png
-name: Bionic Senses
-type: cybernetic
+    craftsmanship: 'common'
+    availability: 'common'
+    weight: 0
+    equipped: false
+    inBackpack: false
+    description: 'This solid, shoulder-mounted mechadendrite is designed for self-defence. This two metre limb is mounted with a sleek laspistol of Adeptus Mechanicus design. This weapon counts as a laspistol with the Compact upgrade. The owner may use this mechadendrite as his Reaction for the Round or as a Half Action Attack on his own turn, but it can only be fired once per Round. The firer uses his full Ballistic Skill for the attack. Note that this weapon has no optical targeting facilities built in. You must have the appropriate Mechadendrite Use talent to operate this implant.'
+    source: 'Rogue Trader Core Rulebook'
+    backpack:
+        inBackpack: false
+img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_04.png'
+name: 'Ballistic Mechadendrite'
+type: 'cybernetic'
 ---
 data:
-  armourPoints:
-    body: 0
-    head: 0
-    leftArm: 0
-    leftLeg: 0
-    rightArm: 0
-    rightLeg: 0
-  availability: Very Rare
-  craftsmanship: Common
-  description: 'These bionics are internal cogitator implants which aid in data retention and processing. The user can rapidly sift through stacked dataslates and parchments, applying intuition to vast reams of data far beyond the capabilities of a normal man. This implant grants the user a +10 bonus to Literacy, Logic, and Scholastic Lore tests.'
-  weight: 0
-  equipped: false
-img: systems/rogue-trader-3rd/icons/talents/blue/b_35.png
-name: Calculus Logi Upgrade
-type: cybernetic
+    craftsmanship: 'common'
+    availability: 'common'
+    weight: 0
+    equipped: false
+    inBackpack: false
+    description: 'The paranoid (or prepared) are ever willing to replace crude flesh with more durable, armoured materials—the light armour shielding of a bionic heart provides a last line of defence. Superior models can be triggered to pump more rapidly to increase physical capacity, though this risks stroke or other catastrophe as the rest of the circulatory system is put under pressure. A character with this implant gains +1 armour to the body location—this bonus stacks with any armour worn—and gains the Sprint Talent.'
+    source: 'Rogue Trader Core Rulebook'
+    backpack:
+        inBackpack: false
+img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_04.png'
+name: 'Bionic Heart'
+type: 'cybernetic'
 ---
 data:
-  armourPoints:
-    body: 0
-    head: 0
-    leftArm: 0
-    leftLeg: 0
-    rightArm: 0
-    rightLeg: 0
-  availability: Very Rare
-  craftsmanship: Common
-  description: 'Commonly used to repair a severely damaged brain or (hopefully) augment its abilities, these often-risky implant systems represent a major step from simply replacing a limb to altering a character from human to mechanism. Common-level implants can restore paralysed and brain-damaged users to a semblance of normality, but with a permanent loss of 1d10 points from the character’s Weapon Skill, Ballistic Skill, Agility, Intelligence, and Fellowship characteristics. Poor versions restore brain function, but destroy the subject’s personality and memories, rendering them no better than a servitor, and as such are unsuitable for PCs. Good cerebral implants are very rare even among high ranking Imperial officials, and are exceedingly difficult to acquire, becoming Near Unique in Availability. These grant the user the Unnatural Intelligence (2) trait (see page 139) and a +20 bonus to Logic and Lore tests, thanks to the superior mental capabilities he now enjoys.'
-  weight: 0
-  equipped: false
-img: systems/rogue-trader-3rd/icons/talents/blue/b_35.png
-name: Cerebral Implants
-type: cybernetic
+    craftsmanship: 'common'
+    availability: 'common'
+    weight: 0
+    equipped: false
+    inBackpack: false
+    description: 'Internal cogitator implants which aid in data retention and processing. The user can rapidly sift through stacked data-slates and parchments, applying intuition to vast reams of data far beyond the capabilities of a normal man. This implant grants the user a +10 bonus to any Literacy, Logic, or Scholastic Lore Tests.'
+    source: 'Rogue Trader Core Rulebook'
+    backpack:
+        inBackpack: false
+img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_04.png'
+name: 'Calculus Logi Upgrade'
+type: 'cybernetic'
 ---
 data:
-  armourPoints:
-    body: 0
-    head: 1
-    leftArm: 0
-    leftLeg: 0
-    rightArm: 0
-    rightLeg: 0
-  availability: Scarce
-  craftsmanship: Common
-  description: 'This augmentation covers or replaces most of the skull with layers of plasteel and gel padding to better prevent concussion and other brain injuries. This implant adds +1 Armour point to the Head, and stacks with any worn armour on that location.'
-  weight: 0
-  equipped: false
-img: systems/rogue-trader-3rd/icons/talents/blue/b_35.png
-name: Cranial Armour
-type: cybernetic
+    craftsmanship: 'common'
+    availability: 'common'
+    weight: 0
+    equipped: false
+    inBackpack: false
+    description: 'These systems may be used to repair a severely damaged brain or augment its abilities. Common cortex implants are used to restore paralysed and brain-damaged individuals to some semblance of normality. The best that can be managed by these systems is a permanent loss of 1d10 points from the character''s Weapon Skill, Ballistic Skill, Agility, Intelligence and Fellowship. In addition, such characters gain 1d10 Insanity Points. Poor cortex implants restore brain function but destroy the personality and memories of the subject, effectively making them a servitor, and are therefore unsuitable for player characters. Good cortex implants are unusual even among the Mechanicus, and their creation is an almost lost art. They grant the trait Unnatural Intelligence (×2) (see page 368) and in addition perform all the functions of a cogitator system. However, characters with this implant gain 1d10 Insanity Points.'
+    source: 'Rogue Trader Core Rulebook'
+    backpack:
+        inBackpack: false
+img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_04.png'
+name: 'Cortex Implants'
+type: 'cybernetic'
 ---
 data:
-  armourPoints:
-    body: 0
-    head: 0
-    leftArm: 0
-    leftLeg: 0
-    rightArm: 0
-    rightLeg: 0
-  availability: Very Rare
-  craftsmanship: Common
-  description: 'Powerful electromagnets are implanted in the Acolyte, allowing him to cast forth a net of invisible energy as a Full Action after a successful Challenging (+0) Willpower test. He can call an unsecured metal object into his hand; the object cannot mass more than 1 kg per point of Willpower bonus, and must be within 20 metres. He must already have Mechanicus Implants trait (see page 137) for this system to function, and it can be improved through certain talents as described in Chapter IV: Talents & Traits.'
-  weight: 0
-  equipped: false
-img: systems/rogue-trader-3rd/icons/talents/blue/b_35.png
-name: Ferric Lure Implants
-type: cybernetic
+    craftsmanship: 'common'
+    availability: 'common'
+    weight: 0
+    equipped: false
+    inBackpack: false
+    description: 'This augmentation covers or replaces most of the skull with layers of plasteel and gel padding to better prevent concussion and other brain injuries. This implant adds +1 Armour—this bonus stacks with any worn Armour—to the Head location.'
+    source: 'Rogue Trader Core Rulebook'
+    backpack:
+        inBackpack: false
+img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_04.png'
+name: 'Cranial Armour'
+type: 'cybernetic'
 ---
 data:
-  armourPoints:
-    body: 0
-    head: 0
-    leftArm: 0
-    leftLeg: 0
-    rightArm: 0
-    rightLeg: 0
-  availability: Rare
-  craftsmanship: Common
-  description: 'The Acolyte now has a mechanical port implanted in his body, commonly in the rear of the neck, which can be connected to machines via a data cable. This allows the user faster and smoother access to the valuable information within, and grants a +10 bonus to Common Lore, Inquiry, or Tech-Use tests whilst connected to a relevant mechanism or data spool.'
-  weight: 0
-  equipped: false
-img: systems/rogue-trader-3rd/icons/talents/blue/b_35.png
-name: Interface Port
-type: cybernetic
+    craftsmanship: 'common'
+    availability: 'common'
+    weight: 0
+    equipped: false
+    inBackpack: false
+    description: 'Sight, hearing, touch, and taste can be duplicated artificially and more esoteric senses may be added. Common systems, while usually very obviously artificial and often oversized, manage to more or less duplicate the approximate human range of senses adequately and have no further game effects. Poor cybernetic senses are problem- ridden imitations of the real thing (hearing may be troubled by static, vision rendered in low-resolution monochrome, and so on). A character with this system suffers a $-20$ penalty to Tests made involving the cybernetic sense. Good cybernetic senses grant the Heightened Senses talent for that particular sense, and a $+20$ bonus to Tests made to resist attacks on the sense itself—such as deafening noises or blinding flashes. Basic and advanced cybernetic eyes may also incorporate magnifying lenses (counting as a telescopic sight, see page 134 for more details), a full photo-visor, and/or a system allowing the Dark Sight trait (see page 364). Likewise, basic or advanced cybernetic hearing may also include an internal micro-bead system.'
+    source: 'Rogue Trader Core Rulebook'
+    backpack:
+        inBackpack: false
+img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_04.png'
+name: 'Cybernetic Senses'
+type: 'cybernetic'
 ---
 data:
-  armourPoints:
-    body: 0
-    head: 0
-    leftArm: 0
-    leftLeg: 0
-    rightArm: 0
-    rightLeg: 0
-  availability: Rare
-  craftsmanship: Common
-  description: 'This implant acts as a powerful battery, storing energy for various implants and (especially) for functions that require energy to be expended in rapid or violent fashions. When it is fully charged, the Acolyte no longer gains Fatigue from using Luminen Capacitors either to recharge or attack something, but each use of those implants drains the reservoir by half. The battery fully recharges after one day of resting.'
-  weight: 0
-  equipped: false
-img: systems/rogue-trader-3rd/icons/talents/blue/b_35.png
-name: Internal Reservoir
-type: cybernetic
+    craftsmanship: 'common'
+    availability: 'common'
+    weight: 0
+    equipped: false
+    inBackpack: false
+    description: 'Micro-cogitators implanted at the base of the skull allow the user to be aware of the direction of true magnetic north, present location to within a few metres, relative velocity, altitude, time of day, and other valuable information. The user must still have access to maps and other planetary in order to benefit from this information, however—knowing you are at a specific location on a planetary surface has little meaning if you have no idea what is over the next rise, or what direction you must travel to reach a given destination.'
+    source: 'Rogue Trader Core Rulebook'
+    backpack:
+        inBackpack: false
+img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_04.png'
+name: 'Locator Matrix'
+type: 'cybernetic'
 ---
 data:
-  armourPoints:
-    body: 0
-    head: 0
-    leftArm: 0
-    leftLeg: 0
-    rightArm: 0
-    rightLeg: 0
-  availability: Rare
-  craftsmanship: Common
-  description: 'Micro-cogitators implanted at the base of the skull allow the user to be aware of the direction of the planetary poles, the Acolyte’s present location to within a few metres, relative velocity, altitude, time of day, and other valuable information. The user must still have access to maps and other planetary data in order to benefit from this information, however—knowing one is at a specific location on a planetary surface has little meaning without knowing what is over the next rise, or what is the direction needed to reach a given destination.'
-  weight: 0
-  equipped: false
-img: systems/rogue-trader-3rd/icons/talents/blue/b_35.png
-name: Locator Matrix
-type: cybernetic
+    craftsmanship: 'common'
+    availability: 'common'
+    weight: 0
+    equipped: false
+    inBackpack: false
+    description: 'This powerful shoulder-mounted mechadendrite is designed for heavy lifting and manipulation of industrial machinery. Built of ceramite and steel, it may extend to a length of $1.5\mathrm{m}$. When using the arm, the character gains a $+20$ bonus to Strength Tests. This limb is tipped with two sets of gripping and crushing pincers. These may be locked around a suitable anchor point as a Free Action to safely tether the tech-priest to lifting gear, high gantries, and so on. Finally, a character may use the manipulator as a club. It counts as a Primitive weapon that deals $1\mathrm{d}5 + 2$ Impact Damage. The manipulator may not be used for any task requiring fine manipulation such typing on a key pad or handling delicate objects. A character must have the appropriate Mechadendrite Use talent to operate this implant.'
+    source: 'Rogue Trader Core Rulebook'
+    backpack:
+        inBackpack: false
+img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_04.png'
+name: 'Manipulator Mechadendrite'
+type: 'cybernetic'
 ---
 data:
-  armourPoints:
-    body: 0
-    head: 0
-    leftArm: 0
-    leftLeg: 0
-    rightArm: 0
-    rightLeg: 0
-  availability: Very Rare
-  craftsmanship: Common
-  description: 'This implanted energy source charges internal capacitors, allowing the character to recharge devices or even unleash powerful energy blasts. With a successful Toughness test, the character recharges or powers machinery. This requires one minute of mental focus and meditation. The difficulty of the Toughness test varies depending on the nature of the powered system.'
-  weight: 0
-  equipped: false
-img: systems/rogue-trader-3rd/icons/talents/blue/b_35.png
-name: Luminen Capacitor
-type: cybernetic
+    craftsmanship: 'common'
+    availability: 'common'
+    weight: 0
+    equipped: false
+    inBackpack: false
+    description: 'This two-meter long, flexible limb is designed to provide medical and surgical assistance in the field. It grants a $+10$ bonus to Medicae Tests. The mechadendrite houses six injector pistons, each of which may be filled with one dose of a drug. These must be supplied separately. In addition to providing first aid, the mechadendrite''s flesh staplers may be used to staunch Blood Loss as a Half Action. A small chainscalpel attachment reduces the difficulty of limb amputation to Challenging $(+0)$. This blade may be used as an improvised weapon, and on a hit it deals 1d5 Rending Damage. Finally, the medicae mechadendrite may be used to gain a $+10$ bonus to Interrogation Tests. This mechadendrite may be shoulder or sternum-mounted. A character must have the appropriate Mechadendrite Use talent to operate this implant.'
+    source: 'Rogue Trader Core Rulebook'
+    backpack:
+        inBackpack: false
+img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_04.png'
+name: 'Medicae Mechadendrite'
+type: 'cybernetic'
 ---
 data:
-  armourPoints:
-    body: 0
-    head: 0
-    leftArm: 0
-    leftLeg: 0
-    rightArm: 0
-    rightLeg: 0
-  availability: Very Rare
-  craftsmanship: Common
-  description: 'Archaeotech systems of powerful gravimetric coils are implanted in the body, allowing the user to become unshackled from gravity’s grasp for short periods. Using a Half Action, the user may hover 20-30 centimetres off the ground for a number of minutes equal to 1d10 plus the character’s Toughness bonus. The character must employ a Half Action each round to concentrate on operating this implant and may use the other action to move normally. The character can slow his rate of descent when falling so long as this implant is active when the character reaches the ground, reducing all falling damage to a maximum of 1d10+3 Impact damage. Each time the character activates the coils, it drains the stored power and cannot be used again until recharged (which takes 24 hours).'
-  weight: 0
-  equipped: false
-img: systems/rogue-trader-3rd/icons/talents/blue/b_35.png
-name: Maglev Coils
-type: cybernetic
+    craftsmanship: 'common'
+    availability: 'common'
+    weight: 0
+    equipped: false
+    inBackpack: false
+    description: 'A neurally linked datavault and pict-capture array, often incorporating augmetic replacement of one or both eyes, that records information of people or scenes viewed. It can then later replay that information, or overlay the present view with additional data on people and objects viewed. It is a tool of chroniclers, remembrancers, and masters of ceremonies—as well as factors or nobles who like to see the secrets of their rivals overlaid upon their view of the negotiating table. It can provide a $+10$ bonus to Trade (Remembrancer) Tests, or other Tests in social situations where the recorded information provides leverage or value. The implant also grants the user the Total Recall Talent if he does not already possess it.'
+    source: 'Rogue Trader Core Rulebook'
+    backpack:
+        inBackpack: false
+img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_04.png'
+name: 'Memorance Implant'
+type: 'cybernetic'
 ---
 data:
-  armourPoints:
-    body: 0
-    head: 0
-    leftArm: 0
-    leftLeg: 0
-    rightArm: 0
-    rightLeg: 0
-  availability: Very Rare
-  craftsmanship: Common
-  description: 'Mechadendrites are mechanical attachments of brass and steel that act as additional arms. They are normally mounted on the shoulders or back, though some within the Mechanicum also project these cybernetics from their waists or chests. Each is usually 2 metres in length when fully extended, and has a specialised function based around the mechanisms affixed at their end. The number of mechadendrites coiled or folded around a Tech-Priest’s crimson- robed figure is often an excellent indicator of his rank within the Priesthood of Mars. Unless stated otherwise, mechadendrites can only be used to perform tasks that the owner already knows how to do. For example, a character with a medicae mechadendrite must have the Medicae skill in order to take advantage of the extra abilities the limb grants. A character must have the appropriate Mechadendrite Use talent (see page 130) to operate his mechadendrite, and the maximum number of mechadendrites he can have installed upon his body is equal to his Toughness bonus.'
-  weight: 0
-  equipped: false
-img: systems/rogue-trader-3rd/icons/talents/blue/b_35.png
-name: Mechadendrite
-type: cybernetic
+    craftsmanship: 'common'
+    availability: 'common'
+    weight: 0
+    equipped: false
+    inBackpack: false
+    description: 'These devices, also known as sense-links, allow the owner to directly interface with a machine or technological device. MIUs see widespread use among the Adeptus Mechanicus who regard them as objects of divine communion. A basic MIU implant involves a single spinal or cortex connector, while advanced variants include wrist connector probes—and possibly mechadendrite connectors—in addition to the spinal plug. Common models impose no modifiers to machine spirit communication and add a $+10$ bonus to Tech-Use, Pilot, or Drive Tests used in conjunction with devices capable of MIU linking. Poor MIU systems require a successful Willpower Test to use and impose a $-10$ penalty to interact with machine spirits. Good models grant a $+10$ bonus to communicate with machine spirits, and for Tech-Use, Pilot, Drive, Logic, Inquiry, and Ballistic Skill Tests when interfaced with MIU systems. In addition, an MIU gives the user the ability to experience the senses of any familiars he controls (such as a servo-skull or grapplehawk, see page 375) as if he were present.'
+    source: 'Rogue Trader Core Rulebook'
+    backpack:
+        inBackpack: false
+img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_04.png'
+name: 'Mind Impulse Unit (miu)'
+type: 'cybernetic'
 ---
 data:
-  armourPoints:
-    body: 0
-    head: 0
-    leftArm: 0
-    leftLeg: 0
-    rightArm: 0
-    rightLeg: 0
-  availability: Rare
-  craftsmanship: Common
-  description: 'This implant is a neurally-linked datavault and pict-capture array, often incorporating augmetic replacement of one or both eyes, that records information on people or scenes viewed. It can then later replay that information, or overlay the present view with additional data on people and objects viewed. It is a tool of chroniclers, loremancers, and masters of ceremonies, as well as factors or nobles who like to see the secrets of their rivals overlaid upon their view of the negotiating table. It provides a +10 bonus to Trade (Loremancer) tests or other tests in social situations where the recorded information provides leverage or value.'
-  weight: 0
-  equipped: false
-img: systems/rogue-trader-3rd/icons/talents/blue/b_35.png
-name: Memorance Implant
-type: cybernetic
+    craftsmanship: 'common'
+    availability: 'common'
+    weight: 0
+    equipped: false
+    inBackpack: false
+    description: 'Unlike the more advanced version normally only granted to priests of the Adeptus Mechanicus, this version is more simplified, allowing the user to remotely operate a single weapon which is normally attached to the shoulder. While not as elaborate, it is easier to use and a favourite of many militant professions. This system allows user to fire an additional ranged weapon as a Free Action—using his full Ballistic Skill—no matter what other actions he may be taking at the time. This additional weapon must be connected to the user via the MIU weapon interface, and are often equipped as a shoulder-mount.'
+    source: 'Rogue Trader Core Rulebook'
+    backpack:
+        inBackpack: false
+img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_04.png'
+name: 'Miu Weapon Interface'
+type: 'cybernetic'
 ---
 data:
-  armourPoints:
-    body: 0
-    head: 0
-    leftArm: 0
-    leftLeg: 0
-    rightArm: 0
-    rightLeg: 0
-  availability: Rare
-  craftsmanship: Common
-  description: 'These devices, also known as sense-links, allow the owner to interface directly with a machine or technological device. MIUs see widespread use among the Adeptus Mechanicus, who regard them as objects of divine communion. A basic model involves a single spinal or cortex connector, while advanced variants include wrist connector probes—and possibly mechadendrite connectors—in addition to the spinal plug. Common models impose no modifiers to machine spirit communication, and add a +10 bonus to Tech-Use or Operate tests used in conjunction with devices capable of MIU linking. Poor MIU systems require a Challenging (+0) Willpower test to use and impose a –10 penalty when attempting to interface with a device. Good models grant a +10 bonus to commune with machine spirits and for Tech-Use, Operate, Logic, Inquiry, and Ballistic Skill tests made as part of interfacing with the MIU systems.'
-  weight: 0
-  equipped: false
-img: systems/rogue-trader-3rd/icons/talents/blue/b_35.png
-name: Mind Impulse Unit
-type: cybernetic
+    craftsmanship: 'common'
+    availability: 'common'
+    weight: 0
+    equipped: false
+    inBackpack: false
+    description: 'This highly flexible mechadendrite set with pict-capture and sensor devices is designed to assist in inspection and detection. This mechadendrite extends to a length of three metres, and can reduce its width to pencil thickness. It grants a +10 bonus to all Perception-based Tests. The pict-devices mounted on the mechadendrite allow the user to examine surfaces at a microscopic level and may be used as a telescopic sight. The mechadendrite is also mounted with an infra-red torch and sensors. A character using the mechadendrite suffers no penalties due to darkness and gains a +20 bonus to vision-based Perception Tests at night. Finally, the mechadendrite is fitted with a light that may be tinted a variety of different colours, depending on the controller''s whim. This mechadendrite may be shoulder or sternum-mounted. A character must have the appropriate Mechadendrite Use talent to operate this implant.'
+    source: 'Rogue Trader Core Rulebook'
+    backpack:
+        inBackpack: false
+img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_04.png'
+name: 'Optical Mechadendrite'
+type: 'cybernetic'
 ---
 data:
-  armourPoints:
-    body: 0
-    head: 0
-    leftArm: 0
-    leftLeg: 0
-    rightArm: 0
-    rightLeg: 0
-  availability: Rare
-  craftsmanship: Common
-  description: '
-Unlike the more advanced MIU version normally only granted to priests of the Adeptus Mechanicus, this model is more simplified, allowing the user to remotely operate a single weapon which is attached user’s body. While not as elaborate, it is easier to use and a favourite of many militant professions. This system allows the user to fire the linked ranged weapon as a Free Action during his turn. Note that he can still only take a single Action with the Attack subtype during his turn. This additional weapon must be connected to the user via the MIU weapon interface, and is usually equipped as a shoulder mount.'
-  weight: 0
-  equipped: false
-img: systems/rogue-trader-3rd/icons/talents/blue/b_35.png
-name: MIU Weapon Interface
-type: cybernetic
+    craftsmanship: 'common'
+    availability: 'common'
+    weight: 0
+    equipped: false
+    inBackpack: false
+    description: 'These are implanted inside the lungs and can sift out most toxic gases. Inhaled particulate matter is also filtered, making breathing easier in heavily polluted atmospheres. This implant allows the user to ignore any inhaled toxic gases or atmospheric contaminants.'
+    source: 'Rogue Trader Core Rulebook'
+    backpack:
+        inBackpack: false
+img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_04.png'
+name: 'Respiratory Filter Implant'
+type: 'cybernetic'
 ---
 data:
-  armourPoints:
-    body: 0
-    head: 0
-    leftArm: 0
-    leftLeg: 0
-    rightArm: 0
-    rightLeg: 0
-  availability: Rare
-  craftsmanship: Common
-  description: 'These are implanted inside the lungs or involve masses of tubes, wires, vox-grills, or other augmetic parts replacing the neck and upper chest. The implant sifts out most toxic gases; inhaled particulate matter is also filtered, making breathing easier in heavily polluted atmospheres. This implant grants the user a +20 bonus to resist inhaled poisons, gas weapons, or atmospheric toxins.'
-  weight: 0
-  equipped: false
-img: systems/rogue-trader-3rd/icons/talents/blue/b_35.png
-name: Respiratory Filter Implant
-type: cybernetic
+    craftsmanship: 'common'
+    availability: 'common'
+    weight: 0
+    equipped: false
+    inBackpack: false
+    description: 'The hand and lower forearm are replaced with specialised and sensitive tools ideal for page turning, autoscribing, data-slate manipulation, and other invaluable abilities for a sage. While somewhat disquieting in appearance, they are viewed with favour by hive-world scholars and lexmechanics. This implant gives the user a +10 bonus to all Investigation Skill Tests.'
+    source: 'Rogue Trader Core Rulebook'
+    backpack:
+        inBackpack: false
+img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_04.png'
+name: 'Scribe-Tines'
+type: 'cybernetic'
 ---
 data:
-  armourPoints:
-    body: 0
-    head: 0
-    leftArm: 0
-    leftLeg: 0
-    rightArm: 0
-    rightLeg: 0
-  availability: Rare
-  craftsmanship: Common
-  description: 'The hand and lower forearm are replaced with specialised and sensitive tools ideal for manipulating parchment, autoscribing, dataslate tuning, and other efforts to record and preserve information. While somewhat disquieting in appearance, they are viewed with favour by hive-world scholars and lexmechanics. This implant gives the user a +10 bonus to all Lore skill tests.'
-  weight: 0
-  equipped: false
-img: systems/rogue-trader-3rd/icons/talents/blue/b_35.png
-name: Scribe-tines
-type: cybernetic
+    craftsmanship: 'common'
+    availability: 'common'
+    weight: 0
+    equipped: false
+    inBackpack: false
+    description: 'Thin carapace plating is inserted under the skin in various locations, giving the user added protection against damage. While not as impressive as most augmentations, and sometimes uncomfortable, subskin armour is very reliable. This implant adds +2 Armour to the Arms, Body, and Legs locations. The armour bonus is added to any other armour for those locations.'
+    source: 'Rogue Trader Core Rulebook'
+    backpack:
+        inBackpack: false
+img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_04.png'
+name: 'Subskin Armour'
+type: 'cybernetic'
 ---
 data:
-  armourPoints:
-    body: 2
-    head: 0
-    leftArm: 2
-    leftLeg: 2
-    rightArm: 2
-    rightLeg: 2
-  availability: Very Rare
-  craftsmanship: Common
-  description: 'Thin carapace plating is inserted under the skin in various locations, giving the user added protection against damage. While not as impressive as most augmentations and sometimes uncomfortable, subskin armour is very reliable. This implant adds +2 Armour points to the Arms, Body, and Legs locations, which stacks with any other Armour points for these locations.'
-  weight: 0
-  equipped: false
-img: systems/rogue-trader-3rd/icons/talents/blue/b_35.png
-name: Subskin Armour
-type: cybernetic
+    craftsmanship: 'common'
+    availability: 'common'
+    weight: 0
+    equipped: false
+    inBackpack: false
+    description: 'Vat-grown muscle tissue, hyperdense and augmented with flakweave, is implanted into existing muscle groups to increased their strength. Users gain a +1 to their Strength Bonus for a normal implantation. Best-Craftsmanship grafts will grant the Unnatural Strength (x2) Trait but also impose a -10 penalty to any Agility Tests due to the misshapen nature of the body.'
+    source: 'Rogue Trader Core Rulebook'
+    backpack:
+        inBackpack: false
+img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_04.png'
+name: 'Synthetic Muscle Grafts'
+type: 'cybernetic'
 ---
 data:
-  armourPoints:
-    body: 0
-    head: 0
-    leftArm: 0
-    leftLeg: 0
-    rightArm: 0
-    rightLeg: 0
-  availability: Rare
-  craftsmanship: Common
-  description: 'Ropey strands of vat-grown muscle tissue, thick with slurried nutrients and laced with flakweave, are woven into existing muscle groups, granting increased strength of varying levels. This implant grants the Unnatural Strength (1) trait; Best craftsmanship grafts instead grant the Unnatural Strength (4) trait but also impose a –10 penalty on Agility tests due to the newly misshapen and unnatural body form.'
-  weight: 0
-  equipped: false
-img: systems/rogue-trader-3rd/icons/talents/blue/b_35.png
-name: Synthmuscle
-type: cybernetic
----
-data:
-  armourPoints:
-    body: 0
-    head: 0
-    leftArm: 0
-    leftLeg: 0
-    rightArm: 0
-    rightLeg: 0
-  availability: Scarce
-  craftsmanship: Common
-  description: 'This implant is usually found with those who use their voice to project commands or proclamations, such as Ecclesiarchy Preachers or Adeptus Arbites Crowd Dispersal Officers. This implant works to amplify the vocal cords to an inhuman range in order to shout commands over the noise of a raging battle, and counts as using a laud hailer.'
-  weight: 0
-  equipped: false
-img: systems/rogue-trader-3rd/icons/talents/blue/b_35.png
-name: Vocal Implant
-type: cybernetic
----
-data:
-  armourPoints:
-    body: 0
-    head: 0
-    leftArm: 0
-    leftLeg: 0
-    rightArm: 0
-    rightLeg: 0
-  availability: Rare
-  craftsmanship: Common
-  description: 'The subject has cranial surgery to implant neural receptors and artificial nerve routing, and can be compelled not to reveal a certain item of information, remain within a set area, or perform a specific task. If the subject attempts—or is forced—to counter this compulsion, his brain shuts down into unconsciousness, or even death for some severe volitor patterns.'
-  weight: 0
-  equipped: false
-img: systems/rogue-trader-3rd/icons/talents/blue/b_35.png
-name: Volitor Implant
-type: cybernetic
+    craftsmanship: 'common'
+    availability: 'common'
+    weight: 0
+    equipped: false
+    inBackpack: false
+    description: 'This two-meter long limb houses a variety of tools and attachments designed to assist a tech-priest in the course of his holy duties. The mechadendrite counts as a combitool, granting a +10 bonus to all Tech-Use Tests. The limb also houses six injector pistons, each of which may be filled with one dose of sacred unguent. These must be supplied separately. In addition to this, the limb contains an electrically powered censer, which can gust incense fumes over particularly troublesome faults. The censer generates one "blast" of smoke every fifteen minutes. This may be employed in'
+    source: 'Rogue Trader Core Rulebook'
+    backpack:
+        inBackpack: false
+img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_04.png'
+name: 'Utility Mechadendrite'
+type: 'cybernetic'
