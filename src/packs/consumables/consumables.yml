@@ -1,572 +1,583 @@
 data:
-  craftsmanship: common
-  availability: common
-  weight: 0
-  equipped: false
-  inBackpack: false
-  description: Amasec is a popular alcoholic drink distilled from wine. It can range
-    from lesser brews barely fit for firebombs, to well-aged brands suitable for only
-    the finest of the Emperor's servants.
-  source: Rogue Trader Core Rulebook
-  backpack:
+    craftsmanship: common
+    availability: common
+    weight: 0
+    equipped: false
     inBackpack: false
-img: systems/rogue-trader-3rd/icons/talents/blue/b_01.png
+    description: Amasec is a popular alcoholic drink distilled from wine. It can range
+        from lesser brews barely fit for firebombs, to well-aged brands suitable for
+        only the finest of the Emperor's servants.
+    source: Rogue Trader Core Rulebook
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/consumable-bottle.png
 name: Amasec
 type: drug
 ---
 data:
-  craftsmanship: common
-  availability: common
-  weight: 0
-  equipped: false
-  inBackpack: false
-  description: This drug can negate the effects of most dangerous gases and toxins
-    if administered fast enough. A dose of de-tox immediately ends the ongoing effects,
-    both positive and negative, of any drugs, toxins, or gases affecting the character
-    (unless the effect states that de-tox is not effective against them). Using de-tox,
-    however, is both painful and debilitating, causing such unpleasant side effects
-    as vomiting, nose bleeds, and a great voiding of the bowels. Upon taking this
-    drug, a character is Stunned for a number of Rounds equal to 1d10 minus his Toughness
-    Bonus. A result of 0 or less means that the character suffers no ill effects.
-  source: Rogue Trader Core Rulebook
-  backpack:
+    craftsmanship: common
+    availability: common
+    weight: 0
+    equipped: false
     inBackpack: false
-img: systems/rogue-trader-3rd/icons/talents/blue/b_01.png
+    description: This drug can negate the effects of most dangerous gases and toxins
+        if administered fast enough. A dose of de-tox immediately ends the ongoing
+        effects, both positive and negative, of any drugs, toxins, or gases affecting
+        the character (unless the effect states that de-tox is not effective against
+        them). Using de-tox, however, is both painful and debilitating, causing such
+        unpleasant side effects as vomiting, nose bleeds, and a great voiding of the
+        bowels. Upon taking this drug, a character is Stunned for a number of Rounds
+        equal to 1d10 minus his Toughness Bonus. A result of 0 or less means that
+        the character suffers no ill effects.
+    source: Rogue Trader Core Rulebook
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/consumable-drug-vial.png
 name: De-Tox (drug)
 type: drug
 ---
 data:
-  craftsmanship: common
-  availability: common
-  weight: 0
-  equipped: false
-  inBackpack: false
-  description: A generic name for a variety of combat drugs most often used within
-    penal legion units. Once administered, the subject becomes fearless and fanatical
-    in combat. A character using frenzon gains the Frenzy talent and also gains immunity
-    to Fear. A single dose of frenzon lasts for 1d10 minutes.
-  source: Rogue Trader Core Rulebook
-  backpack:
+    craftsmanship: common
+    availability: common
+    weight: 0
+    equipped: false
     inBackpack: false
-img: systems/rogue-trader-3rd/icons/talents/blue/b_01.png
+    description: A generic name for a variety of combat drugs most often used within
+        penal legion units. Once administered, the subject becomes fearless and fanatical
+        in combat. A character using frenzon gains the Frenzy talent and also gains
+        immunity to Fear. A single dose of frenzon lasts for 1d10 minutes.
+    source: Rogue Trader Core Rulebook
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/consumable-drug-vial.png
 name: Frenzon (drug)
 type: drug
 ---
 data:
-  craftsmanship: common
-  availability: common
-  weight: 0
-  equipped: false
-  inBackpack: false
-  description: Injectors can take many forms from cheap low-tech disposable syringes
-    up to sophisticated hypo-sprays and even bio-attuned skin patches. An injector
-    can hold a single dose of any drug, which a character may administer as a Full
-    Action.
-  source: Rogue Trader Core Rulebook
-  backpack:
+    craftsmanship: common
+    availability: common
+    weight: 0
+    equipped: false
     inBackpack: false
-img: systems/rogue-trader-3rd/icons/talents/blue/b_01.png
+    description: Injectors can take many forms from cheap low-tech disposable syringes
+        up to sophisticated hypo-sprays and even bio-attuned skin patches. An injector
+        can hold a single dose of any drug, which a character may administer as a
+        Full Action.
+    source: Rogue Trader Core Rulebook
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/consumable-injector.png
 name: Injector
 type: drug
 ---
 data:
-  craftsmanship: common
-  availability: common
-  weight: 0
-  equipped: false
-  inBackpack: false
-  description: Lho-sticks are common with Imperial Guard troopers and many menial
-    workers. Each rolled paper tube contains a scented, mildly narcotic (and addictive)
-    plant-derived substance, which is then lit and the resulting smoke inhaled through
-    the tube.
-  source: Rogue Trader Core Rulebook
-  backpack:
+    craftsmanship: common
+    availability: common
+    weight: 0
+    equipped: false
     inBackpack: false
-img: systems/rogue-trader-3rd/icons/talents/blue/b_01.png
+    description: Lho-sticks are common with Imperial Guard troopers and many menial
+        workers. Each rolled paper tube contains a scented, mildly narcotic (and addictive)
+        plant-derived substance, which is then lit and the resulting smoke inhaled
+        through the tube.
+    source: Rogue Trader Core Rulebook
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/consumable-lho-stick.png
 name: Lho-Sticks
 type: drug
 ---
 data:
-  craftsmanship: common
-  availability: common
-  weight: 0
-  equipped: false
-  inBackpack: false
-  description: This is vital bit of equipment for any medic. A typical medikit contains
-    various cataplasm patches, contraseptics, and synthetic skin applicators. A character
-    who has a medikit at hand when using the Medicae skill gains a +20 bonus to their
-    Test.
-  source: Rogue Trader Core Rulebook
-  backpack:
+    craftsmanship: common
+    availability: common
+    weight: 0
+    equipped: false
     inBackpack: false
-img: systems/rogue-trader-3rd/icons/talents/blue/b_01.png
+    description: This is vital bit of equipment for any medic. A typical medikit contains
+        various cataplasm patches, contraseptics, and synthetic skin applicators.
+        A character who has a medikit at hand when using the Medicae skill gains a
+        +20 bonus to their Test.
+    source: Rogue Trader Core Rulebook
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/consumable-drug-vial.png
 name: Medikit
 type: drug
 ---
 data:
-  craftsmanship: common
-  availability: common
-  weight: 0
-  equipped: false
-  inBackpack: false
-  description: A practical item for vessels with no properly trained medicae support,
-    these kits can be used by almost anyone. Each contains essential items such as
-    synthetic skin spray, counterseptics, cast spray, toxin wands, and more, all with
-    easy to follow instructions and built-in cogitators for diagnostic advice. This
-    item grants a +20 bonus to Medicae skill Tests and can be used even if user does
-    not have the skill.
-  source: Rogue Trader Core Rulebook
-  backpack:
+    craftsmanship: common
+    availability: common
+    weight: 0
+    equipped: false
     inBackpack: false
-img: systems/rogue-trader-3rd/icons/talents/blue/b_01.png
+    description: A practical item for vessels with no properly trained medicae support,
+        these kits can be used by almost anyone. Each contains essential items such
+        as synthetic skin spray, counterseptics, cast spray, toxin wands, and more,
+        all with easy to follow instructions and built-in cogitators for diagnostic
+        advice. This item grants a +20 bonus to Medicae skill Tests and can be used
+        even if user does not have the skill.
+    source: Rogue Trader Core Rulebook
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/consumable-drug-vial.png
 name: Medikit (Advanced)
 type: drug
 ---
 data:
-  craftsmanship: common
-  availability: common
-  weight: 0
-  equipped: false
-  inBackpack: false
-  description: The nobility of the Imperium dine upon such delicacies as real, unprocessed
-    meat from strange beasts, fruits won from death worlds at the cost of many lives,
-    and exotic grains from private hydroponic gardens. Some intricate delicacies are
-    created solely for the purpose of demonstrating great wealth, but no self-respecting
-    noble would sink so low as to eat and drink the same rations as their servants—or,
-    Emperor forbid, the filth that serfs and mid-hivers consume.
-  source: Rogue Trader Core Rulebook
-  backpack:
+    craftsmanship: common
+    availability: common
+    weight: 0
+    equipped: false
     inBackpack: false
-img: systems/rogue-trader-3rd/icons/talents/blue/b_01.png
+    description: The nobility of the Imperium dine upon such delicacies as real, unprocessed
+        meat from strange beasts, fruits won from death worlds at the cost of many
+        lives, and exotic grains from private hydroponic gardens. Some intricate delicacies
+        are created solely for the purpose of demonstrating great wealth, but no self-respecting
+        noble would sink so low as to eat and drink the same rations as their servants—or,
+        Emperor forbid, the filth that serfs and mid-hivers consume.
+    source: Rogue Trader Core Rulebook
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/consumable-drug-vial.png
 name: High Provender
 type: drug
 ---
 data:
-  craftsmanship: common
-  availability: common
-  weight: 0
-  equipped: false
-  inBackpack: false
-  description: Prohibited and the subject of widespread crackdowns, obscura remains
-    a widely used narcotic among Imperial subjects. |  Name | Weight | Availability  |
-    | --- | --- | --- | |  Amasec | — | Scarce  | |  De-tox | — | Rare  | |  Frenzon
-    | — | Very Rare  | |  Injector | — | Plentiful  | |  Lho-sticks | — | Common  |
-    |  Medikit | 2 kg | Common  | |  Medikit (Advanced) | 5 kg | Rare  | |  High Provender
-    | — | Very Rare  | |  Obscura | — | Rare  | |  Ration Packs | — | Ubiquitous  |
-    |  Recaf | — | Abundant  | |  Sacred Unguents | — | Very Rare  | |  Slaught |
-    — | Scarce  | |  Stimm | — | Average  | |  Thosophist’s Philtre | — | Very Rare  |
-    |  Tranq | — | Abundant  | Smugglers can make a good living importing and selling
-    the drug to all classes of civilians and military personnel. Obscura users enter
-    a dream-like state for 1d5 hours (if required to engage in combat consider them
-    under the effects of a hallucinogen grenade). Then for 1d10 hours after the effects
-    wear off, they enter a deep depression, unless another dose of obscura is taken.
-  source: Rogue Trader Core Rulebook
-  backpack:
+    craftsmanship: common
+    availability: common
+    weight: 0
+    equipped: false
     inBackpack: false
-img: systems/rogue-trader-3rd/icons/talents/blue/b_01.png
+    description: Prohibited and the subject of widespread crackdowns, obscura remains
+        a widely used narcotic among Imperial subjects. |  Name | Weight | Availability  |
+        | --- | --- | --- | |  Amasec | — | Scarce  | |  De-tox | — | Rare  | |  Frenzon
+        | — | Very Rare  | |  Injector | — | Plentiful  | |  Lho-sticks | — | Common  |
+        |  Medikit | 2 kg | Common  | |  Medikit (Advanced) | 5 kg | Rare  | |  High
+        Provender | — | Very Rare  | |  Obscura | — | Rare  | |  Ration Packs | —
+        | Ubiquitous  | |  Recaf | — | Abundant  | |  Sacred Unguents | — | Very Rare  |
+        |  Slaught | — | Scarce  | |  Stimm | — | Average  | |  Thosophist’s Philtre
+        | — | Very Rare  | |  Tranq | — | Abundant  | Smugglers can make a good living
+        importing and selling the drug to all classes of civilians and military personnel.
+        Obscura users enter a dream-like state for 1d5 hours (if required to engage
+        in combat consider them under the effects of a hallucinogen grenade). Then
+        for 1d10 hours after the effects wear off, they enter a deep depression, unless
+        another dose of obscura is taken.
+    source: Rogue Trader Core Rulebook
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/consumable-drug-vial.png
 name: Obscura
 type: drug
 ---
 data:
-  craftsmanship: common
-  availability: common
-  weight: 0
-  equipped: false
-  inBackpack: false
-  description: Most food in the Imperium is packaged, processed, and usually completely
-    unrecognisable as anything edible. The quality of ration packs varies widely,
-    ranging from simple and poor fare such as corpse starch rations or cultured algae
-    to flavoured strips of grox meat and fine nutrislurry.
-  source: Rogue Trader Core Rulebook
-  backpack:
+    craftsmanship: common
+    availability: common
+    weight: 0
+    equipped: false
     inBackpack: false
-img: systems/rogue-trader-3rd/icons/talents/blue/b_01.png
+    description: Most food in the Imperium is packaged, processed, and usually completely
+        unrecognisable as anything edible. The quality of ration packs varies widely,
+        ranging from simple and poor fare such as corpse starch rations or cultured
+        algae to flavoured strips of grox meat and fine nutrislurry.
+    source: Rogue Trader Core Rulebook
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/consumable-ration-pack.png
 name: Ration Packs
 type: drug
 ---
 data:
-  craftsmanship: common
-  availability: common
-  weight: 0
-  equipped: false
-  inBackpack: false
-  description: Recaf is a popular hot beverage, made from crushed and brewed leaves.
-    The composition can vary from planet to planet, but most blends incorporate some
-    form of stimulant such as caffeine or detoxified pharamoxine compounds.
-  source: Rogue Trader Core Rulebook
-  backpack:
+    craftsmanship: common
+    availability: common
+    weight: 0
+    equipped: false
     inBackpack: false
-img: systems/rogue-trader-3rd/icons/talents/blue/b_01.png
+    description: Recaf is a popular hot beverage, made from crushed and brewed leaves.
+        The composition can vary from planet to planet, but most blends incorporate
+        some form of stimulant such as caffeine or detoxified pharamoxine compounds.
+    source: Rogue Trader Core Rulebook
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/consumable-bottle.png
 name: Recaf
 type: drug
 ---
 data:
-  craftsmanship: common
-  availability: common
-  weight: 0
-  equipped: false
-  inBackpack: false
-  description: 'Sacred unguents blessed by the Omnissiah are much sought after for
-    their mystical properties when applied to machines. If applied to a weapon (a
-    Full Action) it becomes immune to Jamming (see Chapter IX: Playing the Game, page
-    249) for a number of shots equal to its clip size. If the weapon is Jammed and
-    the unguent is then applied, it immediately unjams, but there is no further effect.'
-  source: Rogue Trader Core Rulebook
-  backpack:
+    craftsmanship: common
+    availability: common
+    weight: 0
+    equipped: false
     inBackpack: false
-img: systems/rogue-trader-3rd/icons/talents/blue/b_01.png
+    description: 'Sacred unguents blessed by the Omnissiah are much sought after for
+        their mystical properties when applied to machines. If applied to a weapon
+        (a Full Action) it becomes immune to Jamming (see Chapter IX: Playing the
+        Game, page 249) for a number of shots equal to its clip size. If the weapon
+        is Jammed and the unguent is then applied, it immediately unjams, but there
+        is no further effect.'
+    source: Rogue Trader Core Rulebook
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/consumable-sacred-unguent.png
 name: Sacred Unguents
 type: drug
 ---
 data:
-  craftsmanship: common
-  availability: common
-  weight: 0
-  equipped: false
-  inBackpack: false
-  description: Also know as “onslaught”, this drug heightens awareness and improves
-    reaction time, literally speeding up the user but causing Fatigue and neural damage
-    with prolonged use. Taking a dose increases the user's Agility Bonus and Perception
-    Bonus by 3 for 2d10 minutes. When the drug runs its course, the user must Test
-    Toughness or take a -20 penalty to Agility Tests and Perception Tests for 1d5
-    hours.
-  source: Rogue Trader Core Rulebook
-  backpack:
+    craftsmanship: common
+    availability: common
+    weight: 0
+    equipped: false
     inBackpack: false
-img: systems/rogue-trader-3rd/icons/talents/blue/b_01.png
+    description: Also know as “onslaught”, this drug heightens awareness and improves
+        reaction time, literally speeding up the user but causing Fatigue and neural
+        damage with prolonged use. Taking a dose increases the user's Agility Bonus
+        and Perception Bonus by 3 for 2d10 minutes. When the drug runs its course,
+        the user must Test Toughness or take a -20 penalty to Agility Tests and Perception
+        Tests for 1d5 hours.
+    source: Rogue Trader Core Rulebook
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/consumable-drug-vial.png
 name: Slaught
 type: drug
 ---
 data:
-  craftsmanship: common
-  availability: common
-  weight: 0
-  equipped: false
-  inBackpack: false
-  description: Stimm is a powerful drug that works to mask pain and drive fighters
-    on when their bodies would otherwise give up. A dose of stimm lasts 3d10 Rounds.
-    During this time a character ignores any negative effects to his Characteristics
-    from Damage or Critical Damage and cannot be Stunned. When the stimm wears off,
-    the character takes a -20 penalty to Strength, Toughness and Agility Tests for
-    one hour.
-  source: Rogue Trader Core Rulebook
-  backpack:
+    craftsmanship: common
+    availability: common
+    weight: 0
+    equipped: false
     inBackpack: false
-img: systems/rogue-trader-3rd/icons/talents/blue/b_01.png
+    description: Stimm is a powerful drug that works to mask pain and drive fighters
+        on when their bodies would otherwise give up. A dose of stimm lasts 3d10 Rounds.
+        During this time a character ignores any negative effects to his Characteristics
+        from Damage or Critical Damage and cannot be Stunned. When the stimm wears
+        off, the character takes a -20 penalty to Strength, Toughness and Agility
+        Tests for one hour.
+    source: Rogue Trader Core Rulebook
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/consumable-drug-vial.png
 name: Stimm (drug)
 type: drug
 ---
 data:
-  craftsmanship: common
-  availability: common
-  weight: 0
-  equipped: false
-  inBackpack: false
-  description: A heady, thick liquor of Archaos, forbidden by ancient law upon that
-    world. It is said to give a drinker depth and clarity of thought, and though this
-    is likely no more than the mystique that attends any forbidden item, this rare
-    intoxicant is prized as a sign of culture and wealth amongst Calixian sophisticates.
-  source: Rogue Trader Core Rulebook
-  backpack:
+    craftsmanship: common
+    availability: common
+    weight: 0
+    equipped: false
     inBackpack: false
-img: systems/rogue-trader-3rd/icons/talents/blue/b_01.png
+    description: A heady, thick liquor of Archaos, forbidden by ancient law upon that
+        world. It is said to give a drinker depth and clarity of thought, and though
+        this is likely no more than the mystique that attends any forbidden item,
+        this rare intoxicant is prized as a sign of culture and wealth amongst Calixian
+        sophisticates.
+    source: Rogue Trader Core Rulebook
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/consumable-drug-vial.png
 name: Theosophist's Philtre
 type: drug
 ---
 data:
-  craftsmanship: common
-  availability: common
-  weight: 0
-  equipped: false
-  inBackpack: false
-  description: The term "tranq" covers an array of artificial, alcoholic chemistillates
-    made by the low-hive masses of the Golgenna Reach. The techniques for producing
-    tranq have been carried throughout the Calixis Sector by crew-scum, criminals,
-    and Guardsmen. Drinking tranq numbs the body and mind, a very different feeling
-    to being drunk on rotgut, amasec or other spirits. Though similar in end result,
-    the effects of tranq are unpleasant, depressive, and an acquired taste.
-  source: Rogue Trader Core Rulebook
-  backpack:
+    craftsmanship: common
+    availability: common
+    weight: 0
+    equipped: false
     inBackpack: false
-img: systems/rogue-trader-3rd/icons/talents/blue/b_01.png
+    description: The term "tranq" covers an array of artificial, alcoholic chemistillates
+        made by the low-hive masses of the Golgenna Reach. The techniques for producing
+        tranq have been carried throughout the Calixis Sector by crew-scum, criminals,
+        and Guardsmen. Drinking tranq numbs the body and mind, a very different feeling
+        to being drunk on rotgut, amasec or other spirits. Though similar in end result,
+        the effects of tranq are unpleasant, depressive, and an acquired taste.
+    source: Rogue Trader Core Rulebook
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/consumable-drug-vial.png
 name: Tranq
 type: drug
 ---
 data:
-  craftsmanship: common
-  availability: common
-  weight: 0
-  equipped: false
-  inBackpack: false
-  description: ''
-  source: Rogue Trader Core Rulebook
-  backpack:
+    craftsmanship: common
+    availability: common
+    weight: 0
+    equipped: false
     inBackpack: false
-img: systems/rogue-trader-3rd/icons/talents/blue/b_01.png
+    description: ''
+    source: Rogue Trader Core Rulebook
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/consumable-drug-vial.png
 name: Tools
 type: drug
 ---
 data:
-  craftsmanship: common
-  availability: common
-  weight: 0
-  equipped: false
-  inBackpack: false
-  description: A tech-device of the Divine Astrometricum, a Calixian faction of tech-priests
-    concerned with cataloguing stars, nebulae, and distant events in the voids. Its
-    clicking arrangement of spheres and hololithic projections form a catalogue of
-    sorts, which is of use to those who make their way between stars. It can provide
-    a +10 bonus to Navigation, Pilot, Scholastic Lore (Astromancy), or Trade (Astrographer)
-    Tests where its information is directly relevant to the circumstances.
-  source: Rogue Trader Core Rulebook
-  backpack:
+    craftsmanship: common
+    availability: common
+    weight: 0
+    equipped: false
     inBackpack: false
-img: systems/rogue-trader-3rd/icons/talents/blue/b_01.png
+    description: A tech-device of the Divine Astrometricum, a Calixian faction of
+        tech-priests concerned with cataloguing stars, nebulae, and distant events
+        in the voids. Its clicking arrangement of spheres and hololithic projections
+        form a catalogue of sorts, which is of use to those who make their way between
+        stars. It can provide a +10 bonus to Navigation, Pilot, Scholastic Lore (Astromancy),
+        or Trade (Astrographer) Tests where its information is directly relevant to
+        the circumstances.
+    source: Rogue Trader Core Rulebook
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/consumable-drug-vial.png
 name: Almanac Astrae Divinitus
 type: drug
 ---
 data:
-  craftsmanship: common
-  availability: common
-  weight: 0
-  equipped: false
-  inBackpack: false
-  description: A long protective case of many quick-release compartments and sockets
-    for power packs designed to be slung over the back. It is intended to protect
-    the diverse wargear of a professional militant from the environment and pilfering
-    hands. The Arms Coffer has enough room for two Basic weapons or four Pistol
-    weapons (or one Basic weapon and up to two Pistol weapons), plus four clips of
-    Basic weapon ammunition or eight clips of Pistol weapon ammunition (one Basic
-    clip takes the space of two Pistol clips). // Errata v1.4 (p.143).
-  source: Rogue Trader Core Rulebook, p.143
-  backpack:
+    craftsmanship: common
+    availability: common
+    weight: 0
+    equipped: false
     inBackpack: false
-img: systems/rogue-trader-3rd/icons/talents/blue/b_01.png
+    description: A long protective case of many quick-release compartments and sockets
+        for power packs designed to be slung over the back. It is intended to protect
+        the diverse wargear of a professional militant from the environment and pilfering
+        hands. The Arms Coffer has enough room for two Basic weapons or four Pistol
+        weapons (or one Basic weapon and up to two Pistol weapons), plus four clips
+        of Basic weapon ammunition or eight clips of Pistol weapon ammunition (one
+        Basic clip takes the space of two Pistol clips). // Errata v1.4 (p.143).
+    source: Rogue Trader Core Rulebook, p.143
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/consumable-drug-vial.png
 name: Arms Coffer
 type: drug
 ---
 data:
-  craftsmanship: common
-  availability: common
-  weight: 0
-  equipped: false
-  inBackpack: false
-  description: 'These devices are used to detect energy emissions, motion, and biological
-    life signs. A character using an auspex gains |  TABLE 5-15: TOOLS  |   |   |
-    | --- | --- | --- | |  Name | kg | Availability  | |  Almanac Astrae Divinitus
-    | 4 | Extremely Rare  | |  Arms Coffer | 6 | Average  | |  Auspex/Scanner | 0.5
-    | Scarce  | |  Auto-quill | — | Scarce  | |  Calculance Array | 120 | Scarce  |
-    |  Combi-tool | 1 | Rare  | |  Data-loom (Hadd-pattern) | 13 | Very Rare  | |  Data-slate
-    | 0.5 | Common  | |  Demolition Charge | 1 | Scarce  | |  Diagnostor | 4 | Very
-    Rare  | |  Glow-globe/Lamp Pack | 0.5 | Abundant  | |  Grapnel | 2 | Average  |
-    |  Grapplehawk | — | Very Rare  | |  Grav Chute | 15 | Rare  | |  Jump Pack |
-    25 | Rare  | |  Lord-Captain''s Baton | 1 | Very Rare  | |  Magboots | 2 | Rare  |
-    |  Magnoculars | 0.5 | Average  | |  Manacles | 1 | Plentiful  | |  Mefonte''s
-    Orthodoxy | 2 | Scarce  | |  Melta-bomb | 12 | Very Rare  | |  Micro-bead | —
-    | Average  | |  Multikey | — | Scarce  | |  Multicompass | 4 | Near Unique  |
-    |  Navis Prima | 1 | Very Rare  | |  Pict Recorder | 1 | Common  | |  Psy-focus
-    | — | Rare  | |  Renumeration Engine | 7 | Very Rare  | |  Shipboard Emergency
-    Kit | 6 | Common  | |  Screamer | 1.5 | Average  | |  Servitor (Labor, Simple
-    Monotask) | — | Scarce  | |  Servitor (Combat) | — | Rare  | |  Servitor (Complex
-    Multitask) | — | Rare  | |  Servo-Skull | — | Scarce  | |  Stummer | 2 | Average  |
-    |  Venom Ring | — | Very Rare  | |  Vox Caster | — | Scarce  | a +20 bonus to
-    Awareness Tests and may make a Tech-Use Test to spot things not normally detectable
-    to human senses alone, such as invisible gases, nearby bio-signs, or ambient radiation.
-    The standard range for an auspex is 50m, though walls more than 50cm thick and
-    certain shielding materials can block the scanner.'
-  source: Rogue Trader Core Rulebook
-  backpack:
+    craftsmanship: common
+    availability: common
+    weight: 0
+    equipped: false
     inBackpack: false
-img: systems/rogue-trader-3rd/icons/talents/blue/b_01.png
+    description: 'These devices are used to detect energy emissions, motion, and biological
+        life signs. A character using an auspex gains |  TABLE 5-15: TOOLS  |   |   |
+        | --- | --- | --- | |  Name | kg | Availability  | |  Almanac Astrae Divinitus
+        | 4 | Extremely Rare  | |  Arms Coffer | 6 | Average  | |  Auspex/Scanner
+        | 0.5 | Scarce  | |  Auto-quill | — | Scarce  | |  Calculance Array | 120
+        | Scarce  | |  Combi-tool | 1 | Rare  | |  Data-loom (Hadd-pattern) | 13 |
+        Very Rare  | |  Data-slate | 0.5 | Common  | |  Demolition Charge | 1 | Scarce  |
+        |  Diagnostor | 4 | Very Rare  | |  Glow-globe/Lamp Pack | 0.5 | Abundant  |
+        |  Grapnel | 2 | Average  | |  Grapplehawk | — | Very Rare  | |  Grav Chute
+        | 15 | Rare  | |  Jump Pack | 25 | Rare  | |  Lord-Captain''s Baton | 1 |
+        Very Rare  | |  Magboots | 2 | Rare  | |  Magnoculars | 0.5 | Average  | |  Manacles
+        | 1 | Plentiful  | |  Mefonte''s Orthodoxy | 2 | Scarce  | |  Melta-bomb |
+        12 | Very Rare  | |  Micro-bead | — | Average  | |  Multikey | — | Scarce  |
+        |  Multicompass | 4 | Near Unique  | |  Navis Prima | 1 | Very Rare  | |  Pict
+        Recorder | 1 | Common  | |  Psy-focus | — | Rare  | |  Renumeration Engine
+        | 7 | Very Rare  | |  Shipboard Emergency Kit | 6 | Common  | |  Screamer
+        | 1.5 | Average  | |  Servitor (Labor, Simple Monotask) | — | Scarce  | |  Servitor
+        (Combat) | — | Rare  | |  Servitor (Complex Multitask) | — | Rare  | |  Servo-Skull
+        | — | Scarce  | |  Stummer | 2 | Average  | |  Venom Ring | — | Very Rare  |
+        |  Vox Caster | — | Scarce  | a +20 bonus to Awareness Tests and may make
+        a Tech-Use Test to spot things not normally detectable to human senses alone,
+        such as invisible gases, nearby bio-signs, or ambient radiation. The standard
+        range for an auspex is 50m, though walls more than 50cm thick and certain
+        shielding materials can block the scanner.'
+    source: Rogue Trader Core Rulebook
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/consumable-drug-vial.png
 name: Auspex/Scanner
 type: drug
 ---
 data:
-  craftsmanship: common
-  availability: common
-  weight: 0
-  equipped: false
-  inBackpack: false
-  description: These scribing devices of arcane appearance allow the user to copy
-    text at an impressive rate with great accuracy. A character with the Trade (Rememberancer)
-    skill can use an auto quill to gain a +10 to their Skill Tests. V·ARTHOURY
-  source: Rogue Trader Core Rulebook
-  backpack:
+    craftsmanship: common
+    availability: common
+    weight: 0
+    equipped: false
     inBackpack: false
-img: systems/rogue-trader-3rd/icons/talents/blue/b_01.png
+    description: These scribing devices of arcane appearance allow the user to copy
+        text at an impressive rate with great accuracy. A character with the Trade
+        (Rememberancer) skill can use an auto quill to gain a +10 to their Skill Tests.
+        V·ARTHOURY
+    source: Rogue Trader Core Rulebook
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/consumable-drug-vial.png
 name: Auto Quill
 type: drug
 ---
 data:
-  craftsmanship: common
-  availability: common
-  weight: 0
-  equipped: false
-  inBackpack: false
-  description: This intoxicating drink is made from a rare small yellow fruit found
-    on some worlds on the rimward edges of the Calixis Sector. Fermented properly
-    in raw stone vats, it gives a very pleasant glowing feeling when imbibed. This
-    glow is quite literal—as intoxication sets in, the drinker actually emits a soft
-    reddish hue that diminishes as the effects fade and sobriety sets back in. Popular
-    amongst debauched young nobles, it is a favourite drink at their parties, where
-    they compete to see who can glow the brightest before passing out.
-  source: Into the Storm
-  backpack:
+    craftsmanship: common
+    availability: common
+    weight: 0
+    equipped: false
     inBackpack: false
-img: systems/rogue-trader-3rd/icons/talents/blue/b_01.png
+    description: This intoxicating drink is made from a rare small yellow fruit found
+        on some worlds on the rimward edges of the Calixis Sector. Fermented properly
+        in raw stone vats, it gives a very pleasant glowing feeling when imbibed.
+        This glow is quite literal—as intoxication sets in, the drinker actually emits
+        a soft reddish hue that diminishes as the effects fade and sobriety sets back
+        in. Popular amongst debauched young nobles, it is a favourite drink at their
+        parties, where they compete to see who can glow the brightest before passing
+        out.
+    source: Into the Storm
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/consumable-drug-vial.png
 name: Blush
 type: drug
 ---
 data:
-  craftsmanship: common
-  availability: common
-  weight: 0
-  equipped: false
-  inBackpack: false
-  description: The ploin is a fruit grown in both the Calixis Sector and Koronus Expanse.
-    It is often brewed into a non-alcoholic beverage popular with many Explorers as
-    it combats many common illnesses brought on by the habitual poor diets inherent
-    to extended space travel. Made from the lopsided ploin fruit, it is rich in nutrients.
-    When cheaply fermented it produces a clear, strong drink commonly known as "wobble"—as
-    this is both what the fruit does when set upright, as well as what most users
-    do after imbibing. Drinking wobble requires a Difficult (-10) Carouse Test to
-    avoid extreme drunkenness—a level of fatigue in game terms—and painful headaches
-    the following morning.
-  source: Into the Storm
-  backpack:
+    craftsmanship: common
+    availability: common
+    weight: 0
+    equipped: false
     inBackpack: false
-img: systems/rogue-trader-3rd/icons/talents/blue/b_01.png
+    description: The ploin is a fruit grown in both the Calixis Sector and Koronus
+        Expanse. It is often brewed into a non-alcoholic beverage popular with many
+        Explorers as it combats many common illnesses brought on by the habitual poor
+        diets inherent to extended space travel. Made from the lopsided ploin fruit,
+        it is rich in nutrients. When cheaply fermented it produces a clear, strong
+        drink commonly known as "wobble"—as this is both what the fruit does when
+        set upright, as well as what most users do after imbibing. Drinking wobble
+        requires a Difficult (-10) Carouse Test to avoid extreme drunkenness—a level
+        of fatigue in game terms—and painful headaches the following morning.
+    source: Into the Storm
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/consumable-drug-vial.png
 name: Ploin Juice
 type: drug
 ---
 data:
-  craftsmanship: common
-  availability: common
-  weight: 0
-  equipped: false
-  inBackpack: false
-  description: Raenka is a highly prized brandy made from fermented Ploin juice and
-    crafted through careful distillation in used amasec barrels. On several feudal
-    worlds, it is a main export and secures a great percentage of yearly revenues.
-    Prized for its rich dark yellow hue and subtle bouquet, raenka connoisseurs eagerly
-    watch for news each season on the stages of ageing and which areas are releasing
-    their vintages. Many traders make a small but tidy profit carrying barrels by
-    special request from fermentation yards to impatient buyers willing to circumvent
-    the normal flow of the liqueur.
-  source: Into the Storm
-  backpack:
+    craftsmanship: common
+    availability: common
+    weight: 0
+    equipped: false
     inBackpack: false
-img: systems/rogue-trader-3rd/icons/talents/blue/b_01.png
+    description: Raenka is a highly prized brandy made from fermented Ploin juice
+        and crafted through careful distillation in used amasec barrels. On several
+        feudal worlds, it is a main export and secures a great percentage of yearly
+        revenues. Prized for its rich dark yellow hue and subtle bouquet, raenka connoisseurs
+        eagerly watch for news each season on the stages of ageing and which areas
+        are releasing their vintages. Many traders make a small but tidy profit carrying
+        barrels by special request from fermentation yards to impatient buyers willing
+        to circumvent the normal flow of the liqueur.
+    source: Into the Storm
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/consumable-drug-vial.png
 name: Raenka
 type: drug
 ---
 data:
-  craftsmanship: common
-  availability: common
-  weight: 0
-  equipped: false
-  inBackpack: false
-  description: This drug induces a state of near monomania, allowing the user to totally
-    focus their concentration on a single subject. It is not to be used carelessly;
-    if the mind wanders while the drug takes effect there is no telling what topic
-    may become the fixation. Still, when a deadly puzzle must be solved or an ancient
-    scroll deciphered it can literally become a lifesaver. Users taking the drug must
-    first take a Difficult (-10) Willpower Test to see if they successfully focus
-    on the desired topic. If they succeed, then they take all Intelligence-based tests
-    at +30 bonus for 3d10 rounds. If they fail however, for the same period of time
-    they take all tests at a -20 penalty, perhaps concentrating more on an attractive
-    shipmate or the pattern or the stars through the glassteel void portals.
-  source: Into the Storm
-  backpack:
+    craftsmanship: common
+    availability: common
+    weight: 0
+    equipped: false
     inBackpack: false
-img: systems/rogue-trader-3rd/icons/talents/blue/b_01.png
+    description: This drug induces a state of near monomania, allowing the user to
+        totally focus their concentration on a single subject. It is not to be used
+        carelessly; if the mind wanders while the drug takes effect there is no telling
+        what topic may become the fixation. Still, when a deadly puzzle must be solved
+        or an ancient scroll deciphered it can literally become a lifesaver. Users
+        taking the drug must first take a Difficult (-10) Willpower Test to see if
+        they successfully focus on the desired topic. If they succeed, then they take
+        all Intelligence-based tests at +30 bonus for 3d10 rounds. If they fail however,
+        for the same period of time they take all tests at a -20 penalty, perhaps
+        concentrating more on an attractive shipmate or the pattern or the stars through
+        the glassteel void portals.
+    source: Into the Storm
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/consumable-drug-vial.png
 name: Attention Spanner
 type: drug
 ---
 data:
-  craftsmanship: common
-  availability: common
-  weight: 0
-  equipped: false
-  inBackpack: false
-  description: As long as Ghostfire has been used to produce Frenzon and many of the
-    other combat stimulants in Calixis, there has been the refined extract commonly
-    called Cold Fire. While Frenzon induces a near-suicidal state of aggression (which
-    is fine for Penal Legionaries), Cold Fire allows for more self-control, although
-    it is still illegal unless issued by regimental commanders. Users gain the Battle
-    Rage Talent, lasting for 3d10 rounds per dose.
-  source: Into the Storm
-  backpack:
+    craftsmanship: common
+    availability: common
+    weight: 0
+    equipped: false
     inBackpack: false
-img: systems/rogue-trader-3rd/icons/talents/blue/b_01.png
+    description: As long as Ghostfire has been used to produce Frenzon and many of
+        the other combat stimulants in Calixis, there has been the refined extract
+        commonly called Cold Fire. While Frenzon induces a near-suicidal state of
+        aggression (which is fine for Penal Legionaries), Cold Fire allows for more
+        self-control, although it is still illegal unless issued by regimental commanders.
+        Users gain the Battle Rage Talent, lasting for 3d10 rounds per dose.
+    source: Into the Storm
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/consumable-drug-vial.png
 name: Cold Fire
 type: drug
 ---
 data:
-  craftsmanship: common
-  availability: common
-  weight: 0
-  equipped: false
-  inBackpack: false
-  description: A common drug for those who live by the sword, spur infuses the user
-    with boundless energy until he feels ready to tackle any situation. The powerful
-    stimulant increases reaction times |  Name | Weight | Availability  | | --- |
-    --- | --- | |  Attention Spanner | — | Very Rare  | |  Blush | — | Rare  | |  Cold
-    Fire | — | Rare  | |  Ploin Juice | — | Ubiquitous  | |  Raenka | — | Scarce  |
-    |  Spur | — | Scarce  | |  Wideawake | — | Plentiful  | |  White Void | — | Rare  |
-    and overall stamina for a short period, with the inevitable crash of depression
-    and weariness following soon after. Each dose lasts 2d10 minutes, during which
-    the user cannot be Stunned and takes no Fatigue. Afterwards, however, the character
-    takes a -20 Penalty for Toughness and Agility Tests for one hour, as well as one
-    Fatigue level for every two they would have received while the drug was active.
-    If used more than five times in a week long period, the user must make a Hard
-    (-20) Willpower Test, or ingest the drug daily as he becomes addicted.
-  source: Into the Storm
-  backpack:
+    craftsmanship: common
+    availability: common
+    weight: 0
+    equipped: false
     inBackpack: false
-img: systems/rogue-trader-3rd/icons/talents/blue/b_01.png
+    description: A common drug for those who live by the sword, spur infuses the user
+        with boundless energy until he feels ready to tackle any situation. The powerful
+        stimulant increases reaction times |  Name | Weight | Availability  | | ---
+        | --- | --- | |  Attention Spanner | — | Very Rare  | |  Blush | — | Rare  |
+        |  Cold Fire | — | Rare  | |  Ploin Juice | — | Ubiquitous  | |  Raenka |
+        — | Scarce  | |  Spur | — | Scarce  | |  Wideawake | — | Plentiful  | |  White
+        Void | — | Rare  | and overall stamina for a short period, with the inevitable
+        crash of depression and weariness following soon after. Each dose lasts 2d10
+        minutes, during which the user cannot be Stunned and takes no Fatigue. Afterwards,
+        however, the character takes a -20 Penalty for Toughness and Agility Tests
+        for one hour, as well as one Fatigue level for every two they would have received
+        while the drug was active. If used more than five times in a week long period,
+        the user must make a Hard (-20) Willpower Test, or ingest the drug daily as
+        he becomes addicted.
+    source: Into the Storm
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/consumable-drug-vial.png
 name: Spur
 type: drug
 ---
 data:
-  craftsmanship: common
-  availability: common
-  weight: 0
-  equipped: false
-  inBackpack: false
-  description: An addictive and illegal drug mostly found amid front line units entrenched
-    in seemingly endless combat, White Void creates a beatific feeling of well being.
-    Common methods of usage involve either sprinkling the powder onto damp lho sticks,
-    or immersing the sticks in dissolved powder then smoking them once dry. Long-term
-    usage slowly removes coloration from the eye, eventually leaving a small black
-    dot surrounded by white. Users gain +20 WP for 1d10 minutes per dose. If used
-    more than twice in a week long period, the user must make a Hard (-20) Willpower
-    Test or become addicted, unable to fight his cravings and ingesting the drug on
-    a daily basis.
-  source: Into the Storm
-  backpack:
+    craftsmanship: common
+    availability: common
+    weight: 0
+    equipped: false
     inBackpack: false
-img: systems/rogue-trader-3rd/icons/talents/blue/b_01.png
+    description: An addictive and illegal drug mostly found amid front line units
+        entrenched in seemingly endless combat, White Void creates a beatific feeling
+        of well being. Common methods of usage involve either sprinkling the powder
+        onto damp lho sticks, or immersing the sticks in dissolved powder then smoking
+        them once dry. Long-term usage slowly removes coloration from the eye, eventually
+        leaving a small black dot surrounded by white. Users gain +20 WP for 1d10
+        minutes per dose. If used more than twice in a week long period, the user
+        must make a Hard (-20) Willpower Test or become addicted, unable to fight
+        his cravings and ingesting the drug on a daily basis.
+    source: Into the Storm
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/consumable-drug-vial.png
 name: White Void
 type: drug
 ---
 data:
-  craftsmanship: common
-  availability: common
-  weight: 0
-  equipped: false
-  inBackpack: false
-  description: A simple drug made in numerous styles from many different ingredients,
-    Wideawake acts to ward off feelings of drowsiness and keeps the user alert for
-    many hours beyond his normal limit. While multiple doses will keep the user awake
-    even longer, once the effects wear off the resulting collapse will last much longer
-    and lead to feelings of listlessness for several days. Wideawake allows the user
-    to stay awake and alert, ignoring one level of Fatigue for 1d5 hours. Additional
-    doses prolong the affect, but do not counteract more than one Fatigue level. fter
-    the drug wears off the user suffers an additional level of Fatigue.
-  source: Into the Storm
-  backpack:
+    craftsmanship: common
+    availability: common
+    weight: 0
+    equipped: false
     inBackpack: false
-img: systems/rogue-trader-3rd/icons/talents/blue/b_01.png
+    description: A simple drug made in numerous styles from many different ingredients,
+        Wideawake acts to ward off feelings of drowsiness and keeps the user alert
+        for many hours beyond his normal limit. While multiple doses will keep the
+        user awake even longer, once the effects wear off the resulting collapse will
+        last much longer and lead to feelings of listlessness for several days. Wideawake
+        allows the user to stay awake and alert, ignoring one level of Fatigue for
+        1d5 hours. Additional doses prolong the affect, but do not counteract more
+        than one Fatigue level. fter the drug wears off the user suffers an additional
+        level of Fatigue.
+    source: Into the Storm
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/consumable-drug-vial.png
 name: Wideawake
 type: drug

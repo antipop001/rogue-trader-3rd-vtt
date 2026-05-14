@@ -1,6 +1,6 @@
 data:
-    craftsmanship: 'common'
-    availability: 'common'
+    craftsmanship: common
+    availability: common
     isOnFire: false
     isDepressurized: false
     isUnpowered: false
@@ -9,15 +9,23 @@ data:
     space: 2
     hitPoints: 0
     shipPoints: 1
-    description: 'An older version of the Mars Pattern, these macrocannons lack range and power. They are most often found on transports. Mars Pattern Macrocannons The most common macrobattery, these are reliable, hard-hitting weapons firing kilo-tonne ordinance, mounted along the vessel''s dorsal ridge or in broadside. Mars Pattern Macrocannon Broadside The most common macrobattery, these are reliable, hard-hitting weapons firing kilo-tonne ordinance, mounted in a warship''s extended broadside. Broadside: These weapons must occupy a Port or Starboard Weapon Capacity slot. Sunsear Laser Battery These laser batteries are common on Naval frigates, providing a balance between power used and damage inflicted.'
-    source: 'Rogue Trader Core Rulebook'
-    location: 'Main'
-    componentClass: 'Supplemental'
-    componentType: 'Macrocannon'
-    class: 'Turret'
-    type: 'Macrocannon'
-    size: 'Light'
-    slot: 'Dorsal'
+    description: 'An older version of the Mars Pattern, these macrocannons lack range
+        and power. They are most often found on transports. Mars Pattern Macrocannons
+        The most common macrobattery, these are reliable, hard-hitting weapons firing
+        kilo-tonne ordinance, mounted along the vessel''s dorsal ridge or in broadside.
+        Mars Pattern Macrocannon Broadside The most common macrobattery, these are
+        reliable, hard-hitting weapons firing kilo-tonne ordinance, mounted in a warship''s
+        extended broadside. Broadside: These weapons must occupy a Port or Starboard
+        Weapon Capacity slot. Sunsear Laser Battery These laser batteries are common
+        on Naval frigates, providing a balance between power used and damage inflicted.'
+    source: Rogue Trader Core Rulebook
+    location: Main
+    componentClass: Supplemental
+    componentType: Macrocannon
+    class: Turret
+    type: Macrocannon
+    size: Light
+    slot: Dorsal
     rangeSmall: 0
     rangeMedium: 0
     rangeLong: 4
@@ -28,13 +36,13 @@ data:
     effect: ''
     backpack:
         inBackpack: false
-img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_01.png'
-name: 'Thunderstrike Macrocannons'
-type: 'shipWeapon'
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-macrobattery.png
+name: Thunderstrike Macrocannons
+type: shipWeapon
 ---
 data:
-    craftsmanship: 'common'
-    availability: 'common'
+    craftsmanship: common
+    availability: common
     isOnFire: false
     isDepressurized: false
     isUnpowered: false
@@ -43,15 +51,22 @@ data:
     space: 2
     hitPoints: 0
     shipPoints: 1
-    description: 'The most common macrobattery, these are reliable, hard-hitting weapons firing kilo-tonne ordinance, mounted along the vessel''s dorsal ridge or in broadside. Mars Pattern Macrocannon Broadside The most common macrobattery, these are reliable, hard-hitting weapons firing kilo-tonne ordinance, mounted in a warship''s extended broadside. Broadside: These weapons must occupy a Port or Starboard Weapon Capacity slot. Sunsear Laser Battery These laser batteries are common on Naval frigates, providing a balance between power used and damage inflicted.'
-    source: 'Rogue Trader Core Rulebook'
-    location: 'Main'
-    componentClass: 'Supplemental'
-    componentType: 'Macrocannon'
-    class: 'Turret'
-    type: 'Macrocannon'
-    size: 'Light'
-    slot: 'Dorsal'
+    description: 'The most common macrobattery, these are reliable, hard-hitting weapons
+        firing kilo-tonne ordinance, mounted along the vessel''s dorsal ridge or in
+        broadside. Mars Pattern Macrocannon Broadside The most common macrobattery,
+        these are reliable, hard-hitting weapons firing kilo-tonne ordinance, mounted
+        in a warship''s extended broadside. Broadside: These weapons must occupy a
+        Port or Starboard Weapon Capacity slot. Sunsear Laser Battery These laser
+        batteries are common on Naval frigates, providing a balance between power
+        used and damage inflicted.'
+    source: Rogue Trader Core Rulebook
+    location: Main
+    componentClass: Supplemental
+    componentType: Macrocannon
+    class: Turret
+    type: Macrocannon
+    size: Light
+    slot: Dorsal
     rangeSmall: 0
     rangeMedium: 0
     rangeLong: 6
@@ -62,13 +77,13 @@ data:
     effect: ''
     backpack:
         inBackpack: false
-img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_01.png'
-name: 'Mars Pattern Macrocannons'
-type: 'shipWeapon'
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-macrobattery.png
+name: Mars Pattern Macrocannons
+type: shipWeapon
 ---
 data:
-    craftsmanship: 'common'
-    availability: 'common'
+    craftsmanship: common
+    availability: common
     isOnFire: false
     isDepressurized: false
     isUnpowered: false
@@ -77,15 +92,19 @@ data:
     space: 5
     hitPoints: 0
     shipPoints: 1
-    description: 'The most common macrobattery, these are reliable, hard-hitting weapons firing kilo-tonne ordinance, mounted in a warship''s extended broadside. Broadside: These weapons must occupy a Port or Starboard Weapon Capacity slot. Sunsear Laser Battery These laser batteries are common on Naval frigates, providing a balance between power used and damage inflicted.'
-    source: 'Rogue Trader Core Rulebook'
-    location: 'Main'
-    componentClass: 'Supplemental'
-    componentType: 'Macrocannon'
-    class: 'Turret'
-    type: 'Macrocannon'
-    size: 'Light'
-    slot: 'Dorsal'
+    description: 'The most common macrobattery, these are reliable, hard-hitting weapons
+        firing kilo-tonne ordinance, mounted in a warship''s extended broadside. Broadside:
+        These weapons must occupy a Port or Starboard Weapon Capacity slot. Sunsear
+        Laser Battery These laser batteries are common on Naval frigates, providing
+        a balance between power used and damage inflicted.'
+    source: Rogue Trader Core Rulebook
+    location: Main
+    componentClass: Supplemental
+    componentType: Macrocannon
+    class: Turret
+    type: Macrocannon
+    size: Light
+    slot: Dorsal
     rangeSmall: 0
     rangeMedium: 0
     rangeLong: 6
@@ -96,13 +115,13 @@ data:
     effect: ''
     backpack:
         inBackpack: false
-img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_01.png'
-name: 'Mars Pattern Macrocannon Broadside'
-type: 'shipWeapon'
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-macrobattery.png
+name: Mars Pattern Macrocannon Broadside
+type: shipWeapon
 ---
 data:
-    craftsmanship: 'common'
-    availability: 'common'
+    craftsmanship: common
+    availability: common
     isOnFire: false
     isDepressurized: false
     isUnpowered: false
@@ -111,15 +130,16 @@ data:
     space: 4
     hitPoints: 0
     shipPoints: 1
-    description: 'These laser batteries are common on Naval frigates, providing a balance between power used and damage inflicted.'
-    source: 'Rogue Trader Core Rulebook'
-    location: 'Main'
-    componentClass: 'Supplemental'
-    componentType: 'Macrocannon'
-    class: 'Turret'
-    type: 'Macrocannon'
-    size: 'Light'
-    slot: 'Dorsal'
+    description: These laser batteries are common on Naval frigates, providing a balance
+        between power used and damage inflicted.
+    source: Rogue Trader Core Rulebook
+    location: Main
+    componentClass: Supplemental
+    componentType: Macrocannon
+    class: Turret
+    type: Macrocannon
+    size: Light
+    slot: Dorsal
     rangeSmall: 0
     rangeMedium: 0
     rangeLong: 9
@@ -130,13 +150,13 @@ data:
     effect: ''
     backpack:
         inBackpack: false
-img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_01.png'
-name: 'Sunsear Laser Battery'
-type: 'shipWeapon'
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-macrobattery.png
+name: Sunsear Laser Battery
+type: shipWeapon
 ---
 data:
-    craftsmanship: 'common'
-    availability: 'common'
+    craftsmanship: common
+    availability: common
     isOnFire: false
     isDepressurized: false
     isUnpowered: false
@@ -145,15 +165,20 @@ data:
     space: 4
     hitPoints: 0
     shipPoints: 2
-    description: 'These weapons are rare and expensive examples of the ancient art of plasma-craft. Their power draw is considerable, but so is their effectiveness. // Vapourisation: When this Weapon Component rolls a 1 or 2 on the Critical Hit Chart, it effects two Components instead of one. // Hull-size variants: //   - All Ships: Power 7, Space 4, SP 2, Strength 4, Damage 1d10+4, Crit 4, Range 5 VU //   - All Ships: Power 8, Space 4, SP 2'
-    source: 'Rogue Trader Core Rulebook'
-    location: 'Main'
-    componentClass: 'Supplemental'
-    componentType: 'Macrocannon'
-    class: 'Turret'
-    type: 'Macrocannon'
-    size: 'Light'
-    slot: 'Dorsal'
+    description: 'These weapons are rare and expensive examples of the ancient art
+        of plasma-craft. Their power draw is considerable, but so is their effectiveness.
+        // Vapourisation: When this Weapon Component rolls a 1 or 2 on the Critical
+        Hit Chart, it effects two Components instead of one. // Hull-size variants:
+        //   - All Ships: Power 7, Space 4, SP 2, Strength 4, Damage 1d10+4, Crit
+        4, Range 5 VU //   - All Ships: Power 8, Space 4, SP 2'
+    source: Rogue Trader Core Rulebook
+    location: Main
+    componentClass: Supplemental
+    componentType: Macrocannon
+    class: Turret
+    type: Macrocannon
+    size: Light
+    slot: Dorsal
     rangeSmall: 0
     rangeMedium: 0
     rangeLong: 5
@@ -164,13 +189,13 @@ data:
     effect: ''
     backpack:
         inBackpack: false
-img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_01.png'
-name: 'Ryza Pattern Plasma Battery'
-type: 'shipWeapon'
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-macrobattery.png
+name: Ryza Pattern Plasma Battery
+type: shipWeapon
 ---
 data:
-    craftsmanship: 'common'
-    availability: 'common'
+    craftsmanship: common
+    availability: common
     isOnFire: false
     isDepressurized: false
     isUnpowered: false
@@ -179,15 +204,17 @@ data:
     space: 4
     hitPoints: 0
     shipPoints: 2
-    description: 'The Starbreaker is a recent attempt by lesser forge worlds to copy the STC Titanforge. Unfortunately, they are less powerful than the weapons they emulate.'
-    source: 'Rogue Trader Core Rulebook'
-    location: 'Main'
-    componentClass: 'Supplemental'
-    componentType: 'Lance'
-    class: 'Lance'
-    type: 'Lance'
-    size: 'Light'
-    slot: 'Dorsal'
+    description: The Starbreaker is a recent attempt by lesser forge worlds to copy
+        the STC Titanforge. Unfortunately, they are less powerful than the weapons
+        they emulate.
+    source: Rogue Trader Core Rulebook
+    location: Main
+    componentClass: Supplemental
+    componentType: Lance
+    class: Lance
+    type: Lance
+    size: Light
+    slot: Dorsal
     rangeSmall: 0
     rangeMedium: 0
     rangeLong: 5
@@ -198,13 +225,13 @@ data:
     effect: ''
     backpack:
         inBackpack: false
-img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_01.png'
-name: 'Starbreaker Lance Weapon'
-type: 'shipWeapon'
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-lance.png
+name: Starbreaker Lance Weapon
+type: shipWeapon
 ---
 data:
-    craftsmanship: 'common'
-    availability: 'common'
+    craftsmanship: common
+    availability: common
     isOnFire: false
     isDepressurized: false
     isUnpowered: false
@@ -213,15 +240,16 @@ data:
     space: 4
     hitPoints: 0
     shipPoints: 2
-    description: 'The Titanforge Lances are an STC standard for lance weaponry, found on naval warships throughout the Calixis Sector.'
-    source: 'Rogue Trader Core Rulebook'
-    location: 'Main'
-    componentClass: 'Supplemental'
-    componentType: 'Lance'
-    class: 'Lance'
-    type: 'Lance'
-    size: 'Light'
-    slot: 'Dorsal'
+    description: The Titanforge Lances are an STC standard for lance weaponry, found
+        on naval warships throughout the Calixis Sector.
+    source: Rogue Trader Core Rulebook
+    location: Main
+    componentClass: Supplemental
+    componentType: Lance
+    class: Lance
+    type: Lance
+    size: Light
+    slot: Dorsal
     rangeSmall: 0
     rangeMedium: 0
     rangeLong: 6
@@ -232,13 +260,13 @@ data:
     effect: ''
     backpack:
         inBackpack: false
-img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_01.png'
-name: 'Titanforge Lance Weapon'
-type: 'shipWeapon'
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-lance.png
+name: Titanforge Lance Weapon
+type: shipWeapon
 ---
 data:
-    craftsmanship: 'common'
-    availability: 'common'
+    craftsmanship: common
+    availability: common
     isOnFire: false
     isDepressurized: false
     isUnpowered: false
@@ -247,15 +275,18 @@ data:
     space: 6
     hitPoints: 0
     shipPoints: 2
-    description: 'The Titanforge Lances are an STC standard for lance weaponry, found on naval warships throughout the Calixis Sector. On larger vessels, multiple lances may be mounted in a set of gargantuan turrets (not to be confused with the smaller defence turrets).'
-    source: 'Rogue Trader Core Rulebook'
-    location: 'Main'
-    componentClass: 'Supplemental'
-    componentType: 'Lance'
-    class: 'Lance'
-    type: 'Lance'
-    size: 'Light'
-    slot: 'Dorsal'
+    description: The Titanforge Lances are an STC standard for lance weaponry, found
+        on naval warships throughout the Calixis Sector. On larger vessels, multiple
+        lances may be mounted in a set of gargantuan turrets (not to be confused with
+        the smaller defence turrets).
+    source: Rogue Trader Core Rulebook
+    location: Main
+    componentClass: Supplemental
+    componentType: Lance
+    class: Lance
+    type: Lance
+    size: Light
+    slot: Dorsal
     rangeSmall: 0
     rangeMedium: 0
     rangeLong: 6
@@ -266,13 +297,13 @@ data:
     effect: ''
     backpack:
         inBackpack: false
-img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_01.png'
-name: 'Titanforge Lance Battery'
-type: 'shipWeapon'
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-lance.png
+name: Titanforge Lance Battery
+type: shipWeapon
 ---
 data:
-    craftsmanship: 'common'
-    availability: 'common'
+    craftsmanship: common
+    availability: common
     isOnFire: false
     isDepressurized: false
     isUnpowered: false
@@ -281,15 +312,17 @@ data:
     space: 0
     hitPoints: 0
     shipPoints: 0
-    description: 'These use a deliberate plasma containment failure, causing a blast of heat and light to burst forth like a miniature sun. They are highly lethal against almost all targets.'
-    source: 'Rogue Trader Core Rulebook'
-    location: 'Main'
-    componentClass: 'Supplemental'
-    componentType: 'Macrocannon'
-    class: 'Turret'
-    type: 'Macrocannon'
-    size: 'Light'
-    slot: 'Dorsal'
+    description: These use a deliberate plasma containment failure, causing a blast
+        of heat and light to burst forth like a miniature sun. They are highly lethal
+        against almost all targets.
+    source: Rogue Trader Core Rulebook
+    location: Main
+    componentClass: Supplemental
+    componentType: Macrocannon
+    class: Turret
+    type: Macrocannon
+    size: Light
+    slot: Dorsal
     rangeSmall: 0
     rangeMedium: 0
     rangeLong: 0
@@ -300,13 +333,13 @@ data:
     effect: ''
     backpack:
         inBackpack: false
-img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_01.png'
-name: 'Plasma Drive Explosion'
-type: 'shipWeapon'
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-macrobattery.png
+name: Plasma Drive Explosion
+type: shipWeapon
 ---
 data:
-    craftsmanship: 'common'
-    availability: 'common'
+    craftsmanship: common
+    availability: common
     isOnFire: false
     isDepressurized: false
     isUnpowered: false
@@ -315,15 +348,20 @@ data:
     space: 1
     hitPoints: 0
     shipPoints: 1
-    description: 'Acquisition ... 38, 34 See Ship and Warrant Path Acquisitionist ... 72 See Alternate Career Ranks Additional Starship Components ... 156 Archeotech Components ... 161 Essential Components ... 156 Supplemental Components ... 158 Agent of the Throne ... 70 Alien Biology ... 24 Alternate Career Ranks ... 129 A Product of Upbringing ... 199 Armour ... 193 Augmenticist ... 74 See Alternate Career Ranks'
-    source: 'Into the Storm'
-    location: 'Main'
-    componentClass: 'Supplemental'
-    componentType: 'Macrocannon'
-    class: 'Turret'
-    type: 'Macrocannon'
-    size: 'Light'
-    slot: 'Dorsal'
+    description: Acquisition ... 38, 34 See Ship and Warrant Path Acquisitionist ...
+        72 See Alternate Career Ranks Additional Starship Components ... 156 Archeotech
+        Components ... 161 Essential Components ... 156 Supplemental Components ...
+        158 Agent of the Throne ... 70 Alien Biology ... 24 Alternate Career Ranks
+        ... 129 A Product of Upbringing ... 199 Armour ... 193 Augmenticist ... 74
+        See Alternate Career Ranks
+    source: Into the Storm
+    location: Main
+    componentClass: Supplemental
+    componentType: Macrocannon
+    class: Turret
+    type: Macrocannon
+    size: Light
+    slot: Dorsal
     rangeSmall: 0
     rangeMedium: 0
     rangeLong: 6
@@ -334,13 +372,13 @@ data:
     effect: ''
     backpack:
         inBackpack: false
-img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_01.png'
-name: 'Jovian Missile Battery'
-type: 'shipWeapon'
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-macrobattery.png
+name: Jovian Missile Battery
+type: shipWeapon
 ---
 data:
-    craftsmanship: 'common'
-    availability: 'common'
+    craftsmanship: common
+    availability: common
     isOnFire: false
     isDepressurized: false
     isUnpowered: false
@@ -349,15 +387,20 @@ data:
     space: 5
     hitPoints: 0
     shipPoints: 1
-    description: 'Acquisition ... 38, 34 See Ship and Warrant Path Acquisitionist ... 72 See Alternate Career Ranks Additional Starship Components ... 156 Archeotech Components ... 161 Essential Components ... 156 Supplemental Components ... 158 Agent of the Throne ... 70 Alien Biology ... 24 Alternate Career Ranks ... 129 A Product of Upbringing ... 199 Armour ... 193 Augmenticist ... 74 See Alternate Career Ranks'
-    source: 'Into the Storm'
-    location: 'Main'
-    componentClass: 'Supplemental'
-    componentType: 'Macrocannon'
-    class: 'Turret'
-    type: 'Macrocannon'
-    size: 'Light'
-    slot: 'Dorsal'
+    description: Acquisition ... 38, 34 See Ship and Warrant Path Acquisitionist ...
+        72 See Alternate Career Ranks Additional Starship Components ... 156 Archeotech
+        Components ... 161 Essential Components ... 156 Supplemental Components ...
+        158 Agent of the Throne ... 70 Alien Biology ... 24 Alternate Career Ranks
+        ... 129 A Product of Upbringing ... 199 Armour ... 193 Augmenticist ... 74
+        See Alternate Career Ranks
+    source: Into the Storm
+    location: Main
+    componentClass: Supplemental
+    componentType: Macrocannon
+    class: Turret
+    type: Macrocannon
+    size: Light
+    slot: Dorsal
     rangeSmall: 0
     rangeMedium: 0
     rangeLong: 5
@@ -368,13 +411,13 @@ data:
     effect: ''
     backpack:
         inBackpack: false
-img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_01.png'
-name: 'Lathe Grav-culverin Broadside'
-type: 'shipWeapon'
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-macrobattery.png
+name: Lathe Grav-culverin Broadside
+type: shipWeapon
 ---
 data:
-    craftsmanship: 'common'
-    availability: 'common'
+    craftsmanship: common
+    availability: common
     isOnFire: false
     isDepressurized: false
     isUnpowered: false
@@ -383,15 +426,20 @@ data:
     space: 4
     hitPoints: 0
     shipPoints: 1
-    description: 'Acquisition ... 38, 34 See Ship and Warrant Path Acquisitionist ... 72 See Alternate Career Ranks Additional Starship Components ... 156 Archeotech Components ... 161 Essential Components ... 156 Supplemental Components ... 158 Agent of the Throne ... 70 Alien Biology ... 24 Alternate Career Ranks ... 129 A Product of Upbringing ... 199 Armour ... 193 Augmenticist ... 74 See Alternate Career Ranks'
-    source: 'Into the Storm'
-    location: 'Main'
-    componentClass: 'Supplemental'
-    componentType: 'Macrocannon'
-    class: 'Turret'
-    type: 'Macrocannon'
-    size: 'Light'
-    slot: 'Dorsal'
+    description: Acquisition ... 38, 34 See Ship and Warrant Path Acquisitionist ...
+        72 See Alternate Career Ranks Additional Starship Components ... 156 Archeotech
+        Components ... 161 Essential Components ... 156 Supplemental Components ...
+        158 Agent of the Throne ... 70 Alien Biology ... 24 Alternate Career Ranks
+        ... 129 A Product of Upbringing ... 199 Armour ... 193 Augmenticist ... 74
+        See Alternate Career Ranks
+    source: Into the Storm
+    location: Main
+    componentClass: Supplemental
+    componentType: Macrocannon
+    class: Turret
+    type: Macrocannon
+    size: Light
+    slot: Dorsal
     rangeSmall: 0
     rangeMedium: 0
     rangeLong: 5
@@ -402,13 +450,13 @@ data:
     effect: ''
     backpack:
         inBackpack: false
-img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_01.png'
-name: 'Mezoa Macrocannons'
-type: 'shipWeapon'
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-macrobattery.png
+name: Mezoa Macrocannons
+type: shipWeapon
 ---
 data:
-    craftsmanship: 'common'
-    availability: 'common'
+    craftsmanship: common
+    availability: common
     isOnFire: false
     isDepressurized: false
     isUnpowered: false
@@ -417,15 +465,18 @@ data:
     space: 3
     hitPoints: 0
     shipPoints: 2
-    description: 'These squat, oversized, and highly insulated macrocannon are designed specifically to fire shells tipped with powerful delta-charges that detonate with furious heat. // Inferno: Whenever this Weapon Component inflicts a Critical Hit, it is automatically a Fire! Critical.'
-    source: 'Into the Storm'
-    location: 'Main'
-    componentClass: 'Supplemental'
-    componentType: 'Macrocannon'
-    class: 'Turret'
-    type: 'Macrocannon'
-    size: 'Light'
-    slot: 'Dorsal'
+    description: 'These squat, oversized, and highly insulated macrocannon are designed
+        specifically to fire shells tipped with powerful delta-charges that detonate
+        with furious heat. // Inferno: Whenever this Weapon Component inflicts a Critical
+        Hit, it is automatically a Fire! Critical.'
+    source: Into the Storm
+    location: Main
+    componentClass: Supplemental
+    componentType: Macrocannon
+    class: Turret
+    type: Macrocannon
+    size: Light
+    slot: Dorsal
     rangeSmall: 0
     rangeMedium: 0
     rangeLong: 4
@@ -436,13 +487,13 @@ data:
     effect: ''
     backpack:
         inBackpack: false
-img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_01.png'
-name: 'Pyros Melta-cannons'
-type: 'shipWeapon'
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-macrobattery.png
+name: Pyros Melta-cannons
+type: shipWeapon
 ---
 data:
-    craftsmanship: 'common'
-    availability: 'common'
+    craftsmanship: common
+    availability: common
     isOnFire: false
     isDepressurized: false
     isUnpowered: false
@@ -451,15 +502,17 @@ data:
     space: 6
     hitPoints: 0
     shipPoints: 1
-    description: 'With enough power, a ship of the line can mount entire broadsides of long ranged laser weaponry, giving it impressive offensive reach. // Broadside: This weapon Component must occupy a Port or Starboard Weapon Capacity slot.'
-    source: 'Into the Storm'
-    location: 'Main'
-    componentClass: 'Supplemental'
-    componentType: 'Macrocannon'
-    class: 'Turret'
-    type: 'Macrocannon'
-    size: 'Light'
-    slot: 'Dorsal'
+    description: 'With enough power, a ship of the line can mount entire broadsides
+        of long ranged laser weaponry, giving it impressive offensive reach. // Broadside:
+        This weapon Component must occupy a Port or Starboard Weapon Capacity slot.'
+    source: Into the Storm
+    location: Main
+    componentClass: Supplemental
+    componentType: Macrocannon
+    class: Turret
+    type: Macrocannon
+    size: Light
+    slot: Dorsal
     rangeSmall: 0
     rangeMedium: 0
     rangeLong: 9
@@ -470,13 +523,13 @@ data:
     effect: ''
     backpack:
         inBackpack: false
-img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_01.png'
-name: 'Sunsear Las-broadside'
-type: 'shipWeapon'
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-macrobattery.png
+name: Sunsear Las-broadside
+type: shipWeapon
 ---
 data:
-    craftsmanship: 'common'
-    availability: 'common'
+    craftsmanship: common
+    availability: common
     isOnFire: false
     isDepressurized: false
     isUnpowered: false
@@ -485,15 +538,16 @@ data:
     space: 4
     hitPoints: 0
     shipPoints: 2
-    description: 'Narrowing the focus aperture on the STC Titanforge allowed the Lathes to boost range without unduly decreasing its power.'
-    source: 'Into the Storm'
-    location: 'Main'
-    componentClass: 'Supplemental'
-    componentType: 'Lance'
-    class: 'Lance'
-    type: 'Lance'
-    size: 'Light'
-    slot: 'Dorsal'
+    description: Narrowing the focus aperture on the STC Titanforge allowed the Lathes
+        to boost range without unduly decreasing its power.
+    source: Into the Storm
+    location: Main
+    componentClass: Supplemental
+    componentType: Lance
+    class: Lance
+    type: Lance
+    size: Light
+    slot: Dorsal
     rangeSmall: 0
     rangeMedium: 0
     rangeLong: 9
@@ -504,13 +558,13 @@ data:
     effect: ''
     backpack:
         inBackpack: false
-img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_01.png'
-name: 'Sunhammer Lance'
-type: 'shipWeapon'
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-lance.png
+name: Sunhammer Lance
+type: shipWeapon
 ---
 data:
-    craftsmanship: 'common'
-    availability: 'common'
+    craftsmanship: common
+    availability: common
     isOnFire: false
     isDepressurized: false
     isUnpowered: false
@@ -519,15 +573,17 @@ data:
     space: 6
     hitPoints: 0
     shipPoints: 2
-    description: 'A single Sunhammer lance proved successful enough that they have also been constructed in batteries. IV. STARSHIPS EXPANDED TABLE 4-2: LANCES AND MACROBATTERIES'
-    source: 'Into the Storm'
-    location: 'Main'
-    componentClass: 'Supplemental'
-    componentType: 'Lance'
-    class: 'Lance'
-    type: 'Lance'
-    size: 'Light'
-    slot: 'Dorsal'
+    description: 'A single Sunhammer lance proved successful enough that they have
+        also been constructed in batteries. IV. STARSHIPS EXPANDED TABLE 4-2: LANCES
+        AND MACROBATTERIES'
+    source: Into the Storm
+    location: Main
+    componentClass: Supplemental
+    componentType: Lance
+    class: Lance
+    type: Lance
+    size: Light
+    slot: Dorsal
     rangeSmall: 0
     rangeMedium: 0
     rangeLong: 9
@@ -538,13 +594,13 @@ data:
     effect: ''
     backpack:
         inBackpack: false
-img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_01.png'
-name: 'Sunhammer Lance Battery'
-type: 'shipWeapon'
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-lance.png
+name: Sunhammer Lance Battery
+type: shipWeapon
 ---
 data:
-    craftsmanship: 'common'
-    availability: 'common'
+    craftsmanship: common
+    availability: common
     isOnFire: false
     isDepressurized: false
     isUnpowered: false
@@ -553,15 +609,21 @@ data:
     space: 4
     hitPoints: 0
     shipPoints: 2
-    description: 'Humanity''s grasp of laser weapon technology was once much greater than even the greatest Magos of a Forge can replicate. However, such weapons can still be found scattered amongst the vast reaches of the Imperium. Though a weapon such as the Staravar does not do substantially more damage than other laser macrobatteries, it uses substantially less power to do so. Macrobattery: Except where specified otherwise, this weapon Component follows all rules for Macrobatteries.'
-    source: 'Into the Storm'
-    location: 'Main'
-    componentClass: 'Supplemental'
-    componentType: 'Macrocannon'
-    class: 'Turret'
-    type: 'Macrocannon'
-    size: 'Light'
-    slot: 'Dorsal'
+    description: 'Humanity''s grasp of laser weapon technology was once much greater
+        than even the greatest Magos of a Forge can replicate. However, such weapons
+        can still be found scattered amongst the vast reaches of the Imperium. Though
+        a weapon such as the Staravar does not do substantially more damage than other
+        laser macrobatteries, it uses substantially less power to do so. Macrobattery:
+        Except where specified otherwise, this weapon Component follows all rules
+        for Macrobatteries.'
+    source: Into the Storm
+    location: Main
+    componentClass: Supplemental
+    componentType: Macrocannon
+    class: Turret
+    type: Macrocannon
+    size: Light
+    slot: Dorsal
     rangeSmall: 0
     rangeMedium: 0
     rangeLong: 12
@@ -572,13 +634,13 @@ data:
     effect: ''
     backpack:
         inBackpack: false
-img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_01.png'
-name: 'Staravar Laser Macrobattery'
-type: 'shipWeapon'
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-macrobattery.png
+name: Staravar Laser Macrobattery
+type: shipWeapon
 ---
 data:
-    craftsmanship: 'common'
-    availability: 'common'
+    craftsmanship: common
+    availability: common
     isOnFire: false
     isDepressurized: false
     isUnpowered: false
@@ -587,15 +649,22 @@ data:
     space: 6
     hitPoints: 0
     shipPoints: 3
-    description: 'The Star-flare Lance is a dangerous relic constructed at the pinnacle of mankind''s technical prowess during the Dark Age of Technology. The massive lance is powered by an ill-understood power source that keeps the beam focused on its target for a sustained period of time, raking across enemy ships. Large: This weapon may only be placed on ships of light cruiser size and larger. Lance: Except where specified otherwise, this weapon Component follows all rules for Lances. // Pinpoint accuracy: This weapon scores an additional hit for every two degrees of success, rather than every three.'
-    source: 'Into the Storm'
-    location: 'Main'
-    componentClass: 'Supplemental'
-    componentType: 'Macrocannon'
-    class: 'Turret'
-    type: 'Macrocannon'
-    size: 'Light'
-    slot: 'Dorsal'
+    description: 'The Star-flare Lance is a dangerous relic constructed at the pinnacle
+        of mankind''s technical prowess during the Dark Age of Technology. The massive
+        lance is powered by an ill-understood power source that keeps the beam focused
+        on its target for a sustained period of time, raking across enemy ships. Large:
+        This weapon may only be placed on ships of light cruiser size and larger.
+        Lance: Except where specified otherwise, this weapon Component follows all
+        rules for Lances. // Pinpoint accuracy: This weapon scores an additional hit
+        for every two degrees of success, rather than every three.'
+    source: Into the Storm
+    location: Main
+    componentClass: Supplemental
+    componentType: Macrocannon
+    class: Turret
+    type: Macrocannon
+    size: Light
+    slot: Dorsal
     rangeSmall: 0
     rangeMedium: 0
     rangeLong: 7
@@ -606,6 +675,6 @@ data:
     effect: ''
     backpack:
         inBackpack: false
-img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_01.png'
-name: 'Star-flare Lance'
-type: 'shipWeapon'
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-macrobattery.png
+name: Star-flare Lance
+type: shipWeapon

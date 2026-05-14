@@ -1,6 +1,6 @@
 data:
-    craftsmanship: 'common'
-    availability: 'common'
+    craftsmanship: common
+    availability: common
     isOnFire: false
     isDepressurized: false
     isUnpowered: false
@@ -9,22 +9,22 @@ data:
     space: 8
     hitPoints: 0
     shipPoints: 0
-    description: 'The STC standard drive for transports, compact but underpowered.'
-    source: 'Rogue Trader Core Rulebook'
-    location: 'Main'
-    componentClass: 'Essential'
-    componentType: 'Plasma Drive'
+    description: The STC standard drive for transports, compact but underpowered.
+    source: Rogue Trader Core Rulebook
+    location: Main
+    componentClass: Essential
+    componentType: Plasma Drive
     target: ''
     effect: ''
     backpack:
         inBackpack: false
-img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_05.png'
-name: 'Jovian Pattern Class 1 Drive'
-type: 'shipComponent'
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-plasma-drive.png
+name: Jovian Pattern Class 1 Drive
+type: shipComponent
 ---
 data:
-    craftsmanship: 'common'
-    availability: 'common'
+    craftsmanship: common
+    availability: common
     isOnFire: false
     isDepressurized: false
     isUnpowered: false
@@ -33,22 +33,23 @@ data:
     space: 12
     hitPoints: 0
     shipPoints: 1
-    description: 'The STC standard drive for transports has been extended to provide additional power in exchange for less available space.'
-    source: 'Rogue Trader Core Rulebook'
-    location: 'Main'
-    componentClass: 'Essential'
-    componentType: 'Plasma Drive'
+    description: The STC standard drive for transports has been extended to provide
+        additional power in exchange for less available space.
+    source: Rogue Trader Core Rulebook
+    location: Main
+    componentClass: Essential
+    componentType: Plasma Drive
     target: ''
     effect: ''
     backpack:
         inBackpack: false
-img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_05.png'
-name: 'Lathe Pattern Class 1 Drive'
-type: 'shipComponent'
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-plasma-drive.png
+name: Lathe Pattern Class 1 Drive
+type: shipComponent
 ---
 data:
-    craftsmanship: 'common'
-    availability: 'common'
+    craftsmanship: common
+    availability: common
     isOnFire: false
     isDepressurized: false
     isUnpowered: false
@@ -57,22 +58,22 @@ data:
     space: 10
     hitPoints: 0
     shipPoints: 0
-    description: 'The STC standard drive for escort-grade warships.'
-    source: 'Rogue Trader Core Rulebook'
-    location: 'Main'
-    componentClass: 'Essential'
-    componentType: 'Plasma Drive'
+    description: The STC standard drive for escort-grade warships.
+    source: Rogue Trader Core Rulebook
+    location: Main
+    componentClass: Essential
+    componentType: Plasma Drive
     target: ''
     effect: ''
     backpack:
         inBackpack: false
-img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_05.png'
-name: 'Jovian Pattern Class 2 Drive'
-type: 'shipComponent'
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-plasma-drive.png
+name: Jovian Pattern Class 2 Drive
+type: shipComponent
 ---
 data:
-    craftsmanship: 'common'
-    availability: 'common'
+    craftsmanship: common
+    availability: common
     isOnFire: false
     isDepressurized: false
     isUnpowered: false
@@ -81,22 +82,22 @@ data:
     space: 12
     hitPoints: 0
     shipPoints: 0
-    description: 'The STC standard drive for smaller capital-grade warships.'
-    source: 'Rogue Trader Core Rulebook'
-    location: 'Main'
-    componentClass: 'Essential'
-    componentType: 'Plasma Drive'
+    description: The STC standard drive for smaller capital-grade warships.
+    source: Rogue Trader Core Rulebook
+    location: Main
+    componentClass: Essential
+    componentType: Plasma Drive
     target: ''
     effect: ''
     backpack:
         inBackpack: false
-img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_05.png'
-name: 'Jovian Pattern Class 3 Drive'
-type: 'shipComponent'
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-plasma-drive.png
+name: Jovian Pattern Class 3 Drive
+type: shipComponent
 ---
 data:
-    craftsmanship: 'common'
-    availability: 'common'
+    craftsmanship: common
+    availability: common
     isOnFire: false
     isDepressurized: false
     isUnpowered: false
@@ -105,22 +106,22 @@ data:
     space: 14
     hitPoints: 0
     shipPoints: 0
-    description: 'The STC standard drive for cruiser-grade warships.'
-    source: 'Rogue Trader Core Rulebook'
-    location: 'Main'
-    componentClass: 'Essential'
-    componentType: 'Plasma Drive'
+    description: The STC standard drive for cruiser-grade warships.
+    source: Rogue Trader Core Rulebook
+    location: Main
+    componentClass: Essential
+    componentType: Plasma Drive
     target: ''
     effect: ''
     backpack:
         inBackpack: false
-img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_05.png'
-name: 'Jovian Pattern Class 4 Drive'
-type: 'shipComponent'
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-plasma-drive.png
+name: Jovian Pattern Class 4 Drive
+type: shipComponent
 ---
 data:
-    craftsmanship: 'common'
-    availability: 'common'
+    craftsmanship: common
+    availability: common
     isOnFire: false
     isDepressurized: false
     isUnpowered: false
@@ -129,22 +130,22 @@ data:
     space: 10
     hitPoints: 0
     shipPoints: 0
-    description: 'Allows the vessel to enter and remain in the immaterium.'
-    source: 'Rogue Trader Core Rulebook'
-    location: 'Main'
-    componentClass: 'Essential'
-    componentType: 'Warp Drive'
+    description: Allows the vessel to enter and remain in the immaterium.
+    source: Rogue Trader Core Rulebook
+    location: Main
+    componentClass: Essential
+    componentType: Warp Drive
     target: ''
     effect: ''
     backpack:
         inBackpack: false
-img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_05.png'
-name: 'Strelov 1 Warp Engine'
-type: 'shipComponent'
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-warp-engine.png
+name: Strelov 1 Warp Engine
+type: shipComponent
 ---
 data:
-    craftsmanship: 'common'
-    availability: 'common'
+    craftsmanship: common
+    availability: common
     isOnFire: false
     isDepressurized: false
     isUnpowered: false
@@ -153,22 +154,22 @@ data:
     space: 12
     hitPoints: 0
     shipPoints: 0
-    description: 'Allows the vessel to enter and remain in the immaterium.'
-    source: 'Rogue Trader Core Rulebook'
-    location: 'Main'
-    componentClass: 'Essential'
-    componentType: 'Warp Drive'
+    description: Allows the vessel to enter and remain in the immaterium.
+    source: Rogue Trader Core Rulebook
+    location: Main
+    componentClass: Essential
+    componentType: Warp Drive
     target: ''
     effect: ''
     backpack:
         inBackpack: false
-img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_05.png'
-name: 'Strelov 2 Warp Engine'
-type: 'shipComponent'
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-warp-engine.png
+name: Strelov 2 Warp Engine
+type: shipComponent
 ---
 data:
-    craftsmanship: 'common'
-    availability: 'common'
+    craftsmanship: common
+    availability: common
     isOnFire: false
     isDepressurized: false
     isUnpowered: false
@@ -177,22 +178,26 @@ data:
     space: 0
     hitPoints: 0
     shipPoints: 0
-    description: 'Though a void shield protects a starship in space, it is of no use against the nightmarish inhabitants of the warp. For that, a warp-capable ship requires a Geller Field. This technology has existed since long before the Age of Strife, and creates a bubble of normalcy in that realm of chaos, and makes sure its creatures stay outside the hull.'
-    source: 'Rogue Trader Core Rulebook'
-    location: 'Main'
-    componentClass: 'Essential'
-    componentType: 'Gellar Field'
+    description: Though a void shield protects a starship in space, it is of no use
+        against the nightmarish inhabitants of the warp. For that, a warp-capable
+        ship requires a Geller Field. This technology has existed since long before
+        the Age of Strife, and creates a bubble of normalcy in that realm of chaos,
+        and makes sure its creatures stay outside the hull.
+    source: Rogue Trader Core Rulebook
+    location: Main
+    componentClass: Essential
+    componentType: Gellar Field
     target: ''
     effect: ''
     backpack:
         inBackpack: false
-img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_05.png'
-name: 'Geller Field'
-type: 'shipComponent'
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-geller-field.png
+name: Geller Field
+type: shipComponent
 ---
 data:
-    craftsmanship: 'common'
-    availability: 'common'
+    craftsmanship: common
+    availability: common
     isOnFire: false
     isDepressurized: false
     isUnpowered: false
@@ -201,22 +206,27 @@ data:
     space: 0
     hitPoints: 0
     shipPoints: 2
-    description: 'The entire hull of the vessel is covered with silver, hand-inscribed hexagramic wards. These reinforce a Geller Field projected from a 50 metre statue of an Imperial Saint, located just fore of the bridge. // Shield of Faith: Any Navigation Tests to pilot the ship through the warp gain a +10 bonus. When rolling on Table 7-4: Warp Travel Encounters (see page 186), the GM rolls twice and allows the Navigator to chose which result is applied.'
-    source: 'Rogue Trader Core Rulebook'
-    location: 'Main'
-    componentClass: 'Essential'
-    componentType: 'Gellar Field'
+    description: 'The entire hull of the vessel is covered with silver, hand-inscribed
+        hexagramic wards. These reinforce a Geller Field projected from a 50 metre
+        statue of an Imperial Saint, located just fore of the bridge. // Shield of
+        Faith: Any Navigation Tests to pilot the ship through the warp gain a +10
+        bonus. When rolling on Table 7-4: Warp Travel Encounters (see page 186), the
+        GM rolls twice and allows the Navigator to chose which result is applied.'
+    source: Rogue Trader Core Rulebook
+    location: Main
+    componentClass: Essential
+    componentType: Gellar Field
     target: ''
     effect: ''
     backpack:
         inBackpack: false
-img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_05.png'
-name: 'Warpsbane Hull'
-type: 'shipComponent'
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-geller-field.png
+name: Warpsbane Hull
+type: shipComponent
 ---
 data:
-    craftsmanship: 'common'
-    availability: 'common'
+    craftsmanship: common
+    availability: common
     isOnFire: false
     isDepressurized: false
     isUnpowered: false
@@ -225,22 +235,23 @@ data:
     space: 1
     hitPoints: 0
     shipPoints: 0
-    description: 'A single double-layered void shield. Provides 1 Void Shield. VIII: STARSHIPS'
-    source: 'Rogue Trader Core Rulebook'
-    location: 'Main'
-    componentClass: 'Essential'
-    componentType: 'Void Shield'
+    description: 'A single double-layered void shield. Provides 1 Void Shield. VIII:
+        STARSHIPS'
+    source: Rogue Trader Core Rulebook
+    location: Main
+    componentClass: Essential
+    componentType: Void Shield
     target: ''
     effect: ''
     backpack:
         inBackpack: false
-img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_05.png'
-name: 'Single Void Shield Array'
-type: 'shipComponent'
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-void-shield.png
+name: Single Void Shield Array
+type: shipComponent
 ---
 data:
-    craftsmanship: 'common'
-    availability: 'common'
+    craftsmanship: common
+    availability: common
     isOnFire: false
     isDepressurized: false
     isUnpowered: false
@@ -249,22 +260,22 @@ data:
     space: 2
     hitPoints: 0
     shipPoints: 0
-    description: 'Twin, multiple-layered void shields. Provides 2 Void Shields.'
-    source: 'Rogue Trader Core Rulebook'
-    location: 'Main'
-    componentClass: 'Essential'
-    componentType: 'Void Shield'
+    description: Twin, multiple-layered void shields. Provides 2 Void Shields.
+    source: Rogue Trader Core Rulebook
+    location: Main
+    componentClass: Essential
+    componentType: Void Shield
     target: ''
     effect: ''
     backpack:
         inBackpack: false
-img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_05.png'
-name: 'Multiple Void Shield Array'
-type: 'shipComponent'
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-void-shield.png
+name: Multiple Void Shield Array
+type: shipComponent
 ---
 data:
-    craftsmanship: 'common'
-    availability: 'common'
+    craftsmanship: common
+    availability: common
     isOnFire: false
     isDepressurized: false
     isUnpowered: false
@@ -273,22 +284,23 @@ data:
     space: 0
     hitPoints: 0
     shipPoints: 0
-    description: 'The bridge is the starship''s brain, where the captain commands the vessel and directs its every action.'
-    source: 'Rogue Trader Core Rulebook'
-    location: 'Main'
-    componentClass: 'Essential'
-    componentType: 'Void Shield'
+    description: The bridge is the starship's brain, where the captain commands the
+        vessel and directs its every action.
+    source: Rogue Trader Core Rulebook
+    location: Main
+    componentClass: Essential
+    componentType: Void Shield
     target: ''
     effect: ''
     backpack:
         inBackpack: false
-img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_05.png'
-name: 'Ship’s Bridge'
-type: 'shipComponent'
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-void-shield.png
+name: Ship’s Bridge
+type: shipComponent
 ---
 data:
-    craftsmanship: 'common'
-    availability: 'common'
+    craftsmanship: common
+    availability: common
     isOnFire: false
     isDepressurized: false
     isUnpowered: false
@@ -297,22 +309,26 @@ data:
     space: 1
     hitPoints: 0
     shipPoints: 0
-    description: 'A holdover from the ship''s Navy days, this bridge was laid out and equipped with combat in mind. // Damage Control Station: As long as the bridge remains undamaged, all Tech-Use Tests to repair the ship gain +10. // Hull-size variants: //   - Transports, Raiders, Frigates: Power 1, Space 1, SP 0 //   - Light Cruisers, Cruisers: Power 2, Space 2, SP 0'
-    source: 'Rogue Trader Core Rulebook'
-    location: 'Main'
-    componentClass: 'Essential'
-    componentType: 'Void Shield'
+    description: 'A holdover from the ship''s Navy days, this bridge was laid out
+        and equipped with combat in mind. // Damage Control Station: As long as the
+        bridge remains undamaged, all Tech-Use Tests to repair the ship gain +10.
+        // Hull-size variants: //   - Transports, Raiders, Frigates: Power 1, Space
+        1, SP 0 //   - Light Cruisers, Cruisers: Power 2, Space 2, SP 0'
+    source: Rogue Trader Core Rulebook
+    location: Main
+    componentClass: Essential
+    componentType: Void Shield
     target: ''
     effect: ''
     backpack:
         inBackpack: false
-img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_05.png'
-name: 'Combat Bridge'
-type: 'shipComponent'
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-void-shield.png
+name: Combat Bridge
+type: shipComponent
 ---
 data:
-    craftsmanship: 'common'
-    availability: 'common'
+    craftsmanship: common
+    availability: common
     isOnFire: false
     isDepressurized: false
     isUnpowered: false
@@ -321,22 +337,28 @@ data:
     space: 1
     hitPoints: 0
     shipPoints: 1
-    description: 'This bridge has been modified to give the ship''s master greater control over his vessel. // Enhanced Cogitator Relays: As long as the bridge remains undamaged, all Command Tests made by the captain gain +5 and all Ballistic Skill Tests to fire shipboard weapons gain +5. If this Component ever suffers a Critical Hit, it becomes unpowered on a 1d10 roll of 3 or higher. // Hull-size variants: //   - Raiders, Frigates: Power 2, Space 1, SP 1 //   - Light Cruisers, Cruisers: Power 3, Space 2, SP 1'
-    source: 'Rogue Trader Core Rulebook'
-    location: 'Main'
-    componentClass: 'Essential'
-    componentType: 'Void Shield'
+    description: 'This bridge has been modified to give the ship''s master greater
+        control over his vessel. // Enhanced Cogitator Relays: As long as the bridge
+        remains undamaged, all Command Tests made by the captain gain +5 and all Ballistic
+        Skill Tests to fire shipboard weapons gain +5. If this Component ever suffers
+        a Critical Hit, it becomes unpowered on a 1d10 roll of 3 or higher. // Hull-size
+        variants: //   - Raiders, Frigates: Power 2, Space 1, SP 1 //   - Light Cruisers,
+        Cruisers: Power 3, Space 2, SP 1'
+    source: Rogue Trader Core Rulebook
+    location: Main
+    componentClass: Essential
+    componentType: Void Shield
     target: ''
     effect: ''
     backpack:
         inBackpack: false
-img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_05.png'
-name: 'Command Bridge'
-type: 'shipComponent'
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-void-shield.png
+name: Command Bridge
+type: shipComponent
 ---
 data:
-    craftsmanship: 'common'
-    availability: 'common'
+    craftsmanship: common
+    availability: common
     isOnFire: false
     isDepressurized: false
     isUnpowered: false
@@ -345,22 +367,25 @@ data:
     space: 1
     hitPoints: 0
     shipPoints: 0
-    description: 'This bridge has a station equipped with cogitator-servitors and a hololithic projector, given over to quickly loading and unloading cargo. // Organised: When working towards a Trade objective, the Explorers earn an additional 50 Achievement Points towards completing that objective.'
-    source: 'Rogue Trader Core Rulebook'
-    location: 'Main'
-    componentClass: 'Essential'
-    componentType: 'Void Shield'
+    description: 'This bridge has a station equipped with cogitator-servitors and
+        a hololithic projector, given over to quickly loading and unloading cargo.
+        // Organised: When working towards a Trade objective, the Explorers earn an
+        additional 50 Achievement Points towards completing that objective.'
+    source: Rogue Trader Core Rulebook
+    location: Main
+    componentClass: Essential
+    componentType: Void Shield
     target: ''
     effect: ''
     backpack:
         inBackpack: false
-img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_05.png'
-name: 'Commerce Bridge'
-type: 'shipComponent'
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-void-shield.png
+name: Commerce Bridge
+type: shipComponent
 ---
 data:
-    craftsmanship: 'common'
-    availability: 'common'
+    craftsmanship: common
+    availability: common
     isOnFire: false
     isDepressurized: false
     isUnpowered: false
@@ -369,22 +394,28 @@ data:
     space: 2
     hitPoints: 0
     shipPoints: 0
-    description: 'This bridge has been modified to give the ship''s master greater control over his vessel. // Enhanced Cogitator Relays: As long as the bridge remains undamaged, all Command Tests made by the captain gain +5 and all Ballistic Skill Tests to fire shipboard weapons gain +5. If this Component ever suffers a Critical Hit, it becomes unpowered on a 1d10 roll of 3 or higher. // Hull-size variants: //   - Raiders, Frigates: Power 2, Space 2, SP 0 //   - Light Cruisers, Cruisers: Power 3, Space 2, SP 0'
-    source: 'Rogue Trader Core Rulebook'
-    location: 'Main'
-    componentClass: 'Essential'
-    componentType: 'Void Shield'
+    description: 'This bridge has been modified to give the ship''s master greater
+        control over his vessel. // Enhanced Cogitator Relays: As long as the bridge
+        remains undamaged, all Command Tests made by the captain gain +5 and all Ballistic
+        Skill Tests to fire shipboard weapons gain +5. If this Component ever suffers
+        a Critical Hit, it becomes unpowered on a 1d10 roll of 3 or higher. // Hull-size
+        variants: //   - Raiders, Frigates: Power 2, Space 2, SP 0 //   - Light Cruisers,
+        Cruisers: Power 3, Space 2, SP 0'
+    source: Rogue Trader Core Rulebook
+    location: Main
+    componentClass: Essential
+    componentType: Void Shield
     target: ''
     effect: ''
     backpack:
         inBackpack: false
-img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_05.png'
-name: 'Armoured Command Bridge'
-type: 'shipComponent'
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-void-shield.png
+name: Armoured Command Bridge
+type: shipComponent
 ---
 data:
-    craftsmanship: 'common'
-    availability: 'common'
+    craftsmanship: common
+    availability: common
     isOnFire: false
     isDepressurized: false
     isUnpowered: false
@@ -393,22 +424,25 @@ data:
     space: 3
     hitPoints: 0
     shipPoints: 0
-    description: 'The bridge of a ship of the line is designed with one goal in mind—winning battles. // Master Plotting Table: All Piloting and Navigation tests by crew on the Bridge gain +5. // Improved Fire Direction: All Ballistic Skill Tests to fire shipboard weapons gain +10.'
-    source: 'Rogue Trader Core Rulebook'
-    location: 'Main'
-    componentClass: 'Essential'
-    componentType: 'Void Shield'
+    description: 'The bridge of a ship of the line is designed with one goal in mind—winning
+        battles. // Master Plotting Table: All Piloting and Navigation tests by crew
+        on the Bridge gain +5. // Improved Fire Direction: All Ballistic Skill Tests
+        to fire shipboard weapons gain +10.'
+    source: Rogue Trader Core Rulebook
+    location: Main
+    componentClass: Essential
+    componentType: Void Shield
     target: ''
     effect: ''
     backpack:
         inBackpack: false
-img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_05.png'
-name: 'Ship Master’s Bridge'
-type: 'shipComponent'
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-void-shield.png
+name: Ship Master’s Bridge
+type: shipComponent
 ---
 data:
-    craftsmanship: 'common'
-    availability: 'common'
+    craftsmanship: common
+    availability: common
     isOnFire: false
     isDepressurized: false
     isUnpowered: false
@@ -417,22 +451,26 @@ data:
     space: 1
     hitPoints: 0
     shipPoints: 0
-    description: 'The life-support system was designed for reliability and does little to remove the stink of oil and warp engine discharge. // Stale Air: Increase all Morale loss by 1. // Hull-size variants: //   - Transports, Raiders, Frigates: Power 3, Space 1, SP 0 //   - Light Cruisers, Cruisers: Power 4, Space 2, SP 0'
-    source: 'Rogue Trader Core Rulebook'
-    location: 'Main'
-    componentClass: 'Essential'
-    componentType: 'Life Sustainer'
+    description: 'The life-support system was designed for reliability and does little
+        to remove the stink of oil and warp engine discharge. // Stale Air: Increase
+        all Morale loss by 1. // Hull-size variants: //   - Transports, Raiders, Frigates:
+        Power 3, Space 1, SP 0 //   - Light Cruisers, Cruisers: Power 4, Space 2,
+        SP 0'
+    source: Rogue Trader Core Rulebook
+    location: Main
+    componentClass: Essential
+    componentType: Life Sustainer
     target: ''
     effect: ''
     backpack:
         inBackpack: false
-img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_05.png'
-name: 'M-1.r Life Sustainer'
-type: 'shipComponent'
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-life-sustainer.png
+name: M-1.r Life Sustainer
+type: shipComponent
 ---
 data:
-    craftsmanship: 'common'
-    availability: 'common'
+    craftsmanship: common
+    availability: common
     isOnFire: false
     isDepressurized: false
     isUnpowered: false
@@ -441,22 +479,25 @@ data:
     space: 2
     hitPoints: 0
     shipPoints: 0
-    description: 'This life sustainer is of STC origins, and is in common use in the Calixis Sector. // Hull-size variants: //   - Transports, Raiders, Frigates: Power 4, Space 2, SP 0 //   - Light Cruisers, Cruisers: Power 5, Space 3, SP 0'
-    source: 'Rogue Trader Core Rulebook'
-    location: 'Main'
-    componentClass: 'Essential'
-    componentType: 'Life Sustainer'
+    description: 'This life sustainer is of STC origins, and is in common use in the
+        Calixis Sector. // Hull-size variants: //   - Transports, Raiders, Frigates:
+        Power 4, Space 2, SP 0 //   - Light Cruisers, Cruisers: Power 5, Space 3,
+        SP 0'
+    source: Rogue Trader Core Rulebook
+    location: Main
+    componentClass: Essential
+    componentType: Life Sustainer
     target: ''
     effect: ''
     backpack:
         inBackpack: false
-img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_05.png'
-name: 'Vitae Pattern Life Sustainer'
-type: 'shipComponent'
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-life-sustainer.png
+name: Vitae Pattern Life Sustainer
+type: shipComponent
 ---
 data:
-    craftsmanship: 'common'
-    availability: 'common'
+    craftsmanship: common
+    availability: common
     isOnFire: false
     isDepressurized: false
     isUnpowered: false
@@ -465,22 +506,25 @@ data:
     space: 2
     hitPoints: 0
     shipPoints: 0
-    description: 'The masters of this vessel have done little to improve the quarters left from this ship''s Navy days. // Cramped: Decrease Morale permanently by 2. // Hull-size variants: //   - Transports, Raiders, Frigates: Power 1, Space 2, SP 0 //   - Light Cruisers, Cruisers: Power 2, Space 3, SP 0'
-    source: 'Rogue Trader Core Rulebook'
-    location: 'Main'
-    componentClass: 'Essential'
-    componentType: 'Crew Quarters'
+    description: 'The masters of this vessel have done little to improve the quarters
+        left from this ship''s Navy days. // Cramped: Decrease Morale permanently
+        by 2. // Hull-size variants: //   - Transports, Raiders, Frigates: Power 1,
+        Space 2, SP 0 //   - Light Cruisers, Cruisers: Power 2, Space 3, SP 0'
+    source: Rogue Trader Core Rulebook
+    location: Main
+    componentClass: Essential
+    componentType: Crew Quarters
     target: ''
     effect: ''
     backpack:
         inBackpack: false
-img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_05.png'
-name: 'Pressed-crew Quarters'
-type: 'shipComponent'
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-crew-quarters.png
+name: Pressed-crew Quarters
+type: shipComponent
 ---
 data:
-    craftsmanship: 'common'
-    availability: 'common'
+    craftsmanship: common
+    availability: common
     isOnFire: false
     isDepressurized: false
     isUnpowered: false
@@ -489,22 +533,24 @@ data:
     space: 3
     hitPoints: 0
     shipPoints: 0
-    description: 'Standard living quarters for the voidsmen of a long-distance trader. // Hull-size variants: //   - Transports, Raiders, Frigates: Power 1, Space 3, SP 0 //   - Light Cruisers, Cruisers: Power 2, Space 4, SP 0'
-    source: 'Rogue Trader Core Rulebook'
-    location: 'Main'
-    componentClass: 'Essential'
-    componentType: 'Crew Quarters'
+    description: 'Standard living quarters for the voidsmen of a long-distance trader.
+        // Hull-size variants: //   - Transports, Raiders, Frigates: Power 1, Space
+        3, SP 0 //   - Light Cruisers, Cruisers: Power 2, Space 4, SP 0'
+    source: Rogue Trader Core Rulebook
+    location: Main
+    componentClass: Essential
+    componentType: Crew Quarters
     target: ''
     effect: ''
     backpack:
         inBackpack: false
-img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_05.png'
-name: 'Voidsmen Quarters'
-type: 'shipComponent'
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-crew-quarters.png
+name: Voidsmen Quarters
+type: shipComponent
 ---
 data:
-    craftsmanship: 'common'
-    availability: 'common'
+    craftsmanship: common
+    availability: common
     isOnFire: false
     isDepressurized: false
     isUnpowered: false
@@ -513,22 +559,24 @@ data:
     space: 0
     hitPoints: 0
     shipPoints: 0
-    description: 'The Imperial Navy’s standard sensor array. // External: This Component does not require hull space. Although it is external, it can only be destroyed or damaged by a Critical Hit.'
-    source: 'Rogue Trader Core Rulebook'
-    location: 'Main'
-    componentClass: 'Essential'
-    componentType: 'Augur Array'
+    description: 'The Imperial Navy’s standard sensor array. // External: This Component
+        does not require hull space. Although it is external, it can only be destroyed
+        or damaged by a Critical Hit.'
+    source: Rogue Trader Core Rulebook
+    location: Main
+    componentClass: Essential
+    componentType: Augur Array
     target: ''
     effect: ''
     backpack:
         inBackpack: false
-img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_05.png'
-name: 'M-100 Auger Array'
-type: 'shipComponent'
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-augur-array.png
+name: M-100 Auger Array
+type: shipComponent
 ---
 data:
-    craftsmanship: 'common'
-    availability: 'common'
+    craftsmanship: common
+    availability: common
     isOnFire: false
     isDepressurized: false
     isUnpowered: false
@@ -537,22 +585,63 @@ data:
     space: 0
     hitPoints: 0
     shipPoints: 0
-    description: 'A modified version of the Imperial Navy’s standard sensor array, with boosted wideband gain. S04 R-50 Auspex Multi-band The sensors of this ship have been optimised for navigation, at the expense of the sensor''s other uses. External: This Component does not require hull space. Although it is external, it can only be destroyed or damaged by a Critical Hit. Deep Void Auger Array These, quite simply, are the some of the best sensors created by the Adeptus Mechanicus, and are reserved for their own ships and Imperial Naval scout vessels. External: This Component does not require hull space. Although it is external, it can only be destroyed or damaged by a Critical Hit. SUPPLEMENTAL COMPONENTS Supplemental Components are not required for a starship to function, though they may be highly recommended. Unlike Essential Components, multiples of the same type of Component or even duplicates of the same Component may be installed on a ship, unless specifically stated otherwise. When installing Weapon Components, they must be placed in one of the starship''s Weapon Capacity slots. For example, a starship that has a Weapon Capacity of Dorsal 1 and Prow 1 can have one dorsal weapon and one prow weapon, no more. If a lance weapon is installed on a vessel of frigate size or smaller (transports and raiders, for example), it must be installed in a prow weapon slot. Lances are large and cumbersome weapons and in respects to smaller vessels, can only be installed on ships specifically designed to carry them. If a ship of frigate size or smaller does not have a prow weapon slot, it cannot carry a lance. Certain Weapon Components may only be installed in certain classes of ships, or in certain Weapon Capacity slots. MACROBATTERIES Macrobatteries are ranks of massive cannons or other weapons, fired in volley to overwhelm an enemy in a barrage of destruction. Thunderstrike Macrocannons An older version of the Mars Pattern, these macrocannons lack range and power. They are most often found on transports. Mars Pattern Macrocannons The most common macrobattery, these are reliable, hard-hitting weapons firing kilo-tonne ordinance, mounted along the vessel''s dorsal ridge or in broadside. Mars Pattern Macrocannon Broadside The most common macrobattery, these are reliable, hard-hitting weapons firing kilo-tonne ordinance, mounted in a warship''s extended broadside. Broadside: These weapons must occupy a Port or Starboard Weapon Capacity slot. Sunsear Laser Battery These laser batteries are common on Naval frigates, providing a balance between power used and damage inflicted. // External: This Component does not require hull space. Although it is external, it can only be destroyed or damaged by a Critical Hit. // Sensitive: Increased power draw provides a +5 bonus to the ship’s Detection. // Stellar Detection: Mapping protocols provide a +5 bonus to Manoeuvre Tests to avoid celestial phenomena, but subtracts -2 from the ship''s Detection. // Long Distance Scan: When working toward an Exploration objective, the players earn an additional 50 Achievement Points toward completing that objective. // Eye of the Omnissiah: The exceptional sensitivity of the array grants +10 to the ship''s Detection.'
-    source: 'Rogue Trader Core Rulebook'
-    location: 'Main'
-    componentClass: 'Essential'
-    componentType: 'Augur Array'
+    description: 'A modified version of the Imperial Navy’s standard sensor array,
+        with boosted wideband gain. S04 R-50 Auspex Multi-band The sensors of this
+        ship have been optimised for navigation, at the expense of the sensor''s other
+        uses. External: This Component does not require hull space. Although it is
+        external, it can only be destroyed or damaged by a Critical Hit. Deep Void
+        Auger Array These, quite simply, are the some of the best sensors created
+        by the Adeptus Mechanicus, and are reserved for their own ships and Imperial
+        Naval scout vessels. External: This Component does not require hull space.
+        Although it is external, it can only be destroyed or damaged by a Critical
+        Hit. SUPPLEMENTAL COMPONENTS Supplemental Components are not required for
+        a starship to function, though they may be highly recommended. Unlike Essential
+        Components, multiples of the same type of Component or even duplicates of
+        the same Component may be installed on a ship, unless specifically stated
+        otherwise. When installing Weapon Components, they must be placed in one of
+        the starship''s Weapon Capacity slots. For example, a starship that has a
+        Weapon Capacity of Dorsal 1 and Prow 1 can have one dorsal weapon and one
+        prow weapon, no more. If a lance weapon is installed on a vessel of frigate
+        size or smaller (transports and raiders, for example), it must be installed
+        in a prow weapon slot. Lances are large and cumbersome weapons and in respects
+        to smaller vessels, can only be installed on ships specifically designed to
+        carry them. If a ship of frigate size or smaller does not have a prow weapon
+        slot, it cannot carry a lance. Certain Weapon Components may only be installed
+        in certain classes of ships, or in certain Weapon Capacity slots. MACROBATTERIES
+        Macrobatteries are ranks of massive cannons or other weapons, fired in volley
+        to overwhelm an enemy in a barrage of destruction. Thunderstrike Macrocannons
+        An older version of the Mars Pattern, these macrocannons lack range and power.
+        They are most often found on transports. Mars Pattern Macrocannons The most
+        common macrobattery, these are reliable, hard-hitting weapons firing kilo-tonne
+        ordinance, mounted along the vessel''s dorsal ridge or in broadside. Mars
+        Pattern Macrocannon Broadside The most common macrobattery, these are reliable,
+        hard-hitting weapons firing kilo-tonne ordinance, mounted in a warship''s
+        extended broadside. Broadside: These weapons must occupy a Port or Starboard
+        Weapon Capacity slot. Sunsear Laser Battery These laser batteries are common
+        on Naval frigates, providing a balance between power used and damage inflicted.
+        // External: This Component does not require hull space. Although it is external,
+        it can only be destroyed or damaged by a Critical Hit. // Sensitive: Increased
+        power draw provides a +5 bonus to the ship’s Detection. // Stellar Detection:
+        Mapping protocols provide a +5 bonus to Manoeuvre Tests to avoid celestial
+        phenomena, but subtracts -2 from the ship''s Detection. // Long Distance Scan:
+        When working toward an Exploration objective, the players earn an additional
+        50 Achievement Points toward completing that objective. // Eye of the Omnissiah:
+        The exceptional sensitivity of the array grants +10 to the ship''s Detection.'
+    source: Rogue Trader Core Rulebook
+    location: Main
+    componentClass: Essential
+    componentType: Augur Array
     target: ''
     effect: ''
     backpack:
         inBackpack: false
-img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_05.png'
-name: 'M-201.b Auger Array'
-type: 'shipComponent'
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-augur-array.png
+name: M-201.b Auger Array
+type: shipComponent
 ---
 data:
-    craftsmanship: 'common'
-    availability: 'common'
+    craftsmanship: common
+    availability: common
     isOnFire: false
     isDepressurized: false
     isUnpowered: false
@@ -561,22 +650,59 @@ data:
     space: 0
     hitPoints: 0
     shipPoints: 0
-    description: 'The sensors of this ship have been optimised for navigation, at the expense of the sensor''s other uses. External: This Component does not require hull space. Although it is external, it can only be destroyed or damaged by a Critical Hit. Deep Void Auger Array These, quite simply, are the some of the best sensors created by the Adeptus Mechanicus, and are reserved for their own ships and Imperial Naval scout vessels. External: This Component does not require hull space. Although it is external, it can only be destroyed or damaged by a Critical Hit. SUPPLEMENTAL COMPONENTS Supplemental Components are not required for a starship to function, though they may be highly recommended. Unlike Essential Components, multiples of the same type of Component or even duplicates of the same Component may be installed on a ship, unless specifically stated otherwise. When installing Weapon Components, they must be placed in one of the starship''s Weapon Capacity slots. For example, a starship that has a Weapon Capacity of Dorsal 1 and Prow 1 can have one dorsal weapon and one prow weapon, no more. If a lance weapon is installed on a vessel of frigate size or smaller (transports and raiders, for example), it must be installed in a prow weapon slot. Lances are large and cumbersome weapons and in respects to smaller vessels, can only be installed on ships specifically designed to carry them. If a ship of frigate size or smaller does not have a prow weapon slot, it cannot carry a lance. Certain Weapon Components may only be installed in certain classes of ships, or in certain Weapon Capacity slots. MACROBATTERIES Macrobatteries are ranks of massive cannons or other weapons, fired in volley to overwhelm an enemy in a barrage of destruction. Thunderstrike Macrocannons An older version of the Mars Pattern, these macrocannons lack range and power. They are most often found on transports. Mars Pattern Macrocannons The most common macrobattery, these are reliable, hard-hitting weapons firing kilo-tonne ordinance, mounted along the vessel''s dorsal ridge or in broadside. Mars Pattern Macrocannon Broadside The most common macrobattery, these are reliable, hard-hitting weapons firing kilo-tonne ordinance, mounted in a warship''s extended broadside. Broadside: These weapons must occupy a Port or Starboard Weapon Capacity slot. Sunsear Laser Battery These laser batteries are common on Naval frigates, providing a balance between power used and damage inflicted. // Stellar Detection: Mapping protocols provide a +5 bonus to Manoeuvre Tests to avoid celestial phenomena, but subtracts -2 from the ship''s Detection. // Long Distance Scan: When working toward an Exploration objective, the players earn an additional 50 Achievement Points toward completing that objective. // Eye of the Omnissiah: The exceptional sensitivity of the array grants +10 to the ship''s Detection.'
-    source: 'Rogue Trader Core Rulebook'
-    location: 'Main'
-    componentClass: 'Essential'
-    componentType: 'Augur Array'
+    description: 'The sensors of this ship have been optimised for navigation, at
+        the expense of the sensor''s other uses. External: This Component does not
+        require hull space. Although it is external, it can only be destroyed or damaged
+        by a Critical Hit. Deep Void Auger Array These, quite simply, are the some
+        of the best sensors created by the Adeptus Mechanicus, and are reserved for
+        their own ships and Imperial Naval scout vessels. External: This Component
+        does not require hull space. Although it is external, it can only be destroyed
+        or damaged by a Critical Hit. SUPPLEMENTAL COMPONENTS Supplemental Components
+        are not required for a starship to function, though they may be highly recommended.
+        Unlike Essential Components, multiples of the same type of Component or even
+        duplicates of the same Component may be installed on a ship, unless specifically
+        stated otherwise. When installing Weapon Components, they must be placed in
+        one of the starship''s Weapon Capacity slots. For example, a starship that
+        has a Weapon Capacity of Dorsal 1 and Prow 1 can have one dorsal weapon and
+        one prow weapon, no more. If a lance weapon is installed on a vessel of frigate
+        size or smaller (transports and raiders, for example), it must be installed
+        in a prow weapon slot. Lances are large and cumbersome weapons and in respects
+        to smaller vessels, can only be installed on ships specifically designed to
+        carry them. If a ship of frigate size or smaller does not have a prow weapon
+        slot, it cannot carry a lance. Certain Weapon Components may only be installed
+        in certain classes of ships, or in certain Weapon Capacity slots. MACROBATTERIES
+        Macrobatteries are ranks of massive cannons or other weapons, fired in volley
+        to overwhelm an enemy in a barrage of destruction. Thunderstrike Macrocannons
+        An older version of the Mars Pattern, these macrocannons lack range and power.
+        They are most often found on transports. Mars Pattern Macrocannons The most
+        common macrobattery, these are reliable, hard-hitting weapons firing kilo-tonne
+        ordinance, mounted along the vessel''s dorsal ridge or in broadside. Mars
+        Pattern Macrocannon Broadside The most common macrobattery, these are reliable,
+        hard-hitting weapons firing kilo-tonne ordinance, mounted in a warship''s
+        extended broadside. Broadside: These weapons must occupy a Port or Starboard
+        Weapon Capacity slot. Sunsear Laser Battery These laser batteries are common
+        on Naval frigates, providing a balance between power used and damage inflicted.
+        // Stellar Detection: Mapping protocols provide a +5 bonus to Manoeuvre Tests
+        to avoid celestial phenomena, but subtracts -2 from the ship''s Detection.
+        // Long Distance Scan: When working toward an Exploration objective, the players
+        earn an additional 50 Achievement Points toward completing that objective.
+        // Eye of the Omnissiah: The exceptional sensitivity of the array grants +10
+        to the ship''s Detection.'
+    source: Rogue Trader Core Rulebook
+    location: Main
+    componentClass: Essential
+    componentType: Augur Array
     target: ''
     effect: ''
     backpack:
         inBackpack: false
-img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_05.png'
-name: 'R-50 Auspex Multi-band'
-type: 'shipComponent'
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-augur-array.png
+name: R-50 Auspex Multi-band
+type: shipComponent
 ---
 data:
-    craftsmanship: 'common'
-    availability: 'common'
+    craftsmanship: common
+    availability: common
     isOnFire: false
     isDepressurized: false
     isUnpowered: false
@@ -585,22 +711,52 @@ data:
     space: 0
     hitPoints: 0
     shipPoints: 1
-    description: 'These, quite simply, are the some of the best sensors created by the Adeptus Mechanicus, and are reserved for their own ships and Imperial Naval scout vessels. External: This Component does not require hull space. Although it is external, it can only be destroyed or damaged by a Critical Hit. SUPPLEMENTAL COMPONENTS Supplemental Components are not required for a starship to function, though they may be highly recommended. Unlike Essential Components, multiples of the same type of Component or even duplicates of the same Component may be installed on a ship, unless specifically stated otherwise. When installing Weapon Components, they must be placed in one of the starship''s Weapon Capacity slots. For example, a starship that has a Weapon Capacity of Dorsal 1 and Prow 1 can have one dorsal weapon and one prow weapon, no more. If a lance weapon is installed on a vessel of frigate size or smaller (transports and raiders, for example), it must be installed in a prow weapon slot. Lances are large and cumbersome weapons and in respects to smaller vessels, can only be installed on ships specifically designed to carry them. If a ship of frigate size or smaller does not have a prow weapon slot, it cannot carry a lance. Certain Weapon Components may only be installed in certain classes of ships, or in certain Weapon Capacity slots. MACROBATTERIES Macrobatteries are ranks of massive cannons or other weapons, fired in volley to overwhelm an enemy in a barrage of destruction. Thunderstrike Macrocannons An older version of the Mars Pattern, these macrocannons lack range and power. They are most often found on transports. Mars Pattern Macrocannons The most common macrobattery, these are reliable, hard-hitting weapons firing kilo-tonne ordinance, mounted along the vessel''s dorsal ridge or in broadside. Mars Pattern Macrocannon Broadside The most common macrobattery, these are reliable, hard-hitting weapons firing kilo-tonne ordinance, mounted in a warship''s extended broadside. Broadside: These weapons must occupy a Port or Starboard Weapon Capacity slot. Sunsear Laser Battery These laser batteries are common on Naval frigates, providing a balance between power used and damage inflicted. // Eye of the Omnissiah: The exceptional sensitivity of the array grants +10 to the ship''s Detection.'
-    source: 'Rogue Trader Core Rulebook'
-    location: 'Main'
-    componentClass: 'Essential'
-    componentType: 'Augur Array'
+    description: 'These, quite simply, are the some of the best sensors created by
+        the Adeptus Mechanicus, and are reserved for their own ships and Imperial
+        Naval scout vessels. External: This Component does not require hull space.
+        Although it is external, it can only be destroyed or damaged by a Critical
+        Hit. SUPPLEMENTAL COMPONENTS Supplemental Components are not required for
+        a starship to function, though they may be highly recommended. Unlike Essential
+        Components, multiples of the same type of Component or even duplicates of
+        the same Component may be installed on a ship, unless specifically stated
+        otherwise. When installing Weapon Components, they must be placed in one of
+        the starship''s Weapon Capacity slots. For example, a starship that has a
+        Weapon Capacity of Dorsal 1 and Prow 1 can have one dorsal weapon and one
+        prow weapon, no more. If a lance weapon is installed on a vessel of frigate
+        size or smaller (transports and raiders, for example), it must be installed
+        in a prow weapon slot. Lances are large and cumbersome weapons and in respects
+        to smaller vessels, can only be installed on ships specifically designed to
+        carry them. If a ship of frigate size or smaller does not have a prow weapon
+        slot, it cannot carry a lance. Certain Weapon Components may only be installed
+        in certain classes of ships, or in certain Weapon Capacity slots. MACROBATTERIES
+        Macrobatteries are ranks of massive cannons or other weapons, fired in volley
+        to overwhelm an enemy in a barrage of destruction. Thunderstrike Macrocannons
+        An older version of the Mars Pattern, these macrocannons lack range and power.
+        They are most often found on transports. Mars Pattern Macrocannons The most
+        common macrobattery, these are reliable, hard-hitting weapons firing kilo-tonne
+        ordinance, mounted along the vessel''s dorsal ridge or in broadside. Mars
+        Pattern Macrocannon Broadside The most common macrobattery, these are reliable,
+        hard-hitting weapons firing kilo-tonne ordinance, mounted in a warship''s
+        extended broadside. Broadside: These weapons must occupy a Port or Starboard
+        Weapon Capacity slot. Sunsear Laser Battery These laser batteries are common
+        on Naval frigates, providing a balance between power used and damage inflicted.
+        // Eye of the Omnissiah: The exceptional sensitivity of the array grants +10
+        to the ship''s Detection.'
+    source: Rogue Trader Core Rulebook
+    location: Main
+    componentClass: Essential
+    componentType: Augur Array
     target: ''
     effect: ''
     backpack:
         inBackpack: false
-img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_05.png'
-name: 'Deep Void Auger Array'
-type: 'shipComponent'
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-augur-array.png
+name: Deep Void Auger Array
+type: shipComponent
 ---
 data:
-    craftsmanship: 'common'
-    availability: 'common'
+    craftsmanship: common
+    availability: common
     isOnFire: false
     isDepressurized: false
     isUnpowered: false
@@ -609,22 +765,26 @@ data:
     space: 2
     hitPoints: 0
     shipPoints: 1
-    description: 'Warships can be converted to haul cargo, but this can often have an adverse effect on their combat performance. // Hidden Spaces: When working toward a Trade or Criminal objective, the players earn an additional 50 Achievement Points toward completing that objective. // Unbalanced: Starships are precisely balanced, something this modification effects, meaning they suffer –3 to Manoeuvrability.'
-    source: 'Rogue Trader Core Rulebook'
-    location: 'Main'
-    componentClass: 'Supplemental'
-    componentType: 'Cargo Holds and Passenger Compartments'
+    description: 'Warships can be converted to haul cargo, but this can often have
+        an adverse effect on their combat performance. // Hidden Spaces: When working
+        toward a Trade or Criminal objective, the players earn an additional 50 Achievement
+        Points toward completing that objective. // Unbalanced: Starships are precisely
+        balanced, something this modification effects, meaning they suffer –3 to Manoeuvrability.'
+    source: Rogue Trader Core Rulebook
+    location: Main
+    componentClass: Supplemental
+    componentType: Cargo Holds and Passenger Compartments
     target: ''
     effect: ''
     backpack:
         inBackpack: false
-img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_05.png'
-name: 'Cargo Hold and Lighter Bay'
-type: 'shipComponent'
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-cargo-hold.png
+name: Cargo Hold and Lighter Bay
+type: shipComponent
 ---
 data:
-    craftsmanship: 'common'
-    availability: 'common'
+    craftsmanship: common
+    availability: common
     isOnFire: false
     isDepressurized: false
     isUnpowered: false
@@ -633,22 +793,25 @@ data:
     space: 5
     hitPoints: 0
     shipPoints: 1
-    description: 'Cargo holds have been installed across the ship, spread out to minimise their effect on the vessel''s handling. // Storage Area: When working toward a Trade objective, the players earn an additional 100 Achievement Points toward completing that objective.'
-    source: 'Rogue Trader Core Rulebook'
-    location: 'Main'
-    componentClass: 'Supplemental'
-    componentType: 'Cargo Holds and Passenger Compartments'
+    description: 'Cargo holds have been installed across the ship, spread out to minimise
+        their effect on the vessel''s handling. // Storage Area: When working toward
+        a Trade objective, the players earn an additional 100 Achievement Points toward
+        completing that objective.'
+    source: Rogue Trader Core Rulebook
+    location: Main
+    componentClass: Supplemental
+    componentType: Cargo Holds and Passenger Compartments
     target: ''
     effect: ''
     backpack:
         inBackpack: false
-img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_05.png'
-name: 'Compartmentalized Cargo Hold'
-type: 'shipComponent'
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-cargo-hold.png
+name: Compartmentalized Cargo Hold
+type: shipComponent
 ---
 data:
-    craftsmanship: 'common'
-    availability: 'common'
+    craftsmanship: common
+    availability: common
     isOnFire: false
     isDepressurized: false
     isUnpowered: false
@@ -657,22 +820,24 @@ data:
     space: 4
     hitPoints: 0
     shipPoints: 1
-    description: 'This hold was designed for moving bulk cargo. // Stowed and Secured: When working towards a Trade objective, the players earn an additional 125 Achievement Points towards completing that objective.'
-    source: 'Rogue Trader Core Rulebook'
-    location: 'Main'
-    componentClass: 'Supplemental'
-    componentType: 'Cargo Holds and Passenger Compartments'
+    description: 'This hold was designed for moving bulk cargo. // Stowed and Secured:
+        When working towards a Trade objective, the players earn an additional 125
+        Achievement Points towards completing that objective.'
+    source: Rogue Trader Core Rulebook
+    location: Main
+    componentClass: Supplemental
+    componentType: Cargo Holds and Passenger Compartments
     target: ''
     effect: ''
     backpack:
         inBackpack: false
-img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_05.png'
-name: 'Main Cargo Hold'
-type: 'shipComponent'
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-cargo-hold.png
+name: Main Cargo Hold
+type: shipComponent
 ---
 data:
-    craftsmanship: 'common'
-    availability: 'common'
+    craftsmanship: common
+    availability: common
     isOnFire: false
     isDepressurized: false
     isUnpowered: false
@@ -681,22 +846,25 @@ data:
     space: 1
     hitPoints: 0
     shipPoints: 1
-    description: 'Comfortable quarters for passengers earn Thrones—and make for jealous crew. // Paying Customers: When working toward a Trade, Criminal, or Creed objective, the players earn an additional 100 Achievement Points towards completing that objective. // Class Division: Decrease Morale permanently by 3.'
-    source: 'Rogue Trader Core Rulebook'
-    location: 'Main'
-    componentClass: 'Supplemental'
-    componentType: 'Cargo Holds and Passenger Compartments'
+    description: 'Comfortable quarters for passengers earn Thrones—and make for jealous
+        crew. // Paying Customers: When working toward a Trade, Criminal, or Creed
+        objective, the players earn an additional 100 Achievement Points towards completing
+        that objective. // Class Division: Decrease Morale permanently by 3.'
+    source: Rogue Trader Core Rulebook
+    location: Main
+    componentClass: Supplemental
+    componentType: Cargo Holds and Passenger Compartments
     target: ''
     effect: ''
     backpack:
         inBackpack: false
-img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_05.png'
-name: 'Luxury Passenger Quarters'
-type: 'shipComponent'
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-crew-quarters.png
+name: Luxury Passenger Quarters
+type: shipComponent
 ---
 data:
-    craftsmanship: 'common'
-    availability: 'common'
+    craftsmanship: common
+    availability: common
     isOnFire: false
     isDepressurized: false
     isUnpowered: false
@@ -705,22 +873,27 @@ data:
     space: 4
     hitPoints: 0
     shipPoints: 2
-    description: 'For a truly enterprising Rogue Trader, a war is just another business venture. These barracks allow him to attempt just that—by filling his ship with thousands of troops. // Soldiers: When working toward a Military objective, the players earn an additional 100 Achievement Points towards completing that objective. // Reinforcements: If the ship is transporting troops, it gains +20 to all Command Tests involving boarding actions and Hit and Run Actions.'
-    source: 'Rogue Trader Core Rulebook'
-    location: 'Main'
-    componentClass: 'Supplemental'
-    componentType: 'Cargo Holds and Passenger Compartments'
+    description: 'For a truly enterprising Rogue Trader, a war is just another business
+        venture. These barracks allow him to attempt just that—by filling his ship
+        with thousands of troops. // Soldiers: When working toward a Military objective,
+        the players earn an additional 100 Achievement Points towards completing that
+        objective. // Reinforcements: If the ship is transporting troops, it gains
+        +20 to all Command Tests involving boarding actions and Hit and Run Actions.'
+    source: Rogue Trader Core Rulebook
+    location: Main
+    componentClass: Supplemental
+    componentType: Cargo Holds and Passenger Compartments
     target: ''
     effect: ''
     backpack:
         inBackpack: false
-img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_05.png'
-name: 'Barracks'
-type: 'shipComponent'
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-cargo-hold.png
+name: Barracks
+type: shipComponent
 ---
 data:
-    craftsmanship: 'common'
-    availability: 'common'
+    craftsmanship: common
+    availability: common
     isOnFire: false
     isDepressurized: false
     isUnpowered: false
@@ -729,22 +902,27 @@ data:
     space: 0
     hitPoints: 0
     shipPoints: 2
-    description: 'Multiple manoeuvring thrusters draw immense power, but offer impressive performance nonetheless. // Agile: These thrusters add +5 to the ship''s Manoeuvrability. // External: This Component does not require hull space. Although it is external, it can only be destroyed or damaged by a Critical Hit. // Hull-size variants: //   - Raiders, Frigates: Power 3, Space 0, SP 2 //   - Transports, Light Cruisers: Power 4, Space 0, SP 2 //   - Cruisers: Power 5, Space 0, SP 2'
-    source: 'Rogue Trader Core Rulebook'
-    location: 'Main'
-    componentClass: 'Supplemental'
-    componentType: 'Augments and Enhancements'
+    description: 'Multiple manoeuvring thrusters draw immense power, but offer impressive
+        performance nonetheless. // Agile: These thrusters add +5 to the ship''s Manoeuvrability.
+        // External: This Component does not require hull space. Although it is external,
+        it can only be destroyed or damaged by a Critical Hit. // Hull-size variants:
+        //   - Raiders, Frigates: Power 3, Space 0, SP 2 //   - Transports, Light
+        Cruisers: Power 4, Space 0, SP 2 //   - Cruisers: Power 5, Space 0, SP 2'
+    source: Rogue Trader Core Rulebook
+    location: Main
+    componentClass: Supplemental
+    componentType: Augments and Enhancements
     target: ''
     effect: ''
     backpack:
         inBackpack: false
-img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_05.png'
-name: 'Augmented Retro-thrusters'
-type: 'shipComponent'
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-augur-array.png
+name: Augmented Retro-thrusters
+type: shipComponent
 ---
 data:
-    craftsmanship: 'common'
-    availability: 'common'
+    craftsmanship: common
+    availability: common
     isOnFire: false
     isDepressurized: false
     isUnpowered: false
@@ -753,22 +931,25 @@ data:
     space: 2
     hitPoints: 0
     shipPoints: 2
-    description: 'Additional adamantine plates in key locations make this vessel hard to destroy. VIII: STARSHIPS // Hard to Breach: Add +3 to Hull Integrity // Hull-size variants: //   - Transports, Raiders, Frigates: Power 0, Space 2, SP 2 //   - Light Cruisers, Cruisers: Power 0, Space 3, SP 2'
-    source: 'Rogue Trader Core Rulebook'
-    location: 'Main'
-    componentClass: 'Supplemental'
-    componentType: 'Augments and Enhancements'
+    description: 'Additional adamantine plates in key locations make this vessel hard
+        to destroy. VIII: STARSHIPS // Hard to Breach: Add +3 to Hull Integrity //
+        Hull-size variants: //   - Transports, Raiders, Frigates: Power 0, Space 2,
+        SP 2 //   - Light Cruisers, Cruisers: Power 0, Space 3, SP 2'
+    source: Rogue Trader Core Rulebook
+    location: Main
+    componentClass: Supplemental
+    componentType: Augments and Enhancements
     target: ''
     effect: ''
     backpack:
         inBackpack: false
-img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_05.png'
-name: 'Reinforced Interior Bulkheads'
-type: 'shipComponent'
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-armour-plating.png
+name: Reinforced Interior Bulkheads
+type: shipComponent
 ---
 data:
-    craftsmanship: 'common'
-    availability: 'common'
+    craftsmanship: common
+    availability: common
     isOnFire: false
     isDepressurized: false
     isUnpowered: false
@@ -777,22 +958,26 @@ data:
     space: 1
     hitPoints: 0
     shipPoints: 2
-    description: 'Additional adamantine plates protect this vessel from harm. Armour: Increase this vessel''s Armour by 1. // Dead Weight: Decrease this vessel''s Manoeuvrability by -2. // Hull-size variants: //   - Transports, Raiders, Frigates: Power 0, Space 1, SP 2 //   - Light Cruisers, Cruisers: Power 0, Space 2, SP 2'
-    source: 'Rogue Trader Core Rulebook'
-    location: 'Main'
-    componentClass: 'Supplemental'
-    componentType: 'Augments and Enhancements'
+    description: 'Additional adamantine plates protect this vessel from harm. Armour:
+        Increase this vessel''s Armour by 1. // Dead Weight: Decrease this vessel''s
+        Manoeuvrability by -2. // Hull-size variants: //   - Transports, Raiders,
+        Frigates: Power 0, Space 1, SP 2 //   - Light Cruisers, Cruisers: Power 0,
+        Space 2, SP 2'
+    source: Rogue Trader Core Rulebook
+    location: Main
+    componentClass: Supplemental
+    componentType: Augments and Enhancements
     target: ''
     effect: ''
     backpack:
         inBackpack: false
-img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_05.png'
-name: 'Armour Plating'
-type: 'shipComponent'
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-armour-plating.png
+name: Armour Plating
+type: shipComponent
 ---
 data:
-    craftsmanship: 'common'
-    availability: 'common'
+    craftsmanship: common
+    availability: common
     isOnFire: false
     isDepressurized: false
     isUnpowered: false
@@ -801,22 +986,26 @@ data:
     space: 4
     hitPoints: 0
     shipPoints: 2
-    description: 'The trademark of cruisers and battleships of the Imperial Navy, heavy sheets of adamantine 20 metres thick cover the bow of this vessel. Imposing: A ship with this Component may not have Prow macrobatteries or lances. This ship gains +4 armour only in its fore arc. This ship also does 1d10 additional damage when ramming.'
-    source: 'Rogue Trader Core Rulebook'
-    location: 'Main'
-    componentClass: 'Supplemental'
-    componentType: 'Augments and Enhancements'
+    description: 'The trademark of cruisers and battleships of the Imperial Navy,
+        heavy sheets of adamantine 20 metres thick cover the bow of this vessel. Imposing:
+        A ship with this Component may not have Prow macrobatteries or lances. This
+        ship gains +4 armour only in its fore arc. This ship also does 1d10 additional
+        damage when ramming.'
+    source: Rogue Trader Core Rulebook
+    location: Main
+    componentClass: Supplemental
+    componentType: Augments and Enhancements
     target: ''
     effect: ''
     backpack:
         inBackpack: false
-img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_05.png'
-name: 'Armoured Prow'
-type: 'shipComponent'
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-armour-plating.png
+name: Armoured Prow
+type: shipComponent
 ---
 data:
-    craftsmanship: 'common'
-    availability: 'common'
+    craftsmanship: common
+    availability: common
     isOnFire: false
     isDepressurized: false
     isUnpowered: false
@@ -825,22 +1014,30 @@ data:
     space: 2
     hitPoints: 0
     shipPoints: 2
-    description: 'The interior of the ship is a maze of passageways, blind compartments, and triple-sealed pressure-hatches. Enemy boarding parties become quickly lost and separated, while the defenders spring cunning ambushes from behind hololithic bulkheads. // Hidden sally-ports: This ship gains +10 to all Command Tests when defending against boarding actions and Hit and Run Actions. // Incomprehensible Layout: When a Component on this ship is selected to be affected from a critical hit, it is chosen by the ship''s controller, not the attacker. // Hull-size variants: //   - Transports, Raiders, Frigates: Power 1, Space 2, SP 2 //   - Light Cruisers, Cruisers: Power 2, Space 3, SP 2'
-    source: 'Rogue Trader Core Rulebook'
-    location: 'Main'
-    componentClass: 'Supplemental'
-    componentType: 'Augments and Enhancements'
+    description: 'The interior of the ship is a maze of passageways, blind compartments,
+        and triple-sealed pressure-hatches. Enemy boarding parties become quickly
+        lost and separated, while the defenders spring cunning ambushes from behind
+        hololithic bulkheads. // Hidden sally-ports: This ship gains +10 to all Command
+        Tests when defending against boarding actions and Hit and Run Actions. //
+        Incomprehensible Layout: When a Component on this ship is selected to be affected
+        from a critical hit, it is chosen by the ship''s controller, not the attacker.
+        // Hull-size variants: //   - Transports, Raiders, Frigates: Power 1, Space
+        2, SP 2 //   - Light Cruisers, Cruisers: Power 2, Space 3, SP 2'
+    source: Rogue Trader Core Rulebook
+    location: Main
+    componentClass: Supplemental
+    componentType: Augments and Enhancements
     target: ''
     effect: ''
     backpack:
         inBackpack: false
-img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_05.png'
-name: 'Tenebro-Maze'
-type: 'shipComponent'
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-augur-array.png
+name: Tenebro-Maze
+type: shipComponent
 ---
 data:
-    craftsmanship: 'common'
-    availability: 'common'
+    craftsmanship: common
+    availability: common
     isOnFire: false
     isDepressurized: false
     isUnpowered: false
@@ -849,22 +1046,26 @@ data:
     space: 4
     hitPoints: 0
     shipPoints: 2
-    description: 'Extensive supply stowage allows the vessel to make longer journeys and better repair damage. // Extensive Stores: Double the time a ship may remain at void without suffering Crew Population or Morale loss. When making Extended Repairs, repair 1 additional Hull Integrity. // Plenty for All: Increase Morale permanently by 1.'
-    source: 'Rogue Trader Core Rulebook'
-    location: 'Main'
-    componentClass: 'Supplemental'
-    componentType: 'Additional Facilities'
+    description: 'Extensive supply stowage allows the vessel to make longer journeys
+        and better repair damage. // Extensive Stores: Double the time a ship may
+        remain at void without suffering Crew Population or Morale loss. When making
+        Extended Repairs, repair 1 additional Hull Integrity. // Plenty for All: Increase
+        Morale permanently by 1.'
+    source: Rogue Trader Core Rulebook
+    location: Main
+    componentClass: Supplemental
+    componentType: Additional Facilities
     target: ''
     effect: ''
     backpack:
         inBackpack: false
-img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_05.png'
-name: 'Extended Supply Vaults'
-type: 'shipComponent'
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-augur-array.png
+name: Extended Supply Vaults
+type: shipComponent
 ---
 data:
-    craftsmanship: 'common'
-    availability: 'common'
+    craftsmanship: common
+    availability: common
     isOnFire: false
     isDepressurized: false
     isUnpowered: false
@@ -873,22 +1074,25 @@ data:
     space: 1
     hitPoints: 0
     shipPoints: 1
-    description: 'The Mechanicus has no qualms about converting the grievously wounded into servitors...but the rest of the crew may differ in opinion. // Recycling: Reduce all losses of Crew Population by 3, to a minimum of 1. Increase all losses to Morale by 1.'
-    source: 'Rogue Trader Core Rulebook'
-    location: 'Main'
-    componentClass: 'Supplemental'
-    componentType: 'Additional Facilities'
+    description: 'The Mechanicus has no qualms about converting the grievously wounded
+        into servitors...but the rest of the crew may differ in opinion. // Recycling:
+        Reduce all losses of Crew Population by 3, to a minimum of 1. Increase all
+        losses to Morale by 1.'
+    source: Rogue Trader Core Rulebook
+    location: Main
+    componentClass: Supplemental
+    componentType: Additional Facilities
     target: ''
     effect: ''
     backpack:
         inBackpack: false
-img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_05.png'
-name: 'Crew Reclamation Facility'
-type: 'shipComponent'
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-augur-array.png
+name: Crew Reclamation Facility
+type: shipComponent
 ---
 data:
-    craftsmanship: 'common'
-    availability: 'common'
+    craftsmanship: common
+    availability: common
     isOnFire: false
     isDepressurized: false
     isUnpowered: false
@@ -897,22 +1101,30 @@ data:
     space: 3
     hitPoints: 0
     shipPoints: 2
-    description: 'Although all ships have a well-armoured room to store their munitions, this facility contains massive stockpiles of weapons, from small arms to macro-cannon warheads. // Well Armed: When working toward a Military objective, the players earn an additional 25 Achievement Points toward completing that objective. // Ordinatus Extremus: All macrobatteries on this ship gain +1 to their listed damage. // Volatile: If this Component is damaged, it explodes. The ship takes 2d5 damage to Hull Integrity, and a Component of the GM''s choice is set on fire. // Hull-size variants: //   - Transports, Raiders, Frigates: Power 2, Space 3, SP 2 //   - Light Cruisers, Cruisers: Power 3, Space 4, SP 2'
-    source: 'Rogue Trader Core Rulebook'
-    location: 'Main'
-    componentClass: 'Supplemental'
-    componentType: 'Additional Facilities'
+    description: 'Although all ships have a well-armoured room to store their munitions,
+        this facility contains massive stockpiles of weapons, from small arms to macro-cannon
+        warheads. // Well Armed: When working toward a Military objective, the players
+        earn an additional 25 Achievement Points toward completing that objective.
+        // Ordinatus Extremus: All macrobatteries on this ship gain +1 to their listed
+        damage. // Volatile: If this Component is damaged, it explodes. The ship takes
+        2d5 damage to Hull Integrity, and a Component of the GM''s choice is set on
+        fire. // Hull-size variants: //   - Transports, Raiders, Frigates: Power 2,
+        Space 3, SP 2 //   - Light Cruisers, Cruisers: Power 3, Space 4, SP 2'
+    source: Rogue Trader Core Rulebook
+    location: Main
+    componentClass: Supplemental
+    componentType: Additional Facilities
     target: ''
     effect: ''
     backpack:
         inBackpack: false
-img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_05.png'
-name: 'Munitorium'
-type: 'shipComponent'
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-augur-array.png
+name: Munitorium
+type: shipComponent
 ---
 data:
-    craftsmanship: 'common'
-    availability: 'common'
+    craftsmanship: common
+    availability: common
     isOnFire: false
     isDepressurized: false
     isUnpowered: false
@@ -921,22 +1133,25 @@ data:
     space: 1
     hitPoints: 0
     shipPoints: 1
-    description: 'A section of this ship has been set aside to offer prayer and praises to the Master of Mankind. // Inspiration: Increase Morale permanently by 3. // Awe of the God Emperor: When working toward a Creed objective, the players earn an additional 100 Achievement Points toward completing that objective.'
-    source: 'Rogue Trader Core Rulebook'
-    location: 'Main'
-    componentClass: 'Supplemental'
-    componentType: 'Additional Facilities'
+    description: 'A section of this ship has been set aside to offer prayer and praises
+        to the Master of Mankind. // Inspiration: Increase Morale permanently by 3.
+        // Awe of the God Emperor: When working toward a Creed objective, the players
+        earn an additional 100 Achievement Points toward completing that objective.'
+    source: Rogue Trader Core Rulebook
+    location: Main
+    componentClass: Supplemental
+    componentType: Additional Facilities
     target: ''
     effect: ''
     backpack:
         inBackpack: false
-img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_05.png'
-name: 'Temple-shrine to the God Emperor'
-type: 'shipComponent'
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-augur-array.png
+name: Temple-shrine to the God Emperor
+type: shipComponent
 ---
 data:
-    craftsmanship: 'common'
-    availability: 'common'
+    craftsmanship: common
+    availability: common
     isOnFire: false
     isDepressurized: false
     isUnpowered: false
@@ -945,22 +1160,24 @@ data:
     space: 1
     hitPoints: 0
     shipPoints: 1
-    description: 'An ancient collection of writings and manuscripts has been collected aboard this vessel. VIII: STARSHIPS TABLE 8-6: ARCHEOTECH COMPONENTS // Accumulated Data: Any Investigation Skill Tests made aboard this ship gains +10.'
-    source: 'Rogue Trader Core Rulebook'
-    location: 'Main'
-    componentClass: 'Supplemental'
-    componentType: 'Additional Facilities'
+    description: 'An ancient collection of writings and manuscripts has been collected
+        aboard this vessel. VIII: STARSHIPS TABLE 8-6: ARCHEOTECH COMPONENTS // Accumulated
+        Data: Any Investigation Skill Tests made aboard this ship gains +10.'
+    source: Rogue Trader Core Rulebook
+    location: Main
+    componentClass: Supplemental
+    componentType: Additional Facilities
     target: ''
     effect: ''
     backpack:
         inBackpack: false
-img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_05.png'
-name: 'Librarium Vault'
-type: 'shipComponent'
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-augur-array.png
+name: Librarium Vault
+type: shipComponent
 ---
 data:
-    craftsmanship: 'common'
-    availability: 'common'
+    craftsmanship: common
+    availability: common
     isOnFire: false
     isDepressurized: false
     isUnpowered: false
@@ -969,22 +1186,26 @@ data:
     space: 1
     hitPoints: 0
     shipPoints: 1
-    description: 'Few Rogue Traders can resist cataloguing their accomplishments. This is more than hubris—such trophies can awe competitors, or may hold secrets long lost. // Past Experiences: When working toward an Exploration, Trade, or Criminal objective, the players earn an additional 50 Achievement Points toward completing that objective.'
-    source: 'Rogue Trader Core Rulebook'
-    location: 'Main'
-    componentClass: 'Supplemental'
-    componentType: 'Additional Facilities'
+    description: 'Few Rogue Traders can resist cataloguing their accomplishments.
+        This is more than hubris—such trophies can awe competitors, or may hold secrets
+        long lost. // Past Experiences: When working toward an Exploration, Trade,
+        or Criminal objective, the players earn an additional 50 Achievement Points
+        toward completing that objective.'
+    source: Rogue Trader Core Rulebook
+    location: Main
+    componentClass: Supplemental
+    componentType: Additional Facilities
     target: ''
     effect: ''
     backpack:
         inBackpack: false
-img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_05.png'
-name: 'Trophy Room'
-type: 'shipComponent'
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-augur-array.png
+name: Trophy Room
+type: shipComponent
 ---
 data:
-    craftsmanship: 'common'
-    availability: 'common'
+    craftsmanship: common
+    availability: common
     isOnFire: false
     isDepressurized: false
     isUnpowered: false
@@ -993,22 +1214,26 @@ data:
     space: 1
     hitPoints: 0
     shipPoints: 1
-    description: 'A gigantic observation dome made of diamond panes and armoured glass adorns this vessel''s spine, allowing an unrestricted view of the surrounding void. // Engraved Star-charts: When working towards an Exploration objective, the players earn an additional 50 Achievement Points towards completing that objective. // Cure for Claustrophobia: Increase Morale permanently by 1.'
-    source: 'Rogue Trader Core Rulebook'
-    location: 'Main'
-    componentClass: 'Supplemental'
-    componentType: 'Additional Facilities'
+    description: 'A gigantic observation dome made of diamond panes and armoured glass
+        adorns this vessel''s spine, allowing an unrestricted view of the surrounding
+        void. // Engraved Star-charts: When working towards an Exploration objective,
+        the players earn an additional 50 Achievement Points towards completing that
+        objective. // Cure for Claustrophobia: Increase Morale permanently by 1.'
+    source: Rogue Trader Core Rulebook
+    location: Main
+    componentClass: Supplemental
+    componentType: Additional Facilities
     target: ''
     effect: ''
     backpack:
         inBackpack: false
-img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_05.png'
-name: 'Observation Dome'
-type: 'shipComponent'
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-augur-array.png
+name: Observation Dome
+type: shipComponent
 ---
 data:
-    craftsmanship: 'common'
-    availability: 'common'
+    craftsmanship: common
+    availability: common
     isOnFire: false
     isDepressurized: false
     isUnpowered: false
@@ -1017,22 +1242,28 @@ data:
     space: 1
     hitPoints: 0
     shipPoints: 2
-    description: 'The ship possesses a stock of ancient, skull-faced killing machines. Sealed in cyro-stasis until absolutely required, a mere dozen can be successfully sent on hit and run raids to maim and kill on enemy vessels. // Death-dealers: When used to conduct a Hit and Run Action, this enhancement provides a +20 bonus to the opposed Command Test. // Precise: When determining the Critical Hit inflicted by a Hit and Run Action they participated in, the character conducting the raid may select any result between 1 and 6, rather than rolling.'
-    source: 'Rogue Trader Core Rulebook'
-    location: 'Main'
-    componentClass: 'Supplemental'
-    componentType: 'Additional Facilities'
+    description: 'The ship possesses a stock of ancient, skull-faced killing machines.
+        Sealed in cyro-stasis until absolutely required, a mere dozen can be successfully
+        sent on hit and run raids to maim and kill on enemy vessels. // Death-dealers:
+        When used to conduct a Hit and Run Action, this enhancement provides a +20
+        bonus to the opposed Command Test. // Precise: When determining the Critical
+        Hit inflicted by a Hit and Run Action they participated in, the character
+        conducting the raid may select any result between 1 and 6, rather than rolling.'
+    source: Rogue Trader Core Rulebook
+    location: Main
+    componentClass: Supplemental
+    componentType: Additional Facilities
     target: ''
     effect: ''
     backpack:
         inBackpack: false
-img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_05.png'
-name: 'Murder-Servitors'
-type: 'shipComponent'
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-augur-array.png
+name: Murder-Servitors
+type: shipComponent
 ---
 data:
-    craftsmanship: 'common'
-    availability: 'common'
+    craftsmanship: common
+    availability: common
     isOnFire: false
     isDepressurized: false
     isUnpowered: false
@@ -1041,22 +1272,28 @@ data:
     space: 1
     hitPoints: 0
     shipPoints: 2
-    description: 'This life sustainer uses extensive conduits and purifiers to do a thorough job of cleaning the air and water through methods lost to the Mechanicus. // The Air is Sweet: Increase Morale permanently by 2, reduce all losses to Crew Population due to non-combat sources by 1. This can be used as a ship''s Life Sustainer. // Hull-size variants: //   - Transports, raiders, frigates: Power 2, Space 1, SP 2 //   - Light cruisers, cruisers: Power 2, Space 2, SP 2'
-    source: 'Rogue Trader Core Rulebook'
-    location: 'Main'
-    componentClass: 'Supplemental'
-    componentType: 'Archeotech'
+    description: 'This life sustainer uses extensive conduits and purifiers to do
+        a thorough job of cleaning the air and water through methods lost to the Mechanicus.
+        // The Air is Sweet: Increase Morale permanently by 2, reduce all losses to
+        Crew Population due to non-combat sources by 1. This can be used as a ship''s
+        Life Sustainer. // Hull-size variants: //   - Transports, raiders, frigates:
+        Power 2, Space 1, SP 2 //   - Light cruisers, cruisers: Power 2, Space 2,
+        SP 2'
+    source: Rogue Trader Core Rulebook
+    location: Main
+    componentClass: Supplemental
+    componentType: Archeotech
     target: ''
     effect: ''
     backpack:
         inBackpack: false
-img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_05.png'
-name: 'Ancient Life Sustainer'
-type: 'shipComponent'
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-life-sustainer.png
+name: Ancient Life Sustainer
+type: shipComponent
 ---
 data:
-    craftsmanship: 'common'
-    availability: 'common'
+    craftsmanship: common
+    availability: common
     isOnFire: false
     isDepressurized: false
     isUnpowered: false
@@ -1065,22 +1302,22 @@ data:
     space: 4
     hitPoints: 0
     shipPoints: 3
-    description: 'The STC standard drive for transports, compact but underpowered.'
-    source: 'Rogue Trader Core Rulebook'
-    location: 'Main'
-    componentClass: 'Supplemental'
-    componentType: 'Archeotech'
+    description: The STC standard drive for transports, compact but underpowered.
+    source: Rogue Trader Core Rulebook
+    location: Main
+    componentClass: Supplemental
+    componentType: Archeotech
     target: ''
     effect: ''
     backpack:
         inBackpack: false
-img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_05.png'
-name: 'Modified Jovian Pattern Class 1 Drive'
-type: 'shipComponent'
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-augur-array.png
+name: Modified Jovian Pattern Class 1 Drive
+type: shipComponent
 ---
 data:
-    craftsmanship: 'common'
-    availability: 'common'
+    craftsmanship: common
+    availability: common
     isOnFire: false
     isDepressurized: false
     isUnpowered: false
@@ -1089,22 +1326,23 @@ data:
     space: 8
     hitPoints: 0
     shipPoints: 3
-    description: 'The STC standard drive for transports has been extended to provide additional power in exchange for less available space.'
-    source: 'Rogue Trader Core Rulebook'
-    location: 'Main'
-    componentClass: 'Supplemental'
-    componentType: 'Archeotech'
+    description: The STC standard drive for transports has been extended to provide
+        additional power in exchange for less available space.
+    source: Rogue Trader Core Rulebook
+    location: Main
+    componentClass: Supplemental
+    componentType: Archeotech
     target: ''
     effect: ''
     backpack:
         inBackpack: false
-img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_05.png'
-name: 'Modified Lathe Pattern Class 1 Drive'
-type: 'shipComponent'
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-augur-array.png
+name: Modified Lathe Pattern Class 1 Drive
+type: shipComponent
 ---
 data:
-    craftsmanship: 'common'
-    availability: 'common'
+    craftsmanship: common
+    availability: common
     isOnFire: false
     isDepressurized: false
     isUnpowered: false
@@ -1113,22 +1351,22 @@ data:
     space: 6
     hitPoints: 0
     shipPoints: 3
-    description: 'The STC standard drive for escort-grade warships.'
-    source: 'Rogue Trader Core Rulebook'
-    location: 'Main'
-    componentClass: 'Supplemental'
-    componentType: 'Archeotech'
+    description: The STC standard drive for escort-grade warships.
+    source: Rogue Trader Core Rulebook
+    location: Main
+    componentClass: Supplemental
+    componentType: Archeotech
     target: ''
     effect: ''
     backpack:
         inBackpack: false
-img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_05.png'
-name: 'Modified Jovian Pattern Class 2 Drive'
-type: 'shipComponent'
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-augur-array.png
+name: Modified Jovian Pattern Class 2 Drive
+type: shipComponent
 ---
 data:
-    craftsmanship: 'common'
-    availability: 'common'
+    craftsmanship: common
+    availability: common
     isOnFire: false
     isDepressurized: false
     isUnpowered: false
@@ -1137,22 +1375,22 @@ data:
     space: 8
     hitPoints: 0
     shipPoints: 3
-    description: 'The STC standard drive for smaller capital-grade warships.'
-    source: 'Rogue Trader Core Rulebook'
-    location: 'Main'
-    componentClass: 'Supplemental'
-    componentType: 'Archeotech'
+    description: The STC standard drive for smaller capital-grade warships.
+    source: Rogue Trader Core Rulebook
+    location: Main
+    componentClass: Supplemental
+    componentType: Archeotech
     target: ''
     effect: ''
     backpack:
         inBackpack: false
-img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_05.png'
-name: 'Modified Jovian Pattern Class 3 Drive'
-type: 'shipComponent'
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-augur-array.png
+name: Modified Jovian Pattern Class 3 Drive
+type: shipComponent
 ---
 data:
-    craftsmanship: 'common'
-    availability: 'common'
+    craftsmanship: common
+    availability: common
     isOnFire: false
     isDepressurized: false
     isUnpowered: false
@@ -1161,22 +1399,22 @@ data:
     space: 10
     hitPoints: 0
     shipPoints: 3
-    description: 'The STC standard drive for cruiser-grade warships.'
-    source: 'Rogue Trader Core Rulebook'
-    location: 'Main'
-    componentClass: 'Supplemental'
-    componentType: 'Archeotech'
+    description: The STC standard drive for cruiser-grade warships.
+    source: Rogue Trader Core Rulebook
+    location: Main
+    componentClass: Supplemental
+    componentType: Archeotech
     target: ''
     effect: ''
     backpack:
         inBackpack: false
-img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_05.png'
-name: 'Modified Jovian Pattern Class 4 Drive'
-type: 'shipComponent'
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-augur-array.png
+name: Modified Jovian Pattern Class 4 Drive
+type: shipComponent
 ---
 data:
-    craftsmanship: 'common'
-    availability: 'common'
+    craftsmanship: common
+    availability: common
     isOnFire: false
     isDepressurized: false
     isUnpowered: false
@@ -1185,22 +1423,28 @@ data:
     space: 1
     hitPoints: 0
     shipPoints: 2
-    description: 'This bridge is interlaced with ancient cogitator circuitry and hololithic technology, granting the Captain and bridge crew unparalleled control over their vessel.† † This can be used as a ship''s bridge. // Eyes Everywhere: Add +10 to all Command Tests or social Skill Tests any character makes while on the bridge. // Hololithic Display Tank: Increase the ship''s Manoeuvrability by +5. // Hull-size variants: //   - Transports, raiders, frigates: Power 1, Space 1, SP 2 //   - Light cruisers, cruisers: Power 2, Space 1, SP 2'
-    source: 'Rogue Trader Core Rulebook'
-    location: 'Main'
-    componentClass: 'Supplemental'
-    componentType: 'Archeotech'
+    description: 'This bridge is interlaced with ancient cogitator circuitry and hololithic
+        technology, granting the Captain and bridge crew unparalleled control over
+        their vessel.† † This can be used as a ship''s bridge. // Eyes Everywhere:
+        Add +10 to all Command Tests or social Skill Tests any character makes while
+        on the bridge. // Hololithic Display Tank: Increase the ship''s Manoeuvrability
+        by +5. // Hull-size variants: //   - Transports, raiders, frigates: Power
+        1, Space 1, SP 2 //   - Light cruisers, cruisers: Power 2, Space 1, SP 2'
+    source: Rogue Trader Core Rulebook
+    location: Main
+    componentClass: Supplemental
+    componentType: Archeotech
     target: ''
     effect: ''
     backpack:
         inBackpack: false
-img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_05.png'
-name: 'Bridge of Antiquity'
-type: 'shipComponent'
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-bridge.png
+name: Bridge of Antiquity
+type: shipComponent
 ---
 data:
-    craftsmanship: 'common'
-    availability: 'common'
+    craftsmanship: common
+    availability: common
     isOnFire: false
     isDepressurized: false
     isUnpowered: false
@@ -1209,22 +1453,28 @@ data:
     space: 0
     hitPoints: 0
     shipPoints: 2
-    description: 'More than simply an auger array, the Logis-Targeter uses near-heretical cogitator circuitry from the Dark Age of Technology to ensure extremely accurate weaponry.† † This can be used as a ship''s Auger Array. // External: This Component does not require hull space. Although it is external, it can only be destroyed or damaged by a Critical Hit. // Image of the Void: Increase the ship''s Detection by +5. // Targeting Matrix: All Ballistic Skill Tests to fire the ship''s weapons gain +5.'
-    source: 'Rogue Trader Core Rulebook'
-    location: 'Main'
-    componentClass: 'Supplemental'
-    componentType: 'Archeotech'
+    description: 'More than simply an auger array, the Logis-Targeter uses near-heretical
+        cogitator circuitry from the Dark Age of Technology to ensure extremely accurate
+        weaponry.† † This can be used as a ship''s Auger Array. // External: This
+        Component does not require hull space. Although it is external, it can only
+        be destroyed or damaged by a Critical Hit. // Image of the Void: Increase
+        the ship''s Detection by +5. // Targeting Matrix: All Ballistic Skill Tests
+        to fire the ship''s weapons gain +5.'
+    source: Rogue Trader Core Rulebook
+    location: Main
+    componentClass: Supplemental
+    componentType: Archeotech
     target: ''
     effect: ''
     backpack:
         inBackpack: false
-img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_05.png'
-name: 'Auto-stabilised Logis-targeter'
-type: 'shipComponent'
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-augur-array.png
+name: Auto-stabilised Logis-targeter
+type: shipComponent
 ---
 data:
-    craftsmanship: 'common'
-    availability: 'common'
+    craftsmanship: common
+    availability: common
     isOnFire: false
     isDepressurized: false
     isUnpowered: false
@@ -1233,22 +1483,29 @@ data:
     space: 1
     hitPoints: 0
     shipPoints: 1
-    description: 'These relics from the Dark Age of Technology are highly sought after, able to send individuals instantaneously through the immaterium to appear on a ship or planet many thousands of kilometres away. // Surprise Strike: Characters may make Hit and Run Attacks without a piloting test, as they travel directly to the heart of the enemy vessel. When using the teleportarium to perform such an attack, the attacker receives +20 to his Command Test. (The teleportarium may be used in any number of other ways, such as guaranteeing escape from sticky situations on a nearby planet, at the GM''s discretion.)'
-    source: 'Rogue Trader Core Rulebook'
-    location: 'Main'
-    componentClass: 'Supplemental'
-    componentType: 'Archeotech'
+    description: 'These relics from the Dark Age of Technology are highly sought after,
+        able to send individuals instantaneously through the immaterium to appear
+        on a ship or planet many thousands of kilometres away. // Surprise Strike:
+        Characters may make Hit and Run Attacks without a piloting test, as they travel
+        directly to the heart of the enemy vessel. When using the teleportarium to
+        perform such an attack, the attacker receives +20 to his Command Test. (The
+        teleportarium may be used in any number of other ways, such as guaranteeing
+        escape from sticky situations on a nearby planet, at the GM''s discretion.)'
+    source: Rogue Trader Core Rulebook
+    location: Main
+    componentClass: Supplemental
+    componentType: Archeotech
     target: ''
     effect: ''
     backpack:
         inBackpack: false
-img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_05.png'
-name: 'Teleportarium'
-type: 'shipComponent'
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-augur-array.png
+name: Teleportarium
+type: shipComponent
 ---
 data:
-    craftsmanship: 'common'
-    availability: 'common'
+    craftsmanship: common
+    availability: common
     isOnFire: false
     isDepressurized: false
     isUnpowered: false
@@ -1257,22 +1514,24 @@ data:
     space: 4
     hitPoints: 0
     shipPoints: 3
-    description: 'A wondrous and terrible mechanism used on the ships of the enigmatic Eldar. To possess it is to invite damnation, but even crudely and imperfectly installed aboard a ship, the ghost'
-    source: 'Rogue Trader Core Rulebook'
-    location: 'Main'
-    componentClass: 'Supplemental'
-    componentType: 'Xenotech'
+    description: A wondrous and terrible mechanism used on the ships of the enigmatic
+        Eldar. To possess it is to invite damnation, but even crudely and imperfectly
+        installed aboard a ship, the ghost
+    source: Rogue Trader Core Rulebook
+    location: Main
+    componentClass: Supplemental
+    componentType: Xenotech
     target: ''
     effect: ''
     backpack:
         inBackpack: false
-img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_05.png'
-name: 'Ghost Field'
-type: 'shipComponent'
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-augur-array.png
+name: Ghost Field
+type: shipComponent
 ---
 data:
-    craftsmanship: 'common'
-    availability: 'common'
+    craftsmanship: common
+    availability: common
     isOnFire: false
     isDepressurized: false
     isUnpowered: false
@@ -1281,22 +1540,30 @@ data:
     space: 3
     hitPoints: 0
     shipPoints: 2
-    description: 'The xenos race that created these weapons has long since vanished from the galaxy. Many examples of their technology remain, however. Designated ''shard'' weaponry by xeno-tech scholars, their shipboard cannons do not seem to require power or even ammunition. Theories abound as to how they operate but none has been proven, as every attempt to disassemble one has resulted in catastrophic failure. // Unknown energy source: This Component may not become unpowered for any reason. If it is ever destroyed, its ship takes 2d5 additional Hull Integrity damage, with no reduction from Armour or Shields. // Macrobattery: Strength 4. Damage 1d10+2. Crit Rating - 3. Range - 6.'
-    source: 'Rogue Trader Core Rulebook'
-    location: 'Main'
-    componentClass: 'Supplemental'
-    componentType: 'Xenotech'
+    description: 'The xenos race that created these weapons has long since vanished
+        from the galaxy. Many examples of their technology remain, however. Designated
+        ''shard'' weaponry by xeno-tech scholars, their shipboard cannons do not seem
+        to require power or even ammunition. Theories abound as to how they operate
+        but none has been proven, as every attempt to disassemble one has resulted
+        in catastrophic failure. // Unknown energy source: This Component may not
+        become unpowered for any reason. If it is ever destroyed, its ship takes 2d5
+        additional Hull Integrity damage, with no reduction from Armour or Shields.
+        // Macrobattery: Strength 4. Damage 1d10+2. Crit Rating - 3. Range - 6.'
+    source: Rogue Trader Core Rulebook
+    location: Main
+    componentClass: Supplemental
+    componentType: Xenotech
     target: ''
     effect: ''
     backpack:
         inBackpack: false
-img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_05.png'
-name: 'Shard Cannon Battery'
-type: 'shipComponent'
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-augur-array.png
+name: Shard Cannon Battery
+type: shipComponent
 ---
 data:
-    craftsmanship: 'common'
-    availability: 'common'
+    craftsmanship: common
+    availability: common
     isOnFire: false
     isDepressurized: false
     isUnpowered: false
@@ -1305,22 +1572,30 @@ data:
     space: 1
     hitPoints: 0
     shipPoints: 2
-    description: 'Another example of Eldar technology, runecasters are often housed in large, vaulted chambers. In the centre of the chamber, clusters or rune-stones float suspended above a wide crystal lens. Xeno-tech researchers have re-appropriated the devices from their previous, unknown purposes. Through some incomprehensible means, the device is almost prescient—aiding Navigators in avoiding the worst storms of the Immaterium. // Eye of the Warp: Navigators using this Component to pilot a ship through the empyrean gain a +20 bonus to all Navigation Tests. Additionally, any journeys made using this Component take half their normal time. // Fuelled by Fate: This Component never becomes unpowered for any reason.'
-    source: 'Rogue Trader Core Rulebook'
-    location: 'Main'
-    componentClass: 'Supplemental'
-    componentType: 'Xenotech'
+    description: 'Another example of Eldar technology, runecasters are often housed
+        in large, vaulted chambers. In the centre of the chamber, clusters or rune-stones
+        float suspended above a wide crystal lens. Xeno-tech researchers have re-appropriated
+        the devices from their previous, unknown purposes. Through some incomprehensible
+        means, the device is almost prescient—aiding Navigators in avoiding the worst
+        storms of the Immaterium. // Eye of the Warp: Navigators using this Component
+        to pilot a ship through the empyrean gain a +20 bonus to all Navigation Tests.
+        Additionally, any journeys made using this Component take half their normal
+        time. // Fuelled by Fate: This Component never becomes unpowered for any reason.'
+    source: Rogue Trader Core Rulebook
+    location: Main
+    componentClass: Supplemental
+    componentType: Xenotech
     target: ''
     effect: ''
     backpack:
         inBackpack: false
-img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_05.png'
-name: 'Runecaster'
-type: 'shipComponent'
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-augur-array.png
+name: Runecaster
+type: shipComponent
 ---
 data:
-    craftsmanship: 'common'
-    availability: 'common'
+    craftsmanship: common
+    availability: common
     isOnFire: false
     isDepressurized: false
     isUnpowered: false
@@ -1329,22 +1604,28 @@ data:
     space: 0
     hitPoints: 0
     shipPoints: 2
-    description: 'A vastly larger version of the digital energy weapons used by nobles and worthies of the Imperium, the grid is an interlinked network of hundreds of miniature laser turrets scattered across a vessel''s hull. The lasers, while not powerful individually, act in concert to shoot down incoming ordinance and small craft. // Wall of Light: Increase the ship''s turret rating by 2. // External: This Component does not require hull space. Although it is external, it can only be destroyed or damaged by a Critical Hit.'
-    source: 'Rogue Trader Core Rulebook'
-    location: 'Main'
-    componentClass: 'Supplemental'
-    componentType: 'Xenotech'
+    description: 'A vastly larger version of the digital energy weapons used by nobles
+        and worthies of the Imperium, the grid is an interlinked network of hundreds
+        of miniature laser turrets scattered across a vessel''s hull. The lasers,
+        while not powerful individually, act in concert to shoot down incoming ordinance
+        and small craft. // Wall of Light: Increase the ship''s turret rating by 2.
+        // External: This Component does not require hull space. Although it is external,
+        it can only be destroyed or damaged by a Critical Hit.'
+    source: Rogue Trader Core Rulebook
+    location: Main
+    componentClass: Supplemental
+    componentType: Xenotech
     target: ''
     effect: ''
     backpack:
         inBackpack: false
-img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_05.png'
-name: 'Micro Laser Defence Grid'
-type: 'shipComponent'
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-augur-array.png
+name: Micro Laser Defence Grid
+type: shipComponent
 ---
 data:
-    craftsmanship: 'common'
-    availability: 'common'
+    craftsmanship: common
+    availability: common
     isOnFire: false
     isDepressurized: false
     isUnpowered: false
@@ -1353,22 +1634,32 @@ data:
     space: 0
     hitPoints: 0
     shipPoints: 3
-    description: 'Not ''sails'' in the traditional sense, these devices are long, blade-like fins extending from the prow of a ship. Some xeno-archeologists believe they are relics of the Yu''vath or another long-dead race. Imperial vessels are too bulky to rely on them for propulsion, but they can aid in manoeuvring, somehow ''tapping into'' gravitational fields and pulling starships along them. // The Currents of Space: A starship with this Component gains +1 Speed and +5 Manoeuvrability. // External: This Component does not require hull space. Although it is external, it can only be destroyed or damaged by a Critical Hit. // Hull-size variants: //   - Transports, raiders, frigates: Power 3, Space 0, SP 3 //   - Light cruisers, cruisers: Power 5, Space 0, SP 3'
-    source: 'Rogue Trader Core Rulebook'
-    location: 'Main'
-    componentClass: 'Supplemental'
-    componentType: 'Xenotech'
+    description: 'Not ''sails'' in the traditional sense, these devices are long,
+        blade-like fins extending from the prow of a ship. Some xeno-archeologists
+        believe they are relics of the Yu''vath or another long-dead race. Imperial
+        vessels are too bulky to rely on them for propulsion, but they can aid in
+        manoeuvring, somehow ''tapping into'' gravitational fields and pulling starships
+        along them. // The Currents of Space: A starship with this Component gains
+        +1 Speed and +5 Manoeuvrability. // External: This Component does not require
+        hull space. Although it is external, it can only be destroyed or damaged by
+        a Critical Hit. // Hull-size variants: //   - Transports, raiders, frigates:
+        Power 3, Space 0, SP 3 //   - Light cruisers, cruisers: Power 5, Space 0,
+        SP 3'
+    source: Rogue Trader Core Rulebook
+    location: Main
+    componentClass: Supplemental
+    componentType: Xenotech
     target: ''
     effect: ''
     backpack:
         inBackpack: false
-img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_05.png'
-name: 'Gravity Sails'
-type: 'shipComponent'
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-augur-array.png
+name: Gravity Sails
+type: shipComponent
 ---
 data:
-    craftsmanship: 'common'
-    availability: 'common'
+    craftsmanship: common
+    availability: common
     isOnFire: false
     isDepressurized: false
     isUnpowered: false
@@ -1377,22 +1668,28 @@ data:
     space: 14
     hitPoints: 0
     shipPoints: 2
-    description: 'Acquisition ... 38, 34 See Ship and Warrant Path Acquisitionist ... 72 See Alternate Career Ranks Additional Starship Components ... 156 Archeotech Components ... 161 Essential Components ... 156 Supplemental Components ... 158 Agent of the Throne ... 70 Alien Biology ... 24 Alternate Career Ranks ... 129 A Product of Upbringing ... 199 Armour ... 193 Augmenticist ... 74 See Alternate Career Ranks // Hull-size variants: //   - Light Cruisers: Power -65, Space 14, SP 2 //   - Cruisers: Power -85, Space 17, SP 2'
-    source: 'Into the Storm'
-    location: 'Main'
-    componentClass: 'Essential'
-    componentType: 'Plasma Drive'
+    description: 'Acquisition ... 38, 34 See Ship and Warrant Path Acquisitionist
+        ... 72 See Alternate Career Ranks Additional Starship Components ... 156 Archeotech
+        Components ... 161 Essential Components ... 156 Supplemental Components ...
+        158 Agent of the Throne ... 70 Alien Biology ... 24 Alternate Career Ranks
+        ... 129 A Product of Upbringing ... 199 Armour ... 193 Augmenticist ... 74
+        See Alternate Career Ranks // Hull-size variants: //   - Light Cruisers: Power
+        -65, Space 14, SP 2 //   - Cruisers: Power -85, Space 17, SP 2'
+    source: Into the Storm
+    location: Main
+    componentClass: Essential
+    componentType: Plasma Drive
     target: ''
     effect: ''
     backpack:
         inBackpack: false
-img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_05.png'
-name: 'Jovian-pattern “Warcruiser” Drive'
-type: 'shipComponent'
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-plasma-drive.png
+name: Jovian-pattern “Warcruiser” Drive
+type: shipComponent
 ---
 data:
-    craftsmanship: 'common'
-    availability: 'common'
+    craftsmanship: common
+    availability: common
     isOnFire: false
     isDepressurized: false
     isUnpowered: false
@@ -1401,22 +1698,28 @@ data:
     space: 14
     hitPoints: 0
     shipPoints: 2
-    description: 'Acquisition ... 38, 34 See Ship and Warrant Path Acquisitionist ... 72 See Alternate Career Ranks Additional Starship Components ... 156 Archeotech Components ... 161 Essential Components ... 156 Supplemental Components ... 158 Agent of the Throne ... 70 Alien Biology ... 24 Alternate Career Ranks ... 129 A Product of Upbringing ... 199 Armour ... 193 Augmenticist ... 74 See Alternate Career Ranks // Hull-size variants: //   - Transports: Power -40, Space 14, SP 2 //   - Raiders, Frigates: Power -47, Space 14, SP 2'
-    source: 'Into the Storm'
-    location: 'Main'
-    componentClass: 'Essential'
-    componentType: 'Plasma Drive'
+    description: 'Acquisition ... 38, 34 See Ship and Warrant Path Acquisitionist
+        ... 72 See Alternate Career Ranks Additional Starship Components ... 156 Archeotech
+        Components ... 161 Essential Components ... 156 Supplemental Components ...
+        158 Agent of the Throne ... 70 Alien Biology ... 24 Alternate Career Ranks
+        ... 129 A Product of Upbringing ... 199 Armour ... 193 Augmenticist ... 74
+        See Alternate Career Ranks // Hull-size variants: //   - Transports: Power
+        -40, Space 14, SP 2 //   - Raiders, Frigates: Power -47, Space 14, SP 2'
+    source: Into the Storm
+    location: Main
+    componentClass: Essential
+    componentType: Plasma Drive
     target: ''
     effect: ''
     backpack:
         inBackpack: false
-img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_05.png'
-name: 'Lathe-pattern 2a Drive'
-type: 'shipComponent'
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-plasma-drive.png
+name: Lathe-pattern 2a Drive
+type: shipComponent
 ---
 data:
-    craftsmanship: 'common'
-    availability: 'common'
+    craftsmanship: common
+    availability: common
     isOnFire: false
     isDepressurized: false
     isUnpowered: false
@@ -1425,22 +1728,25 @@ data:
     space: 12
     hitPoints: 0
     shipPoints: 1
-    description: 'The Markov series of warp engines is designed to propel smaller courier vessels more quickly through the Immaterium. Overcharged: Reduce the base travel time for a journey through the Immaterium by 1d5 weeks. It may be further modified by the results of the Navigation (Warp) Test.'
-    source: 'Into the Storm'
-    location: 'Main'
-    componentClass: 'Essential'
-    componentType: 'Warp Drive'
+    description: 'The Markov series of warp engines is designed to propel smaller
+        courier vessels more quickly through the Immaterium. Overcharged: Reduce the
+        base travel time for a journey through the Immaterium by 1d5 weeks. It may
+        be further modified by the results of the Navigation (Warp) Test.'
+    source: Into the Storm
+    location: Main
+    componentClass: Essential
+    componentType: Warp Drive
     target: ''
     effect: ''
     backpack:
         inBackpack: false
-img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_05.png'
-name: 'Markov 1 Warp Engine'
-type: 'shipComponent'
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-warp-engine.png
+name: Markov 1 Warp Engine
+type: shipComponent
 ---
 data:
-    craftsmanship: 'common'
-    availability: 'common'
+    craftsmanship: common
+    availability: common
     isOnFire: false
     isDepressurized: false
     isUnpowered: false
@@ -1449,22 +1755,26 @@ data:
     space: 13
     hitPoints: 0
     shipPoints: 1
-    description: 'The Markov 2 was adapted to decrease the travel times of light cruisers. However, certain problems with up-scaling the design led to decreased effectiveness compared to the Markov 1. Overcharged: Reduce the base travel time for a journey through the Immaterium by 1d10 days. It may be further modified by the results of the Navigation (Warp) Test.'
-    source: 'Into the Storm'
-    location: 'Main'
-    componentClass: 'Essential'
-    componentType: 'Warp Drive'
+    description: 'The Markov 2 was adapted to decrease the travel times of light cruisers.
+        However, certain problems with up-scaling the design led to decreased effectiveness
+        compared to the Markov 1. Overcharged: Reduce the base travel time for a journey
+        through the Immaterium by 1d10 days. It may be further modified by the results
+        of the Navigation (Warp) Test.'
+    source: Into the Storm
+    location: Main
+    componentClass: Essential
+    componentType: Warp Drive
     target: ''
     effect: ''
     backpack:
         inBackpack: false
-img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_05.png'
-name: 'Markov 2 Warp Engine'
-type: 'shipComponent'
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-warp-engine.png
+name: Markov 2 Warp Engine
+type: shipComponent
 ---
 data:
-    craftsmanship: 'common'
-    availability: 'common'
+    craftsmanship: common
+    availability: common
     isOnFire: false
     isDepressurized: false
     isUnpowered: false
@@ -1473,22 +1783,28 @@ data:
     space: 0
     hitPoints: 0
     shipPoints: 0
-    description: 'Some captains equip their Gellar field generators with emergency cogitation circuits that activate the field automatically upon detecting the warp. Though many scorn the idea because of the extra power draw, and others are distrustful of automated circuitry, such devices have saved ships in the past. // Auto-engagement routines: If the ship unexpectedly enters the warp, roll 1d10. On a 3 or higher, the Gellar Field activates automatically, protecting the ship from any warp intrusion that may have taken place.'
-    source: 'Into the Storm'
-    location: 'Main'
-    componentClass: 'Essential'
-    componentType: 'Gellar Field'
+    description: 'Some captains equip their Gellar field generators with emergency
+        cogitation circuits that activate the field automatically upon detecting the
+        warp. Though many scorn the idea because of the extra power draw, and others
+        are distrustful of automated circuitry, such devices have saved ships in the
+        past. // Auto-engagement routines: If the ship unexpectedly enters the warp,
+        roll 1d10. On a 3 or higher, the Gellar Field activates automatically, protecting
+        the ship from any warp intrusion that may have taken place.'
+    source: Into the Storm
+    location: Main
+    componentClass: Essential
+    componentType: Gellar Field
     target: ''
     effect: ''
     backpack:
         inBackpack: false
-img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_05.png'
-name: 'Emergency Field'
-type: 'shipComponent'
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-geller-field.png
+name: Emergency Field
+type: shipComponent
 ---
 data:
-    craftsmanship: 'common'
-    availability: 'common'
+    craftsmanship: common
+    availability: common
     isOnFire: false
     isDepressurized: false
     isUnpowered: false
@@ -1497,22 +1813,25 @@ data:
     space: 1
     hitPoints: 0
     shipPoints: 0
-    description: 'These standard void shields have had their frequencies adjusted to better brush aside stellar debris and detritus. IV. STARSHIPS EXPANDED TABLE 4-1: ESSENTIAL COMPONENTS // Void Shield: This Component counts as a ship''s Void Shield, giving the ship one void shield.'
-    source: 'Into the Storm'
-    location: 'Main'
-    componentClass: 'Essential'
-    componentType: 'Void Shield'
+    description: 'These standard void shields have had their frequencies adjusted
+        to better brush aside stellar debris and detritus. IV. STARSHIPS EXPANDED
+        TABLE 4-1: ESSENTIAL COMPONENTS // Void Shield: This Component counts as a
+        ship''s Void Shield, giving the ship one void shield.'
+    source: Into the Storm
+    location: Main
+    componentClass: Essential
+    componentType: Void Shield
     target: ''
     effect: ''
     backpack:
         inBackpack: false
-img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_05.png'
-name: 'Repulsor Shield'
-type: 'shipComponent'
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-void-shield.png
+name: Repulsor Shield
+type: shipComponent
 ---
 data:
-    craftsmanship: 'common'
-    availability: 'common'
+    craftsmanship: common
+    availability: common
     isOnFire: false
     isDepressurized: false
     isUnpowered: false
@@ -1521,22 +1840,27 @@ data:
     space: 1
     hitPoints: 0
     shipPoints: 0
-    description: 'These standard void shield arrays have had their frequencies adjusted to better brush aside stellar debris and detritus. // Void Shield: This Component counts as a ship’s Void Shield, giving the ship two void shields. // Charged particle repulsion effect: The ship does not suffer penalties to Manoeuvre Actions when travelling through nebulas, ice rings, plasma clouds or other celestial phenomena consisting primarily of small particles.'
-    source: 'Into the Storm'
-    location: 'Main'
-    componentClass: 'Essential'
-    componentType: 'Void Shield'
+    description: 'These standard void shield arrays have had their frequencies adjusted
+        to better brush aside stellar debris and detritus. // Void Shield: This Component
+        counts as a ship’s Void Shield, giving the ship two void shields. // Charged
+        particle repulsion effect: The ship does not suffer penalties to Manoeuvre
+        Actions when travelling through nebulas, ice rings, plasma clouds or other
+        celestial phenomena consisting primarily of small particles.'
+    source: Into the Storm
+    location: Main
+    componentClass: Essential
+    componentType: Void Shield
     target: ''
     effect: ''
     backpack:
         inBackpack: false
-img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_05.png'
-name: 'Repulsor Shield Array'
-type: 'shipComponent'
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-void-shield.png
+name: Repulsor Shield Array
+type: shipComponent
 ---
 data:
-    craftsmanship: 'common'
-    availability: 'common'
+    craftsmanship: common
+    availability: common
     isOnFire: false
     isDepressurized: false
     isUnpowered: false
@@ -1545,22 +1869,23 @@ data:
     space: 0
     hitPoints: 0
     shipPoints: 0
-    description: 'The starship’s bridge is the brain to the plasma drive’s heart, commanding and directing the vessel.'
-    source: 'Into the Storm'
-    location: 'Main'
-    componentClass: 'Essential'
-    componentType: 'Void Shield'
+    description: The starship’s bridge is the brain to the plasma drive’s heart, commanding
+        and directing the vessel.
+    source: Into the Storm
+    location: Main
+    componentClass: Essential
+    componentType: Void Shield
     target: ''
     effect: ''
     backpack:
         inBackpack: false
-img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_05.png'
-name: 'Ship’s Bridge'
-type: 'shipComponent'
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-void-shield.png
+name: Ship’s Bridge
+type: shipComponent
 ---
 data:
-    craftsmanship: 'common'
-    availability: 'common'
+    craftsmanship: common
+    availability: common
     isOnFire: false
     isDepressurized: false
     isUnpowered: false
@@ -1569,22 +1894,28 @@ data:
     space: 1
     hitPoints: 0
     shipPoints: 1
-    description: 'A bridge favoured by the Explorators of the Mechanics, its cogitation circuitry provides optimum interface with hololithic charts and auger arrays. // Long Range Scanning: This ship gains +5 Detection when using Active Augury. // Navigation Records: When working towards an Exploration objective, the players earn an additional 50 Endeavour Points. // Hull-size variants: //   - Transports, Raiders, Frigates: Power 4, Space 1, SP 1 //   - Light Cruisers, Cruisers: Power 4, Space 2, SP 1'
-    source: 'Into the Storm'
-    location: 'Main'
-    componentClass: 'Essential'
-    componentType: 'Void Shield'
+    description: 'A bridge favoured by the Explorators of the Mechanics, its cogitation
+        circuitry provides optimum interface with hololithic charts and auger arrays.
+        // Long Range Scanning: This ship gains +5 Detection when using Active Augury.
+        // Navigation Records: When working towards an Exploration objective, the
+        players earn an additional 50 Endeavour Points. // Hull-size variants: //   -
+        Transports, Raiders, Frigates: Power 4, Space 1, SP 1 //   - Light Cruisers,
+        Cruisers: Power 4, Space 2, SP 1'
+    source: Into the Storm
+    location: Main
+    componentClass: Essential
+    componentType: Void Shield
     target: ''
     effect: ''
     backpack:
         inBackpack: false
-img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_05.png'
-name: 'Exploration Bridge'
-type: 'shipComponent'
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-void-shield.png
+name: Exploration Bridge
+type: shipComponent
 ---
 data:
-    craftsmanship: 'common'
-    availability: 'common'
+    craftsmanship: common
+    availability: common
     isOnFire: false
     isDepressurized: false
     isUnpowered: false
@@ -1593,22 +1924,28 @@ data:
     space: 4
     hitPoints: 0
     shipPoints: 1
-    description: 'The ship’s crew is made up of a ‘kin-brotherhood’ of bonded voidsmen. Tenaciously loyal, they see their ship as no different than a homeworld, and will die to defend it. // For Hearth and Homel: All Command Tests to defend against boarding and hit and run actions gain +5. In addition, all sources of Morale loss are reduced by 1, to a minimum of 1. // Hull-size variants: //   - Transports, Raiders, Frigates: Power 1, Space 4, SP 1 //   - Light Cruisers, Cruisers: Power 2, Space 5, SP 1'
-    source: 'Into the Storm'
-    location: 'Main'
-    componentClass: 'Essential'
-    componentType: 'Crew Quarters'
+    description: 'The ship’s crew is made up of a ‘kin-brotherhood’ of bonded voidsmen.
+        Tenaciously loyal, they see their ship as no different than a homeworld, and
+        will die to defend it. // For Hearth and Homel: All Command Tests to defend
+        against boarding and hit and run actions gain +5. In addition, all sources
+        of Morale loss are reduced by 1, to a minimum of 1. // Hull-size variants:
+        //   - Transports, Raiders, Frigates: Power 1, Space 4, SP 1 //   - Light
+        Cruisers, Cruisers: Power 2, Space 5, SP 1'
+    source: Into the Storm
+    location: Main
+    componentClass: Essential
+    componentType: Crew Quarters
     target: ''
     effect: ''
     backpack:
         inBackpack: false
-img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_05.png'
-name: 'Clan-kin Quarters'
-type: 'shipComponent'
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-crew-quarters.png
+name: Clan-kin Quarters
+type: shipComponent
 ---
 data:
-    craftsmanship: 'common'
-    availability: 'common'
+    craftsmanship: common
+    availability: common
     isOnFire: false
     isDepressurized: false
     isUnpowered: false
@@ -1617,22 +1954,29 @@ data:
     space: 4
     hitPoints: 0
     shipPoints: 1
-    description: 'While the ship has regular quarters for its crew, this ship also has ranks of cyro-stasis tubes filling its deep chambers. Here the captain stores ‘surplus’ crew...until they are needed. This component does include regular crew quarters, in addition to the cryo-stasis tubes. 165 IV: STARSHIPS EXPANDED // Manpower Reserves: Once per game session, the ship’s captain may choose to reduce one source of Crew Population loss to zero. // Hull-size variants: //   - Transports, Raiders, Frigates: Power 3, Space 4, SP 1 //   - Light Cruisers, Cruisers: Power 4, Space 5, SP 1'
-    source: 'Into the Storm'
-    location: 'Main'
-    componentClass: 'Essential'
-    componentType: 'Crew Quarters'
+    description: 'While the ship has regular quarters for its crew, this ship also
+        has ranks of cyro-stasis tubes filling its deep chambers. Here the captain
+        stores ‘surplus’ crew...until they are needed. This component does include
+        regular crew quarters, in addition to the cryo-stasis tubes. 165 IV: STARSHIPS
+        EXPANDED // Manpower Reserves: Once per game session, the ship’s captain may
+        choose to reduce one source of Crew Population loss to zero. // Hull-size
+        variants: //   - Transports, Raiders, Frigates: Power 3, Space 4, SP 1 //   -
+        Light Cruisers, Cruisers: Power 4, Space 5, SP 1'
+    source: Into the Storm
+    location: Main
+    componentClass: Essential
+    componentType: Crew Quarters
     target: ''
     effect: ''
     backpack:
         inBackpack: false
-img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_05.png'
-name: 'Cold Quarters'
-type: 'shipComponent'
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-crew-quarters.png
+name: Cold Quarters
+type: shipComponent
 ---
 data:
-    craftsmanship: 'common'
-    availability: 'common'
+    craftsmanship: common
+    availability: common
     isOnFire: false
     isDepressurized: false
     isUnpowered: false
@@ -1641,22 +1985,31 @@ data:
     space: 1
     hitPoints: 0
     shipPoints: 2
-    description: 'Some of the oldest Imperial vessels are blessed with "Castellan" class void shields. These shields are far superior to current void shields, and their multiple banks of fail-safe circuit breakers means they can remain up under far-greater stresses. † This must be used as a ship''s Void Shield. // Void Shield: This Component counts as a ship''s Void Shield, giving the ship one void shield.† // Fail-safes: Once per Strategic Round, during one opponent''s Strategic Turn, the ship''s Enginsee Prime may make a Difficult (-10) Tech-Use Test. This does not count as the Enginsee''s Extended Action. If he succeeds, the ship doubles its number of Void Shields for the duration of a single opponent''s Strategic Turn.'
-    source: 'Into the Storm'
-    location: 'Main'
-    componentClass: 'Supplemental'
-    componentType: 'Archeotech'
+    description: 'Some of the oldest Imperial vessels are blessed with "Castellan"
+        class void shields. These shields are far superior to current void shields,
+        and their multiple banks of fail-safe circuit breakers means they can remain
+        up under far-greater stresses. † This must be used as a ship''s Void Shield.
+        // Void Shield: This Component counts as a ship''s Void Shield, giving the
+        ship one void shield.† // Fail-safes: Once per Strategic Round, during one
+        opponent''s Strategic Turn, the ship''s Enginsee Prime may make a Difficult
+        (-10) Tech-Use Test. This does not count as the Enginsee''s Extended Action.
+        If he succeeds, the ship doubles its number of Void Shields for the duration
+        of a single opponent''s Strategic Turn.'
+    source: Into the Storm
+    location: Main
+    componentClass: Supplemental
+    componentType: Archeotech
     target: ''
     effect: ''
     backpack:
         inBackpack: false
-img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_05.png'
-name: 'Castellan Shield'
-type: 'shipComponent'
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-augur-array.png
+name: Castellan Shield
+type: shipComponent
 ---
 data:
-    craftsmanship: 'common'
-    availability: 'common'
+    craftsmanship: common
+    availability: common
     isOnFire: false
     isDepressurized: false
     isUnpowered: false
@@ -1665,22 +2018,31 @@ data:
     space: 2
     hitPoints: 0
     shipPoints: 2
-    description: 'Only a very few Imperial ships are blessed with "Castellan" class void shields, and even fewer are ships of the line. These shields'' multiple banks of fail-safe circuit breakers take up a great deal of room, but mean they can remain up under even more stress than a single Castellan Shield. † This must be used as a ship''s Void Shield. // Void Shields: This Component counts as a ship''s Void Shields, giving the ship two void shields.† // Fail-safes: Once per Strategic Round, during one opponent''s Strategic Turn, the ship''s Enginsee Prime may make a Difficult (-10) Tech-Use Test. This does not count as the Enginsee''s Extended Action. If he succeeds, the ship doubles its number of Void Shields for the duration of a single opponent''s Strategic Turn.'
-    source: 'Into the Storm'
-    location: 'Main'
-    componentClass: 'Supplemental'
-    componentType: 'Archeotech'
+    description: 'Only a very few Imperial ships are blessed with "Castellan" class
+        void shields, and even fewer are ships of the line. These shields'' multiple
+        banks of fail-safe circuit breakers take up a great deal of room, but mean
+        they can remain up under even more stress than a single Castellan Shield.
+        † This must be used as a ship''s Void Shield. // Void Shields: This Component
+        counts as a ship''s Void Shields, giving the ship two void shields.† // Fail-safes:
+        Once per Strategic Round, during one opponent''s Strategic Turn, the ship''s
+        Enginsee Prime may make a Difficult (-10) Tech-Use Test. This does not count
+        as the Enginsee''s Extended Action. If he succeeds, the ship doubles its number
+        of Void Shields for the duration of a single opponent''s Strategic Turn.'
+    source: Into the Storm
+    location: Main
+    componentClass: Supplemental
+    componentType: Archeotech
     target: ''
     effect: ''
     backpack:
         inBackpack: false
-img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_05.png'
-name: 'Castellan Shield Array'
-type: 'shipComponent'
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-void-shield.png
+name: Castellan Shield Array
+type: shipComponent
 ---
 data:
-    craftsmanship: 'common'
-    availability: 'common'
+    craftsmanship: common
+    availability: common
     isOnFire: false
     isDepressurized: false
     isUnpowered: false
@@ -1689,22 +2051,28 @@ data:
     space: 1
     hitPoints: 0
     shipPoints: 2
-    description: 'Though the creation of true artificial intelligence is one of the darkest heresies of the Adeptus Mechanicus, this was not always so. The Men of Iron were the most infamous example of such technology, but the Dark Age of Technology generated many others. The cogitator interlink is designed to amplify the starship''s core cogitator, enhancing the ship''s operations considerably. // Sophisticated cogitation operation: This starship''s Crew Rating gains a +5 bonus.'
-    source: 'Into the Storm'
-    location: 'Main'
-    componentClass: 'Supplemental'
-    componentType: 'Archeotech'
+    description: 'Though the creation of true artificial intelligence is one of the
+        darkest heresies of the Adeptus Mechanicus, this was not always so. The Men
+        of Iron were the most infamous example of such technology, but the Dark Age
+        of Technology generated many others. The cogitator interlink is designed to
+        amplify the starship''s core cogitator, enhancing the ship''s operations considerably.
+        // Sophisticated cogitation operation: This starship''s Crew Rating gains
+        a +5 bonus.'
+    source: Into the Storm
+    location: Main
+    componentClass: Supplemental
+    componentType: Archeotech
     target: ''
     effect: ''
     backpack:
         inBackpack: false
-img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_05.png'
-name: 'Cogitator Interlink'
-type: 'shipComponent'
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-augur-array.png
+name: Cogitator Interlink
+type: shipComponent
 ---
 data:
-    craftsmanship: 'common'
-    availability: 'common'
+    craftsmanship: common
+    availability: common
     isOnFire: false
     isDepressurized: false
     isUnpowered: false
@@ -1713,22 +2081,33 @@ data:
     space: 1
     hitPoints: 0
     shipPoints: 1
-    description: 'Ancient technology from mankind''s dark past, the conversion matrix allows raw power to be diverted directly into a ship''s drive tube when required, giving the ship an increase in thrust. A captain may divert Power being used to power other Components, however, if he does so, the Component becomes unpowered for as long as the conversion matrix is used. IV: STARSHIPS EXPANDED TABLE 4-4: ARCHEOTECH COMPONENTS // Redirect Power to Engines: The ship''s captain can choose to activate the conversion matrix at any time as a free action. When he does so, he decreases the amount of Power generated by the ship and increases its Speed value. Frigates and raiders can exchange 3 Power for 1 Speed. Light cruisers can exchange 4 Power for 1 Speed. Transports and Cruisers can exchange 5 Power for 1 Speed. A ship''s Speed value cannot be increased by more than 5 using this Component.'
-    source: 'Into the Storm'
-    location: 'Main'
-    componentClass: 'Supplemental'
-    componentType: 'Archeotech'
+    description: 'Ancient technology from mankind''s dark past, the conversion matrix
+        allows raw power to be diverted directly into a ship''s drive tube when required,
+        giving the ship an increase in thrust. A captain may divert Power being used
+        to power other Components, however, if he does so, the Component becomes unpowered
+        for as long as the conversion matrix is used. IV: STARSHIPS EXPANDED TABLE
+        4-4: ARCHEOTECH COMPONENTS // Redirect Power to Engines: The ship''s captain
+        can choose to activate the conversion matrix at any time as a free action.
+        When he does so, he decreases the amount of Power generated by the ship and
+        increases its Speed value. Frigates and raiders can exchange 3 Power for 1
+        Speed. Light cruisers can exchange 4 Power for 1 Speed. Transports and Cruisers
+        can exchange 5 Power for 1 Speed. A ship''s Speed value cannot be increased
+        by more than 5 using this Component.'
+    source: Into the Storm
+    location: Main
+    componentClass: Supplemental
+    componentType: Archeotech
     target: ''
     effect: ''
     backpack:
         inBackpack: false
-img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_05.png'
-name: 'Energistic Conversion Matrix'
-type: 'shipComponent'
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-augur-array.png
+name: Energistic Conversion Matrix
+type: shipComponent
 ---
 data:
-    craftsmanship: 'common'
-    availability: 'common'
+    craftsmanship: common
+    availability: common
     isOnFire: false
     isDepressurized: false
     isUnpowered: false
@@ -1737,15 +2116,19 @@ data:
     space: 1
     hitPoints: 0
     shipPoints: 1
-    description: 'Ancient stacks of gilded calcu-logi cogitators aid in the computations of the starship''s manoeuvres, compensating for human error and ensuring maximum performance. // Aid of the machine-spirit: When this ship performs the Adjust Speed and Bearing, Come to New Heading, and Evasive Manoeuvres Manoeuvre Actions, its Pilot (Space Craft) + Manoeuvrability Test counts as Challenging.'
-    source: 'Into the Storm'
-    location: 'Main'
-    componentClass: 'Supplemental'
-    componentType: 'Archeotech'
+    description: 'Ancient stacks of gilded calcu-logi cogitators aid in the computations
+        of the starship''s manoeuvres, compensating for human error and ensuring maximum
+        performance. // Aid of the machine-spirit: When this ship performs the Adjust
+        Speed and Bearing, Come to New Heading, and Evasive Manoeuvres Manoeuvre Actions,
+        its Pilot (Space Craft) + Manoeuvrability Test counts as Challenging.'
+    source: Into the Storm
+    location: Main
+    componentClass: Supplemental
+    componentType: Archeotech
     target: ''
     effect: ''
     backpack:
         inBackpack: false
-img: 'systems/rogue-trader-3rd/icons/items/heavy/heavy_05.png'
-name: 'Gyro-stabilisation Matrix'
-type: 'shipComponent'
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-augur-array.png
+name: Gyro-stabilisation Matrix
+type: shipComponent

@@ -843,7 +843,7 @@ results:
       - 1
     drawn: false
     documentCollection: ''
-    _id: RTCrit01HoledAA
+    _id: xhexqJOz1Qg9tK5w
     text: 'Holed: A lucky hit has wrenched open the ship''s hull, exposing it to
       space. The attacker selects one Component (only choosing ones he knows of)
       that is not the bridge or plasma/warp drives. Emergency bulkheads slam into
@@ -858,7 +858,7 @@ results:
       - 2
     drawn: false
     documentCollection: ''
-    _id: RTCrit02IntDmgBB
+    _id: fa4MJ1rBhzAz7Los
     text: 'Internal Damage: The force of the hit ruptures bulkheads and smashes
       machinery. The attacker selects one Component (only choosing ones he knows
       of) that is not the bridge or plasma/warp drives. This Component is damaged.'
@@ -872,7 +872,7 @@ results:
       - 3
     drawn: false
     documentCollection: ''
-    _id: RTCrit03SensorCC
+    _id: rS8XvA2srd8Qspqb
     text: 'Sensors damaged: The ship''s auspex arrays have been knocked out, leaving
       the vessel blind. Until the damage is repaired, all shooting tests suffer a
       −30 to hit, and all sensory tests to detect anything beyond the ship''s
@@ -888,7 +888,7 @@ results:
       - 4
     drawn: false
     documentCollection: ''
-    _id: RTCrit04ThrustDD
+    _id: yEtNku3YO4TMjoEX
     text: 'Thrusters damaged: The ship''s manoeuvring thrusters are smashed, venting
       randomly and leaking fuel. Roll 1d10. On 1-7, the ship can still manoeuvre,
       albeit slowly — reduce the Manoeuvrability bonus by −20. On 8-10, the
@@ -904,7 +904,7 @@ results:
       - 5
     drawn: false
     documentCollection: ''
-    _id: RTCrit05FireFireE
+    _id: Cfjh7orZ4aOjvp6V
     text: 'Fire!: Alarms scream through the hull as hungry flames roar through
       passageways and compartments. The attacker selects one Component (only those
       he knows of) that is not the bridge or plasma/warp drive — this Component
@@ -919,7 +919,7 @@ results:
       - 6
     drawn: false
     documentCollection: ''
-    _id: RTCrit06EngCripFF
+    _id: FLfxi6OvaZkDpKAo
     text: 'Engines Crippled: Something pierces the immense drive tubes in the ship''s
       stern, bleeding plasma into the void. Roll 1d10. On 1-7 the plasma drives are
       heavily damaged — reduce Speed by half. On 8-10 the drives are wrecked —
@@ -934,7 +934,7 @@ results:
       - 7
     drawn: false
     documentCollection: ''
-    _id: RTCrit07SurlyMSGG
+    _id: UUiVL1UOcZfp21vz
     text: 'Surly Techsprites: Massive electrical surges knock out systems across
       the ship. Roll 1d10 for every Component — on a 4+, the Component now counts
       as unpowered. Each must be repaired individually before it can receive power
@@ -949,7 +949,7 @@ results:
       - 8
     drawn: false
     documentCollection: ''
-    _id: RTCrit08DecapHHH
+    _id: VQQV1GoJqoWMY2nr
     text: 'Decapitation: A lucky hit strikes the ship''s bridge, sending shrapnel
       scything across the compartment and opening it to space! All crewmembers on
       the bridge must make a Dodge reaction or be hit by shrapnel doing 2d10
@@ -965,7 +965,7 @@ results:
       - 10
     drawn: false
     documentCollection: ''
-    _id: RTCrit09HullBreaI
+    _id: EB0mG7WqxvI82kDT
     text: 'Hull Breach: The hull is ripped asunder, opening compartments to the
       void and doing massive structural damage. The attacker selects 1d5 Components
       (only those he knows of, not the bridge). Roll 1d10 for each — on 1-7 the
@@ -992,7 +992,7 @@ results:
       - 7
     drawn: false
     documentCollection: ''
-    _id: RTCata01HulkAAA
+    _id: n949E3yxYHpfAxsy
     text: 'Space Hulk: Catastrophic damage leaves the ship a drifting, smouldering
       wreck. Roll 1d10 for each Component — on 1-2 untouched but unpowered, on
       3-7 depressurised and damaged, on 8-10 destroyed and all crew inside killed.
@@ -1007,7 +1007,7 @@ results:
       - 9
     drawn: false
     documentCollection: ''
-    _id: RTCata02PlasmBBB
+    _id: BdxYg7jUaxSyLQai
     text: 'Plasma Drive Explosion: The starship''s plasma drive explodes in a
       single cataclysmic blast. All starships within 1d10 VUs must make a Hard
       (−20) Pilot (Space Craft)+Manoeuvrability Test or be struck by flaming
@@ -1023,7 +1023,7 @@ results:
       - 10
     drawn: false
     documentCollection: ''
-    _id: RTCata03WarpCCC
+    _id: r8MY1lcDOGZcV8j1
     text: 'Warp Drive Explosion: The warp drive overloads and rends a hole in
       space. All starships within 2d10 VUs must make a Hard (−20) Pilot+
       Manoeuvrability Test or be struck by the chaos-storm (treat as one lance

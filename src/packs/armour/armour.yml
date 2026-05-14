@@ -1,829 +1,831 @@
 data:
-  armourPoints:
-    body: 6
-    head: 0
-    leftArm: 0
-    leftLeg: 0
-    rightArm: 0
-    rightLeg: 0
-  availability: Very Rare
-  craftsmanship: Common
-  description: 'Primitive: halves its AP value against non-Primitive weapons.'
-  maxAgility: 0
-  source: Rogue Trader Core Rulebook, p.138
-  type: Primitive
-  weight: 20.0
-img: systems/rogue-trader-3rd/icons/items/armor/armor_s12.png
+    armourPoints:
+        body: 6
+        head: 0
+        leftArm: 0
+        leftLeg: 0
+        rightArm: 0
+        rightLeg: 0
+    availability: Very Rare
+    craftsmanship: Common
+    description: 'Primitive: halves its AP value against non-Primitive weapons.'
+    maxAgility: 0
+    source: Rogue Trader Core Rulebook, p.138
+    type: Primitive
+    weight: 20.0
+img: systems/rogue-trader-3rd/icons/items/buckets/armour-primitive.png
 name: Burnscour Beast Hide
 type: armour
 ---
 data:
-  armourPoints:
-    body: 3
-    head: 0
-    leftArm: 3
-    leftLeg: 0
-    rightArm: 3
-    rightLeg: 0
-  availability: Common
-  craftsmanship: Common
-  description: Provides 3 AP to the Body and the Arm wielding the Shield. Stacks with
-    other armour. Can be made of ceramite/adamantium to lose Primitive quality (becomes
-    rarer).
-  maxAgility: 0
-  source: Into the Storm, p.123
-  type: Primitive
-  weight: 1.0
-img: systems/rogue-trader-3rd/icons/items/armor/armor_s12.png
+    armourPoints:
+        body: 3
+        head: 0
+        leftArm: 3
+        leftLeg: 0
+        rightArm: 3
+        rightLeg: 0
+    availability: Common
+    craftsmanship: Common
+    description: Provides 3 AP to the Body and the Arm wielding the Shield. Stacks
+        with other armour. Can be made of ceramite/adamantium to lose Primitive quality
+        (becomes rarer).
+    maxAgility: 0
+    source: Into the Storm, p.123
+    type: Primitive
+    weight: 1.0
+img: systems/rogue-trader-3rd/icons/items/buckets/armour-primitive.png
 name: Combat Shield
 type: armour
 ---
 data:
-  armourPoints:
-    body: 5
-    head: 5
-    leftArm: 5
-    leftLeg: 5
-    rightArm: 5
-    rightLeg: 5
-  availability: Scarce
-  craftsmanship: Common
-  description: 'Primitive: halves its AP value against non-Primitive weapons.'
-  maxAgility: 0
-  source: Rogue Trader Core Rulebook, p.138
-  type: Primitive
-  weight: 30.0
-img: systems/rogue-trader-3rd/icons/items/armor/armor_s09.png
+    armourPoints:
+        body: 5
+        head: 5
+        leftArm: 5
+        leftLeg: 5
+        rightArm: 5
+        rightLeg: 5
+    availability: Scarce
+    craftsmanship: Common
+    description: 'Primitive: halves its AP value against non-Primitive weapons.'
+    maxAgility: 0
+    source: Rogue Trader Core Rulebook, p.138
+    type: Primitive
+    weight: 30.0
+img: systems/rogue-trader-3rd/icons/items/buckets/armour-primitive.png
 name: Feudal World Plate
 type: armour
 ---
 data:
-  armourPoints:
-    body: 3
-    head: 0
-    leftArm: 3
-    leftLeg: 3
-    rightArm: 3
-    rightLeg: 3
-  availability: Common
-  craftsmanship: Common
-  description: 'Primitive: halves its AP value against non-Primitive weapons.'
-  maxAgility: 0
-  source: Rogue Trader Core Rulebook, p.138
-  type: Primitive
-  weight: 15.0
-img: systems/rogue-trader-3rd/icons/items/armor/armor_s12.png
+    armourPoints:
+        body: 3
+        head: 0
+        leftArm: 3
+        leftLeg: 3
+        rightArm: 3
+        rightLeg: 3
+    availability: Common
+    craftsmanship: Common
+    description: 'Primitive: halves its AP value against non-Primitive weapons.'
+    maxAgility: 0
+    source: Rogue Trader Core Rulebook, p.138
+    type: Primitive
+    weight: 15.0
+img: systems/rogue-trader-3rd/icons/items/buckets/armour-primitive.png
 name: Grox Hide/Chainmail
 type: armour
 ---
 data:
-  armourPoints:
-    body: 2
-    head: 0
-    leftArm: 2
-    leftLeg: 2
-    rightArm: 2
-    rightLeg: 2
-  availability: Common
-  craftsmanship: Common
-  description: 'Primitive: halves its AP value against non-Primitive weapons.'
-  maxAgility: 0
-  source: Rogue Trader Core Rulebook, p.138
-  type: Primitive
-  weight: 7.0
-img: systems/rogue-trader-3rd/icons/items/armor/armor_s12.png
+    armourPoints:
+        body: 2
+        head: 0
+        leftArm: 2
+        leftLeg: 2
+        rightArm: 2
+        rightLeg: 2
+    availability: Common
+    craftsmanship: Common
+    description: 'Primitive: halves its AP value against non-Primitive weapons.'
+    maxAgility: 0
+    source: Rogue Trader Core Rulebook, p.138
+    type: Primitive
+    weight: 7.0
+img: systems/rogue-trader-3rd/icons/items/buckets/armour-primitive.png
 name: Heavy Leathers/Furs
 type: armour
 ---
 data:
-  armourPoints:
-    body: 2
-    head: 2
-    leftArm: 2
-    leftLeg: 2
-    rightArm: 2
-    rightLeg: 2
-  availability: Very Rare
-  craftsmanship: Common
-  description: Kroot Gear. When a Kroot wears armour providing more than 3 AP, they
-    lose the benefits of Unnatural Perception and Fieldcraft.
-  maxAgility: 0
-  source: Into the Storm, p.146
-  type: Primitive
-  weight: 4.0
-img: systems/rogue-trader-3rd/icons/items/armor/armor_s12.png
+    armourPoints:
+        body: 2
+        head: 2
+        leftArm: 2
+        leftLeg: 2
+        rightArm: 2
+        rightLeg: 2
+    availability: Very Rare
+    craftsmanship: Common
+    description: Kroot Gear. When a Kroot wears armour providing more than 3 AP, they
+        lose the benefits of Unnatural Perception and Fieldcraft.
+    maxAgility: 0
+    source: Into the Storm, p.146
+    type: Primitive
+    weight: 4.0
+img: systems/rogue-trader-3rd/icons/items/buckets/armour-primitive.png
 name: Kroot Leathers
 type: armour
 ---
 data:
-  armourPoints:
-    body: 3
-    head: 0
-    leftArm: 3
-    leftLeg: 3
-    rightArm: 3
-    rightLeg: 3
-  availability: Rare
-  craftsmanship: Common
-  description: Full body protection with little or no reduction in mobility; often
-    tailored to the wearer.
-  maxAgility: 0
-  source: Rogue Trader Core Rulebook, p.139
-  type: Basic
-  weight: 5.0
-img: systems/rogue-trader-3rd/icons/items/armor/armor_s09.png
+    armourPoints:
+        body: 3
+        head: 0
+        leftArm: 3
+        leftLeg: 3
+        rightArm: 3
+        rightLeg: 3
+    availability: Rare
+    craftsmanship: Common
+    description: Full body protection with little or no reduction in mobility; often
+        tailored to the wearer.
+    maxAgility: 0
+    source: Rogue Trader Core Rulebook, p.139
+    type: Basic
+    weight: 5.0
+img: systems/rogue-trader-3rd/icons/items/buckets/armour-flak.png
 name: Armoured Bodyglove
 type: armour
 ---
 data:
-  armourPoints:
-    body: 3
-    head: 0
-    leftArm: 3
-    leftLeg: 3
-    rightArm: 3
-    rightLeg: 3
-  availability: Scarce
-  craftsmanship: Common
-  description: Counts as AP 5 against damage from weapons with the Blast quality (if
-    not on the target spot).
-  maxAgility: 0
-  source: Rogue Trader Core Rulebook, p.138
-  type: Basic
-  weight: 8.0
-img: systems/rogue-trader-3rd/icons/items/armor/armor_s09.png
+    armourPoints:
+        body: 3
+        head: 0
+        leftArm: 3
+        leftLeg: 3
+        rightArm: 3
+        rightLeg: 3
+    availability: Scarce
+    craftsmanship: Common
+    description: Counts as AP 5 against damage from weapons with the Blast quality
+        (if not on the target spot).
+    maxAgility: 0
+    source: Rogue Trader Core Rulebook, p.138
+    type: Basic
+    weight: 8.0
+img: systems/rogue-trader-3rd/icons/items/buckets/armour-flak.png
 name: Flak Cloak
 type: armour
 ---
 data:
-  armourPoints:
-    body: 3
-    head: 0
-    leftArm: 3
-    leftLeg: 3
-    rightArm: 3
-    rightLeg: 3
-  availability: Average
-  craftsmanship: Common
-  description: Counts as AP 5 against damage from weapons with the Blast quality (if
-    not on the target spot).
-  maxAgility: 0
-  source: Rogue Trader Core Rulebook, p.138
-  type: Basic
-  weight: 5.0
-img: systems/rogue-trader-3rd/icons/items/armor/armor_s09.png
+    armourPoints:
+        body: 3
+        head: 0
+        leftArm: 3
+        leftLeg: 3
+        rightArm: 3
+        rightLeg: 3
+    availability: Average
+    craftsmanship: Common
+    description: Counts as AP 5 against damage from weapons with the Blast quality
+        (if not on the target spot).
+    maxAgility: 0
+    source: Rogue Trader Core Rulebook, p.138
+    type: Basic
+    weight: 5.0
+img: systems/rogue-trader-3rd/icons/items/buckets/armour-flak.png
 name: Flak Coat
 type: armour
 ---
 data:
-  armourPoints:
-    body: 0
-    head: 2
-    leftArm: 0
-    leftLeg: 0
-    rightArm: 0
-    rightLeg: 0
-  availability: Average
-  craftsmanship: Common
-  description: Counts as AP 5 against damage from weapons with the Blast quality (if
-    not on the target spot).
-  maxAgility: 0
-  source: Rogue Trader Core Rulebook, p.138
-  type: Basic
-  weight: 2.0
-img: systems/rogue-trader-3rd/icons/items/armor/armor_s09.png
+    armourPoints:
+        body: 0
+        head: 2
+        leftArm: 0
+        leftLeg: 0
+        rightArm: 0
+        rightLeg: 0
+    availability: Average
+    craftsmanship: Common
+    description: Counts as AP 5 against damage from weapons with the Blast quality
+        (if not on the target spot).
+    maxAgility: 0
+    source: Rogue Trader Core Rulebook, p.138
+    type: Basic
+    weight: 2.0
+img: systems/rogue-trader-3rd/icons/items/buckets/armour-flak.png
 name: Flak Helmet
 type: armour
 ---
 data:
-  armourPoints:
-    body: 4
-    head: 4
-    leftArm: 4
-    leftLeg: 4
-    rightArm: 4
-    rightLeg: 4
-  availability: Scarce
-  craftsmanship: Common
-  description: Counts as AP 5 against damage from weapons with the Blast quality (if
-    not on the target spot).
-  maxAgility: 0
-  source: Rogue Trader Core Rulebook, p.138
-  type: Basic
-  weight: 11.0
-img: systems/rogue-trader-3rd/icons/items/armor/armor_s09.png
+    armourPoints:
+        body: 4
+        head: 4
+        leftArm: 4
+        leftLeg: 4
+        rightArm: 4
+        rightLeg: 4
+    availability: Scarce
+    craftsmanship: Common
+    description: Counts as AP 5 against damage from weapons with the Blast quality
+        (if not on the target spot).
+    maxAgility: 0
+    source: Rogue Trader Core Rulebook, p.138
+    type: Basic
+    weight: 11.0
+img: systems/rogue-trader-3rd/icons/items/buckets/armour-flak.png
 name: Guard Flak Armour
 type: armour
 ---
 data:
-  armourPoints:
-    body: 4
-    head: 0
-    leftArm: 4
-    leftLeg: 4
-    rightArm: 4
-    rightLeg: 4
-  availability: Very Rare
-  craftsmanship: Common
-  description: 'Mesh: briefly becomes rigid to dissipate force.'
-  maxAgility: 0
-  source: Rogue Trader Core Rulebook, p.138
-  type: Basic
-  weight: 1.5
-img: systems/rogue-trader-3rd/icons/items/armor/armor_s09.png
+    armourPoints:
+        body: 4
+        head: 0
+        leftArm: 4
+        leftLeg: 4
+        rightArm: 4
+        rightLeg: 4
+    availability: Very Rare
+    craftsmanship: Common
+    description: 'Mesh: briefly becomes rigid to dissipate force.'
+    maxAgility: 0
+    source: Rogue Trader Core Rulebook, p.138
+    type: Basic
+    weight: 1.5
+img: systems/rogue-trader-3rd/icons/items/buckets/armour-flak.png
 name: Mesh Combat Cloak
 type: armour
 ---
 data:
-  armourPoints:
-    body: 0
-    head: 3
-    leftArm: 0
-    leftLeg: 0
-    rightArm: 0
-    rightLeg: 0
-  availability: Rare
-  craftsmanship: Common
-  description: 'Mesh: briefly becomes rigid to dissipate force.'
-  maxAgility: 0
-  source: Rogue Trader Core Rulebook, p.138
-  type: Basic
-  weight: 0.5
-img: systems/rogue-trader-3rd/icons/items/armor/armor_s09.png
+    armourPoints:
+        body: 0
+        head: 3
+        leftArm: 0
+        leftLeg: 0
+        rightArm: 0
+        rightLeg: 0
+    availability: Rare
+    craftsmanship: Common
+    description: 'Mesh: briefly becomes rigid to dissipate force.'
+    maxAgility: 0
+    source: Rogue Trader Core Rulebook, p.138
+    type: Basic
+    weight: 0.5
+img: systems/rogue-trader-3rd/icons/items/buckets/armour-flak.png
 name: Mesh Cowl
 type: armour
 ---
 data:
-  armourPoints:
-    body: 4
-    head: 0
-    leftArm: 0
-    leftLeg: 0
-    rightArm: 0
-    rightLeg: 0
-  availability: Rare
-  craftsmanship: Common
-  description: 'Mesh: briefly becomes rigid to dissipate force.'
-  maxAgility: 0
-  source: Rogue Trader Core Rulebook, p.138
-  type: Basic
-  weight: 2.0
-img: systems/rogue-trader-3rd/icons/items/armor/armor_s09.png
+    armourPoints:
+        body: 4
+        head: 0
+        leftArm: 0
+        leftLeg: 0
+        rightArm: 0
+        rightLeg: 0
+    availability: Rare
+    craftsmanship: Common
+    description: 'Mesh: briefly becomes rigid to dissipate force.'
+    maxAgility: 0
+    source: Rogue Trader Core Rulebook, p.138
+    type: Basic
+    weight: 2.0
+img: systems/rogue-trader-3rd/icons/items/buckets/armour-flak.png
 name: Mesh Vest
 type: armour
 ---
 data:
-  armourPoints:
-    body: 3
-    head: 0
-    leftArm: 3
-    leftLeg: 3
-    rightArm: 3
-    rightLeg: 3
-  availability: Rare
-  craftsmanship: Common
-  description: 'Mesh: briefly becomes rigid to dissipate force.'
-  maxAgility: 0
-  source: Rogue Trader Core Rulebook, p.138
-  type: Basic
-  weight: 2.0
-img: systems/rogue-trader-3rd/icons/items/armor/armor_s09.png
+    armourPoints:
+        body: 3
+        head: 0
+        leftArm: 3
+        leftLeg: 3
+        rightArm: 3
+        rightLeg: 3
+    availability: Rare
+    craftsmanship: Common
+    description: 'Mesh: briefly becomes rigid to dissipate force.'
+    maxAgility: 0
+    source: Rogue Trader Core Rulebook, p.138
+    type: Basic
+    weight: 2.0
+img: systems/rogue-trader-3rd/icons/items/buckets/armour-flak.png
 name: Xeno Mesh
 type: armour
 ---
 data:
-  armourPoints:
-    body: 6
-    head: 0
-    leftArm: 0
-    leftLeg: 0
-    rightArm: 0
-    rightLeg: 0
-  availability: Rare
-  craftsmanship: Common
-  description: Armaplas/Ceramite plating.
-  maxAgility: 0
-  source: Rogue Trader Core Rulebook, p.138
-  type: Carapace
-  weight: 7.0
-img: systems/rogue-trader-3rd/icons/items/armor/armor_s09.png
+    armourPoints:
+        body: 6
+        head: 0
+        leftArm: 0
+        leftLeg: 0
+        rightArm: 0
+        rightLeg: 0
+    availability: Rare
+    craftsmanship: Common
+    description: Armaplas/Ceramite plating.
+    maxAgility: 0
+    source: Rogue Trader Core Rulebook, p.138
+    type: Carapace
+    weight: 7.0
+img: systems/rogue-trader-3rd/icons/items/buckets/armour-carapace.png
 name: Carapace Chestplate
 type: armour
 ---
 data:
-  armourPoints:
-    body: 0
-    head: 4
-    leftArm: 0
-    leftLeg: 0
-    rightArm: 0
-    rightLeg: 0
-  availability: Rare
-  craftsmanship: Common
-  description: Armaplas/Ceramite plating.
-  maxAgility: 0
-  source: Rogue Trader Core Rulebook, p.138
-  type: Carapace
-  weight: 2.0
-img: systems/rogue-trader-3rd/icons/items/armor/armor_s09.png
+    armourPoints:
+        body: 0
+        head: 4
+        leftArm: 0
+        leftLeg: 0
+        rightArm: 0
+        rightLeg: 0
+    availability: Rare
+    craftsmanship: Common
+    description: Armaplas/Ceramite plating.
+    maxAgility: 0
+    source: Rogue Trader Core Rulebook, p.138
+    type: Carapace
+    weight: 2.0
+img: systems/rogue-trader-3rd/icons/items/buckets/armour-carapace.png
 name: Carapace Helm
 type: armour
 ---
 data:
-  armourPoints:
-    body: 5
-    head: 5
-    leftArm: 5
-    leftLeg: 5
-    rightArm: 5
-    rightLeg: 5
-  availability: Rare
-  craftsmanship: Common
-  description: Armaplas/Ceramite plating.
-  maxAgility: 0
-  source: Rogue Trader Core Rulebook, p.138
-  type: Carapace
-  weight: 15.0
-img: systems/rogue-trader-3rd/icons/items/armor/armor_s09.png
+    armourPoints:
+        body: 5
+        head: 5
+        leftArm: 5
+        leftLeg: 5
+        rightArm: 5
+        rightLeg: 5
+    availability: Rare
+    craftsmanship: Common
+    description: Armaplas/Ceramite plating.
+    maxAgility: 0
+    source: Rogue Trader Core Rulebook, p.138
+    type: Carapace
+    weight: 15.0
+img: systems/rogue-trader-3rd/icons/items/buckets/armour-carapace.png
 name: Enforcer Light Carapace
 type: armour
 ---
 data:
-  armourPoints:
-    body: 6
-    head: 6
-    leftArm: 6
-    leftLeg: 6
-    rightArm: 6
-    rightLeg: 6
-  availability: Very Rare
-  craftsmanship: Common
-  description: Armaplas/Ceramite plating. Can be sealed with a rebreather for vacuum/toxin
-    protection.
-  maxAgility: 0
-  source: Rogue Trader Core Rulebook, p.139
-  type: Carapace
-  weight: 15.0
-img: systems/rogue-trader-3rd/icons/items/armor/armor_s07.png
+    armourPoints:
+        body: 6
+        head: 6
+        leftArm: 6
+        leftLeg: 6
+        rightArm: 6
+        rightLeg: 6
+    availability: Very Rare
+    craftsmanship: Common
+    description: Armaplas/Ceramite plating. Can be sealed with a rebreather for vacuum/toxin
+        protection.
+    maxAgility: 0
+    source: Rogue Trader Core Rulebook, p.139
+    type: Carapace
+    weight: 15.0
+img: systems/rogue-trader-3rd/icons/items/buckets/armour-carapace.png
 name: Storm Trooper Carapace
 type: armour
 ---
 data:
-  armourPoints:
-    body: 9
-    head: 9
-    leftArm: 9
-    leftLeg: 9
-    rightArm: 9
-    rightLeg: 9
-  availability: Extremely Rare
-  craftsmanship: Common
-  description: Massive power armour protection. Any armour that provides 7 or more
-    APs inflicts a -30 penalty on Concealment and Silent Move Tests.
-  maxAgility: 0
-  source: Into the Storm, p.131
-  type: Power
-  weight: 150.0
-img: systems/rogue-trader-3rd/icons/items/armor/armor_s09.png
+    armourPoints:
+        body: 9
+        head: 9
+        leftArm: 9
+        leftLeg: 9
+        rightArm: 9
+        rightLeg: 9
+    availability: Extremely Rare
+    craftsmanship: Common
+    description: Massive power armour protection. Any armour that provides 7 or more
+        APs inflicts a -30 penalty on Concealment and Silent Move Tests.
+    maxAgility: 0
+    source: Into the Storm, p.131
+    type: Power
+    weight: 150.0
+img: systems/rogue-trader-3rd/icons/items/buckets/armour-power.png
 name: Heavy Power Armour
 type: armour
 ---
 data:
-  armourPoints:
-    body: 7
-    head: 7
-    leftArm: 7
-    leftLeg: 7
-    rightArm: 7
-    rightLeg: 7
-  availability: Extremely Rare
-  craftsmanship: Common
-  description: 'Errata v1.4: Availability changed to Extremely Rare. Any armour providing
-    7+ APs inflicts -30 to Concealment and Silent Move Tests.'
-  maxAgility: 0
-  source: Rogue Trader Core Rulebook, p.139
-  type: Power
-  weight: 40.0
-img: systems/rogue-trader-3rd/icons/items/armor/armor_s09.png
+    armourPoints:
+        body: 7
+        head: 7
+        leftArm: 7
+        leftLeg: 7
+        rightArm: 7
+        rightLeg: 7
+    availability: Extremely Rare
+    craftsmanship: Common
+    description: 'Errata v1.4: Availability changed to Extremely Rare. Any armour
+        providing 7+ APs inflicts -30 to Concealment and Silent Move Tests.'
+    maxAgility: 0
+    source: Rogue Trader Core Rulebook, p.139
+    type: Power
+    weight: 40.0
+img: systems/rogue-trader-3rd/icons/items/buckets/armour-power.png
 name: Light Power Armour
 type: armour
 ---
 data:
-  armourPoints:
-    body: 8
-    head: 8
-    leftArm: 8
-    leftLeg: 8
-    rightArm: 8
-    rightLeg: 8
-  availability: Extremely Rare
-  craftsmanship: Common
-  description: 'Errata v1.4: Availability changed to Extremely Rare. Any armour providing
-    7+ APs inflicts -30 to Concealment and Silent Move Tests.'
-  maxAgility: 0
-  source: Rogue Trader Core Rulebook, p.139
-  type: Power
-  weight: 65.0
-img: systems/rogue-trader-3rd/icons/items/armor/armor_s04.png
+    armourPoints:
+        body: 8
+        head: 8
+        leftArm: 8
+        leftLeg: 8
+        rightArm: 8
+        rightLeg: 8
+    availability: Extremely Rare
+    craftsmanship: Common
+    description: 'Errata v1.4: Availability changed to Extremely Rare. Any armour
+        providing 7+ APs inflicts -30 to Concealment and Silent Move Tests.'
+    maxAgility: 0
+    source: Rogue Trader Core Rulebook, p.139
+    type: Power
+    weight: 65.0
+img: systems/rogue-trader-3rd/icons/items/buckets/armour-power.png
 name: Power Armour
 type: armour
 ---
 data:
-  armourPoints:
-    body: 0
-    head: 0
-    leftArm: 0
-    leftLeg: 0
-    rightArm: 0
-    rightLeg: 0
-  availability: Near Unique
-  craftsmanship: Common
-  description: 'Errata v1.4: Imposes a -20 penalty on all Weapon Skill and Ballistic
-    Skill Tests made to attack the wearer.'
-  maxAgility: 0
-  source: Into the Storm, p.138
-  type: Field
-  weight: 2.0
-img: systems/rogue-trader-3rd/icons/psykana/protect-blue-2.jpg
+    armourPoints:
+        body: 0
+        head: 0
+        leftArm: 0
+        leftLeg: 0
+        rightArm: 0
+        rightLeg: 0
+    availability: Near Unique
+    craftsmanship: Common
+    description: 'Errata v1.4: Imposes a -20 penalty on all Weapon Skill and Ballistic
+        Skill Tests made to attack the wearer.'
+    maxAgility: 0
+    source: Into the Storm, p.138
+    type: Field
+    weight: 2.0
+img: systems/rogue-trader-3rd/icons/items/buckets/armour-force-field.png
 name: Archeotech Blurshield
 type: armour
 ---
 data:
-  armourPoints:
-    body: 0
-    head: 0
-    leftArm: 0
-    leftLeg: 0
-    rightArm: 0
-    rightLeg: 0
-  availability: Near Unique
-  craftsmanship: Common
-  description: Protection Rating 60 (Arm/Body only). When it blocks an Energy attack,
-    wearer may spend a Reaction and pass a Challenging (+0) Agility Test to reflect
-    it back at a target.
-  maxAgility: 0
-  source: Into the Storm, p.131
-  type: Field
-  weight: 1.5
-  protectionRating: 60
-img: systems/rogue-trader-3rd/icons/psykana/protect-blue-2.jpg
+    armourPoints:
+        body: 0
+        head: 0
+        leftArm: 0
+        leftLeg: 0
+        rightArm: 0
+        rightLeg: 0
+    availability: Near Unique
+    craftsmanship: Common
+    description: Protection Rating 60 (Arm/Body only). When it blocks an Energy attack,
+        wearer may spend a Reaction and pass a Challenging (+0) Agility Test to reflect
+        it back at a target.
+    maxAgility: 0
+    source: Into the Storm, p.131
+    type: Field
+    weight: 1.5
+    protectionRating: 60
+img: systems/rogue-trader-3rd/icons/items/buckets/armour-force-field.png
 name: Archeotech Mirror Shield
 type: armour
 ---
 data:
-  armourPoints:
-    body: 0
-    head: 0
-    leftArm: 0
-    leftLeg: 0
-    rightArm: 0
-    rightLeg: 0
-  availability: Extremely Rare
-  craftsmanship: Common
-  description: Protection Rating 50. If the field blocks >12 Damage from a single
-    attack, it acts as a photon flash grenade centered on the wearer (wearer is immune).
-  maxAgility: 0
-  source: Into the Storm, p.131
-  type: Field
-  weight: 1.0
-  protectionRating: 50
-img: systems/rogue-trader-3rd/icons/items/armor/armor_s09.png
+    armourPoints:
+        body: 0
+        head: 0
+        leftArm: 0
+        leftLeg: 0
+        rightArm: 0
+        rightLeg: 0
+    availability: Extremely Rare
+    craftsmanship: Common
+    description: Protection Rating 50. If the field blocks >12 Damage from a single
+        attack, it acts as a photon flash grenade centered on the wearer (wearer is
+        immune).
+    maxAgility: 0
+    source: Into the Storm, p.131
+    type: Field
+    weight: 1.0
+    protectionRating: 50
+img: systems/rogue-trader-3rd/icons/items/buckets/armour-force-field.png
 name: Conversion Field
 type: armour
 ---
 data:
-  armourPoints:
-    body: 0
-    head: 0
-    leftArm: 0
-    leftLeg: 0
-    rightArm: 0
-    rightLeg: 0
-  availability: Near Unique
-  craftsmanship: Common
-  description: Protection Rating 55. If blocks an attack, wearer teleports 2d10m randomly.
-    If all 3 dice roll same number, wearer disappears for 1d5 Rounds and gains 1 CP.
-  maxAgility: 0
-  source: Into the Storm, p.131
-  type: Field
-  weight: 2.0
-  protectionRating: 55
-img: systems/rogue-trader-3rd/icons/items/armor/armor_s09.png
+    armourPoints:
+        body: 0
+        head: 0
+        leftArm: 0
+        leftLeg: 0
+        rightArm: 0
+        rightLeg: 0
+    availability: Near Unique
+    craftsmanship: Common
+    description: Protection Rating 55. If blocks an attack, wearer teleports 2d10m
+        randomly. If all 3 dice roll same number, wearer disappears for 1d5 Rounds
+        and gains 1 CP.
+    maxAgility: 0
+    source: Into the Storm, p.131
+    type: Field
+    weight: 2.0
+    protectionRating: 55
+img: systems/rogue-trader-3rd/icons/items/buckets/armour-force-field.png
 name: Displacer Field
 type: armour
 ---
 data:
-  armourPoints:
-    body: 0
-    head: 0
-    leftArm: 0
-    leftLeg: 0
-    rightArm: 0
-    rightLeg: 0
-  availability: Unique
-  craftsmanship: Common
-  description: Protection Rating 75.
-  maxAgility: 0
-  source: Into the Storm, p.131
-  type: Field
-  weight: 0.2
-  protectionRating: 75
-img: systems/rogue-trader-3rd/icons/psykana/protect-blue-2.jpg
+    armourPoints:
+        body: 0
+        head: 0
+        leftArm: 0
+        leftLeg: 0
+        rightArm: 0
+        rightLeg: 0
+    availability: Unique
+    craftsmanship: Common
+    description: Protection Rating 75.
+    maxAgility: 0
+    source: Into the Storm, p.131
+    type: Field
+    weight: 0.2
+    protectionRating: 75
+img: systems/rogue-trader-3rd/icons/items/buckets/armour-force-field.png
 name: Eldar Forceshield
 type: armour
 ---
 data:
-  armourPoints:
-    body: 0
-    head: 0
-    leftArm: 0
-    leftLeg: 0
-    rightArm: 0
-    rightLeg: 0
-  availability: Near Unique
-  craftsmanship: Common
-  description: Protection Rating 80. Imposes -40 to Stealth tests. Does not function
-    against melee attacks or ranged attacks made within 3m. Lasts 1 hour.
-  maxAgility: 0
-  source: Into the Storm, p.131
-  type: Field
-  weight: 50.0
-  protectionRating: 80
-img: systems/rogue-trader-3rd/icons/psykana/protect-blue-2.jpg
+    armourPoints:
+        body: 0
+        head: 0
+        leftArm: 0
+        leftLeg: 0
+        rightArm: 0
+        rightLeg: 0
+    availability: Near Unique
+    craftsmanship: Common
+    description: Protection Rating 80. Imposes -40 to Stealth tests. Does not function
+        against melee attacks or ranged attacks made within 3m. Lasts 1 hour.
+    maxAgility: 0
+    source: Into the Storm, p.131
+    type: Field
+    weight: 50.0
+    protectionRating: 80
+img: systems/rogue-trader-3rd/icons/items/buckets/armour-force-field.png
 name: Power Field (Personal)
 type: armour
 ---
 data:
-  armourPoints:
-    body: 0
-    head: 0
-    leftArm: 0
-    leftLeg: 0
-    rightArm: 0
-    rightLeg: 0
-  availability: Extremely Rare
-  craftsmanship: Common
-  description: Protection Rating 80. Vehicle or emplaced version.
-  maxAgility: 0
-  source: Into the Storm, p.131
-  type: Field
-  weight: 500.0
-  protectionRating: 80
-img: systems/rogue-trader-3rd/icons/items/armor/armor_s09.png
+    armourPoints:
+        body: 0
+        head: 0
+        leftArm: 0
+        leftLeg: 0
+        rightArm: 0
+        rightLeg: 0
+    availability: Extremely Rare
+    craftsmanship: Common
+    description: Protection Rating 80. Vehicle or emplaced version.
+    maxAgility: 0
+    source: Into the Storm, p.131
+    type: Field
+    weight: 500.0
+    protectionRating: 80
+img: systems/rogue-trader-3rd/icons/items/buckets/armour-force-field.png
 name: Power Field (Vehicle/Emplacement)
 type: armour
 ---
 data:
-  armourPoints:
-    body: 0
-    head: 0
-    leftArm: 0
-    leftLeg: 0
-    rightArm: 0
-    rightLeg: 0
-  availability: Very Rare
-  craftsmanship: Common
-  description: Protection Rating 30. Surrounds the user with a hazy glow when active.
-  maxAgility: 0
-  source: Into the Storm, p.131
-  type: Field
-  weight: 2.0
-  protectionRating: 30
-img: systems/rogue-trader-3rd/icons/items/armor/armor_s09.png
+    armourPoints:
+        body: 0
+        head: 0
+        leftArm: 0
+        leftLeg: 0
+        rightArm: 0
+        rightLeg: 0
+    availability: Very Rare
+    craftsmanship: Common
+    description: Protection Rating 30. Surrounds the user with a hazy glow when active.
+    maxAgility: 0
+    source: Into the Storm, p.131
+    type: Field
+    weight: 2.0
+    protectionRating: 30
+img: systems/rogue-trader-3rd/icons/items/buckets/armour-force-field.png
 name: Refractor Field
 type: armour
 ---
 data:
-  armourPoints:
-    body: 0
-    head: 0
-    leftArm: 0
-    leftLeg: 0
-    rightArm: 0
-    rightLeg: 0
-  availability: Near Unique
-  craftsmanship: Common
-  description: Protection Rating 70. Button/broach sized; generates invisible field;
-    lasts several minutes, requires several hours to recharge.
-  maxAgility: 0
-  source: Into the Storm, p.131
-  type: Field
-  weight: 0.05
-  protectionRating: 70
-img: systems/rogue-trader-3rd/icons/psykana/protect-blue-2.jpg
+    armourPoints:
+        body: 0
+        head: 0
+        leftArm: 0
+        leftLeg: 0
+        rightArm: 0
+        rightLeg: 0
+    availability: Near Unique
+    craftsmanship: Common
+    description: Protection Rating 70. Button/broach sized; generates invisible field;
+        lasts several minutes, requires several hours to recharge.
+    maxAgility: 0
+    source: Into the Storm, p.131
+    type: Field
+    weight: 0.05
+    protectionRating: 70
+img: systems/rogue-trader-3rd/icons/items/buckets/armour-force-field.png
 name: Salvation Shield
 type: armour
 ---
 data:
-  armourPoints:
-    body: 0
-    head: 2
-    leftArm: 0
-    leftLeg: 0
-    rightArm: 0
-    rightLeg: 0
-  availability: Scarce
-  craftsmanship: Common
-  description: Ork Armour.
-  maxAgility: 0
-  source: Into the Storm, p.144
-  type: Other
-  weight: 3.0
-img: systems/rogue-trader-3rd/icons/items/armor/armor_s09.png
+    armourPoints:
+        body: 0
+        head: 2
+        leftArm: 0
+        leftLeg: 0
+        rightArm: 0
+        rightLeg: 0
+    availability: Scarce
+    craftsmanship: Common
+    description: Ork Armour.
+    maxAgility: 0
+    source: Into the Storm, p.144
+    type: Other
+    weight: 3.0
+img: systems/rogue-trader-3rd/icons/items/buckets/armour-void-suit.png
 name: '''Ard Hat'
 type: armour
 ---
 data:
-  armourPoints:
-    body: 4
-    head: 0
-    leftArm: 0
-    leftLeg: 4
-    rightArm: 0
-    rightLeg: 4
-  availability: Very Rare
-  craftsmanship: Common
-  description: Ork Armour.
-  maxAgility: 0
-  source: Into the Storm, p.144
-  type: Other
-  weight: 8.0
-img: systems/rogue-trader-3rd/icons/items/armor/armor_s09.png
+    armourPoints:
+        body: 4
+        head: 0
+        leftArm: 0
+        leftLeg: 4
+        rightArm: 0
+        rightLeg: 4
+    availability: Very Rare
+    craftsmanship: Common
+    description: Ork Armour.
+    maxAgility: 0
+    source: Into the Storm, p.144
+    type: Other
+    weight: 8.0
+img: systems/rogue-trader-3rd/icons/items/buckets/armour-void-suit.png
 name: '''Eavy Armor'
 type: armour
 ---
 data:
-  armourPoints:
-    body: 0
-    head: 0
-    leftArm: 0
-    leftLeg: 0
-    rightArm: 0
-    rightLeg: 0
-  availability: Very Rare
-  craftsmanship: Common
-  description: Adds communications, auto-senses, or preysense to a helmet.
-  maxAgility: 0
-  source: Rogue Trader Core Rulebook, p.139
-  type: Other
-  weight: 0.0
-img: systems/rogue-trader-3rd/icons/items/armor/armor_s09.png
+    armourPoints:
+        body: 0
+        head: 0
+        leftArm: 0
+        leftLeg: 0
+        rightArm: 0
+        rightLeg: 0
+    availability: Very Rare
+    craftsmanship: Common
+    description: Adds communications, auto-senses, or preysense to a helmet.
+    maxAgility: 0
+    source: Rogue Trader Core Rulebook, p.139
+    type: Other
+    weight: 0.0
+img: systems/rogue-trader-3rd/icons/items/buckets/armour-void-suit.png
 name: Advanced Helmet Systems
 type: armour
 ---
 data:
-  armourPoints:
-    body: 0
-    head: 0
-    leftArm: 0
-    leftLeg: 0
-    rightArm: 0
-    rightLeg: 0
-  availability: Very Rare
-  craftsmanship: Common
-  description: Ork Armour/Status symbol. Aids Mob Rule.
-  maxAgility: 0
-  source: Into the Storm, p.144
-  type: Other
-  weight: 5.0
-img: systems/rogue-trader-3rd/icons/items/armor/armor_s09.png
+    armourPoints:
+        body: 0
+        head: 0
+        leftArm: 0
+        leftLeg: 0
+        rightArm: 0
+        rightLeg: 0
+    availability: Very Rare
+    craftsmanship: Common
+    description: Ork Armour/Status symbol. Aids Mob Rule.
+    maxAgility: 0
+    source: Into the Storm, p.144
+    type: Other
+    weight: 5.0
+img: systems/rogue-trader-3rd/icons/items/buckets/armour-void-suit.png
 name: Boss Pole
 type: armour
 ---
 data:
-  armourPoints:
-    body: 5
-    head: 5
-    leftArm: 5
-    leftLeg: 5
-    rightArm: 5
-    rightLeg: 5
-  availability: Near Unique
-  craftsmanship: Common
-  description: Covered in spikes and blades; wearer always counts as having a mono-knife
-    in melee.
-  maxAgility: 0
-  source: Into the Storm, p.131
-  type: Other
-  weight: 4.0
-img: systems/rogue-trader-3rd/icons/items/armor/armor_s09.png
+    armourPoints:
+        body: 5
+        head: 5
+        leftArm: 5
+        leftLeg: 5
+        rightArm: 5
+        rightLeg: 5
+    availability: Near Unique
+    craftsmanship: Common
+    description: Covered in spikes and blades; wearer always counts as having a mono-knife
+        in melee.
+    maxAgility: 0
+    source: Into the Storm, p.131
+    type: Other
+    weight: 4.0
+img: systems/rogue-trader-3rd/icons/items/buckets/armour-void-suit.png
 name: Eldar Raider Armour
 type: armour
 ---
 data:
-  armourPoints:
-    body: 4
-    head: 0
-    leftArm: 4
-    leftLeg: 4
-    rightArm: 4
-    rightLeg: 4
-  availability: Very Rare
-  craftsmanship: Common
-  description: Metallic weave that appears solid but flows with movement.
-  maxAgility: 0
-  source: Into the Storm, p.131
-  type: Other
-  weight: 7.0
-img: systems/rogue-trader-3rd/icons/items/armor/armor_s09.png
+    armourPoints:
+        body: 4
+        head: 0
+        leftArm: 4
+        leftLeg: 4
+        rightArm: 4
+        rightLeg: 4
+    availability: Very Rare
+    craftsmanship: Common
+    description: Metallic weave that appears solid but flows with movement.
+    maxAgility: 0
+    source: Into the Storm, p.131
+    type: Other
+    weight: 7.0
+img: systems/rogue-trader-3rd/icons/items/buckets/armour-void-suit.png
 name: Flexsteel
 type: armour
 ---
 data:
-  armourPoints:
-    body: 0
-    head: 2
-    leftArm: 0
-    leftLeg: 0
-    rightArm: 0
-    rightLeg: 0
-  availability: Very Rare
-  craftsmanship: Common
-  description: Ork Armour. AP is cumulative with other Head armour. Grants +10 bonus
-    to Intimidation Tests.
-  maxAgility: 0
-  source: Into the Storm, p.144
-  type: Other
-  weight: 5.0
-img: systems/rogue-trader-3rd/icons/items/armor/armor_s09.png
+    armourPoints:
+        body: 0
+        head: 2
+        leftArm: 0
+        leftLeg: 0
+        rightArm: 0
+        rightLeg: 0
+    availability: Very Rare
+    craftsmanship: Common
+    description: Ork Armour. AP is cumulative with other Head armour. Grants +10 bonus
+        to Intimidation Tests.
+    maxAgility: 0
+    source: Into the Storm, p.144
+    type: Other
+    weight: 5.0
+img: systems/rogue-trader-3rd/icons/items/buckets/armour-void-suit.png
 name: Iron Gob
 type: armour
 ---
 data:
-  armourPoints:
-    body: 1
-    head: 0
-    leftArm: 1
-    leftLeg: 1
-    rightArm: 1
-    rightLeg: 1
-  availability: Common
-  craftsmanship: Common
-  description: Ork Armour. Covers Body, Arms, Legs.
-  maxAgility: 0
-  source: Into the Storm, p.144
-  type: Other
-  weight: 3.0
-img: systems/rogue-trader-3rd/icons/items/armor/armor_s09.png
+    armourPoints:
+        body: 1
+        head: 0
+        leftArm: 1
+        leftLeg: 1
+        rightArm: 1
+        rightLeg: 1
+    availability: Common
+    craftsmanship: Common
+    description: Ork Armour. Covers Body, Arms, Legs.
+    maxAgility: 0
+    source: Into the Storm, p.144
+    type: Other
+    weight: 3.0
+img: systems/rogue-trader-3rd/icons/items/buckets/armour-void-suit.png
 name: Squighide
 type: armour
 ---
 data:
-  armourPoints:
-    body: 2
-    head: 0
-    leftArm: 2
-    leftLeg: 2
-    rightArm: 2
-    rightLeg: 2
-  availability: Very Rare
-  craftsmanship: Common
-  description: Cybernetic implant. Adds +2 Armour to the Arms, Body, and Legs. Stacks
-    with other worn armour.
-  maxAgility: 0
-  source: Rogue Trader Core Rulebook, p.147
-  type: Other
-  weight: 0.0
-img: systems/rogue-trader-3rd/icons/items/armor/armor_s09.png
+    armourPoints:
+        body: 2
+        head: 0
+        leftArm: 2
+        leftLeg: 2
+        rightArm: 2
+        rightLeg: 2
+    availability: Very Rare
+    craftsmanship: Common
+    description: Cybernetic implant. Adds +2 Armour to the Arms, Body, and Legs. Stacks
+        with other worn armour.
+    maxAgility: 0
+    source: Rogue Trader Core Rulebook, p.147
+    type: Other
+    weight: 0.0
+img: systems/rogue-trader-3rd/icons/items/buckets/armour-void-suit.png
 name: Subskin Armour
 type: armour
 ---
 data:
-  armourPoints:
-    body: 2
-    head: 2
-    leftArm: 2
-    leftLeg: 2
-    rightArm: 2
-    rightLeg: 2
-  availability: Extremely Rare
-  craftsmanship: Common
-  description: Does not stack with other armour. Wearer gains +10 Concealment/Silent
-    Move, and is invisible to Preysense/Dark Sight.
-  maxAgility: 0
-  source: Rogue Trader Core Rulebook, p.139
-  type: Other
-  weight: 2.0
-img: systems/rogue-trader-3rd/icons/items/armor/armor_s09.png
+    armourPoints:
+        body: 2
+        head: 2
+        leftArm: 2
+        leftLeg: 2
+        rightArm: 2
+        rightLeg: 2
+    availability: Extremely Rare
+    craftsmanship: Common
+    description: Does not stack with other armour. Wearer gains +10 Concealment/Silent
+        Move, and is invisible to Preysense/Dark Sight.
+    maxAgility: 0
+    source: Rogue Trader Core Rulebook, p.139
+    type: Other
+    weight: 2.0
+img: systems/rogue-trader-3rd/icons/items/buckets/armour-void-suit.png
 name: Synskin
 type: armour
 ---
 data:
-  armourPoints:
-    body: 3
-    head: 3
-    leftArm: 3
-    leftLeg: 3
-    rightArm: 3
-    rightLeg: 3
-  availability: Rare
-  craftsmanship: Common
-  description: Also known as Frost Armour. Negates effects of extreme heat; comes
-    with a re-breather.
-  maxAgility: 0
-  source: Into the Storm, p.131
-  type: Other
-  weight: 12.0
-img: systems/rogue-trader-3rd/icons/items/armor/armor_s09.png
+    armourPoints:
+        body: 3
+        head: 3
+        leftArm: 3
+        leftLeg: 3
+        rightArm: 3
+        rightLeg: 3
+    availability: Rare
+    craftsmanship: Common
+    description: Also known as Frost Armour. Negates effects of extreme heat; comes
+        with a re-breather.
+    maxAgility: 0
+    source: Into the Storm, p.131
+    type: Other
+    weight: 12.0
+img: systems/rogue-trader-3rd/icons/items/buckets/armour-void-suit.png
 name: Thermal Armour
 type: armour
