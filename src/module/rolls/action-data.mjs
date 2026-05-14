@@ -6,6 +6,28 @@ import { DHBasicActionManager } from '../actions/basic-action-manager.mjs';
 import { SYSTEM_ID } from '../hooks-manager.mjs';
 import { RogueTraderSettings } from '../rogue-trader-settings.mjs';
 
+/**
+ * Roll the named RollTable from the system's `tables` compendium and return
+ * the result text. Returns null if the table or compendium can't be located.
+ */
+async function drawFromTable(tableName) {
+    try {
+        const pack = game.packs.get(`${SYSTEM_ID}.tables`);
+        if (!pack) return null;
+        const index = pack.index?.size ? pack.index : await pack.getIndex();
+        const entry = index.find(e => e.name === tableName);
+        if (!entry) return null;
+        const table = await pack.getDocument(entry._id);
+        if (!table) return null;
+        const draw = await table.roll();
+        const results = draw?.results ?? [];
+        return results.map(r => r.text ?? r.description ?? '').filter(Boolean).join(' ');
+    } catch (err) {
+        console.warn(`[rt] drawFromTable("${tableName}") failed:`, err);
+        return null;
+    }
+}
+
 export class ActionData {
     id = uuid();
     template = '';
@@ -28,17 +50,35 @@ export class ActionData {
         const pr = this.rollData.pr ?? 0;
         const isDoubles = /^(.)\1+$/.test(this.rollData.roll.total);
         // RT 1e: Fettered (pr < rating) never triggers Psychic Phenomena.
-        if (pr < rating) {
-            return;
-        }
+        if (pr < rating) return;
+
         // Unfettered (pr === rating): trigger on doubles.
         // Push (pr > rating): trigger on any non-doubles.
+        let triggerPhenomena = false;
+        let triggerPerils = false;
+        let label = '';
         if (pr > rating) {
             if (!isDoubles) {
-                this.addEffect('Psychic Phenomena', 'The warp convulses with energy! (Push)');
+                triggerPhenomena = true;
+                label = 'Push';
+            }
+            // Push + doubles is also a Perils trigger per RT corebook p.181.
+            if (isDoubles) {
+                triggerPerils = true;
+                label = 'Push doubles';
             }
         } else if (isDoubles) {
-            this.addEffect('Psychic Phenomena', 'The warp convulses with energy!');
+            triggerPhenomena = true;
+        }
+
+        if (triggerPerils) {
+            const perils = await drawFromTable('Perils of the Warp');
+            const text = perils ? `The Perils of the Warp claim the psyker! ${perils}` : 'Perils of the Warp triggered — roll on the table manually.';
+            this.addEffect('Perils of the Warp', text + (label ? ` (${label})` : ''));
+        } else if (triggerPhenomena) {
+            const phenom = await drawFromTable('Psychic Phenomena');
+            const text = phenom ? `The warp convulses with energy! ${phenom}` : 'The warp convulses with energy! — roll Psychic Phenomena manually.';
+            this.addEffect('Psychic Phenomena', text + (label ? ` (${label})` : ''));
         }
     }
 

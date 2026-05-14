@@ -127,15 +127,14 @@ Currently the engine carries the full DH2 creation flow (Home World × Backgroun
 - [ ] Build a character-creation wizard that walks Origin Path → spend 4,500 xp through career table → 500 discretionary
 - [ ] Migration path for existing DH2-built characters
 
-### Economy — implement Profit Factor + Acquisition Test
+### Economy — Profit Factor + Acquisition Test — DONE 2026-05-14
 
-The repo has *neither* a working DH2 Requisition system *nor* an RT Acquisition system.
-
-- [ ] Add `profitFactor` field (group-wide). Options: a setting on a Party/Warband actor, a world-level setting, or a synchronized field across player actors.
-- [ ] Build an Acquisition Test macro: `1d100 ≤ PF + Availability + Craftsmanship + Scale + DoS-from-Commerce`
-- [ ] Add availability/craftsmanship/scale dropdowns on item sheets (availability already exists; craftsmanship exists; scale is new)
-- [ ] Optional: Endeavours tracker for PF awards
-- [ ] Remove `characteristics.influence` from `src/template.json` (lines 99–107) — replaced by group PF
+- [x] `profitFactor` as a world setting (default 30), GM-editable in Configure Settings
+- [x] `game.rt.acquisition()` opens an Acquisition Test dialog (`src/module/rules/acquisition.mjs`)
+- [x] Modifier tables: Availability, Craftsmanship, Scale — RT corebook p.270
+- [ ] Pre-populate dialog from a right-clicked item's availability/craftsmanship (would need a sheet button or context-menu integration)
+- [ ] Endeavours tracker for PF awards
+- [ ] Remove `characteristics.influence` from `src/template.json` (replaced by group PF — left in place for back-compat; safe to remove later)
 
 ### Aptitudes system — drop or formalize as flavor
 

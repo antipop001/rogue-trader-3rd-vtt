@@ -38,6 +38,7 @@ import { DarkHeresyCyberneticSheet } from './sheets/item/cybernetic-sheet.mjs';
 import { DarkHeresyForceFieldSheet } from './sheets/item/force-field-sheet.mjs';
 import { checkAndMigrateWorld } from './rogue-trader-migrations.mjs';
 import { DHTourMain } from './tours/main-tour.mjs';
+import { openAcquisitionDialog } from './rules/acquisition.mjs';
 
 import * as documents from './documents/_module.mjs'
 
@@ -77,6 +78,7 @@ Enable Debug with: game.rt.debug = true
             rollItemMacro,
             rollSkillMacro,
             rollCharacteristicMacro,
+            acquisition: openAcquisitionDialog,
         };
 
         //CONFIG.debug.hooks = true;

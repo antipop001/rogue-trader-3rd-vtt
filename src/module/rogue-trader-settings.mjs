@@ -7,7 +7,7 @@ export class RogueTraderSettings {
         simpleAttackRolls: 'simple-attack-rolls',
         simplePsychicRolls: 'simple-psychic-rolls',
         processActiveEffectsDuringCombat: 'active-effects-during-combat',
-
+        profitFactor: 'profit-factor',
     }
 
     static registerSettings() {
@@ -47,5 +47,22 @@ export class RogueTraderSettings {
             default: false,
             type: Boolean,
         });
+        game.settings.register(SYSTEM_ID, RogueTraderSettings.SETTINGS.profitFactor, {
+            name: 'Profit Factor',
+            hint: 'The group-wide Profit Factor used for Acquisition Tests (RT corebook p.270).',
+            scope: 'world',
+            config: true,
+            requiresReload: false,
+            default: 30,
+            type: Number,
+        });
+    }
+
+    static getProfitFactor() {
+        return game.settings.get(SYSTEM_ID, RogueTraderSettings.SETTINGS.profitFactor) ?? 30;
+    }
+
+    static async setProfitFactor(value) {
+        return game.settings.set(SYSTEM_ID, RogueTraderSettings.SETTINGS.profitFactor, Number(value) || 0);
     }
 }

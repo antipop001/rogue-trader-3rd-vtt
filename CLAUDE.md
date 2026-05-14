@@ -202,10 +202,17 @@ All combat-action modifiers and types match RT 1e corebook Table 9-1 (pp.147-148
 - **No compendium content**: zero ship components, zero ship weapons, zero ship traits, zero hull profiles in any pack. Users must build every Plasma Drive, Warp Engine, Macrocannon, Lance, void shield, hull pattern by hand. The RT corebook Ch.VII (pp.182–229) defines ~80 components and ~30 weapons — needs a full content pass.
 - Strategic Round / VU map / boarding action flow: prompts exist (`crew-prompt.mjs`, `ship-weapon-prompt.mjs`) but there's no explicit Strategic Round turn structure or VU positional tracking visible.
 
-### G. Economy / acquisition
+### G. Economy / acquisition — DONE 2026-05-14
 
-- No `profitFactor` field anywhere. No `acquisition` action/macro. RT uses a group-wide Profit Factor + Acquisition Test as its sole economy; this is unimplemented.
-- The DH2 Influence + Requisition mechanic is *also* not coded — `influence` is just a characteristic with no associated test machinery. So in practice neither game's economy works automatically.
+RT's group-wide Profit Factor + Acquisition Test (corebook p.270) is now implemented:
+
+- **`profitFactor` world setting** (default 30) registered via `RogueTraderSettings`. GM-editable in the Configure Settings dialog. Use `RogueTraderSettings.getProfitFactor()` / `setProfitFactor()` to read or write programmatically.
+- **`game.rt.acquisition()`** opens an Acquisition Test dialog with dropdowns for Availability / Craftsmanship / Scale (with per-tier modifiers baked in from `src/module/rules/acquisition.mjs`), an optional Commerce DoS bonus, and an extra modifier field. Rolls 1d100 vs `PF + mods` and posts a chat card with DoS/DoF.
+- Modifier tables: AVAILABILITY_MODS (+30 Ubiquitous … −70 Unique), CRAFTSMANSHIP_MODS (Poor +10 … Best −30), SCALE_MODS (Trivial +30 … Vast −30) — verbatim from RT corebook p.270.
+
+DH2 Influence + Requisition remains unimplemented (correct — RT uses PF instead).
+
+**Future work:** wire up `availability` / `craftsmanship` fields on item sheets so right-clicking an item could pre-populate the Acquisition dialog from that item.
 
 ### H. Psychic mechanic — DONE 2026-05-14
 
