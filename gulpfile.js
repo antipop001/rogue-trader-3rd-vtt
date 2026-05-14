@@ -126,7 +126,7 @@ function watchCopy() {
 
 function createArchive() {
   return gulp.src(`${BUILD_DIR}/**`)
-      .pipe(zip(`rogue-trader-3rd-${SYSTEM.version}.zip`))
+      .pipe(zip(`rogue-trader-3rd-vtt-${SYSTEM.version}.zip`))
       .pipe(gulp.dest('./archive'));
 }
 

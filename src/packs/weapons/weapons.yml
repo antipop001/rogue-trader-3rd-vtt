@@ -5599,7 +5599,7 @@ data:
   source: Rogue Trader Core Rulebook, p.126
   special:
     blast: 3
-    concussive: true
+    concussive: 0
   type: Grenade
   weight: 0.2
 img: systems/rogue-trader-3rd/icons/items/pistols/pistols_09.png
