@@ -39,6 +39,7 @@ import { DarkHeresyForceFieldSheet } from './sheets/item/force-field-sheet.mjs';
 import { checkAndMigrateWorld } from './rogue-trader-migrations.mjs';
 import { DHTourMain } from './tours/main-tour.mjs';
 import { openAcquisitionDialog } from './rules/acquisition.mjs';
+import { openEndeavoursDialog } from './rules/endeavours.mjs';
 
 import * as documents from './documents/_module.mjs'
 
@@ -79,6 +80,7 @@ Enable Debug with: game.rt.debug = true
             rollSkillMacro,
             rollCharacteristicMacro,
             acquisition: openAcquisitionDialog,
+            endeavours: openEndeavoursDialog,
         };
 
         //CONFIG.debug.hooks = true;

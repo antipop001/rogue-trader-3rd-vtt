@@ -8,6 +8,7 @@ export class RogueTraderSettings {
         simplePsychicRolls: 'simple-psychic-rolls',
         processActiveEffectsDuringCombat: 'active-effects-during-combat',
         profitFactor: 'profit-factor',
+        endeavours: 'endeavours',
     }
 
     static registerSettings() {
@@ -56,6 +57,15 @@ export class RogueTraderSettings {
             default: 30,
             type: Number,
         });
+        game.settings.register(SYSTEM_ID, RogueTraderSettings.SETTINGS.endeavours, {
+            name: 'Endeavours',
+            hint: 'Active and completed Endeavours. Manage via game.rt.endeavours().',
+            scope: 'world',
+            config: false,
+            requiresReload: false,
+            default: [],
+            type: Array,
+        });
     }
 
     static getProfitFactor() {
@@ -64,5 +74,13 @@ export class RogueTraderSettings {
 
     static async setProfitFactor(value) {
         return game.settings.set(SYSTEM_ID, RogueTraderSettings.SETTINGS.profitFactor, Number(value) || 0);
+    }
+
+    static getEndeavours() {
+        return game.settings.get(SYSTEM_ID, RogueTraderSettings.SETTINGS.endeavours) ?? [];
+    }
+
+    static async setEndeavours(arr) {
+        return game.settings.set(SYSTEM_ID, RogueTraderSettings.SETTINGS.endeavours, arr ?? []);
     }
 }
