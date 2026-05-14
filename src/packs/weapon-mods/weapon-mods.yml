@@ -524,11 +524,16 @@ data:
     of power in the form of a massive battery or charge-unit. For flame weapons, it
     is composed of tanks of volatile promethium. Other ammunition packs are simply
     stacks of regular stubber or bolt rounds with a feeder line that links into the
-    weapon itself. These items hold 80 rounds of ammunition for Plasma, Melta, and
-    Las weapons, 200 rounds of ammunition for SP or Bolt weapons, and 60 shots for
-    Flame weapons. A weapon connected to a backpack power pack uses the power pack
-    for its ammunition and ignores its normal clip size. Backpack ammo packs or power
-    packs weigh 25 kg. |  Name | Availability  | | --- | --- | |  Arrows/Quarrels
+    weapon itself. These items hold 80 rounds of ammunition for a Plasma weapon, Melta
+    weapon, Hellgun or Hellpistol, or 300 shots for any other Las weapon, 200 rounds
+    of ammunition for SP or Bolt weapons, and 60 shots for Flame weapons. A weapon
+    connected to a backpack power pack uses the power pack for its ammunition and
+    ignores its normal clip size. The Backpack Ammo Pack/Power Pack does not have the
+    capacity to power or carry ammo for Heavy Weapons, with the exception of Heavy
+    Stubbers, Heavy Bolters, and Heavy Flamers. Backpack ammo packs or power packs
+    weigh 25 kg. // Errata v1.4 p.135 — Las-weapon capacities split (80 rounds for
+    Hellgun/Hellpistol, 300 for other Las), Heavy Weapon support restricted to Heavy
+    Stubber/Bolter/Flamer. |  Name | Availability  | | --- | --- | |  Arrows/Quarrels
     | Common  | |  Backpack Power Pack | Rare  | |  Shot | Common  | |  Bullets |
     Plentiful  | |  Shells | Common  | |  Charge Pack (pistol) | Common  | |  Charge
     Pack (basic) | Common  | |  Charge Pack (heavy) | Rare  | |  Fuel (pistol) | Scarce  |

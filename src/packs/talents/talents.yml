@@ -349,7 +349,8 @@ data:
         greater distances without harm than the common man. Whenever he falls, he
         may take an Agility Test as a Free Action. Success, and each additional Degree
         of Success, reduces the distance fallen by a number of metres equal to the
-        character's Agility Bonus for the purposes of determining the total fall.
+        character's Agility Bonus for the purposes of determining the Damage from
+        the fall.
     cost: 0
     prerequisites: Agility 30
     source: Rogue Trader Core Rulebook
@@ -909,15 +910,17 @@ type: talent
 ---
 data:
     aptitudes: ''
-    benefit: The Explorer may work himself into a frenzy with one minute of preparation.
-        While Frenzied, he is immune to Fear, Pinning, stunning effects, the effects
-        of Fatigue, and gains a +10 bonus to Weapon Skill, Strength, Toughness, and
-        Willpower. However, he suffers a -20 penalty to Ballistic Skill, Intelligence,
-        and Fellowship, may not Parry, retreat, or flee, and must use the All-Out
-        Attack Action in melee combat if possible. He remains Frenzied for the duration
+    benefit: After spending one full Round fuelling his anger — by flagellation, drugs,
+        or other means — the Explorer goes into an uncontrolled rage on the next Round,
+        gaining a +10 bonus to Weapon Skill, Strength, Toughness, and Willpower but
+        suffering a -20 penalty to Ballistic Skill and Intelligence. The Explorer
+        must attack the nearest enemy in melee combat if possible; if not engaged
+        with the nearest enemy he must move toward and engage that enemy where reasonable.
+        While Frenzied he is immune to Fear, Pinning, stunning effects, and the effects
+        of Fatigue, may not Parry, retreat, or flee, and must use the All Out Attack
+        Manoeuvre in melee combat if possible. He remains Frenzied for the duration
         of the combat. Unless the character has a Talent that allows him to do so,
-        he may not use Psychic Techniques whilst in Frenzy. After ending his Frenzy,
-        the Explorer cannot Frenzy again for at least an hour.
+        he may not use Psychic Techniques whilst in Frenzy.
     cost: 0
     prerequisites: ''
     source: Rogue Trader Core Rulebook
@@ -2299,10 +2302,13 @@ type: talent
 ---
 data:
     aptitudes: ''
-    benefit: By spending a Half Action and uttering a sub-vocal litany of fear via
-        his vox synthesisers, the Explorer projects an aura of dread. All non-Mechanicus
-        creatures within a 50-metre radius treat the Explorer as if he had the Fear
-        (1) Trait for 2 minutes.
+    benefit: The Explorer's infrasonic dirges cause terror in the weak. All humans
+        within a 50-metre radius — regardless of their ability to hear — treat the
+        character as if he had a Fear Rating of 1. While incanting the dirge, the
+        Explorer may not communicate in any other way. The rite requires two minutes
+        of chanting, and most would not consider halting the incantations before completion.
+        Humans without auditory augmentation cannot hear infrasonic sound, and though
+        still affected will not know the Explorer is speaking.
     cost: 0
     prerequisites: Mechanicus Implants
     source: Rogue Trader Core Rulebook
@@ -2665,9 +2671,10 @@ type: talent
 data:
     aptitudes: ''
     benefit: Due to extensive training in unarmed combat, the Explorer's unarmed combat
-        attacks do 1d10-3+SB Damage and have the Primitive quality. As a result of
-        his advanced training against both armed and unarmed foes, he does not count
-        as Unarmed when making attacks against armed opponents.
+        attacks do 1d10-3 (+SB) Damage instead of the standard 1d5-3. Because of his
+        advanced training against both armed and unarmed foes, he does not count as
+        Unarmed when making attacks against armed opponents. The character's attacks
+        still count as having the Primitive quality.
     cost: 0
     prerequisites: Weapon Skill 35, Agility 35
     source: Rogue Trader Core Rulebook

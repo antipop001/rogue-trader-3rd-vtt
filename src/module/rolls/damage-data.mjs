@@ -100,6 +100,11 @@ export class Hit {
         if(!rollFormula || rollFormula === '') {
             rollFormula = 0;
         }
+        // Ship weapons store damage as a numeric modifier; each hit rolls 1d10 + that value (RT corebook p.215, lances p.216).
+        if (actionItem.type === 'shipWeapon') {
+            const bonus = Number(rollFormula) || 0;
+            rollFormula = bonus >= 0 ? `1d10+${bonus}` : `1d10${bonus}`;
+        }
         this.damageRoll = new Roll(rollFormula, attackData.rollData);
 
         if (attackData.rollData.hasAttackSpecial('Tearing')) {
@@ -180,14 +185,14 @@ export class Hit {
                 }
             }
 
-            // Add Accurate
+            // Add Accurate — RT corebook p.143: +1d10 per 2 DoS when Aimed, max +2d10
             if (attackData.rollData.action === 'Standard Attack' || attackData.rollData.action === 'Called Shot') {
-                if (attackData.rollData.hasAttackSpecial('Accurate')) {
-                    if (attackData.rollData.modifiers.aim === 10) {
-                        this.modifiers['accurate'] = attackData.rollData.dos - 1;
-                    }
-                    if (attackData.rollData.modifiers.aim === 20) {
-                        this.modifiers['accurate'] = (attackData.rollData.dos - 1) * 2;
+                if (attackData.rollData.hasAttackSpecial('Accurate') && attackData.rollData.modifiers.aim > 0) {
+                    const dice = Math.min(Math.floor(attackData.rollData.dos / 2), 2);
+                    if (dice > 0) {
+                        const accurateRoll = new Roll(`${dice}d10`, {});
+                        await accurateRoll.evaluate();
+                        this.modifiers['accurate'] = accurateRoll.total;
                     }
                 }
             }

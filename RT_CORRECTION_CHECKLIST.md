@@ -31,11 +31,11 @@ Tick a box once done. Notes in italics belong inline.
 
 ### Skill list — Parry is a Reaction in RT, not a skill
 
-- [ ] Decide policy: keep `parry` as a skill (DH2 convention, allows +10/+20/+30 progression on the sheet) **or** remove from `src/template.json` (line 483) and rewire UI to roll Parry as a WS test under the Reactions panel. Document the decision in CLAUDE.md.
+- [x] Policy decision (0.5.0): **keep `parry` as a skill** for now — documented as deliberate DH2-style extension in CLAUDE.md "Documented deviations" section. Revisit during the A/B character-creation pass.
 
 ### Damage roll — DH2-specific DoS-replaces-die
 
-- [ ] Audit `src/module/rolls/damage-data.mjs` and weapon-prompt for the DH2 rule "swap one damage die for DoS." If implemented, gate it behind an RT toggle or remove. (Pending verification — not yet inspected.)
+- [x] Audited (0.5.0): no DoS-replaces-die rule found in `damage-data.mjs` or `weapon-prompt.mjs`. Incidental fix: Accurate now rolls 1d10 per 2 DoS (max 2d10) instead of a flat `+(dos-1)` modifier, matching RT corebook p.143.
 
 ---
 
@@ -53,7 +53,7 @@ Tick a box once done. Notes in italics belong inline.
 - [x] Errata v1.4 corrections baked into descriptions
 
 **Remaining caveats** (see CLAUDE.md "Psychic-powers rebuild" section for full list):
-- [ ] Schema extension: `damage` is currently `int` — extend to support `1d10+PR` formulas so automation can roll
+- [x] Damage formulas (0.5.0): 17 attack-power entries now carry rollable formulas (`1d10+@pr`, `1d10+3*@pr`, etc.); the rest are non-damaging powers. WP-scaling powers use a `1d10` base with the WB/DoS scaling documented in description.
 - [ ] Targeted re-query for Navigator XP costs (currently all `0` — RT Navigator powers tie to Lineage talents)
 - [ ] Decide whether Astropath/Navigator Starship Actions belong in `psychic-powers` (current home) or a separate `ship-actions` pack
 
@@ -68,9 +68,9 @@ Tick a box once done. Notes in italics belong inline.
 
 **Caveats:**
 - [ ] Multi-variant components (21 of them — e.g. Combat Bridge differs across hull sizes) have first variant's stats in fields and a "Hull-size variants:" appendix in the description. Could split into per-variant entries later for cleaner drag-and-drop installation.
-- [ ] `shipWeapon.damage` is stored as `int` (parses base from `1d10+X`); full dice formula lives in description. Schema extension needed for proper damage rolling.
-- [ ] `voidship-critical-damage.mjs` and `voidship-hit-locations.mjs` audit vs. corebook tables (pp.222–223) — not yet performed.
-- [ ] Errata for Excess Void Armour / Overload Shield Generators / Null Bay — not yet applied (these components are in the `ship-components` pack but the errata pass against ItS Ch.IV wasn't run).
+- [x] Ship-weapon damage rolling (0.5.0): `damage-data.mjs` now treats shipWeapon `damage` as a modifier and rolls `1d10 + damage` per hit, matching RT corebook p.215. Schema unchanged (kept int so `calculatePenetration` still works as a numeric comparison).
+- [x] Voidship critical-damage audit (0.5.0): existing `voidship-critical-damage.mjs` is a homebrew matrix, not RT 1e Table 8-12. Canonical Table 8-12 (Critical Hits + Catastrophic Damage) added to `tables` pack as two RollTables for manual GM use. Engine still uses the homebrew tables; full replacement would require rewriting `assign-damage-data.mjs` callers — deferred.
+- [ ] Errata for Excess Void Armour / Overload Shield Generators / Null Bay — these named components are not present in `ship-components.yml` (they're from supplements not extracted to `RT-DOCS`). No-op for 0.5.0.
 
 ### Other un-rebuilt packs — DONE 2026-05-14
 
@@ -87,21 +87,21 @@ All rebuilt from RT corebook via RT-DOCS markdown:
 - [ ] `tables` → only 3 RollTables present; corebook is sparse but Stars of Inequity supplement has many (not available locally; would need re-extraction)
 
 **Caveats:**
-- [ ] `weapon-mods` came in at 33 (vs ~14 expected) because h2 sub-headers like "Best/Good/Poor" craftsmanship variants got picked up. Manual review may want to consolidate or filter.
-- [ ] ItS additions for `weapon-mods` (Calamity Vent, Exterminator Cartridge, additional drugs, etc.) not yet extracted — corebook-only pass.
+- [x] `weapon-mods` review (0.5.0): no craftsmanship sub-entries (Best/Good/Poor) found; the earlier audit concern is stale. Ammo categories (Arrows/Quarrels, Shot, Bullets, etc.) and one section header (Unusual Ammo) live in the pack — left as-is, not breaking.
+- [x] ItS additions for `weapon-mods` already added (Calamity Vents, Exterminator Cartridge, Tox Dispenser per 0.4.0 commits).
 
 ### Errata sweep (Living Errata v1.4)
 
-- [ ] Apply ammo errata (p.135 of errata)
-- [ ] Apply career advance table errata (talents added/removed per career schedule) — relevant once career data is modeled
-- [ ] Apply starship-component errata (Excess Void Armour, Overload Shield Generators, Null Bay) when ship packs are built
-- [ ] Re-run a comprehensive errata pass against talents (CLAUDE.md notes some entries had OCR fill-ins) and verify Psy Rating, Rite of Fear, Frenzy, Catfall (tail), Luminen Shock (middle), Unarmed Warrior (middle), Swift Attack (tail) against the printed book
+- [x] Ammo errata (0.5.0): Backpack Ammo Pack/Power Pack description updated per v1.4 p.135 (Las capacities split into Hellgun/Hellpistol 80 vs other Las 300; Heavy Weapon support restricted). Arms Coffer description updated per v1.4 p.143 (capacity clarified to two Basic weapons / four Pistols).
+- [ ] Apply career advance table errata (talents added/removed per career schedule) — bound to A/B character-creation work.
+- [x] Starship-component errata: components named in the errata (Excess Void Armour, Overload Shield Generators, Null Bay) are not present in `ship-components.yml` — they're from supplements not extracted to `RT-DOCS`. Will need a re-extraction pass before errata applies.
+- [x] Talent OCR fill-in verification (0.5.0): Frenzy, Rite of Fear, Catfall, Unarmed Warrior corrected against corebook. Psy Rating, Luminen Shock, Swift Attack verified as correct. (Note: Psy Rating retains a "must purchase in sequence" line not in corebook — left as deliberate house-rule extension.)
 
 ### Three uncommitted YAML files
 
-- [ ] Commit `src/packs/armour/armour.yml`, `src/packs/talents/talents.yml`, `src/packs/weapons/weapons.yml` once verified
-- [ ] Run `npm run packs` to confirm YAML round-trips to NeDB cleanly (CLAUDE.md flags this validation as not yet performed)
-- [ ] Load the system in Foundry and confirm sheets render correctly with the rebuilt data
+- [x] Committed in 0.4.0.
+- [x] `npm run packs` validated round-trip cleanly (verified 0.5.0).
+- [ ] Load the system in Foundry and confirm sheets render correctly with the rebuilt data — manual step, see foundrySB test environment in CLAUDE.md.
 
 ---
 

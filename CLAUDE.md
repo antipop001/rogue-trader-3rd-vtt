@@ -4,7 +4,7 @@ Unofficial Foundry VTT system for **FFG's Rogue Trader 1e** content using **Dark
 
 Forked from mrkeathley's Dark Heresy 2 system. Authored by MortarionUA. Compatible with Foundry VTT v13–v14.
 
-**Current version: 0.4.0** (released 2026-05-14). See https://github.com/antipop001/rogue-trader-3rd-vtt/releases/tag/0.4.0 for release notes.
+**Current version: 0.5.0** (released 2026-05-14). See https://github.com/antipop001/rogue-trader-3rd-vtt/releases/tag/0.5.0 for release notes. 0.5.0 closes the "everything before the A/B character-creation decision" punch list: damage-roll audit (Accurate now rolls 1d10 per 2 DoS instead of a flat modifier), ship-weapon damage now properly rolls 1d10 + listed Damage per hit (RT corebook p.215), 17 psychic-power attack-power damage fields now carry rollable formulas, ammo and Arms Coffer errata applied (v1.4 p.135/p.143), four corebook-OCR talent fill-ins corrected (Frenzy, Rite of Fear, Catfall, Unarmed Warrior), and the canonical RT Table 8-12 Critical Hits chart was added to the `tables` pack.
 
 ## Test environment (foundrySB)
 
@@ -109,7 +109,7 @@ The errata document was queried for talent and armor changes. **Weapon errata wa
 
 Two sources for RT content; prefer the local one:
 
-1. **`RT-DOCS/`** (local, fast) — pre-extracted markdown of CoreBook (split as `CoreBook-1-200.pdf/markdown.md` + `CoreBook-201-401.pdf/markdown.md`), Into the Storm, and Errata v1.4. Each PDF also has a `pages/page-N/` directory for per-page lookups. `grep` and direct `Read` work here, no API latency. Use this first for any new content pass.
+1. **`/mnt/project_data/RT/RT-DOCS/`** (local, fast — moved out of repo 2026-05-14) — pre-extracted markdown of CoreBook (split as `CoreBook-1-200.pdf/markdown.md` + `CoreBook-201-401.pdf/markdown.md`), Into the Storm, and Errata v1.4. Each PDF also has a `pages/page-N/` directory for per-page lookups. `grep` and direct `Read` work here, no API latency. Use this first for any new content pass.
 2. **NotebookLM** (notebook `cd87d917-4cea-45b3-b27c-a149070b1826`) — only when you need synthesis across sources or the markdown OCR is too noisy for a specific extract. Auth via `nlm login --manual --file /home/ahermon/cookies.txt`; if `cookies.json` ends up corrupt, see `notebooklm_mcp_setup.md` memory for the flat-dict-rewrite fix.
 
 ### RT-DOCS quirks (learned the hard way)
@@ -258,18 +258,30 @@ Future work: auto-roll the Psychic Phenomena and Perils of the Warp tables (in `
 - **RT corebook has only 3 player psyker disciplines** (Telepathy, Divination, Telekinesis), NOT 5. Biomancy and Pyromancy are DH2/supplement-only and were correctly absent from RT 1e — the prior CLAUDE.md/RT_CORRECTION_CHECKLIST.md text saying "5 core disciplines" was wrong.
 - **Astropathic Choirs is a relay-assistance rule** (corebook p.162; Errata v1.4 raised max bonus from +5 to +10), not a purchasable power — not extracted as a compendium entry. The only Astropath-exclusive power is **Astral Telepathy** which is in the Telepathy discipline.
 
-**Schema caveats:**
-- `damage` is stored as `0` for every attack power — the actual `1d10+PR` formulas live in the description because the schema field is just `int`. Automation needs the schema extended.
+**Schema caveats (updated 0.5.0):**
+- 17 attack powers now carry RT-canon Roll formulas in `damage` (e.g. `1d10+@pr`, `1d10+3*@pr`). The remaining 62 powers don't deal direct damage and keep `damage: 0`. WP-scaling powers (Lidless Stare, Scourge of the Red Tide) carry a base `1d10` and explain the WB/DoS scaling in description text.
 - Navigator XP costs are `0` placeholders — RT Navigator powers are tied to Lineage talents/career advances, not flat XP. Worth a targeted re-query.
 - `penetration: 99` is a sentinel for "Ignores Armour" (Psychic Scream).
 - Errata corrections from v1.4 are baked into the descriptions (with `Errata:` prefix when an entry was modified).
 
-### Bottom line (as of 0.4.0)
+## Documented deviations from RT 1e (preserved into 0.5.0)
 
-The repo is now a **DH2-derived engine with RT 1e mechanics + RT-canon content across all 14 compendia**. Three layers, two done:
+These are deliberate carry-overs from the DH2 fork that are NOT being changed in 0.5.0. They're either tightly coupled to the A/B character-creation decision or low-priority cosmetic. Listed so future passes don't "rediscover" them as bugs.
 
-1. **Combat math fixes** ✓ 2026-05-14. All 6 audit fixes plus 2 the audit missed (Semi-Auto Burst type, Stun type). Evasion split into Dodge/Parry.
-2. **Content rebuild** ✓ 2026-05-14. ~881 entries across 14 packs. Only `tables` is still sparse (3 DH2 RollTables); Stars of Inequity / Edge of the Abyss supplements are not local, so adding RT-specific GM tables would need re-extraction.
-3. **Character creation Path A vs B** — **OPEN, next major decision**. The DH2 creation pipeline (Home World × Background × Role × Aptitudes) still ships in `src/module/rules/{homeworlds,backgrounds,roles,divinations}.mjs` and `acolyte.aptitudes` is still in `template.json`. Decide whether to (A) replace the data in those modules with RT equivalents but keep the 3-axis UI, or (B) rip the lot out and build an Origin Path + Career advance-table model with a creation wizard.
+1. **Parry is a skill, not just a Reaction.** `src/template.json:475` defines `parry` as a WS-based skill. RT 1e treats Parry as a Reaction (a WS test, no separate skill ranks). Keeping the skill lets characters spend XP advances on +10/+20/+30 Parry — useful as a house-rule extension, but unfaithful to RT.
+2. **`athletics` and `stealth` are consolidated skills.** DH2 collapsed Climb/Swim into Athletics and Concealment/Silent Move/Shadowing into Stealth. RT 1e keeps them split. The current skills work; the names just don't line up with the corebook.
+3. **DarkHeresy* sheet class names** (`DarkHeresyPsychicPowerSheet`, `DarkHeresyItemContainerSheet`, etc.). Purely cosmetic; renaming would touch many template files for zero functional gain. Defer.
+4. **`npc.threatLevel` field exists but no encounter-budget tool consumes it.** DH2-only concept; RT relies on GM judgment. Field is harmless flavor data; will be removed if the A/B pass cleans `template.json`.
+5. **Skill specialty lists drift from RT canon.** Audit (0.5.0): Common Lore 8 vs 14, Forbidden Lore 6 vs 11, Scholastic Lore 9 vs 16, Linguistics is a DH2 consolidation (RT splits into Speak Language + Literacy + Secret Tongue), Trade 10 vs 13. Changing these is a breaking schema migration (specialty keys are referenced by existing actors); deferred to the A/B pass so it can be done as one coordinated migration.
+6. **Voidship critical-damage subsystem is homebrew.** `voidship-critical-damage.mjs` uses a Nonpenetrating/Penetrating/Critical × Component × 1d10 matrix that doesn't match RT 1e Table 8-12. The canonical RT table is now in the `tables` pack as two RollTables (`Critical Hits to Starships`, `Catastrophic Damage`) for manual GM use. The engine still uses the homebrew tables; replacing them would require rewriting `assign-damage-data.mjs` callers and is out of scope for 0.5.0.
+7. **`getCriticalDamage` and voidship hit-location data** (Main/Prow/Bridge/Rear) describe which arc was hit *from* but are not the RT 1e Critical Hit table targets. See #6 above; documented for clarity.
+
+### Bottom line (as of 0.5.0)
+
+The repo is now a **DH2-derived engine with RT 1e mechanics + RT-canon content across all 14 compendia + canonical critical-hit RollTable + corrected damage rolling**. Three layers, two done:
+
+1. **Combat math fixes** ✓ 2026-05-14. All 6 audit fixes plus 2 the audit missed (Semi-Auto Burst type, Stun type). Evasion split into Dodge/Parry. 0.5.0 added the Accurate fix (1d10 per 2 DoS, not flat).
+2. **Content rebuild** ✓ 2026-05-14. ~890 entries across 15 packs. 0.5.0 added the canonical RT Critical Hits and Catastrophic Damage tables; the rest of the `tables` pack remains sparse (Stars of Inequity / Edge of the Abyss not local — would need re-extraction).
+3. **Character creation Path A vs B** — **OPEN, next major decision**. The DH2 creation pipeline (Home World × Background × Role × Aptitudes) still ships in `src/module/rules/{homeworlds,backgrounds,roles,divinations}.mjs` and `acolyte.aptitudes` is still in `template.json`. Decide whether to (A) replace the data in those modules with RT equivalents but keep the 3-axis UI, or (B) rip the lot out and build an Origin Path + Career advance-table model with a creation wizard. The skill-specialty drift (deviation #5 above) should be addressed in the same pass.
 
 See `RT_CORRECTION_CHECKLIST.md` for the punch list with completed items checked off.

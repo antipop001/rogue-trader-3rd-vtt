@@ -302,7 +302,7 @@ data:
     attackBonus: 0
     attackType: 'Psychic Bolt'
     cost: 0
-    damage: 0
+    damage: '1d5'
     damageType: 'Energy'
     discipline: 'Navigator'
     description: 'Novice: The Navigator must make a Hard (–20) Willpower Test. Success means that for a radius equal to 1 VU x the Navigator''s Willpower Bonus the warp space has become churned and clouded. Ships wishing to enter or exit the warp suffer a –10 penalty to any Pilot (Space Craft) Skill Test per degree of success. Failing this Test causes the ship to suffer 1 point of hull integrity damage that cannot be reduced by Void Shields or armour. Adept: As per Novice, except the radius becomes equal to 2 VUs x the Navigator''s Willpower Bonus. Vessels that attempt to enter or exit the warp through this interference suffer 1d5 points of damage should the Pilot Test fail. This damage cannot be reduced by Void Shields or armour. Master: As per Adept, but ships failing the Pilot Test suffer 1d5 points of damage, plus one additional point of damage per degree of success. This damage cannot be reduced by Void Shields or armour. // Errata: Errata v1.4 clarifies that unless otherwise noted, using a Navigator Power is a Half Action. // Damage formula: 1d5'
@@ -332,7 +332,7 @@ data:
     attackBonus: 0
     attackType: 'Psychic Barrage'
     cost: 0
-    damage: 0
+    damage: '1d10+4'
     damageType: 'Energy'
     discipline: 'Navigator'
     description: 'Novice: The Navigator does not make any Test to activate this power. This power projects itself in a 30 degree cone from the Navigator out to a range of 10 metres. It does 1d10+4 Energy Damage and has a penetration of 2. All living creatures caught in the arc of this power must make a Challenging (+0) Agility Test or suffer the damage of the power. The Novice must make a Routine (+20) Toughness Test or suffer one level of Fatigue. Adept: As per Novice, except that the power now functions as a Flamer in terms of range, damage, and other special qualities. In addition this power does two additional Wounds for every 10 Corruption Points the target has. The Adept does not suffer fatigue for using this power. Master: As per Novice, except that the power now functions as a Heavy Flamer in terms of range, damage, and other special qualities. In addition this power does four additional Wounds for every 10 Corruption Points the target has. // Errata: Errata v1.4 clarifies that unless otherwise noted, using a Navigator Power is a Half Action. // Damage formula: 1d10+4'
@@ -422,7 +422,7 @@ data:
     attackBonus: 0
     attackType: 'Psychic Bolt'
     cost: 0
-    damage: 0
+    damage: '1d10'
     damageType: 'Energy'
     discipline: 'Navigator'
     description: 'Novice: The Navigator makes an Opposed Willpower Test with anyone looking into his Warp Eye within 15 metres. Make a single test for the Navigator and compare it to the results of each person gazing into his Warp Eye. Should the Navigator achieve more degrees of success, the opponent suffers 1d10+ the Navigator''s unmodified Willpower Bonus in Energy damage, plus an additional 1d10 for every degree of success. This damage is not reduced by armour (unless warded), but the opponent may use his Toughness Bonus. Adept: As per Novice, however the damage is increased to 1d10+ double the Navigator''s unmodified Willpower Bonus in Energy Damage, plus an additional 1d10 for every degree of Success. In addition, this ability can also damage non-living beings, and inanimate objects (bulkheads, structures, etc). Because of the taxing nature of this power, using it causes the Navigator to suffer one Wound and one level of Fatigue. Should the Navigator fail the Willpower Test by one degree or more, he suffers two Wounds instead of one. Master: At this level, the Navigator is able to unleash the full fury of the warp. An angry red tide of energy boils out from his Warp Eye. Damage is dealt as the Adept level, however with this full force, it is almost impossible to avoid the overwhelming gaze of the Navigator. Targets do not get any bonus to their Test for looking away, as the roiling tides of the warp surround them. Again, due to the taxing nature of using this power, the Navigator suffers 1d5 Wounds (not reduced by armour or Toughness) and is unable to make use of any other Navigator powers until the end of the combat. Should the Navigator fail the Willpower Test by one degree or more, he suffers 1d10 levels of Fatigue. // Errata: Errata v1.4 clarifies that unless otherwise noted, using a Navigator Power is a Half Action. // Damage formula: 1d10+WB Energy + 1d10 per DoS'
@@ -452,7 +452,7 @@ data:
     attackBonus: 0
     attackType: 'Psychic Bolt'
     cost: 0
-    damage: 0
+    damage: '1d10'
     damageType: 'Rending'
     discipline: 'Navigator'
     description: 'Novice: To use this power, the Navigator makes an Opposed Willpower Test against a Target in his direct line of sight within 100 metres. Should he achieve more degrees of success, he does 1d10 Rending Damage to the Target. This damage may be reduced by Toughness, but not by armour (unless warded). In addition to this, the Target is also automatically knocked prone. Adept: As per Novice except that the damage is increased to 1d10 Rending Damage with bonus damage equal to the degrees of success of the Opposed Willpower Test. Master: As per Novice except that the damage increases to 2d10 Rending Damage with bonus damage equal to the degrees of success of the Opposed Willpower Test. In addition to being knocked down, the Target must also make a Pinning Test, unless they are immune to Pinning. // Errata: Errata v1.4 changed the targeting of Novice to ''against a Target in his direct line of sight within 100 metres'' and clarified that Navigator powers are Half Actions. // Damage formula: 1d10 Rending'
@@ -572,7 +572,7 @@ data:
     attackBonus: 0
     attackType: 'Psychic Bolt'
     cost: 300
-    damage: 0
+    damage: '1d10+@pr'
     damageType: 'Energy'
     discipline: 'Telepathy'
     description: 'The psyker is able to form a bridge between his mind and the mind of the target. Through this connection, the psyker is able to pour through the raw power of the warp into the target''s mind, blowing out blood vessels and causing a psycho-induced stroke. Many fear the use of this power due to the devastating effects it has on both the psyker and the target. When using this power, the psyker makes an Opposed Willpower Test against the target. Should the psyker succeed, the target suffers 1d10+ Psy Rating damage. This damage cannot be reduced due to armour (unless the armour is warded) or Toughness. Daemons and other creatures of the warp are immune to this ability, as are Untouchables and other similar types. Should the psyker fail the Focus Power Test, he suffers 1d5 Insanity Points as he is witness to the awful visions of Chaos. // Damage formula: 1d10+PR'
@@ -752,7 +752,7 @@ data:
     attackBonus: 0
     attackType: 'Psychic Bolt'
     cost: 200
-    damage: 0
+    damage: '1d10+@pr'
     damageType: 'Rending'
     discipline: 'Telekinesis'
     description: 'Using the power of his mind, the psyker is able to create a telekinetic grip on a living creature''s vital organs and squeeze them. The psyker makes an Opposed Willpower Test against the target. If successful, he inflicts 1d10 Rending Damage with the Shocking Quality to the target, with a bonus of +1 Damage per Psy Rating. This damage is not reduced for armour (unless warded) or Toughness Bonus. Additionally, this power will only work on living beings and animals. It will not work against daemons, non-living, or other denizens of the warp. // Damage formula: 1d10+PR Rending'
@@ -902,7 +902,7 @@ data:
     attackBonus: 0
     attackType: 'Psychic Bolt'
     cost: 500
-    damage: 0
+    damage: '1d10'
     damageType: 'Energy'
     discipline: 'Theosophamy'
     description: 'Banishment disrupts the connection between daemons and the warp, and thus only affects target with the Daemonic Trait (or creatures determined to be warp-entities by the GM). To use the power, the psyker makes an Opposed Willpower Test against the target. For every Degree of Success on the Focus Power Test, the target takes 1d10 points of damage, ignoring armour and Toughness. Should the psyker win the Test by 5 or more Degrees of Success, the entity is flung screaming back into the warp, and is utterly destroyed! // Damage formula: 1d10 per DoS'
@@ -932,7 +932,7 @@ data:
     attackBonus: 0
     attackType: 'Psychic Bolt'
     cost: 200
-    damage: 0
+    damage: '1d10'
     damageType: 'Rending'
     discipline: 'Theosophamy'
     description: 'This technique only affects individuals with mutations (including minor ones) and Navigators—who are themselves mutants. It does not affect abhumans and aliens. A successful Focus Power Test grants the psyker the Fear (1) Trait against those affected by the technique. Each turn they begin within 10 metres of the psyker, they must make a Hard (–20) Willpower Test or take 1d10 R damage as their tainted body rebels. This damage is not reduced by armour or Toughness. // Damage formula: 1d10 R'
@@ -992,7 +992,7 @@ data:
     attackBonus: 0
     attackType: 'Psychic Barrage'
     cost: 300
-    damage: 0
+    damage: '@pr'
     damageType: 'Energy'
     discipline: 'Theosophamy'
     description: 'Seal the Breach allows the psyker to sever the connection between the mortal universe and the warp. Creatures with the Daemonic Trait that draw upon this energy will have their power leeched away as they attempt to exist within real space; they will perish if they fail to re-establish a connection with their realm (or be forced to flee back to it). In addition, this technique will also affect other psykers and those who draw upon the warp (such as sorcerers). The psyker makes a single Opposed Willpower Test against all daemonic creatures within a number of metres equal to the range of this technique. Should the psyker achieve more successes, the daemonic take damage equal to the psyker''s Psy Rating for every degree of success on this Test. This damage cannot be reduced by armour. Psykers, and warp-sorcerers, suffer a -10 penalty on their Tests to manifest psychic powers and techniques for every Degree of Success instead of damage. // Damage formula: Psy Rating per DoS'
@@ -1472,7 +1472,7 @@ data:
     attackBonus: 0
     attackType: 'Psychic Bolt'
     cost: 0
-    damage: 0
+    damage: '1d10'
     damageType: 'Energy'
     discipline: 'Navigator'
     description: 'If a Navigator opens his warp eye fully, anyone gazing into its depths will witness the power and mind breaking unreality of the warp. In an instant, they witness the chaos boiling beneath the skin of existence and for many, it is the last thing they ever see. Novice: The Navigator makes an Opposed Willpower Test with anyone looking into his Warp Eye. Make a single test for the Navigator and compare it to the results of each of his opponents. If the Navigator achieves more degrees of success, the opponent suffers 1d10+ the Navigator''s Willpower bonus in Energy damage. This damage is not reduced by armour or Toughness Bonus. Anyone taking damage from this power is also Stunned for 1 round as they are ripped with agony. Using this power is taxing and inflicts a level of Fatigue on the Navigator. If the Navigator fails this Test by one degree of failure or more, he suffers two levels of Fatigue. Adept: As above, however, the damage is increased to 2d10+ (the Navigator''s WP bonus) and the time the victims are Stunned increases to 1d5 rounds. Victims also suffer 1d5 Insanity Points. Master: As above, with the additional effect that any creature possessing an Intelligence of 20+ suffering damage from this power must make an immediate Difficult (–10) Toughness Test or be slain. If they pass, they suffer 1d10 Insanity points rather than 1d5. Avoiding a Navigator''s gaze: The Lidless Stare will affect anyone, friend or foe, that looks into the Navigator''s third eye when this power is activated. This has an effective range of 15m (reduced to 5m in fog or mist) and has no effect on unliving targets, Untouchables, and daemons or other entities from the Warp. Those forewarned can look away, though even then being within line of sight of a Navigator is dangerous. The power of his eye is persuasive, and looking away only grants them +30 on their rolls to resist its power. Those who are unaware of the Navigator''s presence gain this bonus as well. // Errata: Action changed to Full Action per Errata v1.4. // Damage formula: 1d10+WPB to 2d10+WPB Energy'
@@ -1592,7 +1592,7 @@ data:
     attackBonus: 0
     attackType: 'Psychic Bolt'
     cost: 0
-    damage: 0
+    damage: '1d10'
     damageType: 'Impact'
     discipline: 'Telekinesis'
     description: 'Telekinesis is the ability to move physical objects with force of will. The psyker''s initial gift in Telekinesis has several applications. The psyker may lift or move any object within his range and line of sight that does not exceed the weight limit of 10 kg x Psy Rating. The object may be moved slowly within the range of the power. Objects move far too slowly to be used as an attack, however. Additionally, this raw lifting ability does not function on living beings, as the smallest movements tend to unbalance the psyker''s mental focus. Once an object is released from Telekinesis, it begins to slowly settle back to earth as the last vestiges of the power leave it. A more forceful approach can be taken with lighter objects, weighing up to 5 kg x Psy Rating. These may be accelerated with greater speed and force, out to a maximum of 5 metres x Psy Rating. To hit a target, the psyker makes a Ballistic Skill Test. Damage is equal to 1d10 Impact Damage plus 1 point per 5 kg of the missile''s weight. Lastly, the psyker can direct a sharp wave of force against a target to shove it away. The psyker must make an Opposed Test, pitting his Willpower against the target''s Strength. If the psyker wins, he knocks the target to the ground and pushes it away a number of metres equal to his Psy Rating. // Damage formula: 1d10 Impact + 1 per 5 kg'
@@ -1652,7 +1652,7 @@ data:
     attackBonus: 0
     attackType: 'Psychic Bolt'
     cost: 100
-    damage: 0
+    damage: '1d10+2+2*@pr'
     damageType: 'Impact'
     discipline: 'Telekinesis'
     description: 'The psyker can hurl a bolt of force at an opponent. If he activates the Technique, he hits the target with a psychic ranged attack that deals 1d10+2 Impact Damage, with a bonus of +2 Damage per point of effective Psy Rating. This attack can be dodged in the same manner as any other ranged attack, but if it hits and the psyker scores at least 3 Degrees of Success, the target is also pushed back 1d5 metres and knocked prone. // Errata: Damage scaling increased, base damage updated to 1d10+2, push back and prone effect added on 3+ DoS. // Damage formula: 1d10+2 Impact + 2 per PR'
@@ -1682,7 +1682,7 @@ data:
     attackBonus: 0
     attackType: 'Psychic Bolt'
     cost: 200
-    damage: 0
+    damage: '1d10+2*@pr'
     damageType: 'Impact'
     discipline: 'Telekinesis'
     description: 'The psyker can wrap a target in crushing bands of force. Make an Opposed Test, pitting the psyker''s Willpower against the target''s Toughness. If the psyker wins, he may inflict 1d10 Impact Damage with a bonus of +2 Damage per Psy Rating. The psyker may also Grapple the opponent (see page 240), substituting his Willpower bonus for his Strength bonus. This Technique cannot be dodged. // Errata: Damage scaling increased from +1 per PR to +2 per PR. Clarified that the attack cannot be dodged. // Damage formula: 1d10 Impact + 2 per PR'
@@ -1712,7 +1712,7 @@ data:
     attackBonus: 0
     attackType: 'Psychic Barrage'
     cost: 200
-    damage: 0
+    damage: '1d10+3*@pr'
     damageType: 'Rending'
     discipline: 'Telekinesis'
     description: 'Shaping the force of the psyker''s mind into a blade of destructive force, the Telekinetic Weapon is a powerful manifestation of the psyker''s discipline and control. The Telekinetic Weapon counts as a sword in the hand of the psyker, but there is no penalty for lacking the required Weapon Training Talent. To strike with the Psychic Weapon, the psyker makes a Weapon Skill Test—the Telekinetic weapon may be parried, but is not destroyed by weapons with the Power Field quality (see page 116). If the weapon hits, it does 1d10 Rending Damage with a bonus of +3 Damage per Psy Rating. Additionally, the weapon has a Penetration value equal to the psyker''s Psy Rating. (The psyker does not add his Strength Bonus to the Damage he deals). // Errata: Damage scaling increased from +1 per PR to +3 per PR. FAQ clarified that Strength Bonus is not added to damage. // Damage formula: 1d10 Rending + 3 per PR // Penetration: Psy Rating'
@@ -1772,7 +1772,7 @@ data:
     attackBonus: 0
     attackType: 'Psychic Bolt'
     cost: 400
-    damage: 0
+    damage: '1d10+2*@pr'
     damageType: 'Rending'
     discipline: 'Telekinesis'
     description: 'This technique is an elegant manifestation of the psyker''s killing will in the form of multiple hovering blades of destructive force, visible as hazy distortions in the air. When activated, the psyker brings a number of force shards into existence equal to his effective Psy Rating. The force shards hover around the psyker, acting as a potential barrier to incoming attacks. Any opponent attacking the psyker when he has one or more force shards orbiting suffers a –10 to Weapon Skill or Ballistic Skill tests. The force shards can be launched at targets as a ranged attack in subsequent turns. The psyker makes a Challenging (+0) Willpower Test to hit the target. On a success he hits with one force shard, plus one additional hit per degree of success, to a maximum number of hits equal to the number of force shards. Each shard deals 1d10 Rending Damage with a bonus of +2 Damage per Psy Rating and a Penetration equal to the Psy Rating used in the Technique. The shards may hit any number of targets within two metres of the primary target. This attack can be dodged in the same manner as any other ranged attack. // Errata: Number of shards changed to effective Psy Rating. Launching changed to a Challenging (+0) Willpower Test. Damage scaling increased to +2 per PR. Dodge rules clarified. // Damage formula: 1d10 Rending + 2 per PR // Penetration: Psy Rating'
@@ -1802,7 +1802,7 @@ data:
     attackBonus: 0
     attackType: 'Psychic Barrage'
     cost: 500
-    damage: 0
+    damage: '2d10+3*@pr'
     damageType: 'Impact'
     discipline: 'Telekinesis'
     description: 'The psyker has developed his powers to the furthest reaches. He can generate a rain of force bolts that can smash his enemies in a savage storm of psychic fury. The psyker can pick out a number of targets equal to his Psy Rating for each round that he maintains this power. The psyker must make a Challenging (+0) Willpower Test to hit each of his targets, and deals 2d10 Impact Damage with a bonus of +3 Damage per Psy Rating. No target may be hit more than once a round. This attack can be dodged in the same manner as any other ranged attack. // Errata: Attack roll changed from Ballistic Skill Test to Challenging (+0) Willpower Test. Damage scaling increased to +3 per PR. Dodge rules clarified. // Damage formula: 2d10 Impact + 3 per PR'
@@ -2042,7 +2042,7 @@ data:
     attackBonus: 0
     attackType: 'Psychic Bolt'
     cost: 300
-    damage: 0
+    damage: '1d10+@pr'
     damageType: 'Impact'
     discipline: 'Telepathy'
     description: 'By focusing all of his will behind one massive psychic scream, the psyker can injure or stun an opponent out to a range of 5m x Psy Rating. If the psyker succeeds on his Focus Power Test, he deals 1d10 Impact Damage +1 additional Damage per point of effective Psy Rating. This attack ignores Armour. The target must pass a Toughness Test with a penalty equal to 5 x the psyker''s effective Psy Rating, or be Stunned for one Round, plus a number of additional Rounds equal to his Degrees of Failure. // Errata: Completely redefined by Errata v1.4 (Damage changed from 1d10+PR to 1d10+1 per effective PR, Penetration is now Ignores Armour, Target Toughness penalty clarified to 5 x effective PR). // Damage formula: 1d10 Impact Damage +1 additional Damage per point of effective Psy Rating // Penetration: Ignores Armour'

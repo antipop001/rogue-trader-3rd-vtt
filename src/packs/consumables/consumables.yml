@@ -334,8 +334,11 @@ data:
   description: A long protective case of many quick-release compartments and sockets
     for power packs designed to be slung over the back. It is intended to protect
     the diverse wargear of a professional militant from the environment and pilfering
-    hands.
-  source: Rogue Trader Core Rulebook
+    hands. The Arms Coffer has enough room for two Basic weapons or four Pistol
+    weapons (or one Basic weapon and up to two Pistol weapons), plus four clips of
+    Basic weapon ammunition or eight clips of Pistol weapon ammunition (one Basic
+    clip takes the space of two Pistol clips). // Errata v1.4 (p.143).
+  source: Rogue Trader Core Rulebook, p.143
   backpack:
     inBackpack: false
 img: systems/rogue-trader-3rd/icons/talents/blue/b_01.png

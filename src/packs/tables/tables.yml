@@ -828,4 +828,214 @@ results:
 formula: 1d100
 replacement: true
 displayRoll: true
+---
+name: Critical Hits to Starships
+img: systems/rogue-trader-3rd/icons/voidship/voidship-1.png
+description: 'Rogue Trader corebook Table 8-12 (p.232). Roll when a weapon meets
+  its Crit Rating or when a Crippled ship takes damage past its Armour. Add to the
+  result any Critical Hits the target has already taken since being Crippled. On
+  11+, see the Catastrophic Damage sub-table.'
+results:
+  - type: 0
+    weight: 1
+    range:
+      - 1
+      - 1
+    drawn: false
+    documentCollection: ''
+    _id: RTCrit01HoledAA
+    text: 'Holed: A lucky hit has wrenched open the ship''s hull, exposing it to
+      space. The attacker selects one Component (only choosing ones he knows of)
+      that is not the bridge or plasma/warp drives. Emergency bulkheads slam into
+      place to seal off the compartments, but this Component is depressurised.'
+    img: icons/svg/d20-black.svg
+    documentId:
+    flags: {}
+  - type: 0
+    weight: 1
+    range:
+      - 2
+      - 2
+    drawn: false
+    documentCollection: ''
+    _id: RTCrit02IntDmgBB
+    text: 'Internal Damage: The force of the hit ruptures bulkheads and smashes
+      machinery. The attacker selects one Component (only choosing ones he knows
+      of) that is not the bridge or plasma/warp drives. This Component is damaged.'
+    img: icons/svg/d20-black.svg
+    documentId:
+    flags: {}
+  - type: 0
+    weight: 1
+    range:
+      - 3
+      - 3
+    drawn: false
+    documentCollection: ''
+    _id: RTCrit03SensorCC
+    text: 'Sensors damaged: The ship''s auspex arrays have been knocked out, leaving
+      the vessel blind. Until the damage is repaired, all shooting tests suffer a
+      −30 to hit, and all sensory tests to detect anything beyond the ship''s
+      immediate engagement range automatically fail. Repairs must be attempted in
+      the void.'
+    img: icons/svg/d20-black.svg
+    documentId:
+    flags: {}
+  - type: 0
+    weight: 1
+    range:
+      - 4
+      - 4
+    drawn: false
+    documentCollection: ''
+    _id: RTCrit04ThrustDD
+    text: 'Thrusters damaged: The ship''s manoeuvring thrusters are smashed, venting
+      randomly and leaking fuel. Roll 1d10. On 1-7, the ship can still manoeuvre,
+      albeit slowly — reduce the Manoeuvrability bonus by −20. On 8-10, the
+      thrusters are completely damaged and the ship cannot turn. Damage can be
+      repaired.'
+    img: icons/svg/d20-black.svg
+    documentId:
+    flags: {}
+  - type: 0
+    weight: 1
+    range:
+      - 5
+      - 5
+    drawn: false
+    documentCollection: ''
+    _id: RTCrit05FireFireE
+    text: 'Fire!: Alarms scream through the hull as hungry flames roar through
+      passageways and compartments. The attacker selects one Component (only those
+      he knows of) that is not the bridge or plasma/warp drive — this Component
+      is now on fire (follows the standard shipboard fire rules).'
+    img: icons/svg/d20-black.svg
+    documentId:
+    flags: {}
+  - type: 0
+    weight: 1
+    range:
+      - 6
+      - 6
+    drawn: false
+    documentCollection: ''
+    _id: RTCrit06EngCripFF
+    text: 'Engines Crippled: Something pierces the immense drive tubes in the ship''s
+      stern, bleeding plasma into the void. Roll 1d10. On 1-7 the plasma drives are
+      heavily damaged — reduce Speed by half. On 8-10 the drives are wrecked —
+      reduce Speed to 1. Damage can be repaired.'
+    img: icons/svg/d20-black.svg
+    documentId:
+    flags: {}
+  - type: 0
+    weight: 1
+    range:
+      - 7
+      - 7
+    drawn: false
+    documentCollection: ''
+    _id: RTCrit07SurlyMSGG
+    text: 'Surly Techsprites: Massive electrical surges knock out systems across
+      the ship. Roll 1d10 for every Component — on a 4+, the Component now counts
+      as unpowered. Each must be repaired individually before it can receive power
+      again. Morale takes 1d5 damage from the spooky atmosphere.'
+    img: icons/svg/d20-black.svg
+    documentId:
+    flags: {}
+  - type: 0
+    weight: 1
+    range:
+      - 8
+      - 8
+    drawn: false
+    documentCollection: ''
+    _id: RTCrit08DecapHHH
+    text: 'Decapitation: A lucky hit strikes the ship''s bridge, sending shrapnel
+      scything across the compartment and opening it to space! All crewmembers on
+      the bridge must make a Dodge reaction or be hit by shrapnel doing 2d10
+      Explosive damage. If the damage result is 12+, the bridge Component is also
+      depressurised. If 16+, the Component is damaged.'
+    img: icons/svg/d20-black.svg
+    documentId:
+    flags: {}
+  - type: 0
+    weight: 2
+    range:
+      - 9
+      - 10
+    drawn: false
+    documentCollection: ''
+    _id: RTCrit09HullBreaI
+    text: 'Hull Breach: The hull is ripped asunder, opening compartments to the
+      void and doing massive structural damage. The attacker selects 1d5 Components
+      (only those he knows of, not the bridge). Roll 1d10 for each — on 1-7 the
+      Component is damaged and depressurised; on 8-10 destroyed and all crew inside
+      killed. The ship reduces both Crew Population and Morale by half (instead of
+      rolling separately).'
+    img: icons/svg/d20-black.svg
+    documentId:
+    flags: {}
+formula: 1d10
+replacement: true
+displayRoll: true
+---
+name: Catastrophic Damage
+img: systems/rogue-trader-3rd/icons/voidship/voidship-1.png
+description: 'Rogue Trader corebook Table 8-12 follow-up (p.233). Triggered when
+  a Critical Hits roll reaches 11+ (Catastrophic Damage). Roll 1d10 here to
+  determine the cataclysm.'
+results:
+  - type: 0
+    weight: 7
+    range:
+      - 1
+      - 7
+    drawn: false
+    documentCollection: ''
+    _id: RTCata01HulkAAA
+    text: 'Space Hulk: Catastrophic damage leaves the ship a drifting, smouldering
+      wreck. Roll 1d10 for each Component — on 1-2 untouched but unpowered, on
+      3-7 depressurised and damaged, on 8-10 destroyed and all crew inside killed.
+      Reduce Crew Population to 1d10.'
+    img: icons/svg/d20-black.svg
+    documentId:
+    flags: {}
+  - type: 0
+    weight: 2
+    range:
+      - 8
+      - 9
+    drawn: false
+    documentCollection: ''
+    _id: RTCata02PlasmBBB
+    text: 'Plasma Drive Explosion: The starship''s plasma drive explodes in a
+      single cataclysmic blast. All starships within 1d10 VUs must make a Hard
+      (−20) Pilot (Space Craft)+Manoeuvrability Test or be struck by flaming
+      debris — treat as 1d5 macrobattery hits doing 1d10+4 damage each (void
+      shields and Armour protect normally).'
+    img: icons/svg/d20-black.svg
+    documentId:
+    flags: {}
+  - type: 0
+    weight: 1
+    range:
+      - 10
+      - 10
+    drawn: false
+    documentCollection: ''
+    _id: RTCata03WarpCCC
+    text: 'Warp Drive Explosion: The warp drive overloads and rends a hole in
+      space. All starships within 2d10 VUs must make a Hard (−20) Pilot+
+      Manoeuvrability Test or be struck by the chaos-storm (treat as one lance
+      strike doing 1d10 damage, void shields do not protect). Every starship
+      within 1d5 VUs must make a second Challenging (+0) test or be sucked into
+      the rift — what happens next is up to the GM (mass possessions and
+      manifesting daemons are the norm). If the ship has no warp drive, it
+      suffers a Plasma Drive Explosion instead.'
+    img: icons/svg/d20-black.svg
+    documentId:
+    flags: {}
+formula: 1d10
+replacement: true
+displayRoll: true
 
