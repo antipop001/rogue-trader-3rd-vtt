@@ -830,7 +830,7 @@ replacement: true
 displayRoll: true
 ---
 name: Critical Hits to Starships
-img: systems/rogue-trader-3rd/icons/voidship/voidship-1.png
+img: systems/rogue-trader-3rd/icons/tables/voidship-critical.png
 description: 'Rogue Trader corebook Table 8-12 (p.232). Roll when a weapon meets
   its Crit Rating or when a Crippled ship takes damage past its Armour. Add to the
   result any Critical Hits the target has already taken since being Crippled. On
@@ -980,7 +980,7 @@ replacement: true
 displayRoll: true
 ---
 name: Catastrophic Damage
-img: systems/rogue-trader-3rd/icons/voidship/voidship-1.png
+img: systems/rogue-trader-3rd/icons/tables/voidship-critical.png
 description: 'Rogue Trader corebook Table 8-12 follow-up (p.233). Triggered when
   a Critical Hits roll reaches 11+ (Catastrophic Damage). Roll 1d10 here to
   determine the cataclysm.'
