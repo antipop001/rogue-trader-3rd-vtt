@@ -81,12 +81,15 @@
                 {{> systems/rogue-trader-3rd/templates/actor/panel/talent-panel.hbs}}
             </div>
             <div class="tab" data-group="primary" data-tab="bio">
+                {{> systems/rogue-trader-3rd/templates/actor/panel/origin-path-panel.hbs}}
                 <div class="rt-panel rt-grid-col-6">
                     <div class="rt-header__info">
                         <h1 class="rt-panel__header rt-grid-col-4">Biography</h1>
                         {{#each actor.bio}}
                             {{#unless (arrayIncludes @key @root.rt.bio.primary)}}
-                                {{> systems/rogue-trader-3rd/templates/actor/partial/character-field.hbs key=@key value=this options=(getBioOptions @key)}}
+                                {{#unless (arrayIncludes @key @root.rt.bio.skip)}}
+                                    {{> systems/rogue-trader-3rd/templates/actor/partial/character-field.hbs key=@key value=this options=(getBioOptions @key)}}
+                                {{/unless}}
                             {{/unless}}
                         {{/each}}
                     </div>

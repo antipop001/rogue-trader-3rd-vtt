@@ -1,0 +1,8 @@
+<div class="origin-path-row">
+    <label class="origin-path-row__label">{{label}}</label>
+    <select class="origin-path-row__select" name="system.bio.originPath.{{key}}.value">
+        <option value=""></option>
+        {{selectOptions (arrayToObject options) selected=value.value}}
+    </select>
+    <input class="origin-path-row__notes" type="text" placeholder="Notes (sub-option, effects, etc.)" name="system.bio.originPath.{{key}}.notes" value="{{value.notes}}" />
+</div>

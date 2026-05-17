@@ -4,8 +4,26 @@ import { attackSpecialsNames } from './attack-specials.mjs';
 import { backgroundNames } from './backgrounds.mjs';
 import { roleNames } from './roles.mjs';
 import { divinationNames } from './divinations.mjs';
+import { homeWorldOptions } from './origin-path/homeworlds.mjs';
+import { birthrightOptions } from './origin-path/birthrights.mjs';
+import { lureOfTheVoidOptions } from './origin-path/lures.mjs';
+import { trialsAndTravailsOptions } from './origin-path/trials.mjs';
+import { motivationOptions } from './origin-path/motivations.mjs';
+import { careerOptions } from './origin-path/careers.mjs';
 
 export const DarkHeresy = {};
+
+// RT 1e Origin Path — canonical labels per stage, sourced from RT Core Rulebook
+// Ch.I + Into the Storm Ch.I (additional Home Worlds + replacement options).
+// Used to populate dropdowns on the Origin Path sheet panel.
+DarkHeresy.originPath = {
+    homeWorld: homeWorldOptions().map(o => o.label),
+    birthright: birthrightOptions().map(o => o.label),
+    lureOfTheVoid: lureOfTheVoidOptions().map(o => o.label),
+    trialsAndTravails: trialsAndTravailsOptions().map(o => o.label),
+    motivation: motivationOptions().map(o => o.label),
+    career: careerOptions().map(o => o.label),
+};
 
 DarkHeresy.bio = {
     homeWorld: homeworldNames(),
@@ -13,7 +31,13 @@ DarkHeresy.bio = {
     role: roleNames(),
     elite: eliteAdvancesNames(),
     divination: divinationNames(),
-    primary: ['background', 'role', 'elite', 'homeWorld', 'divination'],
+    // DH2-fork primary fields hidden from the header (replaced by Origin Path).
+    primary: [],
+    // Skipped by the generic bio loop entirely. The DH2 fields stay in
+    // template.json so existing acolyte data doesn't break, but they no longer
+    // render anywhere on the sheet. 'originPath' is excluded because it has
+    // its own panel.
+    skip: ['originPath', 'homeWorld', 'background', 'role', 'elite', 'divination'],
     size: {
         4: 'Average (4)',
         1: 'Minuscule (1)',

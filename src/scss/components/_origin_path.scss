@@ -1,0 +1,27 @@
+// Origin Path panel — six rows of {label, dropdown, notes-input}.
+.origin-path-row {
+    display: grid;
+    grid-template-columns: 10em 1fr 1.5fr;
+    gap: 0.5em;
+    align-items: center;
+    margin: 0.25em 0;
+
+    &__label {
+        font-weight: bold;
+        text-align: right;
+        padding-right: 0.5em;
+    }
+
+    &__select,
+    &__notes {
+        padding: 0.2em 0.4em;
+    }
+}
+
+.rt-panel__hint {
+    font-size: 0.85em;
+    font-style: italic;
+    opacity: 0.7;
+    margin: 0 0 0.5em 0;
+    padding: 0 0.5em;
+}

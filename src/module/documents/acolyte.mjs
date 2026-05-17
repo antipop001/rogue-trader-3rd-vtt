@@ -74,6 +74,7 @@ export class RogueTraderAcolyte extends RogueTraderBaseActor {
         this.system.backgroundEffects = {
             abilities: [],
         };
+        this._ensureOriginPath();
         this._computeBackgroundFields();
         this._computeCharacteristics();
         this._computeSkills();
@@ -82,6 +83,23 @@ export class RogueTraderAcolyte extends RogueTraderBaseActor {
         this._computeMovement();
         this._computeEncumbrance();
         await super.prepareData();
+    }
+
+    /**
+     * Backfill `bio.originPath` with defaults so existing acolytes (created
+     * before 0.6.0) still render the Origin Path panel without throwing.
+     */
+    _ensureOriginPath() {
+        if (!this.system.bio) this.system.bio = {};
+        const op = this.system.bio.originPath ?? {};
+        const blank = { value: '', notes: '' };
+        op.homeWorld ??= { ...blank };
+        op.birthright ??= { ...blank };
+        op.lureOfTheVoid ??= { ...blank };
+        op.trialsAndTravails ??= { ...blank };
+        op.motivation ??= { ...blank };
+        op.career ??= { ...blank };
+        this.system.bio.originPath = op;
     }
 
     async rollWeaponDamage(weapon) {

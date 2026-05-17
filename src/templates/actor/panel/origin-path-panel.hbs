@@ -1,0 +1,17 @@
+<div class="rt-panel rt-grid-col-6">
+    <h1 class="rt-panel__header">Origin Path</h1>
+    <p class="rt-panel__hint">RT corebook Ch.I + Into the Storm Ch.I. Pick the canonical entry from the dropdown; record your character's specific picks, sub-options, and effects in the notes field.</p>
+
+    {{> systems/rogue-trader-3rd/templates/actor/partial/origin-path-row.hbs
+        key='homeWorld' label='Home World' value=actor.bio.originPath.homeWorld options=rt.originPath.homeWorld}}
+    {{> systems/rogue-trader-3rd/templates/actor/partial/origin-path-row.hbs
+        key='birthright' label='Birthright' value=actor.bio.originPath.birthright options=rt.originPath.birthright}}
+    {{> systems/rogue-trader-3rd/templates/actor/partial/origin-path-row.hbs
+        key='lureOfTheVoid' label='Lure of the Void' value=actor.bio.originPath.lureOfTheVoid options=rt.originPath.lureOfTheVoid}}
+    {{> systems/rogue-trader-3rd/templates/actor/partial/origin-path-row.hbs
+        key='trialsAndTravails' label='Trials and Travails' value=actor.bio.originPath.trialsAndTravails options=rt.originPath.trialsAndTravails}}
+    {{> systems/rogue-trader-3rd/templates/actor/partial/origin-path-row.hbs
+        key='motivation' label='Motivation' value=actor.bio.originPath.motivation options=rt.originPath.motivation}}
+    {{> systems/rogue-trader-3rd/templates/actor/partial/origin-path-row.hbs
+        key='career' label='Career' value=actor.bio.originPath.career options=rt.originPath.career}}
+</div>
