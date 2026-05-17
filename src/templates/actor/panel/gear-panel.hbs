@@ -6,7 +6,7 @@
             <div class="table-cell">Type</div>
             <div class="table-cell">Weight</div>
             <div class="table-cell--last">
-                <label class="rt-control-button item-create" data-type="gear">
+                <label class="rt-control-button item-create" data-action="itemCreate" data-type="gear">
                     <span class="rt-control-button__span material-icons">{{defaultVal icon 'add_circle'}}</span>
                 </label>
             </div>
@@ -15,7 +15,7 @@
             {{#if item.isGear}}
                 <div class="table-row item-drag" data-item-id="{{item.id}}" data-item-type="{{item.type}}">
                     <div class="table-cell--settingstoggle">
-                        <label class="rt-control-button item-edit" data-item-id="{{item.id}}">
+                        <label class="rt-control-button item-edit" data-action="itemEdit" data-item-id="{{item.id}}">
                             <span class="rt-control-button__span material-icons">{{defaultVal icon 'settings'}}</span>
                         </label>
                     </div>
@@ -29,7 +29,7 @@
                         <span class="display">{{item.system.weight}}</span>
                     </div>
                     <div class="table-cell--last">
-                        <label class="rt-control-button item-delete" data-item-id="{{item.id}}">
+                        <label class="rt-control-button item-delete" data-action="itemDelete" data-item-id="{{item.id}}">
                             <span class="rt-control-button__span material-icons">{{defaultVal icon 'delete'}}</span>
                         </label>
                     </div>

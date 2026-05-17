@@ -11,7 +11,7 @@
         {{#each actor.characteristics as |characteristic name|}}
             <div class="rt-chartable__cell--head {{colorCode this.has_bonus this.has_negative}}">
                 <button
-                    class="roll-characteristic actor-drag"
+                    class="roll-characteristic actor-drag" data-action="rollCharacteristic"
                     type="roll"
                     data-item-type="characteristic"
                     data-item-id="{{name}}"

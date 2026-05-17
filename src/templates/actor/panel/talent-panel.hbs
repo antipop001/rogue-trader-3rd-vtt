@@ -5,7 +5,7 @@
             <div class="table-cell--span2">Name</div>
             <div class="table-cell">Tier</div>
             <div class="table-cell--last">
-                <label class="rt-control-button item-create" data-type="talent">
+                <label class="rt-control-button item-create" data-action="itemCreate" data-type="talent">
                     <span class="rt-control-button__span material-icons">{{defaultVal icon 'add_circle'}}</span>
                 </label>
             </div>
@@ -14,7 +14,7 @@
             {{#if item.isTalent}}
                 <div class="table-row">
                     <div class="table-cell--settingstoggle">
-                        <label class="rt-control-button item-edit" data-item-id="{{item.id}}">
+                        <label class="rt-control-button item-edit" data-action="itemEdit" data-item-id="{{item.id}}">
                             <span class="rt-control-button__span material-icons">{{defaultVal icon 'settings'}}</span>
                         </label>
                     </div>
@@ -25,10 +25,10 @@
                         <span>{{item.system.tier}}</span>
                     </div>
                     <div class="table-cell--last">
-                        <label class="rt-control-button item-vocalize" data-item-id="{{item.id}}">
+                        <label class="rt-control-button item-vocalize" data-action="itemVocalize" data-item-id="{{item.id}}">
                             <span class="rt-control-button__span material-icons">{{defaultVal icon 'record_voice_over'}}</span>
                         </label>
-                        <label class="rt-control-button item-delete" data-item-id="{{item.id}}">
+                        <label class="rt-control-button item-delete" data-action="itemDelete" data-item-id="{{item.id}}">
                             <span class="rt-control-button__span material-icons">{{defaultVal icon 'delete'}}</span>
                         </label>
                     </div>

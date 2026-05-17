@@ -1,6 +1,7 @@
 import { RogueTraderItem } from './documents/item.mjs';
 import { DarkHeresy } from './rules/config.mjs';
 import { AcolyteSheet } from './sheets/actor/acolyte-sheet.mjs';
+import { AcolyteSheetV2 } from './sheets/actor/acolyte-sheet-v2.mjs';
 import { DarkHeresyItemSheet } from './sheets/item/item-sheet.mjs';
 import { DarkHeresyShipComponentSheet } from './sheets/item/ship-component-sheet.mjs';
 import { DarkHeresyShipWeaponSheet } from './sheets/item/ship-weapon-sheet.mjs';
@@ -102,7 +103,7 @@ Enable Debug with: game.rt.debug = true
 
         // Register sheet application classes
         Actors.unregisterSheet('core', ActorSheet);
-        Actors.registerSheet(SYSTEM_ID, AcolyteSheet, {types: ["acolyte"], makeDefault: true });
+        Actors.registerSheet(SYSTEM_ID, AcolyteSheetV2, {types: ["acolyte"], makeDefault: true, label: 'Acolyte (v2)' });
         Actors.registerSheet(SYSTEM_ID, NpcSheet, {types: ['npc'], makeDefault: true });
         Actors.registerSheet(SYSTEM_ID, VehicleSheet, {types: ['vehicle'], makeDefault: true });
         Actors.registerSheet(SYSTEM_ID, VoidshipSheet, {types: ['voidship'], makeDefault: true });

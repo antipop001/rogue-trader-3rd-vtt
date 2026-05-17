@@ -1,6 +1,6 @@
 <div class="rt-panel rt-grid-col-2 rt-grid-row-3 {{isError actor.encumbrance.backpack_encumbered}}">
     <h1 class="rt-panel__header">
-        <label class="rt-trait-toggle sheet-control__hide-control" data-toggle="backpack_settings">
+        <label class="rt-trait-toggle sheet-control__hide-control" data-action="toggleHidden" data-toggle="backpack_settings">
             <i class="rt-material material-icons">{{defaultVal icon "settings"}}</i>
             <span class="rt-trait-toggle__span">
                 {{#if actor.encumbrance.backpack_encumbered}}

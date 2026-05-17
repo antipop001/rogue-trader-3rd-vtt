@@ -9,7 +9,7 @@
         <div class="table-row--head">
             <div class="table-cell--span2">Malignancies</div>
             <div class="table-cell--last">
-                <label class="rt-control-button item-create" data-type="malignancy">
+                <label class="rt-control-button item-create" data-action="itemCreate" data-type="malignancy">
                     <span class="rt-control-button__span material-icons">{{defaultVal icon 'add_circle'}}</span>
                 </label>
             </div>
@@ -18,7 +18,7 @@
             {{#if item.isMalignancy}}
                 <div class="table-row">
                     <div class="table-cell--settingstoggle">
-                        <label class="rt-control-button item-edit" data-item-id="{{item.id}}">
+                        <label class="rt-control-button item-edit" data-action="itemEdit" data-item-id="{{item.id}}">
                             <span class="rt-control-button__span material-icons">{{defaultVal icon 'settings'}}</span>
                         </label>
                     </div>
@@ -26,7 +26,7 @@
                         {{> systems/rogue-trader-3rd/templates/actor/partial/trait-toggle.hbs toggle=(concat 'description_' item.id) text=item.name}}
                     </div>
                     <div class="table-cell">
-                        <label class="rt-control-button item-delete" data-item-id="{{item.id}}">
+                        <label class="rt-control-button item-delete" data-action="itemDelete" data-item-id="{{item.id}}">
                             <span class="rt-control-button__span material-icons">{{defaultVal icon 'delete'}}</span>
                         </label>
                     </div>
@@ -40,7 +40,7 @@
         <div class="table-row--head">
             <div class="table-cell--span2">Mutations</div>
             <div class="table-cell--last">
-                <label class="rt-control-button item-create" data-type="mutation">
+                <label class="rt-control-button item-create" data-action="itemCreate" data-type="mutation">
                     <span class="rt-control-button__span material-icons">{{defaultVal icon 'add_circle'}}</span>
                 </label>
             </div>
@@ -49,7 +49,7 @@
             {{#if item.isMutation}}
                 <div class="table-row">
                     <div class="table-cell--settingstoggle">
-                        <label class="rt-control-button item-edit" data-item-id="{{item.id}}">
+                        <label class="rt-control-button item-edit" data-action="itemEdit" data-item-id="{{item.id}}">
                             <span class="rt-control-button__span material-icons">{{defaultVal icon 'settings'}}</span>
                         </label>
                     </div>
@@ -57,7 +57,7 @@
                         {{> systems/rogue-trader-3rd/templates/actor/partial/trait-toggle.hbs toggle=(concat 'description_' item.id) text=item.name}}
                     </div>
                     <div class="table-cell">
-                        <label class="rt-control-button item-delete" data-item-id="{{item.id}}">
+                        <label class="rt-control-button item-delete" data-action="itemDelete" data-item-id="{{item.id}}">
                             <span class="rt-control-button__span material-icons">{{defaultVal icon 'delete'}}</span>
                         </label>
                     </div>

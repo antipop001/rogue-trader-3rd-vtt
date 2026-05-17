@@ -2,11 +2,24 @@
 .rt-actor {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
+    // Header (auto), navigation (auto), body fills remaining vertical space.
+    grid-template-rows: auto auto 1fr;
     border: 20px solid transparent;
     border-image: url('../images/border-floral.png') 95 / 20px / 0 round;
     grid-gap: 0;
+    // .rt-actor is on .window-content; let Foundry's flex: 1 size it, but contain so the
+    // body scrolls inside rather than the whole grid pushing past the frame.
+    min-height: 0;
+    overflow: hidden;
 
     > * {
         min-width: 100px;
     }
+}
+
+.rt-body {
+    grid-column: 1 / -1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    min-height: 0;
 }

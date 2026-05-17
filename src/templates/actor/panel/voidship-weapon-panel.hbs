@@ -10,7 +10,7 @@
             <div class="table-cell">Strength</div>
             <div class="table-cell">Damage</div>
             <div class="table-cell--last">
-                <label class="rt-control-button item-create" data-type="shipWeapon">
+                <label class="rt-control-button item-create" data-action="itemCreate" data-type="shipWeapon">
                     <span class="rt-control-button__span material-icons">{{defaultVal icon 'add_circle'}}</span>
                 </label>
             </div>
@@ -19,7 +19,7 @@
             {{#if item.isShipWeapon}}
                 <div class="table-row item-drag" data-item-id="{{item.id}}" data-item-type="shipWeapon">
                     <div class="table-cell--settingstoggle">
-                        <label class="rt-control-button item-edit" data-item-id="{{item.id}}">
+                        <label class="rt-control-button item-edit" data-action="itemEdit" data-item-id="{{item.id}}">
                             <span class="rt-control-button__span material-icons">{{defaultVal icon 'settings'}}</span>
                         </label>
                     </div>
@@ -45,10 +45,10 @@
                         <span class="display">{{item.system.damage}}</span>
                     </div>
                     <div class="table-cell--last">
-                        <label class="rt-control-button item-roll" data-item-id="{{item.id}}">
+                        <label class="rt-control-button item-roll" data-action="itemRoll" data-item-id="{{item.id}}">
                             <span class="rt-control-button__span material-icons">{{defaultVal icon 'casino'}}</span>
                         </label>
-                        <label class="rt-control-button item-delete" data-item-id="{{item.id}}">
+                        <label class="rt-control-button item-delete" data-action="itemDelete" data-item-id="{{item.id}}">
                             <span class="rt-control-button__span material-icons">{{defaultVal icon 'delete'}}</span>
                         </label>
                     </div>

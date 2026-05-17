@@ -26,7 +26,7 @@
                                        type="checkbox" name="system.skills.{{name}}.specialities.{{skey}}.taken" />
                             </div>
                         {{/each}}
-                        <div class="rt-settings__row--invert add-skill" data-skill="{{name}}">
+                        <div class="rt-settings__row--invert add-skill" data-action="addSkill" data-skill="{{name}}">
                             <button class="rt-settings__label--add">add_box</button>
                         </div>
                     </div>
@@ -36,7 +36,7 @@
                         <div class="table-row actor-drag" data-item-type="skill" data-item-id="{{name}}"
                              data-speciality="{{skey}}">
                             <div class="table-cell">
-                                <button class="roll-skill" data-skill="{{name}}" data-specialty="{{skey}}"
+                                <button class="roll-skill" data-action="rollSkill" data-skill="{{name}}" data-specialty="{{skey}}"
                                         type="roll">{{localize this.label}}</button>
                             </div>
                             <div class="table-cell">

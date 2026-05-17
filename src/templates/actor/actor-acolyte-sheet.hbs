@@ -1,127 +1,118 @@
 {{#if limited}}
-    <div class="rt-wrapper">
-    <form class="rt-actor" autocomplete="off">
     <div class="rt-header rt-grid-col-6 rt-panel">
-    <div class="rt-header__info">
-        <div class="rt-header__logo rt-header__item-wrapper--span-4">
-            <img class="rt-header__logo-image" src="{{actor.img}}" data-edit="img" alt="{{actor.name}}" title="{{actor.name}}" />
+        <div class="rt-header__info">
+            <div class="rt-header__logo rt-header__item-wrapper--span-4">
+                <img class="rt-header__logo-image" src="{{actor.img}}" data-edit="img" alt="{{actor.name}}" title="{{actor.name}}" />
+            </div>
+            <div class="rt-header__item-wrapper--span-2">
+                <span class="rt-header__title">Name</span>
+                <span class="rt-header__title">{{actor.name}}</span>
+            </div>
         </div>
-        <div class="rt-header__item-wrapper--span-2">
-            <span class="rt-header__title">Name</span>
-            <span class="rt-header__title">{{actor.name}}</span>
-        </div>
-    </div>
-    </div>
-    </form>
     </div>
 {{else}}
 {{rtlog this}}
-<div class="rt-wrapper">
-    <form class="rt-actor" autocomplete="off">
-        <div class="rt-header rt-grid-col-6 rt-panel">
-            <div class="rt-header__info">
-                <div class="rt-header__logo rt-header__item-wrapper--span-4">
-                    <img class="rt-header__logo-image" src="{{actor.img}}" data-edit="img" alt="{{actor.name}}" title="{{actor.name}}" />
-                </div>
-                <div class="rt-header__item-wrapper--span-2">
-                    <span class="rt-header__title">Name</span>
-                    <input class="rt-header__input" name="name" type="text" value="{{actor.name}}" />
-                </div>
-                {{#each actor.bio}}
-                    {{#if (arrayIncludes @key @root.rt.bio.primary)}}
-                        {{> systems/rogue-trader-3rd/templates/actor/partial/character-field.hbs key=@key value=this options=(getBioOptions @key)}}
-                    {{/if}}
-                {{/each}}
+    <div class="rt-header rt-grid-col-6 rt-panel">
+        <div class="rt-header__info">
+            <div class="rt-header__logo rt-header__item-wrapper--span-4">
+                <img class="rt-header__logo-image" src="{{actor.img}}" data-edit="img" alt="{{actor.name}}" title="{{actor.name}}" />
             </div>
+            <div class="rt-header__item-wrapper--span-2">
+                <span class="rt-header__title">Name</span>
+                <input class="rt-header__input" name="name" type="text" value="{{actor.name}}" />
+            </div>
+            {{#each actor.bio}}
+                {{#if (arrayIncludes @key @root.rt.bio.primary)}}
+                    {{> systems/rogue-trader-3rd/templates/actor/partial/character-field.hbs key=@key value=this options=(getBioOptions @key)}}
+                {{/if}}
+            {{/each}}
         </div>
+    </div>
 
-        <div class="rt-navigation" data-group="primary">
-            <label class="rt-navigation__item rt-navigation__item-left">
-                <a class="item" data-tab="combat" data-group="primary">combat</a>
-            </label>
-            <label class="rt-navigation__item">
-                <a class="item" data-tab="main" data-group="primary">main</a>
-            </label>
-            <label class="rt-navigation__item">
-                <a class="item" data-tab="bio" data-group="primary">bio</a>
-            </label>
-            <label class="rt-navigation__item">
-                <a class="item" data-tab="gear" data-group="primary">gear</a>
-            </label>
-            <label class="rt-navigation__item">
-                <a class="item" data-tab="psychic" data-group="primary">psychic powers</a>
-            </label>
-            <label class="rt-navigation__item">
-                <a class="item" data-tab="advances" data-group="primary">advances</a>
-            </label>
-            <label class="rt-navigation__item">
-                <a class="item" data-tab="social" data-group="primary">social</a>
-            </label>
+    <nav class="rt-navigation tabs" data-group="primary">
+        <label class="rt-navigation__item rt-navigation__item-left">
+            <a class="item" data-tab="combat" data-group="primary" data-action="tab">combat</a>
+        </label>
+        <label class="rt-navigation__item">
+            <a class="item" data-tab="main" data-group="primary" data-action="tab">main</a>
+        </label>
+        <label class="rt-navigation__item">
+            <a class="item" data-tab="bio" data-group="primary" data-action="tab">bio</a>
+        </label>
+        <label class="rt-navigation__item">
+            <a class="item" data-tab="gear" data-group="primary" data-action="tab">gear</a>
+        </label>
+        <label class="rt-navigation__item">
+            <a class="item" data-tab="psychic" data-group="primary" data-action="tab">psychic powers</a>
+        </label>
+        <label class="rt-navigation__item">
+            <a class="item" data-tab="advances" data-group="primary" data-action="tab">advances</a>
+        </label>
+        <label class="rt-navigation__item">
+            <a class="item" data-tab="social" data-group="primary" data-action="tab">social</a>
+        </label>
+    </nav>
+
+    <section class="rt-body">
+        <div class="tab" data-group="primary" data-tab="combat">
+            {{> systems/rogue-trader-3rd/templates/actor/panel/wounds-panel.hbs}}
+            {{> systems/rogue-trader-3rd/templates/actor/panel/fatigue-panel.hbs}}
+            {{> systems/rogue-trader-3rd/templates/actor/panel/fate-panel.hbs}}
+            {{> systems/rogue-trader-3rd/templates/actor/panel/armour-display-panel.hbs}}
+            {{> systems/rogue-trader-3rd/templates/actor/panel/combat-controls-panel.hbs}}
+            {{> systems/rogue-trader-3rd/templates/actor/panel/initiative-panel.hbs}}
+            {{> systems/rogue-trader-3rd/templates/actor/panel/characteristic-roller-panel.hbs}}
+            {{> systems/rogue-trader-3rd/templates/actor/panel/movement-panel.hbs}}
+            {{> systems/rogue-trader-3rd/templates/actor/panel/active-effects-panel.hbs}}
+
         </div>
-
-        <section class="rt-body">
-            <div class="tab" data-group="primary" data-tab="combat">
-                {{> systems/rogue-trader-3rd/templates/actor/panel/wounds-panel.hbs}}
-                {{> systems/rogue-trader-3rd/templates/actor/panel/fatigue-panel.hbs}}
-                {{> systems/rogue-trader-3rd/templates/actor/panel/fate-panel.hbs}}
-                {{> systems/rogue-trader-3rd/templates/actor/panel/armour-display-panel.hbs}}
-                {{> systems/rogue-trader-3rd/templates/actor/panel/combat-controls-panel.hbs}}
-                {{> systems/rogue-trader-3rd/templates/actor/panel/initiative-panel.hbs}}
-                {{> systems/rogue-trader-3rd/templates/actor/panel/characteristic-roller-panel.hbs}}
-                {{> systems/rogue-trader-3rd/templates/actor/panel/movement-panel.hbs}}
-                {{> systems/rogue-trader-3rd/templates/actor/panel/active-effects-panel.hbs}}
-
-            </div>
-            <div class="tab" data-group="primary" data-tab="main">
-                {{> systems/rogue-trader-3rd/templates/actor/panel/characteristic-panel.hbs}}
-                {{> systems/rogue-trader-3rd/templates/actor/panel/trait-panel.hbs}}
-                {{> systems/rogue-trader-3rd/templates/actor/panel/bonuses-panel.hbs}}
-                {{> systems/rogue-trader-3rd/templates/actor/panel/skills-panel.hbs}}
-                {{> systems/rogue-trader-3rd/templates/actor/panel/skills-specialist-panel.hbs}}
-                {{> systems/rogue-trader-3rd/templates/actor/panel/talent-panel.hbs}}
-            </div>
-            <div class="tab" data-group="primary" data-tab="bio">
-                {{> systems/rogue-trader-3rd/templates/actor/panel/origin-path-panel.hbs}}
-                <div class="rt-panel rt-grid-col-6">
-                    <div class="rt-header__info">
-                        <h1 class="rt-panel__header rt-grid-col-4">Biography</h1>
-                        {{#each actor.bio}}
-                            {{#unless (arrayIncludes @key @root.rt.bio.primary)}}
-                                {{#unless (arrayIncludes @key @root.rt.bio.skip)}}
-                                    {{> systems/rogue-trader-3rd/templates/actor/partial/character-field.hbs key=@key value=this options=(getBioOptions @key)}}
-                                {{/unless}}
+        <div class="tab" data-group="primary" data-tab="main">
+            {{> systems/rogue-trader-3rd/templates/actor/panel/characteristic-panel.hbs}}
+            {{> systems/rogue-trader-3rd/templates/actor/panel/trait-panel.hbs}}
+            {{> systems/rogue-trader-3rd/templates/actor/panel/bonuses-panel.hbs}}
+            {{> systems/rogue-trader-3rd/templates/actor/panel/skills-panel.hbs}}
+            {{> systems/rogue-trader-3rd/templates/actor/panel/skills-specialist-panel.hbs}}
+            {{> systems/rogue-trader-3rd/templates/actor/panel/talent-panel.hbs}}
+        </div>
+        <div class="tab" data-group="primary" data-tab="bio">
+            {{> systems/rogue-trader-3rd/templates/actor/panel/origin-path-panel.hbs}}
+            <div class="rt-panel rt-grid-col-6">
+                <div class="rt-header__info">
+                    <h1 class="rt-panel__header rt-grid-col-4">Biography</h1>
+                    {{#each actor.bio}}
+                        {{#unless (arrayIncludes @key @root.rt.bio.primary)}}
+                            {{#unless (arrayIncludes @key @root.rt.bio.skip)}}
+                                {{> systems/rogue-trader-3rd/templates/actor/partial/character-field.hbs key=@key value=this options=(getBioOptions @key)}}
                             {{/unless}}
-                        {{/each}}
-                    </div>
+                        {{/unless}}
+                    {{/each}}
                 </div>
             </div>
-            <div class="tab" data-group="primary" data-tab="gear">
-                {{> systems/rogue-trader-3rd/templates/actor/panel/weapon-panel.hbs}}
-                {{> systems/rogue-trader-3rd/templates/actor/panel/encumbrance-panel.hbs}}
-                {{> systems/rogue-trader-3rd/templates/actor/panel/armour-panel.hbs}}
-                {{> systems/rogue-trader-3rd/templates/actor/panel/storage-location-panel.hbs}}
-                {{> systems/rogue-trader-3rd/templates/actor/panel/cybernetic-panel.hbs}}
-                {{> systems/rogue-trader-3rd/templates/actor/panel/backpack-panel.hbs}}
-                {{> systems/rogue-trader-3rd/templates/actor/panel/force-field-panel.hbs}}
-                {{> systems/rogue-trader-3rd/templates/actor/panel/gear-panel.hbs}}
-            </div>
-            <div class="tab" data-group="primary" data-tab="psychic">
-                {{> systems/rogue-trader-3rd/templates/actor/panel/psychic-powers-panel.hbs}}
-                {{> systems/rogue-trader-3rd/templates/actor/panel/psy-panel.hbs}}
-            </div>
-            <div class="tab" data-group="primary" data-tab="advances">
-                {{> systems/rogue-trader-3rd/templates/actor/panel/corruption-panel.hbs}}
-                {{> systems/rogue-trader-3rd/templates/actor/panel/aptitude-panel.hbs}}
-                {{> systems/rogue-trader-3rd/templates/actor/panel/experience-panel.hbs}}
-                {{> systems/rogue-trader-3rd/templates/actor/panel/insanity-panel.hbs}}
-            </div>
-            <div class="tab" data-group="primary" data-tab="social">
-                {{> systems/rogue-trader-3rd/templates/actor/panel/journal-panel.hbs}}
-                {{> systems/rogue-trader-3rd/templates/actor/panel/peer-panel.hbs}}
-                {{> systems/rogue-trader-3rd/templates/actor/panel/enemy-panel.hbs}}
-            </div>
-        </section>
-    </form>
-</div>
+        </div>
+        <div class="tab" data-group="primary" data-tab="gear">
+            {{> systems/rogue-trader-3rd/templates/actor/panel/weapon-panel.hbs}}
+            {{> systems/rogue-trader-3rd/templates/actor/panel/encumbrance-panel.hbs}}
+            {{> systems/rogue-trader-3rd/templates/actor/panel/armour-panel.hbs}}
+            {{> systems/rogue-trader-3rd/templates/actor/panel/storage-location-panel.hbs}}
+            {{> systems/rogue-trader-3rd/templates/actor/panel/cybernetic-panel.hbs}}
+            {{> systems/rogue-trader-3rd/templates/actor/panel/backpack-panel.hbs}}
+            {{> systems/rogue-trader-3rd/templates/actor/panel/force-field-panel.hbs}}
+            {{> systems/rogue-trader-3rd/templates/actor/panel/gear-panel.hbs}}
+        </div>
+        <div class="tab" data-group="primary" data-tab="psychic">
+            {{> systems/rogue-trader-3rd/templates/actor/panel/psychic-powers-panel.hbs}}
+            {{> systems/rogue-trader-3rd/templates/actor/panel/psy-panel.hbs}}
+        </div>
+        <div class="tab" data-group="primary" data-tab="advances">
+            {{> systems/rogue-trader-3rd/templates/actor/panel/corruption-panel.hbs}}
+            {{> systems/rogue-trader-3rd/templates/actor/panel/aptitude-panel.hbs}}
+            {{> systems/rogue-trader-3rd/templates/actor/panel/experience-panel.hbs}}
+            {{> systems/rogue-trader-3rd/templates/actor/panel/insanity-panel.hbs}}
+        </div>
+        <div class="tab" data-group="primary" data-tab="social">
+            {{> systems/rogue-trader-3rd/templates/actor/panel/journal-panel.hbs}}
+            {{> systems/rogue-trader-3rd/templates/actor/panel/peer-panel.hbs}}
+            {{> systems/rogue-trader-3rd/templates/actor/panel/enemy-panel.hbs}}
+        </div>
+    </section>
 {{/if}}
-
