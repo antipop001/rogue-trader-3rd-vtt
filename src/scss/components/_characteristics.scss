@@ -1,7 +1,9 @@
 .rt {
     &-chartable {
         display: grid;
-        grid-template-columns: 0.75fr repeat(10, 0.5fr);
+        // RT has 9 characteristics (Influence dropped). Label column sized to fit
+        // "Unnatural" (the widest row label); the 9 data columns share the rest.
+        grid-template-columns: auto repeat(9, 1fr);
         grid-template-rows: repeat(7, 1fr);
         grid-auto-flow: column;
 
@@ -12,6 +14,13 @@
             height: 100%;
             text-align: center !important;
             text-align-last: center !important;
+        }
+
+        // The Advances row holds the longest text ("Intermediate"/"Proficient").
+        // Shrink the select font a touch so it fits without truncation.
+        select {
+            font-size: 8.5pt;
+            padding: 0 2px;
         }
 
         &__cell {
