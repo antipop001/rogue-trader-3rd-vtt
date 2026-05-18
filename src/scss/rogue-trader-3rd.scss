@@ -43,7 +43,12 @@
     @import 'components/origin_path';
 
     // Sheets
-    @import 'sheets/actor';
     @import 'sheets/item';
     @import 'sheets/attack';
 }
+
+// Actor sheet layout rules live outside .rt-wrapper because in V2 both classes
+// land on the same <section> element, and a descendant combinator (`.rt-wrapper
+// .rt-actor`) wouldn't match. The .rt-actor / .rt-body / .voidship .rt-actor
+// selectors are unique to this system and don't need .rt-wrapper scoping.
+@import 'sheets/actor';

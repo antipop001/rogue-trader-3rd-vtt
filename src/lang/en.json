@@ -1,7 +1,10 @@
 {
   "TYPES": {
     "Actor": {
-      "acolyte": "Explorer"
+      "acolyte": "Explorer",
+      "npc": "NPC",
+      "vehicle": "Vehicle",
+      "voidship": "Voidship"
     }
   }
 }

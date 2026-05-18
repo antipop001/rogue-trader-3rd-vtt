@@ -1,7 +1,5 @@
 {{rtlog this}}
-<div class="rt-wrapper">
-    <form class="rt-actor" autocomplete="off">
-        <div class="rt-header rt-grid-col-6 rt-panel">
+<div class="rt-header rt-grid-col-6 rt-panel">
             <div class="rt-header__info">
                 <div class="rt-header__logo rt-header__item-wrapper--span-4">
                     <img class="rt-header__logo-image" src="{{actor.img}}" data-edit="img" alt="{{actor.name}}" title="{{actor.name}}" />
@@ -30,8 +28,4 @@
         {{> systems/rogue-trader-3rd/templates/actor/panel/vehicle-integrity-panel.hbs}}
         {{> systems/rogue-trader-3rd/templates/actor/panel/vehicle-movement-panel.hbs}}
         {{> systems/rogue-trader-3rd/templates/actor/panel/trait-panel.hbs}}
-        {{> systems/rogue-trader-3rd/templates/actor/panel/weapon-panel.hbs}}
-    </form>
-</div>
-
-
+{{> systems/rogue-trader-3rd/templates/actor/panel/weapon-panel.hbs}}

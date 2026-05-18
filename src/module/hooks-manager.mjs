@@ -28,7 +28,9 @@ import { DarkHeresyTraitSheet } from './sheets/item/trait-sheet.mjs';
 import { RogueTraderActorProxy } from './documents/actor-proxy.mjs';
 import { NpcSheet } from './sheets/actor/npc-sheet.mjs';
 import { VehicleSheet } from './sheets/actor/vehicle-sheet.mjs';
+import { VehicleSheetV2 } from './sheets/actor/vehicle-sheet-v2.mjs';
 import { VoidshipSheet } from './sheets/actor/voidship-sheet.mjs';
+import { VoidshipSheetV2 } from './sheets/actor/voidship-sheet-v2.mjs';
 import { DarkHeresyCriticalInjurySheet } from './sheets/item/critical-injury-sheet.mjs';
 import { DarkHeresyGearSheet } from './sheets/item/gear-sheet.mjs';
 import { RogueTraderSettings } from './rogue-trader-settings.mjs';
@@ -105,8 +107,8 @@ Enable Debug with: game.rt.debug = true
         Actors.unregisterSheet('core', ActorSheet);
         Actors.registerSheet(SYSTEM_ID, AcolyteSheetV2, {types: ["acolyte"], makeDefault: true, label: 'Acolyte (v2)' });
         Actors.registerSheet(SYSTEM_ID, NpcSheet, {types: ['npc'], makeDefault: true });
-        Actors.registerSheet(SYSTEM_ID, VehicleSheet, {types: ['vehicle'], makeDefault: true });
-        Actors.registerSheet(SYSTEM_ID, VoidshipSheet, {types: ['voidship'], makeDefault: true });
+        Actors.registerSheet(SYSTEM_ID, VehicleSheetV2, {types: ['vehicle'], makeDefault: true, label: 'Vehicle (v2)' });
+        Actors.registerSheet(SYSTEM_ID, VoidshipSheetV2, {types: ['voidship'], makeDefault: true, label: 'Voidship (v2)' });
 
         Items.unregisterSheet('core', ItemSheet);
         Items.registerSheet(SYSTEM_ID, DarkHeresyItemSheet, { makeDefault: true });

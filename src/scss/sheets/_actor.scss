@@ -2,24 +2,42 @@
 .rt-actor {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    // Header (auto), navigation (auto), body fills remaining vertical space.
-    grid-template-rows: auto auto 1fr;
     border: 20px solid transparent;
     border-image: url('../images/border-floral.png') 95 / 20px / 0 round;
     grid-gap: 0;
-    // .rt-actor is on .window-content; let Foundry's flex: 1 size it, but contain so the
-    // body scrolls inside rather than the whole grid pushing past the frame.
     min-height: 0;
-    overflow: hidden;
 
-    > * {
+    // V2 wraps each rendered PART in <section data-application-part="..."> which would
+    // otherwise become the single grid child and swallow all the rt-grid-col-N spans.
+    // `display: contents` makes the wrapper invisible to layout so the actual panels
+    // participate in the .rt-actor grid directly.
+    > [data-application-part] {
+        display: contents;
+    }
+
+    > *,
+    > [data-application-part] > * {
         min-width: 100px;
     }
 }
 
-.rt-body {
+// Acolyte sheet has header / nav / body — pin the first two and scroll the body.
+.acolyte .rt-actor {
+    grid-template-rows: auto auto 1fr;
+    overflow: hidden;
+}
+
+.acolyte .rt-body {
     grid-column: 1 / -1;
     overflow-y: auto;
     overflow-x: hidden;
     min-height: 0;
+}
+
+// Vehicle / voidship are flat panel grids — scroll the whole content area.
+.vehicle .rt-actor,
+.voidship .rt-actor {
+    overflow-y: auto;
+    overflow-x: hidden;
+    align-content: start;
 }
