@@ -27,6 +27,7 @@ import { DarkHeresyStorageLocationSheet } from './sheets/item/storage-location-s
 import { DarkHeresyTraitSheet } from './sheets/item/trait-sheet.mjs';
 import { RogueTraderActorProxy } from './documents/actor-proxy.mjs';
 import { NpcSheet } from './sheets/actor/npc-sheet.mjs';
+import { NpcSheetV2 } from './sheets/actor/npc-sheet-v2.mjs';
 import { VehicleSheet } from './sheets/actor/vehicle-sheet.mjs';
 import { VehicleSheetV2 } from './sheets/actor/vehicle-sheet-v2.mjs';
 import { VoidshipSheet } from './sheets/actor/voidship-sheet.mjs';
@@ -106,7 +107,7 @@ Enable Debug with: game.rt.debug = true
         // Register sheet application classes
         Actors.unregisterSheet('core', ActorSheet);
         Actors.registerSheet(SYSTEM_ID, AcolyteSheetV2, {types: ["acolyte"], makeDefault: true, label: 'Acolyte (v2)' });
-        Actors.registerSheet(SYSTEM_ID, NpcSheet, {types: ['npc'], makeDefault: true });
+        Actors.registerSheet(SYSTEM_ID, NpcSheetV2, {types: ['npc'], makeDefault: true, label: 'NPC (v2)' });
         Actors.registerSheet(SYSTEM_ID, VehicleSheetV2, {types: ['vehicle'], makeDefault: true, label: 'Vehicle (v2)' });
         Actors.registerSheet(SYSTEM_ID, VoidshipSheetV2, {types: ['voidship'], makeDefault: true, label: 'Voidship (v2)' });
 
