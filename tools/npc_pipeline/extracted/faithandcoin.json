@@ -1,0 +1,451 @@
+[
+  {
+    "name": "Child of the Sacred Flesh",
+    "slug": "child-of-the-sacred-flesh",
+    "faction": "",
+    "description": "",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 19,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 48,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 46,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 24,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 25,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 19,
+        "unnatural": 0
+      }
+    },
+    "wounds": 0,
+    "movement": "3/6/9/18 Grounds: 20",
+    "skills": [
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Climb",
+        0
+      ],
+      [
+        "Concealment",
+        10
+      ],
+      [
+        "Dodge",
+        0
+      ],
+      [
+        "Silent Move",
+        10
+      ],
+      [
+        "Speak Language (Low Gothic)",
+        0
+      ],
+      [
+        "Survival",
+        0
+      ],
+      [
+        "Tracking",
+        10
+      ]
+    ],
+    "talents": [
+      "Frenzy",
+      "Swift Attack"
+    ],
+    "traits": [],
+    "weapons_text": "Savage metal spear (1d10+4 R; Pen 0; Toxic).",
+    "armour_text": "Decrepit armour (Body 3) **Total TB:** 4",
+    "gear_text": "Ragged robes resembling debased ecclesiastical vestments, fetishes, trophies and random symbols of the Imperial Creed.",
+    "portrait_ref": null,
+    "ws_line": 4292,
+    "source_book": "roguetrader_faithandcoin.pdf"
+  },
+  {
+    "name": "Orphan of the Flesh",
+    "slug": "orphan-of-the-flesh",
+    "faction": "",
+    "description": "",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 56,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 6,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 58,
+        "unnatural": 10
+      },
+      "toughness": {
+        "base": 46,
+        "unnatural": 8
+      },
+      "agility": {
+        "base": 16,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 16,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 23,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 12,
+        "unnatural": 0
+      }
+    },
+    "wounds": 0,
+    "movement": "2/4/6/12 Grounds: 35",
+    "skills": [
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Concealment",
+        10
+      ]
+    ],
+    "talents": [],
+    "traits": [
+      "Amorphous",
+      "Fear (1)",
+      "Improved Natural Weapons",
+      "Size (Hulking)",
+      "Strange Physiology",
+      "Sturdy",
+      "Unnatural Senses",
+      "Unnatural Strength (x2)",
+      "Unnatural Toughness (x2)"
+    ],
+    "weapons_text": "Skeletal protrusions (1d10+10, R; Pen 6).",
+    "armour_text": "Twisted hide (All 6). **Total TB:** 8",
+    "gear_text": "",
+    "portrait_ref": "img-68.jpeg",
+    "ws_line": 4311,
+    "source_book": "roguetrader_faithandcoin.pdf"
+  },
+  {
+    "name": "Mutant Rat Swarm",
+    "slug": "mutant-rat-swarm",
+    "faction": "",
+    "description": "",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 32,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 1,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 33,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 23,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 10,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 43,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 15,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 6,
+        "unnatural": 0
+      }
+    },
+    "wounds": 0,
+    "movement": "3/6/9/18 Grounds: 10, 30, or 50",
+    "skills": [
+      [
+        "Awareness",
+        10
+      ],
+      [
+        "Concealment",
+        10
+      ],
+      [
+        "Silent Move",
+        20
+      ]
+    ],
+    "talents": [],
+    "traits": [
+      "Bestial",
+      "Size (Varies)",
+      "Swarm (see page 142)"
+    ],
+    "weapons_text": "Teeth and claws (Melee; 1d10+3; Pen 0; Tearing).",
+    "armour_text": "None. **Total TB:** 2",
+    "gear_text": "",
+    "portrait_ref": "img-68.jpeg",
+    "ws_line": 4333,
+    "source_book": "roguetrader_faithandcoin.pdf"
+  },
+  {
+    "name": "Autochthonic Vermin Swarm",
+    "slug": "autochthonic-vermin-swarm",
+    "faction": "",
+    "description": "",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 46,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 1,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 42,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 42,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 23,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 10,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 22,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 18,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 2,
+        "unnatural": 0
+      }
+    },
+    "wounds": 0,
+    "movement": "2/4/6/12 Grounds: 20, 40, or 60",
+    "skills": [
+      [
+        "Awareness",
+        0
+      ]
+    ],
+    "talents": [],
+    "traits": [
+      "Bestial",
+      "Dark Sight",
+      "Toxic",
+      "Size (Varies)",
+      "Strange Physiology",
+      "Swarm (see Swarm (Trait))"
+    ],
+    "weapons_text": "Razor-filled maws (Melee; 1d10+5; Pen 2; Tearing).",
+    "armour_text": "None. **Total TB:** 4",
+    "gear_text": "",
+    "portrait_ref": "img-68.jpeg",
+    "ws_line": 4353,
+    "source_book": "roguetrader_faithandcoin.pdf"
+  },
+  {
+    "name": "Overgrown Autochthonic Vermin",
+    "slug": "overgrown-autochthonic-vermin",
+    "faction": "",
+    "description": "",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 45,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 48,
+        "unnatural": 8
+      },
+      "toughness": {
+        "base": 36,
+        "unnatural": 6
+      },
+      "agility": {
+        "base": 33,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 20,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 33,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 25,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 2,
+        "unnatural": 0
+      }
+    },
+    "wounds": 0,
+    "movement": "4/8/12/24 Grounds: 24",
+    "skills": [
+      [
+        "Awareness",
+        0
+      ]
+    ],
+    "talents": [],
+    "traits": [
+      "Dark Sight",
+      "Improved Natural Weapons",
+      "Size (Hulking)",
+      "Toxic",
+      "Unnatural Strength (x2)",
+      "Unnatural Toughness (x2)"
+    ],
+    "weapons_text": "Rending bite (Melee; 2d10+8; Pen 2; Tearing, Toxic), tongue lash (Pistol; 15m; 1d10+4; Ensnaring Grasp†). **†Ensnaring Grasp:** If it hits a target with this attack, this creature immediately makes a Grapple Action against it as a Free Action (see page 240 of the ROGUE TRADER Core Rulebook) even if it would not normally be within range for this Action. So long as it remains in control of the Grapple, it drags its prey 1d5 metres toward its maw at the start of each of its Turns.",
+    "armour_text": "None. **Total TB:** 6",
+    "gear_text": "",
+    "portrait_ref": null,
+    "ws_line": 4380,
+    "source_book": "roguetrader_faithandcoin.pdf"
+  },
+  {
+    "name": "Guardian of the Inner Sanctum",
+    "slug": "guardian-of-the-inner-sanctum",
+    "faction": "",
+    "description": "",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 46,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 18,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 48,
+        "unnatural": 8
+      },
+      "toughness": {
+        "base": 46,
+        "unnatural": 8
+      },
+      "agility": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 20,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 33,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 25,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 6,
+        "unnatural": 0
+      }
+    },
+    "wounds": 0,
+    "movement": "5/10/15/30 Grounds: 45",
+    "skills": [
+      [
+        "Awareness",
+        10
+      ]
+    ],
+    "talents": [
+      "Ambidextrous",
+      "Berserk Charge",
+      "Cleanse and Purify",
+      "Die Hard",
+      "Fearless",
+      "Hardy",
+      "Iron Jaw",
+      "Two-Weapon Wielder (Ballistic)",
+      "Two-Weapon Wielder (Melee)"
+    ],
+    "traits": [
+      "Auto-Stabilised",
+      "Dark Sight",
+      "Fear (1)",
+      "Machine (2)",
+      "Size (Enormous)",
+      "Unnatural Strength (x2)",
+      "Unnatural Toughness (x2)"
+    ],
+    "weapons_text": "Stomp (Melee; 1d10+5; Pen 6), chain axe (Melee; 1d10+11 R; Pen 1; Tearing), heavy flamer (30m; S/--/--; 2d10+4 E; Pen 4; Clip 1; Rld Full; Flame).",
+    "armour_text": "Head 2, Body 8, Arms 8, Legs 8. **Total TB:** 8",
+    "gear_text": "Internal micro-bead (to receive/relay instructions), fuel tank equivalent to one clip for its heavy flamer.",
+    "portrait_ref": "img-69.jpeg",
+    "ws_line": 4401,
+    "source_book": "roguetrader_faithandcoin.pdf"
+  }
+]

@@ -1,0 +1,238 @@
+---
+effects: []
+flags:
+  rt:
+    description: These disgusting parodies of life are animated bodies under the Worm's control. Sluggish and clumsy, they
+      offer no real danger singly, though in numbers they can be deadly.
+    movement: 1/2/3/6
+    rawGear: None. **Meat Puppet:** Neither dead nor alive, the Warp Puppets are just objects animated by the power of the
+      Psycharus Worm. As such, they cannot truly be killed. When they reach 0 Wounds, they will collapse for 5 rounds before
+      rising again with new gaping wounds and missing limbs. Only massive damage inflicting 15 points of Damage in a single
+      hit can put them down for good. The GM should allow PCs to hack up inactive puppets with melee weapons. Warp Puppets
+      only ever use the Charge or Standard Attack actions.
+    source: Forsaken Bounty
+img: ''
+items:
+- _id: rCUUeGlpCCXhNZhm
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Weapon Training (as appropriate)
+  ownership:
+    default: 3
+  sort: 0
+  system: {}
+  type: talent
+- _id: cgCNFVlSjXKohpQG
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Meat Puppet (see below)
+  ownership:
+    default: 3
+  sort: 0
+  system: {}
+  type: trait
+- _id: Uo0ZFNbQCxKU4PyG
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
+  name: Warp-enhanced jagged debris (1d5+6; Pen 2) or laspistol
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    attackBonus: 0
+    attackType: ''
+    availability: Common
+    backpack:
+      inBackpack: false
+    class: Melee
+    clip:
+      max: 0
+      value: 0
+    craftsmanship: Common
+    damage: ''
+    damageType: ''
+    description: ''
+    effect: ''
+    equipped: true
+    inBackpack: false
+    modifications: []
+    penetration: ''
+    range: ''
+    rateOfFire:
+      burst: 0
+      full: 0
+      single: 1
+    reload: ''
+    source: Forsaken Bounty
+    special: {}
+    target: ''
+    type: ''
+    weight: 0
+  type: weapon
+name: Warp Puppets
+prototypeToken:
+  actorLink: false
+  disposition: -1
+  height: 1
+  name: Warp Puppets
+  texture:
+    scaleX: 1.0
+    scaleY: 1.0
+    src: ''
+  width: 1
+system:
+  characteristics:
+    agility:
+      base: 11
+      unnatural: 0
+    ballisticSkill:
+      base: 13
+      unnatural: 0
+    fellowship:
+      base: 0
+      unnatural: 0
+    intelligence:
+      base: 0
+      unnatural: 0
+    perception:
+      base: 12
+      unnatural: 0
+    strength:
+      base: 64
+      unnatural: 0
+    toughness:
+      base: 21
+      unnatural: 0
+    weaponSkill:
+      base: 33
+      unnatural: 0
+    willpower:
+      base: 13
+      unnatural: 0
+  npc:
+    faction: ''
+    subfaction: ''
+    threatLevel: 0
+    type: troop
+  skills: {}
+  wounds:
+    critical: 0
+    max: 6
+    rolled: true
+    value: 6
+type: npc
+---
+effects: []
+flags:
+  rt:
+    description: Little of Orden now remains, his mind hollowed out by the Psycharus Worm. What he does remember comes only
+      to him briefly as flashes of human memory amidst alien images and the desires of the Worm.
+    movement: 4/8/12/24
+    rawGear: None.
+    source: Forsaken Bounty
+img: ''
+items:
+- _id: TeieC7rSBdDJYkwR
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: None
+  ownership:
+    default: 3
+  sort: 0
+  system: {}
+  type: talent
+- _id: CPzMp0Zqps1eWuqf
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
+  name: Energised Fists
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    attackBonus: 0
+    attackType: ''
+    availability: Common
+    backpack:
+      inBackpack: false
+    class: Melee
+    clip:
+      max: 0
+      value: 0
+    craftsmanship: Common
+    damage: ''
+    damageType: ''
+    description: ''
+    effect: ''
+    equipped: true
+    inBackpack: false
+    modifications: []
+    penetration: ''
+    range: ''
+    rateOfFire:
+      burst: 0
+      full: 0
+      single: 1
+    reload: ''
+    source: Forsaken Bounty
+    special: {}
+    target: ''
+    type: ''
+    weight: 0
+  type: weapon
+name: Orden, Thrall Of The Psycharus Worm
+prototypeToken:
+  actorLink: false
+  disposition: -1
+  height: 1
+  name: Orden, Thrall Of The Psycharus Worm
+  texture:
+    scaleX: 1.0
+    scaleY: 1.0
+    src: ''
+  width: 1
+system:
+  characteristics:
+    agility:
+      base: 47
+      unnatural: 0
+    ballisticSkill:
+      base: 13
+      unnatural: 0
+    fellowship:
+      base: 12
+      unnatural: 0
+    intelligence:
+      base: 40
+      unnatural: 0
+    perception:
+      base: 39
+      unnatural: 0
+    strength:
+      base: 34
+      unnatural: 0
+    toughness:
+      base: 51
+      unnatural: 0
+    weaponSkill:
+      base: 53
+      unnatural: 0
+    willpower:
+      base: 58
+      unnatural: 0
+  npc:
+    faction: ''
+    subfaction: ''
+    threatLevel: 0
+    type: troop
+  skills: {}
+  wounds:
+    critical: 0
+    max: 21
+    rolled: true
+    value: 21
+type: npc

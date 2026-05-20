@@ -1,0 +1,2083 @@
+[
+  {
+    "name": "Arbitrator Primus Naxander Durantis",
+    "slug": "arbitrator-primus-naxander-durantis",
+    "faction": "",
+    "description": "\"All crime is a slight against the Emperor's divine plan, and consequently an act of beresy. All heretical acts are in breach of the Emperor's holy law; and are thus crimes.\"\n\n—Arbitrator Prime Naxander Durantis.\n\nA man with nearly two decades of experience serving with Judge Envedine, Arbitrator Primus Durantis is the commander of the Intervention. Now in his late fifties (and with limited access to rejuvinat drugs), Durantis views his rank with a mixture of honour and resentment, eager to bring justice to the stars but also struggling with the fact that he can no longer so readily lead his men in combat as he did earlier in his career.\n\nUnwilling to let all his old duties fall away in place of newer ones, Durantis still interrogates many suspects personally, his scarred visage serving to intimidate the weaker-willed of his captives. He is a shrewd interrogator, having learned a great deal working alongside many skilled chasteners over the years, and his eye for detail is sharper than ever.",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 41,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 53,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 38,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 42,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 44,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 52,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 48,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 43,
+        "unnatural": 0
+      }
+    },
+    "wounds": 20,
+    "movement": "3/6/9/18",
+    "skills": [
+      [
+        "Awareness",
+        10
+      ],
+      [
+        "Ciphers (Adeptus Arbites)",
+        20
+      ],
+      [
+        "Command",
+        20
+      ],
+      [
+        "Common Lore (Adeptus Arbites)",
+        20
+      ],
+      [
+        "Deceive",
+        0
+      ],
+      [
+        "Dodge",
+        0
+      ],
+      [
+        "Inquiry",
+        20
+      ],
+      [
+        "Interrogation",
+        20
+      ],
+      [
+        "Intimidating",
+        10
+      ],
+      [
+        "Literacy",
+        10
+      ],
+      [
+        "Logic",
+        0
+      ],
+      [
+        "Scholastic Lore (Judgement)",
+        10
+      ],
+      [
+        "Scrutiny",
+        20
+      ],
+      [
+        "Secret Tongue (Administratum)",
+        0
+      ],
+      [
+        "Speak Language (High Gothic)",
+        0
+      ],
+      [
+        "Speak Language (Low Gothic)",
+        0
+      ],
+      [
+        "Tech-Use",
+        0
+      ],
+      [
+        "Trade (Voidfarer)",
+        10
+      ]
+    ],
+    "talents": [
+      "Basic Weapon Training (Universal)",
+      "Combat Sense",
+      "Die Hard",
+      "Hatred (Criminals, Pirates)",
+      "Iron Discipline",
+      "Iron Jaw",
+      "Jaded",
+      "Melee Weapon Training (Universal)",
+      "Mighty Shot",
+      "Pistol Training (Universal)",
+      "Quick Draw",
+      "Rapid Reload",
+      "Takedown"
+    ],
+    "traits": [],
+    "weapons_text": "Hand Cannon (35m; S/-/-; 1d10+6 I; Pen 2; Clip 5; Rld 5), Power Maul (High Setting: 1d10+8 E; Pen 4; Power Field, Shocking or Low Setting: 1d10+4 E; Pen 2; Shocking).",
+    "armour_text": "(Arms 3, Body 3, Legs 3) Total TB: 4",
+    "gear_text": "Micro-bead, void suit, bionic arm, good-craftsmanship bionic eye, good-craftsmanship bionic ear.",
+    "portrait_ref": null,
+    "ws_line": 3208,
+    "source_book": "roguetrader_hostileacquisitions.pdf"
+  },
+  {
+    "name": "Arbitrator",
+    "slug": "arbitrator",
+    "faction": "",
+    "description": "The Arbitrators who serve aboard the Intervention or the Precedent have had to pick up additional skills in their shipboard service. In the course of their duties, they have become well-versed in the matters of ship-to-ship combat, subduing enemy crewmen, and swiftly searching for hidden contraband. Clad in pressure-sealed carapace armour and armed in the traditional manner of an arbitrator—with shotgun, suppression shield, and power maul—the Arbitrators are a fearsome prospect for the crew of many illegal ships.",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 43,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 43,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 39,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 33,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 30,
+        "unnatural": 0
+      }
+    },
+    "wounds": 11,
+    "movement": "4/8/12/24",
+    "skills": [
+      [
+        "Acrobatics",
+        0
+      ],
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Common Lore (Adeptus Arbites)",
+        0
+      ],
+      [
+        "Interrogation",
+        10
+      ],
+      [
+        "Scholastic Lore (Judgement)",
+        10
+      ],
+      [
+        "Search",
+        10
+      ],
+      [
+        "Scrutiny",
+        0
+      ],
+      [
+        "Speak Language (Low Gothic)",
+        0
+      ],
+      [
+        "Tech-Use",
+        0
+      ]
+    ],
+    "talents": [
+      "Basic Weapon Training (Bolt, SP)",
+      "Disarm",
+      "Melee Weapon Training (Shock, Primitive)",
+      "Pistol Training (Bolt, Launcher, SP)",
+      "Takedown"
+    ],
+    "traits": [],
+    "weapons_text": "Persecutor-pattern Combat Shotgun (35m; S/3/-; 1d10+4 I; Pen 0; Clip 20; Rld Full; Scatter), Power Maul (High Setting—1d10+9 E; Pen 4; Power Field, Shocking or Low Setting—1d10+5 E; Pen 2; Shocking).",
+    "armour_text": "(All 6) Total TB: 4",
+    "gear_text": "Micro-bead, photo-visor, 2 combat shotgun magazines, combat shotgun magazine of executioner shells, manacles, auspex, suppression shield†.",
+    "portrait_ref": "img-34.jpeg",
+    "ws_line": 3227,
+    "source_book": "roguetrader_hostileacquisitions.pdf"
+  },
+  {
+    "name": "Magos Juris Konstantyn Ambolic",
+    "slug": "magos-juris-konstantyn-ambolic",
+    "faction": "",
+    "description": "",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 44,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 49,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 64,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 58,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 21,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 64,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 41,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 48,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 11,
+        "unnatural": 0
+      }
+    },
+    "wounds": 0,
+    "movement": "2/4/6/12 Total",
+    "skills": [
+      [
+        "Chem-Use",
+        0
+      ],
+      [
+        "Command",
+        10
+      ],
+      [
+        "Common Lore (Adeptus Arbites)",
+        0
+      ],
+      [
+        "Common Lore (Adeptus Mechanicus)",
+        20
+      ],
+      [
+        "Common Lore (Imperium)",
+        0
+      ],
+      [
+        "Common Lore (Tech)",
+        20
+      ],
+      [
+        "Forbidden Lore (Adeptus Mechanicus)",
+        10
+      ],
+      [
+        "Forbidden Lore (Archeotech)",
+        10
+      ],
+      [
+        "Forbidden Lore (Heresy)",
+        0
+      ],
+      [
+        "Forbidden Lore (Pirates)",
+        0
+      ],
+      [
+        "Interrogation",
+        10
+      ],
+      [
+        "Intimidate",
+        10
+      ],
+      [
+        "Literacy",
+        10
+      ],
+      [
+        "Logic",
+        20
+      ],
+      [
+        "Scholastic Lore (Cryptology)",
+        0
+      ],
+      [
+        "Scholastic Lore (Judgement)",
+        20
+      ],
+      [
+        "Secret Tongue (Tech)",
+        20
+      ],
+      [
+        "Speak Language (Explorator Binary)",
+        10
+      ],
+      [
+        "Speak Language (High Gothic)",
+        0
+      ],
+      [
+        "Speak Language (Low Gothic)",
+        10
+      ],
+      [
+        "Speak Language (Techna-Lingua)",
+        20
+      ],
+      [
+        "Tech-Use",
+        20
+      ]
+    ],
+    "talents": [
+      "Ambidextrous",
+      "Autosanguine",
+      "Basic Weapon Training (Universal)",
+      "Binary Chatter",
+      "Chem Geld",
+      "Die Hard",
+      "Disturbing Voice",
+      "Electrical Succour",
+      "Electro Graft Use",
+      "Energy Cache",
+      "Hatred (Criminals)",
+      "Luminen Blast",
+      "Luminen Shock",
+      "Machinator Array",
+      "Maglev Grace",
+      "Maglev Transcendence",
+      "Mechadendrite Use (Weapon, Utility)",
+      "Melee Weapon Training (Universal)",
+      "Pistol Training (Universal)",
+      "Prosanguine",
+      "Resistance (Cold, Fear, Poison)",
+      "Rite of Awe",
+      "Rite of Fear",
+      "Rite of Pure Thought",
+      "The Flesh is Weak 5",
+      "Total Recall"
+    ],
+    "traits": [
+      "Mechanicus Implants"
+    ],
+    "weapons_text": "Ryza-pattern Plasma Pistol (30m; S/2/–; 1d10+6 E; Pen 6; Clip 10; Rld 3 Full; Overheat), Sollex-pattern Omnissian Axe (2d10+10 E; Pen 6; Power Field, Unbalanced), mechadendrite-mounted Hellpistol (35m; S/2/–; 1d10+4 E; Pen 7; Clip 30; Rld 2 Full), mechadendrite-mounted chainsword (1d10+8 R; Pen 2; Balanced, Tearing).",
+    "armour_text": "(All 14) Would: 18 Total TB: 5",
+    "gear_text": "Full cybernetic resurrection, including two bionic arms, two bionic legs, bionic respiratory system, good craftsmanship cybernetic senses (all), good craftsmanship cortex implant, ballistic mechadendrite with hellpistol, manipulator mechadendrite, optical mechadendrite, utility mechadendrite.",
+    "portrait_ref": "img-35.jpeg",
+    "ws_line": 3412,
+    "source_book": "roguetrader_hostileacquisitions.pdf"
+  },
+  {
+    "name": "Classiarii Trooper",
+    "slug": "classiarii-trooper",
+    "faction": "",
+    "description": "",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 42,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 46,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 51,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 56,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 38,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 12,
+        "unnatural": 0
+      }
+    },
+    "wounds": 15,
+    "movement": "3/6/9/18",
+    "skills": [
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Common Lore (Adeptus Mechanicus)",
+        0
+      ],
+      [
+        "Demolition",
+        10
+      ],
+      [
+        "Dodge",
+        0
+      ],
+      [
+        "Logic",
+        0
+      ],
+      [
+        "Medicae",
+        0
+      ],
+      [
+        "Secret Tongue (Military)",
+        0
+      ],
+      [
+        "Secret Tongue (Tech)",
+        0
+      ],
+      [
+        "Speak Language (Low Gothic)",
+        0
+      ],
+      [
+        "Speak Language (Techna-linguis)",
+        0
+      ],
+      [
+        "Tech-Use",
+        0
+      ]
+    ],
+    "talents": [
+      "Ambidextrous",
+      "Basic Weapon Training (Universal)",
+      "Binary Chatter",
+      "Double Team",
+      "Fearless",
+      "Hipshooting",
+      "Heavy Weapon Training (Bolt, Las, SP)",
+      "Independent Targeting",
+      "Logis Implant",
+      "Melee Weapon Training (Universal)",
+      "Pistol Training (Universal)",
+      "Rapid Reload",
+      "Sprint",
+      "Two-Weapon Wielder (Ballistic)"
+    ],
+    "traits": [
+      "Auto-stabilised",
+      "Dark Sight",
+      "Flyer 3 (null-gravity only)",
+      "Machine 3"
+    ],
+    "weapons_text": "Best-Craftsmanship Shotcannon with Amputator shells (40m; S/3/–; 2d10+6 I; Clip 24; Rld 2 Full; Scatter) or MIU-linked Mezoa-pattern Flamer (20m; S/–/–; 1d10+4 E; Pen 2; Clip 6; Rld 2 Full; Flame) or MIU-linked Mezoa-pattern Meltagun (20m; S/–/–; 2d10+8 E; Pen 13; Clip 10; Rld 3 Full) or MIU-linked Compact Storm Bolter (45m; S/2/4; 1d10+4 X; Pen 4; Clip 30; Rld Full; Storm, Tearing), Chainsword (1d10+8 R; Pen 2; Balanced, Tearing).",
+    "armour_text": "** (Head 7, Body 9, Arms 8, Legs 8) **Total TB:** 5",
+    "gear_text": "Backpack Ammo Supply (for Shotcannon or Storm Bolter), Combi-tool, 2 meltabombs, augur array, good-craftsmanship bionic respiratory system, bionic heart, MIU weapon interface, subskin armour, cranial armour, synthetic muscle grafts, voidskin, vox implant.",
+    "portrait_ref": "img-35.jpeg",
+    "ws_line": 3452,
+    "source_book": "roguetrader_hostileacquisitions.pdf"
+  },
+  {
+    "name": "Lathe-Pattern Murder Servitor",
+    "slug": "lathe-pattern-murder-servitor",
+    "faction": "",
+    "description": "",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 55,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 22,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 42,
+        "unnatural": 8
+      },
+      "toughness": {
+        "base": 50,
+        "unnatural": 10
+      },
+      "agility": {
+        "base": 44,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 20,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 2,
+        "unnatural": 0
+      }
+    },
+    "wounds": 14,
+    "movement": "8/16/24/48",
+    "skills": [
+      [
+        "Acrobatics",
+        10
+      ],
+      [
+        "Awareness",
+        10
+      ],
+      [
+        "Climb",
+        20
+      ],
+      [
+        "Concealment",
+        10
+      ],
+      [
+        "Dodge",
+        10
+      ],
+      [
+        "Search",
+        10
+      ],
+      [
+        "Silent Move",
+        20
+      ],
+      [
+        "Tracking",
+        20
+      ]
+    ],
+    "talents": [
+      "Ambidextrous",
+      "Berserk Charge",
+      "Crippling Strike",
+      "Crushing Blow",
+      "Frenzy",
+      "Lightning Reflexes",
+      "Melee Weapon Training (Universal)",
+      "Step Aside",
+      "Swift Attack",
+      "Two-Weapon Wielder (Melee)"
+    ],
+    "traits": [
+      "Brutal Charge",
+      "Dark Sight",
+      "Flyer 6 (null-gravity only)",
+      "Improved Natural Weapons",
+      "Machine 3",
+      "Multiple Arms",
+      "Natural Weapons",
+      "Unnatural Speed",
+      "Unnatural Strength (x2)",
+      "Unnatural Toughness (x2)"
+    ],
+    "weapons_text": "Mono-talons (1d10+10 R; Pen 2), Viscerator-limb (1d10+14 R; Pen 2; Tearing, Unbalanced), Melta-cutter array (5m; S/–/–; 3d10+8 E; Pen 13; Clip 10; Rld 3 Full; Inaccurate, Scatter, Twin-Linked).",
+    "armour_text": "** (All 9) **Total TB:** 5",
+    "gear_text": "Micro-bead, photo-visor.",
+    "portrait_ref": "img-36.jpeg",
+    "ws_line": 3486,
+    "source_book": "roguetrader_hostileacquisitions.pdf"
+  },
+  {
+    "name": "Ordinate-Majore Mordechai Lorik",
+    "slug": "ordinate-majore-mordechai-lorik",
+    "faction": "",
+    "description": "\"I would sooner submit to penitent excruciation than deal with the Ordinate-Majore again.\"\n\n—Rogue Trader Jonquin Saul\n\nPrecise and pedantic to a fault, Ordinate-Majore Mordechai Lorik is one of the Divisio Auditae senior Quaestors. Universally disliked by almost everyone he meets, Lorik seems to possess no empathy for other people, caring only about the details of his work, and in this regard he has been extremely successful. Over the last forty years, he has investigated the political and financial landscape of Port Wander and the systems nearby, personally uncovering the evidence that led to the elimination of five smuggling operations carrying xenos technology through the Maw.\n\nLorik's operation now involves dozens of lesser Quaestors, operating in close communication as they move from world to world. Lorik himself seldom gets directly involved during the early stages of an investigation, instead choosing to direct matters from a private office on Port Wander, analysing data gathered by his subordinates and processed by a team of lexmechanics and calculus logi. When he does get involved directly, it is never a quick matter. Lorik has had vessels impounded for weeks while he and squads of commandeered Adeptus Arbites search them from prow to stern with exacting detail.\n\nLorik is particularly loathed by Rogue Traders, who he dislikes in equal measure—individuals so unrestrained and impulsive are anathema to him. Voyages into the Expanse have been delayed by months because of tedious inspections performed at the command of Mordechai Lorik.\n\nNow an elderly man, Lorik is frail and feeble, his body sustained only by expensive rejuvenat treatments and augmetic replacements. He has only a few years of life left, something for which his enemies are grateful, and hopeful that his inevitable replacement is perhaps easier to deal with.\n\nLorik's profile can be used to represent him directly, or any senior Quaestor.",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 28,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 26,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 23,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 22,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 58,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 53,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 46,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 28,
+        "unnatural": 0
+      }
+    },
+    "wounds": 9,
+    "movement": "3/6/9/18",
+    "skills": [
+      [
+        "Command",
+        0
+      ],
+      [
+        "Commerce",
+        0
+      ],
+      [
+        "Common Lore (Adeptus Arbites)",
+        10
+      ],
+      [
+        "Common Lore (Administratum, Imperium, Navis Nobilite, Rogue Traders)",
+        20
+      ],
+      [
+        "Evaluate",
+        10
+      ],
+      [
+        "Literacy",
+        20
+      ],
+      [
+        "Logic",
+        0
+      ],
+      [
+        "Scholastic Lore (Bureaucracy)",
+        20
+      ],
+      [
+        "Scholastic Lore (Imperial Warrants)",
+        10
+      ],
+      [
+        "Scrutiny",
+        20
+      ],
+      [
+        "Secret Tongue (Administratum)",
+        20
+      ],
+      [
+        "Speak Language (High Gothic, Low Gothic)",
+        20
+      ],
+      [
+        "Tech-Use",
+        0
+      ]
+    ],
+    "talents": [
+      "Autosanguine",
+      "Chem Geld",
+      "Foresight",
+      "Infused Knowledge",
+      "Light Sleeper",
+      "Orthoproxy",
+      "Paranoia",
+      "Pistol Training (Las)",
+      "Talented (Scholastic Lore [Bureaucracy])",
+      "Total Recall"
+    ],
+    "traits": [],
+    "weapons_text": "Compact laspistol (15m; S/-/-; 1d10+1 E; Clip 15; Rld Full; Reliable).",
+    "armour_text": "(All 0) Total TB: 2",
+    "gear_text": "Chrono, Ordinate's robes, auto-quill, several data-slates, transcription servo-skull, bionic respiratory system, bionic hips, bionic shoulder, scribe-tines.",
+    "portrait_ref": null,
+    "ws_line": 3633,
+    "source_book": "roguetrader_hostileacquisitions.pdf"
+  },
+  {
+    "name": "Commodore Teodor Naremmus",
+    "slug": "commodore-teodor-naremmus",
+    "faction": "",
+    "description": "",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 38,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 36,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 42,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 43,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 48,
+        "unnatural": 0
+      }
+    },
+    "wounds": 13,
+    "movement": "3/6/9/18",
+    "skills": [
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Climb",
+        0
+      ],
+      [
+        "Command",
+        20
+      ],
+      [
+        "Common Lore (Imperium)",
+        0
+      ],
+      [
+        "Common Lore (Imperial Navy)",
+        10
+      ],
+      [
+        "Common Lore (War)",
+        10
+      ],
+      [
+        "Forbidden Lore (Pirates)",
+        0
+      ],
+      [
+        "Literacy",
+        10
+      ],
+      [
+        "Navigation (Stellar)",
+        0
+      ],
+      [
+        "Speak Language (High Gothic)",
+        0
+      ],
+      [
+        "Speak Language (Low Gothic)",
+        0
+      ]
+    ],
+    "talents": [
+      "Air of Authority",
+      "Basic Weapons Training (Las, SP)",
+      "Iron Discipline",
+      "Master &amp; Commander",
+      "Melee Weapon Training (Universal)",
+      "Nerves of Steel",
+      "Peer (Imperial Navy)",
+      "Pistol Training (Universal)"
+    ],
+    "traits": [],
+    "weapons_text": "Naval Pistol (20m; S/3/–; 1d10+4 I; Clip 6; Rld Full; Tearing), Power Sword (1d10+8 E; Pen 5; Balanced, Power Field).",
+    "armour_text": "** (Arms 3, Body 3, Legs 3) **Total TB:** 3",
+    "gear_text": "2 spare naval pistol clips, personal vox, lord-captain's baton, respirator, Medallion Crimson.",
+    "portrait_ref": null,
+    "ws_line": 3696,
+    "source_book": "roguetrader_hostileacquisitions.pdf"
+  },
+  {
+    "name": "\"Retaliator\" Detachment Armsman",
+    "slug": "retaliator-detachment-armsman",
+    "faction": "",
+    "description": "",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 38,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 38,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 28,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 20,
+        "unnatural": 0
+      }
+    },
+    "wounds": 12,
+    "movement": "3/6/9/18",
+    "skills": [
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Common Lore (Imperium)",
+        0
+      ],
+      [
+        "Common Lore (Imperial Navy)",
+        0
+      ],
+      [
+        "Intimidate",
+        0
+      ],
+      [
+        "Speak Language (Low Gothic)",
+        0
+      ]
+    ],
+    "talents": [
+      "Basic Weapon Training (SP)",
+      "Melee Weapon Training (Primitive)",
+      "Nerves of Steel",
+      "Pistol Training (SP)",
+      "Rapid Reload"
+    ],
+    "traits": [],
+    "weapons_text": "Auto-Shotgun (30m; S/3/–; 1d10+4 I; Clip 30; Rld 3 Full; Scatter), Mono-cutlass (1d10+3 R; Pen 2).",
+    "armour_text": "(All 6) Total TB: 3",
+    "gear_text": "2 spare auto-shotgun clips, 2 Stun Grenades, Demolition Charge, micro-bead vox, good craftsmanship photo-visor.",
+    "portrait_ref": "img-40.jpeg",
+    "ws_line": 3727,
+    "source_book": "roguetrader_hostileacquisitions.pdf"
+  },
+  {
+    "name": "Interrogator Deric Oktavian",
+    "slug": "interrogator-deric-oktavian",
+    "faction": "",
+    "description": "",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 44,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 53,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 46,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 49,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 53,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 46,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 38,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 60,
+        "unnatural": 0
+      }
+    },
+    "wounds": 16,
+    "movement": "4/8/12/24",
+    "skills": [
+      [
+        "Acrobatics",
+        0
+      ],
+      [
+        "Awareness",
+        20
+      ],
+      [
+        "Blather",
+        10
+      ],
+      [
+        "Charm",
+        20
+      ],
+      [
+        "Chem-use",
+        10
+      ],
+      [
+        "Climb",
+        10
+      ],
+      [
+        "Command",
+        20
+      ],
+      [
+        "Common Lore (Adeptus Arbites, Imperium, Koronus Expanse, Rogue Trader, Underworld)",
+        10
+      ],
+      [
+        "Concealment",
+        10
+      ],
+      [
+        "Deceive",
+        20
+      ],
+      [
+        "Disguise",
+        20
+      ],
+      [
+        "Dodge",
+        20
+      ],
+      [
+        "Drive (Ground Vehicles, Hover)",
+        20
+      ],
+      [
+        "Evaluate",
+        20
+      ],
+      [
+        "Forbidden Lore (Heresy, Mutants)",
+        10
+      ],
+      [
+        "Gamble",
+        20
+      ],
+      [
+        "Inquiry",
+        20
+      ],
+      [
+        "Intimidate",
+        0
+      ],
+      [
+        "Literacy",
+        10
+      ],
+      [
+        "Pilot (All)",
+        20
+      ],
+      [
+        "Scholastic Lore (Imperial Warrants, Judgement, Occult)",
+        0
+      ],
+      [
+        "Scrutiny",
+        20
+      ],
+      [
+        "Search",
+        10
+      ],
+      [
+        "Secret Tongue (Acolyte)",
+        0
+      ],
+      [
+        "Security",
+        10
+      ],
+      [
+        "Shadowing",
+        10
+      ],
+      [
+        "Silent Move",
+        10
+      ],
+      [
+        "Sleight of Hand",
+        20
+      ],
+      [
+        "Speak Language (Low Gothic)",
+        10
+      ],
+      [
+        "Survival",
+        10
+      ],
+      [
+        "Swim",
+        0
+      ],
+      [
+        "Tracking",
+        0
+      ]
+    ],
+    "talents": [
+      "Ambidextrous",
+      "Basic Weapon Training (Universal)",
+      "Crack Shot",
+      "Deadeye Shot",
+      "Die Hard",
+      "Good Reputation (Inquisition, Underworld)",
+      "Hardy",
+      "Hip Shooting",
+      "Independent Targeting",
+      "Jaded",
+      "Light Sleeper",
+      "Marksman",
+      "Melee Weapon Training (Universal)",
+      "Mighty Shot",
+      "Nerves of Steel",
+      "Peer (Adeptus Arbites, Administratum, Imperial Navy, Inquisition, Underworld)",
+      "Pistol Training (Universal)",
+      "Quick Draw",
+      "Rapid Reload",
+      "Sharpshooter",
+      "Step Aside",
+      "Talented (Inquiry)",
+      "True Grit",
+      "Unremarkable"
+    ],
+    "traits": [],
+    "weapons_text": "",
+    "armour_text": "",
+    "gear_text": "",
+    "portrait_ref": "img-40.jpeg",
+    "ws_line": 3892,
+    "source_book": "roguetrader_hostileacquisitions.pdf"
+  },
+  {
+    "name": "The Rogue Psyker",
+    "slug": "the-rogue-psyker",
+    "faction": "",
+    "description": "This Rogue Psyker example is a cabal of cultists devoted to the Dark Gods. Their Origin is Faith Found Wanting, represented by skills such as Forbidden Lore, Ciphers (Occult), and Secret Tongue (Cult) as well as the Dark Soul talent. After Faith Found Wanting, Vendetta is selected and filled out with the Tracking, Shadowing, and Silent Move skills in addition to the Peer (Underworld) talent, all showing the cabal’s desire to get revenge by successfully tracking their mark and securing allies to assist them. Each cabalist also carries a memento as a reminder of why it is that he hunts the Rogue Trader and his crew. Following Vendetta is the Paranoid Savant from Devices and Downfalls.\n\nThe Light Sleeper and Paranoia talents fit well alongside some buffed up Investigation Skills such as Common Lore, Forbidden Lore, and Logic. Also, Telepathy and Divination are appropriate Psychic Disciplines due to their focus on information gain and transmission. Reputation is selected from the next row and thus their Fellowship is perhaps higher than one would normally expect from a cabalist and several Interaction based skills help them with social manoeuvrability. Finally, the psykers need a few skills, talents, powers, and equipment specifically appropriate to those who traffic with the warp.\n\n## Dark Cabalist (Rogue Psyker) Profile",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 28,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 28,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 36,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 28,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 37,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 45,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 43,
+        "unnatural": 0
+      }
+    },
+    "wounds": 13,
+    "movement": "3/6/9/18",
+    "skills": [
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Ciphers (Occult)",
+        0
+      ],
+      [
+        "Charm",
+        10
+      ],
+      [
+        "Common Lore (Imperium, Koronus Expanse)",
+        0
+      ],
+      [
+        "Command",
+        0
+      ],
+      [
+        "Deceive",
+        10
+      ],
+      [
+        "Forbidden Lore (Cults, Daemonology, Warp)",
+        10
+      ],
+      [
+        "Invocation",
+        0
+      ],
+      [
+        "Logic",
+        10
+      ],
+      [
+        "Psyniscience",
+        0
+      ],
+      [
+        "Secret Tongue (Cult)",
+        0
+      ],
+      [
+        "Shadowing",
+        10
+      ],
+      [
+        "Silent Move",
+        10
+      ],
+      [
+        "Speak Language (Low Gothic)",
+        0
+      ],
+      [
+        "Tracking",
+        0
+      ],
+      [
+        "Trade (Seer)",
+        0
+      ]
+    ],
+    "talents": [
+      "Dark Soul",
+      "Jaded",
+      "Light Sleeper",
+      "Paranoia",
+      "Peer (Renegade, Underworld) Psy Rating 2"
+    ],
+    "traits": [
+      "One Mutation. **Disciplines:** Telepathy",
+      "Divination. **Psychic Techniques:** Short Range Telepathy",
+      "Mind Probe"
+    ],
+    "weapons_text": "Sacrificial blade (1d5+4 R; Primitive), stub automatic (30m; S/3/–; 1d10+3 I; Pen 0; Clip 9; Reload Full).",
+    "armour_text": "** (Body 3, Arms 2, Legs 2) **Total TB:** 4",
+    "gear_text": "Tattered clothes, trinkets and fetishes, memento, ragged reinforced void suit, respirator.",
+    "portrait_ref": "img-48.jpeg",
+    "ws_line": 5028,
+    "source_book": "roguetrader_hostileacquisitions.pdf"
+  },
+  {
+    "name": "The Brute",
+    "slug": "the-brute",
+    "faction": "",
+    "description": "The Ork Warboss is a formidable villain using the column of the Nemesis Path that starts with Despot and ends with The Brute. His Despotic origins grant the Warboss skills such as Command and Intimidate as well as talents like Air of Authority. Motivated by Slaughter and threatening the Explorer’s Wellbeing, he has the Frenzy, Battle Rage, Crushing Blow, Furious Assault, and (several) Weapon Training talents.\n\nMany talents designed to make the Warboss seem indomitable and fearsome such as Hardy, True Grit, and Iron Jaw complete his status as a Warrior Without Peer. Though mainly developed for his superior combat skills, he has some social ability with regards to command and intimidation and fun roleplaying bits like his trophies and Ork Speak.\n\n## Ork Warboss (The Brute) Profile",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 50,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 48,
+        "unnatural": 8
+      },
+      "toughness": {
+        "base": 55,
+        "unnatural": 10
+      },
+      "agility": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 26,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 28,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 32,
+        "unnatural": 0
+      }
+    },
+    "wounds": 18,
+    "movement": "3/6/9/18",
+    "skills": [
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Barter",
+        0
+      ],
+      [
+        "Command",
+        0
+      ],
+      [
+        "Intimidate",
+        0
+      ],
+      [
+        "Speak Language (Ork, Low Gothic)",
+        0
+      ]
+    ],
+    "talents": [
+      "Air of Authority",
+      "Battle Rage",
+      "Common Lore (Ork)",
+      "Crushing Blow",
+      "Furious Assault",
+      "Hardy",
+      "Iron Jaw",
+      "True Grit"
+    ],
+    "traits": [
+      "Brutal Charge",
+      "Resistance (Cold, Heat, Radiation)",
+      "Sturdy",
+      "Unnatural Strength (x2)",
+      "Unnatural Toughness (x2)"
+    ],
+    "weapons_text": "Choppa (1d10+12 R; Pen 2, Tearing), 1d5 Stikkbombz (24m; S/–/–; 2d10+5 X; Pen 2; Clip 1; Reload –; Blast [1]), shoots (60m; S/3/10; 1d10+4 I; Pen 0; Clip 30; Reload Full; Inaccurate, Unreliable).",
+    "armour_text": "** (Body 5, Head 4, Arms 2, Legs 2) **Total TB:** 10",
+    "gear_text": "2d10 Ork teeth (‘Teef’), shiny bitz, collected gore and other trophies from his kills, 3 spare clips for the shoots, respirator, crude hand vox.",
+    "portrait_ref": null,
+    "ws_line": 5056,
+    "source_book": "roguetrader_hostileacquisitions.pdf"
+  },
+  {
+    "name": "The Pirate Prince",
+    "slug": "the-pirate-prince",
+    "faction": "",
+    "description": "Cruel and disdainful towards humans, Eldar pirates make perfect enemies for Rogue Traders. The Eldar Raiders listed below start with Enemy in Arms, taking several Weapon Training talents, Quick Draw, and Leap Up to represent an agile and quick combat style. Next, they are motivated by Greed and target a Rogue Trader’s ability to make a profit—Motivation and Stakes choices that go hand in hand.\n\nThe Barter, Commerce, Gamble, and Trade skills all make sense when working towards these ends. Because they are Wealthy Scofflaws as well, these trade and wealth related skills are bulked up. Additionally, skills and talents related to crime work well such as Deceive and Ciphers (Underworld).\n\nEldar Raider (The Pirate Prince) Profile",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 44,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 44,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 33,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 52,
+        "unnatural": 10
+      },
+      "intelligence": {
+        "base": 39,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 43,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 27,
+        "unnatural": 0
+      }
+    },
+    "wounds": 12,
+    "movement": "5/10/15/30",
+    "skills": [
+      [
+        "Acrobatics",
+        0
+      ],
+      [
+        "Awareness",
+        10
+      ],
+      [
+        "Barter",
+        0
+      ],
+      [
+        "Ciphers (Underworld)",
+        10
+      ],
+      [
+        "Commerce",
+        10
+      ],
+      [
+        "Deceive",
+        10
+      ],
+      [
+        "Dodge",
+        0
+      ],
+      [
+        "Evaluate",
+        10
+      ],
+      [
+        "Forbidden Lore (The Black Library, Xenos, The Warp)",
+        0
+      ],
+      [
+        "Gamble",
+        0
+      ],
+      [
+        "Navigation (Stellar)",
+        0
+      ],
+      [
+        "Pilot (Interface Craft, Jump Pack)",
+        0
+      ],
+      [
+        "Medicae",
+        0
+      ],
+      [
+        "Silent Move",
+        10
+      ],
+      [
+        "Speak Language (Eldar, Low Gothic, Void Cant)",
+        10
+      ],
+      [
+        "Trade",
+        0
+      ]
+    ],
+    "talents": [
+      "Leap Up",
+      "Quick Draw",
+      "Resistance (Fear, Psychic Techniques)",
+      "Sprint"
+    ],
+    "traits": [
+      "Unnatural Agility (x2)"
+    ],
+    "weapons_text": "Shuriken catapult (60m; S/3/10; 1d10+4 R; Pen 6; Clip 100; Reload 2 Full; Reliable), xenos-crafted laspistol (30m; S/-/-; 1d10+2 E; Pen 0; Clip 30; Reload Full; Reliable), xenos-crafted mono-sword (1d10+3 R; Pen 2; Balanced), 2 plasma grenades, 4 blind grenades.",
+    "armour_text": "(All 4) Total TB: 3",
+    "gear_text": "3 spare clips of shuriken catapult ammunition, waystone gem, xenos-crafted medikit, xenos-crafted void-sealed armour that grants full life support as well as long range encrypted vox, auspex, and Dark Sight. Inbuilt void impellor units in the armour grant Flyer 12 in null gravity.",
+    "portrait_ref": null,
+    "ws_line": 5082,
+    "source_book": "roguetrader_hostileacquisitions.pdf"
+  },
+  {
+    "name": "The Heretek",
+    "slug": "the-heretek",
+    "faction": "",
+    "description": "To represent the unsurpassed mind of the Rival Intellect origin, the Magos has an increased Intelligence score, cortex implants, and several Lore skills. Her heretical fascination with proscribed alien technology is represented by her high proficiency with Forbidden Lore (Xenos). Despite her heresy, she remains a trusted and powerful servant of the Machine God, and as such her equipment and her very body are of the highest mechanical quality.\n\nSecretive Magos (The Heretek) Profile",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 33,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 39,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 46,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 20,
+        "unnatural": 0
+      }
+    },
+    "wounds": 22,
+    "movement": "3/6/9/18",
+    "skills": [
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Common Lore (Machine Cult, Tech)",
+        10
+      ],
+      [
+        "Drive (Hover Vehicle)",
+        0
+      ],
+      [
+        "Forbidden Lore (Archeotech, Adeptus Mechanicus)",
+        0
+      ],
+      [
+        "Forbidden Lore (Xenos-tech)",
+        20
+      ],
+      [
+        "Logic",
+        10
+      ],
+      [
+        "Pilot (Spacecraft)",
+        0
+      ],
+      [
+        "Speak Language (Explorator Binary, Low Gothic, Techna-lingua)",
+        0
+      ],
+      [
+        "Tech-Use",
+        20
+      ]
+    ],
+    "talents": [
+      "Infused Knowledge",
+      "Logis Implant",
+      "Rite of Awe",
+      "Rite of Fear",
+      "The Flesh is Weak 2"
+    ],
+    "traits": [
+      "Mechanicus Implants (see page 366 of the ROGUE TRADER rulebook)",
+      "Machine (2)"
+    ],
+    "weapons_text": "Omnissian Axe (2d10+7 E; Pen 6; Powerfield, Unbalanced), Hellpistol (35m; S/2/-; 1d10+4 E; Pen 7; Clip 40; Reload 2 Full).",
+    "armour_text": "(All 4) Total TB: 3",
+    "gear_text": "3 spare hellpistol clips, manipulator, optical, and utility mechadendrites, bionic augur arrays, good-quality cortex implants, sacred unguents, techpriests's mantle.",
+    "portrait_ref": null,
+    "ws_line": 5109,
+    "source_book": "roguetrader_hostileacquisitions.pdf"
+  },
+  {
+    "name": "The Apostate",
+    "slug": "the-apostate",
+    "faction": "",
+    "description": "To represent a constant state of awareness regarding his own place outside Imperial acceptance, the Nemesis has the Paranoia talent. The Tracking +20 Skill represent the thirst for vengeance possessed by those with the Vendetta motivation. To make him a truly ferocious combatant, the Nemesis has the Blademaster talent, and higher-than-average Weapon Skill and Ballistic Skill.\n\nDispossessed Kroot (The Apostate) Profile",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 48,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 38,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 35,
+        "unnatural": 6
+      },
+      "toughness": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 44,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 25,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 44,
+        "unnatural": 8
+      },
+      "willpower": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 18,
+        "unnatural": 0
+      }
+    },
+    "wounds": 23,
+    "movement": "4/8/16/32",
+    "skills": [
+      [
+        "Acrobatics",
+        0
+      ],
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Barter",
+        0
+      ],
+      [
+        "Climb",
+        10
+      ],
+      [
+        "Concealment",
+        20
+      ],
+      [
+        "Dodge",
+        10
+      ],
+      [
+        "Silent Move",
+        20
+      ],
+      [
+        "Speak Language (Low Gothic, Kroot)",
+        0
+      ],
+      [
+        "Tracking",
+        20
+      ],
+      [
+        "Survival",
+        20
+      ]
+    ],
+    "talents": [
+      "Blademaster",
+      "Furious Attack",
+      "Leap Up",
+      "Lightning Reflexes",
+      "Melee Weapon Training (Primitive)",
+      "Paranoia",
+      "Resistance (Fear)",
+      "Sprint",
+      "Swift Attack"
+    ],
+    "traits": [
+      "Natural Weaponry (Beak)",
+      "Unnatural Perception (x2)",
+      "Unnatural Strength (x2)"
+    ],
+    "weapons_text": "Kroot Rifle (110m; S/-/-; 1d10+5 E; Pen 1; Clip 6; Reload 2 Full), beak (1d5+6 R; Primitive).",
+    "armour_text": "Hide Armour (Body 2).",
+    "gear_text": "Cut meat, bandolier of 30 rifle charges, fetish pouch.",
+    "portrait_ref": null,
+    "ws_line": 5136,
+    "source_book": "roguetrader_hostileacquisitions.pdf"
+  },
+  {
+    "name": "The Inquisitor",
+    "slug": "the-inquisitor",
+    "faction": "",
+    "description": "The Orthodox Xenos Inquisitor sends xenostech smuggling Rogue Traders to rot on the nearest prison world. Her dedication to Puritan ideals gives her the Armour of Contempt, Hatred (Criminals), Inspire Wrath, and Litany of Hate talents. Her commitment to Orthodoxy in all things Imperial continues this puritanical trend and is represented by the Duty Unto Death talent. Various knowledge-based skills and the Foresight and Paranoia talents follow from her being a Paranoid Savant. Ultimately, her station as an Inquisitor and his good reputation with planetary governments help him to revoke the Freedom his Rogue Trader enemies take for granted.\n\nIV. THE NEMESIS PATH\n\nOrdo Xenos (The Inquisitor) Profile",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 43,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 31,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 38,
+        "unnatural": 0
+      }
+    },
+    "wounds": 15,
+    "movement": "3/6/9/18",
+    "skills": [
+      [
+        "Awareness",
+        10
+      ],
+      [
+        "Charm",
+        0
+      ],
+      [
+        "Common Lore (Imperium, Koronus Expanse)",
+        10
+      ],
+      [
+        "Evaluate",
+        10
+      ],
+      [
+        "Forbidden Lore (Archeotech, the Inquisition, Xenos)",
+        10
+      ],
+      [
+        "Inquiry",
+        10
+      ],
+      [
+        "Interrogation",
+        0
+      ],
+      [
+        "Intimidate",
+        0
+      ],
+      [
+        "Literacy",
+        0
+      ],
+      [
+        "Scholastic Lore (Judgement, Occult)",
+        10
+      ],
+      [
+        "Scrutiny",
+        0
+      ],
+      [
+        "Search",
+        0
+      ],
+      [
+        "Security",
+        0
+      ],
+      [
+        "Shadowing",
+        0
+      ],
+      [
+        "Speak Language (Low Gothic)",
+        0
+      ],
+      [
+        "Tech-Use",
+        0
+      ],
+      [
+        "Tracking",
+        0
+      ]
+    ],
+    "talents": [
+      "Ambidextrous",
+      "Armour of Contempt",
+      "Duty Unto Death",
+      "Fearless",
+      "Foresight",
+      "Good Reputation (Government)",
+      "Hatred (Criminals)",
+      "Inspire Wrath",
+      "Litany of Hate",
+      "Melee Weapon Training (Universal)",
+      "Paranoia",
+      "Peer (Academic, Inquisition)",
+      "Two Weapon Wielder (Ballistic)"
+    ],
+    "traits": [],
+    "weapons_text": "Power sword (1d10+8 E; Pen 5; Power Field, Balanced), Two Stripped Down Conversion Beamers (Pistol; 50m; S/-/-; 1d10+2 E; Pen 2; Clip 8; Rld 2 Full; At between 10-30 metres range, the weapon deals 1d10+7 E damage with a Pen 4; at 30-50 metres range, the weapon deals 2d10+7 E damage with a Pen of 6; at longer ranges the weapon deals 3d10+7 E damage with a Pen of 10 and Blast [2])",
+    "armour_text": "(All 5) Total TB: 3",
+    "gear_text": "Auspex, auto-quill, chrono, 2 extra hellgun clips, data-slate, multikey, servo-skull, set of fine clothing.",
+    "portrait_ref": "img-49.jpeg",
+    "ws_line": 5164,
+    "source_book": "roguetrader_hostileacquisitions.pdf"
+  },
+  {
+    "name": "The Politico",
+    "slug": "the-politico",
+    "faction": "",
+    "description": "Both the Nemesis' origins and motivations are hidden from the world at large and as such are not represented by any equipment or other readily visible means. They are however present in the large number of Forbidden Lore skills. Interactions with the Rak'Gol and the creatures of the warp has made the adversary Jaded and resistant to fear. As a Politico archetype, the villain has several social and manipulation skills, and a high Fellowship attribute.\n\nAgitator of Tzeentch (The Politico) Profile",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 31,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 32,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 33,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 38,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 42,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 41,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 44,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 42,
+        "unnatural": 0
+      }
+    },
+    "wounds": 18,
+    "movement": "3/6/9/18",
+    "skills": [
+      [
+        "Charm",
+        20
+      ],
+      [
+        "Ciphers (Underworld)",
+        10
+      ],
+      [
+        "Common Lore (Administratum, Koronus Expanse)",
+        0
+      ],
+      [
+        "Deceive",
+        20
+      ],
+      [
+        "Forbidden Lore (Pirates, Xenos)",
+        0
+      ],
+      [
+        "Forbidden Lore (Daemonology, Heresy, The Warp)",
+        10
+      ],
+      [
+        "Inquiry",
+        10
+      ],
+      [
+        "Interrogation",
+        0
+      ],
+      [
+        "Scholastic Lore (Bureaucracy, Heraldry)",
+        0
+      ],
+      [
+        "Scrutiny",
+        0
+      ],
+      [
+        "Speak Language (High Gothic, Low Gothic)",
+        0
+      ]
+    ],
+    "talents": [
+      "Air of Authority",
+      "Jaded",
+      "Melee Weapon Training (Universal)",
+      "Peer (Nobility, Administratum, Underworld)",
+      "Pistol Weapon Training (Universal)",
+      "Resistance (Fear)"
+    ],
+    "traits": [],
+    "weapons_text": "Laspistol (30m; S/-/-; 1d10+3 E; Clip 30; Reload Full; Reliable), Power Sword (1d10+8 E; Pen 5; Power Field, Balanced).",
+    "armour_text": "(All 5) Total TB: 3",
+    "gear_text": "Seal of authority, Noble clothing, 2 spare laspistol clips, tomes on the Dark Gods.",
+    "portrait_ref": "img-49.jpeg",
+    "ws_line": 5193,
+    "source_book": "roguetrader_hostileacquisitions.pdf"
+  },
+  {
+    "name": "The Criminal Mastermind",
+    "slug": "the-criminal-mastermind",
+    "faction": "",
+    "description": "This Criminal Mastermind has fallen from his position as a commander of an entire planet's worth of Enforcers and blends the best of his training with his new connections in the criminal underworld. His harsh, justice-oriented origins show through in his knowledge of the Imperium and habits of asceticism. He has Common Lore (Adeptus Arbites, Imperial Creed, Imperium, Koronus Expanse) in addition to the Armour of Contempt and Orthoproxy talents. He desires Glory above all else, having memorised Imperial legends and tempered nerves of steel. He has Scholastic Lore (Legend) and the Nerves of Steel and Last Man Standing talents. His status as a Scandalous Socialite affords him several social skills as well as the Peer (Nobility) and Decadence talents. Finally, to interfere in his opposed Rogue Trader's ability to use Influence, he has friends in both high and low places represented by his Peer (Adeptus Arbites, Underworld) talent and buffed up social skills and Fellowship.",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 28,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 33,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 36,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 39,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 45,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 44,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 52,
+        "unnatural": 0
+      }
+    },
+    "wounds": 18,
+    "movement": "3/6/9/18",
+    "skills": [
+      [
+        "Awareness",
+        10
+      ],
+      [
+        "Carouse",
+        0
+      ],
+      [
+        "Charm",
+        10
+      ],
+      [
+        "Common Lore (Adeptus Arbites, Imperial Creed, Imperium, Koronus Expanse, Underworld)",
+        10
+      ],
+      [
+        "Concealment",
+        0
+      ],
+      [
+        "Deceive",
+        0
+      ],
+      [
+        "Inquiry",
+        10
+      ],
+      [
+        "Interrogation",
+        10
+      ],
+      [
+        "Intimidate",
+        10
+      ],
+      [
+        "Literacy",
+        0
+      ],
+      [
+        "Scholastic Lore (Imperial Warrants, Judgement, Legend)",
+        0
+      ],
+      [
+        "Search",
+        10
+      ],
+      [
+        "Speak Language (Low Gothic, High Gothic)",
+        0
+      ]
+    ],
+    "talents": [
+      "Armour of Contempt",
+      "Decadence",
+      "Last Man Standing",
+      "Nerves of Steel",
+      "Orthoproxy",
+      "Peer (Adeptus Arbites, Nobility, Underworld)"
+    ],
+    "traits": [],
+    "weapons_text": "Inferno pistol (10m; S/-/–; 2d10+8 E; Pen 13; Clip 3; Reload Full), Boltgun (90m; S/2/4; 1d10+5 X; Pen 4; Clip 24; Reload Full; Tearing).",
+    "armour_text": "(Arms 3, Body 3, Legs 3) Total TB: 3",
+    "gear_text": "Autoquill, dataslate, 2 clips for Boltgun and Inferno pistol, set of fine clothing, void suit.",
+    "portrait_ref": "img-50.jpeg",
+    "ws_line": 5216,
+    "source_book": "roguetrader_hostileacquisitions.pdf"
+  }
+]

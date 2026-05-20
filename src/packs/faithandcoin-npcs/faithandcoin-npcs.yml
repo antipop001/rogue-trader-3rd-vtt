@@ -1,0 +1,1452 @@
+---
+effects: []
+flags:
+  rt:
+    description: ''
+    movement: '3/6/9/18 Grounds: 20'
+    rawGear: Ragged robes resembling debased ecclesiastical vestments, fetishes, trophies and random symbols of the Imperial
+      Creed.
+    source: Faith and Coin
+img: ''
+items:
+- _id: Q1crUTZ26KUY6BGy
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/red/r_08.png
+  name: Frenzy
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: After spending one full Round fuelling his anger — by flagellation, drugs, or other means — the Explorer goes
+      into an uncontrolled rage on the next Round, gaining a +10 bonus to Weapon Skill, Strength, Toughness, and Willpower
+      but suffering a -20 penalty to Ballistic Skill and Intelligence. The Explorer must attack the nearest enemy in melee
+      combat if possible; if not engaged with the nearest enemy he must move toward and engage that enemy where reasonable.
+      While Frenzied he is immune to Fear, Pinning, stunning effects, and the effects of Fatigue, may not Parry, retreat,
+      or flee, and must use the All Out Attack Manoeuvre in melee combat if possible. He remains Frenzied for the duration
+      of the combat. Unless the character has a Talent that allows him to do so, he may not use Psychic Techniques whilst
+      in Frenzy.
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: 8TxBytwfehIAwTrl
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Swift Attack
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer's speed and martial ability allow him to land flurries of blows. As a Full Action, he may make two
+      melee attacks on his Turn. If he has the Two-Weapon Wielder Talent and is wielding two melee weapons, he gets the advantage
+      of Swift Attack with only one of the weapons, and a single attack with the other. If he has the Two-Weapon Wielder Talent
+      and is wielding a melee weapon in one hand and a gun in the other, he gets the advantage of Swift Attack with the melee
+      weapon and a single attack with the gun.
+    cost: 0
+    prerequisites: Weapon Skill 35
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: AhoYCoROKzU7rrIY
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
+  name: Savage metal spear
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    attackBonus: 0
+    attackType: ''
+    availability: Common
+    backpack:
+      inBackpack: false
+    class: Melee
+    clip:
+      max: 0
+      value: 0
+    craftsmanship: Common
+    damage: 1d10+4
+    damageType: Rending
+    description: ''
+    effect: ''
+    equipped: true
+    inBackpack: false
+    modifications: []
+    penetration: '0'
+    range: ''
+    rateOfFire:
+      burst: 0
+      full: 0
+      single: 1
+    reload: ''
+    source: Faith and Coin
+    special:
+      toxic: true
+    target: ''
+    type: ''
+    weight: 0
+  type: weapon
+name: Child of the Sacred Flesh
+prototypeToken:
+  actorLink: false
+  disposition: -1
+  height: 1
+  name: Child of the Sacred Flesh
+  texture:
+    scaleX: 1.0
+    scaleY: 1.0
+    src: ''
+  width: 1
+system:
+  characteristics:
+    agility:
+      base: 30
+      unnatural: 0
+    ballisticSkill:
+      base: 19
+      unnatural: 0
+    fellowship:
+      base: 19
+      unnatural: 0
+    intelligence:
+      base: 24
+      unnatural: 0
+    perception:
+      base: 30
+      unnatural: 0
+    strength:
+      base: 48
+      unnatural: 0
+    toughness:
+      base: 46
+      unnatural: 0
+    weaponSkill:
+      base: 40
+      unnatural: 0
+    willpower:
+      base: 25
+      unnatural: 0
+  npc:
+    faction: ''
+    subfaction: ''
+    threatLevel: 0
+    type: troop
+  skills:
+    athletics:
+      advance: 0
+    awareness:
+      advance: 0
+    dodge:
+      advance: 0
+    linguistics:
+      advance: 0
+    stealth:
+      advance: 10
+    survival:
+      advance: 10
+  wounds:
+    critical: 0
+    max: 0
+    rolled: true
+    value: 0
+type: npc
+---
+effects: []
+flags:
+  rt:
+    description: ''
+    movement: '2/4/6/12 Grounds: 35'
+    rawGear: ''
+    source: Faith and Coin
+img: systems/rogue-trader-3rd/images/npcs/faithandcoin/orphan-of-the-flesh.png
+items:
+- _id: 9ctt7NChUER21Rl1
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Amorphous
+  ownership:
+    default: 3
+  sort: 0
+  system: {}
+  type: trait
+- _id: sAM9bMFSHKNwjAo0
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Fear (1)
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    description: A creature with this Trait has an unnerving appearance. The fear of it always has an associated rating (1–4)
+      to reflect just how awful the creature is to behold. The higher the Fear Rating the harder it is for others to resist
+      going insane from the encounter, as shown on the following chart.
+    source: Rogue Trader Core Rulebook
+  type: trait
+- _id: EqCU7ZserhWD751m
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Improved Natural Weapons
+  ownership:
+    default: 3
+  sort: 0
+  system: {}
+  type: trait
+- _id: GqlVVwfibdPRbNHL
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Size (Hulking)
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    description: '**Trait Groups:** Miniscule, Puny, Scrawny, Hulking, Enormous, Massive Creatures come in one of seven different
+      size categories, as shown on the following chart. Size affects movement and how easy or hard it is to strike that creature
+      in combat. (When calculating a creatures movement, apply the size modifier first, and then other modifiers from other
+      Traits or talents. Base movement can never be reduced below 1.) For the purposes of comparison, a human is an average-sized
+      creature.'
+    source: Rogue Trader Core Rulebook
+  type: trait
+- _id: rAn5Zb7llpLfwCB8
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Strange Physiology
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    description: A creature with this Trait has an unusual, alien, or altogether bizarre anatomy. All hits count as Body hits
+      and death results when damage equals or exceeds the creature's Wounds.
+    source: Rogue Trader Core Rulebook
+  type: trait
+- _id: 6WGEJMmi7fp7Gztq
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Sturdy
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    description: Sturdy creatures are hard to move and gain a +20 bonus to tests made to resist grappling and the Takedown
+      talent.
+    source: Rogue Trader Core Rulebook
+  type: trait
+- _id: SEbOgXSmvH2wmx89
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Unnatural Senses
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    description: The creature can perceive its surroundings using senses other than sight or hearing, using special organs,
+      fine hairs, or some other disturbing Trait to make itself aware of what's around it. This Trait always includes a range,
+      usually 15 metres.
+    source: Rogue Trader Core Rulebook
+  type: trait
+- _id: VYWqyHGojSXQkzn6
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Unnatural Strength (x2)
+  ownership:
+    default: 3
+  sort: 0
+  system: &id001
+    description: One or more of the creature's Characteristics is unnatural. Each time this Trait is gained, select a Characteristic,
+      and double its bonus. For example, a creature with a Strength of 41 normally has a 4 Strength Bonus. With this Trait,
+      its Strength Bonus increases to 8. The Trait may be gained multiple times. Each time, you may select a new Characteristic
+      or one chosen previously. Each time you apply this Trait to the same Characteristic, the Bonus multiplier increases
+      by 1. For example, one selection multiplies the Characteristic Bonus by ×2, two selections by ×3, and three selections
+      by ×4. Note this Trait does not modify the creature's movement. Movement is based on a creature's unmodified Agility
+      Bonus. During Opposed Characteristic Tests, on a success, the bonus multiplier is added to the degree of success.
+    source: Rogue Trader Core Rulebook
+  type: trait
+- _id: DLypxXMPNNUmesFH
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Unnatural Toughness (x2)
+  ownership:
+    default: 3
+  sort: 0
+  system: *id001
+  type: trait
+- _id: lT70HScb4seg4uss
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
+  name: Skeletal protrusions
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    attackBonus: 0
+    attackType: ''
+    availability: Common
+    backpack:
+      inBackpack: false
+    class: Melee
+    clip:
+      max: 0
+      value: 0
+    craftsmanship: Common
+    damage: ''
+    damageType: ''
+    description: ''
+    effect: ''
+    equipped: true
+    inBackpack: false
+    modifications: []
+    penetration: '6'
+    range: ''
+    rateOfFire:
+      burst: 0
+      full: 0
+      single: 1
+    reload: ''
+    source: Faith and Coin
+    special: {}
+    target: ''
+    type: ''
+    weight: 0
+  type: weapon
+name: Orphan of the Flesh
+prototypeToken:
+  actorLink: false
+  disposition: -1
+  height: 1
+  name: Orphan of the Flesh
+  texture:
+    scaleX: 1.2
+    scaleY: 1.2
+    src: systems/rogue-trader-3rd/images/npcs/faithandcoin/orphan-of-the-flesh.png
+  width: 1
+system:
+  characteristics:
+    agility:
+      base: 16
+      unnatural: 0
+    ballisticSkill:
+      base: 6
+      unnatural: 0
+    fellowship:
+      base: 12
+      unnatural: 0
+    intelligence:
+      base: 16
+      unnatural: 0
+    perception:
+      base: 23
+      unnatural: 0
+    strength:
+      base: 58
+      unnatural: 10
+    toughness:
+      base: 46
+      unnatural: 8
+    weaponSkill:
+      base: 56
+      unnatural: 0
+    willpower:
+      base: 35
+      unnatural: 0
+  npc:
+    faction: ''
+    subfaction: ''
+    threatLevel: 0
+    type: troop
+  skills:
+    awareness:
+      advance: 0
+    stealth:
+      advance: 10
+  wounds:
+    critical: 0
+    max: 0
+    rolled: true
+    value: 0
+type: npc
+---
+effects: []
+flags:
+  rt:
+    description: ''
+    movement: '3/6/9/18 Grounds: 10, 30, or 50'
+    rawGear: ''
+    source: Faith and Coin
+img: ''
+items:
+- _id: 1SmPrdodBvp8Q42v
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Bestial
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    description: A creature with this Trait is animalistic, tending to behave instinctively rather than rationally. No matter
+      how high its Intelligence score is, it is still bestial. A creature with this Trait never needs to make a Survival Test
+      whilst in its natural habitat. Unless starving or desperate, a bestial creature must make a Willpower Test when frightened,
+      startled or injured. On a failed test, the creature flees.
+    source: Rogue Trader Core Rulebook
+  type: trait
+- _id: y7kGlQKkebj1VcvF
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Size (Varies)
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    description: '**Trait Groups:** Miniscule, Puny, Scrawny, Hulking, Enormous, Massive Creatures come in one of seven different
+      size categories, as shown on the following chart. Size affects movement and how easy or hard it is to strike that creature
+      in combat. (When calculating a creatures movement, apply the size modifier first, and then other modifiers from other
+      Traits or talents. Base movement can never be reduced below 1.) For the purposes of comparison, a human is an average-sized
+      creature.'
+    source: Rogue Trader Core Rulebook
+  type: trait
+- _id: 8JaXKGKXczGBTcDt
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Swarm (see page 142)
+  ownership:
+    default: 3
+  sort: 0
+  system: {}
+  type: trait
+- _id: uBlt1OTShS19TF0A
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
+  name: Teeth and claws
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    attackBonus: 0
+    attackType: ''
+    availability: Common
+    backpack:
+      inBackpack: false
+    class: Melee
+    clip:
+      max: 0
+      value: 0
+    craftsmanship: Common
+    damage: ''
+    damageType: ''
+    description: ''
+    effect: ''
+    equipped: true
+    inBackpack: false
+    modifications: []
+    penetration: '0'
+    range: ''
+    rateOfFire:
+      burst: 0
+      full: 0
+      single: 1
+    reload: ''
+    source: Faith and Coin
+    special:
+      tearing: true
+    target: ''
+    type: ''
+    weight: 0
+  type: weapon
+name: Mutant Rat Swarm
+prototypeToken:
+  actorLink: false
+  disposition: -1
+  height: 1
+  name: Mutant Rat Swarm
+  texture:
+    scaleX: 1.0
+    scaleY: 1.0
+    src: ''
+  width: 1
+system:
+  characteristics:
+    agility:
+      base: 35
+      unnatural: 0
+    ballisticSkill:
+      base: 1
+      unnatural: 0
+    fellowship:
+      base: 6
+      unnatural: 0
+    intelligence:
+      base: 10
+      unnatural: 0
+    perception:
+      base: 43
+      unnatural: 0
+    strength:
+      base: 33
+      unnatural: 0
+    toughness:
+      base: 23
+      unnatural: 0
+    weaponSkill:
+      base: 32
+      unnatural: 0
+    willpower:
+      base: 15
+      unnatural: 0
+  npc:
+    faction: ''
+    subfaction: ''
+    threatLevel: 0
+    type: troop
+  skills:
+    awareness:
+      advance: 10
+    stealth:
+      advance: 20
+  wounds:
+    critical: 0
+    max: 0
+    rolled: true
+    value: 0
+type: npc
+---
+effects: []
+flags:
+  rt:
+    description: ''
+    movement: '2/4/6/12 Grounds: 20, 40, or 60'
+    rawGear: ''
+    source: Faith and Coin
+img: ''
+items:
+- _id: CLTghqqz1nb8dABl
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Bestial
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    description: A creature with this Trait is animalistic, tending to behave instinctively rather than rationally. No matter
+      how high its Intelligence score is, it is still bestial. A creature with this Trait never needs to make a Survival Test
+      whilst in its natural habitat. Unless starving or desperate, a bestial creature must make a Willpower Test when frightened,
+      startled or injured. On a failed test, the creature flees.
+    source: Rogue Trader Core Rulebook
+  type: trait
+- _id: phB32x3xtX46zJwv
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Dark Sight
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    description: A creature with this Trait sees normally even in areas of total darkness, and never takes a penalty for fighting
+      in areas of dim or no lighting.
+    source: Rogue Trader Core Rulebook
+  type: trait
+- _id: Jni3t8CGVbrkNdCB
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Toxic
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    description: A creature with this Trait is poisonous. A target hit by its natural weapons must make a Toughness Test.
+      The toxins might instead be delivered by contact with the creature's skin or by inhaling its stench, in which case a
+      Toughness Test must be made upon coming into contact or proximity. A failed Toughness Test indicates the victim has
+      been poisoned. A typical poison deals 1d10 points of damage, ignoring Armour Points. Variations, if present, are included
+      in the creature's description.
+    source: Rogue Trader Core Rulebook
+  type: trait
+- _id: Agh0tYW6CFGzysCv
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Size (Varies)
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    description: '**Trait Groups:** Miniscule, Puny, Scrawny, Hulking, Enormous, Massive Creatures come in one of seven different
+      size categories, as shown on the following chart. Size affects movement and how easy or hard it is to strike that creature
+      in combat. (When calculating a creatures movement, apply the size modifier first, and then other modifiers from other
+      Traits or talents. Base movement can never be reduced below 1.) For the purposes of comparison, a human is an average-sized
+      creature.'
+    source: Rogue Trader Core Rulebook
+  type: trait
+- _id: 9pcsNdwqLY5Vajqf
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Strange Physiology
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    description: A creature with this Trait has an unusual, alien, or altogether bizarre anatomy. All hits count as Body hits
+      and death results when damage equals or exceeds the creature's Wounds.
+    source: Rogue Trader Core Rulebook
+  type: trait
+- _id: NW8ZjqboFCCYxJi7
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Swarm (see Swarm (Trait))
+  ownership:
+    default: 3
+  sort: 0
+  system: {}
+  type: trait
+- _id: PV2AV1VqrSAeN6p6
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
+  name: Razor-filled maws
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    attackBonus: 0
+    attackType: ''
+    availability: Common
+    backpack:
+      inBackpack: false
+    class: Melee
+    clip:
+      max: 0
+      value: 0
+    craftsmanship: Common
+    damage: ''
+    damageType: ''
+    description: ''
+    effect: ''
+    equipped: true
+    inBackpack: false
+    modifications: []
+    penetration: '2'
+    range: ''
+    rateOfFire:
+      burst: 0
+      full: 0
+      single: 1
+    reload: ''
+    source: Faith and Coin
+    special:
+      tearing: true
+    target: ''
+    type: ''
+    weight: 0
+  type: weapon
+name: Autochthonic Vermin Swarm
+prototypeToken:
+  actorLink: false
+  disposition: -1
+  height: 1
+  name: Autochthonic Vermin Swarm
+  texture:
+    scaleX: 1.0
+    scaleY: 1.0
+    src: ''
+  width: 1
+system:
+  characteristics:
+    agility:
+      base: 23
+      unnatural: 0
+    ballisticSkill:
+      base: 1
+      unnatural: 0
+    fellowship:
+      base: 2
+      unnatural: 0
+    intelligence:
+      base: 10
+      unnatural: 0
+    perception:
+      base: 22
+      unnatural: 0
+    strength:
+      base: 42
+      unnatural: 0
+    toughness:
+      base: 42
+      unnatural: 0
+    weaponSkill:
+      base: 46
+      unnatural: 0
+    willpower:
+      base: 18
+      unnatural: 0
+  npc:
+    faction: ''
+    subfaction: ''
+    threatLevel: 0
+    type: troop
+  skills:
+    awareness:
+      advance: 0
+  wounds:
+    critical: 0
+    max: 0
+    rolled: true
+    value: 0
+type: npc
+---
+effects: []
+flags:
+  rt:
+    description: ''
+    movement: '4/8/12/24 Grounds: 24'
+    rawGear: ''
+    source: Faith and Coin
+img: ''
+items:
+- _id: VW25TInaCiJzLSBw
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Dark Sight
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    description: A creature with this Trait sees normally even in areas of total darkness, and never takes a penalty for fighting
+      in areas of dim or no lighting.
+    source: Rogue Trader Core Rulebook
+  type: trait
+- _id: yKOWeW2hfwV4jRMK
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Improved Natural Weapons
+  ownership:
+    default: 3
+  sort: 0
+  system: {}
+  type: trait
+- _id: aqRFO9DuwhhI6Un9
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Size (Hulking)
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    description: '**Trait Groups:** Miniscule, Puny, Scrawny, Hulking, Enormous, Massive Creatures come in one of seven different
+      size categories, as shown on the following chart. Size affects movement and how easy or hard it is to strike that creature
+      in combat. (When calculating a creatures movement, apply the size modifier first, and then other modifiers from other
+      Traits or talents. Base movement can never be reduced below 1.) For the purposes of comparison, a human is an average-sized
+      creature.'
+    source: Rogue Trader Core Rulebook
+  type: trait
+- _id: quXdD7QFjoWaZv2J
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Toxic
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    description: A creature with this Trait is poisonous. A target hit by its natural weapons must make a Toughness Test.
+      The toxins might instead be delivered by contact with the creature's skin or by inhaling its stench, in which case a
+      Toughness Test must be made upon coming into contact or proximity. A failed Toughness Test indicates the victim has
+      been poisoned. A typical poison deals 1d10 points of damage, ignoring Armour Points. Variations, if present, are included
+      in the creature's description.
+    source: Rogue Trader Core Rulebook
+  type: trait
+- _id: GvL1nxPpas1cBuhr
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Unnatural Strength (x2)
+  ownership:
+    default: 3
+  sort: 0
+  system: &id001
+    description: One or more of the creature's Characteristics is unnatural. Each time this Trait is gained, select a Characteristic,
+      and double its bonus. For example, a creature with a Strength of 41 normally has a 4 Strength Bonus. With this Trait,
+      its Strength Bonus increases to 8. The Trait may be gained multiple times. Each time, you may select a new Characteristic
+      or one chosen previously. Each time you apply this Trait to the same Characteristic, the Bonus multiplier increases
+      by 1. For example, one selection multiplies the Characteristic Bonus by ×2, two selections by ×3, and three selections
+      by ×4. Note this Trait does not modify the creature's movement. Movement is based on a creature's unmodified Agility
+      Bonus. During Opposed Characteristic Tests, on a success, the bonus multiplier is added to the degree of success.
+    source: Rogue Trader Core Rulebook
+  type: trait
+- _id: h8xVFXUKWwZKH5Kn
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Unnatural Toughness (x2)
+  ownership:
+    default: 3
+  sort: 0
+  system: *id001
+  type: trait
+- _id: rVTiAHI0Jhr2WV88
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
+  name: Rending bite
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    attackBonus: 0
+    attackType: ''
+    availability: Common
+    backpack:
+      inBackpack: false
+    class: Melee
+    clip:
+      max: 0
+      value: 0
+    craftsmanship: Common
+    damage: ''
+    damageType: ''
+    description: ''
+    effect: ''
+    equipped: true
+    inBackpack: false
+    modifications: []
+    penetration: '2'
+    range: ''
+    rateOfFire:
+      burst: 0
+      full: 0
+      single: 1
+    reload: ''
+    source: Faith and Coin
+    special:
+      tearing: true
+      toxic: true
+    target: ''
+    type: ''
+    weight: 0
+  type: weapon
+- _id: Ndml0RaNs3zFOowa
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
+  name: tongue lash (Pistol; 15m; 1d10+4; Ensnaring Grasp). **Ensnaring Grasp:** If it hits a target with this attack
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    attackBonus: 0
+    attackType: ''
+    availability: Common
+    backpack:
+      inBackpack: false
+    class: ''
+    clip:
+      max: 0
+      value: 0
+    craftsmanship: Common
+    damage: ''
+    damageType: ''
+    description: ''
+    effect: ''
+    equipped: true
+    inBackpack: false
+    modifications: []
+    penetration: ''
+    range: ''
+    rateOfFire:
+      burst: 0
+      full: 0
+      single: 1
+    reload: ''
+    source: Faith and Coin
+    special: {}
+    target: ''
+    type: ''
+    weight: 0
+  type: weapon
+- _id: vwAYNd7N7Ekg7MQS
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
+  name: this creature immediately makes a Grapple Action against it as a Free Action (see page 240 of the ROGUE TRADER Core
+    Rulebook) even if it would not normally be within range for this Action. So long as it remains in control of the Grapple
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    attackBonus: 0
+    attackType: ''
+    availability: Common
+    backpack:
+      inBackpack: false
+    class: ''
+    clip:
+      max: 0
+      value: 0
+    craftsmanship: Common
+    damage: ''
+    damageType: ''
+    description: ''
+    effect: ''
+    equipped: true
+    inBackpack: false
+    modifications: []
+    penetration: ''
+    range: ''
+    rateOfFire:
+      burst: 0
+      full: 0
+      single: 1
+    reload: ''
+    source: Faith and Coin
+    special: {}
+    target: ''
+    type: ''
+    weight: 0
+  type: weapon
+- _id: fD51AZ07wTsXsqn5
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
+  name: it drags its prey 1d5 metres toward its maw at the start of each of its Turns
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    attackBonus: 0
+    attackType: ''
+    availability: Common
+    backpack:
+      inBackpack: false
+    class: ''
+    clip:
+      max: 0
+      value: 0
+    craftsmanship: Common
+    damage: ''
+    damageType: ''
+    description: ''
+    effect: ''
+    equipped: true
+    inBackpack: false
+    modifications: []
+    penetration: ''
+    range: ''
+    rateOfFire:
+      burst: 0
+      full: 0
+      single: 1
+    reload: ''
+    source: Faith and Coin
+    special: {}
+    target: ''
+    type: ''
+    weight: 0
+  type: weapon
+name: Overgrown Autochthonic Vermin
+prototypeToken:
+  actorLink: false
+  disposition: -1
+  height: 1
+  name: Overgrown Autochthonic Vermin
+  texture:
+    scaleX: 1.2
+    scaleY: 1.2
+    src: ''
+  width: 1
+system:
+  characteristics:
+    agility:
+      base: 33
+      unnatural: 0
+    ballisticSkill:
+      base: 30
+      unnatural: 0
+    fellowship:
+      base: 2
+      unnatural: 0
+    intelligence:
+      base: 20
+      unnatural: 0
+    perception:
+      base: 33
+      unnatural: 0
+    strength:
+      base: 48
+      unnatural: 8
+    toughness:
+      base: 36
+      unnatural: 6
+    weaponSkill:
+      base: 45
+      unnatural: 0
+    willpower:
+      base: 25
+      unnatural: 0
+  npc:
+    faction: ''
+    subfaction: ''
+    threatLevel: 0
+    type: troop
+  skills:
+    awareness:
+      advance: 0
+  wounds:
+    critical: 0
+    max: 0
+    rolled: true
+    value: 0
+type: npc
+---
+effects: []
+flags:
+  rt:
+    description: ''
+    movement: '5/10/15/30 Grounds: 45'
+    rawGear: Internal micro-bead (to receive/relay instructions), fuel tank equivalent to one clip for its heavy flamer.
+    source: Faith and Coin
+img: systems/rogue-trader-3rd/images/npcs/faithandcoin/guardian-of-the-inner-sanctum.png
+items:
+- _id: jlAVPVfDNF1mvMtu
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/items/swords/swords_01_b.png
+  name: Ambidextrous
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: 'This Talent does not represent true ambidexterity so much as sufficient training with both hands to make the
+      distinction moot. The Explorer can use either hand equally well for any task, and does not suffer the -20 penalty for
+      actions using his off hand. Special: When combined with a Two-Weapon Wielder Talent, the penalty for making attacks
+      with both weapons in the same Turn drops to -10.'
+    cost: 0
+    prerequisites: Agility 30
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: 2VXf4Ic3FVLjKd0R
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Berserk Charge
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer has learned to put the whole force of his momentum behind his weapon blows. When he charges into
+      combat, few can stand before him. If he uses the Charge Action, he gains a +20 bonus to Weapon Skill instead of +10.
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: YkgwSFxWr0mUjAsc
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Cleanse and Purify
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer can control the flow of molten promethium like no other, manipulating flame like an old accomplice.
+      The targets of his flamer attacks take a -20 penalty to their Agility Tests to escape its effects.
+    cost: 0
+    prerequisites: Flame Weapon Training (Universal)
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: UXcdxtytl5VEDylP
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Die Hard
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: Through either willpower or sheer stubbornness, the Explorer refuses to cross into shadow. When he suffers from
+      blood loss, the character may roll twice to avoid death.
+    cost: 0
+    prerequisites: Willpower 40
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: UHZOPQBSnbd9zkNb
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Fearless
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: Through hard experience with horrifying situations, fear no longer commands the Explorer's actions. He is immune
+      to the effects of Fear and Pinning, but disengaging from combat or backing down from a fight requires a successful Willpower
+      Test.
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: 2dNkBuu69Y3Ty1tA
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Hardy
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer's constitution rebounds quickly from shock or injury. When undergoing medical treatment or healing
+      from injuries, he recovers Damage as if Lightly Wounded.
+    cost: 0
+    prerequisites: Toughness 40
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: FHjpoVRptK8YnScp
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Iron Jaw
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer has taken blows from Orks and given back as good as he got. He can bounce back from most strikes
+      without ill effects. If ever Stunned, a successful Toughness Test allows him to ignore the effects.
+    cost: 0
+    prerequisites: Toughness 40
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: O8Ani76T0DHL7rzH
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Two-Weapon Wielder (Ballistic)
+  ownership:
+    default: 3
+  sort: 0
+  system: &id001
+    aptitudes: ''
+    benefit: Years of training allow the Explorer to use a melee weapon in each hand when needed. When armed with two melee
+      weapons, he may spend a Full Action to attack with both. Both tests made to attack with the weapons suffer a -20 penalty.
+      He must possess Two-Weapon Wielder (Melee) and Two-Weapon Wielder (Ballistic) if he wishes to use a gun and hand weapon
+      together.
+    cost: 0
+    prerequisites: Weapon Skill 35, Agility 35
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: iaVvIvB9Eo15zDLr
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Two-Weapon Wielder (Melee)
+  ownership:
+    default: 3
+  sort: 0
+  system: *id001
+  type: talent
+- _id: 8DdRo2NR2XA5Ccee
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Auto-Stabilised
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    description: The creature always counts as braced when firing heavy weapons and may fire on semi- or full-automatic as
+      a half action. A creature with this Trait suffers no penalties for moving and firing on semi- or full-automatic.
+    source: Rogue Trader Core Rulebook
+  type: trait
+- _id: EAOIZvWXcGRtO055
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Dark Sight
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    description: A creature with this Trait sees normally even in areas of total darkness, and never takes a penalty for fighting
+      in areas of dim or no lighting.
+    source: Rogue Trader Core Rulebook
+  type: trait
+- _id: cdFa3qTOmeJmH3g0
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Fear (1)
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    description: A creature with this Trait has an unnerving appearance. The fear of it always has an associated rating (1–4)
+      to reflect just how awful the creature is to behold. The higher the Fear Rating the harder it is for others to resist
+      going insane from the encounter, as shown on the following chart.
+    source: Rogue Trader Core Rulebook
+  type: trait
+- _id: ovniwhuMWSVacBPp
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Machine (2)
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    description: A creature with the Machine Trait is fashioned from inorganic materials and is generally more rigorous than
+      fleshy folks. Machines do not
+    source: Rogue Trader Core Rulebook
+  type: trait
+- _id: pGgk8hRdBJLMStax
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Size (Enormous)
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    description: '**Trait Groups:** Miniscule, Puny, Scrawny, Hulking, Enormous, Massive Creatures come in one of seven different
+      size categories, as shown on the following chart. Size affects movement and how easy or hard it is to strike that creature
+      in combat. (When calculating a creatures movement, apply the size modifier first, and then other modifiers from other
+      Traits or talents. Base movement can never be reduced below 1.) For the purposes of comparison, a human is an average-sized
+      creature.'
+    source: Rogue Trader Core Rulebook
+  type: trait
+- _id: ZkB7x3oPwP1nQCQ4
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Unnatural Strength (x2)
+  ownership:
+    default: 3
+  sort: 0
+  system: &id002
+    description: One or more of the creature's Characteristics is unnatural. Each time this Trait is gained, select a Characteristic,
+      and double its bonus. For example, a creature with a Strength of 41 normally has a 4 Strength Bonus. With this Trait,
+      its Strength Bonus increases to 8. The Trait may be gained multiple times. Each time, you may select a new Characteristic
+      or one chosen previously. Each time you apply this Trait to the same Characteristic, the Bonus multiplier increases
+      by 1. For example, one selection multiplies the Characteristic Bonus by ×2, two selections by ×3, and three selections
+      by ×4. Note this Trait does not modify the creature's movement. Movement is based on a creature's unmodified Agility
+      Bonus. During Opposed Characteristic Tests, on a success, the bonus multiplier is added to the degree of success.
+    source: Rogue Trader Core Rulebook
+  type: trait
+- _id: mxxIvhKp1C62qV31
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Unnatural Toughness (x2)
+  ownership:
+    default: 3
+  sort: 0
+  system: *id002
+  type: trait
+- _id: jk6duRmL9A6iBI1p
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
+  name: Stomp
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    attackBonus: 0
+    attackType: ''
+    availability: Common
+    backpack:
+      inBackpack: false
+    class: Melee
+    clip:
+      max: 0
+      value: 0
+    craftsmanship: Common
+    damage: ''
+    damageType: ''
+    description: ''
+    effect: ''
+    equipped: true
+    inBackpack: false
+    modifications: []
+    penetration: '6'
+    range: ''
+    rateOfFire:
+      burst: 0
+      full: 0
+      single: 1
+    reload: ''
+    source: Faith and Coin
+    special: {}
+    target: ''
+    type: ''
+    weight: 0
+  type: weapon
+- _id: oCPpRbNfzt3k0wI3
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
+  name: Chain Axe
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    attackBonus: 0
+    attackType: ''
+    availability: Average
+    backpack:
+      inBackpack: false
+    class: Melee
+    clip:
+      max: 0
+      value: 0
+    craftsmanship: Common
+    damage: 1d10+4
+    damageType: Rending
+    description: 'Special: Tearing'
+    effect: ''
+    equipped: true
+    inBackpack: false
+    modifications: []
+    penetration: '2'
+    range: '0'
+    rateOfFire:
+      burst: 0
+      full: 0
+      single: 1
+    reload: ''
+    source: Rogue Trader Core Rulebook, p.135
+    special:
+      tearing: true
+    target: ''
+    type: Chain
+    weight: 13.0
+  type: weapon
+- _id: uEjbyhmaCMZA9ytp
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/items/buckets/heavy-flame.png
+  name: Heavy Flamer
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    attackBonus: 0
+    attackType: ''
+    availability: Rare
+    backpack:
+      inBackpack: false
+    class: Heavy
+    clip:
+      max: 10
+      value: 10
+    craftsmanship: Common
+    damage: 2d10+4
+    damageType: Energy
+    description: 'Special: Flame'
+    effect: ''
+    equipped: true
+    inBackpack: false
+    modifications: []
+    penetration: '4'
+    range: '30'
+    rateOfFire:
+      burst: 0
+      full: 0
+      single: 1
+    reload: 2 Full
+    source: Rogue Trader Core Rulebook, p.123
+    special:
+      flame: true
+    target: ''
+    type: Flame
+    weight: 20.0
+  type: weapon
+name: Guardian of the Inner Sanctum
+prototypeToken:
+  actorLink: false
+  disposition: -1
+  height: 2
+  name: Guardian of the Inner Sanctum
+  texture:
+    scaleX: 1.0
+    scaleY: 1.0
+    src: systems/rogue-trader-3rd/images/npcs/faithandcoin/guardian-of-the-inner-sanctum.png
+  width: 2
+system:
+  characteristics:
+    agility:
+      base: 30
+      unnatural: 0
+    ballisticSkill:
+      base: 18
+      unnatural: 0
+    fellowship:
+      base: 6
+      unnatural: 0
+    intelligence:
+      base: 20
+      unnatural: 0
+    perception:
+      base: 33
+      unnatural: 0
+    strength:
+      base: 48
+      unnatural: 8
+    toughness:
+      base: 46
+      unnatural: 8
+    weaponSkill:
+      base: 46
+      unnatural: 0
+    willpower:
+      base: 25
+      unnatural: 0
+  npc:
+    faction: ''
+    subfaction: ''
+    threatLevel: 0
+    type: troop
+  skills:
+    awareness:
+      advance: 10
+  wounds:
+    critical: 0
+    max: 0
+    rolled: true
+    value: 0
+type: npc

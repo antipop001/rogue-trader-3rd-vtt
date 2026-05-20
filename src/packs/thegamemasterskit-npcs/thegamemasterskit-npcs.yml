@@ -1,0 +1,181 @@
+---
+effects: []
+flags:
+  rt:
+    description: 'Brought to life by the will of the Dark Lament, these are juggernauts of living stone with but a single
+      purpose: to kill.'
+    movement: 1/2/3/6
+    rawGear: ''
+    source: The Game Master's Kit
+img: systems/rogue-trader-3rd/images/npcs/thegamemasterskit/statues-of-the-dark-lament.png
+items:
+- _id: 3w4vTFS9OE6L6CiL
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: From Beyond
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    description: The mind of a creature with this Trait is beyond the petty frailties and precarious sanity of a mortal mind.
+      It is immune to Fear, Pinning, Insanity Points, and psychic powers used to cloud, control, or delude its mind.
+    source: Rogue Trader Core Rulebook
+  type: trait
+- _id: i0ivqAe1hqVWJl02
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Improved Natural Weapons
+  ownership:
+    default: 3
+  sort: 0
+  system: {}
+  type: trait
+- _id: EL0XkYkSi99CC9QD
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Natural Armour (4)
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    description: This creature has a naturally tough hide or an exoskeleton, affording it some protection against attacks.
+      This Trait always includes a numeric value to indicate how many Armour Points the creature gains to all locations.
+    source: Rogue Trader Core Rulebook
+  type: trait
+- _id: CPRdKT7BvRe0BA8Z
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Natural Weapons
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    description: This creature has sharp claws, teeth, spines or some other natural weapon to attack its foes. It counts as
+      being armed even when not wielding weapons. Its attacks deal 1d10 points of damage plus its Strength Bonus. The creature
+      may make attacks with its Natural Weapons using its Weapon Skill, though it cannot parry with its natural weapons, nor
+      can it be disarmed—unless, of course, you hack off its limbs! Natural weapons always count as Primitive.
+    source: Rogue Trader Core Rulebook
+  type: trait
+- _id: homILsbvcZEWHRVJ
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Unnatural Strength (x2)
+  ownership:
+    default: 3
+  sort: 0
+  system: &id001
+    description: One or more of the creature's Characteristics is unnatural. Each time this Trait is gained, select a Characteristic,
+      and double its bonus. For example, a creature with a Strength of 41 normally has a 4 Strength Bonus. With this Trait,
+      its Strength Bonus increases to 8. The Trait may be gained multiple times. Each time, you may select a new Characteristic
+      or one chosen previously. Each time you apply this Trait to the same Characteristic, the Bonus multiplier increases
+      by 1. For example, one selection multiplies the Characteristic Bonus by ×2, two selections by ×3, and three selections
+      by ×4. Note this Trait does not modify the creature's movement. Movement is based on a creature's unmodified Agility
+      Bonus. During Opposed Characteristic Tests, on a success, the bonus multiplier is added to the degree of success.
+    source: Rogue Trader Core Rulebook
+  type: trait
+- _id: OAwlk7MipkQ3Bia5
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Unnatural Toughness (x2)
+  ownership:
+    default: 3
+  sort: 0
+  system: *id001
+  type: trait
+- _id: v7YSSN9dC5du0Yg1
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
+  name: Fists and Stone Blades
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    attackBonus: 0
+    attackType: ''
+    availability: Common
+    backpack:
+      inBackpack: false
+    class: Melee
+    clip:
+      max: 0
+      value: 0
+    craftsmanship: Common
+    damage: ''
+    damageType: ''
+    description: ''
+    effect: ''
+    equipped: true
+    inBackpack: false
+    modifications: []
+    penetration: ''
+    range: ''
+    rateOfFire:
+      burst: 0
+      full: 0
+      single: 1
+    reload: ''
+    source: The Game Master's Kit
+    special: {}
+    target: ''
+    type: ''
+    weight: 0
+  type: weapon
+name: Statues Of The Dark Lament
+prototypeToken:
+  actorLink: false
+  disposition: -1
+  height: 1
+  name: Statues Of The Dark Lament
+  texture:
+    scaleX: 1.0
+    scaleY: 1.0
+    src: systems/rogue-trader-3rd/images/npcs/thegamemasterskit/statues-of-the-dark-lament.png
+  width: 1
+system:
+  characteristics:
+    agility:
+      base: 11
+      unnatural: 0
+    ballisticSkill:
+      base: 0
+      unnatural: 0
+    fellowship:
+      base: 0
+      unnatural: 0
+    intelligence:
+      base: 37
+      unnatural: 0
+    perception:
+      base: 32
+      unnatural: 0
+    strength:
+      base: 44
+      unnatural: 8
+    toughness:
+      base: 41
+      unnatural: 8
+    weaponSkill:
+      base: 43
+      unnatural: 0
+    willpower:
+      base: 40
+      unnatural: 0
+  npc:
+    faction: ''
+    subfaction: ''
+    threatLevel: 0
+    type: troop
+  skills: {}
+  wounds:
+    critical: 0
+    max: 15
+    rolled: true
+    value: 15
+type: npc

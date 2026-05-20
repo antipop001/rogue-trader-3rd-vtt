@@ -2,7 +2,7 @@
   "id": "rogue-trader-3rd",
   "title": "Rogue Trader 3rd Edition",
   "description": "Unofficial Rogue Trader 3rd Edition system for Foundry VTT with extensive character sheet support, automated combat, compendium packs, and inventory management.",
-  "version": "0.7.3",
+  "version": "0.7.4",
   "compatibility": {
     "minimum": 13,
     "verified": "14",
@@ -133,6 +133,222 @@
       "label": "Ship Traits & Hulls",
       "path": "./packs/ship-traits.db",
       "type": "Item"
+    },
+    {
+      "name": "npcs",
+      "system": "rogue-trader-3rd",
+      "label": "NPCs",
+      "path": "./packs/npcs.db",
+      "type": "Actor"
+    },
+    {
+      "name": "citadelofskulls-npcs",
+      "system": "rogue-trader-3rd",
+      "label": "Citadel of Skulls \u2014 NPCs",
+      "path": "./packs/citadelofskulls-npcs.db",
+      "type": "Actor",
+      "ownership": {
+        "PLAYER": "NONE",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "corebook-npcs",
+      "system": "rogue-trader-3rd",
+      "label": "Core Rulebook \u2014 NPCs",
+      "path": "./packs/corebook-npcs.db",
+      "type": "Actor",
+      "ownership": {
+        "PLAYER": "NONE",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "darkfrontier-npcs",
+      "system": "rogue-trader-3rd",
+      "label": "Dark Frontier \u2014 NPCs",
+      "path": "./packs/darkfrontier-npcs.db",
+      "type": "Actor",
+      "ownership": {
+        "PLAYER": "NONE",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "edgeoftheabyss-npcs",
+      "system": "rogue-trader-3rd",
+      "label": "Edge of the Abyss \u2014 NPCs",
+      "path": "./packs/edgeoftheabyss-npcs.db",
+      "type": "Actor",
+      "ownership": {
+        "PLAYER": "NONE",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "faithandcoin-npcs",
+      "system": "rogue-trader-3rd",
+      "label": "Faith and Coin \u2014 NPCs",
+      "path": "./packs/faithandcoin-npcs.db",
+      "type": "Actor",
+      "ownership": {
+        "PLAYER": "NONE",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "fallensuns-npcs",
+      "system": "rogue-trader-3rd",
+      "label": "Fallen Suns \u2014 NPCs",
+      "path": "./packs/fallensuns-npcs.db",
+      "type": "Actor",
+      "ownership": {
+        "PLAYER": "NONE",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "forsakenbounty-npcs",
+      "system": "rogue-trader-3rd",
+      "label": "Forsaken Bounty \u2014 NPCs",
+      "path": "./packs/forsakenbounty-npcs.db",
+      "type": "Actor",
+      "ownership": {
+        "PLAYER": "NONE",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "hostileacquisitions-npcs",
+      "system": "rogue-trader-3rd",
+      "label": "Hostile Acquisitions \u2014 NPCs",
+      "path": "./packs/hostileacquisitions-npcs.db",
+      "type": "Actor",
+      "ownership": {
+        "PLAYER": "NONE",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "intothestorm-npcs",
+      "system": "rogue-trader-3rd",
+      "label": "Into the Storm \u2014 NPCs",
+      "path": "./packs/intothestorm-npcs.db",
+      "type": "Actor",
+      "ownership": {
+        "PLAYER": "NONE",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "lureoftheexpanse-npcs",
+      "system": "rogue-trader-3rd",
+      "label": "Lure of the Expanse \u2014 NPCs",
+      "path": "./packs/lureoftheexpanse-npcs.db",
+      "type": "Actor",
+      "ownership": {
+        "PLAYER": "NONE",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "sheddinglight-npcs",
+      "system": "rogue-trader-3rd",
+      "label": "Shedding Light \u2014 NPCs",
+      "path": "./packs/sheddinglight-npcs.db",
+      "type": "Actor",
+      "ownership": {
+        "PLAYER": "NONE",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "starsofinequity-npcs",
+      "system": "rogue-trader-3rd",
+      "label": "Stars of Inequity \u2014 NPCs",
+      "path": "./packs/starsofinequity-npcs.db",
+      "type": "Actor",
+      "ownership": {
+        "PLAYER": "NONE",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "taucharacterguide-npcs",
+      "system": "rogue-trader-3rd",
+      "label": "Tau Character Guide \u2014 NPCs",
+      "path": "./packs/taucharacterguide-npcs.db",
+      "type": "Actor",
+      "ownership": {
+        "PLAYER": "NONE",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "thefrozenreaches-npcs",
+      "system": "rogue-trader-3rd",
+      "label": "The Frozen Reaches \u2014 NPCs",
+      "path": "./packs/thefrozenreaches-npcs.db",
+      "type": "Actor",
+      "ownership": {
+        "PLAYER": "NONE",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "thegamemasterskit-npcs",
+      "system": "rogue-trader-3rd",
+      "label": "Game Master's Kit \u2014 NPCs",
+      "path": "./packs/thegamemasterskit-npcs.db",
+      "type": "Actor",
+      "ownership": {
+        "PLAYER": "NONE",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "thekoronusbestiary-npcs",
+      "system": "rogue-trader-3rd",
+      "label": "Koronus Bestiary \u2014 NPCs",
+      "path": "./packs/thekoronusbestiary-npcs.db",
+      "type": "Actor",
+      "ownership": {
+        "PLAYER": "NONE",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "thenavisprimer-npcs",
+      "system": "rogue-trader-3rd",
+      "label": "Navis Primer \u2014 NPCs",
+      "path": "./packs/thenavisprimer-npcs.db",
+      "type": "Actor",
+      "ownership": {
+        "PLAYER": "NONE",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "thesoulreaver-npcs",
+      "system": "rogue-trader-3rd",
+      "label": "The Soul Reaver \u2014 NPCs",
+      "path": "./packs/thesoulreaver-npcs.db",
+      "type": "Actor",
+      "ownership": {
+        "PLAYER": "NONE",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "twilightcrusade-npcs",
+      "system": "rogue-trader-3rd",
+      "label": "Twilight Crusade \u2014 NPCs",
+      "path": "./packs/twilightcrusade-npcs.db",
+      "type": "Actor",
+      "ownership": {
+        "PLAYER": "NONE",
+        "ASSISTANT": "OWNER"
+      }
     }
   ],
   "grid": {

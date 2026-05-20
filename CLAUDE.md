@@ -4,9 +4,22 @@ Unofficial Foundry VTT system for **FFG's Rogue Trader 1e** content using **Dark
 
 Forked from mrkeathley's Dark Heresy 2 system. Authored by MortarionUA. Compatible with Foundry VTT v13–v14.
 
-**Current version: 0.6.0** (released 2026-05-17). See https://github.com/antipop001/rogue-trader-3rd-vtt/releases/tag/0.6.0 for release notes. 0.6.0 ships **Path A (lite)** of the character-creation decision: a six-stage Origin Path panel (Home World / Birthright / Lure of the Void / Trials and Travails / Motivation / Career) with canonical RT Core + Into the Storm dropdowns and free-text notes per stage, plus a coordinated skill-specialty list migration to RT canon (Common Lore 14, Forbidden Lore 11, Scholastic Lore 16, Linguistics 12, Trade 13). The DH2-fork bio fields (homeWorld/background/role/elite/divination) remain in `template.json` for data continuity but are no longer rendered on the sheet. No advance-table model or wizard — players write their effects into the per-stage notes field.
+**Current version: 0.7.4** (released 2026-05-19). 19 new GM-only NPC compendia (one per RT supplement) built from a fresh OCR-and-extract pipeline against the FFG RT books, with token sizes derived from each NPC's `Size (X)` trait and 176 canon-anchored portraits.
 
-Earlier in the 0.5.x series: 0.5.0 closed the "everything before the A/B character-creation decision" punch list — Accurate damage fix (1d10 per 2 DoS), ship-weapon damage rolling (1d10 + listed Damage per hit, RT corebook p.215), 17 psychic-power damage formulas, ammo + Arms Coffer errata (v1.4), four talent OCR fill-in corrections (Frenzy / Rite of Fear / Catfall / Unarmed Warrior), and the canonical RT Table 8-12 Critical Hits + Catastrophic Damage RollTables. 0.5.1 refreshed inventory icons with 98 Flux-dev-generated bucket icons (520 entries rewired). 0.5.2 fixed the psychic-power damage-roll gate (`subtype: 'Concentration Attack'`), the tables-icon path, and the chainsword bucket art.
+## 0.7.x series — ApplicationV2 actor sheets + content pipeline
+- **0.7.0** — `AcolyteSheetV2` extending `HandlebarsApplicationMixin(ActorSheetV2)`. Pop-out windows on v13/v14. Templates migrated to V2 `data-action` event-dispatch syntax.
+- **0.7.1** — characteristic table 10→9 columns (Influence removed), advance-select font shrunk to 8.5pt so Intermediate/Proficient fit.
+- **0.7.2** — vehicle + voidship V2 sheets. Extracted shared `ActorContainerSheetV2` base (item/effect CRUD, drag/drop, toggle-visibility); voidship has a `_processSubmitData` override that routes `items.<id>.<path>` form keys through `updateEmbeddedDocuments`. `TYPES.Actor.{npc,vehicle,voidship}` localization added so window titles resolve. **Key SCSS fix:** moved `@import 'sheets/actor'` out of `.rt-wrapper` scope in `rogue-trader-3rd.scss` — in V2 both classes land on the same `<section class="window-content rt-actor rt-wrapper">` element, so the descendant combinator `.rt-wrapper .rt-actor` never matched and the grid was silently never applied (voidship panels stacked full-width instead of 3-up).
+- **0.7.3** — NPC V2 sheet as a thin subclass of `AcolyteSheetV2` (only redeclares `npc` frame class and template path).
+- **0.7.4** — **NPC compendium fleet.** 19 new packs (`<book>-npcs`) registered in `system.json` with GM-only `ownership: {PLAYER: "NONE", ASSISTANT: "OWNER"}` so players can't browse them. 334 NPCs total, extracted by `tools/npc_pipeline/extract_all_npcs.py` from Mistral-OCR'd RT supplement markdown. Token sizes derive from each NPC's `Size (X)` trait per `size.md` (Miniscule/Puny 0.5×0.5, Average/Hulking 1×1 with Hulking art-scaled 1.2×, Enormous 2×2 up to Titanic 8×8). 176 portraits live: 145 colorized via low-denoise (0.18) ComfyUI img2img against canonical FFG references, 31 hand-curated overrides from `/mnt/project_data/RT/RT-NPC/` for NPCs flagged BAD by the strict-check sweep. 158 NPCs ship without a portrait — Foundry falls back to its default `mystery-man.svg`.
+
+V2 conversion gotchas codified in `~/.claude/projects/-home-ahermon/memory/reference_foundry_v2_sheet_gotchas.md`.
+
+## 0.6.0 — Origin Path (Path A lite)
+0.6.0 shipped **Path A (lite)** of the character-creation decision: a six-stage Origin Path panel (Home World / Birthright / Lure of the Void / Trials and Travails / Motivation / Career) with canonical RT Core + Into the Storm dropdowns and free-text notes per stage, plus a coordinated skill-specialty list migration to RT canon (Common Lore 14, Forbidden Lore 11, Scholastic Lore 16, Linguistics 12, Trade 13). The DH2-fork bio fields (homeWorld/background/role/elite/divination) remain in `template.json` for data continuity but are no longer rendered on the sheet. No advance-table model or wizard — players write their effects into the per-stage notes field.
+
+## 0.5.x — pre-character-creation punch list
+0.5.0 closed the "everything before the A/B character-creation decision" punch list — Accurate damage fix (1d10 per 2 DoS), ship-weapon damage rolling (1d10 + listed Damage per hit, RT corebook p.215), 17 psychic-power damage formulas, ammo + Arms Coffer errata (v1.4), four talent OCR fill-in corrections (Frenzy / Rite of Fear / Catfall / Unarmed Warrior), and the canonical RT Table 8-12 Critical Hits + Catastrophic Damage RollTables. 0.5.1 refreshed inventory icons with 98 Flux-dev-generated bucket icons (520 entries rewired). 0.5.2 fixed the psychic-power damage-roll gate (`subtype: 'Concentration Attack'`), the tables-icon path, and the chainsword bucket art.
 
 ## Test environment (foundrySB)
 
@@ -17,12 +30,60 @@ Proxmox LXC for live-testing this system in Foundry.
 | CTID | 211 (foundrySB) |
 | IP | 192.168.11.36 |
 | Foundry | v14.361 |
+| World | rt-smoke |
 | Node.js | v24.15.0 |
 | App path | /opt/foundry |
 | Data path | /var/lib/foundrydata |
 | Log | /var/log/foundry.log |
 | URL | http://192.168.11.36:30000 |
 | SSH | `ssh -i ~/.ssh/foundry_test project@192.168.11.36` |
+
+### Deploy loop
+
+After `npm run build`, rsync each subdirectory of `build/rogue-trader-3rd/` to the matching subdirectory under `/var/lib/foundrydata/Data/systems/rogue-trader-3rd/`. **Rsync gotcha:** never pass two source dirs into one destination — they collide. Sync each subdir to its own dest.
+
+Then restart: `sudo systemctl restart foundry.service`.
+
+### Compendium changes need a cache-clear (Foundry V14 gotcha)
+
+Foundry V14 auto-migrates each system NeDB `.db` compendium into a **LevelDB cache** as a subdirectory next to the .db file on first read:
+
+```
+<data>/systems/<system>/packs/<pack>.db       ← source (NeDB, what we deploy)
+<data>/systems/<system>/packs/<pack>/         ← LevelDB cache (000005.ldb, CURRENT, MANIFEST-*, LOG)
+```
+
+After the cache exists, Foundry **ignores `.db` file changes** even across `systemctl restart`. It only re-migrates if the LevelDB subdirectory is absent. No error, no warning — the server quietly serves stale data, and `pack.clear()` + `pack.getDocuments()` returns the cached version.
+
+After any compendium change, the deploy step MUST also drop the caches:
+
+```bash
+sudo systemctl stop foundry.service && \
+sudo rm -rf /var/lib/foundrydata/Data/systems/rogue-trader-3rd/packs/*/ && \
+sudo systemctl start foundry.service
+```
+
+The `*/` glob removes only LevelDB subdirectories (which are root-owned because Foundry creates them), leaving the `.db` files (project-owned) intact. Codified in `~/.claude/projects/-home-ahermon/memory/reference_foundry_v14_leveldb_cache.md`.
+
+### Headless debugging (Playwright)
+
+Playwright is installed in `~/.venvs/playwright/`. Use it for direct page-context inspection of Foundry. Template script: `/tmp/inspect_compendium.py` — navigates to `/join`, logs in as Gamemaster (empty password while debugging — user clears + resets), runs JS in the page context, dumps the result to stdout. The test world's GM seat is single-occupancy, so the user must log out of their browser tab before a Playwright session can claim it.
+
+## Adjacent infrastructure — whisperx (ComfyUI image gen)
+
+The `whisperx` Proxmox LXC at `192.168.11.22` hosts the SDXL image-generation pipeline used for NPC portraits (see "NPC compendium pipeline" / "Image generation" sections). Connection details:
+
+| Property | Value |
+|---|---|
+| SSH | `ssh ahermon@192.168.11.22` (ed25519 key auth, passwordless from dev LXC) |
+| Alt access | `ssh project@192.168.11.22` (password `project`, has sudo) for system admin / model installs |
+| ComfyUI API | `http://192.168.11.22:8188` (LAN-only — iptables INPUT restricts to `192.168.11.0/24` + `127.0.0.0/8`) |
+| Install | `/home/ahermon/comfyui/ComfyUI/`, venv at `/home/ahermon/comfyui-venv/` (Python 3.10, torch 2.12) |
+| Service log | `/var/log/comfyui/comfyui.log` |
+| GPU | RTX 3060 12GB |
+| Workflows | `tools/npc_pipeline/comfy_npc_img2img.py` (in this repo) is the production entry point |
+
+**Security note (2026-05-18):** the LXC was compromised before this date with a crypto-miner + supply-chain RCE attack — a fake `comuifyConfig` custom node that fetched `45.130.22.219/comfyUI<MMDD>.elf` on every ComfyUI start and dropped systemd-user-timer backdoors with innocent names (`gnome-X11`, `mail-sync`, `nano`, `ssh.config`, `ssh-proxy`). Cleaned up, payloads quarantined to `/root/forensic/`. **ComfyUI-Manager has been removed (had remote install endpoints — the RCE vector) — don't reinstall it.** The C2 IP `45.130.22.219` is permanently blocked at iptables OUTPUT. If a compendium-style supply-chain attack pattern reappears (suspicious URLs in custom_node `__init__.py`, unfamiliar `~/.config/systemd/user/*.service` with `ExecStart=/home/ahermon/.somewhere/...`), repeat the audit pattern from `~/.claude/projects/-home-ahermon/memory/reference_comfyui_whisperx.md`.
 
 ## Build
 
@@ -42,6 +103,60 @@ Weapon items: `class` (Pistol/Basic/Heavy/Melee/Thrown), `type` (Bolt/Las/SP/Mel
 Armour items: `armourPoints: {head, leftArm, rightArm, body, leftLeg, rightLeg}`, `maxAgility`, `type` (Primitive/Basic/Carapace/Power/Field/Other), `weight`, `availability`.
 
 Item type registry is in `src/template.json`.
+
+## NPC compendium pipeline (in flight, 2026-05-19)
+
+Building the first **Actor**-type compendium for this system: `src/packs/npcs/npcs.yml` → `npcs.db`. Registered in `system.json` as `{ "name": "npcs", "type": "Actor", "label": "NPCs" }`. PoC currently has the four xenos NPCs from corebook Ch.XIV (Eldar Corsair, Ork Freebooter, Kroot Mercenary, Warp Predator/Ebon Geist).
+
+**Extraction:** `/tmp/build_npcs.py` parses NPC stat blocks from `/mnt/project_data/RT/RT-DOCS/CoreBook-201-401.pdf/markdown.md`. Handles:
+- Both table formats: dual-header (`| Profile | | …` + separator + `| WS BS S T …` + data row, like Eldar) and single-header (just `| WS BS S T …` + separator + data row, like Ebon Geist).
+- Multi-line cells where the markdown converter split `(N)\nvalue` (Unnatural Characteristic notation) across two lines.
+- Paragraph splits caused by inline image markdown breaking up a single skill/talent/trait list — merged back into one section.
+- Footnote bleed: lines like `". †..."` or `". Daemonic Presence:..."` after a list are cut at the period.
+- Stat-block skill name → `template.json` skill key mapping (consolidated: Barter→commerce, Climb→athletics, Silent Move/Concealment→stealth, Speak Language→linguistics, etc.).
+
+**Assembly:** `/tmp/build_npc_yaml.py` builds the Foundry actor YAML, resolving talent/trait names against `src/packs/{talents,traits}/*.yml` to embed full benefit/description data. Inline weapons/armour parsing:
+- Weapon spec like `(60m; S/3/10; 1d10+4 R; Pen 6; Clip 100; Reload 2Full; Reliable)` → structured `system.{range,rateOfFire,damage,damageType,penetration,clip,reload,special:{reliable:true}}`.
+- Armour `(Body 5, Head 4, Arms 2, Legs 2)` → `system.armourPoints` with Arms/Legs split into left/right.
+- Compendium-weapon lookup with qualifier-stripping (`xeno-crafted laspistol` → also tries `laspistol`) and hard aliases (`shoots`→`ork shoota`).
+
+**Foundry V14 embedded-item gotchas** (learned the hard way; cost ~half a day):
+- Embedded weapon/armour items need ALL schema-required template fields populated (`physicalItem`: `inBackpack`; `attack`: `attackType`, `attackBonus`; `action`: `target`, `effect`; `backpack: {inBackpack}`). Missing fields cause silent doc rejection during compendium load — no error log, items just disappear. Standalone Item compendiums get a relaxation pass; embedded items don't.
+- `range` and `penetration` are declared as strings (`""`) in `template.json` and must be strings on embedded items even though they hold numeric values.
+- `_id` must be 16-char mixed-case alphanumeric (`[A-Za-z0-9]{16}`), Foundry-style randomID. Lowercase hex works for the .db row itself but is risky.
+- And THE big one: deploying a new `.db` file doesn't update Foundry until you `rm -rf packs/<name>/` LevelDB cache. See "Deploy loop" / `reference_foundry_v14_leveldb_cache.md`.
+
+**Image generation (current path — ComfyUI img2img against canonical refs):**
+
+`flux/dev` via fal-ai was the first pass and was *not 40K-accurate enough* — SDXL/flux bases have weak priors for niche xenos (Kroot, Ebon Geist) and drift into generic fantasy. As of 2026-05-18 the pipeline runs locally on the `whisperx` LXC:
+
+| Property | Value |
+|---|---|
+| ComfyUI API | `http://192.168.11.22:8188` (firewalled to `192.168.11.0/24`) |
+| Base model | **JuggernautXL_v9** — photorealistic painted SDXL. *Avoid Illustrious-XL for these portraits — its anime bias fights the oil-paint aesthetic.* |
+| Style LoRA | **`Oldhammer.safetensors` @ 0.45–0.60** — stacked on every portrait. The vintage GW oil-paint style anchor. ⭐ |
+| Faction LoRAs | `Aeldari` (Eldar), `Ork-Boyz` (Ork), `Tau` (Tau-allied — avoid for pure Kroot), `Astartes` (Space Marines). All from nDimensional/HuggingFace. |
+| Reference art | RT corebook NPC illustrations live at `/mnt/project_data/RT/RT-DOCS/CoreBook-201-401.pdf/pages/page-NNN/img-NN.jpeg`. Upload to whisperx's `~/comfyui/ComfyUI/input/rt_npc_refs/` first. |
+| Workflow | **img2img**: `LoadImage → ImageScale 832×1216 → VAEEncode → KSampler(denoise=0.50–0.65, dpmpp_2m, karras, cfg=6, 30 steps) → VAEDecode → SaveImage`. The reference's painted body + species anatomy anchors the result; the prompt + LoRAs repaint the detail. |
+| Denoise rule of thumb | `0.50` preserves canon anatomy almost verbatim (use when species drift is the failure); `0.65` lets the prompt dominate (use when reference composition is fine but you want a fresh repaint) |
+| Script | `tools/npc_pipeline/comfy_npc_img2img.py` (callable as `python3 comfy_npc_img2img.py [eldar|ork|kroot|geist]`) |
+
+**Strict-check discipline (REQUIRED for canon-anchored generation):**
+
+Every generated portrait must be visually compared against the canonical published reference before being committed. Do not ship the first plausible result — for niche species the base model has no real prior and will drift to nearest-neighbor (Kroot → orc-faced humanoid, Aztec tribal warrior, Saurian Space Marine, literal cartoon crow — all observed during the 2026-05-18 pass). Name each drift mode explicitly and counter with a targeted negative prompt before re-rolling. Codified in `~/.claude/projects/-home-ahermon/memory/feedback_canon_strict_check.md`.
+
+Typical negative-prompt counters seen during the Kroot iteration:
+- Wrong species → `human face, orc, ork, goblin, snarl, tusks, troll, ogre`
+- Wrong faction → `yellow power armor, imperial fists, space marine, ceramite shoulder pad`
+- Wrong anatomy → `(extra arms:1.5), three arms, four arms, multiple weapons, feathered body, full bird, mascot, cartoon`
+- Wrong style → `anime style, cell shaded, chibi, photograph, modern, contemporary`
+- Costume drift → `skull mask, bone mask, tribal mask, headdress, native american, aztec`
+
+**Style consistency across a batch:** the Oldhammer LoRA does the heavy lifting. Fixed seed (42 default) gives composition reproducibility but is less load-bearing than the style LoRA.
+
+**flux/dev historical pass:** the four initial portraits were generated with flux/dev (style-front prompts + NotebookLM canonical descriptions + fixed seed 42 + square_hd). Result was 3/4 stylistically OK, 1/4 (Kroot) off-canon. Documented for posterity in case we revisit fal-ai pipelines.
+
+**Known stubs:** creature-unique talents/traits not in the compendium (Mob Rule, Consume Life, Daemonic Presence, Hard Target, the `Common Lore (Ork)`/`Speak Language (X)` meta-talents) embed as name-only items — they render with their name but no benefit text until authored.
 
 ## Compendium canon (as of 2026-05-14, version 0.4.0)
 

@@ -26,3 +26,5 @@ conf
 ## Reference / local-only
 .claude
 RT-DOCS
+__pycache__/
+*.pyc

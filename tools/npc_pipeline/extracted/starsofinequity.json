@@ -1,0 +1,2790 @@
+[
+  {
+    "name": "Apex Predator",
+    "slug": "apex-predator",
+    "faction": "",
+    "description": "",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 58,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 0,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 48,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 45,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 48,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 19,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 49,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 41,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 9,
+        "unnatural": 0
+      }
+    },
+    "wounds": 0,
+    "movement": "",
+    "skills": [],
+    "talents": [],
+    "traits": [],
+    "weapons_text": "",
+    "armour_text": "",
+    "gear_text": "",
+    "portrait_ref": null,
+    "ws_line": 1355,
+    "source_book": "roguetrader_starsofinequity.pdf"
+  },
+  {
+    "name": "Behemoth",
+    "slug": "behemoth",
+    "faction": "",
+    "description": "",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 0,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 70,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 65,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 28,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 14,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 26,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 37,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 12,
+        "unnatural": 0
+      }
+    },
+    "wounds": 55,
+    "movement": "4/8/12/24",
+    "skills": [
+      [
+        "Awareness",
+        0
+      ]
+    ],
+    "talents": [
+      "Combat Master or Fearless or Hardy or Iron Jaw"
+    ],
+    "traits": [
+      "Bestial",
+      "Natural Armour (5)",
+      "Natural Weapons",
+      "Size (Enormous)",
+      "Unnatural Strength (x2)"
+    ],
+    "weapons_text": "Oversized claws, fangs, horns, or other natural weapons (Melee; 1d10+7 I or R; Pen 0; Primitive), trample (Melee; 2d10+7; Pen 2; Overbearing†).",
+    "armour_text": "Durable hide (All 6) Total TB: 6",
+    "gear_text": "",
+    "portrait_ref": null,
+    "ws_line": 1384,
+    "source_book": "roguetrader_starsofinequity.pdf"
+  },
+  {
+    "name": "Ptera-beast",
+    "slug": "ptera-beast",
+    "faction": "",
+    "description": "",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 45,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 0,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 16,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 48,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 10,
+        "unnatural": 0
+      }
+    },
+    "wounds": 10,
+    "movement": "3/6/9/18",
+    "skills": [
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Dodge",
+        0
+      ]
+    ],
+    "talents": [
+      "Double Team or Lightning Reflexes or Step Aside"
+    ],
+    "traits": [
+      "Bestial",
+      "Flyer (6)",
+      "Natural Weapons"
+    ],
+    "weapons_text": "Cruel talons, barbed tail, or vicious beak (Melee; 1d10+4; Pen 0; Primitive) # Shadowed Stalker The most dangerous xenos beasts are not always the largest or most physically imposing. Many Rogue Traders have found that clever or stealthy predators can ruin their operations in ways that no frenzied rampage by mightier creatures could manage. Some worlds seem to have an entire secondary ecosystem hidden in the shadows of the first, where secret predators and lurking scavengers can make entire herds of prey animals simply vanish. Travellers throughout the Expanse have learned (at great cost) not only to heed every shadow and every rustle in the foliage, but also to expect surprise and ambush, despite their vigilance.",
+    "armour_text": "None Total TB: 3",
+    "gear_text": "",
+    "portrait_ref": null,
+    "ws_line": 1414,
+    "source_book": "roguetrader_starsofinequity.pdf"
+  },
+  {
+    "name": "Shadowed Stalker",
+    "slug": "shadowed-stalker",
+    "faction": "",
+    "description": "",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 53,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 0,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 41,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 37,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 48,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 17,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 43,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 36,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 10,
+        "unnatural": 0
+      }
+    },
+    "wounds": 0,
+    "movement": "",
+    "skills": [],
+    "talents": [],
+    "traits": [],
+    "weapons_text": "",
+    "armour_text": "",
+    "gear_text": "",
+    "portrait_ref": "img-19.jpeg",
+    "ws_line": 1442,
+    "source_book": "roguetrader_starsofinequity.pdf"
+  },
+  {
+    "name": "Venomous Terror",
+    "slug": "venomous-terror",
+    "faction": "",
+    "description": "",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 38,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 0,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 32,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 29,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 38,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 13,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 28,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 9,
+        "unnatural": 0
+      }
+    },
+    "wounds": 0,
+    "movement": "",
+    "skills": [],
+    "talents": [],
+    "traits": [],
+    "weapons_text": "",
+    "armour_text": "",
+    "gear_text": "",
+    "portrait_ref": "img-19.jpeg",
+    "ws_line": 1480,
+    "source_book": "roguetrader_starsofinequity.pdf"
+  },
+  {
+    "name": "Stranded Ork",
+    "slug": "stranded-ork",
+    "faction": "Ork",
+    "description": "",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 36,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 18,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 48,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 46,
+        "unnatural": 8
+      },
+      "agility": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 20,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 33,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 25,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 22,
+        "unnatural": 0
+      }
+    },
+    "wounds": 12,
+    "movement": "3/6/9/18",
+    "skills": [
+      [
+        "Intimidate",
+        0
+      ],
+      [
+        "Speak Language (Ork)",
+        0
+      ],
+      [
+        "Survival",
+        0
+      ]
+    ],
+    "talents": [
+      "Basic Weapon Training (Primitive)",
+      "Bulging Biceps",
+      "Crushing Blow",
+      "Furious Assault",
+      "Hardy",
+      "Iron Jaw",
+      "Melee Weapon Training (Primitive)",
+      "True Grit"
+    ],
+    "traits": [
+      "Brutal Charge",
+      "Mob Rule†",
+      "Sturdy",
+      "Unnatural Toughness (x2)"
+    ],
+    "weapons_text": "Stone club (Melee; 2d10 I + 4; Pen 0; Primitive, Unbalanced) or spear (Melee; 1d10+ 4 R; Pen 0; Primitive), flint knife (Melee; 1d5 R+ 4; Pen 0; Primitive).",
+    "armour_text": "Hide Armour (Body 2) **Total TB:** 8",
+    "gear_text": "1d10 Ork teeth (“Teef”), charm (crudely carved bone or stone), small juicy Squig (fer eatin’), gourd of fungus beer.",
+    "portrait_ref": "img-41.jpeg",
+    "ws_line": 2543,
+    "source_book": "roguetrader_starsofinequity.pdf"
+  },
+  {
+    "name": "Gretchin Headhunter",
+    "slug": "gretchin-headhunter",
+    "faction": "",
+    "description": "",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 18,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 18,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 19,
+        "unnatural": 8
+      },
+      "agility": {
+        "base": 38,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 33,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 38,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 22,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 24,
+        "unnatural": 0
+      }
+    },
+    "wounds": 8,
+    "movement": "4/8/12/24",
+    "skills": [
+      [
+        "Concealment",
+        0
+      ],
+      [
+        "Dodge",
+        0
+      ],
+      [
+        "Search",
+        0
+      ],
+      [
+        "Shadowing",
+        0
+      ],
+      [
+        "Speak Language (Ork)",
+        0
+      ],
+      [
+        "Silent Move",
+        0
+      ],
+      [
+        "Tracking",
+        0
+      ]
+    ],
+    "talents": [
+      "Basic Weapon Training (Primitive)",
+      "Heightened Senses (Hearing)",
+      "Melee Weapon Training (Primitive)"
+    ],
+    "traits": [
+      "Mob Rule†",
+      "Size (Scrawny)",
+      "Unnatural Toughness (x2)"
+    ],
+    "weapons_text": "Blowgun (Basic; 15m; S/-/-; 1d5 R; Pen 0; Clip 1; Reload Full; Primitive, Toxic) or bow (Basic; 30m; S/-/-; 1d10 R; Pen 0; Clip 1; Reload Half; Primitive, Reliable) or sling (Basic; 15m; S/-/-; 1d10-2 I; Pen 0; Clip 1; Reload Full; Primitive) or Squig-skull shield (Melee; 1d5+1 I; Pen 0; Defensive, Primitive), sneaky rock knife (Melee; 1d5+1 R; Pen 0; Primitive).",
+    "armour_text": "None Total TB: 4",
+    "gear_text": "15 poison darts or 15 flint arrows, 1d5 ork teeth (\"Teef\"), pouch of rotting refuse.",
+    "portrait_ref": "img-41.jpeg",
+    "ws_line": 2578,
+    "source_book": "roguetrader_starsofinequity.pdf"
+  },
+  {
+    "name": "Huntin’ Squig",
+    "slug": "huntin-squig",
+    "faction": "",
+    "description": "",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 0,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 33,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 24,
+        "unnatural": 4
+      },
+      "agility": {
+        "base": 33,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 10,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 28,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 0,
+        "unnatural": 0
+      }
+    },
+    "wounds": 10,
+    "movement": "3/6/9/18",
+    "skills": [
+      [
+        "Awareness",
+        10
+      ],
+      [
+        "Tracking",
+        20
+      ]
+    ],
+    "talents": [
+      "Furious Assault",
+      "Hardy",
+      "Heightened Senses (Smell)"
+    ],
+    "traits": [
+      "Bestial",
+      "Natural Weapons (Teeth)",
+      "Unnatural Toughness (x2)"
+    ],
+    "weapons_text": "Bite (Melee; 1d10+5 R; Pen 0; Tearing) ## MARKED FOR DEATH Rogue Traders—especially successful ones—are likely to make numerous enemies during the course of their careers, some of whom are likely to hold grudges. In the 41st Millennium, assassination is a familiar means of exacting revenge or removing a potential business rival, and in the wilds of the Koronus Expanse, the opportunities for an assassin to strike are endless. The means of eliminating a target are varied, and an old enemy with a score to settle has a wide selection of potential assassins to contract, from hired guns, mercenaries, and other assorted renegades and lowlifes, to professional killers who have dedicated their existences to the art of ending human lives.",
+    "armour_text": "None Total TB: 4",
+    "gear_text": "",
+    "portrait_ref": null,
+    "ws_line": 2606,
+    "source_book": "roguetrader_starsofinequity.pdf"
+  },
+  {
+    "name": "Death Cult Assassin",
+    "slug": "death-cult-assassin",
+    "faction": "",
+    "description": "Outside of those individuals trained in the Imperium’s secret temples, few killers can match the skills and determination of a death cult assassin. Trained to use blades with unparalleled grace and efficiency, the blindly devoted cultists have made an art form out of murder. Within the Calixis Sector and the Expanse, the deadly assassins of the infamous Moritat are undoubtedly the most renowned, though several other dissolute death cults, such as the Red Chain, the Sons of Dispater, and the Faceless Covenant, also thrive in the region, and are willing to contract out their services.",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 66,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 28,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 36,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 48,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 33,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 42,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 38,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 27,
+        "unnatural": 0
+      }
+    },
+    "wounds": 20,
+    "movement": "3/6/9/18",
+    "skills": [
+      [
+        "Acrobatics",
+        0
+      ],
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Climb",
+        0
+      ],
+      [
+        "Dodge",
+        0
+      ],
+      [
+        "Secret Tongue (Moritat)",
+        0
+      ],
+      [
+        "Shadowing",
+        0
+      ],
+      [
+        "Silent Move",
+        20
+      ],
+      [
+        "Speak Language (Low Gothic)",
+        0
+      ],
+      [
+        "Survival",
+        0
+      ],
+      [
+        "Tracking",
+        10
+      ]
+    ],
+    "talents": [
+      "Ambidextrous",
+      "Assassin Strike",
+      "Blademaster",
+      "Catfall",
+      "Crippling Strike",
+      "Dual Strike",
+      "Exotic Weapon Training (Blood Blade)",
+      "Fearless",
+      "Hard Target",
+      "Leap Up",
+      "Swift Attack",
+      "Melee Weapon Training (Universal)",
+      "Precise Blow",
+      "Step Aside",
+      "Sure Strike",
+      "Two-Weapon Wielder",
+      "Wall of Steel"
+    ],
+    "traits": [],
+    "weapons_text": "Power sword (Melee; 1d10+8 E; Pen 5; Balanced, Power Field), blood blade† (Melee; 1d10+7 R; Pen 2; Balanced, Tearing), mono stiletto (Melee; 1d5+3 R; Pen 2; Balanced).",
+    "armour_text": "Bodyglove (All 3) Total TB: 4",
+    "gear_text": "1 hallucinogen grenade, 1 photon flash grenade, preysense goggles, grapnel, stummer, data-slate with encrypted picts and information on intended target.",
+    "portrait_ref": null,
+    "ws_line": 2634,
+    "source_book": "roguetrader_starsofinequity.pdf"
+  },
+  {
+    "name": "Hired Gunslinger",
+    "slug": "hired-gunslinger",
+    "faction": "",
+    "description": "While nearly everyone on the frontier of the galaxy carries a weapon of some sort, a few individuals naturally excel at shooting, and have honed their ability to superhuman levels. Whether drawing down on an opponent with a bolt pistol or stubgun or lining up the crosshairs of a long-las, a gunslinger rarely misses his target. In the Expanse, gunslingers hailing from Gunmetal City on Scintilla in the Calixis Sector have a reputation for being the most lethal and efficient killers, and their services are always in demand.",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 27,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 59,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 45,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 50,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 32,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 29,
+        "unnatural": 0
+      }
+    },
+    "wounds": 18,
+    "movement": "3/6/9/18",
+    "skills": [
+      [
+        "Awareness",
+        10
+      ],
+      [
+        "Carouse",
+        0
+      ],
+      [
+        "Dodge",
+        0
+      ],
+      [
+        "Scrutiny",
+        0
+      ],
+      [
+        "Shadowing",
+        0
+      ],
+      [
+        "Sleight of Hand",
+        0
+      ],
+      [
+        "Speak Language (Low Gothic)",
+        0
+      ],
+      [
+        "Tracking",
+        0
+      ]
+    ],
+    "talents": [
+      "Ambidextrous",
+      "Basic Weapon Training (Universal)",
+      "Crack Shot",
+      "Deadeye Shot",
+      "Dual Shot",
+      "Gunslinger",
+      "Hip Shooting",
+      "Independent Targeting",
+      "Lightning Reflexes",
+      "Marksman",
+      "Nerves of Steel",
+      "Pistol Weapon Training (Universal)",
+      "Quick Draw",
+      "Rapid Reload",
+      "Two Weapon Wielder"
+    ],
+    "traits": [],
+    "weapons_text": "Lucius-pattern hellpistol with red-dot laser sight (35m; S/2/–; 1d10+4 E; Pen 7; Clip 40; Reload 2 Full), Good Craftsmanship “Scalptaker” stub revolver with Expander Rounds (Pistol; 30m; S/–/–; 1d10+5 I; Pen 1; Clip 6; Reload 2 Full; Reliable, Customised), long-las (Basic; 150m; S/–/–; 1d10+3 E; Pen 1; Clip 40; Reload Full; Accurate, Reliable) or pump-action shotgun (Basic; 30m; S/–/–; 1d10+4 I; Pen 0; Clip 8; Reload 2 Full; Scatter).",
+    "armour_text": "Flak duster (All 3) Total TB: 3",
+    "gear_text": "2 blind grenades, 2 spare power packs, 12 spare expander rounds, photo-visor, filtration plugs, charm (such as a holed coin or expended slug), data-slate with encrypted picts and information on intended target.",
+    "portrait_ref": null,
+    "ws_line": 2661,
+    "source_book": "roguetrader_starsofinequity.pdf"
+  },
+  {
+    "name": "Genestealer",
+    "slug": "genestealer",
+    "faction": "",
+    "description": "",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 65,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 0,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 55,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 60,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 12,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 27,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 56,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 45,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 0,
+        "unnatural": 0
+      }
+    },
+    "wounds": 16,
+    "movement": "",
+    "skills": [
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Climb",
+        0
+      ],
+      [
+        "Concealment",
+        0
+      ],
+      [
+        "Dodge",
+        0
+      ],
+      [
+        "Silent Move",
+        10
+      ],
+      [
+        "Swim",
+        0
+      ]
+    ],
+    "talents": [
+      "Ambidextrous",
+      "Crushing Blow",
+      "Fearless",
+      "Genestealer’s Kiss†",
+      "Hard Target",
+      "Leap Up",
+      "Lightning Attack",
+      "Lightning Reflexes",
+      "Resistance (Psychic Powers, Cold, Poisons)",
+      "Step Aside",
+      "Swift Attack"
+    ],
+    "traits": [
+      "Dark Sight",
+      "Fear 2",
+      "From Beyond",
+      "Improved Natural Weapons (Claws)",
+      "Multiple Arms",
+      "Natural Armour 4 (All)",
+      "Natural Weapons (Claws)",
+      "Unnatural Agility (x2)",
+      "Unnatural Speed"
+    ],
+    "weapons_text": "",
+    "armour_text": "Natural Armour (4 All) Total TB: 6",
+    "gear_text": "",
+    "portrait_ref": null,
+    "ws_line": 2698,
+    "source_book": "roguetrader_starsofinequity.pdf"
+  },
+  {
+    "name": "Broodlord",
+    "slug": "broodlord",
+    "faction": "",
+    "description": "",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 70,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 0,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 60,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 65,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 12,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 36,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 56,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 55,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 0,
+        "unnatural": 0
+      }
+    },
+    "wounds": 32,
+    "movement": "",
+    "skills": [
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Climb",
+        0
+      ],
+      [
+        "Concealment",
+        0
+      ],
+      [
+        "Dodge",
+        0
+      ],
+      [
+        "Silent Move",
+        10
+      ],
+      [
+        "Swim",
+        0
+      ]
+    ],
+    "talents": [
+      "Ambidextrous",
+      "Crushing Blow",
+      "Fearless",
+      "Genestealer’s Kiss†",
+      "Hard Target",
+      "Hypnotic Gaze††",
+      "Leap Up",
+      "Lightning Attack",
+      "Lightning Reflexes",
+      "Resistance (Psychic Powers, Cold, Poisons)",
+      "Step Aside",
+      "Swift Attack"
+    ],
+    "traits": [
+      "Dark Sight",
+      "Fear 2",
+      "From Beyond",
+      "Improved Natural Weapons (Claws)",
+      "Multiple Arms",
+      "Natural Armour (5)",
+      "Natural Weapons (Claws)",
+      "Unnatural Agility (x2)",
+      "Unnatural Speed"
+    ],
+    "weapons_text": "",
+    "armour_text": "Natural Armour (5 All) Total TB: 6",
+    "gear_text": "",
+    "portrait_ref": "img-42.jpeg",
+    "ws_line": 2723,
+    "source_book": "roguetrader_starsofinequity.pdf"
+  },
+  {
+    "name": "Sanger Krin",
+    "slug": "sanger-krin",
+    "faction": "",
+    "description": "",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 28,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 64,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 32,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 36,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 56,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 45,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 48,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 39,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 28,
+        "unnatural": 0
+      }
+    },
+    "wounds": 20,
+    "movement": "5/10/15/30",
+    "skills": [
+      [
+        "Awareness",
+        10
+      ],
+      [
+        "Command",
+        0
+      ],
+      [
+        "Common Lore (Koronus Expanse)",
+        0
+      ],
+      [
+        "Concealment",
+        0
+      ],
+      [
+        "Literacy",
+        0
+      ],
+      [
+        "Scholastic Lore (Beasts)",
+        0
+      ],
+      [
+        "Shadowing",
+        0
+      ],
+      [
+        "Silent Move",
+        10
+      ],
+      [
+        "Speak Language (High Gothic)",
+        0
+      ],
+      [
+        "Survival",
+        0
+      ],
+      [
+        "Tracking",
+        20
+      ]
+    ],
+    "talents": [
+      "Air of Authority",
+      "Basic Weapon Training (Universal)",
+      "Combat Sense",
+      "Crack Shot",
+      "Dark Soul",
+      "Marksman",
+      "Mighty Shot",
+      "Peer (Nobility)",
+      "Pistol Weapon Training (Universal)",
+      "Rapid Reaction",
+      "Sharpshooter"
+    ],
+    "traits": [],
+    "weapons_text": "Best-Craftsmanship “Nomad” long-las with omniscope (Basic; 150m; S/–/–; 1d10+4 E; Pen 1; Clip 40; Reload 1 Full; Accurate), 2 Belasco duelling pistols (Pistol; 45m; S/–/–; 1d10+5 E; Pen 4; 1 Full; Accurate), mono knife (Melee; 1d5+3 R; Pen 2; Balanced).",
+    "armour_text": "Carapace, pith helm (All 4)",
+    "gear_text": "Cameleoline cloak, 2 spare power packs, 2 hot-shot charge packs, filtration plugs, multicompass, grapplehawk (see page 375 of the ROGUE TRADER Core Rulebook).",
+    "portrait_ref": "img-42.jpeg",
+    "ws_line": 2756,
+    "source_book": "roguetrader_starsofinequity.pdf"
+  },
+  {
+    "name": "Rak'Gol Scouts",
+    "slug": "rak-gol-scouts",
+    "faction": "Rak'Gol",
+    "description": "Striking from the blackest reaches of the Alenic Depths, the violent and cruel Rak'Gol have become the byword for death and terror in the Koronus Expanse. Horrific, eight-limbed monstrosities, twisted and Warped, the Rak'Gol seem to exist only for slaughter, descending on ships and isolated colonies like a plague, and disappearing again into the cold depths of the void. Though the underlying impetus for the Rak'Gol's seemingly random attacks remains a mystery, those who suffer their predations rarely live to tell the tale.\n\nRak'Gol Carvers are a subset of this species that have recently been seen spearheading their lightning assaults. These creatures are slightly smaller than many of their compatriots, though they still tower over humans, built for speed in lieu of raw power and armed with savage melee weapons. Their presence is often a precursor to the larger Marauders, Broodmasters, Abominations, and occasionally, the dreaded Techno-Shamans.",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 50,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 31,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 43,
+        "unnatural": 8
+      },
+      "toughness": {
+        "base": 38,
+        "unnatural": 6
+      },
+      "agility": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 27,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 31,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 28,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 6,
+        "unnatural": 0
+      }
+    },
+    "wounds": 19,
+    "movement": "8/16/24/48",
+    "skills": [
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Climb",
+        0
+      ],
+      [
+        "Concealment",
+        0
+      ],
+      [
+        "Dodge",
+        0
+      ],
+      [
+        "Tracking +10",
+        0
+      ]
+    ],
+    "talents": [
+      "Basic Weapon Training (SP)",
+      "Hard Target",
+      "Melee Weapon Training (Primitive, Universal)",
+      "Pistol Weapon Training (SP) True Grit",
+      "Sprint"
+    ],
+    "traits": [
+      "Fear (1)",
+      "Hunting Frenzy†",
+      "Multiple Arms",
+      "Size (Hulking)",
+      "Quadruped",
+      "Sturdy",
+      "Unnatural Strength (x2)",
+      "Unnatural Toughness (x2)"
+    ],
+    "weapons_text": "Implanted chainblades (Melee; 1d10+12 R; Pen 6; Tearing), razorstorm launcher (Pistol; 15m; S/3/–; 1d10+3 R; Pen 0; Clip 10; Reload Full; Tearing)",
+    "armour_text": "Implanted Plates (All 6) Total TB: 6",
+    "gear_text": "Good-Craftsmanship bionic respiratory system, long-range implanted vox, photo-visor, suicide device (automatically detonated to destroy the corpse upon death), 4 spare razorstorm launcher clips.",
+    "portrait_ref": "img-44.jpeg",
+    "ws_line": 2828,
+    "source_book": "roguetrader_starsofinequity.pdf"
+  },
+  {
+    "name": "Prefectus Primus Marlya Sindegrosse",
+    "slug": "prefectus-primus-marlya-sindegrosse",
+    "faction": "",
+    "description": "",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 20,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 20,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 0,
+        "unnatural": 0
+      }
+    },
+    "wounds": 12,
+    "movement": "3/6/9/18",
+    "skills": [
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Common Lore (Administratum, Imperium)",
+        10
+      ],
+      [
+        "Literacy",
+        10
+      ],
+      [
+        "Scholastic Lore (Bureaucracy)",
+        0
+      ],
+      [
+        "Speak Language (Low Gothic, High Gothic)",
+        0
+      ],
+      [
+        "Trade (Remembrancer)",
+        0
+      ]
+    ],
+    "talents": [
+      "Light Sleeper",
+      "Peer (Administratum)",
+      "Pistol Weapon Training (SP)",
+      "Satrap†",
+      "Total Recall"
+    ],
+    "traits": [],
+    "weapons_text": "",
+    "armour_text": "Heavy Tunic (All 2)  **Total TB:** 3",
+    "gear_text": "",
+    "portrait_ref": "img-63.jpeg",
+    "ws_line": 3855,
+    "source_book": "roguetrader_starsofinequity.pdf"
+  },
+  {
+    "name": "High Councillor Olayo Jurchen",
+    "slug": "high-councillor-olayo-jurchen",
+    "faction": "",
+    "description": "",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 25,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 20,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 38,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 38,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 0,
+        "unnatural": 0
+      }
+    },
+    "wounds": 12,
+    "movement": "3/6/9/18",
+    "skills": [
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Command",
+        0
+      ],
+      [
+        "Common Lore (Imperium)",
+        0
+      ],
+      [
+        "Drive (Ground Vehicle)",
+        0
+      ],
+      [
+        "Literacy",
+        0
+      ],
+      [
+        "Speak Language (Low Gothic)",
+        0
+      ],
+      [
+        "Tech-Use",
+        0
+      ],
+      [
+        "Trade (Technomat)",
+        0
+      ]
+    ],
+    "talents": [
+      "Basic Weapon Training (SP)",
+      "Melee Weapon Training (Primitive)",
+      "Peer (Workers)"
+    ],
+    "traits": [],
+    "weapons_text": "",
+    "armour_text": "Heavy Work Gear (All 2)  **Total TB:** 3",
+    "gear_text": "",
+    "portrait_ref": "img-63.jpeg",
+    "ws_line": 3879,
+    "source_book": "roguetrader_starsofinequity.pdf"
+  },
+  {
+    "name": "Brigadier Barnabus Scheltrum",
+    "slug": "brigadier-barnabus-scheltrum",
+    "faction": "",
+    "description": "Needing to quickly find employment elsewhere after a practical joke went awry, Barnabus took passage to the Koronus Expanse, where he was soon put to good use as an Arch-militant for a succession of Rogue Traders, before finally being granted a role as a colonial administrator. He has found he actually quite enjoys his position, where he can experience a comfortable lifestyle, whilst also engaging in some vaguely military pursuits, such as drill and endless dress parades.",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 38,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 38,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 35,
+        "unnatural": 0
+      }
+    },
+    "wounds": 15,
+    "movement": "3/6/9/18",
+    "skills": [
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Climb",
+        0
+      ],
+      [
+        "Command",
+        10
+      ],
+      [
+        "Common Lore (Imperium, Imperial Guard, War)",
+        0
+      ],
+      [
+        "Drive (Ground Vehicle)",
+        0
+      ],
+      [
+        "Intimidate",
+        0
+      ],
+      [
+        "Literacy",
+        0
+      ],
+      [
+        "Navigation (Surface)",
+        0
+      ],
+      [
+        "Secret Tongue (Military)",
+        0
+      ],
+      [
+        "Speak Language (High Gothic, Low Gothic)",
+        0
+      ]
+    ],
+    "talents": [
+      "Air of Authority",
+      "Basic Weapon Training (Las, SP)",
+      "Counter Attack",
+      "Disarm",
+      "Heightened Senses (Sight)",
+      "Iron Discipline",
+      "Melee Weapon Training (Universal)",
+      "Pistol Weapon Training (Universal)",
+      "Quick Draw"
+    ],
+    "traits": [],
+    "weapons_text": "",
+    "armour_text": "Flak armour (All 4) **Total TB:** 3",
+    "gear_text": "",
+    "portrait_ref": "img-63.jpeg",
+    "ws_line": 3899,
+    "source_book": "roguetrader_starsofinequity.pdf"
+  },
+  {
+    "name": "Cardinal Karolin Szarkos",
+    "slug": "cardinal-karolin-szarkos",
+    "faction": "",
+    "description": "Cardinal Szarkos’ exact background is unknown, but she once held a position in a powerful and influential organisation in the Calixis Sector before leaving that life behind for reasons unknown. Now, she serves as a representative of the Ecclesiarchy in the Koronus Expanse, and puts her skills to use administrating a Colony in the name of the God-Emperor.",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 50,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 42,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 39,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 41,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 45,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 50,
+        "unnatural": 0
+      }
+    },
+    "wounds": 16,
+    "movement": "3/6/9/18",
+    "skills": [
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Command",
+        0
+      ],
+      [
+        "Common Lore (Ecclesiarchy, Imperial Creed, Imperium)",
+        0
+      ],
+      [
+        "Interrogation",
+        10
+      ],
+      [
+        "Literacy",
+        0
+      ],
+      [
+        "Speak Language (High Gothic, Low Gothic)",
+        0
+      ],
+      [
+        "Tech-Use",
+        0
+      ]
+    ],
+    "talents": [
+      "Pistol Weapon Training (Universal)",
+      "Cardinal†",
+      "Jaded",
+      "Orthoproxy",
+      "Quick Draw"
+    ],
+    "traits": [],
+    "weapons_text": "",
+    "armour_text": "Reinforced robes (All 3) **Total TB:** 4",
+    "gear_text": "",
+    "portrait_ref": "img-64.jpeg",
+    "ws_line": 3925,
+    "source_book": "roguetrader_starsofinequity.pdf"
+  },
+  {
+    "name": "Magos-Commodore Gnothis Trannarch",
+    "slug": "magos-commodore-gnothis-trannarch",
+    "faction": "",
+    "description": "",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 42,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 48,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 47,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 51,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 62,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 37,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 56,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 35,
+        "unnatural": 0
+      }
+    },
+    "wounds": 18,
+    "movement": "3/6/9/18",
+    "skills": [
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Common Lore (Adeptus Mechanicus, Tech)",
+        20
+      ],
+      [
+        "Common Lore (Imperial Navy, Imperium, Navis Nobilite, Koronus Expanse)",
+        0
+      ],
+      [
+        "Forbidden Lore (Adeptus Mechanicus, Archeotech)",
+        20
+      ],
+      [
+        "Speak Language (Explorator Binary, Low Gothic, High Gothic, Techna Lingua)",
+        0
+      ],
+      [
+        "Literacy",
+        0
+      ],
+      [
+        "Logic",
+        10
+      ],
+      [
+        "Tech-Use",
+        20
+      ]
+    ],
+    "talents": [
+      "Ambidextrous",
+      "Binary Chatter",
+      "Chem Geld",
+      "Disturbing Voice",
+      "Ferric Summons",
+      "Heightened Senses (Sight)",
+      "Luminen Shock",
+      "Mechadendrite Use (Manipulator, Utility)",
+      "Orthoproxy",
+      "Paranoia",
+      "Swift Attack",
+      "Technical Knock",
+      "Touched by the Fates (3)",
+      "The Flesh is Weak (4)"
+    ],
+    "traits": [
+      "Machine (4)",
+      "Mechanicus Implants"
+    ],
+    "weapons_text": "",
+    "armour_text": "Machine Trait (All 4) **Total TB:** 5",
+    "gear_text": "",
+    "portrait_ref": null,
+    "ws_line": 4335,
+    "source_book": "roguetrader_starsofinequity.pdf"
+  },
+  {
+    "name": "Tech-Priest Ulmir Arvein",
+    "slug": "tech-priest-ulmir-arvein",
+    "faction": "",
+    "description": "",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 42,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 44,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 38,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 48,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 32,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 60,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 41,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 42,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 25,
+        "unnatural": 0
+      }
+    },
+    "wounds": 16,
+    "movement": "3/6/9/18",
+    "skills": [
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Common Lore (Adeptus Mechanicus, Tech)",
+        20
+      ],
+      [
+        "Common Lore (Imperium, Koronus Expanse)",
+        0
+      ],
+      [
+        "Forbidden Lore (Adeptus Mechanicus, Archeotech, Xenos)",
+        10
+      ],
+      [
+        "Speak Language (Explorator Binary, Low Gothic, High Gothic, Techna Lingua)",
+        0
+      ],
+      [
+        "Literacy",
+        0
+      ],
+      [
+        "Logic",
+        10
+      ],
+      [
+        "Tech-Use",
+        20
+      ]
+    ],
+    "talents": [
+      "Ambidextrous",
+      "Binary Chatter",
+      "Chem Geld",
+      "Disturbing Voice",
+      "Ferric Summons",
+      "Luminen Shock",
+      "Mechadendrite Use (Utility, Weapon)",
+      "Orthoproxy",
+      "Paranoia",
+      "Swift Attack",
+      "Technical Knock",
+      "Touched by the Fates (2)"
+    ],
+    "traits": [
+      "Mechanicus Implants"
+    ],
+    "weapons_text": "",
+    "armour_text": "Mesh-lined robes (All 4) **Total TB:** 4",
+    "gear_text": "",
+    "portrait_ref": "img-74.jpeg",
+    "ws_line": 4364,
+    "source_book": "roguetrader_starsofinequity.pdf"
+  },
+  {
+    "name": "Corsair-Captain Jalthas Methere",
+    "slug": "corsair-captain-jalthas-methere",
+    "faction": "",
+    "description": "",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 53,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 50,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 38,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 43,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 56,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 47,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 45,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 50,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 57,
+        "unnatural": 0
+      }
+    },
+    "wounds": 20,
+    "movement": "5/10/15/30",
+    "skills": [
+      [
+        "Awareness",
+        10
+      ],
+      [
+        "Barter",
+        10
+      ],
+      [
+        "Blather",
+        10
+      ],
+      [
+        "Carouse",
+        20
+      ],
+      [
+        "Charm",
+        20
+      ],
+      [
+        "Command",
+        20
+      ],
+      [
+        "Commerce",
+        10
+      ],
+      [
+        "Common Lore (Koronus Expanse, Tech)",
+        0
+      ],
+      [
+        "Deceive",
+        20
+      ],
+      [
+        "Dodge",
+        10
+      ],
+      [
+        "Drive (Ground Vehicle, Skimmer)",
+        0
+      ],
+      [
+        "Evaluate",
+        20
+      ],
+      [
+        "Forbidden Lore (Pirates)",
+        20
+      ],
+      [
+        "Forbidden Lore (Xenos)",
+        0
+      ],
+      [
+        "Inquiry",
+        10
+      ],
+      [
+        "Literacy",
+        0
+      ],
+      [
+        "Navigation (Stellar, Surface)",
+        0
+      ],
+      [
+        "Pilot (Flyers, Spacecraft)",
+        20
+      ],
+      [
+        "Scholastic Lore (Astromancy)",
+        10
+      ],
+      [
+        "Secret Tongue (Cymian)",
+        0
+      ],
+      [
+        "Scrutiny",
+        10
+      ],
+      [
+        "Speak Language (Low Gothic)",
+        0
+      ],
+      [
+        "Tech-Use",
+        10
+      ]
+    ],
+    "talents": [
+      "Air of Authority",
+      "Ambidextrous",
+      "Basic Weapon Training (Universal)",
+      "Blademaster",
+      "Combat Master",
+      "Counter Attack",
+      "Deadeye Shot",
+      "Decadence",
+      "Disarm",
+      "Exotic Weapon Proficiency (Digi-Melta)",
+      "Heightened Senses (Sight)",
+      "Into the Jaws of Hell",
+      "Iron Discipline",
+      "Lightning Attack",
+      "Lightning Reflexes",
+      "Master &amp; Commander",
+      "Master Orator",
+      "Melee Weapon Training (Universal)",
+      "Pistol Weapon Training (Universal)",
+      "Polyglot",
+      "Quick Draw",
+      "Sharpshooter",
+      "Swift Attack",
+      "Touched by the Fates (3)",
+      "Two-Weapon Wielder (Melee, Ranged)",
+      "Wall of Steel"
+    ],
+    "traits": [],
+    "weapons_text": "Archeotech laspistol (Pistol; 90m; S/3/–; 1d10+3 E; Pen 2; Clip 70; Reload Full; Accurate, Reliable), digi-melta (Pistol; 3m; S/–/–; 2d10+4 E; Pen 12; Clip 1; Reload Full), Best Craftsmanship power sword (Melee; 1d10+9 E; Pen 5; Balanced, Power Field), baleful eye concealed behind eyepatch (Pistol; 10m; S/2/–; 1d10+4 E; Pen 7; Clip 40; Rld 2 Full).",
+    "armour_text": "Jauntily adorned carapace (All 4)",
+    "gear_text": "Dispersal field†, 2 smoke grenades, 2 clips for archeotech laspistol, micro-bead, extravagant hat and coat.",
+    "portrait_ref": null,
+    "ws_line": 4467,
+    "source_book": "roguetrader_starsofinequity.pdf"
+  },
+  {
+    "name": "Cymian",
+    "slug": "cymian",
+    "faction": "",
+    "description": "",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 25,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 10,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 32,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 61,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 21,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 39,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 21,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 18,
+        "unnatural": 0
+      }
+    },
+    "wounds": 6,
+    "movement": "8/16/24/48",
+    "skills": [
+      [
+        "Acrobatics",
+        0
+      ],
+      [
+        "Awareness",
+        10
+      ],
+      [
+        "Climb",
+        20
+      ],
+      [
+        "Concealment",
+        20
+      ],
+      [
+        "Dodge",
+        0
+      ],
+      [
+        "Silent Move",
+        0
+      ]
+    ],
+    "talents": [
+      "Assassin Strike",
+      "Frenzy",
+      "Furious Assault"
+    ],
+    "traits": [
+      "Dark Sight",
+      "Machine (2)",
+      "Natural Weapons (Teeth and Claws)",
+      "Quadruped",
+      "Size (Puny)"
+    ],
+    "weapons_text": "Teeth and claws (Melee; 1d5+3 R; Pen 0).",
+    "armour_text": "Machine Trait (All 2) Total TB: 3",
+    "gear_text": "",
+    "portrait_ref": null,
+    "ws_line": 4498,
+    "source_book": "roguetrader_starsofinequity.pdf"
+  },
+  {
+    "name": "Yanveb Drallat",
+    "slug": "yanveb-drallat",
+    "faction": "",
+    "description": "",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 55,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 38,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 51,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 47,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 42,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 32,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 37,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 37,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 28,
+        "unnatural": 0
+      }
+    },
+    "wounds": 18,
+    "movement": "4/8/12/24",
+    "skills": [
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Chem-Use",
+        0
+      ],
+      [
+        "Climb",
+        0
+      ],
+      [
+        "Dodge",
+        0
+      ],
+      [
+        "Navigation (Surface)",
+        0
+      ],
+      [
+        "Shadowing",
+        0
+      ],
+      [
+        "Survival",
+        0
+      ],
+      [
+        "Swim",
+        0
+      ]
+    ],
+    "talents": [
+      "Basic Weapon Training (Universal)",
+      "Blind Fighting",
+      "Bulging Biceps",
+      "Die Hard",
+      "Disarm",
+      "Double Team",
+      "Exotic Weapon Training (Eldar Shuriken)",
+      "Hardy",
+      "Heavy Weapon Training (Universal)",
+      "Hip Shooting",
+      "Iron Jaw",
+      "Jaded",
+      "Melee Weapon Training (Chain, Primitive)",
+      "Mighty Shot",
+      "Nerves of Steel",
+      "Pistol Weapon Training (Universal)",
+      "Rapid Reload",
+      "True Grit"
+    ],
+    "traits": [],
+    "weapons_text": "Shuriken catapult (Basic; 60m; S/3/10; 1d10+6 R; Pen 6; Clip 100; Reload 2 Full; Reliable) or heavy bolter (Heavy; 120m; -/-/10; 2d10+4 X; Pen 5; Clip 60; Reload Full; Tearing), naval pistol (Pistol; 20m; S/3/-; 1d10+6 I; Pen 0; Clip 6; Reload Full; Tearing), chainsword (Melee; 1d10+7 R; Pen 2; Tearing, Balanced).",
+    "armour_text": "Light carapace (All 5) Total TB: 4",
+    "gear_text": "2 reloads for naval pistol, 1 reload for shuriken catapult or 1 heavy bolter clip, 3 frag grenades, 2 krak grenades, photovisor, micro-bead.",
+    "portrait_ref": null,
+    "ws_line": 4517,
+    "source_book": "roguetrader_starsofinequity.pdf"
+  },
+  {
+    "name": "Kanrak",
+    "slug": "kanrak",
+    "faction": "",
+    "description": "",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 47,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 41,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 58,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 47,
+        "unnatural": 8
+      },
+      "agility": {
+        "base": 29,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 34,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 34,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 45,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 19,
+        "unnatural": 0
+      }
+    },
+    "wounds": 30,
+    "movement": "3/6/9/18",
+    "skills": [
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Climb",
+        0
+      ],
+      [
+        "Survival",
+        0
+      ],
+      [
+        "Swim",
+        0
+      ]
+    ],
+    "talents": [
+      "Basic Weapon Training (Universal)",
+      "Blind Fighting",
+      "Bulging Biceps",
+      "Combat Sense",
+      "Crushing Blow",
+      "Die Hard",
+      "Duty Unto Death",
+      "Frenzy",
+      "Furious Assault",
+      "Melee Weapon Training (Universal)",
+      "Pistol Weapon Training (Universal)",
+      "Resistance (Heat, Psychic Powers)",
+      "Swift Attack",
+      "Thrown Weapon Training (Universal)",
+      "True Grit"
+    ],
+    "traits": [
+      "Natural Armour (2)",
+      "Natural Weapons (Teeth and Claws)",
+      "Size (Hulking)",
+      "Toxic"
+    ],
+    "weapons_text": "Xenos autogun (Basic; 90m; S/3/10; 1d10+3 I; Pen 2; Clip 40; Reload Full), 3 xenos throwing axes (Melee/Thrown; 8m; S/-/ -; 1d10+9 R; Pen 1; Unbalanced), chainaxe (Melee; 1d10+11 R; Pen 2; Tearing).",
+    "armour_text": "Natural armour (All 2) Total TB: 8",
+    "gear_text": "2 reloads for autogun, 3 frag grenades, 3 stun grenades, 2 krak grenades, assorted grisly trophies.",
+    "portrait_ref": "img-76.jpeg",
+    "ws_line": 4537,
+    "source_book": "roguetrader_starsofinequity.pdf"
+  },
+  {
+    "name": "Kaptin Skellkap Graffletz",
+    "slug": "kaptin-skellkap-graffletz",
+    "faction": "",
+    "description": "",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 58,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 25,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 65,
+        "unnatural": 13
+      },
+      "toughness": {
+        "base": 67,
+        "unnatural": 13
+      },
+      "agility": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 38,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 34,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 45,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 29,
+        "unnatural": 0
+      }
+    },
+    "wounds": 50,
+    "movement": "4/8/12/24",
+    "skills": [
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Barter",
+        0
+      ],
+      [
+        "Carouse",
+        10
+      ],
+      [
+        "Climb",
+        0
+      ],
+      [
+        "Command",
+        10
+      ],
+      [
+        "Common Lore (Koronus Expanse, War)",
+        0
+      ],
+      [
+        "Intimidate",
+        20
+      ],
+      [
+        "Navigation (Stellar)",
+        0
+      ],
+      [
+        "Pilot (Flyers, Spacecraft)",
+        10
+      ],
+      [
+        "Speak Language (Low Gothic, Ork)",
+        0
+      ]
+    ],
+    "talents": [
+      "Air of Authority",
+      "Basic Weapon Training (Primitive, SP)",
+      "Berserk Charge",
+      "Bulging Biceps",
+      "Combat Master",
+      "Crushing Blow",
+      "Exotic Weapon Proficiency (Ork)",
+      "Fearless",
+      "Furious Assault",
+      "Hardy",
+      "Into the Jaws of Hell",
+      "Iron Discipline",
+      "Iron Jaw",
+      "Lightning Attack",
+      "Melee Weapon Training (Chain, Primitive, Power)",
+      "Resistance (Cold, Heat, Radiation)",
+      "Talented (Intimidate)",
+      "Swift Attack",
+      "Touched by the Fates (2)",
+      "True Grit",
+      "Two-Weapon Wielder (Melee, Ranged)",
+      "Void Tactician"
+    ],
+    "traits": [
+      "Brutal Charge",
+      "Fear (1)",
+      "Make it Work†",
+      "Might Makes Right††",
+      "Mob Rule†††",
+      "Size (Hulking)",
+      "Sturdy",
+      "Unnatural Strength (x2)",
+      "Unnatural Toughness (x2)"
+    ],
+    "weapons_text": "Power klaw (Melee; 2d10+20 R; Pen 9; Power Field, Unwieldy), chainaxe (Melee; 1d10+16 R; Pen 2; Tearing), kustom slugga (Pistol; 25m; S/3/–; 1d10+5 I; Pen 0; Clip 24; Reload Full; Inaccurate, Tearing, Unreliable).",
+    "armour_text": "Body 7, Arms 4, Legs 4 Total TB: 12",
+    "gear_text": "",
+    "portrait_ref": "img-77.jpeg",
+    "ws_line": 4615,
+    "source_book": "roguetrader_starsofinequity.pdf"
+  },
+  {
+    "name": "Skabgob",
+    "slug": "skabgob",
+    "faction": "",
+    "description": "",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 52,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 10,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 10,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 45,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 33,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 39,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 37,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 22,
+        "unnatural": 0
+      }
+    },
+    "wounds": 30,
+    "movement": "5/10/15/30",
+    "skills": [
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Climb",
+        10
+      ],
+      [
+        "Command",
+        0
+      ],
+      [
+        "Common Lore (Koronus Expanse)",
+        0
+      ],
+      [
+        "Demolitions",
+        0
+      ],
+      [
+        "Dodge",
+        10
+      ],
+      [
+        "Intimidate",
+        20
+      ],
+      [
+        "Concealment",
+        10
+      ],
+      [
+        "Navigation (Surface)",
+        0
+      ],
+      [
+        "Pilot (Flyers, Spacecraft)",
+        10
+      ],
+      [
+        "Silent Move",
+        10
+      ],
+      [
+        "Speak Language (Low Gothic, Ork)",
+        0
+      ]
+    ],
+    "talents": [
+      "Basic Weapon Training (Primitive, SP)",
+      "Berserk Charge",
+      "Bulging Biceps",
+      "Combat Master",
+      "Crushing Blow",
+      "Exotic Weapon Proficiency (Ork)",
+      "Fearless",
+      "Furious Assault",
+      "Hardy",
+      "Iron Jaw",
+      "Lightning Attack",
+      "Melee Weapon Training (Chain, Primitive, Power)",
+      "Resistance (Cold, Heat, Radiation)",
+      "Swift Attack",
+      "Touched by the Fates (2)",
+      "True Grit",
+      "Two-Weapon Wielder (Melee, Ranged)"
+    ],
+    "traits": [
+      "Brutal Charge",
+      "Make it Work†",
+      "Might Makes Right†",
+      "Mob Rule†",
+      "Size (Hulking)",
+      "Sturdy",
+      "Unnatural Strength (x2)",
+      "Unnatural Toughness (x2)"
+    ],
+    "weapons_text": "\"Da Nek Cutta\" (Melee; 1d10+14 R; Pen 3), shoots (Ranged; 60m; S/3/10; 1d10+4 I; Pen 0; Clip 30; Reload Full; Inaccurate, Unreliable).",
+    "armour_text": "Sneakin' suit (All 3) Total TB: 10",
+    "gear_text": "3 clips for shoots, 4 smoke grenades, 3 frag grenades, 8 kg of \"demulishun wotsits.\" †See Kaptin Graffletz's entry on page 135.",
+    "portrait_ref": "img-78.jpeg",
+    "ws_line": 4651,
+    "source_book": "roguetrader_starsofinequity.pdf"
+  },
+  {
+    "name": "Master Shaper Te'Logk",
+    "slug": "master-shaper-te-logk",
+    "faction": "",
+    "description": "",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 50,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 47,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 45,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 52,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 47,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 46,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 49,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 32,
+        "unnatural": 0
+      }
+    },
+    "wounds": 20,
+    "movement": "5/10/15/30",
+    "skills": [
+      [
+        "Acrobatics",
+        0
+      ],
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Barter",
+        0
+      ],
+      [
+        "Climb",
+        10
+      ],
+      [
+        "Command",
+        20
+      ],
+      [
+        "Commerce",
+        10
+      ],
+      [
+        "Concealment",
+        20
+      ],
+      [
+        "Dodge",
+        20
+      ],
+      [
+        "Forbidden Lore (the Warp)",
+        0
+      ],
+      [
+        "Intimidate",
+        0
+      ],
+      [
+        "Silent Move",
+        20
+      ],
+      [
+        "Speak Language (Low Gothic, Kroot, Tau)",
+        0
+      ],
+      [
+        "Survival (Int) +20), Tracking",
+        10
+      ]
+    ],
+    "talents": [
+      "Air of Authority",
+      "Basic Weapon Training (Universal)",
+      "Berserk Charge",
+      "Combat Sense",
+      "Exotic Weapon Training (Kroot, Pulse)",
+      "Furious Assault",
+      "Heightened Senses (Hearing, Sight)",
+      "Iron Jaw",
+      "Leap Up",
+      "Lightning Attack",
+      "Lightning Reflexes",
+      "Melee Weapon Training (Universal)",
+      "Pistol Weapon Training (Universal)",
+      "Nerves of Steel",
+      "Resistance (Fear)",
+      "Sprint",
+      "Step Aside",
+      "Swift Attack",
+      "True Grit"
+    ],
+    "traits": [
+      "Fieldcraft†",
+      "Natural Weapons (Beak)",
+      "Unnatural Perception (x2)",
+      "Unnatural Strength (x2)"
+    ],
+    "weapons_text": "Pulse carbine (Basic; 60m; S/–/3; 2d10+2 E; Pen 4; Clip 24; Reload Full; Gyro-Stabilised) and integral grenade launcher (Basic; 80m; S/–/–; Special; Pen 0; Clip 1; Reload Half), eviscerator (Melee; 1d10+22 R; Pen 5; Tearing, Unwieldy), beak (Melee; 1d5+8 R, Primitive).",
+    "armour_text": "Hides (Body 2, Primitive) **Total TB:** 4",
+    "gear_text": "Bandoliers with 5 photon flash grenades for launcher and 2 clips for pulse carbine, fetish pouch, assorted charms and trophies.",
+    "portrait_ref": "img-80.jpeg",
+    "ws_line": 4731,
+    "source_book": "roguetrader_starsofinequity.pdf"
+  },
+  {
+    "name": "Stalker Hrrithck",
+    "slug": "stalker-hrrithck",
+    "faction": "",
+    "description": "Stalker Hrrithek is one of many Kroot of the Forsaken Kindred who manifest a unique and unanticipated mutation. Hrrithek also belongs to a significantly smaller group: those for whom such mutation is actually beneficial. Psykers are not unknown amongst the Kroot; such powers are sometimes manifested by the shamanistic Shapers, and by Kindreds who have consumed the remains of Eldar, or other psychically attuned creatures. Hrrithek displays a very different sort of connection to the Warp. Hrrithek's physical body straddles the division between realspace and the Warp, and over time, he has learned to consciously shift his being further into the Warp, while maintaining a tenuous hold on reality. In Hrrithek's role as a Stalker, this ability has proven invaluable. In this ghost-like state, Hrrithek can move in complete\n\nsilence, hide within solid objects, and even pass through solid walls. Many of the Kindred's targets over the years have been at a loss to explain how their defences and security could have been compromised, for why should they expect an incorporeal phantom, when faced with the avian mercenaries of the Kroot? Hrrithck's unique ability, combined with the Kroot's mercenary nature, makes him an ideal assassin. Indeed, the Kindred has earned something of a reputation for excelling at the elimination of individual targets, due primarily to Hrrithck's work.\n\nHrrithck's build is slight, even by the standards of the Kroot. His brute strength is also somewhat less impressive than typical for his race. Fortunately, he seldom has the need to engage in a straight up fight. Hrrithck leads a solitary life, only interacting with his fellow Kroot on matters of business, and the most sacred of rituals. The Stalker often disappears for days at a time. If he has simply hidden away in the depths of the largely empty Warsphere, or vanished for a more nefarious reason, none can say. Many of the Kindred are put ill at ease by Hrrithck, whose bizarre behaviour and empty stare are disturbing, even to the Kroot. Despite the many differences between the psychology of Kroot and humans, it seems a universal rule that familiarity with the Warp breeds madness.",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 45,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 47,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 45,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 52,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 47,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 46,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 49,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 32,
+        "unnatural": 0
+      }
+    },
+    "wounds": 16,
+    "movement": "5/10/15/30",
+    "skills": [
+      [
+        "Acrobatics",
+        10
+      ],
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Barter",
+        0
+      ],
+      [
+        "Climb",
+        10
+      ],
+      [
+        "Concealment",
+        20
+      ],
+      [
+        "Dodge",
+        20
+      ],
+      [
+        "Forbidden Lore (the Warp)",
+        0
+      ],
+      [
+        "Silent Move",
+        20
+      ],
+      [
+        "Speak Language (Low Gothic, Kroot, Tau)",
+        0
+      ],
+      [
+        "Survival (Int) +20), Tracking",
+        10
+      ]
+    ],
+    "talents": [
+      "Basic Weapon Training (Universal)",
+      "Exotic Weapon Training (Kroot, Pulse)",
+      "Fearless",
+      "Frenzy",
+      "Furious Assault",
+      "Hard Target",
+      "Leap Up",
+      "Lightning Attack",
+      "Lightning Reflexes",
+      "Melee Weapon Training (Universal)",
+      "Pistol Weapon Training (Universal)",
+      "Sprint",
+      "Swift Attack",
+      "Two-Weapon Wielder (Melee, Ranged)"
+    ],
+    "traits": [
+      "Fieldcraft†",
+      "Natural Weapons (Beak)",
+      "Phase",
+      "Unnatural Perception (x2)",
+      "Unnatural Strength (x2)"
+    ],
+    "weapons_text": "",
+    "armour_text": "Hides (Body 2, Primitive)",
+    "gear_text": "",
+    "portrait_ref": "img-81.jpeg",
+    "ws_line": 4769,
+    "source_book": "roguetrader_starsofinequity.pdf"
+  },
+  {
+    "name": "Representative",
+    "slug": "representative",
+    "faction": "",
+    "description": "Name:",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 0,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 0,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 0,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 0,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 0,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 0,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 0,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 0,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 0,
+        "unnatural": 0
+      }
+    },
+    "wounds": 0,
+    "movement": "",
+    "skills": [],
+    "talents": [],
+    "traits": [],
+    "weapons_text": "",
+    "armour_text": "",
+    "gear_text": "",
+    "portrait_ref": "img-82.jpeg",
+    "ws_line": 4864,
+    "source_book": "roguetrader_starsofinequity.pdf"
+  }
+]

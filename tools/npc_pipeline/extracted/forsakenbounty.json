@@ -1,0 +1,128 @@
+[
+  {
+    "name": "Warp Puppets",
+    "slug": "warp-puppets",
+    "faction": "",
+    "description": "These disgusting parodies of life are animated bodies under the Worm's control. Sluggish and clumsy, they offer no real danger singly, though in numbers they can be deadly.",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 33,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 13,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 64,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 21,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 11,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 0,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 12,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 13,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 0,
+        "unnatural": 0
+      }
+    },
+    "wounds": 6,
+    "movement": "1/2/3/6",
+    "skills": [
+      [
+        "None",
+        0
+      ]
+    ],
+    "talents": [
+      "Weapon Training (as appropriate)"
+    ],
+    "traits": [
+      "Meat Puppet (see below)"
+    ],
+    "weapons_text": "Warp-enhanced jagged debris (1d5+6; Pen 2) or laspistol (30m, S/-/-; 1d10+3).",
+    "armour_text": "",
+    "gear_text": "None. **Meat Puppet:** Neither dead nor alive, the Warp Puppets are just objects animated by the power of the Psycharus Worm. As such, they cannot truly be killed. When they reach 0 Wounds, they will collapse for 5 rounds before rising again with new gaping wounds and missing limbs. Only massive damage inflicting 15 points of Damage in a single hit can put them down for good. The GM should allow PCs to hack up inactive puppets with melee weapons. Warp Puppets only ever use the Charge or Standard Attack actions.",
+    "portrait_ref": "img-10.jpeg",
+    "ws_line": 1007,
+    "source_book": "roguetrader_forsakenbounty.pdf"
+  },
+  {
+    "name": "Orden, Thrall Of The Psycharus Worm",
+    "slug": "orden-thrall-of-the-psycharus-worm",
+    "faction": "",
+    "description": "Little of Orden now remains, his mind hollowed out by the Psycharus Worm. What he does remember comes only to him briefly as flashes of human memory amidst alien images and the desires of the Worm.",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 53,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 13,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 34,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 51,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 47,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 39,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 58,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 12,
+        "unnatural": 0
+      }
+    },
+    "wounds": 21,
+    "movement": "4/8/12/24",
+    "skills": [
+      [
+        "None",
+        0
+      ]
+    ],
+    "talents": [
+      "None"
+    ],
+    "traits": [],
+    "weapons_text": "Energised Fists (2d10+4).",
+    "armour_text": "None.",
+    "gear_text": "None.",
+    "portrait_ref": null,
+    "ws_line": 1026,
+    "source_book": "roguetrader_forsakenbounty.pdf"
+  }
+]

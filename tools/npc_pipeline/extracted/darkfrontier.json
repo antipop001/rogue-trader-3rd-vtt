@@ -1,0 +1,131 @@
+[
+  {
+    "name": "Shardspiders",
+    "slug": "shardspiders",
+    "faction": "",
+    "description": "Another construct of the Yu'vath, these deadly little creatures are fashioned from bruised purple crystal and are about the size of a large dog. With twelve legs and a tiny central body they scuttle about with alarming speed. They also have a set of needle-like mandibles which they can alternatively use to mend broken crystal or plunge into an Explorer's soft flesh...",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 39,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 0,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 44,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 41,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 51,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 16,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 37,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 20,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 0,
+        "unnatural": 0
+      }
+    },
+    "wounds": 10,
+    "movement": "5/10/15/30",
+    "skills": [
+      [
+        "Stealth",
+        0
+      ]
+    ],
+    "talents": [
+      "None"
+    ],
+    "traits": [
+      "Natural Armour (All 2)"
+    ],
+    "weapons_text": "Monofilament mandibles (1d10+4; Pen 4)",
+    "armour_text": "All 2",
+    "gear_text": "None # THE KEENING TOWER The needle-like crystal tower that spears the centre of the island has a single, large and obvious entrance ringed by strange Yu'vath markings. There is not untoward danger here; however, unless the Explorers devise some way of more easily getting to the top, they are in for a long torturous climb. Have each Explorer make an Ordinary (+10) Toughness Test or suffer a -10 penalty to their Toughness for the following battle.",
+    "portrait_ref": "img-6.jpeg",
+    "ws_line": 255,
+    "source_book": "roguetrader_darkfrontier.pdf"
+  },
+  {
+    "name": "Yu'Vath Bone Warden",
+    "slug": "yu-vath-bone-warden",
+    "faction": "",
+    "description": "An ancient Dark-Energy Construct, the Bone Warden is a fell union of warp technology and dark sorcery. They were crafted by the Yu'vath primarily to act as watchmen and guardians for their void crypts and solar fortresses; and even now, long after their masters have been forgotten, they remain to fulfil their duty. The Bone Warden has no physical form and instead resides in a collective of dead matter—most often corpses or other once living remains. These corpses are held together by ribbons and arcs of crackling black energy, the air around them charged with constant flashes of midnight electricity and the smell of burning flesh. Acting as a single mass, the corpses form a cloud of grasping, clawing hands and mouths that whirls through the\n\nair. The only way to defeat a warden is to destroy its physical state and thus disperse its dark energy field. However, even as its adversaries blast away its fleshy shell, it uses its warp-shard crown—a collection of dark crystalline fragments that orbit its energised core—to claim more physical matter, regenerating its rotting form. For this reason, Bone Wardens are often found in rooms well stocked with the dead—a ready made supply of material left by their Yu'vath masters\n\nFortunately for the Explorers, the Bone Warden they will encounter in the crystal tower has faded in power with time and the weakening of the fortress itself—as such it does not have archeo-warp weapons or its full complement of psychic powers.\n\nCharged with defending the nexus and the crystal tower, the Bone Warden will attack immediately and fight until either it or the Explorers have been destroyed.",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 58,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 33,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 54,
+        "unnatural": 10
+      },
+      "toughness": {
+        "base": 41,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 31,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 32,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 0,
+        "unnatural": 0
+      }
+    },
+    "wounds": 40,
+    "movement": "3/6/9/18",
+    "skills": [
+      [
+        "None",
+        0
+      ]
+    ],
+    "talents": [
+      "None"
+    ],
+    "traits": [
+      "Warp-Shard Crown (see below)",
+      "Cloud of Corpses (see below) Unnatural Strength x2 (see below)"
+    ],
+    "weapons_text": "Claws and Fists (2d10+10), Warp Blast (Counts as an Archaeotech Hellpistol—see page 5 of FORSAKEN BOUNTY)",
+    "armour_text": "None",
+    "gear_text": "None Warp-Shard Crown: At any time, a Bone Warden can spend a Full Action to regenerate one wound for every corpse within 20 metres as its shards burrow into their dead flesh and they are dragged into to the creature’s mass. Once a corpse is used in this way, it becomes part of the Bone Warden and cannot be used again. The Warp-Shard Crown also has a secondary power to disrupt energy attacks and fields in its presence as the crystals sap their power. For this reason, power weapons (like power swords) only do half damage against it.",
+    "portrait_ref": "img-8.jpeg",
+    "ws_line": 290,
+    "source_book": "roguetrader_darkfrontier.pdf"
+  }
+]

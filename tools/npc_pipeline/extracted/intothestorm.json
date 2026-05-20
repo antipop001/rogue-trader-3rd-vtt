@@ -1,0 +1,160 @@
+[
+  {
+    "name": "Gretchin",
+    "slug": "gretchin",
+    "faction": "",
+    "description": "Gretchin are small, devious, and generally only dangerous in large numbers. They serve Orks to avoid being killed and/or eaten by the larger Greenskins, although this is by no means a guarantee. They are able to shoot better than their larger cousins, and are slightly more intelligent, not that it helps them in the greenskin's social hierarchy.",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 20,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 18,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 18,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 44,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 33,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 16,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 24,
+        "unnatural": 0
+      }
+    },
+    "wounds": 5,
+    "movement": "",
+    "skills": [
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Concealment",
+        0
+      ],
+      [
+        "Dodge",
+        0
+      ],
+      [
+        "Search",
+        0
+      ],
+      [
+        "Shadowing",
+        0
+      ],
+      [
+        "Silent Move",
+        0
+      ]
+    ],
+    "talents": [
+      "Heightened Senses (Hearing)",
+      "Melee Weapon Training (Primitive)",
+      "Pistol Weapon Training (Primitive, SP)"
+    ],
+    "traits": [
+      "Mob Rule",
+      "Size (Scrawny)",
+      "Unnatural Toughness (x2)"
+    ],
+    "weapons_text": "Gretchin may be armed with any one-handed SP. Pistol procured by the controlling character, although Sluggas are likely the most common. They inevitably have a sneaky boot knife as well (1d5+1 R)†.",
+    "armour_text": "None",
+    "gear_text": "",
+    "portrait_ref": "img-30.jpeg",
+    "ws_line": 2673,
+    "source_book": "roguetrader_intothestorm-1-125.pdf"
+  },
+  {
+    "name": "Squigs",
+    "slug": "squigs",
+    "faction": "",
+    "description": "There are countless sub-species of Squigs in the greenskin ecosystem, although most share the same basic physiological characteristics. Squigs are primarily a gigantic fang-filled maw with a large tongue, plus powerful legs and beady eyes. They have voracious appetites, and eat anything they can fit between their grossly oversized jaws, as well as plenty of things that don't. Orks and gretchin often keep squigs as pets (and food sources), being one of the few races that find any redeeming qualities in them.",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 0,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 22,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 33,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 8,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 25,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 0,
+        "unnatural": 0
+      }
+    },
+    "wounds": 10,
+    "movement": "",
+    "skills": [
+      [
+        "Awareness +10",
+        0
+      ],
+      [
+        "Tracking +20",
+        0
+      ]
+    ],
+    "talents": [
+      "Furious Assault"
+    ],
+    "traits": [
+      "Bestial",
+      "Improved Natural Weapons (Bite)††",
+      "Unnatural Toughness (x2)"
+    ],
+    "weapons_text": "Grossly oversized maw (1d10+6†, R, Tearing) †Includes Strength Bonus ††Improved Natural Weapons are not Primitive.",
+    "armour_text": "",
+    "gear_text": "",
+    "portrait_ref": "img-30.jpeg",
+    "ws_line": 2696,
+    "source_book": "roguetrader_intothestorm-1-125.pdf"
+  }
+]

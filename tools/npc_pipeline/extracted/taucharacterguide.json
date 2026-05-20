@@ -1,0 +1,130 @@
+[
+  {
+    "name": "Tau Fire Warrior",
+    "slug": "tau-fire-warrior",
+    "faction": "Tau",
+    "description": "",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 25,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 20,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 25,
+        "unnatural": 0
+      }
+    },
+    "wounds": 0,
+    "movement": "",
+    "skills": [],
+    "talents": [],
+    "traits": [],
+    "weapons_text": "",
+    "armour_text": "",
+    "gear_text": "",
+    "portrait_ref": "img-3.jpeg",
+    "ws_line": 304,
+    "source_book": "roguetrader_taucharacterguide.pdf"
+  },
+  {
+    "name": "Tau Drones",
+    "slug": "tau-drones",
+    "faction": "Tau",
+    "description": "The Tau make extensive use of artificial intelligence-controlled machines called drones. These drones are most often seen on the battlefield in squads of gun drones, equipped with twin-linked pulse carbines they operate in squadrons, using their anti-gravitic motors to outmanoeuvre and surprise their prey.\n\nA variant of the gun drone, equipped with a longshot pulse rifle and directed by markerlights, has also become a highly feared presence in the far off Eastern Rim zones of conflict.\n\nDrones are not only equipped to deal death, however; two further models, one equipped with a markerlight and a second carrying a shield generator provide vital support for the forces of the Tau Empire.\n\nDrones possess only a simple programmed response system and, although capable of adapting to changing battlefield conditions, are often controlled directly by Fire Warriors or battlesuit pilots equipped with drone controllers.",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 22,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 22,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 45,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 15,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 8,
+        "unnatural": 0
+      }
+    },
+    "wounds": 12,
+    "movement": "6/12/18/36",
+    "skills": [
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Dodge",
+        10
+      ]
+    ],
+    "talents": [
+      "Exotic Weapon Training (Tau)",
+      "Fearless",
+      "Guardian"
+    ],
+    "traits": [
+      "Dark Sight",
+      "Hoverer (6)",
+      "Machine (4)",
+      "Size (Scrawny)"
+    ],
+    "weapons_text": "Twin-linked pulse carbine (Basic; 60m; S/-/3; 2d0+2 E; Pen 4; Clip 24; Reload Full; Gyro-Stabilised, Twin-linked) or longshot pulse rifle (Basic; 200m; S/2/-; 2d10+3 E; Pen 4; Clip 12; Reload 2 Full; Accurate, Tearing)",
+    "armour_text": "Machine (4 all) Total TB: 4",
+    "gear_text": "If the drone is not equipped with a weapon, it may instead carry a markerlight or a shield generator.",
+    "portrait_ref": "img-15.jpeg",
+    "ws_line": 1280,
+    "source_book": "roguetrader_taucharacterguide.pdf"
+  }
+]

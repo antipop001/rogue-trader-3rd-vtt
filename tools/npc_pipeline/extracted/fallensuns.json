@@ -1,0 +1,2095 @@
+[
+  {
+    "name": "Rogue Trader Naj Amardi",
+    "slug": "rogue-trader-naj-amardi",
+    "faction": "",
+    "description": "More information on Naj Amardi can be found on page 36.",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 38,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 46,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 47,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 50,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 48,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 42,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 45,
+        "unnatural": 0
+      }
+    },
+    "wounds": 20,
+    "movement": "5/10/15/30",
+    "skills": [
+      [
+        "Acrobatics",
+        0
+      ],
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Barter",
+        20
+      ],
+      [
+        "Charm",
+        0
+      ],
+      [
+        "Ciphers (Rogue Trader)",
+        0
+      ],
+      [
+        "Command",
+        20
+      ],
+      [
+        "Commerce",
+        10
+      ],
+      [
+        "Common Lore (Administratum, Imperium, Imperial Navy, Koronus Expanse, Rogue Traders, War)",
+        0
+      ],
+      [
+        "Contortionist",
+        0
+      ],
+      [
+        "Dodge",
+        10
+      ],
+      [
+        "Evaluate",
+        0
+      ],
+      [
+        "Forbidden Lore (Pirates, Xenos)",
+        10
+      ],
+      [
+        "Inquiry",
+        10
+      ],
+      [
+        "Literacy",
+        0
+      ],
+      [
+        "Scholastic Lore (Astromancy, Cryptology, Imperial Warrants, Tactica Imperialis)",
+        0
+      ],
+      [
+        "Scrutiny",
+        0
+      ],
+      [
+        "Secret Tongue (Rogue Trader)",
+        0
+      ],
+      [
+        "Speak Language (High Gothic, Low Gothic)",
+        0
+      ],
+      [
+        "Tech-Use",
+        0
+      ]
+    ],
+    "talents": [
+      "Air of Authority",
+      "Ambidextrous",
+      "Armour of Contempt",
+      "Catfall",
+      "Crack Shot",
+      "Deadeye Shot",
+      "Fearless",
+      "Gunslinger",
+      "Hatred (Eldar, Orks)",
+      "Jaded",
+      "Master and Commander",
+      "Pistol Weapon Training (Universal)",
+      "Melee Weapon Training (Universal)",
+      "Quick Draw",
+      "Rapid Reload",
+      "Step Aside",
+      "Two-Weapon Wielder (Ballistic)"
+    ],
+    "traits": [
+      "Touched by the Fates (2)"
+    ],
+    "weapons_text": "Two Best Craftsmanship Bolt Pistols with Red-Dot Laser Sights (30m; S/2/–; 1d10+5 X; Pen 4; Clip 8; Rld Full; Tearing, +10 bonus to strike on single shots), Best Craftsmanship Ryza- pattern Wrath Plasma Pistol (40m; S/–/–; 1d10+8 E; Pen 6; Clip 8; Rld 3 Full; Overheat, Accurate), Best Craftsmanship Mordian-pattern Power Sword (1d10+9 E; Pen 5; Power Field, Balanced, +15 to parry, +10 to attack).",
+    "armour_text": "Best Craftsmanship Light Carapace (Arms 6; Body 6; Head 6; Legs 6).",
+    "gear_text": "Chrono, uniforms (dress, un-dress, and working), respirator, dataslate, void suit.",
+    "portrait_ref": "img-33.jpeg",
+    "ws_line": 1810,
+    "source_book": "roguetrader_fallensuns.pdf"
+  },
+  {
+    "name": "Garvin Derleth",
+    "slug": "garvin-derleth",
+    "faction": "",
+    "description": "More information on Garvin Derleth can be found on page 20.",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 32,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 28,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 32,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 35,
+        "unnatural": 0
+      }
+    },
+    "wounds": 13,
+    "movement": "3/6/9/18",
+    "skills": [
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Blather",
+        10
+      ],
+      [
+        "Common Lore (Imperium)",
+        0
+      ],
+      [
+        "Dodge",
+        0
+      ],
+      [
+        "Literacy",
+        0
+      ],
+      [
+        "Speak Language (High Gothic, Low Gothic)",
+        0
+      ],
+      [
+        "Trade (Copyist)",
+        0
+      ]
+    ],
+    "talents": [
+      "Light Sleeper",
+      "Paranoia",
+      "Pistol Weapon Training (Universal)",
+      "Sprint",
+      "Unremarkable"
+    ],
+    "traits": [
+      "Touched by the Fates (3)"
+    ],
+    "weapons_text": "Good Craftsmanship Laspistol (30m; S/–/–; 1d10+2 E; Pen 0; Clip 30; Rld Full; Reliable).",
+    "armour_text": "Good Craftsmanship Flak Coat (Arms 3; Body 3; Legs 3).",
+    "gear_text": "Administratum robes, auto-quill, chrono, dataslate, re-breather.",
+    "portrait_ref": null,
+    "ws_line": 1840,
+    "source_book": "roguetrader_fallensuns.pdf"
+  },
+  {
+    "name": "Captain Sylvia Locke",
+    "slug": "captain-sylvia-locke",
+    "faction": "",
+    "description": "More information on Sylvia Locke can be found on page 21 of THE FROZEN REACHES.",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 48,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 45,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 37,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 38,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 44,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 45,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 50,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 55,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 44,
+        "unnatural": 0
+      }
+    },
+    "wounds": 20,
+    "movement": "4/8/12/24",
+    "skills": [
+      [
+        "Awareness",
+        10
+      ],
+      [
+        "Climb",
+        0
+      ],
+      [
+        "Command",
+        20
+      ],
+      [
+        "Common Lore (Imperium, Void, Imperial Navy, Navis Nobilitie, War)",
+        0
+      ],
+      [
+        "Navigation (Stellar)",
+        0
+      ],
+      [
+        "Pilot (Flyers, Space Craft)",
+        20
+      ],
+      [
+        "Scholastic Lore (Astromancy, Bureaucracy, Imperial Warrants, Navis Nobilite, Tactica Imperialis)",
+        0
+      ],
+      [
+        "Speak Language (High Gothic, Low Gothic)",
+        0
+      ]
+    ],
+    "talents": [
+      "Air of Authority",
+      "Into the Jaws of Hell",
+      "Iron Discipline",
+      "Nerves of Steel",
+      "Master and Commander",
+      "Melee Weapon Training (Universal)",
+      "Peer (Imperial Navy)",
+      "Pistol Weapon Training (Universal)",
+      "Void Tactician"
+    ],
+    "traits": [
+      "Touched by the Fates (3)"
+    ],
+    "weapons_text": "Best Craftsmanship Naval Pistol with Photo Sight (20m; S/3/–; 1D10+4 I; Pen 0; Clip 6; Rld Full; Tearing, Never Jams), Best Craftsmanship Officer's Cutlass (1D10+4 R; Pen 0; Shocking; +10 WS to Attack)",
+    "armour_text": "Reinforced Imperial Navy Uniform (Arms 4; Body 4; Legs 3).",
+    "gear_text": "2 extra naval pistol clips, filtration plugs, personal vox, officer's seal, respirator, Uniforms (dress, un-dress, and working).",
+    "portrait_ref": null,
+    "ws_line": 1864,
+    "source_book": "roguetrader_fallensuns.pdf"
+  },
+  {
+    "name": "Rogue Trader Krawkin Feckward",
+    "slug": "rogue-trader-krawkin-feckward",
+    "faction": "",
+    "description": "More information on Krawkin Feckward can be found on page 28 of LURE OF THE EXPANSE.",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 42,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 45,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 50,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 38,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 40,
+        "unnatural": 0
+      }
+    },
+    "wounds": 25,
+    "movement": "3/6/9/18",
+    "skills": [
+      [
+        "Awareness",
+        20
+      ],
+      [
+        "Barter",
+        10
+      ],
+      [
+        "Charm",
+        0
+      ],
+      [
+        "Chem-Use",
+        0
+      ],
+      [
+        "Command",
+        10
+      ],
+      [
+        "Commerce",
+        0
+      ],
+      [
+        "Common Lore (Adeptus Arbites, Imperium, Koronus Expanse, Rogue Traders)",
+        0
+      ],
+      [
+        "Deceive",
+        20
+      ],
+      [
+        "Evaluate",
+        0
+      ],
+      [
+        "Forbidden Lore (Archaeotech, The Inquisition, Pirates)",
+        0
+      ],
+      [
+        "Literacy",
+        0
+      ],
+      [
+        "Scholastic Lore (Beasts, Bureaucracy, Judgement)",
+        0
+      ],
+      [
+        "Scrutiny",
+        20
+      ],
+      [
+        "Speak Language (High Gothic, Low Gothic, Trader's Cant)",
+        10
+      ],
+      [
+        "Wrangling",
+        0
+      ]
+    ],
+    "talents": [
+      "Air of Authority",
+      "Basic Weapon Training (Universal)",
+      "Blademaster",
+      "Decadence",
+      "Exotic Weapon Training (Digi Weapons)",
+      "Melee Weapon Training (Universal)",
+      "Paranoia",
+      "Peer (Nobility)",
+      "Pistol Training (Universal)"
+    ],
+    "traits": [
+      "Touched by the Fates (2)"
+    ],
+    "weapons_text": "Best Craftsmanship Bolt Pistol (30m, S/2/–; 1d10+5 X; Pen 4; Clip 8; Rld Full; Tearing; Never Jams), Best Craftsmanship Monosword (1d10+4 R; Pen 2; Balanced; +10 WS to Attack), Best Craftsmanship Digi-laser (3m; S/–/–; 1d10+4 E; Pen 7; Clip 1; Rld Full; Reliable; Never Jams).",
+    "armour_text": "Xenos-hide and flak-weave long coat (Arms 2; Body 3; Legs 2).",
+    "gear_text": "4 clips of Inferno Shells for bolt pistol, data-slate, micro-bead.",
+    "portrait_ref": null,
+    "ws_line": 1892,
+    "source_book": "roguetrader_fallensuns.pdf"
+  },
+  {
+    "name": "Karrad Vall",
+    "slug": "karrad-vall",
+    "faction": "",
+    "description": "More information on Karrad Vall can be found on page 356 of the ROGUE TRADER Rulebook.",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 65,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 55,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 33,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 50,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 45,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 40,
+        "unnatural": 0
+      }
+    },
+    "wounds": 40,
+    "movement": "6/12/18/36",
+    "skills": [
+      [
+        "Acrobatics",
+        20
+      ],
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Charm",
+        0
+      ],
+      [
+        "Climb",
+        0
+      ],
+      [
+        "Command",
+        20
+      ],
+      [
+        "Commerce",
+        0
+      ],
+      [
+        "Common Lore (Administratum, Imperial Navy, Imperium, Koronus Expanse, Rogue Traders, Tech)",
+        0
+      ],
+      [
+        "Deceive",
+        20
+      ],
+      [
+        "Dodge",
+        20
+      ],
+      [
+        "Evaluate",
+        0
+      ],
+      [
+        "Forbidden Lore (Daemonology, Pirates, Psykers, The Warp)",
+        0
+      ],
+      [
+        "Intimidate",
+        20
+      ],
+      [
+        "Literacy",
+        0
+      ],
+      [
+        "Navigation (Stellar)",
+        0
+      ],
+      [
+        "Scrutiny",
+        0
+      ],
+      [
+        "Silent Move",
+        20
+      ],
+      [
+        "Speak Language (High Gothic, Low Gothic)",
+        0
+      ],
+      [
+        "Tech-Use",
+        0
+      ]
+    ],
+    "talents": [
+      "Ambidextrous",
+      "Assassin Strike",
+      "Basic Weapon Training (Universal)",
+      "Blademaster",
+      "Catfall",
+      "Combat Master",
+      "Counter Attack",
+      "Crippling Strike",
+      "Die Hard",
+      "Disarm",
+      "Dual Strike",
+      "Exotic Weapon Training (Daemon Weapon)",
+      "Fearless",
+      "Furious Assault",
+      "Iron Discipline",
+      "Leap Up",
+      "Lightning Reflexes",
+      "Master and Commander",
+      "Melee Weapon Training (Universal)",
+      "Nerves of Steel",
+      "Pistol Weapon Training (Universal)",
+      "Precise Blow",
+      "Quick Draw",
+      "Step Aside",
+      "Sure Strike",
+      "Swift Attack",
+      "True Grit",
+      "Two-Weapon Wielder (Melee)",
+      "Two-Weapon Wielder (Ballistic)",
+      "Wall of Steel"
+    ],
+    "traits": [
+      "Unnatural Strength (x2)",
+      "Unnatural Agility (x2)"
+    ],
+    "weapons_text": "Bane (2d10+12 E; Pen 0; Balanced, Tearing, Special), 3 Best Craftsmanship Shotgun Pistols (10m; S/–/–; 1d10+4 I; Pen 0; Clip 1; Rld Full; Reliable, Scatter), Best Craftsmanship Fractal Blade (1d10+14 R; Pen 7; Power Field, Balanced).",
+    "armour_text": "Best Craftsmanship Storm Trooper Carapace (Arms 7, Body 7, Legs 7).",
+    "gear_text": "",
+    "portrait_ref": null,
+    "ws_line": 1918,
+    "source_book": "roguetrader_fallensuns.pdf"
+  },
+  {
+    "name": "Karrad Vall (Legionnaire)",
+    "slug": "karrad-vall-legionnaire",
+    "faction": "",
+    "description": "",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 55,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 65,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 65,
+        "unnatural": 12
+      },
+      "toughness": {
+        "base": 50,
+        "unnatural": 10
+      },
+      "agility": {
+        "base": 50,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 43,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 35,
+        "unnatural": 0
+      }
+    },
+    "wounds": 40,
+    "movement": "6/12/18/36",
+    "skills": [
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Climb",
+        0
+      ],
+      [
+        "Command",
+        20
+      ],
+      [
+        "Dodge",
+        20
+      ],
+      [
+        "Forbidden Lore (Daemons, Warp)",
+        0
+      ],
+      [
+        "Intimidate",
+        20
+      ],
+      [
+        "Literacy",
+        0
+      ],
+      [
+        "Scrutiny",
+        0
+      ],
+      [
+        "Speak Language (High Gothic, Low Gothic)",
+        0
+      ],
+      [
+        "Survival",
+        0
+      ],
+      [
+        "Swim",
+        0
+      ]
+    ],
+    "talents": [
+      "Basic Weapon Training (Universal)",
+      "Combat Master",
+      "Crack Shot",
+      "Deadeye Shot",
+      "Die Hard",
+      "Disturbing Voice",
+      "Double Team",
+      "Fearless",
+      "Hatred (Loyalist Space Marines)",
+      "Heightened Senses (Sight, Hearing, Smell)",
+      "Iron Discipline",
+      "Iron Jaw",
+      "Jaded",
+      "Melee Weapon Training (Universal)",
+      "Mighty Shot",
+      "Pistol Weapon Training (Universal)",
+      "Quick Draw",
+      "Rapid Reload",
+      "Sharpshooter",
+      "Swift Attack",
+      "True Grit"
+    ],
+    "traits": [
+      "Dark Sight",
+      "Fear (2)",
+      "Size (Hulking)",
+      "Unnatural Strength (x2)",
+      "Unnatural Toughness (x2)"
+    ],
+    "weapons_text": "Legion Plasma Pistol (30m; S/2/–; 1d10+12 E; Pen 10; Clip 24; Rld 5 Full; Maximal, Overheats), Vall's Lightning Claw (1d10+18 E; Pen 8; Power Field†), 2 Legion Krak Grenades (SBx3; S/–/–; 3d10+4 X; Pen 6).",
+    "armour_text": "Corrupt Astartes Power Armour (Arms 8; Body 10; Head 8; Legs 8).",
+    "gear_text": "",
+    "portrait_ref": "img-34.jpeg",
+    "ws_line": 1940,
+    "source_book": "roguetrader_fallensuns.pdf"
+  },
+  {
+    "name": "Chaos Space Marine",
+    "slug": "chaos-space-marine",
+    "faction": "Chaos",
+    "description": "More information on Chaos Space Marines can be found on page 356 of the ROGUE TRADER Rulebook.\n\n### Chaos Space Marine Profile",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 50,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 50,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 55,
+        "unnatural": 12
+      },
+      "toughness": {
+        "base": 45,
+        "unnatural": 8
+      },
+      "agility": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 45,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 20,
+        "unnatural": 0
+      }
+    },
+    "wounds": 35,
+    "movement": "5/10/15/30",
+    "skills": [
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Climb",
+        0
+      ],
+      [
+        "Command",
+        10
+      ],
+      [
+        "Dodge",
+        10
+      ],
+      [
+        "Forbidden Lore (Daemons, Warp)",
+        0
+      ],
+      [
+        "Intimidate",
+        20
+      ],
+      [
+        "Literacy",
+        0
+      ],
+      [
+        "Scrutiny",
+        0
+      ],
+      [
+        "Speak Language (High Gothic, Low Gothic)",
+        0
+      ],
+      [
+        "Survival",
+        0
+      ],
+      [
+        "Swim",
+        0
+      ]
+    ],
+    "talents": [
+      "Basic Weapon Training (Universal)",
+      "Crushing Blow",
+      "Crack Shot",
+      "Crippling Strike",
+      "Combat Master",
+      "Deadeye Shot",
+      "Die Hard",
+      "Double Team",
+      "Fearless",
+      "Hatred (Imperium, Loyalist Space Marines)",
+      "Heavy Weapon Training (Universal)",
+      "Heightened Senses (Sight, Smell, Sound)",
+      "Jaded",
+      "Mighty Shot",
+      "Melee Weapon Training (Universal)",
+      "Pistol Weapon Training (Universal)",
+      "Quick Draw",
+      "Rapid Reload",
+      "Swift Attack",
+      "True Grit"
+    ],
+    "traits": [
+      "Dark Sight",
+      "Size (Hulking)",
+      "Unnatural Strength (x2)",
+      "Unnatural Toughness (x2)"
+    ],
+    "weapons_text": "Legion Bolt Pistol (30m; S/2/–; 1d10+11 X; Pen 4; Clip 8; Reload Full; Reliable, Tearing), Legion Bolter (100m; S/3/–; 1d10+11 X; Pen 4; Clip 24; Reload Full; Reliable, Tearing), Legion Chain Sword (1d10+17 R; Pen 2; Balanced, Tearing), 3 Legion Frag Grenades (SBx3; S/–/–; 2d10 X; Pen 0; Blast [5]).",
+    "armour_text": "Legion Power Armour (Arms 8, Body 10, Head 8, Legs 8).",
+    "gear_text": "",
+    "portrait_ref": null,
+    "ws_line": 2006,
+    "source_book": "roguetrader_fallensuns.pdf"
+  },
+  {
+    "name": "Chaos Reaver",
+    "slug": "chaos-reaver",
+    "faction": "Chaos",
+    "description": "More information on Chaos Reavers can be found on pages 355-356 of the ROGUE TRADER Rulebook.\n\n### Chaos Reaver Profile",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 25,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 20,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 20,
+        "unnatural": 0
+      }
+    },
+    "wounds": 10,
+    "movement": "3/6/9/18",
+    "skills": [
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Climb",
+        0
+      ],
+      [
+        "Common Lore (Imperium, Koronus Expanse)",
+        0
+      ],
+      [
+        "Forbidden Lore (Chaos, Mutants, The Warp, Xenos)",
+        0
+      ],
+      [
+        "Speak Language (Low Gothic)",
+        0
+      ],
+      [
+        "Swim",
+        0
+      ],
+      [
+        "Survival",
+        0
+      ]
+    ],
+    "talents": [
+      "Basic Weapon Training (Universal)",
+      "Berserk Charge",
+      "Decadence",
+      "Fearless",
+      "Furious Assault",
+      "Melee Weapon Training (Universal)",
+      "Pistol Weapon Training (Universal)"
+    ],
+    "traits": [],
+    "weapons_text": "Autogun (90m; S/3/10; 1d10+3 I; Pen 0; Clip 30; Rld 2 Full) or Good Craftsmanship Combat Shotgun (30m; S/3/–; 1d10+4 I; Pen 0; Clip 18; Rld Full; Scatter), Good Quality Monosword (1d10+3 R; Pen 2; Balanced).",
+    "armour_text": "Flak-weave robes (Arms 4; Body 4; Legs 4).",
+    "gear_text": "Respirator, Chaos Charm, 4 extra clips for weapon.",
+    "portrait_ref": null,
+    "ws_line": 2038,
+    "source_book": "roguetrader_fallensuns.pdf"
+  },
+  {
+    "name": "Chaos Sorcerer",
+    "slug": "chaos-sorcerer",
+    "faction": "Chaos",
+    "description": "",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 45,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 50,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 50,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 30,
+        "unnatural": 0
+      }
+    },
+    "wounds": 15,
+    "movement": "4/8/12/24",
+    "skills": [
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Climb",
+        0
+      ],
+      [
+        "Common Lore (Imperium, Koronus Expanse)",
+        0
+      ],
+      [
+        "Concealment",
+        10
+      ],
+      [
+        "Contortionist",
+        10
+      ],
+      [
+        "Deceive",
+        20
+      ],
+      [
+        "Dodge",
+        0
+      ],
+      [
+        "Forbidden Lore (Chaos, Cults, Daemonology, Heresy, Sorcerers, The Warp)",
+        10
+      ],
+      [
+        "Intimidate",
+        0
+      ],
+      [
+        "Invocation",
+        20
+      ],
+      [
+        "Psyniscience",
+        10
+      ],
+      [
+        "Scrutiny",
+        0
+      ],
+      [
+        "Search",
+        0
+      ],
+      [
+        "Secret Tongue (Chaos Sorcerers)",
+        0
+      ],
+      [
+        "Silent Move",
+        10
+      ],
+      [
+        "Speak Language (High Gothic, Low Gothic)",
+        0
+      ]
+    ],
+    "talents": [],
+    "traits": [],
+    "weapons_text": "",
+    "armour_text": "",
+    "gear_text": "",
+    "portrait_ref": null,
+    "ws_line": 2061,
+    "source_book": "roguetrader_fallensuns.pdf"
+  },
+  {
+    "name": "Badb Ra",
+    "slug": "badb-ra",
+    "faction": "",
+    "description": "More information on Badb Ra can be found on page 136 of EDGE OF THE ABYSS.\n\n### Badb Ra Profile",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 52,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 55,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 33,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 10,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 39,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 58,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 43,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 20,
+        "unnatural": 0
+      }
+    },
+    "wounds": 15,
+    "movement": "5/10/15/30",
+    "skills": [
+      [
+        "Acrobatics",
+        20
+      ],
+      [
+        "Awareness",
+        20
+      ],
+      [
+        "Concealment",
+        20
+      ],
+      [
+        "Deceive",
+        20
+      ],
+      [
+        "Dodge",
+        10
+      ],
+      [
+        "Evaluate",
+        10
+      ],
+      [
+        "Forbidden Lore (The Black Library, Xenos, The Warp)",
+        10
+      ],
+      [
+        "Gamble",
+        0
+      ],
+      [
+        "Navigation (Stellar)",
+        0
+      ],
+      [
+        "Pilot (Flyer)",
+        0
+      ],
+      [
+        "Medicae",
+        0
+      ],
+      [
+        "Silent Move",
+        20
+      ],
+      [
+        "Speak Language (Eldar, Low Gothic, Void Cant)",
+        10
+      ]
+    ],
+    "talents": [
+      "Basic Weapon Training (Las)",
+      "Catfall",
+      "Exotic Weapon Training (Shuriken Catapult, Shuriken Pistol)",
+      "Foresight",
+      "Hard Target",
+      "Leap Up",
+      "Melee Weapon Training (Power, Primitive)",
+      "Pistol Weapon Training (Las)",
+      "Quick Draw",
+      "Rapid Reaction",
+      "Resistance (Fear, Psychic Techniques)",
+      "Sprint"
+    ],
+    "traits": [
+      "Unnatural Agility (x2)"
+    ],
+    "weapons_text": "Best Quality Shuriken Catapult (60m; S/3/10; 1d10+4 R; Pen 6; Clip 100; Rld 2 Full; Reliable), Eldar Laspistol (30m; S/-/-; 1d10+2 E; Pen 0; Clip 30; Rld Full; Reliable), xeno-crafted mono-sword (1d10+3 R; Pen 2; Balanced), 1 plasma grenade, 1 blind grenade.",
+    "armour_text": "Xeno mesh void armour (Arms 4; Body 5; Legs 4).",
+    "gear_text": "Ragged outer garments adorned with a variety of bone fetishes, 3 spare clips of Shuriken catapult ammunition, waystone gem, xenos-crafted medkit, auspex.",
+    "portrait_ref": "img-35.jpeg",
+    "ws_line": 2100,
+    "source_book": "roguetrader_fallensuns.pdf"
+  },
+  {
+    "name": "Farseer Caille",
+    "slug": "farseer-caille",
+    "faction": "",
+    "description": "More information on Farseer Caille can be found on page 28.\n\n### Farseer Caille Profile",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 50,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 45,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 10,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 44,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 53,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 10,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 35,
+        "unnatural": 0
+      }
+    },
+    "wounds": 30,
+    "movement": "5/10/15/30",
+    "skills": [
+      [
+        "Acrobatics",
+        0
+      ],
+      [
+        "Awareness",
+        20
+      ],
+      [
+        "Climb",
+        0
+      ],
+      [
+        "Concealment",
+        10
+      ],
+      [
+        "Common Lore (Koronus Expanse)",
+        0
+      ],
+      [
+        "Deceive",
+        0
+      ],
+      [
+        "Dodge",
+        10
+      ],
+      [
+        "Forbidden Lore (The Black Library, Xenos, The Warp, The Webway, Psykers)",
+        20
+      ],
+      [
+        "Inquiry",
+        10
+      ],
+      [
+        "Invocation",
+        0
+      ],
+      [
+        "Psyniscience",
+        20
+      ],
+      [
+        "Scrutiny",
+        0
+      ],
+      [
+        "Search",
+        0
+      ],
+      [
+        "Silent Move",
+        0
+      ],
+      [
+        "Speak Language (Eldar, Low Gothic)",
+        0
+      ]
+    ],
+    "talents": [
+      "Basic Weapon Training (Universal)",
+      "Blademaster",
+      "Exotic Weapon Training (Shuriken Pistol, Witchblade)",
+      "Favoured by the Warp",
+      "Foresight",
+      "Improved Warp Sense",
+      "Melee Weapon Training (Universal)",
+      "Pistol Weapon Training (Universal)",
+      "Psy Rating 6",
+      "Warp Conduit",
+      "Warp Sense"
+    ],
+    "traits": [
+      "Unnatural Agility (x2)",
+      "Unnatural Willpower (x2)"
+    ],
+    "weapons_text": "",
+    "armour_text": "",
+    "gear_text": "",
+    "portrait_ref": "img-35.jpeg",
+    "ws_line": 2128,
+    "source_book": "roguetrader_fallensuns.pdf"
+  },
+  {
+    "name": "Warlock Bhaine Dhûn",
+    "slug": "warlock-bhaine-dh-n",
+    "faction": "",
+    "description": "More information on Bhaine Dhûn can be found on page 28.\n\n## Bhaine Dhûn Profile",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 55,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 48,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 36,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 34,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 54,
+        "unnatural": 10
+      },
+      "intelligence": {
+        "base": 44,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 43,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 52,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 35,
+        "unnatural": 0
+      }
+    },
+    "wounds": 15,
+    "movement": "5/10/15/30",
+    "skills": [
+      [
+        "Acrobatics",
+        0
+      ],
+      [
+        "Awareness",
+        20
+      ],
+      [
+        "Climb",
+        0
+      ],
+      [
+        "Concealment",
+        10
+      ],
+      [
+        "Deceive",
+        0
+      ],
+      [
+        "Dodge",
+        10
+      ],
+      [
+        "Forbidden Lore (The Black Library, Xenos, The Warp, The Webway, Psykers)",
+        0
+      ],
+      [
+        "Inquiry",
+        0
+      ],
+      [
+        "Psyniscience",
+        20
+      ],
+      [
+        "Scrutiny",
+        0
+      ],
+      [
+        "Search",
+        0
+      ],
+      [
+        "Silent Move",
+        0
+      ],
+      [
+        "Speak Language (Eldar, Low Gothic)",
+        0
+      ],
+      [
+        "Survival",
+        0
+      ]
+    ],
+    "talents": [
+      "Basic Weapon Training (Universal)",
+      "Blademaster",
+      "Exotic Weapon Training (Shuriken Pistol, Witchblade)",
+      "Improved Warp Sense",
+      "Melee Weapon Training (Universal)",
+      "Pistol Weapon Training (Universal)",
+      "Psy Rating (6)"
+    ],
+    "traits": [
+      "Unnatural Agility (x2)"
+    ],
+    "weapons_text": "",
+    "armour_text": "",
+    "gear_text": "",
+    "portrait_ref": "img-36.jpeg",
+    "ws_line": 2187,
+    "source_book": "roguetrader_fallensuns.pdf"
+  },
+  {
+    "name": "Crow Spirit Istaurmen",
+    "slug": "crow-spirit-istaurmen",
+    "faction": "Tau",
+    "description": "More information on the Istaurmen can be found on page 24.",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 50,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 45,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 50,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 45,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 45,
+        "unnatural": 0
+      }
+    },
+    "wounds": 15,
+    "movement": "5/10/15/30",
+    "skills": [
+      [
+        "Acrobatics",
+        0
+      ],
+      [
+        "Awareness",
+        10
+      ],
+      [
+        "Climb",
+        0
+      ],
+      [
+        "Blather",
+        10
+      ],
+      [
+        "Charm",
+        10
+      ],
+      [
+        "Concealment",
+        10
+      ],
+      [
+        "Common Lore (Imperium, Koronus Expanse, Rogue Traders)",
+        0
+      ],
+      [
+        "Deceive",
+        20
+      ],
+      [
+        "Dodge",
+        10
+      ],
+      [
+        "Forbidden Lore (The Black Library, Xenos, The Warp, The Webway, Psykers, Pirates)",
+        0
+      ],
+      [
+        "Inquiry",
+        10
+      ],
+      [
+        "Interrogation",
+        0
+      ],
+      [
+        "Scrutiny",
+        0
+      ],
+      [
+        "Search",
+        0
+      ],
+      [
+        "Silent Move",
+        0
+      ],
+      [
+        "Speak Language (Eldar, Low Gothic)",
+        0
+      ],
+      [
+        "Survival",
+        0
+      ]
+    ],
+    "talents": [
+      "Basic Weapon Training (Universal)",
+      "Exotic Weapon Training (Shuriken Pistol)",
+      "Foresight",
+      "Master Orator",
+      "Melee Weapon Training (Universal)",
+      "Pistol Weapon Training (Universal)",
+      "Polyglot"
+    ],
+    "traits": [
+      "Unnatural Agility (x2)"
+    ],
+    "weapons_text": "Shuriken Pistol (30m; S/3/5; 1d10+2 R; Pen 4; Clip 40; Rld 2 Full; Reliable).",
+    "armour_text": "Eldar void armour (Arms 4; Body 5; Head 5; Legs 4).",
+    "gear_text": "3 spare clips for shuriken pistol, waystone gem, and Eldar void armour that provides full life support as well as long-range encrypted vox, auspex, and Dark Sight. The armour also has built-in void impellers that grant the wearer Flyer 12 in zero gravity.",
+    "portrait_ref": "img-36.jpeg",
+    "ws_line": 2229,
+    "source_book": "roguetrader_fallensuns.pdf"
+  },
+  {
+    "name": "Eldar Harlequins",
+    "slug": "eldar-harlequins",
+    "faction": "Eldar",
+    "description": "Among the Eldar there exists a troupe of masked warrior-dancers called the Harlequins, devotees of their Laughing God and driven foes of Chaos. These mysterious entertainers travel the Webway, constantly moving among the Eldar people. They bring with them the epic tales of their race, passing them on to each dwindling generation with their exquisite dance and evocative mummery. Of these stories the greatest, though most rarely repeated, is the Dance Without End, the story of the Fall. In this dark morality tale, the Harlequins re-enact the Fall of the Eldar Empire and the creation of Slaanesh—the dark result of their own decadence. Few beings in the galaxy are as single-minded in their opposition to Chaos as the Harlequins. Fierce combatants all, their performances turn to death-dances on the field of battle, bringing terror and death to the servants of the Dark Powers.\n\nActing a variety of parts, troupes make up the bulk of a Harlequin troupe. While the most numerous, these performers are nevertheless potent combatants against the forces of Chaos. Their supernatural grace and skill on the battlefield surpasses that of all but the most highly-trained Imperial soldier or xenos menace. In addition to their own innate skill, all Harlequins make use of technology beyond even the rest of the Eldar people, including brightly-coloured holo-suits that mask their movements and anti-gravity \"flip-belts.\"",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 60,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 45,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 38,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 36,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 57,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 42,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 54,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 59,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 36,
+        "unnatural": 0
+      }
+    },
+    "wounds": 15,
+    "movement": "8/16/24/48",
+    "skills": [
+      [
+        "Acrobatics",
+        20
+      ],
+      [
+        "Awareness",
+        20
+      ],
+      [
+        "Charm",
+        10
+      ],
+      [
+        "Command",
+        0
+      ],
+      [
+        "Deceive",
+        20
+      ],
+      [
+        "Dodge",
+        20
+      ],
+      [
+        "Forbidden Lore (Daemonology)",
+        0
+      ],
+      [
+        "Scrutiny",
+        0
+      ],
+      [
+        "Sleight of Hand",
+        10
+      ],
+      [
+        "Speak Language (Eldar)",
+        0
+      ],
+      [
+        "Stealth",
+        20
+      ]
+    ],
+    "talents": [
+      "Ambidextrous",
+      "Combat Master",
+      "Hard Target",
+      "Leap Up",
+      "Lightning Attack",
+      "Lightning Reflexes",
+      "Step Aside",
+      "Swift Attack",
+      "Talented (Acrobatics)",
+      "Two-Weapon Wielder (Ranged, Melee)"
+    ],
+    "traits": [
+      "Unnatural Agility (x2)"
+    ],
+    "weapons_text": "Harlequin's Kiss (1d10+8 R; Pen 10; Tearing), Shuriken Pistol (Pistol; 30m; S/3/5; 1d10+2 R; Pen 4; Clip 40; Reload 2 Full; Reliable).",
+    "armour_text": "Xenos Mesh (3 All)",
+    "gear_text": "",
+    "portrait_ref": null,
+    "ws_line": 2254,
+    "source_book": "roguetrader_fallensuns.pdf"
+  },
+  {
+    "name": "Warp Spider Aspect Shell",
+    "slug": "warp-spider-aspect-shell",
+    "faction": "",
+    "description": "These empty suits of armour are animated by malignant forces.\n\n## Warp Spider Aspect Shell Profile",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 45,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 50,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 55,
+        "unnatural": 10
+      },
+      "intelligence": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 50,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 25,
+        "unnatural": 0
+      }
+    },
+    "wounds": 20,
+    "movement": "5/10/15/30",
+    "skills": [
+      [
+        "Acrobatics",
+        10
+      ],
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Climb",
+        0
+      ],
+      [
+        "Contortionist",
+        0
+      ],
+      [
+        "Demolition",
+        0
+      ],
+      [
+        "Dodge",
+        10
+      ],
+      [
+        "Forbidden Lore (The Black Library, Eldar Craftworlds, Xenos, The Warp, The Webway)",
+        0
+      ],
+      [
+        "Intimidate",
+        0
+      ],
+      [
+        "Shadowing",
+        0
+      ],
+      [
+        "Silent Move",
+        0
+      ],
+      [
+        "Speak Language (Eldar, Low Gothic)",
+        0
+      ],
+      [
+        "Survival",
+        0
+      ],
+      [
+        "Tracking",
+        0
+      ]
+    ],
+    "talents": [
+      "Assassin Strike",
+      "Basic Weapon Training (Universal)",
+      "Catfall",
+      "Combat Master",
+      "Crack Shot",
+      "Crushing Blow",
+      "Die Hard",
+      "Double Team",
+      "Exotic Weapon Training (Death Spinner, Shuriken Pistol, Shuriken Catapult)",
+      "Fearless",
+      "Hard Target",
+      "Heightened Senses (Sight, Sound)",
+      "Leap Up",
+      "Lightning Reflexes",
+      "Melee Weapon Training (Universal)",
+      "Pistol Weapon Training (Universal)",
+      "Quick Draw",
+      "Rapid Reload",
+      "Sprint",
+      "Step Aside"
+    ],
+    "traits": [
+      "Unnatural Agility (x2)",
+      "From Beyond"
+    ],
+    "weapons_text": "Death Spinner (40m; S/–/–; 4d10+5 R; Pen 2; Clip 30; Rld 2 Full; Blast (2), Reliable, Tearing).",
+    "armour_text": "Aspect Armour (Arms 5; Body 6; Head 5; Legs 5).",
+    "gear_text": "Warp Jump Generator.",
+    "portrait_ref": null,
+    "ws_line": 2285,
+    "source_book": "roguetrader_fallensuns.pdf"
+  },
+  {
+    "name": "Dire Avenger Aspect Shell",
+    "slug": "dire-avenger-aspect-shell",
+    "faction": "",
+    "description": "",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 55,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 52,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 31,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 33,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 51,
+        "unnatural": 10
+      },
+      "intelligence": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 50,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 25,
+        "unnatural": 0
+      }
+    },
+    "wounds": 20,
+    "movement": "5/10/15/30",
+    "skills": [
+      [
+        "Acrobatics",
+        10
+      ],
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Climb",
+        0
+      ],
+      [
+        "Demolition",
+        0
+      ],
+      [
+        "Dodge",
+        10
+      ],
+      [
+        "Drive (Ground, Skimmer)",
+        0
+      ],
+      [
+        "Intimidate",
+        0
+      ],
+      [
+        "Speak Language (Eldar, Low Gothic)",
+        0
+      ],
+      [
+        "Survival",
+        0
+      ],
+      [
+        "Tracking",
+        0
+      ]
+    ],
+    "talents": [],
+    "traits": [],
+    "weapons_text": "",
+    "armour_text": "",
+    "gear_text": "",
+    "portrait_ref": null,
+    "ws_line": 2311,
+    "source_book": "roguetrader_fallensuns.pdf"
+  },
+  {
+    "name": "Corrupt Wraithguard",
+    "slug": "corrupt-wraithguard",
+    "faction": "",
+    "description": "These silent constructs are normally animated by Eldar spirits. However, the ones on Lu'Nasad are controlled by darker forces.\n\n## Corrupt Wraithguard Profile",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 45,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 50,
+        "unnatural": 10
+      },
+      "toughness": {
+        "base": 60,
+        "unnatural": 12
+      },
+      "agility": {
+        "base": 30,
+        "unnatural": 6
+      },
+      "intelligence": {
+        "base": 15,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 25,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 0,
+        "unnatural": 0
+      }
+    },
+    "wounds": 0,
+    "movement": "",
+    "skills": [],
+    "talents": [],
+    "traits": [],
+    "weapons_text": "",
+    "armour_text": "",
+    "gear_text": "",
+    "portrait_ref": null,
+    "ws_line": 2347,
+    "source_book": "roguetrader_fallensuns.pdf"
+  },
+  {
+    "name": "Daemonette",
+    "slug": "daemonette",
+    "faction": "Warp",
+    "description": "Slaanesh has many servants, but the most numerous of them are the Daemonettes. Created to fulfil the Prince of Pleasure's every whim, Daemonettes are his courtiers and courtesans, his warriors and messengers.\n\nIn appearance, a daemonette is both alluring and repulsive, with slender, lithe bodies and an androgynous glamour that is heightened by the captivating musk that pervades the air around them. A daemonette's skin is luminously pale and smooth, and the daemon's hands are replaced by long, dextrous claws covered in iron-hard chitin. These claws can bestow a gentle caress or a fatal slash with equal skill. Daemonettes move swiftly upon languid, long legs and bird-like feet, able to dart across the battlefield with uncanny grace. Regardless of their appearance, daemonettes possess a powerful gift from their master, an aura that always makes them appear as an object of ultimate beauty and desire in the eyes of their enemies, no matter what race, gender, or morality such a foe may possess.",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 45,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 0,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 43,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 35,
+        "unnatural": 6
+      },
+      "agility": {
+        "base": 50,
+        "unnatural": 10
+      },
+      "intelligence": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 50,
+        "unnatural": 0
+      }
+    },
+    "wounds": 18,
+    "movement": "5/10/15/30",
+    "skills": [
+      [
+        "Acrobatics",
+        0
+      ],
+      [
+        "Athletics",
+        0
+      ],
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Dodge",
+        0
+      ],
+      [
+        "Psyniscience",
+        0
+      ]
+    ],
+    "talents": [
+      "Heightened Senses (All)",
+      "Swift Attack"
+    ],
+    "traits": [
+      "Daemonic (TB 8)",
+      "Dark Sight",
+      "Fear 2",
+      "From Beyond",
+      "Improved Natural Weapons",
+      "Natural Weapon (Pincer Claw)",
+      "Warp Instability"
+    ],
+    "weapons_text": "¹Pincer Claw (1d10+3 R, Pen 3, Tearing).",
+    "armour_text": "",
+    "gear_text": "",
+    "portrait_ref": "img-37.jpeg",
+    "ws_line": 2390,
+    "source_book": "roguetrader_fallensuns.pdf"
+  }
+]

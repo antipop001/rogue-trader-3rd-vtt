@@ -1,0 +1,2775 @@
+[
+  {
+    "name": "Minder",
+    "slug": "minder",
+    "faction": "",
+    "description": "",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 32,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 22,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 39,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 44,
+        "unnatural": 8
+      },
+      "agility": {
+        "base": 22,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 24,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 36,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 33,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 19,
+        "unnatural": 0
+      }
+    },
+    "wounds": 0,
+    "movement": "",
+    "skills": [
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Common Lore (Orks)",
+        0
+      ],
+      [
+        "Common Lore (War)",
+        0
+      ],
+      [
+        "Intimidate",
+        10
+      ],
+      [
+        "Speak Language (Ork)",
+        0
+      ]
+    ],
+    "talents": [
+      "Bulging Biceps",
+      "Exotic Weapon Training (Grabba Stikk)",
+      "Furious Assault",
+      "Resistance (Psychic Techniques)",
+      "Takedown",
+      "True Grit",
+      "Xenos Weapon Training (Ork)"
+    ],
+    "traits": [
+      "Brutal Charge",
+      "Clan (same as their associated Weirdboy)",
+      "Keep an Eye on 'Im†'",
+      "Make It Work",
+      "Might Makes Right",
+      "Mob Rule",
+      "Sturdy",
+      "Unnatural Toughness (x2). **Default"
+    ],
+    "weapons_text": "** Grabba-stikk (Melee; 2m; 1d10+3 I; Pen 0; Shocking, Snare), choppa (1d10+4 R; Pen 2; Unbalanced), slugga (20m; S/3/–; 1d10+4 I; Pen 0; Clip 18; Rld Full; Inaccurate).",
+    "armour_text": "Squeig-hide leathers (All 2)",
+    "gear_text": "Pockets full of bullets (equivalent to two Slugga clips), several Teef, special hat or hair squig. **†Keep an Eye on 'Im:** Minderz have been tasked with keeping an eye on the Weirdboy; they make every effort to stay within 5 metres of their charge at all times, and refuse to leave (especially at his own behest) unless convinced with an Intimidate Test as per the Might Makes Right Trait (see page 52) or some other appropriately strenuous form of coercion.",
+    "portrait_ref": "img-31.jpeg",
+    "ws_line": 2013,
+    "source_book": "roguetrader_thenavisprimer.pdf"
+  },
+  {
+    "name": "Gretchin",
+    "slug": "gretchin",
+    "faction": "",
+    "description": "",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 20,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 15,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 18,
+        "unnatural": 2
+      },
+      "agility": {
+        "base": 44,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 33,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 16,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 24,
+        "unnatural": 0
+      }
+    },
+    "wounds": 0,
+    "movement": "",
+    "skills": [
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Concealment",
+        0
+      ],
+      [
+        "Dodge",
+        0
+      ],
+      [
+        "Search",
+        0
+      ],
+      [
+        "Shadowing",
+        0
+      ],
+      [
+        "Silent Move",
+        0
+      ]
+    ],
+    "talents": [
+      "Heightened Senses (Hearing)",
+      "Melee Weapon Training (Primitive)",
+      "Pistol Weapon Training (Primitive, SP)"
+    ],
+    "traits": [
+      "Mob Rule",
+      "Size (Scrawny)",
+      "Unnatural Toughness (x2). **Default"
+    ],
+    "weapons_text": "** Sneaky boot knife (Melee; 1d5+1 R; Pen 0). Gretchin may also be armed with any SP Pistol, but these must be provided by their master.",
+    "armour_text": "None **Total TB:** 2",
+    "gear_text": "",
+    "portrait_ref": "img-31.jpeg",
+    "ws_line": 2041,
+    "source_book": "roguetrader_thenavisprimer.pdf"
+  },
+  {
+    "name": "Squig",
+    "slug": "squig",
+    "faction": "",
+    "description": "",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 0,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 22,
+        "unnatural": 4
+      },
+      "agility": {
+        "base": 33,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 8,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 25,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 0,
+        "unnatural": 0
+      }
+    },
+    "wounds": 0,
+    "movement": "",
+    "skills": [
+      [
+        "Awareness +10",
+        0
+      ],
+      [
+        "Tracking +20",
+        0
+      ]
+    ],
+    "talents": [
+      "Furious Assault"
+    ],
+    "traits": [
+      "Bestial",
+      "Improved Natural Weapons (Bite)",
+      "Size (Scrawny)",
+      "Unnatural Toughness (x2)"
+    ],
+    "weapons_text": "Grossly oversized maw (Melee; 1d10+6 R; Pen 0; Tearing). Squigs are also sometimes fitted with explosive payloads by their Ork keepers.",
+    "armour_text": "None **Total TB:** 4",
+    "gear_text": "",
+    "portrait_ref": "img-31.jpeg",
+    "ws_line": 2061,
+    "source_book": "roguetrader_thenavisprimer.pdf"
+  },
+  {
+    "name": "Flying Creature",
+    "slug": "flying-creature",
+    "faction": "",
+    "description": "",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 0,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 10,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 10,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 10,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 20,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 15,
+        "unnatural": 0
+      }
+    },
+    "wounds": 4,
+    "movement": "2/4/6/12",
+    "skills": [
+      [
+        "Awareness",
+        20
+      ],
+      [
+        "Concealment",
+        0
+      ],
+      [
+        "Dodge",
+        0
+      ]
+    ],
+    "talents": [
+      "Swift Attack"
+    ],
+    "traits": [
+      "Bestial",
+      "Flyer (8)",
+      "Natural Weapons",
+      "Size (Puny)"
+    ],
+    "weapons_text": "Claws or fangs (Melee; 1d10+1; Primitive).",
+    "armour_text": "None **Total TB:** 1",
+    "gear_text": "",
+    "portrait_ref": null,
+    "ws_line": 4275,
+    "source_book": "roguetrader_thenavisprimer.pdf"
+  },
+  {
+    "name": "Slithering Creature",
+    "slug": "slithering-creature",
+    "faction": "",
+    "description": "",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 32,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 0,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 14,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 32,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 24,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 12,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 25,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 10,
+        "unnatural": 0
+      }
+    },
+    "wounds": 6,
+    "movement": "2/4/6/12",
+    "skills": [
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Swim",
+        0
+      ]
+    ],
+    "talents": [],
+    "traits": [
+      "Bestial",
+      "Crawler",
+      "Natural Weapons",
+      "Size (Puny)",
+      "Toxic"
+    ],
+    "weapons_text": "Claws or fangs (Melee; 1d10+1 R; Primitive, Toxic).",
+    "armour_text": "None **Total TB:** 3",
+    "gear_text": "",
+    "portrait_ref": null,
+    "ws_line": 4294,
+    "source_book": "roguetrader_thenavisprimer.pdf"
+  },
+  {
+    "name": "Walking Creature",
+    "slug": "walking-creature",
+    "faction": "",
+    "description": "",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 28,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 0,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 22,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 20,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 15,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 20,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 18,
+        "unnatural": 0
+      }
+    },
+    "wounds": 6,
+    "movement": "4/8/12/24",
+    "skills": [
+      [
+        "Awareness",
+        10
+      ],
+      [
+        "Concealment",
+        10
+      ],
+      [
+        "Silent Move",
+        10
+      ],
+      [
+        "Swim",
+        0
+      ]
+    ],
+    "talents": [],
+    "traits": [
+      "Bestial",
+      "Natural Weapons",
+      "Quadruped",
+      "Size (Scrawny)"
+    ],
+    "weapons_text": "Claws or fangs (Melee; 1d10+2 R; Primitive).",
+    "armour_text": "None **Total TB:** 2",
+    "gear_text": "",
+    "portrait_ref": "img-60.jpeg",
+    "ws_line": 4312,
+    "source_book": "roguetrader_thenavisprimer.pdf"
+  },
+  {
+    "name": "Vaporian Glasshawk",
+    "slug": "vaporian-glasshawk",
+    "faction": "",
+    "description": "",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 0,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 20,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 10,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 10,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 20,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 15,
+        "unnatural": 0
+      }
+    },
+    "wounds": 5,
+    "movement": "2/4/6/12",
+    "skills": [
+      [
+        "Awareness",
+        20
+      ],
+      [
+        "Concealment",
+        10
+      ],
+      [
+        "Dodge",
+        0
+      ],
+      [
+        "Psyniscience",
+        0
+      ]
+    ],
+    "talents": [
+      "Heightened Senses (Sight)",
+      "Natural Weapons (Razor beak and talons)",
+      "Swift Attack"
+    ],
+    "traits": [
+      "Bestial",
+      "Flyer (6)",
+      "Machine",
+      "Size (Puny). **Familiar Features:** Mechanical",
+      "Psy-Detector",
+      "Strong",
+      "Warded",
+      "Wanderer"
+    ],
+    "weapons_text": "Razor beak and talons (Melee; 1d10+2; Primitive).",
+    "armour_text": "3 (Metal Skin) **Total TB:** 1",
+    "gear_text": "",
+    "portrait_ref": null,
+    "ws_line": 4458,
+    "source_book": "roguetrader_thenavisprimer.pdf"
+  },
+  {
+    "name": "Tusk-Born Wyrd Squig",
+    "slug": "tusk-born-wyrd-squig",
+    "faction": "",
+    "description": "",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 0,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 22,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 33,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 13,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 0,
+        "unnatural": 0
+      }
+    },
+    "wounds": 11,
+    "movement": "2/4/8/12",
+    "skills": [
+      [
+        "Awareness",
+        10
+      ],
+      [
+        "Intimidate",
+        0
+      ],
+      [
+        "Tracking",
+        10
+      ]
+    ],
+    "talents": [
+      "Berserk Charge",
+      "Furious Assault"
+    ],
+    "traits": [
+      "Bestial",
+      "Brutal Charge",
+      "Lightning Rod",
+      "Natural Weapons (Bite)",
+      "Size (Scrawny)",
+      "Unnatural Toughness (x2). **Familiar Features:** Aggressive",
+      "Big Teeth",
+      "Lightning Rod",
+      "Unnatural (Toughness)"
+    ],
+    "weapons_text": "Bite (Melee; 1d10+6 R; Tearing).",
+    "armour_text": "None **Total TB:** 4",
+    "gear_text": "",
+    "portrait_ref": "img-61.jpeg",
+    "ws_line": 4478,
+    "source_book": "roguetrader_thenavisprimer.pdf"
+  },
+  {
+    "name": "Inquisitor Havelock Blackheel",
+    "slug": "inquisitor-havelock-blackheel",
+    "faction": "",
+    "description": "",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 55,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 50,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 45,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 55,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 45,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 60,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 60,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 65,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 50,
+        "unnatural": 0
+      }
+    },
+    "wounds": 21,
+    "movement": "4/8/12/24",
+    "skills": [
+      [
+        "Awareness",
+        10
+      ],
+      [
+        "Chem-Use",
+        0
+      ],
+      [
+        "Command",
+        20
+      ],
+      [
+        "Common Lore (Adeptus Astra Telepathica, Ecclesiarchy, Imperial Creed, Imperium, Koronus Expanse, Rogue Traders, War)",
+        0
+      ],
+      [
+        "Deceive",
+        20
+      ],
+      [
+        "Dodge",
+        0
+      ],
+      [
+        "Drive (Ground Vehicles)",
+        0
+      ],
+      [
+        "Forbidden Lore (Heresy, The Inquisition, Psykers)",
+        0
+      ],
+      [
+        "Inquiry",
+        20
+      ],
+      [
+        "Interrogation",
+        20
+      ],
+      [
+        "Intimidate",
+        10
+      ],
+      [
+        "Literacy",
+        0
+      ],
+      [
+        "Logic",
+        0
+      ],
+      [
+        "Navigation (Surface)",
+        0
+      ],
+      [
+        "Performer (Storyteller)",
+        20
+      ],
+      [
+        "Scrutiny",
+        20
+      ],
+      [
+        "Search",
+        20
+      ],
+      [
+        "Shadowing",
+        10
+      ],
+      [
+        "Speak Language (High Gothic, Low Gothic)",
+        0
+      ],
+      [
+        "Tech-Use",
+        0
+      ]
+    ],
+    "talents": [
+      "Air of Authority",
+      "Armour of Contempt",
+      "Basic Weapon Training (Universal)",
+      "Die Hard",
+      "Duty Unto Death",
+      "Enemy (Psykers)",
+      "Fearless",
+      "Foresight",
+      "Hatred (Daemons, Mutants, Psykers)",
+      "Inspire Wrath",
+      "Into the Jaws of Hell",
+      "Iron Discipline",
+      "Iron Jaw",
+      "Jaded",
+      "Master Orator",
+      "Melee Weapon Training (Universal)",
+      "Nerves of Steel",
+      "Paranoia",
+      "Pistol Weapon Training (Universal)",
+      "Polyglot",
+      "Pure Faith",
+      "Resistance (Psychic Powers)",
+      "Rival (Adeptus Astra Telepathica, Ordo Calixis)",
+      "Strong Minded",
+      "The Emperor Protects",
+      "True Grit",
+      "Wrath of the Righteous"
+    ],
+    "traits": [
+      "Dark Sight",
+      "Fire and Brimstone†",
+      "Touched by the Fates"
+    ],
+    "weapons_text": "Best Craftsmanship custom \"baleflame\" incinerator (Basic; 30m; S/-/-; 2d10+8 E; Pen 6; Clip 4; Rld 3 Full; Flame, Recharge), Best Craftsmanship Loi-pattern burning blade (Melee; 1d10+10 E; Pen 4; Balanced, Power Field).",
+    "armour_text": "",
+    "gear_text": "",
+    "portrait_ref": "img-62.jpeg",
+    "ws_line": 4522,
+    "source_book": "roguetrader_thenavisprimer.pdf"
+  },
+  {
+    "name": "Torch-Wielding Mob",
+    "slug": "torch-wielding-mob",
+    "faction": "",
+    "description": "",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 25,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 25,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 25,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 30,
+        "unnatural": 0
+      }
+    },
+    "wounds": 50,
+    "movement": "3/6/9/18",
+    "skills": [
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Common Lore (Imperium)",
+        0
+      ],
+      [
+        "Speak Language (Low Gothic)",
+        0
+      ]
+    ],
+    "talents": [
+      "Basic Weapon Training (SP)",
+      "Melee Weapon Training (Improvised)"
+    ],
+    "traits": [
+      "Variable Size†",
+      "Vast and Overwhelming††",
+      "Wall of Bodies†††"
+    ],
+    "weapons_text": "Pump-Action Shotgun (Basic; 30m; S/-/-; 1d10+4 I; Pen 0; Clip 8; Rld 2 Full, Scatter), Farm Implement (Melee; 1d10+2 I; Pen 0; Primitive, Unbalanced).",
+    "armour_text": "Heavy Clothes (All 2).",
+    "gear_text": "",
+    "portrait_ref": null,
+    "ws_line": 4556,
+    "source_book": "roguetrader_thenavisprimer.pdf"
+  },
+  {
+    "name": "Culexus Assassin",
+    "slug": "culexus-assassin",
+    "faction": "",
+    "description": "",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 50,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 55,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 42,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 41,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 55,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 36,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 54,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 60,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 1,
+        "unnatural": 0
+      }
+    },
+    "wounds": 28,
+    "movement": "5/10/15/30",
+    "skills": [
+      [
+        "Acrobatics",
+        20
+      ],
+      [
+        "Awareness",
+        10
+      ],
+      [
+        "Climb",
+        0
+      ],
+      [
+        "Common Lore (Adeptus Astra Telepathica, Ecclesiarchy, Imperial Creed, Imperium)",
+        0
+      ],
+      [
+        "Concealment",
+        20
+      ],
+      [
+        "Contortionist",
+        10
+      ],
+      [
+        "Dodge",
+        10
+      ],
+      [
+        "Forbidden Lore (Assassins, The Inquisition, Psykers)",
+        0
+      ],
+      [
+        "Interrogation",
+        0
+      ],
+      [
+        "Intimidate",
+        20
+      ],
+      [
+        "Literacy",
+        0
+      ],
+      [
+        "Scholastic Lore (Imperial Creed)",
+        0
+      ],
+      [
+        "Scrutiny",
+        10
+      ],
+      [
+        "Search",
+        10
+      ],
+      [
+        "Security",
+        0
+      ],
+      [
+        "Shadowing",
+        20
+      ],
+      [
+        "Silent Move",
+        20
+      ],
+      [
+        "Sleight of Hand",
+        0
+      ],
+      [
+        "Speak Language (High Gothic, Low Gothic)",
+        0
+      ],
+      [
+        "Survival",
+        0
+      ],
+      [
+        "Tech-Use",
+        0
+      ],
+      [
+        "Tracking",
+        10
+      ]
+    ],
+    "talents": [
+      "Ambidextrous",
+      "Assassin Strike",
+      "Basic Weapon Training (Universal)",
+      "Catfall",
+      "Chem Geld",
+      "Counter Attack",
+      "Disturbing Voice",
+      "Die Hard",
+      "Duty Unto Death",
+      "Enemy (Psykers)",
+      "Fearless",
+      "Hatred (Psykers)",
+      "Hip Shooting",
+      "Iron Jaw",
+      "Leap Up",
+      "Light Sleeper",
+      "Lighting Attack",
+      "Lightning Reflexes",
+      "Meditation",
+      "Melee Weapon Training (Universal)",
+      "Mimic",
+      "Paranoia",
+      "Precise Blow",
+      "Rapid Reaction",
+      "Sprint",
+      "Step Aside",
+      "Sure Strike",
+      "Takedown",
+      "Unarmed Master",
+      "Unarmed Warrior"
+    ],
+    "traits": [
+      "Fear (1)",
+      "Untouchable (5)†"
+    ],
+    "weapons_text": "",
+    "armour_text": "Etherium, Animus Speculum (All 5). **Total TB:** 4",
+    "gear_text": "",
+    "portrait_ref": "img-63.jpeg",
+    "ws_line": 4607,
+    "source_book": "roguetrader_thenavisprimer.pdf"
+  },
+  {
+    "name": "Wyrd Gunslinger",
+    "slug": "wyrd-gunslinger",
+    "faction": "",
+    "description": "",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 50,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 41,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 51,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 34,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 39,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 45,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 40,
+        "unnatural": 0
+      }
+    },
+    "wounds": 0,
+    "movement": "5/10/15/30 Grounds: 18",
+    "skills": [
+      [
+        "Acrobatics",
+        0
+      ],
+      [
+        "Awareness",
+        10
+      ],
+      [
+        "Barter",
+        0
+      ],
+      [
+        "Charm",
+        0
+      ],
+      [
+        "Common Lore (Koronus Expanse, War)",
+        0
+      ],
+      [
+        "Contortionist",
+        0
+      ],
+      [
+        "Deceive",
+        10
+      ],
+      [
+        "Dodge",
+        0
+      ],
+      [
+        "Psyniscience",
+        0
+      ],
+      [
+        "Scrutiny",
+        0
+      ],
+      [
+        "Speak Language (Low Gothic)",
+        0
+      ],
+      [
+        "Survival",
+        0
+      ],
+      [
+        "Tech-Use",
+        0
+      ]
+    ],
+    "talents": [
+      "Ambidextrous",
+      "Basic Weapon Training (Universal)",
+      "Blind Fighting",
+      "Catfall",
+      "Combat ## WYRDS IN A CAMPAIGN Most NPCs who do not already have a Psy Rating can easily be made into a Wyrd. Simply add the Psy Rating 1 Talent and grant the character 1-4 Psychic Techniques from an appropriate Discipline. Even a recurring character might become a wyrd in between two meetings with the Explorers",
+      "having awakened to new powers in the interim. Wyrds are interesting and dangerous because they are unexpected",
+      "and there are a vast number of ways in which a GM can take advantage of the opportunity for surprises they present"
+    ],
+    "traits": [],
+    "weapons_text": "",
+    "armour_text": "Dusty leathers (All 2). **Total TB:** 4",
+    "gear_text": "",
+    "portrait_ref": "img-64.jpeg",
+    "ws_line": 4673,
+    "source_book": "roguetrader_thenavisprimer.pdf"
+  },
+  {
+    "name": "Warp Guide",
+    "slug": "warp-guide",
+    "faction": "",
+    "description": "",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 32,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 41,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 31,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 41,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 44,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 50,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 23,
+        "unnatural": 0
+      }
+    },
+    "wounds": 0,
+    "movement": "4/8/12/24 Grounds: 15 Artwork: Curse-Carved Void Suit (All 2). Total TB: 4",
+    "skills": [
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Blather",
+        10
+      ],
+      [
+        "Common Lore (Imperium, Koronus Expanse, Navis Nobilite, Rogue Traders)",
+        0
+      ],
+      [
+        "Concealment",
+        0
+      ],
+      [
+        "Deceive",
+        10
+      ],
+      [
+        "Forbidden Lore (Chaos, Navigators, Pirates, Psykers, The Warp)",
+        0
+      ],
+      [
+        "Invocation",
+        0
+      ],
+      [
+        "Literacy",
+        0
+      ],
+      [
+        "Navigation (Stellar, Warp)",
+        10
+      ],
+      [
+        "Psyniscience",
+        0
+      ],
+      [
+        "Scholastic Lore (Astromancy, Navis Nobilite, Numerology, Occult)",
+        0
+      ],
+      [
+        "Scrutiny",
+        0
+      ],
+      [
+        "Sleight of Hand",
+        0
+      ],
+      [
+        "Speak Language (Low Gothic)",
+        0
+      ],
+      [
+        "Survival",
+        0
+      ],
+      [
+        "Tech-Use",
+        0
+      ],
+      [
+        "Trade (Soothsayer)",
+        0
+      ]
+    ],
+    "talents": [
+      "Dark Soul",
+      "Decadence",
+      "Blood Sacrifice†",
+      "Enemy (Navigators)",
+      "Foresight",
+      "Improved Warp Sense",
+      "Jaded",
+      "Psy Rating (3)",
+      "Warp Affinity",
+      "Warp Conduit",
+      "Warp Sense"
+    ],
+    "traits": [],
+    "weapons_text": "",
+    "armour_text": "",
+    "gear_text": "",
+    "portrait_ref": "img-65.jpeg",
+    "ws_line": 4718,
+    "source_book": "roguetrader_thenavisprimer.pdf"
+  },
+  {
+    "name": "Eldar Warlock",
+    "slug": "eldar-warlock",
+    "faction": "Eldar",
+    "description": "",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 51,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 42,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 34,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 36,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 54,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 44,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 46,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 50,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 39,
+        "unnatural": 0
+      }
+    },
+    "wounds": 14,
+    "movement": "5/10/15/30",
+    "skills": [
+      [
+        "Acrobatics",
+        0
+      ],
+      [
+        "Awareness",
+        10
+      ],
+      [
+        "Climb",
+        0
+      ],
+      [
+        "Concealment",
+        10
+      ],
+      [
+        "Deceive",
+        0
+      ],
+      [
+        "Dodge",
+        10
+      ],
+      [
+        "Forbidden Lore (The Black Library, Xenos, The Warp, The Webway, Psykers)",
+        0
+      ],
+      [
+        "Inquiry",
+        0
+      ],
+      [
+        "Psyniscience",
+        20
+      ],
+      [
+        "Scrutiny",
+        0
+      ],
+      [
+        "Speak Language (Eldar, Low Gothic)",
+        0
+      ]
+    ],
+    "talents": [
+      "Assassin Strike",
+      "Blademaster",
+      "Catfall",
+      "Combat Formation",
+      "Disarm",
+      "Duty Unto Death",
+      "Exotic Weapon Training (Singing Spear, Shuriken Pistol, Witchblade)",
+      "Foresight",
+      "Guardian",
+      "Hard Target",
+      "Heightened Senses (Sight)",
+      "Improved Warp Sense",
+      "Lightning Reflexes",
+      "Meditation",
+      "Nerves of Steel",
+      "Precise Blow",
+      "Psy Rating 5",
+      "Quick Draw",
+      "Resistance (Psychic Techniques)",
+      "Sprint",
+      "Secrets of the Seers",
+      "Sure Strike",
+      "Swift Attack",
+      "Total Recall",
+      "Wall of Steel",
+      "Warp Sense"
+    ],
+    "traits": [
+      "Eldritch Mastery",
+      "Unnatural Agility (x2)"
+    ],
+    "weapons_text": "Shuriken pistol (Pistol; 30m; S/3/5; 1d10+2 R; Pen 4; Clip 40; Rld 2 Full; Reliable), witchblade (Melee; 1d10+14; Pen 5; Balanced, Power Field, Witch-Edge) or singing spear (Melee; 1d10+14, Pen 10; Power Field; Witch-Edge).",
+    "armour_text": "Eldar Rune Armour (All 6). **Total TB:** 3",
+    "gear_text": "Robes, runes of warding, runes of witnessing, empty spirit stone.",
+    "portrait_ref": "img-66.jpeg",
+    "ws_line": 4766,
+    "source_book": "roguetrader_thenavisprimer.pdf"
+  },
+  {
+    "name": "Eldar Farseer",
+    "slug": "eldar-farseer",
+    "faction": "Eldar",
+    "description": "",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 60,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 45,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 32,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 57,
+        "unnatural": 10
+      },
+      "intelligence": {
+        "base": 64,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 59,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 59,
+        "unnatural": 10
+      },
+      "fellowship": {
+        "base": 41,
+        "unnatural": 0
+      }
+    },
+    "wounds": 30,
+    "movement": "5/10/15/30",
+    "skills": [
+      [
+        "Acrobatics",
+        0
+      ],
+      [
+        "Awareness",
+        20
+      ],
+      [
+        "Climb",
+        0
+      ],
+      [
+        "Concealment",
+        10
+      ],
+      [
+        "Common Lore (Koronus Expanse)",
+        0
+      ],
+      [
+        "Deceive",
+        0
+      ],
+      [
+        "Dodge",
+        10
+      ],
+      [
+        "Forbidden Lore (The Black Library, Xenos, The Warp, The Webway, Psykers)",
+        20
+      ],
+      [
+        "Inquiry",
+        10
+      ],
+      [
+        "Invocation",
+        0
+      ],
+      [
+        "Psyniscience",
+        20
+      ],
+      [
+        "Scrutiny",
+        0
+      ],
+      [
+        "Search",
+        0
+      ],
+      [
+        "Silent Move",
+        0
+      ],
+      [
+        "Speak Language (Eldar, Low Gothic)",
+        0
+      ]
+    ],
+    "talents": [
+      "Assassin Strike",
+      "Bastion of Iron Will",
+      "Blademaster",
+      "Catfall",
+      "Combat Formation",
+      "Exotic Weapon Training (Shuriken Pistol, Singing Spear, Witchblade)",
+      "Favoured by the Warp",
+      "Foresight",
+      "Hard Target",
+      "Heightened Senses (Sight)",
+      "Improved Warp Sense",
+      "Lightning Reflexes",
+      "Meditation",
+      "Nerves of Steel",
+      "Precise Blow",
+      "Psy Rating 8",
+      "Resistance (Psychic Techniques)",
+      "Secrets of the Seers",
+      "Sprint",
+      "Step Aside",
+      "Strong Minded",
+      "Sure Strike",
+      "Swift Attack",
+      "Total Recall",
+      "Touched by the Fates",
+      "Warp Conduit",
+      "Warp Sense"
+    ],
+    "traits": [
+      "Eldritch Mastery",
+      "Unnatural Agility (x2)",
+      "Unnatural Willpower (x2)"
+    ],
+    "weapons_text": "",
+    "armour_text": "Rune Armour, Ghosthelm (All 6). **Total TB:** 3 **Fate Points:** 5",
+    "gear_text": "",
+    "portrait_ref": "img-68.jpeg",
+    "ws_line": 5008,
+    "source_book": "roguetrader_thenavisprimer.pdf"
+  },
+  {
+    "name": "Eldar Corsair Void Dreamer",
+    "slug": "eldar-corsair-void-dreamer",
+    "faction": "Eldar",
+    "description": "",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 51,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 55,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 45,
+        "unnatural": 8
+      },
+      "intelligence": {
+        "base": 52,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 55,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 53,
+        "unnatural": 10
+      },
+      "fellowship": {
+        "base": 42,
+        "unnatural": 0
+      }
+    },
+    "wounds": 15,
+    "movement": "4/8/12/24",
+    "skills": [
+      [
+        "Awareness",
+        10
+      ],
+      [
+        "Common Lore (Koronus Expanse)",
+        0
+      ],
+      [
+        "Dodge",
+        0
+      ],
+      [
+        "Forbidden Lore (Pirates, Psykers, The Warp, The Webway)",
+        0
+      ],
+      [
+        "Navigation (Stellar, Warp)",
+        20
+      ],
+      [
+        "Pilot (Spacecraft)",
+        0
+      ],
+      [
+        "Psyniscience +10",
+        0
+      ],
+      [
+        "Speak Language (Eldar, Low Gothic)",
+        0
+      ],
+      [
+        "Tracking",
+        20
+      ]
+    ],
+    "talents": [
+      "Assassin Strike",
+      "Blademaster",
+      "Catfall",
+      "Combat Formation",
+      "Exotic Weapon Training (Shuriken Pistol, Witchblade, Void Sabre)",
+      "Favoured by the Warp",
+      "Foresight",
+      "Hard Target",
+      "Heightened Senses (Sight)",
+      "Improved Warp Sense",
+      "Lightning Attack",
+      "Lightning Reflexes",
+      "Meditation",
+      "Nerves of Steel",
+      "Precise Blow",
+      "Psy Rating 7",
+      "Rapid Reaction",
+      "Resistance (Psychic Techniques)",
+      "Secrets of the Seers",
+      "Sprint",
+      "Step Aside",
+      "Strong Minded",
+      "Sure Strike",
+      "Swift Attack",
+      "Total Recall",
+      "Touched by the Fates",
+      "Warp Conduit",
+      "Warp Sense"
+    ],
+    "traits": [
+      "Eldritch Mastery",
+      "Unnatural Agility (x2)",
+      "Unnatural Willpower (x2)"
+    ],
+    "weapons_text": "",
+    "armour_text": "Eldar void armour (All 4). **Total TB:** 3",
+    "gear_text": "",
+    "portrait_ref": "img-69.jpeg",
+    "ws_line": 5171,
+    "source_book": "roguetrader_thenavisprimer.pdf"
+  },
+  {
+    "name": "Ork Weirdboy",
+    "slug": "ork-weirdboy",
+    "faction": "Ork",
+    "description": "",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 39,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 20,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 45,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 40,
+        "unnatural": 8
+      },
+      "agility": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 29,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 19,
+        "unnatural": 0
+      }
+    },
+    "wounds": 19,
+    "movement": "3/6/9/18",
+    "skills": [
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Intimidate",
+        0
+      ],
+      [
+        "Survival",
+        0
+      ],
+      [
+        "Psyniscience",
+        0
+      ]
+    ],
+    "talents": [
+      "Bulging Biceps",
+      "Common Lore (Ork)",
+      "Crushing Blow",
+      "Da Power of Waaagh!",
+      "Furious Assault",
+      "Hardy",
+      "Iron Jaw",
+      "Lotsa Power!",
+      "Make It Stop!",
+      "Minderz (x2)",
+      "Peer (Own Clan)",
+      "Psy Rating 2",
+      "Speak Language (Ork, Low Gothic)",
+      "Throo Da Kosmos",
+      "True Grit",
+      "Runtz",
+      "Xenos Weapon Training (Ork)"
+    ],
+    "traits": [
+      "Brutal Charge",
+      "Mob Rule",
+      "Resistance (Cold, Heat, Radiation)",
+      "Sturdy",
+      "Unnatural Toughness (x2)"
+    ],
+    "weapons_text": "Channelling rod (Melee; 1d10+8; Pen 0; Primitive).",
+    "armour_text": "Adorned leathers (All 2) Total TB: 8",
+    "gear_text": "2d10 Ork teeth (\"Teef\"), crude respirator, pouch with odd bitz (dried bat-squig guano, the bones of a \"lucky\" grot, etc.).",
+    "portrait_ref": "img-70.jpeg",
+    "ws_line": 5308,
+    "source_book": "roguetrader_thenavisprimer.pdf"
+  },
+  {
+    "name": "Ork Warphead",
+    "slug": "ork-warphead",
+    "faction": "Ork",
+    "description": "",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 46,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 20,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 50,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 48,
+        "unnatural": 8
+      },
+      "agility": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 32,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 55,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 22,
+        "unnatural": 0
+      }
+    },
+    "wounds": 24,
+    "movement": "3/6/9/18",
+    "skills": [
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Intimidate",
+        0
+      ],
+      [
+        "Survival",
+        0
+      ],
+      [
+        "Psyniscience",
+        0
+      ]
+    ],
+    "talents": [
+      "Bulging Biceps",
+      "Common Lore (Ork)",
+      "Crushing Blow",
+      "Da Power of Waaagh!",
+      "Ded 'Ard Furious Assault",
+      "Good Reputation (Own Clan)",
+      "Hardy",
+      "Iron Jaw",
+      "Lotsa Power!",
+      "Minderz",
+      "Oh Zog!",
+      "Peer (Own Clan)",
+      "Psy Rating 3",
+      "Sparky Squigs",
+      "Speak Language (Ork, Low Gothic)",
+      "Throo Da Kosmos",
+      "Too 'Ard Ta Care",
+      "True Grit",
+      "Runtz",
+      "Warphead",
+      "Xenos Weapon Training (Ork)"
+    ],
+    "traits": [
+      "Brutal Charge",
+      "Mob Rule",
+      "Resistance (Cold, Heat, Radiation)",
+      "Sturdy",
+      "Unnatural Toughness (x2)"
+    ],
+    "weapons_text": "Best Quality copper channelling rod (Melee; 1d10+10; Pen 0; Primitive), Tusk squigknife (Melee; 1d5+8 R; Pen 0; Tearing).",
+    "armour_text": "Ceremonial armour (All 4). **Total TB:** 8",
+    "gear_text": "3d10 Ork teeth (\"Teef\"), crude respirator, large ritual pouch with odd bitz (squig teef, jangly bells, etc.).",
+    "portrait_ref": "img-70.jpeg",
+    "ws_line": 5342,
+    "source_book": "roguetrader_thenavisprimer.pdf"
+  },
+  {
+    "name": "Gur'Kall the Wanderer",
+    "slug": "gur-kall-the-wanderer",
+    "faction": "",
+    "description": "",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 46,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 20,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 12,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 33,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 68,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 23,
+        "unnatural": 0
+      }
+    },
+    "wounds": 30,
+    "movement": "3/6/9/18",
+    "skills": [
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Intimidate",
+        0
+      ],
+      [
+        "Survival",
+        0
+      ],
+      [
+        "Psyniscience",
+        0
+      ]
+    ],
+    "talents": [
+      "Basic Weapon Training (Primitive, SP)",
+      "Bulging Biceps",
+      "Common Lore (Ork)",
+      "Crushing Blow",
+      "Da Power of Waaagh!",
+      "Ded 'Ard Furious Assault",
+      "Glowy Bubble",
+      "Good Reputation (Own Clan)",
+      "Hardy",
+      "Iron Jaw",
+      "Lotsa Power!",
+      "Make It Stop!",
+      "Minderz",
+      "Oh Zog!",
+      "Peer (Own Clan)",
+      "Psy Rating 4",
+      "Sparky Squigs",
+      "Speak Language (Ork, Low Gothic)",
+      "Throo Da Kosmos",
+      "Too 'Ard Ta Care",
+      "Touched by the Fates",
+      "True Grit",
+      "Runtz",
+      "Warphead",
+      "Xenos Weapon Training (Ork)"
+    ],
+    "traits": [
+      "Brutal Charge",
+      "Mob Rule",
+      "Resistance (Cold, Heat, Radiation, Psychic Techniques)",
+      "Size (Hulking)",
+      "Sturdy",
+      "Unnatural Strength (x2)",
+      "Unnatural Toughness (x2)"
+    ],
+    "weapons_text": "Best Quality copper channelling rod (Melee; 1d10+17; Pen 0; Primitive), \"stabby crystal\" (Melee; 1d10+16 R; Pen 4; Force).",
+    "armour_text": "Fancy kustom armour (All 6).",
+    "gear_text": "3d10+5 Ork teeth (\"Teef\"), two Best Craftsmanship Tusk-born wyrd squigs (see page 112), crude respirator, massive ritual pouch with odd bitz (dried bat-squig guano, a small trove of \"shiny rokks from 'dose fancy, weedy gits,\" several strange and organic-looking crystal growths, a numerous badly abused maps of \"Da Kosmos,\" a small puzzle box well beyond Gur'Kall's ability to open).",
+    "portrait_ref": null,
+    "ws_line": 5418,
+    "source_book": "roguetrader_thenavisprimer.pdf"
+  },
+  {
+    "name": "Rak'Gol Techno-Shaman",
+    "slug": "rak-gol-techno-shaman",
+    "faction": "Rak'Gol",
+    "description": "",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 53,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 40,
+        "unnatural": 8
+      },
+      "toughness": {
+        "base": 42,
+        "unnatural": 8
+      },
+      "agility": {
+        "base": 25,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 37,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 37,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 50,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 5,
+        "unnatural": 0
+      }
+    },
+    "wounds": 32,
+    "movement": "5/10/15/30",
+    "skills": [
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Dodge",
+        0
+      ],
+      [
+        "Psyniscience",
+        0
+      ]
+    ],
+    "talents": [
+      "Die Hard",
+      "Fearless",
+      "Melee Weapon Training (Primitive)",
+      "Psy Rating 3",
+      "Resistance (Psychic Techniques)",
+      "True Grit"
+    ],
+    "traits": [
+      "Fear (2)",
+      "Hunting Frenzy+",
+      "Multiple Arms",
+      "Size (Hulking)",
+      "Quadruped",
+      "Resonator Implants",
+      "Roiling Fury++",
+      "Unnatural Strength (x2)",
+      "Unnatural Toughness (x2)"
+    ],
+    "weapons_text": "Implanted Yu'Vath Crystalblades (Melee; 1d10+10 R; Pen 4; Force). +Hunting Frenzy: Rak'Gol are utterly merciless and unrelenting in battle, descending into a terrifying blood-rage once combat begins. Treat this as the Frenzy Talent, except the Rak'Gol can enter it at any time in combat as a Free Action. Techno-Shamans may use Psychic Techniques whilst in a Frenzy, and may use ranged Psychic Techniques on the nearest foe instead of moving towards it or performing an All-Out Attack. ++Roiling Fury: As a Rak'Gol Techno-Shaman slakes its bloodlust, its psychic potential grows; for each foe it slays in an encounter, its Psy Rating increases by 1 (to a maximum of 10).",
+    "armour_text": "Implanted plates (All 6).",
+    "gear_text": "",
+    "portrait_ref": "img-71.jpeg",
+    "ws_line": 5459,
+    "source_book": "roguetrader_thenavisprimer.pdf"
+  },
+  {
+    "name": "The Broker",
+    "slug": "the-broker",
+    "faction": "",
+    "description": "",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 27,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 36,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 36,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 27,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 45,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 63,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 54,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 63,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 36,
+        "unnatural": 0
+      }
+    },
+    "wounds": 18,
+    "movement": "4/8/12/24",
+    "skills": [
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Charm",
+        10
+      ],
+      [
+        "Common Lore (Imperium, Koronus Expanse, Rogue Traders)",
+        0
+      ],
+      [
+        "Deceive",
+        20
+      ],
+      [
+        "Disguise",
+        20
+      ],
+      [
+        "Forbidden Lore (Chaos, Daemonology, Heresy, Psykers, The Warp)",
+        0
+      ],
+      [
+        "Literacy",
+        0
+      ],
+      [
+        "Scholastic Lore (Legend, Numerology, Occult, Philosophy)",
+        0
+      ],
+      [
+        "Speak Language (Daemonic Tongues, Eldar, High Gothic, Low Gothic, Ork)",
+        0
+      ]
+    ],
+    "talents": [
+      "Infused Knowledge",
+      "Polyglot",
+      "Psy Rating (5)",
+      "Total Recall"
+    ],
+    "traits": [
+      "Blessings of Tzeentch†",
+      "Blue Horrors††",
+      "Daemonic",
+      "Dark Sight",
+      "Fear (2)",
+      "From Beyond",
+      "Multiple Arms",
+      "Natural Weapons",
+      "Regeneration",
+      "Strange Physiology",
+      "Touched by the Fates",
+      "Warp Instability"
+    ],
+    "weapons_text": "",
+    "armour_text": "Shifting Clothes (3 All) **Total TB:** 8 **Fate Points:** 3",
+    "gear_text": "",
+    "portrait_ref": null,
+    "ws_line": 5601,
+    "source_book": "roguetrader_thenavisprimer.pdf"
+  },
+  {
+    "name": "The Luminary",
+    "slug": "the-luminary",
+    "faction": "",
+    "description": "",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 0,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 0,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 0,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 0,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 0,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 0,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 0,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 0,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 0,
+        "unnatural": 0
+      }
+    },
+    "wounds": 33,
+    "movement": "10/20/30/60",
+    "skills": [
+      [
+        "Acrobatics",
+        0
+      ],
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Blather",
+        10
+      ],
+      [
+        "Charm",
+        10
+      ],
+      [
+        "Common Lore (Imperium, Koronus Expanse)",
+        0
+      ],
+      [
+        "Contortionist",
+        10
+      ],
+      [
+        "Deceive",
+        20
+      ],
+      [
+        "Disguise",
+        20
+      ],
+      [
+        "Dodge",
+        0
+      ],
+      [
+        "Forbidden Lore (Chaos, Daemonology, Psykers, The Warp)",
+        0
+      ],
+      [
+        "Inquiry",
+        10
+      ],
+      [
+        "Psyniscience",
+        0
+      ],
+      [
+        "Scholastic Lore ()",
+        0
+      ],
+      [
+        "Scrutiny",
+        0
+      ],
+      [
+        "Shadowing",
+        10
+      ],
+      [
+        "Silent Move",
+        20
+      ],
+      [
+        "Speak Language (Daemonic Tongue, Low Gothic, High Gothic)",
+        0
+      ]
+    ],
+    "talents": [
+      "Assassin Strike",
+      "Catfall",
+      "Heightened Senses (All)",
+      "Psy Rating (5)",
+      "Swift Attack",
+      "Touched by the Fates"
+    ],
+    "traits": [
+      "Daemonic",
+      "Dark Sight",
+      "Fear (2)",
+      "From Beyond",
+      "Natural Weapons (Claws)",
+      "Soporific Musk†",
+      "Strange Physiology",
+      "Unnatural Agility (x2)",
+      "Unnatural Fellowship (x2)",
+      "Warp Instability. **Psychic Disciplines:** Telepathy",
+      "Daemon Techniques. **Psychic Techniques:** All Telepathy Techniques",
+      "Siren’s Whisper",
+      "Call to Ecstasy"
+    ],
+    "weapons_text": "Pincer Claw (Melee; 1d10+4 R; Pen 3; Tearing). **†Soporific Musk:** As a Daemonette, The Chosen has a tantalizing allure that entrances and beguiles mortals. All Dodge and Parry Tests made against The Chosen suffer a –10 penalty.",
+    "armour_text": "Fancy Clothes (2 All) **Total TB:** 6 **Fate Points:** 3",
+    "gear_text": "",
+    "portrait_ref": "img-72.jpeg",
+    "ws_line": 5637,
+    "source_book": "roguetrader_thenavisprimer.pdf"
+  },
+  {
+    "name": "The Carrier",
+    "slug": "the-carrier",
+    "faction": "",
+    "description": "",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 43,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 34,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 43,
+        "unnatural": 8
+      },
+      "toughness": {
+        "base": 61,
+        "unnatural": 11
+      },
+      "agility": {
+        "base": 34,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 34,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 25,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 52,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 52,
+        "unnatural": 0
+      }
+    },
+    "wounds": 61,
+    "movement": "3/6/9/—",
+    "skills": [
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Barter",
+        0
+      ],
+      [
+        "Carouse",
+        0
+      ],
+      [
+        "Charm",
+        0
+      ],
+      [
+        "Common Lore (Imperium, Imperial Navy, Koronus Expanse)",
+        0
+      ],
+      [
+        "Concealment",
+        0
+      ],
+      [
+        "Deceive",
+        20
+      ],
+      [
+        "Disguise",
+        20
+      ],
+      [
+        "Forbidden Lore (Daemonology., The Warp)",
+        0
+      ],
+      [
+        "Gamble",
+        0
+      ],
+      [
+        "Medicae",
+        0
+      ],
+      [
+        "Navigation (Stellar, Warp)",
+        0
+      ],
+      [
+        "Pilot (Spacecraft)",
+        0
+      ],
+      [
+        "Psyniscience",
+        20
+      ],
+      [
+        "Scholastic Lore (Astromancy, Legend)",
+        0
+      ],
+      [
+        "Secret Tongue (Underdeck)",
+        0
+      ],
+      [
+        "Speak Language (Daemonic, Low Gothic)",
+        0
+      ],
+      [
+        "Survival",
+        0
+      ],
+      [
+        "Trade (Voidfarer)",
+        0
+      ]
+    ],
+    "talents": [
+      "Basic Weapon Training (Las, SP)",
+      "Decadence",
+      "Melee Weapon Training (Universal)",
+      "Paranoia",
+      "Pistol Weapon Training (Las, SP)",
+      "Psy Rating (8)",
+      "Resistance (Disease, Psychic Powers)",
+      "Warp Affinity",
+      "Warp Conduit",
+      "Warp Sense"
+    ],
+    "traits": [
+      "Daemonic",
+      "Dark Sight",
+      "From Beyond",
+      "Strange Physiology",
+      "The Stuff of Nightmares",
+      "Touched by the Fates",
+      "Unnatural Strength (x2)"
+    ],
+    "weapons_text": "",
+    "armour_text": "Filthy-encrusted void-suit (All 5) **Total TB:** 12 **Fate Points:** 3",
+    "gear_text": "",
+    "portrait_ref": "img-72.jpeg",
+    "ws_line": 5672,
+    "source_book": "roguetrader_thenavisprimer.pdf"
+  },
+  {
+    "name": "The Huntsman",
+    "slug": "the-huntsman",
+    "faction": "",
+    "description": "",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 62,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 26,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 62,
+        "unnatural": 12
+      },
+      "toughness": {
+        "base": 44,
+        "unnatural": 8
+      },
+      "agility": {
+        "base": 44,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 44,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 26,
+        "unnatural": 0
+      }
+    },
+    "wounds": 44,
+    "movement": "5/10/15/30",
+    "skills": [
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Intimidate",
+        20
+      ],
+      [
+        "Wrangling",
+        0
+      ]
+    ],
+    "talents": [
+      "Battle Rage",
+      "Counter Attack",
+      "Crippling Strike",
+      "Crushing Blow",
+      "Exotic Weapon Training (Hellblade)",
+      "Frenzy",
+      "Furious Assault",
+      "Heightened Senses (Smell, Hearing)",
+      "Swift Attack",
+      "Precise Blow",
+      "Resistance (Psychic Powers)",
+      "Strong Minded",
+      "Touched by the Fates"
+    ],
+    "traits": [
+      "Daemonic",
+      "Dark Sight",
+      "Fear (2)",
+      "From Beyond",
+      "Natural Armour (4)",
+      "Natural Weapons (Teeth and Claws)",
+      "Size (Hulking)",
+      "Strange Physiology",
+      "Unnatural Strength (x2)"
+    ],
+    "weapons_text": "Thorn† (Melee; 2d10+14 R; Pen 3; Tearing), Teeth and Claws (Melee; 1d10+12 R; Pen 0).",
+    "armour_text": "Brazen Skin (4). **Total TB:** 8 **Fate Points:** 2",
+    "gear_text": "Collar of Khorne††, psyker-skull necklace.",
+    "portrait_ref": "img-73.jpeg",
+    "ws_line": 5708,
+    "source_book": "roguetrader_thenavisprimer.pdf"
+  },
+  {
+    "name": "Huntsman's Flesh Hound",
+    "slug": "huntsman-s-flesh-hound",
+    "faction": "",
+    "description": "",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 45,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 0,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 45,
+        "unnatural": 8
+      },
+      "toughness": {
+        "base": 40,
+        "unnatural": 8
+      },
+      "agility": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 15,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 60,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 10,
+        "unnatural": 0
+      }
+    },
+    "wounds": 15,
+    "movement": "9/18/27/54",
+    "skills": [
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Tracking",
+        0
+      ]
+    ],
+    "talents": [
+      "Berserk Charge",
+      "Double Team",
+      "Furious Assault",
+      "Hard Target",
+      "Heightened Senses (All)"
+    ],
+    "traits": [
+      "Bestial",
+      "Daemonic",
+      "Daemonic Presence†",
+      "Dark Sight",
+      "Fear (3)",
+      "From Beyond",
+      "Improved Natural Weapons",
+      "Natural Armour (4)",
+      "Natural Weapon (claws and teeth)",
+      "Quadruped",
+      "Size (Hulking)",
+      "Unnatural Senses (30 metres)",
+      "Unnatural Strength (x2)",
+      "Warp Instability"
+    ],
+    "weapons_text": "Teeth and claws (Melee; 1d10+10 R; Pen 2; Tearing).",
+    "armour_text": "Daemonic Hide (All 4). **Total TB:** 8",
+    "gear_text": "Collar Of Khorne††.",
+    "portrait_ref": "img-73.jpeg",
+    "ws_line": 5734,
+    "source_book": "roguetrader_thenavisprimer.pdf"
+  },
+  {
+    "name": "Plaguebearer",
+    "slug": "plaguebearer",
+    "faction": "",
+    "description": "These servants of Nurgle are devoted to spreading his corruption throughout their travels. Their exposed intestines, cyclopean eye, and horns strike fear in those who face them, while their plagueswords infect anyone they wound.\n\nPlaguebearer Profile",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 0,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 0,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 0,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 0,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 0,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 0,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 0,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 0,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 0,
+        "unnatural": 0
+      }
+    },
+    "wounds": 30,
+    "movement": "3/6/9/18",
+    "skills": [
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Psyniscience",
+        0
+      ],
+      [
+        "Scholastic Lore (Numerology)",
+        0
+      ],
+      [
+        "Speak Language (any one)",
+        0
+      ]
+    ],
+    "talents": [
+      "Crippling Strike"
+    ],
+    "traits": [
+      "Cloud of Flies†",
+      "Daemonic (TB 10)",
+      "Daemonic Presence††",
+      "Fear (2)",
+      "From Beyond",
+      "Improved Natural Weapons",
+      "Natural Weapons (Claws)",
+      "Regeneration (1)",
+      "Strange Physiology",
+      "Unnatural Strength (x2)",
+      "Unnatural Toughness (x2)",
+      "Warp Instability"
+    ],
+    "weapons_text": "Plaguesword (Melee: 1d10+13; Pen 1; Toxic), Claws (Melee: 1d10+8; Pen 2; Toxic).",
+    "armour_text": "None Total TB: 15",
+    "gear_text": "",
+    "portrait_ref": "img-74.jpeg",
+    "ws_line": 5837,
+    "source_book": "roguetrader_thenavisprimer.pdf"
+  }
+]

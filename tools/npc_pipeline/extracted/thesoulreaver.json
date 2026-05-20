@@ -1,0 +1,3176 @@
+[
+  {
+    "name": "Archon Salaine Morn",
+    "slug": "archon-salaine-morn",
+    "faction": "",
+    "description": "",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 68,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 61,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 52,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 38,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 66,
+        "unnatural": 18
+      },
+      "intelligence": {
+        "base": 58,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 58,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 59,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 54,
+        "unnatural": 0
+      }
+    },
+    "wounds": 22,
+    "movement": "6/12/18/36",
+    "skills": [
+      [
+        "Acrobatics",
+        10
+      ],
+      [
+        "Awareness",
+        20
+      ],
+      [
+        "Chem-Use",
+        10
+      ],
+      [
+        "Command",
+        20
+      ],
+      [
+        "Common Lore (Dark Eldar)",
+        20
+      ],
+      [
+        "Dodge",
+        10
+      ],
+      [
+        "Intimidate",
+        20
+      ],
+      [
+        "Silent Move",
+        0
+      ],
+      [
+        "Sleight of Hand",
+        0
+      ]
+    ],
+    "talents": [
+      "Air of Authority",
+      "Catfall",
+      "Combat Master",
+      "Crippling Strike",
+      "Crushing Blow",
+      "Dark Soul",
+      "Die Hard",
+      "Disturbing Voice",
+      "Exotic Weapon Training (Agoniser, Husk Blade, Blast Pistol)",
+      "Hard Target",
+      "Heightened Senses (Hearing, Sight)",
+      "Into the Jaws of Hell",
+      "Iron Discipline",
+      "Jaded",
+      "Kabalite Weapon Training",
+      "Lightning Attack",
+      "Lightning Reflexes",
+      "Master Orator",
+      "Mighty Shot",
+      "Paranoia",
+      "Quick Draw",
+      "Rapid Reaction",
+      "Resistance (Poison, Psychic Techniques)",
+      "Sprint",
+      "Step Aside",
+      "Strong Minded",
+      "Swift Attack",
+      "Total Recall"
+    ],
+    "traits": [
+      "Dark Sight",
+      "Power Through Pain",
+      "Touched by the Fates",
+      "Unnatural Agility (x3)"
+    ],
+    "weapons_text": "Blast pistol (Pistol; 20m; S/-/-; 2d10+7 X; Pen 20; Clip 8; Rld 2 Full; Felling [1], Proven [2]), Best Craftsmanship agoniser lash (Melee; 3m; 1d10+10 E; Pen 6; Flexible, Shocking, Tearing), husk blade (Melee; 1d10+8 R; Pen 7; Balanced, Felling [1]), 3 Eldar plasma grenades (Thrown; 12m; 1d10+8 E; Pen 4; Blast [3], Shocking).",
+    "armour_text": "Ghostplate armour (All 6).",
+    "gear_text": "Shadow field (Protection 80, Overloads upon failure), 3 doses of Corpse Obmulen, soul trap†.",
+    "portrait_ref": "img-81.jpeg",
+    "ws_line": 3384,
+    "source_book": "roguetrader_thesoulreaver.pdf"
+  },
+  {
+    "name": "Drecarus, The Arch-Agonist Of T Saevoym, Haemonculus",
+    "slug": "drecarus-the-arch-agonist-of-t-saevoym-haemonculus",
+    "faction": "",
+    "description": "Drecarus is the master of the Sutured Helix Coven, the Arch-Agonist of T'saevoym, a title whose meaning is long-forgotten but instils dread in even the most jaded of Dark Eldar nobles of the Nexus of Shadows to this day nonetheless. What is known about Drecarus is that he is an incalculably ancient being, and that as long as anyone can remember he has been sole master of his coven, the Sutured Helix. Though his coven once held a position of some prominence in the twisted dens of Commorragh, Drecarus grew weary of the bickering of Archons and even fellow Haemonculi, and so he lead his coven into the webway that they might focus on their twisted work.\n\nDuring its aeons of sojourning, The Sutured Helix ran afoul of a group of Rak'Gol marauders while travelling the Koronus Expanse. Their damaged vessel was saved by the raiding fleet of Zaergarn Kul. Eager to have a Haemonculi Coven on the Nexus of Shadows, Zaergarn offered the crippled vessel an offer it could not refuse, and Drecarus grudgingly assented to become Zaergarn's ally and advisor. Over time, Zaergarn trusted Drecarus with more and more of his rule, and the Haemonculus' power over the\n\nNexus of Shadows grew. Drecarus worked to accelerate the war between the two Archons, and it was he who provided Salaine Morn with the means to acquire the Mandrake who slew Zaergarn. When the dust settled, the Haemonculus was victorious. With Salaine banished and Zaergarn's spirit trapped inside The Soul Reaver, Drecarus is now master of the Nexus of Shadows, and rules through subtle manipulation of Zaergarn's Kabal of the Splintered Talon, which does not even yet suspect its true lord's death.",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 53,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 59,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 36,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 49,
+        "unnatural": 8
+      },
+      "agility": {
+        "base": 49,
+        "unnatural": 12
+      },
+      "intelligence": {
+        "base": 64,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 58,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 49,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 38,
+        "unnatural": 0
+      }
+    },
+    "wounds": 24,
+    "movement": "4/8/12/24",
+    "skills": [
+      [
+        "Awareness",
+        20
+      ],
+      [
+        "Chem-Use",
+        20
+      ],
+      [
+        "Command",
+        20
+      ],
+      [
+        "Common Lore (Dark Eldar)",
+        20
+      ],
+      [
+        "Dodge",
+        0
+      ],
+      [
+        "Forbidden Lore (Mutants)",
+        10
+      ],
+      [
+        "Forbidden Lore (Xenos)",
+        10
+      ],
+      [
+        "Interrogation",
+        20
+      ],
+      [
+        "Intimidate",
+        20
+      ],
+      [
+        "Literacy",
+        10
+      ],
+      [
+        "Medicae",
+        20
+      ],
+      [
+        "Scholastic Lore (Beasts)",
+        10
+      ],
+      [
+        "Silent Move",
+        0
+      ],
+      [
+        "Sleight of Hand",
+        0
+      ],
+      [
+        "Tech-Use",
+        20
+      ],
+      [
+        "Trade (Chymist)",
+        20
+      ]
+    ],
+    "talents": [
+      "Ambidextrous",
+      "Autosanguine",
+      "Catfall",
+      "Chem Geld",
+      "Dark Soul",
+      "Decadence",
+      "Disciple of Shiamesh",
+      "Die Hard",
+      "Disturbing Voice",
+      "Dual Shot",
+      "Exotic Weapon Training (Reaver's Fang, Stinger Pistol)",
+      "Gunslinger",
+      "Infused Knowledge",
+      "Iron Jaw",
+      "Jaded",
+      "Marksman",
+      "Master Chirurgeon",
+      "Paranoia",
+      "Prosanguine",
+      "Resistance (Cold, Fear, Heat, Psychic Techniques)",
+      "Swift Attack",
+      "Takedown",
+      "Talented (Chem-Use, Interrogation, Medicae)",
+      "Touched by the Fates",
+      "Total Recall",
+      "Two Weapon Wielder (Ballistic, Melee)"
+    ],
+    "traits": [
+      "Altered Physique",
+      "Dark Sight",
+      "Multiple Limbs",
+      "Power Through Pain",
+      "Touched by the Fates",
+      "Unnatural Agility (x3)",
+      "Unnatural Toughness (x2)"
+    ],
+    "weapons_text": "Two custom stinger pistols† (Pistol; 30m; S/-/-; 1d10+8 R; Pen 3; Clip 18; Rld 2 Full; Felling [2], Toxic), reaver's fang (Melee; 2d5+9 R; Pen 2; Felling [2], Tearing, Toxic).",
+    "armour_text": "Gnarlskin (2 All).",
+    "gear_text": "",
+    "portrait_ref": null,
+    "ws_line": 3417,
+    "source_book": "roguetrader_thesoulreaver.pdf"
+  },
+  {
+    "name": "Succubus Anyalra",
+    "slug": "succubus-anyalra",
+    "faction": "",
+    "description": "",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 73,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 56,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 46,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 37,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 72,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 44,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 51,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 47,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 49,
+        "unnatural": 0
+      }
+    },
+    "wounds": 18,
+    "movement": "7/14/21/42",
+    "skills": [],
+    "talents": [],
+    "traits": [],
+    "weapons_text": "",
+    "armour_text": "Wychsuit (All 2).",
+    "gear_text": "",
+    "portrait_ref": "img-82.jpeg",
+    "ws_line": 3451,
+    "source_book": "roguetrader_thesoulreaver.pdf"
+  },
+  {
+    "name": "Archon Zaergarn Kul",
+    "slug": "archon-zaergarn-kul",
+    "faction": "",
+    "description": "",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 68,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 61,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 49,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 38,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 66,
+        "unnatural": 18
+      },
+      "intelligence": {
+        "base": 52,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 50,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 59,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 14,
+        "unnatural": 0
+      }
+    },
+    "wounds": 22,
+    "movement": "6/12/18/36",
+    "skills": [
+      [
+        "Acrobatics",
+        10
+      ],
+      [
+        "Awareness",
+        20
+      ],
+      [
+        "Intimidate",
+        20
+      ]
+    ],
+    "talents": [
+      "Combat Master",
+      "Crippling Strike",
+      "Crushing Blow",
+      "Dark Soul",
+      "Die Hard",
+      "Disturbing Voice",
+      "Exotic Weapon Training (Blast Pistol, Agoniser Talon)",
+      "Hard Target",
+      "Heightened Senses (Hearing, Sight)",
+      "Iron Discipline",
+      "Jaded",
+      "Kabalite Weapon Training",
+      "Lightning Attack",
+      "Lightning Reflexes",
+      "Mighty Shot",
+      "Paranoia",
+      "Rapid Reaction",
+      "Resistance (Poison, Psychic Techniques)",
+      "Sprint",
+      "Strong Minded",
+      "Swift Attack"
+    ],
+    "traits": [
+      "Dark Sight",
+      "From Beyond Power Through Pain",
+      "Unnatural Agility (x3)"
+    ],
+    "weapons_text": "Blast pistol (Pistol; 20m; S/--/--; 2d10+7 X; Pen 20; Clip 8; Rld 2 Full; Felling [1], Proven [2]), Best Craftsmanship agoniser talon (Melee; 1d10+9 R; Pen 7; Shocking, Tearing).",
+    "armour_text": "Kabalite armour (All 4).",
+    "gear_text": "",
+    "portrait_ref": "img-82.jpeg",
+    "ws_line": 3497,
+    "source_book": "roguetrader_thesoulreaver.pdf"
+  },
+  {
+    "name": "Kabalite Warrior",
+    "slug": "kabalite-warrior",
+    "faction": "",
+    "description": "",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 41,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 41,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 39,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 34,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 52,
+        "unnatural": 10
+      },
+      "intelligence": {
+        "base": 33,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 45,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 31,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 28,
+        "unnatural": 0
+      }
+    },
+    "wounds": 10,
+    "movement": "5/10/15/30",
+    "skills": [
+      [
+        "Acrobatics",
+        0
+      ],
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Chem-Use",
+        0
+      ],
+      [
+        "Common Lore (Dark Eldar)",
+        0
+      ],
+      [
+        "Deceive",
+        0
+      ],
+      [
+        "Dodge",
+        0
+      ],
+      [
+        "Intimidate",
+        10
+      ],
+      [
+        "Silent Move",
+        0
+      ],
+      [
+        "Sleight of Hand",
+        0
+      ]
+    ],
+    "talents": [
+      "Catfall",
+      "Dark Soul",
+      "Deadeye Shot",
+      "Hard Target",
+      "Heightened Senses (Hearing, Sight)",
+      "Kabalite Weapon Training",
+      "Lightning Reflexes",
+      "Pity the Weak",
+      "Sprint"
+    ],
+    "traits": [
+      "Dark Sight",
+      "Power Through Pain",
+      "Unnatural Agility (x2)"
+    ],
+    "weapons_text": "Splinter rifle (Basic; 80m; S/3/5; 1d10+2 R; Pen 3; Clip 200; Rld 2 Full; Toxic) or (Melee; 1d10+3 R; Pen 2), mono-blade (Melee; 1d5+3 R; Pen 2).",
+    "armour_text": "Kabalite armour (All 4).",
+    "gear_text": "Assorted grisly trophies, 2 clips of splinter rifle rounds.",
+    "portrait_ref": null,
+    "ws_line": 3524,
+    "source_book": "roguetrader_thesoulreaver.pdf"
+  },
+  {
+    "name": "Kabalite Trueborn",
+    "slug": "kabalite-trueborn",
+    "faction": "",
+    "description": "Unlike the exiled Shadowed Thorns Kabal, the Kabal of the Splintered Talon has long maintained a large cadre of Kabalite Trueborn. Trueborn are raised to regard those around them with contempt and derision, viewing themselves as superior. To their credit, this is often the case, with the long and ruthless upbringing of a Trueborn child creating a killer with prowess equal to its arrogance and ambition.\n\nAmongst the Splintered Talon Kabal, rapid-firing shardcarbines and long, serrated blades of exquisite quality are some of the most fashionable weapons. Beyond the easy reach of many half-born warriors, these deadly implements form the common armament of many Trueborn within the Kabal. However, the wealth and power of even the least influential of Trueborn is sufficient for them to enter battle with deadlier and more exotic weaponry more often, and many choose to carry splinter cannons, shredders, blasters, and dark lances with which to obliterate their prey.",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 46,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 46,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 44,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 34,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 57,
+        "unnatural": 10
+      },
+      "intelligence": {
+        "base": 33,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 45,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 36,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 44,
+        "unnatural": 0
+      }
+    },
+    "wounds": 12,
+    "movement": "5/10/15/30",
+    "skills": [
+      [
+        "Acrobatics",
+        10
+      ],
+      [
+        "Awareness",
+        10
+      ],
+      [
+        "Chem-Use",
+        0
+      ],
+      [
+        "Command",
+        0
+      ],
+      [
+        "Common Lore (Dark Eldar)",
+        0
+      ],
+      [
+        "Dodge",
+        10
+      ],
+      [
+        "Intimidate",
+        20
+      ],
+      [
+        "Silent Move",
+        0
+      ],
+      [
+        "Sleight of Hand",
+        0
+      ]
+    ],
+    "talents": [
+      "Catfall",
+      "Combat Master",
+      "Dark Soul",
+      "Deadeye Shot",
+      "Hard Target",
+      "Heightened Senses (Hearing, Sight)",
+      "Kabalite Weapon Training",
+      "Lightning Reflexes",
+      "Mighty Shot",
+      "Pity the Weak",
+      "Sprint"
+    ],
+    "traits": [
+      "Dark Sight",
+      "Power Through Pain",
+      "Unnatural Agility (x2)"
+    ],
+    "weapons_text": "Shardcarbine (Basic; 60m; S/3/5; 1d10+4 R; Pen 3; Clip 200; Rld 2 Full; Storm, Toxic), Best Craftsmanship mono-sword (Melee; 1d10+5 R; Pen 2; Balanced), 3 Eldar plasma grenades (Thrown; 12m; 1d10+8 E; Pen 4; Blast [3], Shocking).",
+    "armour_text": "Kabalite armour (All 4) **Total TB:** 3",
+    "gear_text": "Assorted grisly trophies, 2 clips of shardcarbine rounds.",
+    "portrait_ref": null,
+    "ws_line": 3549,
+    "source_book": "roguetrader_thesoulreaver.pdf"
+  },
+  {
+    "name": "Reaver",
+    "slug": "reaver",
+    "faction": "",
+    "description": "Riding sleek, swift jetbikes, Reaver are obsessed with killing at speed, and they crave nothing so much as the thrill of taking a life while travelling at breakneck velocities. Whether slaughtering whimpering lesser races during a realspace raid or eviscerating their rivals in a death-race high above the streets, Reavers find joy only by turning their skill as pilots to murderous ends.\n\nSeveral small Reaver sects gather to the arena of the Withered Blade. Their deadly sport takes place high above the stands amidst razor-sharp obstacles, often simultaneously with the gladiatorial bouts far below. More than a few clashes on the gore-caked sands of the arena floor have been enlivened by a splatter of blood and a shower of body parts and jetbike pieces plummeting from above.\n\nSometimes the Reavers who fly above the Shadowspine Pits descend to slaughter combatants or even members of the audience in murderous flybys, much to the amusement of those spectators who they have not just eviscerated.",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 51,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 43,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 33,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 62,
+        "unnatural": 12
+      },
+      "intelligence": {
+        "base": 33,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 48,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 36,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 30,
+        "unnatural": 0
+      }
+    },
+    "wounds": 9,
+    "movement": "6/12/18/36",
+    "skills": [
+      [
+        "Awareness",
+        20
+      ],
+      [
+        "Common Lore (Dark Eldar)",
+        10
+      ],
+      [
+        "Dodge",
+        10
+      ],
+      [
+        "Drive (Skimmer)",
+        10
+      ],
+      [
+        "Intimidate",
+        10
+      ],
+      [
+        "Pilot (Flyers)",
+        10
+      ]
+    ],
+    "talents": [
+      "Catfall",
+      "Crippling Strike",
+      "Dark Soul",
+      "Exotic Weapon Training (Splinter Pistol, Splinter Rifle)",
+      "Heightened Senses (Hearing, Sight)",
+      "Lightning Reflexes",
+      "Melee Weapon Training (Primitive)",
+      "Paranoia",
+      "Step Aside"
+    ],
+    "traits": [
+      "Dark Sight",
+      "Power Through Pain",
+      "Unnatural Agility (x2)"
+    ],
+    "weapons_text": "Splinter pistol (Pistol; 30m; S/3/–; 1d10+2 R; Pen 3; Clip 120; Rld 2 Full; Toxic) or (Melee; 1d5+3 R; Pen 2), mono-knife (Melee; 1d5+3 R; Pen 2).",
+    "armour_text": "Wychsuit (All 2) **Total TB:** 3",
+    "gear_text": "Grisly prizes wrested from their prey, combat drugs (see page 116), Reaver jetbike (see page 139).",
+    "portrait_ref": "img-83.jpeg",
+    "ws_line": 3575,
+    "source_book": "roguetrader_thesoulreaver.pdf"
+  },
+  {
+    "name": "Wych",
+    "slug": "wych",
+    "faction": "",
+    "description": "",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 48,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 41,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 44,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 36,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 61,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 33,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 45,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 31,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 28,
+        "unnatural": 0
+      }
+    },
+    "wounds": 0,
+    "movement": "6/12/18/36 Grounds: 10",
+    "skills": [
+      [
+        "Acrobatics",
+        10
+      ],
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Chem-Use",
+        0
+      ],
+      [
+        "Common Lore (Dark Eldar)",
+        0
+      ],
+      [
+        "Deceive",
+        0
+      ],
+      [
+        "Dodge",
+        20
+      ],
+      [
+        "Intimidate",
+        10
+      ],
+      [
+        "Silent Move",
+        0
+      ],
+      [
+        "Sleight of Hand",
+        0
+      ]
+    ],
+    "talents": [
+      "Ambidextrous",
+      "Catfall",
+      "Combat Master",
+      "Dark Soul",
+      "Exotic Weapon Training (Splinter Pistol, Wych Knife)",
+      "Hard Target",
+      "Heightened Senses (Hearing, Sight)",
+      "Lightning Reflexes",
+      "Pity the Weak",
+      "Precise Blow",
+      "Sprint",
+      "Sure Strike",
+      "Two-Weapon Wielder (Ballistic, Melee)",
+      "Unarmed Warrior"
+    ],
+    "traits": [
+      "Dark Sight",
+      "Power Through Pain",
+      "Unnatural Agility (x2)"
+    ],
+    "weapons_text": "Splinter pistol (Pistol; 30m; S/3/–; 1d10+2 R; Pen 3; Clip 120; Rld 2 Full; Toxic) or (Melee; 1d5+4 R; Pen 2), wych knife (Melee; 1d10+4 R; Pen 3; Razor-Sharp), unarmed attacks (Melee; 1d10+1 R; Primitive).",
+    "armour_text": "Wychsuit (All 2). **Total TB:** 3",
+    "gear_text": "1 dose of combat drugs (see page 116).",
+    "portrait_ref": "img-83.jpeg",
+    "ws_line": 3603,
+    "source_book": "roguetrader_thesoulreaver.pdf"
+  },
+  {
+    "name": "Hekatrix Bloodbride",
+    "slug": "hekatrix-bloodbride",
+    "faction": "",
+    "description": "",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 53,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 41,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 51,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 36,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 61,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 33,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 45,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 36,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 36,
+        "unnatural": 0
+      }
+    },
+    "wounds": 0,
+    "movement": "6/12/18/36 Grounds: 13",
+    "skills": [
+      [
+        "Acrobatics",
+        20
+      ],
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Charm",
+        0
+      ],
+      [
+        "Chem-Use",
+        0
+      ],
+      [
+        "Common Lore (Dark Eldar)",
+        0
+      ],
+      [
+        "Deceive",
+        0
+      ],
+      [
+        "Dodge",
+        20
+      ],
+      [
+        "Intimidate",
+        10
+      ],
+      [
+        "Silent Move",
+        0
+      ],
+      [
+        "Sleight of Hand",
+        0
+      ]
+    ],
+    "talents": [
+      "Assassin Strike",
+      "Ambidextrous",
+      "Catfall",
+      "Combat Master",
+      "Dark Soul",
+      "Exotic Weapon Training (Splinter Pistol, Hydra Gauntlet, Razorflail, Wych Knife)",
+      "Hard Target",
+      "Heightened Senses (Hearing, Sight)",
+      "Lightning Reflexes",
+      "Pity the Weak",
+      "Precise Blow",
+      "Sprint",
+      "Step Aside",
+      "Sure Strike",
+      "Swift Attack",
+      "Two-Weapon Wielder (Ballistic, Melee)",
+      "Unarmed Master",
+      "Unarmed Warrior"
+    ],
+    "traits": [
+      "Dark Sight",
+      "Power Through Pain",
+      "Unnatural Agility (x2)"
+    ],
+    "weapons_text": "Splinter pistol (Pistol; 30m; S/3/–; 1d10+2 R; Pen 3; Clip 120; Rld 2 Full; Toxic) or (Melee; 1d5+5 R; Pen 2), wych knife (Melee; 1d10+5 R; Pen 3, Razor-Sharp), unarmed attacks (Melee; 1d10+5 R; Pen 0).",
+    "armour_text": "Wychsuit (All 2). **Total TB:** 3",
+    "gear_text": "1 dose of combat drugs (see page 116).",
+    "portrait_ref": "img-84.jpeg",
+    "ws_line": 3628,
+    "source_book": "roguetrader_thesoulreaver.pdf"
+  },
+  {
+    "name": "Wych Beastmaster",
+    "slug": "wych-beastmaster",
+    "faction": "",
+    "description": "Though officially part of the Cult of the Withered Blade, the Beastmasters are a world apart from the Hekatarii. Almost universally male and isolated from the rest of the cult, the Beastmasters are regarded more as a necessity than valued members, for none but the Beastmasters can drive forth the beasts and slaves into the arena with such cruel efficiency.\n\nEach Beastmaster is blessed with a powerful and commanding presence, and even the mightiest and deadliest of beasts will hesitate at a Beastmaster's scornful glare and the way his hand tightens around the handle of his lash. Weapons that inflict debilitating shocks to a target are favoured tools of Beastmasters, allowing them to cow their charges into submission and savour the pain and helplessness that such devices inflict.",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 48,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 41,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 46,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 41,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 57,
+        "unnatural": 10
+      },
+      "intelligence": {
+        "base": 48,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 45,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 42,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 46,
+        "unnatural": 0
+      }
+    },
+    "wounds": 12,
+    "movement": "6/12/18/36",
+    "skills": [
+      [
+        "Acrobatics",
+        10
+      ],
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Chem-Use",
+        0
+      ],
+      [
+        "Command",
+        10
+      ],
+      [
+        "Common Lore (Dark Eldar)",
+        0
+      ],
+      [
+        "Deceive",
+        0
+      ],
+      [
+        "Dodge",
+        10
+      ],
+      [
+        "Intimidate",
+        20
+      ],
+      [
+        "Pilot (Personal)",
+        0
+      ],
+      [
+        "Silent Move",
+        0
+      ],
+      [
+        "Sleight of Hand",
+        0
+      ],
+      [
+        "Wrangling",
+        20
+      ]
+    ],
+    "talents": [
+      "Air of Authority",
+      "Ambidextrous",
+      "Catfall",
+      "Combat Master",
+      "Dark Soul",
+      "Disturbing Voice",
+      "Exotic Weapon Training (Splinter Pod)",
+      "Hard Target",
+      "Heightened Senses (Hearing, Sight)",
+      "Iron Jaw",
+      "Jaded",
+      "Lightning Reflexes",
+      "Melee Weapon Training (Primitive)",
+      "Pity the Weak",
+      "Sprint",
+      "Sure Strike",
+      "Takedown",
+      "Two-Weapon Wielder (Ballistic, Melee)",
+      "Unarmed Warrior"
+    ],
+    "traits": [
+      "Dark Sight",
+      "Power Through Pain",
+      "Unnatural Agility (x2)"
+    ],
+    "weapons_text": "Skyboard-mounted splinter pods (Heavy; 50m; S/3/–; 1d10+2 R; Pen 3; Clip 500; Rld –; Storm, Toxic), agoniser lash (Melee; 3m; 1d10+7 R; Pen 6; Flexible, Shocking, Tearing).",
+    "armour_text": "Wychsuit and skyboard (All 4).",
+    "gear_text": "Skyboard, dominion mask† †Dominion Mask: The wearer of a dominion mask may re-roll failed Intimidate and Wrangling Tests.",
+    "portrait_ref": "img-84.jpeg",
+    "ws_line": 3661,
+    "source_book": "roguetrader_thesoulreaver.pdf"
+  },
+  {
+    "name": "Hellion",
+    "slug": "hellion",
+    "faction": "",
+    "description": "Where Dark Eldar gather, Hellion gangs are sure to form. Exiled miscreants, feral adolescents, and those scornful of the rule of the Kabals, Hellion gangs roam the skies at will, surviving in whatever ways they can and resentful of any with power, prestige, or privilege. Mounted upon shrieking skyboards, their reflexes and senses heightened by powerful combat drugs, and armed with razor-sharp hellglaives, Hellions are an unpredictable danger to anyone who strays into their domains.\n\nTwo dozen or so major Hellion gangs haunt the territories of the Splintered Talon and the Withered Blade, while many more form and collapse within short spans of time, their members absorbed into larger, more powerful gangs or cast to the distant streets below. These gangs sometimes join in the realspace raids launched by the Kabal of the Splintered Talon or the Cult of the Withered Blade, but each group considers itself independent from these powerful organisations.",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 43,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 41,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 44,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 36,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 59,
+        "unnatural": 10
+      },
+      "intelligence": {
+        "base": 33,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 45,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 29,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 28,
+        "unnatural": 0
+      }
+    },
+    "wounds": 11,
+    "movement": "6/12/18/36",
+    "skills": [
+      [
+        "Acrobatics",
+        10
+      ],
+      [
+        "Awareness",
+        10
+      ],
+      [
+        "Chem-Use",
+        0
+      ],
+      [
+        "Common Lore (Dark Eldar)",
+        0
+      ],
+      [
+        "Deceive",
+        0
+      ],
+      [
+        "Dodge",
+        10
+      ],
+      [
+        "Intimidate",
+        10
+      ],
+      [
+        "Pilot (Personal)",
+        10
+      ],
+      [
+        "Silent Move",
+        0
+      ],
+      [
+        "Sleight of Hand",
+        0
+      ]
+    ],
+    "talents": [
+      "Assassin Strike",
+      "Ambidextrous",
+      "Catfall",
+      "Dark Soul",
+      "Exotic Weapon Training (Hellglaive, Splinter Pod)",
+      "Hard Target",
+      "Heightened Senses (Hearing, Sight)",
+      "Lightning Reflexes",
+      "Pity the Weak",
+      "Sprint",
+      "Sure Strike",
+      "Two-Weapon Wielder (Ballistic, Melee)"
+    ],
+    "traits": [
+      "Dark Sight",
+      "Power Through Pain",
+      "Unnatural Agility (x2)"
+    ],
+    "weapons_text": "Skyboard-mounted splinter pods (Heavy; 50m; S/3/–; 1d10+2 R; Pen 3; Clip 500; Rld –; Storm, Toxic), hellglaive (Melee; 1d10+7 R; Pen 3; Razor-Sharp).",
+    "armour_text": "Wychsuit and skyboard (All 4).",
+    "gear_text": "Skyboard, 1 dose of combat drugs (see page 116).",
+    "portrait_ref": "img-84.jpeg",
+    "ws_line": 3683,
+    "source_book": "roguetrader_thesoulreaver.pdf"
+  },
+  {
+    "name": "Scourge",
+    "slug": "scourge",
+    "faction": "",
+    "description": "Flitting between the towering spires of Kabals, the arena complexes of Wyches, and the dank dungeons of Haemonculi, Scourges have seen the full extent of Dark Eldar society and soar contemptuously above it all. Each has been subjected to agonising augmentative and transformative surgeries, grafting great wings to their shoulders, augmenting their flesh with synth-muscle and adrenaline dispensers, and hollowing their bones so that each Scourge can truly fly. Even after these gruelling procedures, a Scourge's ascension is incomplete, for the newly transformed Dark Eldar must soar to the eyries of their new kin upon blood-soaked wings still raw from their implantation, surviving the perils of Hellion gangs and the high-speed hunts of Reavers and Razorwings. Only once this vertical pilgrimage is complete can they truly be called Scourges.\n\nScourges serve as messengers for the powerful, carrying venom-sealed missives. The recipient has the only means to cure the courier and open the message. This role gives the Scourges great freedom and power, for to slay a Scourge while he performs his duties is punishable by the most creative and painful of deaths. In battle, Scourges favour long-ranged weaponry, unwilling to risk their fragile augmented bodies to the fury of melee, and a flight of Scourges can deliver that firepower to the enemy swiftly and from unexpected angles. The patronage of powerful Archons and Succubi allows a Scourge to afford some of the deadliest and most exotic weaponry, from toxic shardcarbines, to vicious shredders, deadly blasters, and even haywire blasters and heat lances.",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 42,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 48,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 46,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 55,
+        "unnatural": 10
+      },
+      "intelligence": {
+        "base": 33,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 48,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 36,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 32,
+        "unnatural": 0
+      }
+    },
+    "wounds": 10,
+    "movement": "",
+    "skills": [
+      [
+        "Acrobatics",
+        10
+      ],
+      [
+        "Awareness",
+        20
+      ],
+      [
+        "Common Lore (Dark Eldar)",
+        10
+      ],
+      [
+        "Dodge",
+        10
+      ],
+      [
+        "Intimidate",
+        10
+      ],
+      [
+        "Silent Move",
+        10
+      ],
+      [
+        "Sleight of Hand",
+        0
+      ]
+    ],
+    "talents": [
+      "Bulging Biceps",
+      "Catfall",
+      "Dark Soul",
+      "Deadeye Shot",
+      "Hard Target",
+      "Heightened Senses (Hearing, Sight)",
+      "Hip Shooting",
+      "Kabalite Weapon Training",
+      "Lightning Reflexes",
+      "Mighty Shot",
+      "Pity the Weak",
+      "Sprint"
+    ],
+    "traits": [
+      "Dark Sight",
+      "Flyer (12)",
+      "Power Through Pain",
+      "Unnatural Agility (x2)"
+    ],
+    "weapons_text": "Shardcarbine (Basic; 60m; S/3/5; 1d10+4 R; Pen 3; Clip 200; Rld 2 Full; Storm, Toxic), mono-blade (Melee; 1d5+4 R; Pen 2), 3 Eldar plasma grenades (Thrown; 12m; 1d10+8 E; Pen 4; Blast [3], Shocking).",
+    "armour_text": "Ghostplate (All 6, PR 20).",
+    "gear_text": "Assorted grisly trophies, 2 clips of shardcarbine rounds.",
+    "portrait_ref": null,
+    "ws_line": 3714,
+    "source_book": "roguetrader_thesoulreaver.pdf"
+  },
+  {
+    "name": "Wrack",
+    "slug": "wrack",
+    "faction": "",
+    "description": "Drecarus and his coven have countless thousands of assistants, collectively known as Wracks. These degraded, twisted beings no longer resemble the Dark Eldar they once were, but rather the abominations they have chosen to become, resorting to gruesome transformative surgeries in order to stave off the ennui that comes from centuries of debauched experience.\n\nWracks one day hope to ascend to the ranks of the Haemonculi themselves, though whether or not any amongst them has ever done so is unknown. The Haemonculi, careful with their secrets and essentially immortal, have little room for rivals, only servants, slaves, and subjects. Each Wrack is, however, a capable torturer, alchemist, and physician in its own right, for few Haemonculi are inclined to the indignities of manual labour and instead command their minions to perform the procedures they direct. Some Wracks take the bizarre, specialised results of their masters' dark science onto the battlefield, and equip themselves with liquifier guns, hekrifles, and even stranger contraptions that bring death and pain to their enemies.",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 47,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 43,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 46,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 41,
+        "unnatural": 8
+      },
+      "agility": {
+        "base": 41,
+        "unnatural": 8
+      },
+      "intelligence": {
+        "base": 42,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 48,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 36,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 12,
+        "unnatural": 0
+      }
+    },
+    "wounds": 19,
+    "movement": "4/8/12/24",
+    "skills": [
+      [
+        "Awareness",
+        10
+      ],
+      [
+        "Chem-Use",
+        20
+      ],
+      [
+        "Common Lore (Dark Eldar)",
+        10
+      ],
+      [
+        "Dodge",
+        0
+      ],
+      [
+        "Interrogate",
+        10
+      ],
+      [
+        "Intimidate",
+        20
+      ],
+      [
+        "Medicae",
+        10
+      ],
+      [
+        "Sleight of Hand",
+        0
+      ]
+    ],
+    "talents": [
+      "Ambidextrous",
+      "Autosanguine",
+      "Catfall",
+      "Crushing Blow",
+      "Dark Soul",
+      "Disturbing Voice",
+      "Heightened Senses (Hearing, Sight)",
+      "Jaded",
+      "Melee Weapon Training (Primitive)",
+      "Pity the Weak",
+      "Two-Weapon Wielder (Melee)"
+    ],
+    "traits": [
+      "Altered Physique",
+      "Dark Sight",
+      "Multiple Arms",
+      "Power Through Pain",
+      "Unnatural Agility (x2)",
+      "Unnatural Toughness (x2)"
+    ],
+    "weapons_text": "Envenomed blades, talons and injector-claws (Melee; 1d10+6 R; Pen 2; Tearing, Toxic).",
+    "armour_text": "Gnarlskin (All 2).",
+    "gear_text": "Surgical tools, phials of blood, bile, tissue samples.",
+    "portrait_ref": null,
+    "ws_line": 3734,
+    "source_book": "roguetrader_thesoulreaver.pdf"
+  },
+  {
+    "name": "Grotesque",
+    "slug": "grotesque",
+    "faction": "",
+    "description": "",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 49,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 16,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 47,
+        "unnatural": 12
+      },
+      "toughness": {
+        "base": 56,
+        "unnatural": 10
+      },
+      "agility": {
+        "base": 38,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 15,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 22,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 8,
+        "unnatural": 0
+      }
+    },
+    "wounds": 40,
+    "movement": "4/8/12/24",
+    "skills": [
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Intimidate",
+        20
+      ]
+    ],
+    "talents": [
+      "Autosanguine",
+      "Berserk Charge",
+      "Crushing Blow",
+      "Dark Soul",
+      "Die Hard",
+      "Disturbing Voice",
+      "Fearless",
+      "Frenzy",
+      "Heightened Senses (Hearing, Sight)",
+      "Iron Jaw",
+      "Jaded",
+      "Melee Weapon Training (Primitive)",
+      "Pity the Weak",
+      "Two-Weapon Wielder (Melee)"
+    ],
+    "traits": [
+      "Altered Physique",
+      "Dark Sight",
+      "Fear (1)",
+      "Hulking",
+      "Power Through Pain",
+      "Unnatural Agility (x2)",
+      "Unnatural Strength (x3)",
+      "Unnatural Toughness (x2)"
+    ],
+    "weapons_text": "Cleaver (Melee; 2d10+14 R; Pen 2; Unbalanced).",
+    "armour_text": "Gnarlskin (All 2).",
+    "gear_text": "Stimulant injectors†.",
+    "portrait_ref": "img-85.jpeg",
+    "ws_line": 3762,
+    "source_book": "roguetrader_thesoulreaver.pdf"
+  },
+  {
+    "name": "Cronos Parasite Engine",
+    "slug": "cronos-parasite-engine",
+    "faction": "",
+    "description": "",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 32,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 49,
+        "unnatural": 12
+      },
+      "toughness": {
+        "base": 59,
+        "unnatural": 15
+      },
+      "agility": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 18,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 29,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 36,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 2,
+        "unnatural": 0
+      }
+    },
+    "wounds": 60,
+    "movement": "",
+    "skills": [
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Dodge",
+        0
+      ],
+      [
+        "Intimidate",
+        0
+      ]
+    ],
+    "talents": [
+      "Crushing Blow",
+      "Die Hard",
+      "Fearless",
+      "Frenzy",
+      "Iron Jaw",
+      "Melee Weapon Training (Primitive)",
+      "Pity the Weak",
+      "Swift Attack",
+      "Two-Weapon Wielder (Ballistic, Melee)"
+    ],
+    "traits": [
+      "Brutal Charge",
+      "Dark Sight",
+      "Fear (2)",
+      "Hoverer (4)",
+      "Multiple Arms",
+      "Power Through Pain",
+      "Size (Massive)",
+      "Strange Physiology",
+      "Unnatural Strength (x3)",
+      "Unnatural Toughness (x3)"
+    ],
+    "weapons_text": "Spirit Probes (Melee; 1d10+12, Pen 4; Shocking, Temporal Leech†), Spirit Siphon (Basic; 20m; 1d10+8; Pen 4; Spray††, Temporal Leech†), Spirit Vortex (Basic; 30m; 1d10+6, Pen 4; Blast [5], Temporal Leech†).",
+    "armour_text": "Armoured carapace (All 10) Total TB: 15",
+    "gear_text": "",
+    "portrait_ref": "img-85.jpeg",
+    "ws_line": 3786,
+    "source_book": "roguetrader_thesoulreaver.pdf"
+  },
+  {
+    "name": "Anguished Eldar",
+    "slug": "anguished-eldar",
+    "faction": "Eldar",
+    "description": "Rare enough commodities within most Dark Eldar settlements, few Craftworlders or Exodites ever reach the gladiatorial arenas of the Nexus of Shadows. Most are claimed by powerful Dark Eldar as prizes or tributes, their potent souls and intense emotions savoured amidst the petty agony of lesser beings, while others are given to the Haemonculi, who employ their flesh as raw materials while distilling their spirits are into potent elixirs.\n\nOnly those few Eldar captured by the Cult of the Withered Blade, and those few given to the Cult's Succubi, ever find their way to the Shadowspine Pits. The mightiest of them have endured countless battles and have lost themselves in the hate and fury of the arena, and have little care for their own lives. Each is permitted to keep his spirit stone, to be defiled, rent open, devoured by his killer, a sensation unlike any other and a reward worthy of the finest performance.",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 46,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 43,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 36,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 32,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 51,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 37,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 45,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 47,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 31,
+        "unnatural": 0
+      }
+    },
+    "wounds": 10,
+    "movement": "5/10/15/30",
+    "skills": [
+      [
+        "Acrobatics",
+        10
+      ],
+      [
+        "Awareness",
+        10
+      ],
+      [
+        "Common Lore (Dark Eldar)",
+        0
+      ],
+      [
+        "Common Lore (Eldar)",
+        10
+      ],
+      [
+        "Dodge",
+        10
+      ],
+      [
+        "Silent Move",
+        0
+      ]
+    ],
+    "talents": [
+      "Catfall",
+      "Exotic Weapon Training (Shuriken Catapult, Shuriken Pistol, Splinter Pistol)",
+      "Hard Target",
+      "Hatred (Dark Eldar)",
+      "Heightened Senses (Hearing, Sight)",
+      "Jaded",
+      "Lightning Reflexes",
+      "Melee Weapon Training (Primitive)",
+      "Sprint",
+      "Touched by the Bloody Hand†"
+    ],
+    "traits": [
+      "Unnatural Agility (x2)"
+    ],
+    "weapons_text": "",
+    "armour_text": "Rough leathers (Arms 2, Body 2).",
+    "gear_text": "",
+    "portrait_ref": null,
+    "ws_line": 3813,
+    "source_book": "roguetrader_thesoulreaver.pdf"
+  },
+  {
+    "name": "Brutalised Tau Fire Warrior",
+    "slug": "brutalised-tau-fire-warrior",
+    "faction": "Tau",
+    "description": "Although an impossibly rare sight within the Koronus Expanse, little is beyond the reach of the realspace raids of the Dark Eldar, and the distant Tau Empire is no exception. Regarded as little more than animals for sport and sustenance in the same ways as humans, Tau are sometimes captured in raids by the Dark Eldar of the Nexus of Shadows, more as a curiosity than for their actual worth, for the souls of Tau are pale, flickering things, meagre even compared to the sputtering light of the human spirit.\n\nThe Withered Blade has several dozen grey-skinned Tau warriors remaining within its dungeons, more as fodder for the beasts than for any real sport. Nonetheless, their efforts in the ring amuse Anyalra, who has watched with idle interest as these disciplined warriors have been whittled down to a bare few, surviving by wits and ferocity uncharacteristic of their kind in the circle's bloody conflicts.",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 26,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 34,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 31,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 32,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 32,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 37,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 33,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 34,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 31,
+        "unnatural": 0
+      }
+    },
+    "wounds": 10,
+    "movement": "2/4/6/12",
+    "skills": [
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Common Lore (Tau)",
+        0
+      ],
+      [
+        "Speak Language (Tau)",
+        0
+      ]
+    ],
+    "talents": [
+      "Exotic Weapon Training (Pulse Carbine, Pulse Rifle)",
+      "Heightened Senses (Smell)"
+    ],
+    "traits": [],
+    "weapons_text": "Mono-sword (Melee; 1d10+3 R; Pen 2; Balanced), bonding knife (Melee; 1d5+3; Primitive).",
+    "armour_text": "Rough leathers (Arms 2, Body 2).",
+    "gear_text": "None.",
+    "portrait_ref": "img-86.jpeg",
+    "ws_line": 3835,
+    "source_book": "roguetrader_thesoulreaver.pdf"
+  },
+  {
+    "name": "Tormented Human",
+    "slug": "tormented-human",
+    "faction": "",
+    "description": "Given their sheer numbers within the galaxy, humans make up the largest proportion of the inhabitants of the Withered Blade’s dungeons, and can be found participating in all manner of events. Whether they battle against the cult’s Wyches, struggle to fend off the onslaught of beasts, or swarm about as moving targets for the exhibition flights of Reavers, there are humans everywhere within the arena and beyond.\n\nAs is commonplace, the Withered Blade tends to trade away or otherwise discard those humans who will provide little sport—the spectacle of the arena is diminished if the victims cannot pose some challenge, no matter how slight, to the Wyches or the beasts, and a swift and easy kill is worth little prestige. Those who are weak of mind or body are swiftly traded away to Kabals or Haemonculi covens, for the Withered Blade seeks those with strength and a spark of fury to better serve their needs. As a result, most of those who find themselves in the Withered Blade’s dungeons are fighters, and already bear the scars of las-burn, bullet, and blade. They fight with the righteous hatred and the desperate ferocity of men whose lives were long ago given to battle.",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 38,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 38,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 36,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 37,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 34,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 28,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 31,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 34,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 29,
+        "unnatural": 0
+      }
+    },
+    "wounds": 10,
+    "movement": "3/6/9/18",
+    "skills": [
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Common Lore (Imperium)",
+        0
+      ],
+      [
+        "Intimidate",
+        0
+      ],
+      [
+        "Speak Language (Low Gothic)",
+        0
+      ]
+    ],
+    "talents": [
+      "Basic Weapon Training (Las, SP)",
+      "Hatred (Dark Eldar)",
+      "Melee Weapon Training (Primitive)",
+      "Nerves of Steel",
+      "Paranoia",
+      "Pistol Training (Las, SP)"
+    ],
+    "traits": [],
+    "weapons_text": "Mono-sword (Melee; 1d10+3 R; Pen 2; Balanced).",
+    "armour_text": "Rough leathers (Arms 2, Body 2).",
+    "gear_text": "None.",
+    "portrait_ref": "img-86.jpeg",
+    "ws_line": 3856,
+    "source_book": "roguetrader_thesoulreaver.pdf"
+  },
+  {
+    "name": "Domos Agnelain, Enslaved Magos Of The Adeptus Mechanicus",
+    "slug": "domos-agnelain-enslaved-magos-of-the-adeptus-mechanicus",
+    "faction": "",
+    "description": "Captured some decades ago, Magos-Errant Domos Agnelain was accompanying an Explorator mission into the Koronus Expanse in search of the Gaelan Sphere, when the vessel was attacked by a large group of Dark Eldar whilst performing maintenance rites after a somewhat tumultuous journey through the Warp and taken after a short battle. Over the following years, Agnelain saw his brethren mutilated and flensed down to little more than augmetic-enhanced skeletons driven by shattered minds, yet Agnelain alone was spared the worst of the torturers’ cruel attentions. He did not find out why until decades later—the Dark Eldar had discovered that he was the leader amongst the surviving Tech-Priests, if only by dint of his rank, and had spent years siphoning and pillaging lore from the minds of his subordinates before they reached the leader.\n\nAfter nearly forty years with a dwindling number of fellow captives for company, Agnelain’s mind had turned in on itself, focussing on the knowledge he had attained rather than face the horrors of his surroundings, until eventually his captors came for him as well. It took the Dark Eldar a matter of years to unlock the secrets of his mind and begin sifting through them to find anything of use. Domos patches up the slave warriors of the Withered Blade when he is not being called upon by the Cult to create monstrosities to tear the gladiators asunder yet again.",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 26,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 38,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 29,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 32,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 29,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 58,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 37,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 44,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 18,
+        "unnatural": 0
+      }
+    },
+    "wounds": 12,
+    "movement": "2/4/6/12",
+    "skills": [
+      [
+        "Common Lore (Machine Cult)",
+        10
+      ],
+      [
+        "Common Lore (Tech)",
+        10
+      ],
+      [
+        "Evaluate",
+        10
+      ],
+      [
+        "Forbidden Lore (Archeotech)",
+        20
+      ],
+      [
+        "Forbidden Lore (Adeptus Mechanicus)",
+        10
+      ],
+      [
+        "Literacy",
+        10
+      ],
+      [
+        "Logic",
+        10
+      ],
+      [
+        "Medicae",
+        0
+      ],
+      [
+        "Speak Language (Low Gothic)",
+        0
+      ],
+      [
+        "Speak Language (Techna-Lingua)",
+        20
+      ],
+      [
+        "Tech-Use",
+        20
+      ],
+      [
+        "Trade (Technomat)",
+        10
+      ]
+    ],
+    "talents": [
+      "Autosanguine",
+      "Basic Weapon Training (Universal)",
+      "Binary Chatter",
+      "Chem Geld",
+      "Crippled in Mind and Body†",
+      "Electrical Succour",
+      "Electrograft Use",
+      "Feedback Screech",
+      "Ferric Lure",
+      "Jaded",
+      "Logis Implant",
+      "Luminen Blast",
+      "Luminen Charge",
+      "Mechadendrite Use (Utility)",
+      "Melee Weapon Training (Universal)",
+      "Orthoproxy",
+      "The Flesh is Weak (3)",
+      "Total Recall"
+    ],
+    "traits": [
+      "Mechanics Implants"
+    ],
+    "weapons_text": "Rusty mechadendrites (Melee; 1d5–1 R; Pen 0).",
+    "armour_text": "Rusty cyber-mantle (All 4).",
+    "gear_text": "None.",
+    "portrait_ref": "img-86.jpeg",
+    "ws_line": 3875,
+    "source_book": "roguetrader_thesoulreaver.pdf"
+  },
+  {
+    "name": "Captain Anja Shen",
+    "slug": "captain-anja-shen",
+    "faction": "",
+    "description": "",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 44,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 38,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 34,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 42,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 34,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 34,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 37,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 42,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 36,
+        "unnatural": 0
+      }
+    },
+    "wounds": 15,
+    "movement": "4/8/12/24",
+    "skills": [
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Barter",
+        0
+      ],
+      [
+        "Charm",
+        0
+      ],
+      [
+        "Command",
+        10
+      ],
+      [
+        "Commerce",
+        0
+      ],
+      [
+        "Common Lore (Imperium)",
+        0
+      ],
+      [
+        "Common Lore (Merchant)",
+        0
+      ],
+      [
+        "Common Lore (Underworld)",
+        10
+      ],
+      [
+        "Deceive",
+        0
+      ],
+      [
+        "Dodge",
+        0
+      ],
+      [
+        "Evaluate",
+        0
+      ],
+      [
+        "Forbidden Lore (Pirates)",
+        10
+      ],
+      [
+        "Interrogate",
+        0
+      ],
+      [
+        "Intimidate",
+        0
+      ],
+      [
+        "Inquiry",
+        0
+      ],
+      [
+        "Navigation (Stellar)",
+        10
+      ],
+      [
+        "Pilot (Space Craft)",
+        0
+      ],
+      [
+        "Scholastic Lore (Astromancy)",
+        0
+      ],
+      [
+        "Security",
+        0
+      ],
+      [
+        "Sleight of Hand",
+        10
+      ],
+      [
+        "Speak Language (Low Gothic)",
+        0
+      ],
+      [
+        "Speak Language (Void Cant)",
+        0
+      ],
+      [
+        "Trade (Voidfarer)",
+        0
+      ]
+    ],
+    "talents": [
+      "Air of Authority",
+      "Basic Weapon Training (Universal)",
+      "Concealed Cavity",
+      "Decadence",
+      "Exotic Weapon Training (Digi-Laser)",
+      "Hatred (Dark Eldar, Imperial Navy)",
+      "Iron Discipline",
+      "Jaded",
+      "Light Sleeper",
+      "Melee Weapon Training (Primitive, Universal)",
+      "Nerves of Steel",
+      "Paranoia",
+      "Peer (Criminals)",
+      "Pistol Training (Las, SP)",
+      "Resistance (Fear)",
+      "Swift Attack"
+    ],
+    "traits": [],
+    "weapons_text": "Mono-sword (Melee; 1d10+3 R; Pen 2; Balanced), concealed digi-laser (Pistol; 3m; S/-/-; 1d10+3 E; Pen 7; Clip 1; Rld Full; Reliable).",
+    "armour_text": "Rough leathers (Arms 2, Body 2).",
+    "gear_text": "Good Craftsmanship bionic arm with small compartment, 3 digi-laser charge packs, one small effigy of Anyalra filled with sharp objects.",
+    "portrait_ref": null,
+    "ws_line": 3902,
+    "source_book": "roguetrader_thesoulreaver.pdf"
+  },
+  {
+    "name": "Brother-Sergeant Ludvos Tarn",
+    "slug": "brother-sergeant-ludvos-tarn",
+    "faction": "",
+    "description": "",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 58,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 56,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 49,
+        "unnatural": 8
+      },
+      "toughness": {
+        "base": 53,
+        "unnatural": 10
+      },
+      "agility": {
+        "base": 48,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 46,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 44,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 61,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 48,
+        "unnatural": 0
+      }
+    },
+    "wounds": 25,
+    "movement": "4/8/12/24",
+    "skills": [
+      [
+        "Awareness",
+        10
+      ],
+      [
+        "Command",
+        10
+      ],
+      [
+        "Common Lore (Imperium)",
+        0
+      ],
+      [
+        "Common Lore (War)",
+        10
+      ],
+      [
+        "Intimidate",
+        20
+      ],
+      [
+        "Scholastic Lore (Tactica Imperialis)",
+        0
+      ],
+      [
+        "Speak Language (High Gothic)",
+        0
+      ],
+      [
+        "Speak Language (Low Gothic)",
+        10
+      ]
+    ],
+    "talents": [
+      "Ambidextrous",
+      "Basic Weapon Training (Universal)",
+      "Bulging Biceps",
+      "Crippling Strike",
+      "Crushing Blow",
+      "Die Hard",
+      "Disarm",
+      "Duty Unto Death",
+      "Fearless",
+      "Hardy",
+      "Hatred (Dark Eldar)",
+      "Heightened Senses (Sight, Hearing)",
+      "Iron Discipline",
+      "Iron Jaw",
+      "Lightning Reflexes",
+      "Melee Weapon Training (Primitive, Universal)",
+      "Peer (Adeptus Astartes)",
+      "Pistol Training (Universal)",
+      "Resistance (Poisons, Psychic Techniques)",
+      "Swift Attack",
+      "True Grit",
+      "Two-Weapon Wielder (Ballistic, Melee)",
+      "Unarmed Master",
+      "Unarmed Warrior"
+    ],
+    "traits": [
+      "Unnatural Strength (x2)",
+      "Unnatural Toughness (x2)"
+    ],
+    "weapons_text": "2 mono-swords (Melee; 1d10+10 R; Pen 2; Balanced), unarmed attacks (Melee; 1d10+10 I; Pen 0).",
+    "armour_text": "Leathers (Arms 2, Body 2).",
+    "gear_text": "None.",
+    "portrait_ref": "img-87.jpeg",
+    "ws_line": 3925,
+    "source_book": "roguetrader_thesoulreaver.pdf"
+  },
+  {
+    "name": "Nashrik Hakh, Savage Kroot",
+    "slug": "nashrik-hakh-savage-kroot",
+    "faction": "Kroot",
+    "description": "Captured alongside the remnants of a cadre of Tau, Nashrik Hakh has survived where many of her kin have not. The strength, agility, sensory acuity, and most of all the genetic pliancy of the Kroot saw her kindred divided between the laboratories of Drecarus and the fighting pits of the Withered Blade. Of the former, none but Drecarus know their fates. Of the latter, only Nashrik survives, her kin having been driven like beasts into the arena time and again without respite.\n\nNashrik herself is far from intact. Having triumphed in an early battle, she took the opportunity to sate her hunger upon the cadaver of her foe, only to find that the Wyches’ drug-polluted flesh reacted poorly with her physiology. She struggles to maintain her sense of self against the toxins that seared her brain as they flooded her body, but the senseless ferocity of a feral oblivion grows nearer with every passing day.",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 49,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 32,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 51,
+        "unnatural": 10
+      },
+      "toughness": {
+        "base": 46,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 51,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 28,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 53,
+        "unnatural": 10
+      },
+      "willpower": {
+        "base": 26,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 28,
+        "unnatural": 0
+      }
+    },
+    "wounds": 16,
+    "movement": "5/10/15/30",
+    "skills": [
+      [
+        "Awareness",
+        20
+      ],
+      [
+        "Concealment",
+        20
+      ],
+      [
+        "Intimidate",
+        0
+      ],
+      [
+        "Silent Move",
+        20
+      ],
+      [
+        "Speak Language (Kroot)",
+        0
+      ],
+      [
+        "Speak Language (Tau)",
+        0
+      ],
+      [
+        "Survival",
+        20
+      ],
+      [
+        "Tracking",
+        20
+      ]
+    ],
+    "talents": [
+      "Basic Weapon Training (Primitive, SP)",
+      "Berserk Charge",
+      "Frenzy",
+      "Heightened Senses (All)",
+      "Lightning Reflexes",
+      "Melee Weapon Training (Primitive)",
+      "Polyglot",
+      "Sprint",
+      "Swift Attack"
+    ],
+    "traits": [
+      "Natural Weapon (Beak)",
+      "Unnatural Perception (x2)",
+      "Unnatural Strength (x2)"
+    ],
+    "weapons_text": "Mono-sword (Melee; 1d10+10 R; Pen 2; Balanced), beak (Melee; 1d5+10 R; Primitive).",
+    "armour_text": "Rough leathers (Arms 2, Body 2).",
+    "gear_text": "A single ragged quill from her former Shaper’s head.",
+    "portrait_ref": "img-87.jpeg",
+    "ws_line": 3947,
+    "source_book": "roguetrader_thesoulreaver.pdf"
+  },
+  {
+    "name": "Neija Tromean, Warp-Wyrd",
+    "slug": "neija-tromean-warp-wyrd",
+    "faction": "",
+    "description": "“Neija Tromean is cursed.” Those are likely to be the first words from the lips of any person who has encountered her. Escaping from the grasp of the Imperium and the toil of Sepheris Secundus, she found passage to the fringes of the Calixis Sector aboard ore freighters and other transports, always escaping the calamities that befell those who carried her, until the most recent instance. When she attempted to gain passage to the Koronus Expanse, her vessel was attacked by Dark Eldar Raiders.\n\nThe Kabal that claimed her fell to the machinations of another within a week of her arrival in the Dark City, and she has since been within the ownership of several other Kabals and cults within Dark Eldar society, each one crumbling due to completely unrelated events, as if misfortune is attracted to this young woman. Now, she is condemned to the arena of the Withered Blade thanks to the machinations of a rival Wych cult seeking to gain a foothold in the Nexus of Shadows. For her part, Neija is biding her time before some new calamity befalls her captors.",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 28,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 28,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 38,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 36,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 28,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 37,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 48,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 23,
+        "unnatural": 0
+      }
+    },
+    "wounds": 13,
+    "movement": "3/6/9/18",
+    "skills": [
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Ciphers (Occult)",
+        0
+      ],
+      [
+        "Common Lore (Imperium)",
+        0
+      ],
+      [
+        "Common Lore (Calixis Sector)",
+        10
+      ],
+      [
+        "Deceive",
+        10
+      ],
+      [
+        "Forbidden Lore (Cults)",
+        0
+      ],
+      [
+        "Forbidden Lore (Warp)",
+        0
+      ],
+      [
+        "Intimidate",
+        0
+      ],
+      [
+        "Invocation",
+        10
+      ],
+      [
+        "Psyniscience",
+        10
+      ],
+      [
+        "Speak Language (Low Gothic)",
+        0
+      ]
+    ],
+    "talents": [
+      "Accursed Presence†",
+      "Dark Soul",
+      "Fearless",
+      "Melee Weapon Training (Primitive)",
+      "Psy Rating 5",
+      "Resistance (Psychic Techniques)",
+      "Touched by the Fates"
+    ],
+    "traits": [],
+    "weapons_text": "Mono-sword (Melee; 1d10+3 R; Pen 2; Balanced).",
+    "armour_text": "Rough leathers (Arms 2, Body 2).",
+    "gear_text": "Psychic Suppressor†.",
+    "portrait_ref": "img-87.jpeg",
+    "ws_line": 3969,
+    "source_book": "roguetrader_thesoulreaver.pdf"
+  },
+  {
+    "name": "Relhadhar Antariel",
+    "slug": "relhadhar-antariel",
+    "faction": "",
+    "description": "",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 54,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 33,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 41,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 38,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 62,
+        "unnatural": 12
+      },
+      "intelligence": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 45,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 47,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 31,
+        "unnatural": 0
+      }
+    },
+    "wounds": 13,
+    "movement": "6/12/18/36",
+    "skills": [
+      [
+        "Acrobatics",
+        10
+      ],
+      [
+        "Awareness",
+        10
+      ],
+      [
+        "Command",
+        10
+      ],
+      [
+        "Common Lore (Dark Eldar)",
+        0
+      ],
+      [
+        "Common Lore (Eldar)",
+        10
+      ],
+      [
+        "Dodge",
+        20
+      ],
+      [
+        "Intimidate",
+        10
+      ],
+      [
+        "Silent Move",
+        0
+      ]
+    ],
+    "talents": [
+      "Ambidextrous",
+      "Catfall",
+      "Exotic Weapon Training (Shuriken Catapult, Shuriken Pistol, Splinter Pistol, Wych Knife)",
+      "Hard Target",
+      "Hatred (Dark Eldar)",
+      "Heightened Senses (Hearing, Sight)",
+      "Jaded",
+      "Lightning Reflexes",
+      "Melee Weapon Training (Universal)",
+      "Resistance (Poison)",
+      "Sprint",
+      "Step Aside",
+      "Swift Attack",
+      "Two-Weapon Wielder (Ballistic, Melee)"
+    ],
+    "traits": [
+      "Unnatural Agility (x2)",
+      "Touched by the Bloody Hand†. **Touched by the Bloody Hand:** This Eldar has been exposed to unending battle",
+      "and no creature can endure such a thing unscathed. To survive",
+      "he has embraced the rage and ferocity of Kaela Mensha Khaine",
+      "and succumbed to its lure. As a Full Action",
+      "the Eldar may draw upon the ageless fury of the Bloody Handed War God of the Eldar",
+      "gaining +10 to Weapon Skill and Agility until the end of the combat",
+      "and all of his melee attacks count as having the Tearing Quality",
+      "but he also suffers a –10 penalty to Ballistic Skill",
+      "Intelligence",
+      "and Fellowship during that time and for 1d5 hours afterwards"
+    ],
+    "weapons_text": "2 stolen wych knives (Melee; 1d10+4 R; Pen 3; Razor-Sharp).",
+    "armour_text": "Rough leathers (Arms 2, Body 2). **Total TB:** 3",
+    "gear_text": "Spirit stone.",
+    "portrait_ref": "img-88.jpeg",
+    "ws_line": 3996,
+    "source_book": "roguetrader_thesoulreaver.pdf"
+  },
+  {
+    "name": "Chrono-gladiator",
+    "slug": "chrono-gladiator",
+    "faction": "",
+    "description": "",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 48,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 23,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 38,
+        "unnatural": 6
+      },
+      "toughness": {
+        "base": 32,
+        "unnatural": 6
+      },
+      "agility": {
+        "base": 54,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 26,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 31,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 36,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 22,
+        "unnatural": 0
+      }
+    },
+    "wounds": 16,
+    "movement": "5/10/15/30",
+    "skills": [
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Intimidate",
+        10
+      ]
+    ],
+    "talents": [
+      "Ambidextrous",
+      "Autosanguine",
+      "Crushing Blow",
+      "Fearless",
+      "Melee Weapon Training (Universal)",
+      "Two-Weapon Wielder (Melee)"
+    ],
+    "traits": [
+      "Unnatural Speed",
+      "Unnatural Strength (x2)",
+      "Unnatural Toughness (x2)",
+      "The Ticking Clock†"
+    ],
+    "weapons_text": "Multiple sets of implanted talons (Melee; 1d10+8 R; Pen 3; Razor-Sharp, Toxic).",
+    "armour_text": "Implanted plates (All 3). **Total TB:** 6",
+    "gear_text": "Implanted stimm-inductor with 2d10 doses remaining.",
+    "portrait_ref": "img-88.jpeg",
+    "ws_line": 4026,
+    "source_book": "roguetrader_thesoulreaver.pdf"
+  },
+  {
+    "name": "Fleshwrought Drake",
+    "slug": "fleshwrought-drake",
+    "faction": "",
+    "description": "Holding a place of pride within the Withered Blade's beast cages, these monstrosities were once entirely mundane Carnosaurus on a distant, nameless primordial world. Favoured upon their acquisition for their simplicity and the spectacle of their size and power, these creatures have been slain on countless occasions and resurrected each time by the labours of Haemonculi, who have not hesitated to improve upon the creatures.\n\nNow, a Fleshwrought Drake is a hybrid of flesh and venom, its decayed muscles renewed by hypersteroids and vivisect-grafts, its blood replaced by a deadly mixture of unnatural chemicals, and its bestial mind supplanted by Drecarus' own invention, the spider-like Effigy Matrix.",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 42,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 15,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 65,
+        "unnatural": 12
+      },
+      "toughness": {
+        "base": 58,
+        "unnatural": 15
+      },
+      "agility": {
+        "base": 31,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 18,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 42,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 31,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 1,
+        "unnatural": 0
+      }
+    },
+    "wounds": 55,
+    "movement": "5/10/15/30",
+    "skills": [
+      [
+        "Awareness",
+        0
+      ]
+    ],
+    "talents": [
+      "Berserk Charge",
+      "Die Hard",
+      "Fearless",
+      "Furious Assault",
+      "Heightened Senses (Smell)",
+      "Iron Jaw"
+    ],
+    "traits": [
+      "Altered Physique",
+      "Deadly Natural Weapons",
+      "Enormous",
+      "From Beyond",
+      "Natural Armour (Scaled Hide and Gnarled Skin)",
+      "Quadruped",
+      "Size (Enormous)",
+      "Toxic",
+      "Unnatural Strength (x2)",
+      "Unnatural Toughness (x3)"
+    ],
+    "weapons_text": "Augmented bite (Melee; 1d10+14 R; Pen 4; Tearing, Toxic), maw-mounted liquifier gun† (Basic; 20m; S/-/-; 2d10+2 E; Pen 2; Flame, Toxic).",
+    "armour_text": "Gnarlskin over scale (All 4). **Total TB:** 15",
+    "gear_text": "",
+    "portrait_ref": "img-88.jpeg",
+    "ws_line": 4050,
+    "source_book": "roguetrader_thesoulreaver.pdf"
+  },
+  {
+    "name": "Ariadne Helspider",
+    "slug": "ariadne-helspider",
+    "faction": "",
+    "description": "For better or worse, the arachnid form is commonplace across the galaxy, and has been for longer than any alive can recall. Countless trillions of species of spiders and similar organisms exist on innumerable worlds and parts beyond, and the webway is no exception. Native to the ragged and twisted webway tunnels that stretch across and beyond the Calixis Sector, the Koronus Expanse, and the Screaming Vortex between, the Ariadne Helspider is a vicious, many-legged creature that seems unfettered by the normal passage of time. Its wounds heal as if its flesh was reverting to a past state, its attacks seem to strike home even though the creature remains some metres distant, and blows struck against it seem impossibly to miss, as if they had never happened.\n\nHunted for sport by the Dark Eldar of the Nexus of Shadows, Helspiders are a local favourite of the Beastmasters of the Shadowspine Pits. The audience also enjoys the unique confusion and suffering these creatures can inflict. Further, these beasts also make their pit matches more exciting by their habit of manipulating the web of fate to slip past the normally impenetrable fields that keep the combatants in the ring. It is not unheard of for these creatures to run rampant through the stands until being brought under control, to the delight of any Dark Eldar not in their path.",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 39,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 33,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 49,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 38,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 51,
+        "unnatural": 15
+      },
+      "intelligence": {
+        "base": 12,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 45,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 31,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 1,
+        "unnatural": 0
+      }
+    },
+    "wounds": 9,
+    "movement": "16/32/48/96",
+    "skills": [
+      [
+        "Acrobatic",
+        0
+      ],
+      [
+        "Awareness",
+        10
+      ],
+      [
+        "Concealment",
+        0
+      ],
+      [
+        "Climb",
+        20
+      ],
+      [
+        "Dodge",
+        0
+      ],
+      [
+        "Psyniscience",
+        0
+      ],
+      [
+        "Silent Move",
+        0
+      ]
+    ],
+    "talents": [
+      "Assassin Strike",
+      "Heightened Senses (Sight)",
+      "Improved Warp Sense",
+      "Rapid Reaction",
+      "Sure Strike",
+      "Talented (Climb)",
+      "Step Aside",
+      "Warp Sense"
+    ],
+    "traits": [
+      "Bestial",
+      "Dark Sight",
+      "Deadly Natural Weapons",
+      "From Beyond",
+      "Multiple Arms",
+      "Natural Armour (Chitinous Carapace)",
+      "Quadruped (8 legs)",
+      "Regeneration",
+      "Scrawny",
+      "Strange Physiology",
+      "Unnatural Agility (x3)",
+      "Unnatural Senses (20m)",
+      "Temporal Predator†",
+      "Warp Weapon"
+    ],
+    "weapons_text": "Time-rending mandibles† (Melee; 10m; 1d10+4 R; Stasis Venom††), webbing (Basic; 20m; S/-/-; Snare).",
+    "armour_text": "Chitinous carapace (All 3). **Total TB:** 3",
+    "gear_text": "",
+    "portrait_ref": null,
+    "ws_line": 4072,
+    "source_book": "roguetrader_thesoulreaver.pdf"
+  },
+  {
+    "name": "Clawed Fiend",
+    "slug": "clawed-fiend",
+    "faction": "",
+    "description": "Of all the unpleasant creatures in the pens of the Dark Eldar, none can surpass the raw animal ferocity of the Clawed Fiend. A Clawed Fiend is a mound of corded muscle, covered by durable grey fur. Every one of its extremities is lethal, from its shredding talons, to its bone-bladed tail, to its great, red head set, with slavering jaws and far too many beady eyes. Perhaps even more startling than the creature's physique is the savagery with which it pursues prey. Terrors in their own right, Clawed Fiends hardly need to feel the indelicate touch of a Beastmaster's lash to be hunters of the highest calibre. When harmed, however, this beast enters a slashing madness, converting its assailants into a gruesome red slurry as it tears and bellows at everything and anything around it.\n\nThe Dark Eldar delight in such violence, of course, and so Clawed Fiends are prized by many Beastmasters, including those of the Cult of the Withered Blade, both as creatures to fight in the Shadowspine Pits and as extra muscle for the realspace raids that drag new fodder back to the arenas. More information on Clawed Fiends in the Koronus Expanse is available in THE KORONUS BESTIARY.",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 48,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 5,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 35,
+        "unnatural": 6
+      },
+      "toughness": {
+        "base": 43,
+        "unnatural": 8
+      },
+      "agility": {
+        "base": 47,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 20,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 32,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 23,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 5,
+        "unnatural": 0
+      }
+    },
+    "wounds": 38,
+    "movement": "5/10/15/30",
+    "skills": [
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Climb (Str)",
+        10
+      ]
+    ],
+    "talents": [
+      "Berserk Charge",
+      "Bestial Fury†",
+      "Blind Fighting",
+      "Combat Master",
+      "Crushing Blow",
+      "Iron Jaw",
+      "Nerves of Steel",
+      "Takedown"
+    ],
+    "traits": [
+      "Animalistic Fury†",
+      "Bestial",
+      "Brutal Charge",
+      "Dark-Sight",
+      "Fear (2)",
+      "Natural Armour",
+      "Natural Weapons",
+      "Size (Hulking)",
+      "Sturdy",
+      "Unnatural Strength (x2)",
+      "Unnatural Toughness (x2)",
+      "Unnatural Sight (25 metres)"
+    ],
+    "weapons_text": "Claws (Melee; 1d10+6 R; Pen 1; Tearing), tail claw (Melee; 3m; 1D10 R; Tearing, Flexible).",
+    "armour_text": "Toughened Skin (All 4) Total TB: 8",
+    "gear_text": "",
+    "portrait_ref": null,
+    "ws_line": 4097,
+    "source_book": "roguetrader_thesoulreaver.pdf"
+  },
+  {
+    "name": "Khymera",
+    "slug": "khymera",
+    "faction": "",
+    "description": "Spawned in fractured corners of the Warp where mortal dreams twist, grow, and burst forth into living creatures of nightmare, Khymera are savage, feline hunters kept in realspace through the copious efforts of Dark Eldar Beastmasters. Despite the difficulty of keeping these creatures in the materium, to say nothing of keeping them under control once there, Khymera resonate with the sadistic psyche of the Dark Eldar in a way that natural beasts cannot, and Beastmasters are often found trailing packs of these hulking, ethereal beasts, driving them ever onward to greater and greater heights of slaughter.\n\nIn the pits of the Nexus of Shadows, there are few sights more outwardly unnatural and horrifying than a pack of Khymera phase-shifting through a solid wall to rend the flesh of a group of slaves with their claws and lashing tendrils of knotted flesh. These wretches serve as fodder for the warp-spawned Khymera, and the Dark Eldar drink deep of their terror. More information on Khymera in the Koronus Expanse is available in THE KORONUS BESTIARY.",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 45,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 0,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 36,
+        "unnatural": 6
+      },
+      "agility": {
+        "base": 54,
+        "unnatural": 10
+      },
+      "intelligence": {
+        "base": 15,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 1,
+        "unnatural": 0
+      }
+    },
+    "wounds": 21,
+    "movement": "12/24/36/72",
+    "skills": [
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Tracking",
+        0
+      ],
+      [
+        "Silent Movie",
+        0
+      ]
+    ],
+    "talents": [
+      "Furious Assault",
+      "Hard Target",
+      "Heightened Senses (all)",
+      "Swift Attack"
+    ],
+    "traits": [
+      "Bestial",
+      "Daemonic (TB 6)",
+      "Daemonic Presence†",
+      "Dark Sight",
+      "Fear (3)",
+      "From Beyond",
+      "Multiple Arms",
+      "Natural Weapons",
+      "Phase",
+      "Quadruped",
+      "Size (Hulking)",
+      "Unnatural Agility (x2)",
+      "Unnatural Toughness (x2)",
+      "Warp Instability"
+    ],
+    "weapons_text": "Teeth and Claws (Melee; 1d10+4 R; Pen 0; Tearing), Raptorial Arms (Melee; 2m; 1d10+4 I; Pen 1; Flexible).",
+    "armour_text": "None Total TB: 6",
+    "gear_text": "",
+    "portrait_ref": null,
+    "ws_line": 4119,
+    "source_book": "roguetrader_thesoulreaver.pdf"
+  },
+  {
+    "name": "Razorwing",
+    "slug": "razorwing",
+    "faction": "",
+    "description": "Compared with Khymera and Clawed Fiends, Razorwing flocks seem positively mundane. The large avians do not at first appear to be a threat to a seasoned traveller—and it is this fact that makes them so very deadly. Razorwings are blisteringly fast and agile, capable of outmanoeuvring a flying Hellion ganger on his skyboard, and their hardened talons, beaks, and razor-tipped feathers can strip a body of armour and flesh in an instant. It is not unknown for flocks of Razorwings to reduce their prey to a mess of bones and blood in a single pass before carrying off the skeleton of their victim to devour elsewhere.\n\nAnyalra always takes a particular interest when her Beastmasters unleash these graceful, feathered killers in the arena. More information on Razorwings in the Koronus Expanse is available in THE KORONUS BESTIARY.",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 47,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 1,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 31,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 33,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 52,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 22,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 38,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 23,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 10,
+        "unnatural": 0
+      }
+    },
+    "wounds": 10,
+    "movement": "",
+    "skills": [
+      [
+        "Dodge",
+        0
+      ],
+      [
+        "Silent Move",
+        0
+      ]
+    ],
+    "talents": [
+      "Frenzy",
+      "Furious Assault",
+      "Lightning Attack",
+      "Lightning Reflexes",
+      "Step Aside",
+      "Swift Attack"
+    ],
+    "traits": [
+      "Bestial",
+      "Flyer (8)",
+      "Natural Armour",
+      "Improved Natural Weapons",
+      "Size (Scrawny)"
+    ],
+    "weapons_text": "Beak (Melee; 1d10+3 R; Pen 1; Tearing), wings (Melee; 1d10+2 R; Pen 3; Razor Sharp).",
+    "armour_text": "Toughened Feathers (All 2).",
+    "gear_text": "",
+    "portrait_ref": null,
+    "ws_line": 4141,
+    "source_book": "roguetrader_thesoulreaver.pdf"
+  },
+  {
+    "name": "Murderfiend Servitor",
+    "slug": "murderfiend-servitor",
+    "faction": "",
+    "description": "The particular talents of Domos Agnelain have not gone to waste, and the depths of his knowledge have been sifted and sorted on many occasions to find some morsel of worth. Seldom are any of the secrets of the Adeptus Mechanicus of value to the Dark Eldar, for their eldritch technology is as sorcery to the sciences of the Martian priesthood. However, it is not lore that the thought-pillagers and meme-scalpels seek, but concepts that bring new sights and sensations to the Nexus of Shadows.\n\nServitorisation is not a concept entirely unfamiliar to the Dark Eldar—Grotesques are, after all, lobotomised slaves of a similar sort—but the notions of Murder-servitors and Arco-flagellants found approval in the dark cliques of the Nexus when they were mined from Magos Domos’ brain. Autonomous killing machines designed to terrorise and slaughter appealed to the murderous decadence of the Talonlord’s court, and when these concepts were found in the Magos’ mental archives, Drecarus’ Haemonculi almost immediately began work to create something similar. Wrought from the flesh of Dark Eldar who were deserving of some cruel and unusual punishment, Murderfiend Servitors are vicious, swift, and entirely remorseless creatures, seeking only the deaths of those around them and to slake the unholy thirst that still burns their hollow souls.",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 55,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 6,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 38,
+        "unnatural": 6
+      },
+      "toughness": {
+        "base": 39,
+        "unnatural": 6
+      },
+      "agility": {
+        "base": 64,
+        "unnatural": 12
+      },
+      "intelligence": {
+        "base": 16,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 41,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 12,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 4,
+        "unnatural": 0
+      }
+    },
+    "wounds": 12,
+    "movement": "6/12/18/36",
+    "skills": [
+      [
+        "Acrobatics",
+        0
+      ],
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Dodge",
+        0
+      ],
+      [
+        "Intimidate",
+        20
+      ]
+    ],
+    "talents": [
+      "Ambidextrous",
+      "Autosanguine",
+      "Catfall",
+      "Crippling Strike",
+      "Frenzy",
+      "Hard Target",
+      "Heightened Senses (Sight, Hearing)",
+      "Sprint",
+      "Swift Attack"
+    ],
+    "traits": [
+      "Dark Sight",
+      "Fear (1)",
+      "From Beyond",
+      "Machine (4)",
+      "Deadly Natural Weapons",
+      "Power From Pain",
+      "Unnatural Agility (x2)",
+      "Unnatural Strength (x2)",
+      "Unnatural Toughness (x2)"
+    ],
+    "weapons_text": "Implanted eviscerator blades (Melee; 1d10+6 R; Pen 3; Razor-Sharp, Tearing).",
+    "armour_text": "Mechanical form (All 4).",
+    "gear_text": "Stimulant injectors†.",
+    "portrait_ref": null,
+    "ws_line": 4163,
+    "source_book": "roguetrader_thesoulreaver.pdf"
+  }
+]

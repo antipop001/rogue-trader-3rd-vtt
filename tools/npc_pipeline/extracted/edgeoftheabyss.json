@@ -1,0 +1,2544 @@
+[
+  {
+    "name": "Morgaash Kulgraz, Kaptin Of Da Wurldbreaka, Warlord Of Undred-Undred Teef",
+    "slug": "morgaash-kulgraz-kaptin-of-da-wurldbreaka-warlord-of-undred-undred-teef",
+    "faction": "",
+    "description": "Demonstrating fierce ambition and ruthless cunning of a kind seen only in very few Orks across the galaxy, Morgaash Kulgraz has slain and subjugated every Ork in his path, growing increasingly massive as other “Kaptins” challenge him. The last two decades have been particularly prosperous, with Morgaash ripping Uzrek Mag Nazdakka limb from limb in brutal unarmed combat and claiming Uzrek’s old ship, *Da Wurldbreaka* as his prize.\n\nMorgaash is a towering monster of an Ork, larger than most and physically imposing enough to back up his claims of being the Warlord of Undred-Undred Teef, though several rivals still claim otherwise. Few accurate records exist of Morgaash himself from the Imperial vessels he has assaulted—by the time Morgaash himself boards, the battle is normally won and all hope of escape lost. However, occasional survivor’s reports claim that the Warlord is some three and a half metres tall and may weigh as much as half a tonne, carrying a massive chain-axe that, wielded by Morgaash’s immense strength, is sufficient to shear through deck plating and leave gouges in bulkheads and blast doors. Worse, Morgaash is a bold and daring leader, particularly during ship-to-ship combat, and more than a few enemies have underestimated what the Orks are capable of under his leadership. Morgaash spends most of his time on *Da Wurldbreaka*, where he is plotting the downfall of Snaga, whom he sees as his main opposition to power.",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 61,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 75,
+        "unnatural": 4
+      },
+      "toughness": {
+        "base": 68,
+        "unnatural": 2
+      },
+      "agility": {
+        "base": 36,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 37,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 34,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 41,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 29,
+        "unnatural": 0
+      }
+    },
+    "wounds": 56,
+    "movement": "5/10/15/30",
+    "skills": [
+      [
+        "Awareness +10",
+        0
+      ],
+      [
+        "Barter",
+        0
+      ],
+      [
+        "Carouse",
+        10
+      ],
+      [
+        "Climb",
+        0
+      ],
+      [
+        "Command +20",
+        0
+      ],
+      [
+        "Common Lore (Ork)",
+        20
+      ],
+      [
+        "Common Lore (War)",
+        20
+      ],
+      [
+        "Common Lore (Koronus Expanse)",
+        0
+      ],
+      [
+        "Dodge",
+        0
+      ],
+      [
+        "Intimidate +20 (Str)",
+        0
+      ],
+      [
+        "Navigation (Stellar)",
+        0
+      ],
+      [
+        "Pilot (Flyers, Space Craft)",
+        0
+      ],
+      [
+        "Speak Language (Low Gothic, Ork)",
+        0
+      ]
+    ],
+    "talents": [
+      "Basic Weapon Training (Primitive, SP)",
+      "Berserk Charge",
+      "Bulging Biceps",
+      "Crippling Strike",
+      "Crushing Blow",
+      "Exotic Weapon Proficiency (Any Ork weapon)",
+      "Fearless",
+      "Furious Assault",
+      "Hardy",
+      "Into the Jaws of Hell",
+      "Iron Discipline",
+      "Iron Jaw",
+      "Lightning Attack",
+      "Melee Weapon Training (Chain, Primitive, Power)",
+      "Resistance (Cold, Heat, Radiation)",
+      "Talented (Intimidate)",
+      "Swift Attack",
+      "Touched by the Fates (2 Fate Points)",
+      "True Grit",
+      "Two-Weapon Wielder (Ballistic, Melee)",
+      "Void Tactician"
+    ],
+    "traits": [
+      "‘Ardest’",
+      "Brutal Charge",
+      "Enormous",
+      "Fear (1)",
+      "Make It Work††",
+      "Might Makes Right†††",
+      "Mob Rule††††",
+      "Sturdy",
+      "Unnatural Strength (x2)",
+      "Unnatural Toughness (x2)"
+    ],
+    "weapons_text": "",
+    "armour_text": "",
+    "gear_text": "",
+    "portrait_ref": "img-29.jpeg",
+    "ws_line": 1584,
+    "source_book": "roguetrader_edgeoftheabyss.pdf"
+  },
+  {
+    "name": "Baharrudor, The Stormchaser",
+    "slug": "baharrudor-the-stormchaser",
+    "faction": "",
+    "description": "The Stormchaser is a legend spoken of fearfully amongst many of the crews that ply the Koronus Expanse, the vicious xenos pirate lord whose fleet emerges to strike vessels caught within the storms and tides of the Warp, attacking when their prey cannot escape, and leaving survivors enough only to whisper his name.\n\nThe truth is little different. Caeluthin was born to a life of structure and discipline upon the Craftworld of Kaelor, becoming a Mariner and sailing the void for many years before his boredom and wanderlust became too great. Leaving his home in search of something more, Caeluthin became an Outcast, a willing exile from his people for so long as his wanderlust consumed him. Some five centuries later, Caeluthin's sense of adventure is still strong, and he has risen to become the leader of the Twilight Swords Corsairs, and does not feel he shall ever return to the life he had upon Kaelor.\n\nCaeluthin is cunning, but easily bored, and prone to variegated and ever-changing moods. He views humanity with a sense of faint amusement at times, as a man might look at an animal capable of an interesting trick, while in other moods, he deems them little better than vermin, worthy only of annihilation. Overall, he sees humanity as worthless creatures, useless to his plans.\n\nThis viewpoint conflicts with the guidance of Ela'Ashbel of Craftworld Kaelor, and is the cause of contention as the two sides work together more often. It is possible that the Farseer's council may moderate Caeluthin's views—or that her preference to use humanity to further Eldar goals may have some appeal.",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 51,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 57,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 38,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 68,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 54,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 50,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 61,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 45,
+        "unnatural": 0
+      }
+    },
+    "wounds": 20,
+    "movement": "6/12/18/36",
+    "skills": [
+      [
+        "Acrobatics",
+        0
+      ],
+      [
+        "Awareness",
+        10
+      ],
+      [
+        "Barter",
+        10
+      ],
+      [
+        "Charm",
+        10
+      ],
+      [
+        "Command",
+        20
+      ],
+      [
+        "Common Lore (Koronus Expanse)",
+        20
+      ],
+      [
+        "Deceive",
+        20
+      ],
+      [
+        "Dodge",
+        10
+      ],
+      [
+        "Evaluate",
+        10
+      ],
+      [
+        "Forbidden Lore (Pirates)",
+        0
+      ],
+      [
+        "Forbidden Lore (The Black Library)",
+        0
+      ],
+      [
+        "Forbidden Lore (Xenos)",
+        20
+      ],
+      [
+        "Forbidden Lore (The Warp)",
+        10
+      ],
+      [
+        "Gamble",
+        10
+      ],
+      [
+        "Intimidate",
+        0
+      ],
+      [
+        "Literacy",
+        0
+      ],
+      [
+        "Medicae",
+        0
+      ],
+      [
+        "Navigation (Stellar)",
+        20
+      ],
+      [
+        "Navigation (Webway)",
+        10
+      ],
+      [
+        "Pilot (Flyers)",
+        10
+      ],
+      [
+        "Pilot (Personal)",
+        0
+      ],
+      [
+        "Pilot (Space Craft)",
+        20
+      ],
+      [
+        "Silent Move",
+        10
+      ],
+      [
+        "Scrutiny",
+        10
+      ],
+      [
+        "Speak Language (Eldar)",
+        10
+      ],
+      [
+        "Speak Language (Low Gothic)",
+        10
+      ],
+      [
+        "Speak Language (Trader's Cant)",
+        0
+      ],
+      [
+        "Trade (Voidfarer)",
+        20
+      ]
+    ],
+    "talents": [],
+    "traits": [],
+    "weapons_text": "",
+    "armour_text": "",
+    "gear_text": "",
+    "portrait_ref": "img-33.jpeg",
+    "ws_line": 1855,
+    "source_book": "roguetrader_edgeoftheabyss.pdf"
+  },
+  {
+    "name": "Ilistaneth Anturien, Bloody Hand Of The Crow Spirits",
+    "slug": "ilistaneth-anturien-bloody-hand-of-the-crow-spirits",
+    "faction": "",
+    "description": "The Crow Spirits have a long and bloody history, and much of it within the last eleven centuries can be attributed to one being. The deadliest and most experienced warrior of the Crow Spirits, Ilistaneth Anturien has been directly responsible for more death than almost any other individual within the Expanse. Cold and utterly ruthless, Ilistaneth harbours a profound loathing for all that is not Eldar and knows joy only in the moment of triumph.\n\nIlistaneth does not question the instructions given to him by his masters; his hatred for the enemies of his kind dwarfs any empathy he might have for the plight of his targets. A master of many weapons and just as many poisons, Ilistaneth is a terrifying adversary to face, and as many foes have died to his blades with a look of dread upon their face, as have perished at a great distance never knowing the cause of their demise.\n\nIlistaneth possesses a vast and bewildering array of armaments and tools. The most astounding is a Holo-Suit—normally worn by the mysterious Eldar warrior-troubadours known as Harlequins, gifted to him by a troupe of Harlequins as a reward for slaying a target whose fate interfered with their own.",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 63,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 58,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 44,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 32,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 61,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 44,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 47,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 64,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 26,
+        "unnatural": 0
+      }
+    },
+    "wounds": 17,
+    "movement": "6/12/18/36",
+    "skills": [
+      [
+        "Acrobatics",
+        20
+      ],
+      [
+        "Awareness",
+        10
+      ],
+      [
+        "Chem-Use",
+        20
+      ],
+      [
+        "Common Lore (War)",
+        20
+      ],
+      [
+        "Concealment",
+        10
+      ],
+      [
+        "Demolitions",
+        20
+      ],
+      [
+        "Dodge",
+        20
+      ],
+      [
+        "Forbidden Lore (The Black Library)",
+        0
+      ],
+      [
+        "Forbidden Lore (Xenos)",
+        10
+      ],
+      [
+        "Intimidate",
+        20
+      ],
+      [
+        "Literacy",
+        0
+      ],
+      [
+        "Medicae",
+        10
+      ],
+      [
+        "Navigation (Surface)",
+        0
+      ],
+      [
+        "Security",
+        0
+      ],
+      [
+        "Shadowing",
+        10
+      ],
+      [
+        "Silent Move",
+        20
+      ],
+      [
+        "Speak Language (Eldar)",
+        10
+      ],
+      [
+        "Tracking",
+        20
+      ]
+    ],
+    "talents": [
+      "Assassin Strike",
+      "Basic Weapon Training (Universal)",
+      "Berserk Charge",
+      "Blademaster",
+      "Blind Fighting",
+      "Catfall",
+      "Chem Geld",
+      "Combat Master",
+      "Counter Attack",
+      "Crack Shot",
+      "Crippling Strike",
+      "Deadeye Shot",
+      "Die Hard",
+      "Exotic Weapon Proficiency (Shuriken Catapult, Shuriken Pistol, Shuriken Cannon, Splinter Pistol, Splinter Rifle, Splinter Cannon, Eldar Longrifle, Eldar Lasblaster)",
+      "Fearless",
+      "Foresight",
+      "Guardian",
+      "Gunslinger",
+      "Hard Target",
+      "Hip Shooting",
+      "Independent Targeting",
+      "Jaded",
+      "Leap Up",
+      "Lightning Attack",
+      "Lightning Reflexes",
+      "Marksman",
+      "Melee Weapon Training (Universal)",
+      "Mighty Shot",
+      "Nerves of Steel",
+      "Paranoia",
+      "Precise Blow",
+      "Quick Draw",
+      "Rapid Reaction",
+      "Rapid Reload",
+      "Resistance (Psychic Techniques)",
+      "Sharpshooter",
+      "Step Aside",
+      "Strong Minded",
+      "Sure Strike",
+      "Swift Attack",
+      "Thrown Weapon Training (Universal)",
+      "Touched by the Fates",
+      "Two-Weapon Wielder (Ballistic, Melee)",
+      "Unarmed Master",
+      "Unarmed Warrior",
+      "Wall of Steel"
+    ],
+    "traits": [
+      "Unnatural Agility (x2)"
+    ],
+    "weapons_text": "(note that Ilistaneth is skilled in the use of a great many different weapons) Pair of Best Craftsmanship Eldar Power Swords (1d10+9 E; Pen 8; Balanced, Power Field), Pair of Gauntlet-mounted Shuriken Pistols (21m; S/3/5; 1d10+4 R; Pen 4; Clip 40; Rld Full; Reliable), 3 Plasma Grenades (12m; S/–/–; 1d10+6 E; Pen 6; Blast (1))",
+    "armour_text": "Reinforced Eldar Mesh Armour with Advanced Helmet Systems (Body 6, Head 6, Arms 6, Legs 6), Holo-Suit.† **Holo-Suit:** These exotic devices, also known as Domino Fields or Jigsaw Fields, break up the image of the wearer as he moves, and blends his image into his surroundings when stationary, making him difficult to target with any accuracy. Enemies suffer a –20 to all Weapon Skill and Ballistic Skill Tests when attacking the wearer. Additionally, when stationary, the holo-suit grants a +30 bonus to Concealment Tests to its wearer.",
+    "gear_text": "Waystone gem, 3 pistol reloads, xenos-crafted medikit, xenos-crafted long-range encrypted vox, Webway Key.",
+    "portrait_ref": "img-34.jpeg",
+    "ws_line": 1984,
+    "source_book": "roguetrader_edgeoftheabyss.pdf"
+  },
+  {
+    "name": "Master Shaper Ashak Kor Of The Misthound Kindred",
+    "slug": "master-shaper-ashak-kor-of-the-misthound-kindred",
+    "faction": "",
+    "description": "Generations ago, before the Orks and the Tau came to Pech, a migrating group of Crotalid—large semi-aquatic reptilian predators who migrate from world to world through the Warp by instinct—found themselves amongst the ancestors of the Misthound Kindred, who descended upon them swiftly, glad to have found new prey to consume.\n\nThe peculiar warp-migration ability of the Crotalid seemed difficult to acquire, however, and the Kroot who carried the essence of the Crotalid within them were incapable of taking advantage of it. Successive generations of controlled breeding, however, after the Ork invasion, led to the first manifestations\n\nof that ability, in a young Kroot whose parents had consumed Ork psykers early in the war. Over the following decades, additional Kroot were born with this ability, though it appeared only a handful of those who carried the essence of the Crotalid.\n\nAshak Kor was the first to gain this talent, a limited ability to travel short distances through the Warp, phasing slightly out of the material universe for short periods of time. As he came of age, he became a Shaper, and led his people off-world to find some way of developing this gift they had acquired. When the Misthound Kindred found themselves in the Koronus Expanse, Ashak felt that this was the place they would achieve that goal. Since that time, the Kroot of the Misthound Kindred have hunted those with a connection to the Warp as a way of expanding their ability to travel the Warp, so that one day, they might hunt across the stars without Warspheres, prowling from world to world.",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 52,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 38,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 45,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 54,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 49,
+        "unnatural": 8
+      },
+      "willpower": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 28,
+        "unnatural": 0
+      }
+    },
+    "wounds": 15,
+    "movement": "5/10/15/30",
+    "skills": [
+      [
+        "Acrobatics",
+        10
+      ],
+      [
+        "Awareness",
+        10
+      ],
+      [
+        "Barter",
+        0
+      ],
+      [
+        "Climb",
+        10
+      ],
+      [
+        "Command",
+        20
+      ],
+      [
+        "Concealment",
+        20
+      ],
+      [
+        "Dodge",
+        10
+      ],
+      [
+        "Intimidate",
+        0
+      ],
+      [
+        "Silent Move",
+        20
+      ],
+      [
+        "Scrutiny",
+        10
+      ],
+      [
+        "Speak Language (Low Gothic, Kroot, Tau)",
+        0
+      ],
+      [
+        "Tracking",
+        10
+      ],
+      [
+        "Survival",
+        20
+      ],
+      [
+        "Swim",
+        10
+      ]
+    ],
+    "talents": [
+      "Assassin Strike",
+      "Basic Weapon Training (SP, Primitive)",
+      "Combat Sense",
+      "Crushing Blow",
+      "Exotic Weapon Training (Kroot Rifle, Krootbow)",
+      "Furious Assault",
+      "Kroot Leap",
+      "Leap Up",
+      "Lightning Reflexes",
+      "Melee Weapon Training (Universal)",
+      "Resistance (Fear)",
+      "Sprint",
+      "Swift Attack",
+      "Touched by the Fates"
+    ],
+    "traits": [],
+    "weapons_text": "",
+    "armour_text": "",
+    "gear_text": "",
+    "portrait_ref": "img-35.jpeg",
+    "ws_line": 2096,
+    "source_book": "roguetrader_edgeoftheabyss.pdf"
+  },
+  {
+    "name": "Marauder Statistics",
+    "slug": "marauder-statistics",
+    "faction": "",
+    "description": "Marauders are the most numerous of the Rak'Gol—making up most of the species foot troops. They have been blooded in battle and many have the scars and prosthetics to show for it.",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 45,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 41,
+        "unnatural": 8
+      },
+      "toughness": {
+        "base": 45,
+        "unnatural": 8
+      },
+      "agility": {
+        "base": 28,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 28,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 28,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 7,
+        "unnatural": 0
+      }
+    },
+    "wounds": 25,
+    "movement": "5/10/15/30",
+    "skills": [
+      [
+        "Climb",
+        0
+      ],
+      [
+        "Demolition",
+        0
+      ],
+      [
+        "Dodge",
+        0
+      ]
+    ],
+    "talents": [
+      "Basic Weapon Training (Flamer, SP)",
+      "Bulging Biceps",
+      "Die Hard",
+      "Fearless",
+      "Melee Weapon Training (Primitive)",
+      "Pistol Weapon Training (Flamer, SP)",
+      "True Grit",
+      "Sprint"
+    ],
+    "traits": [
+      "Fear (1)",
+      "Hunting Frenzy†",
+      "Multiple Arms",
+      "Size (Hulking)",
+      "Quadruped",
+      "Sturdy",
+      "Unnatural Strength (x2)",
+      "Unnatural Toughness (x2)"
+    ],
+    "weapons_text": "Implanted mono-blades (1d10+12 R; Pen 4), Rak'Gol Razor Gun†† (40m; S/-/-; 1d10+5 R; Pen 0; Clip 10; Reload: Full) or Rak'Gol pattern heavy stubber (120m; -/-/10; 1d10+5 I; Pen 3; Clip 40; Reload: Full) or Rak'Gol pattern hand-flamer (10m; S/-/-; 1d10+4 E; Pen 2; Clip 2; Reload: 2 Full; Flame), 3 frag grenades, 1 krak grenade.",
+    "armour_text": "Implanted ceramic plates and stone-like hide (5 Arms, 8 Body, 6 Head, 5 Legs).",
+    "gear_text": "Bionic respiratory system (Good Craftsmanship), implanted vox, photo-visor, and suicide device (as bomb collar, self-detonated), spare ammo drum for heavy stubber.",
+    "portrait_ref": "img-38.jpeg",
+    "ws_line": 2265,
+    "source_book": "roguetrader_edgeoftheabyss.pdf"
+  },
+  {
+    "name": "Stryxis Merchant",
+    "slug": "stryxis-merchant",
+    "faction": "Stryxis",
+    "description": "The merchants of the Stryxis race are the ones who are mainly encountered by the explorers and Rogue Traders of the Koronus Expanse. They are reviled and distrusted all across the Expanse for their shady dealings and treacherous leanings.\n\nMerchant Profile",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 32,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 39,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 46,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 60,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 37,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 46,
+        "unnatural": 0
+      }
+    },
+    "wounds": 15,
+    "movement": "4/8/12/24",
+    "skills": [
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Barter +20",
+        0
+      ],
+      [
+        "Commerce",
+        0
+      ],
+      [
+        "Deceive +30",
+        0
+      ],
+      [
+        "Evaluate",
+        10
+      ],
+      [
+        "Common Lore (choice of two)",
+        0
+      ],
+      [
+        "Forbidden Lore (choice of one)",
+        0
+      ],
+      [
+        "Inquiry",
+        20
+      ],
+      [
+        "Scrutiny",
+        20
+      ],
+      [
+        "Tech Use",
+        0
+      ],
+      [
+        "Trade (Merchant)",
+        0
+      ]
+    ],
+    "talents": [
+      "Ambidextrous",
+      "Basic Weapon Training (Las, SP)",
+      "Exotic Weapon Training (Stryxis Æther weapons)",
+      "Hard Target",
+      "Hatred (Eldar)",
+      "Jaded",
+      "Paranoia",
+      "Pistol Training (Las, SP)",
+      "Polyglot",
+      "Total Recall"
+    ],
+    "traits": [
+      "Dark Sight",
+      "Unnatural Perception (x2)"
+    ],
+    "weapons_text": "Æther blade (1d5+2 E; Pen 0; Special), xenos Light-pistol (30m; S/-/-; 1d10+5 E; Pen 0; Clip 30; Full; Reliable, Accurate) or xenos Light-rifle (60m; S/-/-; 1d10+6 E; Pen 3; Clip 15; Reload Full; Reliable, Accurate), concealed mono-blade (1d5+4 R; Pen 2).",
+    "armour_text": "Stryxis Ghost-field† and robes (3 All).",
+    "gear_text": "various trinkets and charms, smelly robes, spare energy cell for pistol.",
+    "portrait_ref": null,
+    "ws_line": 2480,
+    "source_book": "roguetrader_edgeoftheabyss.pdf"
+  },
+  {
+    "name": "Stryxis Vat-Brute",
+    "slug": "stryxis-vat-brute",
+    "faction": "Stryxis",
+    "description": "Vat-brutes are the massive slabs of muscle that have been created by the Stryxis flesh-crafters for a variety of tasks. They are vaguely humanoid, resembling something of a proto-human with smooth and featureless faces, and androgynous features. Their intelligence resembles something close to a mono-tasked servitor, with very little creative thinking outside the tasks they are created for. Vat-brutes can be used for anything from heavy labour to combat.\n\nVat-brute Profile",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 60,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 60,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 20,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 10,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 0,
+        "unnatural": 0
+      }
+    },
+    "wounds": 18,
+    "movement": "3/6/9/18",
+    "skills": [
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Trade (any one)",
+        10
+      ]
+    ],
+    "talents": [
+      "If the vat-brute is being used for combat it will have the appropriate Weapon Training Talents"
+    ],
+    "traits": [
+      "Auto-stabilised",
+      "Dark Sight",
+      "Machine (2)",
+      "Natural Weapons (brute fists)",
+      "Size (Hulking)"
+    ],
+    "weapons_text": "",
+    "armour_text": "",
+    "gear_text": "",
+    "portrait_ref": "img-41.jpeg",
+    "ws_line": 2507,
+    "source_book": "roguetrader_edgeoftheabyss.pdf"
+  },
+  {
+    "name": "Saynay Sorcerer",
+    "slug": "saynay-sorcerer",
+    "faction": "",
+    "description": "The sorcerers of the Saynay Clan are among the vilest practitioners of the sorcerous arts. Their rituals involve sacrifice, blood, and cannibal consumption, preferably while the victim is still alive to witness the feast. A sorcerer usually serves the Saynay clan in the role of advisor and enforcer both. They use their warp-divination to plot courses for their masters, and consume their masters’ foes in hellfire. If a member of the Saynay Clan is to become a shipmaster, he must have the allegiance of at least one sorcerer, and the more successful one of those wretches is, the more foul conjurors flock to his banner.\n\nSorcerers are also known to infiltrate the worlds and stations of the Koronus Expanse. There they lurk in the darkest corners of society, sacrificing and bleeding their victims for the pleasure of their masters. More than one ship-master has discovered a gore-splattered abattoir in the lowest decks of their vessel, just as the planetary authorities find sewers and alleys drenched in blood. Sometimes, the Saynay sorcerer may summon fell warp-creatures to do their bidding, preferring to do so in packed marketplaces and other locations where helpless folk tend to congregate. What this accomplishes beyond slaughter is unknown, but whispered tales\n\ntold of the Saynay Clan say no sorcerer is allowed a position of leadership—they must always advise. Whether or not this is because the gore-caked masters of the Clan do not trust the sorcerers, or because the leaders of the clan are powerful enough to compel total obedience from the wretches, none can say.",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 36,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 48,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 43,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 56,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 33,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 51,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 0,
+        "unnatural": 0
+      }
+    },
+    "wounds": 15,
+    "movement": "4/8/12/24",
+    "skills": [
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Chem-Use",
+        0
+      ],
+      [
+        "Common Lore (Koronus Expanse)",
+        10
+      ],
+      [
+        "Contortionist",
+        0
+      ],
+      [
+        "Deceive",
+        20
+      ],
+      [
+        "Dodge",
+        0
+      ],
+      [
+        "Forbidden Lore (Daemonology, The Warp)",
+        20
+      ],
+      [
+        "Forbidden Lore (Pirates)",
+        0
+      ],
+      [
+        "Literacy",
+        0
+      ],
+      [
+        "Navigation (Warp)",
+        0
+      ],
+      [
+        "Scholastic Lore (Occult)",
+        20
+      ],
+      [
+        "Secret Tongue (Dark Speech)",
+        0
+      ],
+      [
+        "Speak Language (Low Gothic)",
+        0
+      ]
+    ],
+    "talents": [
+      "Dark Soul",
+      "Heightened Senses (Smell)",
+      "Fearless",
+      "Jaded",
+      "Master Sorcerer",
+      "Melee Weapon Training (Primitive, Universal)",
+      "Pistol Training (Las, SP)",
+      "Peer (Renegades)",
+      "Resistance (Psychic Techniques)",
+      "Sorcerer",
+      "Sorcerous Power x4",
+      "Strong Minded",
+      "Swift Attack",
+      "Two Weapon Wielder (Melee)",
+      "Whispers"
+    ],
+    "traits": [],
+    "weapons_text": "Obsidian long-knife (1d5+5 R; Pen 4; Balanced, Tearing).",
+    "armour_text": "Gore-encrusted robes and chain (Body, Arms, Legs 2).",
+    "gear_text": "Runes, sigils, grimoire of sorcerer’s rites, bag of rotting bits, tattered cloak.",
+    "portrait_ref": null,
+    "ws_line": 2902,
+    "source_book": "roguetrader_edgeoftheabyss.pdf"
+  },
+  {
+    "name": "Blade-Thing",
+    "slug": "blade-thing",
+    "faction": "",
+    "description": "Those who live in the underdecks of Footfall tell tales of creatures that lurk in the dark corners at the edge of sight,\n\nthings of mist, shadows, and far too many razor-edged blades. These creatures prowl in the unlit places below humanity's hives and stations, waiting and watching for some lone unfortunate. Their victim's bodies are found days later, bled dry through a thousand cuts. The Ordo Malleus names such creatures Daemons, but to their prey, they are simply Blade-things.\n\nThe Blade-thing is a Daemon that thrives on fear and blood. It possesses a malicious, animalistic cunning, and often shows a proclivity to slay unseen, only to leave evidence of its work for others to discover. The sorcerers of the Saynay Clan delight in the creatures' work, and some twisted resonance between their spirit and the Daemon leads to the sorcerers showing a tendency to summon Blade-things to do their twisted bidding. In turn, Blade-things seem almost eager in their service. The rare few slaves and captives who have escaped captivity from the Saynay Clan tell frightening tales of the pens and pits in the bowels of their ramshackle vessels, and the sharp-bladed creatures that lurk and roam through unlit corridors, killing anyone—friend or foe—they find alone.\n\nThe rites to summon a Blade-thing and bind it in reality for any length of time are a secret passed amongst the Saynay sorcerers. It is likely the blasphemous rituals can only be found in their sorcerous grimoires—and perhaps in the hidden vaults of the Tricorn Palace on Scintilla, kept in the care of the Inquisition. Beyond the paraphernalia of blasphemous runes and a eight-pointed symbol of Chaos rendered into a summoning circle, the main ingredients of the rite are a light source (such a candle or lamp), and a sacrificial victim. The key act involves extinguishing the light, then, in the darkness that follows, slaying the sacrifice with a single cut, preferably to the throat or other artery. If the Blade-thing is lured by this offering, it will manifest in the shadows, listening to the sorcerer's whispered orders. However, tales are told that if the sorcerer has any open cuts or wounds on himself, the Blade-thing will take his life instead, and return to the warp.\n\nBlade-thing Profile",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 60,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 0,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 36,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 60,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 28,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 60,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 10,
+        "unnatural": 0
+      }
+    },
+    "wounds": 15,
+    "movement": "6/12/18/36",
+    "skills": [
+      [
+        "Awareness",
+        20
+      ],
+      [
+        "Concealment",
+        20
+      ],
+      [
+        "Contortionist",
+        0
+      ],
+      [
+        "Dodge",
+        10
+      ],
+      [
+        "Psyniscience",
+        0
+      ],
+      [
+        "Silent Move",
+        20
+      ]
+    ],
+    "talents": [
+      "Blademaster",
+      "Heightened Senses (Hearing)",
+      "Lightning Attack",
+      "Step Aside",
+      "Sure Strike",
+      "Swift Attack"
+    ],
+    "traits": [
+      "Daemonic (TB 6)",
+      "Dark Sight",
+      "Fear (3)",
+      "From Beyond"
+    ],
+    "weapons_text": "Far too many blades (1d10+5 R; Pen 6; Tearing).",
+    "armour_text": "Unseen armour (All 3).",
+    "gear_text": "None Thing of Smoke and Shadow: The Blade-thing lives in shadows and darkness. When in a shadow or other dark area, it gains the Phase Trait. It may only become incorporeal or substantial in a dark or shadowed area.",
+    "portrait_ref": null,
+    "ws_line": 2938,
+    "source_book": "roguetrader_edgeoftheabyss.pdf"
+  },
+  {
+    "name": "Greater Daemon (Walking Nightmare)",
+    "slug": "greater-daemon-walking-nightmare",
+    "faction": "Warp",
+    "description": "Of all the dark fates that can befall a ship is the Warp should its Gellar field flicker or fall, the worst is the manifestation of a Greater Daemon. Born of nameless horrors and inhuman hatred, an entity of this magnitude is almost impossible to stop by mortal hands. Powerful beyond belief, this lord of darkness desires no more than to drag the screaming souls of its victims back to the abyssal depths of the hell-void from which it came.\n\nSuch horrifying entities are thankfully rare, but many voidsmen tell tales of such creatures manifesting aboard a vessel. Such stories inevitably end with the \"walking nightmare\" departing, leaving a drifting charnel-tomb in its wake.\n\nWalking Nightmare Profile",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 68,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 29,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 55,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 54,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 18,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 65,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 65,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 79,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 13,
+        "unnatural": 0
+      }
+    },
+    "wounds": 80,
+    "movement": "3/6/9/18",
+    "skills": [
+      [
+        "Awareness",
+        10
+      ],
+      [
+        "Deceive",
+        20
+      ],
+      [
+        "Forbidden Lore (Daemonology, Heresy, the Warp, plus any other two)",
+        20
+      ],
+      [
+        "Psyniscience",
+        20
+      ],
+      [
+        "Secret Tongue (Daemonic)",
+        20
+      ],
+      [
+        "Speak Language (all)",
+        20
+      ]
+    ],
+    "talents": [
+      "Ambidextrous",
+      "Furious Assault",
+      "Swift Attack",
+      "Two Weapon Wielder (Melee)"
+    ],
+    "traits": [
+      "Daemonic (TB 10)",
+      "Dark Sight",
+      "Fear 4",
+      "Flyer 8",
+      "From Beyond",
+      "Size (Enormous)",
+      "Unholy Aura†",
+      "Unnatural Strength (x3)",
+      "Vortex of the Abyss††",
+      "Warp Fire†††",
+      "Warp Instability"
+    ],
+    "weapons_text": "Claws and fangs (2d10+15 R; Pen 0; Counts as two weapons) †Unholy Aura: The Daemon is not protected by armour, but shields itself from attacks using the raw power of the Warp.",
+    "armour_text": "",
+    "gear_text": "",
+    "portrait_ref": null,
+    "ws_line": 2960,
+    "source_book": "roguetrader_edgeoftheabyss.pdf"
+  },
+  {
+    "name": "Sendak Voltrasse",
+    "slug": "sendak-voltrasse",
+    "faction": "",
+    "description": "A spiteful vassal of Karrad Vall, Sendak Voltrasse—whose original name is now long forgotten, even to himself—has fought at Vall's command for as long as he can remember. After what may be centuries of service, Voltrasse harbours great hatred for Vall, but is inexplicably powerless against the Faceless Lord, and cannot remember any reason for this hatred. For years now, Voltrasse has journeyed across the Void, seeming never to stop save to raid, plunder and destroy, searching for something that his master desires. None know what that thing is, save for Vall. However, his thoughts infest his servant's mind, goading him ever onwards.\n\nVoltrasse's original nature is a forgotten thing, stripped from his mind until he remembers it no more, leaving him unable to recall what shape his body once had. He towers above all others under his command, his sickly flesh and iron-hard bone not truly alive. Beneath the surface of his gore-caked voidsuit, thin, dark veins worm across his pale skin, twitching and shifting as if imbued with a life of their own; he can no longer remove the suit, as it has long-since fused to his flesh. Visible to all through a hole in the front of the voidsuit, a sphere of obsidian covered in blasphemous engravings is embedded in his chest, held in place by a twisted scaffold of black iron festooned with barbed needles. His eye sockets are empty, as are those of many of his crew, and his face is covered in ancient scars and unnerving tattoos.\n\nVoltrasse Profile",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 52,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 18,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 51,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 58,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 44,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 41,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 61,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 51,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 38,
+        "unnatural": 0
+      }
+    },
+    "wounds": 18,
+    "movement": "4/8/12/24",
+    "skills": [
+      [
+        "Awareness",
+        20
+      ],
+      [
+        "Chem-Use",
+        0
+      ],
+      [
+        "Command",
+        20
+      ],
+      [
+        "Common Lore (Imperium)",
+        10
+      ],
+      [
+        "Common Lore (Koronus Expanse)",
+        10
+      ],
+      [
+        "Common Lore (War)",
+        10
+      ],
+      [
+        "Contortionist",
+        0
+      ],
+      [
+        "Deceive",
+        10
+      ],
+      [
+        "Dodge",
+        20
+      ],
+      [
+        "Forbidden Lore (Daemonology)",
+        0
+      ],
+      [
+        "Forbidden Lore (Pirates)",
+        0
+      ],
+      [
+        "Forbidden Lore (The Warp)",
+        20
+      ],
+      [
+        "Interrogation",
+        10
+      ],
+      [
+        "Intimidate",
+        20
+      ],
+      [
+        "Literacy",
+        0
+      ],
+      [
+        "Navigation (Warp)",
+        20
+      ],
+      [
+        "Psyniscience",
+        20
+      ],
+      [
+        "Secret Tongue (Dark Speech)",
+        0
+      ],
+      [
+        "Speak Language (Low Gothic)",
+        0
+      ]
+    ],
+    "talents": [
+      "Berserk Charge",
+      "Blind Fighting",
+      "Combat Master",
+      "Combat Sense",
+      "Crushing Blow",
+      "Die Hard",
+      "Disturbing Voice",
+      "Favoured by the Warp",
+      "Frenzy",
+      "Furious Assault",
+      "Hardy",
+      "Heightened Senses (Sound, Taste, Smell, Touch)",
+      "Improved Warp Sense",
+      "Jaded",
+      "Lightning Attack",
+      "Melee Weapon Training (Universal)",
+      "Pistol Training (Las, SP)",
+      "Peer (Renegades)",
+      "Psy Rating 6*",
+      "Swift Attack",
+      "True Grit",
+      "Two-Weapon Wielder (Melee)",
+      "Unarmed Master",
+      "Unarmed Warrior",
+      "Wall of Steel",
+      "Warp Conduit",
+      "Warp Sense"
+    ],
+    "traits": [],
+    "weapons_text": "",
+    "armour_text": "",
+    "gear_text": "",
+    "portrait_ref": "img-43.jpeg",
+    "ws_line": 2983,
+    "source_book": "roguetrader_edgeoftheabyss.pdf"
+  },
+  {
+    "name": "Current Endeavours",
+    "slug": "current-endeavours",
+    "faction": "",
+    "description": "Calligos Winterscale's interests stretch across the Expanse, but they are unsurprisingly focused in Winterscale's Realm. Perhaps because it bears his name, Calligos does focus his efforts within this region of the Expanse. His interests and assets in this region are myriad and varied; they include arms dealing, dabbling in the Cold Trade, smuggling, piracy, exploration, and even \"legal\" trade ventures. If one can think of a money-making scheme, it is likely that somewhere a Winterscale agent is doing something similar. It would not be fair to say that Calligos does not serve Imperial interests, he is as loyal to the Imperium of Man as any Rogue Trader. It is more appropriate to say that to Calligos Winterscale, the Winterscale Dynasty is the Imperium, and that monolithic establishment back through the Maw is simply not his concern.\n\nCalligos will not rest until the entirety of Winterscale's Realm bows to his rule—as preposterous as this goal is, he seems to be putting a massive effort behind it. The focus of his effort is the frozen world of Lucien's Breath. There he is embroiled in a bitter war with the Rogue Trader Aspyce Chorda. In Chorda, Winterscale has found an opponent he can neither cow nor crush, and to his fury he has been forced to split control of the world with her. All know this is only a temporary solution. Already skirmishes and raids break out between the rival sides, and Winterscale is openly gathering his strength and his allies to crush the usurper. It is likely that Chorda's competence and danger as a worthy adversary appeals to Winterscale's bloodlust, and only encourages his desire for conflict. The inevitable war between the two promises to be both bloody and massive in scale, and could plunge that entire region of space into conflict.\n\nHowever, the approaching war offers Rogue Traders a singular opportunity. Winterscale is too evenly matched to Chorda to be assured victory. He is willing to hire cut-throats and mercenary Rogue Traders who are eager for war, and reward them well for their service.",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 59,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 54,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 60,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 62,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 47,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 39,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 63,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 55,
+        "unnatural": 0
+      }
+    },
+    "wounds": 30,
+    "movement": "3/6/9/18",
+    "skills": [
+      [
+        "Awareness",
+        10
+      ],
+      [
+        "Barter",
+        10
+      ],
+      [
+        "Blather",
+        20
+      ],
+      [
+        "Carouse",
+        20
+      ],
+      [
+        "Charm",
+        20
+      ],
+      [
+        "Climb",
+        0
+      ],
+      [
+        "Commerce",
+        0
+      ],
+      [
+        "Command",
+        20
+      ],
+      [
+        "Common Lore (Imperial Guard, Imperial Navy, Imperium, Koronus Expanse, Rogue Traders, War)",
+        10
+      ],
+      [
+        "Demolition",
+        0
+      ],
+      [
+        "Dodge",
+        0
+      ],
+      [
+        "Drive (Ground Vehicle, Skimmer/Hover)",
+        10
+      ],
+      [
+        "Evaluate",
+        0
+      ],
+      [
+        "Gamble",
+        10
+      ],
+      [
+        "Interrogation",
+        0
+      ],
+      [
+        "Intimidate",
+        20
+      ],
+      [
+        "Literacy",
+        0
+      ],
+      [
+        "Navigation (Stellar)",
+        0
+      ],
+      [
+        "Pilot (Flyers, Space Craft)",
+        10
+      ],
+      [
+        "Scrutiny",
+        10
+      ],
+      [
+        "Speak Language (High Gothic, Low Gothic, Trader's Cant)",
+        0
+      ],
+      [
+        "Survival",
+        0
+      ],
+      [
+        "Swim",
+        0
+      ]
+    ],
+    "talents": [
+      "Air of Authority",
+      "Ambidextrous",
+      "Armour of Contempt",
+      "Basic Weapon Training (Universal)",
+      "Battle Rage",
+      "Berserk Charge",
+      "Blademaster",
+      "Bulging Biceps",
+      "Combat Formation",
+      "Combat Master",
+      "Crippling Strike",
+      "Crushing Blow",
+      "Decadence",
+      "Die Hard",
+      "Fearless",
+      "Frenzy",
+      "Furious Assault",
+      "hardy",
+      "Heavy Weapon Training (SP, Bolt, Launcher)",
+      "Into the Jaws of Hell",
+      "Iron Discipline",
+      "Iron Jaw",
+      "Lightning Attack",
+      "Master and Commander",
+      "Melee Weapon Training (Primitive, Universal)",
+      "Mighty Shot",
+      "Pistol Weapon Training (Universal)",
+      "Quick Draw",
+      "Renowned Warrant",
+      "Resistance (Psychic Techniques)",
+      "Strong Minded",
+      "Swift Attack",
+      "True Grit",
+      "Unarmed Master",
+      "Unarmed Warrior",
+      "Wall of Steel"
+    ],
+    "traits": [
+      "Touched by the Fates (3)"
+    ],
+    "weapons_text": "Breaker—Best Craftsmanship Power Axe (1d10+16E; Pen 7; Unbalanced, Power Field, +5 to WS), Hostile Argument—Best Craftsmanship Storm Bolter with Tempest Shells (90m; S/2/4; 1d10+7E; Pen 4; Clip 60; Rld Full; Storm, Tearing, Shocking, Never Jams), Voss Pattern Grenade Launcher with Krak Grenades (60m; S/-/-; 2d10+6X; Pen 6; Clip 6; Rld Full; Inaccurate), Fair Point—Best Craftsmanship Mono-knife (1d5+9 R; Pen 2; +5 WS).",
+    "armour_text": "Enforcer Light Carapace (All 5).",
+    "gear_text": "Chrono, Micro-bead, Best Craftsmanship Uniform Jacket and Clothing, Data-Slate, Multicompass, Recoil Gloves, Best Craftsmanship Conversion Field (see INTO THE STORM page 130), one storm bolter reload.",
+    "portrait_ref": "img-52.jpeg",
+    "ws_line": 3467,
+    "source_book": "roguetrader_edgeoftheabyss.pdf"
+  },
+  {
+    "name": "Current Endeavours And Rumoured Activities",
+    "slug": "current-endeavours-and-rumoured-activities",
+    "faction": "",
+    "description": "For the last twenty years Aoife's daughter Igraine has remained in the Calixis Sector amongst the nobility, just as Aoife did while growing up. Aoife has been attempting to groom her daughter for the day when she will take the Warrant from afar, but rumours abound that she wants to see her daughter removed from the poisonous intrigues of the Sector Capital, so they may meet in Port Wander. However, there are certainly those who desire to strike against the Armengarde heir while she is unprotected, as Igraine's worth to the Dynasty is incalculable. Such a task may be more dangerous than it appears, however, especially if Igraine is as competent as her mother. Then, of course, there is also the matter of her mysterious father.\n\nRecently, the Machenko Dynasty has begun to move against the Armengarde interests in the Koronus Expanse with ever-increasing force. They have established a base of operations somewhere in the Rubycon II system, and are sending armed vessels to attack those associated with the Armengardes in the past. In response, an Armengarde agent known as Master Dougal has arrived at the Port. He is offering a great deal of wealth (and future favours) for someone willing to eliminate this threat.",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 60,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 33,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 37,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 50,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 41,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 31,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 51,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 62,
+        "unnatural": 0
+      }
+    },
+    "wounds": 22,
+    "movement": "3/6/9/18",
+    "skills": [
+      [
+        "Awareness + 10",
+        0
+      ],
+      [
+        "Barter + 10",
+        0
+      ],
+      [
+        "Blather + 10",
+        0
+      ],
+      [
+        "Carouse + 20",
+        0
+      ],
+      [
+        "Charm + 20",
+        0
+      ],
+      [
+        "Ciphers (Rogue Trader, Nobilite Encoding)",
+        0
+      ],
+      [
+        "Command + 20",
+        0
+      ],
+      [
+        "Commerce",
+        0
+      ],
+      [
+        "Common Lore (Adeptus Astra Telepathica, Adeptus Mechanicus, Imperium, Imperial Navy, Koronus Expanse, Rogue Traders)",
+        0
+      ],
+      [
+        "Deceive + 10",
+        0
+      ],
+      [
+        "Dodge",
+        0
+      ],
+      [
+        "Drive (Ground, Skimmer)",
+        0
+      ],
+      [
+        "Evaluate",
+        0
+      ],
+      [
+        "Forbidden Lore (The Inquisition, Psykers, Xenos)",
+        0
+      ],
+      [
+        "Gamble + 20",
+        0
+      ],
+      [
+        "Inquiry + 10",
+        0
+      ],
+      [
+        "Literacy",
+        0
+      ],
+      [
+        "Pilot (Flyers, Space Craft) + 10",
+        0
+      ],
+      [
+        "Scholastic Lore (Cryptology, Legend)",
+        0
+      ],
+      [
+        "Scrutiny",
+        0
+      ],
+      [
+        "Search",
+        0
+      ],
+      [
+        "Secret Tongue (Rogue Trader, Underdeck)",
+        0
+      ],
+      [
+        "Speak Language (High Gothic, Low Gothic, Trader's Cant)",
+        0
+      ],
+      [
+        "Tech Use",
+        0
+      ]
+    ],
+    "talents": [
+      "Air of Authority",
+      "Ambidextrous",
+      "Basic Weapon Training (Universal)",
+      "Bastion of Iron Will",
+      "Blademaster",
+      "Combat Master",
+      "Counter Attack",
+      "Crippling Strike",
+      "Disarm",
+      "Enemy (Machenko Dynasty)",
+      "Exotic Weapon Training (The Mourning's Edge)",
+      "Flame Weapon Training (Pistol)",
+      "Good Reputation (Void Born, Workers)",
+      "Hardy",
+      "Into the Jaws of Hell",
+      "Iron Discipline",
+      "Jaded",
+      "Master and Commander",
+      "Meditation",
+      "Melee Weapon Training (Primitive, Universal)",
+      "Nerves of Steel",
+      "Peer (Adeptus Mechanicus, Inquisition, Middle Classes, Nobility, Void Born, Workers) Pistol Weapon Training (Universal)",
+      "Quick Draw",
+      "Renowned Warrant",
+      "Resistance (Psychic Techniques)",
+      "Strong Minded",
+      "Swift Attack",
+      "True Grit",
+      "Touched by the Fates",
+      "Two-Weapon Wielder (Melee, Ballistic)",
+      "Wall of Steel"
+    ],
+    "traits": [],
+    "weapons_text": "The Mourning's Edge—Unique Eldar Powersword (1d10+10 E; Pen 7; Balanced, Power Field, +20 total to Parry attempts), Hand Flamer (10m; S/-/-; 1d10+4E; Pen 2; Clip 2; Rld 2 Full).",
+    "armour_text": "Concealed Xenos-mesh (Arms 4, Body 4, Legs 4).",
+    "gear_text": "Chrono, micro-bead, Best Craftsmanship uniform, Best Craftsmanship bionic arm, data-slate, multicompass. Best Craftsmanship refractor field (see INTO THE STORM page 130).",
+    "portrait_ref": "img-57.jpeg",
+    "ws_line": 3841,
+    "source_book": "roguetrader_edgeoftheabyss.pdf"
+  },
+  {
+    "name": "Overseer Leerus",
+    "slug": "overseer-leerus",
+    "faction": "",
+    "description": "Overseer Leerus is the cruel and prideful overseer of the Omega Dig.\n\n## Leerus Profile",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 48,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 34,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 42,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 52,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 32,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 38,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 34,
+        "unnatural": 0
+      }
+    },
+    "wounds": 18,
+    "movement": "3/6/9/18",
+    "skills": [
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Barter",
+        0
+      ],
+      [
+        "Carouse",
+        0
+      ],
+      [
+        "Ciphers",
+        0
+      ],
+      [
+        "Climb (Str)",
+        0
+      ],
+      [
+        "Commerce",
+        0
+      ],
+      [
+        "Command",
+        0
+      ],
+      [
+        "Common Lore (Int) (Imperium, Koronus Expanse)",
+        0
+      ],
+      [
+        "Deceive",
+        0
+      ],
+      [
+        "Dodge",
+        0
+      ],
+      [
+        "Evaluate",
+        0
+      ],
+      [
+        "Forbidden Lore (Int) (Archeotech, Xenos)",
+        0
+      ],
+      [
+        "Intimidate (Str)",
+        20
+      ],
+      [
+        "Literacy",
+        0
+      ],
+      [
+        "Navigation (Int) (Surface)",
+        0
+      ],
+      [
+        "Scholastic Lore (Int) (Cryptology)",
+        0
+      ],
+      [
+        "Scrutiny",
+        0
+      ],
+      [
+        "Search",
+        0
+      ],
+      [
+        "Speak Language (Int) (High Gothic, Low Gothic)",
+        0
+      ],
+      [
+        "Survival",
+        0
+      ]
+    ],
+    "talents": [
+      "Air of Authority",
+      "Basic Weapon Training (Bolt)",
+      "Counter Attack",
+      "Deadeye Shot",
+      "Die Hard",
+      "Light Sleeper",
+      "Melee Weapon Training (Universal)",
+      "Pistol Weapon Training (Bolt)",
+      "Rapid Reaction",
+      "Resistance (Psychic Techniques)",
+      "Strong Minded",
+      "True Grit"
+    ],
+    "traits": [],
+    "weapons_text": "Best Quality Customised Boltgun with Motion Predictor, Silencer and Lamp Pack (90m; S/2/4; 1d10+5 X; Pen 4; Clip 24, Reload Half, Tearing), chainsword (1d10+6 R; Pen 2; Balanced, Tearing)",
+    "armour_text": "Light carapace (Arms 4, Body 5, Legs 4).",
+    "gear_text": "2 bolt pistol clips, 1 boltgun clip, 1 lamp pack recharge, expensive survival suit, filtration plugs, auspex, data-slate, micro-bead, multicompass.",
+    "portrait_ref": null,
+    "ws_line": 4884,
+    "source_book": "roguetrader_edgeoftheabyss.pdf"
+  },
+  {
+    "name": "Tech-Adept Oddyle",
+    "slug": "tech-adept-oddyle",
+    "faction": "",
+    "description": "Tech-adept Oddyle is the renegade Tech-Priest working the Dig.\n\n## Oddyle Profile",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 34,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 24,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 33,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 29,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 41,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 34,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 20,
+        "unnatural": 0
+      }
+    },
+    "wounds": 14,
+    "movement": "3/6/9/18",
+    "skills": [
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Chem-Use",
+        0
+      ],
+      [
+        "Common Lore (Tech) (Adeptus Mechanicus) (Koronus Expanse)",
+        0
+      ],
+      [
+        "Logic",
+        10
+      ],
+      [
+        "Forbidden Lore (Adeptus Mechanicus) (Archeotech) (Xenos)",
+        0
+      ],
+      [
+        "Speak Language (Low Gothic) (Techna-Lingua)",
+        0
+      ],
+      [
+        "Tech-Use",
+        20
+      ]
+    ],
+    "talents": [
+      "Binary Chatter",
+      "Chem Geld",
+      "Electrical Succour",
+      "Energy Cache",
+      "Ferric Lure",
+      "Foresight",
+      "Luminen Charge",
+      "Meditation",
+      "Melee Weapon Training (Chain, Power, Primitive)",
+      "Pistol Training (Bolt, Las, Plasma, SP)"
+    ],
+    "traits": [
+      "Mechanicus Implants"
+    ],
+    "weapons_text": "Chain axe (1d10+7 R; Pen 2; Tearing), laspistol (30m; S/-/-; 1d10+2 E; Pen 0; Clip 30; Reload Full; Reliable).",
+    "armour_text": "Flak cloak (Head 3, Arms 3, Body 3, Legs 3).",
+    "gear_text": "MIU, Cybernetic Senses, Memorance Implant, Locator Matrix, Augur Arrays (all Good Craftsmanship), Odic Accumulator (counts as a Best Craftsmanship Graviton Gun).",
+    "portrait_ref": null,
+    "ws_line": 4907,
+    "source_book": "roguetrader_edgeoftheabyss.pdf"
+  },
+  {
+    "name": "Artificer Boran",
+    "slug": "artificer-boran",
+    "faction": "",
+    "description": "The off-kilter Boran is Oddyle’s somewhat reliable assistant.\n\n## Boran Profile",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 25,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 32,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 32,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 45,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 32,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 32,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 15,
+        "unnatural": 0
+      }
+    },
+    "wounds": 12,
+    "movement": "3/6/9/18",
+    "skills": [
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Chem-Use",
+        0
+      ],
+      [
+        "Common Lore (Tech) (Adeptus Mechanicus) (Koronus Expanse)",
+        0
+      ],
+      [
+        "Drive (Tracked Vehicles) (Walkers)",
+        0
+      ],
+      [
+        "Logic",
+        10
+      ],
+      [
+        "Speak Language (Low Gothic) (Techna-Lingua)",
+        0
+      ],
+      [
+        "Tech-Use",
+        20
+      ],
+      [
+        "Trade (Armourer)",
+        20
+      ]
+    ],
+    "talents": [
+      "Binary Chatter",
+      "Chem Geld",
+      "Electrical Succour",
+      "Energy Cache",
+      "Luminen Charge",
+      "Meditation",
+      "Melee Weapon Training (Shock, Primitive)",
+      "Pistol Training (Bolt, Las, Plasma, SP)",
+      "Rite of Pure Thought/Frenzy+"
+    ],
+    "traits": [
+      "Mechanicus Implants"
+    ],
+    "weapons_text": "Plasma pistol (10m; S/2/-E; Pen 6; Clip 10; Reload Half; Overheat), Shock Staff (1d5+6 I; Pen 0; Shocking)",
+    "armour_text": "Flak cloak (Head 3, Arms 3, Body 3, Legs 3).",
+    "gear_text": "MIU, Optical Mechadentrite, Utility Mechadendrite, Cranial Armour (all Good Craftsmanship), 2 plasma flasks, data-slate, respirator, personal cogitator, tools.",
+    "portrait_ref": null,
+    "ws_line": 4932,
+    "source_book": "roguetrader_edgeoftheabyss.pdf"
+  },
+  {
+    "name": "Adept Zpha",
+    "slug": "adept-zpha",
+    "faction": "",
+    "description": "Adept Zpha is the Dig’s foremost scholar.\n\n## Zpha Profile",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 25,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 20,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 24,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 22,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 50,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 44,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 33,
+        "unnatural": 0
+      }
+    },
+    "wounds": 9,
+    "movement": "3/6/9/18",
+    "skills": [
+      [
+        "Common Lore (Int) (Imperium, Koronus Expanse, Tech)",
+        0
+      ],
+      [
+        "Evaluate",
+        0
+      ],
+      [
+        "Forbidden Lore (Int) (Archeotech, Xenos)",
+        0
+      ],
+      [
+        "Literacy",
+        0
+      ],
+      [
+        "Navigation (Surface)",
+        0
+      ],
+      [
+        "Scholastic Lore (Int) (Archaic, Cryptology)",
+        0
+      ],
+      [
+        "Search",
+        0
+      ],
+      [
+        "Speak Language (Int) (High Gothic, Low Gothic)",
+        0
+      ],
+      [
+        "Tech-Use",
+        0
+      ],
+      [
+        "Trade (Int) (Archaeologist)",
+        20
+      ]
+    ],
+    "talents": [],
+    "traits": [],
+    "weapons_text": "",
+    "armour_text": "",
+    "gear_text": "",
+    "portrait_ref": null,
+    "ws_line": 4959,
+    "source_book": "roguetrader_edgeoftheabyss.pdf"
+  },
+  {
+    "name": "The Monster In The Maze",
+    "slug": "the-monster-in-the-maze",
+    "faction": "",
+    "description": "The terrifying remnants of a man who haunts the maze city.",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 48,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 0,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 51,
+        "unnatural": 10
+      },
+      "toughness": {
+        "base": 60,
+        "unnatural": 12
+      },
+      "agility": {
+        "base": 34,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 20,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 32,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 50,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 5,
+        "unnatural": 0
+      }
+    },
+    "wounds": 40,
+    "movement": "5/10/15/30",
+    "skills": [
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Concealment",
+        0
+      ],
+      [
+        "Shadowing",
+        0
+      ],
+      [
+        "Survival",
+        0
+      ]
+    ],
+    "talents": [
+      "Berserk Charge",
+      "Blind Fighting",
+      "Hatred (Overseer Leerus)",
+      "Lightning Attack",
+      "Rapid Reaction",
+      "Swift Attack",
+      "Warp Sense"
+    ],
+    "traits": [
+      "Brutal Charge",
+      "Dark-sight",
+      "Fear (3)",
+      "From Beyond†",
+      "Natural Armour",
+      "Natural Weapons",
+      "Regeneration†",
+      "Size (Enormous)",
+      "Sturdy",
+      "Warp Weapons†",
+      "Unnatural Strength (x2)",
+      "Unnatural Toughness (x2)"
+    ],
+    "weapons_text": "Chitinous Claws (1d10+10 R; Pen 3; Tearing).",
+    "armour_text": "Hideously twisted chitin/hardened skin (All 8).",
+    "gear_text": "",
+    "portrait_ref": null,
+    "ws_line": 4978,
+    "source_book": "roguetrader_edgeoftheabyss.pdf"
+  },
+  {
+    "name": "Rhiner Gelt",
+    "slug": "rhiner-gelt",
+    "faction": "",
+    "description": "The leader of the workers at the Dig.",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 38,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 44,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 46,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 23,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 37,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 40,
+        "unnatural": 0
+      }
+    },
+    "wounds": 15,
+    "movement": "2/4/6/12",
+    "skills": [
+      [
+        "Awareness",
+        10
+      ],
+      [
+        "Command +10",
+        0
+      ],
+      [
+        "Common Lore (Imperium) (Imperial Guard) (War)",
+        0
+      ],
+      [
+        "Interrogation",
+        0
+      ],
+      [
+        "Intimidate (Str)",
+        0
+      ],
+      [
+        "Speak Language (Low Gothic)",
+        0
+      ]
+    ],
+    "talents": [
+      "Basic Weapon Training (Las, SP)",
+      "Disarm",
+      "Melee Weapon Training (Primitive)",
+      "Peer (Workers) (Military)",
+      "Pistol Training (Las, SP)",
+      "Takedown",
+      "Unarmed Warrior",
+      "Unarmed Master"
+    ],
+    "traits": [],
+    "weapons_text": "Unarmed fists (1d10+4 I; Pen 0).",
+    "armour_text": "None.",
+    "gear_text": "Rugged work gear.",
+    "portrait_ref": null,
+    "ws_line": 4999,
+    "source_book": "roguetrader_edgeoftheabyss.pdf"
+  },
+  {
+    "name": "Mercenary Guards",
+    "slug": "mercenary-guards",
+    "faction": "",
+    "description": "Dangerous mercenaries hired to protect the camp.",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 25,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 0,
+        "unnatural": 0
+      }
+    },
+    "wounds": 10,
+    "movement": "3/6/9/18",
+    "skills": [
+      [
+        "Awareness",
+        20
+      ],
+      [
+        "Common Lore (Int) (Imperium, Koronus Expanse, Underworld)",
+        0
+      ],
+      [
+        "Dodge",
+        10
+      ],
+      [
+        "Inquiry",
+        0
+      ],
+      [
+        "Intimidate (Str)",
+        10
+      ],
+      [
+        "Scrutiny",
+        10
+      ]
+    ],
+    "talents": [
+      "Basic Weapon Training (Universal)",
+      "Disarm",
+      "Heavy Weapon Training (SP)",
+      "Melee Weapon Training (Primitive, Universal)",
+      "Nerves of Steel",
+      "Pistol Training (Universal)"
+    ],
+    "traits": [],
+    "weapons_text": "Hellgun (110m; S/3/–; 1d10+4 E; Pen 7; Clip 30; Reload 2 Full) or Heavy Stubber (120m; –/–/10; 1d10+5 I; Pen 3; Clip 40; Reload Full), 3 Frag Grenades (9m; S/–/–; 2d10 X; Pen 0; Blast (4))",
+    "armour_text": "Flak armour with carapace chest plate (Arms 4, Body 6, Head 4, Legs 4).",
+    "gear_text": "Rugged clothing, filtration plugs, photo-contacts.",
+    "portrait_ref": null,
+    "ws_line": 5017,
+    "source_book": "roguetrader_edgeoftheabyss.pdf"
+  },
+  {
+    "name": "Badb Ra, Crow Spirit Corsair",
+    "slug": "badb-ra-crow-spirit-corsair",
+    "faction": "",
+    "description": "The mysterious agent of the Crow Spirits in the maze city.",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 52,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 55,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 33,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 55,
+        "unnatural": 10
+      },
+      "intelligence": {
+        "base": 39,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 58,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 43,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 20,
+        "unnatural": 0
+      }
+    },
+    "wounds": 18,
+    "movement": "5/10/15/30",
+    "skills": [
+      [
+        "Acrobatics",
+        20
+      ],
+      [
+        "Awareness",
+        20
+      ],
+      [
+        "Concealment",
+        20
+      ],
+      [
+        "Deceive (Fel) +20), Dodge (Ag) +10, Evaluate (Int) +10, Forbidden Lore (Int) (The Black Library",
+        0
+      ],
+      [
+        "Xenos",
+        0
+      ],
+      [
+        "The Warp) +10, Gamble (Int), Navigation (Stellar) (Int), Pilot (flyer) (Ag), Medicae (Int), Silent Move (Ag) +20, Speak Language (Eldar",
+        0
+      ],
+      [
+        "Low Gothic",
+        0
+      ],
+      [
+        "Void Cant)",
+        10
+      ]
+    ],
+    "talents": [
+      "Basic Weapon Training (Las)",
+      "Catfall",
+      "Exotic Weapons Training (Shuriken Catapult, Shuriken Pistol)",
+      "Foresight",
+      "Hard Target",
+      "Leap Up",
+      "Melee Weapon Training (Power, Primitive)",
+      "Pistol Weapon Training (Las)",
+      "Quick Draw",
+      "Rapid Reaction",
+      "Resistance (Fear, Psychic Techniques, Sprint"
+    ],
+    "traits": [
+      "Unnatural Agility (x2)"
+    ],
+    "weapons_text": "Best Quality Shuriken catapult (60m; S/3/10; 1d10+4 R; Pen 6; Clip 100, Reload 2 Full; Reliable), xenocrafted laspistol (30m; S/-/-; 1d10+2 E; Pen 0; Clip 30; Reload Full; Reliable), xenocrafted mono-sword (1d10+3 R; Pen 2; Balanced), 1 plasma grenade, 1 blind grenade.",
+    "armour_text": "Xeno mesh void armour (Body 5, Arms 4, Legs 4).",
+    "gear_text": "Ragged outer garments adorned with a variety of bone fetishes, 3 spare clips of Shuriken catapult ammunition, waystone gem, xenos-crafted medkit, auspex, the key.",
+    "portrait_ref": null,
+    "ws_line": 5044,
+    "source_book": "roguetrader_edgeoftheabyss.pdf"
+  }
+]

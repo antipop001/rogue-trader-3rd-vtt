@@ -1,0 +1,2367 @@
+[
+  {
+    "name": "Drexis Skar",
+    "slug": "drexis-skar",
+    "faction": "",
+    "description": "Drexis Skar is a Chaos Reaver captain who has recently fallen on hard times. Tall and lanky with a bald pate and black eyes, he is rarely seen without a sneer on his thin, bloodless lips. He has sharp features, and where it is not covered with vaguely unsettling tattoos, his skin is sallow and waxy with a faint, sickly-green tinge as if he has recently recovered from a serious illness. When discovered by the Explorers, Skar is desperately low on food and water, and is seriously considering using his single remaining bolt shell as release from his lonely torment.",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 52,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 41,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 48,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 39,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 50,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 55,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 42,
+        "unnatural": 0
+      }
+    },
+    "wounds": 18,
+    "movement": "3/6/9/18",
+    "skills": [
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Charm",
+        0
+      ],
+      [
+        "Barter",
+        0
+      ],
+      [
+        "Blather",
+        20
+      ],
+      [
+        "Carouse",
+        10
+      ],
+      [
+        "Command",
+        0
+      ],
+      [
+        "Common Lore (Imperium, Imperial Navy, Merchant, Underworld)",
+        0
+      ],
+      [
+        "Concealment",
+        0
+      ],
+      [
+        "Deceive",
+        20
+      ],
+      [
+        "Dodge",
+        0
+      ],
+      [
+        "Intimidate",
+        10
+      ],
+      [
+        "Forbidden Lore (Chaos, Daemonology, Heresy, Pirates)",
+        0
+      ],
+      [
+        "Interrogation",
+        0
+      ],
+      [
+        "Inquiry",
+        10
+      ],
+      [
+        "Navigation (Stellar)",
+        10
+      ],
+      [
+        "Pilot (Spacecraft)",
+        20
+      ],
+      [
+        "Tech-Use",
+        0
+      ],
+      [
+        "Speak Language (Low Gothic, Void Cant)",
+        0
+      ]
+    ],
+    "talents": [],
+    "traits": [],
+    "weapons_text": "",
+    "armour_text": "",
+    "gear_text": "",
+    "portrait_ref": "img-22.jpeg",
+    "ws_line": 1780,
+    "source_book": "roguetrader_citadelofskulls.pdf"
+  },
+  {
+    "name": "Euryale Ceto",
+    "slug": "euryale-ceto",
+    "faction": "",
+    "description": "\"Nothing may exist in this galaxy without my knowledge, or without my consent.\"\n\n-Euryale Ceto, Archivist of the Citadel of Skulls\n\nThe hideous mutant known as Euryale Ceto is the keeper of the treasure vaults beneath the Citadel of Skulls. Also known as the Archivist, she was once a powerful human sorceress from an isolated feral world in the Unbeholden Reaches. Taken by Chaos Reavers during a raid centuries ago, she threw her lot in with the powers of Chaos after experiencing the excruciating joy of Slaanesh. Since then, she has dedicated herself to collecting dark knowledge and experiencing blasphemous pleasures for the glory of Slaanesh. Now, after centuries in the service of Slaanesh, her body is twisted beyond recognition and she has become a frightful four-armed hybrid of woman and serpent. Cunning and incredibly intelligent, she prefers to keep to her chambers in the vault, cataloguing and obsessively studying her many treasures while her sorcerers and daemons do the work of guarding her and the treasures in the vault.\n\nEuryale Ceto Profile",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 40,
+        "unnatural": 8
+      },
+      "agility": {
+        "base": 45,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 55,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 50,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 58,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 20,
+        "unnatural": 0
+      }
+    },
+    "wounds": 26,
+    "movement": "4/8/12/24",
+    "skills": [
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Ciphers (Occult)",
+        0
+      ],
+      [
+        "Common Lore (Imperium, Koronus Expanse)",
+        0
+      ],
+      [
+        "Command",
+        0
+      ],
+      [
+        "Contortionist",
+        20
+      ],
+      [
+        "Deceive",
+        0
+      ],
+      [
+        "Dodge",
+        20
+      ],
+      [
+        "Forbidden Lore (Cults, Daemonology, Heresy, Psykers, The Warp, Chaos)",
+        0
+      ],
+      [
+        "Intimidate",
+        20
+      ],
+      [
+        "Invocation",
+        20
+      ],
+      [
+        "Psyniscience",
+        0
+      ],
+      [
+        "Scholastic Lore (Occult)",
+        0
+      ],
+      [
+        "Secret Tongue (Chaos Reavers)",
+        0
+      ],
+      [
+        "Speak Language (Low Gothic, High Gothic)",
+        0
+      ]
+    ],
+    "talents": [],
+    "traits": [],
+    "weapons_text": "",
+    "armour_text": "",
+    "gear_text": "",
+    "portrait_ref": "img-24.jpeg",
+    "ws_line": 1828,
+    "source_book": "roguetrader_citadelofskulls.pdf"
+  },
+  {
+    "name": "Slade Mortia",
+    "slug": "slade-mortia",
+    "faction": "",
+    "description": "\"I prefer the direct approach. Master Gunner, give them a couple of broadsides to set the proper tone for auspicious meeting.\"\n\n-Slade Mortia opening trade negotiations\n\nCaptain of the dreaded cruiser Debaser, Slade Mortia is a man known throughout the rimward regions of the Expanse as a ruthless and merciless pirate. Specialising in commerce raiding and ship thievery, Mortia is known as a prime realspace navigator and a master ship handler. His crewmen and reavers are held as an example by their fellows as some of the most brutal and dangerous voidmen in the Expanse. He is famous for stealing numerous ships and uncounted Thrones worth of cargo from Battlefleet Calixis and escaping with his ill-gotten gains to the Expanse.",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 45,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 52,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 37,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 44,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 37,
+        "unnatural": 0
+      }
+    },
+    "wounds": 18,
+    "movement": "4/8/12/24",
+    "skills": [
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Barter",
+        0
+      ],
+      [
+        "Carouse",
+        10
+      ],
+      [
+        "Ciphers (Underworld, Chaos Reaver)",
+        0
+      ],
+      [
+        "Command",
+        10
+      ],
+      [
+        "Common Lore (Imperium, Koronus Expanse, Merchant Underworld)",
+        0
+      ],
+      [
+        "Deceive",
+        10
+      ],
+      [
+        "Dodge",
+        0
+      ],
+      [
+        "Forbidden Lore (Chaos, Heresy, Pirates)",
+        0
+      ],
+      [
+        "Intimidate",
+        20
+      ],
+      [
+        "Interrogation",
+        10
+      ],
+      [
+        "Inquiry",
+        0
+      ],
+      [
+        "Navigation (Stellar)",
+        20
+      ],
+      [
+        "Pilot (Space Craft)",
+        20
+      ],
+      [
+        "Tech-Use",
+        0
+      ],
+      [
+        "Speak Language (Low Gothic, Void Cant)",
+        0
+      ]
+    ],
+    "talents": [
+      "Air of Authority",
+      "Basic Weapon Training (Universal)",
+      "Decadence",
+      "Die Hard",
+      "Jaded",
+      "Last Man Standing",
+      "Leap Up",
+      "Light Sleeper",
+      "Melee Weapon Training (Universal)",
+      "Paranoia",
+      "Peer (Chaos Reavers)",
+      "Pistol Weapon Training (Universal)",
+      "Resistance (Fear)",
+      "Swift Attack",
+      "Touched by the Fates"
+    ],
+    "traits": [],
+    "weapons_text": "Best Craftsmanship Plasma Pistol (30m; S/2/-; 1d10+6 E; Pen 6; Clp 10; Rld 3 Full; Overheat), Good Craftsmanship Chain Sword (1d10+6 R; Pen 2; Tearing, Balanced), Crux Beam Gun (80m; S/3/-; 2d10+5 E; Pen 6; Clp 25; Rld 4 Full; Scatter).",
+    "armour_text": "Best Craftsmanship Light Power Armour (Arms 8; Body 8; Head 8; Legs 8).",
+    "gear_text": "Chaos charm, corrupted almanac astrae divinitus, dataslate, auto-quill, combi-tool, defaced lord-captain's baton, micro-bead.",
+    "portrait_ref": "img-25.jpeg",
+    "ws_line": 1870,
+    "source_book": "roguetrader_citadelofskulls.pdf"
+  },
+  {
+    "name": "Torq And Siegmund Felthan",
+    "slug": "torq-and-siegmund-felthan",
+    "faction": "",
+    "description": "The brothers Felthan are a pair of heavily-augmented identical twins from a feral world in the Heathen Stars. They have travelled the Expanse for nearly fifty years, selling their services as thugs and killers to the highest bidder. Adherents of Chaos more through association than by active worship, they recently shipped out with Slade Mortia as hired bodyguards. While canny and passable tacticians, the brothers are dull-witted and have a near insatiable taste for mindless violence that makes them difficult to control. Despite this, they are loyal to Mortia and defend him to their last breath, as long as the money keeps coming.",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 50,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 50,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 45,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 50,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 20,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 25,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 20,
+        "unnatural": 0
+      }
+    },
+    "wounds": 20,
+    "movement": "3/6/9/18",
+    "skills": [
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Climb",
+        0
+      ],
+      [
+        "Command",
+        0
+      ],
+      [
+        "Demolition",
+        10
+      ],
+      [
+        "Dodge",
+        10
+      ],
+      [
+        "Forbidden Lore (Chaos)",
+        0
+      ],
+      [
+        "Intimidate",
+        20
+      ],
+      [
+        "Search",
+        10
+      ],
+      [
+        "Security",
+        0
+      ],
+      [
+        "Speak Language (Low Gothic)",
+        0
+      ],
+      [
+        "Survival",
+        10
+      ],
+      [
+        "Tech-Use",
+        0
+      ]
+    ],
+    "talents": [
+      "Basic Weapon Training (Universal)",
+      "Blind Fighting",
+      "Combat Master",
+      "Crack Shot",
+      "Decadence",
+      "Die Hard",
+      "Double Team",
+      "Fearless",
+      "Heavy Weapon Training (Universal)",
+      "Iron Discipline",
+      "Iron Jaw",
+      "Melee Weapon Training (Universal)",
+      "Mighty Shot",
+      "Nerves of Steel",
+      "Pistol Weapon Training (Universal)",
+      "Step Aside",
+      "Takedown",
+      "Technical Knock",
+      "True Grit"
+    ],
+    "traits": [],
+    "weapons_text": "Best Craftsmanship Boltgun with Preysense Sight (90m; S/2/4; 1d10+7 X; Pen 4; Clip 24; Rld Full; Tearing, Reliable), Good Craftsmanship Hand Cannon (35m; S/-/-; 1d10+6 I; Pen 2; Clip 5; Rld 2 Full), Good Craftsmanship Chain Sword (1d10+6 R; Pen 2; Tearing, Balanced).",
+    "armour_text": "Power Armour (Arms 8; Body 8; Head 8; Legs 8).",
+    "gear_text": "Chaos charm, micro-bead, three clips for each weapon.",
+    "portrait_ref": "img-25.jpeg",
+    "ws_line": 1898,
+    "source_book": "roguetrader_citadelofskulls.pdf"
+  },
+  {
+    "name": "Fallon Marquese",
+    "slug": "fallon-marquese",
+    "faction": "",
+    "description": "\"For enough Thrones, I'd take a shot at the God-Emperor himself.\"\n\n--Fallon Marquese on his unique business model\n\nA truly evil and low individual, Fallon Marquese makes his living as a scout and assassin for hire. An expert tracker and marksman, he claims to have stepped foot on every world in the Expanse and regularly takes credit for some of the more fantastic assassinations in the Calixis Sector. Marquese also claims to possess knowledge of secret doors and passageways in the Citadel of Skulls itself. He is currently on Iniquity after arriving aboard a slaver ship and is looking for his next assignment.",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 45,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 45,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 45,
+        "unnatural": 0
+      }
+    },
+    "wounds": 12,
+    "movement": "4/8/12/24",
+    "skills": [
+      [
+        "Awareness",
+        10
+      ],
+      [
+        "Barter",
+        0
+      ],
+      [
+        "Blather",
+        0
+      ],
+      [
+        "Carouse",
+        0
+      ],
+      [
+        "Climb",
+        0
+      ],
+      [
+        "Common Lore (Imperium, Koronus Expanse)",
+        0
+      ],
+      [
+        "Concealment",
+        0
+      ],
+      [
+        "Deceive",
+        20
+      ],
+      [
+        "Dodge",
+        0
+      ],
+      [
+        "Forbidden Lore (Heresy, Mutants, Chaos Reavers)",
+        0
+      ],
+      [
+        "Inquiry",
+        10
+      ],
+      [
+        "Scrutiny",
+        10
+      ],
+      [
+        "Search",
+        20
+      ],
+      [
+        "Security",
+        0
+      ],
+      [
+        "Shadowing",
+        0
+      ],
+      [
+        "Silent Move",
+        20
+      ],
+      [
+        "Survival",
+        0
+      ],
+      [
+        "Tech-use",
+        0
+      ],
+      [
+        "Tracking",
+        10
+      ]
+    ],
+    "talents": [
+      "Basic Weapon Training (Universal)",
+      "Catfall",
+      "Deadeye Shot",
+      "Decadence",
+      "Hardy",
+      "Iron Jaw",
+      "Jaded",
+      "Leap Up",
+      "Marksman",
+      "Medicae",
+      "Melee Weapon Training (Universal)",
+      "Pistol Weapon Training (Universal)",
+      "Sharpshooter",
+      "Touched by the Fates"
+    ],
+    "traits": [],
+    "weapons_text": "",
+    "armour_text": "",
+    "gear_text": "",
+    "portrait_ref": null,
+    "ws_line": 1925,
+    "source_book": "roguetrader_citadelofskulls.pdf"
+  },
+  {
+    "name": "Vault Guardians",
+    "slug": "vault-guardians",
+    "faction": "",
+    "description": "These hideous beings are warp-possessed mutants who serve as the personal servants of Archivist Eurayle Ceto. Like something out of a nightmare, they appear to be a horrid hybrid of man and snake. From the waist up, they have thickly-muscled humanoid torsos with four arms covered in glossy blue-black scales. Below the waist, they have no legs, but support themselves and move about on a five-metre tail like that of a snake. Their faces are human-like, but vaguely reptilian, with wild black hair, two black slits for nostrils, and beetle brows over tiny close-set yellow eyes. They speak, when they bother to speak at all, in a piercing, sibilant whisper that carries through the vaults and chambers of Eurayle's libraries. They roam the myriad twisting chambers of the library's catacombs, lurking in shadows and waiting patiently for interlopers. While they have no sorcerous powers, they more than make up for this deficiency with incredible martial prowess. They are incredibly fast and strong, more so than their lithe and awkward frame would suggest. As ambidextrous as spiders, they wield deadly serrated warp blades in each hand, and can attack with either their swords or vicious bite.",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 50,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 0,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 45,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 55,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 60,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 25,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 55,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 15,
+        "unnatural": 0
+      }
+    },
+    "wounds": 30,
+    "movement": "12/24/36/72",
+    "skills": [
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Climb",
+        0
+      ],
+      [
+        "Concealment",
+        10
+      ],
+      [
+        "Contortionist",
+        10
+      ],
+      [
+        "Dodge",
+        10
+      ],
+      [
+        "Scrutiny",
+        0
+      ],
+      [
+        "Search",
+        0
+      ],
+      [
+        "Silent Move",
+        20
+      ],
+      [
+        "Tracking",
+        20
+      ]
+    ],
+    "talents": [
+      "Ambidextrous",
+      "Blademaster",
+      "Blind Fighting",
+      "Combat Master",
+      "Counter Attack",
+      "Double Team",
+      "Dual Strike",
+      "Fearless",
+      "Lightning Attack",
+      "Melee Weapon Training (universal)",
+      "Precise Blow",
+      "Rapid Reaction",
+      "Swift Attack",
+      "True Grit",
+      "Two-Weapon Wielder",
+      "Wall of Steel"
+    ],
+    "traits": [
+      "Crawler",
+      "Daemonic",
+      "Dark Sight",
+      "Fanged",
+      "Fear (1)",
+      "From Beyond",
+      "Improved Natural Weapons",
+      "Multiple Arms",
+      "Natural Armour (5)",
+      "Natural Weapon (Fangs 1d10+7* R)",
+      "Unnatural Senses (20m)",
+      "Unnatural Speed"
+    ],
+    "weapons_text": "Matched set of Best Craftsmanship Daemon Swords (1d10+9 R; Pen 5; Balanced, Warp Weapon).",
+    "armour_text": "Natural Armour (Arms 5; Body 5; Head 5; Tail 5).",
+    "gear_text": "Chaos charm.",
+    "portrait_ref": null,
+    "ws_line": 1952,
+    "source_book": "roguetrader_citadelofskulls.pdf"
+  },
+  {
+    "name": "Chaos Sorcerers",
+    "slug": "chaos-sorcerers",
+    "faction": "Chaos",
+    "description": "Wholly dedicated both to their mistress Euryale and Slaanesh, these degenerate human sorcerers can be found everywhere within the Citadel of Skulls. Wielding powerful sorcery and consumed by a fanaticism nearly unmatched in the fortress of Karad Vall, they serve as seers, soothsayers, and mystic warriors.\n\n## Chaos Sorcerer Profile",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 45,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 50,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 50,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 20,
+        "unnatural": 0
+      }
+    },
+    "wounds": 15,
+    "movement": "4/8/12/24",
+    "skills": [
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Climb",
+        0
+      ],
+      [
+        "Common Lore (Imperium, Koronus Expanse)",
+        0
+      ],
+      [
+        "Concealment",
+        10
+      ],
+      [
+        "Contortionist",
+        10
+      ],
+      [
+        "Deceive",
+        20
+      ],
+      [
+        "Dodge",
+        0
+      ],
+      [
+        "Forbidden Lore (Chaos, Cults, Daemonology, Heresy, Sorcerers, The Warp)",
+        10
+      ],
+      [
+        "Intimidate",
+        0
+      ],
+      [
+        "Invocation",
+        20
+      ],
+      [
+        "Psyniscience",
+        10
+      ],
+      [
+        "Scrutiny",
+        0
+      ],
+      [
+        "Search",
+        0
+      ],
+      [
+        "Secret Tongue (Chaos Sorcerers)",
+        0
+      ],
+      [
+        "Silent Move",
+        10
+      ],
+      [
+        "Speak Language (High Gothic, Low Gothic)",
+        0
+      ]
+    ],
+    "talents": [],
+    "traits": [],
+    "weapons_text": "",
+    "armour_text": "",
+    "gear_text": "",
+    "portrait_ref": "img-26.jpeg",
+    "ws_line": 1979,
+    "source_book": "roguetrader_citadelofskulls.pdf"
+  },
+  {
+    "name": "Chaos Reaver",
+    "slug": "chaos-reaver",
+    "faction": "Chaos",
+    "description": "Chaos Reavers are voidmen who, whether by choice or by design, have come to embrace the Dark Gods. They come from all walks of life and, like their uncorrupted brethren, represent a broad cross-section of humanity. Pressed from captured ships or lured from ports and planets with the promise of wealth and a life of ease, their lot is even harder than an average voidman's, and their life expectancy is shockingly short.\n\n## Chaos Reaver Profile",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 20,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 20,
+        "unnatural": 0
+      }
+    },
+    "wounds": 10,
+    "movement": "3/6/9/18",
+    "skills": [
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Carouse",
+        20
+      ],
+      [
+        "Common Lore (Imperium, Imperial Navy, Koronus Expanse, Rogue Traders, Tech)",
+        0
+      ],
+      [
+        "Chem-Use",
+        0
+      ],
+      [
+        "Dodge",
+        0
+      ],
+      [
+        "Forbidden Lore (Chaos, Heresy, Pirates)",
+        0
+      ],
+      [
+        "Gamble",
+        0
+      ],
+      [
+        "Intimidate",
+        0
+      ],
+      [
+        "Scrutiny",
+        10
+      ],
+      [
+        "Secret Tongue (Chaos Reavers)",
+        0
+      ],
+      [
+        "Speak Language (Low Gothic, Void Cant)",
+        0
+      ],
+      [
+        "Tech-Use",
+        0
+      ]
+    ],
+    "talents": [
+      "Basic Weapon Training (Universal)",
+      "Decadence",
+      "Die Hard",
+      "Jaded",
+      "Last Man Standing",
+      "Leap Up",
+      "Melee Weapon Training (Universal)",
+      "Pistol Weapon Training (Universal)",
+      "Unarmed Warrior"
+    ],
+    "traits": [],
+    "weapons_text": "Pump-Action Shotgun (30m; S/–/–; 1d10+4 I; Pen 0; Clip 8; Rld 2 Full; Scatter), Hand Cannon (35m; S/–/–; 1d10+4 I; Pen 2; Clip 5; Rld 2 Full).",
+    "armour_text": "Reinforced Void Suit (Arms 3; Body 3; Head 4; Legs 3).",
+    "gear_text": "Chaos charm, working coverall, multi-tool.",
+    "portrait_ref": "img-26.jpeg",
+    "ws_line": 2011,
+    "source_book": "roguetrader_citadelofskulls.pdf"
+  },
+  {
+    "name": "Chaos Reaver Captain",
+    "slug": "chaos-reaver-captain",
+    "faction": "Chaos",
+    "description": "Plying the Empyrean in their corrupt voidships, the captains of the numerous Chaos Reaver fleets are as varied as the stars themselves. They come from all walks of life, from bloodthirsty pirates, to fallen Rogue Traders, to corrupt Imperial Navy officers, and have little in common save a taste for savagery and a devotion to the Ruinous Powers. Whether murdering, guileless brutes, smooth-talking professional killers, disorganised rabble, or well-trained officers who deploy their fleets with military precision, they are, to a man, extremely dangerous characters. They have countless fanatical and well-trained Reavers under their command, and darker powers as well. They are not to be trifled with lightly.\n\n## Chaos Reaver Captain Profile",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 45,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 45,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 35,
+        "unnatural": 0
+      }
+    },
+    "wounds": 16,
+    "movement": "4/8/16/32",
+    "skills": [
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Barter",
+        0
+      ],
+      [
+        "Command",
+        10
+      ],
+      [
+        "Common Lore (Imperium, Koronus Expanse, Merchant Underworld)",
+        0
+      ],
+      [
+        "Deceive",
+        20
+      ],
+      [
+        "Forbidden Lore (Chaos, Heresy, Pirates)",
+        0
+      ],
+      [
+        "Intimidate",
+        20
+      ],
+      [
+        "Interrogation",
+        10
+      ],
+      [
+        "Inquiry",
+        0
+      ],
+      [
+        "Navigation (Stellar)",
+        10
+      ],
+      [
+        "Pilot (Space Craft)",
+        0
+      ],
+      [
+        "Tech-Use",
+        0
+      ],
+      [
+        "Speak Language (Low Gothic, Void Cant)",
+        0
+      ]
+    ],
+    "talents": [
+      "Air of Authority",
+      "Basic Weapon Training (Universal)",
+      "Decadence",
+      "Die Hard",
+      "Jaded",
+      "Last Man Standing",
+      "Leap Up",
+      "Light Sleeper",
+      "Melee Weapon Training (Universal)",
+      "Paranoia",
+      "Peer (Chaos Reavers)",
+      "Pistol Weapon Training (Universal)",
+      "Resistance (Fear)",
+      "Swift Attack"
+    ],
+    "traits": [],
+    "weapons_text": "Good Craftsmanship Bolt Pistol (30m; S/2/–; 1d10+5 X; Pen 4; Clp 8; Rld Full; Tearing), Good Craftsmanship Chain Sword (1d10+6 R; Pen 2; Tearing, Balanced).",
+    "armour_text": "Light Carapace (Arms 4; Body 5; Legs 4).",
+    "gear_text": "Bionic Eye, chaos charm, uniform, star charts, micro-bead, voxcaster.",
+    "portrait_ref": "img-26.jpeg",
+    "ws_line": 2034,
+    "source_book": "roguetrader_citadelofskulls.pdf"
+  },
+  {
+    "name": "Slave Overseer",
+    "slug": "slave-overseer",
+    "faction": "",
+    "description": "Generally cruel and heartless, these men and women can be found in large numbers wherever slaves are working, plying their groxwhips and shock-staves to squeeze every last ounce of sweat from their charges. Many overseers know the value of the carrot as well as the stick, providing drugs and distractions tailored to keeping the slaves docile and easy to control.\n\n## Slave Overseer Profile",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 30,
+        "unnatural": 0
+      }
+    },
+    "wounds": 12,
+    "movement": "3/6/9/18",
+    "skills": [
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Command",
+        0
+      ],
+      [
+        "Dodge",
+        0
+      ],
+      [
+        "Intimidate",
+        0
+      ],
+      [
+        "Search",
+        0
+      ],
+      [
+        "Speak Language (Low Gothic)",
+        0
+      ],
+      [
+        "Tech-Use",
+        0
+      ],
+      [
+        "Tracking",
+        0
+      ]
+    ],
+    "talents": [
+      "Air of Authority",
+      "Basic Weapon Training (Universal)",
+      "Double Team",
+      "Fearless",
+      "Hardy",
+      "Inspire Wrath",
+      "Iron Discipline",
+      "Melee Weapon Training (Universal)",
+      "Paranoia",
+      "Pistol Weapon Training (Universal)",
+      "Precise Blow",
+      "Sure Shot",
+      "Takedown",
+      "Unarmed Warrior"
+    ],
+    "traits": [],
+    "weapons_text": "Good Craftsmanship Shock Staff (1d5+7 I; Pen 0; Shocking) or Good Craftsmanship Groxwhip (3m; 1d10+7* R; Pen 0; Flexible, Tearing), Good Craftsmanship Hand Cannon (35m; S/–/–; 1d10+4 I; Pen 2; Clip 5; Rld 2 Full).",
+    "armour_text": "Light Carapace (Arms 5; Body 5; Legs 5).",
+    "gear_text": "Mocro-bead, vox-caster, recoil glove.",
+    "portrait_ref": null,
+    "ws_line": 2061,
+    "source_book": "roguetrader_citadelofskulls.pdf"
+  },
+  {
+    "name": "Slave",
+    "slug": "slave",
+    "faction": "",
+    "description": "Iniquity's labour force is composed of countless millions of slaves forcibly taken from ships, planets, outposts, and stations throughout the Expanse by the numerous bands of Chaos Reaver slavers. The slave labour force, while generally downtrodden, has formed their own, strange society. They have separated themselves along cultural and class lines and have installed a rigid caste system. There is also a thriving underground economy among the slaves that provides the base entertainments and drugs that the slaves desire as a way to escape their eternal torment. The overseers and slavers have allowed this to flourish as it makes their jobs significantly easier.\n\n## Slave Profile",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 25,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 25,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 25,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 25,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 25,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 20,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 20,
+        "unnatural": 0
+      }
+    },
+    "wounds": 7,
+    "movement": "2/4/6/12",
+    "skills": [
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Barter",
+        0
+      ],
+      [
+        "Chem-Use",
+        0
+      ],
+      [
+        "Concealment",
+        0
+      ],
+      [
+        "Deceive",
+        0
+      ],
+      [
+        "Secret Tongue (Slave Cant)",
+        0
+      ],
+      [
+        "Speak Language (Low Gothic)",
+        0
+      ],
+      [
+        "Tech-Use",
+        0
+      ],
+      [
+        "Trade (Labourer)",
+        0
+      ]
+    ],
+    "talents": [
+      "Basic Weapon Training (Universal)",
+      "Jaded",
+      "Melee Weapon Training (Universal)"
+    ],
+    "traits": [
+      "Mutation (see sidebar)"
+    ],
+    "weapons_text": "",
+    "armour_text": "",
+    "gear_text": "Ragged clothing, tools for specific job, chains.",
+    "portrait_ref": null,
+    "ws_line": 2084,
+    "source_book": "roguetrader_citadelofskulls.pdf"
+  },
+  {
+    "name": "Iniquity Militant",
+    "slug": "iniquity-militant",
+    "faction": "",
+    "description": "Each ruling faction on Iniquity maintains a standing militia made up of renegades, mercenaries, and corrupted Guardsmen. These militants enforce their employer's interests on the planet, and operate not only as soldiers but as paramilitary security forces.\n\n## Iniquity Militant Profile",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 45,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 25,
+        "unnatural": 0
+      }
+    },
+    "wounds": 13,
+    "movement": "3/6/9/18",
+    "skills": [
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Climb",
+        0
+      ],
+      [
+        "Command",
+        0
+      ],
+      [
+        "Demolition",
+        0
+      ],
+      [
+        "Dodge",
+        0
+      ],
+      [
+        "Drive (Ground Vehicle, Skimmer/Hover, Walker)",
+        0
+      ],
+      [
+        "Inquiry",
+        0
+      ],
+      [
+        "Interrogation",
+        0
+      ],
+      [
+        "Intimidate",
+        0
+      ],
+      [
+        "Scrutiny",
+        0
+      ],
+      [
+        "Search",
+        0
+      ],
+      [
+        "Security",
+        0
+      ],
+      [
+        "Shadowing",
+        0
+      ],
+      [
+        "Survival",
+        0
+      ],
+      [
+        "Tech-Use",
+        0
+      ]
+    ],
+    "talents": [
+      "Basic Weapon Training (Universal)",
+      "Bulging Biceps",
+      "Combat Master",
+      "Pistol Weapon Training (Universal)",
+      "Melee Weapon Training (Universal)"
+    ],
+    "traits": [],
+    "weapons_text": "Good Craftsmanship Lasgun (100m; S/3/–; 1d10+3 E; Pen 0; Clip 60; Rld Full; Reliable) or Good Craftsmanship Autogun (90m; S/3/10; 1d10+3 I; Pen 0; Clip 30; Rld 2 Full), Mono-Knife (5m; 1d5+3 R; Pen 2), 2 Frag Grenades (9m; S/–/–; 2d10 X; Pen 0; Blast (4)), 2 Krak Grenades (9m; S/–/–; 2d10+4 X; Pen 6).",
+    "armour_text": "Light Carapace (Arms 5; Body 5; Legs 5).",
+    "gear_text": "Micro-bead, webbing, two reloads for weapon.",
+    "portrait_ref": null,
+    "ws_line": 2105,
+    "source_book": "roguetrader_citadelofskulls.pdf"
+  },
+  {
+    "name": "Khadem",
+    "slug": "khadem",
+    "faction": "",
+    "description": "The Khadem are those slaves who have been horribly mutated by exposure to the ever-present industrial pollution and radiation found on Iniquity. Thoroughly debased, these unfortunates have been cast out by their enslaved brethren and have regressed mentally to the point where they can do only the most menial of tasks. Khadem are found in the numerous slag heaps, scrap yards, and poison-filled chemical lagoons and holding ponds found around Iniquity's industrial centres. They are put to work here separating garbage, scavenging, and wading among poisons and pollutants skimming for reclaimable compounds and ores.\n\nPhysically, their mutations take many diverse forms, but all Khadem tend to have a number of common traits related to the cause of their plight. Thanks to the constant exposure to lethal chemicals, their skin has hardened, and they have grown resistant to most mundane poisons. Their blood has become a toxic soup, it glows green and hisses and steams when exposed to the open air. Their organs have liquefied or taken on other forms to better deal with their toxic blood, and they can vomit a corrosive cocktail of poisonous bile and caustic chemicals in close combat. Khadem are typically encountered in packs or family clans. They are shy and meek, almost childlike, around non-mutants and their overseers, but can be goaded into fits of rage that make them dangerous to those unused to their ways.\n\n## Khadem Profile",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 25,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 25,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 20,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 20,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 20,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 15,
+        "unnatural": 0
+      }
+    },
+    "wounds": 10,
+    "movement": "2/4/6/12",
+    "skills": [
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Barter",
+        0
+      ],
+      [
+        "Chem-Use",
+        0
+      ],
+      [
+        "Concealment",
+        0
+      ],
+      [
+        "Deceive",
+        0
+      ],
+      [
+        "Secret Tongue (Slave Cant)",
+        0
+      ],
+      [
+        "Tech-Use",
+        0
+      ],
+      [
+        "Trade (Labourer or Scavenger)",
+        0
+      ]
+    ],
+    "talents": [
+      "Basic Weapon Training (Universal)",
+      "Frenzy",
+      "Jaded",
+      "Melee Weapon Training (Universal)",
+      "Resistance (Poisons)"
+    ],
+    "traits": [],
+    "weapons_text": "",
+    "armour_text": "",
+    "gear_text": "",
+    "portrait_ref": null,
+    "ws_line": 2130,
+    "source_book": "roguetrader_citadelofskulls.pdf"
+  },
+  {
+    "name": "Iniquity-Pattern Industrial Servitor",
+    "slug": "iniquity-pattern-industrial-servitor",
+    "faction": "",
+    "description": "Slaves who have transgressed or have reached the end of their natural usefulness are turned over to Iniquity's Hereteks for servitor conversion. Modified with artificial muscle grafts and built-in tools, these mindless brutes are commonplace among the mines and industries of Iniquity. Even in death, there is no escape for a slave from the industrial hell of Iniquity's mines, furnaces, and foundries.\n\n## Iniquity-pattern Industrial Servitor Profile",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 15,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 15,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 50,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 15,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 10,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 20,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 5,
+        "unnatural": 0
+      }
+    },
+    "wounds": 15,
+    "movement": "1/2/3/6",
+    "skills": [
+      [
+        "None",
+        0
+      ]
+    ],
+    "talents": [
+      "None"
+    ],
+    "traits": [
+      "Machine (4)",
+      "Improved Natural Weapons",
+      "Natural Weapon (built-in tools)",
+      "Unnatural Strength (x2)"
+    ],
+    "weapons_text": "Fist (1d10+15 I), built-in saws, torches, shears, and other industrial tools (1d10+5 E, I, or R depending on the nature of the tool).",
+    "armour_text": "Built-in armour plates (Arms 4; Body 4; Head 4; Legs 4).",
+    "gear_text": "Internal micro-bead for receiving and relaying orders, photo-visor.",
+    "portrait_ref": null,
+    "ws_line": 2155,
+    "source_book": "roguetrader_citadelofskulls.pdf"
+  },
+  {
+    "name": "Iniquity-Pattern Combat Servitor",
+    "slug": "iniquity-pattern-combat-servitor",
+    "faction": "",
+    "description": "Iniquity's Hereteks have created their own variant of the ubiquitous Charron-pattern Battle Servitor to meet the needs of their dark lords. They are massive, hulking slabs of vat-grown nacreous grey skin pierced through with corrupt, arcane machine parts. These mindless killing machines carry an array of built-in weapons, from servo-fists to heavy bolters to missile launchers, and are very capable, if unimaginative, combatants.",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 50,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 50,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 15,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 10,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 20,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 0,
+        "unnatural": 0
+      }
+    },
+    "wounds": 15,
+    "movement": "1/2/3/6",
+    "skills": [
+      [
+        "Awareness",
+        10
+      ]
+    ],
+    "talents": [
+      "Basic Weapon Training (Universal)",
+      "Berserk Charge",
+      "Flame Weapon Training (Universal)",
+      "Heavy Weapon Training (Bolt, Launcher, Melta, Plasma)",
+      "Melee Weapon Training (Universal)",
+      "Two-Weapon Wielder"
+    ],
+    "traits": [
+      "Armour Plated",
+      "Auto-stabilised",
+      "Darksight",
+      "Improved Natural Weapons",
+      "Machine (4)",
+      "Natural Weapon (Servo-fist)",
+      "Size (Hulking)",
+      "Sturdy",
+      "Unnatural Strength (x2)",
+      "Unnatural Toughness (x2). **Armour (Machine):** Arms 6; Body 6; Head 6; Legs 6"
+    ],
+    "weapons_text": "Servo-fist (1d5+8), Chain Axe (1d10+12 R; Pen 2; Tearing), Grenade Launcher (60m; S/-/-; Dam *; Pen *; Clip 6; Rld Full; *, innaccurate) or Missile Launcher (200m; S/-/-; Dam *; Pen *; Clip 6; Rld 2 Full; **), and either a Heavy Bolter (120 m; -/-/10; 2d10+2 X; Pen 5; Clip 60; Rld Full; Tearing), Heavy Flamer (30m; S/-/-; 2d10+4 E; Pen 4, Clip 10; Rld 2 Full; Flame), or Multi-Melta (60m; S/3/-; 4d10+5 E; Pen 13; Clip 10; Rld 2 Full; Blast [1]).",
+    "armour_text": "",
+    "gear_text": "Internal micro-bead for receiving and relaying orders, ammo hopper equivalent to four clips for each weapon, red dot laser sight for heavy weapon, systems sealed against hazardous environments, built-in magboots. *Varies by grenade or missile.* # CHAOS HERETEK Among the legion of Chaos followers on Iniquity are quite a few fallen members of the Priesthood of Mars. These corrupt Tech-Priests are responsible for keeping the ships, manufactoria, and diverse industrial machines found on and around Iniquity running through dark rituals and rites. Chaos Hereteks also control the numerous servitors found among the forces of Chaos on Iniquity.",
+    "portrait_ref": "img-27.jpeg",
+    "ws_line": 2180,
+    "source_book": "roguetrader_citadelofskulls.pdf"
+  },
+  {
+    "name": "Chaos Heretek",
+    "slug": "chaos-heretek",
+    "faction": "Chaos",
+    "description": "Among the legion of Chaos followers on Iniquity are quite a few fallen members of the Priesthood of Mars. These corrupt Tech-Priests are responsible for keeping the ships, manufactoria, and diverse industrial machines found on and around Iniquity running through dark rituals and rites. Chaos Hereteks also control the numerous servitors found among the forces of Chaos on Iniquity.",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 45,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 0,
+        "unnatural": 0
+      }
+    },
+    "wounds": 10,
+    "movement": "3/6/9/18",
+    "skills": [
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Carouse",
+        0
+      ],
+      [
+        "Chem-Use",
+        0
+      ],
+      [
+        "Climb",
+        0
+      ],
+      [
+        "Common Lore (Tech)",
+        0
+      ],
+      [
+        "Deceive",
+        0
+      ],
+      [
+        "Evaluate",
+        0
+      ],
+      [
+        "Forbidden Lore (Adeptus Mechanicus, Archaeotech, Heresy)",
+        0
+      ],
+      [
+        "Intimidate",
+        0
+      ],
+      [
+        "Medicae",
+        10
+      ],
+      [
+        "Scholastic Lore (Chymistry, Judgement)",
+        10
+      ],
+      [
+        "Secret Tongue (Tech)",
+        0
+      ],
+      [
+        "Speak Language (Low Gothic, Explorator Binary, Techna-Lingua)",
+        0
+      ],
+      [
+        "Tech-Use",
+        20
+      ],
+      [
+        "Trade (Technomat, Armourer, or Explorator)",
+        0
+      ]
+    ],
+    "talents": [
+      "Basic Weapon Training (Universal)",
+      "Luminen Blast (10m; 1d10+3; Causes Fatigue)",
+      "Master Churgeon",
+      "Master Enginsee",
+      "Melee Weapon Training (Universal)",
+      "Pistol Weapon Training (Universal)",
+      "Rite of Awe",
+      "Rite of Fear",
+      "Technical Knock",
+      "The Flesh is Weak"
+    ],
+    "traits": [
+      "Machine (2)"
+    ],
+    "weapons_text": "Archaeotech Laspistol (90m; S/3/–; 1d10+3 E; Pen 2; Clip 70; Rld Full; Accurate, Reliable), Mono-Knife (5m; 1d5+3 R; Pen 2).",
+    "armour_text": "None (All 2).",
+    "gear_text": "Micro-bead, Mechanicus implants, tattered robes, dataslate, auto-quill, two clips for weapon, corrupt servo-skull.",
+    "portrait_ref": "img-27.jpeg",
+    "ws_line": 2201,
+    "source_book": "roguetrader_citadelofskulls.pdf"
+  },
+  {
+    "name": "Servitor-Controlled Autocannon Turrets",
+    "slug": "servitor-controlled-autocannon-turrets",
+    "faction": "",
+    "description": "These hardwired, servitor-controlled turrets guard the entrance to the Shuttle Bay. Fully automated, they track back and forth, scanning the airspace outside the bay's entrance, and won't hesitate to open fire upon any craft that approaches without authorisation. The turrets cannot target inside the bay, but fire on any unauthorised flyers or spacecraft that approach or leave the bay.",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 0,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 50,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 0,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 15,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 10,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 20,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 0,
+        "unnatural": 0
+      }
+    },
+    "wounds": 15,
+    "movement": "—",
+    "skills": [],
+    "talents": [],
+    "traits": [
+      "Armour Plated",
+      "Auto-Stabilised",
+      "Darksight",
+      "Machine (4)",
+      "Size (Hulking)"
+    ],
+    "weapons_text": "Autocannon (300m; S/2/5; 4d10+5 I; Pen 4; Clip 200).",
+    "armour_text": "6.",
+    "gear_text": "",
+    "portrait_ref": "img-27.jpeg",
+    "ws_line": 2221,
+    "source_book": "roguetrader_citadelofskulls.pdf"
+  },
+  {
+    "name": "Dark Cherub",
+    "slug": "dark-cherub",
+    "faction": "",
+    "description": "",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 0,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 48,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 18,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 0,
+        "unnatural": 0
+      }
+    },
+    "wounds": 8,
+    "movement": "2/4/6/12",
+    "skills": [
+      [
+        "Awareness",
+        10
+      ],
+      [
+        "Dodge",
+        0
+      ]
+    ],
+    "talents": [
+      "Fearless",
+      "Swift Attack"
+    ],
+    "traits": [
+      "Dark Sight",
+      "Flier 20",
+      "Improved Natural Weapons",
+      "Natural Armour (4)",
+      "Natural Weapons (Dirty Claws)",
+      "Size (Scrawny)"
+    ],
+    "weapons_text": "Dirty Claws (1d10+3 I, Toxic).",
+    "armour_text": "Natural (All 4).",
+    "gear_text": "",
+    "portrait_ref": null,
+    "ws_line": 2232,
+    "source_book": "roguetrader_citadelofskulls.pdf"
+  },
+  {
+    "name": "Flesh Hound of Khorne",
+    "slug": "flesh-hound-of-khorne",
+    "faction": "",
+    "description": "Massive, thickly-armoured carnivores, the wolf-like Flesh Hounds prowl both Vall's citadel and the lands surrounding it. They hunt in tireless packs both in this world and within the Warp, and once on a scent they will not rest until their quarry is brought down either in an orgy of blood or as a penitent dragged before the throne of the Blood God himself.",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 45,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 0,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 45,
+        "unnatural": 8
+      },
+      "toughness": {
+        "base": 40,
+        "unnatural": 8
+      },
+      "agility": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 15,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 60,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 9,
+        "unnatural": 0
+      }
+    },
+    "wounds": 15,
+    "movement": "7/14/28/56",
+    "skills": [
+      [
+        "Awareness",
+        20
+      ],
+      [
+        "Tracking",
+        20
+      ]
+    ],
+    "talents": [
+      "Frenzy",
+      "Resistance (Psychic Powers)",
+      "Swift Attack",
+      "Talented (Tracking)"
+    ],
+    "traits": [
+      "Bestial",
+      "Blood for the Blood God*",
+      "Collar of Khorne**",
+      "Daemonic (TB 8)",
+      "Darksight",
+      "Fear (2)",
+      "From Beyond",
+      "Improved Natural Weapons",
+      "Natural Armour (4)",
+      "Natural Weapons (Teeth and Claws)",
+      "Quadruped",
+      "Size (Hulking)",
+      "Unnatural Senses (30m)",
+      "Unnatural Strength (x2)",
+      "Warp Instability"
+    ],
+    "weapons_text": "Teeth and Claws (1d10+10 R; Tearing).",
+    "armour_text": "Natural Armour (4 all).",
+    "gear_text": "",
+    "portrait_ref": "img-28.jpeg",
+    "ws_line": 2252,
+    "source_book": "roguetrader_citadelofskulls.pdf"
+  },
+  {
+    "name": "Nurgling",
+    "slug": "nurgling",
+    "faction": "",
+    "description": "These disease-carrying vermin are a common sight among the catacombs of the Citadel of Skulls. Nurglings are tiny, hideous things with bloated bodies whose scrofulous hides are covered in weeping sores, pustules, and misshapen tumours. Their ravening mouths are filled with long, jagged fangs, and their spindly arms tipped with scabrous claws. Travelling in swarms, these voracious predators will attack anything on sight, and can kill a man with a single bite.",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 25,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 0,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 10,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 21,
+        "unnatural": 4
+      },
+      "agility": {
+        "base": 25,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 15,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 15,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 0,
+        "unnatural": 0
+      }
+    },
+    "wounds": 6,
+    "movement": "2/4/6/12",
+    "skills": [
+      [
+        "Awareness",
+        20
+      ]
+    ],
+    "talents": [
+      "None"
+    ],
+    "traits": [
+      "Daemonic (TB 4)",
+      "Fear (1)",
+      "From Beyond",
+      "Improved Natural Weapons",
+      "Natural Weapon (Teeth)",
+      "Size (Scrawny)",
+      "Warp Instability"
+    ],
+    "weapons_text": "Teeth (1d10+1 R; Toxic). A victim who suffers damage from a Nurgling's bite must pass an Ordinary (+10) Toughness Test or contract a virulent disease. The exact nature of the disease should be left up to the GM's discretion. A diseased victim loses 1d5 points of Toughness permanently.",
+    "armour_text": "None.",
+    "gear_text": "None.",
+    "portrait_ref": "img-28.jpeg",
+    "ws_line": 2277,
+    "source_book": "roguetrader_citadelofskulls.pdf"
+  },
+  {
+    "name": "Npc Appendix",
+    "slug": "npc-appendix",
+    "faction": "",
+    "description": "Sister of the Sybaritic Host Profile",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 0,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 40,
+        "unnatural": 8
+      },
+      "toughness": {
+        "base": 45,
+        "unnatural": 8
+      },
+      "agility": {
+        "base": 50,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 45,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 50,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 0,
+        "unnatural": 0
+      }
+    },
+    "wounds": 12,
+    "movement": "5/10/15/30",
+    "skills": [
+      [
+        "Awareness",
+        10
+      ],
+      [
+        "Charm",
+        20
+      ],
+      [
+        "Deceive",
+        10
+      ],
+      [
+        "Dodge",
+        0
+      ],
+      [
+        "Inquiry",
+        10
+      ],
+      [
+        "Interrogation",
+        20
+      ],
+      [
+        "Intimidation",
+        10
+      ],
+      [
+        "Medicae",
+        0
+      ],
+      [
+        "Silent Move",
+        10
+      ]
+    ],
+    "talents": [
+      "Mimic",
+      "Psy Rating (4)",
+      "Psychic Technique"
+    ],
+    "traits": [
+      "Daemonic (TB 8)",
+      "Dark Sight",
+      "From Beyond",
+      "Improved Natural Weapons",
+      "Natural Weapons (Claws)",
+      "Unnatural Fellowship (x2)",
+      "Unnatural Strength (x2)"
+    ],
+    "weapons_text": "",
+    "armour_text": "",
+    "gear_text": "",
+    "portrait_ref": "img-30.jpeg",
+    "ws_line": 2303,
+    "source_book": "roguetrader_citadelofskulls.pdf"
+  },
+  {
+    "name": "Thermodrake",
+    "slug": "thermodrake",
+    "faction": "",
+    "description": "Thermodrakes are highly mutated native lizards that live in and around the poisonous lagoons, brownfields, and toxic slag heaps near Iniquity’s industrial centres. Highly poisonous, these cunning creatures are as big as a man and incredibly strong. Their four powerful limbs are tipped with long talons, and their slavering, tooth-filled mouths constantly drip with venom. They are also possessed of thick natural armour—thick scaled skin the green-black colour of ancient verdigris and a rust-coloured underbelly. While they are typically slow creatures, when surprised or cornered, they are capable of short bursts of speed and will attack in a frenzy of claws and teeth. Their bite is deadly poisonous, and they can spit a gob of thick, caustic mucous up to ten metres. Typically, they aim for the eyes.\n\n**Weapons:** Bite (1d10+8 R; Pen 1; Toxic), Claws (1d10+8 R), Caustic Mucous (10m; 1d10+2 E; Tearing). If a Thermodrake makes a successful called shot to a victim’s eyes with its caustic mucous, the victim is blinded for 1d5 rounds per the Blinded rules on page 260 of the *ROGUE TRADER*\n\nThermodrake Profile",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 45,
+        "unnatural": 8
+      },
+      "toughness": {
+        "base": 50,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 35,
+        "unnatural": 6
+      },
+      "intelligence": {
+        "base": 15,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 0,
+        "unnatural": 0
+      }
+    },
+    "wounds": 15,
+    "movement": "6/12/18/36",
+    "skills": [
+      [
+        "Awareness",
+        20
+      ]
+    ],
+    "talents": [
+      "Deadeye Shot",
+      "Fearless",
+      "Precise Blow",
+      "Sure Strike",
+      "Sprint"
+    ],
+    "traits": [],
+    "weapons_text": "",
+    "armour_text": "",
+    "gear_text": "",
+    "portrait_ref": "img-31.jpeg",
+    "ws_line": 2335,
+    "source_book": "roguetrader_citadelofskulls.pdf"
+  },
+  {
+    "name": "Tunnel Horror",
+    "slug": "tunnel-horror",
+    "faction": "",
+    "description": "Tunnel Horrors are giant, highly-aggressive hunting arachnids native to the blasted surface of Iniquity. Whether they are mutations of normal arachnids or naturally occurring creatures is unclear. Whatever the case may be, they are bigger than a man and incredibly fast considering their size. They have eight legs tipped with wicked talons, a lean, flat abdomen, and a small head studded with numerous eyes surrounding a jaw filled with needle teeth. Their body is protected by a thick, black, chitinous exoskeleton covered in short, bristly, hairs along the seems of the chitin plates. These hairs comprise a delicate sensory system by which the creature senses the vibrations caused by approaching prey. They are rare and solitary creatures who dig deep burrows beneath the surface that are lined with a sticky white thread-like substance secreted from their body. They camouflage their lairs by building a cover or lid of local flora, soil, and stones woven together with their sticky thread and hinged like a trap door. When they sense the approach of their prey, typically\n\nhumans and the larger lizards and serpents native to the planet, they lunge from their hidden lair, snatch their victim, and drag them back into their lair for future consumption.\n\n## Tunnel Horror Profile",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 50,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 0,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 40,
+        "unnatural": 8
+      },
+      "toughness": {
+        "base": 35,
+        "unnatural": 6
+      },
+      "agility": {
+        "base": 55,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 15,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 50,
+        "unnatural": 10
+      },
+      "willpower": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 0,
+        "unnatural": 0
+      }
+    },
+    "wounds": 14,
+    "movement": "16/32/48/96",
+    "skills": [
+      [
+        "Awareness",
+        20
+      ],
+      [
+        "Concealment",
+        20
+      ],
+      [
+        "Dodge",
+        0
+      ]
+    ],
+    "talents": [
+      "Lightning Attack",
+      "Lightning Reflexes",
+      "Step Aside",
+      "Takedown"
+    ],
+    "traits": [
+      "Bestial",
+      "Burrower",
+      "Dark Sight",
+      "Fear (1)",
+      "Improved Natural Weapons",
+      "Natural Armour (4)",
+      "Natural Weapons (Teeth and Claws)",
+      "Quadruped (x3)",
+      "Size (Hulking)",
+      "Strange Physiology",
+      "Toxic",
+      "Unnatural Perception (x2)",
+      "Unnatural Toughness (x2)",
+      "Unnatural Senses (30m)"
+    ],
+    "weapons_text": "Mandibles (1d10+4; Tearing, Toxic?), Talons (1d10+4; Tearing). * A victim who takes damage from a Tunnel Horror's bite must make a successful Very Hard (–30) Toughness Test or be Stunned for 1d5 rounds. This replaces the normal effects of Toxic.",
+    "armour_text": "Chitinous Exoskeleton (All 4).",
+    "gear_text": "",
+    "portrait_ref": "img-31.jpeg",
+    "ws_line": 2366,
+    "source_book": "roguetrader_citadelofskulls.pdf"
+  }
+]

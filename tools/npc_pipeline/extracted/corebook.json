@@ -1,0 +1,1736 @@
+[
+  {
+    "name": "Colonist",
+    "slug": "colonist",
+    "faction": "",
+    "description": "",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 25,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 20,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 25,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 25,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 25,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 30,
+        "unnatural": 0
+      }
+    },
+    "wounds": 9,
+    "movement": "3/6/9/18",
+    "skills": [
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Common Lore (Imperium)",
+        0
+      ],
+      [
+        "Drive (pick one)",
+        0
+      ],
+      [
+        "Speak Language (Low Gothic)",
+        0
+      ],
+      [
+        "Trade (pick one)",
+        0
+      ]
+    ],
+    "talents": [
+      "Basic Weapon Training (SP)",
+      "Melee Weapon Training (Primitive)"
+    ],
+    "traits": [],
+    "weapons_text": "",
+    "armour_text": "",
+    "gear_text": "Poor quality clothing, trinket, or votive item.",
+    "portrait_ref": "img-69.jpeg",
+    "ws_line": 6945,
+    "source_book": "CoreBook-201-401.pdf"
+  },
+  {
+    "name": "Free Trader Captain",
+    "slug": "free-trader-captain",
+    "faction": "",
+    "description": "The Imperium's myriad worlds are connected in vast intertwining networks of commerce, with many planets unable to sustain themselves without imports of food, technology, or manpower. It is this merchant navy which acts to move trade and tithe goods from one system to another, transporting untold quantities of essential freight across the stars. Free traders are normally part of commercial fleets and travel where their masters decree, but some small operators continue to act independently of the conglomerate, while others are hardy (or desperate enough) to strike out for border areas in search of greater profits on the very edge of the Imperium. While their passages are normally quiet, they know at any time they and their crews might be called upon to lay down their lives in battle and no passage in the warp is ever safe.",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 29,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 31,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 32,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 36,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 32,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 37,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 33,
+        "unnatural": 0
+      }
+    },
+    "wounds": 12,
+    "movement": "3/6/9/18",
+    "skills": [
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Barter",
+        10
+      ],
+      [
+        "Common Lore (Imperium, Merchant)",
+        0
+      ],
+      [
+        "Navigation (Stellar)",
+        0
+      ],
+      [
+        "Speak Language (High Gothic, Low Gothic)",
+        0
+      ],
+      [
+        "Trade (Merchant, Voidfarer)",
+        10
+      ]
+    ],
+    "talents": [
+      "Basic Weapon Training (Las, SP)",
+      "Melee Weapon Training (Primitive, Universal)",
+      "Peer (void born)",
+      "Pistol Training (Universal)"
+    ],
+    "traits": [],
+    "weapons_text": "Hellpistol (Pistol; 30m; S/2/–; 1d10+4 E; Pen 7; Clip 20; Reload 2Full).",
+    "armour_text": "Reinforced uniform (Arms 1, Body 2, Legs 1).",
+    "gear_text": "1 spare hellpistol clip, personal vox, seal of captaincy or commercia warrant, data-slate, master security key for ship.",
+    "portrait_ref": "img-69.jpeg",
+    "ws_line": 7023,
+    "source_book": "CoreBook-201-401.pdf"
+  },
+  {
+    "name": "Mutant Outcast",
+    "slug": "mutant-outcast",
+    "faction": "",
+    "description": "Mutation is a fact of human existence in the 41st Millennium. On many worlds, particularly those who have been cut off from contact for centuries and even millennia, the human gene-pool has become irrevocably damaged by generations of exposure to pollutants and alien biospheres, and worst of all, to genetic tampering and exposure to the reality distorting effects of the warp. As a result, increasing numbers are born with obvious and often grievous mutations, most often in the form of gross physical deformities and mental deviancies. Within the Imperium the most terribly afflicted are ruthlessly and systematically purged, however beyond the Imperium's border, their treatment can vary widely, from exploitation to dominance among those worlds lost to the taint of Chaos. On some worlds steeped in commonplace superstition and fear, or where fanatical interpretations of the Imperial creed and local hatreds have taken hold, the merest hint of physical deviancy is likely to end in a pyre. On other largely industrial worlds where mutation is sometimes viewed as a baleful\n\nbut unavoidable fact among the lower classes, whole mutant populations are allowed to form as a harshly repressed and utterly disposable workforce, and only the most excessive cases of mutation are culled.\n\nThere are numerous forms of mutant, but the most common exhibits some base physical degeneracy or deviation from the excepted norms of the human form. Also known as an abhuman, sub or twist, these degenerates are often found as slaves and outcasts on the fringes of human settlement in the Koronus Expanse, and in abominable profusion on those worlds touched by the warp.",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 28,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 22,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 22,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 18,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 25,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 18,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 15,
+        "unnatural": 0
+      }
+    },
+    "wounds": 12,
+    "movement": "2/4/6/12",
+    "skills": [
+      [
+        "Climb",
+        0
+      ],
+      [
+        "Intimidate",
+        0
+      ],
+      [
+        "Survival",
+        0
+      ],
+      [
+        "Trade (labourer or scavenger)",
+        0
+      ]
+    ],
+    "talents": [
+      "Basic Weapon Training (Primitive)",
+      "Frenzy",
+      "Jaded",
+      "Resistance (Poisons)"
+    ],
+    "traits": [
+      "Mutation (roll once on table 14-2 Mutation on page 369, re-rolling any result higher than 50)"
+    ],
+    "weapons_text": "Improvised club (1d10+1 I; Primitive).",
+    "armour_text": "",
+    "gear_text": "Rags, tatters and scraps of scavenged detritus.",
+    "portrait_ref": "img-69.jpeg",
+    "ws_line": 7049,
+    "source_book": "CoreBook-201-401.pdf"
+  },
+  {
+    "name": "Navy Officer",
+    "slug": "navy-officer",
+    "faction": "",
+    "description": "A military aristocracy of the stars that spans the Imperium, the Officer Corps of the Imperial Navy are an institution that dates back millennia in a tradition of service, bellicosity, and sacrifice that some would argue is unmatched. To serve in the Imperial Navy is to act as the glue that holds the Imperium together, for without warp travel the vast armies of humanity would be left stranded, impotent, and swiftly torn apart by its enemies. Just as the Navy itself binds together the Imperium, so do its officer class bind and regulate the Navy.\n\nProud, warlike, and honourable, often descended from bloodlines that have served for centuries, it is they who keep the ratings and the indentures in line, uphold the traditions of service and loyalty and most importantly hold the line against the darkness of the void beyond.",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 38,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 32,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 38,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 31,
+        "unnatural": 0
+      }
+    },
+    "wounds": 12,
+    "movement": "3/6/9/18",
+    "skills": [
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Climb",
+        0
+      ],
+      [
+        "Command",
+        10
+      ],
+      [
+        "Common Lore (Imperium, Void, Imperial Navy, War)",
+        0
+      ],
+      [
+        "Navigation (Stellar)",
+        0
+      ],
+      [
+        "Speak Language (High Gothic, Low Gothic)",
+        0
+      ]
+    ],
+    "talents": [
+      "Basic Weapon Training (Las, SP)",
+      "Nerves of Steel",
+      "Melee Weapon Training (Primitive, Universal)",
+      "Peer (Imperial Navy)",
+      "Pistol Training (Universal)"
+    ],
+    "traits": [],
+    "weapons_text": "Naval pistol (20m; S/3/-; 1d10+4 I; Pen 0; Clip 6; Reload Full; Tearing), mono-sword (1d10+3 R; Pen 2) or officer's cutlass (1d10+3 R; Shocking).",
+    "armour_text": "Flak reinforced uniform (Arms 3, Body 3, Legs 3).",
+    "gear_text": "2 spare naval pistol clips, personal vox, officer's seal, respirator.",
+    "portrait_ref": null,
+    "ws_line": 7075,
+    "source_book": "CoreBook-201-401.pdf"
+  },
+  {
+    "name": "Oathsworn Bodyguard",
+    "slug": "oathsworn-bodyguard",
+    "faction": "",
+    "description": "The exploitation of the Expanse has resulted in the amassing of many great fortunes and a great many vendettas and intrigues in turn. Both are equally perilous in a realm where little law is recognised beyond raw power and the void of space swallows the dead without trace. In such a world no one, no matter how famed or mighty, is beyond the reach of an assassin's hand, and the need for trustworthy personal protection is paramount. While dumb muscle and hired guns of dubious provenance are ten-a-throne, a skilled professional, or Oathsworn as they are known in the parlance of the Expanse, is another matter. Depending on their contract, those who offer their services as such bodyguards range in their role from simple escort duty, to laying their life down for their employer, to acting as their personal agents and 'dealing' with those who offended their masters. Reputable bodyguards can become quite wealthy and respected themselves, assuming they survive, and some establish familial contracts which last as long as their employer's lineage does. Others specialize in dangerous locales, using their familiarity with the local environs to offer protection in that area.",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 42,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 38,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 28,
+        "unnatural": 0
+      }
+    },
+    "wounds": 18,
+    "movement": "3/6/9/18",
+    "skills": [
+      [
+        "Awareness",
+        10
+      ],
+      [
+        "Common Lore (Imperium, Underworld)",
+        0
+      ],
+      [
+        "Dodge",
+        10
+      ],
+      [
+        "Drive (Land Vehicle)",
+        0
+      ],
+      [
+        "Inquiry",
+        0
+      ],
+      [
+        "Intimidate",
+        10
+      ],
+      [
+        "Scrutiny",
+        10
+      ],
+      [
+        "Security",
+        10
+      ],
+      [
+        "Shadowing",
+        10
+      ],
+      [
+        "Silent Move",
+        0
+      ]
+    ],
+    "talents": [
+      "Basic Weapon Training (Las, SP, Bolt)",
+      "Crack Shot",
+      "Disarm",
+      "Melee Weapon Training (Primitive, Universal)",
+      "Nerves of Steel",
+      "Pistol Training (Universal)",
+      "Quick Draw"
+    ],
+    "traits": [],
+    "weapons_text": "Autopistol with manstopper rounds and a red-dot laser sight (30m; S/-/6; 1d10+2 I; Pen 3, Clip 18; Reload Full), compact laspistol (15m; S/--/--; 1d10+1 E; Pen 0, Clip 15; Reload Full; Reliable), shock glove (1d10+3 I; Shocking).",
+    "armour_text": "Flak armour with carapace chest plate (Arms 4, Body 6, Head 4, Legs 4).",
+    "gear_text": "Quality clothing suitable to their surroundings, micro-bead, 2 autopistol manstopper clips, 1 blind grenade, filtration plugs, silencer, photo-contacts.",
+    "portrait_ref": "img-70.jpeg",
+    "ws_line": 7091,
+    "source_book": "CoreBook-201-401.pdf"
+  },
+  {
+    "name": "Renegade",
+    "slug": "renegade",
+    "faction": "",
+    "description": "There are many that flee the Imperium and turn renegade, and just as many reasons for doing so. Failed revolutionaries, refugees, Imperial deserters, outlaws, heretics and worse all make their way to the Expanse in the hopes of freedom from pursuit and to do as they will. Many attempt to found their own societies on shadowed and undiscovered worlds, or lurk on the edge of more established colonies, but an equal number are drawn to raiding and piracy to survive. Many human pirates and raiders are not worshippers of Chaos or in league with aliens, but simply criminals out to take what they can, or who have fallen into an unforgiving cycle of plunder and flight in order to sustain their outlaw existence. There remains a darker core however, of those that have fallen far from the light and are prey to the most appalling appetites and savagery. It is these that are the most feared of renegades, hated by colonist, Imperial, Rogue Trader and fellow outlaw alike.",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 38,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 28,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 25,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 33,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 22,
+        "unnatural": 0
+      }
+    },
+    "wounds": 12,
+    "movement": "3/6/9/18",
+    "skills": [
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Common Lore (Expanse, Imperium)",
+        0
+      ],
+      [
+        "Chem-Use",
+        0
+      ],
+      [
+        "Intimidate",
+        10
+      ],
+      [
+        "Speak Language (Low Gothic)",
+        0
+      ],
+      [
+        "either Deceive (Fel) and Tech-Use (Int) or Forbidden Lore (pick one) (Int) and Secret Tongue (as appropriate)",
+        0
+      ]
+    ],
+    "talents": [
+      "Basic Weapon Training (SP)",
+      "Jaded",
+      "Melee Weapon Training (Chain, Primitive, Thrown)",
+      "Pistol Training (Las, SP)",
+      "Peer (Criminal or Renegade)"
+    ],
+    "traits": [],
+    "weapons_text": "Knife (1d5+3 R; Primitive), hand cannon (30m; S/--/--; 1d10+4; Pen 2; Clip 5; Reload 2Full), and either a sword (1d10+3 R; Balanced, Primitive) or chainsword (1d10+5 R; Balanced, Tearing), autopistol (30m; S/--/6; 1d10+2 I; Pen 0; Clip 18; Reload Full), autogun (90m; S/3/10; 1d10+4 I; Pen 0; Clip 30; Reload 2Full), or pump-action shotgun (30m; S/--/--; 1d10+4; Pen 0; Clip 8; Reload 2Full; Scatter).",
+    "armour_text": "Composite armour (Arms 2, Body 3, Legs 3).",
+    "gear_text": "Tattered miss-matched clothing, spare ammunition for weapons, and either a hand vox and respirator, or gruesome trophies, human meat, and skins. Void pirates will also be equipped in armoured void suits.",
+    "portrait_ref": "img-70.jpeg",
+    "ws_line": 7116,
+    "source_book": "CoreBook-201-401.pdf"
+  },
+  {
+    "name": "Void Pirate Captain",
+    "slug": "void-pirate-captain",
+    "faction": "",
+    "description": "It takes a brave and capable individual to lead a pirate crew in the reaches beyond Imperial space. One must be cunning and ruthless, as well as able to command a crew of renegades and killers through respect or fear. A pirate captain can be as cruel as vacuum or affect the manner of a rakish noble or Rogue Trader depending on his nature and crew, but he must be successful or risk his command to mutiny. The most successful are more than the leaders of cutthroats; they are savvy operators with extensive intelligence gathering networks, knowledge of dark secrets uncovered in their voyages and contacts on both sides of the law.",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 44,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 38,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 34,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 42,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 34,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 34,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 38,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 42,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 36,
+        "unnatural": 0
+      }
+    },
+    "wounds": 15,
+    "movement": "3/6/9/18",
+    "skills": [
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Charm",
+        0
+      ],
+      [
+        "Barter",
+        0
+      ],
+      [
+        "Command",
+        10
+      ],
+      [
+        "Common Lore (Imperium, Merchant, Underworld)",
+        0
+      ],
+      [
+        "Deceive",
+        0
+      ],
+      [
+        "Intimidate",
+        0
+      ],
+      [
+        "Interrogation",
+        10
+      ],
+      [
+        "Inquiry",
+        0
+      ],
+      [
+        "Navigation (Stellar)",
+        10
+      ],
+      [
+        "Pilot (Space Craft)",
+        0
+      ],
+      [
+        "Tech-Use",
+        0
+      ],
+      [
+        "Speak Language (Void Cant)",
+        0
+      ]
+    ],
+    "talents": [
+      "Air of Authority",
+      "Basic Weapon Training (Universal)",
+      "Decadence",
+      "Exotic Weapon Training (any one)",
+      "Jaded",
+      "Light Sleeper",
+      "Melee Weapon Training (Primitive, Universal)",
+      "Paranoia",
+      "Pistol Training (Universal)",
+      "Resistance (Fear)",
+      "Peer (Criminals or Renegades)",
+      "Swift Attack"
+    ],
+    "traits": [],
+    "weapons_text": "Bolt pistol (30m; S/2/–; 1d10+5 X; Pen 4; Clip 8; Reload Full; Tearing), hand cannon (30m; S/–/–; 1d10+4 I; Pen 2; Clip 5; Reload 2Full), chainsword (1d10+5 R; Balanced, Tearing), exotic pistol (any one).",
+    "armour_text": "Light carapace (Arms 4, Body 5, Legs 4).",
+    "gear_text": "Motley uniform, bionic eye, 2 bolt pistol clips, 4 hand cannon clips, 1 clip for exotic weapon, dubious charts. Some may have extensive further cybernetic implants.",
+    "portrait_ref": null,
+    "ws_line": 7139,
+    "source_book": "CoreBook-201-401.pdf"
+  },
+  {
+    "name": "Warp Witch",
+    "slug": "warp-witch",
+    "faction": "",
+    "description": "Among the Void Born, there are those psykers who flee the Imperial authorities upon the awakening of their powers or have been born beyond their reach. Those that manage to survive this dark transfiguration are rare, and often insane, but no less sought after in certain quarters because of this. This is because these Warp Witches possess among their psyker’s gifts some, albeit crude, ability to navigate the warp and whisper upon its unseen winds, although never with anything approaching the certainty and proficiency of a true Navigator or Astropath. For those renegades and corsairs who strike a devil’s bargain with a Warp Witch, they may find the price levied by these fickle and spiteful psykers even steeper than they can guess at. Often, the powers they have to track the warp are conveyed not by their own gifts, but by the daemons sitting invisibly on their shoulders.",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 28,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 28,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 36,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 28,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 37,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 45,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 23,
+        "unnatural": 0
+      }
+    },
+    "wounds": 13,
+    "movement": "3/6/9/18",
+    "skills": [
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Ciphers (Occult)",
+        0
+      ],
+      [
+        "Common Lore (Imperium, Koronus Expanse)",
+        0
+      ],
+      [
+        "Command",
+        0
+      ],
+      [
+        "Deceive",
+        10
+      ],
+      [
+        "Forbidden Lore (Cults, Daemonology, Warp)",
+        10
+      ],
+      [
+        "Intimidate",
+        10
+      ],
+      [
+        "Invocation",
+        10
+      ],
+      [
+        "Psyniscience",
+        0
+      ],
+      [
+        "Secret Tongue (Cult)",
+        0
+      ],
+      [
+        "Speak Language (Low Gothic)",
+        0
+      ],
+      [
+        "Trade (Seer)",
+        0
+      ]
+    ],
+    "talents": [
+      "Dark Soul",
+      "Fearless",
+      "Jaded",
+      "Melee Weapon Training (Primitive)",
+      "Peer (Renegade)",
+      "Pistol Weapon Training (SP)",
+      "Psy Rating 6",
+      "Resistance (Psychic Techniques)"
+    ],
+    "traits": [
+      "Dark Pact†",
+      "one Mutation from Table 14–3"
+    ],
+    "weapons_text": "",
+    "armour_text": "",
+    "gear_text": "",
+    "portrait_ref": "img-71.jpeg",
+    "ws_line": 7162,
+    "source_book": "CoreBook-201-401.pdf"
+  },
+  {
+    "name": "Battle Servitor (Charron-Pattern)",
+    "slug": "battle-servitor-charron-pattern",
+    "faction": "",
+    "description": "The Charron Pattern is a light battle servitor, humanoid in shape, found often in the service of the Imperial Navy and numerous other star vessels as shock troops and defenders\n\nin boarding actions. Those found in the Koronus Expanse are often very old, their inorganic components having been recycled through numerous bodies and recovered from the fallen of the battlefield. As a result they have a reputation for their machine spirits being unreliable in combat and not knowing friend from foe on occasion. This makes some captains reluctant to employ them save in the direst need.\n\nBattle Servitor Profile",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 40,
+        "unnatural": 8
+      },
+      "toughness": {
+        "base": 40,
+        "unnatural": 8
+      },
+      "agility": {
+        "base": 20,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 20,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 0,
+        "unnatural": 0
+      }
+    },
+    "wounds": 15,
+    "movement": "2/4/8/12",
+    "skills": [
+      [
+        "Awareness",
+        0
+      ]
+    ],
+    "talents": [
+      "Two-Weapon Wielder",
+      "plus any Weapon Training appropriate to its armament"
+    ],
+    "traits": [
+      "Armour Plated",
+      "Auto-stabilised",
+      "Darksight",
+      "Flyer (2) (Null gravity conditions only)",
+      "Machine (4)",
+      "Natural Weapon (servo-fists)",
+      "Sturdy",
+      "Unnatural Strength (×2)",
+      "Unnatural Toughness (×2). Armour (Machine): All 6"
+    ],
+    "weapons_text": "Servo-fist (1d5+8; Primitive), either chain axe (1d10+12 R; Tearing) or shock glove (1d10+8 I; Shocking), and either a flamer (20m; S/—/—; 1d10+4 E; Pen 2; Clip 12; Reload 3Full; Flame), autogun (90m; S/3/10; 1d10+3 I; Pen 0; Clip 30; Reload 2Full), hellgun (110m; S/3/—; 1d10+4 E; Pen 7; Clip 40; Reload 2Full), heavy bolter (120m; —/—/10; 2d10+2 X; Pen 5; Clip 60; Reload Full; Tearing), plasma cannon (120m; S/—/—; 2d10+10 E; Pen 8; Clip 16; Reload 5Full; Blast (1), Overheat, Unreliable) or multi-melta (90m; S/—/—; 4d10+5 E; Pen 13; Clip 10; Reload 2Full; Blast (1)).",
+    "armour_text": "",
+    "gear_text": "Internal vox-bead, ammo hopper equivalent to four clips for each weapon, red dot laser sight for its primary ranged weapon, systems sealed to the void, inbuilt mag-boots.",
+    "portrait_ref": null,
+    "ws_line": 7201,
+    "source_book": "CoreBook-201-401.pdf"
+  },
+  {
+    "name": "Grapplehawk (Falax-Pattern)",
+    "slug": "grapplehawk-falax-pattern",
+    "faction": "",
+    "description": "One of the more unusual servitor types, the grapplehawk is a large cyber-converted avian creature used to hunt and capture or kill human and animal prey. They are armoured, fitted with enhanced sensory equipment and grav-assisted flight systems. The Thulian Magos are known to favour this kind of construct both as scouts in the field and aggressive sample \"gatherers,\" and also have been known to sell examples to various Rogue Traders and Outlander nobles in return for their cooperation and support.",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 0,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 48,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 18,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 0,
+        "unnatural": 0
+      }
+    },
+    "wounds": 8,
+    "movement": "2/4/6/12",
+    "skills": [
+      [
+        "Awareness",
+        10
+      ],
+      [
+        "Dodge",
+        0
+      ]
+    ],
+    "talents": [
+      "Fearless",
+      "Swift Attack"
+    ],
+    "traits": [
+      "Armour Plating",
+      "Dark Sight",
+      "Flier 20",
+      "Machine (4)",
+      "Size (Scrawny). Armour (Machine): All 4"
+    ],
+    "weapons_text": "Shock-pulse claws (1d10+3 E, Shocking).",
+    "armour_text": "",
+    "gear_text": "Inbuilt vox and cogitator, auspex. Inbuilt grappling units allow it to lift stunned prey as if it had Unnatural Strength (x2), although its speed will significantly decrease based on its load.",
+    "portrait_ref": "img-71.jpeg",
+    "ws_line": 7218,
+    "source_book": "CoreBook-201-401.pdf"
+  },
+  {
+    "name": "Servitor Drone",
+    "slug": "servitor-drone",
+    "faction": "",
+    "description": "",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 15,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 15,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 50,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 15,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 10,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 20,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 5,
+        "unnatural": 0
+      }
+    },
+    "wounds": 10,
+    "movement": "1/2/3/6",
+    "skills": [
+      [
+        "Trade (any one)",
+        10
+      ]
+    ],
+    "talents": [
+      "None"
+    ],
+    "traits": [
+      "Machine 4",
+      "Natural Weapon (Fist). Armour (Machine): All 4"
+    ],
+    "weapons_text": "Fist (1d10+5 I; Primitive).",
+    "armour_text": "",
+    "gear_text": "Internal micro-bead.",
+    "portrait_ref": null,
+    "ws_line": 7233,
+    "source_book": "CoreBook-201-401.pdf"
+  },
+  {
+    "name": "Servo Skull",
+    "slug": "servo-skull",
+    "faction": "",
+    "description": "Servo-skulls are human skulls (often that of a favoured servant or low ranking tech-priest) that have been fitted with rudimentary artificial intelligence, support systems, and an anti-grav motor to provide mobility. Their advantages are their small size and manoeuvrability, which allows them to enter otherwise inaccessible spaces or hazardous areas that would endanger their operators, as well as the ability to act as additional 'eyes and ears' for their masters.",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 15,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 15,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 10,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 20,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 15,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 20,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 0,
+        "unnatural": 0
+      }
+    },
+    "wounds": 4,
+    "movement": "— (see below)",
+    "skills": [
+      [
+        "Awareness",
+        10
+      ],
+      [
+        "Concealment",
+        10
+      ],
+      [
+        "Dodge",
+        0
+      ],
+      [
+        "Silent Move",
+        10
+      ],
+      [
+        "One other skill to suit its function (Int etc)",
+        20
+      ]
+    ],
+    "talents": [
+      "Fearless"
+    ],
+    "traits": [
+      "Dark Sight",
+      "Flier 6",
+      "Machine (2)",
+      "Size (Puny). Armour (Machine): All 2"
+    ],
+    "weapons_text": "",
+    "armour_text": "",
+    "gear_text": "Inbuilt vox and cogitator. Depending on its function the Servo-skull will also have an inbuilt lumen globe, auspex, combi-tool or laspistol (30m; S/—/—; 1d10+2 E; Pen 0; Clip 30; Reload Full; Reliable) with inbuilt red-dot laser sight. Servo-skulls are often modified with other tools, sensors, or pistol-class weapons by their owners.",
+    "portrait_ref": null,
+    "ws_line": 7250,
+    "source_book": "CoreBook-201-401.pdf"
+  },
+  {
+    "name": "Eldar Corsair",
+    "slug": "eldar-corsair",
+    "faction": "Eldar",
+    "description": "Few humans know much of the enigmatic ancient race know as the Eldar, save reports of haughty disdain, quixotic temperament, powerful technology, and the unnatural and subtle cruelties of merciless raiders who strike like ghostly phantoms. Despite these conflicting reports there are those foolish and wealthy enough to take up the extortionately priced services of these so-called corsairs. Those who do employ the skills of these most efficient mercenaries take a very grave risk. The tales of mastery and splendour in battle attributed to them are almost equalled by those telling of their fickle loyalty, sudden betrayals, and gleeful slaughtering grace, silken armour a-sheen with the blood of former allies.\n\nWithin the Koronus Expanse the two most infamous groups of eldar corsairs at large are known to humanity as the fickle and deadly mercenaries of the Children of Thorns and the mysterious exterminators called the Crow Spirits.",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 48,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 48,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 33,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 52,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 39,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 43,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 25,
+        "unnatural": 0
+      }
+    },
+    "wounds": 12,
+    "movement": "5/10/15/30",
+    "skills": [
+      [
+        "Acrobatics",
+        0
+      ],
+      [
+        "Awareness",
+        10
+      ],
+      [
+        "Barter",
+        0
+      ],
+      [
+        "Deceive",
+        10
+      ],
+      [
+        "Dodge",
+        0
+      ],
+      [
+        "Evaluate",
+        10
+      ],
+      [
+        "Forbidden Lore (The Black Library, Xenos, The Warp)",
+        0
+      ],
+      [
+        "Gamble",
+        0
+      ],
+      [
+        "Navigation (Stellar)",
+        0
+      ],
+      [
+        "Pilot (Interface Craft, Jump Pack)",
+        0
+      ],
+      [
+        "Medicae",
+        0
+      ],
+      [
+        "Silent Move",
+        10
+      ],
+      [
+        "Speak Language (Eldar, Low Gothic, Void Cant)",
+        10
+      ]
+    ],
+    "talents": [
+      "Basic Weapon Training (Las)",
+      "Catfall",
+      "Exotic Weapons Training (Shuriken Catapult, Shuriken Pistol)",
+      "Leap Up",
+      "Melee Weapon Training (Power, Primitive)",
+      "Pistol Weapon Training (Las)",
+      "Quick Draw",
+      "Resistance (Fear, Psychic Techniques)",
+      "Sprint"
+    ],
+    "traits": [
+      "Unnatural Agility (x2)"
+    ],
+    "weapons_text": "Shuriken catapult (60m; S/3/10; 1d10+4 R; Pen 6; Clip 100; Reload 2Full; Reliable), xeno-crafted laspistol (30m; S/-/-; 1d10+2 E; Pen 0; Clip 30; Reload Full; Reliable), xeno-crafted mono-sword (1d10+3 R; Pen 2; Balanced), 2 plasma grenades, 4 blind grenades.",
+    "armour_text": "Xeno mesh void armour (Body 5, Head 5, Arms 4, Legs 4).",
+    "gear_text": "3 spare clips of shuriken catapult ammunition, waystone gem, xenos-crafted medkit, xenos-crafted void-sealed armour that grants full life support, long range encrypted vox, auspex, and Dark Sight. Inbuilt void impellor units in the armour grant Flyer 12 in null gravity.",
+    "portrait_ref": "img-72.jpeg",
+    "ws_line": 7281,
+    "source_book": "CoreBook-201-401.pdf"
+  },
+  {
+    "name": "Barbarous and strife-torn ork empires are scattered",
+    "slug": "barbarous-and-strife-torn-ork-empires-are-scattered",
+    "faction": "Ork",
+    "description": "throughout known space, and the Koronus Expanse is no exception with a volume of space known as Undred-Undred Teef the home of a long established ork domain from which frequent raids and pirate attacks from scavenging ork warbands of loota krews and freebooter pirates are infamous.",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 45,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 20,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 50,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 45,
+        "unnatural": 8
+      },
+      "agility": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 26,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 28,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 22,
+        "unnatural": 0
+      }
+    },
+    "wounds": 16,
+    "movement": "3/6/9/18",
+    "skills": [
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Barter",
+        0
+      ],
+      [
+        "Intimidate",
+        0
+      ]
+    ],
+    "talents": [
+      "Basic Weapon Training (Primitive, SP)",
+      "Bulging Biceps",
+      "Common Lore (Ork)",
+      "Crushing Blow",
+      "Furious Assault",
+      "Hardy",
+      "Heavy Weapon Training (SP)",
+      "Iron Jaw",
+      "Melee Weapon Training (Chain, Primitive, Power)",
+      "Pistol Weapon Training (Primitive, SP)",
+      "Speak Language (Ork, Low Gothic)",
+      "True Grit"
+    ],
+    "traits": [
+      "Brutal Charge",
+      "Mob Rule†",
+      "Resistance (Cold, Heat, Radiation)",
+      "Sturdy",
+      "Unnatural Toughness (x2)"
+    ],
+    "weapons_text": "Chain axe (1d10+9 R; Pen 2 Tearing), 1d5 frag grenades, shoots (60m; S/3/10; 1d10+4 I; Pen 0; Clip 30; Reload Full; Inaccurate, Unreliable).",
+    "armour_text": "Looted armour (Body 5, Head 4, Arms 2, Legs 2).",
+    "gear_text": "2d10 ork teeth (\"Teef\"), shiny bitz, scavenged machine components and trophies, 3 spare clips for the shoots, respirator, crude hand vox.",
+    "portrait_ref": "img-72.jpeg",
+    "ws_line": 7312,
+    "source_book": "CoreBook-201-401.pdf"
+  },
+  {
+    "name": "Kroot Mercenary",
+    "slug": "kroot-mercenary",
+    "faction": "Kroot",
+    "description": "Encountered very rarely in the Koronus Expanse, the kroot are not indigenous to the local stars but nomadic wanderers from half a galaxy away. A mercenary race, their feral, clannish mindset hides both a perception and intelligence few would credit them with. A carnivorous and highly adaptable species, an individual kroot stands considerably taller than a human and possesses many features that betray their avian heritage. Sporting a crest of quills, a beaked mouth, and the ability to move with incredible speed and lithe physical power, a kroot is a formidable opponent. Their martial prowess—combined with an unpleasant reputation for eating those they slay—gives these freelance warriors a justly fearsome reputation, and they command a high price from the merchant criminals and recidivist elements willing to flout Imperial law by taking them into their employ.",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 42,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 33,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 35,
+        "unnatural": 6
+      },
+      "toughness": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 44,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 25,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 44,
+        "unnatural": 8
+      },
+      "willpower": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 18,
+        "unnatural": 0
+      }
+    },
+    "wounds": 12,
+    "movement": "4/8/16/32",
+    "skills": [
+      [
+        "Acrobatics",
+        0
+      ],
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Barter",
+        0
+      ],
+      [
+        "Climb",
+        10
+      ],
+      [
+        "Concealment",
+        20
+      ],
+      [
+        "Dodge",
+        10
+      ],
+      [
+        "Silent Move",
+        20
+      ],
+      [
+        "Speak Language (Low Gothic, Kroot)",
+        0
+      ],
+      [
+        "Tracking",
+        10
+      ],
+      [
+        "Survival",
+        20
+      ]
+    ],
+    "talents": [
+      "Basic Weapon Training (SP, Primitive)",
+      "Furious Attack",
+      "Leap Up",
+      "Lightning Reflexes",
+      "Melee Weapon Training (Primitive)",
+      "Resistance (Fear)",
+      "Sprint",
+      "Swift Attack"
+    ],
+    "traits": [
+      "Natural Weapons (Beak)†",
+      "Unnatural Perception (x2)",
+      "Unnatural Strength (x2)"
+    ],
+    "weapons_text": "",
+    "armour_text": "",
+    "gear_text": "",
+    "portrait_ref": "img-73.jpeg",
+    "ws_line": 7339,
+    "source_book": "CoreBook-201-401.pdf"
+  },
+  {
+    "name": "Warp Predator (Ebon Geist)",
+    "slug": "warp-predator-ebon-geist",
+    "faction": "Warp",
+    "description": "These near-mindless creatures are animalistic predators whose hunger for life is boundless. They are drawn to the soul sparks of mortal life like sharks to bloody water. Such a predator is the Ebon Geist, a thing blacker than the emptiest void, a killing shadow, thin and writhing that can pass through dark spaces as insubstantial as a nightmare fading into forgetfulness. The geist murders with its chill talons leaving noting but bodies consumed to desiccated husks, the screaming shadows of its victims cold-burned into the hull where they perished.\n\n## Ebon Geist Profile",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 36,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 0,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 36,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 40,
+        "unnatural": 8
+      },
+      "agility": {
+        "base": 45,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 14,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 45,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 42,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 0,
+        "unnatural": 0
+      }
+    },
+    "wounds": 18,
+    "movement": "8/16/24/48",
+    "skills": [
+      [
+        "Dodge",
+        0
+      ],
+      [
+        "Psyniscience",
+        0
+      ],
+      [
+        "Concealment",
+        20
+      ],
+      [
+        "Silent Move",
+        20
+      ]
+    ],
+    "talents": [
+      "Heightened Senses (all)",
+      "Swift Attack",
+      "Lightning Attack"
+    ],
+    "traits": [
+      "Consume Life†",
+      "Daemonic (TB 8)",
+      "Dark Sight",
+      "Daemonic Presence",
+      "Fear (2)",
+      "Flyer (12)",
+      "From Beyond",
+      "Hard Target",
+      "Phase",
+      "Toxic",
+      "Unnatural Agility (×2)",
+      "Unnatural Speed (×2)",
+      "Warp Instability"
+    ],
+    "weapons_text": "",
+    "armour_text": "",
+    "gear_text": "",
+    "portrait_ref": "img-74.jpeg",
+    "ws_line": 7381,
+    "source_book": "CoreBook-201-401.pdf"
+  },
+  {
+    "name": "Hadarak Fel",
+    "slug": "hadarak-fel",
+    "faction": "",
+    "description": "",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 48,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 42,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 38,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 37,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 45,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 41,
+        "unnatural": 0
+      }
+    },
+    "wounds": 22,
+    "movement": "3/6/9/18",
+    "skills": [
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Charm",
+        20
+      ],
+      [
+        "Climb",
+        0
+      ],
+      [
+        "Command",
+        20
+      ],
+      [
+        "Common Lore (Imperium, Void, Imperial Navy, War)",
+        0
+      ],
+      [
+        "Deceive",
+        20
+      ],
+      [
+        "Dodge",
+        10
+      ],
+      [
+        "Navigation (Stellar)",
+        10
+      ],
+      [
+        "Speak Language (High Gothic, Low Gothic)",
+        10
+      ]
+    ],
+    "talents": [
+      "Basic Weapon Training (Las, SP)",
+      "Nerves of Steel",
+      "Melee Weapon Training (Primitive, Universal)",
+      "Pistol Training (Universal)"
+    ],
+    "traits": [],
+    "weapons_text": "Bolt pistol with red-dot laser sight (30m; S/2/–; 1d10+5 X; Pen 4; Clip 8; Reload Full; Tearing), best-Craftsmanship mono-sword (1d10+3 R; Pen 2).",
+    "armour_text": "Enforcer light carapace (Arms 5, Body 5, Legs 5).",
+    "gear_text": "2 spare bolt pistol clips, personal vox, signet ring, respirator.",
+    "portrait_ref": "img-84.jpeg",
+    "ws_line": 7835,
+    "source_book": "CoreBook-201-401.pdf"
+  },
+  {
+    "name": "Lady Ash",
+    "slug": "lady-ash",
+    "faction": "",
+    "description": "",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 28,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 28,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 36,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 32,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 38,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 55,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 23,
+        "unnatural": 0
+      }
+    },
+    "wounds": 19,
+    "movement": "3/6/9/18",
+    "skills": [
+      [
+        "Awareness",
+        20
+      ],
+      [
+        "Ciphers (Occult)",
+        0
+      ],
+      [
+        "Common Lore (Imperium, Koronus Expanse)",
+        0
+      ],
+      [
+        "Command",
+        0
+      ],
+      [
+        "Deceive",
+        10
+      ],
+      [
+        "Dodge",
+        10
+      ],
+      [
+        "Forbidden Lore (Daemonology, Warp)",
+        10
+      ],
+      [
+        "Intimidate",
+        10
+      ],
+      [
+        "Invocation",
+        20
+      ],
+      [
+        "Psyniscience",
+        20
+      ],
+      [
+        "Speak Language (Low Gothic)",
+        0
+      ]
+    ],
+    "talents": [
+      "Dark Soul",
+      "Fearless",
+      "Jaded",
+      "Melee Weapon Training (Primitive)",
+      "Pistol Weapon Training (Universal)",
+      "Psy Rating 6",
+      "Resistance (Psychic Techniques)"
+    ],
+    "traits": [],
+    "weapons_text": "",
+    "armour_text": "",
+    "gear_text": "",
+    "portrait_ref": null,
+    "ws_line": 7855,
+    "source_book": "CoreBook-201-401.pdf"
+  },
+  {
+    "name": "Pyrexia",
+    "slug": "pyrexia",
+    "faction": "",
+    "description": "",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 0,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 48,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 19,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 42,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 0,
+        "unnatural": 0
+      }
+    },
+    "wounds": 8,
+    "movement": "2/4/6/12",
+    "skills": [
+      [
+        "Awareness",
+        10
+      ],
+      [
+        "Dodge",
+        0
+      ]
+    ],
+    "talents": [
+      "Fearless",
+      "Swift Attack"
+    ],
+    "traits": [
+      "Armour Plating",
+      "Dark Sight",
+      "Flier 20",
+      "Machine (4)",
+      "Size (Scrawny)"
+    ],
+    "weapons_text": "",
+    "armour_text": "",
+    "gear_text": "",
+    "portrait_ref": "img-85.jpeg",
+    "ws_line": 7879,
+    "source_book": "CoreBook-201-401.pdf"
+  }
+]

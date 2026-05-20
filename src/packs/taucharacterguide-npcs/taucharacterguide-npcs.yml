@@ -1,0 +1,295 @@
+---
+effects: []
+flags:
+  rt:
+    description: ''
+    movement: ''
+    rawGear: ''
+    source: 'The Koronus Bestiary: Tau Character Guide'
+img: systems/rogue-trader-3rd/images/npcs/taucharacterguide/tau-fire-warrior.png
+items: []
+name: Tau Fire Warrior
+prototypeToken:
+  actorLink: false
+  disposition: -1
+  height: 1
+  name: Tau Fire Warrior
+  texture:
+    scaleX: 1.0
+    scaleY: 1.0
+    src: systems/rogue-trader-3rd/images/npcs/taucharacterguide/tau-fire-warrior.png
+  width: 1
+system:
+  characteristics:
+    agility:
+      base: 20
+      unnatural: 0
+    ballisticSkill:
+      base: 35
+      unnatural: 0
+    fellowship:
+      base: 25
+      unnatural: 0
+    intelligence:
+      base: 30
+      unnatural: 0
+    perception:
+      base: 35
+      unnatural: 0
+    strength:
+      base: 30
+      unnatural: 0
+    toughness:
+      base: 30
+      unnatural: 0
+    weaponSkill:
+      base: 25
+      unnatural: 0
+    willpower:
+      base: 30
+      unnatural: 0
+  npc:
+    faction: Tau
+    subfaction: ''
+    threatLevel: 0
+    type: troop
+  skills: {}
+  wounds:
+    critical: 0
+    max: 0
+    rolled: true
+    value: 0
+type: npc
+---
+effects: []
+flags:
+  rt:
+    description: 'The Tau make extensive use of artificial intelligence-controlled machines called drones. These drones are
+      most often seen on the battlefield in squads of gun drones, equipped with twin-linked pulse carbines they operate in
+      squadrons, using their anti-gravitic motors to outmanoeuvre and surprise their prey.
+
+
+      A variant of the gun drone, equipped with a longshot pulse rifle and directed by markerlights, has also become a highly
+      feared presence in the far off Eastern Rim zones of conflict.
+
+
+      Drones are not only equipped to deal death, however; two further models, one equipped with a markerlight and a second
+      carrying a shield generator provide vital support for the forces of the Tau Empire.
+
+
+      Drones possess only a simple programmed response system and, although capable of adapting to changing battlefield conditions,
+      are often controlled directly by Fire Warriors or battlesuit pilots equipped with drone controllers.'
+    movement: 6/12/18/36
+    rawGear: If the drone is not equipped with a weapon, it may instead carry a markerlight or a shield generator.
+    source: 'The Koronus Bestiary: Tau Character Guide'
+img: systems/rogue-trader-3rd/images/npcs/taucharacterguide/tau-drones.png
+items:
+- _id: ebuHFFnNetU5Ovzd
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/items/spear/stave_04_b.png
+  name: Exotic Weapon Training (Tau)
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer has received Exotic Weapon Training in a single Exotic Weapon, and can use it without penalty. This
+      Talent may be taken multiple times, choosing a different Exotic Weapon each time.
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: xECouFghBMVjfy6s
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Fearless
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: Through hard experience with horrifying situations, fear no longer commands the Explorer's actions. He is immune
+      to the effects of Fear and Pinning, but disengaging from combat or backing down from a fight requires a successful Willpower
+      Test.
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: UsABsaq3KdgFZhw6
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Guardian
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: Years of serving as a bodyguard allow the Explorer to put himself in the line of fire, or to take a murderous
+      attack that was intended for another. He may sacrifice all of his Actions for the next Round to switch places with an
+      ally within 2 metres (as long as there is no obstruction in the way). This may be done at any time, even interrupting
+      another action. The character becomes the target of any attacks previously targeting the ally. This Talent may not be
+      used more than once per combat.
+    cost: 0
+    prerequisites: Agility 40
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: 96aiNyRtyBy6qOVa
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Dark Sight
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    description: A creature with this Trait sees normally even in areas of total darkness, and never takes a penalty for fighting
+      in areas of dim or no lighting.
+    source: Rogue Trader Core Rulebook
+  type: trait
+- _id: pMYKxdEEVzNNw5zQ
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Hoverer (6)
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    description: 'Creatures with this Trait have a limited capability for flight, flying no higher than two metres. As with
+      the Flyer trait, this Trait always includes a number to indicate speed. For more details on flying, see Chapter VII:
+      Playing the Game.'
+    source: Rogue Trader Core Rulebook
+  type: trait
+- _id: MPmZquM8U2Fw1TsC
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Machine (4)
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    description: A creature with the Machine Trait is fashioned from inorganic materials and is generally more rigorous than
+      fleshy folks. Machines do not
+    source: Rogue Trader Core Rulebook
+  type: trait
+- _id: HrRLEOCWv921wIyk
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Size (Scrawny)
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    description: '**Trait Groups:** Miniscule, Puny, Scrawny, Hulking, Enormous, Massive Creatures come in one of seven different
+      size categories, as shown on the following chart. Size affects movement and how easy or hard it is to strike that creature
+      in combat. (When calculating a creatures movement, apply the size modifier first, and then other modifiers from other
+      Traits or talents. Base movement can never be reduced below 1.) For the purposes of comparison, a human is an average-sized
+      creature.'
+    source: Rogue Trader Core Rulebook
+  type: trait
+- _id: I8VeoCc4DKnyhyK4
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
+  name: Twin-linked pulse carbine (Basic; 60m; S/-/3; 2d0+2 E; Pen 4; Clip 24; Reload Full; Gyro-Stabilised, Twin-linked)
+    or longshot pulse rifle
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    attackBonus: 0
+    attackType: ''
+    availability: Common
+    backpack:
+      inBackpack: false
+    class: Basic
+    clip:
+      max: 12
+      value: 12
+    craftsmanship: Common
+    damage: 2d10+3
+    damageType: Energy
+    description: ''
+    effect: ''
+    equipped: true
+    inBackpack: false
+    modifications: []
+    penetration: '4'
+    range: '200'
+    rateOfFire:
+      burst: 2
+      full: 0
+      single: 1
+    reload: 2 Full
+    source: 'The Koronus Bestiary: Tau Character Guide'
+    special:
+      accurate: true
+      tearing: true
+    target: ''
+    type: ''
+    weight: 0
+  type: weapon
+name: Tau Drones
+prototypeToken:
+  actorLink: false
+  disposition: -1
+  height: 1
+  name: Tau Drones
+  texture:
+    scaleX: 1.0
+    scaleY: 1.0
+    src: systems/rogue-trader-3rd/images/npcs/taucharacterguide/tau-drones.png
+  width: 1
+system:
+  characteristics:
+    agility:
+      base: 40
+      unnatural: 0
+    ballisticSkill:
+      base: 22
+      unnatural: 0
+    fellowship:
+      base: 8
+      unnatural: 0
+    intelligence:
+      base: 15
+      unnatural: 0
+    perception:
+      base: 35
+      unnatural: 0
+    strength:
+      base: 30
+      unnatural: 0
+    toughness:
+      base: 45
+      unnatural: 0
+    weaponSkill:
+      base: 22
+      unnatural: 0
+    willpower:
+      base: 30
+      unnatural: 0
+  npc:
+    faction: Tau
+    subfaction: ''
+    threatLevel: 0
+    type: troop
+  skills:
+    awareness:
+      advance: 0
+    dodge:
+      advance: 10
+  wounds:
+    critical: 0
+    max: 12
+    rolled: true
+    value: 12
+type: npc

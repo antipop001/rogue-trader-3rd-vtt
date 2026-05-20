@@ -1,0 +1,450 @@
+[
+  {
+    "name": "Mutant Scavenger",
+    "slug": "mutant-scavenger",
+    "faction": "",
+    "description": "",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 28,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 28,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 44,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 27,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 24,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 41,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 25,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 17,
+        "unnatural": 0
+      }
+    },
+    "wounds": 8,
+    "movement": "2/4/8/16",
+    "skills": [
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Barter",
+        10
+      ],
+      [
+        "Stealth (Ag) +10. Talents/",
+        0
+      ]
+    ],
+    "talents": [],
+    "traits": [
+      "None"
+    ],
+    "weapons_text": "Firearms (Basic; 40m; 1d10+4 I; Pen 0; S/-/-; Clip 3; Reload 1 Full; Overheats), claws and bone-spikes (Melee; 1d10+4 R; Pen 0; Tearing).",
+    "armour_text": "Scavy Robes (All 2)",
+    "gear_text": "",
+    "portrait_ref": "img-6.jpeg",
+    "ws_line": 322,
+    "source_book": "roguetrader_sheddinglight.pdf"
+  },
+  {
+    "name": "Canoptek Wraith",
+    "slug": "canoptek-wraith",
+    "faction": "",
+    "description": "",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 45,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 45,
+        "unnatural": 8
+      },
+      "toughness": {
+        "base": 45,
+        "unnatural": 8
+      },
+      "agility": {
+        "base": 45,
+        "unnatural": 8
+      },
+      "intelligence": {
+        "base": 20,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 45,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 45,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 1,
+        "unnatural": 0
+      }
+    },
+    "wounds": 20,
+    "movement": "8/16/24/48 (Hoverer)",
+    "skills": [
+      [
+        "Concealment",
+        10
+      ],
+      [
+        "Dodge",
+        0
+      ],
+      [
+        "Silent Move",
+        10
+      ],
+      [
+        "Tech-Use",
+        20
+      ]
+    ],
+    "talents": [
+      "Ambidextrous",
+      "Step Aside",
+      "Swift Attack",
+      "Two-Weapon Wielder (Melee)"
+    ],
+    "traits": [
+      "Dark Sight",
+      "Fear (2)",
+      "From Beyond",
+      "Hoverer (8)",
+      "Phase",
+      "Phase Shifter†",
+      "Machine (6)",
+      "Size (Hulking)",
+      "Regeneration (5)",
+      "Unnatural Strength (x2)",
+      "Unnatural Toughness (x2)",
+      "Unnatural Perception (x2)",
+      "Wraithflight††"
+    ],
+    "weapons_text": "Claws (1d10+8 R; Pen 2) and Whip Coils (1d10+4 I; Pen 0; Flexible, Snare).",
+    "armour_text": "Machine Trait (All 6) **Total TB:** 8",
+    "gear_text": "",
+    "portrait_ref": "img-7.jpeg",
+    "ws_line": 407,
+    "source_book": "roguetrader_sheddinglight.pdf"
+  },
+  {
+    "name": "Cryptek",
+    "slug": "cryptek",
+    "faction": "",
+    "description": "",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 32,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 31,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 35,
+        "unnatural": 6
+      },
+      "agility": {
+        "base": 45,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 65,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 45,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 20,
+        "unnatural": 0
+      }
+    },
+    "wounds": 20,
+    "movement": "3/6/9/18",
+    "skills": [
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Logic",
+        20
+      ],
+      [
+        "Tech-Use",
+        20
+      ]
+    ],
+    "talents": [
+      "Lightning Attack"
+    ],
+    "traits": [
+      "Machine (6)",
+      "Regeneration 5",
+      "Unnatural Toughness (x2)"
+    ],
+    "weapons_text": "Needle Fingers (1d10+3 R; Pen 5; Toxic).",
+    "armour_text": "Machine Trait (All 6) Total TB: 6",
+    "gear_text": "",
+    "portrait_ref": "img-7.jpeg",
+    "ws_line": 453,
+    "source_book": "roguetrader_sheddinglight.pdf"
+  },
+  {
+    "name": "Scarab Swarm",
+    "slug": "scarab-swarm",
+    "faction": "",
+    "description": "",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 5,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 10,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 20,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 5,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 20,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 20,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 5,
+        "unnatural": 0
+      }
+    },
+    "wounds": 40,
+    "movement": "4/8/16/32",
+    "skills": [
+      [
+        "Stealth",
+        20
+      ]
+    ],
+    "talents": [
+      "Repair†",
+      "Swift Attack"
+    ],
+    "traits": [
+      "Hoverer (4)",
+      "Size (Puny)",
+      "Machine (4)",
+      "Deadly Natural Weapons (Disruptor Field)",
+      "Swarm"
+    ],
+    "weapons_text": "Disruptor Field (Melee; 2d10+1 R; Pen 3, Gauss).",
+    "armour_text": "Machine Trait (All 4)",
+    "gear_text": "",
+    "portrait_ref": "img-10.jpeg",
+    "ws_line": 543,
+    "source_book": "roguetrader_sheddinglight.pdf"
+  },
+  {
+    "name": "Necron Warrior",
+    "slug": "necron-warrior",
+    "faction": "Necron",
+    "description": "",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 45,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 35,
+        "unnatural": 6
+      },
+      "toughness": {
+        "base": 35,
+        "unnatural": 6
+      },
+      "agility": {
+        "base": 25,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 25,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 15,
+        "unnatural": 0
+      }
+    },
+    "wounds": 20,
+    "movement": "3/6/9/18",
+    "skills": [
+      [
+        "Intimidate",
+        10
+      ],
+      [
+        "Logic",
+        20
+      ],
+      [
+        "Tech-Use",
+        20
+      ]
+    ],
+    "talents": [
+      "Crack Shot"
+    ],
+    "traits": [
+      "Machine (6)",
+      "Regeneration",
+      "Size (Hulking)",
+      "Unnatural Strength (x2)",
+      "Unnatural Toughness (x2)"
+    ],
+    "weapons_text": "Gauss Player (Basic; 100m; 1d10+6 E; Pen 3; S/2/-; Clip—; Reload—; Gauss), Weapon Blade (Melee; 1d10+6 R; Pen 2; Unwieldy).",
+    "armour_text": "Machine Trait (All 6)",
+    "gear_text": "",
+    "portrait_ref": null,
+    "ws_line": 573,
+    "source_book": "roguetrader_sheddinglight.pdf"
+  },
+  {
+    "name": "Tomb Stalker",
+    "slug": "tomb-stalker",
+    "faction": "",
+    "description": "",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 55,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 60,
+        "unnatural": 12
+      },
+      "toughness": {
+        "base": 60,
+        "unnatural": 12
+      },
+      "agility": {
+        "base": 55,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 5,
+        "unnatural": 0
+      }
+    },
+    "wounds": 0,
+    "movement": "4/8/16/32 ##",
+    "skills": [
+      [
+        "Logic",
+        20
+      ],
+      [
+        "Stealth",
+        20
+      ],
+      [
+        "Tech-Use",
+        20
+      ]
+    ],
+    "talents": [],
+    "traits": [],
+    "weapons_text": "",
+    "armour_text": "Machine Trait (All 8) ##",
+    "gear_text": "",
+    "portrait_ref": null,
+    "ws_line": 614,
+    "source_book": "roguetrader_sheddinglight.pdf"
+  }
+]

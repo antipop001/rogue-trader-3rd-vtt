@@ -1,0 +1,2374 @@
+[
+  {
+    "name": "Abel Gerrit",
+    "slug": "abel-gerrit",
+    "faction": "",
+    "description": "Full background on Abel Gerrit is on page 24.",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 45,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 41,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 38,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 42,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 37,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 38,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 45,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 56,
+        "unnatural": 0
+      }
+    },
+    "wounds": 20,
+    "movement": "4/8/12/24",
+    "skills": [
+      [
+        "Awareness",
+        10
+      ],
+      [
+        "Barter",
+        0
+      ],
+      [
+        "Charm",
+        0
+      ],
+      [
+        "Commerce",
+        10
+      ],
+      [
+        "Command",
+        10
+      ],
+      [
+        "Common Lore (Imperium, Merchant)",
+        0
+      ],
+      [
+        "Dodge",
+        0
+      ],
+      [
+        "Evaluate",
+        10
+      ],
+      [
+        "Forbidden Lore (Xenos)",
+        0
+      ],
+      [
+        "Inquiry",
+        10
+      ],
+      [
+        "Navigation (Stellar)",
+        10
+      ],
+      [
+        "Pilot (Space Craft)",
+        0
+      ],
+      [
+        "Tech-Use",
+        0
+      ],
+      [
+        "Trade (Trader)",
+        0
+      ],
+      [
+        "Scrutiny",
+        10
+      ],
+      [
+        "Speak Language (High Gothic, Low Gothic, Trader's Cant)",
+        0
+      ]
+    ],
+    "talents": [
+      "Air of Authority",
+      "Basic Weapon Training (Universal)",
+      "Blademaster",
+      "Dual Strike",
+      "Iron Discipline",
+      "Jaded",
+      "Lightning Attack",
+      "Master and Commander",
+      "Melee Weapon Training (Universal)",
+      "Nerves of Steel",
+      "Pistol Training (Bolt, Las, SP)",
+      "Resistance (Fear)",
+      "Peer (Nobility)",
+      "Renowned Warrant",
+      "Swift Attack",
+      "Two-Weapon Wielder (Melee)"
+    ],
+    "traits": [
+      "Touched by the Fates 2"
+    ],
+    "weapons_text": "Bolt pistol (30m; S/2/–; 1d10+5 X; pen 4; clip 8, reload full; tearing), 2 power swords (1d10+8 R; pen 5; power field, balanced).",
+    "armour_text": "Mesh-lined finery (arms 3, body 4, legs 3).",
+    "gear_text": "2 bolt-pistol clips, coin embossed with image of the cruiser Oceanid.",
+    "portrait_ref": "img-63.jpeg",
+    "ws_line": 3918,
+    "source_book": "roguetrader_lureoftheexpanse.pdf"
+  },
+  {
+    "name": "Djanko Scourge",
+    "slug": "djanko-scourge",
+    "faction": "",
+    "description": "Full background on Djanko Scourge is on page 28.",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 41,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 33,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 50,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 54,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 28,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 36,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 32,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 37,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 33,
+        "unnatural": 0
+      }
+    },
+    "wounds": 30,
+    "movement": "2/4/6/12",
+    "skills": [
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Barter",
+        10
+      ],
+      [
+        "Carouse",
+        10
+      ],
+      [
+        "Command",
+        20
+      ],
+      [
+        "Common Lore (Imperium, Imperial Guard, War)",
+        0
+      ],
+      [
+        "Dodge",
+        0
+      ],
+      [
+        "Intimidation",
+        20
+      ],
+      [
+        "Interrogation",
+        10
+      ],
+      [
+        "Navigation (Stellar)",
+        0
+      ],
+      [
+        "Speak Language (Low Gothic, Trader's Cant)",
+        0
+      ],
+      [
+        "Trade (Trader)",
+        10
+      ]
+    ],
+    "talents": [
+      "Air of Authority",
+      "Basic Weapon Training (Universal)",
+      "Battle Rage",
+      "Crushing Blow",
+      "Fearless",
+      "Frenzy",
+      "Furious Assault",
+      "Hip Shooting",
+      "Iron Discipline",
+      "Melee Weapon Training (Universal)",
+      "Pistol Training (Universal)",
+      "Sure Strike",
+      "Swift Attack"
+    ],
+    "traits": [
+      "Touched by the Fates 2"
+    ],
+    "weapons_text": "Gold-plated best-craftsmanship plasma pistol (30m; S/2/–; 1d10+6 E, pen 6, clip 10, reload 3 full), chainsword (1d10+9* R; pen 2; balanced, tearing).",
+    "armour_text": "Mesh-lined dress uniform (arms 4, body 4, legs 4).",
+    "gear_text": "1 spare hydrogen flask.",
+    "portrait_ref": null,
+    "ws_line": 3943,
+    "source_book": "roguetrader_lureoftheexpanse.pdf"
+  },
+  {
+    "name": "Hadarak Fel",
+    "slug": "hadarak-fel",
+    "faction": "",
+    "description": "Full background on Hadarak Fel is on page 25.",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 48,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 42,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 38,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 37,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 45,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 41,
+        "unnatural": 0
+      }
+    },
+    "wounds": 22,
+    "movement": "3/6/9/18",
+    "skills": [
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Barter",
+        0
+      ],
+      [
+        "Charm",
+        20
+      ],
+      [
+        "Commerce",
+        10
+      ],
+      [
+        "Command",
+        20
+      ],
+      [
+        "Common Lore (Imperium, Void, Imperial Navy, War)",
+        0
+      ],
+      [
+        "Deceive",
+        20
+      ],
+      [
+        "Dodge",
+        10
+      ],
+      [
+        "Intimidate",
+        0
+      ],
+      [
+        "Interrogation",
+        10
+      ],
+      [
+        "Inquiry",
+        0
+      ],
+      [
+        "Navigation (Stellar)",
+        10
+      ],
+      [
+        "Speak Language (High Gothic, Low Gothic)",
+        10
+      ]
+    ],
+    "talents": [
+      "Air of Authority",
+      "Basic Weapon Training (Las, Bolt, SP)",
+      "Decadence",
+      "Jaded",
+      "Melee Weapon Training (Universal)",
+      "Nerves of Steel",
+      "Pistol Training (Bolt, Las, SP)",
+      "Resistance (Fear)",
+      "Peer (Rogue Traders, Criminal)",
+      "Swift Attack"
+    ],
+    "traits": [
+      "Touched by the Fates 2"
+    ],
+    "weapons_text": "Bolt pistol with red-dot laser sight (30m; S/2/–; 1d10+5 X; pen 4; clip 8, reload full; tearing), best-craftsmanship mono-sword (1d10+4 R; pen 2, balanced).",
+    "armour_text": "Light carapace (arms 4, body 4, legs 3).",
+    "gear_text": "Captain's finery, 4 bolt-pistol clips, personal vox, signet ring, respirator.",
+    "portrait_ref": null,
+    "ws_line": 3968,
+    "source_book": "roguetrader_lureoftheexpanse.pdf"
+  },
+  {
+    "name": "Madam Charlabelle",
+    "slug": "madam-charlabelle",
+    "faction": "",
+    "description": "Full background on Madam Charlabelle is on page 25.",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 48,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 32,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 27,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 44,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 50,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 47,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 47,
+        "unnatural": 0
+      }
+    },
+    "wounds": 23,
+    "movement": "4/8/12/24",
+    "skills": [
+      [
+        "Awareness",
+        10
+      ],
+      [
+        "Barter",
+        10
+      ],
+      [
+        "Charm",
+        0
+      ],
+      [
+        "Commerce",
+        20
+      ],
+      [
+        "Concealment",
+        10
+      ],
+      [
+        "Common Lore (Imperium, Underworld, Merchant)",
+        0
+      ],
+      [
+        "Deceive",
+        0
+      ],
+      [
+        "Dodge",
+        10
+      ],
+      [
+        "Forbidden Lore (Xenos)",
+        10
+      ],
+      [
+        "Inquiry",
+        0
+      ],
+      [
+        "Navigation (Stellar)",
+        10
+      ],
+      [
+        "Pilot (Void)",
+        0
+      ],
+      [
+        "Tech-Use",
+        0
+      ],
+      [
+        "Trade (Trader)",
+        0
+      ],
+      [
+        "Speak Language (High Gothic, Low Gothic, Trader’s Cant, Kroot)",
+        0
+      ],
+      [
+        "Scrutiny",
+        10
+      ],
+      [
+        "Search",
+        0
+      ]
+    ],
+    "talents": [
+      "Air of Authority",
+      "Combat Sense",
+      "Exotic Weapon Training (Harlequin’s Kiss)",
+      "Fearless",
+      "Foresight",
+      "Hatred (Orks)",
+      "Hardy",
+      "Iron Discipline",
+      "Light Sleeper",
+      "Melee Weapon Training (Universal)",
+      "Paranoia",
+      "Pistol Weapon Training (Universal)",
+      "Sure Strike",
+      "Swift Attack",
+      "True Grit",
+      "Two Weapon Wielder (Melee, Ballistic)"
+    ],
+    "traits": [
+      "Touched by the Fates 2"
+    ],
+    "weapons_text": "Harlequin’s Kiss (1d10+8 R; Pen 10; tearing), plasma pistol (30m; S/2/–; 1d10+6 E, Pen 6, clip 10, reload 3 full, overheat).",
+    "armour_text": "Xenos mesh (arms 5, body 5, legs 5).",
+    "gear_text": "2 plasma pistol hydrogen flasks, captain’s greatcoat, personal accounts ledger.",
+    "portrait_ref": "img-64.jpeg",
+    "ws_line": 4104,
+    "source_book": "roguetrader_lureoftheexpanse.pdf"
+  },
+  {
+    "name": "Dross Tribesman",
+    "slug": "dross-tribesman",
+    "faction": "",
+    "description": "The primitive inhabitants of Dross favour spears tipped with jagged hull-metal from the wrecks dotting their landscape, creating weapons as sharp and dangerous as mono-weapons.",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 44,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 44,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 43,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 42,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 41,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 18,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 38,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 32,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 36,
+        "unnatural": 0
+      }
+    },
+    "wounds": 15,
+    "movement": "4/8/12/24",
+    "skills": [
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Climb",
+        0
+      ],
+      [
+        "Concealment",
+        10
+      ],
+      [
+        "Dodge",
+        20
+      ],
+      [
+        "Silent Move",
+        10
+      ],
+      [
+        "Survival",
+        0
+      ],
+      [
+        "Tracking",
+        0
+      ],
+      [
+        "Wrangling",
+        0
+      ]
+    ],
+    "talents": [
+      "Basic Weapon Training (Primitive)",
+      "Melee Weapon Training (Primitive, Thrown)",
+      "Swift Attack"
+    ],
+    "traits": [],
+    "weapons_text": "Scavenged hull-metal spear (1d10+4 R; Pen 2), Re-curve bow (1d10+2 R; pen 0; clip 1; reload half; primitive, reliable).",
+    "armour_text": "Hides and metal plates (body 2).",
+    "gear_text": "Tribal regalia, fetishes of the Sky-Father, 10 arrows.",
+    "portrait_ref": "img-64.jpeg",
+    "ws_line": 4136,
+    "source_book": "roguetrader_lureoftheexpanse.pdf"
+  },
+  {
+    "name": "Dweller In The Heights",
+    "slug": "dweller-in-the-heights",
+    "faction": "",
+    "description": "Strange, rocklike creatures that inhabit the Sky-mountains of Vaporius, attacking anyone who might stray too near.\n\n## Dweller Profile",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 34,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 0,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 44,
+        "unnatural": 8
+      },
+      "toughness": {
+        "base": 42,
+        "unnatural": 12
+      },
+      "agility": {
+        "base": 11,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 16,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 28,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 21,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 0,
+        "unnatural": 0
+      }
+    },
+    "wounds": 35,
+    "movement": "2/4/6/12",
+    "skills": [
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Concealment",
+        10
+      ]
+    ],
+    "talents": [
+      "Swift Attack"
+    ],
+    "traits": [
+      "Amorphous",
+      "Burrower",
+      "Fear (1)",
+      "Improved Natural Weapons",
+      "Natural Armour",
+      "Part of the Landscape (see below)",
+      "Size (Hulking)",
+      "Strange Physiology",
+      "Sturdy",
+      "Unnatural Senses",
+      "Unnatural Strength (x2)",
+      "Unnatural Toughness (x3)"
+    ],
+    "weapons_text": "Rocky protrusions (1d10+8 I; pen 0).",
+    "armour_text": "Rocky carapace (all 4) **Part of the Landscape:** The Dwellers look just like any other rocks when still, making them almost impossible to detect. An unmoving Dweller gains a +50 bonus to Concealment Tests. **Variable Size:** The profile presented here is for a ‘standard’ Dweller, measuring 3 metres in height, though they do appear in a variety of sizes—much like rocks. The GM can make a Dweller one size category larger or one size category smaller, adding +10 S, +10 T, and +5 Wounds to the larger creature, and subtracting the same amount from the smaller creature.",
+    "gear_text": "",
+    "portrait_ref": "img-64.jpeg",
+    "ws_line": 4160,
+    "source_book": "roguetrader_lureoftheexpanse.pdf"
+  },
+  {
+    "name": "Elder-Tactician",
+    "slug": "elder-tactician",
+    "faction": "",
+    "description": "Part strategist, part pilot, and part military leader, Elder-Tacticians guide the land-ships of Zayth through their eternal war.\n\n## Elder-Tactician Profile",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 24,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 22,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 28,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 31,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 44,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 38,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 39,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 35,
+        "unnatural": 0
+      }
+    },
+    "wounds": 10,
+    "movement": "3/6/9/18",
+    "skills": [
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Charm",
+        0
+      ],
+      [
+        "Command",
+        10
+      ],
+      [
+        "Deceive",
+        0
+      ],
+      [
+        "Inquiry",
+        0
+      ],
+      [
+        "Navigation (Surface)",
+        20
+      ],
+      [
+        "Speak Language (Low Gothic)",
+        0
+      ]
+    ],
+    "talents": [
+      "Air of Authority",
+      "Combat Formation",
+      "Iron Discipline",
+      "Melee Weapon Training (Primitive, Chain)",
+      "Pistol Training (Bolt, SP)"
+    ],
+    "traits": [],
+    "weapons_text": "Bolt pistol (30m; S/2/–; 1d10+5 I; pen 4; clip 8; reload full; Tearing). Chainsword (1d10+4 R; pen 2; Tearing, Balanced).",
+    "armour_text": "None.",
+    "gear_text": "Elder-Tactician uniform, bolt pistol clip.",
+    "portrait_ref": "img-65.jpeg",
+    "ws_line": 4182,
+    "source_book": "roguetrader_lureoftheexpanse.pdf"
+  },
+  {
+    "name": "Engine-Order",
+    "slug": "engine-order",
+    "faction": "",
+    "description": "The Engine-Order are a secretive group entrusted with maintaining the inner workings of Zayth’s land-ships.\n\n## Engine-Order Profile",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 38,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 38,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 38,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 19,
+        "unnatural": 0
+      }
+    },
+    "wounds": 15,
+    "movement": "3/6/9/18",
+    "skills": [
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Chem-Use",
+        0
+      ],
+      [
+        "Ciphers (Engine-Order)",
+        0
+      ],
+      [
+        "Common Lore (Tech)",
+        0
+      ],
+      [
+        "Drive (Ground Vehicle, Walker)",
+        0
+      ],
+      [
+        "Logic",
+        10
+      ],
+      [
+        "Pilot (Civilian)",
+        0
+      ],
+      [
+        "Speak Language (Low Gothic)",
+        0
+      ],
+      [
+        "Security",
+        0
+      ],
+      [
+        "Tech-Use",
+        20
+      ]
+    ],
+    "talents": [
+      "Autosanguine",
+      "Binary Chatter",
+      "Concealed Cavity",
+      "Electrical Succour",
+      "Electro Graft Use",
+      "Energy Cache",
+      "Ferric Lure",
+      "Gun Blessing",
+      "Iron Jaw",
+      "Luminen Charge",
+      "Luminen Shock",
+      "Mechadendrite Use (Manipulator, Utility)",
+      "Meditation",
+      "Melee Weapon Training (Primitive, Chain)",
+      "Pistol Training (Bolt, SP)"
+    ],
+    "traits": [
+      "Duty to the Land-Ship (see armsman profile)"
+    ],
+    "weapons_text": "Bolt pistol (30m; S/2/–; 1d10+5 I; pen 4; clip 8; reload full; Tearing), two-handed chain axe (2d10+7 R; pen 2; Tearing, unbalanced). **Implants:** Bionic arms (good craftsmanship), bionic respiratory system (good craftsmanship), auger arrays (good craftsmanship), manipulator mechadendrite, utility mechadendrite, cybernetic senses (all, good craftsmanship, incorporating dark sight, photo-visor, sonar sense and a full vox system), MIU interface (good quality).",
+    "armour_text": "Augmetic armoured engine suit (all 5).",
+    "gear_text": "Data-slates, power-cells, spare clip for bolt pistol, cipher keys, various spares, instruments and other paraphernalia.",
+    "portrait_ref": "img-65.jpeg",
+    "ws_line": 4202,
+    "source_book": "roguetrader_lureoftheexpanse.pdf"
+  },
+  {
+    "name": "Gun-Master",
+    "slug": "gun-master",
+    "faction": "",
+    "description": "The Gun-Masters of Zayth supervise the massive macroweapons mounted on the land-ships. However, they often lead Zayth armsmen into battle, carrying massive stubbers or shotcannons.\n\n## Gun-Master Profile",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 34,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 50,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 46,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 42,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 31,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 29,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 31,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 28,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 26,
+        "unnatural": 0
+      }
+    },
+    "wounds": 16,
+    "movement": "3/6/9/18",
+    "skills": [
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Dodge",
+        0
+      ],
+      [
+        "Tech-Use",
+        0
+      ],
+      [
+        "Speak Language (Low Gothic)",
+        0
+      ]
+    ],
+    "talents": [
+      "Arms Master",
+      "Basic Weapon Training (SP)",
+      "Bulging Biceps",
+      "Heavy Weapon Training (SP)",
+      "Iron Jaw",
+      "Melee Weapon Training (Primitive)",
+      "Pistol Training (SP)"
+    ],
+    "traits": [],
+    "weapons_text": "Heavy stubber (120m; -/-/10; 1d10+5 I; pen 3; clip 40; reload full) or naval shotcannon (40m; S/3/-; 2d10+4 I; Pen 0; clip 24; reload 2 full; scatter, unreliable).",
+    "armour_text": "Carapace (All 5).",
+    "gear_text": "Uniform, 2 stubber belts or 4 shotcannon reloads.",
+    "portrait_ref": "img-65.jpeg",
+    "ws_line": 4222,
+    "source_book": "roguetrader_lureoftheexpanse.pdf"
+  },
+  {
+    "name": "Grynix",
+    "slug": "grynix",
+    "faction": "",
+    "description": "A strange, catlike creature sometimes found near Eldar ruins. Though it seems friendly enough, there also seems to be something more to it than first appears.\n\n## Grynix Profile",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 24,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 0,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 13,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 11,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 43,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 20,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 20,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 35,
+        "unnatural": 0
+      }
+    },
+    "wounds": 5,
+    "movement": "4/8/12/24",
+    "skills": [
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Concealment",
+        20
+      ],
+      [
+        "Silent Move",
+        20
+      ]
+    ],
+    "talents": [
+      "None"
+    ],
+    "traits": [
+      "Dark-sight",
+      "Natural Weapons",
+      "Quadruped",
+      "Size (Puny)",
+      "Telepathic Bond†",
+      "Mental Alacrity††"
+    ],
+    "weapons_text": "Claws (1d5+1 R; primitive).",
+    "armour_text": "",
+    "gear_text": "None.",
+    "portrait_ref": null,
+    "ws_line": 4244,
+    "source_book": "roguetrader_lureoftheexpanse.pdf"
+  },
+  {
+    "name": "High Priestess Asira Storm-Speaker",
+    "slug": "high-priestess-asira-storm-speaker",
+    "faction": "",
+    "description": "Although she hails from a primitive culture that has no knowledge of the wider universe, Asira is a canny leader and possesses the powerful abilities of a potent psyker.\n\n## Asira Profile",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 28,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 51,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 45,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 44,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 36,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 24,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 29,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 45,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 33,
+        "unnatural": 0
+      }
+    },
+    "wounds": 22,
+    "movement": "4/8/12/24",
+    "skills": [
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Ciphers (Occult)",
+        0
+      ],
+      [
+        "Common Lore (Koronus Expanse)",
+        0
+      ],
+      [
+        "Command",
+        0
+      ],
+      [
+        "Deceive",
+        10
+      ],
+      [
+        "Forbidden Lore (Warp)",
+        10
+      ],
+      [
+        "Intimidate",
+        10
+      ],
+      [
+        "Invocation",
+        10
+      ],
+      [
+        "Psyniscience",
+        0
+      ],
+      [
+        "Speak Language (Low Gothic)",
+        0
+      ]
+    ],
+    "talents": [
+      "Fearless",
+      "Jaded",
+      "Melee Weapon Training (Primitive)",
+      "Resistance (Psychic)"
+    ],
+    "traits": [],
+    "weapons_text": "Sky-Father Staff (1d10+4 I; pen 0; balanced).",
+    "armour_text": "Ragged leather robes (all 2, primitive).",
+    "gear_text": "Rune stones, salvaged trinkets and small bones.",
+    "portrait_ref": null,
+    "ws_line": 4270,
+    "source_book": "roguetrader_lureoftheexpanse.pdf"
+  },
+  {
+    "name": "Hollow Man Exo-Wrecker",
+    "slug": "hollow-man-exo-wrecker",
+    "faction": "",
+    "description": "Little is known of the mysterious Hollow Men haunting the Processional of the Damned, methodically scrapping ships.\n\n## Hollow Man Profile",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 44,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 48,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 65,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 65,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 14,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 5,
+        "unnatural": 0
+      }
+    },
+    "wounds": 21,
+    "movement": "2/4/8/16",
+    "skills": [
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Pilot (Exo-armour)",
+        10
+      ],
+      [
+        "Tech-Use",
+        0
+      ]
+    ],
+    "talents": [
+      "Chem Geld",
+      "Fearless",
+      "Heavy Weapon Training (Melta)",
+      "Melee Weapon Training (Power)"
+    ],
+    "traits": [
+      "Dark-sight",
+      "Fearless",
+      "Flyer (10)",
+      "Regeneration",
+      "Silent Killers (see below)",
+      "Size (Hulking)"
+    ],
+    "weapons_text": "Thermic cutting torch (10m; S/-/-; 2d10+10 E; pen 12; clip unlimited; reload –), power cutter (1d10+11 E; pen 5; power field, unwieldy).",
+    "armour_text": "Sealed exo-armour (all 8).",
+    "gear_text": "Ancient scrap and salvage long desiccated by the void. **Silent Killers:** When they have taken Damage equal to their Wounds, their corpse disintegrates in a hissing cloud of vapour. They do not talk and cannot be reasoned with. All Fellowship based skills automatically fall against Hollow Men, as do any kind of interrogation or intimidation. Those using psychic powers to read their minds only encounter an eerie emptiness.",
+    "portrait_ref": "img-66.jpeg",
+    "ws_line": 4295,
+    "source_book": "roguetrader_lureoftheexpanse.pdf"
+  },
+  {
+    "name": "Priest-King Ansai",
+    "slug": "priest-king-ansai",
+    "faction": "",
+    "description": "One of the rules of the glass cities of Vaporius, Ansai hides his cunning mind behind a facade of decadence.\n\n## Ansai Profile",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 25,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 25,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 49,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 38,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 44,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 41,
+        "unnatural": 0
+      }
+    },
+    "wounds": 20,
+    "movement": "3/6/9/12",
+    "skills": [
+      [
+        "Awareness",
+        10
+      ],
+      [
+        "Blather",
+        0
+      ],
+      [
+        "Carouse",
+        10
+      ],
+      [
+        "Charm",
+        10
+      ],
+      [
+        "Command",
+        20
+      ],
+      [
+        "Deceive",
+        20
+      ],
+      [
+        "Inquiry",
+        0
+      ],
+      [
+        "Intimidate",
+        0
+      ],
+      [
+        "Psyniscience",
+        0
+      ],
+      [
+        "Scrutiny",
+        20
+      ],
+      [
+        "Speak Language (Low Gothic)",
+        0
+      ]
+    ],
+    "talents": [
+      "Absolute Loyalty†",
+      "Air of Authority",
+      "Dark Soul",
+      "Decadence",
+      "Fearless",
+      "Enemy (Ecclesiarchy)",
+      "Foresight",
+      "Master Orator",
+      "Meditation"
+    ],
+    "traits": [],
+    "weapons_text": "Superior attitude.",
+    "armour_text": "Benign contempt.",
+    "gear_text": "Finery and regalia.",
+    "portrait_ref": "img-66.jpeg",
+    "ws_line": 4325,
+    "source_book": "roguetrader_lureoftheexpanse.pdf"
+  },
+  {
+    "name": "Rogue Trader Companion",
+    "slug": "rogue-trader-companion",
+    "faction": "",
+    "description": "In addition to their armsmen and lackies, Rogue Traders are often accompanied by trusted companions. These individuals are colleagues and friends who fight steadfastly by the Rogue Trader’s side. This profile can be used to represent the companions of any of the rival Rogue Traders.\n\nIII: THE WORLD BEYOND\n\n# Companion Profile",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 45,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 30,
+        "unnatural": 0
+      }
+    },
+    "wounds": 14,
+    "movement": "3/6/9/18",
+    "skills": [
+      [
+        "Awareness",
+        10
+      ],
+      [
+        "Carouse",
+        0
+      ],
+      [
+        "Common Lore (Imperium, Rogue Traders)",
+        0
+      ],
+      [
+        "Dodge",
+        0
+      ],
+      [
+        "Drive (Land Vehicle)",
+        0
+      ],
+      [
+        "Inquiry",
+        0
+      ]
+    ],
+    "talents": [
+      "Basic Weapon Training (Las, SP, Bolt)",
+      "Crack Shot",
+      "Disarm",
+      "Loyal to the End†",
+      "Melee Weapon Training (Chain, Primitive, Shock)",
+      "Nerves of Steel",
+      "Pistol Training (Las, SP, Bolt)",
+      "Quick Draw"
+    ],
+    "traits": [],
+    "weapons_text": "Bolt pistol (30m; S/2/–; 1d10+5 X; pen 4; clip 8, reload full; tearing), compact laspistol (25 m; S/2/–; 1d10+2 I; pen 0, clip 25; reload full), shock maul (1d10+6 I; shocking).",
+    "armour_text": "Flak and carapace (body 4, arms 2, Legs 2).",
+    "gear_text": "Fine dynasty uniform or personal dress of their master, micro-bead, 2 bolt pistol clips, 1 krak grenade, filtration plugs, photo-contacts.",
+    "portrait_ref": null,
+    "ws_line": 4349,
+    "source_book": "roguetrader_lureoftheexpanse.pdf"
+  },
+  {
+    "name": "Rogue Trader Household Troops",
+    "slug": "rogue-trader-household-troops",
+    "faction": "",
+    "description": "Rogue Traders often have a trusted retinue of competent warriors. This profile can be used to represent the household troops of any of the rival Rogue Traders.",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 32,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 32,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 38,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 23,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 31,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 25,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 21,
+        "unnatural": 0
+      }
+    },
+    "wounds": 12,
+    "movement": "3/6/9/18",
+    "skills": [
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Climb",
+        0
+      ],
+      [
+        "Common Lore (Imperium, War)",
+        0
+      ],
+      [
+        "Concealment",
+        0
+      ],
+      [
+        "Drive (Land, Walker)",
+        0
+      ],
+      [
+        "Search",
+        0
+      ],
+      [
+        "Silent Move",
+        0
+      ]
+    ],
+    "talents": [
+      "Basic Weapon Training (Universal)",
+      "Heavy Weapon Training (SP, Launcher, Las)",
+      "Melee Weapon Training (Chain, Primitive)",
+      "Pistol Training (Universal)",
+      "Resistance (Fear)"
+    ],
+    "traits": [],
+    "weapons_text": "Lasgun (S/3/–; 1d10+3 E; Pen 0; Clip 60; Reload full: Reliable), 3 frag grenades (9 m, S/–/–, 2d10 X; Pen 0; Blast [4]), mono knife (1d5+3 R; Pen 2).",
+    "armour_text": "Naval flak armour (arms 3, body 4, head 3, legs 3).",
+    "gear_text": "2 spare lasgun clips, 2 hotshot charges for lasgun, personal vox, house uniform (bearing the colours of their dynasty), respirator, photovisor.",
+    "portrait_ref": null,
+    "ws_line": 4374,
+    "source_book": "roguetrader_lureoftheexpanse.pdf"
+  },
+  {
+    "name": "Sanctarch Ruler",
+    "slug": "sanctarch-ruler",
+    "faction": "",
+    "description": "The rulers of the Sanctarchs have guided their people through centuries of peaceful existence on the world known as the Dread Pearl.",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 25,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 25,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 40,
+        "unnatural": 0
+      }
+    },
+    "wounds": 12,
+    "movement": "3/6/9/18",
+    "skills": [
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Charm",
+        0
+      ],
+      [
+        "Command",
+        10
+      ],
+      [
+        "Speak Language (High Gothic, Low Gothic Dialect)",
+        0
+      ]
+    ],
+    "talents": [
+      "Melee Weapon Training (Primitive)"
+    ],
+    "traits": [
+      "Blessings of the Maiden†"
+    ],
+    "weapons_text": "Staff of Office (1d10+3 I; Pen 0: Balanced, Primitive)††.",
+    "armour_text": "",
+    "gear_text": "Robes, dozens of gemstones and gleaming trinkets.",
+    "portrait_ref": null,
+    "ws_line": 4396,
+    "source_book": "roguetrader_lureoftheexpanse.pdf"
+  },
+  {
+    "name": "Stryxis Rag-Trader",
+    "slug": "stryxis-rag-trader",
+    "faction": "Stryxis",
+    "description": "Untrustworthy, suspicious, and full of malevolent cunning, Stryxis rag-traders can be found throughout the Expanse. They are always willing to trade, and covet trinkets and charms over things that seem more ‘valuable’ to human traders.",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 27,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 39,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 31,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 37,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 49,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 61,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 38,
+        "unnatural": 6
+      },
+      "willpower": {
+        "base": 42,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 46,
+        "unnatural": 0
+      }
+    },
+    "wounds": 12,
+    "movement": "4/8/12/24",
+    "skills": [
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Barter",
+        10
+      ],
+      [
+        "Deceive",
+        30
+      ],
+      [
+        "Inquiry +20",
+        0
+      ],
+      [
+        "Scrutiny",
+        20
+      ],
+      [
+        "Speak Language (Void Cant, Low Gothic)",
+        0
+      ],
+      [
+        "Tech-Use",
+        0
+      ],
+      [
+        "Trade (Merchant)",
+        0
+      ]
+    ],
+    "talents": [
+      "Basic Weapon Training (Las, SP)",
+      "Chem Geld",
+      "Jaded",
+      "Melee Weapon Training (Chain, Primitive, Thrown)"
+    ],
+    "traits": [],
+    "weapons_text": "",
+    "armour_text": "",
+    "gear_text": "",
+    "portrait_ref": null,
+    "ws_line": 4426,
+    "source_book": "roguetrader_lureoftheexpanse.pdf"
+  },
+  {
+    "name": "Crimson Stingers",
+    "slug": "crimson-stingers",
+    "faction": "",
+    "description": "Crimson Stingers are swarms of small, voracious insects. They can strip a full-grown grox to the bones in minutes, if the swarm is large enough.",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 31,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 0,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 11,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 17,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 24,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 9,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 21,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 3,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 0,
+        "unnatural": 0
+      }
+    },
+    "wounds": 60,
+    "movement": "2/4/6/12",
+    "skills": [
+      [
+        "Awareness",
+        0
+      ]
+    ],
+    "talents": [
+      "None"
+    ],
+    "traits": [
+      "Flyer (10)",
+      "Overwhelming†",
+      "Size††",
+      "Strange Physiology",
+      "Toxic",
+      "Swarm Creature†††"
+    ],
+    "weapons_text": "Stingers (1d10+1 R; pen 1d5; Tearing; Toxic).",
+    "armour_text": "None.",
+    "gear_text": "",
+    "portrait_ref": null,
+    "ws_line": 4460,
+    "source_book": "roguetrader_lureoftheexpanse.pdf"
+  },
+  {
+    "name": "Dragon Hornet",
+    "slug": "dragon-hornet",
+    "faction": "",
+    "description": "As big as an Aquila Lander and far more deadly, Dragon Hornets are the apex predator on Quppa-Psi-12.",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 36,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 0,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 40,
+        "unnatural": 8
+      },
+      "toughness": {
+        "base": 40,
+        "unnatural": 8
+      },
+      "agility": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 10,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 45,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 23,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 0,
+        "unnatural": 0
+      }
+    },
+    "wounds": 80,
+    "movement": "4/8/12/24",
+    "skills": [
+      [
+        "Awareness",
+        0
+      ]
+    ],
+    "talents": [
+      "None"
+    ],
+    "traits": [
+      "Flyer (20)",
+      "Multiple Arms",
+      "Improved Natural Weapons",
+      "Natural Armour (All 12)",
+      "Strange Physiology",
+      "Size (Massive)",
+      "Tail Coil†",
+      "Toxic",
+      "Unnatural Strength (x2)",
+      "Unnatural Toughness (x2)"
+    ],
+    "weapons_text": "Bite (2d10+8), tail lash (1d10+10; Toxic).",
+    "armour_text": "None.",
+    "gear_text": "",
+    "portrait_ref": null,
+    "ws_line": 4490,
+    "source_book": "roguetrader_lureoftheexpanse.pdf"
+  },
+  {
+    "name": "Whipper",
+    "slug": "whipper",
+    "faction": "",
+    "description": "Long, centipede-like creatures that travel in packs of a dozen or so. They are far more canny than an insect should be.",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 37,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 0,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 33,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 44,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 16,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 27,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 9,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 0,
+        "unnatural": 0
+      }
+    },
+    "wounds": 8,
+    "movement": "8/16/24/48",
+    "skills": [
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Concealment +20",
+        0
+      ]
+    ],
+    "talents": [
+      "None"
+    ],
+    "traits": [
+      "Natural Armour (5)",
+      "Unnatural Speed (x2)"
+    ],
+    "weapons_text": "Bite or scratch (1d10+3; pen 4).",
+    "armour_text": "Chitin Hide (all 5).",
+    "gear_text": "",
+    "portrait_ref": null,
+    "ws_line": 4516,
+    "source_book": "roguetrader_lureoftheexpanse.pdf"
+  },
+  {
+    "name": "Pathfinder",
+    "slug": "pathfinder",
+    "faction": "",
+    "description": "Eldar Pathfinders leave their home for decades or centuries, scouting the galaxy and seeking out threats to their craftworld.",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 47,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 60,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 38,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 10,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 39,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 58,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 39,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 31,
+        "unnatural": 0
+      }
+    },
+    "wounds": 14,
+    "movement": "5/10/15/30",
+    "skills": [
+      [
+        "Acrobatics",
+        0
+      ],
+      [
+        "Awareness +20",
+        0
+      ],
+      [
+        "Climb",
+        0
+      ],
+      [
+        "Concealment +20",
+        0
+      ],
+      [
+        "Deceive",
+        0
+      ],
+      [
+        "Disguise",
+        0
+      ],
+      [
+        "Dodge +10",
+        0
+      ],
+      [
+        "Forbidden Lore (Xenos)",
+        0
+      ],
+      [
+        "Inquiry",
+        0
+      ],
+      [
+        "Navigation (Surface)",
+        0
+      ],
+      [
+        "Scrutiny",
+        0
+      ],
+      [
+        "Search",
+        0
+      ],
+      [
+        "Security",
+        0
+      ],
+      [
+        "Shadowing",
+        10
+      ],
+      [
+        "Silent Move +20",
+        0
+      ],
+      [
+        "Speak Language (Eldar, Low Gothic)",
+        0
+      ],
+      [
+        "Survival +20",
+        0
+      ],
+      [
+        "Tracking +20",
+        0
+      ]
+    ],
+    "talents": [
+      "Arms Master",
+      "Basic Weapon Training (Las, Primitive)",
+      "Catfall",
+      "Crack Shot",
+      "Cover and Displace†",
+      "Deadeye Shot",
+      "Exotic Weapons Training (Shuriken Pistol, Ranger Long Rifle)",
+      "Foresight",
+      "Heightened Senses (Sight, Hearing)",
+      "Jaded",
+      "Leap Up",
+      "Melee Weapon Training (Primitive)",
+      "Marksman",
+      "Pistol Weapon Training (Las)",
+      "Rapid Reaction",
+      "Sprint",
+      "Swift and Silent††"
+    ],
+    "traits": [
+      "Unnatural Agility (x2)"
+    ],
+    "weapons_text": "Ranger long rifle (200m; S/–/–; 1d10+3 E; pen 2; clip 40; reload full; accurate, reliable), Shuriken pistol (20m; S/3/5; 1d10+2; pen 4; clip 40; reload 2 full), best craftsmanship mono-knife (1d5+4† R; pen 2).",
+    "armour_text": "Xenos—mesh armour (body 4, arms 4, legs 4).",
+    "gear_text": "Cameleoline cloak, 2 clips long rifle ammunition, 2 clips shuriken ammunition, xenos-craft magnoculars, waystone gem.",
+    "portrait_ref": "img-67.jpeg",
+    "ws_line": 4546,
+    "source_book": "roguetrader_lureoftheexpanse.pdf"
+  },
+  {
+    "name": "Farseer Serrenon",
+    "slug": "farseer-serrenon",
+    "faction": "",
+    "description": "The Farseers of the Eldar are the leaders of their people, guiding them with their ability to see the myriad possible futures and select the most advantageous. They are also prodigiously powerful psykers, and prove highly dangerous opponents.\n\nSerrenon is a respected seer amongst the inhabitants of Craftworld Kaelor. He is one of the many Eldar sent by his craftworld to the Expanse to work with the Twilight Swords. However, he sees the protection of the Dread Pearl as a sacred duty, and will not shirk from it willingly.",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 59,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 57,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 33,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 41,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 10,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 44,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 53,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 10,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 35,
+        "unnatural": 0
+      }
+    },
+    "wounds": 30,
+    "movement": "5/10/15/30",
+    "skills": [
+      [
+        "Acrobatics",
+        0
+      ],
+      [
+        "Awareness +20",
+        0
+      ],
+      [
+        "Climb",
+        0
+      ],
+      [
+        "Concealment",
+        10
+      ],
+      [
+        "Deceive",
+        0
+      ],
+      [
+        "Dodge +10",
+        0
+      ],
+      [
+        "Forbidden Lore (Xenos)",
+        20
+      ],
+      [
+        "Inquiry",
+        0
+      ],
+      [
+        "Psyniscience",
+        20
+      ],
+      [
+        "Scrutiny",
+        0
+      ],
+      [
+        "Search",
+        0
+      ],
+      [
+        "Silent Move",
+        0
+      ],
+      [
+        "Speak Language (Eldar, Low Gothic)",
+        0
+      ]
+    ],
+    "talents": [
+      "Basic Weapon Training (Las)",
+      "Blademaster",
+      "Exotic Weapon Training (Shuriken Pistol, Witchblade)",
+      "Improved Warp Sense",
+      "Melee Weapon Training (Universal)",
+      "Pistol Training (Las)",
+      "Psy Rating 8",
+      "Psy Disciplines: Telepathy",
+      "Telekinesis"
+    ],
+    "traits": [
+      "Touched by the Fates 5",
+      "Unnatural Agility (x2)",
+      "Unnatural Willpower (x2)"
+    ],
+    "weapons_text": "",
+    "armour_text": "",
+    "gear_text": "",
+    "portrait_ref": "img-67.jpeg",
+    "ws_line": 4577,
+    "source_book": "roguetrader_lureoftheexpanse.pdf"
+  },
+  {
+    "name": "Warlock",
+    "slug": "warlock",
+    "faction": "",
+    "description": "These Eldar psykers aid the Farseers in their duties, and often accompanying Eldar warriors into battle to augment them with their psychic powers.",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 44,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 48,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 31,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 34,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 54,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 44,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 43,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 52,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 32,
+        "unnatural": 0
+      }
+    },
+    "wounds": 15,
+    "movement": "5/10/15/30",
+    "skills": [
+      [
+        "Acrobatics",
+        0
+      ],
+      [
+        "Awareness +20",
+        0
+      ],
+      [
+        "Climb",
+        0
+      ],
+      [
+        "Concealment",
+        10
+      ],
+      [
+        "Deceive",
+        0
+      ],
+      [
+        "Dodge +10",
+        0
+      ],
+      [
+        "Forbidden Lore (Xenos)",
+        0
+      ],
+      [
+        "Inquiry",
+        0
+      ],
+      [
+        "Psyniscience",
+        10
+      ],
+      [
+        "Scrutiny",
+        0
+      ],
+      [
+        "Search",
+        0
+      ],
+      [
+        "Silent Move",
+        0
+      ],
+      [
+        "Speak Language (Eldar, Low Gothic)",
+        0
+      ],
+      [
+        "Survival",
+        0
+      ]
+    ],
+    "talents": [
+      "Basic Weapon Training (Las)",
+      "Blademaster",
+      "Exotic Weapon Training (Shuriken Pistol, Witchblade)",
+      "Improved Warp Sense",
+      "Melee Weapon Training (Universal)",
+      "Pistol Training (Las)",
+      "Psy Rating 5",
+      "**Psy Disciplines:** Telepathy",
+      "Telekinesis"
+    ],
+    "traits": [
+      "Unnatural Agility (x2). **Psy Powers:** Warlocks have a multitude of divinatory powers and abilities",
+      "none of which have any application here. In addition",
+      "each Warlock trains extensively to use certain psychic powers",
+      "to the point where their manipulation is second nature"
+    ],
+    "weapons_text": "",
+    "armour_text": "",
+    "gear_text": "",
+    "portrait_ref": "img-68.jpeg",
+    "ws_line": 4676,
+    "source_book": "roguetrader_lureoftheexpanse.pdf"
+  },
+  {
+    "name": "Wraithguard",
+    "slug": "wraithguard",
+    "faction": "",
+    "description": "The Wraithguard are construct guardians employed by the Eldar. Each is animated by a single spirit stone that contains the soul of an Eldar, now guiding this towering wraithbone construct.",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 45,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 10,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 12,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 6,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 0,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 25,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 0,
+        "unnatural": 0
+      }
+    },
+    "wounds": 20,
+    "movement": "4/8/12/24",
+    "skills": [
+      [
+        "None",
+        0
+      ]
+    ],
+    "talents": [
+      "Exotic Weapon Training (Wraithcannon)"
+    ],
+    "traits": [
+      "Auto-stabilised",
+      "From Beyond",
+      "Machine (5)",
+      "Natural Weapons",
+      "Size (Hulking)",
+      "Strange Physiology",
+      "Unnatural Agility (x2)",
+      "Unnatural Strength (x2)",
+      "Unnatural Toughness (x2)",
+      "Unnatural Senses",
+      "Wraithsight*"
+    ],
+    "weapons_text": "Wraithcannon (50m; S/—/—; dam special; pen special; clip special; reload special), fist (1d10+10 I). **Wraithsight:** Wraithguard are animated by the souls of ancient, deceased Eldar warriors, some of whom lived millennia ago and have little connection to the living, breathing world. If there is a friendly Eldar psyker within line of sight of the Wraithguard then it may act normally. If, however, there is no Eldar psyker to direct the Wraithguard then it must make a Challenging (+0) Perception Test. On a success, it may act normally. Otherwise, it will wander off in a random direction (see page 248 of *ROGUE TRADER*) at its normal move (i.e., not running), and takes no other actions until the next Round, when it may attempt another Perception Test.",
+    "armour_text": "None (all 5).",
+    "gear_text": "",
+    "portrait_ref": "img-69.jpeg",
+    "ws_line": 4707,
+    "source_book": "roguetrader_lureoftheexpanse.pdf"
+  }
+]

@@ -1,0 +1,5687 @@
+---
+effects: []
+flags:
+  rt:
+    description: Squigs are an integral part of the Ork ecosystem, and can almost always be found in large numbers in the
+      same areas as Orks and Gretchin. Attack squigs—like all squigs—are mostly mouth and teeth, and move about on short,
+      stubby, but powerful legs. The most famous breeds of attack squig are the infamous Face-Biters, Drooling Snapjaws, and
+      Pig-eyed Gougers.
+    movement: 3/6/9/18
+    rawGear: ''
+    source: The Frozen Reaches
+img: systems/rogue-trader-3rd/images/npcs/thefrozenreaches/attack-squig.png
+items:
+- _id: auUurCiTdOGplkFF
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Furious Assault
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer's speed and martial prowess allow him to land several blows where lesser combatants land one. If
+      he successfully hits his target using the All Out Attack Action, he may spend his Reaction to make an additional attack
+      using the same bonuses or penalties as the original attack.
+    cost: 0
+    prerequisites: Weapon Skill 35
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: aVKstAMMCksOcPuk
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Bestial
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    description: A creature with this Trait is animalistic, tending to behave instinctively rather than rationally. No matter
+      how high its Intelligence score is, it is still bestial. A creature with this Trait never needs to make a Survival Test
+      whilst in its natural habitat. Unless starving or desperate, a bestial creature must make a Willpower Test when frightened,
+      startled or injured. On a failed test, the creature flees.
+    source: Rogue Trader Core Rulebook
+  type: trait
+- _id: CpKfGwdZzUa7jb61
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Improved Natural Weapons (Bite)
+  ownership:
+    default: 3
+  sort: 0
+  system: {}
+  type: trait
+- _id: hVGMDtJJvyJdoIYB
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Unnatural Toughness (x2)
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    description: One or more of the creature's Characteristics is unnatural. Each time this Trait is gained, select a Characteristic,
+      and double its bonus. For example, a creature with a Strength of 41 normally has a 4 Strength Bonus. With this Trait,
+      its Strength Bonus increases to 8. The Trait may be gained multiple times. Each time, you may select a new Characteristic
+      or one chosen previously. Each time you apply this Trait to the same Characteristic, the Bonus multiplier increases
+      by 1. For example, one selection multiplies the Characteristic Bonus by ×2, two selections by ×3, and three selections
+      by ×4. Note this Trait does not modify the creature's movement. Movement is based on a creature's unmodified Agility
+      Bonus. During Opposed Characteristic Tests, on a success, the bonus multiplier is added to the degree of success.
+    source: Rogue Trader Core Rulebook
+  type: trait
+- _id: FzyQkMtIvNtpzy84
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
+  name: Toothy jaws
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    attackBonus: 0
+    attackType: ''
+    availability: Common
+    backpack:
+      inBackpack: false
+    class: Melee
+    clip:
+      max: 0
+      value: 0
+    craftsmanship: Common
+    damage: 1d10+6
+    damageType: Rending
+    description: ''
+    effect: ''
+    equipped: true
+    inBackpack: false
+    modifications: []
+    penetration: '0'
+    range: ''
+    rateOfFire:
+      burst: 0
+      full: 0
+      single: 1
+    reload: ''
+    source: The Frozen Reaches
+    special:
+      tearing: true
+    target: ''
+    type: ''
+    weight: 0
+  type: weapon
+name: Attack Squig
+prototypeToken:
+  actorLink: false
+  disposition: -1
+  height: 1
+  name: Attack Squig
+  texture:
+    scaleX: 1.0
+    scaleY: 1.0
+    src: systems/rogue-trader-3rd/images/npcs/thefrozenreaches/attack-squig.png
+  width: 1
+system:
+  characteristics:
+    agility:
+      base: 33
+      unnatural: 6
+    ballisticSkill:
+      base: 0
+      unnatural: 0
+    fellowship:
+      base: 0
+      unnatural: 0
+    intelligence:
+      base: 6
+      unnatural: 0
+    perception:
+      base: 32
+      unnatural: 0
+    strength:
+      base: 38
+      unnatural: 0
+    toughness:
+      base: 26
+      unnatural: 4
+    weaponSkill:
+      base: 40
+      unnatural: 0
+    willpower:
+      base: 25
+      unnatural: 0
+  npc:
+    faction: ''
+    subfaction: ''
+    threatLevel: 0
+    type: troop
+  skills:
+    awareness:
+      advance: 10
+    survival:
+      advance: 20
+  wounds:
+    critical: 0
+    max: 12
+    rolled: true
+    value: 12
+type: npc
+---
+effects: []
+flags:
+  rt:
+    description: Gretchen, also known as Grots, are smaller, more devious greenskins than their Ork relatives, with a cunning
+      mind and strong sense of self preservation. Their deviousness makes them dangerous, although their natural cowardice
+      means they are typically only dangerous when they outnumber opponents. They typically handle the menial tasks Orks can't
+      be bothered with to avoid becoming an Ork's next meal. Those on Damaris tend to be fairly good shots with their "grot
+      blastas," probably because their survival depends on it.
+    movement: 3/6/9/18
+    rawGear: Goggles, shiny bitz of junk.
+    source: The Frozen Reaches
+img: ''
+items:
+- _id: TqnZZP93iewVHtU5
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Basic Weapon Training (Primitive, SP)
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer has received Basic Weapon Training in the Universal group of weapons, and can use them without penalty.
+      The Universal group includes the Bolt, Las, Launcher, Melta, Plasma, and SP groups. When a character attempts to use
+      a weapon he does not have the correct Weapon Training Talent for, he suffers a -20 penalty to any relevant Weapon Skill
+      or Ballistic Skill Test.
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: 2pWvfdop3zoTZTnE
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Heightened Senses (Hearing)
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: Either genetics or augmetics have made the Explorer's sense of touch superior to others. He gains a +10 bonus
+      to any Tests specifically involving touch.
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: 7Bmngo2gnjYALoMD
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Melee Weapon Training (Primitive)
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer has trained extensively with hand-to-hand weaponry, becoming proficient in the use of virtually
+      all hand-held close combat arms. The Universal group includes the Chain, Shock, and Power groups, and allows proficient
+      use of all those weapon types. When a character attempts to use a weapon he does not have the correct Weapon Training
+      Talent for, he suffers a -20 penalty to any relevant Weapon Skill or Ballistic Skill Test.
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: Al7KA7ZiN1MDfy70
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Mob Rule
+  ownership:
+    default: 3
+  sort: 0
+  system: {}
+  type: trait
+- _id: 86PwTI1iU9ocICk8
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Size (Scrawny)
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    description: '**Trait Groups:** Miniscule, Puny, Scrawny, Hulking, Enormous, Massive Creatures come in one of seven different
+      size categories, as shown on the following chart. Size affects movement and how easy or hard it is to strike that creature
+      in combat. (When calculating a creatures movement, apply the size modifier first, and then other modifiers from other
+      Traits or talents. Base movement can never be reduced below 1.) For the purposes of comparison, a human is an average-sized
+      creature.'
+    source: Rogue Trader Core Rulebook
+  type: trait
+- _id: Dm22vOD0Gb3lU0T9
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Unnatural Toughness (x2)
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    description: One or more of the creature's Characteristics is unnatural. Each time this Trait is gained, select a Characteristic,
+      and double its bonus. For example, a creature with a Strength of 41 normally has a 4 Strength Bonus. With this Trait,
+      its Strength Bonus increases to 8. The Trait may be gained multiple times. Each time, you may select a new Characteristic
+      or one chosen previously. Each time you apply this Trait to the same Characteristic, the Bonus multiplier increases
+      by 1. For example, one selection multiplies the Characteristic Bonus by ×2, two selections by ×3, and three selections
+      by ×4. Note this Trait does not modify the creature's movement. Movement is based on a creature's unmodified Agility
+      Bonus. During Opposed Characteristic Tests, on a success, the bonus multiplier is added to the degree of success.
+    source: Rogue Trader Core Rulebook
+  type: trait
+- _id: PjBQfqdoWOFTH8hG
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
+  name: Grot Blasta
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    attackBonus: 0
+    attackType: ''
+    availability: Common
+    backpack:
+      inBackpack: false
+    class: Basic
+    clip:
+      max: 18
+      value: 18
+    craftsmanship: Common
+    damage: 1d10+3
+    damageType: Impact
+    description: ''
+    effect: ''
+    equipped: true
+    inBackpack: false
+    modifications: []
+    penetration: '0'
+    range: '20'
+    rateOfFire:
+      burst: 0
+      full: 0
+      single: 1
+    reload: Full
+    source: The Frozen Reaches
+    special:
+      inaccurate: true
+      unreliable: true
+    target: ''
+    type: ''
+    weight: 0
+  type: weapon
+- _id: lcANoAlgeJ0lBRoZ
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
+  name: Sneaky Boot Knife
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    attackBonus: 0
+    attackType: ''
+    availability: Common
+    backpack:
+      inBackpack: false
+    class: Melee
+    clip:
+      max: 0
+      value: 0
+    craftsmanship: Common
+    damage: 1d5+1
+    damageType: Rending
+    description: ''
+    effect: ''
+    equipped: true
+    inBackpack: false
+    modifications: []
+    penetration: '0'
+    range: ''
+    rateOfFire:
+      burst: 0
+      full: 0
+      single: 1
+    reload: ''
+    source: The Frozen Reaches
+    special: {}
+    target: ''
+    type: ''
+    weight: 0
+  type: weapon
+name: Gretchin
+prototypeToken:
+  actorLink: false
+  disposition: -1
+  height: 1
+  name: Gretchin
+  texture:
+    scaleX: 1.0
+    scaleY: 1.0
+    src: ''
+  width: 1
+system:
+  characteristics:
+    agility:
+      base: 44
+      unnatural: 0
+    ballisticSkill:
+      base: 40
+      unnatural: 0
+    fellowship:
+      base: 24
+      unnatural: 0
+    intelligence:
+      base: 37
+      unnatural: 0
+    perception:
+      base: 40
+      unnatural: 0
+    strength:
+      base: 15
+      unnatural: 0
+    toughness:
+      base: 19
+      unnatural: 2
+    weaponSkill:
+      base: 20
+      unnatural: 0
+    willpower:
+      base: 14
+      unnatural: 0
+  npc:
+    faction: ''
+    subfaction: ''
+    threatLevel: 0
+    type: troop
+  skills:
+    awareness:
+      advance: 0
+    dodge:
+      advance: 0
+    stealth:
+      advance: 0
+  wounds:
+    critical: 0
+    max: 7
+    rolled: true
+    value: 7
+type: npc
+---
+effects: []
+flags:
+  rt:
+    description: Ork Bosses are even larger and more terrifying than other Orks (the main reason why they rise to a position
+      of power!). They keep their "boyz" in line with loud bellows and an occasional thumping.
+    movement: ''
+    rawGear: ''
+    source: The Frozen Reaches
+img: systems/rogue-trader-3rd/images/npcs/thefrozenreaches/ork-freebooter-boss.png
+items:
+- _id: VUKwhZKsdHK2McEA
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Air of Authority
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer was born to command, either motivating or terrifying those under his charge. On a successful Command
+      Test, the Explorer may affect a number of targets equal to 1d10 plus his Fellowship Bonus. This Talent has no effect
+      on hostile targets, and only affects NPCs.
+    cost: 0
+    prerequisites: Fellowship 30
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: b1cZseRnPCCXpzvp
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Basic Weapon Training (Primitive, SP)
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer has received Basic Weapon Training in the Universal group of weapons, and can use them without penalty.
+      The Universal group includes the Bolt, Las, Launcher, Melta, Plasma, and SP groups. When a character attempts to use
+      a weapon he does not have the correct Weapon Training Talent for, he suffers a -20 penalty to any relevant Weapon Skill
+      or Ballistic Skill Test.
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: BDDuu36vGJiBT8F2
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Bulging Biceps
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: Whereas a weaker man would be sent flying when using powerful weapons, the Explorer's strong physique allows
+      him to remain standing. He can fire heavy weapons using Semi-Auto Burst or Full Auto Burst without bracing, and he does
+      not suffer the -30 penalty for failing to brace.
+    cost: 0
+    prerequisites: Strength 45
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: pRIjnVUX5zCzwq93
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/items/maces/mace_09_b.png
+  name: Crushing Blow
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer has the ability to focus his entire body into close combat attacks, adding +2 to damage inflicted
+      in melee.
+    cost: 0
+    prerequisites: Strength 40
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: 1lK8yCZ5O9Tbv3Du
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Furious Assault
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer's speed and martial prowess allow him to land several blows where lesser combatants land one. If
+      he successfully hits his target using the All Out Attack Action, he may spend his Reaction to make an additional attack
+      using the same bonuses or penalties as the original attack.
+    cost: 0
+    prerequisites: Weapon Skill 35
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: V45PwLeMrh68Dpmi
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Hardy
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer's constitution rebounds quickly from shock or injury. When undergoing medical treatment or healing
+      from injuries, he recovers Damage as if Lightly Wounded.
+    cost: 0
+    prerequisites: Toughness 40
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: cWBiTKNjRmIvPeiG
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Iron Discipline
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: Iron sharpens iron. The Explorer does not coddle his crew, nor motivate them through kindness. His stalwart example
+      and stern leadership exhorts them with steel instead of spoils. If the character is visible to his followers, either
+      in person or via vox- or pict-caster, they may re-roll failed Willpower Tests made to resist Fear and Pinning. Iron
+      Discipline can affect a number of targets equal to the character's Willpower Bonus, who must be under his command. PCs
+      can benefit from Iron Discipline if the character with this Talent is the official group leader. If the Explorer is
+      leading a boarding action, he gains a +10 bonus to his Command Tests.
+    cost: 0
+    prerequisites: Willpower 30, Command
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: kb7fhOGxHWuwpqhj
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Iron Jaw
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer has taken blows from Orks and given back as good as he got. He can bounce back from most strikes
+      without ill effects. If ever Stunned, a successful Toughness Test allows him to ignore the effects.
+    cost: 0
+    prerequisites: Toughness 40
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: NF0L0laOsMM1XAwS
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Lightning Reflexes
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer always expects trouble, even in the most innocuous situations, allowing him to act quickly when
+      needed. The character adds twice his Agility Bonus when rolling for Initiative. If he has Unnatural Agility, add +1
+      to the multiplier before factoring the bonus into the Initiative roll.
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: iV92HB4xAHPg8O6A
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Melee Weapon Training (Chain, Primitive, Power)
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer has trained extensively with hand-to-hand weaponry, becoming proficient in the use of virtually
+      all hand-held close combat arms. The Universal group includes the Chain, Shock, and Power groups, and allows proficient
+      use of all those weapon types. When a character attempts to use a weapon he does not have the correct Weapon Training
+      Talent for, he suffers a -20 penalty to any relevant Weapon Skill or Ballistic Skill Test.
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: 5tBVTITjYNjf4qUM
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Pistol Weapon Training (Primitive, SP)
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer has practiced with nearly every single-handed ranged weapon within the confines of the Imperium,
+      and no small number without. The Universal group confers proficiency with most pistol weapons, including the Bolt, Las,
+      Launcher, Melta, Plasma, and SP groups. When a character attempts to use a weapon he does not have the correct Weapon
+      Training Talent for, he suffers a -20 penalty to any relevant Weapon Skill or Ballistic Skill Test.
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: Gfpkqmw2SDBtlbwi
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Resistance (Cold, Heat, Radiation)
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer has gained the discipline or augmentation to resist psychic intrusion. He gains a +10 bonus to Willpower
+      Tests to resist Psychic Techniques.
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: ajhTdmhgH2MkS99b
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: True Grit
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer is able to shrug off wounds that would fell lesser men. Whenever he suffers Critical Damage, halve
+      the result (rounding up).
+    cost: 0
+    prerequisites: Toughness 40
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+name: Ork Freebooter Boss
+prototypeToken:
+  actorLink: false
+  disposition: -1
+  height: 1
+  name: Ork Freebooter Boss
+  texture:
+    scaleX: 1.0
+    scaleY: 1.0
+    src: systems/rogue-trader-3rd/images/npcs/thefrozenreaches/ork-freebooter-boss.png
+  width: 1
+system:
+  characteristics:
+    agility:
+      base: 34
+      unnatural: 0
+    ballisticSkill:
+      base: 22
+      unnatural: 0
+    fellowship:
+      base: 27
+      unnatural: 0
+    intelligence:
+      base: 26
+      unnatural: 0
+    perception:
+      base: 30
+      unnatural: 0
+    strength:
+      base: 55
+      unnatural: 0
+    toughness:
+      base: 58
+      unnatural: 10
+    weaponSkill:
+      base: 50
+      unnatural: 0
+    willpower:
+      base: 29
+      unnatural: 0
+  npc:
+    faction: Ork
+    subfaction: ''
+    threatLevel: 0
+    type: troop
+  skills:
+    awareness:
+      advance: 10
+    commerce:
+      advance: 10
+    commonLore:
+      advance: 10
+    intimidate:
+      advance: 10
+  wounds:
+    critical: 0
+    max: 20
+    rolled: true
+    value: 20
+type: npc
+---
+effects: []
+flags:
+  rt:
+    description: Snokgritz is a hulking, swaggering brute with a forbidding iron gob, a smouldering cybernetic eye, and more
+      scar tissue and screwed-on steel plates than skin. He’s a furious, bloody-minded savage who kills for sport and figures
+      any fight you walk away from is a good one. However, Snokgritz appreciates a bit of “low cunnin,” figuring if it’s good
+      enough for Gork (or possibly Mork)—the Ork god that’s cunning but brutal—it’s good enough for him. With his boyz, the
+      Warboss cut a green swath across Cinerus Maleficum and the Cauldron, leaving only dead and burning worlds in his wake.
+      Now, on the advise of some weedy Chaos ’umies, he’s brought his fleet to the Damaris system in search of fresh food
+      and good fights, both of which he reckons he’ll find on this fragile little ’umie world.
+    movement: ''
+    rawGear: ''
+    source: The Frozen Reaches
+img: systems/rogue-trader-3rd/images/npcs/thefrozenreaches/warboss-snokgritz.png
+items: []
+name: Warboss Snokgritz
+prototypeToken:
+  actorLink: false
+  disposition: -1
+  height: 1
+  name: Warboss Snokgritz
+  texture:
+    scaleX: 1.0
+    scaleY: 1.0
+    src: systems/rogue-trader-3rd/images/npcs/thefrozenreaches/warboss-snokgritz.png
+  width: 1
+system:
+  characteristics:
+    agility:
+      base: 34
+      unnatural: 0
+    ballisticSkill:
+      base: 30
+      unnatural: 0
+    fellowship:
+      base: 30
+      unnatural: 0
+    intelligence:
+      base: 34
+      unnatural: 0
+    perception:
+      base: 36
+      unnatural: 0
+    strength:
+      base: 58
+      unnatural: 0
+    toughness:
+      base: 60
+      unnatural: 0
+    weaponSkill:
+      base: 55
+      unnatural: 0
+    willpower:
+      base: 40
+      unnatural: 0
+  npc:
+    faction: ''
+    subfaction: ''
+    threatLevel: 0
+    type: troop
+  skills: {}
+  wounds:
+    critical: 0
+    max: 0
+    rolled: true
+    value: 0
+type: npc
+---
+effects: []
+flags:
+  rt:
+    description: The Damaris Levy is the world’s Planetary Defence Force, patterned loosely off the Imperial Guard.
+    movement: ''
+    rawGear: ''
+    source: The Frozen Reaches
+img: systems/rogue-trader-3rd/images/npcs/thefrozenreaches/damaris-levy-trooper.png
+items: []
+name: Damaris Levy Trooper
+prototypeToken:
+  actorLink: false
+  disposition: -1
+  height: 1
+  name: Damaris Levy Trooper
+  texture:
+    scaleX: 1.0
+    scaleY: 1.0
+    src: systems/rogue-trader-3rd/images/npcs/thefrozenreaches/damaris-levy-trooper.png
+  width: 1
+system:
+  characteristics:
+    agility:
+      base: 35
+      unnatural: 0
+    ballisticSkill:
+      base: 35
+      unnatural: 0
+    fellowship:
+      base: 22
+      unnatural: 0
+    intelligence:
+      base: 25
+      unnatural: 0
+    perception:
+      base: 31
+      unnatural: 0
+    strength:
+      base: 32
+      unnatural: 0
+    toughness:
+      base: 35
+      unnatural: 0
+    weaponSkill:
+      base: 35
+      unnatural: 0
+    willpower:
+      base: 25
+      unnatural: 0
+  npc:
+    faction: ''
+    subfaction: ''
+    threatLevel: 0
+    type: troop
+  skills: {}
+  wounds:
+    critical: 0
+    max: 0
+    rolled: true
+    value: 0
+type: npc
+---
+effects: []
+flags:
+  rt:
+    description: The Skitarii are trained warriors of the Adeptus Mechanicus. Each has been modified extensively with various
+      cybernetic and bionic systems. Often, one arm of the Skitarii is replaced with a ranged weapon, while the other is free
+      to wield a close-combat weapon.
+    movement: 3/6/9/18
+    rawGear: Skitarii flak armour and robes, red-dot laser sight, extensive cybernetics, ammunition reloads.
+    source: The Frozen Reaches
+img: systems/rogue-trader-3rd/images/npcs/thefrozenreaches/damaris-skitarii-tech-guard.png
+items:
+- _id: 5362sQtUuWN7LCTW
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Basic Weapon Training (Universal)
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer has received Basic Weapon Training in the Universal group of weapons, and can use them without penalty.
+      The Universal group includes the Bolt, Las, Launcher, Melta, Plasma, and SP groups. When a character attempts to use
+      a weapon he does not have the correct Weapon Training Talent for, he suffers a -20 penalty to any relevant Weapon Skill
+      or Ballistic Skill Test.
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: 4sbpkQfJ2a4DIlX4
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Binary Chatter
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer has optimised his use of Techna-Lingua for controlling servitors. He receives a +10 bonus to any
+      attempt to communicate with servitors, and any vessel upon which he serves receives a +1 bonus to Crew Morale due to
+      increased servitor efficiency.
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: pI1BpfZGhhoeRvDP
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Bulging Biceps
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: Whereas a weaker man would be sent flying when using powerful weapons, the Explorer's strong physique allows
+      him to remain standing. He can fire heavy weapons using Semi-Auto Burst or Full Auto Burst without bracing, and he does
+      not suffer the -30 penalty for failing to brace.
+    cost: 0
+    prerequisites: Strength 45
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: fXikkEamV3bnDzgc
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Chem Geld
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: Either chemical and surgical treatments or sheer will has rendered the Explorer immune to most mundane temptations.
+      Seduction attempts against him automatically fail, and Charm Tests increase their Difficulty by one level. Taking this
+      Talent causes one Insanity Point.
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: 71W5wE85EJJB7Tlg
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Heavy Weapon Training (Flame, Las, Launcher, or SP)
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer can use SP heavy weapons without penalty. When a character attempts to use a weapon and he does
+      not have the correct Weapon Training Talent for, he suffers a -20 penalty to any relevant Weapon Skill or Ballistic
+      Skill Test.
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: PVn4P2QaZSYLPYro
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Jaded
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer's wide travels have shown both wonders and horrors beyond the ken of most. The galaxy has thrown
+      its worst at him and he has yet to flinch. Outrageous events, from death's horrific visage to xenos abominations, will
+      not cause Insanity Points or Fear Tests. Terrors of the Warp still affect the character normally.
+    cost: 0
+    prerequisites: Willpower 30
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: seu4zI64sJ0irW6N
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Lightning Reflexes
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer always expects trouble, even in the most innocuous situations, allowing him to act quickly when
+      needed. The character adds twice his Agility Bonus when rolling for Initiative. If he has Unnatural Agility, add +1
+      to the multiplier before factoring the bonus into the Initiative roll.
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: BFlTLeC3icuSiCZ5
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Melee Weapon Training (Universal)
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer has trained extensively with hand-to-hand weaponry, becoming proficient in the use of virtually
+      all hand-held close combat arms. The Universal group includes the Chain, Shock, and Power groups, and allows proficient
+      use of all those weapon types. When a character attempts to use a weapon he does not have the correct Weapon Training
+      Talent for, he suffers a -20 penalty to any relevant Weapon Skill or Ballistic Skill Test.
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: gVR8T73591jDHCcN
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Nerves of Steel
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: Long years on the battlefield enable the Explorer to remain calm as fire impacts all around. He may re-roll failed
+      Willpower Tests to avoid or recover from Pinning.
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: FNZDtEOqcvDbdRlm
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Pistol Weapon Training (Universal)
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer has practiced with nearly every single-handed ranged weapon within the confines of the Imperium,
+      and no small number without. The Universal group confers proficiency with most pistol weapons, including the Bolt, Las,
+      Launcher, Melta, Plasma, and SP groups. When a character attempts to use a weapon he does not have the correct Weapon
+      Training Talent for, he suffers a -20 penalty to any relevant Weapon Skill or Ballistic Skill Test.
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: N49N6kE1St7kTXKq
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Resistance (Heat, Fear)
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer has gained the discipline or augmentation to resist psychic intrusion. He gains a +10 bonus to Willpower
+      Tests to resist Psychic Techniques.
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: PFdnjLYZjaStGSfZ
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Hulking
+  ownership:
+    default: 3
+  sort: 0
+  system: {}
+  type: trait
+- _id: ZbjwegkhmODziTxv
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
+  name: The Skitarii has a single Basic or Heavy ranged weapon built into his arm or body
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    attackBonus: 0
+    attackType: ''
+    availability: Common
+    backpack:
+      inBackpack: false
+    class: ''
+    clip:
+      max: 0
+      value: 0
+    craftsmanship: Common
+    damage: ''
+    damageType: ''
+    description: ''
+    effect: ''
+    equipped: true
+    inBackpack: false
+    modifications: []
+    penetration: ''
+    range: ''
+    rateOfFire:
+      burst: 0
+      full: 0
+      single: 1
+    reload: ''
+    source: The Frozen Reaches
+    special: {}
+    target: ''
+    type: ''
+    weight: 0
+  type: weapon
+name: Damaris Skitarii Tech-Guard
+prototypeToken:
+  actorLink: false
+  disposition: -1
+  height: 1
+  name: Damaris Skitarii Tech-Guard
+  texture:
+    scaleX: 1.0
+    scaleY: 1.0
+    src: systems/rogue-trader-3rd/images/npcs/thefrozenreaches/damaris-skitarii-tech-guard.png
+  width: 1
+system:
+  characteristics:
+    agility:
+      base: 30
+      unnatural: 0
+    ballisticSkill:
+      base: 40
+      unnatural: 0
+    fellowship:
+      base: 15
+      unnatural: 0
+    intelligence:
+      base: 30
+      unnatural: 0
+    perception:
+      base: 35
+      unnatural: 0
+    strength:
+      base: 40
+      unnatural: 5
+    toughness:
+      base: 40
+      unnatural: 0
+    weaponSkill:
+      base: 40
+      unnatural: 0
+    willpower:
+      base: 30
+      unnatural: 0
+  npc:
+    faction: ''
+    subfaction: ''
+    threatLevel: 0
+    type: troop
+  skills:
+    athletics:
+      advance: 0
+    awareness:
+      advance: 10
+    commonLore:
+      advance: 0
+    dodge:
+      advance: 0
+    linguistics:
+      advance: 0
+    techUse:
+      advance: 0
+  wounds:
+    critical: 0
+    max: 14
+    rolled: true
+    value: 14
+type: npc
+---
+effects: []
+flags:
+  rt:
+    description: Rogue Traders often maintain a trusted retinue of competent warriors. This profile can be used to represent
+      the Household Troops of the Rogue Traders in this adventure.
+    movement: 3/6/9/18
+    rawGear: ''
+    source: The Frozen Reaches
+img: systems/rogue-trader-3rd/images/npcs/thefrozenreaches/rogue-trader-household-trooper.png
+items:
+- _id: rDxHorCy1JHMvKhu
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Basic Weapon Training (Flame, Universal)
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer has received Basic Weapon Training in the Universal group of weapons, and can use them without penalty.
+      The Universal group includes the Bolt, Las, Launcher, Melta, Plasma, and SP groups. When a character attempts to use
+      a weapon he does not have the correct Weapon Training Talent for, he suffers a -20 penalty to any relevant Weapon Skill
+      or Ballistic Skill Test.
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: xNxanfZGZ2mLn5aA
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Heavy Weapon Training (SP, Launcher, Las)
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer can use SP heavy weapons without penalty. When a character attempts to use a weapon and he does
+      not have the correct Weapon Training Talent for, he suffers a -20 penalty to any relevant Weapon Skill or Ballistic
+      Skill Test.
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: lUvP3uookfLCsfjh
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Melee Weapon Training (Primitive, Universal)
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer has trained extensively with hand-to-hand weaponry, becoming proficient in the use of virtually
+      all hand-held close combat arms. The Universal group includes the Chain, Shock, and Power groups, and allows proficient
+      use of all those weapon types. When a character attempts to use a weapon he does not have the correct Weapon Training
+      Talent for, he suffers a -20 penalty to any relevant Weapon Skill or Ballistic Skill Test.
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: WJPbtnx4FF6B1nkQ
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Nerves of Steel
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: Long years on the battlefield enable the Explorer to remain calm as fire impacts all around. He may re-roll failed
+      Willpower Tests to avoid or recover from Pinning.
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: j2lU0eW8cU6Rs2Mt
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Pistol Training (Universal)
+  ownership:
+    default: 3
+  sort: 0
+  system: {}
+  type: talent
+- _id: ChJ9WNyVvYj5THcm
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Resistance (Fear)
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer has gained the discipline or augmentation to resist psychic intrusion. He gains a +10 bonus to Willpower
+      Tests to resist Psychic Techniques.
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: 3A2iugyhcCG8JWqX
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/items/buckets/basic-las.png
+  name: Lasgun
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    attackBonus: 0
+    attackType: ''
+    availability: Common
+    backpack:
+      inBackpack: false
+    class: Basic
+    clip:
+      max: 60
+      value: 60
+    craftsmanship: Common
+    damage: 1d10+3
+    damageType: Energy
+    description: 'Special: Reliable'
+    effect: ''
+    equipped: true
+    inBackpack: false
+    modifications: []
+    penetration: '0'
+    range: '100'
+    rateOfFire:
+      burst: 3
+      full: 0
+      single: 1
+    reload: Full
+    source: Rogue Trader Core Rulebook, p.118
+    special:
+      reliable: true
+    target: ''
+    type: Las
+    weight: 4.0
+  type: weapon
+- _id: 5dgK1W0p5nY16Gbp
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/items/buckets/thrown-grenade.png
+  name: Frag Grenade
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    attackBonus: 0
+    attackType: ''
+    availability: Common
+    backpack:
+      inBackpack: false
+    class: Thrown
+    clip:
+      max: 0
+      value: 0
+    craftsmanship: Common
+    damage: 2d10
+    damageType: Explosive
+    description: 'Special: Blast (4) Range: SBx3.'
+    effect: ''
+    equipped: true
+    inBackpack: false
+    modifications: []
+    penetration: '0'
+    range: '0'
+    rateOfFire:
+      burst: 0
+      full: 0
+      single: 1
+    reload: ''
+    source: Rogue Trader Core Rulebook, p.126
+    special:
+      blast: 4
+    target: ''
+    type: Grenade
+    weight: 0.5
+  type: weapon
+- _id: a3Bifq2Gujn8fSfY
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
+  name: Mono Short-Sword
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    attackBonus: 0
+    attackType: ''
+    availability: Common
+    backpack:
+      inBackpack: false
+    class: Melee
+    clip:
+      max: 0
+      value: 0
+    craftsmanship: Common
+    damage: 1d10+4
+    damageType: Rending
+    description: ''
+    effect: ''
+    equipped: true
+    inBackpack: false
+    modifications: []
+    penetration: '2'
+    range: ''
+    rateOfFire:
+      burst: 0
+      full: 0
+      single: 1
+    reload: ''
+    source: The Frozen Reaches
+    special:
+      balanced: true
+    target: ''
+    type: ''
+    weight: 0
+  type: weapon
+- _id: FPDhvuOGYVqVeVzn
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/items/buckets/armour-primitive.png
+  name: Naval Flak Armour
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    armourPoints:
+      body: 4
+      head: 3
+      leftArm: 3
+      leftLeg: 3
+      rightArm: 3
+      rightLeg: 3
+    availability: Common
+    backpack:
+      inBackpack: false
+    craftsmanship: Common
+    description: ''
+    equipped: true
+    inBackpack: false
+    maxAgility: 0
+    overloadOn: 0
+    protectionRating: 0
+    source: The Frozen Reaches
+    type: Other
+    weight: 0
+  type: armour
+name: Rogue Trader Household Trooper
+prototypeToken:
+  actorLink: false
+  disposition: -1
+  height: 1
+  name: Rogue Trader Household Trooper
+  texture:
+    scaleX: 1.0
+    scaleY: 1.0
+    src: systems/rogue-trader-3rd/images/npcs/thefrozenreaches/rogue-trader-household-trooper.png
+  width: 1
+system:
+  characteristics:
+    agility:
+      base: 42
+      unnatural: 0
+    ballisticSkill:
+      base: 40
+      unnatural: 0
+    fellowship:
+      base: 30
+      unnatural: 0
+    intelligence:
+      base: 30
+      unnatural: 0
+    perception:
+      base: 40
+      unnatural: 0
+    strength:
+      base: 40
+      unnatural: 0
+    toughness:
+      base: 40
+      unnatural: 0
+    weaponSkill:
+      base: 40
+      unnatural: 0
+    willpower:
+      base: 30
+      unnatural: 0
+  npc:
+    faction: ''
+    subfaction: ''
+    threatLevel: 0
+    type: troop
+  skills:
+    athletics:
+      advance: 0
+    awareness:
+      advance: 0
+    commonLore:
+      advance: 10
+    dodge:
+      advance: 0
+    stealth:
+      advance: 0
+  wounds:
+    critical: 0
+    max: 12
+    rolled: true
+    value: 12
+type: npc
+---
+effects: []
+flags:
+  rt:
+    description: The Bishop is the head of the Ecclesiarchy on Damaris, and keeper of the Shrine in Damaris City. He is an
+      elderly gentleman with a kind but slightly befuddled air about him. More information about Bishop Arint can be found
+      on page 25.
+    movement: 1/2/3/6
+    rawGear: Ecclesiarchy robes, aquila pendant, sepulchre, charm, cane, chrono, Mefonte's Orthodoxy.
+    source: The Frozen Reaches
+img: ''
+items:
+- _id: 2Kwis5PGUKljU05s
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Air of Authority
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer was born to command, either motivating or terrifying those under his charge. On a successful Command
+      Test, the Explorer may affect a number of targets equal to 1d10 plus his Fellowship Bonus. This Talent has no effect
+      on hostile targets, and only affects NPCs.
+    cost: 0
+    prerequisites: Fellowship 30
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: Pb0UdfcdtGWnv4Qk
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Armour of Contempt
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer's hatred of all the impure armours his soul against malign influence. Whenever the Explorer gains
+      Corruption Points, reduce the total by 1, to a minimum of 0. With a successful Willpower Test, taken as a Free Action,
+      he may ignore the effects of accumulated Corruption Points for 1 Round.
+    cost: 0
+    prerequisites: Willpower 40
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: Lm4rLAZDAM1exSqW
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Good Reputation (Ecclesiarchy)
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: 'The Explorer''s reputation precedes him in interactions with a specific group or organisation, opening doors
+      that might otherwise remain closed. The Explorer gains an additional +10 bonus to Fellowship Tests when dealing with
+      this group. This Talent is cumulative with Peer, for a total bonus of +20. Talent Groups: Academics, Adeptus Arbites,
+      Adeptus Mechanicus, Administratum, Astropaths, Ecclesiarchy, Feral Worlders, Government, Hivers, Imperial Guard, Imperial
+      Navy, Inquisition, Middle Classes, Nobility, the Insane, Underworld, Void Born, Workers.'
+    cost: 0
+    prerequisites: Fellowship 50, Peer
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: ibJM1EWw5yIAs7se
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Master Orator
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer has learned the techniques required to influence large audiences. His Fellowship Tests and Fellowship-based
+      Skill Tests affect 10 times the normal number of targets.
+    cost: 0
+    prerequisites: Fellowship 30
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: SXVHrgUv9zgHQwTj
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/psykana/evil-eye-eerie-2.jpg
+  name: Peer (Ecclesiarchy)
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: 'The Explorer is adept at dealing with a particular social group or organisation. He gains a +10 bonus to all
+      Fellowship Tests when interacting with the chosen group. Talent Groups: Academics, Adeptus Arbites, Adeptus Mechanicus,
+      Administratum, Government, Hivers, Inquisition, Middle Classes, Military, Nobility, the Insane, Underworld, Void Born,
+      Workers.'
+    cost: 0
+    prerequisites: Fellowship 30
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: pgPxhSryDrrF6WB3
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Melee Weapon Training (Universal)
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer has trained extensively with hand-to-hand weaponry, becoming proficient in the use of virtually
+      all hand-held close combat arms. The Universal group includes the Chain, Shock, and Power groups, and allows proficient
+      use of all those weapon types. When a character attempts to use a weapon he does not have the correct Weapon Training
+      Talent for, he suffers a -20 penalty to any relevant Weapon Skill or Ballistic Skill Test.
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: DktTY6f0AJyIlf21
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Pure Faith*
+  ownership:
+    default: 3
+  sort: 0
+  system: {}
+  type: talent
+- _id: WZlBxQ84Lbike0au
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Unshakeable Faith
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer's confidence in the Emperor and his abilities is so strong that he can face any danger. He may re-roll
+      any failed Willpower Tests to avoid the effects of Fear.
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: am5lEoeEpfEyMcIw
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
+  name: None
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    attackBonus: 0
+    attackType: ''
+    availability: Common
+    backpack:
+      inBackpack: false
+    class: ''
+    clip:
+      max: 0
+      value: 0
+    craftsmanship: Common
+    damage: ''
+    damageType: ''
+    description: ''
+    effect: ''
+    equipped: true
+    inBackpack: false
+    modifications: []
+    penetration: ''
+    range: ''
+    rateOfFire:
+      burst: 0
+      full: 0
+      single: 1
+    reload: ''
+    source: The Frozen Reaches
+    special: {}
+    target: ''
+    type: ''
+    weight: 0
+  type: weapon
+name: Bishop Mikael Arint
+prototypeToken:
+  actorLink: false
+  disposition: -1
+  height: 1
+  name: Bishop Mikael Arint
+  texture:
+    scaleX: 1.0
+    scaleY: 1.0
+    src: ''
+  width: 1
+system:
+  characteristics:
+    agility:
+      base: 17
+      unnatural: 0
+    ballisticSkill:
+      base: 12
+      unnatural: 0
+    fellowship:
+      base: 53
+      unnatural: 0
+    intelligence:
+      base: 42
+      unnatural: 0
+    perception:
+      base: 28
+      unnatural: 0
+    strength:
+      base: 21
+      unnatural: 0
+    toughness:
+      base: 20
+      unnatural: 0
+    weaponSkill:
+      base: 15
+      unnatural: 0
+    willpower:
+      base: 51
+      unnatural: 0
+  npc:
+    faction: ''
+    subfaction: ''
+    threatLevel: 0
+    type: troop
+  skills:
+    awareness:
+      advance: 0
+    charm:
+      advance: 10
+    command:
+      advance: 0
+    commonLore:
+      advance: 0
+    linguistics:
+      advance: 0
+    medicae:
+      advance: 0
+    scholasticLore:
+      advance: 10
+  wounds:
+    critical: 0
+    max: 8
+    rolled: true
+    value: 8
+type: npc
+---
+effects: []
+flags:
+  rt:
+    description: More information on Jeremiah Blitz can be found on page 24.
+    movement: 5/10/15/30
+    rawGear: 2 pistol clips, 1 gold Throne-gelt, lho-sticks, micro-bead.
+    source: The Frozen Reaches
+img: ''
+items:
+- _id: rUFdUzVu26bZ5Qqv
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Air of Authority
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer was born to command, either motivating or terrifying those under his charge. On a successful Command
+      Test, the Explorer may affect a number of targets equal to 1d10 plus his Fellowship Bonus. This Talent has no effect
+      on hostile targets, and only affects NPCs.
+    cost: 0
+    prerequisites: Fellowship 30
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: NH5ceBcTyHzzDf6i
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/items/swords/swords_01_b.png
+  name: Ambidextrous
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: 'This Talent does not represent true ambidexterity so much as sufficient training with both hands to make the
+      distinction moot. The Explorer can use either hand equally well for any task, and does not suffer the -20 penalty for
+      actions using his off hand. Special: When combined with a Two-Weapon Wielder Talent, the penalty for making attacks
+      with both weapons in the same Turn drops to -10.'
+    cost: 0
+    prerequisites: Agility 30
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: RLajQLXX4SQ1rFzK
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Basic Weapon Training (Universal)
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer has received Basic Weapon Training in the Universal group of weapons, and can use them without penalty.
+      The Universal group includes the Bolt, Las, Launcher, Melta, Plasma, and SP groups. When a character attempts to use
+      a weapon he does not have the correct Weapon Training Talent for, he suffers a -20 penalty to any relevant Weapon Skill
+      or Ballistic Skill Test.
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: BfGVsjoMxnv7Bix0
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Crack Shot
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: 'The Explorer can place his shots where they will inflict more harm: at creases, gaps, or joints in armour. When
+      his ranged attack causes Critical Damage, add +2 to the Damage.'
+    cost: 0
+    prerequisites: Ballistic Skill 40
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: D9lUg8rI4B6al7dQ
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Deadeye Shot
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer's rock-steady hand and hawk-like eyesight make him a dreaded marksman. No target, however precise,
+      can escape his crosshairs. When making a called shot, the character takes a -10 penalty instead of -20.
+    cost: 0
+    prerequisites: Ballistic Skill 30
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: U1xPIu4sDAxhgocZ
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Dual Shot
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer's skill with guns is such that he can target two shots on exactly the same point. When armed with
+      two pistols, he can fire both simultaneously as a Full Action. Make a single Ballistic Skill Test, and if successful
+      he hits his target with both shots. As the character is firing both guns as a single attack, he may take an Aim Action
+      before firing to get a +10 or +20 bonus to the BS Test, and a red-dot laser sight mounted on any one of the weapons
+      will provide its +10 bonus. The Explorer does not suffer from the normal -20 BS penalty for wielding two weapons. If
+      he hits, the target's Armour gets applied as normal to both hits individually, but Toughness only counts once against
+      the combined Damage rolls of both hits. A single successful Dodge Test from the target will avoid both shots.
+    cost: 0
+    prerequisites: Agility 40, Two-Weapon Wielder (Ballistic)
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: RJ2pzF3VG8TSfANL
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Gunslinger
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer has trained with pistols for so long that they are like extensions of his own body, barely requiring
+      conscious thought to aim and fire. When armed with two pistols, he reduces the penalty for Two-Weapon Fighting by -10.
+      If he also possesses the Ambidextrous Talent, the penalty is reduced to 0.
+    cost: 0
+    prerequisites: Ballistic Skill 40, Two-Weapon Wielder
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: xHnaqurBOefTVVXu
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Hip Shooting
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer's prowess with ranged weapons is such that he can still fire accurately without using the sights.
+      As a Full Action, the character may both move up to his Full Move rate and make a single attack with a ranged weapon.
+      This attack can only be a single shot—no automatic fire.
+    cost: 0
+    prerequisites: Ballistic Skill 40, Agility 40
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: gSJNRViXU0PdCdMw
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Hotshot Pilot
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer can pilot vehicles as if they were extensions of his own body. He may only select this Talent if
+      he has obtained one Pilot Skill as an Advanced Skill. The character treats all other Pilot skills as Basic Skills, and
+      receives a +10 bonus to the Pilot Skills he already possesses.
+    cost: 0
+    prerequisites: Any Pilot Skill, Agility 40
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: hwKD5ckxOZwvMfBN
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Independent Targeting
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer has developed his peripheral vision and situational awareness to a point where he can fire in two
+      directions within a split second. When firing two weapons as part of a single action, the targets need not be less than
+      10 metres apart.
+    cost: 0
+    prerequisites: Ballistic Skill 40
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: 1W0K6hi3ARhYZQT2
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Jaded
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer's wide travels have shown both wonders and horrors beyond the ken of most. The galaxy has thrown
+      its worst at him and he has yet to flinch. Outrageous events, from death's horrific visage to xenos abominations, will
+      not cause Insanity Points or Fear Tests. Terrors of the Warp still affect the character normally.
+    cost: 0
+    prerequisites: Willpower 30
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: qx46tS6LDxkcaRVA
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Last Man Standing
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer has developed a sixth sense about hails of gunfire, allowing him to sense gaps and pauses in the
+      lethal rain. He is immune to Pinning by Pistols and Basic Weapons, and adds +1 AP to the value of any cover protecting
+      him from ranged attacks.
+    cost: 0
+    prerequisites: Nerves of Steel
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: mXNCGucF9OmsF0le
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Leap Up
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: A combination of athletic ability and speed allow the Explorer to spring to his feet in virtually any circumstance.
+      He may stand up as a Free Action.
+    cost: 0
+    prerequisites: Agility 30
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: 8nNLUxPBK4TdLrPs
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Mighty Shot
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer knows the weak points in every armour and material, and has the skill to place shots exactly where
+      they will do the most damage. He adds +2 to Damage with a ranged weapon.
+    cost: 0
+    prerequisites: Ballistic Skill 40
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: eKejykVpcok3CRS0
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Nerves of Steel
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: Long years on the battlefield enable the Explorer to remain calm as fire impacts all around. He may re-roll failed
+      Willpower Tests to avoid or recover from Pinning.
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: 9oG7jbVFkJmGB3ue
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Pistol Weapon Training (Universal)
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer has practiced with nearly every single-handed ranged weapon within the confines of the Imperium,
+      and no small number without. The Universal group confers proficiency with most pistol weapons, including the Bolt, Las,
+      Launcher, Melta, Plasma, and SP groups. When a character attempts to use a weapon he does not have the correct Weapon
+      Training Talent for, he suffers a -20 penalty to any relevant Weapon Skill or Ballistic Skill Test.
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: qC0Yno99J3cU1HFv
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/items/pistols/pistols_18.png
+  name: Quick Draw
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer has practised so frequently with his weapons that they practically leap into his hands, ready for
+      action. He can Ready as a Free Action when armed with a Pistol or Basic class ranged weapon, or a melee weapon that
+      can be wielded in one hand.
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: 8dlTMqCnQVBUH63Q
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Rapid Reaction
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer has honed his reactions to a razor's edge, allowing him to act while most stand dumbfounded. When
+      surprised or ambushed, a successful Agility Test allows him to act normally.
+    cost: 0
+    prerequisites: Agility 40
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: mlvzIIcF4u6mSQjq
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Two Weapon Wielder (Ballistic)
+  ownership:
+    default: 3
+  sort: 0
+  system: {}
+  type: talent
+- _id: fCsoSLGoiFbtbpy2
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
+  name: Best-craftsmanship Bolt Pistols
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    attackBonus: 0
+    attackType: ''
+    availability: Common
+    backpack:
+      inBackpack: false
+    class: Basic
+    clip:
+      max: 8
+      value: 8
+    craftsmanship: Common
+    damage: 1d10+7
+    damageType: Explosive
+    description: ''
+    effect: ''
+    equipped: true
+    inBackpack: false
+    modifications: []
+    penetration: '4'
+    range: '3'
+    rateOfFire:
+      burst: 0
+      full: 0
+      single: 1
+    reload: ''
+    source: The Frozen Reaches
+    special: {}
+    target: ''
+    type: ''
+    weight: 0
+  type: weapon
+- _id: VnO6A1EGcJYtJbuC
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/items/buckets/armour-primitive.png
+  name: Enforcer light carapace
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    armourPoints:
+      body: 0
+      head: 0
+      leftArm: 0
+      leftLeg: 5
+      rightArm: 0
+      rightLeg: 5
+    availability: Common
+    backpack:
+      inBackpack: false
+    craftsmanship: Common
+    description: ''
+    equipped: true
+    inBackpack: false
+    maxAgility: 0
+    overloadOn: 0
+    protectionRating: 0
+    source: The Frozen Reaches
+    type: Other
+    weight: 0
+  type: armour
+name: Rogue Trader Jeremiah Blitz
+prototypeToken:
+  actorLink: false
+  disposition: -1
+  height: 1
+  name: Rogue Trader Jeremiah Blitz
+  texture:
+    scaleX: 1.0
+    scaleY: 1.0
+    src: ''
+  width: 1
+system:
+  characteristics:
+    agility:
+      base: 52
+      unnatural: 0
+    ballisticSkill:
+      base: 53
+      unnatural: 0
+    fellowship:
+      base: 46
+      unnatural: 0
+    intelligence:
+      base: 36
+      unnatural: 0
+    perception:
+      base: 35
+      unnatural: 0
+    strength:
+      base: 44
+      unnatural: 0
+    toughness:
+      base: 35
+      unnatural: 0
+    weaponSkill:
+      base: 36
+      unnatural: 0
+    willpower:
+      base: 39
+      unnatural: 0
+  npc:
+    faction: ''
+    subfaction: ''
+    threatLevel: 0
+    type: troop
+  skills:
+    awareness:
+      advance: 0
+    charm:
+      advance: 20
+    command:
+      advance: 10
+    commerce:
+      advance: 10
+    commonLore:
+      advance: 0
+    deceive:
+      advance: 0
+    dodge:
+      advance: 20
+    intimidate:
+      advance: 0
+    linguistics:
+      advance: 0
+    navigate:
+      advance: 10
+    operate:
+      advance: 20
+    techUse:
+      advance: 0
+  wounds:
+    critical: 0
+    max: 26
+    rolled: true
+    value: 26
+type: npc
+---
+effects: []
+flags:
+  rt:
+    description: More information on General Dante can be found on page 25.
+    movement: 3/6/9/12/18
+    rawGear: Micro-bead, void suit, medikit, data-slate, arms coffer, Damaris Levy uniform (dress, un-dress, working).
+    source: The Frozen Reaches
+img: ''
+items:
+- _id: Vr1MUZLee91QdkrL
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Air of Authority
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer was born to command, either motivating or terrifying those under his charge. On a successful Command
+      Test, the Explorer may affect a number of targets equal to 1d10 plus his Fellowship Bonus. This Talent has no effect
+      on hostile targets, and only affects NPCs.
+    cost: 0
+    prerequisites: Fellowship 30
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: RqiVEPhb5R0BOrgE
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Basic Weapon Training (Universal)
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer has received Basic Weapon Training in the Universal group of weapons, and can use them without penalty.
+      The Universal group includes the Bolt, Las, Launcher, Melta, Plasma, and SP groups. When a character attempts to use
+      a weapon he does not have the correct Weapon Training Talent for, he suffers a -20 penalty to any relevant Weapon Skill
+      or Ballistic Skill Test.
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: 0vtVqk4X35bctgq4
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Combat Formation
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer has directed his comrades to be prepared for danger, planning out their actions for many contingencies
+      if attacked. Before rolling initiative, all other members of the group may choose to use the character's Intelligence
+      Bonus for all initiative rolls rather than individual Agility Bonuses.
+    cost: 0
+    prerequisites: Intelligence 40
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: DuHY12Ab1zDTwJDI
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Die-Hard
+  ownership:
+    default: 3
+  sort: 0
+  system: {}
+  type: talent
+- _id: gf6PhJSACQHCOZ0Y
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Duty Unto Death
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer's will or faith can sustain him when his flesh is weak. He ignores the effects of injury, Fatigue,
+      and Stunning during combat. This Talent does not prevent the Damage, but allows the character to temporarily ignore
+      its effects for the duration of the combat. Death still affects him normally.
+    cost: 0
+    prerequisites: Willpower 45
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: nMHeN2LQtMkGxA3K
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Fearless
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: Through hard experience with horrifying situations, fear no longer commands the Explorer's actions. He is immune
+      to the effects of Fear and Pinning, but disengaging from combat or backing down from a fight requires a successful Willpower
+      Test.
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: qYWShid6Pafi4e0S
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Hip Shooting
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer's prowess with ranged weapons is such that he can still fire accurately without using the sights.
+      As a Full Action, the character may both move up to his Full Move rate and make a single attack with a ranged weapon.
+      This attack can only be a single shot—no automatic fire.
+    cost: 0
+    prerequisites: Ballistic Skill 40, Agility 40
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: 7SzXz0PplfAG3pok
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Into the Jaws of Hell
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer inspires loyalty and devotion in his followers such that they would follow him into the warp or
+      on a boarding action against xenos corsairs. In personal combat, while visible to them, they are immune to Fear and
+      Pinning. While the character is known to be on board a ship in which he serves, the ship has a +5 bonus to its Morale.
+    cost: 0
+    prerequisites: Iron Discipline
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: lYLreZXlPguPU5lS
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Iron Discipline
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: Iron sharpens iron. The Explorer does not coddle his crew, nor motivate them through kindness. His stalwart example
+      and stern leadership exhorts them with steel instead of spoils. If the character is visible to his followers, either
+      in person or via vox- or pict-caster, they may re-roll failed Willpower Tests made to resist Fear and Pinning. Iron
+      Discipline can affect a number of targets equal to the character's Willpower Bonus, who must be under his command. PCs
+      can benefit from Iron Discipline if the character with this Talent is the official group leader. If the Explorer is
+      leading a boarding action, he gains a +10 bonus to his Command Tests.
+    cost: 0
+    prerequisites: Willpower 30, Command
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: QH86ErvYld909Mv2
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Melee Weapon Training (Primitive, Universal)
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer has trained extensively with hand-to-hand weaponry, becoming proficient in the use of virtually
+      all hand-held close combat arms. The Universal group includes the Chain, Shock, and Power groups, and allows proficient
+      use of all those weapon types. When a character attempts to use a weapon he does not have the correct Weapon Training
+      Talent for, he suffers a -20 penalty to any relevant Weapon Skill or Ballistic Skill Test.
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: sepbpC18Retf1uhC
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Pistol Weapon Training (Universal)
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer has practiced with nearly every single-handed ranged weapon within the confines of the Imperium,
+      and no small number without. The Universal group confers proficiency with most pistol weapons, including the Bolt, Las,
+      Launcher, Melta, Plasma, and SP groups. When a character attempts to use a weapon he does not have the correct Weapon
+      Training Talent for, he suffers a -20 penalty to any relevant Weapon Skill or Ballistic Skill Test.
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: YilAHS7I0hk0diKP
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/items/pistols/pistols_18.png
+  name: Quick Draw
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer has practised so frequently with his weapons that they practically leap into his hands, ready for
+      action. He can Ready as a Free Action when armed with a Pistol or Basic class ranged weapon, or a melee weapon that
+      can be wielded in one hand.
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: 7GPKcDpY7oyqCo18
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Rapid Reload
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The practice bays aboard the Explorer's vessel are like a second home, and he has reloaded countless magazines
+      or power cells for his weapons until he can replace them with his eyes closed. The Explorer halves all reload times,
+      rounding down. Thus, Half Action reloads become a Free Action, a Full Action reload becomes a Half Action, and so on.
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: TIvTkwRzs1SZV7VC
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Sound Constitution
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer gains an additional Wound. He may purchase this Talent multiple times in accordance with his Career
+      Advances. In this case note the number of times it's been taken after the Talent, such as Sound Constitution 3.
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: aMiw1V5mvUU0CSKr
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: True Grit
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer is able to shrug off wounds that would fell lesser men. Whenever he suffers Critical Damage, halve
+      the result (rounding up).
+    cost: 0
+    prerequisites: Toughness 40
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: ivfzlO7XEiAECiRP
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Two-Weapon Wielder (Ballistic, Melee). Touched by the Fates
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: Years of training allow the Explorer to use a melee weapon in each hand when needed. When armed with two melee
+      weapons, he may spend a Full Action to attack with both. Both tests made to attack with the weapons suffer a -20 penalty.
+      He must possess Two-Weapon Wielder (Melee) and Two-Weapon Wielder (Ballistic) if he wishes to use a gun and hand weapon
+      together.
+    cost: 0
+    prerequisites: Weapon Skill 35, Agility 35
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: hc8e99Qqj88zrhBk
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/items/buckets/pistol-bolt.png
+  name: Bolt Pistol
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    attackBonus: 0
+    attackType: ''
+    availability: Rare
+    backpack:
+      inBackpack: false
+    class: Pistol
+    clip:
+      max: 8
+      value: 8
+    craftsmanship: Common
+    damage: 1d10+5
+    damageType: Explosive
+    description: 'Special: Tearing'
+    effect: ''
+    equipped: true
+    inBackpack: false
+    modifications: []
+    penetration: '4'
+    range: '30'
+    rateOfFire:
+      burst: 2
+      full: 0
+      single: 1
+    reload: Full
+    source: Rogue Trader Core Rulebook, p.121
+    special:
+      tearing: true
+    target: ''
+    type: Bolt
+    weight: 3.5
+  type: weapon
+- _id: 2KCm2mWtQvQy7rMg
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/items/buckets/melee-power-sword.png
+  name: Power Sword
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    attackBonus: 0
+    attackType: ''
+    availability: Very Rare
+    backpack:
+      inBackpack: false
+    class: Melee
+    clip:
+      max: 0
+      value: 0
+    craftsmanship: Common
+    damage: 1d10+5
+    damageType: Energy
+    description: 'Special: Power Field, Balanced'
+    effect: ''
+    equipped: true
+    inBackpack: false
+    modifications: []
+    penetration: '5'
+    range: '0'
+    rateOfFire:
+      burst: 0
+      full: 0
+      single: 1
+    reload: ''
+    source: Rogue Trader Core Rulebook, p.136
+    special:
+      balanced: true
+      powerField: true
+    target: ''
+    type: Power
+    weight: 3.0
+  type: weapon
+- _id: fOC4vCFMnpxMgIET
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/items/buckets/armour-primitive.png
+  name: Damaris Levy Carapace
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    armourPoints:
+      body: 0
+      head: 0
+      leftArm: 6
+      leftLeg: 0
+      rightArm: 6
+      rightLeg: 0
+    availability: Common
+    backpack:
+      inBackpack: false
+    craftsmanship: Common
+    description: ''
+    equipped: true
+    inBackpack: false
+    maxAgility: 0
+    overloadOn: 0
+    protectionRating: 0
+    source: The Frozen Reaches
+    type: Other
+    weight: 0
+  type: armour
+name: General Remi Dante
+prototypeToken:
+  actorLink: false
+  disposition: -1
+  height: 1
+  name: General Remi Dante
+  texture:
+    scaleX: 1.0
+    scaleY: 1.0
+    src: ''
+  width: 1
+system:
+  characteristics:
+    agility:
+      base: 33
+      unnatural: 0
+    ballisticSkill:
+      base: 43
+      unnatural: 0
+    fellowship:
+      base: 38
+      unnatural: 0
+    intelligence:
+      base: 45
+      unnatural: 0
+    perception:
+      base: 39
+      unnatural: 0
+    strength:
+      base: 50
+      unnatural: 0
+    toughness:
+      base: 41
+      unnatural: 0
+    weaponSkill:
+      base: 47
+      unnatural: 0
+    willpower:
+      base: 47
+      unnatural: 0
+  npc:
+    faction: ''
+    subfaction: ''
+    threatLevel: 0
+    type: troop
+  skills:
+    awareness:
+      advance: 0
+    charm:
+      advance: 0
+    command:
+      advance: 20
+    commonLore:
+      advance: 10
+    dodge:
+      advance: 0
+    intimidate:
+      advance: 10
+    linguistics:
+      advance: 0
+    navigate:
+      advance: 10
+    scholasticLore:
+      advance: 0
+    scrutiny:
+      advance: 10
+    techUse:
+      advance: 0
+  wounds:
+    critical: 0
+    max: 30
+    rolled: true
+    value: 30
+type: npc
+---
+effects: []
+flags:
+  rt:
+    description: More information on Governor Kapak can be found on page 21.
+    movement: 3/6/9/18
+    rawGear: Data-slate, fashionable wardrobe, 5 doses of obscura.
+    source: The Frozen Reaches
+img: ''
+items:
+- _id: ByzwUREeBZkhtweW
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Air of Authority
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer was born to command, either motivating or terrifying those under his charge. On a successful Command
+      Test, the Explorer may affect a number of targets equal to 1d10 plus his Fellowship Bonus. This Talent has no effect
+      on hostile targets, and only affects NPCs.
+    cost: 0
+    prerequisites: Fellowship 30
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: S1lo53ek5EzKqxiJ
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Decadence
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: Through conditioning or long years of abuse, the Explorer has built up a tolerance to many inebriants, drugs,
+      and chemicals. When drinking alcohol or similar beverages, he does not pass out until he has failed a number of Toughness
+      Tests equal to twice his Toughness Bonus. The character also gains a +10 bonus to resist the effects of addiction.
+    cost: 0
+    prerequisites: Toughness 30
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: njtV5Gj5M3tag7kY
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Good Reputation (Administratum)
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: 'The Explorer''s reputation precedes him in interactions with a specific group or organisation, opening doors
+      that might otherwise remain closed. The Explorer gains an additional +10 bonus to Fellowship Tests when dealing with
+      this group. This Talent is cumulative with Peer, for a total bonus of +20. Talent Groups: Academics, Adeptus Arbites,
+      Adeptus Mechanicus, Administratum, Astropaths, Ecclesiarchy, Feral Worlders, Government, Hivers, Imperial Guard, Imperial
+      Navy, Inquisition, Middle Classes, Nobility, the Insane, Underworld, Void Born, Workers.'
+    cost: 0
+    prerequisites: Fellowship 50, Peer
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: MO46ccUmScxz83Qs
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Light Sleeper
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The slightest change in conditions or disturbance brings the Explorer from sleep to full awareness, remaining
+      alert even in slumber. He is always assumed to be awake, even when asleep, for the purposes of Awareness Tests or surprise.
+      Unfortunately, the character's sleep is not deep and can be frequently interrupted, resulting in a less-than-cheery
+      disposition when awake.
+    cost: 0
+    prerequisites: Perception 30
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: GXWpW8gK7YxUubJO
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Master Orator
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer has learned the techniques required to influence large audiences. His Fellowship Tests and Fellowship-based
+      Skill Tests affect 10 times the normal number of targets.
+    cost: 0
+    prerequisites: Fellowship 30
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: iDKM5XnhWAoTZ8ZQ
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Melee Weapon Training (Primitive, Universal)
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer has trained extensively with hand-to-hand weaponry, becoming proficient in the use of virtually
+      all hand-held close combat arms. The Universal group includes the Chain, Shock, and Power groups, and allows proficient
+      use of all those weapon types. When a character attempts to use a weapon he does not have the correct Weapon Training
+      Talent for, he suffers a -20 penalty to any relevant Weapon Skill or Ballistic Skill Test.
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: W65mBJOaHEjD1rqa
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Paranoia
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer knows that danger lurks behind every corner and knows the galaxy will hit him as soon as he lets
+      his guard down. The character gains a +2 bonus on Initiative rolls, and the GM may secretly Test his Perception to notice
+      hidden threats. The price of his eternal vigilance is a twitchy disposition and the inability to relax.
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: KBtoSURKP0p8aol9
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/psykana/evil-eye-eerie-2.jpg
+  name: Peer (Administratum, Nobles)
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: 'The Explorer is adept at dealing with a particular social group or organisation. He gains a +10 bonus to all
+      Fellowship Tests when interacting with the chosen group. Talent Groups: Academics, Adeptus Arbites, Adeptus Mechanicus,
+      Administratum, Government, Hivers, Inquisition, Middle Classes, Military, Nobility, the Insane, Underworld, Void Born,
+      Workers.'
+    cost: 0
+    prerequisites: Fellowship 30
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: aikpnnVEAh5HhzJU
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Pistol Weapon Training (Universal)
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer has practiced with nearly every single-handed ranged weapon within the confines of the Imperium,
+      and no small number without. The Universal group confers proficiency with most pistol weapons, including the Bolt, Las,
+      Launcher, Melta, Plasma, and SP groups. When a character attempts to use a weapon he does not have the correct Weapon
+      Training Talent for, he suffers a -20 penalty to any relevant Weapon Skill or Ballistic Skill Test.
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: D9TyVizlWPR1MwjR
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Total Recall
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: Mental conditioning or augmetics enable the Explorer to record and recall great amounts of information, effectively
+      granting him a perfect memory. He can automatically remember trivial facts or pieces of information that might feasibly
+      have picked up in the past. When dealing with more detailed, complex, or obscure facts, such as the deck plans of a
+      space hulk or a complex xeno pictograph, the GM may require an Intelligence Test.
+    cost: 0
+    prerequisites: Intelligence 30
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: He8HxbzhAr0fC6rp
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
+  name: Modified Belasco Duelling Pistol
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    attackBonus: 0
+    attackType: ''
+    availability: Common
+    backpack:
+      inBackpack: false
+    class: Basic
+    clip:
+      max: 3
+      value: 3
+    craftsmanship: Common
+    damage: 1d10+5
+    damageType: Energy
+    description: ''
+    effect: ''
+    equipped: true
+    inBackpack: false
+    modifications: []
+    penetration: '5'
+    range: '45'
+    rateOfFire:
+      burst: 0
+      full: 0
+      single: 1
+    reload: ''
+    source: The Frozen Reaches
+    special:
+      accurate: true
+      reliable: true
+    target: ''
+    type: ''
+    weight: 0
+  type: weapon
+- _id: sPYk5LRqo4uEL35A
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/items/buckets/armour-primitive.png
+  name: Reinforced robes
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    armourPoints:
+      body: 0
+      head: 0
+      leftArm: 0
+      leftLeg: 0
+      rightArm: 0
+      rightLeg: 0
+    availability: Common
+    backpack:
+      inBackpack: false
+    craftsmanship: Common
+    description: ''
+    equipped: true
+    inBackpack: false
+    maxAgility: 0
+    overloadOn: 0
+    protectionRating: 0
+    source: The Frozen Reaches
+    type: Other
+    weight: 0
+  type: armour
+name: Governor Belkan Kapak
+prototypeToken:
+  actorLink: false
+  disposition: -1
+  height: 1
+  name: Governor Belkan Kapak
+  texture:
+    scaleX: 1.0
+    scaleY: 1.0
+    src: ''
+  width: 1
+system:
+  characteristics:
+    agility:
+      base: 30
+      unnatural: 0
+    ballisticSkill:
+      base: 22
+      unnatural: 0
+    fellowship:
+      base: 50
+      unnatural: 0
+    intelligence:
+      base: 43
+      unnatural: 0
+    perception:
+      base: 46
+      unnatural: 0
+    strength:
+      base: 25
+      unnatural: 0
+    toughness:
+      base: 30
+      unnatural: 0
+    weaponSkill:
+      base: 23
+      unnatural: 0
+    willpower:
+      base: 37
+      unnatural: 0
+  npc:
+    faction: ''
+    subfaction: ''
+    threatLevel: 0
+    type: troop
+  skills:
+    awareness:
+      advance: 10
+    charm:
+      advance: 20
+    command:
+      advance: 0
+    commonLore:
+      advance: 0
+    deceive:
+      advance: 20
+    linguistics:
+      advance: 0
+    scrutiny:
+      advance: 20
+  wounds:
+    critical: 0
+    max: 12
+    rolled: true
+    value: 12
+type: npc
+---
+effects: []
+flags:
+  rt:
+    description: More information on Captain Locke can be found on page 22.
+    movement: 4/8/12/24
+    rawGear: 2 extra naval pistol clips, filtration plugs, personal vox, officer's seal, respirator, Uniforms (dress, un-dress,
+      and working).
+    source: The Frozen Reaches
+img: ''
+items:
+- _id: 04n0TY2uNBgUfjC1
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Air of Authority
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer was born to command, either motivating or terrifying those under his charge. On a successful Command
+      Test, the Explorer may affect a number of targets equal to 1d10 plus his Fellowship Bonus. This Talent has no effect
+      on hostile targets, and only affects NPCs.
+    cost: 0
+    prerequisites: Fellowship 30
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: lLwXKdnjjmQVisxU
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Into the Jaws of Hell
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer inspires loyalty and devotion in his followers such that they would follow him into the warp or
+      on a boarding action against xenos corsairs. In personal combat, while visible to them, they are immune to Fear and
+      Pinning. While the character is known to be on board a ship in which he serves, the ship has a +5 bonus to its Morale.
+    cost: 0
+    prerequisites: Iron Discipline
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: UDUgk0WC7ddlcT9d
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Iron Discipline
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: Iron sharpens iron. The Explorer does not coddle his crew, nor motivate them through kindness. His stalwart example
+      and stern leadership exhorts them with steel instead of spoils. If the character is visible to his followers, either
+      in person or via vox- or pict-caster, they may re-roll failed Willpower Tests made to resist Fear and Pinning. Iron
+      Discipline can affect a number of targets equal to the character's Willpower Bonus, who must be under his command. PCs
+      can benefit from Iron Discipline if the character with this Talent is the official group leader. If the Explorer is
+      leading a boarding action, he gains a +10 bonus to his Command Tests.
+    cost: 0
+    prerequisites: Willpower 30, Command
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: AKtPZ6GrXx4uoELp
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Nerves of Steel
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: Long years on the battlefield enable the Explorer to remain calm as fire impacts all around. He may re-roll failed
+      Willpower Tests to avoid or recover from Pinning.
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: 6vZX0zGFRRdBwlwL
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Master and Commander
+  ownership:
+    default: 3
+  sort: 0
+  system: {}
+  type: talent
+- _id: MpFbO1e7Y0PFKNll
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Melee Weapon Training (Primitive, Universal)
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer has trained extensively with hand-to-hand weaponry, becoming proficient in the use of virtually
+      all hand-held close combat arms. The Universal group includes the Chain, Shock, and Power groups, and allows proficient
+      use of all those weapon types. When a character attempts to use a weapon he does not have the correct Weapon Training
+      Talent for, he suffers a -20 penalty to any relevant Weapon Skill or Ballistic Skill Test.
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: z26BJVIejwsWf9kR
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/psykana/evil-eye-eerie-2.jpg
+  name: Peer (Imperial Navy)
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: 'The Explorer is adept at dealing with a particular social group or organisation. He gains a +10 bonus to all
+      Fellowship Tests when interacting with the chosen group. Talent Groups: Academics, Adeptus Arbites, Adeptus Mechanicus,
+      Administratum, Government, Hivers, Inquisition, Middle Classes, Military, Nobility, the Insane, Underworld, Void Born,
+      Workers.'
+    cost: 0
+    prerequisites: Fellowship 30
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: hhjRibo1wuPrpRtl
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Pistol Training (Universal). Touched by the Fates
+  ownership:
+    default: 3
+  sort: 0
+  system: {}
+  type: talent
+- _id: HYrd1peTHqArC9PJ
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Void Tactician
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer's ability to conceptualise three-dimensional space gives him an advantage in starship combat, granting
+      a +10 bonus to Ballistic Skill Tests made to fire a starship's guns in combat.
+    cost: 0
+    prerequisites: Intelligence 35
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: 8t0CE2wCLPxj2RdH
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
+  name: Best Craftsmanship Naval Pistol with Photo Sight
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    attackBonus: 0
+    attackType: ''
+    availability: Common
+    backpack:
+      inBackpack: false
+    class: Basic
+    clip:
+      max: 6
+      value: 6
+    craftsmanship: Common
+    damage: ''
+    damageType: ''
+    description: ''
+    effect: ''
+    equipped: true
+    inBackpack: false
+    modifications: []
+    penetration: '0'
+    range: '20'
+    rateOfFire:
+      burst: 3
+      full: 0
+      single: 1
+    reload: ''
+    source: The Frozen Reaches
+    special:
+      tearing: true
+    target: ''
+    type: ''
+    weight: 0
+  type: weapon
+- _id: 8qFDu4Ty9en8f3SW
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
+  name: Best Craftsmanship Officer's Cutlass
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    attackBonus: 0
+    attackType: ''
+    availability: Common
+    backpack:
+      inBackpack: false
+    class: Melee
+    clip:
+      max: 0
+      value: 0
+    craftsmanship: Common
+    damage: ''
+    damageType: ''
+    description: ''
+    effect: ''
+    equipped: true
+    inBackpack: false
+    modifications: []
+    penetration: '0'
+    range: ''
+    rateOfFire:
+      burst: 0
+      full: 0
+      single: 1
+    reload: ''
+    source: The Frozen Reaches
+    special:
+      shocking: true
+    target: ''
+    type: ''
+    weight: 0
+  type: weapon
+- _id: KKUZPDIHzpspCZdc
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/items/buckets/armour-primitive.png
+  name: Reinforced Navy Uniform
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    armourPoints:
+      body: 0
+      head: 0
+      leftArm: 4
+      leftLeg: 0
+      rightArm: 4
+      rightLeg: 0
+    availability: Common
+    backpack:
+      inBackpack: false
+    craftsmanship: Common
+    description: ''
+    equipped: true
+    inBackpack: false
+    maxAgility: 0
+    overloadOn: 0
+    protectionRating: 0
+    source: The Frozen Reaches
+    type: Other
+    weight: 0
+  type: armour
+name: Lord-Captain Sylvia Locke
+prototypeToken:
+  actorLink: false
+  disposition: -1
+  height: 1
+  name: Lord-Captain Sylvia Locke
+  texture:
+    scaleX: 1.0
+    scaleY: 1.0
+    src: ''
+  width: 1
+system:
+  characteristics:
+    agility:
+      base: 44
+      unnatural: 0
+    ballisticSkill:
+      base: 45
+      unnatural: 0
+    fellowship:
+      base: 44
+      unnatural: 0
+    intelligence:
+      base: 45
+      unnatural: 0
+    perception:
+      base: 50
+      unnatural: 0
+    strength:
+      base: 37
+      unnatural: 0
+    toughness:
+      base: 38
+      unnatural: 0
+    weaponSkill:
+      base: 48
+      unnatural: 0
+    willpower:
+      base: 55
+      unnatural: 0
+  npc:
+    faction: ''
+    subfaction: ''
+    threatLevel: 0
+    type: troop
+  skills:
+    athletics:
+      advance: 0
+    awareness:
+      advance: 10
+    command:
+      advance: 20
+    commonLore:
+      advance: 0
+    linguistics:
+      advance: 0
+    navigate:
+      advance: 0
+    operate:
+      advance: 20
+  wounds:
+    critical: 0
+    max: 20
+    rolled: true
+    value: 20
+type: npc
+---
+effects: []
+flags:
+  rt:
+    description: More information on Lady Orleans can be found on page 23.
+    movement: 4/8/12/24
+    rawGear: Micro-bead, Voidsuit, Wardrobe of fine clothing, Dress Uniform, Working Uniform, Filtration Plugs, Auto quill,
+      Data-Slate, Multicompass.
+    source: The Frozen Reaches
+img: ''
+items:
+- _id: HnuXm6q7QCksVQoQ
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Air of Authority
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer was born to command, either motivating or terrifying those under his charge. On a successful Command
+      Test, the Explorer may affect a number of targets equal to 1d10 plus his Fellowship Bonus. This Talent has no effect
+      on hostile targets, and only affects NPCs.
+    cost: 0
+    prerequisites: Fellowship 30
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: nxPtU7a5nBIkMA92
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/items/swords/swords_01_b.png
+  name: Ambidextrous
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: 'This Talent does not represent true ambidexterity so much as sufficient training with both hands to make the
+      distinction moot. The Explorer can use either hand equally well for any task, and does not suffer the -20 penalty for
+      actions using his off hand. Special: When combined with a Two-Weapon Wielder Talent, the penalty for making attacks
+      with both weapons in the same Turn drops to -10.'
+    cost: 0
+    prerequisites: Agility 30
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: xppgQbqReexHsLkH
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Armour of Contempt
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer's hatred of all the impure armours his soul against malign influence. Whenever the Explorer gains
+      Corruption Points, reduce the total by 1, to a minimum of 0. With a successful Willpower Test, taken as a Free Action,
+      he may ignore the effects of accumulated Corruption Points for 1 Round.
+    cost: 0
+    prerequisites: Willpower 40
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: G1iXc9cwPCWtbtuP
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Basic Weapon Training (Universal)
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer has received Basic Weapon Training in the Universal group of weapons, and can use them without penalty.
+      The Universal group includes the Bolt, Las, Launcher, Melta, Plasma, and SP groups. When a character attempts to use
+      a weapon he does not have the correct Weapon Training Talent for, he suffers a -20 penalty to any relevant Weapon Skill
+      or Ballistic Skill Test.
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: 1MOLbrzCeDUyf5wb
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Counter Attack
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer's lightning ripostes are things of beauty—if they were slow enough to be seen. After successfully
+      Parrying an opponent's attack, he may immediately make an attack against that opponent using the Parry weapon as a Free
+      Action. This attack suffers a -20 penalty.
+    cost: 0
+    prerequisites: Weapon Skill 40
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: ioNTQOjyexAgLnyy
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Hatred (Administratum, Ecclesiarchy)
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: 'A group, organisation or race has wronged the Explorer in the past, fuelling this animosity. When fighting opponents
+      of that group in close combat, he gains a +10 bonus to all Weapon Skill Tests made against them. (Errata v1.4: The effects
+      of the Hatred Talent never stack — multiple Hatred Talents do not combine, and the bonus to Weapon Skill Tests can never
+      exceed +10.) Talent Groups: Criminals, Mutants, Pirates, Psykers, Rogue Trader (specific), Xenos (specific).'
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: vYEzhWuUHdMs8VkJ
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Hip Shooting
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer's prowess with ranged weapons is such that he can still fire accurately without using the sights.
+      As a Full Action, the character may both move up to his Full Move rate and make a single attack with a ranged weapon.
+      This attack can only be a single shot—no automatic fire.
+    cost: 0
+    prerequisites: Ballistic Skill 40, Agility 40
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: EjgQtnWUMazE48a4
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Hotshot Pilot
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer can pilot vehicles as if they were extensions of his own body. He may only select this Talent if
+      he has obtained one Pilot Skill as an Advanced Skill. The character treats all other Pilot skills as Basic Skills, and
+      receives a +10 bonus to the Pilot Skills he already possesses.
+    cost: 0
+    prerequisites: Any Pilot Skill, Agility 40
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: dL0rjrbVzkXO9RAp
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Jaded
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer's wide travels have shown both wonders and horrors beyond the ken of most. The galaxy has thrown
+      its worst at him and he has yet to flinch. Outrageous events, from death's horrific visage to xenos abominations, will
+      not cause Insanity Points or Fear Tests. Terrors of the Warp still affect the character normally.
+    cost: 0
+    prerequisites: Willpower 30
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: ao4YAZ57SjwEGDx2
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Light Sleeper
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The slightest change in conditions or disturbance brings the Explorer from sleep to full awareness, remaining
+      alert even in slumber. He is always assumed to be awake, even when asleep, for the purposes of Awareness Tests or surprise.
+      Unfortunately, the character's sleep is not deep and can be frequently interrupted, resulting in a less-than-cheery
+      disposition when awake.
+    cost: 0
+    prerequisites: Perception 30
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: OyfnUblvdW5RUdCD
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Lightning Reflexes
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer always expects trouble, even in the most innocuous situations, allowing him to act quickly when
+      needed. The character adds twice his Agility Bonus when rolling for Initiative. If he has Unnatural Agility, add +1
+      to the multiplier before factoring the bonus into the Initiative roll.
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: zenSCzmq0xDaIxl2
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Master and Commander
+  ownership:
+    default: 3
+  sort: 0
+  system: {}
+  type: talent
+- _id: CWsrdyXS6nGpZHP7
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Master Orator
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer has learned the techniques required to influence large audiences. His Fellowship Tests and Fellowship-based
+      Skill Tests affect 10 times the normal number of targets.
+    cost: 0
+    prerequisites: Fellowship 30
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: 7PiDZOOb5tukcboi
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Melee Weapon Training (Primitive, Universal)
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer has trained extensively with hand-to-hand weaponry, becoming proficient in the use of virtually
+      all hand-held close combat arms. The Universal group includes the Chain, Shock, and Power groups, and allows proficient
+      use of all those weapon types. When a character attempts to use a weapon he does not have the correct Weapon Training
+      Talent for, he suffers a -20 penalty to any relevant Weapon Skill or Ballistic Skill Test.
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: hwuocGkVqmwmo6pe
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Nerves of Steel
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: Long years on the battlefield enable the Explorer to remain calm as fire impacts all around. He may re-roll failed
+      Willpower Tests to avoid or recover from Pinning.
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: zN1oCyMHtyJIq7IT
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Pistol Weapon Training (Universal)
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer has practiced with nearly every single-handed ranged weapon within the confines of the Imperium,
+      and no small number without. The Universal group confers proficiency with most pistol weapons, including the Bolt, Las,
+      Launcher, Melta, Plasma, and SP groups. When a character attempts to use a weapon he does not have the correct Weapon
+      Training Talent for, he suffers a -20 penalty to any relevant Weapon Skill or Ballistic Skill Test.
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: kGr6EL9iL3aRTSRc
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Precise Blow
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer's eye, hand, and weapon act seamlessly together, placing blows exactly where the attacker intends.
+      When making a called shot with a melee weapon, the Explorer does not incur the -20 penalty.
+    cost: 0
+    prerequisites: Weapon Skill 40, Sure Strike
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: ktcJOWlLh4MxbZFE
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/items/pistols/pistols_18.png
+  name: Quick Draw
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer has practised so frequently with his weapons that they practically leap into his hands, ready for
+      action. He can Ready as a Free Action when armed with a Pistol or Basic class ranged weapon, or a melee weapon that
+      can be wielded in one hand.
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: bDbCcNPjQDpIDasV
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Step Aside
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer can sway his body out of the path of an attack, causing it to pass through thin air. He may make
+      an additional Dodge once per Round. In effect this gives him a second Reaction that may only be used to Dodge, allowing
+      two Dodges in a Turn. However, he may still only attempt a single Dodge against one attack.
+    cost: 0
+    prerequisites: Agility 40, Dodge
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: mEzBgX9XBFHhUOTH
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Sure Strike
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer can direct his blows far better than most, giving him some control over where they land. When determining
+      hit location for a melee attack, he may use the dice as he rolled them or reverse them, choosing the location he prefers.
+    cost: 0
+    prerequisites: Weapon Skill 30
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: RPRLPPxvuBCkWIrj
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Swift Attack
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer's speed and martial ability allow him to land flurries of blows. As a Full Action, he may make two
+      melee attacks on his Turn. If he has the Two-Weapon Wielder Talent and is wielding two melee weapons, he gets the advantage
+      of Swift Attack with only one of the weapons, and a single attack with the other. If he has the Two-Weapon Wielder Talent
+      and is wielding a melee weapon in one hand and a gun in the other, he gets the advantage of Swift Attack with the melee
+      weapon and a single attack with the gun.
+    cost: 0
+    prerequisites: Weapon Skill 35
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: pcA7Qh8ktcjp1vkt
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Two Weapon Wielder (Ballistic, Melee)
+  ownership:
+    default: 3
+  sort: 0
+  system: {}
+  type: talent
+- _id: fJwdrxoEcDLNcFcs
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Void Tactician
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer's ability to conceptualise three-dimensional space gives him an advantage in starship combat, granting
+      a +10 bonus to Ballistic Skill Tests made to fire a starship's guns in combat.
+    cost: 0
+    prerequisites: Intelligence 35
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: xoxiIKSOp1Zv2aiw
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/items/buckets/pistol-las.png
+  name: Archeotech Laspistol
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    attackBonus: 0
+    attackType: ''
+    availability: Near Unique
+    backpack:
+      inBackpack: false
+    class: Pistol
+    clip:
+      max: 70
+      value: 70
+    craftsmanship: Common
+    damage: 1d10+3
+    damageType: Energy
+    description: 'Special: Accurate, Reliable'
+    effect: ''
+    equipped: true
+    inBackpack: false
+    modifications: []
+    penetration: '2'
+    range: '90'
+    rateOfFire:
+      burst: 3
+      full: 0
+      single: 1
+    reload: Full
+    source: Rogue Trader Core Rulebook, p.117
+    special:
+      accurate: true
+      reliable: true
+    target: ''
+    type: Las
+    weight: 4
+  type: weapon
+- _id: 5orBCtamFFQjebWd
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
+  name: Bestcraftsmanship Power Maul
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    attackBonus: 0
+    attackType: ''
+    availability: Common
+    backpack:
+      inBackpack: false
+    class: Melee
+    clip:
+      max: 0
+      value: 0
+    craftsmanship: Common
+    damage: ''
+    damageType: ''
+    description: ''
+    effect: ''
+    equipped: true
+    inBackpack: false
+    modifications: []
+    penetration: '2'
+    range: ''
+    rateOfFire:
+      burst: 0
+      full: 0
+      single: 1
+    reload: ''
+    source: The Frozen Reaches
+    special:
+      shocking: true
+    target: ''
+    type: ''
+    weight: 0
+  type: weapon
+- _id: XILrvVLULm7KPzat
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/items/buckets/armour-primitive.png
+  name: Concealed Carapace
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    armourPoints:
+      body: 0
+      head: 0
+      leftArm: 6
+      leftLeg: 0
+      rightArm: 6
+      rightLeg: 0
+    availability: Common
+    backpack:
+      inBackpack: false
+    craftsmanship: Common
+    description: ''
+    equipped: true
+    inBackpack: false
+    maxAgility: 0
+    overloadOn: 0
+    protectionRating: 0
+    source: The Frozen Reaches
+    type: Other
+    weight: 0
+  type: armour
+name: Lady Elizabeth Orleans
+prototypeToken:
+  actorLink: false
+  disposition: -1
+  height: 1
+  name: Lady Elizabeth Orleans
+  texture:
+    scaleX: 1.0
+    scaleY: 1.0
+    src: ''
+  width: 1
+system:
+  characteristics:
+    agility:
+      base: 42
+      unnatural: 0
+    ballisticSkill:
+      base: 40
+      unnatural: 0
+    fellowship:
+      base: 51
+      unnatural: 0
+    intelligence:
+      base: 54
+      unnatural: 0
+    perception:
+      base: 33
+      unnatural: 0
+    strength:
+      base: 33
+      unnatural: 0
+    toughness:
+      base: 40
+      unnatural: 0
+    weaponSkill:
+      base: 50
+      unnatural: 0
+    willpower:
+      base: 45
+      unnatural: 0
+  npc:
+    faction: ''
+    subfaction: ''
+    threatLevel: 0
+    type: troop
+  skills:
+    awareness:
+      advance: 0
+    charm:
+      advance: 20
+    command:
+      advance: 10
+    commerce:
+      advance: 20
+    commonLore:
+      advance: 0
+    deceive:
+      advance: 10
+    dodge:
+      advance: 10
+    navigate:
+      advance: 0
+    operate:
+      advance: 10
+    scrutiny:
+      advance: 10
+  wounds:
+    critical: 0
+    max: 24
+    rolled: true
+    value: 24
+type: npc
+---
+effects: []
+flags:
+  rt:
+    description: More information on Reynolds can be found on page 25.
+    movement: 3/6/9/18
+    rawGear: Micro-bead, void suit, blessed ship token, Damaris Levy uniform (dress, un-dress, working), amaser flask. Master
+      of Small Craft (ROGUE TRADER, page 72).
+    source: The Frozen Reaches
+img: ''
+items:
+- _id: OcqnNmz3qkBk6QVJ
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Air of Authority
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer was born to command, either motivating or terrifying those under his charge. On a successful Command
+      Test, the Explorer may affect a number of targets equal to 1d10 plus his Fellowship Bonus. This Talent has no effect
+      on hostile targets, and only affects NPCs.
+    cost: 0
+    prerequisites: Fellowship 30
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: QXQcHKD7VBtMdfH5
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Basic Weapon Training (Universal)
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer has received Basic Weapon Training in the Universal group of weapons, and can use them without penalty.
+      The Universal group includes the Bolt, Las, Launcher, Melta, Plasma, and SP groups. When a character attempts to use
+      a weapon he does not have the correct Weapon Training Talent for, he suffers a -20 penalty to any relevant Weapon Skill
+      or Ballistic Skill Test.
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: VgPs0ZeJBoFHGkVk
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Bulging Biceps
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: Whereas a weaker man would be sent flying when using powerful weapons, the Explorer's strong physique allows
+      him to remain standing. He can fire heavy weapons using Semi-Auto Burst or Full Auto Burst without bracing, and he does
+      not suffer the -30 penalty for failing to brace.
+    cost: 0
+    prerequisites: Strength 45
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: JyGxaFftW8DspLCd
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/items/armor/helmet_s10.png
+  name: Combat Master
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer's weapon seems to be everywhere at once, keeping many more opponents at bay in close combat than
+      even skilled fighters. Opponents gain no bonuses for outnumbering the character in hand-to-hand combat.
+    cost: 0
+    prerequisites: Weapon Skill 30
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: NYaLQcqQHTX4mHdI
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Die Hard
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: Through either willpower or sheer stubbornness, the Explorer refuses to cross into shadow. When he suffers from
+      blood loss, the character may roll twice to avoid death.
+    cost: 0
+    prerequisites: Willpower 40
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: XdNWDomDGgx63Gjt
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Hotshot Pilot
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer can pilot vehicles as if they were extensions of his own body. He may only select this Talent if
+      he has obtained one Pilot Skill as an Advanced Skill. The character treats all other Pilot skills as Basic Skills, and
+      receives a +10 bonus to the Pilot Skills he already possesses.
+    cost: 0
+    prerequisites: Any Pilot Skill, Agility 40
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: z31ZA87KkmAccEqv
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Iron Jaw
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer has taken blows from Orks and given back as good as he got. He can bounce back from most strikes
+      without ill effects. If ever Stunned, a successful Toughness Test allows him to ignore the effects.
+    cost: 0
+    prerequisites: Toughness 40
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: a9TrC6AwZNQ7m3PZ
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Melee Weapon Training (Universal)
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer has trained extensively with hand-to-hand weaponry, becoming proficient in the use of virtually
+      all hand-held close combat arms. The Universal group includes the Chain, Shock, and Power groups, and allows proficient
+      use of all those weapon types. When a character attempts to use a weapon he does not have the correct Weapon Training
+      Talent for, he suffers a -20 penalty to any relevant Weapon Skill or Ballistic Skill Test.
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: RBiWQcEBIhyEDekX
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Nerves of Steel
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: Long years on the battlefield enable the Explorer to remain calm as fire impacts all around. He may re-roll failed
+      Willpower Tests to avoid or recover from Pinning.
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: ONxAGUpYay7eFqDO
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Pistol Weapon Training (Universal)
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer has practiced with nearly every single-handed ranged weapon within the confines of the Imperium,
+      and no small number without. The Universal group confers proficiency with most pistol weapons, including the Bolt, Las,
+      Launcher, Melta, Plasma, and SP groups. When a character attempts to use a weapon he does not have the correct Weapon
+      Training Talent for, he suffers a -20 penalty to any relevant Weapon Skill or Ballistic Skill Test.
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: lUvwMfiwUhY7oXWt
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/items/buckets/basic-sp.png
+  name: Shotgun
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    attackBonus: 0
+    attackType: ''
+    availability: Common
+    backpack:
+      inBackpack: false
+    class: Basic
+    clip:
+      max: 2
+      value: 2
+    craftsmanship: Common
+    damage: 1d10+4
+    damageType: Impact
+    description: 'Special: Scatter'
+    effect: ''
+    equipped: true
+    inBackpack: false
+    modifications: []
+    penetration: '0'
+    range: '30'
+    rateOfFire:
+      burst: 0
+      full: 0
+      single: 1
+    reload: 2 Full
+    source: Rogue Trader Core Rulebook, p.120
+    special:
+      scatter: true
+    target: ''
+    type: SP
+    weight: 5.0
+  type: weapon
+- _id: IwBMDX8UukO65c35
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
+  name: Shock Truncheon
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    attackBonus: 0
+    attackType: ''
+    availability: Common
+    backpack:
+      inBackpack: false
+    class: Melee
+    clip:
+      max: 0
+      value: 0
+    craftsmanship: Common
+    damage: 1d10+4
+    damageType: Impact
+    description: ''
+    effect: ''
+    equipped: true
+    inBackpack: false
+    modifications: []
+    penetration: '0'
+    range: ''
+    rateOfFire:
+      burst: 0
+      full: 0
+      single: 1
+    reload: ''
+    source: The Frozen Reaches
+    special:
+      shocking: true
+    target: ''
+    type: ''
+    weight: 0
+  type: weapon
+- _id: PJvsCkMuV1sbNFQZ
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/items/buckets/armour-primitive.png
+  name: Damaris Levy Armour
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    armourPoints:
+      body: 0
+      head: 0
+      leftArm: 0
+      leftLeg: 0
+      rightArm: 0
+      rightLeg: 0
+    availability: Common
+    backpack:
+      inBackpack: false
+    craftsmanship: Common
+    description: ''
+    equipped: true
+    inBackpack: false
+    maxAgility: 0
+    overloadOn: 0
+    protectionRating: 0
+    source: The Frozen Reaches
+    type: Other
+    weight: 0
+  type: armour
+name: Commander Orran Reynolds
+prototypeToken:
+  actorLink: false
+  disposition: -1
+  height: 1
+  name: Commander Orran Reynolds
+  texture:
+    scaleX: 1.0
+    scaleY: 1.0
+    src: ''
+  width: 1
+system:
+  characteristics:
+    agility:
+      base: 34
+      unnatural: 0
+    ballisticSkill:
+      base: 52
+      unnatural: 0
+    fellowship:
+      base: 30
+      unnatural: 0
+    intelligence:
+      base: 32
+      unnatural: 0
+    perception:
+      base: 45
+      unnatural: 0
+    strength:
+      base: 44
+      unnatural: 0
+    toughness:
+      base: 55
+      unnatural: 0
+    weaponSkill:
+      base: 40
+      unnatural: 0
+    willpower:
+      base: 40
+      unnatural: 0
+  npc:
+    faction: ''
+    subfaction: ''
+    threatLevel: 0
+    type: troop
+  skills:
+    awareness:
+      advance: 0
+    command:
+      advance: 10
+    commonLore:
+      advance: 0
+    dodge:
+      advance: 10
+    forbiddenLore:
+      advance: 0
+    linguistics:
+      advance: 0
+    navigate:
+      advance: 0
+    operate:
+      advance: 0
+    scrutiny:
+      advance: 0
+  wounds:
+    critical: 0
+    max: 20
+    rolled: true
+    value: 20
+type: npc
+---
+effects: []
+flags:
+  rt:
+    description: More information on Shard can be found on page 26.
+    movement: 2/4/6/12
+    rawGear: ''
+    source: The Frozen Reaches
+img: ''
+items:
+- _id: wgdsqgeD0iWE2Aqp
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/items/swords/swords_01_b.png
+  name: Ambidextrous
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: 'This Talent does not represent true ambidexterity so much as sufficient training with both hands to make the
+      distinction moot. The Explorer can use either hand equally well for any task, and does not suffer the -20 penalty for
+      actions using his off hand. Special: When combined with a Two-Weapon Wielder Talent, the penalty for making attacks
+      with both weapons in the same Turn drops to -10.'
+    cost: 0
+    prerequisites: Agility 30
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: NBXQbswiW7bYPACt
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Armour of Contempt
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer's hatred of all the impure armours his soul against malign influence. Whenever the Explorer gains
+      Corruption Points, reduce the total by 1, to a minimum of 0. With a successful Willpower Test, taken as a Free Action,
+      he may ignore the effects of accumulated Corruption Points for 1 Round.
+    cost: 0
+    prerequisites: Willpower 40
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: S7w2a2rmY0Fqhn8g
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Basic Weapon Training (Universal)
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer has received Basic Weapon Training in the Universal group of weapons, and can use them without penalty.
+      The Universal group includes the Bolt, Las, Launcher, Melta, Plasma, and SP groups. When a character attempts to use
+      a weapon he does not have the correct Weapon Training Talent for, he suffers a -20 penalty to any relevant Weapon Skill
+      or Ballistic Skill Test.
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: tNa4GBdqPRc9RmJR
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Binary Chatter
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer has optimised his use of Techna-Lingua for controlling servitors. He receives a +10 bonus to any
+      attempt to communicate with servitors, and any vessel upon which he serves receives a +1 bonus to Crew Morale due to
+      increased servitor efficiency.
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: Wl1NlNAhPWE6qKgW
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Disturbing Voice
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer's voice has particularly baleful or menacing qualities, causing others to quail before it. He gains
+      +10 bonus to all Intimidate or Interrogation Tests when he employs this Talent, but suffers a -10 penalty to Fellowship
+      Tests when dealing with others in a non-threatening manner, such as animals, children, or the easily startled.
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: SmkradZxFMqXT2r7
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Electrical Succor
+  ownership:
+    default: 3
+  sort: 0
+  system: {}
+  type: talent
+- _id: rlwaXtQ2AhaMrETW
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Electro Graft Use
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: 'The Explorer may use his Electro Graft to access data ports and commune with machine spirits. This grants a
+      +10 bonus to Common Lore, Inquiry, or Tech-Use Tests whilst connected to a data port. (Errata v1.4: prerequisite corrected
+      to Mechanicus Implants.)'
+    cost: 0
+    prerequisites: Mechanicus Implants
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: y2m02dmNkhCciWF6
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Energy Cache
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer has learned to focus the power stored within his Potentia Coil with greater efficiency. He no longer
+      gains Fatigue from using Luminen Charge, Luminen Shock, and Luminen Blast.
+    cost: 0
+    prerequisites: Mechanicus Implants
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: 0ImrzK2YELAtNyI6
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Enhanced Bionic Frame
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer's already impressive bionic body structure is steadied by a gyro-array guided by a targeting system
+      linked to the machine-spirit. The Explorer gains the Auto-stabilised Trait.
+    cost: 0
+    prerequisites: Machinator Array
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: YDllHz7iOAbL86sA
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Feedback Screech
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer can haywire his vox synthesisers, causing a hideous blast of noise that shocks and distracts others.
+      All unprotected creatures within a 30-metre radius who have the ability to hear must make a Willpower Test or lose a
+      Half Action on their next Turn as they involuntarily react to the cacophonous shriek.
+    cost: 0
+    prerequisites: Mechanicus Implants
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: FY6cH9ik1gh7HpDf
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Foresight
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: Logic and analysis do for the Explorer what Tarot and the bones claim to do for the superstitious masses. By
+      careful consideration of all the possible consequences, and examination of all evidence and information, he can identify
+      the best path for success. By spending ten minutes studying or analysing a problem, he gains a +10 bonus to his next
+      Intelligence Test.
+    cost: 0
+    prerequisites: Intelligence 30
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: RO6BTl68UdZzpeQE
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Infused Knowledge
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer has been infused with a great wealth of lore and knowledge, either through punishing noetic techniques
+      or by arcane methods kept secret by the guardians of technology and knowledge. The Explorer treats all Common and Scholastic
+      Lore Skills as untrained Basic Skills. This Talent also provides a +10 bonus to any Tests involving Common or Scholastic
+      Lore for which he already possesses the Skill.
+    cost: 0
+    prerequisites: Intelligence 40
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: UeQRotXpIpidVxyt
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Iron Discipline
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: Iron sharpens iron. The Explorer does not coddle his crew, nor motivate them through kindness. His stalwart example
+      and stern leadership exhorts them with steel instead of spoils. If the character is visible to his followers, either
+      in person or via vox- or pict-caster, they may re-roll failed Willpower Tests made to resist Fear and Pinning. Iron
+      Discipline can affect a number of targets equal to the character's Willpower Bonus, who must be under his command. PCs
+      can benefit from Iron Discipline if the character with this Talent is the official group leader. If the Explorer is
+      leading a boarding action, he gains a +10 bonus to his Command Tests.
+    cost: 0
+    prerequisites: Willpower 30, Command
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: 6qvgWBEcprHhc2hz
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Logis Implant
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer may use analytical circuits to calculate trajectory possible outcomes lets him anticipate the movement
+      of his opponents. By using his Reaction for the Round, the character may make a Tech-Use Test to make use of this Talent.
+      He gains a +10 bonus to all Weapon Skill and Ballistic Skill Tests until the end of his next Turn. The Explorer must
+      pass a Toughness Test when he uses this ability or gain a level of Fatigue.
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: 3glaKJ2Q65XOlSBt
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Luminen Charge
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: 'The Explorer has mastered the union between his holy mechanical elements and his mortal flesh, allowing the
+      former to power the latter. With a successful Toughness Test the character may recharge or power machinery with his
+      internal coils. This requires one minute of meditation and ritual incantation. The difficulty of the Toughness Test
+      varies depending on the nature of the powered system: Ordinary (+10) Simple Power Cell, Illuminator; Challenging (+0)
+      Weapon Charge Pack, Data Slate, Bridge Terminal; Difficult (-10) Hotshot Charge Pack, Shuttle Electronics, Servo-Skull;
+      Hard (-20) Lascannon Charge Pack, Servitor, Bridge Hololith; Very Hard (-30) Ship''s Cogitator Core, Reactor Machine
+      Spirit, Xenos Tech. The Explorer must pass a Toughness Test when he uses this ability or gain a level of Fatigue. No
+      matter the power bestowed by the Omnissiah, some systems are either too large or too alien for this Talent—the GM will
+      be the final judge.'
+    cost: 0
+    prerequisites: Mechanicus Implants
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: txilUjDL7GLUy3Dz
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/psykana/lighting-eerie-2.jpg
+  name: Luminen Shock
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: 'The power of the Explorer''s Potentia Coil flows through a network of inductors within his flesh, allowing him
+      to channel this energy into his blows. In close combat, a successful Weapon Skill Test or Grapple delivers the shock.
+      The Luminen Shock inflicts 1d10+3 Energy Damage with the Shocking Quality. The Explorer must pass a Toughness Test when
+      using this ability or gain a level of Fatigue. Talent Use: Half Action Attack.'
+    cost: 0
+    prerequisites: Mechanicus Implants
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: el0qylsb5AaQD8Fj
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Machinator Array
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer has returned to the crèches of the Mechanicus so they can bring him closer to the most holy of forms,
+      adding an extensive machinator array to his existing augmetics. The Explorer's Strength and Toughness Characteristics
+      are increased by +10, and his Agility and Fellowship are reduced by -5. His mass increases to three times that of a
+      normal person, and he may no longer stay afloat or swim in water or similar liquids. The character may mount a single
+      pistol type or close combat weapon on any Ballistic Mechadendrites he possesses. He must still have the proper Talent
+      to use the mounted weapon.
+    cost: 0
+    prerequisites: Mechanicus Implants
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: x1EQhhFkJNNQFXiA
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Maglev Grace
+  ownership:
+    default: 3
+  sort: 0
+  system: {}
+  type: talent
+- _id: DAERMEnwo0IBWajq
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Master Engineer
+  ownership:
+    default: 3
+  sort: 0
+  system: {}
+  type: talent
+- _id: BEVULHEq4tpZtrbr
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Mechadendrite Use
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: Weapon Mechadendrites end in either ranged or close combat weapons, and have the supplemental support and strength
+      necessary for combat. The Explorer can use Weapon Mechadendrites without penalty.
+    cost: 0
+    prerequisites: Mechanicus Implants
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: CelCS6ZIXXFxiuSR
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Melee Weapon Training (Universal)
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer has trained extensively with hand-to-hand weaponry, becoming proficient in the use of virtually
+      all hand-held close combat arms. The Universal group includes the Chain, Shock, and Power groups, and allows proficient
+      use of all those weapon types. When a character attempts to use a weapon he does not have the correct Weapon Training
+      Talent for, he suffers a -20 penalty to any relevant Weapon Skill or Ballistic Skill Test.
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: nsQStqEzh8PszGTf
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Rite of Awe
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Omnissiah has augmetically blessed the Explorer's voice box, allowing him to recite infrasonic liturgies
+      that trigger awe and fear. All humans, regardless of their ability to hear, within a 50-metre radius feel a sense of
+      dread and take a -10 penalty to their next Skill Test. Characters may ignore these effects with a successful Willpower
+      Test. Whilst incanting the rite, the character may not talk or communicate with others. The rite requires two minutes
+      of litanies, and it is considered very bad form to break off the recitation before completion. Humans without auditory
+      implants cannot hear infrasonic sound, and though still affected, will not know the Explorer is speaking.
+    cost: 0
+    prerequisites: Explorator
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: w0IUP81p1YjklOC6
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Rite of Pure Thought
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer has replaced the creative half of his brain with sacred cranial circuitry. He can no longer feel
+      emotion, and instead embraces the crystal purity of logic, making him immune to Fear, Pinning and any effects that stem
+      from emotional disturbance. The GM will remove any Mental Disorders that no longer apply, and grant appropriate new
+      ones of equal severity. The character's fellow Explorers may find him somewhat cold, though other followers of the Omnissiah
+      will rejoice in his newfound freedom.
+    cost: 0
+    prerequisites: Explorator
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: HptPjNhXJFceHlit
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_21.png
+  name: Technical Knock
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: Either through the ease of long practice, or the proper ritual to appease a weapon's machine spirit, the Explorer
+      can clear stoppages in weapons. He may un-jam any gun as a Half Action, but may only perform this rite on one weapon
+      per Round. He must touch the weapon to enact this rite.
+    cost: 0
+    prerequisites: Intelligence 30
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: Ulju5klm0oDWR0CD
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: The Flesh is Weak
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer's body has undergone significant bionic replacement to the point where he is far more machine than
+      man. This Talent grants the Explorer the Machine Trait with Armour Points equal to the number of times this Talent has
+      been taken. The Explorer may purchase this Talent multiple times in accordance with his Career Advances. In this case,
+      note the number of times this Talent has been taken, such as The Flesh is Weak 3.
+    cost: 0
+    prerequisites: Mechanicus Implants
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: D95XEhA5UzUxixBL
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Mechanicus Implants
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    description: 'You have been judged a suitable vessel for the following implants:'
+    source: Rogue Trader Core Rulebook
+  type: trait
+- _id: zQ0xV1yXrIaDK6RA
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Machine 4
+  ownership:
+    default: 3
+  sort: 0
+  system: {}
+  type: trait
+name: Tech-Priest Hadron Shard
+prototypeToken:
+  actorLink: false
+  disposition: -1
+  height: 1
+  name: Tech-Priest Hadron Shard
+  texture:
+    scaleX: 1.0
+    scaleY: 1.0
+    src: ''
+  width: 1
+system:
+  characteristics:
+    agility:
+      base: 22
+      unnatural: 0
+    ballisticSkill:
+      base: 45
+      unnatural: 0
+    fellowship:
+      base: 31
+      unnatural: 0
+    intelligence:
+      base: 57
+      unnatural: 0
+    perception:
+      base: 26
+      unnatural: 0
+    strength:
+      base: 50
+      unnatural: 0
+    toughness:
+      base: 50
+      unnatural: 0
+    weaponSkill:
+      base: 40
+      unnatural: 0
+    willpower:
+      base: 49
+      unnatural: 0
+  npc:
+    faction: ''
+    subfaction: ''
+    threatLevel: 0
+    type: troop
+  skills:
+    awareness:
+      advance: 0
+    commonLore:
+      advance: 0
+    forbiddenLore:
+      advance: 20
+    linguistics:
+      advance: 0
+    medicae:
+      advance: 0
+    scholasticLore:
+      advance: 20
+    trade:
+      advance: 0
+  wounds:
+    critical: 0
+    max: 28
+    rolled: true
+    value: 28
+type: npc
+---
+effects: []
+flags:
+  rt:
+    description: More information on Thrace can be found on page 26.
+    movement: 3/6/9/18
+    rawGear: Micro-bead, respirator, chrono, uniforms (dress, un-dress, working), preysense goggles, hand-held auspex, magnoculars,
+      multi-key, manacles, pict recorder.
+    source: The Frozen Reaches
+img: ''
+items:
+- _id: vMhMycW9BNLV6X5k
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Air of Authority
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer was born to command, either motivating or terrifying those under his charge. On a successful Command
+      Test, the Explorer may affect a number of targets equal to 1d10 plus his Fellowship Bonus. This Talent has no effect
+      on hostile targets, and only affects NPCs.
+    cost: 0
+    prerequisites: Fellowship 30
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: 7r67LM1LWZFNj5jC
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Basic Weapon Training (Universal)
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer has received Basic Weapon Training in the Universal group of weapons, and can use them without penalty.
+      The Universal group includes the Bolt, Las, Launcher, Melta, Plasma, and SP groups. When a character attempts to use
+      a weapon he does not have the correct Weapon Training Talent for, he suffers a -20 penalty to any relevant Weapon Skill
+      or Ballistic Skill Test.
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: SJf0QIbW7b39qkqk
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Combat Sense
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer has the ability to consciously recognise the proddings of his subconscious as it reacts to his preternaturally
+      sharp senses, giving the character an edge that mere speed cannot match. He can use his Perception Bonus in place of
+      his Agility Bonus when rolling Initiative.
+    cost: 0
+    prerequisites: Perception 40
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: 9U2mfZmQGpU9wXU8
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Die Hard
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: Through either willpower or sheer stubbornness, the Explorer refuses to cross into shadow. When he suffers from
+      blood loss, the character may roll twice to avoid death.
+    cost: 0
+    prerequisites: Willpower 40
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: UpzcLyLJ5n3PqNE1
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/items/armor/gloves_s08.png
+  name: Disarm
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer can wrest weapons from an opponent's hands through practiced technique or brute force. If in close
+      combat, he may use a Full Action to disarm his foe by making an Opposed Weapon Skill Test. If he wins the Test, the
+      opponent drops his weapon at his feet. If the character scores three or more Degrees of Success, he takes his opponent's
+      weapon.
+    cost: 0
+    prerequisites: Agility 30
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: rI5fS6YAmiVWg4wQ
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Duty Unto Death
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer's will or faith can sustain him when his flesh is weak. He ignores the effects of injury, Fatigue,
+      and Stunning during combat. This Talent does not prevent the Damage, but allows the character to temporarily ignore
+      its effects for the duration of the combat. Death still affects him normally.
+    cost: 0
+    prerequisites: Willpower 45
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: EpDBVJzIRSsuRJbH
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/violet/p_21.PNG
+  name: Enemy (Underworld)
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: 'The opposite of Good Reputation, the Explorer is particularly despised by a specific social group or organisation.
+      He suffers an additional -10 penalty to Fellowship Tests when dealing with this group. This Talent is cumulative with
+      the Rival Talent, for a total -20 penalty. The GM and player may agree to award this Talent when appropriate to the
+      adventure or campaign. This Talent can be removed with an Elite Advance and the approval of the GM if the Explorer has
+      redeemed himself with the group in question. Talent Groups: Academics, Adepta Sororitas, Adeptus Arbites, Adeptus Mechanicus,
+      Administratum, Astropaths, Ecclesiarchy, Government, Imperial Guard, Imperial Navy, Inquisition, Military, Navigators,
+      Nobility, Rogue Trader, Underworld, Workers.'
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: dnpj3PiyjXTvcbKI
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Foresight
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: Logic and analysis do for the Explorer what Tarot and the bones claim to do for the superstitious masses. By
+      careful consideration of all the possible consequences, and examination of all evidence and information, he can identify
+      the best path for success. By spending ten minutes studying or analysing a problem, he gains a +10 bonus to his next
+      Intelligence Test.
+    cost: 0
+    prerequisites: Intelligence 30
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: oxoMhhAeoTcsIVPm
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Hatred (Criminals)
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: 'A group, organisation or race has wronged the Explorer in the past, fuelling this animosity. When fighting opponents
+      of that group in close combat, he gains a +10 bonus to all Weapon Skill Tests made against them. (Errata v1.4: The effects
+      of the Hatred Talent never stack — multiple Hatred Talents do not combine, and the bonus to Weapon Skill Tests can never
+      exceed +10.) Talent Groups: Criminals, Mutants, Pirates, Psykers, Rogue Trader (specific), Xenos (specific).'
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: wHm4XOC7l3dL3ccl
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Iron Discipline
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: Iron sharpens iron. The Explorer does not coddle his crew, nor motivate them through kindness. His stalwart example
+      and stern leadership exhorts them with steel instead of spoils. If the character is visible to his followers, either
+      in person or via vox- or pict-caster, they may re-roll failed Willpower Tests made to resist Fear and Pinning. Iron
+      Discipline can affect a number of targets equal to the character's Willpower Bonus, who must be under his command. PCs
+      can benefit from Iron Discipline if the character with this Talent is the official group leader. If the Explorer is
+      leading a boarding action, he gains a +10 bonus to his Command Tests.
+    cost: 0
+    prerequisites: Willpower 30, Command
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: aOdGHMtt05ZYxONY
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Melee Weapon Training (Universal)
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer has trained extensively with hand-to-hand weaponry, becoming proficient in the use of virtually
+      all hand-held close combat arms. The Universal group includes the Chain, Shock, and Power groups, and allows proficient
+      use of all those weapon types. When a character attempts to use a weapon he does not have the correct Weapon Training
+      Talent for, he suffers a -20 penalty to any relevant Weapon Skill or Ballistic Skill Test.
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: b1LIyrmDZG5XC2lM
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Mighty Shot
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer knows the weak points in every armour and material, and has the skill to place shots exactly where
+      they will do the most damage. He adds +2 to Damage with a ranged weapon.
+    cost: 0
+    prerequisites: Ballistic Skill 40
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: HtI3DjqX1rnBaCiB
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Rapid Reaction
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer has honed his reactions to a razor's edge, allowing him to act while most stand dumbfounded. When
+      surprised or ambushed, a successful Agility Test allows him to act normally.
+    cost: 0
+    prerequisites: Agility 40
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: essJ88PlRcOT0no8
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Rapid Reload
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The practice bays aboard the Explorer's vessel are like a second home, and he has reloaded countless magazines
+      or power cells for his weapons until he can replace them with his eyes closed. The Explorer halves all reload times,
+      rounding down. Thus, Half Action reloads become a Free Action, a Full Action reload becomes a Half Action, and so on.
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: q6pijhZdv3dNABO6
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Sprint
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer's fleet feet can propel him faster than his comrades. When taking the Full Move Action, the character
+      can move an extra number of metres equal to his Agility Bonus. When taking the Run Action, he may double his movement
+      for one Round. The Explorer gains one level of Fatigue if he uses this Talent two Turns in a row.
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: tA2G6f6hho1HIpCJ
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Takedown
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: As a Half Action the Explorer may declare that he is attempting a takedown before testing Weapon Skill. If he
+      hits and would have done at least 1 point of Damage, then ignore the Damage and the opponent must make a Toughness Test
+      or be stunned for 1 Round. When performing a Stun Action, the character does not suffer a -20 penalty to his Weapon
+      Skill.
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: DTKiUWxJaSuxafPb
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: True Grit
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer is able to shrug off wounds that would fell lesser men. Whenever he suffers Critical Damage, halve
+      the result (rounding up).
+    cost: 0
+    prerequisites: Toughness 40
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: FywiRqIIByCNj3Ea
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Total Recall
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: Mental conditioning or augmetics enable the Explorer to record and recall great amounts of information, effectively
+      granting him a perfect memory. He can automatically remember trivial facts or pieces of information that might feasibly
+      have picked up in the past. When dealing with more detailed, complex, or obscure facts, such as the deck plans of a
+      space hulk or a complex xeno pictograph, the GM may require an Intelligence Test.
+    cost: 0
+    prerequisites: Intelligence 30
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: dPlWowHHSjT4zJSC
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Unremarkable
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer has mastered the art of blending into any crowd by adopting its mannerisms. Attempts to notice the
+      character when amongst other people, or attempts to describe him or recall details, incur a -20 penalty.
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: iiosjYg6tQ5oaLKq
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Whispers
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: Such is the Explorer's reputation for having ears everywhere aboard the ship and a finely tuned network of invisible
+      informants that the crew no longer even bothers to keep secrets from him. The Explorer receives a +10 bonus to any Skill
+      Test for Investigation or the Interview special use of the Inquiry Skill.
+    cost: 0
+    prerequisites: Intelligence 40, Fellowship 30
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: u6514hlR1KTzI5hZ
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
+  name: Hand Cannon with Amputator Shells
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    attackBonus: 0
+    attackType: ''
+    availability: Common
+    backpack:
+      inBackpack: false
+    class: Basic
+    clip:
+      max: 8
+      value: 8
+    craftsmanship: Common
+    damage: 1d10+8
+    damageType: Impact
+    description: ''
+    effect: ''
+    equipped: true
+    inBackpack: false
+    modifications: []
+    penetration: '2'
+    range: '35'
+    rateOfFire:
+      burst: 0
+      full: 0
+      single: 1
+    reload: ''
+    source: The Frozen Reaches
+    special:
+      tearing: true
+    target: ''
+    type: ''
+    weight: 0
+  type: weapon
+- _id: Itd1ZEIpH1b897ts
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
+  name: Shock Maul
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    attackBonus: 0
+    attackType: ''
+    availability: Common
+    backpack:
+      inBackpack: false
+    class: Melee
+    clip:
+      max: 0
+      value: 0
+    craftsmanship: Common
+    damage: 1d10+3
+    damageType: Impact
+    description: ''
+    effect: ''
+    equipped: true
+    inBackpack: false
+    modifications: []
+    penetration: '0'
+    range: ''
+    rateOfFire:
+      burst: 0
+      full: 0
+      single: 1
+    reload: ''
+    source: The Frozen Reaches
+    special:
+      shocking: true
+    target: ''
+    type: ''
+    weight: 0
+  type: weapon
+- _id: lmAwtQlgBUeqHJjQ
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/items/buckets/armour-primitive.png
+  name: Enforcer Carapace
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    armourPoints:
+      body: 0
+      head: 0
+      leftArm: 0
+      leftLeg: 0
+      rightArm: 0
+      rightLeg: 0
+    availability: Common
+    backpack:
+      inBackpack: false
+    craftsmanship: Common
+    description: ''
+    equipped: true
+    inBackpack: false
+    maxAgility: 0
+    overloadOn: 0
+    protectionRating: 0
+    source: The Frozen Reaches
+    type: Other
+    weight: 0
+  type: armour
+name: Marshal Solaria Thrace
+prototypeToken:
+  actorLink: false
+  disposition: -1
+  height: 1
+  name: Marshal Solaria Thrace
+  texture:
+    scaleX: 1.0
+    scaleY: 1.0
+    src: ''
+  width: 1
+system:
+  characteristics:
+    agility:
+      base: 30
+      unnatural: 0
+    ballisticSkill:
+      base: 45
+      unnatural: 0
+    fellowship:
+      base: 41
+      unnatural: 0
+    intelligence:
+      base: 40
+      unnatural: 0
+    perception:
+      base: 47
+      unnatural: 0
+    strength:
+      base: 40
+      unnatural: 0
+    toughness:
+      base: 40
+      unnatural: 0
+    weaponSkill:
+      base: 45
+      unnatural: 0
+    willpower:
+      base: 46
+      unnatural: 0
+  npc:
+    faction: ''
+    subfaction: ''
+    threatLevel: 0
+    type: troop
+  skills:
+    awareness:
+      advance: 20
+    command:
+      advance: 10
+    commonLore:
+      advance: 0
+    dodge:
+      advance: 0
+    intimidate:
+      advance: 20
+    scholasticLore:
+      advance: 20
+    scrutiny:
+      advance: 10
+    survival:
+      advance: 0
+  wounds:
+    critical: 0
+    max: 19
+    rolled: true
+    value: 19
+type: npc
+---
+effects: []
+flags:
+  rt:
+    description: 'More information on Sasys can be found on page 26.
+
+
+      ## Stasys Profile'
+    movement: 4/8/12/24
+    rawGear: ''
+    source: The Frozen Reaches
+img: ''
+items:
+- _id: 6FIemFfxwtfzWPsP
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Heightened Senses (Sound)
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: Either genetics or augmetics have made the Explorer's sense of touch superior to others. He gains a +10 bonus
+      to any Tests specifically involving touch.
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: XmNUiIbB23wh0xeE
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Meditation
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer has mastered his body and its reactions by prayer to the Emperor, shutting down unnecessary functions
+      to refresh his body and mind. Success on a Willpower Test and 10 minutes without interruptions removes one level of
+      Fatigue.
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: 7dteWzVz5W1HV9Lu
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Pistol Weapon Training (Universal)
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer has practiced with nearly every single-handed ranged weapon within the confines of the Imperium,
+      and no small number without. The Universal group confers proficiency with most pistol weapons, including the Bolt, Las,
+      Launcher, Melta, Plasma, and SP groups. When a character attempts to use a weapon he does not have the correct Weapon
+      Training Talent for, he suffers a -20 penalty to any relevant Weapon Skill or Ballistic Skill Test.
+    cost: 0
+    prerequisites: ''
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: ABEyc5z09NwMYIPm
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Psy Rating 5
+  ownership:
+    default: 3
+  sort: 0
+  system: {}
+  type: talent
+- _id: JhwJ3gigJWP6Nj7g
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Rite of Sanctioning
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer has been brought before the Emperor and has received a miniscule fraction of His awesome strength,
+      making the character far more resistant to the predations of the Warp. Choose one result on the Psychic Phenomena chart
+      (other than Perils of the Warp). When rolling for Psychic Phenomena, the Explorer may substitute his trademark result
+      for the effect rolled on the table, so long as he does not roll Perils of the Warp.
+    cost: 0
+    prerequisites: Psy Rating, Special
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: gjeNDyRALIHurc4g
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/red/r_27.png
+  name: Strong Minded
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer's mind acts as a fortress against psychic attacks. He may re-roll failed Willpower Tests to resist
+      any Psychic Techniques that affect his mind. Psychic Techniques that have a physical effect, such as Telekinesis, are
+      unaffected by this Talent.
+    cost: 0
+    prerequisites: Willpower 30, Resistance (Psychic Techniques)
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: uYyIodhbnSweYW6u
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Warp Affinity
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer has a special connection to the warp, allowing him to occasionally sense and avoid its less desirable
+      effects as he channels its power. The character may not select this Talent if he has undergone the Rite of Sanctioning.
+      When rolling for Psychic Phenomenon, the Explorer may discard the die roll, suffer 1d5 Corruption Points, and then re-roll
+      with no modifiers.
+    cost: 0
+    prerequisites: Psy Rating, Special
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: VYFL4dzSe4bZ5Qk9
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Warp Conduit
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The sheer power of the Explorer's mind allows him to channel much more warp energy than his peers. When pushing,
+      he may add a +1 bonus to his Psy Rating and subtract -10 on any resultant Psychic Phenomenon rolls.
+    cost: 0
+    prerequisites: Psy Rating, Strong Minded, Willpower 50
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+name: Astropath Kevil Stasys
+prototypeToken:
+  actorLink: false
+  disposition: -1
+  height: 1
+  name: Astropath Kevil Stasys
+  texture:
+    scaleX: 1.0
+    scaleY: 1.0
+    src: ''
+  width: 1
+system:
+  characteristics:
+    agility:
+      base: 30
+      unnatural: 0
+    ballisticSkill:
+      base: 45
+      unnatural: 0
+    fellowship:
+      base: 41
+      unnatural: 0
+    intelligence:
+      base: 40
+      unnatural: 0
+    perception:
+      base: 47
+      unnatural: 0
+    strength:
+      base: 40
+      unnatural: 0
+    toughness:
+      base: 40
+      unnatural: 0
+    weaponSkill:
+      base: 45
+      unnatural: 0
+    willpower:
+      base: 46
+      unnatural: 0
+  npc:
+    faction: ''
+    subfaction: ''
+    threatLevel: 0
+    type: troop
+  skills:
+    awareness:
+      advance: 0
+    commonLore:
+      advance: 0
+    deceive:
+      advance: 0
+    dodge:
+      advance: 0
+    forbiddenLore:
+      advance: 0
+    linguistics:
+      advance: 0
+    psyniscience:
+      advance: 0
+    scholasticLore:
+      advance: 0
+    trade:
+      advance: 0
+  wounds:
+    critical: 0
+    max: 16
+    rolled: true
+    value: 16
+type: npc

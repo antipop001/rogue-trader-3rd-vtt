@@ -1,0 +1,2744 @@
+[
+  {
+    "name": "Inquisitor Silberthorne",
+    "slug": "inquisitor-silberthorne",
+    "faction": "",
+    "description": "",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 58,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 51,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 42,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 44,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 48,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 59,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 57,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 62,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 59,
+        "unnatural": 0
+      }
+    },
+    "wounds": 14,
+    "movement": "4/8/12/24",
+    "skills": [
+      [
+        "Awareness",
+        10
+      ],
+      [
+        "Barter",
+        0
+      ],
+      [
+        "Blather",
+        10
+      ],
+      [
+        "Charm",
+        20
+      ],
+      [
+        "Ciphers (Inquisition, Personal Codes)",
+        10
+      ],
+      [
+        "Climb",
+        0
+      ],
+      [
+        "Commerce",
+        0
+      ],
+      [
+        "Command",
+        10
+      ],
+      [
+        "Common Lore (Adeptus Arbites, Adeptus Astra Telepathica, Administratum, Imperial Creed, Imperial Navy, Imperium)",
+        10
+      ],
+      [
+        "Deceive",
+        20
+      ],
+      [
+        "Disguise",
+        0
+      ],
+      [
+        "Dodge",
+        10
+      ],
+      [
+        "Drive (Ground Vehicle, Skimmer)",
+        0
+      ],
+      [
+        "Forbidden Lore (Archeotech, Heresy, The Inquisition)",
+        20
+      ],
+      [
+        "Forbidden Lore (Psykers, Xenos)",
+        0
+      ],
+      [
+        "Inquiry",
+        20
+      ],
+      [
+        "Interrogation",
+        20
+      ],
+      [
+        "Literacy",
+        10
+      ],
+      [
+        "Logic",
+        20
+      ],
+      [
+        "Scholastic Lore (Archaic, Bureaucracy, Cryptology, Occult)",
+        10
+      ],
+      [
+        "Scrutiny (Per) (+20)",
+        0
+      ],
+      [
+        "Secret Tongue (Inquisition)",
+        20
+      ],
+      [
+        "Speak Language (High Gothic, Low Gothic)",
+        0
+      ],
+      [
+        "Swim",
+        0
+      ],
+      [
+        "Tech Use",
+        0
+      ]
+    ],
+    "talents": [
+      "Air of Authority",
+      "Armour of Contempt",
+      "Basic Weapon Training (Las, SP, Bolt, Plasma)",
+      "Chem Geld",
+      "Crack Shot",
+      "Die Hard",
+      "Exotic Weapon Training (Digital Weapons)",
+      "Fearless",
+      "Foresight",
+      "Hatred (Heretics)",
+      "Jaded",
+      "Light Sleeper",
+      "Melee Weapon Training (Power, Shock, Primitive)",
+      "Paranoia",
+      "Pistol Weapon Training (Universal)",
+      "Unremarkable"
+    ],
+    "traits": [
+      "None"
+    ],
+    "weapons_text": "Best Craftsmanship plasma pistol (Pistol; 30m; S/2/–; 1d10+6 E; Pen 6; Clip 10; Reload 3 Full; Overheat), Best Craftsmanship power sword (Melee; 1d10+9 E; Pen 5; Power Field, Balanced), digi-laser (Pistol; 3m; S/–/–; 1d10+3 E; Pen 7; Clip 1; Reload Full; Reliable)",
+    "armour_text": "Concealed mesh (3 Body, Arms, Legs)",
+    "gear_text": "Well-made clothes, reload for plasma pistol MRC APPENDIX # SHAS’O JA’VRA Commander Skyroar, named Shas’o Ja’Vra in her native Tau dialect, was born to be a soldier and fire is her blood. Belonging to the Fire caste was merely the beginning. Like every other member of the Tau warrior caste, her training in the martial skills of her people started shortly after her birth. Raised in constant conflict, she was drilled in weapons use, tactics, discipline, and command during every waking moment of her life. Although an excellent student, she was passed over for the position of Shas’ui by her instructors—some said because of her unwillingness to see the bigger picture, others claiming that she sought glory for herself rather than seeking to serve the Greater Good. Whether or not these allegations held a grain of truth, she bore them with the grace and patience expected of a soldier, showing no sign of turmoil within.",
+    "portrait_ref": null,
+    "ws_line": 2285,
+    "source_book": "roguetrader_twilightcrusade.pdf"
+  },
+  {
+    "name": "Commander Skyroar",
+    "slug": "commander-skyroar",
+    "faction": "",
+    "description": "",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 38,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 59,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 32,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 36,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 49,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 47,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 54,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 50,
+        "unnatural": 0
+      }
+    },
+    "wounds": 16,
+    "movement": "3/6/9/18",
+    "skills": [
+      [
+        "Awareness",
+        10
+      ],
+      [
+        "Ciphers (Tau Military)",
+        20
+      ],
+      [
+        "Climb",
+        0
+      ],
+      [
+        "Command",
+        20
+      ],
+      [
+        "Common Lore (Jericho Reach, Tau Empire)",
+        0
+      ],
+      [
+        "Concealment",
+        0
+      ],
+      [
+        "Dodge",
+        10
+      ],
+      [
+        "Drive (Skimmer)",
+        0
+      ],
+      [
+        "Intimidate",
+        10
+      ],
+      [
+        "Literacy",
+        0
+      ],
+      [
+        "Logic",
+        0
+      ],
+      [
+        "Medicae",
+        10
+      ],
+      [
+        "Pilot (Personal) (Ag) +10†",
+        0
+      ],
+      [
+        "Scholastic Lore (Tau War Doctrine) (Int) +20†",
+        0
+      ],
+      [
+        "Silent Move",
+        0
+      ],
+      [
+        "Speak Language (Low Gothic, Tau)",
+        10
+      ],
+      [
+        "Survival",
+        0
+      ],
+      [
+        "Swim",
+        0
+      ]
+    ],
+    "talents": [
+      "Basic Weapon Training (Universal)",
+      "Blessing of the Ethereals†",
+      "Bonding Ritual†",
+      "Combat Formation",
+      "Crack Shot",
+      "Deadeye Shot",
+      "Disciple of Mont’ka†",
+      "Duty Unto Death",
+      "Fire Caste Weapon Training†",
+      "Iron Discipline",
+      "Last Man Standing",
+      "Marksman",
+      "Melee Weapon Training (Primitive)",
+      "Mighty Shot",
+      "Nerves of Steel",
+      "Pistol Weapon Training (Universal)",
+      "Quick Draw",
+      "Rapid Reload",
+      "Sharpshooter",
+      "Supporting Fire NPC APPENDIX # CUSTOMISED XV9 HAZARD BATTLESUIT The XV9 Hazard Close Support Armour—the XV9 Hazard Battlesuit in shorthand—is one result of the Earth caste's research into large battlesuits. Though each XV9 is a considerable investment to construct",
+      "these battlesuits have proven their worth to many Fire caste Commanders time and time again. The XV9 is extremely adept at engaging foes at close range",
+      "searing them apart with incredibly potent armaments while using its photon casters and vectored retro-thrusters to stay just out of reach. Its larger size also provides its pilot with a greater degree of protection"
+    ],
+    "traits": [],
+    "weapons_text": "",
+    "armour_text": "Tau combat armour (6 All) **Total TB:** 3",
+    "gear_text": "",
+    "portrait_ref": null,
+    "ws_line": 2323,
+    "source_book": "roguetrader_twilightcrusade.pdf"
+  },
+  {
+    "name": "Vir Modren",
+    "slug": "vir-modren",
+    "faction": "",
+    "description": "House Modren was never a prosperous one, its Warrant of Trade little more than a footnote in a long list of minor warrants issued during the early stages of the Angevin Crusade. Alongside such luminaries as Haarlock, Winterscale, and Aquairre, the foundling house could do little to establish itself and was resigned to the fact it would always be a lesser power. Centuries later, little about House Modren had changed, their activities limited to short trading runs beyond the Maw and the occasional dalliance with the various xenos denizens of the Expanse. All this changed when a chance encounter with a heavily damaged pirate raider brought Vir Modren into contact with the Ruinous Powers.\n\nAt this time, Vir was a scion of his house. His father gave him command of a small flotilla of vessels and sent him to earn his right to the Modren Warrant. Bored by the tasks assigned him and irritated by his father's insistence that he prove his worth, the young Vir was eager for glory when his flag officer informed him of the pirate vessel. Vir's fleet swiftly defeated the heavily damaged raider and a party was sent aboard to claim the vessel and any cargo it may be carrying. Vir was toying with the idea of keeping the vessel and operating a side-line in piracy when the boarding party requested that he come aboard the raider. It appeared that the raider's crew were a cult of some kind, blasphemous symbols and profane altars scattered around the decks. Each of the raider's surviving crew members bore a plethora of ritual scars and many possessed the dark gifts of Chaos as mutations and minor wyrdling powers. Vir had them all put to the torch, but the raider's cargo deck held one last surprise for the young scion.\n\nWithin the sealed holds and locked vaults, Modren's men had discovered a number of hideous artefacts, relics of the Chaos powers. Several of the boarding party had died because of them, driven to suicide or berserk slaughter when they laid eyes upon them. Modren surveyed the carnage these simple idols and tomes had caused and knew that this was real power.\n\nExtracting data from the raider's central cogitator, Modren learned that this vessel was actually part of a larger force, tasked with delivering these relics to a rendezvous point not far from the mouth of the Koronus Passage, near a region of space known as the Screaming Vortex. Modren immediately formed up his fleet and moved to intercept them. Arriving at the rendezvous point, Modren saw the Chaos fleet was not much larger than his own and arrayed in poor formation. Clearly the renegades were not expecting any kind of trouble. Using the element of surprise, Modren's fleet swept down on them in a maelstrom of lance batteries, plasma fire, and vicious boarding actions. The action cost him many men and ships, but Modren secured victory and, more importantly, more of the relics the Chaos vessels were carrying.\n\nModren began plotting a course to return to his father's fleet, sure that the capture of these relics and the destruction of a Chaos fleet would easily earn him his inheritance. During the long journey, Modren and his seneschals pored over the captured relics, attempting to discern their true powers and how to access them. When the fleet's Astropath approached him, warning of dire portents he saw in the Warp and giving cryptic messages of a doom to come, Modren listened to everything he had to say and swore to no longer pursue his research. The Astropath was moved to another ship to convalesce and Modren resumed his work. The more about these relics Modren discovered the more he understood they should not be turned over to his father. Why did this man who had done nothing with the house warrant deserve the relics he had fought for? Modren decided that once he reached his father's fleet he would not simply turn the relics over like some simpering fool. Instead, he would claim their power for his own, and with them, bind the dynasty to his will.\n\nAs his fleet exited the Warp, the vessels spread into a wolf pack formation. Each vessel carried one of the heretical relics. He closed all vox channels and jammed all pict-casts, cutting his fleet off from any attempt from his father to bargain or plead for his life; then, the killing began. The remnants of Modren's fleet were all hardened killers, tempered in battle during their conflict with the Chaos reavers. Using the power of the relics and bold words, Modren had convinced even the most loyal captains in his fleet that his father's rule must come to an end for the dynasty to truly prosper.\n\nThe vessels moved swiftly and surely, crippling the other craft with pin-point lance blasts and finishing them off in brutal boarding actions, actions the Rogue Trader fleet was powerless to repulse as the invading men bore the terrible Chaos relics ahead of them. Modren led the assault to capture his father's flagship himself, storming the bridge on a tide of blood and steel. The reunion between father\n\nand son was lethal and final. The two struck at each other deadly blows, but Modren alone rose from the blood-soaked steel, his father's weapon still embedded in his chest—some whisper that it pierced his heart.\n\nAfter seizing control of his father's fleet and the house warrant, Modren retreated into the trackless depths of the Koronus Expanse. Concerned about the effect the relics were having on his crew and worried he did not truly understand the powers he was manipulating, he founded a domain deep within the far reaches of unexplored space. He drew about him a court of Warp-dabblers and seers, Hereteks and killers, aliens and mutants. Making occasional forays into darkest parts of the Koronus Expanse for supplies or research materials, Vir Modren has not been seen in person for decades, but his presence has been felt nevertheless. In this latest gambit, his forces have captured a Tau Ethereal, one of the species' enigmatic leaders, together with a sizeable haul of Tau technology and weapons. Once these resources have yielded up their secrets, his court will be one step closer to Modren's true goal. His heart hungers for conquests greater still, and the Koronus Expanse is a fertile place to begin a new empire that could threaten the Calixis Sector and beyond.",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 55,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 49,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 41,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 43,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 50,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 56,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 48,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 57,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 51,
+        "unnatural": 0
+      }
+    },
+    "wounds": 15,
+    "movement": "5/10/15/30",
+    "skills": [
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Barter",
+        10
+      ],
+      [
+        "Blather",
+        10
+      ],
+      [
+        "Carouse",
+        20
+      ],
+      [
+        "Charm",
+        0
+      ],
+      [
+        "Chem-Use",
+        0
+      ],
+      [
+        "Ciphers (Rogue Trader, Mercenary Cant, Underworld)",
+        0
+      ],
+      [
+        "Commerce",
+        20
+      ],
+      [
+        "Command",
+        0
+      ],
+      [
+        "Common Lore (Imperial Navy, Imperium)",
+        0
+      ],
+      [
+        "Common Lore (Koronus Expanse, Rogue Traders)",
+        10
+      ],
+      [
+        "Deceive",
+        10
+      ],
+      [
+        "Dodge",
+        0
+      ],
+      [
+        "Evaluate",
+        10
+      ],
+      [
+        "Forbidden Lore (Heresy, The Warp, Xenos)",
+        10
+      ],
+      [
+        "Gamble",
+        0
+      ],
+      [
+        "Literacy",
+        0
+      ],
+      [
+        "Navigation",
+        0
+      ],
+      [
+        "Pilot (Space Craft)",
+        0
+      ],
+      [
+        "Scholastic Lore (Heraldry, Imperial Warrants, Occult)",
+        0
+      ],
+      [
+        "Scrutiny",
+        10
+      ],
+      [
+        "Secret Tongue (Rogue Trader)",
+        20
+      ],
+      [
+        "Speak Language (Eldar, High Gothic, Low Gothic, Traders Cant)",
+        0
+      ],
+      [
+        "Tech Use",
+        0
+      ],
+      [
+        "Trade (Explorator)",
+        0
+      ],
+      [
+        "Trade (Voidfarer)",
+        0
+      ]
+    ],
+    "talents": [
+      "Basic Weapon Training (Universal)",
+      "Counter Attack",
+      "Crack Shot",
+      "Crippling Strike",
+      "Dark Soul",
+      "Decadence",
+      "Disarm",
+      "Exotic Weapon Training (Needle Pistol, Tau Weaponry)",
+      "Hard Bargain",
+      "Hip Shooting",
+      "Inspire Wrath",
+      "Jaded",
+      "Master &amp; Commander",
+      "Melee Weapon Training (Universal)",
+      "Nerves of Steel",
+      "Paranoia",
+      "Pistol Weapon Training (Universal)",
+      "Polyglot",
+      "Sure Strike",
+      "Swift Attack",
+      "Two Weapon Wielder (Ballistic, Melee)"
+    ],
+    "traits": [
+      "None"
+    ],
+    "weapons_text": "Best Craftsmanship officer's cutlass (Melee; 1d10+4 R; Pen 0; Shocking), Belasco duelling pistol (Pistol; 45m; S/-/-; 1d10+5 E; Pen 4; Clip 1; Reload Full; Accurate), needle pistol (Pistol; 30m; S/-/-; 1d10 R; Pen 0; Clip 6; Reload Full; Accurate, Toxic) # MAGOS FORCYZ Unlike his one-time brethren in the Adeptus Mechanicus, Magos Forcyz is a man consumed by his passions. Forcyz spent his education and much of his life on the Lathe Worlds, delving into the arcane mysteries of the Machine Cult with great vigour. His progress toward higher rank and induction into the deeper obscurities of the Adeptus was slow, however. Although diligent and attentive, Forcyz showed an almost wilful abundance of emotion.",
+    "armour_text": "Carapace chest plate and mesh cloak (6 Body; 4 Arms and Legs)",
+    "gear_text": "",
+    "portrait_ref": null,
+    "ws_line": 2414,
+    "source_book": "roguetrader_twilightcrusade.pdf"
+  },
+  {
+    "name": "Magos Forcyz",
+    "slug": "magos-forcyz",
+    "faction": "",
+    "description": "",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 47,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 39,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 49,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 58,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 29,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 60,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 44,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 52,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 18,
+        "unnatural": 0
+      }
+    },
+    "wounds": 22,
+    "movement": "2/4/6/12",
+    "skills": [
+      [
+        "Awareness",
+        20
+      ],
+      [
+        "Chem-Use",
+        10
+      ],
+      [
+        "Common Lore (Adeptus Mechanicus, Tech)",
+        20
+      ],
+      [
+        "Deceive",
+        10
+      ],
+      [
+        "Drive (All)",
+        0
+      ],
+      [
+        "Forbidden Lore (Adeptus Mechanicus, Heresy)",
+        20
+      ],
+      [
+        "Forbidden Lore (The Warp, Xenos)",
+        10
+      ],
+      [
+        "Forbidden Lore (Daemonology)",
+        0
+      ],
+      [
+        "Interrogation",
+        10
+      ],
+      [
+        "Intimidate",
+        20
+      ],
+      [
+        "Literacy",
+        20
+      ],
+      [
+        "Logic",
+        20
+      ],
+      [
+        "Medicae",
+        10
+      ],
+      [
+        "Pilot (All)",
+        0
+      ],
+      [
+        "Scholastic Lore (Archaic, Chymistry, Occult)",
+        20
+      ],
+      [
+        "Secret Tongue (Tech)",
+        20
+      ],
+      [
+        "Speak Language (Explorator Binary, Low Gothic, Techna-Lingua)",
+        20
+      ],
+      [
+        "Tech Use",
+        20
+      ],
+      [
+        "Trade (Armourer, Chymist)",
+        20
+      ]
+    ],
+    "talents": [
+      "Ambidextrous",
+      "Basic Weapon Training (Universal)",
+      "Binary Chatter",
+      "Chem Geld",
+      "Electrical Succour",
+      "Electro Graft Use",
+      "Energy Cache",
+      "Enhanced Bionic Frame",
+      "Fearless",
+      "Feedback Screech",
+      "Ferric Lure",
+      "Flame Weapon Training",
+      "Foresight",
+      "Gun Blessing",
+      "Infused Knowledge",
+      "Iron Jaw",
+      "Jaded",
+      "Last Man Standing",
+      "Logis Implant",
+      "Luminen Blast",
+      "Luminen Charge",
+      "Luminen Shock",
+      "Machinator Array",
+      "Master Chirugeon",
+      "Mechadendrite Use",
+      "Melee Weapon Training (Universal)",
+      "Nerves of Steel",
+      "Orthoproxy",
+      "Pistol Weapon Training (Universal)",
+      "Prosanguine",
+      "Rite of Awe",
+      "Rite of Fear",
+      "Rite of Pure Thought",
+      "The Flesh is Weak",
+      "Total Recall",
+      "True Grit"
+    ],
+    "traits": [
+      "Mechanicus Implants",
+      "Machine (4)"
+    ],
+    "weapons_text": "Best Craftsmanship inferno pistol (Pistol; 10m; 5/--/--; 2d10+8 E; Pen 13; Clip 3; Reload Full), omnissian axe (Melee; 2d10+8 E; Pen 6; Power Field; Unbalanced) Equipment: Two Best Craftsmanship bionic arms, Best Craftsmanship bionic respiratory system, good craftsmanship auger array, 2 ballistic mechandendrites, calculus logi upgrade, medicae mechadendrite, utility mechadendrite, 3 inferno pistol reloads NPC APPENDIX # FLEET MASTER SABINA ALSUNET At one point in her life, Fleet Master Sabina Alsunet had a promising career in the Imperial Navy. She came from good stock and her family's history and position ensured her acceptance into the prestigious naval academy at Hydraphur. She studied hard, showing a natural gift for command and graduated in the top five percent of her class. She should have earned a place in the naval elite, but it was not to be.",
+    "armour_text": "",
+    "gear_text": "",
+    "portrait_ref": "img-66.jpeg",
+    "ws_line": 2457,
+    "source_book": "roguetrader_twilightcrusade.pdf"
+  },
+  {
+    "name": "Fleet Master Alsunet",
+    "slug": "fleet-master-alsunet",
+    "faction": "",
+    "description": "",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 49,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 48,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 42,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 43,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 44,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 47,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 50,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 49,
+        "unnatural": 0
+      }
+    },
+    "wounds": 15,
+    "movement": "4/8/12/24",
+    "skills": [
+      [
+        "Awareness",
+        10
+      ],
+      [
+        "Carouse",
+        0
+      ],
+      [
+        "Charm",
+        0
+      ],
+      [
+        "Command",
+        20
+      ],
+      [
+        "Common Lore (Imperial Navy, Imperium, Koronus Expanse)",
+        10
+      ],
+      [
+        "Dodge",
+        10
+      ],
+      [
+        "Forbidden Lore (Pirates)",
+        0
+      ],
+      [
+        "Gamble",
+        0
+      ],
+      [
+        "Intimidate",
+        0
+      ],
+      [
+        "Literacy",
+        0
+      ],
+      [
+        "Navigation (Stellar)",
+        10
+      ],
+      [
+        "Pilot (Spacecraft)",
+        20
+      ],
+      [
+        "Scholastic Lore (Astromancy, Tactica Imperialis)",
+        10
+      ],
+      [
+        "Scholastic Lore (Navis Nobilite)",
+        0
+      ],
+      [
+        "Secret Tongue (Military, Underdecks)",
+        0
+      ],
+      [
+        "Speak Language (Low Gothic)",
+        0
+      ],
+      [
+        "Trade (Voidfarer)",
+        0
+      ]
+    ],
+    "talents": [
+      "Air of Authority",
+      "Basic Weapon Training (Universal)",
+      "Combat Sense",
+      "Counter Attack",
+      "Disarm",
+      "Duty Unto Death",
+      "Inspire Wrath",
+      "Into the Jaws of Hell",
+      "Iron Discipline",
+      "Master &amp; Commander",
+      "Melee Weapon Training (Universal)",
+      "Nerves of Steel",
+      "Pistol Weapon Training (Universal)",
+      "Quick Draw",
+      "Void Tactician"
+    ],
+    "traits": [
+      "None"
+    ],
+    "weapons_text": "Boltgun (Basic; 90m; S/2/4; 1d10+5 X; Pen 4; Clip 24; Reload Full; Tearing), Best Craftsmanship mono sword (Melee; 1d10+4 R; Pen 2; Balanced) **Equipment:** 2 boltgun reloads, Imperial Navy uniform, flask of Best Craftsmanship Amasec CAPTAIN MAKARA DE'SOTH Born in the crowded depths of a pilgrim vessel, Captain Makara De'Soth has always had a ship's deck beneath his feet. His parents were zealous adherents to the Imperial Creed, believing the Emperor watched their every move and judged their actions accordingly. As a result, Makara's first years were the gruelling and oft times severe life of a pilgrim, and sins—perceived or real—were met with harsh reprisals.",
+    "armour_text": "Flak coat (3 Body, Arms, and Legs) **Total TB:** 4",
+    "gear_text": "",
+    "portrait_ref": "img-66.jpeg",
+    "ws_line": 2502,
+    "source_book": "roguetrader_twilightcrusade.pdf"
+  },
+  {
+    "name": "Npc Appendix",
+    "slug": "npc-appendix",
+    "faction": "",
+    "description": "Following his victory, Makara set about establishing command of the slavers' ship. Many of the vital crew members were slaves themselves and eagerly joined Makara when he offered them their freedom. Of the remaining pilgrims, dozens tried to sway Makara to return to Maccabeus Quintus so they could continue their holy trek. The newly established ship's captain flushed them from the airlocks, watching their writhing bodies twist silently in the aching cold of the void.\n\nMakara and his crew headed out into the Koronus Expanse, away from the stifling rigidity of the Imperium. Here was a place where he could do as he pleased, where no man had command over him and no god judged him. He took to the pirate life with considerable ease, striking across the length and breadth of the Expanse, and, soon enough, profit began to drive his every endeavour. His path crossed Vir Modren's not long ago. The reclusive Rogue Trader, long thought dead, contacted the now flamboyant and capricious captain with an offer: work for him no questions asked, and Makara would double his current profits, guaranteed. So far, the arrangement has been a profitable one. Makara is content to work alongside the shadowy Rogue Trader for now. The increased profits he earns outweigh the discomfort he feels with some of Modren's courtiers, though he may leave Modren's service if this changes.",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 53,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 32,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 45,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 44,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 41,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 32,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 34,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 31,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 47,
+        "unnatural": 0
+      }
+    },
+    "wounds": 19,
+    "movement": "4/8/12/24",
+    "skills": [
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Carouse",
+        0
+      ],
+      [
+        "Command",
+        0
+      ],
+      [
+        "Concealment",
+        0
+      ],
+      [
+        "Dodge +10",
+        0
+      ],
+      [
+        "Intimidate +10",
+        0
+      ],
+      [
+        "Pilot (Voidship)",
+        0
+      ],
+      [
+        "Scrutiny",
+        0
+      ],
+      [
+        "Shadowing",
+        0
+      ],
+      [
+        "Silent Move",
+        0
+      ]
+    ],
+    "talents": [
+      "Air of Authority",
+      "Ambidextrous",
+      "Basic Weapon Training (Universal)",
+      "Battle Rage",
+      "Berserk Charge",
+      "Blade Master",
+      "Crushing Blow",
+      "Jaded",
+      "Melee Weapon Training (Universal)",
+      "Pistol Weapon Training (Universal)",
+      "Swift Attack",
+      "Two Weapon Wielder (Melee)",
+      "Wall of Steel"
+    ],
+    "traits": [
+      "None"
+    ],
+    "weapons_text": "Chainaxe (Melee; 1d10+8 R; Pen 2; Tearing), pit-axe (Melee; 1d10+5 R; Pen 0; Toxic), shot-raker gun (Basic; 20m; S/-/2; 2d10 I; Pen 1; Clip 10; Reload Full; Scatter) Equipment: Trophies, stolen command sceptre, torn fine coat, flask of rum # GARGOFF 'EADBREAKA Like all Orks, Gargoff Eadbreaka lives for war. The savage joy of battle, the primal thrill of victory, and the fierce glee of an enemy's death are the only things that matter, and his alliance with Rogue Trader Vir Modren grants him that in abundance—for now. Eadbreaka is an outcast from the notorious Undred Endre Teef he and his mob fled the vengeful clan following an unsuccessful coup and became Freebooterz of their own accord.",
+    "armour_text": "Blood-stained armoured uniform (4 All)",
+    "gear_text": "",
+    "portrait_ref": "img-67.jpeg",
+    "ws_line": 2545,
+    "source_book": "roguetrader_twilightcrusade.pdf"
+  },
+  {
+    "name": "Gargoff 'Eadbreaka",
+    "slug": "gargoff-eadbreaka",
+    "faction": "",
+    "description": "",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 61,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 19,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 52,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 49,
+        "unnatural": 8
+      },
+      "agility": {
+        "base": 33,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 28,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 31,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 20,
+        "unnatural": 0
+      }
+    },
+    "wounds": 19,
+    "movement": "3/6/9/18",
+    "skills": [
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Barter",
+        0
+      ],
+      [
+        "Carouse",
+        20
+      ],
+      [
+        "Command",
+        0
+      ],
+      [
+        "Common Lore (Koronus Expanse, Ork)",
+        0
+      ],
+      [
+        "Intimidate",
+        20
+      ],
+      [
+        "Navigation (Surface, Stellar)",
+        0
+      ],
+      [
+        "Survival",
+        20
+      ]
+    ],
+    "talents": [
+      "Basic Weapon Training (Primitive, SP)",
+      "Berserk Charge",
+      "Counter Attack",
+      "Crippling Strike",
+      "Crushing Blow",
+      "Dual Strike",
+      "Furious Assault",
+      "Hardy",
+      "Iron Jaw",
+      "Melee Weapon Training (Universal)",
+      "Pistol Weapon Training (Primitive, SP)",
+      "Resistance (Cold, Heat)",
+      "Speak Language (Low Gothic, Ork) (Int)",
+      "Swift Attack",
+      "True Grit",
+      "Two-Weapon Wielder (Melee)",
+      "Unarmed Master",
+      "Unarmed Warrior"
+    ],
+    "traits": [
+      "Brutal Charge",
+      "Mob Rule†",
+      "Sturdy",
+      "Unnatural Toughness (x2)"
+    ],
+    "weapons_text": "Choppa (Melee; 1d10+6 R; Pen 2; Tearing; Unbalanced), power klaw (Melee; 2d10+5 E, Pen 10; Power Field, Tearing, Unwieldy) Equipment: Grisly trophies, shiny medals, battered \"uniform\" †Mob Rule: Orks grow in confidence and brutality in the company of their own kind. For every additional ork within 10m, the Ork's Willpower is increased by +10 to resist the effects of Fear and Pinning.",
+    "armour_text": "Scavenged plates (5 Body, 3 Arms, Legs) Total TB: 8",
+    "gear_text": "",
+    "portrait_ref": "img-68.jpeg",
+    "ws_line": 2581,
+    "source_book": "roguetrader_twilightcrusade.pdf"
+  },
+  {
+    "name": "Alasiel Belanir",
+    "slug": "alasiel-belanir",
+    "faction": "",
+    "description": "Alasiel Belanir is an Eldar consumed by a single drive—revenge. His every waking moment is filled by thoughts of fiery retribution upon those that have wronged him. His very essence is now built upon the need to exact vengeance. But it was not always like this.\n\nAlasiel spent his youth, like many Eldar in the region, drifting between the stars aboard a long-forgotten Craftworld, one of the magnificent floating cities constructed by the Eldar to house their race, last trace of their once great culture. He learned about his race's hubris, the fall from grace into gross profligacy, and the truth of She Who Thirsts. He was taught how his people would deny the endless hunger of the Warp using spirit stones, and how, through rigid self-discipline, they could avoid the mistakes of the past. For a time, at least, he thought he knew how he would spend the rest of his days.\n\nLike a great many Eldar before him, Alasiel walked numerous paths, learning statecraft, art, and warfare. He bent his talents to mastering each of these disparate fields; he knew the risks in delving too deeply into any one path and strove to maintain balance in all he did. It was a battle he often struggled to win. Whenever he felt himself slipping towards one discipline or another, he would walk amongst the great wraithbone gardens at the heart of the craftworld. Alasiel felt a deep kinship with the infinity circuit and the souls bound therein. He often wondered what wisdom they could bestow on him if only he possessed the talents to stand near them.\n\nAs he grew, Alasiel found the struggle to remain balanced becoming more and more difficult. Even his meditations amongst the spirit stones of his ancestors could not help him. Afraid of becoming subsumed by one path or another, Alasiel, and a crew of like-minded Eldar, elected to leave the confines of the craftworld and travel the stars alone. Reasoning that travel and time away from his people would help give him perspective, he journeyed far and wide, visiting many strange and disparate worlds and encountering many species whom Alasiel dismissed as primitive and without merit. He returned to his craftworld occasionally to trade or swap stories with his old companions. The life of a wanderer suited him, and for a time he believed himself content.\n\nSeveral centuries ago, Alasiel and his crew returned to the craftworld after an extended voyage into the depths of the Koronus Expanse. He was in good spirits and looked forward to seeing familiar faces and spending time with his ancestors in the gardens. As his vessel exited the webway, he was confronted with a scene of carnage. The blackened structure of the shattered craftworld drifted aimlessly through the void, clouded in debris. As swiftly as he could, Alasiel drew nearer the wrecked craft, searching desperately for any sign of life. His search proved fruitless as he found no survivors. Finally he left his ship and entered the now-ruined place of his birth. Instead of a craftworld filled with life, Alasiel found only death. Ragged corpses populated the streets and the once graceful towers and domes lay shattered and broken. Amongst the dead, Alasiel saw people he recognised, people he had once called friends or kin. He also saw strange new bodies, lumpen and clumsy. They were shaped like Eldar but lacked all refinement and grace. Dressed in odd scraps of armour and possessing weapons of murderous power, there\n\nwas little doubt these must be the creatures responsible for the attack of his world. As he explored, a sudden, utter terror gripped Alasiel's heart and he began to run. His crew called after him, chasing him through the ruined streets until eventually they found him in the wraithbone gardens. Alasiel stood, motionless amidst the ruins of his once beloved gardens, surrounded by the remains of the devastated infinity circuit. Dozens of spirit stones lay strewn about him, many of them cracked and broken, their light forever snuffed. As Alasiel stood and wept, he realised that many, perhaps most, of the stones were missing; taken by the hateful creatures who had wrought this carnage. Slowly, the sorrow that consumed him was replaced by anger, a righteous fury that burned with the heat of a star.\n\nAlasiel and his crew left the remains of the craftworld much as they found it, an echoing tomb of former glories. Searching the debris around the wreck, he discovered more evidence of the race that performed this violation. He saw wrecks of vessels that looked familiar, ships belonging to a supremely primitive and unutterably arrogant race called humans. Knowing his prey, Alasiel set off in pursuit of his vengeance.\n\nHe tracked the attackers across the stars, catching their ships in twos and threes. Wherever he found them, he annihilated them utterly, leaving no trace of their existence. Throughout his campaign, he drew ever closer to his true prize: regaining the lost spirit stones of his craftworld.\n\nBy chance, he discovered the ships carrying the stones were due to meet up with a larger fleet just beyond the rim of the Screaming Vortex. He raced to intercept them, fearing they would be lost to him forever should they flee into that\n\nnightmarish realm, but he was too late. The vile perpetrators had not fled, but had instead been cut down by another force of humans. Knowing he was too weak to tackle the newcomers alone, he bided his time, shadowing them as they moved away through the Warp. He watched as days later they engaged a second, larger group of human vessels, eventually defeating and subsuming them. Thinking them nothing more than pirates with little knowledge of the treasures they carried, Alasiel approached the lead ships, offering to pay handsomely for the stones. He was greeted by a counter offer. A pompous and self-important insect calling itself Vir Modren offered to return the stones to Alasiel if he would help him better understand some relics he carried in his hold. With little alternative, Alasiel agreed. The relics turned out to be trophies of the Ruinous Powers, monstrous totems of the ancient evils dwelling beyond the veil. Realising what manner of creature he now dealt with, Alasiel feared for the safety of the stones, but was powerless to move to rescue them.\n\nSince that day, Alasiel has become trapped by the abhorrent Modren, bound to perform certain tasks for him in return for the continued safety of the stones. Resentment and hatred burn deep in the Eldar's heart, and given the chance, he will gladly murder Modren and his entire race for the unspeakable crimes they have perpetrated against his people. But for now, he must think of his ancestors and wait for his time to strike.",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 50,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 50,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 32,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 37,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 57,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 44,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 48,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 44,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 30,
+        "unnatural": 0
+      }
+    },
+    "wounds": 13,
+    "movement": "5/10/15/30",
+    "skills": [
+      [
+        "Acrobatics",
+        10
+      ],
+      [
+        "Awareness",
+        20
+      ],
+      [
+        "Climb",
+        0
+      ],
+      [
+        "Command",
+        10
+      ],
+      [
+        "Common Lore (Eldar, Koronus Expanse)",
+        20
+      ],
+      [
+        "Concealment",
+        0
+      ],
+      [
+        "Dodge",
+        20
+      ],
+      [
+        "Forbidden Lore (Pirates, Psykers, The Warp, Xenos)",
+        10
+      ],
+      [
+        "Literacy",
+        0
+      ],
+      [
+        "Logic",
+        0
+      ],
+      [
+        "Navigation (Stellar, Warp)",
+        20
+      ],
+      [
+        "Pilot (All)",
+        20
+      ],
+      [
+        "Scholastic Lore",
+        0
+      ],
+      [
+        "(Astromancy, Numerology, Occult)",
+        0
+      ],
+      [
+        "Scrutiny",
+        10
+      ],
+      [
+        "Shadowing",
+        0
+      ],
+      [
+        "Silent Move",
+        10
+      ],
+      [
+        "Speak Language (Eldar, Low Gothic)",
+        0
+      ],
+      [
+        "Trade (Voidfarer)",
+        0
+      ]
+    ],
+    "talents": [
+      "Ambidextrous",
+      "Assassin Strike",
+      "Basic Weapon Training (Las)",
+      "Blademaster",
+      "Catfall",
+      "Combat Master",
+      "Counter Attack",
+      "Deadeye Shot",
+      "Disarm",
+      "Exotic Weapon Training (Shuriken Catapult, Shuriken Pistol)",
+      "Hard Target",
+      "Heightened Senses (All)",
+      "Leap Up",
+      "Lightning Reflexes",
+      "Melee Weapon Training (Primitive, Power, Shock)",
+      "Pistol Weapon Training (Las)",
+      "Polyglot",
+      "Precise Blow",
+      "Quick Draw",
+      "Rapid Reaction",
+      "Sharpshooter",
+      "Step Aside",
+      "Sure Strike",
+      "Void Tactician",
+      "Wall of Steel"
+    ],
+    "traits": [
+      "Unnatural Agility (x2)"
+    ],
+    "weapons_text": "Best Craftsmanship Eldar power sword (melee; 1d10+7 E; Pen 8; Power Field, Balanced), Best Craftsmanship shuriken pistol (Pistol; 30m; S/3/5; 1d10+2 R; Pen 4; Clip 40; Reload 2 Full; Reliable) **Equipment:** 3 reloads for shuriken pistol, sombre clothing, xenos cloth bag containing three Eldar spirit stones # CAPTAIN ONTKEAN HESTERON Commanding the Navy cruiser *Valurous Charge* in the tumultuous Jericho Reach would be a challenge for any Imperial officer, but not Captain Ontkean Hesteron. A dedicated and successful Navy officer, Hesteron lived his life by a simple set of rules: adore the Emperor, defend the Imperium, and suffer not the enemies of Mankind to live. From the moment he first stepped aboard a Navy vessel he knew just who those enemies were, and how to deal with them. Since meeting Inquisitor Silberthorne, Hesteron's simple rules have been thrown into question.",
+    "armour_text": "Xenos mesh armour (5 Body, Head; 4 Arms, Legs)",
+    "gear_text": "",
+    "portrait_ref": "img-68.jpeg",
+    "ws_line": 2625,
+    "source_book": "roguetrader_twilightcrusade.pdf"
+  },
+  {
+    "name": "Captain Ontkean Hesteron",
+    "slug": "captain-ontkean-hesteron",
+    "faction": "",
+    "description": "Commanding the Navy cruiser *Valurous Charge* in the tumultuous Jericho Reach would be a challenge for any Imperial officer, but not Captain Ontkean Hesteron. A dedicated and successful Navy officer, Hesteron lived his life by a simple set of rules: adore the Emperor, defend the Imperium, and suffer not the enemies of Mankind to live. From the moment he first stepped aboard a Navy vessel he knew just who those enemies were, and how to deal with them. Since meeting Inquisitor Silberthorne, Hesteron's simple rules have been thrown into question.\n\nContacted by the Inquisitor, Hesteron agreed to transport him, his acolytes, and a number of other select persons, in secret, across the void to the Koronus Expanse. During the voyage, Hesteron discovered the true nature of his passengers. Alarmed and confused by what he found, only the direct intervention of the Inquisitor stopped Hesteron from alerting his crew and killing the entire Tau entourage. Instead, he has sworn to keep Silberthorne's secrets and aid the Inquisitor however he can.\n\nDespite his oaths to the Inquisitor, Hesteron is deeply unsettled by the presence of xenos on his ship, and Silberthorne's insistence it remain a secret. He doesn't like lying to his crew and would much prefer to operate openly. However, as a Navy captain he takes his oaths very seriously, and will not betray the trust Inquisitor Silberthorne has placed in him.",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 41,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 37,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 33,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 29,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 39,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 44,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 39,
+        "unnatural": 0
+      }
+    },
+    "wounds": 14,
+    "movement": "2/4/6/12",
+    "skills": [
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Barter",
+        0
+      ],
+      [
+        "Carouse",
+        0
+      ],
+      [
+        "Command",
+        10
+      ],
+      [
+        "Common Lore (Imperial Creed, Imperial Navy, Imperium Jericho Reach)",
+        0
+      ],
+      [
+        "Dodge",
+        0
+      ],
+      [
+        "Literacy",
+        0
+      ],
+      [
+        "Navigation (Stellar)",
+        10
+      ],
+      [
+        "Pilot (Space Craft)",
+        0
+      ],
+      [
+        "Scholastic Lore (Heraldry, Tactica Imperialis)",
+        0
+      ],
+      [
+        "Secret Tongue (Military)",
+        0
+      ],
+      [
+        "Speak Language (Low Gothic)",
+        0
+      ],
+      [
+        "Trade (Voidfarer)",
+        0
+      ]
+    ],
+    "talents": [
+      "Basic Weapon Training (Universal)",
+      "Die Hard",
+      "Iron Discipline",
+      "Master &amp; Commander",
+      "Melee Weapon Training (Universal)",
+      "Peer (Imperial Navy)",
+      "Pistol Weapon Training (Universal)"
+    ],
+    "traits": [
+      "None"
+    ],
+    "weapons_text": "Naval pistol (Pistol; 20m; S/3/–; 1d10+4 I; Pen 0; Clip 6; Reload Full; Tearing), officer's cutlass (Melee; 1d10+3 R; Pen 0; Shocking) **Equipment:** 4 reloads for naval pistol, ceremonial dress uniform, respirator MRC APPENDIX # DIAMNAS CHAR The battlefields of the Imperium breed two distinct types of soldier; survivors and corpses. Diamnas Char is a survivor. Thrown into battle across countless theatres of war, Diamnas excelled at stealth and recon work, his squad often being called on to perform intelligence gathering operations that would have spelled doom for any other unit.",
+    "armour_text": "Flak coat (3 Arms, Body, Legs) **Total TB:** 3",
+    "gear_text": "",
+    "portrait_ref": null,
+    "ws_line": 2653,
+    "source_book": "roguetrader_twilightcrusade.pdf"
+  },
+  {
+    "name": "Diamnas Char",
+    "slug": "diamnas-char",
+    "faction": "",
+    "description": "",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 41,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 45,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 42,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 38,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 31,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 39,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 29,
+        "unnatural": 0
+      }
+    },
+    "wounds": 16,
+    "movement": "3/6/9/18",
+    "skills": [
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Common Lore (Imperial Creed, Imperial Guard, Imperium)",
+        0
+      ],
+      [
+        "Concealment",
+        20
+      ],
+      [
+        "Demolition",
+        0
+      ],
+      [
+        "Dodge",
+        0
+      ],
+      [
+        "Drive (Ground Vehicle)",
+        0
+      ],
+      [
+        "Gamble",
+        10
+      ],
+      [
+        "Intimidate",
+        0
+      ],
+      [
+        "Medicare",
+        0
+      ],
+      [
+        "Scholastic Lore (Tactica Imperialis)",
+        0
+      ],
+      [
+        "Secret Tongue (Military)",
+        0
+      ],
+      [
+        "Shadowing",
+        20
+      ],
+      [
+        "Silent Move",
+        20
+      ],
+      [
+        "Speak Language (Low Gothic)",
+        0
+      ],
+      [
+        "Survival",
+        10
+      ],
+      [
+        "Tech-Use",
+        0
+      ],
+      [
+        "Tracking",
+        0
+      ]
+    ],
+    "talents": [
+      "Basic Weapon Training (Universal)",
+      "Blind Fighting",
+      "Die Hard",
+      "Double Team",
+      "Duty Unto Death",
+      "Light Sleeper",
+      "Marksman",
+      "Melee Weapon Training (Universal)",
+      "Nerves of Steel",
+      "Pistol Weapon Training (Universal)",
+      "Rapid Reaction",
+      "Rapid Reload",
+      "Talented (Concealment, Shadowing, Silent Move)",
+      "Two-Weapon Wielder (Ballistic)"
+    ],
+    "traits": [
+      "None"
+    ],
+    "weapons_text": "Chainsword (Melee; 1d10+6 R; Pen 2: Tearing; Balanced), 2 hellpistols (Pistol, 35m, S/2/–; 1d10+4 E; Pen 7; Clip 40; Reload 2 Full) **Equipment:** 4 reloads for hellpistols, dark clothing, lucky charm NPC APPENDIX # GULETTE ANHD A powerful telepath in the service of Inquisitor Silberthorne, Gulette Anhd should command fear and respect in everyone she meets, but the aging Psyker has taken a different path. Discovering her talents in her childhood, Gulette spent much of her early life enduring the painful instruction of the Adeptus Astra Telepathica. Lucky to be found both powerful and disciplined enough to live with her gifts, she was sent to train at the Scholastica Psykana, developing her powers to better serve humanity.",
+    "armour_text": "Storm Trooper Carapace (6 All) **Total TB:** 4",
+    "gear_text": "",
+    "portrait_ref": "img-70.jpeg",
+    "ws_line": 2690,
+    "source_book": "roguetrader_twilightcrusade.pdf"
+  },
+  {
+    "name": "Gulette Anhd",
+    "slug": "gulette-anhd",
+    "faction": "",
+    "description": "A powerful telepath in the service of Inquisitor Silberthorne, Gulette Anhd should command fear and respect in everyone she meets, but the aging Psyker has taken a different path. Discovering her talents in her childhood, Gulette spent much of her early life enduring the painful instruction of the Adeptus Astra Telepathica. Lucky to be found both powerful and disciplined enough to live with her gifts, she was sent to train at the Scholastica Psykana, developing her powers to better serve humanity.\n\nHer greatest strengths lay in the realm of telepathy. Mind reading and thought control came as easily to her as walking or breathing. Gulette had no desire to see out her days as a Primaris Psyker in the Imperial Guard, risking her life under alien suns. Nor did she relish the thought of joining the legion of Astropaths, blind and crippled by the torturous Soul Binding ritual. So she took care to never appear too strong or too weak, by turns hiding or exaggerating her abilities. As the end of her instruction approached she was taken for the Rite of Sanctioning, fear gnawing at her soul as to what her ultimate fate would be when time at the Scholastica ended. As the robed and hooded adepts descended upon her, their electro-needles and branding irons held before them, a whispered voice pierced the gloom of the chamber. The voice decreed that, following the rite, she was to be taken from the chamber and given over to the custody of an Inquisitor. A thrill of terror shot down her spine, all thoughts of the agony she was to endure at the hands of Scholastica adepts forgotten. An Inquisitor: one of those most feared and secretive of all the Imperium's dread agents. A thousand thoughts scrabbled in her head: did they know? Had they perceived\n\nher futile attempts at subterfuge? What would they do to her? How many further torments would she endure before the sinister Inquisitors snuffed out her life?\n\nWhen the blazing pain of the Sanctioning had faded, Gulette was led to a simple, unadorned room. Within was a seemingly normal, unassuming middle-aged man. He explained that the Scholastica instructors had informed him of her attempts to mask her powers; her skill at misdirection was good, but there was definitely room for improvement. He offered her the opportunity to increase her skills while hunting and tracking the enemies of Mankind. She could perform the Emperor's work not on the front lines or from within a sightless and ruined body, but from the shadows; a secret and deadly weapon in the hands of the Inquisition. Scarcely believing it to be possible, Gulette accepted the offer.\n\nSince that day, Gulette has worked with Inquisitor Silberthorne on countless missions. Her preferred tactic is to assume the role of a humble scribe or adept working for whatever false personality Silberthorne has conjured up. In her experience, many people immediately dismiss the lowly data-slate wielding scribe as insignificant. From this position of anonymity she is free to discretely scan the thoughts and intentions of all around her, secretly feeding her master the hidden knowledge she has gleaned. If necessary, she can become a deadly combatant, one capable of directly influencing the actions of others or boiling their brains within their skulls, though given her advancing years she has used these powers less and less.",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 24,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 22,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 29,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 31,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 37,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 48,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 19,
+        "unnatural": 0
+      }
+    },
+    "wounds": 11,
+    "movement": "3/6/9/18",
+    "skills": [
+      [
+        "Awareness",
+        10
+      ],
+      [
+        "Common Lore (Adeptus Astra Telepathica, Imperium)",
+        0
+      ],
+      [
+        "Deceive",
+        10
+      ],
+      [
+        "Forbidden Lore (The Inquisition, Psykers, The Warp)",
+        10
+      ],
+      [
+        "Invocation",
+        20
+      ],
+      [
+        "Literacy",
+        10
+      ],
+      [
+        "Psyniscience",
+        20
+      ],
+      [
+        "Speak Language (Low Gothic)",
+        0
+      ]
+    ],
+    "talents": [
+      "Improved Warp Sense",
+      "Light Sleeper",
+      "Meditation",
+      "Melee Weapon Training (Primitive)",
+      "Paranoia",
+      "Pistol Weapon Training (Las, SP)",
+      "Psy Rating 4",
+      "Psychic Discipline (Telepathy, Telekinesis)",
+      "Resistance (Psychic Techniques)",
+      "Rite of Sanctioning",
+      "Strong Minded",
+      "Warp Sense"
+    ],
+    "traits": [
+      "None"
+    ],
+    "weapons_text": "Laspistol (Pistol; 30m; S/-/-; 1d10+2 E; Pen 0; Clip 30, Reload Full; Reliable), mono knife (Melee; 1d5+3 R; Pen 2) Equipment: 1 reload for laspistol, adepts robes, Psykana Mercy Blade, Imperial Aquila (psy focus) Psychic Techniques: Short Range Telepathy, Mind's Eye Mind Link, Mind Probe, Mind Scan, Psychic Scream, Delude, Compel, Force Bolt, Telekinetic Weapon, Storm of Force THE WALL STREET JOURNAL 102 # SHAPER T'NAAK As Shaper to his kindred, T'naak enjoys a position of great spiritual and temporal power. He has led his kindred in the depths of the Expanse for many years and felt the many highs and lows of their mercenary lifestyle. Recently, however, the kindred has entered the employ of Vir Modren.",
+    "armour_text": "None Total TB: 2",
+    "gear_text": "",
+    "portrait_ref": null,
+    "ws_line": 2725,
+    "source_book": "roguetrader_twilightcrusade.pdf"
+  },
+  {
+    "name": "T'naak",
+    "slug": "t-naak",
+    "faction": "",
+    "description": "",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 50,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 42,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 39,
+        "unnatural": 6
+      },
+      "toughness": {
+        "base": 48,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 42,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 29,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 48,
+        "unnatural": 8
+      },
+      "willpower": {
+        "base": 36,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 22,
+        "unnatural": 0
+      }
+    },
+    "wounds": 15,
+    "movement": "4/8/12/24",
+    "skills": [
+      [
+        "Acrobatics",
+        0
+      ],
+      [
+        "Awareness",
+        10
+      ],
+      [
+        "Barter",
+        0
+      ],
+      [
+        "Climb",
+        10
+      ],
+      [
+        "Common Lore (Koronus Expanse Tau Empire)",
+        0
+      ],
+      [
+        "Concealment",
+        10
+      ],
+      [
+        "Dodge",
+        10
+      ],
+      [
+        "Navigation (Surface, Stellar)",
+        0
+      ],
+      [
+        "Shadowing",
+        10
+      ],
+      [
+        "Silent Move",
+        20
+      ],
+      [
+        "Speak Language (Kroot, Low Gothic)",
+        0
+      ],
+      [
+        "Survival",
+        10
+      ],
+      [
+        "Tracking",
+        0
+      ]
+    ],
+    "talents": [
+      "Assassin Strike",
+      "Blind Fighting",
+      "Counter Attack",
+      "Exotic Weapon Training (Kroot Rifle)",
+      "Furious Assault",
+      "Hard Target",
+      "Leap Up",
+      "Melee Weapon Training (Primitive)",
+      "Resistance (Fear)",
+      "Sure Strike",
+      "Swift Attack",
+      "Takedown"
+    ],
+    "traits": [
+      "Natural Weapons (Beak)",
+      "Unnatural Agility (x2)",
+      "Unnatural Perception (x2)"
+    ],
+    "weapons_text": "Kroot rifle (Basic/Melee; 110m; S/2/–; 1d10+5 E/1d10+6 R; Pen 1/0; Clip 6; Reload 2 Full; Balanced) **Equipment:** 1 reload for Kroot rifle, ritual carving knife, various bone charms and talismans # ORTHOS KORRELL Korrell has always been a vicious and ruthless man, leading his pirate crew across the length and breadth of the Expanse. His career could have ended, as many have, as a twisted wreck lost in the icy, emptiness of the void were it not for a chance encounter with a Chaos reaver vessel.",
+    "armour_text": "Thick Beast Furs (2 Arms, Body, Legs, Primitive)",
+    "gear_text": "",
+    "portrait_ref": "img-71.jpeg",
+    "ws_line": 2761,
+    "source_book": "roguetrader_twilightcrusade.pdf"
+  },
+  {
+    "name": "Orthos Korrell",
+    "slug": "orthos-korrell",
+    "faction": "",
+    "description": "",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 50,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 21,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 38,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 19,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 26,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 41,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 8,
+        "unnatural": 0
+      }
+    },
+    "wounds": 15,
+    "movement": "3/6/9/18",
+    "skills": [
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Barter",
+        0
+      ],
+      [
+        "Dodge",
+        10
+      ],
+      [
+        "Forbidden Lore (Ruinous Powers)",
+        0
+      ],
+      [
+        "Intimidate",
+        20
+      ],
+      [
+        "Speak Language (Low Gothic)",
+        0
+      ]
+    ],
+    "talents": [
+      "Basic Weapon Training (Bolt, SP)",
+      "Battle Rage",
+      "Berserk Charge",
+      "Chem Geld",
+      "Counter Attack",
+      "Crippling Strike",
+      "Crushing Blow",
+      "Fearless",
+      "Frenzy",
+      "Furious Assault",
+      "Hatred (Servants of the Imperium)",
+      "Iron Jaw",
+      "Last Man Standing",
+      "Lightning Attack",
+      "Resistance (Psychic Techniques)",
+      "Swift Attack",
+      "True Grit"
+    ],
+    "traits": [
+      "Brutal Charge"
+    ],
+    "weapons_text": "Chainaxe (Melee; 2d10+8 R; Pen 2; Tearing; Unwieldy) **Equipment:** Skull trophies, respirator MICA ARTILISK 108 # AUBERON SHEOL Ambition and a callous disregard for human life define Auberon Sheol. Until he entered into Vir Modren's service, Auberon was a senior Administratum adept in the exhaustively complex law courts of Solomon in the Calixis Sector.",
+    "armour_text": "Carapace chest plate and flak coat (6 Body, 3 Arms, Legs)",
+    "gear_text": "",
+    "portrait_ref": "img-71.jpeg",
+    "ws_line": 2799,
+    "source_book": "roguetrader_twilightcrusade.pdf"
+  },
+  {
+    "name": "Auberon Sheol",
+    "slug": "auberon-sheol",
+    "faction": "",
+    "description": "",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 27,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 29,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 31,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 42,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 39,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 26,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 44,
+        "unnatural": 0
+      }
+    },
+    "wounds": 11,
+    "movement": "3/6/9/18",
+    "skills": [
+      [
+        "Awareness",
+        10
+      ],
+      [
+        "Barter",
+        10
+      ],
+      [
+        "Blather",
+        0
+      ],
+      [
+        "Ciphers (Rogue Trader, Underworld)",
+        0
+      ],
+      [
+        "Commerce",
+        0
+      ],
+      [
+        "Common Lore (Administratum, Imperium, Koronus Expanse)",
+        0
+      ],
+      [
+        "Deceive",
+        20
+      ],
+      [
+        "Evaluate",
+        0
+      ],
+      [
+        "Inquiry",
+        10
+      ],
+      [
+        "Literacy",
+        20
+      ],
+      [
+        "Scholastic Lore (Archaic, Bureaucracy, Heraldry)",
+        0
+      ],
+      [
+        "Scrutiny",
+        20
+      ],
+      [
+        "Secret Tongue (Administratum, Rogue Trader)",
+        0
+      ],
+      [
+        "Sleight of Hand",
+        0
+      ],
+      [
+        "Speak Language (High Gothic, Low Gothic)",
+        0
+      ]
+    ],
+    "talents": [
+      "Pistol Weapon Training (Las)",
+      "Unremarkable",
+      "Whispers"
+    ],
+    "traits": [
+      "None"
+    ],
+    "weapons_text": "Compact laspistol (Pistol; 15m; S/-/-; 1d10+1 E; Pen 0; Clip 15; Reload Full, Reliable) Equipment: Smart clothes, data slate, scribe servo skull # INQUISITOR JYRANO KAISON Inquisitor Jyrano Kaison has been a staunch and unbreakable defender of humanity all his life. Raised in the Schola Progenium like countless other Imperial orphans before him, Jyrano was schooled endlessly about the glory of the Emperor, and his duty to lay down his life for him if it were required.",
+    "armour_text": "None Total TB: 3",
+    "gear_text": "",
+    "portrait_ref": "img-73.jpeg",
+    "ws_line": 2837,
+    "source_book": "roguetrader_twilightcrusade.pdf"
+  },
+  {
+    "name": "Jyrano Kaison",
+    "slug": "jyrano-kaison",
+    "faction": "",
+    "description": "",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 51,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 53,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 42,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 48,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 45,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 49,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 51,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 33,
+        "unnatural": 0
+      }
+    },
+    "wounds": 17,
+    "movement": "3/6/9/18",
+    "skills": [
+      [
+        "Awareness",
+        10
+      ],
+      [
+        "Command",
+        10
+      ],
+      [
+        "Common Lore (Imperial Creed, Imperial Guard, Imperium)",
+        20
+      ],
+      [
+        "Dodge",
+        10
+      ],
+      [
+        "Forbidden Lore (Daemonology, Heresy, The Inquisition, The Warp, Xenos)",
+        20
+      ],
+      [
+        "Inquiry",
+        0
+      ],
+      [
+        "Interrogation",
+        10
+      ],
+      [
+        "Literacy",
+        0
+      ],
+      [
+        "Scholastic Lore (Tactica Imperialis)",
+        0
+      ],
+      [
+        "Scrutiny",
+        10
+      ],
+      [
+        "Search",
+        0
+      ],
+      [
+        "Speak Language (High Gothic, Low Gothic)",
+        0
+      ],
+      [
+        "Survival",
+        0
+      ],
+      [
+        "Tech-Use",
+        0
+      ],
+      [
+        "Tracking",
+        10
+      ]
+    ],
+    "talents": [
+      "Air of Authority",
+      "Armour of Contempt",
+      "Basic Weapon Training (Universal)",
+      "Cleanse and Purify",
+      "Combat Sense",
+      "Fearless",
+      "Flame Weapon Training",
+      "Inspire Wrath",
+      "Pistol Weapon Training (Universal)",
+      "Prosanguine",
+      "True Grit"
+    ],
+    "traits": [
+      "None"
+    ],
+    "weapons_text": "Best Craftsmanship power sword, (Melee; 1d10+10 E; Pen 5; Power Field; Balanced), Flamer (Basic; 20m; S/--/--; 1d10+4 E; Pen 2; Clip 6; Reload 2 Full; Flame) **Equipment:** Auto-senses and preysense helmet upgrades, Auto-injector with 6 doses of stimm, 2 stun grenades, 2 frag grenades ## ETHEREAL AUN'ROH None can fathom the mind of an Ethereal, and Aun'Roh is no exception. Since his incarceration by Modren and despite the numerous atrocities committed on him by Magos Forcyz, Aun'Roh has remained calm and serene.",
+    "armour_text": "Light power armour (7 All)",
+    "gear_text": "",
+    "portrait_ref": "img-74.jpeg",
+    "ws_line": 2866,
+    "source_book": "roguetrader_twilightcrusade.pdf"
+  },
+  {
+    "name": "Aun'Roh",
+    "slug": "aun-roh",
+    "faction": "",
+    "description": "",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 29,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 32,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 27,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 16,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 57,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 52,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 60,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 58,
+        "unnatural": 0
+      }
+    },
+    "wounds": 9,
+    "movement": "1/2/3/6",
+    "skills": [
+      [
+        "Awareness",
+        20
+      ],
+      [
+        "Common Lore (Tau Empire) Charm",
+        20
+      ],
+      [
+        "Dodge",
+        0
+      ],
+      [
+        "Inquiry",
+        20
+      ],
+      [
+        "Logic",
+        10
+      ],
+      [
+        "Medicae",
+        0
+      ],
+      [
+        "Scrutiny",
+        20
+      ],
+      [
+        "Speak Language (Tau, Low Gothic)",
+        0
+      ],
+      [
+        "Tech-Use",
+        0
+      ]
+    ],
+    "talents": [
+      "Master Orator",
+      "Resistance (Fear, Psychic Techniques)"
+    ],
+    "traits": [
+      "None"
+    ],
+    "weapons_text": "None **Equipment:** None SUPPORTING CAST Besides the notable characters who play a major role in this adventure, several minor adversaries, allies, and various other functionaries take part in the plot of TWILIGHT CRUSADE.",
+    "armour_text": "None",
+    "gear_text": "",
+    "portrait_ref": "img-74.jpeg",
+    "ws_line": 2889,
+    "source_book": "roguetrader_twilightcrusade.pdf"
+  },
+  {
+    "name": "Modren’s Guard",
+    "slug": "modren-s-guard",
+    "faction": "",
+    "description": "",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 45,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 45,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 20,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 20,
+        "unnatural": 0
+      }
+    },
+    "wounds": 15,
+    "movement": "3/6/9/18",
+    "skills": [
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Command",
+        0
+      ],
+      [
+        "Common Lore (Koronus Expanse)",
+        0
+      ],
+      [
+        "Dodge",
+        10
+      ],
+      [
+        "Intimidate",
+        10
+      ],
+      [
+        "Medicae",
+        0
+      ]
+    ],
+    "talents": [
+      "Basic Weapon Training (Universal)",
+      "Guardian",
+      "Pistol Weapon Training (Universal)",
+      "Quick Draw",
+      "Melee Weapon Training (Universal)",
+      "Nerves of Steel"
+    ],
+    "traits": [
+      "None"
+    ],
+    "weapons_text": "Boltgun (Basic; 90m; S/2/4; 1d10+5 X; Pen 4; Clip 24; Reload Full; Tearing), chainsword (Melee; 1d10+6 R; Pen 2; Tearing), hand cannon (Pistol; 35m; S/-/-; 1d10+4 I; Pen 2; Clip 5; Reload 2 Full) Equipment: 2 reloads for boltgun, 1 reload for hand cannon, micro-bead, 2 frag grenades SERVITOR Magos Forcyz has constructed a number of gun and combat servitors to aid the defence of his laboratory and manufactorum complex. These servitors serve as Forcyz’s bodyguards and will fight fearlessly and to the death. GMs can use the rules for Battle Servitors on pages 374–375 of the ROGUE TRADER Core Rulebook.",
+    "armour_text": "Enforcer light carapace (5 All) Total TB: 4",
+    "gear_text": "",
+    "portrait_ref": "img-75.jpeg",
+    "ws_line": 2916,
+    "source_book": "roguetrader_twilightcrusade.pdf"
+  },
+  {
+    "name": "Heretek Disciple",
+    "slug": "heretek-disciple",
+    "faction": "",
+    "description": "",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 25,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 15,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 15,
+        "unnatural": 0
+      }
+    },
+    "wounds": 12,
+    "movement": "1/2/3/6",
+    "skills": [
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Chem-Use",
+        0
+      ],
+      [
+        "Common Lore (Adeptus Mechanicus)",
+        10
+      ],
+      [
+        "Forbidden Lore (Adeptus Mechanicus, Daemonology, The Warp, Xenos)",
+        0
+      ],
+      [
+        "Literacy",
+        10
+      ],
+      [
+        "Logic",
+        0
+      ],
+      [
+        "Medicae",
+        10
+      ],
+      [
+        "Scholastic Lore (Chymistry, Occult)",
+        0
+      ],
+      [
+        "Secret Tongue (Tech)",
+        0
+      ],
+      [
+        "Speak Language (Low Gothic, Techna-Lingua)",
+        0
+      ],
+      [
+        "Tech-Use",
+        10
+      ]
+    ],
+    "talents": [
+      "Ambidextrous",
+      "Autosanguine",
+      "Logis Implant",
+      "Mechadendrite Use (Utility)",
+      "Melee Weapon Training (Universal)",
+      "Pistol Weapon Training (Universal)"
+    ],
+    "traits": [
+      "Mechanicus Implants"
+    ],
+    "weapons_text": "Hellpistol (Pistol; 35m; S/2/-; 1d10+4 E; Pen 7; Clip 40; Reload 2 Full) Equipment: 1 reload for hellpistol, numerous bionics and implants, utility mechadendrite DAEMON ENGINE TRAITS A number of Magos Forcyz’s mechanical minions possess the following traits: DAEMON ENGINE (X) The creature is a hybrid of Daemon and machine, fusing technology and sorcery in a way that is both seamless and horrifying. The visual impact of these entities strikes fear into friend and foe alike and provides it additional protection against standard armaments. The Daemon Engine has the combined effects of From Beyond and The Stuff of Nightmares. Psychic Powers that affect the mind cannot control the Engine as it is bound to the sorcerous runes holding the construct together. In addition, Daemon Engines gain a Toughness Bonus equal to the number in parentheses, which, like the Daemonic Trait, can be negated by force weapons, holy/sanctified weapons, or Damage caused by psychic powers.",
+    "armour_text": "Flak Coat (3 Arms, Body, Legs) Total TB: 4",
+    "gear_text": "",
+    "portrait_ref": null,
+    "ws_line": 2937,
+    "source_book": "roguetrader_twilightcrusade.pdf"
+  },
+  {
+    "name": "Forgefiend",
+    "slug": "forgefiend",
+    "faction": "",
+    "description": "",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 65,
+        "unnatural": 1
+      },
+      "toughness": {
+        "base": 65,
+        "unnatural": 4
+      },
+      "agility": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 15,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 45,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 1,
+        "unnatural": 0
+      }
+    },
+    "wounds": 50,
+    "movement": "12/24/36/72 (6/12/18/36)",
+    "skills": [
+      [
+        "None",
+        0
+      ]
+    ],
+    "talents": [
+      "Ambidextrous",
+      "Frenzy",
+      "Swift Attack",
+      "Two-Weapon Wielder"
+    ],
+    "traits": [
+      "Auto-Stabilised",
+      "Daemonforge",
+      "Daemon Engine (8)",
+      "Fear (3)",
+      "Machine (12)",
+      "Size (Enormous)",
+      "Unnatural Strength (x2)"
+    ],
+    "weapons_text": "Two reaper autocannons (Heavy; 300m; S/4/–; 3d10+8 I; Pen 6; Clip –; Reload –; Reliable, Twin-Linked) or two assault cannons (Heavy; 150m; –/–/10; 2d10+10 I; Pen 6; Clip –; Reload –; Tearing) or two ectoplasma cannons (Heavy; S/3/–; 1d10+9 E; Pen 6; Clip –; Reload –; Maximal, Overheat, Warp Weapon), claws and fangs (Melee; 1d10+12 R; Pen 3, Tearing) # MAULERFIEND Brutal beasts of Daemonic energy trapped in a body of twisted steel and fuelled by hate alone, Maulerfiends are some of the most savage Daemon Engines in close-quarters combat. Whether they wield lasher tendrils or searing magma cutters, these ferocious monstrosities are extremely deadly foes.",
+    "armour_text": "Machine (12 All) **Total TB:** 14",
+    "gear_text": "",
+    "portrait_ref": "img-76.jpeg",
+    "ws_line": 2965,
+    "source_book": "roguetrader_twilightcrusade.pdf"
+  },
+  {
+    "name": "Maulerfiend",
+    "slug": "maulerfiend",
+    "faction": "",
+    "description": "",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 65,
+        "unnatural": 1
+      },
+      "toughness": {
+        "base": 65,
+        "unnatural": 4
+      },
+      "agility": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 15,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 45,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 1,
+        "unnatural": 0
+      }
+    },
+    "wounds": 50,
+    "movement": "",
+    "skills": [
+      [
+        "None",
+        0
+      ]
+    ],
+    "talents": [
+      "Ambidextrous",
+      "Frenzy",
+      "Swift Attack",
+      "Two-Weapon Wielder"
+    ],
+    "traits": [
+      "Auto-Stabilised",
+      "Daemonforge",
+      "Daemon Engine (6)",
+      "Fear (3)",
+      "Machine (12)",
+      "Overwhelming†",
+      "Size (Enormous)",
+      "Unnatural Strength (x2)"
+    ],
+    "weapons_text": "Clawed forelimbs and fanged maw (Melee; 2d10+12 R; Pen 5; Razor Sharp, Tearing, Natural Weapons), magma cutters (Melee; 2d10+14 E; Pen 24; Unwieldy) or lasher tendrils (Melee; 1d10+12 I; Pen 0; Flexible, Snare [3]) †**Overwhelming:** A Maulerfiend may attack a Grappled opponent with its magma cutters as a Reaction.",
+    "armour_text": "Machine (12 All) **Total TB:** 14",
+    "gear_text": "",
+    "portrait_ref": "img-76.jpeg",
+    "ws_line": 2987,
+    "source_book": "roguetrader_twilightcrusade.pdf"
+  },
+  {
+    "name": "Heldrake",
+    "slug": "heldrake",
+    "faction": "",
+    "description": "",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 48,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 33,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 55,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 62,
+        "unnatural": 1
+      },
+      "agility": {
+        "base": 38,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 31,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 47,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 42,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 2,
+        "unnatural": 0
+      }
+    },
+    "wounds": 48,
+    "movement": "",
+    "skills": [
+      [
+        "None",
+        0
+      ]
+    ],
+    "talents": [
+      "None"
+    ],
+    "traits": [
+      "Auto-Stabilised",
+      "Daemonforge",
+      "Daemon Engine (6)",
+      "Flyer (12)",
+      "Hoverer (6)",
+      "Machine (12)",
+      "Size (Enormous)"
+    ],
+    "weapons_text": "Hades autocannon (Heavy; 300m; 3/6/12; 3d10+8 I; Pen 6; Storm) or baleflamer (Heavy; 45m; S/–/–; 2d10+3 E; Pen 6; Flame), talons (Melee; 2d10+10 R; Pen 6; Tearing), wings (Melee; 3d10+5 R; Pen 6) NPC APPLICATIONS # TAU NPCS Full rules for characters and NPCs hailing from this xenos culture can be found in the TAU CHARACTER GUIDE supplement. For those who do not own that document, please use the following, simplified rules instead: ## TAU SKILLS A handful of NPCs in this appendix possess the following",
+    "armour_text": "Machine (12 All) **Total TB:** 12",
+    "gear_text": "",
+    "portrait_ref": "img-76.jpeg",
+    "ws_line": 3008,
+    "source_book": "roguetrader_twilightcrusade.pdf"
+  },
+  {
+    "name": "Fire Warrior",
+    "slug": "fire-warrior",
+    "faction": "",
+    "description": "",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 25,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 20,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 25,
+        "unnatural": 0
+      }
+    },
+    "wounds": 0,
+    "movement": "2/4/6/12 Grounds: 13 TOTAL TB: 3",
+    "skills": [
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Command",
+        0
+      ],
+      [
+        "Common Lore (Tau Empire) (Int)†",
+        0
+      ],
+      [
+        "Dodge",
+        0
+      ],
+      [
+        "Medicae",
+        0
+      ],
+      [
+        "Scholastic Lore (Tau War Doctrine) (Int) +10†",
+        0
+      ]
+    ],
+    "talents": [
+      "Bonding Ritual†",
+      "Combat Formation",
+      "Fire Caste Weapon Training†",
+      "Greater than the Sum†",
+      "Supporting Fire†"
+    ],
+    "traits": [
+      "For the Greater Good!†"
+    ],
+    "weapons_text": "Pulse rifle (Basic; 150m; S/2/4; 2d10+3 E; Pen 4; Clip 36; Reload Half; Gyro-Stabilised†) or rail rifle (Basic; 150m; S/-/-; 2d10+3 I; Pen 4; Clip 12; Reload Full; Felling†; Proven [3]†) **Equipment:** 2 reloads for primary weapon, micro-bead, 2 Tau photon grenades †See Tau sidebars, on pages 112-114 for details.",
+    "armour_text": "Tau combat armour (6 All)",
+    "gear_text": "",
+    "portrait_ref": null,
+    "ws_line": 3194,
+    "source_book": "roguetrader_twilightcrusade.pdf"
+  },
+  {
+    "name": "Fire Warrior Shas'ui",
+    "slug": "fire-warrior-shas-ui",
+    "faction": "",
+    "description": "",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 25,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "toughness": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "agility": {
+        "base": 25,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 30,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 37,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 35,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 40,
+        "unnatural": 0
+      }
+    },
+    "wounds": 0,
+    "movement": "2/4/6/12 Grounds: 15 TOTAL TB: 3",
+    "skills": [
+      [
+        "Awareness",
+        0
+      ],
+      [
+        "Command",
+        10
+      ],
+      [
+        "Common Lore (Tau Empire) (Int)†",
+        0
+      ],
+      [
+        "Dodge",
+        0
+      ],
+      [
+        "Medicae",
+        0
+      ],
+      [
+        "Pilot (Battlesuit) (Ag)†",
+        0
+      ],
+      [
+        "Scholastic Lore (Tau War Doctrine) (Int) +20†",
+        0
+      ]
+    ],
+    "talents": [
+      "Bonding Ritual†",
+      "Combat Formation",
+      "Fire Caste Weapon Training†",
+      "Greater than the Sum†",
+      "Strength Through Unity†",
+      "Supporting Fire†",
+      "Tactical Flexibility†"
+    ],
+    "traits": [
+      "Exemplar of Unity",
+      "For the Greater Good!"
+    ],
+    "weapons_text": "Pulse rifle (Basic; 150m; S/2/4; 2d10+3 E; Pen 4; Clip 36; Reload Half; Gyro-Stabilised†) or Pulse Carbine (Basic; 60m; S/-/3; 2d10+2 E; Pen 4; Clip: 24; Reload Half; Gyro-stabilised†) or Rail Rifle (Basic; 150m; S/-/-; 2d10+3 I; Pen 4; Clip 12; Reload Full; Felling†; Proven [3]†) **Equipment:** 2 reloads for primary weapon, micro-bead, 2 Tau photon grenades, target lock MRC APPLICATION # IMPORTANT VESSELS The following voidships play a prominent role throughout this adventure.",
+    "armour_text": "Tau Combat Armour. (6 All)",
+    "gear_text": "",
+    "portrait_ref": "img-81.jpeg",
+    "ws_line": 3213,
+    "source_book": "roguetrader_twilightcrusade.pdf"
+  }
+]

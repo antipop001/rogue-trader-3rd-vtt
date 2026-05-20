@@ -1,0 +1,1263 @@
+---
+effects: []
+flags:
+  rt:
+    description: ''
+    movement: 2/4/8/16
+    rawGear: ''
+    source: Shedding Light
+img: ''
+items:
+- _id: yDBQDoQyy1i9WJ0Y
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: None
+  ownership:
+    default: 3
+  sort: 0
+  system: {}
+  type: trait
+- _id: kMpy0YQXqANXIavi
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
+  name: Firearms
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    attackBonus: 0
+    attackType: ''
+    availability: Common
+    backpack:
+      inBackpack: false
+    class: Basic
+    clip:
+      max: 3
+      value: 3
+    craftsmanship: Common
+    damage: 1d10+4
+    damageType: Impact
+    description: ''
+    effect: ''
+    equipped: true
+    inBackpack: false
+    modifications: []
+    penetration: '0'
+    range: '40'
+    rateOfFire:
+      burst: 0
+      full: 0
+      single: 1
+    reload: 1 Full
+    source: Shedding Light
+    special:
+      overheats: true
+    target: ''
+    type: ''
+    weight: 0
+  type: weapon
+- _id: WeyaPmFDYcLn10MY
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
+  name: Claws And Bone-Spikes
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    attackBonus: 0
+    attackType: ''
+    availability: Common
+    backpack:
+      inBackpack: false
+    class: Melee
+    clip:
+      max: 0
+      value: 0
+    craftsmanship: Common
+    damage: 1d10+4
+    damageType: Rending
+    description: ''
+    effect: ''
+    equipped: true
+    inBackpack: false
+    modifications: []
+    penetration: '0'
+    range: ''
+    rateOfFire:
+      burst: 0
+      full: 0
+      single: 1
+    reload: ''
+    source: Shedding Light
+    special:
+      tearing: true
+    target: ''
+    type: ''
+    weight: 0
+  type: weapon
+- _id: 4vtb5zgepn6o9kEB
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/items/buckets/armour-primitive.png
+  name: Scavy Robes
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    armourPoints:
+      body: 0
+      head: 0
+      leftArm: 0
+      leftLeg: 0
+      rightArm: 0
+      rightLeg: 0
+    availability: Common
+    backpack:
+      inBackpack: false
+    craftsmanship: Common
+    description: ''
+    equipped: true
+    inBackpack: false
+    maxAgility: 0
+    overloadOn: 0
+    protectionRating: 0
+    source: Shedding Light
+    type: Other
+    weight: 0
+  type: armour
+name: Mutant Scavenger
+prototypeToken:
+  actorLink: false
+  disposition: -1
+  height: 1
+  name: Mutant Scavenger
+  texture:
+    scaleX: 1.0
+    scaleY: 1.0
+    src: ''
+  width: 1
+system:
+  characteristics:
+    agility:
+      base: 27
+      unnatural: 0
+    ballisticSkill:
+      base: 28
+      unnatural: 0
+    fellowship:
+      base: 17
+      unnatural: 0
+    intelligence:
+      base: 24
+      unnatural: 0
+    perception:
+      base: 41
+      unnatural: 0
+    strength:
+      base: 40
+      unnatural: 0
+    toughness:
+      base: 44
+      unnatural: 0
+    weaponSkill:
+      base: 28
+      unnatural: 0
+    willpower:
+      base: 25
+      unnatural: 0
+  npc:
+    faction: ''
+    subfaction: ''
+    threatLevel: 0
+    type: troop
+  skills:
+    awareness:
+      advance: 0
+    commerce:
+      advance: 10
+  wounds:
+    critical: 0
+    max: 8
+    rolled: true
+    value: 8
+type: npc
+---
+effects: []
+flags:
+  rt:
+    description: ''
+    movement: 8/16/24/48 (Hoverer)
+    rawGear: ''
+    source: Shedding Light
+img: systems/rogue-trader-3rd/images/npcs/sheddinglight/canoptek-wraith.png
+items:
+- _id: Jb7EQufl1w86WFzN
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/items/swords/swords_01_b.png
+  name: Ambidextrous
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: 'This Talent does not represent true ambidexterity so much as sufficient training with both hands to make the
+      distinction moot. The Explorer can use either hand equally well for any task, and does not suffer the -20 penalty for
+      actions using his off hand. Special: When combined with a Two-Weapon Wielder Talent, the penalty for making attacks
+      with both weapons in the same Turn drops to -10.'
+    cost: 0
+    prerequisites: Agility 30
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: DajnIv5rBrcCsMva
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Step Aside
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer can sway his body out of the path of an attack, causing it to pass through thin air. He may make
+      an additional Dodge once per Round. In effect this gives him a second Reaction that may only be used to Dodge, allowing
+      two Dodges in a Turn. However, he may still only attempt a single Dodge against one attack.
+    cost: 0
+    prerequisites: Agility 40, Dodge
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: wL2WFYPhdwgM0NGy
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Swift Attack
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer's speed and martial ability allow him to land flurries of blows. As a Full Action, he may make two
+      melee attacks on his Turn. If he has the Two-Weapon Wielder Talent and is wielding two melee weapons, he gets the advantage
+      of Swift Attack with only one of the weapons, and a single attack with the other. If he has the Two-Weapon Wielder Talent
+      and is wielding a melee weapon in one hand and a gun in the other, he gets the advantage of Swift Attack with the melee
+      weapon and a single attack with the gun.
+    cost: 0
+    prerequisites: Weapon Skill 35
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: o2OF2aLnRAPmkk3M
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Two-Weapon Wielder (Melee)
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: Years of training allow the Explorer to use a melee weapon in each hand when needed. When armed with two melee
+      weapons, he may spend a Full Action to attack with both. Both tests made to attack with the weapons suffer a -20 penalty.
+      He must possess Two-Weapon Wielder (Melee) and Two-Weapon Wielder (Ballistic) if he wishes to use a gun and hand weapon
+      together.
+    cost: 0
+    prerequisites: Weapon Skill 35, Agility 35
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: Cl83jGVEnoT06Rsg
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Dark Sight
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    description: A creature with this Trait sees normally even in areas of total darkness, and never takes a penalty for fighting
+      in areas of dim or no lighting.
+    source: Rogue Trader Core Rulebook
+  type: trait
+- _id: 8IWuRkCqab3gOO7z
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Fear (2)
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    description: A creature with this Trait has an unnerving appearance. The fear of it always has an associated rating (1–4)
+      to reflect just how awful the creature is to behold. The higher the Fear Rating the harder it is for others to resist
+      going insane from the encounter, as shown on the following chart.
+    source: Rogue Trader Core Rulebook
+  type: trait
+- _id: RmpDLLxbzOGiGf2p
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: From Beyond
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    description: The mind of a creature with this Trait is beyond the petty frailties and precarious sanity of a mortal mind.
+      It is immune to Fear, Pinning, Insanity Points, and psychic powers used to cloud, control, or delude its mind.
+    source: Rogue Trader Core Rulebook
+  type: trait
+- _id: KVf138nVZSI1yByG
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Hoverer (8)
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    description: 'Creatures with this Trait have a limited capability for flight, flying no higher than two metres. As with
+      the Flyer trait, this Trait always includes a number to indicate speed. For more details on flying, see Chapter VII:
+      Playing the Game.'
+    source: Rogue Trader Core Rulebook
+  type: trait
+- _id: a1rgVKfpDjRS4Cqt
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Phase
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    description: A creature with this Trait can transform its body into an insubstantial state, passing ghost-like through
+      solid objects or barriers of any sort. This Trait functions exactly like the Incorporeal Trait, except the creature
+      may become solid or insubstantial by spending a half action. Phase carries additional limitations. A creature in a phased
+      state cannot cross psychically charged barriers, holy wards, or energy fields designed to flux space or manipulate the
+      Warp such as a Gellar Field or a Void Shield.
+    source: Rogue Trader Core Rulebook
+  type: trait
+- _id: Ust219wJdozfAAQ3
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Phase Shifter
+  ownership:
+    default: 3
+  sort: 0
+  system: {}
+  type: trait
+- _id: qKZUYc4NH8Chejlo
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Machine (6)
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    description: A creature with the Machine Trait is fashioned from inorganic materials and is generally more rigorous than
+      fleshy folks. Machines do not
+    source: Rogue Trader Core Rulebook
+  type: trait
+- _id: MY62OUJ3CqUH3H7j
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Size (Hulking)
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    description: '**Trait Groups:** Miniscule, Puny, Scrawny, Hulking, Enormous, Massive Creatures come in one of seven different
+      size categories, as shown on the following chart. Size affects movement and how easy or hard it is to strike that creature
+      in combat. (When calculating a creatures movement, apply the size modifier first, and then other modifiers from other
+      Traits or talents. Base movement can never be reduced below 1.) For the purposes of comparison, a human is an average-sized
+      creature.'
+    source: Rogue Trader Core Rulebook
+  type: trait
+- _id: 1lgWgI8P4o7wR3br
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Regeneration (5)
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    description: Creatures with this Trait heal very quickly. Each round, at the start of its turn the creature tests Toughness
+      to remove 1 point of damage. It loses this Trait when slain.
+    source: Rogue Trader Core Rulebook
+  type: trait
+- _id: 1NfSMBiEGB6XOjgw
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Unnatural Strength (x2)
+  ownership:
+    default: 3
+  sort: 0
+  system: &id001
+    description: One or more of the creature's Characteristics is unnatural. Each time this Trait is gained, select a Characteristic,
+      and double its bonus. For example, a creature with a Strength of 41 normally has a 4 Strength Bonus. With this Trait,
+      its Strength Bonus increases to 8. The Trait may be gained multiple times. Each time, you may select a new Characteristic
+      or one chosen previously. Each time you apply this Trait to the same Characteristic, the Bonus multiplier increases
+      by 1. For example, one selection multiplies the Characteristic Bonus by ×2, two selections by ×3, and three selections
+      by ×4. Note this Trait does not modify the creature's movement. Movement is based on a creature's unmodified Agility
+      Bonus. During Opposed Characteristic Tests, on a success, the bonus multiplier is added to the degree of success.
+    source: Rogue Trader Core Rulebook
+  type: trait
+- _id: XFAm1yhBUvuj9QRa
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Unnatural Toughness (x2)
+  ownership:
+    default: 3
+  sort: 0
+  system: *id001
+  type: trait
+- _id: yBuQnaLUsq0oezpQ
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Unnatural Perception (x2)
+  ownership:
+    default: 3
+  sort: 0
+  system: *id001
+  type: trait
+- _id: 31s0VJEO9Dh3dAm5
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Wraithflight
+  ownership:
+    default: 3
+  sort: 0
+  system: {}
+  type: trait
+- _id: WU8sPrStKKvJ1LbO
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
+  name: Claws (1d10+8 R; Pen 2) and Whip Coils
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    attackBonus: 0
+    attackType: ''
+    availability: Common
+    backpack:
+      inBackpack: false
+    class: Melee
+    clip:
+      max: 0
+      value: 0
+    craftsmanship: Common
+    damage: 1d10+4
+    damageType: Impact
+    description: ''
+    effect: ''
+    equipped: true
+    inBackpack: false
+    modifications: []
+    penetration: '0'
+    range: ''
+    rateOfFire:
+      burst: 0
+      full: 0
+      single: 1
+    reload: ''
+    source: Shedding Light
+    special:
+      flexible: true
+      snare: true
+    target: ''
+    type: ''
+    weight: 0
+  type: weapon
+name: Canoptek Wraith
+prototypeToken:
+  actorLink: false
+  disposition: -1
+  height: 1
+  name: Canoptek Wraith
+  texture:
+    scaleX: 1.2
+    scaleY: 1.2
+    src: systems/rogue-trader-3rd/images/npcs/sheddinglight/canoptek-wraith.png
+  width: 1
+system:
+  characteristics:
+    agility:
+      base: 45
+      unnatural: 8
+    ballisticSkill:
+      base: 35
+      unnatural: 0
+    fellowship:
+      base: 1
+      unnatural: 0
+    intelligence:
+      base: 20
+      unnatural: 0
+    perception:
+      base: 45
+      unnatural: 0
+    strength:
+      base: 45
+      unnatural: 8
+    toughness:
+      base: 45
+      unnatural: 8
+    weaponSkill:
+      base: 45
+      unnatural: 0
+    willpower:
+      base: 45
+      unnatural: 0
+  npc:
+    faction: ''
+    subfaction: ''
+    threatLevel: 0
+    type: troop
+  skills:
+    dodge:
+      advance: 0
+    stealth:
+      advance: 10
+    techUse:
+      advance: 20
+  wounds:
+    critical: 0
+    max: 20
+    rolled: true
+    value: 20
+type: npc
+---
+effects: []
+flags:
+  rt:
+    description: ''
+    movement: 3/6/9/18
+    rawGear: ''
+    source: Shedding Light
+img: systems/rogue-trader-3rd/images/npcs/sheddinglight/cryptek.png
+items:
+- _id: yleMeQUs8ydXmkfv
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/psykana/enchant-sky-2.jpg
+  name: Lightning Attack
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer's speed with weapons is legendary, allowing him to launch flurries of attacks. As a Full Action,
+      the character may make three melee attacks on his Turn. The effects of this Talent replace those of Swift Attack rather
+      than adding to them. The use of Lightning Attack may not be combined with Dual Strike. If the Explorer has the Two-Weapon
+      Wielder Talent and is wielding two melee weapons, he gets the advantage of Lightning Attack with only one of the weapons,
+      and a single attack with the other. If he has the Two-Weapon Wielder Talent and is wielding a melee weapon in one hand
+      and a gun in the other, he gets the advantage of Lightning Attack with the melee weapon and a single attack with the
+      gun.
+    cost: 0
+    prerequisites: Swift Attack
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: RDndTXZI1ejxRry8
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Machine (6)
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    description: A creature with the Machine Trait is fashioned from inorganic materials and is generally more rigorous than
+      fleshy folks. Machines do not
+    source: Rogue Trader Core Rulebook
+  type: trait
+- _id: J1LgBoy8qAv93F6B
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Regeneration 5
+  ownership:
+    default: 3
+  sort: 0
+  system: {}
+  type: trait
+- _id: MFccuwegdjpb21D7
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Unnatural Toughness (x2)
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    description: One or more of the creature's Characteristics is unnatural. Each time this Trait is gained, select a Characteristic,
+      and double its bonus. For example, a creature with a Strength of 41 normally has a 4 Strength Bonus. With this Trait,
+      its Strength Bonus increases to 8. The Trait may be gained multiple times. Each time, you may select a new Characteristic
+      or one chosen previously. Each time you apply this Trait to the same Characteristic, the Bonus multiplier increases
+      by 1. For example, one selection multiplies the Characteristic Bonus by ×2, two selections by ×3, and three selections
+      by ×4. Note this Trait does not modify the creature's movement. Movement is based on a creature's unmodified Agility
+      Bonus. During Opposed Characteristic Tests, on a success, the bonus multiplier is added to the degree of success.
+    source: Rogue Trader Core Rulebook
+  type: trait
+- _id: ITnyORU1VjLtYvhy
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
+  name: Needle Fingers
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    attackBonus: 0
+    attackType: ''
+    availability: Common
+    backpack:
+      inBackpack: false
+    class: Melee
+    clip:
+      max: 0
+      value: 0
+    craftsmanship: Common
+    damage: 1d10+3
+    damageType: Rending
+    description: ''
+    effect: ''
+    equipped: true
+    inBackpack: false
+    modifications: []
+    penetration: '5'
+    range: ''
+    rateOfFire:
+      burst: 0
+      full: 0
+      single: 1
+    reload: ''
+    source: Shedding Light
+    special:
+      toxic: true
+    target: ''
+    type: ''
+    weight: 0
+  type: weapon
+name: Cryptek
+prototypeToken:
+  actorLink: false
+  disposition: -1
+  height: 1
+  name: Cryptek
+  texture:
+    scaleX: 1.0
+    scaleY: 1.0
+    src: systems/rogue-trader-3rd/images/npcs/sheddinglight/cryptek.png
+  width: 1
+system:
+  characteristics:
+    agility:
+      base: 45
+      unnatural: 0
+    ballisticSkill:
+      base: 31
+      unnatural: 0
+    fellowship:
+      base: 20
+      unnatural: 0
+    intelligence:
+      base: 65
+      unnatural: 0
+    perception:
+      base: 45
+      unnatural: 0
+    strength:
+      base: 35
+      unnatural: 0
+    toughness:
+      base: 35
+      unnatural: 6
+    weaponSkill:
+      base: 32
+      unnatural: 0
+    willpower:
+      base: 40
+      unnatural: 0
+  npc:
+    faction: ''
+    subfaction: ''
+    threatLevel: 0
+    type: troop
+  skills:
+    awareness:
+      advance: 0
+    techUse:
+      advance: 20
+  wounds:
+    critical: 0
+    max: 20
+    rolled: true
+    value: 20
+type: npc
+---
+effects: []
+flags:
+  rt:
+    description: ''
+    movement: 4/8/16/32
+    rawGear: ''
+    source: Shedding Light
+img: systems/rogue-trader-3rd/images/npcs/sheddinglight/scarab-swarm.png
+items:
+- _id: pesvwoUusEUho3XX
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Repair
+  ownership:
+    default: 3
+  sort: 0
+  system: {}
+  type: talent
+- _id: djkAkMBOGmC6Ipf4
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Swift Attack
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: The Explorer's speed and martial ability allow him to land flurries of blows. As a Full Action, he may make two
+      melee attacks on his Turn. If he has the Two-Weapon Wielder Talent and is wielding two melee weapons, he gets the advantage
+      of Swift Attack with only one of the weapons, and a single attack with the other. If he has the Two-Weapon Wielder Talent
+      and is wielding a melee weapon in one hand and a gun in the other, he gets the advantage of Swift Attack with the melee
+      weapon and a single attack with the gun.
+    cost: 0
+    prerequisites: Weapon Skill 35
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: MzhwoyKJnSeAE6vC
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Hoverer (4)
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    description: 'Creatures with this Trait have a limited capability for flight, flying no higher than two metres. As with
+      the Flyer trait, this Trait always includes a number to indicate speed. For more details on flying, see Chapter VII:
+      Playing the Game.'
+    source: Rogue Trader Core Rulebook
+  type: trait
+- _id: 5ls8hMlpCjMT3JI1
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Size (Puny)
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    description: '**Trait Groups:** Miniscule, Puny, Scrawny, Hulking, Enormous, Massive Creatures come in one of seven different
+      size categories, as shown on the following chart. Size affects movement and how easy or hard it is to strike that creature
+      in combat. (When calculating a creatures movement, apply the size modifier first, and then other modifiers from other
+      Traits or talents. Base movement can never be reduced below 1.) For the purposes of comparison, a human is an average-sized
+      creature.'
+    source: Rogue Trader Core Rulebook
+  type: trait
+- _id: g4Vhllt6zgQiiSwQ
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Machine (4)
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    description: A creature with the Machine Trait is fashioned from inorganic materials and is generally more rigorous than
+      fleshy folks. Machines do not
+    source: Rogue Trader Core Rulebook
+  type: trait
+- _id: bukhfnvnE6T8oZWJ
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Deadly Natural Weapons (Disruptor Field)
+  ownership:
+    default: 3
+  sort: 0
+  system: {}
+  type: trait
+- _id: HXMe5KE9SXAV8whw
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Swarm
+  ownership:
+    default: 3
+  sort: 0
+  system: {}
+  type: trait
+- _id: SV7Smve15g6MbRjD
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
+  name: Disruptor Field
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    attackBonus: 0
+    attackType: ''
+    availability: Common
+    backpack:
+      inBackpack: false
+    class: Melee
+    clip:
+      max: 0
+      value: 0
+    craftsmanship: Common
+    damage: 2d10+1
+    damageType: Rending
+    description: ''
+    effect: ''
+    equipped: true
+    inBackpack: false
+    modifications: []
+    penetration: '3'
+    range: ''
+    rateOfFire:
+      burst: 0
+      full: 0
+      single: 1
+    reload: ''
+    source: Shedding Light
+    special: {}
+    target: ''
+    type: ''
+    weight: 0
+  type: weapon
+- _id: msS69GCQH4jR05LO
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/items/buckets/armour-primitive.png
+  name: Machine Trait
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    armourPoints:
+      body: 0
+      head: 0
+      leftArm: 0
+      leftLeg: 0
+      rightArm: 0
+      rightLeg: 0
+    availability: Common
+    backpack:
+      inBackpack: false
+    craftsmanship: Common
+    description: ''
+    equipped: true
+    inBackpack: false
+    maxAgility: 0
+    overloadOn: 0
+    protectionRating: 0
+    source: Shedding Light
+    type: Other
+    weight: 0
+  type: armour
+name: Scarab Swarm
+prototypeToken:
+  actorLink: false
+  disposition: -1
+  height: 0.5
+  name: Scarab Swarm
+  texture:
+    scaleX: 1.0
+    scaleY: 1.0
+    src: systems/rogue-trader-3rd/images/npcs/sheddinglight/scarab-swarm.png
+  width: 0.5
+system:
+  characteristics:
+    agility:
+      base: 35
+      unnatural: 0
+    ballisticSkill:
+      base: 5
+      unnatural: 0
+    fellowship:
+      base: 5
+      unnatural: 0
+    intelligence:
+      base: 5
+      unnatural: 0
+    perception:
+      base: 20
+      unnatural: 0
+    strength:
+      base: 10
+      unnatural: 0
+    toughness:
+      base: 20
+      unnatural: 0
+    weaponSkill:
+      base: 35
+      unnatural: 0
+    willpower:
+      base: 20
+      unnatural: 0
+  npc:
+    faction: ''
+    subfaction: ''
+    threatLevel: 0
+    type: troop
+  skills:
+    stealth:
+      advance: 20
+  wounds:
+    critical: 0
+    max: 40
+    rolled: true
+    value: 40
+type: npc
+---
+effects: []
+flags:
+  rt:
+    description: ''
+    movement: 3/6/9/18
+    rawGear: ''
+    source: Shedding Light
+img: ''
+items:
+- _id: 1DG8KwYWBAWrNiIC
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Crack Shot
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    aptitudes: ''
+    benefit: 'The Explorer can place his shots where they will inflict more harm: at creases, gaps, or joints in armour. When
+      his ranged attack causes Critical Damage, add +2 to the Damage.'
+    cost: 0
+    prerequisites: Ballistic Skill 40
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+  type: talent
+- _id: MhtqgwArYhKJf4nw
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Machine (6)
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    description: A creature with the Machine Trait is fashioned from inorganic materials and is generally more rigorous than
+      fleshy folks. Machines do not
+    source: Rogue Trader Core Rulebook
+  type: trait
+- _id: S6v0zSqHwlahkJJg
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Regeneration
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    description: Creatures with this Trait heal very quickly. Each round, at the start of its turn the creature tests Toughness
+      to remove 1 point of damage. It loses this Trait when slain.
+    source: Rogue Trader Core Rulebook
+  type: trait
+- _id: ze1hZy34L3hRaI4J
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Size (Hulking)
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    description: '**Trait Groups:** Miniscule, Puny, Scrawny, Hulking, Enormous, Massive Creatures come in one of seven different
+      size categories, as shown on the following chart. Size affects movement and how easy or hard it is to strike that creature
+      in combat. (When calculating a creatures movement, apply the size modifier first, and then other modifiers from other
+      Traits or talents. Base movement can never be reduced below 1.) For the purposes of comparison, a human is an average-sized
+      creature.'
+    source: Rogue Trader Core Rulebook
+  type: trait
+- _id: CZMCEhPckXNM5vu5
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Unnatural Strength (x2)
+  ownership:
+    default: 3
+  sort: 0
+  system: &id001
+    description: One or more of the creature's Characteristics is unnatural. Each time this Trait is gained, select a Characteristic,
+      and double its bonus. For example, a creature with a Strength of 41 normally has a 4 Strength Bonus. With this Trait,
+      its Strength Bonus increases to 8. The Trait may be gained multiple times. Each time, you may select a new Characteristic
+      or one chosen previously. Each time you apply this Trait to the same Characteristic, the Bonus multiplier increases
+      by 1. For example, one selection multiplies the Characteristic Bonus by ×2, two selections by ×3, and three selections
+      by ×4. Note this Trait does not modify the creature's movement. Movement is based on a creature's unmodified Agility
+      Bonus. During Opposed Characteristic Tests, on a success, the bonus multiplier is added to the degree of success.
+    source: Rogue Trader Core Rulebook
+  type: trait
+- _id: bEetHiD99gIGiLzB
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  name: Unnatural Toughness (x2)
+  ownership:
+    default: 3
+  sort: 0
+  system: *id001
+  type: trait
+- _id: aVgSqrASeio1qRR6
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
+  name: Gauss Player
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    attackBonus: 0
+    attackType: ''
+    availability: Common
+    backpack:
+      inBackpack: false
+    class: Basic
+    clip:
+      max: 0
+      value: 0
+    craftsmanship: Common
+    damage: 1d10+6
+    damageType: Energy
+    description: ''
+    effect: ''
+    equipped: true
+    inBackpack: false
+    modifications: []
+    penetration: '3'
+    range: '100'
+    rateOfFire:
+      burst: 2
+      full: 0
+      single: 1
+    reload: ''
+    source: Shedding Light
+    special: {}
+    target: ''
+    type: ''
+    weight: 0
+  type: weapon
+- _id: IcO1DWi5xCXWeZfY
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
+  name: Weapon Blade
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    attackBonus: 0
+    attackType: ''
+    availability: Common
+    backpack:
+      inBackpack: false
+    class: Melee
+    clip:
+      max: 0
+      value: 0
+    craftsmanship: Common
+    damage: 1d10+6
+    damageType: Rending
+    description: ''
+    effect: ''
+    equipped: true
+    inBackpack: false
+    modifications: []
+    penetration: '2'
+    range: ''
+    rateOfFire:
+      burst: 0
+      full: 0
+      single: 1
+    reload: ''
+    source: Shedding Light
+    special: {}
+    target: ''
+    type: ''
+    weight: 0
+  type: weapon
+- _id: 1jkeqBIlLSvlYoCI
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/items/buckets/armour-primitive.png
+  name: Machine Trait
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    armourPoints:
+      body: 0
+      head: 0
+      leftArm: 0
+      leftLeg: 0
+      rightArm: 0
+      rightLeg: 0
+    availability: Common
+    backpack:
+      inBackpack: false
+    craftsmanship: Common
+    description: ''
+    equipped: true
+    inBackpack: false
+    maxAgility: 0
+    overloadOn: 0
+    protectionRating: 0
+    source: Shedding Light
+    type: Other
+    weight: 0
+  type: armour
+name: Necron Warrior
+prototypeToken:
+  actorLink: false
+  disposition: -1
+  height: 1
+  name: Necron Warrior
+  texture:
+    scaleX: 1.2
+    scaleY: 1.2
+    src: ''
+  width: 1
+system:
+  characteristics:
+    agility:
+      base: 25
+      unnatural: 0
+    ballisticSkill:
+      base: 45
+      unnatural: 0
+    fellowship:
+      base: 15
+      unnatural: 0
+    intelligence:
+      base: 25
+      unnatural: 0
+    perception:
+      base: 30
+      unnatural: 0
+    strength:
+      base: 35
+      unnatural: 6
+    toughness:
+      base: 35
+      unnatural: 6
+    weaponSkill:
+      base: 30
+      unnatural: 0
+    willpower:
+      base: 40
+      unnatural: 0
+  npc:
+    faction: Necron
+    subfaction: ''
+    threatLevel: 0
+    type: troop
+  skills:
+    intimidate:
+      advance: 10
+    techUse:
+      advance: 20
+  wounds:
+    critical: 0
+    max: 20
+    rolled: true
+    value: 20
+type: npc
+---
+effects: []
+flags:
+  rt:
+    description: ''
+    movement: '4/8/16/32 ##'
+    rawGear: ''
+    source: Shedding Light
+img: ''
+items: []
+name: Tomb Stalker
+prototypeToken:
+  actorLink: false
+  disposition: -1
+  height: 1
+  name: Tomb Stalker
+  texture:
+    scaleX: 1.0
+    scaleY: 1.0
+    src: ''
+  width: 1
+system:
+  characteristics:
+    agility:
+      base: 55
+      unnatural: 0
+    ballisticSkill:
+      base: 30
+      unnatural: 0
+    fellowship:
+      base: 5
+      unnatural: 0
+    intelligence:
+      base: 30
+      unnatural: 0
+    perception:
+      base: 30
+      unnatural: 0
+    strength:
+      base: 60
+      unnatural: 12
+    toughness:
+      base: 60
+      unnatural: 12
+    weaponSkill:
+      base: 55
+      unnatural: 0
+    willpower:
+      base: 30
+      unnatural: 0
+  npc:
+    faction: ''
+    subfaction: ''
+    threatLevel: 0
+    type: troop
+  skills:
+    stealth:
+      advance: 20
+    techUse:
+      advance: 20
+  wounds:
+    critical: 0
+    max: 0
+    rolled: true
+    value: 0
+type: npc

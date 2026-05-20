@@ -1,0 +1,64 @@
+[
+  {
+    "name": "Statues Of The Dark Lament",
+    "slug": "statues-of-the-dark-lament",
+    "faction": "",
+    "description": "Brought to life by the will of the Dark Lament, these are juggernauts of living stone with but a single purpose: to kill.",
+    "characteristics": {
+      "weaponSkill": {
+        "base": 43,
+        "unnatural": 0
+      },
+      "ballisticSkill": {
+        "base": 0,
+        "unnatural": 0
+      },
+      "strength": {
+        "base": 44,
+        "unnatural": 8
+      },
+      "toughness": {
+        "base": 41,
+        "unnatural": 8
+      },
+      "agility": {
+        "base": 11,
+        "unnatural": 0
+      },
+      "intelligence": {
+        "base": 37,
+        "unnatural": 0
+      },
+      "perception": {
+        "base": 32,
+        "unnatural": 0
+      },
+      "willpower": {
+        "base": 40,
+        "unnatural": 0
+      },
+      "fellowship": {
+        "base": 0,
+        "unnatural": 0
+      }
+    },
+    "wounds": 15,
+    "movement": "1/2/3/6",
+    "skills": [],
+    "talents": [],
+    "traits": [
+      "From Beyond",
+      "Improved Natural Weapons",
+      "Natural Armour (4)",
+      "Natural Weapons",
+      "Unnatural Strength (x2)",
+      "Unnatural Toughness (x2)"
+    ],
+    "weapons_text": "Fists and Stone Blades (Damage: 1d10+8)",
+    "armour_text": "4 (All) # SILENT HEART These are the servants' quarters and stores of the tower. It is known as the Silent Heart for the mute lay priests who met the sculptors' needs. The GM can build up the tension here after the carnage of the battle outside; it is silent and still, littered with broken bodies and shattered furniture. This was also the place where the inhabitants of the tower made their initial stand against the Whisperers, and it is still littered with the detritus of battle—desiccated corpses, spent casings, and scorch marks. Since the Explorers managed to defeat the statues and gain entrance, the Lament will only be observing them whilst they make their way through these levels, only keeping them on edge by creating shadows, rattling doors, and smashing glass. Though Explorers are made of sterner stuff, the GM can have any retainers become badly rattled, perhaps even firing at shadows or refusing to go unless persuaded otherwise (this could be reflected with an Explorer making a Difficult (-10) Command Test to push his men on).",
+    "gear_text": "",
+    "portrait_ref": "img-12.jpeg",
+    "ws_line": 478,
+    "source_book": "roguetrader_thegamemasterskit_sourcebook.pdf"
+  }
+]
