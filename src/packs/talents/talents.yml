@@ -227,6 +227,14 @@ data:
 img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
 name: Berserk Charge
 type: talent
+flags:
+    rt:
+        conditionalBonuses:
+        - applies:
+              skills: []
+              characteristics: [weaponSkill]
+          value: 20
+          label: 'when Charging'
 ---
 data:
     aptitudes: ''
@@ -620,6 +628,14 @@ data:
 img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
 name: Disturbing Voice
 type: talent
+flags:
+    rt:
+        conditionalBonuses:
+        - applies:
+              skills: [intimidate, interrogation]
+              characteristics: []
+          value: 10
+          label: 'when employing'
 ---
 data:
     aptitudes: ''
@@ -648,6 +664,14 @@ data:
 img: systems/rogue-trader-3rd/icons/talents/violet/p_29.PNG
 name: Double Team
 type: talent
+flags:
+    rt:
+        conditionalBonuses:
+        - applies:
+              skills: []
+              characteristics: [weaponSkill]
+          value: 10
+          label: 'ganging up on opponent'
 ---
 data:
     aptitudes: ''
@@ -754,6 +778,38 @@ data:
 img: systems/rogue-trader-3rd/icons/talents/violet/p_21.PNG
 name: Enemy
 type: talent
+flags:
+    rt:
+        conditionalBonuses:
+        - applies:
+              skills: []
+              characteristics: [fellowship]
+          value: -10
+          label: 'vs chosen group (stacks with Rival)'
+        pickable:
+            kind: group
+            options:
+            - Academics
+            - Adepta Sororitas
+            - Adeptus Arbites
+            - Adeptus Mechanicus
+            - Administratum
+            - Astropaths
+            - Ecclesiarchy
+            - Feral Worlders
+            - Government
+            - Hivers
+            - Imperial Guard
+            - Imperial Navy
+            - Inquisition
+            - Middle Classes
+            - Military
+            - Nobility
+            - Underworld
+            - Void Born
+            - Workers
+            - the Insane
+
 ---
 data:
     aptitudes: ''
@@ -793,6 +849,12 @@ data:
 img: systems/rogue-trader-3rd/icons/items/spear/stave_04_b.png
 name: Exotic Weapon Training
 type: talent
+flags:
+    rt:
+        pickable:
+            kind: exoticWeapon
+            options: []
+
 ---
 data:
     aptitudes: ''
@@ -878,6 +940,14 @@ data:
 img: systems/rogue-trader-3rd/icons/items/flail/flail_03_t.PNG
 name: Flagellant
 type: talent
+flags:
+    rt:
+        conditionalBonuses:
+        - applies:
+              skills: []
+              characteristics: [willpower]
+          value: 10
+          label: 'vs mind control / Malignancy'
 ---
 data:
     aptitudes: ''
@@ -928,6 +998,19 @@ data:
 img: systems/rogue-trader-3rd/icons/talents/red/r_08.png
 name: Frenzy
 type: talent
+flags:
+    rt:
+        conditionalBonuses:
+        - applies:
+              skills: []
+              characteristics: [weaponSkill, strength, toughness, willpower]
+          value: 10
+          label: 'while frenzied'
+        - applies:
+              skills: []
+              characteristics: [ballisticSkill, intelligence]
+          value: -20
+          label: 'while frenzied'
 ---
 data:
     aptitudes: ''
@@ -973,6 +1056,38 @@ data:
 img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
 name: Good Reputation
 type: talent
+flags:
+    rt:
+        conditionalBonuses:
+        - applies:
+              skills: []
+              characteristics: [fellowship]
+          value: 10
+          label: 'with chosen group (stacks with Peer)'
+        pickable:
+            kind: group
+            options:
+            - Academics
+            - Adepta Sororitas
+            - Adeptus Arbites
+            - Adeptus Mechanicus
+            - Administratum
+            - Astropaths
+            - Ecclesiarchy
+            - Feral Worlders
+            - Government
+            - Hivers
+            - Imperial Guard
+            - Imperial Navy
+            - Inquisition
+            - Middle Classes
+            - Military
+            - Nobility
+            - Underworld
+            - Void Born
+            - Workers
+            - the Insane
+
 ---
 data:
     aptitudes: ''
@@ -1092,6 +1207,24 @@ data:
 img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
 name: Hatred
 type: talent
+flags:
+    rt:
+        conditionalBonuses:
+        - applies:
+              skills: []
+              characteristics: [weaponSkill]
+          value: 10
+          label: 'in melee vs chosen group'
+        pickable:
+            kind: group
+            options:
+            - Criminals
+            - Mutants
+            - Pirates
+            - Psykers
+            - 'Rogue Trader (specific)'
+            - 'Xenos (specific)'
+
 ---
 data:
     aptitudes: ''
@@ -1295,6 +1428,31 @@ data:
 img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
 name: Hotshot Pilot
 type: talent
+effects:
+- _id: CAeqxLRtfLJs9kRi
+  name: Hotshot Pilot
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  description: ''
+  origin: ''
+  disabled: false
+  transfer: true
+  tint: null
+  statuses: []
+  duration:
+    startTime: null
+    seconds: null
+    combat: null
+    rounds: null
+    turns: null
+    startRound: null
+    startTurn: null
+  changes:
+  - key: system.skills.operate.modifier
+    mode: 2
+    value: '10'
+    priority: null
+  flags: {}
+
 ---
 data:
     aptitudes: ''
@@ -1355,6 +1513,35 @@ data:
 img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
 name: Infused Knowledge
 type: talent
+effects:
+- _id: 3PnM5wjS1DT09ZTR
+  name: Infused Knowledge
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  description: ''
+  origin: ''
+  disabled: false
+  transfer: true
+  tint: null
+  statuses: []
+  duration:
+    startTime: null
+    seconds: null
+    combat: null
+    rounds: null
+    turns: null
+    startRound: null
+    startTurn: null
+  changes:
+  - key: system.skills.commonLore.modifier
+    mode: 2
+    value: '10'
+    priority: null
+  - key: system.skills.scholasticLore.modifier
+    mode: 2
+    value: '10'
+    priority: null
+  flags: {}
+
 ---
 data:
     aptitudes: ''
@@ -1404,6 +1591,14 @@ data:
 img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
 name: Iron Discipline
 type: talent
+flags:
+    rt:
+        conditionalBonuses:
+        - applies:
+              skills: [command]
+              characteristics: []
+          value: 10
+          label: 'to motivate followers'
 ---
 data:
     aptitudes: ''
@@ -1568,6 +1763,14 @@ data:
 img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
 name: Litany of Hate
 type: talent
+flags:
+    rt:
+        conditionalBonuses:
+        - applies:
+              skills: []
+              characteristics: [weaponSkill]
+          value: 10
+          label: 'vs hated group (after Charm)'
 ---
 data:
     aptitudes: ''
@@ -1584,6 +1787,14 @@ data:
 img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
 name: Logis Implant
 type: talent
+flags:
+    rt:
+        conditionalBonuses:
+        - applies:
+              skills: []
+              characteristics: [weaponSkill, ballisticSkill]
+          value: 10
+          label: 'after Reaction + Tech-Use'
 ---
 data:
     aptitudes: ''
@@ -1659,6 +1870,43 @@ data:
 img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
 name: Machinator Array
 type: talent
+effects:
+- _id: EpAAY0aYbZkYhqN2
+  name: Machinator Array
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  description: ''
+  origin: ''
+  disabled: false
+  transfer: true
+  tint: null
+  statuses: []
+  duration:
+    startTime: null
+    seconds: null
+    combat: null
+    rounds: null
+    turns: null
+    startRound: null
+    startTurn: null
+  changes:
+  - key: system.characteristics.strength.modifier
+    mode: 2
+    value: '10'
+    priority: null
+  - key: system.characteristics.toughness.modifier
+    mode: 2
+    value: '10'
+    priority: null
+  - key: system.characteristics.agility.modifier
+    mode: 2
+    value: '-5'
+    priority: null
+  - key: system.characteristics.fellowship.modifier
+    mode: 2
+    value: '-5'
+    priority: null
+  flags: {}
+
 ---
 data:
     aptitudes: ''
@@ -1724,6 +1972,31 @@ data:
 img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
 name: Master Chirurgeon
 type: talent
+effects:
+- _id: vKiAAjmpTftdvuTm
+  name: Master Chirurgeon
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  description: ''
+  origin: ''
+  disabled: false
+  transfer: true
+  tint: null
+  statuses: []
+  duration:
+    startTime: null
+    seconds: null
+    combat: null
+    rounds: null
+    turns: null
+    startRound: null
+    startTurn: null
+  changes:
+  - key: system.skills.medicae.modifier
+    mode: 2
+    value: '10'
+    priority: null
+  flags: {}
+
 ---
 data:
     aptitudes: ''
@@ -1938,6 +2211,14 @@ data:
 img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
 name: Orthoproxy
 type: talent
+flags:
+    rt:
+        conditionalBonuses:
+        - applies:
+              skills: []
+              characteristics: [willpower]
+          value: 20
+          label: 'vs mind control / interrogation'
 ---
 data:
     aptitudes: ''
@@ -1968,6 +2249,32 @@ data:
 img: systems/rogue-trader-3rd/icons/psykana/evil-eye-eerie-2.jpg
 name: Peer
 type: talent
+flags:
+    rt:
+        conditionalBonuses:
+        - applies:
+              skills: []
+              characteristics: [fellowship]
+          value: 10
+          label: 'with chosen group'
+        pickable:
+            kind: group
+            options:
+            - Academics
+            - Adeptus Arbites
+            - Adeptus Mechanicus
+            - Administratum
+            - Government
+            - Hivers
+            - Inquisition
+            - Middle Classes
+            - Military
+            - Nobility
+            - Underworld
+            - Void Born
+            - Workers
+            - the Insane
+
 ---
 data:
     aptitudes: ''
@@ -2123,6 +2430,12 @@ data:
 img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
 name: Psychic Technique
 type: talent
+flags:
+    rt:
+        pickable:
+            kind: psychicTechnique
+            options: []
+
 ---
 data:
     aptitudes: ''
@@ -2230,6 +2543,14 @@ data:
 img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
 name: Resistance (Cold)
 type: talent
+flags:
+    rt:
+        conditionalBonuses:
+        - applies:
+              skills: []
+              characteristics: [toughness]
+          value: 10
+          label: 'vs cold effects'
 ---
 data:
     aptitudes: ''
@@ -2242,6 +2563,14 @@ data:
 img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
 name: Resistance (Fear)
 type: talent
+flags:
+    rt:
+        conditionalBonuses:
+        - applies:
+              skills: []
+              characteristics: [willpower]
+          value: 10
+          label: 'vs Fear'
 ---
 data:
     aptitudes: ''
@@ -2255,6 +2584,14 @@ data:
 img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
 name: Resistance (Heat)
 type: talent
+flags:
+    rt:
+        conditionalBonuses:
+        - applies:
+              skills: []
+              characteristics: [toughness]
+          value: 10
+          label: 'vs heat effects'
 ---
 data:
     aptitudes: ''
@@ -2268,6 +2605,14 @@ data:
 img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
 name: Resistance (Poisons)
 type: talent
+flags:
+    rt:
+        conditionalBonuses:
+        - applies:
+              skills: []
+              characteristics: [toughness]
+          value: 10
+          label: 'vs poison/toxic'
 ---
 data:
     aptitudes: ''
@@ -2280,6 +2625,14 @@ data:
 img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
 name: Resistance (Psychic Techniques)
 type: talent
+flags:
+    rt:
+        conditionalBonuses:
+        - applies:
+              skills: []
+              characteristics: [willpower]
+          value: 10
+          label: 'vs Psychic Techniques'
 ---
 data:
     aptitudes: ''
@@ -2369,6 +2722,32 @@ data:
 img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
 name: Rival
 type: talent
+flags:
+    rt:
+        conditionalBonuses:
+        - applies:
+              skills: []
+              characteristics: [fellowship]
+          value: -10
+          label: 'vs chosen group'
+        pickable:
+            kind: group
+            options:
+            - Academics
+            - Adeptus Arbites
+            - Adeptus Mechanicus
+            - Administratum
+            - Government
+            - Hivers
+            - Inquisition
+            - Middle Classes
+            - Military
+            - Nobility
+            - Underworld
+            - Void Born
+            - Workers
+            - the Insane
+
 ---
 data:
     aptitudes: ''
@@ -2526,6 +2905,43 @@ data:
 img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
 name: Talented
 type: talent
+flags:
+    rt:
+        pickable:
+            kind: skill
+            options:
+            - acrobatics
+            - athletics
+            - awareness
+            - charm
+            - command
+            - commerce
+            - commonLore
+            - deceive
+            - demolitions
+            - dodge
+            - forbiddenLore
+            - inquiry
+            - interrogation
+            - intimidate
+            - linguistics
+            - logic
+            - medicae
+            - navigate
+            - operate
+            - parry
+            - performance
+            - psyniscience
+            - scholasticLore
+            - scrutiny
+            - security
+            - sleightOfHand
+            - stealth
+            - survival
+            - techUse
+            - trade
+            - wrangling
+
 ---
 data:
     aptitudes: ''
@@ -2598,6 +3014,14 @@ data:
 img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
 name: Too 'Ard Ta Care
 type: talent
+flags:
+    rt:
+        conditionalBonuses:
+        - applies:
+              skills: []
+              characteristics: [toughness]
+          value: 20
+          label: 'vs environmental effects'
 ---
 data:
     aptitudes: ''
@@ -2721,6 +3145,14 @@ data:
 img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
 name: Void Tactician
 type: talent
+flags:
+    rt:
+        conditionalBonuses:
+        - applies:
+              skills: []
+              characteristics: [ballisticSkill]
+          value: 10
+          label: 'firing starship weapons'
 ---
 data:
     aptitudes: ''
@@ -2835,6 +3267,14 @@ data:
 img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
 name: Worky Gubbinz
 type: talent
+flags:
+    rt:
+        conditionalBonuses:
+        - applies:
+              skills: []
+              characteristics: [willpower]
+          value: 5
+          label: 'vs effects targeting bearer'
 ---
 data:
     aptitudes: ''
@@ -2889,6 +3329,14 @@ data:
     tier: '1'
 flags:
     rt:
+        pickable:
+            kind: weaponClass
+            options:
+            - Pistol
+            - Basic
+            - Heavy
+            - Melee
+            - Thrown
         category: Career Special Ability
         career: Arch-militant
 img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -2905,8 +3353,12 @@ data:
     tier: '1'
 flags:
     rt:
-        category: Career Special Ability
-        career: Astropath Transcendent
+        conditionalBonuses:
+        - applies:
+              skills: []
+              characteristics: [willpower]
+          value: 20
+          label: 'vs daemonic effects'
 img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
 name: Soul-Bound to the Emperor
 type: talent
@@ -2953,6 +3405,10 @@ data:
     tier: '1'
 flags:
     rt:
+        pickable:
+            kind: navigatorPower
+            options:
+
         category: Career Special Ability
         career: Navigator
 img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png

@@ -21,6 +21,7 @@ import {
     rollSkillMacro,
 } from './macros/macro-manager.mjs';
 import { HandlebarManager } from './handlebars/handlebars-manager.mjs';
+import { promptForChoice, labelForChoice, buildEffectForChoice } from './pickers/talent-choice.mjs';
 import { DarkHeresyAmmoSheet } from './sheets/item/ammo-sheet.mjs';
 import { DarkHeresyPsychicPowerSheet } from './sheets/item/psychic-power-sheet.mjs';
 import { DarkHeresyStorageLocationSheet } from './sheets/item/storage-location-sheet.mjs';
@@ -56,6 +57,7 @@ export class HooksManager {
         Hooks.once('init', HooksManager.init);
         Hooks.on('ready', HooksManager.ready);
         Hooks.on('hotbarDrop', HooksManager.hotbarDrop);
+        Hooks.on('createItem', HooksManager.onCreateItem);
 
         DHTargetedActionManager.initializeHooks();
         DHBasicActionManager.initializeHooks();
@@ -162,6 +164,38 @@ Enable Debug with: game.rt.debug = true
                 return false;
             default:
                 return;
+        }
+    }
+
+    /**
+     * Fires after an Item document has been created. If the item is a
+     * pickable talent (`flags.rt.pickable` present) on an Actor, prompt the
+     * user for the option, stamp it onto `system.choice`, append it to the
+     * item name as "Talent (Choice)", and — for kind=`skill` — build an
+     * ActiveEffect targeting `system.skills.<choice>.modifier`.
+     */
+    static async onCreateItem(item, _options, userId) {
+        if (userId !== game.user.id) return;            // only the creator prompts
+        if (!item.parent || !item.parent.documentName === 'Actor') return;
+        if (item.type !== 'talent') return;
+        const spec = foundry.utils.getProperty(item, 'flags.rt.pickable');
+        if (!spec || !spec.kind) return;
+        // Don't re-prompt if a choice is already set (e.g. duplicated item).
+        if (item.system?.choice) return;
+
+        const choice = await promptForChoice(item);
+        if (!choice) return;
+
+        const baseName = item.name.replace(/\s*\(.*\)\s*$/, '');
+        const updates = {
+            name: `${baseName} (${labelForChoice(spec.kind, choice)})`,
+            'system.choice': choice,
+        };
+        await item.update(updates);
+
+        const effectData = buildEffectForChoice(item, spec.kind, choice);
+        if (effectData) {
+            await item.createEmbeddedDocuments('ActiveEffect', [effectData]);
         }
     }
 }

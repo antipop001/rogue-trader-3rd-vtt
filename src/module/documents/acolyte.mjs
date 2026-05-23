@@ -83,6 +83,10 @@ export class RogueTraderAcolyte extends RogueTraderBaseActor {
         this._computeMovement();
         this._computeEncumbrance();
         await super.prepareData();
+        // Active Effects apply during super.prepareData(); recompute skills
+        // afterward so `skill.modifier` changes (e.g. Master Chirurgeon's
+        // +10 Medicae) feed into `skill.current`.
+        this._computeSkills();
     }
 
     /**
@@ -147,6 +151,13 @@ export class RogueTraderAcolyte extends RogueTraderBaseActor {
         rollData.type = 'Skill';
         rollData.baseTarget = skill.current;
         rollData.modifiers.modifier = 0;
+        // Surface talents whose `flags.rt.conditionalBonuses` apply to this
+        // skill or its driving characteristic, so the prompt can offer them
+        // as optional checkboxes.
+        rollData.optionalBonuses = this.collectOptionalBonuses({
+            skill: skillName,
+            characteristic: skill.characteristic,
+        });
         await prepareSimpleRoll(simpleSkillData);
     }
 
@@ -287,11 +298,12 @@ export class RogueTraderAcolyte extends RogueTraderBaseActor {
         for (let skill of Object.values(this.skills)) {
             let short = !skill.characteristic || skill.characteristic === '' ? skill.characteristics[0] : skill.characteristic;
             let characteristic = this._findCharacteristic(short);
-            skill.current = characteristic.total + this._skillAdvanceToValue(skill.advance);
+            const mod = skill.modifier || 0;
+            skill.current = characteristic.total + this._skillAdvanceToValue(skill.advance) + mod;
 
             if (skill.isSpecialist) {
                 for (let speciality of Object.values(skill.specialities)) {
-                    speciality.current = characteristic.total + this._skillAdvanceToValue(speciality.advance);
+                    speciality.current = characteristic.total + this._skillAdvanceToValue(speciality.advance) + mod;
                 }
             }
         }

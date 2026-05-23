@@ -65,7 +65,41 @@ export class RogueTraderBaseActor extends Actor {
         rollData.type = override ? override : 'Characteristic';
         rollData.baseTarget = characteristic.total;
         rollData.modifiers.modifier = 0;
+        rollData.optionalBonuses = this.collectOptionalBonuses({ characteristic: characteristicName });
         await prepareSimpleRoll(simpleSkillData);
+    }
+
+    /**
+     * Scan owned items for talents with `flags.rt.conditionalBonuses` that
+     * could apply to the current roll. Returned items become checkboxes in
+     * the roll-modifier prompt.
+     *
+     * @param {{skill?: string, characteristic?: string}} context
+     * @returns {Array<{id: string, label: string, value: number}>}
+     */
+    collectOptionalBonuses(context) {
+        const out = [];
+        for (const item of this.items) {
+            const bonuses = foundry.utils.getProperty(item, 'flags.rt.conditionalBonuses');
+            if (!Array.isArray(bonuses)) continue;
+            for (let i = 0; i < bonuses.length; i++) {
+                const b = bonuses[i];
+                const a = b?.applies || {};
+                const skillMatch = context.skill && Array.isArray(a.skills)
+                    && a.skills.includes(context.skill);
+                const charMatch = context.characteristic && Array.isArray(a.characteristics)
+                    && a.characteristics.includes(context.characteristic);
+                if (!skillMatch && !charMatch) continue;
+                const v = b.value || 0;
+                out.push({
+                    id: `${item.id}-${i}`,
+                    label: `${item.name}${b.label ? ` — ${b.label}` : ''}`,
+                    value: v,
+                    valueSigned: v > 0 ? `+${v}` : `${v}`,
+                });
+            }
+        }
+        return out;
     }
 
     getCharacteristicFuzzy(char) {

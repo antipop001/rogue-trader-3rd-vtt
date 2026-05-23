@@ -18,7 +18,12 @@ export async function prepareSimpleRoll(simpleSkillData) {
                     callback: async (html) => {
                         const rollData = simpleSkillData.rollData;
                         rollData.modifiers['difficulty'] = parseInt(html.find('[id=difficulty] :selected').val());
-                        rollData.modifiers['modifier'] = html.find('#modifier')[0].value;
+                        let mod = parseInt(html.find('#modifier')[0].value) || 0;
+                        // Sum checked talent-bonus checkboxes into the modifier
+                        html.find('input.rt-optional-bonus:checked').each((_, el) => {
+                            mod += parseInt(el.dataset.value) || 0;
+                        });
+                        rollData.modifiers['modifier'] = mod;
                         await rollData.calculateTotalModifiers();
                         await simpleSkillData.calculateSuccessOrFailure();
                         await sendActionDataToChat(simpleSkillData);

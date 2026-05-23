@@ -16,6 +16,17 @@
                 <span class="rt-field__span">Modifier</span>
                 <input class="rt-field__input" type="number" data-dtype="Number" name="modifiers.modifier" id="modifier" value="0" />
             </div>
+            {{#if optionalBonuses.length}}
+                <div class="rt-field__wrapper" style="flex-direction:column; align-items:stretch; gap:4px; margin-top:6px;">
+                    <span class="rt-field__span" style="font-weight:bold;">Talent bonuses (optional)</span>
+                    {{#each optionalBonuses}}
+                        <label style="display:flex; align-items:center; gap:6px; font-size:12px;">
+                            <input type="checkbox" class="rt-optional-bonus" data-value="{{value}}" data-id="{{id}}">
+                            <span>{{label}} <span style="opacity:.7;">({{valueSigned}})</span></span>
+                        </label>
+                    {{/each}}
+                </div>
+            {{/if}}
         </div>
     </form>
 {{/with}}
