@@ -2862,3 +2862,211 @@ data:
 img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
 name: Xenos Weapon Proficiency (Ork)
 type: talent
+---
+_id: s0x5QzFzWFRFZfH0
+data:
+    aptitudes: ''
+    benefit: 'Once per round as a free action, the Rogue Trader may grant a single ally — one he can see and who can hear him — a +10 bonus to any one Test that round.'
+    cost: 0
+    prerequisites: Rogue Trader Career
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+flags:
+    rt:
+        category: Career Special Ability
+        career: Rogue Trader
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Exceptional Leader
+type: talent
+---
+_id: A1RWBmA1bjw1nfFp
+data:
+    aptitudes: ''
+    benefit: 'Choose one (and only one) class of weapon. When wielding a weapon of that chosen class in combat, the Arch-militant gains +10 to hit, +2 damage, and +2 Initiative.'
+    cost: 0
+    prerequisites: Arch-militant Career
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+flags:
+    rt:
+        category: Career Special Ability
+        career: Arch-militant
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Weapon Master
+type: talent
+---
+_id: sobush75dLQXIgxj
+data:
+    aptitudes: ''
+    benefit: 'Astropaths Transcendent are soul-bound to the Emperor. They gain +20 to Willpower when resisting Possession, in opposed Willpower Tests against daemons, and against any Talent, Psychic Power, special ability, or effect originating from a daemon. They also roll an additional d10 on the Perils of the Warp table and may discard one die to take a more favourable result.'
+    cost: 0
+    prerequisites: Astropath Transcendent Career
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+flags:
+    rt:
+        category: Career Special Ability
+        career: Astropath Transcendent
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Soul-Bound to the Emperor
+type: talent
+---
+_id: VuuVpqomsBCelO2m
+data:
+    aptitudes: ''
+    benefit: 'Although blind, the Astropath perceives the world via warp-sense. He is treated as if seeing normally (including colours and being limited by walls). He is immune to effects that target ordinary vision such as blind grenades or cameleoline, but cannot perceive Untouchables at all.'
+    cost: 0
+    prerequisites: Astropath Transcendent Career
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+flags:
+    rt:
+        category: Career Special Ability
+        career: Astropath Transcendent
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: See Without Eyes
+type: talent
+---
+_id: 0OIu0ZYLMeCmSiwg
+data:
+    aptitudes: ''
+    benefit: 'The Explorator begins play with the Mechanicus Implants Trait and may take up to two additional common-craftsmanship bionic implants. He may spend 200 xp per step to upgrade the craftsmanship of one of his bionic implants (common→good→best), up to twice total, but only at character creation.'
+    cost: 0
+    prerequisites: Explorator Career
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+flags:
+    rt:
+        category: Career Special Ability
+        career: Explorator
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Explorator Implants
+type: talent
+---
+_id: tHLZxgrGrqamuKcH
+data:
+    aptitudes: ''
+    benefit: 'All Navigators begin play with the Lidless Stare Navigator Power and may either select one additional power or improve an existing power. Further powers and improvements come from selecting the Navigator Power Advance.'
+    cost: 0
+    prerequisites: Navigator Career
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+flags:
+    rt:
+        category: Career Special Ability
+        career: Navigator
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Warp Eye
+type: talent
+---
+_id: WnJy9PUr1YoGPiPY
+data:
+    aptitudes: ''
+    benefit: 'A Navigator belongs to one of four House Lineages — Nomadic, Magisterial, Shrouded, or Renegade. Each Lineage grants its own set of advantages and quirks (see Ch.VII: Navigator Powers).'
+    cost: 0
+    prerequisites: Navigator Career
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+flags:
+    rt:
+        category: Career Special Ability
+        career: Navigator
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: The Boons of Lineage
+type: talent
+---
+_id: sg0VHxZdbo7vjPDq
+data:
+    aptitudes: ''
+    benefit: 'The Navigator begins play with a number of Navigator Mutations determined by his House Lineage.'
+    cost: 0
+    prerequisites: Navigator Career
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+flags:
+    rt:
+        category: Career Special Ability
+        career: Navigator
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Navigator Mutations
+type: talent
+---
+_id: 5hkveI6qC7t9xCuu
+data:
+    aptitudes: ''
+    benefit: 'The Seneschal may spend a Fate Point to automatically succeed at any Ciphers, Lore, or Logic Test, resolved in the minimum time possible. In addition, he adds one bonus Degree of Success to any successful Commerce, Inquiry, or Evaluate Test.'
+    cost: 0
+    prerequisites: Seneschal Career
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+flags:
+    rt:
+        category: Career Special Ability
+        career: Seneschal
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Seeker of Lore
+type: talent
+---
+_id: 7PEruB41RDuhI8f1
+data:
+    aptitudes: ''
+    benefit: 'The Void-master may re-roll all failed Tests for Manoeuvre Actions aboard a starship.'
+    cost: 0
+    prerequisites: Void-master Career — choose one Mastery
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+flags:
+    rt:
+        category: Career Special Ability
+        career: Void-master
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Mastery of Space
+type: talent
+---
+_id: cBUCHeAWCuc94ngF
+data:
+    aptitudes: ''
+    benefit: 'The Void-master may re-roll all failed Tests for Shooting Actions aboard a starship.'
+    cost: 0
+    prerequisites: Void-master Career — choose one Mastery
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+flags:
+    rt:
+        category: Career Special Ability
+        career: Void-master
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Mastery of Gunnery
+type: talent
+---
+_id: Sfgio8rIU4QtkpHj
+data:
+    aptitudes: ''
+    benefit: 'The Void-master may re-roll all failed Tests involving Detection aboard a starship.'
+    cost: 0
+    prerequisites: Void-master Career — choose one Mastery
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+flags:
+    rt:
+        category: Career Special Ability
+        career: Void-master
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Mastery of Augurs
+type: talent
+---
+_id: 5oQiHmtzYb6F65p9
+data:
+    aptitudes: ''
+    benefit: 'The Void-master may re-roll all failed Pilot Tests when piloting small craft — shuttles, heavy lifters, guncutters, starfighters, bombers, and similar.'
+    cost: 0
+    prerequisites: Void-master Career — choose one Mastery
+    source: Rogue Trader Core Rulebook
+    tier: '1'
+flags:
+    rt:
+        category: Career Special Ability
+        career: Void-master
+img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+name: Mastery of Small Craft
+type: talent
