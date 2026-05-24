@@ -172,8 +172,11 @@ function allCombatActions() {
         {
             name: 'Guarded Action',
             type: ['Full'],
-            subtype: ['Concentration'],
+            subtype: ['Attack', 'Melee', 'Ranged'],
             description: 'Make one attack at -10 WS or BS. Until the start of your next turn, gain +10 to all Dodge and Parry tests.',
+            attack: {
+                modifier: -10,
+            },
         },
         {
             name: 'Jump or Leap',
@@ -208,7 +211,10 @@ function allCombatActions() {
             type: ['Full'],
             subtype: ['Attack', 'Concentration', 'Ranged'],
             description:
-                'Shoot targets coming into a set 45-degree kill zone with Standard/Semi-Auto/Full-Auto attack (specify which) meeting certain criteria, as chosen by the player. Targets of an Overwatch shot must make a +0 Pinning test or become Pinned, even if the attack did no damage.',
+                'Shoot targets coming into a set 45-degree kill zone with Standard/Semi-Auto/Full-Auto attack (specify which) at -20 BS. Targets of an Overwatch shot must make a +0 Pinning test or become Pinned, even if the attack did no damage.',
+            attack: {
+                modifier: -20,
+            },
         },
         {
             name: 'Ready',
