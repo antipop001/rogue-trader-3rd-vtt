@@ -200,11 +200,14 @@ export class ActionData {
                     }
 
                     const rollTotal = this.rollData.roll.total;
-                    if (rollTotal > 91 && this.rollData.hasAttackSpecial('Overheats')) {
+                    const isBestRanged = actionItem.isRanged && actionItem.system.craftsmanship === 'Best';
+                    if (rollTotal > 91 && this.rollData.hasAttackSpecial('Overheats') && !isBestRanged) {
                         this.effects.push('overheat');
                     }
                     let jamThreshold = 96;
-                    if (this.rollData.hasAttackSpecial('Reliable')) {
+                    if (isBestRanged) {
+                        jamThreshold = 101;
+                    } else if (this.rollData.hasAttackSpecial('Reliable')) {
                         jamThreshold = 100;
                     } else if (this.rollData.hasAttackSpecial('Unreliable')) {
                         jamThreshold = 91;

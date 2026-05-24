@@ -3780,6 +3780,7 @@ data:
     special:
         balanced: true
         powerField: true
+    parryBonus: 5
     type: Exotic
     weight: 1.0
 img: systems/rogue-trader-3rd/icons/items/buckets/melee-exotic.png
@@ -3957,7 +3958,7 @@ data:
     type: Power
     weight: 9.0
 img: systems/rogue-trader-3rd/icons/items/buckets/melee-power-axe.png
-name: Hoi Pattern Power Axe
+name: Loi Pattern Power Axe
 type: weapon
 ---
 data:
@@ -4126,7 +4127,7 @@ data:
     type: Primitive
     weight: 5.0
 img: systems/rogue-trader-3rd/icons/items/buckets/melee-primitive-club.png
-name: Macusta Hammer
+name: Lacusta Hammer
 type: weapon
 ---
 data:
@@ -4322,6 +4323,7 @@ data:
     special:
         defensive: true
         primitive: true
+    parryBonus: 5
     type: Primitive
     weight: 0.5
 img: systems/rogue-trader-3rd/icons/items/buckets/melee-primitive-knife.png
@@ -4500,6 +4502,38 @@ data:
     weight: 3.0
 img: systems/rogue-trader-3rd/icons/items/buckets/melee-power-sword.png
 name: Power Sword
+type: weapon
+---
+data:
+    availability: Very Rare
+    class: Melee
+    clip:
+        max: 0
+        value: 0
+    craftsmanship: Common
+    damage: 1d10+5
+    damageType: Energy
+    description: 'The Mordian variant is designed to support a defensive parry, with
+        a lighter weight and thinner, two sided blade. Adds an additional +5 bonus to
+        parry for a total of +15. Special: Power Field, Balanced'
+    equipped: false
+    modifications: []
+    penetration: 5
+    range: 0
+    rateOfFire:
+        burst: 0
+        full: 0
+        single: 1
+    reload: ''
+    source: Rogue Trader Core Rulebook, p.131
+    special:
+        balanced: true
+        powerField: true
+    parryBonus: 5
+    type: Power
+    weight: 3.0
+img: systems/rogue-trader-3rd/icons/items/buckets/melee-power-sword.png
+name: Power Sword (Mordian)
 type: weapon
 ---
 data:
@@ -5722,4 +5756,130 @@ data:
     weight: 0.5
 img: systems/rogue-trader-3rd/icons/items/buckets/thrown-grenade.png
 name: Virus Grenade
+type: weapon
+---
+data:
+    availability: Average
+    class: Thrown
+    clip:
+        max: 1
+        value: 1
+    craftsmanship: Common
+    damage: '0'
+    damageType: Impact
+    description: 'A weighted throwing weapon of leather cords and stones, used to entangle
+        prey. Special: Primitive, Snare, Inaccurate'
+    equipped: false
+    modifications: []
+    penetration: 0
+    range: 10
+    rateOfFire:
+        burst: 0
+        full: 0
+        single: 1
+    reload: ''
+    source: Rogue Trader Core Rulebook, p.124
+    special:
+        primitive: true
+        snare: true
+        inaccurate: true
+    type: Primitive
+    weight: 1.5
+img: systems/rogue-trader-3rd/icons/items/buckets/thrown-primitive.png
+name: Bolas
+type: weapon
+---
+data:
+    availability: Near Unique
+    class: Melee
+    clip:
+        max: 0
+        value: 0
+    craftsmanship: Common
+    damage: 1d10+3
+    damageType: Rending
+    description: 'A psyker-activated weapon that multiplies mental energies into devastating
+        power. Counts as Best Craftsmanship Mono Primitive when not wielded by a psyker.
+        In psyker hands: +PR damage and +PR penetration, damage type becomes Energy.
+        Special: Force, Unbalanced'
+    equipped: false
+    modifications: []
+    penetration: 3
+    range: 0
+    rateOfFire:
+        burst: 0
+        full: 0
+        single: 1
+    reload: ''
+    source: Into the Storm, p.126
+    special:
+        force: true
+        unbalanced: true
+    type: Exotic
+    weight: 8.0
+img: systems/rogue-trader-3rd/icons/items/buckets/melee-exotic.png
+name: Force Axe (Naduesh)
+type: weapon
+---
+data:
+    availability: Near Unique
+    class: Melee
+    clip:
+        max: 0
+        value: 0
+    craftsmanship: Common
+    damage: 1d10
+    damageType: Impact
+    description: 'A psyker-activated weapon that multiplies mental energies into devastating
+        power. Counts as Best Craftsmanship Mono Primitive when not wielded by a psyker.
+        In psyker hands: +PR damage and +PR penetration, damage type becomes Energy.
+        Also acts as a Psy-Focus. Special: Force'
+    equipped: false
+    modifications: []
+    penetration: 2
+    range: 0
+    rateOfFire:
+        burst: 0
+        full: 0
+        single: 1
+    reload: ''
+    source: Into the Storm, p.126
+    special:
+        force: true
+    type: Exotic
+    weight: 2.0
+img: systems/rogue-trader-3rd/icons/items/buckets/melee-exotic.png
+name: Force Staff (Naduesh)
+type: weapon
+---
+data:
+    availability: Near Unique
+    class: Melee
+    clip:
+        max: 0
+        value: 0
+    craftsmanship: Common
+    damage: 1d10+1
+    damageType: Rending
+    description: 'A psyker-activated weapon that multiplies mental energies into devastating
+        power. Counts as Best Craftsmanship Mono Primitive when not wielded by a psyker.
+        In psyker hands: +PR damage and +PR penetration, damage type becomes Energy.
+        Special: Balanced, Force'
+    equipped: false
+    modifications: []
+    penetration: 2
+    range: 0
+    rateOfFire:
+        burst: 0
+        full: 0
+        single: 1
+    reload: ''
+    source: Into the Storm, p.126
+    special:
+        balanced: true
+        force: true
+    type: Exotic
+    weight: 5.0
+img: systems/rogue-trader-3rd/icons/items/buckets/melee-exotic.png
+name: Force Sword (Naduesh)
 type: weapon

@@ -158,6 +158,42 @@ export class RogueTraderAcolyte extends RogueTraderBaseActor {
             skill: skillName,
             characteristic: skill.characteristic,
         });
+
+        // Parry modifiers from equipped melee weapon — RT Core pp.116, 142-145
+        if (skillName === 'parry') {
+            const meleeWeapon = this.items.find(i => i.type === 'weapon' && i.isMelee && i.system.equipped);
+            if (meleeWeapon) {
+                const craft = meleeWeapon.system.craftsmanship;
+                if (craft === 'Poor') {
+                    rollData.modifiers['Poor Craftsmanship'] = -10;
+                } else if (craft === 'Good') {
+                    rollData.modifiers['Good Craftsmanship'] = 5;
+                } else if (craft === 'Best') {
+                    rollData.modifiers['Best Craftsmanship'] = 10;
+                }
+
+                const hasSpecial = (name) => {
+                    const key = name[0].toLowerCase() + name.slice(1);
+                    return meleeWeapon.items?.find(i => i.isAttackSpecial && i.name === name)
+                        || meleeWeapon.system.special?.[key];
+                };
+                if (hasSpecial('Balanced')) {
+                    rollData.modifiers['Balanced'] = 10;
+                }
+                if (hasSpecial('Defensive')) {
+                    rollData.modifiers['Defensive'] = 15;
+                }
+                if (hasSpecial('Unwieldy') || hasSpecial('Unbalanced')) {
+                    rollData.modifiers['Cannot Parry'] = -999;
+                }
+
+                const parryBonus = Number(meleeWeapon.system.parryBonus) || 0;
+                if (parryBonus !== 0) {
+                    rollData.modifiers['Weapon Parry Bonus'] = parryBonus;
+                }
+            }
+        }
+
         await prepareSimpleRoll(simpleSkillData);
     }
 
@@ -417,8 +453,9 @@ export class RogueTraderAcolyte extends RogueTraderBaseActor {
                 });
             });
 
-        // object for storing the max armour
+        // object for storing the max armour and its craftsmanship per location
         let maxArmour = locations.reduce((acc, location) => Object.assign(acc, { [location]: 0 }), {});
+        let maxArmourCraft = locations.reduce((acc, location) => Object.assign(acc, { [location]: 'Common' }), {});
 
         // for each item, find the maximum armour val per location
         this.items
@@ -427,14 +464,21 @@ export class RogueTraderAcolyte extends RogueTraderBaseActor {
             .reduce((acc, armour) => {
                 locations.forEach((location) => {
                     let armourVal = armour.system.armourPoints[location] || 0;
-                    // Coerce -- sometimes this is a string??
                     armourVal = Number(armourVal);
                     if (armourVal > acc[location]) {
                         acc[location] = armourVal;
+                        maxArmourCraft[location] = armour.system.craftsmanship || 'Common';
                     }
                 });
                 return acc;
             }, maxArmour);
+
+        // Best craftsmanship armour: +1 AP — RT Core p.138
+        locations.forEach((location) => {
+            if (maxArmour[location] > 0 && maxArmourCraft[location] === 'Best') {
+                maxArmour[location] += 1;
+            }
+        });
 
         this.armour.head.value = maxArmour['head'];
         this.armour.leftArm.value = maxArmour['leftArm'];

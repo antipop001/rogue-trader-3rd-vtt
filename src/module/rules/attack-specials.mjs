@@ -45,6 +45,26 @@ export async function updateAttackSpecials(rollData) {
     }
 
     await calculateWeaponModifiersAttackSpecials(rollData);
+
+    // Weapon Craftsmanship — RT Core p.116
+    const craftsmanship = actionItem.system.craftsmanship;
+    if (craftsmanship === 'Poor' && actionItem.isRanged) {
+        if (!rollData.attackSpecials.find(s => s.name === 'Unreliable')) {
+            const hasReliable = rollData.attackSpecials.findIndex(s => s.name === 'Reliable');
+            if (hasReliable >= 0) {
+                rollData.attackSpecials.splice(hasReliable, 1);
+            } else {
+                rollData.attackSpecials.push({ name: 'Unreliable', level: true });
+            }
+        }
+    } else if (craftsmanship === 'Good' && actionItem.isRanged) {
+        const hasUnreliable = rollData.attackSpecials.findIndex(s => s.name === 'Unreliable');
+        if (hasUnreliable >= 0) {
+            rollData.attackSpecials.splice(hasUnreliable, 1);
+        } else if (!rollData.attackSpecials.find(s => s.name === 'Reliable')) {
+            rollData.attackSpecials.push({ name: 'Reliable', level: true });
+        }
+    }
 }
 
 /**
@@ -80,6 +100,18 @@ export async function calculateAttackSpecialAttackBonuses(rollData) {
                     rollData.specialModifiers['Inaccurate'] = -1 * rollData.modifiers['aim'];
                 }
                 break;
+        }
+    }
+
+    // Weapon Craftsmanship attack bonuses — RT Core p.116
+    const craftsmanship = actionItem.system.craftsmanship;
+    if (actionItem.isMelee) {
+        if (craftsmanship === 'Poor') {
+            rollData.specialModifiers['Poor Craftsmanship'] = -10;
+        } else if (craftsmanship === 'Good') {
+            rollData.specialModifiers['Good Craftsmanship'] = 5;
+        } else if (craftsmanship === 'Best') {
+            rollData.specialModifiers['Best Craftsmanship'] = 10;
         }
     }
 }

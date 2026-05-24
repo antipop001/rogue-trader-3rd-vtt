@@ -163,6 +163,10 @@ export class Hit {
         if (actionItem.isMelee) {
             this.modifiers['strength bonus'] = sourceActor.getCharacteristicFuzzy('Strength').bonus;
 
+            if (actionItem.system.craftsmanship === 'Best') {
+                this.modifiers['best craftsmanship'] = 1;
+            }
+
             // Crushing Blow
             if (sourceActor.hasTalent('Crushing Blow')) {
                 const wsBonus = sourceActor.getCharacteristicFuzzy('WeaponSkill').bonus;

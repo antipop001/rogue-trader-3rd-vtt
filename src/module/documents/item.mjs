@@ -7,6 +7,9 @@ export class RogueTraderItem extends RogueTraderItemContainer {
         if (this.items && this.items.size > 0) {
             this.items.forEach((item) => (weight += item.totalWeight));
         }
+        if (this.type === 'armour' && this.system.craftsmanship === 'Best') {
+            weight = weight / 2;
+        }
         return weight;
     }
 
