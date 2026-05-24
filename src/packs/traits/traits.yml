@@ -55,7 +55,7 @@ name: 'Dark Sight'
 type: 'trait'
 ---
 data:
-    description: 'Incorporeal creatures are insubstantial and weightless, able to pass through solid objects such as walls and weapons. An incorporeal creature gains a +30 bonus on Concealment Tests'
+    description: 'Incorporeal creatures are insubstantial and weightless, able to pass through solid objects such as walls and weapons. An incorporeal creature gains a +30 bonus on Concealment Tests when hiding inside something. They may also automatically pass any Silent Move Tests they are required to make. An incorporeal creature is also immune to normal weapons—they simply pass through its body as if it wasn''t there. Daemons, psychic powers, Warp creatures, other creatures with the Incorporeal Trait, and opponents armed with force weapons may all injure an incorporeal creature normally. An incorporeal creature can''t normally affect the mortal world, and thus can''t damage non-incorporeal opponents unless noted otherwise. Incorporeal creatures cannot pass through certain devices or barriers, such as a wall with hexagrammic wards, or a starship''s Geller Field.'
     source: 'Rogue Trader Core Rulebook'
 img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
 name: 'Incorporeal'
@@ -83,7 +83,7 @@ name: 'From Beyond'
 type: 'trait'
 ---
 data:
-    description: 'A creature with the Machine Trait is fashioned from inorganic materials and is generally more rigorous than fleshy folks. Machines do not'
+    description: 'A creature with the Machine Trait is fashioned from inorganic materials and is generally more rigorous than fleshy folks. Machines do not breathe, are immune to the effects of a vacuum, extremes of cold, any mind-influencing psychic effect, and their Armour Points apply toward fire damage. Machines are also resilient to injury, having 1 to 5 Armour Points for each location. This number is indicated next to the Trait.'
     source: 'Rogue Trader Core Rulebook'
 img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
 name: 'Machine'
@@ -223,8 +223,92 @@ name: 'Hoverer'
 type: 'trait'
 ---
 data:
-    description: 'You have been judged a suitable vessel for the following implants:'
+    description: 'You have been judged a suitable vessel for the following implants: Electro-Graft (interface with machine data ports), Electro Inductors (emit or siphon power via bio-electrical emanations), Respirator Unit (+20 bonus to resist airborne toxins and gas weapons, contains vox-synthesiser), Cyber-Mantle (sub-dermal anchorage framework for further implants), Potentia Coil (power unit that can store energy and produce various fields), Cranial Circuitry (linked processors and cortical circuits augmenting mental capacities).'
     source: 'Rogue Trader Core Rulebook'
 img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
 name: 'Mechanicus Implants'
+type: 'trait'
+---
+data:
+    description: 'Improved Natural Weapons are Natural Weapons that are not Primitive. The creature counts as armed even when not wielding weapons, dealing 1d10 plus Strength Bonus damage with its natural attacks, but unlike standard Natural Weapons these attacks do not count as Primitive.'
+    source: 'Into the Storm'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Improved Natural Weapons'
+type: 'trait'
+---
+data:
+    description: 'Kroot are infamous for their practice of devouring the corpses of their foes. A Kroot who devours a fresh corpse (killed no more than 24 hours previously, organic only—no daemons or machines) gains a number of bonus Wounds equal to the unmodified Toughness Bonus that the corpse possessed when alive (typically three). These bonus Wounds may not exceed the Kroot''s own Toughness Bonus and remain for a number of hours equal to the Kroot''s Toughness Bonus or until they are lost, whichever comes first. Unlike normal Wounds, these bonus Wounds are removed when affected by the Damage of any successful attack, and are always removed first. In addition, a Kroot who consumes a fresh corpse heals at twice the normal rate and adds one additional bonus Wound to any wounds healed through other means for a number of hours equal to his Toughness Bonus. A Kroot can only benefit from one consumed corpse at a time.'
+    source: 'Into the Storm'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Eaters of the Dead'
+type: 'trait'
+---
+data:
+    description: 'Kroot gain a +10 bonus to all Concealment, Shadowing, and Silent Move Tests. In addition, Kroot treat forests, jungles, and similar environments as open terrain.'
+    source: 'Into the Storm'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Fieldcraft'
+type: 'trait'
+---
+data:
+    description: 'The Kroot''s beak is a natural weapon with the following profile: 1d5+SB R, Primitive.'
+    source: 'Into the Storm'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Kroot Beak'
+type: 'trait'
+---
+data:
+    description: 'Kroot are far more comfortable wearing light armour or piecemeal protection scavenged from the battlefield. When a Kroot wears armour that provides more than 3 APs, he loses the benefits of the Unnatural Perception and Fieldcraft Traits.'
+    source: 'Into the Storm'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Kroot Physiology'
+type: 'trait'
+---
+data:
+    description: 'The Shaper may select one target that he can see. If the Shaper has previously devoured an example of the target''s race, the Shaper may make a Challenging (+0) Scrutiny Test against the target as a Half Action. If successful, the Shaper may determine the number of Wounds that the target possesses, and may further determine a number of the target''s characteristic bonuses equal to the degrees of success on the Scrutiny Test. The Shaper may select which characteristic bonuses he discovers. This ability may be used once per target per encounter.'
+    source: 'Into the Storm'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Instinctual Understanding'
+type: 'trait'
+---
+data:
+    description: 'One of the many roles of a Shaper within Kroot society is to act as a focus for the practice of ancestor worship. Kroot Shapers have a great mastery of rituals that call upon the ancestor spirits of their Kindred. The Kroot Shaper may select certain advances that have this trait as a prerequisite. These advances are known as Shamanic Talents. Each must be activated by the Shaper, usually involving a sonorous chant and access to the powders, rocks and bones kept within the Shaper''s fetish pouch. Activating a Shamanic Talent is a Full Action.'
+    source: 'Into the Storm'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Shamanic Powers'
+type: 'trait'
+---
+data:
+    description: 'Orks are extremely resilient, their bodies capable of withstanding and surviving injury that would kill humans, and recovering swiftly enough from even the most grievous wounds to get back into the fight within days. Orks gain the Unnatural Toughness (x2) and Sturdy Traits, and the Iron Jaw and True Grit Talents. Additionally, all Medicae tests to treat the injuries of an Ork gain a +20 bonus, due to the Ork''s robust physiology.'
+    source: 'Into the Storm'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: '''Ard'
+type: 'trait'
+---
+data:
+    description: 'Battle is natural to the Orks, who possess abilities needed to wage war from birth. Orks gain the Furious Assault and Xenos Weapon Training (Ork) Talents.'
+    source: 'Into the Storm'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Made Fer Fightin'''
+type: 'trait'
+---
+data:
+    description: 'For reasons still baffling to the Imperium, Orks seem to be able to make their own technology function when by all rights it shouldn''t. Any Ork weapon with the Unreliable quality is not considered to be Unreliable when wielded by an Ork.'
+    source: 'Into the Storm'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Make It Work'
+type: 'trait'
+---
+data:
+    description: 'Amongst Orks, size and authority are synonymous, with larger Orks naturally viewed as leaders by those smaller than them. When dealing with other Greenskins (Gretchin, Snotlings, other Orks), an Ork may use the Intimidate skill to perform all the normal functions of the Command Skill, affecting a number of subordinate Greenskins equal to his Strength Bonus. When dealing with non-Greenskins, the Ork does not get this bonus.'
+    source: 'Into the Storm'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Might Makes Right'
+type: 'trait'
+---
+data:
+    description: 'Orks grow in confidence and brutality in the presence of their own kind. For every additional Ork within 10m, the Ork''s Willpower is increased by +10 to resist the effects of Fear and Pinning.'
+    source: 'Into the Storm'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Mob Rule'
 type: 'trait'

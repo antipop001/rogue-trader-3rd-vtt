@@ -9,7 +9,7 @@ flags:
     source: The Game Master's Kit
 img: systems/rogue-trader-3rd/images/npcs/thegamemasterskit/statues-of-the-dark-lament.png
 items:
-- _id: 3w4vTFS9OE6L6CiL
+- _id: O3cAtTtc4mZdxJEC
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -22,7 +22,7 @@ items:
       It is immune to Fear, Pinning, Insanity Points, and psychic powers used to cloud, control, or delude its mind.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: i0ivqAe1hqVWJl02
+- _id: JUmNNplTOHL3r6WG
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -30,9 +30,13 @@ items:
   ownership:
     default: 3
   sort: 0
-  system: {}
+  system:
+    description: Improved Natural Weapons are Natural Weapons that are not Primitive. The creature counts as armed even when
+      not wielding weapons, dealing 1d10 plus Strength Bonus damage with its natural attacks, but unlike standard Natural
+      Weapons these attacks do not count as Primitive.
+    source: Into the Storm
   type: trait
-- _id: EL0XkYkSi99CC9QD
+- _id: es947BSUw4wrdSkB
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -45,7 +49,7 @@ items:
       This Trait always includes a numeric value to indicate how many Armour Points the creature gains to all locations.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: CPRdKT7BvRe0BA8Z
+- _id: cuvWyVesbPJCNzo3
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -60,7 +64,7 @@ items:
       can it be disarmed—unless, of course, you hack off its limbs! Natural weapons always count as Primitive.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: homILsbvcZEWHRVJ
+- _id: zioHoNwP2RYK2nwY
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -68,7 +72,7 @@ items:
   ownership:
     default: 3
   sort: 0
-  system: &id001
+  system:
     description: One or more of the creature's Characteristics is unnatural. Each time this Trait is gained, select a Characteristic,
       and double its bonus. For example, a creature with a Strength of 41 normally has a 4 Strength Bonus. With this Trait,
       its Strength Bonus increases to 8. The Trait may be gained multiple times. Each time, you may select a new Characteristic
@@ -78,7 +82,7 @@ items:
       Bonus. During Opposed Characteristic Tests, on a success, the bonus multiplier is added to the degree of success.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: OAwlk7MipkQ3Bia5
+- _id: 4DuGCMtYQPsYPosS
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -86,9 +90,17 @@ items:
   ownership:
     default: 3
   sort: 0
-  system: *id001
+  system:
+    description: One or more of the creature's Characteristics is unnatural. Each time this Trait is gained, select a Characteristic,
+      and double its bonus. For example, a creature with a Strength of 41 normally has a 4 Strength Bonus. With this Trait,
+      its Strength Bonus increases to 8. The Trait may be gained multiple times. Each time, you may select a new Characteristic
+      or one chosen previously. Each time you apply this Trait to the same Characteristic, the Bonus multiplier increases
+      by 1. For example, one selection multiplies the Characteristic Bonus by ×2, two selections by ×3, and three selections
+      by ×4. Note this Trait does not modify the creature's movement. Movement is based on a creature's unmodified Agility
+      Bonus. During Opposed Characteristic Tests, on a success, the bonus multiplier is added to the degree of success.
+    source: Rogue Trader Core Rulebook
   type: trait
-- _id: v7YSSN9dC5du0Yg1
+- _id: uvnU8AX091dgFnUK
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png

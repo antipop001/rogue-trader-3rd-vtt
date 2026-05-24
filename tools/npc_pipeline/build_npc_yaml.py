@@ -7,6 +7,7 @@ v2: resolves talent/trait names against the existing compendium YAML packs
 into structured weapon/armour items.
 """
 
+import copy
 import json
 import re
 import secrets
@@ -151,14 +152,99 @@ def index_by_name(docs):
 def to_item_stub(doc, _type, default_img):
     """Convert a compendium pack doc to an embedded actor item document."""
     # Pack docs use `data` (legacy NeDB); Foundry actor items want `system`.
-    sys_data = doc.get("data", doc.get("system", {})) or {}
-    return {
+    # Deep-copy mutable data so multiple NPCs sharing a compendium entry
+    # don't alias each other's system/effects/flags dicts.
+    sys_data = copy.deepcopy(doc.get("data", doc.get("system", {})) or {})
+    stub = {
         "_id": fid(),
         "name": doc["name"],
         "type": _type,
         "img": doc.get("img", default_img),
         "system": sys_data,
     }
+    if doc.get("effects"):
+        stub["effects"] = copy.deepcopy(doc["effects"])
+    if doc.get("flags"):
+        stub["flags"] = copy.deepcopy(doc["flags"])
+    return stub
+
+
+SKILL_DISPLAY_TO_KEY = {v: v for v in {
+    "acrobatics", "athletics", "awareness", "charm", "command", "commerce",
+    "commonLore", "deceive", "demolitions", "dodge", "forbiddenLore",
+    "inquiry", "interrogation", "intimidate", "linguistics", "logic",
+    "medicae", "navigate", "operate", "parry", "performance", "psyniscience",
+    "scholasticLore", "scrutiny", "security", "sleightOfHand", "stealth",
+    "survival", "techUse", "trade",
+}}
+for _disp, _key in SKILL_MAP.items():
+    SKILL_DISPLAY_TO_KEY[_disp.lower()] = _key
+SKILL_DISPLAY_TO_KEY.update({
+    "chem-use": "trade", "shadowing": "stealth",
+    "pilot": "operate", "climb": "athletics",
+    "common lore": "commonLore", "forbidden lore": "forbiddenLore",
+    "scholastic lore": "scholasticLore", "tech-use": "techUse",
+    "sleight of hand": "sleightOfHand",
+})
+
+
+def _apply_npc_talent_choice(item):
+    """For resolved talents with pickable flags, extract the choice from the
+    NPC stat-block name parenthetical, stamp system.choice, build ActiveEffects
+    for kind=skill (Talented), and strip the pickable flag."""
+    flags_rt = (item.get("flags") or {}).get("rt", {})
+    pickable = flags_rt.get("pickable")
+    if not pickable:
+        return
+
+    m = re.match(r"^[^(]*\(\s*(.+?)\s*\)\s*(?:\(.*\))?\s*$", item["name"])
+    if not m:
+        return
+
+    choice_text = m.group(1)
+    kind = pickable.get("kind", "")
+
+    item.setdefault("system", {})["choice"] = choice_text
+
+    if kind == "skill":
+        seen = set()
+        skill_keys = []
+        for part in [p.strip() for p in choice_text.split(",")]:
+            clean = re.sub(r"\s*[\[\(].*", "", part).strip()
+            key = SKILL_DISPLAY_TO_KEY.get(part.lower()) or SKILL_DISPLAY_TO_KEY.get(clean.lower())
+            if key and key not in seen:
+                skill_keys.append(key)
+                seen.add(key)
+        if skill_keys:
+            changes = [{"key": f"system.skills.{sk}.modifier",
+                        "mode": 2, "value": "10"} for sk in skill_keys]
+            effect = {
+                "_id": fid(),
+                "name": item["name"],
+                "img": item.get("img", ""),
+                "description": "",
+                "origin": "",
+                "disabled": False,
+                "transfer": True,
+                "tint": None,
+                "statuses": [],
+                "duration": {
+                    "startTime": None, "seconds": None, "combat": None,
+                    "rounds": None, "turns": None, "startRound": None, "startTurn": None,
+                },
+                "changes": changes,
+            }
+            item.setdefault("effects", []).append(effect)
+            item["system"]["choice"] = skill_keys[0] if len(skill_keys) == 1 else ",".join(skill_keys)
+
+    # Update conditional bonus labels with the specific choice
+    cond = flags_rt.get("conditionalBonuses")
+    if cond:
+        for entry in cond:
+            if "chosen group" in entry.get("label", ""):
+                entry["label"] = entry["label"].replace("chosen group", choice_text)
+
+    del flags_rt["pickable"]
 
 
 TRAIT_ALIASES = {
@@ -488,6 +574,8 @@ def build_actor(npc, talent_idx, trait_idx, weapon_idx, book_slug=None):
     trait_miss = []
     for t in npc["talents"]:
         it, hit = resolve_or_stub(t, talent_idx, "talent", talent_default_img)
+        if hit:
+            _apply_npc_talent_choice(it)
         items.append(_wrap_item(it))
         if not hit:
             talent_miss.append(t)

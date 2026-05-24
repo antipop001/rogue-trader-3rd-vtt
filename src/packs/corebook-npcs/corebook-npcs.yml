@@ -8,7 +8,7 @@ flags:
     source: Rogue Trader Core Rulebook
 img: ''
 items:
-- _id: MvPKT2bWsaHeGSts
+- _id: h03lN7KIMPg5flkN
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -27,7 +27,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: a8CUF9IbDjAfWGs2
+- _id: lfHzXZk8kmW6yp8d
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -124,7 +124,7 @@ flags:
     source: Rogue Trader Core Rulebook
 img: systems/rogue-trader-3rd/images/npcs/corebook/free-trader-captain.png
 items:
-- _id: YrCYqNiSzDm5TYMH
+- _id: BnMQdcvY6OncxjJR
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -143,7 +143,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: RPLuRIMYS2X5HLh7
+- _id: jD4Z6z7ZcnT8aKbQ
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -162,9 +162,17 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: EcUeSdgbiGR3SsuE
+- _id: BWP1adPUvfLhKdlC
   effects: []
-  flags: {}
+  flags:
+    rt:
+      conditionalBonuses:
+      - applies:
+          characteristics:
+          - fellowship
+          skills: []
+        label: with void born
+        value: 10
   img: systems/rogue-trader-3rd/icons/psykana/evil-eye-eerie-2.jpg
   name: Peer (void born)
   ownership:
@@ -176,12 +184,13 @@ items:
       Fellowship Tests when interacting with the chosen group. Talent Groups: Academics, Adeptus Arbites, Adeptus Mechanicus,
       Administratum, Government, Hivers, Inquisition, Middle Classes, Military, Nobility, the Insane, Underworld, Void Born,
       Workers.'
+    choice: void born
     cost: 0
     prerequisites: Fellowship 30
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: vdcjF1KCUSCTEZYc
+- _id: JLcrbowQYVAngeZH
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -191,7 +200,7 @@ items:
   sort: 0
   system: {}
   type: talent
-- _id: Ju1folwgIk0nLcmW
+- _id: YGjhy8QNGiVnpnVb
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/pistol-las.png
@@ -230,7 +239,7 @@ items:
     type: Las
     weight: 4
   type: weapon
-- _id: 2IdZIOYcwshvtn39
+- _id: IVZwKmdh7VsOeQDu
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/armour-primitive.png
@@ -352,7 +361,7 @@ flags:
     source: Rogue Trader Core Rulebook
 img: systems/rogue-trader-3rd/images/npcs/corebook/mutant-outcast.png
 items:
-- _id: Q5tMxuVhPKfSctsJ
+- _id: NBtA9daPfSoqBdS8
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -371,9 +380,27 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: BCEa0XLJuKSjkplG
+- _id: ZjIAMkMSN7UqL9tE
   effects: []
-  flags: {}
+  flags:
+    rt:
+      conditionalBonuses:
+      - applies:
+          characteristics:
+          - weaponSkill
+          - strength
+          - toughness
+          - willpower
+          skills: []
+        label: while frenzied
+        value: 10
+      - applies:
+          characteristics:
+          - ballisticSkill
+          - intelligence
+          skills: []
+        label: while frenzied
+        value: -20
   img: systems/rogue-trader-3rd/icons/talents/red/r_08.png
   name: Frenzy
   ownership:
@@ -394,7 +421,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: BMRM1pMez1JkM7jp
+- _id: pBdS3swxwEwq7nxf
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -412,9 +439,17 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: 1DpWR3Mvgocra9D0
+- _id: qHRdxs4NWmXdpAqq
   effects: []
-  flags: {}
+  flags:
+    rt:
+      conditionalBonuses:
+      - applies:
+          characteristics:
+          - willpower
+          skills: []
+        label: vs Psychic Techniques
+        value: 10
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
   name: Resistance (Poisons)
   ownership:
@@ -429,7 +464,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: VfSua4kDAj8cqpaR
+- _id: OZuJHA1UeXBE4RlY
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -439,7 +474,7 @@ items:
   sort: 0
   system: {}
   type: trait
-- _id: nRK613OdbkK64xO3
+- _id: eKurblfWPrrWeIqd
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
@@ -558,7 +593,7 @@ flags:
     source: Rogue Trader Core Rulebook
 img: ''
 items:
-- _id: tLRRxDEcyuD2L9LV
+- _id: N6Q35jiNp0YTxwrI
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -577,7 +612,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: R6YscU4DlziRHfAD
+- _id: UuxcG5i1sTFCOYLR
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -594,7 +629,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: cWgdc2XJbFV1ANNW
+- _id: bvtRQHfGDJWbldCo
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -613,9 +648,17 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: vYdjciZkugxlQ5Nu
+- _id: 1wXxRjkqZlEwlHXj
   effects: []
-  flags: {}
+  flags:
+    rt:
+      conditionalBonuses:
+      - applies:
+          characteristics:
+          - fellowship
+          skills: []
+        label: with Imperial Navy
+        value: 10
   img: systems/rogue-trader-3rd/icons/psykana/evil-eye-eerie-2.jpg
   name: Peer (Imperial Navy)
   ownership:
@@ -627,12 +670,13 @@ items:
       Fellowship Tests when interacting with the chosen group. Talent Groups: Academics, Adeptus Arbites, Adeptus Mechanicus,
       Administratum, Government, Hivers, Inquisition, Middle Classes, Military, Nobility, the Insane, Underworld, Void Born,
       Workers.'
+    choice: Imperial Navy
     cost: 0
     prerequisites: Fellowship 30
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: d2NBFsv8MiwunuFj
+- _id: MO7KacfOkfKNSsht
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -642,7 +686,7 @@ items:
   sort: 0
   system: {}
   type: talent
-- _id: IA7FvY1sw1a6de1n
+- _id: 4CConirPfiNtRoCm
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/pistol-sp.png
@@ -682,7 +726,7 @@ items:
     type: SP
     weight: 3
   type: weapon
-- _id: 8piAjWcPF2fNPqs4
+- _id: WUrKVy39vjiDM0X5
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
@@ -722,7 +766,7 @@ items:
     type: ''
     weight: 0
   type: weapon
-- _id: YFhDxdl7wej2CKsB
+- _id: JLGonmv8EPxQ7WVy
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/armour-primitive.png
@@ -836,7 +880,7 @@ flags:
     source: Rogue Trader Core Rulebook
 img: ''
 items:
-- _id: xT2YsY3BVnEJimO5
+- _id: JW9RliJs3DWo7yaC
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -855,7 +899,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: U942XORXbJFIg7kR
+- _id: LnngzJ9Ds7zARYu8
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -872,7 +916,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: IgFRY3MQN1CaVhIl
+- _id: MQe8ePpwo8sWwvYz
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/armor/gloves_s08.png
@@ -891,7 +935,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: QLBLoWRvkZGTz31B
+- _id: GXvvwts54xTPIBTS
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -910,7 +954,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: Eijt0sZQ27i70CEk
+- _id: tT2Q7TCZAfjgqF08
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -927,7 +971,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: JrRRWvON3U9Jz4zD
+- _id: AnP3k0n0I78Ql2h5
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -937,7 +981,7 @@ items:
   sort: 0
   system: {}
   type: talent
-- _id: vIETAEExzERMXmob
+- _id: yULLibWdv24lNQGi
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/pistols/pistols_18.png
@@ -955,7 +999,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: srrXauieRqFPANbd
+- _id: GzGe7Wyn2VzdYfuN
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
@@ -994,7 +1038,7 @@ items:
     type: ''
     weight: 0
   type: weapon
-- _id: KTO9oY90rKboe6Lc
+- _id: PJhI1A92QzaBlVrH
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
@@ -1034,7 +1078,7 @@ items:
     type: ''
     weight: 0
   type: weapon
-- _id: 6NTIRKMvvsuhc7mu
+- _id: AAY09J9JlhpA7GpS
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-shock.png
@@ -1074,7 +1118,7 @@ items:
     type: Shock
     weight: 1.5
   type: weapon
-- _id: jmpb2XldFrFdwfro
+- _id: FQnvVIlo0eYCBNVy
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/armour-primitive.png
@@ -1189,7 +1233,7 @@ flags:
     source: Rogue Trader Core Rulebook
 img: systems/rogue-trader-3rd/images/npcs/corebook/renegade.png
 items:
-- _id: Txx1x8Qg2c9KsaC1
+- _id: jtFemAN8XXbjETAO
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -1208,7 +1252,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: YQyznDDBcu7LY39h
+- _id: pgKP5FXYcIdS7L6z
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -1226,7 +1270,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: LfPkXx0RBegTQwgo
+- _id: hDnhSqWFyn6wl5y9
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -1245,7 +1289,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: U7mVDKATmHCodbjz
+- _id: Kh0WkqWmFf14Y9Yi
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -1255,9 +1299,17 @@ items:
   sort: 0
   system: {}
   type: talent
-- _id: wr8JjufcJCpaidCl
+- _id: G74GijtCmXOBnAdE
   effects: []
-  flags: {}
+  flags:
+    rt:
+      conditionalBonuses:
+      - applies:
+          characteristics:
+          - fellowship
+          skills: []
+        label: with Criminal or Renegade
+        value: 10
   img: systems/rogue-trader-3rd/icons/psykana/evil-eye-eerie-2.jpg
   name: Peer (Criminal or Renegade)
   ownership:
@@ -1269,12 +1321,13 @@ items:
       Fellowship Tests when interacting with the chosen group. Talent Groups: Academics, Adeptus Arbites, Adeptus Mechanicus,
       Administratum, Government, Hivers, Inquisition, Middle Classes, Military, Nobility, the Insane, Underworld, Void Born,
       Workers.'
+    choice: Criminal or Renegade
     cost: 0
     prerequisites: Fellowship 30
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: JKbOP93akHbkDl18
+- _id: frPyPu6mgjfNY0PY
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-primitive-knife.png
@@ -1314,7 +1367,7 @@ items:
     type: Primitive
     weight: 1.0
   type: weapon
-- _id: 8mqdHjBzlkpQZK6f
+- _id: rEL6CqOeyIQhEQJp
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/pistol-sp.png
@@ -1353,7 +1406,7 @@ items:
     type: SP
     weight: 3
   type: weapon
-- _id: 4LIjvPzLjLm5em3T
+- _id: 49QgrGDFcfC4uXTD
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
@@ -1394,7 +1447,7 @@ items:
     type: ''
     weight: 0
   type: weapon
-- _id: JFEYf9RBHr8q2w8j
+- _id: fcryp2G7eBI4cECY
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/pistol-sp.png
@@ -1433,7 +1486,7 @@ items:
     type: SP
     weight: 2.5
   type: weapon
-- _id: vg3Y0bjuWqVRqWCr
+- _id: Olbu3DyWhgoPiAec
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/basic-sp.png
@@ -1472,7 +1525,7 @@ items:
     type: SP
     weight: 3.5
   type: weapon
-- _id: EfhchX2RD83R3OWW
+- _id: 2BXh83ylqGpBMpGb
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
@@ -1512,7 +1565,7 @@ items:
     type: ''
     weight: 0
   type: weapon
-- _id: CTm1V4BLALOUR5Ua
+- _id: ILNJeVoooYBAa0Gj
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/armour-primitive.png
@@ -1618,7 +1671,7 @@ flags:
     source: Rogue Trader Core Rulebook
 img: ''
 items:
-- _id: Zn8E4nLp0pvivAzt
+- _id: rgjetve9oEfpfUKB
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -1636,7 +1689,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: vlpSSPy7c6qEbKT8
+- _id: tlubq8ZY3kb5rAUW
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -1655,7 +1708,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: os4aYampfAIs4CMS
+- _id: d0cvUCLdZTxTHLo5
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -1673,9 +1726,10 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: XuhQ7vQ9CI8y6PPW
+- _id: Zwb8iXGORUoL8quz
   effects: []
-  flags: {}
+  flags:
+    rt: {}
   img: systems/rogue-trader-3rd/icons/items/spear/stave_04_b.png
   name: Exotic Weapon Training (any one)
   ownership:
@@ -1685,12 +1739,13 @@ items:
     aptitudes: ''
     benefit: The Explorer has received Exotic Weapon Training in a single Exotic Weapon, and can use it without penalty. This
       Talent may be taken multiple times, choosing a different Exotic Weapon each time.
+    choice: any one
     cost: 0
     prerequisites: ''
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: XJTQilnDUE2uOvjB
+- _id: bFz2Vnhpd4SytPNB
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -1708,7 +1763,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: dJXratlpz2WxKqOG
+- _id: CUJLdojgQb9EhcTq
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -1727,7 +1782,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: eI6ZNsgQUJ23lxPw
+- _id: hdBz1xygBvzGS0NO
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -1746,7 +1801,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: gkjpeJfWiR4VatcK
+- _id: y2Q9JJH03WCwGRsV
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -1764,7 +1819,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: HT64ddCQhyUaawwh
+- _id: yARw4yzOyUULy0jO
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -1774,9 +1829,17 @@ items:
   sort: 0
   system: {}
   type: talent
-- _id: qRxaDAL9JEey2Zef
+- _id: U6i1jAK00lRRmriI
   effects: []
-  flags: {}
+  flags:
+    rt:
+      conditionalBonuses:
+      - applies:
+          characteristics:
+          - willpower
+          skills: []
+        label: vs Psychic Techniques
+        value: 10
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
   name: Resistance (Fear)
   ownership:
@@ -1791,9 +1854,17 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: Yqfo1txBMCAp5kix
+- _id: xl06RLC5I8frMqyM
   effects: []
-  flags: {}
+  flags:
+    rt:
+      conditionalBonuses:
+      - applies:
+          characteristics:
+          - fellowship
+          skills: []
+        label: with Criminals or Renegades
+        value: 10
   img: systems/rogue-trader-3rd/icons/psykana/evil-eye-eerie-2.jpg
   name: Peer (Criminals or Renegades)
   ownership:
@@ -1805,12 +1876,13 @@ items:
       Fellowship Tests when interacting with the chosen group. Talent Groups: Academics, Adeptus Arbites, Adeptus Mechanicus,
       Administratum, Government, Hivers, Inquisition, Middle Classes, Military, Nobility, the Insane, Underworld, Void Born,
       Workers.'
+    choice: Criminals or Renegades
     cost: 0
     prerequisites: Fellowship 30
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: vTNkVImeqCYmwYxn
+- _id: 90ml5H0w8LLFTw72
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -1830,7 +1902,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: syj9jb3daPiWTxyE
+- _id: MMixeAQaV0f62CeR
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/pistol-bolt.png
@@ -1870,7 +1942,7 @@ items:
     type: Bolt
     weight: 3.5
   type: weapon
-- _id: AhusVhTVHVdC70qW
+- _id: 1IJKzZe0NUSUFspa
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/pistol-sp.png
@@ -1909,7 +1981,7 @@ items:
     type: SP
     weight: 3
   type: weapon
-- _id: AN5vxwze9NvWl5Lr
+- _id: gmXIBvzf12FQNSO5
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-sword.png
@@ -1950,7 +2022,7 @@ items:
     type: Chain
     weight: 6.0
   type: weapon
-- _id: ylKMMdjnGYSE8GjM
+- _id: E07uXRnK0ed94iXw
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
@@ -1989,7 +2061,7 @@ items:
     type: ''
     weight: 0
   type: weapon
-- _id: tghMkJ0U64AAQyni
+- _id: ITdG3AeqQs9XqIio
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/armour-primitive.png
@@ -2110,7 +2182,7 @@ flags:
     source: Rogue Trader Core Rulebook
 img: ''
 items:
-- _id: DszQEXtJu6ZyeDE1
+- _id: oNIceV8w2xWoC3de
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_32.png
@@ -2127,7 +2199,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: LIMEUEGMGKwBMxvz
+- _id: Pj2gRmxYiqWTCke3
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -2145,7 +2217,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: lQCd5Izj0dcKs6Vj
+- _id: QA3pJahzg27tMVaE
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -2163,7 +2235,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: MWnQv1LhJwyJcWtf
+- _id: 6ZvadIOX2ezWrnnM
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -2182,9 +2254,17 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: NWHLc6QP3TleQYXY
+- _id: hfRTd6NZ9xabxvll
   effects: []
-  flags: {}
+  flags:
+    rt:
+      conditionalBonuses:
+      - applies:
+          characteristics:
+          - fellowship
+          skills: []
+        label: with Renegade
+        value: 10
   img: systems/rogue-trader-3rd/icons/psykana/evil-eye-eerie-2.jpg
   name: Peer (Renegade)
   ownership:
@@ -2196,12 +2276,13 @@ items:
       Fellowship Tests when interacting with the chosen group. Talent Groups: Academics, Adeptus Arbites, Adeptus Mechanicus,
       Administratum, Government, Hivers, Inquisition, Middle Classes, Military, Nobility, the Insane, Underworld, Void Born,
       Workers.'
+    choice: Renegade
     cost: 0
     prerequisites: Fellowship 30
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: hYZHx9DcbxIBkAfQ
+- _id: AwjchzqAhhovEma2
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -2220,7 +2301,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: Mv4EyxjgaQVxYG7o
+- _id: uoX75AOv0fGwZL7n
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -2230,9 +2311,17 @@ items:
   sort: 0
   system: {}
   type: talent
-- _id: KN0uVDMdkM0xbgLj
+- _id: DRAeZ6TueGlElc3L
   effects: []
-  flags: {}
+  flags:
+    rt:
+      conditionalBonuses:
+      - applies:
+          characteristics:
+          - willpower
+          skills: []
+        label: vs Psychic Techniques
+        value: 10
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
   name: Resistance (Psychic Techniques)
   ownership:
@@ -2247,7 +2336,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: cGwRBCT1e85ZwZi8
+- _id: TDTtPdIauj54F2Af
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -2257,7 +2346,7 @@ items:
   sort: 0
   system: {}
   type: trait
-- _id: sMJhUvMYnK4pgWXk
+- _id: kzOgxMqVKVrxOtx5
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -2358,7 +2447,7 @@ flags:
     source: Rogue Trader Core Rulebook
 img: ''
 items:
-- _id: ASdhpCs5PoqQNACA
+- _id: zRrWVnu4CwmABVNe
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -2377,7 +2466,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: CaMkTSFs7NDC9PPH
+- _id: qfPpK4vzQxtVTs5R
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -2387,7 +2476,7 @@ items:
   sort: 0
   system: {}
   type: talent
-- _id: lDqdL67KooW1ldn5
+- _id: LOyd7W0BA8Wz03A4
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -2397,7 +2486,7 @@ items:
   sort: 0
   system: {}
   type: trait
-- _id: WbmOEwrG986Gca9Q
+- _id: txWgWb45NYsvcbS9
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -2410,7 +2499,7 @@ items:
       a half action. A creature with this Trait suffers no penalties for moving and firing on semi- or full-automatic.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: pzL1ex6EwTOztVjs
+- _id: AkIXdB6sbBKlNJGx
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -2420,7 +2509,7 @@ items:
   sort: 0
   system: {}
   type: trait
-- _id: NOXErFHdVi0zSuxM
+- _id: Kiid8rO7s3WHpnGh
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -2435,7 +2524,7 @@ items:
       Game.'
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: lu0Qcdo3qJGlPb7I
+- _id: DVIRzc11DkCwUZcP
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -2445,10 +2534,12 @@ items:
   sort: 0
   system:
     description: A creature with the Machine Trait is fashioned from inorganic materials and is generally more rigorous than
-      fleshy folks. Machines do not
+      fleshy folks. Machines do not breathe, are immune to the effects of a vacuum, extremes of cold, any mind-influencing
+      psychic effect, and their Armour Points apply toward fire damage. Machines are also resilient to injury, having 1 to
+      5 Armour Points for each location. This number is indicated next to the Trait.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: FgvXHcQDoUG8kLzy
+- _id: I0dUrp9YLi4WImcS
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -2458,7 +2549,7 @@ items:
   sort: 0
   system: {}
   type: trait
-- _id: My6UACusghpoGh71
+- _id: ytimkDHgaRLq7BQ0
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -2471,7 +2562,7 @@ items:
       talent.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: 6zQhMKIvT128VeDd
+- _id: UqzfxQyQJl9oI1pa
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -2479,7 +2570,7 @@ items:
   ownership:
     default: 3
   sort: 0
-  system: &id001
+  system:
     description: One or more of the creature's Characteristics is unnatural. Each time this Trait is gained, select a Characteristic,
       and double its bonus. For example, a creature with a Strength of 41 normally has a 4 Strength Bonus. With this Trait,
       its Strength Bonus increases to 8. The Trait may be gained multiple times. Each time, you may select a new Characteristic
@@ -2489,7 +2580,7 @@ items:
       Bonus. During Opposed Characteristic Tests, on a success, the bonus multiplier is added to the degree of success.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: 0T0preXsmAbJpyN6
+- _id: ZcMRq14R7JiAOF1x
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -2497,9 +2588,17 @@ items:
   ownership:
     default: 3
   sort: 0
-  system: *id001
+  system:
+    description: One or more of the creature's Characteristics is unnatural. Each time this Trait is gained, select a Characteristic,
+      and double its bonus. For example, a creature with a Strength of 41 normally has a 4 Strength Bonus. With this Trait,
+      its Strength Bonus increases to 8. The Trait may be gained multiple times. Each time, you may select a new Characteristic
+      or one chosen previously. Each time you apply this Trait to the same Characteristic, the Bonus multiplier increases
+      by 1. For example, one selection multiplies the Characteristic Bonus by ×2, two selections by ×3, and three selections
+      by ×4. Note this Trait does not modify the creature's movement. Movement is based on a creature's unmodified Agility
+      Bonus. During Opposed Characteristic Tests, on a success, the bonus multiplier is added to the degree of success.
+    source: Rogue Trader Core Rulebook
   type: trait
-- _id: PSvy27BS07lALpaG
+- _id: rUlgnBspkXMEMpbH
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
@@ -2539,7 +2638,7 @@ items:
     type: ''
     weight: 0
   type: weapon
-- _id: k4j5yIKf468zDR19
+- _id: vJRspcjf0jcqSCDJ
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
@@ -2579,7 +2678,7 @@ items:
     type: ''
     weight: 0
   type: weapon
-- _id: FRxnNgx67gn4I3nI
+- _id: ecOYxKJCxclBUQ9F
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
@@ -2619,7 +2718,7 @@ items:
     type: ''
     weight: 0
   type: weapon
-- _id: XJ7YMizWqyeK1kxX
+- _id: YykSoyAo4xsNtJxZ
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/basic-sp.png
@@ -2658,7 +2757,7 @@ items:
     type: SP
     weight: 3.5
   type: weapon
-- _id: 087pYrp8lqwIkZnp
+- _id: HW5OMqzxD1tLCngV
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/basic-las.png
@@ -2697,7 +2796,7 @@ items:
     type: Las
     weight: 6.0
   type: weapon
-- _id: f0miA9rCOf9Wvc8K
+- _id: wABjXKhlpcLeMTu4
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/heavy-bolt.png
@@ -2737,7 +2836,7 @@ items:
     type: Bolt
     weight: 40.0
   type: weapon
-- _id: xsP79US420mYIJ2D
+- _id: enBrpRmCCx4IbtYr
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
@@ -2846,7 +2945,7 @@ flags:
     source: Rogue Trader Core Rulebook
 img: ''
 items:
-- _id: 5jEbSat3O4mPVvRu
+- _id: rCCHbp9PwyfUCmKr
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -2864,7 +2963,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: Iiu5RIYItIeHFGOF
+- _id: Nr70whVTR1xP3mXP
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -2884,7 +2983,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: fbCdCN6TuhPN7jn9
+- _id: irRJ6KBeVZCHKfbe
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -2894,7 +2993,7 @@ items:
   sort: 0
   system: {}
   type: trait
-- _id: d9XqGSx5BoiFnBgJ
+- _id: OlHdSU32a8lGCjzS
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -2907,7 +3006,7 @@ items:
       in areas of dim or no lighting.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: yCinMT87ffaU3ORx
+- _id: DUqMLd8Y4h2nEhqb
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -2917,7 +3016,7 @@ items:
   sort: 0
   system: {}
   type: trait
-- _id: JcYRXnFGKx6mVLsA
+- _id: Togj8p8ZwdIUVop5
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -2927,10 +3026,12 @@ items:
   sort: 0
   system:
     description: A creature with the Machine Trait is fashioned from inorganic materials and is generally more rigorous than
-      fleshy folks. Machines do not
+      fleshy folks. Machines do not breathe, are immune to the effects of a vacuum, extremes of cold, any mind-influencing
+      psychic effect, and their Armour Points apply toward fire damage. Machines are also resilient to injury, having 1 to
+      5 Armour Points for each location. This number is indicated next to the Trait.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: KvV3cD6fDsiYvne4
+- _id: oF8DX1gotLEIdV3n
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -2946,7 +3047,7 @@ items:
       creature.'
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: Ly5e9Rin0s61mP8u
+- _id: porlUHJkxoCWwTom
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
@@ -3052,7 +3153,7 @@ flags:
     source: Rogue Trader Core Rulebook
 img: ''
 items:
-- _id: dvQsUV7aBtL5j3nt
+- _id: XRnLjmqYJxiV5Jt5
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -3062,7 +3163,7 @@ items:
   sort: 0
   system: {}
   type: talent
-- _id: b0gmE6mjwuhQa3TM
+- _id: h7btDTPMFvWAw6O7
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -3072,7 +3173,7 @@ items:
   sort: 0
   system: {}
   type: trait
-- _id: BFNn5a8T6Oc61AtI
+- _id: lTnmGgpx5d9x1MrV
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -3082,7 +3183,7 @@ items:
   sort: 0
   system: {}
   type: trait
-- _id: gJmL7sz07SqaLZky
+- _id: GQDbEcAdDcOMD4Bn
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
@@ -3191,7 +3292,7 @@ flags:
     source: Rogue Trader Core Rulebook
 img: ''
 items:
-- _id: DPQEe5G7yVZ0q9EA
+- _id: B0hR9BwjFMCwGbhv
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -3209,7 +3310,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: oos3T0Z5eQcigH0f
+- _id: qhllnCrrR4dehfYz
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -3222,7 +3323,7 @@ items:
       in areas of dim or no lighting.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: DpFKux6c3wCjrtUJ
+- _id: yDzVD431r82B9HPC
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -3232,7 +3333,7 @@ items:
   sort: 0
   system: {}
   type: trait
-- _id: XcWDCsxSuMqbDoFM
+- _id: D3cVHCClAaNxwe5o
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -3242,10 +3343,12 @@ items:
   sort: 0
   system:
     description: A creature with the Machine Trait is fashioned from inorganic materials and is generally more rigorous than
-      fleshy folks. Machines do not
+      fleshy folks. Machines do not breathe, are immune to the effects of a vacuum, extremes of cold, any mind-influencing
+      psychic effect, and their Armour Points apply toward fire damage. Machines are also resilient to injury, having 1 to
+      5 Armour Points for each location. This number is indicated next to the Trait.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: HeE05F8aHmP1atQc
+- _id: 0DQ4rVJ5fCGXeLvq
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -3341,7 +3444,7 @@ flags:
     source: Rogue Trader Core Rulebook
 img: systems/rogue-trader-3rd/images/npcs/corebook/eldar-corsair.png
 items:
-- _id: yjleZV3Q5IdsK1G5
+- _id: m0IDI6eoBmg9GJ9Z
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -3360,7 +3463,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: 3dTPgQ80rslndcCG
+- _id: PmZ35ga3KyomYMLc
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/psykana/wind-grasp-magenta-1.jpg
@@ -3379,7 +3482,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: tiIFcoxR31NeLG58
+- _id: cdpr4MdN1TeFDFDp
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -3389,7 +3492,7 @@ items:
   sort: 0
   system: {}
   type: talent
-- _id: 2onmze9KopFjr1zt
+- _id: iugTPMDcQIhnxvOW
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -3406,7 +3509,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: LrG6bYZeQFDUG8jc
+- _id: TtDGhsINB2aMYQTe
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -3425,7 +3528,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: rJAVUpeyF0ZufbMe
+- _id: e9lDUampeLefjv5C
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -3444,7 +3547,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: VlGncKuK0l7XQnMc
+- _id: VnI9SUaV6nHWqfcw
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/pistols/pistols_18.png
@@ -3462,9 +3565,17 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: uc3SHsDu5xcwqMzz
+- _id: dvgccc37Q2SeghI1
   effects: []
-  flags: {}
+  flags:
+    rt:
+      conditionalBonuses:
+      - applies:
+          characteristics:
+          - willpower
+          skills: []
+        label: vs Psychic Techniques
+        value: 10
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
   name: Resistance (Fear, Psychic Techniques)
   ownership:
@@ -3479,7 +3590,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: fLfE0bzN9ajaw2d8
+- _id: wasiiXIsiTVuTuGT
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -3497,7 +3608,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: HXxnD7ZLfSqJBsNj
+- _id: CPytIPEzrS4Z0j5v
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -3515,7 +3626,7 @@ items:
       Bonus. During Opposed Characteristic Tests, on a success, the bonus multiplier is added to the degree of success.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: sBl3V2J8H5u4L4ZV
+- _id: XTGtiJOUcFp9YiL1
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/basic-exotic.png
@@ -3555,7 +3666,7 @@ items:
     type: Exotic
     weight: 2.5
   type: weapon
-- _id: U1C9marGzkuepqe9
+- _id: i2FOR9NhBzYkYzId
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/pistol-las.png
@@ -3595,7 +3706,7 @@ items:
     type: Las
     weight: 1.5
   type: weapon
-- _id: JTtJCDx6VRDRPbGp
+- _id: 3cG05xjXVJXDfqIm
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
@@ -3635,7 +3746,7 @@ items:
     type: ''
     weight: 0
   type: weapon
-- _id: InzQj2KHqT6WtTr7
+- _id: xzdMBWOavQR4Eyeg
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/thrown-grenade.png
@@ -3675,7 +3786,7 @@ items:
     type: Grenade
     weight: 4.0
   type: weapon
-- _id: nTOwmlD4itWoEbtC
+- _id: duUfNDES7vwK2tB3
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/thrown-grenade.png
@@ -3715,7 +3826,7 @@ items:
     type: Grenade
     weight: 0.5
   type: weapon
-- _id: G3AvXUD7Xo0w565K
+- _id: K2yNFSeAXQ6SgqsS
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/armour-primitive.png
@@ -3832,7 +3943,7 @@ flags:
     source: Rogue Trader Core Rulebook
 img: systems/rogue-trader-3rd/images/npcs/corebook/barbarous-and-strife-torn-ork-empires-are-scattered.png
 items:
-- _id: 07lvtpTBHp4rUDRw
+- _id: eFWYLKdEAEmjB4o9
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -3851,7 +3962,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: Sl7NYwJGElpcTmGF
+- _id: s4NN2KN9M1yKpJqj
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -3869,7 +3980,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: nAkRmvYnDdC3dYOX
+- _id: HkGpiTFTyakAHvgF
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -3879,7 +3990,7 @@ items:
   sort: 0
   system: {}
   type: talent
-- _id: eQ3tmkMWCXlZnuz7
+- _id: gBspRpCI21tpEjCf
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/maces/mace_09_b.png
@@ -3896,7 +4007,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: dY0StoMbD1bHCn69
+- _id: kI8IUVbDOGprQ57Y
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -3914,7 +4025,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: SMo3Oj9uq5qH15Hw
+- _id: 0VLKY92txReLs5MM
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -3931,7 +4042,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: PFQIf8m4jAbxRJ4f
+- _id: pj9IzYz2BsmPtxh5
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -3949,7 +4060,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: UpDVlVDpG4tFsIYT
+- _id: mo7jTvCVu2aXSqnU
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -3966,7 +4077,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: JHO8kPsjUAO6Tb70
+- _id: 4dD0uqO4uY3t0Oiw
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -3985,7 +4096,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: b7oPCIhrzIFgfaax
+- _id: MnWiM7wOJFrcB9ZX
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -4004,7 +4115,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: Yjhl59qC4mrhc87G
+- _id: Bz1Lo13WRl4y7awi
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -4014,7 +4125,7 @@ items:
   sort: 0
   system: {}
   type: talent
-- _id: MtWhjwMgxFPtGoO8
+- _id: 31DAG9hBSHXPrEfu
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -4031,7 +4142,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: gZsImtEglvwP8ugG
+- _id: ZH4Uw1tp2tzLbhPx
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -4043,7 +4154,7 @@ items:
     description: A creature with this Trait deals an extra 3 points of damage with attacks made while charging.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: qTcN8RRewRBd3vvr
+- _id: t6rFUlU3V35q3MxT
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -4051,9 +4162,12 @@ items:
   ownership:
     default: 3
   sort: 0
-  system: {}
+  system:
+    description: Orks grow in confidence and brutality in the presence of their own kind. For every additional Ork within
+      10m, the Ork's Willpower is increased by +10 to resist the effects of Fear and Pinning.
+    source: Into the Storm
   type: trait
-- _id: A7fsupDyZojF1AVu
+- _id: C3YEeRr34OlTDySS
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -4063,7 +4177,7 @@ items:
   sort: 0
   system: {}
   type: trait
-- _id: zSA02Sh951EUr7vN
+- _id: mcSxC5KZpiAWqKA1
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -4076,7 +4190,7 @@ items:
       talent.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: PzX830NS2UEhVwWH
+- _id: 65rzXm8s0ouKIu6M
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -4094,7 +4208,7 @@ items:
       Bonus. During Opposed Characteristic Tests, on a success, the bonus multiplier is added to the degree of success.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: SNW1Ab3B0MxfRDxG
+- _id: u2TqhQjaaBEwCHeI
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
@@ -4134,7 +4248,7 @@ items:
     type: Chain
     weight: 13.0
   type: weapon
-- _id: POc1Z8n7L8fAhTTE
+- _id: pxmRKPcC27ZNTynz
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/thrown-grenade.png
@@ -4174,7 +4288,7 @@ items:
     type: Grenade
     weight: 0.5
   type: weapon
-- _id: mrQZm9iTbA6kFvBJ
+- _id: VnM8V5kodhpz77L7
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/basic-exotic.png
@@ -4215,7 +4329,7 @@ items:
     type: Exotic
     weight: 4.0
   type: weapon
-- _id: Gvo8ELL84cmNo8k1
+- _id: B88MprPN9mUv4HZV
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/armour-primitive.png
@@ -4320,7 +4434,7 @@ flags:
     source: Rogue Trader Core Rulebook
 img: ''
 items:
-- _id: Z9i4c2lciQRpZjqD
+- _id: i7SfB1BHYFuV4rmy
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -4339,7 +4453,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: fWwmD8VOLt10S2mU
+- _id: 7pvh4oGd69Rfotf3
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -4357,7 +4471,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: qxnESM8Xvm3qhm1A
+- _id: A5R9lwpxJtquTsNl
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -4374,7 +4488,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: OE1E2bgwzUHvplLT
+- _id: wywX3NEGNFZZT3MW
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -4392,7 +4506,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: 52pPkqgEZhpvlAKW
+- _id: NypQg1n0qPwdHPUC
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -4411,9 +4525,17 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: J1DMcLRKe0i2WjFt
+- _id: S5xUSJqPxuWm2CO3
   effects: []
-  flags: {}
+  flags:
+    rt:
+      conditionalBonuses:
+      - applies:
+          characteristics:
+          - willpower
+          skills: []
+        label: vs Psychic Techniques
+        value: 10
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
   name: Resistance (Fear)
   ownership:
@@ -4428,7 +4550,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: QPNGEgC1Lku7Vw6K
+- _id: mMZyyDXd4MVltRjb
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -4446,7 +4568,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: ETIf9n2GtryEKtu2
+- _id: 2m9BWc0gFOyMsa5p
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -4466,7 +4588,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: XZsbDpeZ0Wb2shCC
+- _id: sLkz2R156xWhPuZe
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -4481,7 +4603,7 @@ items:
       can it be disarmed—unless, of course, you hack off its limbs! Natural weapons always count as Primitive.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: 5nygwax37OCGmmC0
+- _id: jpPjkGtwAHaXN5vw
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -4489,7 +4611,7 @@ items:
   ownership:
     default: 3
   sort: 0
-  system: &id001
+  system:
     description: One or more of the creature's Characteristics is unnatural. Each time this Trait is gained, select a Characteristic,
       and double its bonus. For example, a creature with a Strength of 41 normally has a 4 Strength Bonus. With this Trait,
       its Strength Bonus increases to 8. The Trait may be gained multiple times. Each time, you may select a new Characteristic
@@ -4499,7 +4621,7 @@ items:
       Bonus. During Opposed Characteristic Tests, on a success, the bonus multiplier is added to the degree of success.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: qceCLA5Qg0s2Cgto
+- _id: HpjK7YSTGgx7hk7o
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -4507,7 +4629,15 @@ items:
   ownership:
     default: 3
   sort: 0
-  system: *id001
+  system:
+    description: One or more of the creature's Characteristics is unnatural. Each time this Trait is gained, select a Characteristic,
+      and double its bonus. For example, a creature with a Strength of 41 normally has a 4 Strength Bonus. With this Trait,
+      its Strength Bonus increases to 8. The Trait may be gained multiple times. Each time, you may select a new Characteristic
+      or one chosen previously. Each time you apply this Trait to the same Characteristic, the Bonus multiplier increases
+      by 1. For example, one selection multiplies the Characteristic Bonus by ×2, two selections by ×3, and three selections
+      by ×4. Note this Trait does not modify the creature's movement. Movement is based on a creature's unmodified Agility
+      Bonus. During Opposed Characteristic Tests, on a success, the bonus multiplier is added to the degree of success.
+    source: Rogue Trader Core Rulebook
   type: trait
 name: Kroot Mercenary
 prototypeToken:
@@ -4594,7 +4724,7 @@ flags:
     source: Rogue Trader Core Rulebook
 img: systems/rogue-trader-3rd/images/npcs/corebook/warp-predator-ebon-geist.png
 items:
-- _id: iSrPGevYK2xf8pdY
+- _id: opSAUVgpmVXEVLCr
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -4611,7 +4741,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: OeZ3Dao6jbAgwd5A
+- _id: F7XPD8ZMQXNUQgDX
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -4631,7 +4761,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: ybMz4bS1CS1ZVtpp
+- _id: wbc9d4Fl15Ji7Aon
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/psykana/enchant-sky-2.jpg
@@ -4653,7 +4783,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: z4cGP4wOyBwrSnzf
+- _id: bg2ON0ql14aD48m6
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -4663,7 +4793,7 @@ items:
   sort: 0
   system: {}
   type: trait
-- _id: WbaOyp7l66vOtO9r
+- _id: DJKXueM9qW02nDz3
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -4678,7 +4808,7 @@ items:
       are also immune to poison and disease.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: sGMh4WqTN2g4MlEH
+- _id: CAHBpxq15JFRJkb5
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -4691,7 +4821,7 @@ items:
       in areas of dim or no lighting.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: ZTnvWFYRGgNOmoL8
+- _id: FlmiPMz9gTgsDNr1
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -4701,7 +4831,7 @@ items:
   sort: 0
   system: {}
   type: trait
-- _id: q168Ch3HCy6SUcEd
+- _id: c18tJMcvBe3TXbOI
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -4715,7 +4845,7 @@ items:
       going insane from the encounter, as shown on the following chart.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: PDwJGjWxemAsCIHs
+- _id: veNJGOE3dJWCaNMb
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -4730,7 +4860,7 @@ items:
       Game.'
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: mV7HK6CfycVNchcU
+- _id: WxUdnY8P2vNY7x9r
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -4743,7 +4873,7 @@ items:
       It is immune to Fear, Pinning, Insanity Points, and psychic powers used to cloud, control, or delude its mind.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: d83fzM8yrbUxonrb
+- _id: G3WSTEmXZpBShOfN
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -4753,7 +4883,7 @@ items:
   sort: 0
   system: {}
   type: trait
-- _id: nFhydTF090SkDMNS
+- _id: WrtY8iVnd4rOW69E
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -4769,7 +4899,7 @@ items:
       Warp such as a Gellar Field or a Void Shield.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: v5anwU8wBH4Yrdoy
+- _id: pbizFVSHbYnYEduX
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -4785,7 +4915,7 @@ items:
       in the creature's description.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: kMu9nQLJN6KdeJwo
+- _id: 7uZuJWOHjHLcoMKd
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -4803,7 +4933,7 @@ items:
       Bonus. During Opposed Characteristic Tests, on a success, the bonus multiplier is added to the degree of success.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: ZO7ZuEXk4jSxdxfv
+- _id: ojmVC28rAEdN1wCu
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -4816,7 +4946,7 @@ items:
       its Agility Bonus (after modifiers from other Traits and factors, specifically size).
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: ffEh8cpLJNSjeE1i
+- _id: oN17CJvwTZ7jpwBI
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -4900,7 +5030,7 @@ flags:
     source: Rogue Trader Core Rulebook
 img: systems/rogue-trader-3rd/images/npcs/corebook/hadarak-fel.png
 items:
-- _id: 54MzQG7DRZ4rsspk
+- _id: EHX9UOR5TWvcfCgb
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -4919,7 +5049,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: qG8rMg3yGbjFvvCQ
+- _id: EvwKzvjTi6IrRefw
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -4936,7 +5066,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: K7yqv0ZFFUbt1nMg
+- _id: DPpesCfUKir849Tj
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -4955,7 +5085,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: S6V9QfzLAx8h6Zud
+- _id: iIMQSWHAYJnaJbW2
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -4965,7 +5095,7 @@ items:
   sort: 0
   system: {}
   type: talent
-- _id: tsJ5kuwuZqpV6n6I
+- _id: 1IZZE2FxaQQGRlTs
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
@@ -5005,7 +5135,7 @@ items:
     type: ''
     weight: 0
   type: weapon
-- _id: Ka3W5f3G2dRCrx5I
+- _id: GUjUTcLgRS3PXvLf
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
@@ -5044,7 +5174,7 @@ items:
     type: ''
     weight: 0
   type: weapon
-- _id: Wewtn6AY7BjU6k8Y
+- _id: KGmj4jF8RGC4mhOh
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/armour-primitive.png
@@ -5154,7 +5284,7 @@ flags:
     source: Rogue Trader Core Rulebook
 img: ''
 items:
-- _id: A8t0bsEN4RvJzGa2
+- _id: 3cqPetYLzE7TayfL
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_32.png
@@ -5171,7 +5301,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: f8d5eUHArfCqwaDb
+- _id: LOzb8ftvps2BpbDe
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -5189,7 +5319,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: RXErEXdPQyEZfTnG
+- _id: Vrx4cee3RqAc8AOH
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -5207,7 +5337,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: nlXPOUe0IwXhWTn0
+- _id: BKjpaMB7d4lpQJAg
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -5226,7 +5356,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: hrpGqnWaIo5hNZBe
+- _id: zgmnMDUPsDPnT3N0
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -5245,7 +5375,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: 31yz65EEcIbXjkak
+- _id: p07N4ne0NpXU5ZrN
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -5255,9 +5385,17 @@ items:
   sort: 0
   system: {}
   type: talent
-- _id: RRyiZD5B4CwrP6pr
+- _id: lQjG1UHl5QW4my6V
   effects: []
-  flags: {}
+  flags:
+    rt:
+      conditionalBonuses:
+      - applies:
+          characteristics:
+          - willpower
+          skills: []
+        label: vs Psychic Techniques
+        value: 10
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
   name: Resistance (Psychic Techniques)
   ownership:
@@ -5352,7 +5490,7 @@ flags:
     source: Rogue Trader Core Rulebook
 img: systems/rogue-trader-3rd/images/npcs/corebook/pyrexia.png
 items:
-- _id: lDRHfz29QJKULD6m
+- _id: zxaYCjpJX1xP2zJ5
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -5370,7 +5508,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: TEQvj4ABCYTEKOjn
+- _id: N3OZEcu7aIBmBMyA
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -5390,7 +5528,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: ele6XTJAAANiEECt
+- _id: NBNZcry8ys4bggL1
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -5400,7 +5538,7 @@ items:
   sort: 0
   system: {}
   type: trait
-- _id: B8hQGu71nPeeOvCt
+- _id: WRTbJd1H8QiRlBHz
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -5413,7 +5551,7 @@ items:
       in areas of dim or no lighting.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: gbycP7IidXrF3Mcs
+- _id: NtifSHtaIvjbxaZU
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -5423,7 +5561,7 @@ items:
   sort: 0
   system: {}
   type: trait
-- _id: sR8n7vTkdwbSq2Bi
+- _id: unnje4gMA2clANKJ
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -5433,10 +5571,12 @@ items:
   sort: 0
   system:
     description: A creature with the Machine Trait is fashioned from inorganic materials and is generally more rigorous than
-      fleshy folks. Machines do not
+      fleshy folks. Machines do not breathe, are immune to the effects of a vacuum, extremes of cold, any mind-influencing
+      psychic effect, and their Armour Points apply toward fire damage. Machines are also resilient to injury, having 1 to
+      5 Armour Points for each location. This number is indicated next to the Trait.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: 27qjgJlNO889Mrem
+- _id: 3jRlFDx7zdUDmXpi
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png

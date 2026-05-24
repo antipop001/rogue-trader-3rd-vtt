@@ -14,7 +14,7 @@ flags:
     source: Dark Frontier
 img: ''
 items:
-- _id: 47o5KYsuxk86FFUZ
+- _id: qRFsouKsSAmxUTM5
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -24,7 +24,7 @@ items:
   sort: 0
   system: {}
   type: talent
-- _id: oTNumr2EKRNfFdbX
+- _id: Amk1OZEiixmbzd2f
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -37,7 +37,7 @@ items:
       This Trait always includes a numeric value to indicate how many Armour Points the creature gains to all locations.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: xU9timdwW9vTxh7k
+- _id: VQaRtzrYkZk0kRTL
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
@@ -165,7 +165,7 @@ flags:
     source: Dark Frontier
 img: systems/rogue-trader-3rd/images/npcs/darkfrontier/yu-vath-bone-warden.png
 items:
-- _id: Znzu5MHdWkqxjzgE
+- _id: AGQb6uTBaFAwlo5J
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -175,7 +175,7 @@ items:
   sort: 0
   system: {}
   type: talent
-- _id: adk8w4V6pYUMPTik
+- _id: FFGJrg3esvCaPAy4
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -185,7 +185,7 @@ items:
   sort: 0
   system: {}
   type: trait
-- _id: 96SB0sfY0fsN8qOY
+- _id: QHI9wGtXXzcioI9Q
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -195,7 +195,7 @@ items:
   sort: 0
   system: {}
   type: trait
-- _id: RT3ASzjzs19176Rj
+- _id: pTD7ZVcCRlfxe8eg
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
@@ -234,7 +234,7 @@ items:
     type: ''
     weight: 0
   type: weapon
-- _id: n75IZDoKe5EaXBWN
+- _id: osIrUYYDSto2xkOC
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png

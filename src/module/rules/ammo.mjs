@@ -187,6 +187,9 @@ export function calculateAmmoInformation(rollData) {
     if (rollData.hasAttackSpecial('Twin-Linked')) {
         ammoPerShot *= 2;
     }
+    if (rollData.hasAttackSpecial('Storm')) {
+        ammoPerShot *= 2;
+    }
     if (rollData.hasAttackSpecial('Maximal')) {
         ammoPerShot *= 3;
     }
@@ -200,9 +203,6 @@ export function calculateAmmoInformation(rollData) {
             fireRate = rollData.weapon.system.rateOfFire.full;
         } else if (rollData.action === 'Semi-Auto Burst') {
             fireRate = rollData.weapon.system.rateOfFire.burst;
-        }
-        if (rollData.hasAttackSpecial('Storm')) {
-            fireRate *= 2;
         }
     }
 

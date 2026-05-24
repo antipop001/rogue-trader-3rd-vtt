@@ -84,9 +84,10 @@ flags:
     source: 'The Koronus Bestiary: Tau Character Guide'
 img: systems/rogue-trader-3rd/images/npcs/taucharacterguide/tau-drones.png
 items:
-- _id: ebuHFFnNetU5Ovzd
+- _id: b6FcIfeNvf6LkiGD
   effects: []
-  flags: {}
+  flags:
+    rt: {}
   img: systems/rogue-trader-3rd/icons/items/spear/stave_04_b.png
   name: Exotic Weapon Training (Tau)
   ownership:
@@ -96,12 +97,13 @@ items:
     aptitudes: ''
     benefit: The Explorer has received Exotic Weapon Training in a single Exotic Weapon, and can use it without penalty. This
       Talent may be taken multiple times, choosing a different Exotic Weapon each time.
+    choice: Tau
     cost: 0
     prerequisites: ''
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: xECouFghBMVjfy6s
+- _id: WQlC5NnRctcwh6fm
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -119,7 +121,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: UsABsaq3KdgFZhw6
+- _id: yfwjQcCFvlc2BupZ
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -139,7 +141,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: 96aiNyRtyBy6qOVa
+- _id: VtyTLwu4SELZnp4T
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -152,7 +154,7 @@ items:
       in areas of dim or no lighting.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: pMYKxdEEVzNNw5zQ
+- _id: CRnWFJ4g8A2GjKzR
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -166,7 +168,7 @@ items:
       Playing the Game.'
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: MPmZquM8U2Fw1TsC
+- _id: vkGrghwoQTm49a90
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -176,10 +178,12 @@ items:
   sort: 0
   system:
     description: A creature with the Machine Trait is fashioned from inorganic materials and is generally more rigorous than
-      fleshy folks. Machines do not
+      fleshy folks. Machines do not breathe, are immune to the effects of a vacuum, extremes of cold, any mind-influencing
+      psychic effect, and their Armour Points apply toward fire damage. Machines are also resilient to injury, having 1 to
+      5 Armour Points for each location. This number is indicated next to the Trait.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: HrRLEOCWv921wIyk
+- _id: a0GNFAg7NUb2dlAq
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -195,7 +199,7 @@ items:
       creature.'
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: I8VeoCc4DKnyhyK4
+- _id: 4qqMGefYyf38JMLK
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png

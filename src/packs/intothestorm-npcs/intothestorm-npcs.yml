@@ -10,7 +10,7 @@ flags:
     source: Into the Storm
 img: systems/rogue-trader-3rd/images/npcs/intothestorm/gretchin.png
 items:
-- _id: hv3F93LZOtSgpkDz
+- _id: ip8JaFrugC97Xjs4
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -27,7 +27,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: 4ecsccY1gY9yNCi0
+- _id: K5gFWGArKaCzBrrD
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -46,7 +46,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: lWI4AVrhNwnZYd5C
+- _id: w11CmPUSC4yibqzF
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -65,7 +65,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: pdy6lLVemgV86oVf
+- _id: 862Z2TAbYcOWyhNE
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -73,9 +73,12 @@ items:
   ownership:
     default: 3
   sort: 0
-  system: {}
+  system:
+    description: Orks grow in confidence and brutality in the presence of their own kind. For every additional Ork within
+      10m, the Ork's Willpower is increased by +10 to resist the effects of Fear and Pinning.
+    source: Into the Storm
   type: trait
-- _id: T30Y5cvRU8rjVK7S
+- _id: 5wFReqXZSEjmGNBo
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -91,7 +94,7 @@ items:
       creature.'
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: kIHY6BXajIED5c87
+- _id: w5wXkRbGPF6Ul02L
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -109,7 +112,7 @@ items:
       Bonus. During Opposed Characteristic Tests, on a success, the bonus multiplier is added to the degree of success.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: aPIXpDPKT98aVLki
+- _id: IbZIqbN0YerO2gGv
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
@@ -148,7 +151,7 @@ items:
     type: ''
     weight: 0
   type: weapon
-- _id: 96zM2GmSYfHuqcVc
+- _id: AXwhQBrviebzjkhd
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
@@ -259,7 +262,7 @@ flags:
     source: Into the Storm
 img: systems/rogue-trader-3rd/images/npcs/intothestorm/squigs.png
 items:
-- _id: TA2GrC4YRVPHEbYq
+- _id: RpkpmooWUdVyNDOD
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -277,7 +280,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: fWFA8uBmMrUc3P3Y
+- _id: lIPz9fe9cT17QYgi
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -292,7 +295,7 @@ items:
       startled or injured. On a failed test, the creature flees.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: dOtO5DkcoCyeqqwC
+- _id: hHdEeImMvCuDyNMV
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -300,9 +303,13 @@ items:
   ownership:
     default: 3
   sort: 0
-  system: {}
+  system:
+    description: Improved Natural Weapons are Natural Weapons that are not Primitive. The creature counts as armed even when
+      not wielding weapons, dealing 1d10 plus Strength Bonus damage with its natural attacks, but unlike standard Natural
+      Weapons these attacks do not count as Primitive.
+    source: Into the Storm
   type: trait
-- _id: KDAlHVBRUUdjYmYj
+- _id: ryli2Av6f5OOWQ2A
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -320,7 +327,7 @@ items:
       Bonus. During Opposed Characteristic Tests, on a success, the bonus multiplier is added to the degree of success.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: dPZVx3oesGdxCNeZ
+- _id: fJbsi6tPIpWkCkei
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png

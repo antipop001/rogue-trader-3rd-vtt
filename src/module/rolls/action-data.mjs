@@ -203,7 +203,13 @@ export class ActionData {
                     if (rollTotal > 91 && this.rollData.hasAttackSpecial('Overheats')) {
                         this.effects.push('overheat');
                     }
-                    if ((!this.rollData.hasAttackSpecial('Reliable') && rollTotal > 96) || rollTotal === 100) {
+                    let jamThreshold = 96;
+                    if (this.rollData.hasAttackSpecial('Reliable')) {
+                        jamThreshold = 100;
+                    } else if (this.rollData.hasAttackSpecial('Unreliable')) {
+                        jamThreshold = 91;
+                    }
+                    if (rollTotal >= jamThreshold) {
                         this.effects.push('jam');
                         this.rollData.success = false;
                     }
@@ -228,11 +234,6 @@ export class ActionData {
                         // Possible Semi Rate
                         this.damageData.additionalHits += Math.floor((this.rollData.dos - 1) / 2);
 
-                        // Storm
-                        if (this.rollData.hasAttackSpecial('Storm')) {
-                            this.damageData.additionalHits *= 2;
-                        }
-
                         // But Max at fire rate (Ammo available / ammo per shot || rate of fire - whichever is lower)
                         if (actionItem.isRanged && this.damageData.additionalHits > this.rollData.fireRate - 1) {
                             this.damageData.additionalHits = this.rollData.fireRate - 1;
@@ -240,11 +241,6 @@ export class ActionData {
                     } else if (this.rollData.action === 'Full Auto Burst' || this.rollData.action === 'Lightning Attack' || actionItem.isPsychicStorm) {
                         // Possible Full Rate
                         this.damageData.additionalHits += Math.floor(this.rollData.dos - 1);
-
-                        // Storm
-                        if (this.rollData.hasAttackSpecial('Storm')) {
-                            this.damageData.additionalHits *= 2;
-                        }
 
                         // But Max at weapon rate
                         if (actionItem.usesAmmo && this.damageData.additionalHits > this.rollData.fireRate - 1) {
@@ -266,6 +262,11 @@ export class ActionData {
                     {
                         this.damageData.additionalHits = Math.floor(this.rollData.dos / 2);
                     }
+                }
+
+                // Storm: every hit counts as two hits (RT Core p.121)
+                if (this.rollData.hasAttackSpecial('Storm')) {
+                    this.damageData.additionalHits += 1 + this.damageData.additionalHits;
                 }
 
             } else {

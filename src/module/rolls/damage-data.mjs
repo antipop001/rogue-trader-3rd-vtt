@@ -259,11 +259,7 @@ export class Hit {
 
         if (actionItem.isMelee) {
             if (this.penetration && attackData.rollData.hasAttackSpecial('Lance')) {
-                this.penetrationModifiers['lance'] = this.penetration * attackData.rollData.dos;
-            }
-
-            if (attackData.rollData.dos > 2 && attackData.rollData.hasAttackSpecial('Razer Sharp')) {
-                this.penetrationModifiers['razer sharp'] = this.penetration;
+                this.penetrationModifiers['lance'] = this.penetration * (attackData.rollData.dos - 1);
             }
 
             if (attackData.rollData.action === 'All Out Attack' && sourceActor.hasTalent('Hammer Blow')) {
@@ -282,6 +278,10 @@ export class Hit {
 
             // Ammo
             await calculateAmmoPenetrationBonuses(attackData, this);
+        }
+
+        if (attackData.rollData.dos > 2 && attackData.rollData.hasAttackSpecial('Razer Sharp')) {
+            this.penetrationModifiers['razor sharp'] = this.penetration;
         }
 
         if (attackData.rollData.eyeOfVengeance) {

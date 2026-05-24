@@ -9,9 +9,27 @@ flags:
     source: Faith and Coin
 img: ''
 items:
-- _id: Q1crUTZ26KUY6BGy
+- _id: EHIB1vhSE2FW34OR
   effects: []
-  flags: {}
+  flags:
+    rt:
+      conditionalBonuses:
+      - applies:
+          characteristics:
+          - weaponSkill
+          - strength
+          - toughness
+          - willpower
+          skills: []
+        label: while frenzied
+        value: 10
+      - applies:
+          characteristics:
+          - ballisticSkill
+          - intelligence
+          skills: []
+        label: while frenzied
+        value: -20
   img: systems/rogue-trader-3rd/icons/talents/red/r_08.png
   name: Frenzy
   ownership:
@@ -32,7 +50,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: 8TxBytwfehIAwTrl
+- _id: v3fQR3HdUBIl9NUx
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -52,7 +70,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: AhoYCoROKzU7rrIY
+- _id: jtylt8aPOrmYN4wS
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
@@ -166,7 +184,7 @@ flags:
     source: Faith and Coin
 img: systems/rogue-trader-3rd/images/npcs/faithandcoin/orphan-of-the-flesh.png
 items:
-- _id: 9ctt7NChUER21Rl1
+- _id: x4geKzQUuzDLCzrq
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -176,7 +194,7 @@ items:
   sort: 0
   system: {}
   type: trait
-- _id: sAM9bMFSHKNwjAo0
+- _id: inMEESFpb1TxzbnC
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -190,7 +208,7 @@ items:
       going insane from the encounter, as shown on the following chart.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: EqCU7ZserhWD751m
+- _id: RbrC4rTmHzeTjMFh
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -198,9 +216,13 @@ items:
   ownership:
     default: 3
   sort: 0
-  system: {}
+  system:
+    description: Improved Natural Weapons are Natural Weapons that are not Primitive. The creature counts as armed even when
+      not wielding weapons, dealing 1d10 plus Strength Bonus damage with its natural attacks, but unlike standard Natural
+      Weapons these attacks do not count as Primitive.
+    source: Into the Storm
   type: trait
-- _id: GqlVVwfibdPRbNHL
+- _id: pORaqc3ZvKNAh81z
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -216,7 +238,7 @@ items:
       creature.'
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: rAn5Zb7llpLfwCB8
+- _id: asnB647rIzKcMyY4
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -229,7 +251,7 @@ items:
       and death results when damage equals or exceeds the creature's Wounds.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: 6WGEJMmi7fp7Gztq
+- _id: jB4fAq23eXgIBtEG
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -242,7 +264,7 @@ items:
       talent.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: SEbOgXSmvH2wmx89
+- _id: PV0QmM1o4D6gRxtu
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -256,7 +278,7 @@ items:
       usually 15 metres.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: VYWqyHGojSXQkzn6
+- _id: u6AOn8qwF4HmbIv4
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -264,7 +286,7 @@ items:
   ownership:
     default: 3
   sort: 0
-  system: &id001
+  system:
     description: One or more of the creature's Characteristics is unnatural. Each time this Trait is gained, select a Characteristic,
       and double its bonus. For example, a creature with a Strength of 41 normally has a 4 Strength Bonus. With this Trait,
       its Strength Bonus increases to 8. The Trait may be gained multiple times. Each time, you may select a new Characteristic
@@ -274,7 +296,7 @@ items:
       Bonus. During Opposed Characteristic Tests, on a success, the bonus multiplier is added to the degree of success.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: DLypxXMPNNUmesFH
+- _id: EUUo3f7uRACIqkRW
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -282,9 +304,17 @@ items:
   ownership:
     default: 3
   sort: 0
-  system: *id001
+  system:
+    description: One or more of the creature's Characteristics is unnatural. Each time this Trait is gained, select a Characteristic,
+      and double its bonus. For example, a creature with a Strength of 41 normally has a 4 Strength Bonus. With this Trait,
+      its Strength Bonus increases to 8. The Trait may be gained multiple times. Each time, you may select a new Characteristic
+      or one chosen previously. Each time you apply this Trait to the same Characteristic, the Bonus multiplier increases
+      by 1. For example, one selection multiplies the Characteristic Bonus by ×2, two selections by ×3, and three selections
+      by ×4. Note this Trait does not modify the creature's movement. Movement is based on a creature's unmodified Agility
+      Bonus. During Opposed Characteristic Tests, on a success, the bonus multiplier is added to the degree of success.
+    source: Rogue Trader Core Rulebook
   type: trait
-- _id: lT70HScb4seg4uss
+- _id: nCH3SQFONCQeBr6R
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
@@ -389,7 +419,7 @@ flags:
     source: Faith and Coin
 img: ''
 items:
-- _id: 1SmPrdodBvp8Q42v
+- _id: 9hJjFIe4VpsmZXwB
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -404,7 +434,7 @@ items:
       startled or injured. On a failed test, the creature flees.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: y7kGlQKkebj1VcvF
+- _id: yXU4zeubyzFgXSrZ
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -420,7 +450,7 @@ items:
       creature.'
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: 8JaXKGKXczGBTcDt
+- _id: Er7suLKUtChEuyyH
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -430,7 +460,7 @@ items:
   sort: 0
   system: {}
   type: trait
-- _id: uBlt1OTShS19TF0A
+- _id: n0pqqywXzAViS94q
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
@@ -536,7 +566,7 @@ flags:
     source: Faith and Coin
 img: ''
 items:
-- _id: CLTghqqz1nb8dABl
+- _id: MHKBz0lxCQMiiylW
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -551,7 +581,7 @@ items:
       startled or injured. On a failed test, the creature flees.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: phB32x3xtX46zJwv
+- _id: MFjATTld9upJo5dA
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -564,7 +594,7 @@ items:
       in areas of dim or no lighting.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: Jni3t8CGVbrkNdCB
+- _id: Z8amCPBlmPIBhT6I
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -580,7 +610,7 @@ items:
       in the creature's description.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: Agh0tYW6CFGzysCv
+- _id: 0W3CFSn2roP6U5en
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -596,7 +626,7 @@ items:
       creature.'
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: 9pcsNdwqLY5Vajqf
+- _id: M16KRuHu4NoN20KJ
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -609,7 +639,7 @@ items:
       and death results when damage equals or exceeds the creature's Wounds.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: NW8ZjqboFCCYxJi7
+- _id: ZOngqPm5dhoZZCXp
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -619,7 +649,7 @@ items:
   sort: 0
   system: {}
   type: trait
-- _id: PV2AV1VqrSAeN6p6
+- _id: ealm7u9FbvoaLh4m
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
@@ -723,7 +753,7 @@ flags:
     source: Faith and Coin
 img: ''
 items:
-- _id: VW25TInaCiJzLSBw
+- _id: L5RZtOLlxb6IITRw
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -736,7 +766,7 @@ items:
       in areas of dim or no lighting.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: yKOWeW2hfwV4jRMK
+- _id: EmMBNdxMK7mLfmQo
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -744,9 +774,13 @@ items:
   ownership:
     default: 3
   sort: 0
-  system: {}
+  system:
+    description: Improved Natural Weapons are Natural Weapons that are not Primitive. The creature counts as armed even when
+      not wielding weapons, dealing 1d10 plus Strength Bonus damage with its natural attacks, but unlike standard Natural
+      Weapons these attacks do not count as Primitive.
+    source: Into the Storm
   type: trait
-- _id: aqRFO9DuwhhI6Un9
+- _id: iVUbDVbfH1gYde6i
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -762,7 +796,7 @@ items:
       creature.'
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: quXdD7QFjoWaZv2J
+- _id: 3HTX3mrwB6NkOLyb
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -778,7 +812,7 @@ items:
       in the creature's description.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: GvL1nxPpas1cBuhr
+- _id: VHYP3wCV56Th072l
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -786,7 +820,7 @@ items:
   ownership:
     default: 3
   sort: 0
-  system: &id001
+  system:
     description: One or more of the creature's Characteristics is unnatural. Each time this Trait is gained, select a Characteristic,
       and double its bonus. For example, a creature with a Strength of 41 normally has a 4 Strength Bonus. With this Trait,
       its Strength Bonus increases to 8. The Trait may be gained multiple times. Each time, you may select a new Characteristic
@@ -796,7 +830,7 @@ items:
       Bonus. During Opposed Characteristic Tests, on a success, the bonus multiplier is added to the degree of success.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: h8xVFXUKWwZKH5Kn
+- _id: 77loHSoDpBnI8C2v
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -804,9 +838,17 @@ items:
   ownership:
     default: 3
   sort: 0
-  system: *id001
+  system:
+    description: One or more of the creature's Characteristics is unnatural. Each time this Trait is gained, select a Characteristic,
+      and double its bonus. For example, a creature with a Strength of 41 normally has a 4 Strength Bonus. With this Trait,
+      its Strength Bonus increases to 8. The Trait may be gained multiple times. Each time, you may select a new Characteristic
+      or one chosen previously. Each time you apply this Trait to the same Characteristic, the Bonus multiplier increases
+      by 1. For example, one selection multiplies the Characteristic Bonus by ×2, two selections by ×3, and three selections
+      by ×4. Note this Trait does not modify the creature's movement. Movement is based on a creature's unmodified Agility
+      Bonus. During Opposed Characteristic Tests, on a success, the bonus multiplier is added to the degree of success.
+    source: Rogue Trader Core Rulebook
   type: trait
-- _id: rVTiAHI0Jhr2WV88
+- _id: t7FWema2qEY8OTeQ
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
@@ -847,7 +889,7 @@ items:
     type: ''
     weight: 0
   type: weapon
-- _id: Ndml0RaNs3zFOowa
+- _id: I05mTpPaZVGFEmIo
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
@@ -886,7 +928,7 @@ items:
     type: ''
     weight: 0
   type: weapon
-- _id: vwAYNd7N7Ekg7MQS
+- _id: ADpfuEG0TDuaKJAs
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
@@ -926,7 +968,7 @@ items:
     type: ''
     weight: 0
   type: weapon
-- _id: fD51AZ07wTsXsqn5
+- _id: QbVsYwhMx7kB2Lla
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
@@ -1029,7 +1071,7 @@ flags:
     source: Faith and Coin
 img: systems/rogue-trader-3rd/images/npcs/faithandcoin/guardian-of-the-inner-sanctum.png
 items:
-- _id: jlAVPVfDNF1mvMtu
+- _id: fcM7Mjsx68x0FcVA
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/swords/swords_01_b.png
@@ -1048,9 +1090,17 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: 2VXf4Ic3FVLjKd0R
+- _id: U1d62Fu2MdddhMsq
   effects: []
-  flags: {}
+  flags:
+    rt:
+      conditionalBonuses:
+      - applies:
+          characteristics:
+          - weaponSkill
+          skills: []
+        label: when Charging
+        value: 20
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
   name: Berserk Charge
   ownership:
@@ -1065,7 +1115,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: YkgwSFxWr0mUjAsc
+- _id: F1xf4i7MELQGaENu
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -1082,7 +1132,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: UXcdxtytl5VEDylP
+- _id: CLcEaaLN1bRBdD8F
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -1099,7 +1149,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: UHZOPQBSnbd9zkNb
+- _id: XVgG1Le8FcdKbAN0
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -1117,7 +1167,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: 2dNkBuu69Y3Ty1tA
+- _id: INq6QC181ejbMDoh
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -1134,7 +1184,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: FHjpoVRptK8YnScp
+- _id: oGX5qRubrkDmdPLo
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -1151,7 +1201,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: O8Ani76T0DHL7rzH
+- _id: nJ7RIHYFT2vC4SgG
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -1159,7 +1209,7 @@ items:
   ownership:
     default: 3
   sort: 0
-  system: &id001
+  system:
     aptitudes: ''
     benefit: Years of training allow the Explorer to use a melee weapon in each hand when needed. When armed with two melee
       weapons, he may spend a Full Action to attack with both. Both tests made to attack with the weapons suffer a -20 penalty.
@@ -1170,7 +1220,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: iaVvIvB9Eo15zDLr
+- _id: yc1HFy3mPv3Qu2Zl
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -1178,9 +1228,18 @@ items:
   ownership:
     default: 3
   sort: 0
-  system: *id001
+  system:
+    aptitudes: ''
+    benefit: Years of training allow the Explorer to use a melee weapon in each hand when needed. When armed with two melee
+      weapons, he may spend a Full Action to attack with both. Both tests made to attack with the weapons suffer a -20 penalty.
+      He must possess Two-Weapon Wielder (Melee) and Two-Weapon Wielder (Ballistic) if he wishes to use a gun and hand weapon
+      together.
+    cost: 0
+    prerequisites: Weapon Skill 35, Agility 35
+    source: Rogue Trader Core Rulebook
+    tier: '1'
   type: talent
-- _id: 8DdRo2NR2XA5Ccee
+- _id: cqp015MI9FVA0ZuV
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -1193,7 +1252,7 @@ items:
       a half action. A creature with this Trait suffers no penalties for moving and firing on semi- or full-automatic.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: EAOIZvWXcGRtO055
+- _id: ZuGwR2x2oTcgJy07
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -1206,7 +1265,7 @@ items:
       in areas of dim or no lighting.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: cdFa3qTOmeJmH3g0
+- _id: gnxvAyFzkMUGKBlx
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -1220,7 +1279,7 @@ items:
       going insane from the encounter, as shown on the following chart.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: ovniwhuMWSVacBPp
+- _id: sHLoSZss5YCAQsQP
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -1230,10 +1289,12 @@ items:
   sort: 0
   system:
     description: A creature with the Machine Trait is fashioned from inorganic materials and is generally more rigorous than
-      fleshy folks. Machines do not
+      fleshy folks. Machines do not breathe, are immune to the effects of a vacuum, extremes of cold, any mind-influencing
+      psychic effect, and their Armour Points apply toward fire damage. Machines are also resilient to injury, having 1 to
+      5 Armour Points for each location. This number is indicated next to the Trait.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: pGgk8hRdBJLMStax
+- _id: yjcIEUYCMUzNd6T9
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -1249,7 +1310,7 @@ items:
       creature.'
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: ZkB7x3oPwP1nQCQ4
+- _id: rIDs70qkQJZfcW0i
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -1257,7 +1318,7 @@ items:
   ownership:
     default: 3
   sort: 0
-  system: &id002
+  system:
     description: One or more of the creature's Characteristics is unnatural. Each time this Trait is gained, select a Characteristic,
       and double its bonus. For example, a creature with a Strength of 41 normally has a 4 Strength Bonus. With this Trait,
       its Strength Bonus increases to 8. The Trait may be gained multiple times. Each time, you may select a new Characteristic
@@ -1267,7 +1328,7 @@ items:
       Bonus. During Opposed Characteristic Tests, on a success, the bonus multiplier is added to the degree of success.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: mxxIvhKp1C62qV31
+- _id: vG00ey0HD5Ujgg95
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -1275,9 +1336,17 @@ items:
   ownership:
     default: 3
   sort: 0
-  system: *id002
+  system:
+    description: One or more of the creature's Characteristics is unnatural. Each time this Trait is gained, select a Characteristic,
+      and double its bonus. For example, a creature with a Strength of 41 normally has a 4 Strength Bonus. With this Trait,
+      its Strength Bonus increases to 8. The Trait may be gained multiple times. Each time, you may select a new Characteristic
+      or one chosen previously. Each time you apply this Trait to the same Characteristic, the Bonus multiplier increases
+      by 1. For example, one selection multiplies the Characteristic Bonus by ×2, two selections by ×3, and three selections
+      by ×4. Note this Trait does not modify the creature's movement. Movement is based on a creature's unmodified Agility
+      Bonus. During Opposed Characteristic Tests, on a success, the bonus multiplier is added to the degree of success.
+    source: Rogue Trader Core Rulebook
   type: trait
-- _id: jk6duRmL9A6iBI1p
+- _id: iR9DQjhplCyUHgjy
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
@@ -1316,7 +1385,7 @@ items:
     type: ''
     weight: 0
   type: weapon
-- _id: oCPpRbNfzt3k0wI3
+- _id: 6IUDkVoAo57tXOGS
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
@@ -1356,7 +1425,7 @@ items:
     type: Chain
     weight: 13.0
   type: weapon
-- _id: uEjbyhmaCMZA9ytp
+- _id: Ww5CqXmwWSSTvH4o
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/heavy-flame.png

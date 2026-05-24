@@ -8,7 +8,7 @@ flags:
     source: Shedding Light
 img: ''
 items:
-- _id: yDBQDoQyy1i9WJ0Y
+- _id: UozlgwmbGfKXpU9F
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -18,7 +18,7 @@ items:
   sort: 0
   system: {}
   type: trait
-- _id: kMpy0YQXqANXIavi
+- _id: DvNOfHVU2gG2Abwx
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
@@ -58,7 +58,7 @@ items:
     type: ''
     weight: 0
   type: weapon
-- _id: WeyaPmFDYcLn10MY
+- _id: h9WypZjqNoaYNvM4
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
@@ -98,7 +98,7 @@ items:
     type: ''
     weight: 0
   type: weapon
-- _id: 4vtb5zgepn6o9kEB
+- _id: tHphXB8qfTdBVfVP
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/armour-primitive.png
@@ -194,7 +194,7 @@ flags:
     source: Shedding Light
 img: systems/rogue-trader-3rd/images/npcs/sheddinglight/canoptek-wraith.png
 items:
-- _id: Jb7EQufl1w86WFzN
+- _id: Ywnq0S5iW6FnVCnq
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/swords/swords_01_b.png
@@ -213,7 +213,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: DajnIv5rBrcCsMva
+- _id: Vvy6Msg0BgjQTzjM
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -231,7 +231,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: wL2WFYPhdwgM0NGy
+- _id: 2AVMveLpmleDqtJE
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -251,7 +251,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: o2OF2aLnRAPmkk3M
+- _id: 94KAK5IQ0LJ4xVf1
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -270,7 +270,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: Cl83jGVEnoT06Rsg
+- _id: hjpfkOHVgMYMR1xa
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -283,7 +283,7 @@ items:
       in areas of dim or no lighting.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: 8IWuRkCqab3gOO7z
+- _id: MRCuIT6VObH43xLF
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -297,7 +297,7 @@ items:
       going insane from the encounter, as shown on the following chart.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: RmpDLLxbzOGiGf2p
+- _id: 0q1v2d5Fg5iYbJzV
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -310,7 +310,7 @@ items:
       It is immune to Fear, Pinning, Insanity Points, and psychic powers used to cloud, control, or delude its mind.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: KVf138nVZSI1yByG
+- _id: W2UvFxSeDe26yPnt
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -324,7 +324,7 @@ items:
       Playing the Game.'
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: a1rgVKfpDjRS4Cqt
+- _id: 3DPzyBAHUmQjWi5S
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -340,7 +340,7 @@ items:
       Warp such as a Gellar Field or a Void Shield.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: Ust219wJdozfAAQ3
+- _id: nuzPSSyHr5iuIZQa
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -350,7 +350,7 @@ items:
   sort: 0
   system: {}
   type: trait
-- _id: qKZUYc4NH8Chejlo
+- _id: jeEozBqysu2xKtjy
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -360,10 +360,12 @@ items:
   sort: 0
   system:
     description: A creature with the Machine Trait is fashioned from inorganic materials and is generally more rigorous than
-      fleshy folks. Machines do not
+      fleshy folks. Machines do not breathe, are immune to the effects of a vacuum, extremes of cold, any mind-influencing
+      psychic effect, and their Armour Points apply toward fire damage. Machines are also resilient to injury, having 1 to
+      5 Armour Points for each location. This number is indicated next to the Trait.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: MY62OUJ3CqUH3H7j
+- _id: 2FAD677NhLseeam4
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -379,7 +381,7 @@ items:
       creature.'
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: 1lgWgI8P4o7wR3br
+- _id: TYOCPPmssMnEkmBT
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -392,7 +394,7 @@ items:
       to remove 1 point of damage. It loses this Trait when slain.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: 1NfSMBiEGB6XOjgw
+- _id: g3PlOx8rFMSWhinh
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -400,7 +402,7 @@ items:
   ownership:
     default: 3
   sort: 0
-  system: &id001
+  system:
     description: One or more of the creature's Characteristics is unnatural. Each time this Trait is gained, select a Characteristic,
       and double its bonus. For example, a creature with a Strength of 41 normally has a 4 Strength Bonus. With this Trait,
       its Strength Bonus increases to 8. The Trait may be gained multiple times. Each time, you may select a new Characteristic
@@ -410,7 +412,7 @@ items:
       Bonus. During Opposed Characteristic Tests, on a success, the bonus multiplier is added to the degree of success.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: XFAm1yhBUvuj9QRa
+- _id: tHaD0ix6YeG0pQmd
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -418,9 +420,17 @@ items:
   ownership:
     default: 3
   sort: 0
-  system: *id001
+  system:
+    description: One or more of the creature's Characteristics is unnatural. Each time this Trait is gained, select a Characteristic,
+      and double its bonus. For example, a creature with a Strength of 41 normally has a 4 Strength Bonus. With this Trait,
+      its Strength Bonus increases to 8. The Trait may be gained multiple times. Each time, you may select a new Characteristic
+      or one chosen previously. Each time you apply this Trait to the same Characteristic, the Bonus multiplier increases
+      by 1. For example, one selection multiplies the Characteristic Bonus by ×2, two selections by ×3, and three selections
+      by ×4. Note this Trait does not modify the creature's movement. Movement is based on a creature's unmodified Agility
+      Bonus. During Opposed Characteristic Tests, on a success, the bonus multiplier is added to the degree of success.
+    source: Rogue Trader Core Rulebook
   type: trait
-- _id: yBuQnaLUsq0oezpQ
+- _id: payHAe3Pugn4Wni7
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -428,9 +438,17 @@ items:
   ownership:
     default: 3
   sort: 0
-  system: *id001
+  system:
+    description: One or more of the creature's Characteristics is unnatural. Each time this Trait is gained, select a Characteristic,
+      and double its bonus. For example, a creature with a Strength of 41 normally has a 4 Strength Bonus. With this Trait,
+      its Strength Bonus increases to 8. The Trait may be gained multiple times. Each time, you may select a new Characteristic
+      or one chosen previously. Each time you apply this Trait to the same Characteristic, the Bonus multiplier increases
+      by 1. For example, one selection multiplies the Characteristic Bonus by ×2, two selections by ×3, and three selections
+      by ×4. Note this Trait does not modify the creature's movement. Movement is based on a creature's unmodified Agility
+      Bonus. During Opposed Characteristic Tests, on a success, the bonus multiplier is added to the degree of success.
+    source: Rogue Trader Core Rulebook
   type: trait
-- _id: 31s0VJEO9Dh3dAm5
+- _id: nl2jpNXeXrjtwByw
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -440,7 +458,7 @@ items:
   sort: 0
   system: {}
   type: trait
-- _id: WU8sPrStKKvJ1LbO
+- _id: kfD6juUcFgQBpIK5
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
@@ -549,7 +567,7 @@ flags:
     source: Shedding Light
 img: systems/rogue-trader-3rd/images/npcs/sheddinglight/cryptek.png
 items:
-- _id: yleMeQUs8ydXmkfv
+- _id: wAYXufTBGXSrDVd8
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/psykana/enchant-sky-2.jpg
@@ -571,7 +589,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: RDndTXZI1ejxRry8
+- _id: vlXbAikyastykRem
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -581,10 +599,12 @@ items:
   sort: 0
   system:
     description: A creature with the Machine Trait is fashioned from inorganic materials and is generally more rigorous than
-      fleshy folks. Machines do not
+      fleshy folks. Machines do not breathe, are immune to the effects of a vacuum, extremes of cold, any mind-influencing
+      psychic effect, and their Armour Points apply toward fire damage. Machines are also resilient to injury, having 1 to
+      5 Armour Points for each location. This number is indicated next to the Trait.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: J1LgBoy8qAv93F6B
+- _id: mvrZib8Dz1XOkmY9
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -594,7 +614,7 @@ items:
   sort: 0
   system: {}
   type: trait
-- _id: MFccuwegdjpb21D7
+- _id: JW01ASrg0kUREjpP
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -612,7 +632,7 @@ items:
       Bonus. During Opposed Characteristic Tests, on a success, the bonus multiplier is added to the degree of success.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: ITnyORU1VjLtYvhy
+- _id: 2rq526xEuAQ9ZD6E
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
@@ -718,7 +738,7 @@ flags:
     source: Shedding Light
 img: systems/rogue-trader-3rd/images/npcs/sheddinglight/scarab-swarm.png
 items:
-- _id: pesvwoUusEUho3XX
+- _id: HayKhzf7U0P8ZfOm
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -728,7 +748,7 @@ items:
   sort: 0
   system: {}
   type: talent
-- _id: djkAkMBOGmC6Ipf4
+- _id: J6mj1mW1cfxY4fw5
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -748,7 +768,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: MzhwoyKJnSeAE6vC
+- _id: wji6yXaLSBD0it78
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -762,7 +782,7 @@ items:
       Playing the Game.'
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: 5ls8hMlpCjMT3JI1
+- _id: lRaYzGQqqL8XRjmL
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -778,7 +798,7 @@ items:
       creature.'
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: g4Vhllt6zgQiiSwQ
+- _id: PXXyTrV60yQT8p9X
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -788,10 +808,12 @@ items:
   sort: 0
   system:
     description: A creature with the Machine Trait is fashioned from inorganic materials and is generally more rigorous than
-      fleshy folks. Machines do not
+      fleshy folks. Machines do not breathe, are immune to the effects of a vacuum, extremes of cold, any mind-influencing
+      psychic effect, and their Armour Points apply toward fire damage. Machines are also resilient to injury, having 1 to
+      5 Armour Points for each location. This number is indicated next to the Trait.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: bukhfnvnE6T8oZWJ
+- _id: jRZWt1rLbXKoUwcK
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -801,7 +823,7 @@ items:
   sort: 0
   system: {}
   type: trait
-- _id: HXMe5KE9SXAV8whw
+- _id: yU1YKfXvIJ9cZJoN
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -811,7 +833,7 @@ items:
   sort: 0
   system: {}
   type: trait
-- _id: SV7Smve15g6MbRjD
+- _id: WRPju2iBGu4tscdS
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
@@ -850,7 +872,7 @@ items:
     type: ''
     weight: 0
   type: weapon
-- _id: msS69GCQH4jR05LO
+- _id: TjCRv8u23MIqhrQd
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/armour-primitive.png
@@ -944,7 +966,7 @@ flags:
     source: Shedding Light
 img: ''
 items:
-- _id: 1DG8KwYWBAWrNiIC
+- _id: epoleMTcPIgx2n1Q
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -961,7 +983,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: MhtqgwArYhKJf4nw
+- _id: 5ktenmj5qnJ7kPmh
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -971,10 +993,12 @@ items:
   sort: 0
   system:
     description: A creature with the Machine Trait is fashioned from inorganic materials and is generally more rigorous than
-      fleshy folks. Machines do not
+      fleshy folks. Machines do not breathe, are immune to the effects of a vacuum, extremes of cold, any mind-influencing
+      psychic effect, and their Armour Points apply toward fire damage. Machines are also resilient to injury, having 1 to
+      5 Armour Points for each location. This number is indicated next to the Trait.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: S6v0zSqHwlahkJJg
+- _id: KWKNbgDejtOSUcZw
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -987,7 +1011,7 @@ items:
       to remove 1 point of damage. It loses this Trait when slain.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: ze1hZy34L3hRaI4J
+- _id: 4tY2oSnDWNHBA4iG
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -1003,7 +1027,7 @@ items:
       creature.'
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: CZMCEhPckXNM5vu5
+- _id: XERfcskF8KErdpIW
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -1011,7 +1035,7 @@ items:
   ownership:
     default: 3
   sort: 0
-  system: &id001
+  system:
     description: One or more of the creature's Characteristics is unnatural. Each time this Trait is gained, select a Characteristic,
       and double its bonus. For example, a creature with a Strength of 41 normally has a 4 Strength Bonus. With this Trait,
       its Strength Bonus increases to 8. The Trait may be gained multiple times. Each time, you may select a new Characteristic
@@ -1021,7 +1045,7 @@ items:
       Bonus. During Opposed Characteristic Tests, on a success, the bonus multiplier is added to the degree of success.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: bEetHiD99gIGiLzB
+- _id: MTrNpkPNO9KxViFC
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -1029,9 +1053,17 @@ items:
   ownership:
     default: 3
   sort: 0
-  system: *id001
+  system:
+    description: One or more of the creature's Characteristics is unnatural. Each time this Trait is gained, select a Characteristic,
+      and double its bonus. For example, a creature with a Strength of 41 normally has a 4 Strength Bonus. With this Trait,
+      its Strength Bonus increases to 8. The Trait may be gained multiple times. Each time, you may select a new Characteristic
+      or one chosen previously. Each time you apply this Trait to the same Characteristic, the Bonus multiplier increases
+      by 1. For example, one selection multiplies the Characteristic Bonus by ×2, two selections by ×3, and three selections
+      by ×4. Note this Trait does not modify the creature's movement. Movement is based on a creature's unmodified Agility
+      Bonus. During Opposed Characteristic Tests, on a success, the bonus multiplier is added to the degree of success.
+    source: Rogue Trader Core Rulebook
   type: trait
-- _id: aVgSqrASeio1qRR6
+- _id: oZs2TouhDJr8VLRD
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
@@ -1070,7 +1102,7 @@ items:
     type: ''
     weight: 0
   type: weapon
-- _id: IcO1DWi5xCXWeZfY
+- _id: N0xfibX0VZRjRBJZ
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
@@ -1109,7 +1141,7 @@ items:
     type: ''
     weight: 0
   type: weapon
-- _id: 1jkeqBIlLSvlYoCI
+- _id: fYdoINSGoAcY3BSd
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/armour-primitive.png
