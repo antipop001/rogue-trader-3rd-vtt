@@ -1,6 +1,6 @@
 data:
     craftsmanship: common
-    availability: common
+    availability: Scarce
     weight: 0
     equipped: false
     inBackpack: false
@@ -20,7 +20,7 @@ type: cybernetic
 ---
 data:
     craftsmanship: common
-    availability: common
+    availability: Scarce
     weight: 0
     equipped: false
     inBackpack: false
@@ -40,7 +40,7 @@ type: cybernetic
 ---
 data:
     craftsmanship: common
-    availability: common
+    availability: Rare
     weight: 0
     equipped: false
     inBackpack: false
@@ -63,7 +63,7 @@ type: cybernetic
 ---
 data:
     craftsmanship: common
-    availability: common
+    availability: Common
     weight: 0
     equipped: false
     inBackpack: false
@@ -82,7 +82,7 @@ type: cybernetic
 ---
 data:
     craftsmanship: common
-    availability: common
+    availability: Rare
     weight: 0
     equipped: false
     inBackpack: false
@@ -102,7 +102,7 @@ type: cybernetic
 ---
 data:
     craftsmanship: common
-    availability: common
+    availability: Rare
     weight: 0
     equipped: false
     inBackpack: false
@@ -120,7 +120,7 @@ type: cybernetic
 ---
 data:
     craftsmanship: common
-    availability: common
+    availability: Near Unique
     weight: 0
     equipped: false
     inBackpack: false
@@ -144,7 +144,7 @@ type: cybernetic
 ---
 data:
     craftsmanship: common
-    availability: common
+    availability: Very Rare
     weight: 0
     equipped: false
     inBackpack: false
@@ -165,7 +165,7 @@ type: cybernetic
 ---
 data:
     craftsmanship: common
-    availability: common
+    availability: Rare
     weight: 0
     equipped: false
     inBackpack: false
@@ -177,6 +177,14 @@ data:
         A character with this implant gains +1 armour to the body location—this bonus
         stacks with any armour worn—and gains the Sprint Talent.
     source: Rogue Trader Core Rulebook
+    hasArmourPoints: true
+    armourPoints:
+        head: 0
+        leftArm: 0
+        rightArm: 0
+        body: 1
+        leftLeg: 0
+        rightLeg: 0
     backpack:
         inBackpack: false
 img: systems/rogue-trader-3rd/icons/items/buckets/cyber-bionic-heart.png
@@ -185,7 +193,7 @@ type: cybernetic
 ---
 data:
     craftsmanship: common
-    availability: common
+    availability: Very Rare
     weight: 0
     equipped: false
     inBackpack: false
@@ -203,7 +211,7 @@ type: cybernetic
 ---
 data:
     craftsmanship: common
-    availability: common
+    availability: Very Rare
     weight: 0
     equipped: false
     inBackpack: false
@@ -228,7 +236,7 @@ type: cybernetic
 ---
 data:
     craftsmanship: common
-    availability: common
+    availability: Scarce
     weight: 0
     equipped: false
     inBackpack: false
@@ -237,6 +245,14 @@ data:
         This implant adds +1 Armour—this bonus stacks with any worn Armour—to the
         Head location.
     source: Rogue Trader Core Rulebook
+    hasArmourPoints: true
+    armourPoints:
+        head: 1
+        leftArm: 0
+        rightArm: 0
+        body: 0
+        leftLeg: 0
+        rightLeg: 0
     backpack:
         inBackpack: false
 img: systems/rogue-trader-3rd/icons/items/buckets/cyber-bionic-arm.png
@@ -245,7 +261,7 @@ type: cybernetic
 ---
 data:
     craftsmanship: common
-    availability: common
+    availability: Rare
     weight: 0
     equipped: false
     inBackpack: false
@@ -272,7 +288,7 @@ type: cybernetic
 ---
 data:
     craftsmanship: common
-    availability: common
+    availability: Rare
     weight: 0
     equipped: false
     inBackpack: false
@@ -293,7 +309,7 @@ type: cybernetic
 ---
 data:
     craftsmanship: common
-    availability: common
+    availability: Very Rare
     weight: 0
     equipped: false
     inBackpack: false
@@ -317,7 +333,7 @@ type: cybernetic
 ---
 data:
     craftsmanship: common
-    availability: common
+    availability: Very Rare
     weight: 0
     equipped: false
     inBackpack: false
@@ -341,7 +357,7 @@ type: cybernetic
 ---
 data:
     craftsmanship: common
-    availability: common
+    availability: Rare
     weight: 0
     equipped: false
     inBackpack: false
@@ -364,7 +380,7 @@ type: cybernetic
 ---
 data:
     craftsmanship: common
-    availability: common
+    availability: Rare
     weight: 0
     equipped: false
     inBackpack: false
@@ -391,7 +407,7 @@ type: cybernetic
 ---
 data:
     craftsmanship: common
-    availability: common
+    availability: Rare
     weight: 0
     equipped: false
     inBackpack: false
@@ -412,7 +428,7 @@ type: cybernetic
 ---
 data:
     craftsmanship: common
-    availability: common
+    availability: Very Rare
     weight: 0
     equipped: false
     inBackpack: false
@@ -437,7 +453,7 @@ type: cybernetic
 ---
 data:
     craftsmanship: common
-    availability: common
+    availability: Rare
     weight: 0
     equipped: false
     inBackpack: false
@@ -454,7 +470,7 @@ type: cybernetic
 ---
 data:
     craftsmanship: common
-    availability: common
+    availability: Scarce
     weight: 0
     equipped: false
     inBackpack: false
@@ -472,7 +488,7 @@ type: cybernetic
 ---
 data:
     craftsmanship: common
-    availability: common
+    availability: Very Rare
     weight: 0
     equipped: false
     inBackpack: false
@@ -482,6 +498,14 @@ data:
         This implant adds +2 Armour to the Arms, Body, and Legs locations. The armour
         bonus is added to any other armour for those locations.
     source: Rogue Trader Core Rulebook
+    hasArmourPoints: true
+    armourPoints:
+        head: 0
+        leftArm: 2
+        rightArm: 2
+        body: 2
+        leftLeg: 2
+        rightLeg: 2
     backpack:
         inBackpack: false
 img: systems/rogue-trader-3rd/icons/items/buckets/cyber-bionic-arm.png
@@ -490,7 +514,7 @@ type: cybernetic
 ---
 data:
     craftsmanship: common
-    availability: common
+    availability: Rare
     weight: 0
     equipped: false
     inBackpack: false
@@ -508,7 +532,7 @@ type: cybernetic
 ---
 data:
     craftsmanship: common
-    availability: common
+    availability: Very Rare
     weight: 0
     equipped: false
     inBackpack: false
@@ -519,7 +543,13 @@ data:
         of sacred unguent. These must be supplied separately. In addition to this,
         the limb contains an electrically powered censer, which can gust incense fumes
         over particularly troublesome faults. The censer generates one "blast" of
-        smoke every fifteen minutes. This may be employed in
+        smoke every fifteen minutes. This may be employed in melee combat to distract
+        and choke, imposing a -5 penalty to Weapon Skill Tests made by all living
+        creatures within a two metre radius for one Round. This is a Half Action.
+        Unless the censer is deactivated, all Perception Tests made to detect the
+        Tech-Priest that rely on a sense of smell gain a +10 bonus. Finally, the
+        mechadendrite contains a cutting blade. This counts as a knife with the
+        Defensive quality and Mono upgrade.
     source: Rogue Trader Core Rulebook
     backpack:
         inBackpack: false
@@ -529,7 +559,7 @@ type: cybernetic
 ---
 data:
     craftsmanship: common
-    availability: common
+    availability: Very Rare
     weight: 0
     equipped: false
     inBackpack: false
@@ -548,7 +578,7 @@ type: cybernetic
 ---
 data:
     craftsmanship: common
-    availability: common
+    availability: Scarce
     weight: 0
     equipped: false
     inBackpack: false
@@ -569,7 +599,7 @@ type: cybernetic
 ---
 data:
     craftsmanship: common
-    availability: common
+    availability: Very Rare
     weight: 0
     equipped: false
     inBackpack: false
@@ -594,7 +624,7 @@ type: cybernetic
 ---
 data:
     craftsmanship: common
-    availability: common
+    availability: Very Rare
     weight: 0
     equipped: false
     inBackpack: false
@@ -614,7 +644,7 @@ type: cybernetic
 ---
 data:
     craftsmanship: common
-    availability: common
+    availability: Rare
     weight: 0
     equipped: false
     inBackpack: false
@@ -633,7 +663,7 @@ type: cybernetic
 ---
 data:
     craftsmanship: common
-    availability: common
+    availability: Rare
     weight: 0
     equipped: false
     inBackpack: false
@@ -653,4 +683,53 @@ data:
         inBackpack: false
 img: systems/rogue-trader-3rd/icons/items/buckets/cyber-implant-system.png
 name: Vitae Supplacement
+type: cybernetic
+---
+data:
+    craftsmanship: common
+    availability: Scarce
+    weight: 0
+    equipped: false
+    inBackpack: false
+    description: Subdermal skin tissue is treated with flakweave and chemical toughening
+        agents, such that the wearer can tolerate a longer term of void exposure
+        before ill effects occur. Voidskin allows the user to resist damage due to
+        void exposure for an additional 1d10+3 rounds past the normal duration.
+    source: Rogue Trader Core Rulebook
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/cyber-implant-system.png
+name: Voidskin
+type: cybernetic
+---
+data:
+    craftsmanship: common
+    availability: Rare
+    weight: 0
+    equipped: false
+    inBackpack: false
+    description: The subject has cranial surgery to implant neural receptors and
+        artificial nerve routing, and can be compelled not to reveal a certain item
+        of information, remain within a set area, or perform a specific task.
+    source: Rogue Trader Core Rulebook
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/cyber-implant-system.png
+name: Volitor Implant
+type: cybernetic
+---
+data:
+    craftsmanship: common
+    availability: Scarce
+    weight: 0
+    equipped: false
+    inBackpack: false
+    description: A built-in micro-bead communications device, often hardwired to
+        a ship's vox frequencies. Allows the user to communicate silently via
+        subvocalization.
+    source: Rogue Trader Core Rulebook
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/cyber-implant-system.png
+name: Vox Implant
 type: cybernetic

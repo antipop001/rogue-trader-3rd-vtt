@@ -438,12 +438,15 @@ data:
         rightLeg: 0
     availability: Near Unique
     craftsmanship: Common
-    description: 'Errata v1.4: Imposes a -20 penalty on all Weapon Skill and Ballistic
-        Skill Tests made to attack the wearer.'
+    description: Rather than providing physical protection, a blurshield creates a fuzzy
+        blur around the wearer so that it is not clear exactly where the target is. While
+        useful against most ranged weapons, it offers little help against flame or blast
+        weapons that rely more on the area of effect than precision targeting. Imposes a
+        -20 penalty on all Ballistic Skill Tests made to attack the wearer.
     maxAgility: 0
     source: Into the Storm, p.138
-    type: Field
-    weight: 2.0
+    type: Other
+    weight: 3.0
 img: systems/rogue-trader-3rd/icons/items/buckets/armour-force-field.png
 name: Archeotech Blurshield
 type: armour
@@ -528,7 +531,7 @@ data:
     maxAgility: 0
     source: Into the Storm, p.131
     type: Field
-    weight: 0.2
+    weight: 2.0
     protectionRating: 75
 img: systems/rogue-trader-3rd/icons/items/buckets/armour-force-field.png
 name: Eldar Forceshield
@@ -753,19 +756,19 @@ type: armour
 ---
 data:
     armourPoints:
-        body: 1
+        body: 3
         head: 0
-        leftArm: 1
-        leftLeg: 1
-        rightArm: 1
-        rightLeg: 1
-    availability: Common
+        leftArm: 3
+        leftLeg: 3
+        rightArm: 3
+        rightLeg: 3
+    availability: Scarce
     craftsmanship: Common
-    description: Ork Armour. Covers Body, Arms, Legs.
+    description: Ork Armour. Covers Body, Arms, Legs. Squighide counts as Primitive, unless it is worn by an Ork.
     maxAgility: 0
     source: Into the Storm, p.144
-    type: Other
-    weight: 3.0
+    type: Primitive
+    weight: 4.0
 img: systems/rogue-trader-3rd/icons/items/buckets/armour-void-suit.png
 name: Squighide
 type: armour

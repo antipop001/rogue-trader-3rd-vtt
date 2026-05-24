@@ -158,7 +158,7 @@ function allCombatActions() {
             name: 'Full Auto Burst',
             type: ['Full'],
             subtype: ['Attack', 'Ranged'],
-            description: 'Grants +20 BS, one hit plus one additional hit per Degree of Success (up to the weapon\'s Full RoF); Jam on 94+ result.',
+            description: 'Grants +20 BS, one hit per Degree of Success (up to the weapon\'s Full RoF); Jam on 94+ result.',
             attack: {
                 modifier: 20,
             },

@@ -353,8 +353,8 @@ data:
     reload: 2 Full
     source: Into the Storm, p.99
     special:
-        accurate: true
-        reliable: true
+        inaccurate: true
+        unreliable: true
     type: SP
     weight: 2.0
 img: systems/rogue-trader-3rd/icons/items/buckets/pistol-sp.png
@@ -382,9 +382,9 @@ data:
     reload: 3 Full
     source: Rogue Trader Core Rulebook, p.124
     special:
-        accurate: true
+        inaccurate: true
         primitive: true
-        reliable: true
+        unreliable: true
     type: Primitive
     weight: 4
 img: systems/rogue-trader-3rd/icons/items/buckets/pistol-primitive.png
@@ -718,8 +718,8 @@ data:
     reload: Full
     source: Rogue Trader Core Rulebook, p.128
     special:
-        accurate: true
-        reliable: true
+        inaccurate: true
+        unreliable: true
     type: Exotic
     weight: 2.0
 img: systems/rogue-trader-3rd/icons/items/buckets/pistol-exotic.png
@@ -1082,7 +1082,7 @@ data:
         burst: 3
         full: 10
         single: 1
-    reload: Full
+    reload: 2 Full
     source: Rogue Trader Core Rulebook, p.120
     special: {}
     type: SP
@@ -1139,8 +1139,8 @@ data:
     reload: Full
     source: Into the Storm, p.143
     special:
-        accurate: true
-        reliable: true
+        inaccurate: true
+        unreliable: true
     type: Exotic
     weight: 6.0
 img: systems/rogue-trader-3rd/icons/items/buckets/basic-exotic.png
@@ -1168,9 +1168,9 @@ data:
     reload: 2 Full
     source: Into the Storm, p.101
     special:
-        accurate: true
+        inaccurate: true
         primitive: true
-        reliable: true
+        unreliable: true
     type: Primitive
     weight: 4.0
 img: systems/rogue-trader-3rd/icons/items/buckets/basic-primitive.png
@@ -1284,9 +1284,9 @@ data:
     reload: 2 Full
     source: Into the Storm, p.143
     special:
-        accurate: true
+        inaccurate: true
         flame: true
-        reliable: true
+        unreliable: true
     type: Exotic
     weight: 8.0
 img: systems/rogue-trader-3rd/icons/items/buckets/basic-exotic.png
@@ -1607,15 +1607,15 @@ data:
     availability: Near Unique
     class: Basic
     clip:
-        max: 2
-        value: 2
+        max: 3
+        value: 3
     craftsmanship: Common
     damage: Special
     damageType: ''
     description: 'Special: Blast (5)'
     equipped: false
     modifications: []
-    penetration: 3
+    penetration: 0
     range: 30
     rateOfFire:
         burst: 0
@@ -1679,7 +1679,7 @@ data:
     reload: Full
     source: Rogue Trader Core Rulebook, p.125
     special:
-        accurate: true
+        inaccurate: true
     type: Launcher
     weight: 12.5
 img: systems/rogue-trader-3rd/icons/items/buckets/basic-launcher.png
@@ -1961,7 +1961,7 @@ data:
     source: Rogue Trader Core Rulebook, p.122
     special: {}
     type: Melta
-    weight: 7.5
+    weight: 40.0
 img: systems/rogue-trader-3rd/icons/items/buckets/basic-melta.png
 name: Meltagun (Mars)
 type: weapon
@@ -1988,7 +1988,7 @@ data:
     source: Rogue Trader Core Rulebook, p.122
     special: {}
     type: Melta
-    weight: 8.5
+    weight: 46.0
 img: systems/rogue-trader-3rd/icons/items/buckets/basic-melta.png
 name: Meltagun (Mezoa)
 type: weapon
@@ -2014,9 +2014,9 @@ data:
     reload: 5 Full
     source: Rogue Trader Core Rulebook, p.124
     special:
-        accurate: true
+        inaccurate: true
         primitive: true
-        reliable: true
+        unreliable: true
     type: Primitive
     weight: 7.0
 img: systems/rogue-trader-3rd/icons/items/buckets/basic-primitive.png
@@ -2073,8 +2073,8 @@ data:
     reload: Full
     source: Rogue Trader Core Rulebook, p.128
     special:
-        accurate: true
-        reliable: true
+        inaccurate: true
+        unreliable: true
     type: Exotic
     weight: 4.0
 img: systems/rogue-trader-3rd/icons/items/buckets/basic-exotic.png
@@ -2243,7 +2243,7 @@ data:
     reload: Full
     source: Into the Storm, p.120
     special:
-        accurate: true
+        inaccurate: true
         blast: 1
         tearing: true
     type: Exotic
@@ -2301,8 +2301,8 @@ data:
     reload: Half
     source: Into the Storm, p.143
     special:
-        accurate: true
-        reliable: true
+        inaccurate: true
+        unreliable: true
     type: Exotic
     weight: 15.0
 img: systems/rogue-trader-3rd/icons/items/buckets/basic-exotic.png
@@ -2538,29 +2538,31 @@ name: Storm Bolter
 type: weapon
 ---
 data:
-    availability: Average
+    availability: Extremely Rare
     class: Basic
     clip:
-        max: 1
-        value: 1
+        max: 60
+        value: 60
     craftsmanship: Common
-    damage: 1d10+2
-    damageType: Rending
-    description: ''
+    damage: 1d10+5
+    damageType: Explosive
+    description: 'Storm Bolters arose from experiments in combining weapons together to achieve greater rates of fire. Here, two linked bolters form a single weapon which can shred most foes in a single burst. Rarely seen outside of the elite Astartes, most Storm Bolters are relic-weapons covered with glyphs and purity seals that speak of their ancient origin.'
     equipped: false
     modifications: []
-    penetration: 2
-    range: 10
+    penetration: '4'
+    range: '90'
     rateOfFire:
-        burst: 0
-        full: 0
+        burst: 2
+        full: 4
         single: 1
     reload: Full
-    source: Into the Storm, p.100
-    special: {}
-    type: SP
-    weight: 1.5
-img: systems/rogue-trader-3rd/icons/items/buckets/basic-sp.png
+    source: Rogue Trader Core Rulebook, p.119
+    special:
+        storm: true
+        tearing: true
+    type: Bolt
+    weight: 9.0
+img: systems/rogue-trader-3rd/icons/items/buckets/basic-bolt.png
 name: Void Speargun
 type: weapon
 ---
@@ -2698,8 +2700,8 @@ data:
     reload: 2 Full
     source: Into the Storm, p.143
     special:
-        accurate: true
-        reliable: true
+        inaccurate: true
+        unreliable: true
         storm: true
         unwieldy: true
     type: Exotic
@@ -3114,7 +3116,7 @@ data:
     reload: Full
     source: Into the Storm, p.102
     special:
-        accurate: true
+        inaccurate: true
         blast: 4
         shocking: true
     type: Launcher
@@ -3144,7 +3146,7 @@ data:
     reload: 2 Full
     source: Into the Storm, p.103
     special:
-        accurate: true
+        inaccurate: true
         blast: 5
     type: Launcher
     weight: 48.0
@@ -3173,7 +3175,7 @@ data:
     reload: Full
     source: Into the Storm, p.102
     special:
-        accurate: true
+        inaccurate: true
         blast: 5
     type: Launcher
     weight: 41.0
@@ -3196,7 +3198,7 @@ data:
     penetration: 13
     range: 60
     rateOfFire:
-        burst: 0
+        burst: 3
         full: 0
         single: 1
     reload: 2 Full
@@ -3230,7 +3232,7 @@ data:
     reload: 2 Full
     source: Rogue Trader Core Rulebook, p.120
     special:
-        reliable: true
+        unreliable: true
         scatter: true
     type: SP
     weight: 7.0
@@ -3261,7 +3263,7 @@ data:
     special:
         blast: 1
         overheats: true
-        reliable: true
+        unreliable: true
     type: Plasma
     weight: 40.0
 img: systems/rogue-trader-3rd/icons/items/buckets/heavy-plasma.png
@@ -3402,7 +3404,7 @@ data:
     reload: ''
     source: Into the Storm, p.144
     special:
-        balanced: true
+        unbalanced: true
         tearing: true
     type: Exotic
     weight: 10.0
@@ -3833,7 +3835,7 @@ data:
     reload: ''
     source: Rogue Trader Core Rulebook, p.137
     special:
-        balanced: true
+        unbalanced: true
         primitive: true
     type: Primitive
     weight: 7.0
@@ -3950,7 +3952,7 @@ data:
     reload: ''
     source: Into the Storm, p.167
     special:
-        balanced: true
+        unbalanced: true
         powerField: true
     type: Power
     weight: 9.0
@@ -3979,7 +3981,7 @@ data:
     reload: ''
     source: Rogue Trader Core Rulebook, p.138
     special:
-        balanced: true
+        unbalanced: true
         primitive: true
     type: Primitive
     weight: 0
@@ -4261,7 +4263,7 @@ data:
     reload: ''
     source: Rogue Trader Core Rulebook, p.135
     special:
-        balanced: true
+        unbalanced: true
         powerField: true
     type: Power
     weight: 8.0
@@ -4290,7 +4292,7 @@ data:
     reload: ''
     source: Rogue Trader Core Rulebook, p.130
     special:
-        balanced: true
+        unbalanced: true
     type: Exotic
     weight: 8.0
 img: systems/rogue-trader-3rd/icons/items/buckets/melee-exotic.png
@@ -4347,7 +4349,7 @@ data:
     reload: ''
     source: Rogue Trader Core Rulebook, p.135
     special:
-        balanced: true
+        unbalanced: true
         powerField: true
     type: Power
     weight: 6.0
