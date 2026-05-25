@@ -2431,7 +2431,7 @@ data:
         scaling increased from +1 per PR to +3 per PR. FAQ clarified that Strength
         Bonus is not added to damage. // Damage formula: 1d10 Rending + 3 per PR //
         Penetration: Psy Rating'
-    penetration: 0
+    penetration: "@pr"
     prerequisite: ''
     range: Personal
     source: Rogue Trader Core Rulebook, p.171
@@ -2515,7 +2515,7 @@ data:
         Number of shards changed to effective Psy Rating. Launching changed to a Challenging
         (+0) Willpower Test. Damage scaling increased to +2 per PR. Dodge rules clarified.
         // Damage formula: 1d10 Rending + 2 per PR // Penetration: Psy Rating'
-    penetration: 0
+    penetration: "@pr"
     prerequisite: ''
     range: 5m x Psy Rating
     source: Rogue Trader Core Rulebook, p.172
