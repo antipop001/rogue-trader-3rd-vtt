@@ -131,17 +131,6 @@ export class Hit {
                     const righteousFuryRoll = new Roll('1d5', {});
                     await righteousFuryRoll.evaluate();
                     this.righteousFury.push({roll: righteousFuryRoll, effect: ''});
-
-                    // DeathDealer
-                    if (actionItem.isMelee) {
-                        if (sourceActor.hasTalentFuzzyWords('Deathdealer', 'Melee')) {
-                            this.modifiers['deathdealer'] = sourceActor.getCharacteristicFuzzy('Perception').bonus;
-                        }
-                    } else if (actionItem.isRanged) {
-                        if (sourceActor.hasTalentFuzzyWords('Deathdealer', 'Ranged')) {
-                            this.modifiers['deathdealer'] = sourceActor.getCharacteristicFuzzy('Perception').bonus;
-                        }
-                    }
                 }
 
                 if (attackData.rollData.hasAttackSpecial('Primitive')) {
