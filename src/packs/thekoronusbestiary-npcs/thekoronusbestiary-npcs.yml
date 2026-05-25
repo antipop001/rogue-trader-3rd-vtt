@@ -1,4 +1,3 @@
----
 effects: []
 flags:
   rt:
@@ -231,6 +230,8 @@ items:
     description: This creature has a naturally tough hide or an exoskeleton, affording it some protection against attacks.
       This Trait always includes a numeric value to indicate how many Armour Points the creature gains to all locations.
     source: Rogue Trader Core Rulebook
+    level: 4
+    hasLevel: true
   type: trait
 - _id: Otrsbwv7wLMOjA9X
   effects: []
@@ -1482,6 +1483,8 @@ items:
     description: This creature has a naturally tough hide or an exoskeleton, affording it some protection against attacks.
       This Trait always includes a numeric value to indicate how many Armour Points the creature gains to all locations.
     source: Rogue Trader Core Rulebook
+    level: 5
+    hasLevel: true
   type: trait
 - _id: mdFYAvYk8bOFaVEB
   effects: []
@@ -3701,6 +3704,8 @@ items:
     description: This creature has a naturally tough hide or an exoskeleton, affording it some protection against attacks.
       This Trait always includes a numeric value to indicate how many Armour Points the creature gains to all locations.
     source: Rogue Trader Core Rulebook
+    level: 6
+    hasLevel: true
   type: trait
 - _id: nIXVjCxSroZWy1SM
   effects: []
@@ -4102,6 +4107,8 @@ items:
     description: This creature has a naturally tough hide or an exoskeleton, affording it some protection against attacks.
       This Trait always includes a numeric value to indicate how many Armour Points the creature gains to all locations.
     source: Rogue Trader Core Rulebook
+    level: 2
+    hasLevel: true
   type: trait
 - _id: GX7kPioapGhWNu1G
   effects: []
@@ -7489,18 +7496,18 @@ items:
     description: ''
     disabled: false
     duration:
-      combat:
-      rounds:
-      seconds:
-      startRound:
-      startTime:
-      startTurn:
-      turns:
+      combat: null
+      rounds: null
+      seconds: null
+      startRound: null
+      startTime: null
+      startTurn: null
+      turns: null
     img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
     name: Talented (Pilot) (Swooping Hawk Wings)
     origin: ''
     statuses: []
-    tint:
+    tint: null
     transfer: true
   flags:
     rt: {}
@@ -8970,28 +8977,28 @@ items:
     changes:
     - key: system.skills.commonLore.modifier
       mode: 2
-      priority:
+      priority: null
       value: '10'
     - key: system.skills.scholasticLore.modifier
       mode: 2
-      priority:
+      priority: null
       value: '10'
     description: ''
     disabled: false
     duration:
-      combat:
-      rounds:
-      seconds:
-      startRound:
-      startTime:
-      startTurn:
-      turns:
+      combat: null
+      rounds: null
+      seconds: null
+      startRound: null
+      startTime: null
+      startTurn: null
+      turns: null
     flags: {}
     img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
     name: Infused Knowledge
     origin: ''
     statuses: []
-    tint:
+    tint: null
     transfer: true
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -9308,18 +9315,18 @@ items:
     description: ''
     disabled: false
     duration:
-      combat:
-      rounds:
-      seconds:
-      startRound:
-      startTime:
-      startTurn:
-      turns:
+      combat: null
+      rounds: null
+      seconds: null
+      startRound: null
+      startTime: null
+      startTurn: null
+      turns: null
     img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
     name: Talented (Pilot)
     origin: ''
     statuses: []
-    tint:
+    tint: null
     transfer: true
   flags:
     rt: {}
@@ -10808,24 +10815,24 @@ items:
     changes:
     - key: system.skills.medicae.modifier
       mode: 2
-      priority:
+      priority: null
       value: '10'
     description: ''
     disabled: false
     duration:
-      combat:
-      rounds:
-      seconds:
-      startRound:
-      startTime:
-      startTurn:
-      turns:
+      combat: null
+      rounds: null
+      seconds: null
+      startRound: null
+      startTime: null
+      startTurn: null
+      turns: null
     flags: {}
     img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
     name: Master Chirurgeon
     origin: ''
     statuses: []
-    tint:
+    tint: null
     transfer: true
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -11842,24 +11849,24 @@ items:
     changes:
     - key: system.skills.operate.modifier
       mode: 2
-      priority:
+      priority: null
       value: '10'
     description: ''
     disabled: false
     duration:
-      combat:
-      rounds:
-      seconds:
-      startRound:
-      startTime:
-      startTurn:
-      turns:
+      combat: null
+      rounds: null
+      seconds: null
+      startRound: null
+      startTime: null
+      startTurn: null
+      turns: null
     flags: {}
     img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
     name: Hotshot Pilot
     origin: ''
     statuses: []
-    tint:
+    tint: null
     transfer: true
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png

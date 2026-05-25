@@ -1,4 +1,3 @@
----
 effects: []
 flags:
   rt:
@@ -1521,6 +1520,8 @@ items:
       psychic effect, and their Armour Points apply toward fire damage. Machines are also resilient to injury, having 1 to
       5 Armour Points for each location. This number is indicated next to the Trait.
     source: Rogue Trader Core Rulebook
+    level: 3
+    hasLevel: true
   type: trait
 - _id: TliP8MAjevyka3Tw
   effects: []
@@ -8115,28 +8116,28 @@ items:
     changes:
     - key: system.skills.commonLore.modifier
       mode: 2
-      priority:
+      priority: null
       value: '10'
     - key: system.skills.scholasticLore.modifier
       mode: 2
-      priority:
+      priority: null
       value: '10'
     description: ''
     disabled: false
     duration:
-      combat:
-      rounds:
-      seconds:
-      startRound:
-      startTime:
-      startTurn:
-      turns:
+      combat: null
+      rounds: null
+      seconds: null
+      startRound: null
+      startTime: null
+      startTurn: null
+      turns: null
     flags: {}
     img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
     name: Infused Knowledge
     origin: ''
     statuses: []
-    tint:
+    tint: null
     transfer: true
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png

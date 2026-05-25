@@ -420,6 +420,7 @@ export class RogueTraderAcolyte extends RogueTraderBaseActor {
                     }
                     break;
                 case 'Natural Armor':
+                case 'Natural Armour':
                     if(trait.system.level > traitBonus) {
                         traitBonus = trait.system.level;
                     }
