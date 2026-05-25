@@ -30,6 +30,12 @@
                             <div class="rt-roll__label">Calculated Damage</div>
                             <div class="rt-roll__value">{{voidshipDamage}}</div>
                         </div>
+                        {{#if voidshipShieldsUsed}}
+                            <div class="rt-roll__row rt-roll__row--number">
+                                <div class="rt-roll__label">Void Shields Absorbed</div>
+                                <div class="rt-roll__value">{{voidshipShieldsUsed}}</div>
+                            </div>
+                        {{/if}}
                         {{#if voidshipTarget}}
                             {{#each voidshipResults as |result|}}
                                 {{#if result.isCritical}}
@@ -132,6 +138,12 @@
                                 {{#if result.isFumble}}
                                     <div class="rt-roll__fumble">
                                         <span>FUMBLE!</span>
+                                        <span>{{result.roll}}</span>
+                                    </div>
+                                {{/if}}
+                                {{#if result.isShielded}}
+                                    <div class="rt-roll__row">
+                                        <span>Void Shield Absorbed</span>
                                         <span>{{result.roll}}</span>
                                     </div>
                                 {{/if}}

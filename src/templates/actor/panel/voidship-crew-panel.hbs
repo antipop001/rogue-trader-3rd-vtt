@@ -15,6 +15,7 @@
     <div class="rt-field__wrapper">
         <span class="rt-field__header">Morale Limit</span>
         <input type="number" data-dtype="Number" class="rt-field__input" name="system.morale.max" value="{{actor.system.morale.max}}" />
+        {{#if actor.system.componentBonuses.morale}}<span class="rt-field__bonus">({{actor.system.componentBonuses.morale}})</span>{{/if}}
     </div>
     <div class="rt-field__wrapper">
         <span class="rt-field__header">Morale Left</span>

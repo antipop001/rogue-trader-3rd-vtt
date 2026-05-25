@@ -7,17 +7,10 @@ data:
     isDestroyed: false
     power: 2
     space: 2
-    hitPoints: 0
+    hitPoints: 2
     shipPoints: 1
-    description: 'An older version of the Mars Pattern, these macrocannons lack range
-        and power. They are most often found on transports. Mars Pattern Macrocannons
-        The most common macrobattery, these are reliable, hard-hitting weapons firing
-        kilo-tonne ordinance, mounted along the vessel''s dorsal ridge or in broadside.
-        Mars Pattern Macrocannon Broadside The most common macrobattery, these are
-        reliable, hard-hitting weapons firing kilo-tonne ordinance, mounted in a warship''s
-        extended broadside. Broadside: These weapons must occupy a Port or Starboard
-        Weapon Capacity slot. Sunsear Laser Battery These laser batteries are common
-        on Naval frigates, providing a balance between power used and damage inflicted.'
+    description: An older version of the Mars Pattern, these macrocannons lack range
+        and power. They are most often found on transports.
     source: Rogue Trader Core Rulebook
     location: Main
     componentClass: Supplemental
@@ -49,16 +42,11 @@ data:
     isDestroyed: false
     power: 4
     space: 2
-    hitPoints: 0
+    hitPoints: 2
     shipPoints: 1
     description: 'The most common macrobattery, these are reliable, hard-hitting weapons
         firing kilo-tonne ordinance, mounted along the vessel''s dorsal ridge or in
-        broadside. Mars Pattern Macrocannon Broadside The most common macrobattery,
-        these are reliable, hard-hitting weapons firing kilo-tonne ordinance, mounted
-        in a warship''s extended broadside. Broadside: These weapons must occupy a
-        Port or Starboard Weapon Capacity slot. Sunsear Laser Battery These laser
-        batteries are common on Naval frigates, providing a balance between power
-        used and damage inflicted.'
+        broadside.'
     source: Rogue Trader Core Rulebook
     location: Main
     componentClass: Supplemental
@@ -90,13 +78,11 @@ data:
     isDestroyed: false
     power: 4
     space: 5
-    hitPoints: 0
+    hitPoints: 2
     shipPoints: 1
     description: 'The most common macrobattery, these are reliable, hard-hitting weapons
-        firing kilo-tonne ordinance, mounted in a warship''s extended broadside. Broadside:
-        These weapons must occupy a Port or Starboard Weapon Capacity slot. Sunsear
-        Laser Battery These laser batteries are common on Naval frigates, providing
-        a balance between power used and damage inflicted.'
+        firing kilo-tonne ordinance, mounted in a warship''s extended broadside. //
+        Broadside: This weapon must occupy a Port or Starboard Weapon Capacity slot.'
     source: Rogue Trader Core Rulebook
     location: Main
     componentClass: Supplemental
@@ -128,7 +114,7 @@ data:
     isDestroyed: false
     power: 6
     space: 4
-    hitPoints: 0
+    hitPoints: 2
     shipPoints: 1
     description: These laser batteries are common on Naval frigates, providing a balance
         between power used and damage inflicted.
@@ -163,7 +149,7 @@ data:
     isDestroyed: false
     power: 7
     space: 4
-    hitPoints: 0
+    hitPoints: 2
     shipPoints: 2
     description: 'These weapons are rare and expensive examples of the ancient art
         of plasma-craft. Their power draw is considerable, but so is their effectiveness.
@@ -202,7 +188,7 @@ data:
     isDestroyed: false
     power: 6
     space: 4
-    hitPoints: 0
+    hitPoints: 2
     shipPoints: 2
     description: The Starbreaker is a recent attempt by lesser forge worlds to copy
         the STC Titanforge. Unfortunately, they are less powerful than the weapons
@@ -238,7 +224,7 @@ data:
     isDestroyed: false
     power: 9
     space: 4
-    hitPoints: 0
+    hitPoints: 2
     shipPoints: 2
     description: The Titanforge Lances are an STC standard for lance weaponry, found
         on naval warships throughout the Calixis Sector.
@@ -273,7 +259,7 @@ data:
     isDestroyed: false
     power: 13
     space: 6
-    hitPoints: 0
+    hitPoints: 2
     shipPoints: 2
     description: The Titanforge Lances are an STC standard for lance weaponry, found
         on naval warships throughout the Calixis Sector. On larger vessels, multiple
@@ -308,52 +294,14 @@ data:
     isDepressurized: false
     isUnpowered: false
     isDestroyed: false
-    power: 0
-    space: 0
-    hitPoints: 0
-    shipPoints: 0
-    description: These use a deliberate plasma containment failure, causing a blast
-        of heat and light to burst forth like a miniature sun. They are highly lethal
-        against almost all targets.
-    source: Rogue Trader Core Rulebook
-    location: Main
-    componentClass: Supplemental
-    componentType: Macrocannon
-    class: Turret
-    type: Macrocannon
-    size: Light
-    slot: Dorsal
-    rangeSmall: 0
-    rangeMedium: 0
-    rangeLong: 0
-    strength: 0
-    damage: 0
-    attackBonus: 0
-    target: ''
-    effect: ''
-    backpack:
-        inBackpack: false
-img: systems/rogue-trader-3rd/icons/items/buckets/ship-macrobattery.png
-name: Plasma Drive Explosion
-type: shipWeapon
----
-data:
-    craftsmanship: common
-    availability: common
-    isOnFire: false
-    isDepressurized: false
-    isUnpowered: false
-    isDestroyed: false
     power: 3
     space: 1
-    hitPoints: 0
+    hitPoints: 2
     shipPoints: 1
-    description: Acquisition ... 38, 34 See Ship and Warrant Path Acquisitionist ...
-        72 See Alternate Career Ranks Additional Starship Components ... 156 Archeotech
-        Components ... 161 Essential Components ... 156 Supplemental Components ...
-        158 Agent of the Throne ... 70 Alien Biology ... 24 Alternate Career Ranks
-        ... 129 A Product of Upbringing ... 199 Armour ... 193 Augmenticist ... 74
-        See Alternate Career Ranks
+    description: 'These missile batteries fire salvoes of warheads at
+        the enemy, relying on volume of fire to overwhelm point defences. //
+        Self Propelled Warhead: These missiles gain +2 damage at Short Range but
+        do not suffer the penalty at Long Range.'
     source: Into the Storm
     location: Main
     componentClass: Supplemental
@@ -385,14 +333,11 @@ data:
     isDestroyed: false
     power: 5
     space: 5
-    hitPoints: 0
+    hitPoints: 2
     shipPoints: 1
-    description: Acquisition ... 38, 34 See Ship and Warrant Path Acquisitionist ...
-        72 See Alternate Career Ranks Additional Starship Components ... 156 Archeotech
-        Components ... 161 Essential Components ... 156 Supplemental Components ...
-        158 Agent of the Throne ... 70 Alien Biology ... 24 Alternate Career Ranks
-        ... 129 A Product of Upbringing ... 199 Armour ... 193 Augmenticist ... 74
-        See Alternate Career Ranks
+    description: 'Gravitic weapons that project concentrated gravitational pulses at
+        the enemy. Mounted in a warship''s extended broadside. //
+        Broadside: This weapon must occupy a Port or Starboard Weapon Capacity slot.'
     source: Into the Storm
     location: Main
     componentClass: Supplemental
@@ -424,14 +369,10 @@ data:
     isDestroyed: false
     power: 4
     space: 4
-    hitPoints: 0
+    hitPoints: 2
     shipPoints: 1
-    description: Acquisition ... 38, 34 See Ship and Warrant Path Acquisitionist ...
-        72 See Alternate Career Ranks Additional Starship Components ... 156 Archeotech
-        Components ... 161 Essential Components ... 156 Supplemental Components ...
-        158 Agent of the Throne ... 70 Alien Biology ... 24 Alternate Career Ranks
-        ... 129 A Product of Upbringing ... 199 Armour ... 193 Augmenticist ... 74
-        See Alternate Career Ranks
+    description: A variant macrocannon design produced by the Mezoa Forge World, trading
+        range for additional firepower.
     source: Into the Storm
     location: Main
     componentClass: Supplemental
@@ -463,7 +404,7 @@ data:
     isDestroyed: false
     power: 4
     space: 3
-    hitPoints: 0
+    hitPoints: 2
     shipPoints: 2
     description: 'These squat, oversized, and highly insulated macrocannon are designed
         specifically to fire shells tipped with powerful delta-charges that detonate
@@ -500,7 +441,7 @@ data:
     isDestroyed: false
     power: 9
     space: 6
-    hitPoints: 0
+    hitPoints: 2
     shipPoints: 1
     description: 'With enough power, a ship of the line can mount entire broadsides
         of long ranged laser weaponry, giving it impressive offensive reach. // Broadside:
@@ -536,7 +477,7 @@ data:
     isDestroyed: false
     power: 9
     space: 4
-    hitPoints: 0
+    hitPoints: 2
     shipPoints: 2
     description: Narrowing the focus aperture on the STC Titanforge allowed the Lathes
         to boost range without unduly decreasing its power.
@@ -571,11 +512,10 @@ data:
     isDestroyed: false
     power: 13
     space: 6
-    hitPoints: 0
+    hitPoints: 2
     shipPoints: 2
-    description: 'A single Sunhammer lance proved successful enough that they have
-        also been constructed in batteries. IV. STARSHIPS EXPANDED TABLE 4-2: LANCES
-        AND MACROBATTERIES'
+    description: A single Sunhammer lance proved successful enough that they have
+        also been constructed in batteries.
     source: Into the Storm
     location: Main
     componentClass: Supplemental
@@ -607,7 +547,7 @@ data:
     isDestroyed: false
     power: 4
     space: 4
-    hitPoints: 0
+    hitPoints: 2
     shipPoints: 2
     description: 'Humanity''s grasp of laser weapon technology was once much greater
         than even the greatest Magos of a Forge can replicate. However, such weapons
@@ -647,7 +587,7 @@ data:
     isDestroyed: false
     power: 12
     space: 6
-    hitPoints: 0
+    hitPoints: 2
     shipPoints: 3
     description: 'The Star-flare Lance is a dangerous relic constructed at the pinnacle
         of mankind''s technical prowess during the Dark Age of Technology. The massive
@@ -660,10 +600,10 @@ data:
     source: Into the Storm
     location: Main
     componentClass: Supplemental
-    componentType: Macrocannon
-    class: Turret
-    type: Macrocannon
-    size: Light
+    componentType: Lance
+    class: Lance
+    type: Lance
+    size: Heavy
     slot: Dorsal
     rangeSmall: 0
     rangeMedium: 0
@@ -675,6 +615,6 @@ data:
     effect: ''
     backpack:
         inBackpack: false
-img: systems/rogue-trader-3rd/icons/items/buckets/ship-macrobattery.png
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-lance.png
 name: Star-flare Lance
 type: shipWeapon

@@ -147,7 +147,7 @@ export function criticalDamage() {
                 9: 'Damaged: Reduce component HP by another 1.',
                 10: 'Nothing: Through miraculous luck, nothing critical was struck. Component continue to operate on full capacity.'
             },
-            "Ship`s Bridge": {
+            "Bridge": {
                 1: 'CIC is hit: The ship’s command space has been hit. All Weapons could only target the closest visible target and lose Operator Bonus. Guided Weapons couldn’t be operated. Reduce Detection Range to 1. Reduce Detection by 30.',
                 2: 'CIC is hit: The ship’s command space has been hit. All Weapons could only target the closest visible target and lose Operator Bonus. Guided Weapons couldn’t be operated. Reduce Detection Range to 1. Reduce Detection by 30.',
                 3: 'Bridge is hit: The main conning station has suffered a hit. The ship couldn’t use any Maneuvers.',
@@ -269,7 +269,7 @@ export function criticalDamage() {
                 9: 'Electromagnetic Resonance: Until the end of the ship’s next Round, it has no active shields and receives -30 Evasion.',
                 10: 'Nothing: Through miraculous luck, nothing critical was struck. Component continue to operate on full capacity.'
             },
-            "Ship`s Bridge": {
+            "Bridge": {
                 1: 'CIC is destroyed: The ship’s command space has been destroyed. All Weapons could only target the closest visible target and lose Operator Bonus. Guided Weapons couldn’t be operated. Reduce Detection Range to 1. Reduce Detection by 30. Last’s until replacement.',
                 2: 'CIC is destroyed: The ship’s command space has been destroyed. All Weapons could only target the closest visible target and lose Operator Bonus. Guided Weapons couldn’t be operated. Reduce Detection Range to 1. Reduce Detection by 30. Last’s until replacement.',
                 3: 'CIC is destroyed: The ship’s command space has been destroyed. All Weapons could only target the closest visible target and lose Operator Bonus. Guided Weapons couldn’t be operated. Reduce Detection Range to 1. Reduce Detection by 30. Last’s until replacement.',

@@ -22,6 +22,7 @@ export class RogueTraderVoidship extends RogueTraderBaseActor {
         await super.prepareData();
         this._computeSpace();
         this._computePower();
+        this._computeComponentBonuses();
     }
 
     get faction() {
@@ -78,6 +79,24 @@ export class RogueTraderVoidship extends RogueTraderBaseActor {
         this.system.powerValue = powerValue;
     }
 
+    _computeComponentBonuses() {
+        const bonuses = {
+            maneuverability: 0, hullIntegrity: 0, morale: 0,
+            armour: 0, armourProw: 0, turrets: 0,
+            detection: 0, speed: 0, bsShipWeapons: 0
+        };
+        this.items.forEach(item => {
+            if (item.type !== 'shipComponent') return;
+            if (item.system.isDestroyed || item.system.isUnpowered) return;
+            const b = item.system.bonuses;
+            if (!b) return;
+            for (const key of Object.keys(bonuses)) {
+                bonuses[key] += (b[key] || 0);
+            }
+        });
+        this.system.componentBonuses = bonuses;
+    }
+
     hasTalent(talent) {
         return !!this.items.filter((i) => i.type === 'talent').find((t) => t.name === talent);
     }
@@ -89,13 +108,14 @@ export class RogueTraderVoidship extends RogueTraderBaseActor {
         rollData.nameOverride = crewActionName;
         rollData.type = 'Check';
         rollData.baseTarget = this.system.crewRating;
+        const cb = this.system.componentBonuses ?? {};
         switch (crewActionName){
             case "Maneuver": {
-                rollData.baseTarget = rollData.baseTarget + (this.system.maneuverability ? this.system.maneuverability : 0);
+                rollData.baseTarget = rollData.baseTarget + (this.system.maneuverability || 0) + (cb.maneuverability || 0);
                 break;
             }
             case "Detection": {
-                rollData.baseTarget = rollData.baseTarget + (this.system.detection ? this.system.detection : 0);
+                rollData.baseTarget = rollData.baseTarget + (this.system.detection || 0) + (cb.detection || 0);
                 break;
             }
         }
@@ -112,7 +132,7 @@ export class RogueTraderVoidship extends RogueTraderBaseActor {
         rollData.voidshipTurrets = true;
         rollData.type = 'Check';
         rollData.baseTarget = this.system.crewRating;
-        rollData.turretsShot = this.system.turrets;
+        rollData.turretsShot = (this.system.turrets || 0) + (this.system.componentBonuses?.turrets || 0);
         rollData.modifiers.modifier = 0;
         await prepareTurretsRoll(simpleSkillData);
     }

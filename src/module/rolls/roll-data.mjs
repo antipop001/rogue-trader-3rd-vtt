@@ -82,6 +82,7 @@ export class RollData {
     voidshipFailure = false;
     voidshipFumble = false;
     voidshipTarget = false;
+    voidshipShieldsUsed = 0;
     dos = 0;
     dof = 0;
 
@@ -317,6 +318,8 @@ export class WeaponRollData extends RollData {
 
     updateOperatorBonus() {
         this.modifiers.operator = this.sourceActor?.operators.weapons ?? 0;
+        const bsBonus = this.sourceActor?.system?.componentBonuses?.bsShipWeapons ?? 0;
+        if (bsBonus) this.modifiers['bridge'] = bsBonus;
     }
 
     updateBaseTarget() {

@@ -377,7 +377,7 @@ export class ActionData {
     async calculateResultVoidship() {
         if (this.rollData.name === "Turrets") {
             await this._calculateVoidshipHits(this.rollData.name, this.rollData.turretsShot);
-        } if (this.rollData.name === "Boarding") {
+        } else if (this.rollData.name === "Boarding") {
             await this._calculateVoidshipHits(this.rollData.name, this.rollData.boardingAttacks);
         } else {
             await this._calculateVoidshipHit();
@@ -434,8 +434,45 @@ export class ActionData {
         })
     }
 
+    async calculateVoidShields() {
+        if (!this.rollData.targetActor || this.rollData.targetActor.type !== "voidship") return;
+        if (this.rollData.weapon.system.type === "Lance") return;
+
+        let shields = this.rollData.targetActor.system.shields;
+        if (shields <= 0) return;
+
+        for (const result of this.rollData.voidshipResults) {
+            if (shields <= 0) break;
+            if (result.isCritical || result.isHit) {
+                result.isShielded = true;
+                result.isCritical = false;
+                result.isHit = false;
+                shields--;
+                this.rollData.voidshipShieldsUsed++;
+            }
+        }
+
+        await this.rollData.targetActor.update({
+            system: { shields: shields }
+        });
+    }
+
     async calculatePenetration() {
         let damage = this.rollData.weapon.system.damage;
+
+        if (this.rollData.weapon.system.type === "Lance") {
+            this.rollData.voidshipDamage = damage;
+            if (this.rollData.targetActor && this.rollData.targetActor.type === "voidship") {
+                this.rollData.voidshipTarget = true;
+                this.rollData.voidshipResults.forEach((result) => {
+                    if (result.isCritical || result.isHit) {
+                        result.penetration = true;
+                    }
+                });
+            }
+            return;
+        }
+
         if (this.rollData.weapon.system.type === "Macrocannon") {
             if (this.rollData.hasAttackSpecial('Scattershot')) {
                 switch (this.rollData.rangeName) {
@@ -466,7 +503,13 @@ export class ActionData {
         this.rollData.voidshipDamage = damage;
         if (this.rollData.targetActor && this.rollData.targetActor.type === "voidship") {
             this.rollData.voidshipTarget = true;
-            let armour = this.rollData.targetActor.system.armour;
+            const baseArmour = this.rollData.targetActor.system.armour;
+            const cb = this.rollData.targetActor.system.componentBonuses ?? {};
+            const armour = {
+                prow: (baseArmour.prow || 0) + (cb.armour || 0) + (cb.armourProw || 0),
+                side: (baseArmour.side || 0) + (cb.armour || 0),
+                rear: (baseArmour.rear || 0) + (cb.armour || 0)
+            };
             this.rollData.voidshipResults.forEach((result) => {
                 if (result.isCritical || result.isHit ) {
                     switch (this.rollData.voidshipFacing) {
@@ -581,6 +624,7 @@ export class ActionData {
         await this.calculateSuccessOrFailure();
         if (this.rollData.weapon && this.rollData.weapon.isShipWeapon) {
             this.rollData.voidshipAttack = true;
+            await this.calculateVoidShields();
             await this.calculateHitLocations();
             await this.calculatePenetration();
         }

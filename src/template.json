@@ -1234,7 +1234,18 @@
         "hitPoints": 0,
         "shipPoints": 0,
         "description": "",
-        "location": "Main"
+        "location": "Main",
+        "bonuses": {
+          "maneuverability": 0,
+          "hullIntegrity": 0,
+          "morale": 0,
+          "armour": 0,
+          "armourProw": 0,
+          "turrets": 0,
+          "detection": 0,
+          "speed": 0,
+          "bsShipWeapons": 0
+        }
       },
       "shipGear": {
         "componentClass": "Essential",
