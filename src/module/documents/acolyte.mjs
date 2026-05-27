@@ -16,6 +16,11 @@ import { getDegree, roll1d100 } from '../rolls/roll-helpers.mjs';
 import { SYSTEM_ID } from '../hooks-manager.mjs';
 import { RogueTraderSettings } from '../rogue-trader-settings.mjs';
 
+const BASIC_SKILLS = new Set([
+    'athletics', 'awareness', 'carouse', 'charm', 'command', 'deceive',
+    'dodge', 'inquiry', 'intimidate', 'logic', 'parry', 'scrutiny', 'stealth',
+]);
+
 export class RogueTraderAcolyte extends RogueTraderBaseActor {
 
     get backpack() {
@@ -143,6 +148,10 @@ export class RogueTraderAcolyte extends RogueTraderBaseActor {
         if (specialityName) {
             skill = skill.specialities[specialityName];
             label = `${label}: ${skill.label}`;
+        }
+        if (skill.untrained && !BASIC_SKILLS.has(skillName)) {
+            ui.notifications.warn(`${label} is an Advanced Skill — cannot attempt untrained.`);
+            return;
         }
         const simpleSkillData = new SimpleSkillData();
         const rollData = simpleSkillData.rollData;
@@ -331,15 +340,34 @@ export class RogueTraderAcolyte extends RogueTraderBaseActor {
     }
 
     _computeSkills() {
-        for (let skill of Object.values(this.skills)) {
+        for (const [name, skill] of Object.entries(this.skills)) {
             let short = !skill.characteristic || skill.characteristic === '' ? skill.characteristics[0] : skill.characteristic;
             let characteristic = this._findCharacteristic(short);
             const mod = skill.modifier || 0;
-            skill.current = characteristic.total + this._skillAdvanceToValue(skill.advance) + mod;
+            const adv = 1 * skill.advance;
+            const isBasic = BASIC_SKILLS.has(name);
+
+            if (adv === 0 && isBasic) {
+                skill.current = Math.floor(characteristic.total / 2) + mod;
+                skill.untrained = true;
+            } else if (adv === 0) {
+                skill.current = 0;
+                skill.untrained = true;
+            } else {
+                skill.current = characteristic.total + this._skillAdvanceToValue(adv) + mod;
+                skill.untrained = false;
+            }
 
             if (skill.isSpecialist) {
                 for (let speciality of Object.values(skill.specialities)) {
-                    speciality.current = characteristic.total + this._skillAdvanceToValue(speciality.advance) + mod;
+                    const sAdv = 1 * speciality.advance;
+                    if (sAdv === 0) {
+                        speciality.current = 0;
+                        speciality.untrained = true;
+                    } else {
+                        speciality.current = characteristic.total + this._skillAdvanceToValue(sAdv) + mod;
+                        speciality.untrained = false;
+                    }
                 }
             }
         }
@@ -355,17 +383,10 @@ export class RogueTraderAcolyte extends RogueTraderBaseActor {
 
     _skillAdvanceToValue(adv) {
         let advance = 1 * adv;
-        let training = -20;
-        if (advance === 1) {
-            training = 0;
-        } else if (advance === 2) {
-            training = 10;
-        } else if (advance === 3) {
-            training = 20;
-        } else if (advance >= 4) {
-            training = 30;
-        }
-        return training;
+        if (advance >= 3) return 20;
+        if (advance === 2) return 10;
+        if (advance === 1) return 0;
+        return 0;
     }
 
     _computeExperience() {
