@@ -172,6 +172,18 @@
             "characteristic": "Per",
             "modifier": 0
           },
+          "carouse": {
+            "label": "Carouse",
+            "characteristics": [
+              "T"
+            ],
+            "advance": 0,
+            "isSpecialist": false,
+            "specialities": {},
+            "cost": 0,
+            "characteristic": "T",
+            "modifier": 0
+          },
           "charm": {
             "label": "Charm",
             "characteristics": [
@@ -963,6 +975,18 @@
                 "taken": false
               }
             },
+            "characteristic": "Int",
+            "modifier": 0
+          },
+          "wrangling": {
+            "label": "Wrangling",
+            "characteristics": [
+              "Int"
+            ],
+            "advance": 0,
+            "isSpecialist": false,
+            "specialities": {},
+            "cost": 0,
             "characteristic": "Int",
             "modifier": 0
           }

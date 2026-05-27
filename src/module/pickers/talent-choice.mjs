@@ -14,7 +14,7 @@
 
 const SKILL_LABELS = {
     acrobatics: "Acrobatics", athletics: "Athletics", awareness: "Awareness",
-    charm: "Charm", command: "Command", commerce: "Commerce",
+    carouse: "Carouse", charm: "Charm", command: "Command", commerce: "Commerce",
     commonLore: "Common Lore", deceive: "Deceive", demolitions: "Demolitions",
     dodge: "Dodge", forbiddenLore: "Forbidden Lore", inquiry: "Inquiry",
     interrogation: "Interrogation", intimidate: "Intimidate",

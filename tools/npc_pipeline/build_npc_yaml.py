@@ -20,7 +20,7 @@ PACKS = REPO / "src/packs"
 
 SKILL_MAP = {
     "Acrobatics": "acrobatics", "Athletics": "athletics", "Awareness": "awareness",
-    "Barter": "commerce", "Charm": "charm", "Climb": "athletics",
+    "Barter": "commerce", "Carouse": "carouse", "Charm": "charm", "Climb": "athletics",
     "Command": "command", "Commerce": "commerce", "Common Lore": "commonLore",
     "Concealment": "stealth", "Deceive": "deceive", "Demolitions": "demolitions",
     "Dodge": "dodge", "Forbidden Lore": "forbiddenLore", "Intimidate": "intimidate",
@@ -31,6 +31,7 @@ SKILL_MAP = {
     "Search": "awareness", "Security": "security", "Silent Move": "stealth",
     "Speak Language": "linguistics", "Stealth": "stealth", "Survival": "survival",
     "Tech-Use": "techUse", "Tracking": "survival", "Trade": "trade",
+    "Wrangling": "wrangling",
 }
 
 CHAR_KEYS = ["weaponSkill", "ballisticSkill", "strength", "toughness",
