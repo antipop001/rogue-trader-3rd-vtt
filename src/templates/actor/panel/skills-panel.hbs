@@ -9,9 +9,10 @@
         </div>
         {{#each actor.skills as |skill name|}}
             {{#unless skill.isSpecialist}}
-                <div class="table-row actor-drag" data-item-type="skill" data-item-id="{{name}}">
+                <div class="table-row actor-drag{{#if skill.untrained}}{{#unless skill.isBasic}} skill-locked{{/unless}}{{/if}}" data-item-type="skill" data-item-id="{{name}}">
                     <div class="table-cell">
                         <button class="roll-skill" data-action="rollSkill" data-skill="{{name}}" type="roll">{{localize this.label}}</button>
+                        <span class="skill-type-tag">{{#if this.isBasic}}B{{else}}A{{/if}}</span>
                     </div>
                     <div class="table-cell">
                         <select name="system.skills.{{name}}.advance">
@@ -27,7 +28,15 @@
                         </select>
                     </div>
                     <div class="table-cell--last table-cell--highlight">
-                        <span class="display">{{this.current}}</span>
+                        {{#if skill.untrained}}
+                            {{#if skill.isBasic}}
+                                <span class="display skill-half">{{this.current}}</span>
+                            {{else}}
+                                <span class="display skill-locked-val">—</span>
+                            {{/if}}
+                        {{else}}
+                            <span class="display">{{this.current}}</span>
+                        {{/if}}
                     </div>
                 </div>
             {{/unless}}

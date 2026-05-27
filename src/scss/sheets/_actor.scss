@@ -34,6 +34,27 @@
     min-height: 0;
 }
 
+// Skill Basic/Advanced indicators
+.skill-type-tag {
+    font-size: 7.5pt;
+    opacity: 0.5;
+    margin-left: 2px;
+    vertical-align: super;
+}
+
+.skill-half {
+    opacity: 0.6;
+    font-style: italic;
+}
+
+.skill-locked-val {
+    opacity: 0.35;
+}
+
+.skill-locked {
+    opacity: 0.55;
+}
+
 // Vehicle / voidship are flat panel grids — scroll the whole content area.
 .vehicle .rt-actor,
 .voidship .rt-actor {

@@ -349,6 +349,7 @@ export class RogueTraderAcolyte extends RogueTraderBaseActor {
             const adv = 1 * skill.advance;
             const isBasic = BASIC_SKILLS.has(name);
 
+            skill.isBasic = isBasic;
             if (adv === 0 && isBasic) {
                 skill.current = Math.floor(characteristic.total / 2) + mod;
                 skill.untrained = true;
