@@ -2912,31 +2912,41 @@ flags:
             options:
             - acrobatics
             - awareness
+            - barter
+            - blather
             - carouse
             - charm
+            - chemUse
             - ciphers
             - climb
             - command
             - commerce
             - commonLore
             - concealment
+            - contortionist
             - deceive
             - demolitions
+            - disguise
             - dodge
+            - drive
+            - evaluate
             - forbiddenLore
+            - gamble
             - inquiry
             - interrogation
             - intimidate
+            - invocation
             - literacy
             - logic
             - medicae
             - navigate
-            - operate
             - parry
             - performance
+            - pilot
             - psyniscience
             - scholasticLore
             - scrutiny
+            - search
             - secretTongue
             - security
             - shadowing
@@ -2946,6 +2956,7 @@ flags:
             - survival
             - swim
             - techUse
+            - tracking
             - trade
             - wrangling
 

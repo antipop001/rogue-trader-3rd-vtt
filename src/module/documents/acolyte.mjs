@@ -17,9 +17,10 @@ import { SYSTEM_ID } from '../hooks-manager.mjs';
 import { RogueTraderSettings } from '../rogue-trader-settings.mjs';
 
 const BASIC_SKILLS = new Set([
-    'awareness', 'carouse', 'charm', 'climb', 'command', 'concealment',
-    'deceive', 'dodge', 'inquiry', 'intimidate', 'logic', 'parry',
-    'scrutiny', 'silentMove', 'swim',
+    'awareness', 'barter', 'carouse', 'charm', 'climb', 'command',
+    'concealment', 'contortionist', 'deceive', 'disguise', 'dodge',
+    'evaluate', 'gamble', 'inquiry', 'intimidate', 'logic', 'parry',
+    'scrutiny', 'search', 'silentMove', 'swim',
 ]);
 
 export class RogueTraderAcolyte extends RogueTraderBaseActor {

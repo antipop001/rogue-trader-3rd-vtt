@@ -159,6 +159,30 @@
             "characteristic": "Per",
             "modifier": 0
           },
+          "barter": {
+            "label": "Barter",
+            "characteristics": [
+              "Fel"
+            ],
+            "advance": 0,
+            "isSpecialist": false,
+            "specialities": {},
+            "cost": 0,
+            "characteristic": "Fel",
+            "modifier": 0
+          },
+          "blather": {
+            "label": "Blather",
+            "characteristics": [
+              "Fel"
+            ],
+            "advance": 0,
+            "isSpecialist": false,
+            "specialities": {},
+            "cost": 0,
+            "characteristic": "Fel",
+            "modifier": 0
+          },
           "carouse": {
             "label": "Carouse",
             "characteristics": [
@@ -182,6 +206,18 @@
             "specialities": {},
             "cost": 0,
             "characteristic": "Fel",
+            "modifier": 0
+          },
+          "chemUse": {
+            "label": "Chem-Use",
+            "characteristics": [
+              "Int"
+            ],
+            "advance": 0,
+            "isSpecialist": false,
+            "specialities": {},
+            "cost": 0,
+            "characteristic": "Int",
             "modifier": 0
           },
           "ciphers": {
@@ -264,18 +300,6 @@
             "specialities": {},
             "cost": 0,
             "characteristic": "Int",
-            "modifier": 0
-          },
-          "concealment": {
-            "label": "Concealment",
-            "characteristics": [
-              "Ag"
-            ],
-            "advance": 0,
-            "isSpecialist": false,
-            "specialities": {},
-            "cost": 0,
-            "characteristic": "Ag",
             "modifier": 0
           },
           "commonLore": {
@@ -375,6 +399,30 @@
             "characteristic": "Int",
             "modifier": 0
           },
+          "concealment": {
+            "label": "Concealment",
+            "characteristics": [
+              "Ag"
+            ],
+            "advance": 0,
+            "isSpecialist": false,
+            "specialities": {},
+            "cost": 0,
+            "characteristic": "Ag",
+            "modifier": 0
+          },
+          "contortionist": {
+            "label": "Contortionist",
+            "characteristics": [
+              "Ag"
+            ],
+            "advance": 0,
+            "isSpecialist": false,
+            "specialities": {},
+            "cost": 0,
+            "characteristic": "Ag",
+            "modifier": 0
+          },
           "deceive": {
             "label": "Deceive",
             "characteristics": [
@@ -401,6 +449,18 @@
             "characteristic": "Int",
             "modifier": 0
           },
+          "disguise": {
+            "label": "Disguise",
+            "characteristics": [
+              "Fel"
+            ],
+            "advance": 0,
+            "isSpecialist": false,
+            "specialities": {},
+            "cost": 0,
+            "characteristic": "Fel",
+            "modifier": 0
+          },
           "dodge": {
             "label": "Dodge",
             "characteristics": [
@@ -411,6 +471,48 @@
             "specialities": {},
             "cost": 0,
             "characteristic": "Ag",
+            "modifier": 0
+          },
+          "drive": {
+            "label": "Drive",
+            "characteristics": [
+              "Ag"
+            ],
+            "advance": 0,
+            "isSpecialist": true,
+            "specialities": {
+              "groundVehicle": {
+                "label": "Ground Vehicle",
+                "advance": 0,
+                "cost": 0,
+                "taken": false
+              },
+              "skimmerHover": {
+                "label": "Skimmer/Hover",
+                "advance": 0,
+                "cost": 0,
+                "taken": false
+              },
+              "walker": {
+                "label": "Walker",
+                "advance": 0,
+                "cost": 0,
+                "taken": false
+              }
+            },
+            "characteristic": "Ag",
+            "modifier": 0
+          },
+          "evaluate": {
+            "label": "Evaluate",
+            "characteristics": [
+              "Int"
+            ],
+            "advance": 0,
+            "isSpecialist": false,
+            "specialities": {},
+            "cost": 0,
+            "characteristic": "Int",
             "modifier": 0
           },
           "forbiddenLore": {
@@ -492,6 +594,18 @@
             "characteristic": "Int",
             "modifier": 0
           },
+          "gamble": {
+            "label": "Gamble",
+            "characteristics": [
+              "Int"
+            ],
+            "advance": 0,
+            "isSpecialist": false,
+            "specialities": {},
+            "cost": 0,
+            "characteristic": "Int",
+            "modifier": 0
+          },
           "inquiry": {
             "label": "Inquiry",
             "characteristics": [
@@ -530,6 +644,18 @@
             "specialities": {},
             "cost": 0,
             "characteristic": "S",
+            "modifier": 0
+          },
+          "invocation": {
+            "label": "Invocation",
+            "characteristics": [
+              "WP"
+            ],
+            "advance": 0,
+            "isSpecialist": false,
+            "specialities": {},
+            "cost": 0,
+            "characteristic": "WP",
             "modifier": 0
           },
           "literacy": {
@@ -602,43 +728,6 @@
             "characteristic": "Int",
             "modifier": 0
           },
-          "operate": {
-            "label": "Operate",
-            "characteristics": [
-              "Ag",
-              "Int"
-            ],
-            "advance": 0,
-            "isSpecialist": true,
-            "specialities": {
-              "surface": {
-                "label": "Surface",
-                "advance": 0,
-                "cost": 0,
-                "taken": false
-              },
-              "walkers": {
-                "label": "Walkers",
-                "advance": 0,
-                "cost": 0,
-                "taken": false
-              },
-              "aeronautica": {
-                "label": "Aeronautica",
-                "advance": 0,
-                "cost": 0,
-                "taken": false
-              },
-              "voidship": {
-                "label": "Voidship",
-                "advance": 0,
-                "cost": 0,
-                "taken": false
-              }
-            },
-            "characteristic": "Ag",
-            "modifier": 0
-          },
           "parry": {
             "label": "Parry",
             "characteristics": [
@@ -663,6 +752,36 @@
             "specialities": {},
             "cost": 0,
             "characteristic": "Fel",
+            "modifier": 0
+          },
+          "pilot": {
+            "label": "Pilot",
+            "characteristics": [
+              "Ag"
+            ],
+            "advance": 0,
+            "isSpecialist": true,
+            "specialities": {
+              "flyer": {
+                "label": "Flyer",
+                "advance": 0,
+                "cost": 0,
+                "taken": false
+              },
+              "personal": {
+                "label": "Personal",
+                "advance": 0,
+                "cost": 0,
+                "taken": false
+              },
+              "spaceCraft": {
+                "label": "Space Craft",
+                "advance": 0,
+                "cost": 0,
+                "taken": false
+              }
+            },
+            "characteristic": "Ag",
             "modifier": 0
           },
           "psyniscience": {
@@ -800,6 +919,72 @@
             "characteristic": "Per",
             "modifier": 0
           },
+          "search": {
+            "label": "Search",
+            "characteristics": [
+              "Per"
+            ],
+            "advance": 0,
+            "isSpecialist": false,
+            "specialities": {},
+            "cost": 0,
+            "characteristic": "Per",
+            "modifier": 0
+          },
+          "secretTongue": {
+            "label": "Secret Tongue",
+            "characteristics": [
+              "Int"
+            ],
+            "advance": 0,
+            "isSpecialist": true,
+            "specialities": {
+              "administratum": {
+                "label": "Administratum",
+                "advance": 0,
+                "cost": 0,
+                "taken": false
+              },
+              "ecclesiarchy": {
+                "label": "Ecclesiarchy",
+                "advance": 0,
+                "cost": 0,
+                "taken": false
+              },
+              "military": {
+                "label": "Military",
+                "advance": 0,
+                "cost": 0,
+                "taken": false
+              },
+              "navigator": {
+                "label": "Navigator",
+                "advance": 0,
+                "cost": 0,
+                "taken": false
+              },
+              "rogueTrader": {
+                "label": "Rogue Trader",
+                "advance": 0,
+                "cost": 0,
+                "taken": false
+              },
+              "tech": {
+                "label": "Tech",
+                "advance": 0,
+                "cost": 0,
+                "taken": false
+              },
+              "underdeck": {
+                "label": "Underdeck",
+                "advance": 0,
+                "cost": 0,
+                "taken": false
+              }
+            },
+            "characteristic": "Int",
+            "modifier": 0
+          },
           "security": {
             "label": "Security",
             "characteristics": [
@@ -811,6 +996,30 @@
             "specialities": {},
             "cost": 0,
             "characteristic": "Int",
+            "modifier": 0
+          },
+          "shadowing": {
+            "label": "Shadowing",
+            "characteristics": [
+              "Ag"
+            ],
+            "advance": 0,
+            "isSpecialist": false,
+            "specialities": {},
+            "cost": 0,
+            "characteristic": "Ag",
+            "modifier": 0
+          },
+          "silentMove": {
+            "label": "Silent Move",
+            "characteristics": [
+              "Ag"
+            ],
+            "advance": 0,
+            "isSpecialist": false,
+            "specialities": {},
+            "cost": 0,
+            "characteristic": "Ag",
             "modifier": 0
           },
           "sleightOfHand": {
@@ -880,84 +1089,6 @@
             "characteristic": "Int",
             "modifier": 0
           },
-          "secretTongue": {
-            "label": "Secret Tongue",
-            "characteristics": [
-              "Int"
-            ],
-            "advance": 0,
-            "isSpecialist": true,
-            "specialities": {
-              "administratum": {
-                "label": "Administratum",
-                "advance": 0,
-                "cost": 0,
-                "taken": false
-              },
-              "ecclesiarchy": {
-                "label": "Ecclesiarchy",
-                "advance": 0,
-                "cost": 0,
-                "taken": false
-              },
-              "military": {
-                "label": "Military",
-                "advance": 0,
-                "cost": 0,
-                "taken": false
-              },
-              "navigator": {
-                "label": "Navigator",
-                "advance": 0,
-                "cost": 0,
-                "taken": false
-              },
-              "rogueTrader": {
-                "label": "Rogue Trader",
-                "advance": 0,
-                "cost": 0,
-                "taken": false
-              },
-              "tech": {
-                "label": "Tech",
-                "advance": 0,
-                "cost": 0,
-                "taken": false
-              },
-              "underdeck": {
-                "label": "Underdeck",
-                "advance": 0,
-                "cost": 0,
-                "taken": false
-              }
-            },
-            "characteristic": "Int",
-            "modifier": 0
-          },
-          "shadowing": {
-            "label": "Shadowing",
-            "characteristics": [
-              "Ag"
-            ],
-            "advance": 0,
-            "isSpecialist": false,
-            "specialities": {},
-            "cost": 0,
-            "characteristic": "Ag",
-            "modifier": 0
-          },
-          "silentMove": {
-            "label": "Silent Move",
-            "characteristics": [
-              "Ag"
-            ],
-            "advance": 0,
-            "isSpecialist": false,
-            "specialities": {},
-            "cost": 0,
-            "characteristic": "Ag",
-            "modifier": 0
-          },
           "survival": {
             "label": "Survival",
             "characteristics": [
@@ -989,6 +1120,18 @@
             "characteristics": [
               "Int",
               "Ag"
+            ],
+            "advance": 0,
+            "isSpecialist": false,
+            "specialities": {},
+            "cost": 0,
+            "characteristic": "Int",
+            "modifier": 0
+          },
+          "tracking": {
+            "label": "Tracking",
+            "characteristics": [
+              "Int"
             ],
             "advance": 0,
             "isSpecialist": false,
