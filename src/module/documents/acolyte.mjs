@@ -151,7 +151,7 @@ export class RogueTraderAcolyte extends RogueTraderBaseActor {
             skill = skill.specialities[specialityName];
             label = `${label}: ${skill.label}`;
         }
-        if (skill.untrained && !BASIC_SKILLS.has(skillName)) {
+        if (skill.untrained && !BASIC_SKILLS.has(skillName) && !skill.treatAsBasic) {
             ui.notifications.warn(`${label} is an Advanced Skill — cannot attempt untrained.`);
             return;
         }
@@ -350,26 +350,39 @@ export class RogueTraderAcolyte extends RogueTraderBaseActor {
             const isBasic = BASIC_SKILLS.has(name);
 
             skill.isBasic = isBasic;
-            if (adv === 0 && isBasic) {
+            if (adv === -1 && !isBasic) {
                 skill.current = Math.floor(characteristic.total / 2) + mod;
                 skill.untrained = true;
+                skill.treatAsBasic = true;
+            } else if (adv === 0 && isBasic) {
+                skill.current = Math.floor(characteristic.total / 2) + mod;
+                skill.untrained = true;
+                skill.treatAsBasic = false;
             } else if (adv === 0) {
                 skill.current = 0;
                 skill.untrained = true;
+                skill.treatAsBasic = false;
             } else {
                 skill.current = characteristic.total + this._skillAdvanceToValue(adv) + mod;
                 skill.untrained = false;
+                skill.treatAsBasic = false;
             }
 
             if (skill.isSpecialist) {
                 for (let speciality of Object.values(skill.specialities)) {
                     const sAdv = 1 * speciality.advance;
-                    if (sAdv === 0) {
+                    if (sAdv === -1) {
+                        speciality.current = Math.floor(characteristic.total / 2) + mod;
+                        speciality.untrained = true;
+                        speciality.treatAsBasic = true;
+                    } else if (sAdv === 0) {
                         speciality.current = 0;
                         speciality.untrained = true;
+                        speciality.treatAsBasic = false;
                     } else {
                         speciality.current = characteristic.total + this._skillAdvanceToValue(sAdv) + mod;
                         speciality.untrained = false;
+                        speciality.treatAsBasic = false;
                     }
                 }
             }

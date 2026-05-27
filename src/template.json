@@ -749,7 +749,32 @@
             ],
             "advance": 0,
             "isSpecialist": true,
-            "specialities": {},
+            "specialities": {
+              "dancer": {
+                "label": "Dancer",
+                "advance": 0,
+                "cost": 0,
+                "taken": false
+              },
+              "musician": {
+                "label": "Musician",
+                "advance": 0,
+                "cost": 0,
+                "taken": false
+              },
+              "singer": {
+                "label": "Singer",
+                "advance": 0,
+                "cost": 0,
+                "taken": false
+              },
+              "storyteller": {
+                "label": "Storyteller",
+                "advance": 0,
+                "cost": 0,
+                "taken": false
+              }
+            },
             "cost": 0,
             "characteristic": "Fel",
             "modifier": 0
@@ -988,14 +1013,14 @@
           "security": {
             "label": "Security",
             "characteristics": [
-              "Int",
-              "Ag"
+              "Ag",
+              "Int"
             ],
             "advance": 0,
             "isSpecialist": false,
             "specialities": {},
             "cost": 0,
-            "characteristic": "Int",
+            "characteristic": "Ag",
             "modifier": 0
           },
           "shadowing": {

@@ -33,7 +33,7 @@
                 </div>
                 {{#each this.specialities as | specialty skey |}}
                     {{#if specialty.taken }}
-                        <div class="table-row actor-drag{{#if specialty.untrained}} skill-locked{{/if}}" data-item-type="skill" data-item-id="{{name}}"
+                        <div class="table-row actor-drag{{#if specialty.untrained}}{{#unless specialty.treatAsBasic}} skill-locked{{/unless}}{{/if}}" data-item-type="skill" data-item-id="{{name}}"
                              data-speciality="{{skey}}">
                             <div class="table-cell">
                                 <button class="roll-skill" data-action="rollSkill" data-skill="{{name}}" data-specialty="{{skey}}"
@@ -42,6 +42,7 @@
                             <div class="table-cell">
                                 <select name="system.skills.{{name}}.specialities.{{skey}}.advance">
                                     {{option '0' this.advance 'Untrained'}}
+                                    {{option '-1' this.advance 'As Basic'}}
                                     {{option '1' this.advance 'Trained'}}
                                     {{option '2' this.advance '+10'}}
                                     {{option '3' this.advance '+20'}}
@@ -52,7 +53,11 @@
                             </div>
                             <div class="table-cell--last table-cell--highlight">
                                 {{#if specialty.untrained}}
-                                    <span class="display skill-locked-val">—</span>
+                                    {{#if specialty.treatAsBasic}}
+                                        <span class="display skill-half">{{this.current}}</span>
+                                    {{else}}
+                                        <span class="display skill-locked-val">—</span>
+                                    {{/if}}
                                 {{else}}
                                     <span class="display">{{this.current}}</span>
                                 {{/if}}
