@@ -160,7 +160,8 @@ export class ActionData {
                     this.rollData.roll = stunRoll;
 
                     if (this.rollData.targetActor) {
-                        const defense = this.rollData.targetActor.system.armour.head.total;
+                        const headArmour = this.rollData.targetActor.system.armour.head;
+                        const defense = headArmour.total + headArmour.toughnessBonus;
                         if (stunRoll.total >= defense) {
                             this.rollData.success = true;
                             this.addEffect('Stun Attack', `Stun roll of ${stunRoll.total} vs ${defense}. Target is stunned for ${stunRoll.total - defense} rounds and gains 1 level of fatigue.`);

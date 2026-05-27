@@ -174,15 +174,6 @@ export class RogueTraderAcolyte extends RogueTraderBaseActor {
         if (skillName === 'parry') {
             const meleeWeapon = this.items.find(i => i.type === 'weapon' && i.isMelee && i.system.equipped);
             if (meleeWeapon) {
-                const craft = meleeWeapon.system.craftsmanship;
-                if (craft === 'Poor') {
-                    rollData.modifiers['Poor Craftsmanship'] = -10;
-                } else if (craft === 'Good') {
-                    rollData.modifiers['Good Craftsmanship'] = 5;
-                } else if (craft === 'Best') {
-                    rollData.modifiers['Best Craftsmanship'] = 10;
-                }
-
                 const hasSpecial = (name) => {
                     const key = name[0].toLowerCase() + name.slice(1);
                     return meleeWeapon.items?.find(i => i.isAttackSpecial && i.name === name)
@@ -350,7 +341,13 @@ export class RogueTraderAcolyte extends RogueTraderBaseActor {
             const isBasic = BASIC_SKILLS.has(name);
 
             skill.isBasic = isBasic;
-            if (adv === -1 && !isBasic) {
+            // Parry is an RT 1e Reaction (full WS), not a trained skill —
+            // untrained still tests at full characteristic.
+            if (name === 'parry' && adv === 0) {
+                skill.current = characteristic.total + mod;
+                skill.untrained = false;
+                skill.treatAsBasic = false;
+            } else if (adv === -1 && !isBasic) {
                 skill.current = Math.floor(characteristic.total / 2) + mod;
                 skill.untrained = true;
                 skill.treatAsBasic = true;
@@ -470,7 +467,7 @@ export class RogueTraderAcolyte extends RogueTraderBaseActor {
             (accumulator, location) =>
                 Object.assign(accumulator, {
                     [location]: {
-                        total: toughness.bonus + traitBonus,
+                        total: traitBonus,
                         toughnessBonus: toughness.bonus,
                         traitBonus: traitBonus,
                         value: 0,
