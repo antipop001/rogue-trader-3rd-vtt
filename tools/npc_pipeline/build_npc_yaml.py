@@ -19,17 +19,20 @@ IN = Path("/tmp/npcs_parsed.json")
 PACKS = REPO / "src/packs"
 
 SKILL_MAP = {
-    "Acrobatics": "acrobatics", "Athletics": "athletics", "Awareness": "awareness",
-    "Barter": "commerce", "Carouse": "carouse", "Charm": "charm", "Climb": "athletics",
+    "Acrobatics": "acrobatics", "Awareness": "awareness",
+    "Barter": "commerce", "Carouse": "carouse", "Charm": "charm",
+    "Ciphers": "ciphers", "Climb": "climb",
     "Command": "command", "Commerce": "commerce", "Common Lore": "commonLore",
-    "Concealment": "stealth", "Deceive": "deceive", "Demolitions": "demolitions",
+    "Concealment": "concealment", "Deceive": "deceive", "Demolitions": "demolitions",
     "Dodge": "dodge", "Forbidden Lore": "forbiddenLore", "Intimidate": "intimidate",
-    "Linguistics": "linguistics", "Medicae": "medicae", "Navigate": "navigate",
+    "Literacy": "literacy", "Medicae": "medicae", "Navigate": "navigate",
     "Navigation": "navigate", "Operate": "operate", "Parry": "parry",
     "Pilot": "operate", "Psyniscience": "psyniscience",
     "Scholastic Lore": "scholasticLore", "Scrutiny": "scrutiny",
-    "Search": "awareness", "Security": "security", "Silent Move": "stealth",
-    "Speak Language": "linguistics", "Stealth": "stealth", "Survival": "survival",
+    "Search": "awareness", "Secret Tongue": "secretTongue",
+    "Security": "security", "Shadowing": "shadowing",
+    "Silent Move": "silentMove", "Speak Language": "speakLanguage",
+    "Survival": "survival", "Swim": "swim",
     "Tech-Use": "techUse", "Tracking": "survival", "Trade": "trade",
     "Wrangling": "wrangling",
 }

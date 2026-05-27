@@ -2911,13 +2911,15 @@ flags:
             kind: skill
             options:
             - acrobatics
-            - athletics
             - awareness
             - carouse
             - charm
+            - ciphers
+            - climb
             - command
             - commerce
             - commonLore
+            - concealment
             - deceive
             - demolitions
             - dodge
@@ -2925,7 +2927,7 @@ flags:
             - inquiry
             - interrogation
             - intimidate
-            - linguistics
+            - literacy
             - logic
             - medicae
             - navigate
@@ -2935,10 +2937,14 @@ flags:
             - psyniscience
             - scholasticLore
             - scrutiny
+            - secretTongue
             - security
+            - shadowing
+            - silentMove
             - sleightOfHand
-            - stealth
+            - speakLanguage
             - survival
+            - swim
             - techUse
             - trade
             - wrangling

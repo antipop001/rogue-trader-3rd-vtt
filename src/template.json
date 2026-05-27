@@ -145,19 +145,6 @@
             "characteristic": "Ag",
             "modifier": 0
           },
-          "athletics": {
-            "label": "Athletics",
-            "characteristics": [
-              "S",
-              "T"
-            ],
-            "advance": 0,
-            "isSpecialist": false,
-            "specialities": {},
-            "cost": 0,
-            "characteristic": "S",
-            "modifier": 0
-          },
           "awareness": {
             "label": "Awareness",
             "characteristics": [
@@ -197,6 +184,60 @@
             "characteristic": "Fel",
             "modifier": 0
           },
+          "ciphers": {
+            "label": "Ciphers",
+            "characteristics": [
+              "Int"
+            ],
+            "advance": 0,
+            "isSpecialist": true,
+            "specialities": {
+              "rogueTrader": {
+                "label": "Rogue Trader",
+                "advance": 0,
+                "cost": 0,
+                "taken": false
+              },
+              "mercenaryCant": {
+                "label": "Mercenary Cant",
+                "advance": 0,
+                "cost": 0,
+                "taken": false
+              },
+              "nobiliteFamily": {
+                "label": "Nobilite Family",
+                "advance": 0,
+                "cost": 0,
+                "taken": false
+              },
+              "astropathSign": {
+                "label": "Astropath Sign",
+                "advance": 0,
+                "cost": 0,
+                "taken": false
+              },
+              "underworld": {
+                "label": "Underworld",
+                "advance": 0,
+                "cost": 0,
+                "taken": false
+              }
+            },
+            "characteristic": "Int",
+            "modifier": 0
+          },
+          "climb": {
+            "label": "Climb",
+            "characteristics": [
+              "S"
+            ],
+            "advance": 0,
+            "isSpecialist": false,
+            "specialities": {},
+            "cost": 0,
+            "characteristic": "S",
+            "modifier": 0
+          },
           "command": {
             "label": "Command",
             "characteristics": [
@@ -223,6 +264,18 @@
             "specialities": {},
             "cost": 0,
             "characteristic": "Int",
+            "modifier": 0
+          },
+          "concealment": {
+            "label": "Concealment",
+            "characteristics": [
+              "Ag"
+            ],
+            "advance": 0,
+            "isSpecialist": false,
+            "specialities": {},
+            "cost": 0,
+            "characteristic": "Ag",
             "modifier": 0
           },
           "commonLore": {
@@ -479,88 +532,15 @@
             "characteristic": "S",
             "modifier": 0
           },
-          "linguistics": {
-            "label": "Linguistics",
+          "literacy": {
+            "label": "Literacy",
             "characteristics": [
-              "Int",
-              "Fel"
+              "Int"
             ],
             "advance": 0,
-            "isSpecialist": true,
-            "specialities": {
-              "eldar": {
-                "label": "Eldar",
-                "advance": 0,
-                "cost": 0,
-                "taken": false
-              },
-              "exploratorBinary": {
-                "label": "Explorator Binary",
-                "advance": 0,
-                "cost": 0,
-                "taken": false
-              },
-              "highGothic": {
-                "label": "High Gothic",
-                "advance": 0,
-                "cost": 0,
-                "taken": false
-              },
-              "lowGothic": {
-                "label": "Low Gothic",
-                "advance": 0,
-                "cost": 0,
-                "taken": false
-              },
-              "ork": {
-                "label": "Ork",
-                "advance": 0,
-                "cost": 0,
-                "taken": false
-              },
-              "technalingua": {
-                "label": "Techna-Lingua",
-                "advance": 0,
-                "cost": 0,
-                "taken": false
-              },
-              "tradersCant": {
-                "label": "Trader's Cant",
-                "advance": 0,
-                "cost": 0,
-                "taken": false
-              },
-              "rogueTrader": {
-                "label": "Rogue Trader",
-                "advance": 0,
-                "cost": 0,
-                "taken": false
-              },
-              "mercenaryCant": {
-                "label": "Mercenary Cant",
-                "advance": 0,
-                "cost": 0,
-                "taken": false
-              },
-              "nobiliteFamily": {
-                "label": "Nobilite Family",
-                "advance": 0,
-                "cost": 0,
-                "taken": false
-              },
-              "astropathSign": {
-                "label": "Astropath Sign",
-                "advance": 0,
-                "cost": 0,
-                "taken": false
-              },
-              "underworld": {
-                "label": "Underworld",
-                "advance": 0,
-                "cost": 0,
-                "taken": false
-              }
-            },
+            "isSpecialist": false,
+            "specialities": {},
+            "cost": 0,
             "characteristic": "Int",
             "modifier": 0
           },
@@ -846,11 +826,130 @@
             "characteristic": "Ag",
             "modifier": 0
           },
-          "stealth": {
-            "label": "Stealth",
+          "speakLanguage": {
+            "label": "Speak Language",
             "characteristics": [
-              "Ag",
-              "Per"
+              "Int"
+            ],
+            "advance": 0,
+            "isSpecialist": true,
+            "specialities": {
+              "eldar": {
+                "label": "Eldar",
+                "advance": 0,
+                "cost": 0,
+                "taken": false
+              },
+              "exploratorBinary": {
+                "label": "Explorator Binary",
+                "advance": 0,
+                "cost": 0,
+                "taken": false
+              },
+              "highGothic": {
+                "label": "High Gothic",
+                "advance": 0,
+                "cost": 0,
+                "taken": false
+              },
+              "lowGothic": {
+                "label": "Low Gothic",
+                "advance": 0,
+                "cost": 0,
+                "taken": false
+              },
+              "ork": {
+                "label": "Ork",
+                "advance": 0,
+                "cost": 0,
+                "taken": false
+              },
+              "technalingua": {
+                "label": "Techna-Lingua",
+                "advance": 0,
+                "cost": 0,
+                "taken": false
+              },
+              "tradersCant": {
+                "label": "Trader's Cant",
+                "advance": 0,
+                "cost": 0,
+                "taken": false
+              }
+            },
+            "characteristic": "Int",
+            "modifier": 0
+          },
+          "secretTongue": {
+            "label": "Secret Tongue",
+            "characteristics": [
+              "Int"
+            ],
+            "advance": 0,
+            "isSpecialist": true,
+            "specialities": {
+              "administratum": {
+                "label": "Administratum",
+                "advance": 0,
+                "cost": 0,
+                "taken": false
+              },
+              "ecclesiarchy": {
+                "label": "Ecclesiarchy",
+                "advance": 0,
+                "cost": 0,
+                "taken": false
+              },
+              "military": {
+                "label": "Military",
+                "advance": 0,
+                "cost": 0,
+                "taken": false
+              },
+              "navigator": {
+                "label": "Navigator",
+                "advance": 0,
+                "cost": 0,
+                "taken": false
+              },
+              "rogueTrader": {
+                "label": "Rogue Trader",
+                "advance": 0,
+                "cost": 0,
+                "taken": false
+              },
+              "tech": {
+                "label": "Tech",
+                "advance": 0,
+                "cost": 0,
+                "taken": false
+              },
+              "underdeck": {
+                "label": "Underdeck",
+                "advance": 0,
+                "cost": 0,
+                "taken": false
+              }
+            },
+            "characteristic": "Int",
+            "modifier": 0
+          },
+          "shadowing": {
+            "label": "Shadowing",
+            "characteristics": [
+              "Ag"
+            ],
+            "advance": 0,
+            "isSpecialist": false,
+            "specialities": {},
+            "cost": 0,
+            "characteristic": "Ag",
+            "modifier": 0
+          },
+          "silentMove": {
+            "label": "Silent Move",
+            "characteristics": [
+              "Ag"
             ],
             "advance": 0,
             "isSpecialist": false,
@@ -871,6 +970,18 @@
             "specialities": {},
             "cost": 0,
             "characteristic": "Per",
+            "modifier": 0
+          },
+          "swim": {
+            "label": "Swim",
+            "characteristics": [
+              "S"
+            ],
+            "advance": 0,
+            "isSpecialist": false,
+            "specialities": {},
+            "cost": 0,
+            "characteristic": "S",
             "modifier": 0
           },
           "techUse": {

@@ -13,17 +13,21 @@
  */
 
 const SKILL_LABELS = {
-    acrobatics: "Acrobatics", athletics: "Athletics", awareness: "Awareness",
-    carouse: "Carouse", charm: "Charm", command: "Command", commerce: "Commerce",
-    commonLore: "Common Lore", deceive: "Deceive", demolitions: "Demolitions",
+    acrobatics: "Acrobatics", awareness: "Awareness",
+    carouse: "Carouse", charm: "Charm", ciphers: "Ciphers",
+    climb: "Climb", command: "Command", commerce: "Commerce",
+    commonLore: "Common Lore", concealment: "Concealment",
+    deceive: "Deceive", demolitions: "Demolitions",
     dodge: "Dodge", forbiddenLore: "Forbidden Lore", inquiry: "Inquiry",
     interrogation: "Interrogation", intimidate: "Intimidate",
-    linguistics: "Linguistics", logic: "Logic", medicae: "Medicae",
+    literacy: "Literacy", logic: "Logic", medicae: "Medicae",
     navigate: "Navigate", operate: "Operate", parry: "Parry",
     performance: "Performance", psyniscience: "Psyniscience",
     scholasticLore: "Scholastic Lore", scrutiny: "Scrutiny",
-    security: "Security", sleightOfHand: "Sleight of Hand",
-    stealth: "Stealth", survival: "Survival", techUse: "Tech-Use",
+    secretTongue: "Secret Tongue", security: "Security",
+    shadowing: "Shadowing", silentMove: "Silent Move",
+    sleightOfHand: "Sleight of Hand", speakLanguage: "Speak Language",
+    survival: "Survival", swim: "Swim", techUse: "Tech-Use",
     trade: "Trade", wrangling: "Wrangling",
 };
 
