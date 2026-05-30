@@ -159,40 +159,15 @@ export class RollData {
         return this.attackSpecials.find((s) => s.name === special);
     }
 
-    modifiersToRollData() {
-        let formula = '0 ';
-        const rollParams = {};
-        for (const modifier of Object.keys(this.modifiers)) {
-            if (this.modifiers[modifier] !== 0) {
-                if (this.modifiers[modifier] >= 0) {
-                    formula += ` + @${modifier}`;
-                } else {
-                    formula += ` - @${modifier}`;
-                }
-                rollParams[modifier] = Math.abs(this.modifiers[modifier]);
-            }
-        }
-        return {
-            formula: formula,
-            params: rollParams,
-        };
-    }
-
     async calculateTotalModifiers() {
-        const rollDetails = this.modifiersToRollData();
-        try {
-            const roll = new Roll(rollDetails.formula, rollDetails.params);
-            await roll.evaluate();
-            if (roll.total > 60) {
-                this.modifierTotal = 60;
-            } else if (roll.total < -60) {
-                this.modifierTotal = -60;
-            } else {
-                this.modifierTotal = roll.total;
-            }
-        } catch (error) {
-            this.modifierTotal = 0;
+        let total = 0;
+        for (const value of Object.values(this.modifiers)) {
+            const n = Number(value);
+            if (Number.isFinite(n)) total += n;
         }
+        if (total > 60) total = 60;
+        else if (total < -60) total = -60;
+        this.modifierTotal = total;
     }
 }
 

@@ -30,6 +30,9 @@ export function calculateCombatActionModifier(rollData) {
  */
 export function updateAvailableCombatActions(rollData) {
     const actions = allCombatActions()
+        // DH2-only actions remain in the list for backwards compatibility with
+        // imported actors/macros but are hidden from the attack dropdown.
+        .filter((action) => !action.legacy)
         .filter((action) => action.subtype.includes('Attack'))
         .filter((action) => {
             if (rollData.weapon.isRanged) {
@@ -72,9 +75,9 @@ function allCombatActions() {
             name: 'Standard Attack',
             type: ['Half'],
             subtype: ['Attack', 'Melee', 'Ranged'],
-            description: 'Grants +10 to WS or BS, make one melee or ranged attack; jam on 96+ result.',
+            description: 'Make one melee attack (WS test) or one ranged attack (BS test). No bonus or penalty. Jam on 96+ for ranged.',
             attack: {
-                modifier: 10,
+                modifier: 0,
             },
         },
         {
@@ -144,15 +147,18 @@ function allCombatActions() {
         {
             name: 'Parry',
             type: ['Reaction'],
-            subtype: ['Melee'],
+            subtype: ['Defence', 'Melee'],
             description:
                 'Attempt to parry an incoming melee attack with a Weapon Skill test. Some weapons grant a bonus or penalty to the Parry test; the Defensive quality grants +10, Unwieldy weapons cannot Parry.',
         },
         {
+            // RT Living Errata v1.4 removes the 'Attack' subtype so Feint
+            // doesn't consume the once-per-turn Attack slot. We keep it here
+            // so the action remains pickable from the attack dropdown.
             name: 'Feint',
             type: ['Half'],
             subtype: ['Attack', 'Melee'],
-            description: 'Opposed WS test; if character wins, his next Melee attack cannot be Evaded.',
+            description: 'Opposed WS test; if character wins, his next Melee attack cannot be Dodged or Parried.',
         },
         {
             name: 'Full Auto Burst',
@@ -170,10 +176,13 @@ function allCombatActions() {
             description: 'Affect a Grappled opponent or escape from a Grapple.',
         },
         {
-            name: 'Guarded Action',
+            // RT 1e Core: Guarded Attack — Full, Attack/Concentration/Melee.
+            // RT lists this as melee-only; we keep Ranged in subtype for the
+            // shooter equivalent (a common house-rule extension).
+            name: 'Guarded Attack',
             type: ['Full'],
-            subtype: ['Attack', 'Melee', 'Ranged'],
-            description: 'Make one attack at -10 WS or BS. Until the start of your next turn, gain +10 to all Dodge and Parry tests.',
+            subtype: ['Attack', 'Concentration', 'Melee', 'Ranged'],
+            description: 'Make one melee attack at -10 WS. Until the start of your next turn, gain +10 to all Dodge and Parry tests.',
             attack: {
                 modifier: -10,
             },
@@ -191,6 +200,9 @@ function allCombatActions() {
             description: 'Make an opposed Strength test (with +10 if using Charge). 2+DoS gives (1d5-3)+SB Impact and 1 level of fatigue.',
         },
         {
+            // DH2-only — RT 1e Core lists Lightning Attack as a Talent, not an
+            // action. Kept here so legacy actors/macros don't break, but hidden
+            // from the attack dropdown via the `legacy` flag.
             name: 'Lightning Attack',
             type: ['Half'],
             subtype: ['Attack', 'Melee'],
@@ -198,6 +210,7 @@ function allCombatActions() {
             attack: {
                 modifier: -10,
             },
+            legacy: true,
         },
         {
             name: 'Manoeuvre',
@@ -270,10 +283,26 @@ function allCombatActions() {
             },
         },
         {
+            // DH2-only — RT 1e Core lists Swift Attack as a Talent, not an
+            // action. Kept for legacy compatibility, hidden from dropdown.
             name: 'Swift Attack',
             type: ['Half'],
             subtype: ['Attack', 'Melee'],
             description: 'Grants +0 WS, additional hit for every two additional DoS.',
+            attack: {
+                modifier: 0,
+            },
+            legacy: true,
+        },
+        {
+            // RT 1e Core Table 9-4 (Chapter IX, p.243). Attack more than once
+            // when wielding two weapons or via a talent (e.g. Two-Weapon
+            // Wielder). Mechanical handling of the second attack is on the GM
+            // for now — this entry just makes the action selectable.
+            name: 'Multiple Attacks',
+            type: ['Full'],
+            subtype: ['Attack', 'Melee', 'Ranged'],
+            description: 'Attack more than once in the same Round. Requires two weapons or a talent (e.g. Two-Weapon Wielder). Resolve each attack with its own WS or BS test.',
             attack: {
                 modifier: 0,
             },
