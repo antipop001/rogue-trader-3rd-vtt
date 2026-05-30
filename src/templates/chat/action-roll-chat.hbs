@@ -299,12 +299,8 @@
                             {{#each hits as |hit|}}
                                 <h2 style='margin-top: .5rem'>Hit {{inc @index}}</h2>
                                 <div class="rt-roll__row rt-roll__row--number">
-                                    <div class="rt-roll__label">Base Formula:</div>
-                                    <div class="rt-roll__value">{{hit.damageRoll.formula}}</div>
-                                </div>
-                                <div class="rt-roll__row rt-roll__row--number">
                                     <div class="rt-roll__label">Base Damage:</div>
-                                    <div class="rt-roll__value">{{hit.damageRoll.result}}</div>
+                                    <div class="rt-roll__value">{{rollFormula hit.damageRoll}} = {{hit.damageRoll.total}}</div>
                                 </div>
                                 {{#each modifiers}}
                                     <div class="rt-roll__row rt-roll__row--number">
@@ -330,7 +326,7 @@
                                     <div class="rt-roll__label">Base Penetration:</div>
                                     <div class="rt-roll__value">
                                         {{#if hit.hasPenetrationRoll}}
-                                            {{hit.penetrationRoll.result}}
+                                            {{rollFormula hit.penetrationRoll}} = {{hit.penetrationRoll.total}}
                                         {{else}}
                                             {{hit.penetration}}
                                         {{/if}}

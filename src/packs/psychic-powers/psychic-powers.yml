@@ -197,7 +197,7 @@ data:
         sentence of advice to the subject about the clearest path to his answer. //
         Errata: Focus Power Test changed to Psyniscience per Errata v1.4.'
     penetration: 0
-    prerequisite: ''
+    prerequisite: 'Foreshadow'
     range: 1m
     source: Rogue Trader Core Rulebook, p.168
     special: {}
@@ -245,7 +245,7 @@ data:
         the person as determined by the GM. // Errata: Focus Power Test changed to
         Psyniscience per Errata v1.4.'
     penetration: 0
-    prerequisite: ''
+    prerequisite: 'Augury'
     range: 1m x Psy Rating radius
     source: Rogue Trader Core Rulebook, p.170
     special: {}
@@ -292,7 +292,7 @@ data:
         next month or until the question is resolved, whichever occurs first. // Errata:
         Focus Power Test changed to Psyniscience per Errata v1.4.'
     penetration: 0
-    prerequisite: ''
+    prerequisite: 'Augury'
     range: Personal
     source: Rogue Trader Core Rulebook, p.169
     special: {}
@@ -333,7 +333,7 @@ data:
         be used at the Fettered Psychic Strength. // Errata: Focus Power Test changed
         to Psyniscience per Errata v1.4.'
     penetration: 0
-    prerequisite: ''
+    prerequisite: 'Divining the Future'
     range: Personal (1m x Psy Rating)
     source: Rogue Trader Core Rulebook, p.170
     special: {}
@@ -376,7 +376,7 @@ data:
         to 5x effective Psy Rating, penalty changed to 5x effective Psy Rating. Shouting
         warnings is a Half Action affecting all allies in range per Errata v1.4.'
     penetration: 0
-    prerequisite: ''
+    prerequisite: 'Divining the Future'
     range: 5m x Psy Rating
     source: Rogue Trader Core Rulebook, p.169
     special: {}
@@ -863,7 +863,7 @@ data:
         Test, he suffers 1d5 Insanity Points as he is witness to the awful visions
         of Chaos. // Damage formula: 1d10+PR'
     penetration: 0
-    prerequisite: ''
+    prerequisite: 'Terrify'
     range: 1m x Psy Rating
     source: Into the Storm, p.193
     special: {}
@@ -902,7 +902,7 @@ data:
         Bonus. In addition, he may also bestow this bonus onto any ally who is within
         range. This bonus lasts for 1 round.
     penetration: 0
-    prerequisite: ''
+    prerequisite: 'Inspire'
     range: Self or 1m x Psy Rating
     source: Into the Storm, p.193
     special: {}
@@ -981,7 +981,7 @@ data:
         other divination powers or through any Psychic Phenomena or Perils of the
         Warp events may be transferred to the psyker maintaining the auto-séance power.
     penetration: 0
-    prerequisite: ''
+    prerequisite: 'Psychometry'
     range: Special
     source: Into the Storm, p.193
     special: {}
@@ -1060,7 +1060,7 @@ data:
         may only be used once every 24 hours and may not be used at the Fettered Psychic
         Strength.
     penetration: 0
-    prerequisite: ''
+    prerequisite: 'Divining the Future'
     range: Self
     source: Into the Storm, p.193
     special: {}
@@ -1097,7 +1097,7 @@ data:
         and animals. It will not work against daemons, non-living, or other denizens
         of the warp. // Damage formula: 1d10+PR Rending'
     penetration: 0
-    prerequisite: ''
+    prerequisite: 'Telekinetic Crush'
     range: 1m x Psy Rating
     source: Into the Storm, p.193
     special: {}
@@ -1139,7 +1139,7 @@ data:
         weight is the total amount of weight the psyker can levitate—anything over
         that limit and the psyker is unable to lift it.'
     penetration: 0
-    prerequisite: ''
+    prerequisite: 'Precision Telekinesis'
     range: Self
     source: Into the Storm, p.193
     special: {}
@@ -1215,7 +1215,7 @@ data:
         the shield from either the psyker to an ally, or vice versa. Once the power
         expires, the shield evaporates completely.
     penetration: 0
-    prerequisite: ''
+    prerequisite: 'Psycho-Kinetic Mist, Precision Telekinesis'
     range: Personal / 2m
     source: Into the Storm, p.193
     special: {}
@@ -1294,7 +1294,7 @@ data:
         is flung screaming back into the warp, and is utterly destroyed! // Damage
         formula: 1d10 per DoS'
     penetration: 0
-    prerequisite: ''
+    prerequisite: 'Seal the Breach'
     range: 5m x Psy Rating
     source: Into the Storm, p.197
     special: {}
@@ -1370,7 +1370,7 @@ data:
         within 5 metres. The same restrictions and conditions that applied to the
         psyker apply to the target instead.
     penetration: 0
-    prerequisite: ''
+    prerequisite: 'Soul of Adamantium'
     range: Self / Special
     source: Into the Storm, p.197
     special: {}
@@ -1484,7 +1484,7 @@ data:
         and only those being held by the psyker (once he relinquishes it from his
         grip, it loses this power) with the Warp Weapon Trait.
     penetration: 0
-    prerequisite: ''
+    prerequisite: 'Soul of Adamantium, Sanctuary'
     range: Special
     source: Into the Storm, p.197
     special: {}
@@ -1521,7 +1521,7 @@ data:
         the ship gain a +5 bonus to any one action while in Starship Combat for the
         next Strategic Round.
     penetration: 0
-    prerequisite: ''
+    prerequisite: 'Mind Link'
     range: N/A
     source: Into the Storm, p.200
     special: {}
@@ -1596,7 +1596,7 @@ data:
         same area or room—in order to take advantage of the bonus. This action can
         only be made once per combat.
     penetration: 0
-    prerequisite: ''
+    prerequisite: 'Divination discipline'
     range: N/A
     source: Into the Storm, p.200
     special: {}
@@ -1633,7 +1633,7 @@ data:
         The character making the Test must be in contact (verbal or vox) of the Astropath
         in order to take advantage of the bonus.
     penetration: 0
-    prerequisite: ''
+    prerequisite: 'Divination discipline'
     range: N/A
     source: Into the Storm, p.200
     special: {}
@@ -1669,7 +1669,7 @@ data:
         for either the Pilot (Space Craft) Test or the Command Test portion of the
         Hit and Run Extended Action (see page 218 of ROGUE TRADER for details).
     penetration: 0
-    prerequisite: ''
+    prerequisite: 'Inspire'
     range: N/A
     source: Into the Storm, p.200
     special: {}
@@ -2342,7 +2342,7 @@ data:
     attackBonus: 0
     attackType: Psychic Bolt
     cost: 100
-    damage: 1d10+2+2*@pr
+    damage: 1d10+2*@pr
     damageType: Impact
     discipline: Telekinesis
     description: 'The psyker can hurl a bolt of force at an opponent. If he activates
@@ -2379,7 +2379,7 @@ data:
     attackBonus: 0
     attackType: Psychic Bolt
     cost: 200
-    damage: 1d10+2*@pr
+    damage: 1d10+@pr
     damageType: Impact
     discipline: Telekinesis
     description: 'The psyker can wrap a target in crushing bands of force. Make an
@@ -2415,7 +2415,7 @@ data:
     attackBonus: 0
     attackType: Psychic Barrage
     cost: 200
-    damage: 1d10+3*@pr
+    damage: 1d10+@pr
     damageType: Rending
     discipline: Telekinesis
     description: 'Shaping the force of the psyker''s mind into a blade of destructive
@@ -2432,7 +2432,7 @@ data:
         Bonus is not added to damage. // Damage formula: 1d10 Rending + 3 per PR //
         Penetration: Psy Rating'
     penetration: "@pr"
-    prerequisite: ''
+    prerequisite: 'Force Bolt'
     range: Personal
     source: Rogue Trader Core Rulebook, p.171
     special: {}
@@ -2469,7 +2469,7 @@ data:
         with the Warp Weapon quality. // Errata: Focus Power Test changed from No
         to Willpower.'
     penetration: 0
-    prerequisite: ''
+    prerequisite: 'Telekinetic Crush'
     range: Personal
     source: Rogue Trader Core Rulebook, p.172
     special: {}
@@ -2494,7 +2494,7 @@ data:
     attackBonus: 0
     attackType: Psychic Bolt
     cost: 400
-    damage: 1d10+2*@pr
+    damage: 1d10+@pr
     damageType: Rending
     discipline: Telekinesis
     description: 'This technique is an elegant manifestation of the psyker''s killing
@@ -2516,7 +2516,7 @@ data:
         (+0) Willpower Test. Damage scaling increased to +2 per PR. Dodge rules clarified.
         // Damage formula: 1d10 Rending + 2 per PR // Penetration: Psy Rating'
     penetration: "@pr"
-    prerequisite: ''
+    prerequisite: 'Precision Telekinesis, Telekinetic Weapon'
     range: 5m x Psy Rating
     source: Rogue Trader Core Rulebook, p.172
     special: {}
@@ -2541,7 +2541,7 @@ data:
     attackBonus: 0
     attackType: Psychic Barrage
     cost: 500
-    damage: 2d10+3*@pr
+    damage: 2d10+2*@pr
     damageType: Impact
     discipline: Telekinesis
     description: 'The psyker has developed his powers to the furthest reaches. He
@@ -2555,7 +2555,7 @@ data:
         Skill Test to Challenging (+0) Willpower Test. Damage scaling increased to
         +3 per PR. Dodge rules clarified. // Damage formula: 2d10 Impact + 3 per PR'
     penetration: 0
-    prerequisite: ''
+    prerequisite: 'Telekinetic Weapon'
     range: 5m x Psy Rating radius
     source: Rogue Trader Core Rulebook, p.172
     special: {}
@@ -2594,7 +2594,7 @@ data:
         allows the character to send messages.'
     penetration: 0
     prerequisite: ''
-    range: 10m x Psy Rating
+    range: 1km x Psy Rating
     source: Rogue Trader Core Rulebook, p.162
     special: {}
     action: Free Action
@@ -2648,7 +2648,7 @@ data:
         life, increasing to Hard (–20) if he is in life or death combat or other such
         distracting circumstances.'
     penetration: 0
-    prerequisite: ''
+    prerequisite: 'Soul-bound to the Emperor'
     range: Interstellar
     source: Rogue Trader Core Rulebook, p.162
     special: {}
@@ -2688,7 +2688,7 @@ data:
         to eliminate the bond at any time, he must succeed at a Hard (–20) Willpower
         Test.
     penetration: 0
-    prerequisite: ''
+    prerequisite: 'Mind Link'
     range: 1 km x Psy Rating
     source: Rogue Trader Core Rulebook, p.162
     special: {}
@@ -2727,9 +2727,9 @@ data:
     range: Personal
     source: Rogue Trader Core Rulebook, p.163
     special: {}
-    action: Half Action
+    action: N/A
     subtype: Concentration
-    sustained: Free Action
+    sustained: N/A
     target:
         bonus: 0
         useSkill: false
@@ -2860,7 +2860,7 @@ data:
         itself). Other creatures or individuals that are resistant to psychic powers
         may be hidden entirely at the GM''s discretion.'
     penetration: 0
-    prerequisite: ''
+    prerequisite: "Mind's Eye, Mind Probe"
     range: 250m x Psy Rating
     source: Rogue Trader Core Rulebook, p.164
     special: {}
@@ -2899,8 +2899,8 @@ data:
         is now Ignores Armour, Target Toughness penalty clarified to 5 x effective
         PR). // Damage formula: 1d10 Impact Damage +1 additional Damage per point
         of effective Psy Rating // Penetration: Ignores Armour'
-    penetration: 99
-    prerequisite: ''
+    penetration: 0
+    prerequisite: 'Mind Probe'
     range: 5m x Psy Rating
     source: Rogue Trader Core Rulebook, p.164
     special: {}
@@ -2966,7 +2966,7 @@ data:
         possessed the Fear (1) Trait. The psyker may increase the level of the Fear
         Trait by 1 for every 3 Psy Rating he uses in the Focus Power Test.
     penetration: 0
-    prerequisite: ''
+    prerequisite: 'Mind Probe'
     range: 5m x Psy Rating
     source: Rogue Trader Core Rulebook, p.165
     special: {}
@@ -3042,7 +3042,7 @@ data:
         forth. If the command is a potentially suicidal act, the target gets a +20
         to his Opposed Willpower Test.
     penetration: 0
-    prerequisite: ''
+    prerequisite: 'Delude'
     range: 5m x Psy Rating
     source: Rogue Trader Core Rulebook, p.165
     special: {}
@@ -3122,7 +3122,7 @@ data:
         his effective Psy Rating. // Errata: Errata added a maximum duration for maintaining
         the power equal to effective Psy Rating.'
     penetration: 0
-    prerequisite: ''
+    prerequisite: 'Sensory Deprivation'
     range: 5m x Psy Rating
     source: Rogue Trader Core Rulebook, p.165
     special: {}
@@ -3181,7 +3181,7 @@ type: psychicPower
 data:
     attackBonus: 0
     attackType: Concentration
-    cost: 500
+    cost: 300
     damage: 0
     damageType: Energy
     discipline: Telepathy
@@ -3197,7 +3197,7 @@ data:
         is severed, and the psyker returns to his own body whilst suffering 1d5 Fatigue
         levels in the process. // Errata: Errata corrected XP cost to 500.'
     penetration: 0
-    prerequisite: ''
+    prerequisite: 'Dominate'
     range: 1 km x Psy Rating
     source: Rogue Trader Core Rulebook, p.166
     special: {}
@@ -3274,7 +3274,7 @@ data:
         been manipulated into thinking is the truth. In either case the mental strain
         inflicts 1d10 Insanity points on the subject.'
     penetration: 0
-    prerequisite: ''
+    prerequisite: 'Dominate, Mind Probe'
     range: 1m
     source: Rogue Trader Core Rulebook, p.166
     special: {}
@@ -3314,7 +3314,7 @@ data:
         ordinary, and the sensory information is successfully masked by the psyker
         until he stops maintaining the power.
     penetration: 0
-    prerequisite: ''
+    prerequisite: 'Compel'
     range: 10m x Psy Rating
     source: Rogue Trader Core Rulebook, p.167
     special: {}

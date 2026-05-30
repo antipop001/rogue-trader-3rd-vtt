@@ -178,6 +178,23 @@ export function registerHandlebarsHelpers() {
             .join(', ');
     });
 
+    // Render a Foundry Roll in highlighted dice notation: "1d10[4] + 5".
+    // Each Die term shows count, faces, then [results] of the individual dice.
+    // Works on both live Roll instances and serialized roll JSON (the chat
+    // log re-hydrates rolls, so both shapes appear in templates).
+    Handlebars.registerHelper('rollFormula', function(roll) {
+        if (!roll || !Array.isArray(roll.terms)) return '';
+        return roll.terms.map(t => {
+            if (t.faces) {
+                const rolls = Array.isArray(t.results) ? t.results.map(r => r.result).join(',') : '';
+                return `${t.number}d${t.faces}[${rolls}]`;
+            }
+            if (t.operator) return ` ${t.operator} `;
+            if (t.number !== undefined) return String(t.number);
+            return '';
+        }).join('');
+    });
+
     Handlebars.registerHelper('damageTypeLong', function(damageType) {
         damageType = (damageType || 'i').toLowerCase();
         switch (damageType) {
