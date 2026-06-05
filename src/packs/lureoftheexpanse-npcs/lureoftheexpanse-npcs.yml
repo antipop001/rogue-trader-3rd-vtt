@@ -1,3 +1,4 @@
+---
 effects: []
 flags:
   rt:
@@ -7,7 +8,7 @@ flags:
     source: Lure of the Expanse
 img: systems/rogue-trader-3rd/images/npcs/lureoftheexpanse/abel-gerrit.png
 items:
-- _id: S9UIDOh0E1KMiJfF
+- _id: 1Ex821h1eQRqoq1b
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -25,7 +26,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: 62JQN4pfeOFvT73Y
+- _id: qw9fCZgqgZVkfXQ1
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -44,7 +45,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: gbMV7mN4nH9sXVFJ
+- _id: YsnBDsPJ4O8op9RR
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/swords/swords_06_b.PNG
@@ -61,7 +62,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: aFmlsL4l2ypoK9qZ
+- _id: fvwlTrXJzzIIbNyv
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -83,7 +84,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: 5ykPvx2E4hrqg5DW
+- _id: qXbUJZYIzeauHhq6
   effects: []
   flags:
     rt:
@@ -112,7 +113,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: axcecrOZ6wliMoPd
+- _id: CKcAjTMViG5jYIEL
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -130,7 +131,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: 7BEUwuYx07T71Jyq
+- _id: nPfiswXtWeBDh8gM
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/psykana/enchant-sky-2.jpg
@@ -152,7 +153,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: 769CQSOncDBO1H9c
+- _id: QwTO7Wp3GzDdnoU7
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -162,7 +163,7 @@ items:
   sort: 0
   system: {}
   type: talent
-- _id: YyHXjnuMnydo08No
+- _id: 7kHlrx5BfigGhHBf
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -181,7 +182,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: Mu3jWKs9EgVkkP1Y
+- _id: siQIiXbopkie9qdG
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -198,7 +199,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: XyXgVucuTEobKySk
+- _id: beoY5UQnTuhQ1YgW
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -208,7 +209,7 @@ items:
   sort: 0
   system: {}
   type: talent
-- _id: MjxOfdRTli4Iyb49
+- _id: sxWS2L97YlgegDqG
   effects: []
   flags:
     rt:
@@ -233,7 +234,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: o8KHLt3Zlb7dXShS
+- _id: Cs0t1W4RYtThtAVF
   effects: []
   flags:
     rt:
@@ -261,7 +262,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: DTa5lda5PkVjHkoj
+- _id: moj5GxyPGMTVqmED
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -279,7 +280,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: ch3Zar7gI9trl51V
+- _id: nOqywYEWEiRjZEop
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -299,7 +300,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: TudAYjXJfky27UG5
+- _id: SgyOuKsg4JRU81lc
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -318,7 +319,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: JiTRjdYsDR4NHTMc
+- _id: wO9ba5JcRIjx21ux
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -328,7 +329,7 @@ items:
   sort: 0
   system: {}
   type: trait
-- _id: POwFIwPmhz95IeR9
+- _id: UvtqRFAF5dzOSkyY
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/pistol-bolt.png
@@ -368,11 +369,11 @@ items:
     type: Bolt
     weight: 3.5
   type: weapon
-- _id: 5EeRCs4dyorhzWlV
+- _id: 3xTEgr2xfD6Z8QfE
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-power-sword.png
-  name: Power Sword
+  name: Power Sword (Mordian)
   ownership:
     default: 3
   sort: 0
@@ -389,11 +390,13 @@ items:
     craftsmanship: Common
     damage: 1d10+5
     damageType: Energy
-    description: 'Special: Power Field, Balanced'
+    description: 'The Mordian variant is designed to support a defensive parry, with a lighter weight and thinner, two sided
+      blade. Adds an additional +5 bonus to parry for a total of +15. Special: Power Field, Balanced'
     effect: ''
     equipped: true
     inBackpack: false
     modifications: []
+    parryBonus: 5
     penetration: '5'
     range: '0'
     rateOfFire:
@@ -401,7 +404,7 @@ items:
       full: 0
       single: 1
     reload: ''
-    source: Rogue Trader Core Rulebook, p.136
+    source: Rogue Trader Core Rulebook, p.131
     special:
       balanced: true
       powerField: true
@@ -409,7 +412,7 @@ items:
     type: Power
     weight: 3.0
   type: weapon
-- _id: IlwCeoUcGcoHWYxC
+- _id: fRMFxHiJcvO0nPE1
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/armour-primitive.png
@@ -487,6 +490,8 @@ system:
   skills:
     awareness:
       advance: 10
+    barter:
+      advance: 0
     charm:
       advance: 0
     command:
@@ -497,16 +502,18 @@ system:
       advance: 0
     dodge:
       advance: 0
+    evaluate:
+      advance: 10
     forbiddenLore:
-      advance: 0
-    linguistics:
       advance: 0
     navigate:
       advance: 10
-    operate:
+    pilot:
       advance: 0
     scrutiny:
       advance: 10
+    speakLanguage:
+      advance: 0
     techUse:
       advance: 0
     trade:
@@ -525,9 +532,9 @@ flags:
     movement: 2/4/6/12
     rawGear: 1 spare hydrogen flask.
     source: Lure of the Expanse
-img: ''
+img: systems/rogue-trader-3rd/images/npcs/lureoftheexpanse/djanko-scourge.png
 items:
-- _id: 2jgB3DXFwuAb4ceG
+- _id: OMV9W5wAhxmRkJ2m
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -545,7 +552,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: MNQEs5KCJuQDpwDc
+- _id: GO5G7236doTocOau
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -564,7 +571,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: 3qCrRsetlYyR7jY8
+- _id: nMvpG3JjqukMN8ST
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/psykana/evil-eye-red-1.jpg
@@ -581,7 +588,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: t7tOIe0zGb6AKnuZ
+- _id: rVsDz1zRN5QasatA
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/maces/mace_09_b.png
@@ -598,7 +605,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: HscPoExQi4gYy6kJ
+- _id: j0h4ZgeeMj5S5PQI
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -616,7 +623,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: oOnoa3KYVsXBwrzw
+- _id: tW64TvjIAH6EuDIS
   effects: []
   flags:
     rt:
@@ -657,7 +664,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: qizOhOQXtBpY7HNt
+- _id: VM7T2iMbJj0zZqmg
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -675,7 +682,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: WUjNgP860sswiaG4
+- _id: 2LXa2J8OdkTsNqXs
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -693,7 +700,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: Ff42oRkDUxktxGSQ
+- _id: 1mkS05OgRqMW4ngZ
   effects: []
   flags:
     rt:
@@ -722,7 +729,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: WykZGqevwpJqY9g0
+- _id: ovyI8njyuOO2EZm5
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -741,7 +748,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: yDcjJiEfNnD7EqIh
+- _id: laXcFNmJ5M4eTqSa
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -751,7 +758,7 @@ items:
   sort: 0
   system: {}
   type: talent
-- _id: vn8IjumcxcdaoONR
+- _id: U6qjU653hOOyFz0P
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -768,7 +775,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: 3MwND5XDqW6iQmyw
+- _id: pgVRAP3Y1mSKVLRa
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -788,7 +795,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: YfveU4rEdiJ4FzNe
+- _id: gGT2UNS5gUi3TLFH
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -798,7 +805,7 @@ items:
   sort: 0
   system: {}
   type: trait
-- _id: d7lWrKsbeaostTMN
+- _id: yJ3sG9wRkfqWkJDk
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
@@ -837,7 +844,7 @@ items:
     type: ''
     weight: 0
   type: weapon
-- _id: nYmnnxzuA0GF3MLj
+- _id: lvPEStUkWCbFQEFF
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-sword.png
@@ -878,7 +885,7 @@ items:
     type: Chain
     weight: 6.0
   type: weapon
-- _id: A2lqIgcsGx1TxxZr
+- _id: RvLSRB6NWBbbYQwp
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/armour-primitive.png
@@ -917,7 +924,7 @@ prototypeToken:
   texture:
     scaleX: 1.0
     scaleY: 1.0
-    src: ''
+    src: systems/rogue-trader-3rd/images/npcs/lureoftheexpanse/djanko-scourge.png
   width: 1
 system:
   characteristics:
@@ -956,17 +963,19 @@ system:
   skills:
     awareness:
       advance: 0
+    barter:
+      advance: 10
+    carouse:
+      advance: 10
     command:
       advance: 20
-    commerce:
-      advance: 10
     commonLore:
       advance: 0
     dodge:
       advance: 0
-    linguistics:
-      advance: 0
     navigate:
+      advance: 0
+    speakLanguage:
       advance: 0
     trade:
       advance: 10
@@ -984,9 +993,9 @@ flags:
     movement: 3/6/9/18
     rawGear: Captain's finery, 4 bolt-pistol clips, personal vox, signet ring, respirator.
     source: Lure of the Expanse
-img: ''
+img: systems/rogue-trader-3rd/images/npcs/lureoftheexpanse/hadarak-fel.png
 items:
-- _id: A2taXnGMD8SJ5brI
+- _id: Y2WmKzwR8FZWFxpW
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -1004,7 +1013,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: 3MxWb8Otoj50jDpH
+- _id: zrp2ZB4zTOiYzBD5
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -1023,7 +1032,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: BhvxkF4FvyOe9YSI
+- _id: YG8au3k9h5lN9v7R
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -1041,7 +1050,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: zsNbOlIFCPAlyLMR
+- _id: JQeHYU5PfTHOX4aO
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -1059,7 +1068,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: RjnAHuvrmpH2JMBw
+- _id: 6OEZmoKFw42vUQXi
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -1078,7 +1087,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: BPdFOItA6m2M5RhT
+- _id: v5hUoU5ovAIoJoLy
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -1095,7 +1104,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: myHjxbX8rlrti07p
+- _id: JMoTjH0gz93atMkh
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -1105,7 +1114,7 @@ items:
   sort: 0
   system: {}
   type: talent
-- _id: HWyrsaO7pSJiL1Ih
+- _id: Qjm7d1lkjPO7pBuD
   effects: []
   flags:
     rt:
@@ -1130,7 +1139,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: ufHPxHqE1ExoteUG
+- _id: vUw9Zq3kbsxqwycj
   effects: []
   flags:
     rt:
@@ -1158,7 +1167,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: 76cg7HSbjCgJzf0Q
+- _id: VyIQkaIfOWczsjo3
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -1178,7 +1187,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: oLUB8jC30np10cp4
+- _id: JvOceBDE49in3vQn
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -1188,7 +1197,7 @@ items:
   sort: 0
   system: {}
   type: trait
-- _id: DnbYL8Lee3pdodZH
+- _id: dZe3T5AqR8GHrAvP
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
@@ -1228,7 +1237,7 @@ items:
     type: ''
     weight: 0
   type: weapon
-- _id: DlBqc68Fe21yTrPk
+- _id: 8dU4E3c2GO4XmZji
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
@@ -1268,7 +1277,7 @@ items:
     type: ''
     weight: 0
   type: weapon
-- _id: ld1uhDMdKYoBF4rZ
+- _id: PyRcA3YkJhjEX6tK
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/armour-primitive.png
@@ -1307,7 +1316,7 @@ prototypeToken:
   texture:
     scaleX: 1.0
     scaleY: 1.0
-    src: ''
+    src: systems/rogue-trader-3rd/images/npcs/lureoftheexpanse/hadarak-fel.png
   width: 1
 system:
   characteristics:
@@ -1346,6 +1355,8 @@ system:
   skills:
     awareness:
       advance: 0
+    barter:
+      advance: 0
     charm:
       advance: 20
     command:
@@ -1360,9 +1371,9 @@ system:
       advance: 10
     intimidate:
       advance: 0
-    linguistics:
-      advance: 10
     navigate:
+      advance: 10
+    speakLanguage:
       advance: 10
   wounds:
     critical: 0
@@ -1380,7 +1391,7 @@ flags:
     source: Lure of the Expanse
 img: systems/rogue-trader-3rd/images/npcs/lureoftheexpanse/madam-charlabelle.png
 items:
-- _id: 84acFQaTQc3Fu1NY
+- _id: 3S3ux8ipCCq2nRjO
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -1398,7 +1409,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: m1ePCeI1XQgg12pX
+- _id: ZSsuJus0i4HewmTs
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -1416,7 +1427,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: bOHqQw2lWsTNyGKg
+- _id: JTaNQHN2QfulgeOQ
   effects: []
   flags:
     rt: {}
@@ -1435,7 +1446,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: 4H537D6kc76cUBVD
+- _id: CAP83van390mK2ku
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -1453,7 +1464,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: xalN5e7UElDL59pa
+- _id: 57T5Na0NjtMElrho
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -1472,7 +1483,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: FftXHvZEOZ66x1cT
+- _id: Bj5VPQ5o0uOGDqjX
   effects: []
   flags:
     rt:
@@ -1500,7 +1511,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: OvpxOHvDPk0zb4Y2
+- _id: aViy0h9w9e2OkJVq
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -1517,7 +1528,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: erf54AgSVGI1sPWX
+- _id: kBiUHgmd6P9bS1KA
   effects: []
   flags:
     rt:
@@ -1546,7 +1557,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: waMdptxrYgksDza4
+- _id: A5QAankGviPZPbmY
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -1565,7 +1576,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: tFx9yujRyrn1Y9g9
+- _id: UIEeInnN9Jmgg7Bd
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -1584,7 +1595,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: 7FWWjhyWgRAHTLE7
+- _id: 0b8gSLzQDFuSKW3Y
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -1602,7 +1613,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: 94owUjyPimhSz525
+- _id: BJ25zpjp14nVHKxK
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -1621,7 +1632,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: GwbWxBTytKQmnoAf
+- _id: LUqcUhWUHjCNQO7O
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -1638,7 +1649,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: UMxUKFMgWLWveA1p
+- _id: phNho1B5wIsyR9SE
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -1658,7 +1669,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: hYL78p4wPFun0eid
+- _id: vvS7vHSaqNFcOGdc
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -1675,7 +1686,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: Xyk1XAbBgZMaZwfj
+- _id: ita9RMOksyyrrWnn
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -1685,7 +1696,7 @@ items:
   sort: 0
   system: {}
   type: talent
-- _id: jjlU3c0tJfwd5rTN
+- _id: M8ZMFXBxs7AxbrT4
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -1695,7 +1706,7 @@ items:
   sort: 0
   system: {}
   type: trait
-- _id: dujrn1nDfjWPINDj
+- _id: i5t2XzCZct1FvHHi
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
@@ -1735,7 +1746,7 @@ items:
     type: ''
     weight: 0
   type: weapon
-- _id: 8jtSMESrKg02jWJY
+- _id: jpMpVx7F3034phPf
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/pistol-plasma.png
@@ -1775,7 +1786,7 @@ items:
     type: Plasma
     weight: 4
   type: weapon
-- _id: oVQXjigpF2L9KCEb
+- _id: eQZDrRmezPBr1pRD
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/armour-primitive.png
@@ -1853,28 +1864,32 @@ system:
   skills:
     awareness:
       advance: 10
+    barter:
+      advance: 10
     charm:
       advance: 0
     commerce:
       advance: 20
     commonLore:
       advance: 0
+    concealment:
+      advance: 10
     deceive:
       advance: 0
     dodge:
       advance: 10
     forbiddenLore:
       advance: 10
-    linguistics:
-      advance: 0
     navigate:
       advance: 10
-    operate:
+    pilot:
       advance: 0
     scrutiny:
       advance: 10
-    stealth:
-      advance: 10
+    search:
+      advance: 0
+    speakLanguage:
+      advance: 0
     techUse:
       advance: 0
     trade:
@@ -1896,7 +1911,7 @@ flags:
     source: Lure of the Expanse
 img: systems/rogue-trader-3rd/images/npcs/lureoftheexpanse/dross-tribesman.png
 items:
-- _id: ddLRbShGIqaVD6Fn
+- _id: ahi2XkfYSI2CxKYB
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -1915,7 +1930,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: NOopwFzOBalGyjrI
+- _id: lvnsbQjSa8OJwnL7
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -1934,7 +1949,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: EoAOFPfWtZOAJown
+- _id: MquhrwYo5EzFcORV
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -1954,7 +1969,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: XiCQQ5u030CZsKOb
+- _id: G4U8XIifS4g4AMt6
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
@@ -1993,7 +2008,7 @@ items:
     type: ''
     weight: 0
   type: weapon
-- _id: nSuNYPIOdgPkL8MI
+- _id: 9bM1XRyfhrodXvV1
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
@@ -2034,7 +2049,7 @@ items:
     type: ''
     weight: 0
   type: weapon
-- _id: ZdNXWbsmnE7uIrpM
+- _id: dOhVrCdXEcdSr6wX
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/armour-primitive.png
@@ -2110,15 +2125,21 @@ system:
     threatLevel: 0
     type: troop
   skills:
-    athletics:
-      advance: 0
     awareness:
       advance: 0
+    climb:
+      advance: 0
+    concealment:
+      advance: 10
     dodge:
       advance: 20
-    stealth:
+    silentMove:
       advance: 10
     survival:
+      advance: 0
+    tracking:
+      advance: 0
+    wrangling:
       advance: 0
   wounds:
     critical: 0
@@ -2140,7 +2161,7 @@ flags:
     source: Lure of the Expanse
 img: systems/rogue-trader-3rd/images/npcs/lureoftheexpanse/dweller-in-the-heights.png
 items:
-- _id: np1DvYqufQJONMI3
+- _id: pEhu5ozy3rdrD0XG
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -2160,7 +2181,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: JKmFhITHSOoWjX4G
+- _id: hpMwNW11dMnJEgFV
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -2170,7 +2191,7 @@ items:
   sort: 0
   system: {}
   type: trait
-- _id: CopXyPUCBAlQpsRy
+- _id: Kqg2MuF3uGEAXnyr
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -2186,7 +2207,7 @@ items:
       each round that the tunnel collapses behind the creature.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: Xrmi0T9obDCJ4IlQ
+- _id: XTpPuZmP5A8pYGZH
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -2200,7 +2221,7 @@ items:
       going insane from the encounter, as shown on the following chart.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: Oy94PA9DfGAIzB4J
+- _id: ME5X8BnqDpS3nMxu
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -2214,7 +2235,7 @@ items:
       Weapons these attacks do not count as Primitive.
     source: Into the Storm
   type: trait
-- _id: PpEyACNBCAxc2rXv
+- _id: CA1HZxa2yQ6hKBYY
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -2226,10 +2247,8 @@ items:
     description: This creature has a naturally tough hide or an exoskeleton, affording it some protection against attacks.
       This Trait always includes a numeric value to indicate how many Armour Points the creature gains to all locations.
     source: Rogue Trader Core Rulebook
-    level: 5
-    hasLevel: true
   type: trait
-- _id: KED61QsVpFTWuTDk
+- _id: b2LmMwItWvHDfQZv
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -2239,7 +2258,7 @@ items:
   sort: 0
   system: {}
   type: trait
-- _id: 8q7nvdeGyrNvhesN
+- _id: pCrlFllDqoLGcXjB
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -2255,7 +2274,7 @@ items:
       creature.'
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: VBgBHqgqTpne4rd6
+- _id: J3JdpBT9akrddTgb
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -2268,7 +2287,7 @@ items:
       and death results when damage equals or exceeds the creature's Wounds.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: Q0gmwN8foSWb1tFm
+- _id: 9MKticKVfyPLLxro
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -2281,7 +2300,7 @@ items:
       talent.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: oakPpa3kXcRlcp5b
+- _id: IO2sMQF2nSY3utSr
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -2295,7 +2314,7 @@ items:
       usually 15 metres.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: mYoJn6fpbhpeyLX5
+- _id: IebY1FQd3N3Jkl1S
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -2313,7 +2332,7 @@ items:
       Bonus. During Opposed Characteristic Tests, on a success, the bonus multiplier is added to the degree of success.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: 4AwOBygHFimKcFo1
+- _id: tRk46Itfe3UNEeFa
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -2331,7 +2350,7 @@ items:
       Bonus. During Opposed Characteristic Tests, on a success, the bonus multiplier is added to the degree of success.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: nRQET7ChkEn9u09G
+- _id: bK4BJgMPh3StxXbP
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
@@ -2418,7 +2437,7 @@ system:
   skills:
     awareness:
       advance: 0
-    stealth:
+    concealment:
       advance: 10
   wounds:
     critical: 0
@@ -2440,7 +2459,7 @@ flags:
     source: Lure of the Expanse
 img: systems/rogue-trader-3rd/images/npcs/lureoftheexpanse/elder-tactician.png
 items:
-- _id: YfGrFGg1ta56yU9p
+- _id: 8MuTtSIbMSYEb2UL
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -2458,7 +2477,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: gi4jsPEYrdo7mIJa
+- _id: hQ2rSmqkymMA7R6m
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -2476,7 +2495,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: zOqSSAdPKaKMvVRJ
+- _id: vPFpVyU3jfcwK16z
   effects: []
   flags:
     rt:
@@ -2505,7 +2524,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: FIwSQNtJddMJw7RU
+- _id: mO4KZK6jZeAenvZ1
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -2524,7 +2543,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: dnOAzmJKZ4DMpFBA
+- _id: 6nM3IVkON2AEUjtF
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -2534,7 +2553,7 @@ items:
   sort: 0
   system: {}
   type: talent
-- _id: 94v0mY0SvMvSC9pK
+- _id: hqipENn9vblx1Kr9
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
@@ -2629,10 +2648,10 @@ system:
       advance: 10
     deceive:
       advance: 0
-    linguistics:
-      advance: 0
     navigate:
       advance: 20
+    speakLanguage:
+      advance: 0
   wounds:
     critical: 0
     max: 10
@@ -2650,9 +2669,9 @@ flags:
     movement: 3/6/9/18
     rawGear: Data-slates, power-cells, spare clip for bolt pistol, cipher keys, various spares, instruments and other paraphernalia.
     source: Lure of the Expanse
-img: ''
+img: systems/rogue-trader-3rd/images/npcs/lureoftheexpanse/engine-order.png
 items:
-- _id: b6MutPy3M53JrhDM
+- _id: zdmag879tJ75iJOR
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -2670,7 +2689,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: JwZnyIcnqGk59rYk
+- _id: oAsEaGfNKHdazaOk
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -2688,7 +2707,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: PZp3eyXKt7LdaPL0
+- _id: TApCamtgTRI0F4GK
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -2707,7 +2726,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: KhMLOt24rHxOfrGs
+- _id: UwQUQaHVcznEy0sB
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -2726,7 +2745,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: ex4FT6gOh7IzRL6f
+- _id: LaxDUeIWcvJ8d6BN
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -2744,7 +2763,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: Xohq2jDuHfRX0c1M
+- _id: aXIzU13uIdSo82Me
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -2761,7 +2780,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: LMrcq35ZmxvFh5gf
+- _id: CRcJ7XDk8nLB7CvL
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -2779,7 +2798,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: 0UWS6Hz3xyTuQYdZ
+- _id: 9332xH90Z7oZr5bT
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -2797,7 +2816,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: v6Teris7Wlw1L8c4
+- _id: 67df8zOspzPwYcnt
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -2814,7 +2833,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: BDfmy44IY2TjiTCB
+- _id: aTgknjqdtI2FN7LD
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -2838,7 +2857,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: 64wLSfjx8r2hlK6s
+- _id: fhtvUji88H9bJtJH
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/psykana/lighting-eerie-2.jpg
@@ -2857,7 +2876,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: SPckJUD9MAfMpVoU
+- _id: 8F1L5qtwm4yEg0a2
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -2874,7 +2893,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: 5kcpR8Gk4OkdHlml
+- _id: qGkqk4mJlRcO4R1v
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -2892,7 +2911,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: SWLJGWXNymwF7QZC
+- _id: 4os31pXeVELiBxAi
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -2911,7 +2930,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: eropKknMNz1Ng7vI
+- _id: D4iSCywJDaobbW6Q
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -2921,7 +2940,7 @@ items:
   sort: 0
   system: {}
   type: talent
-- _id: 4cFMwOYrbeQIms0x
+- _id: oPZCBufLSwMGlzJd
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -2931,7 +2950,7 @@ items:
   sort: 0
   system: {}
   type: trait
-- _id: LIhw23JZt5SZNDP7
+- _id: P2HL0NQnueMwkOxb
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/pistol-bolt.png
@@ -2971,7 +2990,7 @@ items:
     type: Bolt
     weight: 3.5
   type: weapon
-- _id: vOAJhroplLWDRWV7
+- _id: meQPwcj4JOSS1Tj5
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
@@ -3010,7 +3029,7 @@ items:
     type: ''
     weight: 0
   type: weapon
-- _id: jTPhVGFBgk6tFjfr
+- _id: MRlvJYTrCANBZwWy
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
@@ -3049,7 +3068,7 @@ items:
     type: ''
     weight: 0
   type: weapon
-- _id: yOwTH3D4DLmxj77T
+- _id: 2YTVXHoG4yCpDxQi
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
@@ -3088,7 +3107,7 @@ items:
     type: ''
     weight: 0
   type: weapon
-- _id: pHDb8DpN0FvU59IN
+- _id: dG7u77M25v2PyD3I
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
@@ -3127,7 +3146,7 @@ items:
     type: ''
     weight: 0
   type: weapon
-- _id: bLQ7Z3QyrpNLqK7p
+- _id: hnfOylq99mpkDTZs
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
@@ -3166,7 +3185,7 @@ items:
     type: ''
     weight: 0
   type: weapon
-- _id: cELKs59AcHEGFoo0
+- _id: wAf3afxF1wkHEeam
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
@@ -3205,7 +3224,7 @@ items:
     type: ''
     weight: 0
   type: weapon
-- _id: jKyg1fLLfukOWdHp
+- _id: htxsJFKGGwer2xIO
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
@@ -3244,7 +3263,7 @@ items:
     type: ''
     weight: 0
   type: weapon
-- _id: TAZfJqXPlrCQ5jCX
+- _id: QVwyhvaKGfIsBs5B
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/armour-primitive.png
@@ -3283,7 +3302,7 @@ prototypeToken:
   texture:
     scaleX: 1.0
     scaleY: 1.0
-    src: ''
+    src: systems/rogue-trader-3rd/images/npcs/lureoftheexpanse/engine-order.png
   width: 1
 system:
   characteristics:
@@ -3322,13 +3341,19 @@ system:
   skills:
     awareness:
       advance: 0
+    chemUse:
+      advance: 0
+    ciphers:
+      advance: 0
     commonLore:
       advance: 0
-    linguistics:
+    drive:
       advance: 0
-    operate:
+    pilot:
       advance: 0
     security:
+      advance: 0
+    speakLanguage:
       advance: 0
     techUse:
       advance: 20
@@ -3352,7 +3377,7 @@ flags:
     source: Lure of the Expanse
 img: systems/rogue-trader-3rd/images/npcs/lureoftheexpanse/gun-master.png
 items:
-- _id: u0ZU4WkiDO8idzfS
+- _id: GK1Q28YJLHnsMDU7
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -3362,7 +3387,7 @@ items:
   sort: 0
   system: {}
   type: talent
-- _id: rvngp3jyEM0vza7q
+- _id: LBzq6fS0AqzqY0BX
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -3381,7 +3406,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: m26UaR9kvl40siJa
+- _id: EKhWgHdqguoPeQ7M
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -3399,7 +3424,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: d8lV2rSGuhfTHtdO
+- _id: Ck5MFRVhBJNZH51T
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -3417,7 +3442,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: H6yxC4QjZ56kOuyG
+- _id: EAV3UZHurkjUX8UE
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -3434,7 +3459,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: 7R4Ee1OQ6HHmuNxf
+- _id: YFVCt4TedjHix8a9
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -3453,7 +3478,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: xHoUbsC60MAlIRRk
+- _id: g5CsjTu111Bcg1Qx
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -3463,7 +3488,7 @@ items:
   sort: 0
   system: {}
   type: talent
-- _id: 92yqRYrjUzljdvPL
+- _id: lnO6J4kqtwOEbGyV
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
@@ -3504,7 +3529,7 @@ items:
     type: ''
     weight: 0
   type: weapon
-- _id: u8dWTDTqJ8P7JvRw
+- _id: m0yIygYiLAJoA3Bn
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/armour-primitive.png
@@ -3584,7 +3609,7 @@ system:
       advance: 0
     dodge:
       advance: 0
-    linguistics:
+    speakLanguage:
       advance: 0
     techUse:
       advance: 0
@@ -3606,9 +3631,9 @@ flags:
     movement: 4/8/12/24
     rawGear: None.
     source: Lure of the Expanse
-img: ''
+img: systems/rogue-trader-3rd/images/npcs/lureoftheexpanse/grynix.png
 items:
-- _id: 6F3s70KgzdecaAXZ
+- _id: tZz2ryCb1xoDlinA
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -3618,7 +3643,7 @@ items:
   sort: 0
   system: {}
   type: talent
-- _id: noBmvdctfOTZDpjt
+- _id: 0CWLbxPLi9jprbt1
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -3628,7 +3653,7 @@ items:
   sort: 0
   system: {}
   type: trait
-- _id: 8y10L8EWZTViSdVw
+- _id: ivbJO1EulO3N3xQq
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -3643,7 +3668,7 @@ items:
       can it be disarmed—unless, of course, you hack off its limbs! Natural weapons always count as Primitive.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: dI0fP4LnVybGyZjN
+- _id: 9fFyAayaZ9wrJMEU
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -3658,7 +3683,7 @@ items:
       (six legs equals AB × 3, eight legs AB × 4, and so on).
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: liizlyQJh8mQRM7J
+- _id: v6nrd1FubKIxaFhk
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -3674,7 +3699,7 @@ items:
       creature.'
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: ohaFXwnZoVY3DoNP
+- _id: yGQ7go99lNwlynSO
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -3684,7 +3709,7 @@ items:
   sort: 0
   system: {}
   type: trait
-- _id: h6JjFzm8TYzknYFV
+- _id: JUvzay2C3zceT4ur
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -3694,7 +3719,7 @@ items:
   sort: 0
   system: {}
   type: trait
-- _id: rgSKwgtgQFykmRhd
+- _id: AlWp8vmFiVeypT8s
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
@@ -3743,7 +3768,7 @@ prototypeToken:
   texture:
     scaleX: 1.0
     scaleY: 1.0
-    src: ''
+    src: systems/rogue-trader-3rd/images/npcs/lureoftheexpanse/grynix.png
   width: 0.5
 system:
   characteristics:
@@ -3782,7 +3807,9 @@ system:
   skills:
     awareness:
       advance: 0
-    stealth:
+    concealment:
+      advance: 20
+    silentMove:
       advance: 20
   wounds:
     critical: 0
@@ -3802,9 +3829,9 @@ flags:
     movement: 4/8/12/24
     rawGear: Rune stones, salvaged trinkets and small bones.
     source: Lure of the Expanse
-img: ''
+img: systems/rogue-trader-3rd/images/npcs/lureoftheexpanse/high-priestess-asira-storm-speaker.png
 items:
-- _id: HCRKmX9PMyZbnhYC
+- _id: 5ul2Hkv4AQrbYBx1
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -3822,7 +3849,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: 0dTrqissEh0BABJP
+- _id: ksGyV04KpgyuexRK
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -3840,7 +3867,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: eTrEMjGWjTRjdJAE
+- _id: kO6E9IDVeIInp2Iw
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -3859,7 +3886,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: lbNpdJtjOpSHHCbS
+- _id: EtkjcZIZIslAUypj
   effects: []
   flags:
     rt:
@@ -3884,7 +3911,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: irAHC5LM8jW26VtO
+- _id: ZhC1AwB94RA8IRIN
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
@@ -3924,7 +3951,7 @@ items:
     type: ''
     weight: 0
   type: weapon
-- _id: YY7l6brZzbWWL5Z9
+- _id: IoxviwyqfwannPB3
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/armour-primitive.png
@@ -3963,7 +3990,7 @@ prototypeToken:
   texture:
     scaleX: 1.0
     scaleY: 1.0
-    src: ''
+    src: systems/rogue-trader-3rd/images/npcs/lureoftheexpanse/high-priestess-asira-storm-speaker.png
   width: 1
 system:
   characteristics:
@@ -4002,6 +4029,8 @@ system:
   skills:
     awareness:
       advance: 0
+    ciphers:
+      advance: 0
     command:
       advance: 0
     commonLore:
@@ -4012,9 +4041,11 @@ system:
       advance: 10
     intimidate:
       advance: 10
-    linguistics:
-      advance: 0
+    invocation:
+      advance: 10
     psyniscience:
+      advance: 0
+    speakLanguage:
       advance: 0
   wounds:
     critical: 0
@@ -4039,7 +4070,7 @@ flags:
     source: Lure of the Expanse
 img: systems/rogue-trader-3rd/images/npcs/lureoftheexpanse/hollow-man-exo-wrecker.png
 items:
-- _id: B5bggP3Mc0zgwACR
+- _id: lgkCs9nZ4O06tCcg
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -4057,7 +4088,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: TAKFwRq7KWy8acA0
+- _id: njsjflZ0QYjq3cHJ
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -4075,7 +4106,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: R28m3jQeNnOXWW42
+- _id: 6tup91BFBpmHTri5
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -4093,7 +4124,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: 8VWlqjPephQDLw4v
+- _id: VY9t54VrshAgM5xS
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -4112,7 +4143,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: R0VbbTKGRVqtUATt
+- _id: 86OZL4maCFAXY7F2
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -4122,7 +4153,7 @@ items:
   sort: 0
   system: {}
   type: trait
-- _id: moFuBxWgAboxWndK
+- _id: yqBMFp9U3AOfk5ds
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -4132,7 +4163,7 @@ items:
   sort: 0
   system: {}
   type: trait
-- _id: DI2CeyGMdsB1fibs
+- _id: pSg9YPAkfHmEw6qn
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -4147,7 +4178,7 @@ items:
       Game.'
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: VO19I2sCYatXshYC
+- _id: tdypPIwQYx9k51ft
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -4160,7 +4191,7 @@ items:
       to remove 1 point of damage. It loses this Trait when slain.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: l374nQALGGAkg9wC
+- _id: g3ElSgchbB83smwH
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -4170,7 +4201,7 @@ items:
   sort: 0
   system: {}
   type: trait
-- _id: hrtYSXEgS5pkHM2i
+- _id: a8LPQgQ0Dq4Bz1VW
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -4186,7 +4217,7 @@ items:
       creature.'
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: eXa7sQsgE6PAYH9E
+- _id: NswsNcqhiacJS4Vg
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
@@ -4225,7 +4256,7 @@ items:
     type: ''
     weight: 0
   type: weapon
-- _id: fYowFTsblvorvT3K
+- _id: rLYmUehPC9IeWusG
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
@@ -4264,7 +4295,7 @@ items:
     type: ''
     weight: 0
   type: weapon
-- _id: DUaIzNsWtrRBAe9p
+- _id: ddif9ZEWnwCEvUOb
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/armour-primitive.png
@@ -4342,7 +4373,7 @@ system:
   skills:
     awareness:
       advance: 0
-    operate:
+    pilot:
       advance: 10
     techUse:
       advance: 0
@@ -4365,7 +4396,7 @@ flags:
     source: Lure of the Expanse
 img: systems/rogue-trader-3rd/images/npcs/lureoftheexpanse/priest-king-ansai.png
 items:
-- _id: dB2eBB2TkyeJY2y2
+- _id: UnCjlGysvRHzIM2e
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -4375,7 +4406,7 @@ items:
   sort: 0
   system: {}
   type: talent
-- _id: zpt0ys1iBIx6ltO2
+- _id: QUDxr1AcOhFZZmew
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -4393,7 +4424,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: jHqWTRtlxRMQ7k0y
+- _id: atiTc85axCLPTIc1
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_32.png
@@ -4410,7 +4441,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: PzpkzfR7TIPwossd
+- _id: rVz9HcmAqUAQaMya
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -4428,7 +4459,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: DzvE8msGWXBHslEl
+- _id: ov8MnoG4pbSU6SMZ
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -4446,7 +4477,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: gAQWwGKuMa9Tnmzn
+- _id: ty0RblU2AKgNVrDz
   effects: []
   flags:
     rt:
@@ -4477,7 +4508,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: stMz6bCUZ8ZWBxh5
+- _id: s40ZHrhXKAHCX2Ub
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -4496,7 +4527,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: 1wASL83KSTATSvhF
+- _id: 91esk68PNmK8Q3tV
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -4513,7 +4544,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: ib50hsWhk0TYiq77
+- _id: F8mTFjOhyPBdnMrO
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -4531,7 +4562,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: dilMnyXUKoCID1ts
+- _id: LPBQ2AUG1V2Egn1Q
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
@@ -4618,6 +4649,10 @@ system:
   skills:
     awareness:
       advance: 10
+    blather:
+      advance: 0
+    carouse:
+      advance: 10
     charm:
       advance: 10
     command:
@@ -4626,12 +4661,12 @@ system:
       advance: 20
     intimidate:
       advance: 0
-    linguistics:
-      advance: 0
     psyniscience:
       advance: 0
     scrutiny:
       advance: 20
+    speakLanguage:
+      advance: 0
   wounds:
     critical: 0
     max: 20
@@ -4655,9 +4690,9 @@ flags:
     rawGear: Fine dynasty uniform or personal dress of their master, micro-bead, 2 bolt pistol clips, 1 krak grenade, filtration
       plugs, photo-contacts.
     source: Lure of the Expanse
-img: ''
+img: systems/rogue-trader-3rd/images/npcs/lureoftheexpanse/rogue-trader-companion.png
 items:
-- _id: VZKafjO2Ta42GKtW
+- _id: A89GyIBVdREpDoed
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -4676,7 +4711,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: YKvvYzaJsvabfm3Z
+- _id: srlzu9KDCg0bdjGs
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -4693,7 +4728,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: Y52OntvCyIMInY7f
+- _id: lIv09nd9ZPK4ZVAy
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/armor/gloves_s08.png
@@ -4712,7 +4747,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: SjzBXayiaiDoc62K
+- _id: mue7vtTaIFkepR38
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -4722,7 +4757,7 @@ items:
   sort: 0
   system: {}
   type: talent
-- _id: o2gbOmtbet3efWMT
+- _id: ZQNrWNo6EKj58WaF
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -4741,7 +4776,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: nhc5Dm4nOkhM4uEK
+- _id: GGPi93zasw1sMlLu
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -4758,7 +4793,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: 5UJysE0xleBhjfBh
+- _id: u3RXjmRbelGBYAfB
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -4768,7 +4803,7 @@ items:
   sort: 0
   system: {}
   type: talent
-- _id: hw2jWLN4DKdfbBwv
+- _id: G6sORvHrE4QmHPHk
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/pistols/pistols_18.png
@@ -4786,7 +4821,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: llUFJC6ZxJA9ATim
+- _id: rEHsNokcsyauUexI
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/pistol-bolt.png
@@ -4826,7 +4861,7 @@ items:
     type: Bolt
     weight: 3.5
   type: weapon
-- _id: xCnkXcOSs0Pq9jz1
+- _id: cKhXesCKwkVL5JT9
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
@@ -4865,7 +4900,7 @@ items:
     type: ''
     weight: 0
   type: weapon
-- _id: eZHNCKJ886KipE30
+- _id: hLWmHcdEYvrBEcmd
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
@@ -4905,7 +4940,7 @@ items:
     type: ''
     weight: 0
   type: weapon
-- _id: TefAC0sKe1B4Mp2j
+- _id: 4OINw1TOEx2U0RlQ
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/armour-primitive.png
@@ -4944,7 +4979,7 @@ prototypeToken:
   texture:
     scaleX: 1.0
     scaleY: 1.0
-    src: ''
+    src: systems/rogue-trader-3rd/images/npcs/lureoftheexpanse/rogue-trader-companion.png
   width: 1
 system:
   characteristics:
@@ -4983,9 +5018,13 @@ system:
   skills:
     awareness:
       advance: 10
+    carouse:
+      advance: 0
     commonLore:
       advance: 0
     dodge:
+      advance: 0
+    drive:
       advance: 0
   wounds:
     critical: 0
@@ -5003,9 +5042,9 @@ flags:
     rawGear: 2 spare lasgun clips, 2 hotshot charges for lasgun, personal vox, house uniform (bearing the colours of their
       dynasty), respirator, photovisor.
     source: Lure of the Expanse
-img: ''
+img: systems/rogue-trader-3rd/images/npcs/lureoftheexpanse/rogue-trader-household-troops.png
 items:
-- _id: AJdn4IhC8q417FFe
+- _id: 03mRPTGdar44Gc0l
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -5024,7 +5063,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: XDSWsdTm6LwfdYwF
+- _id: teoZIWLyrVwdCyuy
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -5042,7 +5081,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: CvNHxGU4px58ophu
+- _id: jYmuxrmrYb2JVo3C
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -5061,7 +5100,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: OBVvmcruAZELV5qP
+- _id: Pg4NubBcmuR2KEwm
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -5071,7 +5110,7 @@ items:
   sort: 0
   system: {}
   type: talent
-- _id: SSzePtinz3U8iZhI
+- _id: P1fRUI4BoJZiFeuy
   effects: []
   flags:
     rt:
@@ -5096,7 +5135,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: yX8UCQBmobAyZzXS
+- _id: RIgLTvuRjXVM50NF
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/basic-las.png
@@ -5136,7 +5175,7 @@ items:
     type: Las
     weight: 4.0
   type: weapon
-- _id: cLhwSbX9XBSRH4aH
+- _id: WhQbEgF5XWo8QZRX
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/thrown-grenade.png
@@ -5176,7 +5215,7 @@ items:
     type: Grenade
     weight: 0.5
   type: weapon
-- _id: OcjLyxfLQF17KYnU
+- _id: eYbWaQ5dUKmXSaL2
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
@@ -5215,7 +5254,7 @@ items:
     type: ''
     weight: 0
   type: weapon
-- _id: MBKX1iSwm4iWiY89
+- _id: NfN9EtHPd5lMWp1w
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/armour-primitive.png
@@ -5254,7 +5293,7 @@ prototypeToken:
   texture:
     scaleX: 1.0
     scaleY: 1.0
-    src: ''
+    src: systems/rogue-trader-3rd/images/npcs/lureoftheexpanse/rogue-trader-household-troops.png
   width: 1
 system:
   characteristics:
@@ -5291,13 +5330,19 @@ system:
     threatLevel: 0
     type: troop
   skills:
-    athletics:
-      advance: 0
     awareness:
+      advance: 0
+    climb:
       advance: 0
     commonLore:
       advance: 0
-    stealth:
+    concealment:
+      advance: 0
+    drive:
+      advance: 0
+    search:
+      advance: 0
+    silentMove:
       advance: 0
   wounds:
     critical: 0
@@ -5314,9 +5359,9 @@ flags:
     movement: 3/6/9/18
     rawGear: Robes, dozens of gemstones and gleaming trinkets.
     source: Lure of the Expanse
-img: ''
+img: systems/rogue-trader-3rd/images/npcs/lureoftheexpanse/sanctarch-ruler.png
 items:
-- _id: 1aLU4XdIkhWIqS5c
+- _id: xpdLTz6k7d2tcHol
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -5335,7 +5380,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: mevkHiz5aecXkems
+- _id: QxR9aGiFcU5K9ogr
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -5345,7 +5390,7 @@ items:
   sort: 0
   system: {}
   type: trait
-- _id: BljMMBE6kZzsGaxD
+- _id: 8USAZxC5kupTAjy8
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
@@ -5393,7 +5438,7 @@ prototypeToken:
   texture:
     scaleX: 1.0
     scaleY: 1.0
-    src: ''
+    src: systems/rogue-trader-3rd/images/npcs/lureoftheexpanse/sanctarch-ruler.png
   width: 1
 system:
   characteristics:
@@ -5436,7 +5481,7 @@ system:
       advance: 0
     command:
       advance: 10
-    linguistics:
+    speakLanguage:
       advance: 0
   wounds:
     critical: 0
@@ -5454,9 +5499,9 @@ flags:
     movement: 4/8/12/24
     rawGear: ''
     source: Lure of the Expanse
-img: ''
+img: systems/rogue-trader-3rd/images/npcs/lureoftheexpanse/stryxis-rag-trader.png
 items:
-- _id: SkA1iw8IsJ2pTAKd
+- _id: MkRodsI9pzAplczc
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -5475,7 +5520,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: Gy4UZ8NSyboTa5Pg
+- _id: pYwqngxRpC6omrDg
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -5493,7 +5538,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: On0ep0mInKx6RkDZ
+- _id: 3yu8fGS2rDp82NtP
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -5511,7 +5556,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: apIkpP8vUIVWI1h3
+- _id: pVTsQsdVMVcwVJUU
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -5539,7 +5584,7 @@ prototypeToken:
   texture:
     scaleX: 1.0
     scaleY: 1.0
-    src: ''
+    src: systems/rogue-trader-3rd/images/npcs/lureoftheexpanse/stryxis-rag-trader.png
   width: 1
 system:
   characteristics:
@@ -5578,14 +5623,14 @@ system:
   skills:
     awareness:
       advance: 0
-    commerce:
+    barter:
       advance: 10
     deceive:
       advance: 30
-    linguistics:
-      advance: 0
     scrutiny:
       advance: 20
+    speakLanguage:
+      advance: 0
     techUse:
       advance: 0
     trade:
@@ -5605,9 +5650,9 @@ flags:
     movement: 2/4/6/12
     rawGear: ''
     source: Lure of the Expanse
-img: ''
+img: systems/rogue-trader-3rd/images/npcs/lureoftheexpanse/crimson-stingers.png
 items:
-- _id: WuSkmHQmWH8bWvTW
+- _id: 2x1qoKOLrwVq8Qs3
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -5617,7 +5662,7 @@ items:
   sort: 0
   system: {}
   type: talent
-- _id: mFN2Ez1J7eHM2g0W
+- _id: 2bV9kdayxmasaL2P
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -5632,7 +5677,7 @@ items:
       Game.'
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: NJtWfXNLiKvQHVFk
+- _id: pgGjYsxfe2yp6XNg
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -5642,7 +5687,7 @@ items:
   sort: 0
   system: {}
   type: trait
-- _id: tiUIOsL54xx6ehxm
+- _id: XH1m9caW7tsJ15bx
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -5658,7 +5703,7 @@ items:
       creature.'
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: 43pffZHEhO325W3C
+- _id: 1qnxc2keiMIG9aMJ
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -5671,7 +5716,7 @@ items:
       and death results when damage equals or exceeds the creature's Wounds.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: VRGPv0eQUbSOOXCn
+- _id: 6VxtgwaL8CwsfdYC
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -5687,7 +5732,7 @@ items:
       in the creature's description.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: NvhNppdHBlDkS0TX
+- _id: VatgM5ZRlOU8yGr7
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -5697,7 +5742,7 @@ items:
   sort: 0
   system: {}
   type: trait
-- _id: iJlIenp5Q427VJ8i
+- _id: P5AcRUAyR7KgXrkZ
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
@@ -5747,7 +5792,7 @@ prototypeToken:
   texture:
     scaleX: 1.0
     scaleY: 1.0
-    src: ''
+    src: systems/rogue-trader-3rd/images/npcs/lureoftheexpanse/crimson-stingers.png
   width: 1
 system:
   characteristics:
@@ -5800,9 +5845,9 @@ flags:
     movement: 4/8/12/24
     rawGear: ''
     source: Lure of the Expanse
-img: ''
+img: systems/rogue-trader-3rd/images/npcs/lureoftheexpanse/dragon-hornet.png
 items:
-- _id: fAguRT6sW6qGolJI
+- _id: sfljkuMGF1Tg4c6U
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -5812,7 +5857,7 @@ items:
   sort: 0
   system: {}
   type: talent
-- _id: d8CFjKIdYjjrfc7s
+- _id: KjYIyuHbLIyieHrX
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -5827,7 +5872,7 @@ items:
       Game.'
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: EotMYO7rIWVpUE5H
+- _id: 3horvEh0xVHO5R7Z
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -5841,7 +5886,7 @@ items:
       Attack action to gain two attacks on its turn.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: GxRFOgyK2Mezf4ob
+- _id: 4vp0NNkUxTEhvmkb
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -5855,7 +5900,7 @@ items:
       Weapons these attacks do not count as Primitive.
     source: Into the Storm
   type: trait
-- _id: XQTPayDLCdwLxM4U
+- _id: zMNFx1owCZtYofd2
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -5868,7 +5913,7 @@ items:
       This Trait always includes a numeric value to indicate how many Armour Points the creature gains to all locations.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: 1Ma27Ot085BGxH1c
+- _id: yDIUaxjnLEHOdk1W
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -5881,7 +5926,7 @@ items:
       and death results when damage equals or exceeds the creature's Wounds.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: ydBmRri8OO5K7Pwm
+- _id: HPFjOD6DF8AaExVU
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -5897,7 +5942,7 @@ items:
       creature.'
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: hhXhcDcG7ll18jDP
+- _id: N6vh7Zvgrm3WxXBv
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -5907,7 +5952,7 @@ items:
   sort: 0
   system: {}
   type: trait
-- _id: SWlDm8QxguWTO67B
+- _id: EbWzzsxjYzko4gQF
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -5923,7 +5968,7 @@ items:
       in the creature's description.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: GHtv9oMDwNODCSpO
+- _id: sNyrh2gV1CFQjKam
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -5941,7 +5986,7 @@ items:
       Bonus. During Opposed Characteristic Tests, on a success, the bonus multiplier is added to the degree of success.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: E63HmmuDOzfyieuB
+- _id: JrwzCYoqh9Y30RnY
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -5959,7 +6004,7 @@ items:
       Bonus. During Opposed Characteristic Tests, on a success, the bonus multiplier is added to the degree of success.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: nJf2ArASOFlZrMQO
+- _id: iQbvkj4X0l8ZahtP
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
@@ -5998,7 +6043,7 @@ items:
     type: ''
     weight: 0
   type: weapon
-- _id: 2JB17Yy9yevjSpIR
+- _id: dmXN4fddVlRS6uK1
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
@@ -6047,7 +6092,7 @@ prototypeToken:
   texture:
     scaleX: 1.0
     scaleY: 1.0
-    src: ''
+    src: systems/rogue-trader-3rd/images/npcs/lureoftheexpanse/dragon-hornet.png
   width: 3
 system:
   characteristics:
@@ -6101,9 +6146,9 @@ flags:
     movement: 8/16/24/48
     rawGear: ''
     source: Lure of the Expanse
-img: ''
+img: systems/rogue-trader-3rd/images/npcs/lureoftheexpanse/whipper.png
 items:
-- _id: 4p1gIcq4finoKoxA
+- _id: zNqTQzEvkh9DyZzy
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -6113,7 +6158,7 @@ items:
   sort: 0
   system: {}
   type: talent
-- _id: CK1vuVtDoJnPaLrp
+- _id: 4bE3um1ggoMuaW4Q
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -6126,7 +6171,7 @@ items:
       This Trait always includes a numeric value to indicate how many Armour Points the creature gains to all locations.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: 7CZAmlqt1QKoOTZf
+- _id: zACB9xvDVuqKkbfq
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -6139,7 +6184,7 @@ items:
       its Agility Bonus (after modifiers from other Traits and factors, specifically size).
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: MGjfFD8RMCDupwLy
+- _id: E83DYzdCwI9HWsPo
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
@@ -6178,7 +6223,7 @@ items:
     type: ''
     weight: 0
   type: weapon
-- _id: q99FjTsoPXat9Spd
+- _id: y2XV0DSTLekVz6u4
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/armour-primitive.png
@@ -6217,7 +6262,7 @@ prototypeToken:
   texture:
     scaleX: 1.0
     scaleY: 1.0
-    src: ''
+    src: systems/rogue-trader-3rd/images/npcs/lureoftheexpanse/whipper.png
   width: 1
 system:
   characteristics:
@@ -6274,7 +6319,7 @@ flags:
     source: Lure of the Expanse
 img: systems/rogue-trader-3rd/images/npcs/lureoftheexpanse/pathfinder.png
 items:
-- _id: eD5QS6q54jMgzB2f
+- _id: YepYGaT7uk939CoR
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -6284,7 +6329,7 @@ items:
   sort: 0
   system: {}
   type: talent
-- _id: nmsdW771x4BJ8fyH
+- _id: pzhazfe5DPWUzTS4
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -6303,7 +6348,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: 1FnS56xZLZHCsGJo
+- _id: rY4sT8j9UgL56Qmd
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/psykana/wind-grasp-magenta-1.jpg
@@ -6322,7 +6367,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: Tq30qFLcgGkTHahX
+- _id: DZ8XvFMNBdRrhjcL
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -6339,7 +6384,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: uevDsR3wXOgqZqPx
+- _id: 5Q9WMsOqts4nlEKd
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -6349,7 +6394,7 @@ items:
   sort: 0
   system: {}
   type: talent
-- _id: t9RlsBQwcaQjGWQs
+- _id: qbHUZ0xu02jfk27j
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -6366,7 +6411,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: kW5yWm5aPwnmPuhh
+- _id: Thz6NkFvYH3Jtrem
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -6376,7 +6421,7 @@ items:
   sort: 0
   system: {}
   type: talent
-- _id: GBMTOMAG6u2zyYso
+- _id: EbsuH8Y6cNWDliga
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -6395,7 +6440,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: sXLtHZg5WCLyBFSl
+- _id: dgbwYn9FKe0qw9pf
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -6412,7 +6457,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: PSa0Mq0SKa0LIQnq
+- _id: kUIriq1MxJBjmmVv
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -6430,7 +6475,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: fZ3zi5JFWgbmdjHF
+- _id: aQBZOxvf4U4AtUEe
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -6447,7 +6492,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: dPSl8qm4o5ScfXfq
+- _id: q8CVyXOkao6esGjk
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -6466,7 +6511,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: 1oeOD904G3qaMSRP
+- _id: dRxGfl8bnl3XcMa6
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/rifles/rifle_03.png
@@ -6484,7 +6529,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: hFF5SviEs2OLXOUb
+- _id: zb77o1pOgDNli30L
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -6503,7 +6548,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: QhupcVsZ5hk5dmGc
+- _id: T77rzvh3NCCSGypl
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -6520,7 +6565,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: frLerS3FgeToaKnI
+- _id: vg76OsT0vauP00KC
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -6538,7 +6583,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: KaWPsc0cCWu3Xkkq
+- _id: fPzWMNlnCn6FFFKw
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -6548,7 +6593,7 @@ items:
   sort: 0
   system: {}
   type: talent
-- _id: Hvt24aIy6Tbc0vWo
+- _id: 5W5Bg5M3MmpyxsXq
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -6566,7 +6611,7 @@ items:
       Bonus. During Opposed Characteristic Tests, on a success, the bonus multiplier is added to the degree of success.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: pzDWTKaZJWvGMTqg
+- _id: pNcqPJgLJl29m0wN
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
@@ -6607,7 +6652,7 @@ items:
     type: ''
     weight: 0
   type: weapon
-- _id: Xkn7xtYiQdOwrIUw
+- _id: aDRFm2e9cssxc2M7
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/pistol-exotic.png
@@ -6647,7 +6692,7 @@ items:
     type: Exotic
     weight: 1.2
   type: weapon
-- _id: ta10ljf8LOJHPoW2
+- _id: iN2FYstK9K6hQwqZ
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
@@ -6686,7 +6731,7 @@ items:
     type: ''
     weight: 0
   type: weapon
-- _id: 5YNHxhwsf5WtlH2G
+- _id: WP02T4PIvulwskHZ
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/armour-primitive.png
@@ -6764,21 +6809,25 @@ system:
   skills:
     acrobatics:
       advance: 0
-    athletics:
-      advance: 0
-    awareness:
+    climb:
       advance: 0
     deceive:
       advance: 0
-    forbiddenLore:
+    disguise:
       advance: 0
-    linguistics:
+    forbiddenLore:
       advance: 0
     navigate:
       advance: 0
     scrutiny:
       advance: 0
+    search:
+      advance: 0
     security:
+      advance: 0
+    shadowing:
+      advance: 10
+    speakLanguage:
       advance: 0
   wounds:
     critical: 0
@@ -6803,7 +6852,7 @@ flags:
     source: Lure of the Expanse
 img: systems/rogue-trader-3rd/images/npcs/lureoftheexpanse/farseer-serrenon.png
 items:
-- _id: j1C0jFv9AqP5sACg
+- _id: W5nx1Vmo2hsdNSn1
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -6822,7 +6871,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: sua3WgOQvd2Bup5o
+- _id: bmtHRl2oSKFEggO1
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/swords/swords_06_b.PNG
@@ -6839,7 +6888,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: JGX7yEPUUQ7Bkr0B
+- _id: xsky1CVC5BBbWvSD
   effects: []
   flags:
     rt: {}
@@ -6858,7 +6907,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: ERfg3kpvIEQX8hpi
+- _id: EAidee4Oe1gbw8DE
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -6875,7 +6924,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: pyAkDtlp9NFPdNrV
+- _id: Yl9oEBfdlgpZKKMR
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -6894,7 +6943,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: p2RCt6P5wTiUam67
+- _id: DKYKnlPMzVDe2VDu
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -6904,7 +6953,7 @@ items:
   sort: 0
   system: {}
   type: talent
-- _id: Nx6Ef6GHv6lsgrB8
+- _id: KmtxBw6vlKlT6X5Z
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -6914,7 +6963,7 @@ items:
   sort: 0
   system: {}
   type: talent
-- _id: 1nqbT1wylK3GZxAN
+- _id: 8yug45sJlTnYwGwP
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -6924,7 +6973,7 @@ items:
   sort: 0
   system: {}
   type: talent
-- _id: zED7tAgLELnO50fG
+- _id: 6i2jcc9mGbFbadyk
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -6934,7 +6983,7 @@ items:
   sort: 0
   system: {}
   type: talent
-- _id: FtXI483QbBDaPdt9
+- _id: KZFVdXzrwvQsaQiE
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -6944,7 +6993,7 @@ items:
   sort: 0
   system: {}
   type: trait
-- _id: zXmBjdgvzhYaM9kR
+- _id: xGAOE1tjPi3yLJoX
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -6962,7 +7011,7 @@ items:
       Bonus. During Opposed Characteristic Tests, on a success, the bonus multiplier is added to the degree of success.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: WBkzKrTcdLuIzO6K
+- _id: WswgbxLqKFoaYMOC
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -7028,22 +7077,24 @@ system:
   skills:
     acrobatics:
       advance: 0
-    athletics:
+    climb:
       advance: 0
-    awareness:
-      advance: 0
+    concealment:
+      advance: 10
     deceive:
       advance: 0
     forbiddenLore:
       advance: 20
-    linguistics:
-      advance: 0
     psyniscience:
       advance: 20
     scrutiny:
       advance: 0
-    stealth:
-      advance: 10
+    search:
+      advance: 0
+    silentMove:
+      advance: 0
+    speakLanguage:
+      advance: 0
   wounds:
     critical: 0
     max: 30
@@ -7061,7 +7112,7 @@ flags:
     source: Lure of the Expanse
 img: systems/rogue-trader-3rd/images/npcs/lureoftheexpanse/warlock.png
 items:
-- _id: nBgEy49RYWUxG81y
+- _id: mYWolRBvJQU0Sb0y
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -7080,7 +7131,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: yM32G52HR3AMe2LN
+- _id: qSz2Ivk3tcGfzvBa
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/swords/swords_06_b.PNG
@@ -7097,7 +7148,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: AXZuWsou5pmLE49i
+- _id: 7W3VXfy0wrpXl1ha
   effects: []
   flags:
     rt: {}
@@ -7116,7 +7167,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: 0zjmNf3qfNkyujbF
+- _id: 5rdRGF9NoEdz4lqP
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -7133,7 +7184,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: X9QRaB38j4zLwC8N
+- _id: pU1m1MCXIcYJDAkt
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -7152,7 +7203,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: O8fRgpN9EPaBe34n
+- _id: 2y6x8kvVnyYI0Ef9
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -7162,7 +7213,7 @@ items:
   sort: 0
   system: {}
   type: talent
-- _id: Jq8UPRFp1QpNxuVP
+- _id: 8s555LqT6o3goekL
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -7172,7 +7223,7 @@ items:
   sort: 0
   system: {}
   type: talent
-- _id: 3jhatUjI8IQDdbvF
+- _id: yRDMoylJCNWw3Dqy
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -7182,7 +7233,7 @@ items:
   sort: 0
   system: {}
   type: talent
-- _id: idWq9FZe2jPrJ247
+- _id: lwLaRKnZ5nf9XPXu
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -7192,7 +7243,7 @@ items:
   sort: 0
   system: {}
   type: talent
-- _id: PoJwoZyyZxzw8Zq8
+- _id: xF9XDGVdcK22bJbH
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -7210,7 +7261,7 @@ items:
       Bonus. During Opposed Characteristic Tests, on a success, the bonus multiplier is added to the degree of success.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: MgVNlxSFF4FN7WAo
+- _id: prxqDwKL3QOGRVSd
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -7220,7 +7271,7 @@ items:
   sort: 0
   system: {}
   type: trait
-- _id: up0bcsPj3OR2jC4w
+- _id: xcorKw6XMLzyFbUx
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -7230,7 +7281,7 @@ items:
   sort: 0
   system: {}
   type: trait
-- _id: vQXWwCKKGRkiBq4b
+- _id: 1cMdDpLEJoGomrZi
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -7288,22 +7339,24 @@ system:
   skills:
     acrobatics:
       advance: 0
-    athletics:
+    climb:
       advance: 0
-    awareness:
-      advance: 0
+    concealment:
+      advance: 10
     deceive:
       advance: 0
     forbiddenLore:
-      advance: 0
-    linguistics:
       advance: 0
     psyniscience:
       advance: 10
     scrutiny:
       advance: 0
-    stealth:
-      advance: 10
+    search:
+      advance: 0
+    silentMove:
+      advance: 0
+    speakLanguage:
+      advance: 0
     survival:
       advance: 0
   wounds:
@@ -7321,9 +7374,9 @@ flags:
     movement: 4/8/12/24
     rawGear: ''
     source: Lure of the Expanse
-img: ''
+img: systems/rogue-trader-3rd/images/npcs/lureoftheexpanse/wraithguard.png
 items:
-- _id: JcAWwa9kt7DxEjmX
+- _id: fH2VRUF7gKGg1J9k
   effects: []
   flags:
     rt: {}
@@ -7342,7 +7395,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: f0ouIN4bjRUSd6Qo
+- _id: W3LAwM6i0pknW8Ha
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -7355,7 +7408,7 @@ items:
       a half action. A creature with this Trait suffers no penalties for moving and firing on semi- or full-automatic.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: 2IguhRd41eATIvd5
+- _id: Hfp3vZj5VJRrURdK
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -7368,7 +7421,7 @@ items:
       It is immune to Fear, Pinning, Insanity Points, and psychic powers used to cloud, control, or delude its mind.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: TTBPxM38diaStO9r
+- _id: ROZ3pKiKU6ZroUKE
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -7383,7 +7436,7 @@ items:
       5 Armour Points for each location. This number is indicated next to the Trait.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: aKOjc7b38fYQ68Xl
+- _id: kQNaychpCQam7oQz
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -7398,7 +7451,7 @@ items:
       can it be disarmed—unless, of course, you hack off its limbs! Natural weapons always count as Primitive.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: 2Yy5ha6Az4MA3JmC
+- _id: tYov6hEAdPZYf8ho
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -7414,7 +7467,7 @@ items:
       creature.'
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: kvIROioJ7E3Ay5As
+- _id: dI1dAgVLe6GPMrOh
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -7427,7 +7480,7 @@ items:
       and death results when damage equals or exceeds the creature's Wounds.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: IEDziEY5u4dUoBTc
+- _id: 2tacwzioXVaG5ygT
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -7445,7 +7498,7 @@ items:
       Bonus. During Opposed Characteristic Tests, on a success, the bonus multiplier is added to the degree of success.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: ABscuvTJm3ndC0l2
+- _id: 2BSVWN5sZSyiDEui
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -7463,7 +7516,7 @@ items:
       Bonus. During Opposed Characteristic Tests, on a success, the bonus multiplier is added to the degree of success.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: ZqpUsJ2hMjlBZB6W
+- _id: a3w83t5oV62KQuyo
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -7481,7 +7534,7 @@ items:
       Bonus. During Opposed Characteristic Tests, on a success, the bonus multiplier is added to the degree of success.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: HW6ZFobLLueyIR17
+- _id: SnXCH7swDqQ6mBri
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -7495,7 +7548,7 @@ items:
       usually 15 metres.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: 5QMii6VzXWdhvNza
+- _id: DrCPEw2AVQnhSKCe
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -7505,7 +7558,7 @@ items:
   sort: 0
   system: {}
   type: trait
-- _id: QiKx2xkBA7ZwvShj
+- _id: L73JEZyNp7mHpTRo
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
@@ -7544,7 +7597,7 @@ items:
     type: ''
     weight: 0
   type: weapon
-- _id: OxEB7VustcLvfzSi
+- _id: yVcPRLdZFTi5Ycp4
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
@@ -7583,7 +7636,7 @@ items:
     type: ''
     weight: 0
   type: weapon
-- _id: dKvePjRqCiGYN24y
+- _id: H28GAY2j9wKBiDdd
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
@@ -7622,7 +7675,7 @@ items:
     type: ''
     weight: 0
   type: weapon
-- _id: DMwQUAvVl88v6ZAh
+- _id: OyrSh8ZySqnNXARG
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
@@ -7661,7 +7714,7 @@ items:
     type: ''
     weight: 0
   type: weapon
-- _id: FmJXFwjNQCUn9Axb
+- _id: R81kyY6DqSzb8LiJ
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
@@ -7701,7 +7754,7 @@ items:
     type: ''
     weight: 0
   type: weapon
-- _id: 1kvmWc9jdhbOfqUG
+- _id: sT18t4xvHclgiS88
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
@@ -7740,7 +7793,7 @@ items:
     type: ''
     weight: 0
   type: weapon
-- _id: 6zzalK968TFg1Oy1
+- _id: 2zJsez7k2AjXx7uB
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
@@ -7779,7 +7832,7 @@ items:
     type: ''
     weight: 0
   type: weapon
-- _id: rUaGPR9UwBRAClLj
+- _id: fz1qMAiRtABW87r0
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
@@ -7818,7 +7871,7 @@ items:
     type: ''
     weight: 0
   type: weapon
-- _id: 6evVUTZkh1GyfaaS
+- _id: 93FIEKH0coCJPDDQ
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
@@ -7857,7 +7910,7 @@ items:
     type: ''
     weight: 0
   type: weapon
-- _id: QNvdYZRPczzMv4Ur
+- _id: s3OgKqBW8rrWS1lW
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
@@ -7896,7 +7949,7 @@ items:
     type: ''
     weight: 0
   type: weapon
-- _id: QXcKO2bvKeOW1Bz4
+- _id: F74dn2ydqccdicNI
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
@@ -7935,7 +7988,7 @@ items:
     type: ''
     weight: 0
   type: weapon
-- _id: yTjAcJGeJ1p4RHHM
+- _id: pnnDdQGghX9xmKpx
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/armour-primitive.png
@@ -7974,7 +8027,7 @@ prototypeToken:
   texture:
     scaleX: 1.2
     scaleY: 1.2
-    src: ''
+    src: systems/rogue-trader-3rd/images/npcs/lureoftheexpanse/wraithguard.png
   width: 1
 system:
   characteristics:

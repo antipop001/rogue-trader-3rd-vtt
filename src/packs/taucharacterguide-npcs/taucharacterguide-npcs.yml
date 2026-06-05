@@ -84,7 +84,7 @@ flags:
     source: 'The Koronus Bestiary: Tau Character Guide'
 img: systems/rogue-trader-3rd/images/npcs/taucharacterguide/tau-drones.png
 items:
-- _id: b6FcIfeNvf6LkiGD
+- _id: 9alHjtGL1VoBvSlW
   effects: []
   flags:
     rt: {}
@@ -103,7 +103,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: WQlC5NnRctcwh6fm
+- _id: dRqTu1BewmO6GQh0
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -121,7 +121,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: yfwjQcCFvlc2BupZ
+- _id: EaJ6I2gJ3Rga0O2x
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -141,7 +141,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: VtyTLwu4SELZnp4T
+- _id: SWih2J0fksLVhCaM
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -154,7 +154,7 @@ items:
       in areas of dim or no lighting.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: CRnWFJ4g8A2GjKzR
+- _id: nAptedzxyxeYr6Ya
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -168,7 +168,7 @@ items:
       Playing the Game.'
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: vkGrghwoQTm49a90
+- _id: L0GQPCKRnyTGp8oE
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -183,7 +183,7 @@ items:
       5 Armour Points for each location. This number is indicated next to the Trait.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: a0GNFAg7NUb2dlAq
+- _id: 4FgzZw40Dw1Y8WwV
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -199,7 +199,7 @@ items:
       creature.'
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: 4qqMGefYyf38JMLK
+- _id: THvRjhj1pUUDJSku
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png

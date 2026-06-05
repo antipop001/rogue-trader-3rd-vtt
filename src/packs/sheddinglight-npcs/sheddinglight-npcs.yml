@@ -6,9 +6,9 @@ flags:
     movement: 2/4/8/16
     rawGear: ''
     source: Shedding Light
-img: ''
+img: systems/rogue-trader-3rd/images/npcs/sheddinglight/mutant-scavenger.png
 items:
-- _id: UozlgwmbGfKXpU9F
+- _id: yvP1T38Fp9xsc5qo
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -18,7 +18,7 @@ items:
   sort: 0
   system: {}
   type: trait
-- _id: DvNOfHVU2gG2Abwx
+- _id: VlJSENf4DlcvRH2W
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
@@ -58,7 +58,7 @@ items:
     type: ''
     weight: 0
   type: weapon
-- _id: h9WypZjqNoaYNvM4
+- _id: 3mE03c4lSc89QH0z
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
@@ -98,7 +98,7 @@ items:
     type: ''
     weight: 0
   type: weapon
-- _id: tHphXB8qfTdBVfVP
+- _id: BrTMtGI0qNevOdfq
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/armour-primitive.png
@@ -137,7 +137,7 @@ prototypeToken:
   texture:
     scaleX: 1.0
     scaleY: 1.0
-    src: ''
+    src: systems/rogue-trader-3rd/images/npcs/sheddinglight/mutant-scavenger.png
   width: 1
 system:
   characteristics:
@@ -176,7 +176,7 @@ system:
   skills:
     awareness:
       advance: 0
-    commerce:
+    barter:
       advance: 10
   wounds:
     critical: 0
@@ -194,7 +194,7 @@ flags:
     source: Shedding Light
 img: systems/rogue-trader-3rd/images/npcs/sheddinglight/canoptek-wraith.png
 items:
-- _id: Ywnq0S5iW6FnVCnq
+- _id: izjfUpWWtEKgF0rm
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/swords/swords_01_b.png
@@ -213,7 +213,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: Vvy6Msg0BgjQTzjM
+- _id: 6raoIcL36yIdGW6C
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -231,7 +231,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: 2AVMveLpmleDqtJE
+- _id: gKLsjWSpToAsrPeq
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -251,7 +251,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: 94KAK5IQ0LJ4xVf1
+- _id: vwOstMeG8fr73D3C
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -270,7 +270,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: hjpfkOHVgMYMR1xa
+- _id: 9K6ffkYg3UFi9eE2
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -283,7 +283,7 @@ items:
       in areas of dim or no lighting.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: MRCuIT6VObH43xLF
+- _id: kvk9XitnRG9VWh3I
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -297,7 +297,7 @@ items:
       going insane from the encounter, as shown on the following chart.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: 0q1v2d5Fg5iYbJzV
+- _id: fKcpSz1nmyOXeNlf
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -310,7 +310,7 @@ items:
       It is immune to Fear, Pinning, Insanity Points, and psychic powers used to cloud, control, or delude its mind.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: W2UvFxSeDe26yPnt
+- _id: Sbxps0pWjXoqAJPN
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -324,7 +324,7 @@ items:
       Playing the Game.'
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: 3DPzyBAHUmQjWi5S
+- _id: 5SejBbtRJsGG1sXB
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -340,7 +340,7 @@ items:
       Warp such as a Gellar Field or a Void Shield.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: nuzPSSyHr5iuIZQa
+- _id: F5LUhQ0dfPj6KQYG
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -350,7 +350,7 @@ items:
   sort: 0
   system: {}
   type: trait
-- _id: jeEozBqysu2xKtjy
+- _id: yJqVi0mgECR6bnUy
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -365,7 +365,7 @@ items:
       5 Armour Points for each location. This number is indicated next to the Trait.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: 2FAD677NhLseeam4
+- _id: 2Xr46K0o4OfS9INq
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -381,7 +381,7 @@ items:
       creature.'
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: TYOCPPmssMnEkmBT
+- _id: 3Vr3kBWODbuQfl5w
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -394,7 +394,7 @@ items:
       to remove 1 point of damage. It loses this Trait when slain.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: g3PlOx8rFMSWhinh
+- _id: XF8huV9N4kDWVqpL
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -412,7 +412,7 @@ items:
       Bonus. During Opposed Characteristic Tests, on a success, the bonus multiplier is added to the degree of success.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: tHaD0ix6YeG0pQmd
+- _id: 6YiBRoVOUINIJLWK
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -430,7 +430,7 @@ items:
       Bonus. During Opposed Characteristic Tests, on a success, the bonus multiplier is added to the degree of success.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: payHAe3Pugn4Wni7
+- _id: n3gCnmqpBBCGlStB
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -448,7 +448,7 @@ items:
       Bonus. During Opposed Characteristic Tests, on a success, the bonus multiplier is added to the degree of success.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: nl2jpNXeXrjtwByw
+- _id: mMjzDE2XaArGyPtX
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -458,7 +458,7 @@ items:
   sort: 0
   system: {}
   type: trait
-- _id: kfD6juUcFgQBpIK5
+- _id: TN0aNWI7AhPetRAk
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
@@ -545,9 +545,11 @@ system:
     threatLevel: 0
     type: troop
   skills:
+    concealment:
+      advance: 10
     dodge:
       advance: 0
-    stealth:
+    silentMove:
       advance: 10
     techUse:
       advance: 20
@@ -567,7 +569,7 @@ flags:
     source: Shedding Light
 img: systems/rogue-trader-3rd/images/npcs/sheddinglight/cryptek.png
 items:
-- _id: wAYXufTBGXSrDVd8
+- _id: V5Lk5Uwm1yITPCi6
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/psykana/enchant-sky-2.jpg
@@ -589,7 +591,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: vlXbAikyastykRem
+- _id: aG3Ne1tgGw6fhl6S
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -604,7 +606,7 @@ items:
       5 Armour Points for each location. This number is indicated next to the Trait.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: mvrZib8Dz1XOkmY9
+- _id: Wtvza4rYrY8HqzeN
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -614,7 +616,7 @@ items:
   sort: 0
   system: {}
   type: trait
-- _id: JW01ASrg0kUREjpP
+- _id: ljOnZKXEivCLgmw1
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -632,7 +634,7 @@ items:
       Bonus. During Opposed Characteristic Tests, on a success, the bonus multiplier is added to the degree of success.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: 2rq526xEuAQ9ZD6E
+- _id: sCbaQM966SAnQp7P
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
@@ -738,7 +740,7 @@ flags:
     source: Shedding Light
 img: systems/rogue-trader-3rd/images/npcs/sheddinglight/scarab-swarm.png
 items:
-- _id: HayKhzf7U0P8ZfOm
+- _id: L9BkOqaDjxD0TITi
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -748,7 +750,7 @@ items:
   sort: 0
   system: {}
   type: talent
-- _id: J6mj1mW1cfxY4fw5
+- _id: G92m9iQmxRLmp6si
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -768,7 +770,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: wji6yXaLSBD0it78
+- _id: 1NecrbJajtYzDM4i
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -782,7 +784,7 @@ items:
       Playing the Game.'
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: lRaYzGQqqL8XRjmL
+- _id: kT0iPltZYueJo5r7
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -798,7 +800,7 @@ items:
       creature.'
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: PXXyTrV60yQT8p9X
+- _id: vdgfYP1FmM6kbbxk
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -813,7 +815,7 @@ items:
       5 Armour Points for each location. This number is indicated next to the Trait.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: jRZWt1rLbXKoUwcK
+- _id: A2QD7PLdWHBcRrNY
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -823,7 +825,7 @@ items:
   sort: 0
   system: {}
   type: trait
-- _id: yU1YKfXvIJ9cZJoN
+- _id: RxAovpRPvtlv8Bqc
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -833,7 +835,7 @@ items:
   sort: 0
   system: {}
   type: trait
-- _id: WRPju2iBGu4tscdS
+- _id: PGxKMmOsD6iVDKDs
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
@@ -872,7 +874,7 @@ items:
     type: ''
     weight: 0
   type: weapon
-- _id: TjCRv8u23MIqhrQd
+- _id: M0iCm5jNfTRNlqVL
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/armour-primitive.png
@@ -947,9 +949,7 @@ system:
     subfaction: ''
     threatLevel: 0
     type: troop
-  skills:
-    stealth:
-      advance: 20
+  skills: {}
   wounds:
     critical: 0
     max: 40
@@ -964,9 +964,9 @@ flags:
     movement: 3/6/9/18
     rawGear: ''
     source: Shedding Light
-img: ''
+img: systems/rogue-trader-3rd/images/npcs/sheddinglight/necron-warrior.png
 items:
-- _id: epoleMTcPIgx2n1Q
+- _id: msnX899cRiGJy8q5
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -983,7 +983,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: 5ktenmj5qnJ7kPmh
+- _id: 50hT8CvItEnNL8jY
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -998,7 +998,7 @@ items:
       5 Armour Points for each location. This number is indicated next to the Trait.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: KWKNbgDejtOSUcZw
+- _id: YV4XJAqtp3YCgQhu
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -1011,7 +1011,7 @@ items:
       to remove 1 point of damage. It loses this Trait when slain.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: 4tY2oSnDWNHBA4iG
+- _id: lLIhOxbZPV2osH8d
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -1027,7 +1027,7 @@ items:
       creature.'
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: XERfcskF8KErdpIW
+- _id: IZjYsumF2tGOxggJ
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -1045,7 +1045,7 @@ items:
       Bonus. During Opposed Characteristic Tests, on a success, the bonus multiplier is added to the degree of success.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: MTrNpkPNO9KxViFC
+- _id: 8u8AvxiQbHfke8BY
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -1063,7 +1063,7 @@ items:
       Bonus. During Opposed Characteristic Tests, on a success, the bonus multiplier is added to the degree of success.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: oZs2TouhDJr8VLRD
+- _id: Q4ZZV4XULqUUs7kl
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
@@ -1102,7 +1102,7 @@ items:
     type: ''
     weight: 0
   type: weapon
-- _id: N0xfibX0VZRjRBJZ
+- _id: 19g4Qf4P6mJiwu5r
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
@@ -1141,7 +1141,7 @@ items:
     type: ''
     weight: 0
   type: weapon
-- _id: fYdoINSGoAcY3BSd
+- _id: sbYGA0BrTqWRwZrf
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/armour-primitive.png
@@ -1180,7 +1180,7 @@ prototypeToken:
   texture:
     scaleX: 1.2
     scaleY: 1.2
-    src: ''
+    src: systems/rogue-trader-3rd/images/npcs/sheddinglight/necron-warrior.png
   width: 1
 system:
   characteristics:
@@ -1235,7 +1235,7 @@ flags:
     movement: '4/8/16/32 ##'
     rawGear: ''
     source: Shedding Light
-img: ''
+img: systems/rogue-trader-3rd/images/npcs/sheddinglight/tomb-stalker.png
 items: []
 name: Tomb Stalker
 prototypeToken:
@@ -1246,7 +1246,7 @@ prototypeToken:
   texture:
     scaleX: 1.0
     scaleY: 1.0
-    src: ''
+    src: systems/rogue-trader-3rd/images/npcs/sheddinglight/tomb-stalker.png
   width: 1
 system:
   characteristics:
@@ -1283,8 +1283,6 @@ system:
     threatLevel: 0
     type: troop
   skills:
-    stealth:
-      advance: 20
     techUse:
       advance: 20
   wounds:

@@ -9,7 +9,7 @@ flags:
     source: The Game Master's Kit
 img: systems/rogue-trader-3rd/images/npcs/thegamemasterskit/statues-of-the-dark-lament.png
 items:
-- _id: O3cAtTtc4mZdxJEC
+- _id: 9krZ9QOMxNRlHTTd
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -22,7 +22,7 @@ items:
       It is immune to Fear, Pinning, Insanity Points, and psychic powers used to cloud, control, or delude its mind.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: JUmNNplTOHL3r6WG
+- _id: 2rrDdR12csQAtzOe
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -36,7 +36,7 @@ items:
       Weapons these attacks do not count as Primitive.
     source: Into the Storm
   type: trait
-- _id: es947BSUw4wrdSkB
+- _id: OKH3WKY9ECOKebTQ
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -49,7 +49,7 @@ items:
       This Trait always includes a numeric value to indicate how many Armour Points the creature gains to all locations.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: cuvWyVesbPJCNzo3
+- _id: NhmzCFNwUL1pMa2Z
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -64,7 +64,7 @@ items:
       can it be disarmed—unless, of course, you hack off its limbs! Natural weapons always count as Primitive.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: zioHoNwP2RYK2nwY
+- _id: NZZSgidyWhZifKW3
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -82,7 +82,7 @@ items:
       Bonus. During Opposed Characteristic Tests, on a success, the bonus multiplier is added to the degree of success.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: 4DuGCMtYQPsYPosS
+- _id: eCZR3RGMYWDMupqC
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -100,7 +100,7 @@ items:
       Bonus. During Opposed Characteristic Tests, on a success, the bonus multiplier is added to the degree of success.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: uvnU8AX091dgFnUK
+- _id: h6gd0avWYLEEqkWx
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png

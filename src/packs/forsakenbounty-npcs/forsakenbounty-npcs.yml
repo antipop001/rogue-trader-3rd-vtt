@@ -11,9 +11,9 @@ flags:
       hit can put them down for good. The GM should allow PCs to hack up inactive puppets with melee weapons. Warp Puppets
       only ever use the Charge or Standard Attack actions.
     source: Forsaken Bounty
-img: ''
+img: systems/rogue-trader-3rd/images/npcs/forsakenbounty/warp-puppets.png
 items:
-- _id: IafoxAfyegxEbWU9
+- _id: Sn3o7i9OcnMOxy79
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -23,7 +23,7 @@ items:
   sort: 0
   system: {}
   type: talent
-- _id: 2WK0n5AYTAqCwgzD
+- _id: ThB5xm6MJW7URbGe
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -33,7 +33,7 @@ items:
   sort: 0
   system: {}
   type: trait
-- _id: wUbBcXzfnUaX5vOH
+- _id: YjBiviHPrDrGvTj9
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
@@ -81,7 +81,7 @@ prototypeToken:
   texture:
     scaleX: 1.0
     scaleY: 1.0
-    src: ''
+    src: systems/rogue-trader-3rd/images/npcs/forsakenbounty/warp-puppets.png
   width: 1
 system:
   characteristics:
@@ -133,9 +133,9 @@ flags:
     movement: 4/8/12/24
     rawGear: None.
     source: Forsaken Bounty
-img: ''
+img: systems/rogue-trader-3rd/images/npcs/forsakenbounty/orden-thrall-of-the-psycharus-worm.png
 items:
-- _id: 1btypAb5oB7SIiyc
+- _id: tKK0zhwRPaE5zV51
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -145,7 +145,7 @@ items:
   sort: 0
   system: {}
   type: talent
-- _id: xKacBRsew82Rcclk
+- _id: 82mfaCMIbSHRNbBD
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
@@ -193,7 +193,7 @@ prototypeToken:
   texture:
     scaleX: 1.0
     scaleY: 1.0
-    src: ''
+    src: systems/rogue-trader-3rd/images/npcs/forsakenbounty/orden-thrall-of-the-psycharus-worm.png
   width: 1
 system:
   characteristics:

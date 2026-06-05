@@ -10,7 +10,7 @@ flags:
     source: Into the Storm
 img: systems/rogue-trader-3rd/images/npcs/intothestorm/gretchin.png
 items:
-- _id: ip8JaFrugC97Xjs4
+- _id: f9vZgFABhkaUuaUN
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -27,7 +27,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: K5gFWGArKaCzBrrD
+- _id: zbZa4nKKQv0eqQvy
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -46,7 +46,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: w11CmPUSC4yibqzF
+- _id: 51Yu5F5ygFOUoQ1q
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -65,7 +65,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: 862Z2TAbYcOWyhNE
+- _id: Ns32FBGZMLLnLSiW
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -78,7 +78,7 @@ items:
       10m, the Ork's Willpower is increased by +10 to resist the effects of Fear and Pinning.
     source: Into the Storm
   type: trait
-- _id: 5wFReqXZSEjmGNBo
+- _id: 4n1LADAiWr7crODN
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -94,7 +94,7 @@ items:
       creature.'
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: w5wXkRbGPF6Ul02L
+- _id: qpx7t4itEtGGekuL
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -112,7 +112,7 @@ items:
       Bonus. During Opposed Characteristic Tests, on a success, the bonus multiplier is added to the degree of success.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: IbZIqbN0YerO2gGv
+- _id: 1ZhyDgx4kSVVetWf
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
@@ -151,7 +151,7 @@ items:
     type: ''
     weight: 0
   type: weapon
-- _id: AXwhQBrviebzjkhd
+- _id: idwvi2ZlCJxDMnAe
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
@@ -238,9 +238,15 @@ system:
   skills:
     awareness:
       advance: 0
+    concealment:
+      advance: 0
     dodge:
       advance: 0
-    stealth:
+    search:
+      advance: 0
+    shadowing:
+      advance: 0
+    silentMove:
       advance: 0
   wounds:
     critical: 0
@@ -262,7 +268,7 @@ flags:
     source: Into the Storm
 img: systems/rogue-trader-3rd/images/npcs/intothestorm/squigs.png
 items:
-- _id: RpkpmooWUdVyNDOD
+- _id: xtBgsg0otzW2T8V0
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -280,7 +286,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: lIPz9fe9cT17QYgi
+- _id: MZ4LhaEmPHYTQ8rs
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -295,7 +301,7 @@ items:
       startled or injured. On a failed test, the creature flees.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: hHdEeImMvCuDyNMV
+- _id: AGgYHZrGCtGvjs4b
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -309,7 +315,7 @@ items:
       Weapons these attacks do not count as Primitive.
     source: Into the Storm
   type: trait
-- _id: ryli2Av6f5OOWQ2A
+- _id: Zie0OJuMTVVr17Iw
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -327,7 +333,7 @@ items:
       Bonus. During Opposed Characteristic Tests, on a success, the bonus multiplier is added to the degree of success.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: fJbsi6tPIpWkCkei
+- _id: 83V14vWi5TxDwpJW
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png

@@ -334,6 +334,12 @@ export class RogueTraderAcolyte extends RogueTraderBaseActor {
 
     _computeSkills() {
         for (const [name, skill] of Object.entries(this.skills)) {
+            // Orphan skill keys (e.g. pre-0.7.17 `athletics`/`stealth`/`linguistics`/`operate`
+            // left behind on NPCs after the skill split) carry no `characteristic` or
+            // `characteristics`. Skip them so the rest of prepareData doesn't abort.
+            if (!skill.characteristic && (!Array.isArray(skill.characteristics) || skill.characteristics.length === 0)) {
+                continue;
+            }
             let short = !skill.characteristic || skill.characteristic === '' ? skill.characteristics[0] : skill.characteristic;
             let characteristic = this._findCharacteristic(short);
             const mod = skill.modifier || 0;

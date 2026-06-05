@@ -12,9 +12,9 @@ flags:
       devise some way of more easily getting to the top, they are in for a long torturous climb. Have each Explorer make an
       Ordinary (+10) Toughness Test or suffer a -10 penalty to their Toughness for the following battle.'
     source: Dark Frontier
-img: ''
+img: systems/rogue-trader-3rd/images/npcs/darkfrontier/shardspiders.png
 items:
-- _id: qRFsouKsSAmxUTM5
+- _id: MwRVM8b2MX0Z66MX
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -24,7 +24,7 @@ items:
   sort: 0
   system: {}
   type: talent
-- _id: Amk1OZEiixmbzd2f
+- _id: 9CU7JYrQ7xgieLSE
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -37,7 +37,7 @@ items:
       This Trait always includes a numeric value to indicate how many Armour Points the creature gains to all locations.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: VQaRtzrYkZk0kRTL
+- _id: KHSvJJh4w3HptPmA
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
@@ -85,7 +85,7 @@ prototypeToken:
   texture:
     scaleX: 1.0
     scaleY: 1.0
-    src: ''
+    src: systems/rogue-trader-3rd/images/npcs/darkfrontier/shardspiders.png
   width: 1
 system:
   characteristics:
@@ -121,9 +121,7 @@ system:
     subfaction: ''
     threatLevel: 0
     type: troop
-  skills:
-    stealth:
-      advance: 0
+  skills: {}
   wounds:
     critical: 0
     max: 10
@@ -165,7 +163,7 @@ flags:
     source: Dark Frontier
 img: systems/rogue-trader-3rd/images/npcs/darkfrontier/yu-vath-bone-warden.png
 items:
-- _id: AGQb6uTBaFAwlo5J
+- _id: N3fBaSxQ8LWL6xhe
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -175,7 +173,7 @@ items:
   sort: 0
   system: {}
   type: talent
-- _id: FFGJrg3esvCaPAy4
+- _id: z035jVprdIvAhSBG
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -185,7 +183,7 @@ items:
   sort: 0
   system: {}
   type: trait
-- _id: QHI9wGtXXzcioI9Q
+- _id: ZlYUxttv30GRsrgG
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -195,7 +193,7 @@ items:
   sort: 0
   system: {}
   type: trait
-- _id: pTD7ZVcCRlfxe8eg
+- _id: A2uPnZkAXqhT1tGI
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
@@ -234,7 +232,7 @@ items:
     type: ''
     weight: 0
   type: weapon
-- _id: osIrUYYDSto2xkOC
+- _id: pWjfHl1Deo03xLjO
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png

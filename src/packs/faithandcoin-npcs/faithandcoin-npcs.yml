@@ -7,9 +7,9 @@ flags:
     rawGear: Ragged robes resembling debased ecclesiastical vestments, fetishes, trophies and random symbols of the Imperial
       Creed.
     source: Faith and Coin
-img: ''
+img: systems/rogue-trader-3rd/images/npcs/faithandcoin/child-of-the-sacred-flesh.png
 items:
-- _id: EHIB1vhSE2FW34OR
+- _id: RGRsfQOAzE3pWHnx
   effects: []
   flags:
     rt:
@@ -50,7 +50,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: v3fQR3HdUBIl9NUx
+- _id: 9YF8CbykgBiEqBcK
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -70,7 +70,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: jtylt8aPOrmYN4wS
+- _id: ZTlx0LoQ8GDbbvCC
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
@@ -119,7 +119,7 @@ prototypeToken:
   texture:
     scaleX: 1.0
     scaleY: 1.0
-    src: ''
+    src: systems/rogue-trader-3rd/images/npcs/faithandcoin/child-of-the-sacred-flesh.png
   width: 1
 system:
   characteristics:
@@ -156,17 +156,21 @@ system:
     threatLevel: 0
     type: troop
   skills:
-    athletics:
-      advance: 0
     awareness:
       advance: 0
+    climb:
+      advance: 0
+    concealment:
+      advance: 10
     dodge:
       advance: 0
-    linguistics:
-      advance: 0
-    stealth:
+    silentMove:
       advance: 10
+    speakLanguage:
+      advance: 0
     survival:
+      advance: 0
+    tracking:
       advance: 10
   wounds:
     critical: 0
@@ -184,7 +188,7 @@ flags:
     source: Faith and Coin
 img: systems/rogue-trader-3rd/images/npcs/faithandcoin/orphan-of-the-flesh.png
 items:
-- _id: x4geKzQUuzDLCzrq
+- _id: 8QDjwkJ2JQrtpK0M
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -194,7 +198,7 @@ items:
   sort: 0
   system: {}
   type: trait
-- _id: inMEESFpb1TxzbnC
+- _id: VM7k2bSVGwc2A7zn
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -208,7 +212,7 @@ items:
       going insane from the encounter, as shown on the following chart.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: RbrC4rTmHzeTjMFh
+- _id: 3BIvOquIIrh2EkDv
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -222,7 +226,7 @@ items:
       Weapons these attacks do not count as Primitive.
     source: Into the Storm
   type: trait
-- _id: pORaqc3ZvKNAh81z
+- _id: axQqyzTugmC9xc7V
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -238,7 +242,7 @@ items:
       creature.'
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: asnB647rIzKcMyY4
+- _id: ExpP18jpFx33UwYN
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -251,7 +255,7 @@ items:
       and death results when damage equals or exceeds the creature's Wounds.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: jB4fAq23eXgIBtEG
+- _id: kUPkanmZVSk9OEJG
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -264,7 +268,7 @@ items:
       talent.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: PV0QmM1o4D6gRxtu
+- _id: Gdym4F5DFFsmfW9i
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -278,7 +282,7 @@ items:
       usually 15 metres.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: u6AOn8qwF4HmbIv4
+- _id: VFQ2dXpkRob8SfXJ
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -296,7 +300,7 @@ items:
       Bonus. During Opposed Characteristic Tests, on a success, the bonus multiplier is added to the degree of success.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: EUUo3f7uRACIqkRW
+- _id: KHOjqYz9ffq7qsrK
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -314,7 +318,7 @@ items:
       Bonus. During Opposed Characteristic Tests, on a success, the bonus multiplier is added to the degree of success.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: nCH3SQFONCQeBr6R
+- _id: AkrZUBzIZfdZLUIs
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
@@ -401,7 +405,7 @@ system:
   skills:
     awareness:
       advance: 0
-    stealth:
+    concealment:
       advance: 10
   wounds:
     critical: 0
@@ -417,9 +421,9 @@ flags:
     movement: '3/6/9/18 Grounds: 10, 30, or 50'
     rawGear: ''
     source: Faith and Coin
-img: ''
+img: systems/rogue-trader-3rd/images/npcs/faithandcoin/mutant-rat-swarm.png
 items:
-- _id: 9hJjFIe4VpsmZXwB
+- _id: xfFZFlymU3I0GZ2v
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -434,7 +438,7 @@ items:
       startled or injured. On a failed test, the creature flees.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: yXU4zeubyzFgXSrZ
+- _id: mmE66dOgNEqpJJvz
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -450,7 +454,7 @@ items:
       creature.'
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: Er7suLKUtChEuyyH
+- _id: 9kGavC3oCbE5Z71s
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -460,7 +464,7 @@ items:
   sort: 0
   system: {}
   type: trait
-- _id: n0pqqywXzAViS94q
+- _id: TWw0oY7tDuEJfZpC
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
@@ -509,7 +513,7 @@ prototypeToken:
   texture:
     scaleX: 1.0
     scaleY: 1.0
-    src: ''
+    src: systems/rogue-trader-3rd/images/npcs/faithandcoin/mutant-rat-swarm.png
   width: 1
 system:
   characteristics:
@@ -548,7 +552,9 @@ system:
   skills:
     awareness:
       advance: 10
-    stealth:
+    concealment:
+      advance: 10
+    silentMove:
       advance: 20
   wounds:
     critical: 0
@@ -564,9 +570,9 @@ flags:
     movement: '2/4/6/12 Grounds: 20, 40, or 60'
     rawGear: ''
     source: Faith and Coin
-img: ''
+img: systems/rogue-trader-3rd/images/npcs/faithandcoin/autochthonic-vermin-swarm.png
 items:
-- _id: MHKBz0lxCQMiiylW
+- _id: UuxTB7eSRJIfUZ8e
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -581,7 +587,7 @@ items:
       startled or injured. On a failed test, the creature flees.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: MFjATTld9upJo5dA
+- _id: H0Z8JoEDHRVnsb77
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -594,7 +600,7 @@ items:
       in areas of dim or no lighting.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: Z8amCPBlmPIBhT6I
+- _id: TVF833bpmCydTWP2
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -610,7 +616,7 @@ items:
       in the creature's description.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: 0W3CFSn2roP6U5en
+- _id: CKUvMN2BcwoSsnWQ
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -626,7 +632,7 @@ items:
       creature.'
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: M16KRuHu4NoN20KJ
+- _id: Yz7C0ngI0laYjzy3
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -639,7 +645,7 @@ items:
       and death results when damage equals or exceeds the creature's Wounds.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: ZOngqPm5dhoZZCXp
+- _id: jzXZA8v3IaxI1OiO
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -649,7 +655,7 @@ items:
   sort: 0
   system: {}
   type: trait
-- _id: ealm7u9FbvoaLh4m
+- _id: MndjzBTQQMRyxB10
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
@@ -698,7 +704,7 @@ prototypeToken:
   texture:
     scaleX: 1.0
     scaleY: 1.0
-    src: ''
+    src: systems/rogue-trader-3rd/images/npcs/faithandcoin/autochthonic-vermin-swarm.png
   width: 1
 system:
   characteristics:
@@ -751,9 +757,9 @@ flags:
     movement: '4/8/12/24 Grounds: 24'
     rawGear: ''
     source: Faith and Coin
-img: ''
+img: systems/rogue-trader-3rd/images/npcs/faithandcoin/overgrown-autochthonic-vermin.png
 items:
-- _id: L5RZtOLlxb6IITRw
+- _id: YMT7YO7eMA3HkCZd
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -766,7 +772,7 @@ items:
       in areas of dim or no lighting.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: EmMBNdxMK7mLfmQo
+- _id: D2gMu6fS9U8A1jGG
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -780,7 +786,7 @@ items:
       Weapons these attacks do not count as Primitive.
     source: Into the Storm
   type: trait
-- _id: iVUbDVbfH1gYde6i
+- _id: np4FMqByXMtZCrGx
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -796,7 +802,7 @@ items:
       creature.'
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: 3HTX3mrwB6NkOLyb
+- _id: mVoINCCUC8zHWZLN
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -812,7 +818,7 @@ items:
       in the creature's description.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: VHYP3wCV56Th072l
+- _id: MJpFtfaizmrBxxeu
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -830,7 +836,7 @@ items:
       Bonus. During Opposed Characteristic Tests, on a success, the bonus multiplier is added to the degree of success.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: 77loHSoDpBnI8C2v
+- _id: bEjCFJvwqXI4VVNW
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -848,7 +854,7 @@ items:
       Bonus. During Opposed Characteristic Tests, on a success, the bonus multiplier is added to the degree of success.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: t7FWema2qEY8OTeQ
+- _id: k7K90PCym1oPAoLN
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
@@ -889,7 +895,7 @@ items:
     type: ''
     weight: 0
   type: weapon
-- _id: I05mTpPaZVGFEmIo
+- _id: HPmXcU7nImLsHGNJ
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
@@ -928,7 +934,7 @@ items:
     type: ''
     weight: 0
   type: weapon
-- _id: ADpfuEG0TDuaKJAs
+- _id: zeyvbKzuaajDULMp
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
@@ -968,7 +974,7 @@ items:
     type: ''
     weight: 0
   type: weapon
-- _id: QbVsYwhMx7kB2Lla
+- _id: FWTBqkoLAGGEybse
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
@@ -1016,7 +1022,7 @@ prototypeToken:
   texture:
     scaleX: 1.2
     scaleY: 1.2
-    src: ''
+    src: systems/rogue-trader-3rd/images/npcs/faithandcoin/overgrown-autochthonic-vermin.png
   width: 1
 system:
   characteristics:
@@ -1071,7 +1077,7 @@ flags:
     source: Faith and Coin
 img: systems/rogue-trader-3rd/images/npcs/faithandcoin/guardian-of-the-inner-sanctum.png
 items:
-- _id: fcM7Mjsx68x0FcVA
+- _id: yjNK6fhDmIBEP7kL
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/swords/swords_01_b.png
@@ -1090,7 +1096,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: U1d62Fu2MdddhMsq
+- _id: BtiHiXwDj5todLS6
   effects: []
   flags:
     rt:
@@ -1115,7 +1121,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: F1xf4i7MELQGaENu
+- _id: sm7lNWvtcVUtwzyI
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -1132,7 +1138,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: CLcEaaLN1bRBdD8F
+- _id: wxoztTiLUlNmiUW2
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -1149,7 +1155,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: XVgG1Le8FcdKbAN0
+- _id: 07PxyHuiF93fXsIC
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -1167,7 +1173,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: INq6QC181ejbMDoh
+- _id: 3UwCIfrZBECnQqbl
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -1184,7 +1190,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: oGX5qRubrkDmdPLo
+- _id: uI2ACncfxEyFmfSL
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -1201,7 +1207,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: nJ7RIHYFT2vC4SgG
+- _id: VtBHGLCfNWqmvXD0
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -1220,7 +1226,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: yc1HFy3mPv3Qu2Zl
+- _id: QDNanYZGyRerVREE
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -1239,7 +1245,7 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: cqp015MI9FVA0ZuV
+- _id: qFn3pK9Xe1whUMu5
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -1252,7 +1258,7 @@ items:
       a half action. A creature with this Trait suffers no penalties for moving and firing on semi- or full-automatic.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: ZuGwR2x2oTcgJy07
+- _id: TwVgdgPmooMf2xfh
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -1265,7 +1271,7 @@ items:
       in areas of dim or no lighting.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: gnxvAyFzkMUGKBlx
+- _id: CyKIm4nAYi4olx9A
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -1279,7 +1285,7 @@ items:
       going insane from the encounter, as shown on the following chart.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: sHLoSZss5YCAQsQP
+- _id: lGW0sSneFmFuGsix
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -1294,7 +1300,7 @@ items:
       5 Armour Points for each location. This number is indicated next to the Trait.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: yjcIEUYCMUzNd6T9
+- _id: Mu4NiG6qsOezBCXJ
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -1310,7 +1316,7 @@ items:
       creature.'
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: rIDs70qkQJZfcW0i
+- _id: r3tu1pSH8pYqIdLw
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -1328,7 +1334,7 @@ items:
       Bonus. During Opposed Characteristic Tests, on a success, the bonus multiplier is added to the degree of success.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: vG00ey0HD5Ujgg95
+- _id: PousQH7FrBi7IDmS
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
@@ -1346,7 +1352,7 @@ items:
       Bonus. During Opposed Characteristic Tests, on a success, the bonus multiplier is added to the degree of success.
     source: Rogue Trader Core Rulebook
   type: trait
-- _id: iR9DQjhplCyUHgjy
+- _id: W7NQzM56iyyZSPRP
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
@@ -1385,7 +1391,7 @@ items:
     type: ''
     weight: 0
   type: weapon
-- _id: 6IUDkVoAo57tXOGS
+- _id: ZV8dhZWkK8dJC0xZ
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
@@ -1425,7 +1431,7 @@ items:
     type: Chain
     weight: 13.0
   type: weapon
-- _id: Ww5CqXmwWSSTvH4o
+- _id: ZdmTXfYf4ixKghHY
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/heavy-flame.png
