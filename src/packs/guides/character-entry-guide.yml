@@ -1,0 +1,307 @@
+_id: rt3CharEntryGd00
+name: Character Entry Guide
+folder: null
+sort: 0
+ownership:
+  default: 0
+flags: {}
+pages:
+  - _id: rt3CharGuideP01
+    name: 1. Overview & The Seven Tabs
+    type: text
+    title:
+      show: true
+      level: 1
+    sort: 100000
+    ownership:
+      default: -1
+    flags: {}
+    text:
+      format: 1
+      content: |
+        <p>This guide walks you through filling out a Rogue Trader 3rd Edition character sheet, top to bottom, panel by panel. Open this guide alongside an open Actor sheet and follow each page.</p>
+        <h2>The Seven Tabs</h2>
+        <p>An Explorer sheet has seven primary tabs along the top:</p>
+        <ol>
+          <li><strong>Combat</strong> — Wounds, Fatigue, Fate, Armour summary, combat-roll controls, Initiative, characteristic rollers, Movement, active effects.</li>
+          <li><strong>Main</strong> — Characteristics (WS, BS, S, T, Ag, Int, Per, WP, Fel), Traits, Skills (Basic, Advanced, Specialist), Talents.</li>
+          <li><strong>Bio</strong> — Origin Path (Homeworld → Birthright → Lure of the Void → Trials → Career → Motivation), free-form Biography fields.</li>
+          <li><strong>Gear</strong> — Weapons, Encumbrance, Armour items, Storage locations, Cybernetics, Backpack, Force Field, general Gear.</li>
+          <li><strong>Psychic Powers</strong> — Powers list and Psy Rating / Discipline panel. Hidden for non-psykers.</li>
+          <li><strong>Advances</strong> — Corruption, Aptitudes (8 slots), Experience log, Insanity.</li>
+          <li><strong>Social</strong> — Journal, Peers (allies), Enemies.</li>
+        </ol>
+        <h2>How to Use This Guide</h2>
+        <p>Each following page corresponds to one tab. Within a page, panels are documented in the order they appear on the sheet. Where a field maps to a Core Rulebook concept, the page page-references the RT 1e Core Rulebook so you can cross-check.</p>
+        <p><em>Quick tip:</em> Most numeric fields auto-calculate from other inputs (Movement from Agility Bonus + size, Carry Weight from Strength Bonus + Toughness Bonus, etc.). Don't paste in derived values — fill in the source stat and the sheet will compute the rest.</p>
+
+  - _id: rt3CharGuideP02
+    name: 2. Header — Name, Portrait, Primary Bio
+    type: text
+    title:
+      show: true
+      level: 1
+    sort: 200000
+    ownership:
+      default: -1
+    flags: {}
+    text:
+      format: 1
+      content: |
+        <p>The header bar at the top of every tab holds the character's identity:</p>
+        <ul>
+          <li><strong>Portrait</strong> — Click the image to upload one. This is also the token image by default; change it on the prototype token if you want a separate token art.</li>
+          <li><strong>Name</strong> — The character's name. This is also the actor name in the sidebar.</li>
+          <li><strong>Primary Bio fields</strong> — A short list of high-visibility biographical fields chosen by the system (e.g., Career, Rank, Homeworld). These appear in the header for at-a-glance reference and are duplicated on the Bio tab.</li>
+        </ul>
+        <h2>Limited Permission View</h2>
+        <p>If a player has only <em>Limited</em> permission on this actor (set under the actor's permission lock icon), they will see <em>only</em> the portrait and name. Use this for NPCs that PCs only know by sight.</p>
+
+  - _id: rt3CharGuideP03
+    name: 3. Combat Tab
+    type: text
+    title:
+      show: true
+      level: 1
+    sort: 300000
+    ownership:
+      default: -1
+    flags: {}
+    text:
+      format: 1
+      content: |
+        <p>The Combat tab is the at-the-table view. During play this is the tab you should have open.</p>
+        <h2>Wounds Panel</h2>
+        <ul>
+          <li><strong>Current / Max Wounds</strong> — Click to take damage or heal. Max is your starting Wounds (from career) plus any advances.</li>
+          <li><strong>Critical Damage</strong> — Damage taken past Max Wounds. Each point triggers a Critical Effect on the Critical Damage tables (Core p.252-260) based on the location of the killing hit.</li>
+        </ul>
+        <h2>Fatigue Panel</h2>
+        <p>Each level imposes a -10 penalty. At Fatigue equal to your <strong>Toughness Bonus</strong>, you fall unconscious; at <strong>2 × TB</strong> you take a Light Critical Hit to the body.</p>
+        <h2>Fate Panel</h2>
+        <ul>
+          <li><strong>Fate Threshold</strong> — Your maximum Fate. Roll this at character creation (Core p.36).</li>
+          <li><strong>Fate Points</strong> — Current spendable Fate. Refreshes at start of each session per the GM.</li>
+          <li>Burn a Fate Point to survive a fatal hit (permanently removes one from your Threshold).</li>
+        </ul>
+        <h2>Armour Display Panel</h2>
+        <p>Read-only summary of total AP per location: Head, Body, Right/Left Arm, Right/Left Leg. Values come from worn Armour items; do not edit here, edit on the Gear tab.</p>
+        <h2>Combat Controls</h2>
+        <p>Quick-roll buttons for the actions you take most: Attack, Parry, Dodge. Clicking opens the action prompt where you pick weapon, action type, and modifiers.</p>
+        <h2>Initiative Panel</h2>
+        <p>Roll Agility + 1d10 at the start of combat. Click the d20 icon to roll it into the combat tracker. Bonus modifiers (e.g., Quick Draw, Lightning Reflexes) can be entered here.</p>
+        <h2>Characteristic Roller</h2>
+        <p>Click any characteristic name (WS, BS, S…) to roll a Characteristic test. Each test prompts for modifier and shows DoS/DoF in chat.</p>
+        <h2>Movement Panel</h2>
+        <p>Auto-computed from <strong>Agility Bonus</strong> and size: Half Move = AgB, Full Move = 2 × AgB, Charge = 3 × AgB, Run = 6 × AgB.</p>
+        <h2>Active Effects</h2>
+        <p>Temporary modifiers applied to the actor — conditions, drugs, Talent toggles. Click an effect to edit duration or value; the X icon removes it.</p>
+
+  - _id: rt3CharGuideP04
+    name: 4. Main Tab — Characteristics, Skills, Talents
+    type: text
+    title:
+      show: true
+      level: 1
+    sort: 400000
+    ownership:
+      default: -1
+    flags: {}
+    text:
+      format: 1
+      content: |
+        <p>The Main tab is where you do most character setup. Fill it in once at creation and update as advances are bought.</p>
+        <h2>Characteristics Panel</h2>
+        <p>Nine characteristics, each a two-digit value:</p>
+        <ul>
+          <li>WS (Weapon Skill), BS (Ballistic Skill), S (Strength), T (Toughness), Ag (Agility), Int (Intelligence), Per (Perception), WP (Willpower), Fel (Fellowship).</li>
+          <li><strong>Starting value</strong> = career base + 2d10 (per Core p.27).</li>
+          <li>The sheet shows <strong>characteristic / bonus</strong>. Bonus is auto-computed as the tens digit (44 → bonus 4).</li>
+          <li>Apply <strong>Unnatural</strong> trait values in the Traits panel — they raise the bonus, not the rolled value.</li>
+        </ul>
+        <h2>Traits Panel</h2>
+        <p>Toggleable traits like Sound Constitution, Touched by the Fates, Unnatural Strength (×2), etc. Add a Trait from the compendium by dragging it in. Toggling a Trait on/off applies/removes its Active Effect.</p>
+        <h2>Skills Panel — Basic Skills</h2>
+        <p>The 17 Basic Skills (Awareness, Charm, Command, etc.) every character can attempt untrained at half characteristic.</p>
+        <ul>
+          <li><strong>Untrained</strong> — Rolls at characteristic ÷ 2 (rounded down). Penalty of -20 in some editions; RT 1e uses half value.</li>
+          <li><strong>Trained (Known)</strong> — Click the box once. Rolls at full characteristic.</li>
+          <li><strong>+10 / +20</strong> — Subsequent Skill Mastery advances. Click again to step up.</li>
+          <li>Click the skill name to roll.</li>
+        </ul>
+        <h2>Advanced Skills Panel</h2>
+        <p>Skills that cannot be attempted untrained (Forbidden Lore, Tech-Use, Psyniscience). Same trained/+10/+20 progression — but if not Trained, the skill cannot be rolled at all.</p>
+        <h2>Specialist Skills Panel</h2>
+        <p>Skills with sub-specialisations (Common Lore (Imperium), Forbidden Lore (Xenos), Trade (Armourer)…). Add a row, pick the specialisation, then set trained/+10/+20 just like a basic skill.</p>
+        <h2>Talents Panel</h2>
+        <p>Drag Talents from the <em>Talents</em> compendium. Some Talents (<strong>Talented</strong>, <strong>Hatred</strong>, <strong>Peer</strong>, etc.) prompt you to pick a specialisation when you drop them — answer the dialog and the picked option is stored on the Talent.</p>
+        <p>Right-click a Talent for: edit, view source, delete. The hover tooltip shows the benefit text.</p>
+
+  - _id: rt3CharGuideP05
+    name: 5. Bio Tab — Origin Path & Biography
+    type: text
+    title:
+      show: true
+      level: 1
+    sort: 500000
+    ownership:
+      default: -1
+    flags: {}
+    text:
+      format: 1
+      content: |
+        <p>The Bio tab captures who your character is, where they came from, and what drives them.</p>
+        <h2>Origin Path Panel</h2>
+        <p>RT 1e characters are built using the Origin Path (Core p.18-22). Each step is a dropdown row:</p>
+        <ol>
+          <li><strong>Homeworld</strong> — High-Born, Hive World, Schola Progenium, Void-Born, Forge World. Sets starting characteristic modifiers and grants a homeworld bonus Talent.</li>
+          <li><strong>Birthright</strong> — Scion, Stubjack, Vaunted, Savant, Mutant…</li>
+          <li><strong>Lure of the Void</strong> — Why your character took to the stars.</li>
+          <li><strong>Trials and Travails</strong> — Formative experience that shaped you.</li>
+          <li><strong>Career Path</strong> — Arch-Militant, Astropath Transcendent, Explorator, Missionary, Navigator, Rogue Trader, Seneschal, Void-Master. Determines starting Aptitudes, skills, talents, and advance scheme.</li>
+          <li><strong>Motivation</strong> — Pride, Prestige, Profit, Renown.</li>
+        </ol>
+        <p>Each pick auto-applies the listed mechanical effects (characteristic mods, starting skills/talents) via Active Effects and item grants. Edit a row by clicking the dropdown; the previous grants are removed and the new ones applied.</p>
+        <h2>Biography Section</h2>
+        <p>Free-form fields not shown in the header: Gender, Build, Age, Skin Colour, Hair Colour, Eye Colour, Distinguishing Marks, Quirks, Goal, Divination, Description. Fill in what matters for your table — the GM will use these for descriptions, NPC reactions, and divination omens.</p>
+
+  - _id: rt3CharGuideP06
+    name: 6. Gear Tab
+    type: text
+    title:
+      show: true
+      level: 1
+    sort: 600000
+    ownership:
+      default: -1
+    flags: {}
+    text:
+      format: 1
+      content: |
+        <p>Everything the character carries. Drag items from compendiums (Weapons, Armour, Ammo, Consumables, Cybernetics, Tools) into the appropriate panel.</p>
+        <h2>Weapons Panel</h2>
+        <ul>
+          <li><strong>Equipped toggle</strong> — Only equipped weapons appear in the combat-controls dropdown.</li>
+          <li><strong>Quality</strong> — Poor / Common / Good / Best Craftsmanship. Each adjusts attack rolls and (for melee) damage.</li>
+          <li><strong>Mods</strong> — Drag Weapon Mods (Red-Dot Sight, Custom Grip, Motion Predictor…) onto a weapon to attach them. Modifier flags apply to its rolls automatically.</li>
+          <li>Click the weapon name to open the attack prompt.</li>
+        </ul>
+        <h2>Encumbrance Panel</h2>
+        <p>Auto-computed. Carry capacity comes from Strength Bonus + Toughness Bonus (Core p.156, Table 5-2). Status flags: Unencumbered → Encumbered (-10 Ag) → Heavily Encumbered → Staggering. Drugs and traits (Sturdy, etc.) modify capacity.</p>
+        <h2>Armour Panel</h2>
+        <p>Each piece lists its AP and covered locations. Equip toggle includes it in the Armour Display on the Combat tab. Stacking rules: only the highest single AP per location applies (no doubling) — the sheet enforces this automatically.</p>
+        <h2>Storage Locations</h2>
+        <p>Optional containers (Backpack, Strongbox, Footlocker, Locker on the Ship). Items inside don't count toward encumbrance only if explicitly stored on the ship.</p>
+        <h2>Cybernetics, Backpack, Force Field, Gear</h2>
+        <p>Specialty panels for those item categories. Force Field has Overload tracking — when the protection rating fails, the field shorts out for the rest of the encounter unless re-rolled per the special rules of the item.</p>
+
+  - _id: rt3CharGuideP07
+    name: 7. Psychic Powers Tab
+    type: text
+    title:
+      show: true
+      level: 1
+    sort: 700000
+    ownership:
+      default: -1
+    flags: {}
+    text:
+      format: 1
+      content: |
+        <p>Only relevant for psykers (Astropath Transcendent career or characters with the Psy Rating Talent). The tab is visible for everyone but the content panel only matters if Psy Rating > 0.</p>
+        <h2>Psy Panel</h2>
+        <ul>
+          <li><strong>Psy Rating</strong> — The PR stat used in damage formulas (e.g., Force Bolt is <code>1d10 + 2 × PR</code>). Buy with experience or via the Psy Rating Talent.</li>
+          <li><strong>Discipline</strong> — Divination, Telepathy, Telekinesis, Theosophamy, or Navigator Pylon. Determines which powers you can buy.</li>
+          <li><strong>Fettered / Unfettered / Push</strong> — Power level for any cast (Core p.165). Fettered halves PR but is safe. Unfettered uses PR; rolling 9 on the Focus Power dice triggers Psychic Phenomena. Push uses PR + 1 to +5 but Phenomena trigger on doubles.</li>
+        </ul>
+        <h2>Psychic Powers Panel</h2>
+        <p>Drag powers from the <em>Psychic Powers</em> compendium. Each power lists Action, Focus Power test, Range, Sustained, Effect, Prerequisites. Click the power name to make the Focus Power test (Willpower) and roll damage if applicable.</p>
+        <p>Prerequisites are enforced informationally — the sheet won't stop you, but the GM should check the Prereq field before approving the purchase.</p>
+
+  - _id: rt3CharGuideP08
+    name: 8. Advances Tab
+    type: text
+    title:
+      show: true
+      level: 1
+    sort: 800000
+    ownership:
+      default: -1
+    flags: {}
+    text:
+      format: 1
+      content: |
+        <p>Where character growth and corruption are tracked.</p>
+        <h2>Aptitude Panel</h2>
+        <p>Eight Aptitude slots. Set them from your Career and Birthright choices. Aptitudes determine advance costs — an advance that matches 2 aptitudes is cheapest, 1 aptitude middle, 0 aptitudes most expensive (Core p.39, Table 1-2).</p>
+        <h2>Experience Panel</h2>
+        <ul>
+          <li><strong>Total Earned XP</strong> — All XP ever awarded. Edit when the GM grants XP.</li>
+          <li><strong>Spent XP</strong> — Auto-tallied from advances purchased.</li>
+          <li><strong>Available</strong> — Earned minus Spent.</li>
+          <li><strong>Log</strong> — Each row records when XP was earned or spent and on what. Add rows manually as a record.</li>
+        </ul>
+        <h2>Corruption Panel</h2>
+        <p>Tracks Corruption Points from exposure to Chaos and Daemons (Core p.232). At thresholds of 30/60/90 roll on the Malignancy / Mutation tables. At 100, the character is lost.</p>
+        <h2>Insanity Panel</h2>
+        <p>Tracks Insanity Points from sanity-rending events (Core p.231). At thresholds of 30/60/90 roll on the Mental Disorder tables. At 100 the character is permanently insane and an NPC.</p>
+
+  - _id: rt3CharGuideP09
+    name: 9. Social Tab — Journal, Peers, Enemies
+    type: text
+    title:
+      show: true
+      level: 1
+    sort: 900000
+    ownership:
+      default: -1
+    flags: {}
+    text:
+      format: 1
+      content: |
+        <p>The Social tab is for ongoing campaign state: contacts, factions, and the character's own notes.</p>
+        <h2>Journal Panel</h2>
+        <p>Free-form notes the player writes during play — clues, NPC names, theories. Visible to the player and GM only.</p>
+        <h2>Peer Panel</h2>
+        <p>Each row is an organisation, group, or person the character has positive standing with (Adeptus Mechanicus, Imperial Navy, the Local Tarot Reader…). Roll +10 to Interaction tests with that group. Many origin paths and the <strong>Peer</strong> Talent grant entries here.</p>
+        <h2>Enemy Panel</h2>
+        <p>The flip side: groups or people the character has negative standing with. Imposes -10 on Interaction tests. Often granted by the <strong>Enemy</strong> Talent (a "you got something for free, but…" feature of career paths).</p>
+
+  - _id: rt3CharGuideP10
+    name: 10. Making Rolls & Combat Actions
+    type: text
+    title:
+      show: true
+      level: 1
+    sort: 1000000
+    ownership:
+      default: -1
+    flags: {}
+    text:
+      format: 1
+      content: |
+        <p>How rolls actually work in this system.</p>
+        <h2>Basic Test</h2>
+        <p>Roll 1d100, compare to (characteristic + skill + modifiers). Roll ≤ target = success. Each 10 by which you beat or miss the target is a Degree of Success (DoS) or Failure (DoF).</p>
+        <h2>The Action Prompt</h2>
+        <p>Clicking a weapon, skill, or characteristic opens a prompt:</p>
+        <ul>
+          <li><strong>Action</strong> — Pick from the combat-action dropdown. For melee: Standard Attack, All Out Attack, Charge, Multiple Attacks, Guarded Attack, Defensive Stance, Feint, Grapple, Knock-Down, Stun. For ranged: Standard Attack, Aim, Called Shot, Semi/Full Auto, Suppressing Fire, etc.</li>
+          <li><strong>Modifiers</strong> — Each modifier (target size, range, cover, craftsmanship, sight mod) appears as a +/− entry. They sum, capped at ±60.</li>
+          <li><strong>Aim Action</strong> — Half-action Aim grants +10 next attack; Full-action Aim grants +20.</li>
+        </ul>
+        <h2>Reading the Chat Card</h2>
+        <p>The result chat card shows:</p>
+        <ul>
+          <li><strong>Base Target / Modified Target / Roll / Result</strong> — The test math.</li>
+          <li><strong>Degrees of Success/Failure</strong> — Used for hit count (semi/full auto), spell magnitude, etc.</li>
+          <li><strong>Base Damage</strong> — The damage formula expanded, e.g., <code>1d10[7] + 5 = 12</code>. The number in brackets is the actual die result.</li>
+          <li><strong>Modifier rows</strong> — Strength bonus, craftsmanship, etc. that adjust damage.</li>
+          <li><strong>Hit location</strong> — Reversed-tens of the to-hit roll (a roll of 47 hits 74 → Right Arm). Each successive DoS hits the same location on the body chart.</li>
+          <li><strong>Penetration</strong> — Subtracted from the target's AP at the hit location before damage is reduced.</li>
+        </ul>
+        <h2>Damage & Critical</h2>
+        <p>Damage past AP and Toughness Bonus reduces Wounds. Damage past max Wounds is Critical Damage; each point applies a Critical Effect from the table matching the hit location and damage type (Core p.252-260).</p>
+        <h2>Final Tip</h2>
+        <p>If a roll seems wrong, check the chat card's modifier list — it shows exactly which buffs and penalties applied. If a modifier appeared but didn't change the target, that's a bug; please report it.</p>
