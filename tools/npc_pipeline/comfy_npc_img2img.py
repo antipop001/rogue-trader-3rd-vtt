@@ -123,7 +123,7 @@ def workflow(npc_key):
     g = {}
     # Base
     g["ckpt"] = {"class_type": "CheckpointLoaderSimple",
-                 "inputs": {"ckpt_name": "JuggernautXL_v9_RunDiffusionPhoto_v2.safetensors"}}
+                 "inputs": {"ckpt_name": "Juggernaut-XL_v9_RunDiffusionPhoto_v2.safetensors"}}
     last_model, last_clip = ["ckpt", 0], ["ckpt", 1]
 
     # Primary LoRA

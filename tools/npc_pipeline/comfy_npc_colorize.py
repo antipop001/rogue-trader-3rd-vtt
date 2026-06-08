@@ -4,7 +4,7 @@ Reference-cleanup portrait pipeline.
 
 For each NPC whose canonical reference has been VERIFIED as a real match
 (/tmp/npc_verified/<book>.json with verdict in {GOOD, UNCLEAR}):
-  1. Upload the reference image to whisperx's ~/comfyui/ComfyUI/input/rt_npc_refs/<book>/
+  1. Upload the reference image to whisperx's ~/comfyui/input/rt_npc_refs/<book>/
   2. Run a LOW-DENOISE (~0.18) img2img through ComfyUI to smooth out
      page-text bleed on the edges, clean up JPEG artifacts, and bump
      resolution to 832x1216 portrait aspect.
@@ -35,10 +35,10 @@ EXTRACTED_DIR = REPO / "tools/npc_pipeline/extracted"
 OUT_ROOT = REPO / "src/images/npcs"
 
 API = "http://192.168.11.22:8188"
-WHISPERX_INPUT_DIR = "/home/ahermon/comfyui/ComfyUI/input/rt_npc_refs"
+WHISPERX_INPUT_DIR = "/home/ahermon/comfyui/input/rt_npc_refs"
 SSH_HOST = "ahermon@192.168.11.22"
 
-BASE_CKPT = "JuggernautXL_v9_RunDiffusionPhoto_v2.safetensors"
+BASE_CKPT = "Juggernaut-XL_v9_RunDiffusionPhoto_v2.safetensors"
 OLDHAMMER_STRENGTH = 0.30  # very light — reference does the work
 
 DENOISE = 0.18  # low: preserve canonical composition + colors

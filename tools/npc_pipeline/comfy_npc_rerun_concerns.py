@@ -27,8 +27,8 @@ OUT_ROOT = REPO / "src/images/npcs"
 CONCERN_LIST = Path("/tmp/concern_slugs.json")
 
 API = "http://192.168.11.22:8188"
-WHISPERX_INPUT_DIR = "/home/ahermon/comfyui/ComfyUI/input/rt_npc_refs"
-BASE_CKPT = "JuggernautXL_v9_RunDiffusionPhoto_v2.safetensors"
+WHISPERX_INPUT_DIR = "/home/ahermon/comfyui/input/rt_npc_refs"
+BASE_CKPT = "Juggernaut-XL_v9_RunDiffusionPhoto_v2.safetensors"
 OLDHAMMER_STRENGTH = 0.35
 DENOISE = 0.32  # higher than the bulk-colorize 0.18 so seed variation matters
 

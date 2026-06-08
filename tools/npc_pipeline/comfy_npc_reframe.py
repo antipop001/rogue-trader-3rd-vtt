@@ -32,7 +32,7 @@ REPO = Path("/home/ahermon/rogue-trader-3rd-vtt")
 OUT_ROOT = REPO / "src/images/npcs"
 
 API = "http://192.168.11.22:8188"
-BASE_CKPT = "JuggernautXL_v9_RunDiffusionPhoto_v2.safetensors"
+BASE_CKPT = "Juggernaut-XL_v9_RunDiffusionPhoto_v2.safetensors"
 
 # Faction → (LoRA filename, weight)
 FACTION_LORA = {

@@ -6,7 +6,7 @@ and renders one portrait per NPC using the ComfyUI API on whisperx.
 For each NPC:
   - If a canonical reference image exists (npc['portrait_ref']) → img2img at
     denoise 0.55. Reference must already be uploaded to whisperx's
-    ~/comfyui/ComfyUI/input/rt_npc_refs/<book>/<img>.jpeg
+    ~/comfyui/input/rt_npc_refs/<book>/<img>.jpeg
     (use --upload to push them via scp before generation).
   - Else → txt2img.
 
@@ -35,10 +35,10 @@ SRC_REFS_ROOT = Path("/mnt/project_data/RT/RT-DOCS")
 OUT_ROOT = REPO / "src/images/npcs"
 
 API = "http://192.168.11.22:8188"
-WHISPERX_INPUT_DIR = "/home/ahermon/comfyui/ComfyUI/input/rt_npc_refs"
+WHISPERX_INPUT_DIR = "/home/ahermon/comfyui/input/rt_npc_refs"
 SSH_HOST = "ahermon@192.168.11.22"
 
-BASE_CKPT = "JuggernautXL_v9_RunDiffusionPhoto_v2.safetensors"
+BASE_CKPT = "Juggernaut-XL_v9_RunDiffusionPhoto_v2.safetensors"
 
 # Faction → (LoRA filename, weight). None means no faction LoRA.
 FACTION_LORA = {
