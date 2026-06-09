@@ -10,8 +10,14 @@ import { lureOfTheVoidOptions } from './origin-path/lures.mjs';
 import { trialsAndTravailsOptions } from './origin-path/trials.mjs';
 import { motivationOptions } from './origin-path/motivations.mjs';
 import { careerOptions } from './origin-path/careers.mjs';
+import { shipRoleOptions } from './ship-roles.mjs';
 
 export const DarkHeresy = {};
+
+// Into the Storm Ch.VII Ship Roles — full role records (key, label, rank,
+// careers, skills, benefit, description, source). The panel reads the full
+// list, filters by selected key, and renders all the metadata.
+DarkHeresy.shipRoles = shipRoleOptions();
 
 // RT 1e Origin Path — canonical labels per stage, sourced from RT Core Rulebook
 // Ch.I + Into the Storm Ch.I (additional Home Worlds + replacement options).
@@ -37,7 +43,7 @@ DarkHeresy.bio = {
     // template.json so existing acolyte data doesn't break, but they no longer
     // render anywhere on the sheet. 'originPath' is excluded because it has
     // its own panel.
-    skip: ['originPath', 'homeWorld', 'background', 'role', 'elite', 'divination'],
+    skip: ['originPath', 'shipRole', 'homeWorld', 'background', 'role', 'elite', 'divination'],
     size: {
         4: 'Average (4)',
         1: 'Minuscule (1)',

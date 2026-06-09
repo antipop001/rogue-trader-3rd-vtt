@@ -95,6 +95,15 @@ export function registerHandlebarsHelpers() {
         return obj;
     });
 
+    Handlebars.registerHelper('findByKey', function(array, key) {
+        if (!Array.isArray(array) || !key) return undefined;
+        return array.find(item => item.key === key);
+    });
+
+    Handlebars.registerHelper('eq', function(a, b) {
+        return a === b;
+    });
+
     Handlebars.registerHelper('option', function(option, current, name) {
         const selected = current === option ? 'selected="selected"' : '';
         let optionValue;

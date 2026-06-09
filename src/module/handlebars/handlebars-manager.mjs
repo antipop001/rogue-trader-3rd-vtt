@@ -63,6 +63,7 @@ export class HandlebarManager {
             'systems/rogue-trader-3rd/templates/actor/panel/voidship-traits-panel.hbs',
 
             'systems/rogue-trader-3rd/templates/actor/panel/origin-path-panel.hbs',
+            'systems/rogue-trader-3rd/templates/actor/panel/ship-role-panel.hbs',
 
             'systems/rogue-trader-3rd/templates/actor/partial/character-field.hbs',
             'systems/rogue-trader-3rd/templates/actor/partial/display-toggle.hbs',

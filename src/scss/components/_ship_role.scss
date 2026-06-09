@@ -1,0 +1,57 @@
+// Ship Role panel — dropdown + read-only role detail + notes input.
+// Lives on the Bio tab alongside the Origin Path panel.
+.ship-role-row {
+    display: grid;
+    grid-template-columns: 10em 1fr;
+    gap: 0.5em;
+    align-items: center;
+    margin: 0.25em 0;
+
+    &__label {
+        font-weight: bold;
+        text-align: right;
+        padding-right: 0.5em;
+    }
+
+    &__select,
+    &__notes {
+        padding: 0.2em 0.4em;
+    }
+}
+
+.ship-role-detail {
+    margin: 0.5em 0;
+    padding: 0.5em 0.75em;
+    border-left: 3px solid #555;
+    background: rgba(0, 0, 0, 0.04);
+
+    &__row {
+        display: grid;
+        grid-template-columns: 10em 1fr;
+        gap: 0.5em;
+        align-items: baseline;
+        margin: 0.2em 0;
+    }
+
+    &__label {
+        font-weight: bold;
+        text-align: right;
+        padding-right: 0.5em;
+        font-size: 0.9em;
+        opacity: 0.8;
+    }
+
+    &__value {
+        font-size: 0.95em;
+    }
+
+    &__row--benefit &__value {
+        font-weight: 600;
+    }
+
+    &__row--desc &__value,
+    &__row--source &__value {
+        font-style: italic;
+        opacity: 0.85;
+    }
+}

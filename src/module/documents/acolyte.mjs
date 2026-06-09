@@ -99,6 +99,7 @@ export class RogueTraderAcolyte extends RogueTraderBaseActor {
     /**
      * Backfill `bio.originPath` with defaults so existing acolytes (created
      * before 0.6.0) still render the Origin Path panel without throwing.
+     * Also backfill `bio.shipRole` (added in 0.7.30).
      */
     _ensureOriginPath() {
         if (!this.system.bio) this.system.bio = {};
@@ -111,6 +112,7 @@ export class RogueTraderAcolyte extends RogueTraderBaseActor {
         op.motivation ??= { ...blank };
         op.career ??= { ...blank };
         this.system.bio.originPath = op;
+        this.system.bio.shipRole ??= { ...blank };
     }
 
     async rollWeaponDamage(weapon) {

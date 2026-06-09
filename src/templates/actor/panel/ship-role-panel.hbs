@@ -1,0 +1,48 @@
+<div class="rt-panel rt-grid-col-6">
+    <h1 class="rt-panel__header">Ship Role</h1>
+    <p class="rt-panel__hint">Into the Storm Ch.VII (pp.224-232). The command position this character holds aboard the Rogue Trader's vessel. Roles are separate from Career and grant a mechanical benefit during ship operations. Switching costs 100 xp unless the GM rules otherwise.</p>
+
+    <div class="ship-role-row">
+        <label class="ship-role-row__label">Role</label>
+        <select class="ship-role-row__select" name="system.bio.shipRole.value">
+            <option value=""></option>
+            {{#each rt.shipRoles}}
+                <option value="{{this.key}}" {{#if (eq this.key ../actor.bio.shipRole.value)}}selected{{/if}}>Rank {{this.rank}} — {{this.label}}</option>
+            {{/each}}
+        </select>
+    </div>
+
+    {{#with (findByKey rt.shipRoles actor.bio.shipRole.value) as |role|}}
+        <div class="ship-role-detail">
+            <div class="ship-role-detail__row">
+                <span class="ship-role-detail__label">Rank</span>
+                <span class="ship-role-detail__value">{{role.rank}}</span>
+            </div>
+            <div class="ship-role-detail__row">
+                <span class="ship-role-detail__label">Careers</span>
+                <span class="ship-role-detail__value">{{role.careerNotes}}</span>
+            </div>
+            <div class="ship-role-detail__row">
+                <span class="ship-role-detail__label">Important Skills</span>
+                <span class="ship-role-detail__value">{{role.skills}}</span>
+            </div>
+            <div class="ship-role-detail__row ship-role-detail__row--benefit">
+                <span class="ship-role-detail__label">Benefit</span>
+                <span class="ship-role-detail__value">{{role.benefit}}</span>
+            </div>
+            <div class="ship-role-detail__row ship-role-detail__row--desc">
+                <span class="ship-role-detail__label">Description</span>
+                <span class="ship-role-detail__value">{{role.description}}</span>
+            </div>
+            <div class="ship-role-detail__row ship-role-detail__row--source">
+                <span class="ship-role-detail__label">Source</span>
+                <span class="ship-role-detail__value">{{role.source}}</span>
+            </div>
+        </div>
+    {{/with}}
+
+    <div class="ship-role-row ship-role-row--notes">
+        <label class="ship-role-row__label">Notes</label>
+        <input class="ship-role-row__notes" type="text" placeholder="Subordinates, mechanical effects, custom interpretations, etc." name="system.bio.shipRole.notes" value="{{actor.bio.shipRole.notes}}" />
+    </div>
+</div>
