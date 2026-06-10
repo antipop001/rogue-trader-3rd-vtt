@@ -175,7 +175,7 @@ $grid-tables: (
                     @extend %cell;
                 }
 
-                &--settingstoggle + #{&}--grouped {
+                &--settingstoggle + .table-cell--grouped {
                     grid-column-start: 2;
                 }
 
@@ -277,7 +277,7 @@ $grid-tables: (
                     @extend %cell;
                 }
 
-                &--settingstoggle + #{&}--grouped {
+                &--settingstoggle + .table-cell--grouped {
                     grid-column-start: 2;
                 }
 
