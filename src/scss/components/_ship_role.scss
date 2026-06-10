@@ -1,8 +1,10 @@
 // Ship Role panel — dropdown + read-only role detail + notes input.
 // Lives on the Bio tab alongside the Origin Path panel.
+
+// Form rows (dropdown, notes) — keep aligned with a label column.
 .ship-role-row {
     display: grid;
-    grid-template-columns: 10em 1fr;
+    grid-template-columns: 6em 1fr;
     gap: 0.5em;
     align-items: center;
     margin: 0.25em 0;
@@ -19,39 +21,69 @@
     }
 }
 
+// Detail box — values are paragraphs, not single tokens. Stack label
+// above value so every value uses the full panel width instead of
+// fighting a 10em label column.
 .ship-role-detail {
     margin: 0.5em 0;
-    padding: 0.5em 0.75em;
+    padding: 0.6em 0.9em;
     border-left: 3px solid #555;
     background: rgba(0, 0, 0, 0.04);
 
     &__row {
-        display: grid;
-        grid-template-columns: 10em 1fr;
-        gap: 0.5em;
-        align-items: baseline;
-        margin: 0.2em 0;
+        display: block;
+        margin: 0 0 0.55em;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
     }
 
     &__label {
+        display: block;
         font-weight: bold;
-        text-align: right;
-        padding-right: 0.5em;
-        font-size: 0.9em;
-        opacity: 0.8;
+        font-size: 0.72em;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        opacity: 0.55;
+        margin-bottom: 0.15em;
     }
 
     &__value {
+        display: block;
         font-size: 0.95em;
+        line-height: 1.4;
     }
 
-    &__row--benefit &__value {
-        font-weight: 600;
+    &__row--benefit {
+        .ship-role-detail__value {
+            font-weight: 600;
+        }
     }
 
-    &__row--desc &__value,
-    &__row--source &__value {
-        font-style: italic;
-        opacity: 0.85;
+    &__row--desc {
+        .ship-role-detail__value {
+            font-style: italic;
+            opacity: 0.85;
+        }
+    }
+
+    // Source is metadata, not content — make it a small inline footer.
+    &__row--source {
+        margin-top: 0.4em;
+
+        .ship-role-detail__label,
+        .ship-role-detail__value {
+            display: inline;
+            font-size: 0.78em;
+            opacity: 0.6;
+            font-style: italic;
+            font-weight: normal;
+            letter-spacing: normal;
+            text-transform: none;
+        }
+        .ship-role-detail__label::after {
+            content: ': ';
+        }
     }
 }
