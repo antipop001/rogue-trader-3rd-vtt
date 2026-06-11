@@ -8,6 +8,7 @@
     "build": "gulp build",
     "packs": "gulp packs",
     "scss": "gulp scss",
+    "test": "node --test tests/chargen/*.test.mjs",
     "watch": "gulp"
   },
   "browserslist": [

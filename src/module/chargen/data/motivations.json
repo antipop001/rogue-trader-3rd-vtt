@@ -1,0 +1,790 @@
+{
+  "_meta": {
+    "step": "motivation",
+    "source": "Rogue Trader Core Rulebook + Into the Storm",
+    "status": "Core reconciled-by-hand from Core book pp.30-31. Into the Storm 'New Motivation Options' reconciled from ItS pp.25-27 (printed folios; PDF pages 26-28). Verify vs errata.",
+    "scope": "Core (Endurance/Fortune/Vengeance/Renown/Pride/Prestige) plus the nine Into the Storm advanced Motivation picks. ItS groups three sub-options under each broad heading (Devotion / Knowledge / Fear); each concrete sub-option is its own selectable record carrying its printed xp_cost (ItS p.25: 'pick a single option ... and pay the listed amount of xp'), named 'Heading - Option'. Devotion may replace Endurance or Renown; Knowledge may replace Vengeance or Pride; Fear may replace ANY entry (substitutes_for lists all six Core motivations). XP costs verified against ItS page text AND the AllowStorm-gated Excel StormMotivationOptionList (the six Devotion/Knowledge costs match). NOTE: the Excel StormMotivationOptionList ALSO lists 'New Horizons' (200), 'The Thrill of War' (250), and 'No Joy Unexplored' (200) -- these are NOT in the Into the Storm Motivation chapter (multi-system bleed-through from other supplements) and are EXCLUDED, matching the Core+ItS scope. ItS Advanced Origins is the human path, so each ItS pick requires species Human.",
+    "rules_qa": [
+      "Provenance pages are PRINTED FOLIOS (ItS folio = PDF page index - 1).",
+      "Devotion (in place of Endurance or Renown) -> Creed 200 (Charm+Common Lore (Imperial Creed) trained; Inspire Wrath), Duty 100 (Armour of Contempt OR Unshakeable Faith; +3 WP), Loyalty 100 (Trade (Voidfarer) trained; +5 WP & Fel while aboard the ship the character lives on).",
+      "Knowledge (in place of Vengeance or Pride) -> Knowledge is Life 300 (two Scholastic Lore trained; Total Recall; optional +200xp third Scholastic Lore), Know Thy Foe 200 (one Forbidden Lore trained; optional +100xp second), Knowledge is Power 300 (one Common Lore or Scholastic Lore trained; Foresight; +3 Int or Per).",
+      "Fear (in place of ANY entry) -> Enemy in Ascendance 100 (Paranoia; +3 Per), Haunted by Thy Own Sins 300 (Dark Soul+Frenzy+Flagellant; one Forbidden Lore as untrained basic; 1d10 Corruption), Tormented by the Unspeakable 200 (Light Sleeper+Jaded+Resistance (Fear); 2d10 Insanity).",
+      "Flagellant is an ItS talent (ItS p.27 sidebar); granted by Haunted by Thy Own Sins. Excel Motivation names map: 'Haunted'=Haunted by Thy Own Sins (300), 'Tormented'=Tormented by the Unspeakable (200), 'Enemy in Ascendance'=100, 'Creed'=200, 'Duty'=100, 'Loyalty'=100, 'Knowledge is Life'=300, 'Know thy Foe'=200, 'Knowledge is Power'=300.",
+      "Optional extra-xp purchases (Knowledge is Life 3rd Scholastic Lore +200xp, Know Thy Foe 2nd Forbidden Lore +100xp) are modelled as nested 'choice' effects whose 'take it' option carries an origin_xp_cost (hard-debited from the 500 pool, blocking on overspend) plus the extra grant_skill; the 'skip' option (the default) costs nothing. Knowledge is Life's two base Scholastic Lores are two choices sharing distinct_group 'knowledge_is_life_lores' (must differ).",
+      "EXCLUDED multi-system Excel rows: New Horizons (200), The Thrill of War (250), No Joy Unexplored (200) -- not present in the ItS Motivation chapter; flag for QA if a different supplement should be in scope."
+    ],
+    "vendored_from": "RTT_MAKER@308151d rogue_trader/data",
+    "vendored_on": "2026-06-11",
+    "vendored_by": "tools/sync_chargen_data.py"
+  },
+  "options": [
+    {
+      "name": "Endurance",
+      "source": "Core",
+      "page": 29,
+      "effects": [
+        {
+          "type": "wounds",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "name": "Fortune",
+      "source": "Core",
+      "page": 29,
+      "effects": [
+        {
+          "type": "fate",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "name": "Vengeance",
+      "source": "Core",
+      "page": 29,
+      "effects": [
+        {
+          "type": "grant_talent",
+          "talent": "Hatred (choose one)"
+        }
+      ]
+    },
+    {
+      "name": "Renown",
+      "source": "Core",
+      "page": 29,
+      "effects": [
+        {
+          "type": "choice",
+          "id": "renown_talent",
+          "options": [
+            {
+              "label": "Air of Authority",
+              "effects": [
+                {
+                  "type": "grant_talent",
+                  "talent": "Air of Authority"
+                }
+              ]
+            },
+            {
+              "label": "Peer (choose one)",
+              "effects": [
+                {
+                  "type": "grant_talent",
+                  "talent": "Peer (choose one)"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Pride",
+      "source": "Core",
+      "page": 29,
+      "effects": [
+        {
+          "type": "choice",
+          "id": "pride_reward",
+          "options": [
+            {
+              "label": "Heirloom Item",
+              "effects": [
+                {
+                  "type": "trait",
+                  "name": "Heirloom Item",
+                  "text": "Gain one Heirloom Item rolled on Table 1-2: Heirloom Items (Core p.31)."
+                }
+              ]
+            },
+            {
+              "label": "+3 Toughness",
+              "effects": [
+                {
+                  "type": "char_mod",
+                  "char": "T",
+                  "amount": 3
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Prestige",
+      "source": "Core",
+      "page": 30,
+      "effects": [
+        {
+          "type": "choice",
+          "id": "prestige_talent",
+          "options": [
+            {
+              "label": "Talented (choose one)",
+              "effects": [
+                {
+                  "type": "grant_talent",
+                  "talent": "Talented (choose one)"
+                }
+              ]
+            },
+            {
+              "label": "Peer (choose one)",
+              "effects": [
+                {
+                  "type": "grant_talent",
+                  "talent": "Peer (choose one)"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Devotion \u2014 Creed",
+      "source": "Into the Storm",
+      "page": 26,
+      "xp_cost": 200,
+      "substitutes_for": [
+        "Endurance",
+        "Renown"
+      ],
+      "requires": {
+        "all_of": [
+          {
+            "species": "Human"
+          }
+        ]
+      },
+      "effects": [
+        {
+          "type": "grant_skill",
+          "skill": "Charm",
+          "level": "trained"
+        },
+        {
+          "type": "grant_skill",
+          "skill": "Common Lore (Imperial Creed)",
+          "level": "trained"
+        },
+        {
+          "type": "grant_talent",
+          "talent": "Inspire Wrath"
+        }
+      ]
+    },
+    {
+      "name": "Devotion \u2014 Duty",
+      "source": "Into the Storm",
+      "page": 26,
+      "xp_cost": 100,
+      "substitutes_for": [
+        "Endurance",
+        "Renown"
+      ],
+      "requires": {
+        "all_of": [
+          {
+            "species": "Human"
+          }
+        ]
+      },
+      "effects": [
+        {
+          "type": "choice",
+          "id": "devotion_duty_talent",
+          "options": [
+            {
+              "label": "Armour of Contempt",
+              "effects": [
+                {
+                  "type": "grant_talent",
+                  "talent": "Armour of Contempt"
+                }
+              ]
+            },
+            {
+              "label": "Unshakeable Faith",
+              "effects": [
+                {
+                  "type": "grant_talent",
+                  "talent": "Unshakeable Faith"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "char_mod",
+          "char": "WP",
+          "amount": 3
+        }
+      ]
+    },
+    {
+      "name": "Devotion \u2014 Loyalty",
+      "source": "Into the Storm",
+      "page": 26,
+      "xp_cost": 100,
+      "substitutes_for": [
+        "Endurance",
+        "Renown"
+      ],
+      "requires": {
+        "all_of": [
+          {
+            "species": "Human"
+          }
+        ]
+      },
+      "effects": [
+        {
+          "type": "grant_skill",
+          "skill": "Trade (Voidfarer)",
+          "level": "trained"
+        },
+        {
+          "type": "trait",
+          "name": "Loyalty",
+          "text": "+5 bonus to all Willpower and Fellowship Tests made while aboard the ship the character lives on."
+        }
+      ]
+    },
+    {
+      "name": "Knowledge \u2014 Knowledge is Life",
+      "source": "Into the Storm",
+      "page": 26,
+      "xp_cost": 300,
+      "substitutes_for": [
+        "Vengeance",
+        "Pride"
+      ],
+      "requires": {
+        "all_of": [
+          {
+            "species": "Human"
+          }
+        ]
+      },
+      "effects": [
+        {
+          "type": "choice",
+          "id": "knowledge_is_life_lore_one",
+          "distinct_group": "knowledge_is_life_lores",
+          "options": [
+            {
+              "label": "Scholastic Lore (Astromancy)",
+              "effects": [
+                {
+                  "type": "grant_skill",
+                  "skill": "Scholastic Lore (Astromancy)",
+                  "level": "trained"
+                }
+              ]
+            },
+            {
+              "label": "Scholastic Lore (Beasts)",
+              "effects": [
+                {
+                  "type": "grant_skill",
+                  "skill": "Scholastic Lore (Beasts)",
+                  "level": "trained"
+                }
+              ]
+            },
+            {
+              "label": "Scholastic Lore (Bureaucracy)",
+              "effects": [
+                {
+                  "type": "grant_skill",
+                  "skill": "Scholastic Lore (Bureaucracy)",
+                  "level": "trained"
+                }
+              ]
+            },
+            {
+              "label": "Scholastic Lore (Chymistry)",
+              "effects": [
+                {
+                  "type": "grant_skill",
+                  "skill": "Scholastic Lore (Chymistry)",
+                  "level": "trained"
+                }
+              ]
+            },
+            {
+              "label": "Scholastic Lore (Heraldry)",
+              "effects": [
+                {
+                  "type": "grant_skill",
+                  "skill": "Scholastic Lore (Heraldry)",
+                  "level": "trained"
+                }
+              ]
+            },
+            {
+              "label": "Scholastic Lore (Imperial Creed)",
+              "effects": [
+                {
+                  "type": "grant_skill",
+                  "skill": "Scholastic Lore (Imperial Creed)",
+                  "level": "trained"
+                }
+              ]
+            },
+            {
+              "label": "Scholastic Lore (Judgement)",
+              "effects": [
+                {
+                  "type": "grant_skill",
+                  "skill": "Scholastic Lore (Judgement)",
+                  "level": "trained"
+                }
+              ]
+            },
+            {
+              "label": "Scholastic Lore (Legend)",
+              "effects": [
+                {
+                  "type": "grant_skill",
+                  "skill": "Scholastic Lore (Legend)",
+                  "level": "trained"
+                }
+              ]
+            },
+            {
+              "label": "Scholastic Lore (Numerology)",
+              "effects": [
+                {
+                  "type": "grant_skill",
+                  "skill": "Scholastic Lore (Numerology)",
+                  "level": "trained"
+                }
+              ]
+            },
+            {
+              "label": "Scholastic Lore (Occult)",
+              "effects": [
+                {
+                  "type": "grant_skill",
+                  "skill": "Scholastic Lore (Occult)",
+                  "level": "trained"
+                }
+              ]
+            },
+            {
+              "label": "Scholastic Lore (Philosophy)",
+              "effects": [
+                {
+                  "type": "grant_skill",
+                  "skill": "Scholastic Lore (Philosophy)",
+                  "level": "trained"
+                }
+              ]
+            },
+            {
+              "label": "Scholastic Lore (Tactica Imperialis)",
+              "effects": [
+                {
+                  "type": "grant_skill",
+                  "skill": "Scholastic Lore (Tactica Imperialis)",
+                  "level": "trained"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "choice",
+          "id": "knowledge_is_life_lore_two",
+          "distinct_group": "knowledge_is_life_lores",
+          "options": [
+            {
+              "label": "Scholastic Lore (Astromancy)",
+              "effects": [
+                {
+                  "type": "grant_skill",
+                  "skill": "Scholastic Lore (Astromancy)",
+                  "level": "trained"
+                }
+              ]
+            },
+            {
+              "label": "Scholastic Lore (Beasts)",
+              "effects": [
+                {
+                  "type": "grant_skill",
+                  "skill": "Scholastic Lore (Beasts)",
+                  "level": "trained"
+                }
+              ]
+            },
+            {
+              "label": "Scholastic Lore (Bureaucracy)",
+              "effects": [
+                {
+                  "type": "grant_skill",
+                  "skill": "Scholastic Lore (Bureaucracy)",
+                  "level": "trained"
+                }
+              ]
+            },
+            {
+              "label": "Scholastic Lore (Chymistry)",
+              "effects": [
+                {
+                  "type": "grant_skill",
+                  "skill": "Scholastic Lore (Chymistry)",
+                  "level": "trained"
+                }
+              ]
+            },
+            {
+              "label": "Scholastic Lore (Heraldry)",
+              "effects": [
+                {
+                  "type": "grant_skill",
+                  "skill": "Scholastic Lore (Heraldry)",
+                  "level": "trained"
+                }
+              ]
+            },
+            {
+              "label": "Scholastic Lore (Imperial Creed)",
+              "effects": [
+                {
+                  "type": "grant_skill",
+                  "skill": "Scholastic Lore (Imperial Creed)",
+                  "level": "trained"
+                }
+              ]
+            },
+            {
+              "label": "Scholastic Lore (Judgement)",
+              "effects": [
+                {
+                  "type": "grant_skill",
+                  "skill": "Scholastic Lore (Judgement)",
+                  "level": "trained"
+                }
+              ]
+            },
+            {
+              "label": "Scholastic Lore (Legend)",
+              "effects": [
+                {
+                  "type": "grant_skill",
+                  "skill": "Scholastic Lore (Legend)",
+                  "level": "trained"
+                }
+              ]
+            },
+            {
+              "label": "Scholastic Lore (Numerology)",
+              "effects": [
+                {
+                  "type": "grant_skill",
+                  "skill": "Scholastic Lore (Numerology)",
+                  "level": "trained"
+                }
+              ]
+            },
+            {
+              "label": "Scholastic Lore (Occult)",
+              "effects": [
+                {
+                  "type": "grant_skill",
+                  "skill": "Scholastic Lore (Occult)",
+                  "level": "trained"
+                }
+              ]
+            },
+            {
+              "label": "Scholastic Lore (Philosophy)",
+              "effects": [
+                {
+                  "type": "grant_skill",
+                  "skill": "Scholastic Lore (Philosophy)",
+                  "level": "trained"
+                }
+              ]
+            },
+            {
+              "label": "Scholastic Lore (Tactica Imperialis)",
+              "effects": [
+                {
+                  "type": "grant_skill",
+                  "skill": "Scholastic Lore (Tactica Imperialis)",
+                  "level": "trained"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "grant_talent",
+          "talent": "Total Recall"
+        },
+        {
+          "type": "choice",
+          "id": "knowledge_is_life_third_lore",
+          "options": [
+            {
+              "label": "Skip (no third Lore)",
+              "effects": []
+            },
+            {
+              "label": "Buy a third Scholastic Lore (+200xp)",
+              "effects": [
+                {
+                  "type": "origin_xp_cost",
+                  "amount": 200
+                },
+                {
+                  "type": "grant_skill",
+                  "skill": "Scholastic Lore (choose one)",
+                  "level": "trained"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Knowledge \u2014 Know Thy Foe",
+      "source": "Into the Storm",
+      "page": 27,
+      "xp_cost": 200,
+      "substitutes_for": [
+        "Vengeance",
+        "Pride"
+      ],
+      "requires": {
+        "all_of": [
+          {
+            "species": "Human"
+          }
+        ]
+      },
+      "effects": [
+        {
+          "type": "grant_skill",
+          "skill": "Forbidden Lore (choose one)",
+          "level": "trained"
+        },
+        {
+          "type": "choice",
+          "id": "know_thy_foe_second_lore",
+          "options": [
+            {
+              "label": "Skip (no second Lore)",
+              "effects": []
+            },
+            {
+              "label": "Buy a second Forbidden Lore (+100xp)",
+              "effects": [
+                {
+                  "type": "origin_xp_cost",
+                  "amount": 100
+                },
+                {
+                  "type": "grant_skill",
+                  "skill": "Forbidden Lore (choose another)",
+                  "level": "trained"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Knowledge \u2014 Knowledge is Power",
+      "source": "Into the Storm",
+      "page": 27,
+      "xp_cost": 300,
+      "substitutes_for": [
+        "Vengeance",
+        "Pride"
+      ],
+      "requires": {
+        "all_of": [
+          {
+            "species": "Human"
+          }
+        ]
+      },
+      "effects": [
+        {
+          "type": "choice",
+          "id": "knowledge_is_power_skill",
+          "options": [
+            {
+              "label": "Common Lore (any one)",
+              "effects": [
+                {
+                  "type": "grant_skill",
+                  "skill": "Common Lore (choose one)",
+                  "level": "trained"
+                }
+              ]
+            },
+            {
+              "label": "Scholastic Lore (any one)",
+              "effects": [
+                {
+                  "type": "grant_skill",
+                  "skill": "Scholastic Lore (choose one)",
+                  "level": "trained"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "grant_talent",
+          "talent": "Foresight"
+        },
+        {
+          "type": "char_mod_choice",
+          "id": "knowledge_is_power_bonus",
+          "amount": 3,
+          "pool": [
+            "Int",
+            "Per"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Fear \u2014 Enemy in Ascendance",
+      "source": "Into the Storm",
+      "page": 27,
+      "xp_cost": 100,
+      "substitutes_for": [
+        "Endurance",
+        "Fortune",
+        "Vengeance",
+        "Renown",
+        "Pride",
+        "Prestige"
+      ],
+      "requires": {
+        "all_of": [
+          {
+            "species": "Human"
+          }
+        ]
+      },
+      "effects": [
+        {
+          "type": "grant_talent",
+          "talent": "Paranoia"
+        },
+        {
+          "type": "char_mod",
+          "char": "Per",
+          "amount": 3
+        }
+      ]
+    },
+    {
+      "name": "Fear \u2014 Haunted by Thy Own Sins",
+      "source": "Into the Storm",
+      "page": 27,
+      "xp_cost": 300,
+      "substitutes_for": [
+        "Endurance",
+        "Fortune",
+        "Vengeance",
+        "Renown",
+        "Pride",
+        "Prestige"
+      ],
+      "requires": {
+        "all_of": [
+          {
+            "species": "Human"
+          }
+        ]
+      },
+      "effects": [
+        {
+          "type": "grant_talent",
+          "talent": "Dark Soul"
+        },
+        {
+          "type": "grant_talent",
+          "talent": "Frenzy"
+        },
+        {
+          "type": "grant_talent",
+          "talent": "Flagellant"
+        },
+        {
+          "type": "grant_skill",
+          "skill": "Forbidden Lore (choose one)",
+          "level": "basic"
+        },
+        {
+          "type": "corruption",
+          "id": "haunted_corruption",
+          "dice": [
+            1,
+            10
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Fear \u2014 Tormented by the Unspeakable",
+      "source": "Into the Storm",
+      "page": 27,
+      "xp_cost": 200,
+      "substitutes_for": [
+        "Endurance",
+        "Fortune",
+        "Vengeance",
+        "Renown",
+        "Pride",
+        "Prestige"
+      ],
+      "requires": {
+        "all_of": [
+          {
+            "species": "Human"
+          }
+        ]
+      },
+      "effects": [
+        {
+          "type": "grant_talent",
+          "talent": "Light Sleeper"
+        },
+        {
+          "type": "grant_talent",
+          "talent": "Jaded"
+        },
+        {
+          "type": "grant_talent",
+          "talent": "Resistance (Fear)"
+        },
+        {
+          "type": "insanity",
+          "id": "tormented_insanity",
+          "dice": [
+            2,
+            10
+          ]
+        }
+      ]
+    }
+  ]
+}

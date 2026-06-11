@@ -1,0 +1,224 @@
+// Character-creation wizard. Its own ApplicationV2 window — styled standalone
+// under .rt-chargen (the window contentClass), imported at TOP LEVEL, never
+// inside .rt-wrapper (gotchas #11/#12: doubled-wrapper selectors).
+
+$chargen-accent: #246b83;
+$chargen-border: rgba(0, 0, 0, 0.35);
+$chargen-muted: rgba(0, 0, 0, 0.55);
+
+// The window content element; out-specifies V2's dark-theme defaults
+// (gotcha #2: V2 frame color/background bleed into .window-content).
+.rt-chargen-app .window-content.rt-chargen {
+    color: #000;
+    background: url('../images/40k_back.png') #eff2f1 center/cover;
+    font-family: Lusitana, serif;
+
+    input,
+    select,
+    button {
+        color: #000;
+        background: rgba(255, 255, 255, 0.55);
+        border: 1px solid rgba(0, 0, 0, 0.4);
+    }
+
+    button:hover {
+        background: rgba(36, 107, 131, 0.2);
+    }
+
+    .rt-chargen__layout {
+        display: grid;
+        grid-template-columns: 11rem 1fr;
+        gap: 0.75rem;
+        height: 100%;
+        min-height: 0;
+    }
+
+    .rt-chargen__rail {
+        border-right: 1px solid $chargen-border;
+        padding: 0.5rem 0.5rem 0.5rem 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0.4rem;
+    }
+
+    .rt-chargen__stage {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.35rem 0.5rem;
+        border-radius: 3px;
+        opacity: 0.85;
+
+        &--active {
+            background: rgba(36, 107, 131, 0.15);
+            border: 1px solid $chargen-accent;
+            opacity: 1;
+            font-weight: 700;
+        }
+
+        &--locked {
+            opacity: 0.4;
+
+            .rt-chargen__stage-label::after {
+                content: ' (soon)';
+                font-size: 0.75em;
+                font-style: italic;
+            }
+        }
+    }
+
+    .rt-chargen__stage-num {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 1.4rem;
+        height: 1.4rem;
+        border: 1px solid $chargen-border;
+        border-radius: 50%;
+        font-size: 0.8em;
+        flex-shrink: 0;
+    }
+
+    .rt-chargen__pane {
+        padding: 0.5rem 0.75rem 0.5rem 0;
+        overflow-y: auto;
+        min-height: 0;
+
+        h2 {
+            font-family: 'IM Fell DW Pica', serif;
+            border-bottom: 2px solid $chargen-accent;
+            padding-bottom: 0.2rem;
+        }
+    }
+
+    .rt-chargen__field {
+        display: grid;
+        grid-template-columns: 10rem 1fr;
+        align-items: center;
+        gap: 0.5rem;
+        margin: 0.4rem 0;
+
+        label {
+            font-weight: 700;
+        }
+
+        input,
+        select {
+            color: #000;
+        }
+    }
+
+    .rt-chargen__toolbar {
+        display: flex;
+        gap: 0.5rem;
+        margin: 0.5rem 0;
+
+        button {
+            width: auto;
+            line-height: 1.6;
+        }
+    }
+
+    .rt-chargen__hint {
+        font-style: italic;
+        color: $chargen-muted;
+        margin: 0.25rem 0;
+    }
+
+    .rt-chargen__pool {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 0.35rem;
+        margin: 0.4rem 0;
+    }
+
+    .rt-chargen__pool-label {
+        font-weight: 700;
+    }
+
+    .rt-chargen__chip {
+        padding: 0.1rem 0.5rem;
+        border: 1px solid $chargen-border;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.5);
+
+        &--used {
+            opacity: 0.35;
+            text-decoration: line-through;
+        }
+    }
+
+    .rt-chargen__table {
+        width: 100%;
+        margin: 0.5rem 0;
+        border-collapse: collapse;
+
+        th {
+            text-align: left;
+            text-transform: uppercase;
+            font-size: 0.78em;
+            letter-spacing: 0.05em;
+            border-bottom: 1px solid $chargen-border;
+            padding: 0.25rem 0.4rem;
+        }
+
+        td {
+            padding: 0.2rem 0.4rem;
+            border-bottom: 1px dotted rgba(0, 0, 0, 0.15);
+        }
+
+        input[type='number'],
+        select {
+            width: 5rem;
+            text-align: center;
+            color: #000;
+        }
+    }
+
+    .rt-chargen__abbr {
+        color: $chargen-muted;
+        font-size: 0.85em;
+    }
+
+    .rt-chargen__bonus {
+        text-align: center;
+        font-weight: 700;
+    }
+
+    .rt-chargen__die {
+        width: auto;
+        padding: 0.1rem 0.4rem;
+        line-height: 1.4;
+    }
+
+    .rt-chargen__warnings {
+        border: 1px solid #a66;
+        background: rgba(170, 102, 102, 0.12);
+        border-radius: 3px;
+        padding: 0.4rem 0.6rem;
+        margin: 0.5rem 0;
+
+        p {
+            margin: 0.15rem 0;
+        }
+    }
+
+    .rt-chargen__footer {
+        margin-top: 0.75rem;
+        display: flex;
+        justify-content: flex-end;
+
+        button {
+            width: auto;
+            font-weight: 700;
+            padding: 0.3rem 1rem;
+            line-height: 1.8;
+        }
+
+        button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+    }
+}

@@ -1,0 +1,237 @@
+{
+  "_meta": {
+    "step": "species",
+    "source": "Into the Storm",
+    "status": "Kroot & Ork non-human PC chargen profiles, reconciled by hand from Into the Storm pp.49-65 and Rogue Trader Errata v1.4. Each species REPLACES the human Home World / standard Origin Path (ItS pp.20, 53: 'do not use the standard character generation process'). A species selection sets character.species, applies baseline traits/skills/talents as ordinary effects, and supplies a per-characteristic generation profile (2d10 + a species-specific base, in place of the human flat +25). Starting XP is the same 500-xp pool humans get (INC 4 user decision).",
+    "rules_qa": [
+      "Ork characteristic base values use the ERRATA (Rogue Trader Errata v1.4): Weapon Skill 35, Ballistic Skill 15, Strength 35. The printed ItS Table 2-2: Ork Characteristics (folio 63 / PDF page-64) misprinted these as 25/10/30; the other six (T 30, Ag 20, Int 15, Per 20, WP 20, Fel 15) are unchanged by errata and taken from the printed table. (The errata sheet cites 'page 52' for this fix, but that is the errata's own imprecise reference -- the printed table is on folio 63.)",
+      "Kroot characteristic base values are from ItS Table 2-1: Kroot Characteristics (folio 50 / PDF page-51): WS 30, BS 25, S 25, T 25, Ag 30, Int 20, Per 25, WP 25, Fel 20. No errata touches the Kroot table.",
+      "Each species generates one characteristic at a time as 2d10 + <base> (Kroot folio 50, Ork folio 63), mirroring the human 2d10+25 -- so every value still supports a player-entered roll or an app roll (manual-dice rule).",
+      "INC 5 DONE: Ork Origins 'Mekboy' and 'Painboy' grant +5 Intelligence (Errata v1.4). That +5 Int is NOT applied here on the Ork species -- it is applied by the Ork Freebooter CAREER via its 'Orky Know-Wotz' choice (careers.json), so it lands exactly once. The Ork species below carries ONLY the baseline Ork traits/skills/talents.",
+      "INC 5 DONE: the Ork 'Da Klan' (Bad Moons/Blood Axes/Death Skulls/Evil Suns/Goffs/Snakebites, folio 61) and 'Orky Know-Wotz' (Driva/Hunta/Mekboy/Painboy/Runtherd/Trappa, folio 62) origin-role picks are modelled as Ork Freebooter career special-ability choices (careers.json); the species applies only the universal 'all Ork PCs gain' bundle.",
+      "INC 5 DONE: the Kroot 'Kindred' pick (Bold Hunter/Cunning Hybrid/Greenskin Hybrid/Headhunter/Stalker, folio 49-50) is modelled as a Kroot Mercenary career special-ability choice (careers.json); the species applies only the universal 'all Kroot PCs gain' bundle.",
+      "Ork does not gain Corruption Points (ItS folio 61 'Kaos an' Kurrupshun') and is removed from play at 100 Insanity (Madboyz) -- behavioural rules tracked for the play side, not modelled as chargen effects here.",
+      "allowed_home_worlds is null for both species: a non-human does NOT pick a human Home World (the Home World step is replaced). allowed_careers is left null pending INC 5; career legality is enforced by INC 5's requires.species data, not here."
+    ],
+    "vendored_from": "RTT_MAKER@308151d rogue_trader/data",
+    "vendored_on": "2026-06-11",
+    "vendored_by": "tools/sync_chargen_data.py"
+  },
+  "species": [
+    {
+      "name": "Kroot",
+      "source": "Into the Storm",
+      "page": 50,
+      "char_profile": {
+        "WS": {
+          "roll": "2d10+30"
+        },
+        "BS": {
+          "roll": "2d10+25"
+        },
+        "S": {
+          "roll": "2d10+25"
+        },
+        "T": {
+          "roll": "2d10+25"
+        },
+        "Ag": {
+          "roll": "2d10+30"
+        },
+        "Int": {
+          "roll": "2d10+20"
+        },
+        "Per": {
+          "roll": "2d10+25"
+        },
+        "WP": {
+          "roll": "2d10+25"
+        },
+        "Fel": {
+          "roll": "2d10+20"
+        }
+      },
+      "starting_wounds": {
+        "tb_multiplier": 2,
+        "dice": [
+          1,
+          5
+        ],
+        "flat": 3
+      },
+      "starting_fate": [
+        [
+          5,
+          2
+        ],
+        [
+          10,
+          3
+        ]
+      ],
+      "replaces_home_world": true,
+      "allowed_home_worlds": null,
+      "allowed_careers": null,
+      "effects": [
+        {
+          "type": "trait",
+          "name": "Eaters of the Dead",
+          "text": "Devouring a fresh organic corpse grants bonus Wounds equal to that creature's unmodified Toughness Bonus (max the Kroot's own TB), lasting hours equal to the Kroot's TB; also heals at twice the normal rate. ItS folio 49."
+        },
+        {
+          "type": "trait",
+          "name": "Fieldcraft",
+          "text": "+10 to all Concealment, Shadowing, and Silent Move Tests; treats forests, jungles, and similar environments as open terrain. ItS folio 49."
+        },
+        {
+          "type": "trait",
+          "name": "Natural Weapons (Beak)",
+          "text": "The Kroot's beak is a natural weapon: 1d5+SB R, Primitive. ItS folio 49."
+        },
+        {
+          "type": "trait",
+          "name": "Kroot Physiology",
+          "text": "Wearing armour providing more than 3 APs loses the benefits of the Unnatural Perception and Fieldcraft Traits. Kroot do not start with Unnatural Perception but may purchase it. ItS folio 49."
+        }
+      ]
+    },
+    {
+      "name": "Ork",
+      "source": "Into the Storm",
+      "page": 63,
+      "char_profile": {
+        "WS": {
+          "roll": "2d10+35"
+        },
+        "BS": {
+          "roll": "2d10+15"
+        },
+        "S": {
+          "roll": "2d10+35"
+        },
+        "T": {
+          "roll": "2d10+30"
+        },
+        "Ag": {
+          "roll": "2d10+20"
+        },
+        "Int": {
+          "roll": "2d10+15"
+        },
+        "Per": {
+          "roll": "2d10+20"
+        },
+        "WP": {
+          "roll": "2d10+20"
+        },
+        "Fel": {
+          "roll": "2d10+15"
+        }
+      },
+      "starting_wounds": {
+        "tb_multiplier": 2,
+        "dice": [
+          1,
+          5
+        ],
+        "flat": 1
+      },
+      "starting_fate": [
+        [
+          5,
+          1
+        ],
+        [
+          10,
+          2
+        ]
+      ],
+      "replaces_home_world": true,
+      "allowed_home_worlds": null,
+      "allowed_careers": null,
+      "effects": [
+        {
+          "type": "grant_skill",
+          "skill": "Common Lore (Orks)",
+          "level": "trained"
+        },
+        {
+          "type": "grant_skill",
+          "skill": "Intimidate",
+          "level": "trained"
+        },
+        {
+          "type": "grant_skill",
+          "skill": "Speak Language (Ork)",
+          "level": "trained"
+        },
+        {
+          "type": "grant_skill",
+          "skill": "Speak Language (Low Gothic)",
+          "level": "trained"
+        },
+        {
+          "type": "grant_talent",
+          "talent": "Iron Jaw"
+        },
+        {
+          "type": "grant_talent",
+          "talent": "True Grit"
+        },
+        {
+          "type": "grant_talent",
+          "talent": "Furious Assault"
+        },
+        {
+          "type": "grant_talent",
+          "talent": "Xenos Weapon Training (Ork)"
+        },
+        {
+          "type": "trait",
+          "name": "Unnatural Toughness (x2)",
+          "text": "Ork resilience: double the Toughness Bonus for relevant purposes (ItS folio 60, ''Ard'). Not applied to starting Wounds."
+        },
+        {
+          "type": "trait",
+          "name": "Sturdy",
+          "text": "Hard to knock down/grapple: +20 to resist being knocked down or to a Strength Test to break a grapple. ItS folio 60."
+        },
+        {
+          "type": "trait",
+          "name": "Make It Work",
+          "text": "Any Ork weapon with the Unreliable quality is not considered Unreliable when wielded by an Ork. ItS folio 60."
+        },
+        {
+          "type": "trait",
+          "name": "Da Boyz",
+          "text": "Orks are genderless; it is impossible to seduce an Ork. ItS folio 61."
+        },
+        {
+          "type": "trait",
+          "name": "Might Makes Right",
+          "text": "When dealing with Greenskins, the Ork may use Intimidate to perform the functions of Command, affecting subordinate Greenskins equal to his Strength Bonus. ItS folio 61."
+        },
+        {
+          "type": "trait",
+          "name": "Mob Rule",
+          "text": "For every additional Ork within 10m, the Ork's Willpower is increased by +10 to resist Fear and Pinning. ItS folio 61."
+        },
+        {
+          "type": "trait",
+          "name": "Medicae (Ork)",
+          "text": "All Medicae Tests to treat an Ork's injuries gain a +20 bonus due to robust physiology. ItS folio 60."
+        },
+        {
+          "type": "trait",
+          "name": "No Corruption",
+          "text": "Orks do not gain Corruption Points (ItS folio 61, 'Kaos an' Kurrupshun')."
+        },
+        {
+          "type": "trait",
+          "name": "Madboyz",
+          "text": "Orks accrue Insanity Points but they have no effect until 100, at which point the Ork becomes a Madboy and is removed from play. ItS folio 61."
+        }
+      ]
+    }
+  ]
+}

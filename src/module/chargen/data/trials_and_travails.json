@@ -1,0 +1,820 @@
+{
+  "_meta": {
+    "step": "trials_and_travails",
+    "source": "Rogue Trader Core Rulebook + Into the Storm",
+    "status": "Core reconciled-by-hand from Core book pp.28-30. Into the Storm 'New Trials and Travails Options' reconciled from ItS pp.23-25 (printed folios; PDF pages 24-26). Verify vs errata.",
+    "scope": "Core options (Hand of War/Press-ganged/Calamity/Ship-lorn/Dark Voyage/High Vendetta), where both listed effects are always received (Core p.28) and internal 'choose one' picks are choices, plus the nine Into the Storm advanced Trials & Travails picks. ItS groups three sub-options under each broad heading (Darkness / A Product of Upbringing / Lost Worlds); each concrete sub-option is its own selectable record carrying its printed xp_cost (ItS p.23: they 'work identically to the Lure of the Void options ... in terms of Experience Point costs'), named 'Heading - Option'. The broad heading 'may be taken instead of' two Core options (recorded as substitutes_for). XP costs verified against ItS page text AND the AllowStorm-gated Excel StormTrialsOptionList (all nine match). ItS Advanced Origins is the human path, so each ItS pick requires species Human.",
+    "open_skill_items": "Several options grant 'a Skill of your choice' / 'a Common Lore' / 'a Forbidden Lore' / 'an Exploration skill' that the engine cannot pre-enumerate; modelled as a grant_skill with a placeholder skill name the UI must resolve.",
+    "rules_qa": [
+      "Provenance pages are PRINTED FOLIOS (ItS folio = PDF page index - 1).",
+      "Darkness (instead of The Hand of War or High Vendetta) -> Forbidden Knowledge 200 (Common Lore (any one)+Forbidden Lore (any one) trained; Paranoia+Enemy), Warp Incursion 100 (Resistance (Psychic Powers)+Light Sleeper; 1d5 Corruption), Dark Secret 200 (+6 to any one Characteristic; 1d5 Insanity).",
+      "A Product of Upbringing (instead of Press-Ganged or Ship Lorn) -> New Blood 200 (Rival (Nobility); +1 Profit Factor), Rivals 100 (+3 Fel; Rival talent; Peer talent), Decadent 150 (+3 WP; Decadence; +5 Charm bonus; 1d5 Corruption).",
+      "Lost Worlds (instead of Calamity or Dark Voyage) -> Lost Dynasty 400 (+1 Profit Factor; +1 Fate), Rogue Planet 200 (+3 WP; one Exploration skill trained; 1d5 Insanity), Beyond the Pale 100 (1d5 Corruption + 1d5 Insanity; two Forbidden Lore trained).",
+      "Dark Secret's '+6 to any one Characteristic' is modelled as a char_mod_choice with amount 6, pool 'any' (a one-off +6, not an Advance).",
+      "Beyond the Pale 'two Forbidden Lore' modelled as two nested choices sharing distinct_group 'beyond_the_pale_lores' over the enumerated Forbidden Lore specialisation list (Core p.117) so the engine forbids picking the same Lore twice (the two must differ).",
+      "New Blood's Excel cost 200 matches the book; the Excel row name is 'New Blood' (the broad heading is 'A Product of Upbringing')."
+    ],
+    "vendored_from": "RTT_MAKER@308151d rogue_trader/data",
+    "vendored_on": "2026-06-11",
+    "vendored_by": "tools/sync_chargen_data.py"
+  },
+  "options": [
+    {
+      "name": "The Hand of War",
+      "source": "Core",
+      "page": 27,
+      "effects": [
+        {
+          "type": "choice",
+          "id": "hand_of_war_talent",
+          "options": [
+            {
+              "label": "Weapon Training (choose one)",
+              "effects": [
+                {
+                  "type": "grant_talent",
+                  "talent": "Weapon Training (choose one)"
+                }
+              ]
+            },
+            {
+              "label": "Leap Up",
+              "effects": [
+                {
+                  "type": "grant_talent",
+                  "talent": "Leap Up"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "grant_talent",
+          "talent": "Hatred (war foe)"
+        },
+        {
+          "type": "trait",
+          "name": "The Face of the Enemy",
+          "text": "You never willingly deal with your sworn enemy (Orks, Eldar, mutants, Chaos worshippers, the Imperial Guard, the Imperial Navy or void pirates); if forced, -10 to all Fellowship Tests in those dealings, and you may react violently (Willpower Test to avert)."
+        }
+      ]
+    },
+    {
+      "name": "Press-ganged",
+      "source": "Core",
+      "page": 28,
+      "effects": [
+        {
+          "type": "grant_skill",
+          "skill": "Skill of your choice (no prerequisites)",
+          "level": "trained"
+        },
+        {
+          "type": "choice",
+          "id": "pressganged_common_lore",
+          "options": [
+            {
+              "label": "Gain a new Common Lore Skill",
+              "effects": [
+                {
+                  "type": "grant_skill",
+                  "skill": "Common Lore (choose one)",
+                  "level": "trained"
+                }
+              ]
+            },
+            {
+              "label": "Improve an existing Common Lore by one level",
+              "effects": [
+                {
+                  "type": "trait",
+                  "name": "Common Lore Improvement",
+                  "text": "Improve a Common Lore Skill you already have by one level (resolve once you have one)."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "trait",
+          "name": "Jealous Freedom",
+          "text": "You react violently towards imprisonment or loss of freedom (Willpower Test to avert)."
+        }
+      ]
+    },
+    {
+      "name": "Calamity",
+      "source": "Core",
+      "page": 28,
+      "effects": [
+        {
+          "type": "grant_talent",
+          "talent": "Light Sleeper"
+        },
+        {
+          "type": "choice",
+          "id": "calamity_talent",
+          "options": [
+            {
+              "label": "Hardy",
+              "effects": [
+                {
+                  "type": "grant_talent",
+                  "talent": "Hardy"
+                }
+              ]
+            },
+            {
+              "label": "Nerves of Steel",
+              "effects": [
+                {
+                  "type": "grant_talent",
+                  "talent": "Nerves of Steel"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "profit_factor",
+          "amount": -1
+        }
+      ]
+    },
+    {
+      "name": "Ship-lorn",
+      "source": "Core",
+      "page": 28,
+      "effects": [
+        {
+          "type": "choice",
+          "id": "shiplorn_benefit",
+          "options": [
+            {
+              "label": "Survival (gain or +1 level)",
+              "effects": [
+                {
+                  "type": "grant_skill",
+                  "skill": "Survival",
+                  "level": "trained"
+                }
+              ]
+            },
+            {
+              "label": "Dark Soul",
+              "effects": [
+                {
+                  "type": "grant_talent",
+                  "talent": "Dark Soul"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "trait",
+          "name": "Against All Odds",
+          "text": "Whenever you spend a Fate Point to recover Wounds, you may re-roll the dice but must accept the second result even if worse."
+        },
+        {
+          "type": "fate",
+          "amount": -1
+        },
+        {
+          "type": "trait",
+          "name": "Ill-starred",
+          "text": "-5 on Fellowship Tests when interacting with the void born, Rogue Traders, and other voidfarers who are not personal friends, if they know your reputation."
+        }
+      ]
+    },
+    {
+      "name": "Dark Voyage",
+      "source": "Core",
+      "page": 28,
+      "effects": [
+        {
+          "type": "choice",
+          "id": "dark_voyage_benefit",
+          "options": [
+            {
+              "label": "Forbidden Lore (gain or +1 level)",
+              "effects": [
+                {
+                  "type": "grant_skill",
+                  "skill": "Forbidden Lore (choose one)",
+                  "level": "trained"
+                }
+              ]
+            },
+            {
+              "label": "Resistance (Fear)",
+              "effects": [
+                {
+                  "type": "grant_talent",
+                  "talent": "Resistance (Fear)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "insanity",
+          "id": "dark_voyage_insanity",
+          "dice": [
+            1,
+            5
+          ]
+        }
+      ]
+    },
+    {
+      "name": "High Vendetta",
+      "source": "Core",
+      "page": 29,
+      "effects": [
+        {
+          "type": "choice",
+          "id": "high_vendetta_talent",
+          "options": [
+            {
+              "label": "Die Hard",
+              "effects": [
+                {
+                  "type": "grant_talent",
+                  "talent": "Die Hard"
+                }
+              ]
+            },
+            {
+              "label": "Paranoia",
+              "effects": [
+                {
+                  "type": "grant_talent",
+                  "talent": "Paranoia"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "grant_skill",
+          "skill": "Inquiry",
+          "level": "trained"
+        },
+        {
+          "type": "trait",
+          "name": "Brook No Insult",
+          "text": "You allow no serious offence to your honour, or to those under your protection, to pass unchallenged (Willpower Test to avert)."
+        }
+      ]
+    },
+    {
+      "name": "Darkness \u2014 Forbidden Knowledge",
+      "source": "Into the Storm",
+      "page": 23,
+      "xp_cost": 200,
+      "substitutes_for": [
+        "The Hand of War",
+        "High Vendetta"
+      ],
+      "requires": {
+        "all_of": [
+          {
+            "species": "Human"
+          }
+        ]
+      },
+      "effects": [
+        {
+          "type": "grant_skill",
+          "skill": "Common Lore (choose one)",
+          "level": "trained"
+        },
+        {
+          "type": "grant_skill",
+          "skill": "Forbidden Lore (choose one)",
+          "level": "trained"
+        },
+        {
+          "type": "grant_talent",
+          "talent": "Paranoia"
+        },
+        {
+          "type": "grant_talent",
+          "talent": "Enemy (source of the knowledge)"
+        }
+      ]
+    },
+    {
+      "name": "Darkness \u2014 Warp Incursion",
+      "source": "Into the Storm",
+      "page": 24,
+      "xp_cost": 100,
+      "substitutes_for": [
+        "The Hand of War",
+        "High Vendetta"
+      ],
+      "requires": {
+        "all_of": [
+          {
+            "species": "Human"
+          }
+        ]
+      },
+      "effects": [
+        {
+          "type": "grant_talent",
+          "talent": "Resistance (Psychic Powers)"
+        },
+        {
+          "type": "grant_talent",
+          "talent": "Light Sleeper"
+        },
+        {
+          "type": "corruption",
+          "id": "warp_incursion_corruption",
+          "dice": [
+            1,
+            5
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Darkness \u2014 Dark Secret",
+      "source": "Into the Storm",
+      "page": 24,
+      "xp_cost": 200,
+      "substitutes_for": [
+        "The Hand of War",
+        "High Vendetta"
+      ],
+      "requires": {
+        "all_of": [
+          {
+            "species": "Human"
+          }
+        ]
+      },
+      "effects": [
+        {
+          "type": "char_mod_choice",
+          "id": "dark_secret_bonus",
+          "amount": 6,
+          "pool": "any"
+        },
+        {
+          "type": "insanity",
+          "id": "dark_secret_insanity",
+          "dice": [
+            1,
+            5
+          ]
+        },
+        {
+          "type": "trait",
+          "name": "Dark Secret",
+          "text": "Harbour a dark secret; work with the GM to determine it and the difficult, rare, esoteric circumstances required to remove it."
+        }
+      ]
+    },
+    {
+      "name": "A Product of Upbringing \u2014 New Blood",
+      "source": "Into the Storm",
+      "page": 24,
+      "xp_cost": 200,
+      "substitutes_for": [
+        "Press-ganged",
+        "Ship-lorn"
+      ],
+      "requires": {
+        "all_of": [
+          {
+            "species": "Human"
+          }
+        ]
+      },
+      "effects": [
+        {
+          "type": "grant_talent",
+          "talent": "Rival (Nobility)"
+        },
+        {
+          "type": "profit_factor",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "name": "A Product of Upbringing \u2014 Rivals",
+      "source": "Into the Storm",
+      "page": 24,
+      "xp_cost": 100,
+      "substitutes_for": [
+        "Press-ganged",
+        "Ship-lorn"
+      ],
+      "requires": {
+        "all_of": [
+          {
+            "species": "Human"
+          }
+        ]
+      },
+      "effects": [
+        {
+          "type": "char_mod",
+          "char": "Fel",
+          "amount": 3
+        },
+        {
+          "type": "grant_talent",
+          "talent": "Rival (rival faction)"
+        },
+        {
+          "type": "grant_talent",
+          "talent": "Peer (allied supporters)"
+        },
+        {
+          "type": "trait",
+          "name": "Vendetta of Rivals",
+          "text": "Whenever you encounter a member of the rival faction you attempt retribution; a Difficult (-10) Willpower Test prevents this once per scene."
+        }
+      ]
+    },
+    {
+      "name": "A Product of Upbringing \u2014 Decadent",
+      "source": "Into the Storm",
+      "page": 24,
+      "xp_cost": 150,
+      "substitutes_for": [
+        "Press-ganged",
+        "Ship-lorn"
+      ],
+      "requires": {
+        "all_of": [
+          {
+            "species": "Human"
+          }
+        ]
+      },
+      "effects": [
+        {
+          "type": "char_mod",
+          "char": "WP",
+          "amount": 3
+        },
+        {
+          "type": "grant_talent",
+          "talent": "Decadence"
+        },
+        {
+          "type": "trait",
+          "name": "Refined Tastes",
+          "text": "+5 bonus to Charm Tests."
+        },
+        {
+          "type": "corruption",
+          "id": "decadent_corruption",
+          "dice": [
+            1,
+            5
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Lost Worlds \u2014 Lost Dynasty",
+      "source": "Into the Storm",
+      "page": 25,
+      "xp_cost": 400,
+      "substitutes_for": [
+        "Calamity",
+        "Dark Voyage"
+      ],
+      "requires": {
+        "all_of": [
+          {
+            "species": "Human"
+          }
+        ]
+      },
+      "effects": [
+        {
+          "type": "profit_factor",
+          "amount": 1
+        },
+        {
+          "type": "fate",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "name": "Lost Worlds \u2014 Rogue Planet",
+      "source": "Into the Storm",
+      "page": 25,
+      "xp_cost": 200,
+      "substitutes_for": [
+        "Calamity",
+        "Dark Voyage"
+      ],
+      "requires": {
+        "all_of": [
+          {
+            "species": "Human"
+          }
+        ]
+      },
+      "effects": [
+        {
+          "type": "char_mod",
+          "char": "WP",
+          "amount": 3
+        },
+        {
+          "type": "grant_skill",
+          "skill": "Exploration skill of your choice",
+          "level": "trained"
+        },
+        {
+          "type": "insanity",
+          "id": "rogue_planet_insanity",
+          "dice": [
+            1,
+            5
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Lost Worlds \u2014 Beyond the Pale",
+      "source": "Into the Storm",
+      "page": 25,
+      "xp_cost": 100,
+      "substitutes_for": [
+        "Calamity",
+        "Dark Voyage"
+      ],
+      "requires": {
+        "all_of": [
+          {
+            "species": "Human"
+          }
+        ]
+      },
+      "effects": [
+        {
+          "type": "corruption",
+          "id": "beyond_the_pale_corruption",
+          "dice": [
+            1,
+            5
+          ]
+        },
+        {
+          "type": "insanity",
+          "id": "beyond_the_pale_insanity",
+          "dice": [
+            1,
+            5
+          ]
+        },
+        {
+          "type": "choice",
+          "id": "beyond_the_pale_lore_one",
+          "distinct_group": "beyond_the_pale_lores",
+          "options": [
+            {
+              "label": "Forbidden Lore (Adeptus Mechanicus)",
+              "effects": [
+                {
+                  "type": "grant_skill",
+                  "skill": "Forbidden Lore (Adeptus Mechanicus)",
+                  "level": "trained"
+                }
+              ]
+            },
+            {
+              "label": "Forbidden Lore (Archeotech)",
+              "effects": [
+                {
+                  "type": "grant_skill",
+                  "skill": "Forbidden Lore (Archeotech)",
+                  "level": "trained"
+                }
+              ]
+            },
+            {
+              "label": "Forbidden Lore (Daemonology)",
+              "effects": [
+                {
+                  "type": "grant_skill",
+                  "skill": "Forbidden Lore (Daemonology)",
+                  "level": "trained"
+                }
+              ]
+            },
+            {
+              "label": "Forbidden Lore (Heresy)",
+              "effects": [
+                {
+                  "type": "grant_skill",
+                  "skill": "Forbidden Lore (Heresy)",
+                  "level": "trained"
+                }
+              ]
+            },
+            {
+              "label": "Forbidden Lore (Mutants)",
+              "effects": [
+                {
+                  "type": "grant_skill",
+                  "skill": "Forbidden Lore (Mutants)",
+                  "level": "trained"
+                }
+              ]
+            },
+            {
+              "label": "Forbidden Lore (Navigators)",
+              "effects": [
+                {
+                  "type": "grant_skill",
+                  "skill": "Forbidden Lore (Navigators)",
+                  "level": "trained"
+                }
+              ]
+            },
+            {
+              "label": "Forbidden Lore (Pirates)",
+              "effects": [
+                {
+                  "type": "grant_skill",
+                  "skill": "Forbidden Lore (Pirates)",
+                  "level": "trained"
+                }
+              ]
+            },
+            {
+              "label": "Forbidden Lore (Psykers)",
+              "effects": [
+                {
+                  "type": "grant_skill",
+                  "skill": "Forbidden Lore (Psykers)",
+                  "level": "trained"
+                }
+              ]
+            },
+            {
+              "label": "Forbidden Lore (The Inquisition)",
+              "effects": [
+                {
+                  "type": "grant_skill",
+                  "skill": "Forbidden Lore (The Inquisition)",
+                  "level": "trained"
+                }
+              ]
+            },
+            {
+              "label": "Forbidden Lore (The Warp)",
+              "effects": [
+                {
+                  "type": "grant_skill",
+                  "skill": "Forbidden Lore (The Warp)",
+                  "level": "trained"
+                }
+              ]
+            },
+            {
+              "label": "Forbidden Lore (Xenos)",
+              "effects": [
+                {
+                  "type": "grant_skill",
+                  "skill": "Forbidden Lore (Xenos)",
+                  "level": "trained"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "choice",
+          "id": "beyond_the_pale_lore_two",
+          "distinct_group": "beyond_the_pale_lores",
+          "options": [
+            {
+              "label": "Forbidden Lore (Adeptus Mechanicus)",
+              "effects": [
+                {
+                  "type": "grant_skill",
+                  "skill": "Forbidden Lore (Adeptus Mechanicus)",
+                  "level": "trained"
+                }
+              ]
+            },
+            {
+              "label": "Forbidden Lore (Archeotech)",
+              "effects": [
+                {
+                  "type": "grant_skill",
+                  "skill": "Forbidden Lore (Archeotech)",
+                  "level": "trained"
+                }
+              ]
+            },
+            {
+              "label": "Forbidden Lore (Daemonology)",
+              "effects": [
+                {
+                  "type": "grant_skill",
+                  "skill": "Forbidden Lore (Daemonology)",
+                  "level": "trained"
+                }
+              ]
+            },
+            {
+              "label": "Forbidden Lore (Heresy)",
+              "effects": [
+                {
+                  "type": "grant_skill",
+                  "skill": "Forbidden Lore (Heresy)",
+                  "level": "trained"
+                }
+              ]
+            },
+            {
+              "label": "Forbidden Lore (Mutants)",
+              "effects": [
+                {
+                  "type": "grant_skill",
+                  "skill": "Forbidden Lore (Mutants)",
+                  "level": "trained"
+                }
+              ]
+            },
+            {
+              "label": "Forbidden Lore (Navigators)",
+              "effects": [
+                {
+                  "type": "grant_skill",
+                  "skill": "Forbidden Lore (Navigators)",
+                  "level": "trained"
+                }
+              ]
+            },
+            {
+              "label": "Forbidden Lore (Pirates)",
+              "effects": [
+                {
+                  "type": "grant_skill",
+                  "skill": "Forbidden Lore (Pirates)",
+                  "level": "trained"
+                }
+              ]
+            },
+            {
+              "label": "Forbidden Lore (Psykers)",
+              "effects": [
+                {
+                  "type": "grant_skill",
+                  "skill": "Forbidden Lore (Psykers)",
+                  "level": "trained"
+                }
+              ]
+            },
+            {
+              "label": "Forbidden Lore (The Inquisition)",
+              "effects": [
+                {
+                  "type": "grant_skill",
+                  "skill": "Forbidden Lore (The Inquisition)",
+                  "level": "trained"
+                }
+              ]
+            },
+            {
+              "label": "Forbidden Lore (The Warp)",
+              "effects": [
+                {
+                  "type": "grant_skill",
+                  "skill": "Forbidden Lore (The Warp)",
+                  "level": "trained"
+                }
+              ]
+            },
+            {
+              "label": "Forbidden Lore (Xenos)",
+              "effects": [
+                {
+                  "type": "grant_skill",
+                  "skill": "Forbidden Lore (Xenos)",
+                  "level": "trained"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

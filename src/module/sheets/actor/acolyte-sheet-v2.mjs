@@ -5,6 +5,7 @@ import { Hit } from '../../rolls/damage-data.mjs';
 import { AssignDamageData } from '../../rolls/assign-damage-data.mjs';
 import { prepareAssignDamageRoll } from '../../prompts/assign-damage-prompt.mjs';
 import { prepareCreateSpecialistSkillPrompt } from '../../prompts/simple-prompt.mjs';
+import { ChargenWizard } from '../../applications/chargen-wizard.mjs';
 
 export class AcolyteSheetV2 extends ActorContainerSheetV2 {
 
@@ -19,8 +20,26 @@ export class AcolyteSheetV2 extends ActorContainerSheetV2 {
             dodge: AcolyteSheetV2._onDodge,
             parry: AcolyteSheetV2._onParry,
             addSkill: AcolyteSheetV2._onAddSkill,
+            openChargen: AcolyteSheetV2._onOpenChargen,
         },
     };
+
+    /** Append a Character Creation control (opens/resumes the chargen wizard). */
+    _getHeaderControls() {
+        const controls = super._getHeaderControls();
+        if (this.isEditable) {
+            controls.push({
+                icon: 'fa-solid fa-hat-wizard',
+                label: 'Character Creation',
+                action: 'openChargen',
+            });
+        }
+        return controls;
+    }
+
+    static _onOpenChargen() {
+        new ChargenWizard({ actor: this.actor }).render(true);
+    }
 
     static PARTS = {
         body: {

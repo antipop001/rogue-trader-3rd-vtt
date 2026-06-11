@@ -1,0 +1,108 @@
+<div class="rt-chargen__layout">
+    <nav class="rt-chargen__rail">
+        {{#each stages}}
+        <div class="rt-chargen__stage{{#if this.active}} rt-chargen__stage--active{{/if}}{{#if this.locked}} rt-chargen__stage--locked{{/if}}">
+            <span class="rt-chargen__stage-num">{{this.num}}</span>
+            <span class="rt-chargen__stage-label">{{this.label}}</span>
+        </div>
+        {{/each}}
+    </nav>
+
+    <section class="rt-chargen__pane">
+        <h2>Stage 1 — Characteristics</h2>
+
+        <div class="rt-chargen__field">
+            <label for="rt-chargen-name">Character name</label>
+            <input type="text" id="rt-chargen-name" name="charname" value="{{name}}" placeholder="New Explorer" />
+        </div>
+
+        <div class="rt-chargen__field">
+            <label for="rt-chargen-method">Generation method</label>
+            <select id="rt-chargen-method" name="method">
+                {{#each methods}}
+                <option value="{{this.key}}" {{#if this.selected}}selected{{/if}}>{{this.label}}</option>
+                {{/each}}
+            </select>
+        </div>
+
+        <div class="rt-chargen__toolbar">
+            {{#if isRoll}}
+            <button type="button" data-action="rollAll"><i class="fas fa-dice"></i> Roll All (2d10+25)</button>
+            {{/if}}
+            {{#if isPool}}
+            <button type="button" data-action="rollPool"><i class="fas fa-dice"></i> Roll Pool</button>
+            {{#if pool}}
+            <button type="button" data-action="assignPool"><i class="fas fa-arrow-down-1-9"></i> Assign in order</button>
+            {{/if}}
+            {{/if}}
+            {{#if isFixed}}
+            <button type="button" data-action="fillFixed"><i class="fas fa-equals"></i> Fill all with 36</button>
+            {{/if}}
+        </div>
+
+        {{#if isManual}}
+        <p class="rt-chargen__hint">Roll 2d10+25 per characteristic with your own dice and type the results below.</p>
+        {{/if}}
+
+        {{#if pool}}
+        <div class="rt-chargen__pool">
+            <span class="rt-chargen__pool-label">Pool:</span>
+            {{#each pool}}
+            <span class="rt-chargen__chip{{#if this.used}} rt-chargen__chip--used{{/if}}">{{this.value}}</span>
+            {{/each}}
+        </div>
+        {{/if}}
+
+        <table class="rt-chargen__table">
+            <thead>
+                <tr>
+                    <th>Characteristic</th>
+                    <th>Base</th>
+                    <th>Bonus</th>
+                    {{#if isRoll}}<th></th>{{/if}}
+                </tr>
+            </thead>
+            <tbody>
+                {{#each rows}}
+                <tr>
+                    <td class="rt-chargen__char">{{this.full}} <span class="rt-chargen__abbr">({{this.abbr}})</span></td>
+                    <td>
+                        {{#if this.poolOptions}}
+                        <select data-abbr="{{this.abbr}}">
+                            <option value="">—</option>
+                            {{#each this.poolOptions}}
+                            <option value="{{this.idx}}" {{#if this.selected}}selected{{/if}} {{#if this.disabled}}disabled{{/if}}>{{this.value}}</option>
+                            {{/each}}
+                        </select>
+                        {{else}}
+                        <input type="number" data-abbr="{{this.abbr}}" value="{{this.base}}" min="0" max="99" />
+                        {{/if}}
+                    </td>
+                    <td class="rt-chargen__bonus">{{this.bonus}}</td>
+                    {{#if ../isRoll}}
+                    <td>
+                        <button type="button" class="rt-chargen__die" data-action="rollOne" data-abbr="{{this.abbr}}" title="Roll 2d10+25 for {{this.full}}">
+                            <i class="fas fa-dice-d20"></i>
+                        </button>
+                    </td>
+                    {{/if}}
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+
+        {{#if warnings.length}}
+        <div class="rt-chargen__warnings">
+            {{#each warnings}}
+            <p><i class="fas fa-triangle-exclamation"></i> {{this}}</p>
+            {{/each}}
+        </div>
+        {{/if}}
+
+        <footer class="rt-chargen__footer">
+            <button type="button" data-action="commit" {{#unless canCommit}}disabled{{/unless}}>
+                <i class="fas fa-user-plus"></i> {{commitLabel}}
+            </button>
+        </footer>
+    </section>
+</div>

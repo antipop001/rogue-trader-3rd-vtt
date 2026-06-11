@@ -45,6 +45,7 @@ import { checkAndMigrateWorld } from './rogue-trader-migrations.mjs';
 import { DHTourMain } from './tours/main-tour.mjs';
 import { openAcquisitionDialog } from './rules/acquisition.mjs';
 import { openEndeavoursDialog } from './rules/endeavours.mjs';
+import { ChargenWizard } from './applications/chargen-wizard.mjs';
 
 import * as documents from './documents/_module.mjs'
 
@@ -58,6 +59,7 @@ export class HooksManager {
         Hooks.on('ready', HooksManager.ready);
         Hooks.on('hotbarDrop', HooksManager.hotbarDrop);
         Hooks.on('createItem', HooksManager.onCreateItem);
+        Hooks.on('renderActorDirectory', HooksManager.onRenderActorDirectory);
 
         DHTargetedActionManager.initializeHooks();
         DHBasicActionManager.initializeHooks();
@@ -147,6 +149,23 @@ Enable Debug with: game.rt.debug = true
         if (!game.settings.get(SYSTEM_ID, RogueTraderSettings.SETTINGS.processActiveEffectsDuringCombat)) {
             DHCombatActionManager.disableHooks();
         }
+    }
+
+    /**
+     * Add a "Character Creation" button to the Actors directory for users who
+     * can create actors. Opens the chargen wizard (Stage 1: Characteristics).
+     */
+    static onRenderActorDirectory(app, html) {
+        if (!game.user.can('ACTOR_CREATE')) return;
+        const el = html instanceof HTMLElement ? html : html[0];
+        if (!el || el.querySelector('.rt-chargen-open')) return;
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'rt-chargen-open';
+        btn.innerHTML = '<i class="fa-solid fa-hat-wizard"></i> Character Creation';
+        btn.addEventListener('click', () => new ChargenWizard().render(true));
+        const anchor = el.querySelector('.header-actions') ?? el.querySelector('.directory-footer');
+        (anchor ?? el).append(btn);
     }
 
     static hotbarDrop(bar, data, slot) {

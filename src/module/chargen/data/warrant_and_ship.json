@@ -1,0 +1,608 @@
+{
+  "_meta": {
+    "step": "warrant_and_ship",
+    "source": "Into the Storm",
+    "status": "Reconciled by hand from Into the Storm pp.34-44 (Power and Profit: The Ship and Warrant Path), with the errata v1.4 renames applied (see docs/errata-notes.md).",
+    "scope": "The Ship and Warrant Path (ItS p.34) is a DYNASTY/GROUP-level path -- distinct from the per-character Origin Path -- that generates the group's starting Warrant of Trade and starship through one pick from each of six category rows. Each pick grants Profit Factor (PF) and Ship Points (SP). We model the whole path as a single origin step 'warrant_and_ship' whose one option ('The Ship and Warrant Path') carries six nested 'choice' effects, one per category row. Each category selection grants its PF via the declarative profit_factor effect AND its SP via the declarative ship_points effect (Stage 5 INC 2: SP accumulates onto Character.ship_points_contributed and feeds the dynasty's Ship-Points build budget -- see rogue_trader/dynasty.py). The descriptive trait text is kept as a human-readable backup of both values.",
+    "page_provenance": "Printed folio pages throughout (ItS intro/chart folio 34; category body text folios 35-44), matching the Core records' folio convention.",
+    "errata": [
+      "Ecclesiarchal Bequest -> Ministorum Bequest (errata v1.4, ItS p.34 Acquisition row).",
+      "Bribery -> Intrigue (errata v1.4, ItS p.34 Acquisition row). The book body text on p.38 already prints both renamed names; the chart on p.34 still shows the pre-errata names."
+    ],
+    "rules_qa": [
+      "Verify each category's SP/PF pairs vs the chart on ItS p.34 and the body text pp.35-44. The chart and body agree on every PF/SP value transcribed here.",
+      "Chart-flow geometry IS NOW ENFORCED (origin._check_warrant_adjacency / warrant_legal_next). The path flows top-to-bottom; each pick is limited to the chart cell directly below or adjacent to the previous row's pick (ItS p.34 'Using the Path', p.35 chart). Rows are encoded in printed LEFT-TO-RIGHT COLUMN POSITION in origin._WS_ROWS -- this is NOT a consistent Ship-Points ordering; SP direction differs between rows (e.g. Warrant Age ascends L->R while Fortune & Fate descends L->R). For equal-width, co-aligned transitions, from a parent at column i a child may sit at columns {i-1,i,i+1} clamped to the child row width. THREE transitions change row width and use explicit allowed-children maps instead of the clamp (the clamp would otherwise leave dead cells): Fortune & Fate(5)->Acquisition(7) expansion (origin._WS_FORTUNE_TO_ACQUISITION, so the extremes Rising Star->Exile and Fallen from Grace->Reward are both legal and all 7 Acquisition cells are reachable); Acquisition(7)->Sanction(5) funnel (origin._WS_ACQUISITION_TO_SANCTION -- the extremes Exile col0 / Reward col6 each funnel to a SINGLE Sanction cell per p.34); and Contacts(5)->Warrant Renown(3) funnel (origin._WS_CONTACTS_TO_RENOWN, so right-edge Contacts cells Adeptus Mechanicus/Battlefleet reach Famous and every Contacts cell reaches >=1 Renown cell). An out-of-adjacency pick raises OriginError. adjacency-uncertain (rules-qa): the printed p.35 chart shows only 5 Acquisition cells; Reward (SP16) and Intrigue (SP12) come from the body text (pp.38-39) + p.34 prose ('Exile and Reward ... a single choice below'), so their exact column placement (Reward as the far SP-high extreme, Intrigue between Administratum and Reward) is INFERRED -- verify against the physical chart.",
+      "Ship Points are now mechanical: each category option carries a declarative ship_points effect equal to the SP in its trait text, accumulated onto Character.ship_points_contributed (Stage 5 INC 2). The dynasty (rogue_trader/dynasty.py) sums member contributions into its Ship-Points budget; SP spend on a ship + the 1:1 leftover-SP-to-PF conversion (ItS p.34 STARTING PROFIT/SHIP POINTS) is in dynasty.convert_leftover_sp_to_pf. The trait text is kept as a human-readable backup. rules-qa: verify the ship_points amount on each option equals the SP printed in its trait text (no value changed -- only became declarative).",
+      "Archeotech/Xenostech component grants ('One Archeotech component may be purchased' on The Age of Rebirth; 'One Xenostech component may be purchased' on Halo Artefacts -- ItS pp.35, 41) are recorded as descriptive traits; component purchase is equipment/Stage 6, not modelled here.",
+      "Warrant Renown PF/SP: Infamous SP6/PF12, Unknown SP10/PF8, Famous SP14/PF4 (ItS p.44). The chart on p.34 lists these under 'Warrant Pension'."
+    ],
+    "vendored_from": "RTT_MAKER@308151d rogue_trader/data",
+    "vendored_on": "2026-06-11",
+    "vendored_by": "tools/sync_chargen_data.py"
+  },
+  "options": [
+    {
+      "name": "The Ship and Warrant Path",
+      "source": "Into the Storm",
+      "page": 34,
+      "effects": [
+        {
+          "type": "choice",
+          "id": "warrant_age",
+          "options": [
+            {
+              "label": "The Age of Rebirth",
+              "effects": [
+                {
+                  "type": "profit_factor",
+                  "amount": 10
+                },
+                {
+                  "type": "ship_points",
+                  "amount": 12
+                },
+                {
+                  "type": "trait",
+                  "name": "Warrant Age: The Age of Rebirth",
+                  "text": "Ship Points 12, Profit Factor 10 (ItS p.35). One Archeotech component may be purchased."
+                }
+              ]
+            },
+            {
+              "label": "The Forging",
+              "effects": [
+                {
+                  "type": "profit_factor",
+                  "amount": 8
+                },
+                {
+                  "type": "ship_points",
+                  "amount": 10
+                },
+                {
+                  "type": "trait",
+                  "name": "Warrant Age: The Forging",
+                  "text": "Ship Points 10, Profit Factor 8 (ItS p.35)."
+                }
+              ]
+            },
+            {
+              "label": "Age of Apostasy",
+              "effects": [
+                {
+                  "type": "profit_factor",
+                  "amount": 6
+                },
+                {
+                  "type": "ship_points",
+                  "amount": 8
+                },
+                {
+                  "type": "trait",
+                  "name": "Warrant Age: Age of Apostasy",
+                  "text": "Ship Points 8, Profit Factor 6 (ItS p.35)."
+                }
+              ]
+            },
+            {
+              "label": "Age of Redemption",
+              "effects": [
+                {
+                  "type": "profit_factor",
+                  "amount": 4
+                },
+                {
+                  "type": "ship_points",
+                  "amount": 6
+                },
+                {
+                  "type": "trait",
+                  "name": "Warrant Age: Age of Redemption",
+                  "text": "Ship Points 6, Profit Factor 4 (ItS p.36)."
+                }
+              ]
+            },
+            {
+              "label": "The Waning",
+              "effects": [
+                {
+                  "type": "profit_factor",
+                  "amount": 2
+                },
+                {
+                  "type": "ship_points",
+                  "amount": 4
+                },
+                {
+                  "type": "trait",
+                  "name": "Warrant Age: The Waning",
+                  "text": "Ship Points 4, Profit Factor 2 (ItS p.36)."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "choice",
+          "id": "fortune_and_fate",
+          "options": [
+            {
+              "label": "Rising Star",
+              "effects": [
+                {
+                  "type": "profit_factor",
+                  "amount": 10
+                },
+                {
+                  "type": "ship_points",
+                  "amount": 12
+                },
+                {
+                  "type": "trait",
+                  "name": "Fortune & Fate: Rising Star",
+                  "text": "Ship Points 12, Profit Factor 10 (ItS p.37)."
+                }
+              ]
+            },
+            {
+              "label": "Ascending",
+              "effects": [
+                {
+                  "type": "profit_factor",
+                  "amount": 8
+                },
+                {
+                  "type": "ship_points",
+                  "amount": 10
+                },
+                {
+                  "type": "trait",
+                  "name": "Fortune & Fate: Ascending",
+                  "text": "Ship Points 10, Profit Factor 8 (ItS p.37)."
+                }
+              ]
+            },
+            {
+              "label": "Stable",
+              "effects": [
+                {
+                  "type": "profit_factor",
+                  "amount": 6
+                },
+                {
+                  "type": "ship_points",
+                  "amount": 8
+                },
+                {
+                  "type": "trait",
+                  "name": "Fortune & Fate: Stable",
+                  "text": "Ship Points 8, Profit Factor 6 (ItS p.37)."
+                }
+              ]
+            },
+            {
+              "label": "Struggling",
+              "effects": [
+                {
+                  "type": "profit_factor",
+                  "amount": 4
+                },
+                {
+                  "type": "ship_points",
+                  "amount": 6
+                },
+                {
+                  "type": "trait",
+                  "name": "Fortune & Fate: Struggling",
+                  "text": "Ship Points 6, Profit Factor 4 (ItS p.37)."
+                }
+              ]
+            },
+            {
+              "label": "Fallen from Grace",
+              "effects": [
+                {
+                  "type": "profit_factor",
+                  "amount": 2
+                },
+                {
+                  "type": "ship_points",
+                  "amount": 4
+                },
+                {
+                  "type": "trait",
+                  "name": "Fortune & Fate: Fallen from Grace",
+                  "text": "Ship Points 4, Profit Factor 2 (ItS p.37)."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "choice",
+          "id": "acquisition",
+          "options": [
+            {
+              "label": "Reward",
+              "effects": [
+                {
+                  "type": "profit_factor",
+                  "amount": 2
+                },
+                {
+                  "type": "ship_points",
+                  "amount": 16
+                },
+                {
+                  "type": "trait",
+                  "name": "Acquisition: Reward",
+                  "text": "Ship Points 16, Profit Factor 2 (ItS p.38)."
+                }
+              ]
+            },
+            {
+              "label": "Intrigue",
+              "effects": [
+                {
+                  "type": "profit_factor",
+                  "amount": 2
+                },
+                {
+                  "type": "ship_points",
+                  "amount": 12
+                },
+                {
+                  "type": "trait",
+                  "name": "Acquisition: Intrigue",
+                  "text": "Ship Points 12, Profit Factor 2 (ItS p.38). Errata v1.4: formerly 'Bribery'."
+                }
+              ]
+            },
+            {
+              "label": "Administratum Trade Mandate",
+              "effects": [
+                {
+                  "type": "profit_factor",
+                  "amount": 4
+                },
+                {
+                  "type": "ship_points",
+                  "amount": 10
+                },
+                {
+                  "type": "trait",
+                  "name": "Acquisition: Administratum Trade Mandate",
+                  "text": "Ship Points 10, Profit Factor 4 (ItS p.38)."
+                }
+              ]
+            },
+            {
+              "label": "Ministorum Bequest",
+              "effects": [
+                {
+                  "type": "profit_factor",
+                  "amount": 6
+                },
+                {
+                  "type": "ship_points",
+                  "amount": 8
+                },
+                {
+                  "type": "trait",
+                  "name": "Acquisition: Ministorum Bequest",
+                  "text": "Ship Points 8, Profit Factor 6 (ItS pp.38-39). Errata v1.4: formerly 'Ecclesiarchal Bequest'."
+                }
+              ]
+            },
+            {
+              "label": "Prize of War",
+              "effects": [
+                {
+                  "type": "profit_factor",
+                  "amount": 8
+                },
+                {
+                  "type": "ship_points",
+                  "amount": 6
+                },
+                {
+                  "type": "trait",
+                  "name": "Acquisition: Prize of War",
+                  "text": "Ship Points 6, Profit Factor 8 (ItS p.39)."
+                }
+              ]
+            },
+            {
+              "label": "Blackmail",
+              "effects": [
+                {
+                  "type": "profit_factor",
+                  "amount": 10
+                },
+                {
+                  "type": "ship_points",
+                  "amount": 4
+                },
+                {
+                  "type": "trait",
+                  "name": "Acquisition: Blackmail",
+                  "text": "Ship Points 4, Profit Factor 10 (ItS p.39)."
+                }
+              ]
+            },
+            {
+              "label": "Exile",
+              "effects": [
+                {
+                  "type": "profit_factor",
+                  "amount": 16
+                },
+                {
+                  "type": "ship_points",
+                  "amount": 2
+                },
+                {
+                  "type": "trait",
+                  "name": "Acquisition: Exile",
+                  "text": "Ship Points 2, Profit Factor 16 (ItS p.39)."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "choice",
+          "id": "sanction",
+          "options": [
+            {
+              "label": "Age of Plunder",
+              "effects": [
+                {
+                  "type": "profit_factor",
+                  "amount": 2
+                },
+                {
+                  "type": "ship_points",
+                  "amount": 12
+                },
+                {
+                  "type": "trait",
+                  "name": "Sanction: Age of Plunder",
+                  "text": "Ship Points 12, Profit Factor 2 (ItS p.40)."
+                }
+              ]
+            },
+            {
+              "label": "Angevin Crusade",
+              "effects": [
+                {
+                  "type": "profit_factor",
+                  "amount": 4
+                },
+                {
+                  "type": "ship_points",
+                  "amount": 10
+                },
+                {
+                  "type": "trait",
+                  "name": "Sanction: Angevin Crusade",
+                  "text": "Ship Points 10, Profit Factor 4 (ItS p.40)."
+                }
+              ]
+            },
+            {
+              "label": "The Meritech Wars",
+              "effects": [
+                {
+                  "type": "profit_factor",
+                  "amount": 6
+                },
+                {
+                  "type": "ship_points",
+                  "amount": 8
+                },
+                {
+                  "type": "trait",
+                  "name": "Sanction: The Meritech Wars",
+                  "text": "Ship Points 8, Profit Factor 6 (ItS pp.40-41)."
+                }
+              ]
+            },
+            {
+              "label": "Fall of the Tellurian Combine",
+              "effects": [
+                {
+                  "type": "profit_factor",
+                  "amount": 8
+                },
+                {
+                  "type": "ship_points",
+                  "amount": 6
+                },
+                {
+                  "type": "trait",
+                  "name": "Sanction: Fall of the Tellurian Combine",
+                  "text": "Ship Points 6, Profit Factor 8 (ItS p.41)."
+                }
+              ]
+            },
+            {
+              "label": "Halo Artefacts",
+              "effects": [
+                {
+                  "type": "profit_factor",
+                  "amount": 10
+                },
+                {
+                  "type": "ship_points",
+                  "amount": 4
+                },
+                {
+                  "type": "trait",
+                  "name": "Sanction: Halo Artefacts",
+                  "text": "Ship Points 4, Profit Factor 10 (ItS p.41). One Xenostech component may be purchased."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "choice",
+          "id": "contacts",
+          "options": [
+            {
+              "label": "Battlefleet",
+              "effects": [
+                {
+                  "type": "profit_factor",
+                  "amount": 2
+                },
+                {
+                  "type": "ship_points",
+                  "amount": 12
+                },
+                {
+                  "type": "trait",
+                  "name": "Contacts: Battlefleet",
+                  "text": "Ship Points 12, Profit Factor 2 (ItS p.42)."
+                }
+              ]
+            },
+            {
+              "label": "Adeptus Mechanicus",
+              "effects": [
+                {
+                  "type": "profit_factor",
+                  "amount": 4
+                },
+                {
+                  "type": "ship_points",
+                  "amount": 10
+                },
+                {
+                  "type": "trait",
+                  "name": "Contacts: Adeptus Mechanicus",
+                  "text": "Ship Points 10, Profit Factor 4 (ItS p.42)."
+                }
+              ]
+            },
+            {
+              "label": "Missionaria Galaxia",
+              "effects": [
+                {
+                  "type": "profit_factor",
+                  "amount": 6
+                },
+                {
+                  "type": "ship_points",
+                  "amount": 8
+                },
+                {
+                  "type": "trait",
+                  "name": "Contacts: Missionaria Galaxia",
+                  "text": "Ship Points 8, Profit Factor 6 (ItS p.42)."
+                }
+              ]
+            },
+            {
+              "label": "Merchant House",
+              "effects": [
+                {
+                  "type": "profit_factor",
+                  "amount": 8
+                },
+                {
+                  "type": "ship_points",
+                  "amount": 6
+                },
+                {
+                  "type": "trait",
+                  "name": "Contacts: Merchant House",
+                  "text": "Ship Points 6, Profit Factor 8 (ItS p.43)."
+                }
+              ]
+            },
+            {
+              "label": "Pirates",
+              "effects": [
+                {
+                  "type": "profit_factor",
+                  "amount": 10
+                },
+                {
+                  "type": "ship_points",
+                  "amount": 4
+                },
+                {
+                  "type": "trait",
+                  "name": "Contacts: Pirates",
+                  "text": "Ship Points 4, Profit Factor 10 (ItS pp.43-44)."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "choice",
+          "id": "warrant_renown",
+          "options": [
+            {
+              "label": "Famous",
+              "effects": [
+                {
+                  "type": "profit_factor",
+                  "amount": 4
+                },
+                {
+                  "type": "ship_points",
+                  "amount": 14
+                },
+                {
+                  "type": "trait",
+                  "name": "Warrant Renown: Famous",
+                  "text": "Ship Points 14, Profit Factor 4 (ItS p.44)."
+                }
+              ]
+            },
+            {
+              "label": "Unknown",
+              "effects": [
+                {
+                  "type": "profit_factor",
+                  "amount": 8
+                },
+                {
+                  "type": "ship_points",
+                  "amount": 10
+                },
+                {
+                  "type": "trait",
+                  "name": "Warrant Renown: Unknown",
+                  "text": "Ship Points 10, Profit Factor 8 (ItS p.44)."
+                }
+              ]
+            },
+            {
+              "label": "Infamous",
+              "effects": [
+                {
+                  "type": "profit_factor",
+                  "amount": 12
+                },
+                {
+                  "type": "ship_points",
+                  "amount": 6
+                },
+                {
+                  "type": "trait",
+                  "name": "Warrant Renown: Infamous",
+                  "text": "Ship Points 6, Profit Factor 12 (ItS p.44)."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

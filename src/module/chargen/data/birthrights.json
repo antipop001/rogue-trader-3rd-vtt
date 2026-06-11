@@ -1,0 +1,1238 @@
+{
+  "_meta": {
+    "step": "birthright",
+    "source": "Rogue Trader Core Rulebook + Into the Storm",
+    "status": "Core reconciled-by-hand from Core book pp.24-25. Into the Storm 'New Birthright Options' reconciled from ItS pp.17-20 (printed folios; PDF pages 18-21). Verify vs errata.",
+    "scope": "Core (Scavenger/Scapegrace/Stubjack/Child of the Creed/Savant/Vaunted) plus the nine Into the Storm advanced Birthright picks. ItS groups three sub-options under each broad heading (Fringe Survivor / Unnatural Origin / In Service to the Throne); each concrete sub-option is its own selectable record carrying its printed xp_cost (ItS p.17: 'pick a single option ... and pay the listed amount of xp'), named 'Heading - Option' (matching INC 1's Lure convention). The broad heading 'may be taken instead of' two Core birthrights (recorded as substitutes_for). XP costs verified against ItS page text AND the AllowStorm-gated Excel StormBirthrightOptionList (all nine match). ItS Advanced Origins is the human path, so each ItS pick requires species Human.",
+    "rules_qa": [
+      "Provenance pages are PRINTED FOLIOS (ItS folio = PDF page index - 1).",
+      "Fringe Survivor (instead of Scavenger or Savant) -> Survivalist 300 (+3 T or Per; Survival trained; +1 Fate; 1d5+1 Insanity), Heretek 100 (+3 Int; choose TWO from Chem-Use/Common Lore (Tech)/Forbidden Lore (Archeotech)/Tech-Use/Medicae/Scholastic Lore (any) trained; 1d5+1 Corruption), Pit-Fighter 200 (+3 T or S and +3 WS; Rival (Underworld); 1 Corruption).",
+      "Unnatural Origin (instead of Scapegrace or Stubjack) -> Contaminated Environs 100 (Peer (Mutants)+Resistance (Poisons); +3 T or WP; -3 Fel; optional +100xp roll on Mutation table re-rolling 75+), False-Man 300 (Ambidextrous+Autosanguine+Chem-Geld; +3 to two chosen characteristics; -3 to one chosen; either 2d10 Insanity OR lose 1 Fate permanently), Tainted by the Warp 200 (Dark Soul+Jaded; Forbidden Lore (Warp) as untrained basic; +3 Per or WP; -3 Fel; 1d10 Corruption; optional +300xp Favoured by the Warp + another 1d10 Corruption).",
+      "In Service to the Throne (instead of Child of the Creed or Vaunted) -> Tithed 350 (one Common Lore trained from a 7-item list; choose TWO skills/talents from a long list; see note), Born to Lead 200 (Command+Literacy+one Scholastic Lore from {Bureaucracy, Imperial Creed, Judgement, Tactica Imperialis} trained; +3 Int or Fel; -3 T), One Amongst Billions 200 (Paranoia+Unremarkable; one Trade or Common Lore trained; +3 Per or Int; -3 S).",
+      "Tithed's 'choose two' second list is long and mixes skills (Drive (any one), Literacy, Medicae, Navigation (surface), Survival, Tech-Use) and weapon-training talents (Basic Weapon Training (Las/SP), Pistol Weapon Training (Las/SP)); the 'choose two' is modelled as two nested choices each offering the full list. Plus +3 Willpower OR Ballistic Skill.",
+      "'Choose N from a list' has no native effect type; modelled as N independent nested 'choice' effects each offering the full list (a player could in principle pick the same entry twice -- flag for QA if strict distinctness is required).",
+      "Contaminated Environs (mutation roll, +100xp) and Tainted by the Warp (Favoured by the Warp, +300xp) optional extra-xp purchases are modelled as nested 'choice' effects whose 'take it' option carries an origin_xp_cost (hard-debited from the 500 pool, blocking on overspend) plus the granted effect; the 'skip' option (the default) costs nothing."
+    ],
+    "vendored_from": "RTT_MAKER@308151d rogue_trader/data",
+    "vendored_on": "2026-06-11",
+    "vendored_by": "tools/sync_chargen_data.py"
+  },
+  "options": [
+    {
+      "name": "Scavenger",
+      "source": "Core",
+      "page": 24,
+      "effects": [
+        {
+          "type": "choice",
+          "id": "scavenger_talent",
+          "options": [
+            {
+              "label": "Unremarkable",
+              "effects": [
+                {
+                  "type": "grant_talent",
+                  "talent": "Unremarkable"
+                }
+              ]
+            },
+            {
+              "label": "Resistance (Fear)",
+              "effects": [
+                {
+                  "type": "grant_talent",
+                  "talent": "Resistance (Fear)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "char_mod_choice",
+          "id": "scavenger_bonus",
+          "amount": 3,
+          "pool": [
+            "WP",
+            "Ag"
+          ]
+        },
+        {
+          "type": "choice",
+          "id": "scavenger_taint",
+          "options": [
+            {
+              "label": "1d5 Corruption",
+              "effects": [
+                {
+                  "type": "corruption",
+                  "id": "scavenger_corruption",
+                  "dice": [
+                    1,
+                    5
+                  ]
+                }
+              ]
+            },
+            {
+              "label": "1d5 Insanity",
+              "effects": [
+                {
+                  "type": "insanity",
+                  "id": "scavenger_insanity",
+                  "dice": [
+                    1,
+                    5
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Scapegrace",
+      "source": "Core",
+      "page": 24,
+      "effects": [
+        {
+          "type": "grant_skill",
+          "skill": "Sleight of Hand",
+          "level": "trained"
+        },
+        {
+          "type": "char_mod_choice",
+          "id": "scapegrace_bonus",
+          "amount": 3,
+          "pool": [
+            "Int",
+            "Per"
+          ]
+        },
+        {
+          "type": "choice",
+          "id": "scapegrace_taint",
+          "options": [
+            {
+              "label": "1d5 Corruption",
+              "effects": [
+                {
+                  "type": "corruption",
+                  "id": "scapegrace_corruption",
+                  "dice": [
+                    1,
+                    5
+                  ]
+                }
+              ]
+            },
+            {
+              "label": "1d5 Insanity",
+              "effects": [
+                {
+                  "type": "insanity",
+                  "id": "scapegrace_insanity",
+                  "dice": [
+                    1,
+                    5
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Stubjack",
+      "source": "Core",
+      "page": 24,
+      "effects": [
+        {
+          "type": "grant_talent",
+          "talent": "Quick Draw"
+        },
+        {
+          "type": "grant_skill",
+          "skill": "Intimidate",
+          "level": "trained"
+        },
+        {
+          "type": "char_mod_choice",
+          "id": "stubjack_bonus",
+          "amount": 5,
+          "pool": [
+            "WS",
+            "BS"
+          ]
+        },
+        {
+          "type": "char_mod",
+          "char": "Fel",
+          "amount": -5
+        },
+        {
+          "type": "insanity",
+          "id": "stubjack_insanity",
+          "dice": [
+            1,
+            5
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Child of the Creed",
+      "source": "Core",
+      "page": 25,
+      "effects": [
+        {
+          "type": "grant_talent",
+          "talent": "Unshakeable Faith"
+        },
+        {
+          "type": "char_mod_choice",
+          "id": "creed_bonus",
+          "amount": 3,
+          "pool": [
+            "WP",
+            "Fel"
+          ]
+        },
+        {
+          "type": "char_mod",
+          "char": "WS",
+          "amount": -3
+        }
+      ]
+    },
+    {
+      "name": "Savant",
+      "source": "Core",
+      "page": 25,
+      "effects": [
+        {
+          "type": "choice",
+          "id": "savant_training",
+          "options": [
+            {
+              "label": "Logic (trained Basic Skill)",
+              "effects": [
+                {
+                  "type": "grant_skill",
+                  "skill": "Logic",
+                  "level": "trained"
+                }
+              ]
+            },
+            {
+              "label": "Peer (Academics)",
+              "effects": [
+                {
+                  "type": "grant_talent",
+                  "talent": "Peer (Academics)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "char_mod_choice",
+          "id": "savant_bonus",
+          "amount": 3,
+          "pool": [
+            "Int",
+            "Fel"
+          ]
+        },
+        {
+          "type": "char_mod",
+          "char": "T",
+          "amount": -3
+        }
+      ]
+    },
+    {
+      "name": "Vaunted",
+      "source": "Core",
+      "page": 25,
+      "effects": [
+        {
+          "type": "grant_talent",
+          "talent": "Decadence"
+        },
+        {
+          "type": "char_mod_choice",
+          "id": "vaunted_bonus",
+          "amount": 3,
+          "pool": [
+            "Ag",
+            "Fel"
+          ]
+        },
+        {
+          "type": "char_mod",
+          "char": "Per",
+          "amount": -3
+        },
+        {
+          "type": "corruption",
+          "id": "vaunted_corruption",
+          "dice": [
+            1,
+            5
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Fringe Survivor \u2014 Survivalist",
+      "source": "Into the Storm",
+      "page": 17,
+      "xp_cost": 300,
+      "substitutes_for": [
+        "Scavenger",
+        "Savant"
+      ],
+      "requires": {
+        "all_of": [
+          {
+            "species": "Human"
+          }
+        ]
+      },
+      "effects": [
+        {
+          "type": "char_mod_choice",
+          "id": "survivalist_bonus",
+          "amount": 3,
+          "pool": [
+            "T",
+            "Per"
+          ]
+        },
+        {
+          "type": "grant_skill",
+          "skill": "Survival",
+          "level": "trained"
+        },
+        {
+          "type": "fate",
+          "amount": 1
+        },
+        {
+          "type": "insanity",
+          "id": "survivalist_insanity",
+          "dice": [
+            1,
+            5
+          ],
+          "bonus": 1
+        }
+      ]
+    },
+    {
+      "name": "Fringe Survivor \u2014 Heretek",
+      "source": "Into the Storm",
+      "page": 18,
+      "xp_cost": 100,
+      "substitutes_for": [
+        "Scavenger",
+        "Savant"
+      ],
+      "requires": {
+        "all_of": [
+          {
+            "species": "Human"
+          }
+        ]
+      },
+      "effects": [
+        {
+          "type": "char_mod",
+          "char": "Int",
+          "amount": 3
+        },
+        {
+          "type": "choice",
+          "id": "heretek_skill_one",
+          "distinct_group": "heretek_skills",
+          "options": [
+            {
+              "label": "Chem-Use",
+              "effects": [
+                {
+                  "type": "grant_skill",
+                  "skill": "Chem-Use",
+                  "level": "trained"
+                }
+              ]
+            },
+            {
+              "label": "Common Lore (Tech)",
+              "effects": [
+                {
+                  "type": "grant_skill",
+                  "skill": "Common Lore (Tech)",
+                  "level": "trained"
+                }
+              ]
+            },
+            {
+              "label": "Forbidden Lore (Archeotech)",
+              "effects": [
+                {
+                  "type": "grant_skill",
+                  "skill": "Forbidden Lore (Archeotech)",
+                  "level": "trained"
+                }
+              ]
+            },
+            {
+              "label": "Tech-Use",
+              "effects": [
+                {
+                  "type": "grant_skill",
+                  "skill": "Tech-Use",
+                  "level": "trained"
+                }
+              ]
+            },
+            {
+              "label": "Medicae",
+              "effects": [
+                {
+                  "type": "grant_skill",
+                  "skill": "Medicae",
+                  "level": "trained"
+                }
+              ]
+            },
+            {
+              "label": "Scholastic Lore (any one)",
+              "effects": [
+                {
+                  "type": "grant_skill",
+                  "skill": "Scholastic Lore (choose one)",
+                  "level": "trained"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "choice",
+          "id": "heretek_skill_two",
+          "distinct_group": "heretek_skills",
+          "options": [
+            {
+              "label": "Chem-Use",
+              "effects": [
+                {
+                  "type": "grant_skill",
+                  "skill": "Chem-Use",
+                  "level": "trained"
+                }
+              ]
+            },
+            {
+              "label": "Common Lore (Tech)",
+              "effects": [
+                {
+                  "type": "grant_skill",
+                  "skill": "Common Lore (Tech)",
+                  "level": "trained"
+                }
+              ]
+            },
+            {
+              "label": "Forbidden Lore (Archeotech)",
+              "effects": [
+                {
+                  "type": "grant_skill",
+                  "skill": "Forbidden Lore (Archeotech)",
+                  "level": "trained"
+                }
+              ]
+            },
+            {
+              "label": "Tech-Use",
+              "effects": [
+                {
+                  "type": "grant_skill",
+                  "skill": "Tech-Use",
+                  "level": "trained"
+                }
+              ]
+            },
+            {
+              "label": "Medicae",
+              "effects": [
+                {
+                  "type": "grant_skill",
+                  "skill": "Medicae",
+                  "level": "trained"
+                }
+              ]
+            },
+            {
+              "label": "Scholastic Lore (any one)",
+              "effects": [
+                {
+                  "type": "grant_skill",
+                  "skill": "Scholastic Lore (choose one)",
+                  "level": "trained"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "corruption",
+          "id": "heretek_corruption",
+          "dice": [
+            1,
+            5
+          ],
+          "bonus": 1
+        }
+      ]
+    },
+    {
+      "name": "Fringe Survivor \u2014 Pit-Fighter",
+      "source": "Into the Storm",
+      "page": 18,
+      "xp_cost": 200,
+      "substitutes_for": [
+        "Scavenger",
+        "Savant"
+      ],
+      "requires": {
+        "all_of": [
+          {
+            "species": "Human"
+          }
+        ]
+      },
+      "effects": [
+        {
+          "type": "char_mod_choice",
+          "id": "pit_fighter_physical",
+          "amount": 3,
+          "pool": [
+            "T",
+            "S"
+          ]
+        },
+        {
+          "type": "char_mod",
+          "char": "WS",
+          "amount": 3
+        },
+        {
+          "type": "trait",
+          "name": "Rival (Underworld)",
+          "text": "Begin play with a rival drawn from the criminal underworld of the fighting pits."
+        },
+        {
+          "type": "corruption",
+          "id": "pit_fighter_corruption",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "name": "Unnatural Origin \u2014 Contaminated Environs",
+      "source": "Into the Storm",
+      "page": 19,
+      "xp_cost": 100,
+      "substitutes_for": [
+        "Scapegrace",
+        "Stubjack"
+      ],
+      "requires": {
+        "all_of": [
+          {
+            "species": "Human"
+          }
+        ]
+      },
+      "effects": [
+        {
+          "type": "grant_talent",
+          "talent": "Peer (Mutants)"
+        },
+        {
+          "type": "grant_talent",
+          "talent": "Resistance (Poisons)"
+        },
+        {
+          "type": "char_mod_choice",
+          "id": "contaminated_bonus",
+          "amount": 3,
+          "pool": [
+            "T",
+            "WP"
+          ]
+        },
+        {
+          "type": "char_mod",
+          "char": "Fel",
+          "amount": -3
+        },
+        {
+          "type": "choice",
+          "id": "contaminated_mutation",
+          "options": [
+            {
+              "label": "Skip (no mutation)",
+              "effects": []
+            },
+            {
+              "label": "Roll a mutation (+100xp)",
+              "effects": [
+                {
+                  "type": "origin_xp_cost",
+                  "amount": 100
+                },
+                {
+                  "type": "trait",
+                  "name": "Mutation",
+                  "text": "Rolled once on Table 14-3: Mutations (ROGUE TRADER p.369), re-rolling any result of 75 or higher. Resolve the specific mutation off-engine and record it here."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Unnatural Origin \u2014 False-Man",
+      "source": "Into the Storm",
+      "page": 19,
+      "xp_cost": 300,
+      "substitutes_for": [
+        "Scapegrace",
+        "Stubjack"
+      ],
+      "requires": {
+        "all_of": [
+          {
+            "species": "Human"
+          }
+        ]
+      },
+      "effects": [
+        {
+          "type": "grant_talent",
+          "talent": "Ambidextrous"
+        },
+        {
+          "type": "grant_talent",
+          "talent": "Autosanguine"
+        },
+        {
+          "type": "grant_talent",
+          "talent": "Chem-Geld"
+        },
+        {
+          "type": "char_mod_choice",
+          "id": "false_man_bonus_one",
+          "amount": 3,
+          "pool": "any"
+        },
+        {
+          "type": "char_mod_choice",
+          "id": "false_man_bonus_two",
+          "amount": 3,
+          "pool": "any"
+        },
+        {
+          "type": "char_mod_choice",
+          "id": "false_man_penalty",
+          "amount": -3,
+          "pool": "any"
+        },
+        {
+          "type": "choice",
+          "id": "false_man_cost",
+          "options": [
+            {
+              "label": "2d10 Insanity",
+              "effects": [
+                {
+                  "type": "insanity",
+                  "id": "false_man_insanity",
+                  "dice": [
+                    2,
+                    10
+                  ]
+                }
+              ]
+            },
+            {
+              "label": "-1 Fate Point (permanent)",
+              "effects": [
+                {
+                  "type": "fate",
+                  "amount": -1
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Unnatural Origin \u2014 Tainted by the Warp",
+      "source": "Into the Storm",
+      "page": 19,
+      "xp_cost": 200,
+      "substitutes_for": [
+        "Scapegrace",
+        "Stubjack"
+      ],
+      "requires": {
+        "all_of": [
+          {
+            "species": "Human"
+          }
+        ]
+      },
+      "effects": [
+        {
+          "type": "grant_talent",
+          "talent": "Dark Soul"
+        },
+        {
+          "type": "grant_talent",
+          "talent": "Jaded"
+        },
+        {
+          "type": "grant_skill",
+          "skill": "Forbidden Lore (Warp)",
+          "level": "basic"
+        },
+        {
+          "type": "char_mod_choice",
+          "id": "tainted_warp_bonus",
+          "amount": 3,
+          "pool": [
+            "Per",
+            "WP"
+          ]
+        },
+        {
+          "type": "char_mod",
+          "char": "Fel",
+          "amount": -3
+        },
+        {
+          "type": "corruption",
+          "id": "tainted_warp_corruption",
+          "dice": [
+            1,
+            10
+          ]
+        },
+        {
+          "type": "choice",
+          "id": "tainted_warp_favoured",
+          "options": [
+            {
+              "label": "Skip (no Favoured by the Warp)",
+              "effects": []
+            },
+            {
+              "label": "Buy Favoured by the Warp (+300xp)",
+              "effects": [
+                {
+                  "type": "origin_xp_cost",
+                  "amount": 300
+                },
+                {
+                  "type": "grant_talent",
+                  "talent": "Favoured by the Warp"
+                },
+                {
+                  "type": "corruption",
+                  "id": "tainted_warp_favoured_corruption",
+                  "dice": [
+                    1,
+                    10
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "In Service to the Throne \u2014 Tithed",
+      "source": "Into the Storm",
+      "page": 19,
+      "xp_cost": 350,
+      "substitutes_for": [
+        "Child of the Creed",
+        "Vaunted"
+      ],
+      "requires": {
+        "all_of": [
+          {
+            "species": "Human"
+          }
+        ]
+      },
+      "effects": [
+        {
+          "type": "choice",
+          "id": "tithed_common_lore",
+          "options": [
+            {
+              "label": "Common Lore (Adeptus Astra Telepathica)",
+              "effects": [
+                {
+                  "type": "grant_skill",
+                  "skill": "Common Lore (Adeptus Astra Telepathica)",
+                  "level": "trained"
+                }
+              ]
+            },
+            {
+              "label": "Common Lore (Administratum)",
+              "effects": [
+                {
+                  "type": "grant_skill",
+                  "skill": "Common Lore (Administratum)",
+                  "level": "trained"
+                }
+              ]
+            },
+            {
+              "label": "Common Lore (Imperial Creed)",
+              "effects": [
+                {
+                  "type": "grant_skill",
+                  "skill": "Common Lore (Imperial Creed)",
+                  "level": "trained"
+                }
+              ]
+            },
+            {
+              "label": "Common Lore (Imperial Guard)",
+              "effects": [
+                {
+                  "type": "grant_skill",
+                  "skill": "Common Lore (Imperial Guard)",
+                  "level": "trained"
+                }
+              ]
+            },
+            {
+              "label": "Common Lore (Imperial Navy)",
+              "effects": [
+                {
+                  "type": "grant_skill",
+                  "skill": "Common Lore (Imperial Navy)",
+                  "level": "trained"
+                }
+              ]
+            },
+            {
+              "label": "Common Lore (Imperium)",
+              "effects": [
+                {
+                  "type": "grant_skill",
+                  "skill": "Common Lore (Imperium)",
+                  "level": "trained"
+                }
+              ]
+            },
+            {
+              "label": "Common Lore (War)",
+              "effects": [
+                {
+                  "type": "grant_skill",
+                  "skill": "Common Lore (War)",
+                  "level": "trained"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "choice",
+          "id": "tithed_pick_one",
+          "distinct_group": "tithed_picks",
+          "options": [
+            {
+              "label": "Drive (any one)",
+              "effects": [
+                {
+                  "type": "grant_skill",
+                  "skill": "Drive (choose one)",
+                  "level": "trained"
+                }
+              ]
+            },
+            {
+              "label": "Literacy",
+              "effects": [
+                {
+                  "type": "grant_skill",
+                  "skill": "Literacy",
+                  "level": "trained"
+                }
+              ]
+            },
+            {
+              "label": "Medicae",
+              "effects": [
+                {
+                  "type": "grant_skill",
+                  "skill": "Medicae",
+                  "level": "trained"
+                }
+              ]
+            },
+            {
+              "label": "Navigation (Surface)",
+              "effects": [
+                {
+                  "type": "grant_skill",
+                  "skill": "Navigation (Surface)",
+                  "level": "trained"
+                }
+              ]
+            },
+            {
+              "label": "Survival",
+              "effects": [
+                {
+                  "type": "grant_skill",
+                  "skill": "Survival",
+                  "level": "trained"
+                }
+              ]
+            },
+            {
+              "label": "Tech-Use",
+              "effects": [
+                {
+                  "type": "grant_skill",
+                  "skill": "Tech-Use",
+                  "level": "trained"
+                }
+              ]
+            },
+            {
+              "label": "Basic Weapon Training (Las)",
+              "effects": [
+                {
+                  "type": "grant_talent",
+                  "talent": "Basic Weapon Training (Las)"
+                }
+              ]
+            },
+            {
+              "label": "Basic Weapon Training (SP)",
+              "effects": [
+                {
+                  "type": "grant_talent",
+                  "talent": "Basic Weapon Training (SP)"
+                }
+              ]
+            },
+            {
+              "label": "Pistol Weapon Training (Las)",
+              "effects": [
+                {
+                  "type": "grant_talent",
+                  "talent": "Pistol Weapon Training (Las)"
+                }
+              ]
+            },
+            {
+              "label": "Pistol Weapon Training (SP)",
+              "effects": [
+                {
+                  "type": "grant_talent",
+                  "talent": "Pistol Weapon Training (SP)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "choice",
+          "id": "tithed_pick_two",
+          "distinct_group": "tithed_picks",
+          "options": [
+            {
+              "label": "Drive (any one)",
+              "effects": [
+                {
+                  "type": "grant_skill",
+                  "skill": "Drive (choose one)",
+                  "level": "trained"
+                }
+              ]
+            },
+            {
+              "label": "Literacy",
+              "effects": [
+                {
+                  "type": "grant_skill",
+                  "skill": "Literacy",
+                  "level": "trained"
+                }
+              ]
+            },
+            {
+              "label": "Medicae",
+              "effects": [
+                {
+                  "type": "grant_skill",
+                  "skill": "Medicae",
+                  "level": "trained"
+                }
+              ]
+            },
+            {
+              "label": "Navigation (Surface)",
+              "effects": [
+                {
+                  "type": "grant_skill",
+                  "skill": "Navigation (Surface)",
+                  "level": "trained"
+                }
+              ]
+            },
+            {
+              "label": "Survival",
+              "effects": [
+                {
+                  "type": "grant_skill",
+                  "skill": "Survival",
+                  "level": "trained"
+                }
+              ]
+            },
+            {
+              "label": "Tech-Use",
+              "effects": [
+                {
+                  "type": "grant_skill",
+                  "skill": "Tech-Use",
+                  "level": "trained"
+                }
+              ]
+            },
+            {
+              "label": "Basic Weapon Training (Las)",
+              "effects": [
+                {
+                  "type": "grant_talent",
+                  "talent": "Basic Weapon Training (Las)"
+                }
+              ]
+            },
+            {
+              "label": "Basic Weapon Training (SP)",
+              "effects": [
+                {
+                  "type": "grant_talent",
+                  "talent": "Basic Weapon Training (SP)"
+                }
+              ]
+            },
+            {
+              "label": "Pistol Weapon Training (Las)",
+              "effects": [
+                {
+                  "type": "grant_talent",
+                  "talent": "Pistol Weapon Training (Las)"
+                }
+              ]
+            },
+            {
+              "label": "Pistol Weapon Training (SP)",
+              "effects": [
+                {
+                  "type": "grant_talent",
+                  "talent": "Pistol Weapon Training (SP)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "char_mod_choice",
+          "id": "tithed_bonus",
+          "amount": 3,
+          "pool": [
+            "WP",
+            "BS"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "In Service to the Throne \u2014 Born to Lead",
+      "source": "Into the Storm",
+      "page": 20,
+      "xp_cost": 200,
+      "substitutes_for": [
+        "Child of the Creed",
+        "Vaunted"
+      ],
+      "requires": {
+        "all_of": [
+          {
+            "species": "Human"
+          }
+        ]
+      },
+      "effects": [
+        {
+          "type": "grant_skill",
+          "skill": "Command",
+          "level": "trained"
+        },
+        {
+          "type": "grant_skill",
+          "skill": "Literacy",
+          "level": "trained"
+        },
+        {
+          "type": "choice",
+          "id": "born_to_lead_lore",
+          "options": [
+            {
+              "label": "Scholastic Lore (Bureaucracy)",
+              "effects": [
+                {
+                  "type": "grant_skill",
+                  "skill": "Scholastic Lore (Bureaucracy)",
+                  "level": "trained"
+                }
+              ]
+            },
+            {
+              "label": "Scholastic Lore (Imperial Creed)",
+              "effects": [
+                {
+                  "type": "grant_skill",
+                  "skill": "Scholastic Lore (Imperial Creed)",
+                  "level": "trained"
+                }
+              ]
+            },
+            {
+              "label": "Scholastic Lore (Judgement)",
+              "effects": [
+                {
+                  "type": "grant_skill",
+                  "skill": "Scholastic Lore (Judgement)",
+                  "level": "trained"
+                }
+              ]
+            },
+            {
+              "label": "Scholastic Lore (Tactica Imperialis)",
+              "effects": [
+                {
+                  "type": "grant_skill",
+                  "skill": "Scholastic Lore (Tactica Imperialis)",
+                  "level": "trained"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "char_mod_choice",
+          "id": "born_to_lead_bonus",
+          "amount": 3,
+          "pool": [
+            "Int",
+            "Fel"
+          ]
+        },
+        {
+          "type": "char_mod",
+          "char": "T",
+          "amount": -3
+        }
+      ]
+    },
+    {
+      "name": "In Service to the Throne \u2014 One Amongst Billions",
+      "source": "Into the Storm",
+      "page": 20,
+      "xp_cost": 200,
+      "substitutes_for": [
+        "Child of the Creed",
+        "Vaunted"
+      ],
+      "requires": {
+        "all_of": [
+          {
+            "species": "Human"
+          }
+        ]
+      },
+      "effects": [
+        {
+          "type": "grant_talent",
+          "talent": "Paranoia"
+        },
+        {
+          "type": "grant_talent",
+          "talent": "Unremarkable"
+        },
+        {
+          "type": "choice",
+          "id": "one_amongst_billions_skill",
+          "options": [
+            {
+              "label": "Trade (any one)",
+              "effects": [
+                {
+                  "type": "grant_skill",
+                  "skill": "Trade (choose one)",
+                  "level": "trained"
+                }
+              ]
+            },
+            {
+              "label": "Common Lore (any one)",
+              "effects": [
+                {
+                  "type": "grant_skill",
+                  "skill": "Common Lore (choose one)",
+                  "level": "trained"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "char_mod_choice",
+          "id": "one_amongst_billions_bonus",
+          "amount": 3,
+          "pool": [
+            "Per",
+            "Int"
+          ]
+        },
+        {
+          "type": "char_mod",
+          "char": "S",
+          "amount": -3
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,946 @@
+{
+  "_meta": {
+    "step": "lure_of_the_void",
+    "source": "Rogue Trader Core Rulebook + Into the Storm",
+    "status": "Core reconciled-by-hand from Core pp.26-28; Into the Storm 'New Lure of the Void' options reconciled from ItS pp.21-23 (Advanced Origins). Verify vs errata.",
+    "scope": "Core options (Tainted, Criminal, Renegade, Duty Bound, Zealot, Chosen by Destiny) plus the Into the Storm 'New Lure of the Void' advanced options (Crusade / Hunter / New Horizons sub-choices). Each ItS sub-choice is its own option record carrying its per-choice xp_cost (ItS p.21: 'pay the xp cost associated with it'). The Origin-Path-table slot substitution ('may select X instead of Y') is recorded as substitutes_for metadata; ItS aliens (Kroot/Ork) use their own background mechanics (ItS pp.49-57) and do not take these Advanced Origin Path Lure options, so each ItS option requires species Human.",
+    "rules_qa": [
+      "Confirm the requires.species:Human gate on ItS Lure options: ItS Advanced Origin Path is the human path; Kroot/Ork have separate background rules (ItS pp.49-57). Flag if a Kroot/Ork is intended to be able to take Crusade/Hunter/New Horizons.",
+      "Call to War (ItS p.22): +5 BS, Peer (Military), Hatred (choice), +1d10 Insanity, 150xp.",
+      "Warrior (ItS p.22): +5 WS, +5 T or +5 Ag, -5 Fel, Meditation, 250xp.",
+      "Bounty Hunter (ItS p.22): +3 WP, +3 Fel, Bloodtracker, 1d5 Corruption or 1d5 Insanity, 250xp.",
+      "Hunted (ItS p.23): +3 Per, Paranoia or Light Sleeper, Enemy, 100xp.",
+      "Seeker of Truth (ItS p.23): +3 Int, Scholastic Lore (any one), +1 Corruption, 100xp. Note: same NAME as Core 'Chosen by Destiny -> Seeker of Truth' but distinct effects/source.",
+      "Xeno-Arcanist (ItS p.23): +3 Int or +3 WP, Peer (Academics) or Forbidden Lore (Xenos), 200xp."
+    ],
+    "vendored_from": "RTT_MAKER@308151d rogue_trader/data",
+    "vendored_on": "2026-06-11",
+    "vendored_by": "tools/sync_chargen_data.py"
+  },
+  "options": [
+    {
+      "name": "Tainted",
+      "source": "Core",
+      "page": 26,
+      "effects": [
+        {
+          "type": "choice",
+          "id": "tainted_result",
+          "options": [
+            {
+              "label": "Mutant",
+              "effects": [
+                {
+                  "type": "trait",
+                  "name": "Mutant",
+                  "text": "Roll once on Table 14-3: Mutations (p.369); a result of 74 or lower (errata v1.4; RAW printed 'less than 76-00'). You may spend 200 xp to select a result (74 or lower) instead of rolling."
+                }
+              ]
+            },
+            {
+              "label": "Insane",
+              "effects": [
+                {
+                  "type": "choice",
+                  "id": "tainted_insane_cost",
+                  "options": [
+                    {
+                      "label": "-3 Fellowship",
+                      "effects": [
+                        {
+                          "type": "char_mod",
+                          "char": "Fel",
+                          "amount": -3
+                        }
+                      ]
+                    },
+                    {
+                      "label": "-1 Fate Point",
+                      "effects": [
+                        {
+                          "type": "fate",
+                          "amount": -1
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "char_mod",
+                  "char": "T",
+                  "amount": 3
+                },
+                {
+                  "type": "grant_talent",
+                  "talent": "Peer (The Insane)"
+                },
+                {
+                  "type": "insanity",
+                  "id": "tainted_insanity",
+                  "dice": [
+                    2,
+                    10
+                  ]
+                }
+              ]
+            },
+            {
+              "label": "Deviant Philosophy",
+              "effects": [
+                {
+                  "type": "char_mod",
+                  "char": "WP",
+                  "amount": 3
+                },
+                {
+                  "type": "grant_talent",
+                  "talent": "Enemy (Ecclesiarchy)"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Criminal",
+      "source": "Core",
+      "page": 26,
+      "effects": [
+        {
+          "type": "choice",
+          "id": "criminal_result",
+          "options": [
+            {
+              "label": "Wanted Fugitive",
+              "effects": [
+                {
+                  "type": "grant_talent",
+                  "talent": "Enemy (Adeptus Arbites)"
+                },
+                {
+                  "type": "grant_talent",
+                  "talent": "Peer (Underworld)"
+                }
+              ]
+            },
+            {
+              "label": "Hunted by a Crime Baron",
+              "effects": [
+                {
+                  "type": "char_mod",
+                  "char": "Per",
+                  "amount": 3
+                },
+                {
+                  "type": "grant_talent",
+                  "talent": "Enemy (Underworld)"
+                }
+              ]
+            },
+            {
+              "label": "Judged and Found Wanting",
+              "effects": [
+                {
+                  "type": "char_mod",
+                  "char": "Fel",
+                  "amount": -5
+                },
+                {
+                  "type": "trait",
+                  "name": "Imperfect Bionic",
+                  "text": "Gain one poor-Craftsmanship bionic limb or implant. You may spend 200 xp to upgrade it to common-Craftsmanship, or a total of 300 xp for good-Craftsmanship."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Renegade",
+      "source": "Core",
+      "page": 26,
+      "effects": [
+        {
+          "type": "choice",
+          "id": "renegade_result",
+          "options": [
+            {
+              "label": "Recidivist",
+              "effects": [
+                {
+                  "type": "grant_talent",
+                  "talent": "Enemy (Adeptus Arbites)"
+                },
+                {
+                  "type": "grant_talent",
+                  "talent": "Resistance (Interrogation)"
+                },
+                {
+                  "type": "grant_skill",
+                  "skill": "Concealment",
+                  "level": "trained"
+                }
+              ]
+            },
+            {
+              "label": "Free-thinker",
+              "effects": [
+                {
+                  "type": "char_mod_choice",
+                  "id": "renegade_freethinker_bonus",
+                  "amount": 3,
+                  "pool": [
+                    "Int",
+                    "Per"
+                  ]
+                },
+                {
+                  "type": "char_mod",
+                  "char": "WP",
+                  "amount": -3
+                },
+                {
+                  "type": "grant_talent",
+                  "talent": "Enemy (Ecclesiarchy)"
+                }
+              ]
+            },
+            {
+              "label": "Dark Visionary",
+              "effects": [
+                {
+                  "type": "choice",
+                  "id": "renegade_dark_taint",
+                  "options": [
+                    {
+                      "label": "1d5+1 Corruption",
+                      "effects": [
+                        {
+                          "type": "corruption",
+                          "id": "renegade_corruption",
+                          "dice": [
+                            1,
+                            5
+                          ],
+                          "bonus": 1
+                        }
+                      ]
+                    },
+                    {
+                      "label": "1d5+1 Insanity",
+                      "effects": [
+                        {
+                          "type": "insanity",
+                          "id": "renegade_insanity",
+                          "dice": [
+                            1,
+                            5
+                          ],
+                          "bonus": 1
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "grant_talent",
+                  "talent": "Dark Soul"
+                },
+                {
+                  "type": "grant_skill",
+                  "skill": "Forbidden Lore (choose one)",
+                  "level": "trained"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Duty Bound",
+      "source": "Core",
+      "page": 28,
+      "effects": [
+        {
+          "type": "choice",
+          "id": "duty_bound_result",
+          "options": [
+            {
+              "label": "Duty to the Throne",
+              "effects": [
+                {
+                  "type": "char_mod",
+                  "char": "WP",
+                  "amount": 3
+                },
+                {
+                  "type": "grant_talent",
+                  "talent": "Armour of Contempt",
+                  "condition": {
+                    "char": "WP",
+                    "min": 40
+                  }
+                },
+                {
+                  "type": "trait",
+                  "name": "Imperial Chauvinism",
+                  "text": "-10 to Interaction Skill Tests when dealing with any source outside the Imperium (e.g., aliens and traitors)."
+                }
+              ]
+            },
+            {
+              "label": "Duty to Humanity",
+              "effects": [
+                {
+                  "type": "char_mod_choice",
+                  "id": "duty_humanity_bonus",
+                  "amount": 3,
+                  "pool": [
+                    "Per",
+                    "Int"
+                  ]
+                },
+                {
+                  "type": "profit_factor",
+                  "amount": -1
+                }
+              ]
+            },
+            {
+              "label": "Duty to Your Dynasty",
+              "effects": [
+                {
+                  "type": "grant_talent",
+                  "talent": "Rival (Rogue Trader family)"
+                },
+                {
+                  "type": "char_mod",
+                  "char": "T",
+                  "amount": -3
+                },
+                {
+                  "type": "profit_factor",
+                  "amount": 1
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Zealot",
+      "source": "Core",
+      "page": 27,
+      "effects": [
+        {
+          "type": "choice",
+          "id": "zealot_result",
+          "options": [
+            {
+              "label": "Blessed Scars",
+              "effects": [
+                {
+                  "type": "trait",
+                  "name": "Blessed Scars",
+                  "text": "+10 to Intimidate Tests and -10 to Charm Tests. Gain one poor-Craftsmanship bionic (200 xp to upgrade to common-Craftsmanship, 300 xp total for good-Craftsmanship)."
+                }
+              ]
+            },
+            {
+              "label": "Unnerving Clarity",
+              "effects": [
+                {
+                  "type": "char_mod",
+                  "char": "WP",
+                  "amount": 5
+                },
+                {
+                  "type": "choice",
+                  "id": "zealot_clarity_cost",
+                  "options": [
+                    {
+                      "label": "-5 Fellowship",
+                      "effects": [
+                        {
+                          "type": "char_mod",
+                          "char": "Fel",
+                          "amount": -5
+                        }
+                      ]
+                    },
+                    {
+                      "label": "1d10 Insanity",
+                      "effects": [
+                        {
+                          "type": "insanity",
+                          "id": "zealot_insanity",
+                          "dice": [
+                            1,
+                            10
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "label": "Favoured of the Faithful",
+              "effects": [
+                {
+                  "type": "char_mod",
+                  "char": "Fel",
+                  "amount": 5
+                },
+                {
+                  "type": "grant_talent",
+                  "talent": "Peer (Ecclesiarchy)"
+                },
+                {
+                  "type": "char_mod",
+                  "char": "T",
+                  "amount": -5
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Chosen by Destiny",
+      "source": "Core",
+      "page": 27,
+      "effects": [
+        {
+          "type": "choice",
+          "id": "destiny_result",
+          "options": [
+            {
+              "label": "Seeker of Truth",
+              "effects": [
+                {
+                  "type": "grant_talent",
+                  "talent": "Foresight"
+                },
+                {
+                  "type": "choice",
+                  "id": "destiny_seeker_enemy",
+                  "options": [
+                    {
+                      "label": "Enemy (Academics)",
+                      "effects": [
+                        {
+                          "type": "grant_talent",
+                          "talent": "Enemy (Academics)"
+                        }
+                      ]
+                    },
+                    {
+                      "label": "Enemy (Ecclesiarchy)",
+                      "effects": [
+                        {
+                          "type": "grant_talent",
+                          "talent": "Enemy (Ecclesiarchy)"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "char_mod",
+                  "char": "WP",
+                  "amount": -3
+                }
+              ]
+            },
+            {
+              "label": "Xenophile",
+              "effects": [
+                {
+                  "type": "trait",
+                  "name": "Xenophile",
+                  "text": "+10 to Fellowship Tests when dealing with alien races or cultures; -5 to Willpower Tests involving alien artefacts and alien psychic powers."
+                }
+              ]
+            },
+            {
+              "label": "Fated for Greatness",
+              "effects": [
+                {
+                  "type": "fate",
+                  "amount": 1
+                },
+                {
+                  "type": "insanity",
+                  "id": "destiny_insanity",
+                  "dice": [
+                    1,
+                    10
+                  ],
+                  "bonus": 1
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Crusade \u2014 Call to War",
+      "source": "Into the Storm",
+      "page": 21,
+      "xp_cost": 150,
+      "substitutes_for": [
+        "Criminal",
+        "Renegade"
+      ],
+      "requires": {
+        "all_of": [
+          {
+            "species": "Human"
+          }
+        ]
+      },
+      "effects": [
+        {
+          "type": "char_mod",
+          "char": "BS",
+          "amount": 5
+        },
+        {
+          "type": "grant_talent",
+          "talent": "Peer (Military)"
+        },
+        {
+          "type": "choice",
+          "id": "call_to_war_hatred",
+          "options": [
+            {
+              "label": "Hatred (Eldar)",
+              "effects": [
+                {
+                  "type": "grant_talent",
+                  "talent": "Hatred (Eldar)"
+                }
+              ]
+            },
+            {
+              "label": "Hatred (Orks)",
+              "effects": [
+                {
+                  "type": "grant_talent",
+                  "talent": "Hatred (Orks)"
+                }
+              ]
+            },
+            {
+              "label": "Hatred (Kroot)",
+              "effects": [
+                {
+                  "type": "grant_talent",
+                  "talent": "Hatred (Kroot)"
+                }
+              ]
+            },
+            {
+              "label": "Hatred (Chaos)",
+              "effects": [
+                {
+                  "type": "grant_talent",
+                  "talent": "Hatred (Chaos)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "insanity",
+          "id": "call_to_war_insanity",
+          "dice": [
+            1,
+            10
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Crusade \u2014 Chasing the Enemy",
+      "source": "Into the Storm",
+      "page": 21,
+      "xp_cost": 150,
+      "substitutes_for": [
+        "Criminal",
+        "Renegade"
+      ],
+      "requires": {
+        "all_of": [
+          {
+            "species": "Human"
+          }
+        ]
+      },
+      "effects": [
+        {
+          "type": "char_mod_choice",
+          "id": "chasing_enemy_bonus",
+          "amount": 3,
+          "pool": [
+            "Int",
+            "WP"
+          ]
+        },
+        {
+          "type": "grant_talent",
+          "talent": "Hatred (chosen quarry)"
+        }
+      ]
+    },
+    {
+      "name": "Crusade \u2014 Warrior",
+      "source": "Into the Storm",
+      "page": 21,
+      "xp_cost": 250,
+      "substitutes_for": [
+        "Criminal",
+        "Renegade"
+      ],
+      "requires": {
+        "all_of": [
+          {
+            "species": "Human"
+          }
+        ]
+      },
+      "effects": [
+        {
+          "type": "char_mod",
+          "char": "WS",
+          "amount": 5
+        },
+        {
+          "type": "char_mod",
+          "char": "Fel",
+          "amount": -5
+        },
+        {
+          "type": "choice",
+          "id": "warrior_physical",
+          "options": [
+            {
+              "label": "+5 Toughness",
+              "effects": [
+                {
+                  "type": "char_mod",
+                  "char": "T",
+                  "amount": 5
+                }
+              ]
+            },
+            {
+              "label": "+5 Agility",
+              "effects": [
+                {
+                  "type": "char_mod",
+                  "char": "Ag",
+                  "amount": 5
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "grant_talent",
+          "talent": "Meditation"
+        }
+      ]
+    },
+    {
+      "name": "Hunter \u2014 Bounty Hunter",
+      "source": "Into the Storm",
+      "page": 21,
+      "xp_cost": 250,
+      "substitutes_for": [
+        "Tainted",
+        "Renegade"
+      ],
+      "requires": {
+        "all_of": [
+          {
+            "species": "Human"
+          }
+        ]
+      },
+      "effects": [
+        {
+          "type": "char_mod",
+          "char": "WP",
+          "amount": 3
+        },
+        {
+          "type": "char_mod",
+          "char": "Fel",
+          "amount": 3
+        },
+        {
+          "type": "grant_talent",
+          "talent": "Bloodtracker"
+        },
+        {
+          "type": "choice",
+          "id": "bounty_hunter_taint",
+          "options": [
+            {
+              "label": "1d5 Corruption",
+              "effects": [
+                {
+                  "type": "corruption",
+                  "id": "bounty_hunter_corruption",
+                  "dice": [
+                    1,
+                    5
+                  ]
+                }
+              ]
+            },
+            {
+              "label": "1d5 Insanity",
+              "effects": [
+                {
+                  "type": "insanity",
+                  "id": "bounty_hunter_insanity",
+                  "dice": [
+                    1,
+                    5
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Hunter \u2014 Xenos Hunter",
+      "source": "Into the Storm",
+      "page": 22,
+      "xp_cost": 200,
+      "substitutes_for": [
+        "Tainted",
+        "Renegade"
+      ],
+      "requires": {
+        "all_of": [
+          {
+            "species": "Human"
+          }
+        ]
+      },
+      "effects": [
+        {
+          "type": "char_mod_choice",
+          "id": "xenos_hunter_bonus",
+          "amount": 3,
+          "pool": [
+            "WS",
+            "BS"
+          ]
+        },
+        {
+          "type": "choice",
+          "id": "xenos_hunter_talent",
+          "options": [
+            {
+              "label": "Leap Up",
+              "effects": [
+                {
+                  "type": "grant_talent",
+                  "talent": "Leap Up"
+                }
+              ]
+            },
+            {
+              "label": "Sprint",
+              "effects": [
+                {
+                  "type": "grant_talent",
+                  "talent": "Sprint"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "choice",
+          "id": "xenos_hunter_skill",
+          "options": [
+            {
+              "label": "Scholastic Lore (Beasts)",
+              "effects": [
+                {
+                  "type": "grant_skill",
+                  "skill": "Scholastic Lore (Beasts)",
+                  "level": "trained"
+                }
+              ]
+            },
+            {
+              "label": "Tracking",
+              "effects": [
+                {
+                  "type": "grant_skill",
+                  "skill": "Tracking",
+                  "level": "trained"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Hunter \u2014 Hunted",
+      "source": "Into the Storm",
+      "page": 22,
+      "xp_cost": 100,
+      "substitutes_for": [
+        "Tainted",
+        "Renegade"
+      ],
+      "requires": {
+        "all_of": [
+          {
+            "species": "Human"
+          }
+        ]
+      },
+      "effects": [
+        {
+          "type": "char_mod",
+          "char": "Per",
+          "amount": 3
+        },
+        {
+          "type": "choice",
+          "id": "hunted_talent",
+          "options": [
+            {
+              "label": "Paranoia",
+              "effects": [
+                {
+                  "type": "grant_talent",
+                  "talent": "Paranoia"
+                }
+              ]
+            },
+            {
+              "label": "Light Sleeper",
+              "effects": [
+                {
+                  "type": "grant_talent",
+                  "talent": "Light Sleeper"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "grant_talent",
+          "talent": "Enemy (chosen hunter)"
+        }
+      ]
+    },
+    {
+      "name": "New Horizons \u2014 Seeker of Truth",
+      "source": "Into the Storm",
+      "page": 22,
+      "xp_cost": 100,
+      "substitutes_for": [
+        "Zealot",
+        "Chosen by Destiny"
+      ],
+      "requires": {
+        "all_of": [
+          {
+            "species": "Human"
+          }
+        ]
+      },
+      "effects": [
+        {
+          "type": "char_mod",
+          "char": "Int",
+          "amount": 3
+        },
+        {
+          "type": "grant_skill",
+          "skill": "Scholastic Lore (choose one)",
+          "level": "trained"
+        },
+        {
+          "type": "corruption",
+          "id": "new_horizons_seeker_corruption",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "name": "New Horizons \u2014 Xeno-Arcanist",
+      "source": "Into the Storm",
+      "page": 22,
+      "xp_cost": 200,
+      "substitutes_for": [
+        "Zealot",
+        "Chosen by Destiny"
+      ],
+      "requires": {
+        "all_of": [
+          {
+            "species": "Human"
+          }
+        ]
+      },
+      "effects": [
+        {
+          "type": "char_mod_choice",
+          "id": "xeno_arcanist_bonus",
+          "amount": 3,
+          "pool": [
+            "Int",
+            "WP"
+          ]
+        },
+        {
+          "type": "choice",
+          "id": "xeno_arcanist_grant",
+          "options": [
+            {
+              "label": "Peer (Academics)",
+              "effects": [
+                {
+                  "type": "grant_talent",
+                  "talent": "Peer (Academics)"
+                }
+              ]
+            },
+            {
+              "label": "Forbidden Lore (Xenos)",
+              "effects": [
+                {
+                  "type": "grant_skill",
+                  "skill": "Forbidden Lore (Xenos)",
+                  "level": "trained"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

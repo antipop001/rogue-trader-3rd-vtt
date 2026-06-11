@@ -1,0 +1,1137 @@
+{
+  "_meta": {
+    "step": "home_world",
+    "source": "Rogue Trader Core Rulebook + Into the Storm",
+    "status": "Core reconciled-by-hand from Core book pp.17-23. Into the Storm 'New Home Worlds' (Advanced Origins) reconciled from ItS pp.9-15 (printed folios; PDF pages 10-16). Verify vs errata.",
+    "scope": "Core (Death/Void Born/Forge/Hive/Imperial/Noble Born) plus the six Into the Storm advanced Home Worlds (Frontier World, Footfallen, Fortress World, Battlefleet, Penal World, Child of Dynasty). ItS home worlds are FREE swaps -- ItS p.9 states a player 'may replace the current Home World options with these new options' with no xp cost (the Excel HomeWorldList has no cost column for them). Each ItS home world 'may be taken instead of' a specific Core home world (recorded as substitutes_for metadata). ItS Advanced Origins is the human path (Kroot/Ork use separate background rules, ItS pp.49-57), so each ItS home world requires species Human.",
+    "rules_qa": [
+      "Provenance pages are PRINTED FOLIOS (ItS folio = PDF page index - 1; anchored on PDF page-21 == folio 20, page-23 == folio 22). Home-world folio OCR was garbled ('99'/'1') so folios are derived from the anchor, not read off these pages -- spot-check the page images if in doubt.",
+      "Frontier World (folio 9): +5 S, -5 Int; Survival+Wrangling trained; +1 wound already folded into Starting Wounds 1d5+2; traits Leery of Outsiders / Tenacious Survivalist / Xenos Interaction.",
+      "Footfallen (folio 10): -5 BS, -5 T, +5 Ag, +5 Fel; Common Lore (Koronus Expanse) trained; Peer choice (Astropaths/the Insane/Underworld/Void Born/Workers); Polyglot; Psyniscience trained (NOT a psyker); Rival (Inquisition); Street Knowledge trait.",
+      "Fortress World (folio 11): +5 BS, +5 WP, -5 Int, -5 Fel; Secret Tongue (Military)+Common Lore (War) trained; Hatred (chosen enemy); Basic Weapon Training (Las or SP); Nerves of Steel; Constant Combat Training trait (-5 non-combat social).",
+      "Battlefleet (folio 12): +5 WP, +3 Fel, -5 Per; Common Lore (Imperial Navy)+Speak Language (Battlefleet War Cant) trained; Navigation (Stellar) OR Pilot (Spacecraft) trained; Void Accustomed trait; Officer on Deck + Ship-Bound Fighter traits.",
+      "Penal World (folio 13): -5 WP, +5 Per, +5 T, -5 Fel; Security as untrained basic; Deceive OR Intimidate trained; Peer (Underworld); 1d5 Insanity + Light Sleeper (Nightmares); Criminal + Underground Resources traits.",
+      "Child of Dynasty (folio 14): -3 T, +3 Int, -5 WP, +5 Fel; Literacy+Speak Language (High Gothic) trained; Enemy (unseen) talent; Dynastic Warrant (+3 Ship Points -- Stage 5, recorded as trait pending ship-point modelling); Honour Amongst One's Peers trait."
+    ],
+    "vendored_from": "RTT_MAKER@308151d rogue_trader/data",
+    "vendored_on": "2026-06-11",
+    "vendored_by": "tools/sync_chargen_data.py"
+  },
+  "options": [
+    {
+      "name": "Death World",
+      "source": "Core",
+      "page": 17,
+      "effects": [
+        {
+          "type": "char_mod",
+          "char": "S",
+          "amount": 5
+        },
+        {
+          "type": "char_mod",
+          "char": "T",
+          "amount": 5
+        },
+        {
+          "type": "char_mod",
+          "char": "WP",
+          "amount": -5
+        },
+        {
+          "type": "char_mod",
+          "char": "Fel",
+          "amount": -5
+        },
+        {
+          "type": "grant_skill",
+          "skill": "Survival",
+          "level": "trained"
+        },
+        {
+          "type": "grant_talent",
+          "talent": "Melee Weapon Training (Primitive)"
+        },
+        {
+          "type": "choice",
+          "id": "death_world_hardened",
+          "options": [
+            {
+              "label": "Jaded",
+              "effects": [
+                {
+                  "type": "grant_talent",
+                  "talent": "Jaded"
+                }
+              ]
+            },
+            {
+              "label": "Resistance (Poisons)",
+              "effects": [
+                {
+                  "type": "grant_talent",
+                  "talent": "Resistance (Poisons)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "trait",
+          "name": "Paranoid",
+          "text": "-10 to all Interaction Skill Tests made in formal surroundings."
+        },
+        {
+          "type": "trait",
+          "name": "Survivor",
+          "text": "+10 bonus to any test to resist Pinning and Shock."
+        }
+      ],
+      "starting_wounds": {
+        "tb_multiplier": 2,
+        "dice": [
+          1,
+          5
+        ],
+        "flat": 2
+      },
+      "starting_fate": [
+        [
+          5,
+          2
+        ],
+        [
+          10,
+          3
+        ]
+      ]
+    },
+    {
+      "name": "Void Born",
+      "source": "Core",
+      "page": 20,
+      "effects": [
+        {
+          "type": "char_mod",
+          "char": "S",
+          "amount": -5
+        },
+        {
+          "type": "char_mod",
+          "char": "WP",
+          "amount": 5
+        },
+        {
+          "type": "grant_skill",
+          "skill": "Speak Language (Ship Dialect)",
+          "level": "trained"
+        },
+        {
+          "type": "grant_skill",
+          "skill": "Navigation (Stellar)",
+          "level": "basic"
+        },
+        {
+          "type": "grant_skill",
+          "skill": "Pilot (Spacecraft)",
+          "level": "basic"
+        },
+        {
+          "type": "trait",
+          "name": "Charmed",
+          "text": "When spending a Fate Point (not burning), roll 1d10; on a natural 9 the Fate Point is not lost."
+        },
+        {
+          "type": "trait",
+          "name": "Ill-omened",
+          "text": "-5 penalty on all Fellowship Tests to interact with non-void born humans."
+        },
+        {
+          "type": "trait",
+          "name": "Void Accustomed",
+          "text": "Immune to space travel sickness; zero/low-gravity is not Difficult Terrain."
+        }
+      ],
+      "starting_wounds": {
+        "tb_multiplier": 2,
+        "dice": [
+          1,
+          5
+        ],
+        "flat": 0
+      },
+      "starting_fate": [
+        [
+          5,
+          3
+        ],
+        [
+          10,
+          4
+        ]
+      ]
+    },
+    {
+      "name": "Forge World",
+      "source": "Core",
+      "page": 18,
+      "effects": [
+        {
+          "type": "char_mod",
+          "char": "WS",
+          "amount": -5
+        },
+        {
+          "type": "char_mod",
+          "char": "Int",
+          "amount": 5
+        },
+        {
+          "type": "grant_skill",
+          "skill": "Common Lore (Tech)",
+          "level": "basic"
+        },
+        {
+          "type": "grant_skill",
+          "skill": "Common Lore (Machine Cult)",
+          "level": "basic"
+        },
+        {
+          "type": "grant_talent",
+          "talent": "Technical Knock"
+        },
+        {
+          "type": "char_mod_choice",
+          "id": "forge_world_fit_for_purpose",
+          "amount": 3,
+          "pool": "any"
+        },
+        {
+          "type": "trait",
+          "name": "Stranger to the Cult",
+          "text": "-10 on Tests involving knowledge of the Imperial Creed; -5 on Fellowship Tests to interact with the Ecclesiarchy in formal settings."
+        }
+      ],
+      "starting_wounds": {
+        "tb_multiplier": 2,
+        "dice": [
+          1,
+          5
+        ],
+        "flat": 1
+      },
+      "starting_fate": [
+        [
+          5,
+          2
+        ],
+        [
+          9,
+          3
+        ],
+        [
+          10,
+          4
+        ]
+      ]
+    },
+    {
+      "name": "Hive World",
+      "source": "Core",
+      "page": 21,
+      "effects": [
+        {
+          "type": "char_mod",
+          "char": "T",
+          "amount": -5
+        },
+        {
+          "type": "char_mod",
+          "char": "Fel",
+          "amount": 5
+        },
+        {
+          "type": "grant_skill",
+          "skill": "Speak Language (Hive Dialect)",
+          "level": "basic"
+        },
+        {
+          "type": "grant_skill",
+          "skill": "Tech-Use",
+          "level": "basic"
+        },
+        {
+          "type": "trait",
+          "name": "Accustomed to Crowds",
+          "text": "Crowds are not Difficult Terrain; no Agility penalty to keep feet when Running/Charging through a dense crowd."
+        },
+        {
+          "type": "trait",
+          "name": "Hivebound",
+          "text": "-10 to all Survival Tests; -5 to all Intelligence Tests while out of a proper hab."
+        },
+        {
+          "type": "trait",
+          "name": "Wary",
+          "text": "+1 bonus to Initiative rolls."
+        }
+      ],
+      "starting_wounds": {
+        "tb_multiplier": 2,
+        "dice": [
+          1,
+          5
+        ],
+        "flat": 1
+      },
+      "starting_fate": [
+        [
+          5,
+          2
+        ],
+        [
+          8,
+          3
+        ],
+        [
+          10,
+          4
+        ]
+      ]
+    },
+    {
+      "name": "Imperial World",
+      "source": "Core",
+      "page": 22,
+      "effects": [
+        {
+          "type": "char_mod",
+          "char": "WP",
+          "amount": 3
+        },
+        {
+          "type": "grant_skill",
+          "skill": "Common Lore (Imperial Creed)",
+          "level": "basic"
+        },
+        {
+          "type": "grant_skill",
+          "skill": "Common Lore (Imperium)",
+          "level": "basic"
+        },
+        {
+          "type": "grant_skill",
+          "skill": "Common Lore (War)",
+          "level": "basic"
+        },
+        {
+          "type": "grant_skill",
+          "skill": "Literacy",
+          "level": "basic"
+        },
+        {
+          "type": "grant_skill",
+          "skill": "Speak Language (High Gothic)",
+          "level": "basic"
+        },
+        {
+          "type": "trait",
+          "name": "Blessed Ignorance",
+          "text": "-5 penalty on Forbidden Lore Tests."
+        }
+      ],
+      "starting_wounds": {
+        "tb_multiplier": 2,
+        "dice": [
+          1,
+          5
+        ],
+        "flat": 0
+      },
+      "starting_fate": [
+        [
+          8,
+          3
+        ],
+        [
+          10,
+          4
+        ]
+      ]
+    },
+    {
+      "name": "Noble Born",
+      "source": "Core",
+      "page": 23,
+      "effects": [
+        {
+          "type": "char_mod",
+          "char": "WP",
+          "amount": -5
+        },
+        {
+          "type": "char_mod",
+          "char": "Fel",
+          "amount": 5
+        },
+        {
+          "type": "grant_skill",
+          "skill": "Literacy",
+          "level": "basic"
+        },
+        {
+          "type": "grant_skill",
+          "skill": "Speak Language (High Gothic)",
+          "level": "basic"
+        },
+        {
+          "type": "grant_skill",
+          "skill": "Speak Language (Low Gothic)",
+          "level": "basic"
+        },
+        {
+          "type": "grant_talent",
+          "talent": "Peer (Nobility)"
+        },
+        {
+          "type": "choice",
+          "id": "noble_born_extra_peer",
+          "options": [
+            {
+              "label": "Peer (Academics)",
+              "effects": [
+                {
+                  "type": "grant_talent",
+                  "talent": "Peer (Academics)"
+                }
+              ]
+            },
+            {
+              "label": "Peer (Adeptus Mechanicus)",
+              "effects": [
+                {
+                  "type": "grant_talent",
+                  "talent": "Peer (Adeptus Mechanicus)"
+                }
+              ]
+            },
+            {
+              "label": "Peer (Administratum)",
+              "effects": [
+                {
+                  "type": "grant_talent",
+                  "talent": "Peer (Administratum)"
+                }
+              ]
+            },
+            {
+              "label": "Peer (Astropaths)",
+              "effects": [
+                {
+                  "type": "grant_talent",
+                  "talent": "Peer (Astropaths)"
+                }
+              ]
+            },
+            {
+              "label": "Peer (Ecclesiarchy)",
+              "effects": [
+                {
+                  "type": "grant_talent",
+                  "talent": "Peer (Ecclesiarchy)"
+                }
+              ]
+            },
+            {
+              "label": "Peer (Government)",
+              "effects": [
+                {
+                  "type": "grant_talent",
+                  "talent": "Peer (Government)"
+                }
+              ]
+            },
+            {
+              "label": "Peer (Mercantile)",
+              "effects": [
+                {
+                  "type": "grant_talent",
+                  "talent": "Peer (Mercantile)"
+                }
+              ]
+            },
+            {
+              "label": "Peer (Military)",
+              "effects": [
+                {
+                  "type": "grant_talent",
+                  "talent": "Peer (Military)"
+                }
+              ]
+            },
+            {
+              "label": "Peer (Underworld)",
+              "effects": [
+                {
+                  "type": "grant_talent",
+                  "talent": "Peer (Underworld)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "profit_factor",
+          "amount": 1
+        },
+        {
+          "type": "trait",
+          "name": "Etiquette",
+          "text": "+10 on Interaction Skill Tests when dealing with high authority and in formal situations."
+        },
+        {
+          "type": "trait",
+          "name": "Vendetta",
+          "text": "Starts play with powerful enemies (defined with the GM)."
+        }
+      ],
+      "starting_wounds": {
+        "tb_multiplier": 2,
+        "dice": [
+          1,
+          5
+        ],
+        "flat": 0
+      },
+      "starting_fate": [
+        [
+          3,
+          2
+        ],
+        [
+          9,
+          3
+        ],
+        [
+          10,
+          4
+        ]
+      ]
+    },
+    {
+      "name": "Frontier World",
+      "source": "Into the Storm",
+      "page": 9,
+      "substitutes_for": [
+        "Death World"
+      ],
+      "requires": {
+        "all_of": [
+          {
+            "species": "Human"
+          }
+        ]
+      },
+      "effects": [
+        {
+          "type": "char_mod",
+          "char": "S",
+          "amount": 5
+        },
+        {
+          "type": "char_mod",
+          "char": "Int",
+          "amount": -5
+        },
+        {
+          "type": "grant_skill",
+          "skill": "Survival",
+          "level": "trained"
+        },
+        {
+          "type": "grant_skill",
+          "skill": "Wrangling",
+          "level": "trained"
+        },
+        {
+          "type": "trait",
+          "name": "Tough as Grox-Hide",
+          "text": "Begin with one additional Wound (already included in Starting Wounds)."
+        },
+        {
+          "type": "trait",
+          "name": "Leery of Outsiders",
+          "text": "-10 penalty on all Fellowship Tests when dealing with someone not previously met (GM's discretion)."
+        },
+        {
+          "type": "trait",
+          "name": "Tenacious Survivalist",
+          "text": "May re-roll any Initiative Roll, but must accept the second result."
+        },
+        {
+          "type": "trait",
+          "name": "Xenos Interaction",
+          "text": "Immune to Fear caused by a xenos with Fear (1) or Fear (2); Fear (3+) affects normally. -5 to all Interaction Tests when dealing with members of the Imperial Cult."
+        }
+      ],
+      "starting_wounds": {
+        "tb_multiplier": 2,
+        "dice": [
+          1,
+          5
+        ],
+        "flat": 2
+      },
+      "starting_fate": [
+        [
+          5,
+          2
+        ],
+        [
+          10,
+          3
+        ]
+      ]
+    },
+    {
+      "name": "Footfallen",
+      "source": "Into the Storm",
+      "page": 10,
+      "substitutes_for": [
+        "Void Born"
+      ],
+      "requires": {
+        "all_of": [
+          {
+            "species": "Human"
+          }
+        ]
+      },
+      "effects": [
+        {
+          "type": "char_mod",
+          "char": "BS",
+          "amount": -5
+        },
+        {
+          "type": "char_mod",
+          "char": "T",
+          "amount": -5
+        },
+        {
+          "type": "char_mod",
+          "char": "Ag",
+          "amount": 5
+        },
+        {
+          "type": "char_mod",
+          "char": "Fel",
+          "amount": 5
+        },
+        {
+          "type": "grant_skill",
+          "skill": "Common Lore (Koronus Expanse)",
+          "level": "trained"
+        },
+        {
+          "type": "grant_skill",
+          "skill": "Psyniscience",
+          "level": "trained"
+        },
+        {
+          "type": "grant_talent",
+          "talent": "Polyglot"
+        },
+        {
+          "type": "grant_talent",
+          "talent": "Rival (Inquisition)"
+        },
+        {
+          "type": "choice",
+          "id": "footfallen_web_of_contacts",
+          "options": [
+            {
+              "label": "Peer (Astropaths)",
+              "effects": [
+                {
+                  "type": "grant_talent",
+                  "talent": "Peer (Astropaths)"
+                }
+              ]
+            },
+            {
+              "label": "Peer (The Insane)",
+              "effects": [
+                {
+                  "type": "grant_talent",
+                  "talent": "Peer (The Insane)"
+                }
+              ]
+            },
+            {
+              "label": "Peer (Underworld)",
+              "effects": [
+                {
+                  "type": "grant_talent",
+                  "talent": "Peer (Underworld)"
+                }
+              ]
+            },
+            {
+              "label": "Peer (Void Born)",
+              "effects": [
+                {
+                  "type": "grant_talent",
+                  "talent": "Peer (Void Born)"
+                }
+              ]
+            },
+            {
+              "label": "Peer (Workers)",
+              "effects": [
+                {
+                  "type": "grant_talent",
+                  "talent": "Peer (Workers)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "trait",
+          "name": "Street Knowledge",
+          "text": "-5 penalty on all Scholastic Lore Tests except those involving the Koronus Expanse (GM's discretion)."
+        },
+        {
+          "type": "trait",
+          "name": "Sixth Sense",
+          "text": "Gain Psyniscience as a Trained Skill though not a psyker; of interest to the Inquisition (Rival (Inquisition))."
+        }
+      ],
+      "starting_wounds": {
+        "tb_multiplier": 2,
+        "dice": [
+          1,
+          5
+        ],
+        "flat": 0
+      },
+      "starting_fate": [
+        [
+          4,
+          2
+        ],
+        [
+          7,
+          3
+        ],
+        [
+          10,
+          4
+        ]
+      ]
+    },
+    {
+      "name": "Fortress World",
+      "source": "Into the Storm",
+      "page": 11,
+      "substitutes_for": [
+        "Forge World"
+      ],
+      "requires": {
+        "all_of": [
+          {
+            "species": "Human"
+          }
+        ]
+      },
+      "effects": [
+        {
+          "type": "char_mod",
+          "char": "BS",
+          "amount": 5
+        },
+        {
+          "type": "char_mod",
+          "char": "WP",
+          "amount": 5
+        },
+        {
+          "type": "char_mod",
+          "char": "Int",
+          "amount": -5
+        },
+        {
+          "type": "char_mod",
+          "char": "Fel",
+          "amount": -5
+        },
+        {
+          "type": "grant_skill",
+          "skill": "Secret Tongue (Military)",
+          "level": "trained"
+        },
+        {
+          "type": "grant_skill",
+          "skill": "Common Lore (War)",
+          "level": "trained"
+        },
+        {
+          "type": "grant_talent",
+          "talent": "Hatred (fortress-world enemy)"
+        },
+        {
+          "type": "grant_talent",
+          "talent": "Nerves of Steel"
+        },
+        {
+          "type": "choice",
+          "id": "fortress_world_weapon_training",
+          "options": [
+            {
+              "label": "Basic Weapon Training (Las)",
+              "effects": [
+                {
+                  "type": "grant_talent",
+                  "talent": "Basic Weapon Training (Las)"
+                }
+              ]
+            },
+            {
+              "label": "Basic Weapon Training (SP)",
+              "effects": [
+                {
+                  "type": "grant_talent",
+                  "talent": "Basic Weapon Training (SP)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "trait",
+          "name": "Constant Combat Training",
+          "text": "-5 penalty on Social Interaction Tests regarding non-combat topics (GM's discretion)."
+        }
+      ],
+      "starting_wounds": {
+        "tb_multiplier": 2,
+        "dice": [
+          1,
+          5
+        ],
+        "flat": 1
+      },
+      "starting_fate": [
+        [
+          9,
+          3
+        ],
+        [
+          10,
+          4
+        ]
+      ]
+    },
+    {
+      "name": "Battlefleet",
+      "source": "Into the Storm",
+      "page": 12,
+      "substitutes_for": [
+        "Hive World"
+      ],
+      "requires": {
+        "all_of": [
+          {
+            "species": "Human"
+          }
+        ]
+      },
+      "effects": [
+        {
+          "type": "char_mod",
+          "char": "WP",
+          "amount": 5
+        },
+        {
+          "type": "char_mod",
+          "char": "Fel",
+          "amount": 3
+        },
+        {
+          "type": "char_mod",
+          "char": "Per",
+          "amount": -5
+        },
+        {
+          "type": "grant_skill",
+          "skill": "Common Lore (Imperial Navy)",
+          "level": "trained"
+        },
+        {
+          "type": "grant_skill",
+          "skill": "Speak Language (Battlefleet War Cant)",
+          "level": "trained"
+        },
+        {
+          "type": "choice",
+          "id": "battlefleet_void_born_ancestry",
+          "options": [
+            {
+              "label": "Navigation (Stellar)",
+              "effects": [
+                {
+                  "type": "grant_skill",
+                  "skill": "Navigation (Stellar)",
+                  "level": "trained"
+                }
+              ]
+            },
+            {
+              "label": "Pilot (Spacecraft)",
+              "effects": [
+                {
+                  "type": "grant_skill",
+                  "skill": "Pilot (Spacecraft)",
+                  "level": "trained"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "trait",
+          "name": "Void Accustomed",
+          "text": "Immune to space travel sickness; zero/low-gravity is not Difficult Terrain (ROGUE TRADER p.19)."
+        },
+        {
+          "type": "trait",
+          "name": "Officer on Deck",
+          "text": "+5 bonus to all Command Tests while aboard any spacecraft."
+        },
+        {
+          "type": "trait",
+          "name": "Ship-Bound Fighter",
+          "text": "On a planet (open ground), suffer -2 to Initiative Tests and double the BS penalty for firing at Long Range or greater; penalties do not apply inside tunnels/confined spaces."
+        }
+      ],
+      "starting_wounds": {
+        "tb_multiplier": 2,
+        "dice": [
+          1,
+          5
+        ],
+        "flat": 0
+      },
+      "starting_fate": [
+        [
+          6,
+          3
+        ],
+        [
+          10,
+          4
+        ]
+      ]
+    },
+    {
+      "name": "Penal World",
+      "source": "Into the Storm",
+      "page": 13,
+      "substitutes_for": [
+        "Imperial World"
+      ],
+      "requires": {
+        "all_of": [
+          {
+            "species": "Human"
+          }
+        ]
+      },
+      "effects": [
+        {
+          "type": "char_mod",
+          "char": "WP",
+          "amount": -5
+        },
+        {
+          "type": "char_mod",
+          "char": "Per",
+          "amount": 5
+        },
+        {
+          "type": "char_mod",
+          "char": "T",
+          "amount": 5
+        },
+        {
+          "type": "char_mod",
+          "char": "Fel",
+          "amount": -5
+        },
+        {
+          "type": "grant_skill",
+          "skill": "Security",
+          "level": "basic"
+        },
+        {
+          "type": "choice",
+          "id": "penal_world_skill",
+          "options": [
+            {
+              "label": "Deceive",
+              "effects": [
+                {
+                  "type": "grant_skill",
+                  "skill": "Deceive",
+                  "level": "trained"
+                }
+              ]
+            },
+            {
+              "label": "Intimidate",
+              "effects": [
+                {
+                  "type": "grant_skill",
+                  "skill": "Intimidate",
+                  "level": "trained"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "grant_talent",
+          "talent": "Peer (Underworld)"
+        },
+        {
+          "type": "grant_talent",
+          "talent": "Light Sleeper"
+        },
+        {
+          "type": "insanity",
+          "id": "penal_world_nightmares",
+          "dice": [
+            1,
+            5
+          ]
+        },
+        {
+          "type": "trait",
+          "name": "Criminal",
+          "text": "-20 penalty on Interaction Tests when dealing with the Adeptus Arbites, Ecclesiarchy, Enforcers, and the Military should the home world become known (GM's discretion)."
+        },
+        {
+          "type": "trait",
+          "name": "Underground Resources",
+          "text": "When making Acquisition Tests on a world with a criminal underworld, may make an item's Availability one level more common (min Abundant); usable once every other game session (GM's discretion); procured items are likely stolen."
+        }
+      ],
+      "starting_wounds": {
+        "tb_multiplier": 2,
+        "dice": [
+          1,
+          5
+        ],
+        "flat": 1
+      },
+      "starting_fate": [
+        [
+          4,
+          2
+        ],
+        [
+          9,
+          3
+        ],
+        [
+          10,
+          4
+        ]
+      ]
+    },
+    {
+      "name": "Child of Dynasty",
+      "source": "Into the Storm",
+      "page": 14,
+      "substitutes_for": [
+        "Noble Born"
+      ],
+      "requires": {
+        "all_of": [
+          {
+            "species": "Human"
+          }
+        ]
+      },
+      "effects": [
+        {
+          "type": "char_mod",
+          "char": "T",
+          "amount": -3
+        },
+        {
+          "type": "char_mod",
+          "char": "Int",
+          "amount": 3
+        },
+        {
+          "type": "char_mod",
+          "char": "WP",
+          "amount": -5
+        },
+        {
+          "type": "char_mod",
+          "char": "Fel",
+          "amount": 5
+        },
+        {
+          "type": "grant_skill",
+          "skill": "Literacy",
+          "level": "trained"
+        },
+        {
+          "type": "grant_skill",
+          "skill": "Speak Language (High Gothic)",
+          "level": "trained"
+        },
+        {
+          "type": "grant_talent",
+          "talent": "Enemy (unseen rival)"
+        },
+        {
+          "type": "trait",
+          "name": "Dynastic Warrant",
+          "text": "Add +3 Ship Points when building the group's ship (Stage 5 / Ship Points not yet modelled). A group with a Child of Dynasty may not exchange Ship Points for Profit Factor; any unspent Ship Points are lost."
+        },
+        {
+          "type": "trait",
+          "name": "Honour Amongst One's Peers",
+          "text": "+5 bonus to all Fellowship Tests to interact with high-ranking Imperial officials and Imperial nobility in a formal setting (GM's discretion)."
+        }
+      ],
+      "starting_wounds": {
+        "tb_multiplier": 2,
+        "dice": [
+          1,
+          5
+        ],
+        "flat": 0
+      },
+      "starting_fate": [
+        [
+          3,
+          2
+        ],
+        [
+          7,
+          3
+        ],
+        [
+          10,
+          4
+        ]
+      ]
+    }
+  ]
+}
