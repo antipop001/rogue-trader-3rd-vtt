@@ -1,21 +1,31 @@
 <div class="rt-chargen__layout">
     <nav class="rt-chargen__rail">
-        {{#each stages}}
-        <div class="rt-chargen__stage{{#if this.active}} rt-chargen__stage--active{{/if}}{{#if this.locked}} rt-chargen__stage--locked{{/if}}">
-            <span class="rt-chargen__stage-num">{{this.num}}</span>
-            <span class="rt-chargen__stage-label">{{this.label}}</span>
-        </div>
+        {{#each pages}}
+        <button type="button" data-action="navPage" data-page="{{this.key}}"
+            class="rt-chargen__stage{{#if this.active}} rt-chargen__stage--active{{/if}}{{#if this.done}} rt-chargen__stage--done{{/if}}">
+            <span class="rt-chargen__stage-num">{{#if this.done}}✓{{else}}{{this.num}}{{/if}}</span>
+            <span class="rt-chargen__stage-label">{{this.label}}{{#if this.optional}} <em>(opt.)</em>{{/if}}</span>
+        </button>
         {{/each}}
+        {{#if originXpSpent}}
+        <div class="rt-chargen__xp-meter" title="Into the Storm origin options debit the 500-xp starting pool">
+            Origin XP: {{originXpSpent}} / {{originXpPool}}
+        </div>
+        {{/if}}
     </nav>
 
     <section class="rt-chargen__pane">
-        <h2>Stage 1 — Characteristics</h2>
+        {{#each stepErrors}}
+        <div class="rt-chargen__warnings"><p><i class="fas fa-triangle-exclamation"></i> Pick dropped: {{this}}</p></div>
+        {{/each}}
 
+        {{!-- ============ Stage 1: Characteristics ============ --}}
+        {{#if isCharacteristics}}
+        <h2>Characteristics</h2>
         <div class="rt-chargen__field">
             <label for="rt-chargen-name">Character name</label>
             <input type="text" id="rt-chargen-name" name="charname" value="{{name}}" placeholder="New Explorer" />
         </div>
-
         <div class="rt-chargen__field">
             <label for="rt-chargen-method">Generation method</label>
             <select id="rt-chargen-method" name="method">
@@ -24,48 +34,29 @@
                 {{/each}}
             </select>
         </div>
-
         <div class="rt-chargen__toolbar">
-            {{#if isRoll}}
-            <button type="button" data-action="rollAll"><i class="fas fa-dice"></i> Roll All (2d10+25)</button>
-            {{/if}}
+            {{#if isRoll}}<button type="button" data-action="rollAll"><i class="fas fa-dice"></i> Roll All</button>{{/if}}
             {{#if isPool}}
             <button type="button" data-action="rollPool"><i class="fas fa-dice"></i> Roll Pool</button>
-            {{#if pool}}
-            <button type="button" data-action="assignPool"><i class="fas fa-arrow-down-1-9"></i> Assign in order</button>
+            {{#if pool}}<button type="button" data-action="assignPool"><i class="fas fa-arrow-down-1-9"></i> Assign in order</button>{{/if}}
             {{/if}}
-            {{/if}}
-            {{#if isFixed}}
-            <button type="button" data-action="fillFixed"><i class="fas fa-equals"></i> Fill all with 36</button>
-            {{/if}}
+            {{#if isFixed}}<button type="button" data-action="fillFixed"><i class="fas fa-equals"></i> Fill all with 36</button>{{/if}}
         </div>
-
-        {{#if isManual}}
-        <p class="rt-chargen__hint">Roll 2d10+25 per characteristic with your own dice and type the results below.</p>
-        {{/if}}
-
+        {{#if speciesNote}}<p class="rt-chargen__hint">{{speciesNote}}</p>{{/if}}
+        {{#if isManual}}<p class="rt-chargen__hint">Roll with your own dice and type the results below.</p>{{/if}}
         {{#if pool}}
         <div class="rt-chargen__pool">
             <span class="rt-chargen__pool-label">Pool:</span>
-            {{#each pool}}
-            <span class="rt-chargen__chip{{#if this.used}} rt-chargen__chip--used{{/if}}">{{this.value}}</span>
-            {{/each}}
+            {{#each pool}}<span class="rt-chargen__chip{{#if this.used}} rt-chargen__chip--used{{/if}}">{{this.value}}</span>{{/each}}
         </div>
         {{/if}}
-
         <table class="rt-chargen__table">
-            <thead>
-                <tr>
-                    <th>Characteristic</th>
-                    <th>Base</th>
-                    <th>Bonus</th>
-                    {{#if isRoll}}<th></th>{{/if}}
-                </tr>
-            </thead>
+            <thead><tr><th>Characteristic</th><th>Dice</th><th>Base</th><th>Bonus</th>{{#if isRoll}}<th></th>{{/if}}</tr></thead>
             <tbody>
                 {{#each rows}}
                 <tr>
                     <td class="rt-chargen__char">{{this.full}} <span class="rt-chargen__abbr">({{this.abbr}})</span></td>
+                    <td class="rt-chargen__abbr">{{this.formula}}</td>
                     <td>
                         {{#if this.poolOptions}}
                         <select data-abbr="{{this.abbr}}">
@@ -80,29 +71,216 @@
                     </td>
                     <td class="rt-chargen__bonus">{{this.bonus}}</td>
                     {{#if ../isRoll}}
-                    <td>
-                        <button type="button" class="rt-chargen__die" data-action="rollOne" data-abbr="{{this.abbr}}" title="Roll 2d10+25 for {{this.full}}">
-                            <i class="fas fa-dice-d20"></i>
-                        </button>
-                    </td>
+                    <td><button type="button" class="rt-chargen__die" data-action="rollOne" data-abbr="{{this.abbr}}" title="Roll {{this.formula}}"><i class="fas fa-dice-d20"></i></button></td>
                     {{/if}}
                 </tr>
                 {{/each}}
             </tbody>
         </table>
-
         {{#if warnings.length}}
         <div class="rt-chargen__warnings">
-            {{#each warnings}}
-            <p><i class="fas fa-triangle-exclamation"></i> {{this}}</p>
+            {{#each warnings}}<p><i class="fas fa-triangle-exclamation"></i> {{this}}</p>{{/each}}
+        </div>
+        {{/if}}
+        {{/if}}
+
+        {{!-- ============ Species (Stage 1b) ============ --}}
+        {{#if isSpecies}}
+        <h2>Species <span class="rt-chargen__abbr">(Into the Storm — optional)</span></h2>
+        <p class="rt-chargen__hint">Kroot and Ork player characters (ItS Ch.II) replace the Home World step with their species and must take their species career.</p>
+        <div class="rt-chargen__field">
+            <label for="rt-chargen-species">Species</label>
+            <select id="rt-chargen-species" name="species">
+                {{#each speciesOptions}}
+                <option value="{{this.name}}" {{#if this.selected}}selected{{/if}}>{{this.label}}</option>
+                {{/each}}
+            </select>
+        </div>
+        {{#if speciesDetail}}
+        <div class="rt-chargen__detail">
+            <h3>{{speciesDetail.name}} <span class="rt-chargen__abbr">{{speciesDetail.source}}</span></h3>
+            {{#if speciesDetail.replacesHomeWorld}}<p class="rt-chargen__hint">Replaces the Home World step. Re-roll characteristics on the first page — species dice differ from the human 2d10+25.</p>{{/if}}
+            <ul>{{#each speciesDetail.effects}}<li>{{this}}</li>{{/each}}</ul>
+        </div>
+        {{/if}}
+        {{/if}}
+
+        {{!-- ============ Origin steps ============ --}}
+        {{#if isOriginStep}}
+        <h2>{{stepLabel}}{{#if stepOptional}} <span class="rt-chargen__abbr">(optional)</span>{{/if}}</h2>
+        {{#if stepBlocked}}
+        <p class="rt-chargen__hint">{{stepBlocked}}</p>
+        {{else}}
+        <div class="rt-chargen__field">
+            <label>Option</label>
+            <select data-step-option="{{stepKey}}">
+                <option value="">—</option>
+                {{#each options}}
+                <option value="{{this.name}}" {{#if this.selected}}selected{{/if}}>{{this.label}}</option>
+                {{/each}}
+            </select>
+        </div>
+        <label class="rt-chargen__its-toggle">
+            <input type="checkbox" name="show-its" {{#if showIts}}checked{{/if}} />
+            Show Into the Storm options
+        </label>
+        {{#if stepOptional}}
+        <div class="rt-chargen__toolbar">
+            <button type="button" data-action="skipStep" data-step="{{stepKey}}"><i class="fas fa-forward"></i> Skip this step</button>
+        </div>
+        {{/if}}
+
+        {{#if selected}}
+        <div class="rt-chargen__detail">
+            <h3>{{selected.name}} <span class="rt-chargen__abbr">{{selected.source}}</span>
+                {{#if selected.xpCost}}<span class="rt-chargen__xp-badge">{{selected.xpCost}} xp</span>{{/if}}
+            </h3>
+            {{#if selected.substitutesFor}}<p class="rt-chargen__hint">May be taken in place of: {{selected.substitutesFor}}</p>{{/if}}
+            <ul>{{#each selected.effects}}<li>{{this}}</li>{{/each}}</ul>
+        </div>
+
+        {{#if pendingChoices.length}}
+        <div class="rt-chargen__pending">
+            <h4>Choices to make</h4>
+            {{#each pendingChoices}}
+            <div class="rt-chargen__field">
+                <label>{{this.label}}</label>
+                <select data-choice-id="{{this.id}}" data-choice-step="{{../stepKey}}">
+                    <option value="">—</option>
+                    {{#each this.options}}<option value="{{this}}">{{this}}</option>{{/each}}
+                </select>
+            </div>
+            {{/each}}
+        </div>
+        {{/if}}
+        {{#if resolvedChoices.length}}
+        <div class="rt-chargen__pending">
+            <h4>Chosen</h4>
+            {{#each resolvedChoices}}
+            <div class="rt-chargen__field">
+                <label>{{this.id}}</label>
+                <select data-choice-id="{{this.id}}" data-choice-step="{{../stepKey}}">
+                    <option value="{{this.sel}}" selected>{{this.sel}}</option>
+                    <option value="">(clear)</option>
+                </select>
+            </div>
             {{/each}}
         </div>
         {{/if}}
 
+        {{#if pendingRolls.length}}
+        <div class="rt-chargen__pending">
+            <h4>Rolls to make <span class="rt-chargen__abbr">(roll to chat, or type your own dice result)</span></h4>
+            {{#each pendingRolls}}
+            <div class="rt-chargen__field">
+                <label>{{this.label}}</label>
+                <span>
+                    <button type="button" class="rt-chargen__die" data-action="rollPending"
+                        data-roll-step="{{../stepKey}}" data-roll-id="{{this.id}}" data-roll-dice="{{this.dice}}">
+                        <i class="fas fa-dice-d20"></i> Roll {{this.dice}}
+                    </button>
+                    <input type="number" data-roll-id="{{this.id}}" data-roll-step="{{../stepKey}}" min="0" max="99" placeholder="result" />
+                </span>
+            </div>
+            {{/each}}
+        </div>
+        {{/if}}
+        {{#if resolvedRolls.length}}
+        <div class="rt-chargen__pending">
+            <h4>Rolled</h4>
+            {{#each resolvedRolls}}
+            <div class="rt-chargen__field">
+                <label>{{this.id}}</label>
+                <input type="number" data-roll-id="{{this.id}}" data-roll-step="{{../stepKey}}" value="{{this.v}}" min="0" max="99" />
+            </div>
+            {{/each}}
+        </div>
+        {{/if}}
+        {{/if}}
+        {{/if}}
+        {{/if}}
+
+        {{!-- ============ Career ============ --}}
+        {{#if isCareer}}
+        <h2>Career</h2>
+        <p class="rt-chargen__hint">{{careerNote}}</p>
+        <div class="rt-chargen__field">
+            <label for="rt-chargen-career">Career</label>
+            <select id="rt-chargen-career" name="career">
+                <option value="">—</option>
+                {{#each careerOptions}}
+                <option value="{{this.name}}" {{#if this.selected}}selected{{/if}}>{{this.name}}</option>
+                {{/each}}
+            </select>
+        </div>
+        {{/if}}
+
+        {{!-- ============ Finish ============ --}}
+        {{#if isFinish}}
+        <h2>Wounds, Fate &amp; Finish</h2>
+
+        {{#if woundsSpec}}
+        <div class="rt-chargen__pending">
+            <h4>Starting Wounds <span class="rt-chargen__abbr">({{woundsSpec.from}}: {{woundsSpec.formula}})</span></h4>
+            <div class="rt-chargen__field">
+                <label>Dice result</label>
+                <span>
+                    <button type="button" class="rt-chargen__die" data-action="rollWounds"><i class="fas fa-dice-d20"></i> Roll {{woundsSpec.dice}}</button>
+                    <input type="number" name="wounds-roll" value="{{woundsSpec.roll}}" min="0" max="99" placeholder="result" />
+                    {{#if woundsSpec.total}}<strong>→ {{woundsSpec.total}} Wounds{{#if woundsSpec.bonus}} (incl. +{{woundsSpec.bonus}} origin bonus){{/if}}</strong>{{/if}}
+                </span>
+            </div>
+            <h4>Starting Fate <span class="rt-chargen__abbr">(1d10 on the origin table)</span></h4>
+            <div class="rt-chargen__field">
+                <label>d10 result</label>
+                <span>
+                    <button type="button" class="rt-chargen__die" data-action="rollFate"><i class="fas fa-dice-d20"></i> Roll 1d10</button>
+                    <input type="number" name="fate-roll" value="{{fateSpec.roll}}" min="1" max="10" placeholder="result" />
+                    {{#if fateSpec.total}}<strong>→ {{fateSpec.total}} Fate{{#if fateSpec.adjustment}} (incl. {{fateSpec.adjustment}} origin adj.){{/if}}</strong>{{/if}}
+                </span>
+            </div>
+        </div>
+        {{else}}
+        <p class="rt-chargen__hint">Pick a Home World (or species) to unlock Starting Wounds and Fate.</p>
+        {{/if}}
+
+        <div class="rt-chargen__detail">
+            <h3>{{summary.name}} <span class="rt-chargen__abbr">{{summary.species}}{{#if summary.career}} — {{summary.career}}{{/if}}</span></h3>
+            <table class="rt-chargen__table rt-chargen__table--summary">
+                <tr>{{#each summary.characteristics}}<th>{{this.abbr}}</th>{{/each}}</tr>
+                <tr>{{#each summary.characteristics}}<td class="rt-chargen__bonus">{{this.value}}</td>{{/each}}</tr>
+            </table>
+            <ul>
+                {{#each summary.origin}}<li><strong>{{this.label}}:</strong> {{this.value}}{{#if this.notes}} <span class="rt-chargen__abbr">({{this.notes}})</span>{{/if}}</li>{{/each}}
+            </ul>
+            {{#if summary.skills.length}}<p><strong>Skills:</strong> {{#each summary.skills}}{{this}}{{#unless @last}}, {{/unless}}{{/each}}</p>{{/if}}
+            {{#if summary.talents.length}}<p><strong>Talents:</strong> {{#each summary.talents}}{{this}}{{#unless @last}}, {{/unless}}{{/each}}</p>{{/if}}
+            {{#if summary.traits.length}}<p><strong>Traits:</strong> {{#each summary.traits}}{{this}}{{#unless @last}}, {{/unless}}{{/each}}</p>{{/if}}
+            <p>
+                {{#if summary.insanity}}<span>Insanity {{summary.insanity}} · </span>{{/if}}
+                {{#if summary.corruption}}<span>Corruption {{summary.corruption}} · </span>{{/if}}
+                {{#if summary.xpSpent}}<span>Origin XP spent {{summary.xpSpent}}/500 · </span>{{/if}}
+                {{#if summary.profitFactor}}<span>PF +{{summary.profitFactor}} · </span>{{/if}}
+                {{#if summary.shipPoints}}<span>SP +{{summary.shipPoints}}</span>{{/if}}
+            </p>
+        </div>
+
+        {{#if incomplete.length}}
+        <div class="rt-chargen__warnings">
+            {{#each incomplete}}<p><i class="fas fa-triangle-exclamation"></i> {{this}}</p>{{/each}}
+        </div>
+        {{/if}}
+
         <footer class="rt-chargen__footer">
+            {{#if summary.profitFactor}}{{#if isGM}}
+            <button type="button" data-action="applyPfWorld" title="Add this character's dynasty PF contribution to the world Profit Factor setting">
+                <i class="fas fa-coins"></i> Add +{{summary.profitFactor}} to world PF
+            </button>
+            {{/if}}{{/if}}
             <button type="button" data-action="commit" {{#unless canCommit}}disabled{{/unless}}>
                 <i class="fas fa-user-plus"></i> {{commitLabel}}
             </button>
         </footer>
+        {{/if}}
     </section>
 </div>

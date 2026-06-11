@@ -199,6 +199,27 @@ export const ORIGIN_STEP = Object.freeze({
     motivation: 'motivation',
 });
 
+/** Engine career name -> sheet dropdown label (rules/origin-path/careers.mjs
+ *  labels; the originPath selects store LABELS, and casing differs from the
+ *  engine names in two places). */
+export const CAREER_LABEL = Object.freeze({
+    'Rogue Trader': 'Rogue Trader',
+    'Arch-militant': 'Arch-Militant',
+    'Astropath Transcendent': 'Astropath Transcendent',
+    'Explorator': 'Explorator',
+    'Missionary': 'Missionary',
+    'Navigator': 'Navigator',
+    'Seneschal': 'Seneschal',
+    'Void-master': 'Void-master',
+    'Kroot Mercenary': 'Kroot Mercenary (ItS)',
+    'Ork Freebooter': 'Ork Freebooter (ItS)',
+});
+
+/** Talent-name aliases: engine/RT-1e name -> compendium item name. */
+export const TALENT_ALIAS = Object.freeze({
+    'Resistance (Psychic Powers)': 'Resistance (Psychic Techniques)',
+});
+
 /** Engine career name -> system career key (rules/origin-path/careers.mjs). */
 export const CAREER_KEY = Object.freeze({
     'Rogue Trader': 'rogueTrader',

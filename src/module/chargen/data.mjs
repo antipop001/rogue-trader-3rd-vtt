@@ -38,3 +38,12 @@ export async function loadStep(step) {
     }
     return cache.get(step);
 }
+
+/** Load every step's parsed data, keyed by step (input for buildRegistry). */
+export async function loadAllSteps() {
+    const out = {};
+    await Promise.all(Object.keys(STEP_FILES).map(async (step) => {
+        out[step] = await loadStep(step);
+    }));
+    return out;
+}

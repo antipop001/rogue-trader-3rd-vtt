@@ -1,10 +1,15 @@
 # In-Foundry Character Builder — Stage A & B Plan
 
-> **Status 2026-06-11:** Stage A implemented, tested (28 node cases, `npm test`),
-> deployed to foundrySB, Playwright-verified (`/tmp/verify_chargen.py`).
-> Unreleased — cut as 0.8.0. Stage B not started. Implementation note: AppV2
-> reserves `state` (read-only getter) — the wizard's builder state lives in
-> `this.chargenState`.
+> **Status 2026-06-11:** Stages A **and B** implemented, tested (51 node cases,
+> `npm test`), deployed to foundrySB, Playwright-verified (`/tmp/verify_chargen.py`,
+> `/tmp/verify_chargen_b.py` — full Void Born → Rogue Trader build through the
+> real UI). Unreleased — cut as 0.8.0. Implementation notes: AppV2 reserves
+> `state` (read-only getter) — the wizard's builder state lives in
+> `this.chargenState`; the wizard uses the replay model (`this.inputs` is the
+> source of truth, ChargenState rebuilt on every change); chargen NEVER writes
+> the legacy `bio.homeWorld` field ("Forge World"/"Hive World" collide with the
+> DH2 `homeworlds()` list and would inject DH2 backgroundEffects). Next: Stage C
+> (career rank-1 advance tables + XP spend).
 
 Goal: port the RTT_MAKER character builder (Python, `/home/ahermon/RTT_MAKER`) into
 the rogue-trader-3rd Foundry system as a guided chargen wizard. This document

@@ -28,14 +28,20 @@ export class ChargenState {
         this.origin = {};            // step -> option name
         /** Replay inputs for Stage B: {step, option, choices: {}, rolls: {}}. */
         this.originInputs = [];
+        /** Human-readable per-step notes (resolved sub-choices) for bio.originPath. */
+        this.originNotes = {};
         this.species = null;         // null == Human
+        this.career = null;          // chosen career name (selection only; XP is Stage C)
         this.profitFactor = 0;
+        this.shipPointsContributed = 0; // Warrant & Ship dynasty SP contribution
         this.fateAdjustment = 0;
         this.woundBonus = 0;
         this.insanity = 0;
         this.corruption = 0;
         this.wounds = null;          // computed starting wounds (int) once rolled
         this.fate = null;            // computed starting fate (int) once rolled
+        this.woundsRoll = null;      // raw bonus-dice total input (resume)
+        this.fateRoll = null;        // raw d10 input (resume)
         this.originXpSpent = 0;
         this.originXpCharges = [];   // {step, option, cost}
         this.pendingChoices = [];    // {id, source, label, options}
@@ -113,14 +119,19 @@ export class ChargenState {
             traits: this.traits,
             origin: this.origin,
             originInputs: this.originInputs,
+            originNotes: this.originNotes,
             species: this.species,
+            career: this.career,
             profitFactor: this.profitFactor,
+            shipPointsContributed: this.shipPointsContributed,
             fateAdjustment: this.fateAdjustment,
             woundBonus: this.woundBonus,
             insanity: this.insanity,
             corruption: this.corruption,
             wounds: this.wounds,
             fate: this.fate,
+            woundsRoll: this.woundsRoll,
+            fateRoll: this.fateRoll,
             originXpSpent: this.originXpSpent,
             originXpCharges: this.originXpCharges,
             pendingChoices: this.pendingChoices,
