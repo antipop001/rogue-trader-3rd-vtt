@@ -1,9 +1,10 @@
 # In-Foundry Character Builder — Stage A & B Plan
 
 > **Status 2026-06-11:** Stages A **and B** implemented, tested (51 node cases,
-> `npm test`), deployed to foundrySB, Playwright-verified (`/tmp/verify_chargen.py`,
-> `/tmp/verify_chargen_b.py` — full Void Born → Rogue Trader build through the
-> real UI). Unreleased — cut as 0.8.0. Implementation notes: AppV2 reserves
+> `npm test`), deployed to foundrySB, Playwright-verified (`tests/e2e/verify_chargen.py`,
+> `tests/e2e/verify_chargen_b.py` — full Void Born → Rogue Trader build through the
+> real UI; run with `~/RTT_MAKER/.venv/bin/python`, system python lacks playwright).
+> Local commits `c6d270f` (A) + `f4eb7c7` (B), not pushed — cut as 0.8.0. Implementation notes: AppV2 reserves
 > `state` (read-only getter) — the wizard's builder state lives in
 > `this.chargenState`; the wizard uses the replay model (`this.inputs` is the
 > source of truth, ChargenState rebuilt on every change); chargen NEVER writes
