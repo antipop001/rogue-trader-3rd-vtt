@@ -137,3 +137,78 @@ Code-handled set re-confirmed unchanged (no double-apply risk introduced).
     Soul-Bound, Strange Physiology, The Stuff of Nightmares, Toxic, Unnatural Senses,
     Warp Instability, Warp Weapon, Kroot Physiology, Da Boyz, No Corruption, Madboyz,
     Medicae (Ork), Kindred: Headhunter, Kindred: Stalker.
+
+---
+
+# AUDIT-003 — `cybernetics` pack (34 entries)
+
+Triage of all 34 `cybernetic` docs in `src/packs/cybernetics/cybernetics.yml` for
+described mechanical bonuses with NO `effects`/`conditionalBonuses` wiring. Canon:
+RT Core Rulebook (Bionic Replacements, pp.131-135) / Into the Storm. Three entries are
+already engine-wired for armour via `hasArmourPoints` (Bionic Heart body +1, Cranial
+Armour head +1, Subskin Armour arms/body/legs +2 — `_computeArmour`); only their
+NON-armour effects are triaged below. No cybernetic name is in `CODE_HANDLED` → zero
+double-apply risk.
+
+**Craftsmanship caveat:** the schema carries a single `craftsmanship: common` field.
+Most multi-version implants describe Poor/Good/Best *deltas* on top of the Common
+baseline. An always-on item AE applies regardless of craftsmanship, so it is only
+correct for bonuses the **Common (baseline) version already grants unconditionally** —
+craftsmanship-gated deltas (Good arm +10, Best Unnatural ×2, etc.) have no clean apply
+point and stay narrative / needs-engine. Item AEs transfer to the actor like the
+talents pack (implant = permanently installed); not gated on `equipped`.
+
+## Entries
+
+| Entry | Described effect (Common baseline) | Bucket | Wiring plan / why |
+|---|---|---|---|
+| Calculus Logi Upgrade | +10 Literacy, Logic, Scholastic Lore (unconditional) | always-on | AE +10 on `skills.{literacy,logic,scholasticLore}.modifier` → **WIRE-CYBER-AE**. |
+| Optical Mechadendrite | +10 all Perception Tests (unconditional); +20 vision Per at night | always-on + conditional | AE +10 `characteristics.perception.modifier` → **WIRE-CYBER-AE**; night +20 → conditionalBonus "vision-based at night" → **WIRE-CYBER-COND**. |
+| Medicae Mechadendrite | +10 Medicae; +10 Interrogation (unconditional) | always-on | AE +10 on `skills.{medicae,interrogation}.modifier` → **WIRE-CYBER-AE**. (chainscalpel/staplers = narrative.) |
+| Scribe-Tines | +10 all "Investigation" Tests | always-on | No `investigation` skill key — RT maps to `inquiry` (confirm vs scrutiny). AE +10 `skills.inquiry.modifier` → **WIRE-CYBER-AE** (note the key remap). |
+| Utility Mechadendrite | counts as combitool: +10 all Tech-Use (unconditional) | always-on | AE +10 `skills.techUse.modifier` → **WIRE-CYBER-AE**. (censer −5 WS to enemies / blade = narrative.) |
+| Bionic Respiratory System | +20 Toughness vs airborne toxins/gas (Common) | conditional | conditionalBonus toughness "resisting airborne toxins/gas" → **WIRE-CYBER-COND**. |
+| Manipulator Mechadendrite | +20 Strength when using the arm | conditional | conditionalBonus strength "using the manipulator mechadendrite" → **WIRE-CYBER-COND**. (1d5+2 club = narrative.) |
+| Mind Impulse Unit (MIU) | +10 Tech-Use/Pilot/Drive when interfaced w/ MIU systems | conditional | conditionalBonus techUse/pilot/drive "interfaced with MIU systems" → **WIRE-CYBER-COND**. |
+| Augmented Senses | grants Heightened Senses (one chosen sense) | needs-engine | Talent grant (pickable sense) → extends **ENGINE-TRAIT-GRANTS**. (Alt: mirror the Heightened Senses conditionalBonus + `pickable` on the item.) |
+| Bionic Heart | grants Sprint Talent (armour +1 already wired) | needs-engine | Talent grant → **ENGINE-TRAIT-GRANTS**. |
+| Memorance Implant | grants Total Recall Talent; +10 Trade(Remembrancer)/social-leverage | needs-engine + narrative | Talent grant → **ENGINE-TRAIT-GRANTS**; the +10 is a specialist-Trade + GM-leverage situational → narrative. |
+| Vitae Supplacement | grants Autosanguine Talent; GM 50% no-death | needs-engine | Talent grant → **ENGINE-TRAIT-GRANTS** (50% = GM-adjudicated narrative). |
+| Blackbone Bracing | grants Bulging Biceps + Iron Jaw Talents; +2 unarmed dmg | needs-engine | Talent grants → **ENGINE-TRAIT-GRANTS**; +2 unarmed dmg → unarmed-damage path → **ENGINE-NATWEAPONS**. |
+| Synthetic Muscle Grafts | +1 Strength Bonus (Common); Best → Unnatural Strength ×2, −10 Ag | needs-engine | SB-only bump (no `.bonus` modifier field; AE on `strength.modifier` +10 would over-apply to all Str Tests) + craftsmanship-gated Unnatural → **ENGINE-UNNATURAL**. |
+| Cortex Implants | Good → Unnatural Intelligence ×2 (craftsmanship-gated; +Insanity) | needs-engine | Craftsmanship-gated Unnatural multiplier → **ENGINE-UNNATURAL** (Common/Poor = stat loss/servitor, narrative). |
+| Cybernetic Senses | Good → Heightened Senses + Dark Sight + +20 resist sense-attack | narrative | All benefits craftsmanship-gated (Good); Common has "no further game effects". Record only. |
+| Bionic Arm | Good → +10 delicate-Ag/+10 Str-with-arm; Poor → penalties | narrative | Craftsmanship-gated; Common version grants no bonus. Record only. |
+| Bionic Locomotion | Good → Sprint Talent + +20 jump/leap; Poor → penalties | narrative | Craftsmanship-gated; Common grants no bonus. Record only. |
+| Auger Arrays | Good → auspex + reroll Per Tests using it; Common = auspex | narrative | Craftsmanship-gated reroll; auspex is equipment. Record only. |
+| Baleful Eye | hellpistol-in-eye weapon | narrative | Weapon (item-like). |
+| Ballistic Mechadendrite | shoulder laspistol, 1 shot/round Reaction or Half Action | narrative | Weapon + action machinery. |
+| Miu Weapon Interface | fire one extra ranged weapon as a Free Action | narrative | Extra-attack action machinery (no flat bonus). |
+| Internal Blade | monoknife weapon; Good Toxic / Best +2 dmg/+2 Pen/Power Field | narrative | Weapon (item-like). |
+| Internal Power Cell | acts as lasgun/hellgun ammo charge pack | narrative | Equipment/resource. |
+| Locator Matrix | magnetic-north/location/velocity awareness | narrative | Information utility (no test bonus). |
+| Respiratory Filter Implant | ignore inhaled toxic gases/contaminants | narrative | Immunity (no test bonus). |
+| Gastral Bionics | ignore ingested toxins/poisons | narrative | Immunity (no test bonus). |
+| Pain Ward | ignore Stun + pain penalties from crit/fire/drowning | narrative | Immunity to penalties (no standing bonus). |
+| Voidskin | resist void exposure +1d10+3 extra rounds | narrative | Duration extension (no test bonus). |
+| Volitor Implant | compulsion-control conditioning | narrative | GM/roleplay control (no game effect). |
+| Vox Implant | subvocalised micro-bead comms | narrative | Comms utility. |
+| Implant Systems | section header (Mechadendrite cap = TB) | narrative | Not an acquirable item; mounting-limit flavor. |
+
+## Bucket roll-up
+
+- **always-on → AE** (→ **WIRE-CYBER-AE**, 5 names): Calculus Logi Upgrade, Optical
+  Mechadendrite, Medicae Mechadendrite, Scribe-Tines, Utility Mechadendrite.
+- **conditional → conditionalBonuses** (→ **WIRE-CYBER-COND**, 4 entries): Bionic
+  Respiratory System, Manipulator Mechadendrite, Optical Mechadendrite (night),
+  Mind Impulse Unit.
+- **needs-engine** (extend existing ENGINE-* tasks, no new apply point): talent grants
+  Augmented Senses / Bionic Heart / Memorance Implant / Vitae Supplacement / Blackbone
+  Bracing → **ENGINE-TRAIT-GRANTS**; +1 SB & Unnatural ×2 (Synthetic Muscle Grafts,
+  Cortex Implants) → **ENGINE-UNNATURAL**; Blackbone Bracing +2 unarmed dmg →
+  **ENGINE-NATWEAPONS**.
+- **narrative (record-only)** → **NARRATIVE-RECORD-CYBER**: Cybernetic Senses, Bionic
+  Arm, Bionic Locomotion, Auger Arrays, Baleful Eye, Ballistic Mechadendrite, Miu Weapon
+  Interface, Internal Blade, Internal Power Cell, Locator Matrix, Respiratory Filter
+  Implant, Gastral Bionics, Pain Ward, Voidskin, Volitor Implant, Vox Implant, Implant
+  Systems, Memorance Implant (the +10 leverage part), Cortex Implants (Common/Poor part).

@@ -73,9 +73,16 @@ guard in the spec). Canon: `/mnt/project_data/RT/RT-DOCS/`.
   ENGINE-WOUNDS-MOD, ENGINE-RAPID-RELOAD, ENGINE-TRAIT-GRANTS, ENGINE-NATWEAPONS,
   NARRATIVE-RECORD-2 below; flagged 7 partially-wired entries for AUDIT-CRITIC. Gate green.
 
-- [ ] AUDIT-003 — `cybernetics`: find entries with described bonuses but no wiring
+- [x] AUDIT-003 — `cybernetics`: find entries with described bonuses but no wiring
   (CLAUDE.md notes ~16: Bionic Arm +10 Ag/Str, Calculus Logi +10 Literacy/Logic/Schol
-  Lore, Synthetic Muscle Grafts +1 SB, etc.). Append WIRE- tasks. (AUDIT)
+  Lore, Synthetic Muscle Grafts +1 SB, etc.). Append WIRE- tasks. (AUDIT) — done iter 6:
+  all 34 cybernetic docs triaged in `loops/effects-audit/triage.md` (AUDIT-003 section).
+  None in `CODE_HANDLED` (no double-apply). Clean buckets: 5 always-on AE
+  (WIRE-CYBER-AE), 4 conditional (WIRE-CYBER-COND); the rest are craftsmanship-gated /
+  talent-grant / immunity → fold into existing ENGINE-TRAIT-GRANTS / ENGINE-UNNATURAL /
+  ENGINE-NATWEAPONS or NARRATIVE-RECORD-CYBER. Craftsmanship caveat: single
+  `craftsmanship: common` field → only Common-baseline unconditional bonuses are
+  cleanly AE-able. Appended the 3 tasks below. Gate green (no pack change this iter).
 
 - [ ] AUDIT-004 — `weapon-mods` / `ammo` / `consumables`: find mechanical text with no
   structured effect. Append WIRE-/NARRATIVE- tasks. (AUDIT)
@@ -180,6 +187,37 @@ guard in the spec). Canon: `/mnt/project_data/RT/RT-DOCS/`.
 - [ ] AUDIT-CRITIC — Completeness pass: re-run the ratchet, list anything still
   unresolved (unwired and not justified-narrative), confirm no code-handled entry got
   an AE (grep), and regenerate the data-vendor-queue audit summary. (AUDIT)
+
+### AUDIT-003 follow-ups (`cybernetics`; see `loops/effects-audit/triage.md` AUDIT-003)
+
+- [ ] WIRE-CYBER-AE — always-on AEs on 5 cybernetics (Common-baseline unconditional
+  bonuses), copying the talents-pack AE shape (unique 16-char `_id`, `mode 2` on
+  `system.{characteristics|skills}.<k>.modifier`, `transfer` default): Calculus Logi
+  Upgrade (+10 `skills.{literacy,logic,scholasticLore}.modifier`), Optical Mechadendrite
+  (+10 `characteristics.perception.modifier`), Medicae Mechadendrite (+10
+  `skills.{medicae,interrogation}.modifier`), Scribe-Tines (+10 `skills.inquiry.modifier`
+  — "Investigation" remaps to `inquiry`; confirm vs `scrutiny` against the skill list),
+  Utility Mechadendrite (+10 `skills.techUse.modifier`). Cite RT Core p.131-135 in each
+  `source:`/AE. Add the 5 names to ratchet `WIRED_EXPECTED` (kind ae). (WIRE)
+
+- [ ] WIRE-CYBER-COND — `flags.rt.conditionalBonuses` on 4 cybernetics: Bionic
+  Respiratory System (+20 toughness "resisting airborne toxins/gas"), Manipulator
+  Mechadendrite (+20 strength "using the manipulator mechadendrite"), Optical
+  Mechadendrite (+20 perception "vision-based at night" — second cond on the same item
+  wired in WIRE-CYBER-AE), Mind Impulse Unit (+10 techUse/pilot/drive "interfaced with
+  MIU systems"). RT Core p.131-135. Add the 4 to ratchet `WIRED_EXPECTED` (kind cond).
+  (WIRE)
+
+- [ ] NARRATIVE-RECORD-CYBER — add the intentionally-unwired cybernetics to the ratchet
+  `NARRATIVE` list (in `triage.md` AUDIT-003): Cybernetic Senses, Bionic Arm, Bionic
+  Locomotion (legs, Hips, Pelvis, Etc.), Auger Arrays, Baleful Eye, Ballistic
+  Mechadendrite, Miu Weapon Interface, Internal Blade, Internal Power Cell, Locator
+  Matrix, Respiratory Filter Implant, Gastral Bionics, Pain Ward, Voidskin, Volitor
+  Implant, Vox Implant, Implant Systems. (The talent-grant / SB / unarmed-damage / ×2
+  cybernetics — Augmented Senses, Bionic Heart, Memorance Implant, Vitae Supplacement,
+  Blackbone Bracing, Synthetic Muscle Grafts, Cortex Implants — extend the existing
+  ENGINE-TRAIT-GRANTS / ENGINE-UNNATURAL / ENGINE-NATWEAPONS tasks, NOT this list.)
+  Verify each is genuinely text-only before adding. (NARRATIVE)
 
 ## Notes
 - Wire effects into the EXISTING packs (`talents`/`traits`/`cybernetics`/…); the `.db`
