@@ -260,7 +260,7 @@ guard in the spec). Canon: `/mnt/project_data/RT/RT-DOCS/`.
   All Out Attack (no bonus), and vs a creature WITHOUT the trait (no bonus). Attack/damage
   pipeline is Foundry-coupled — node gate can't exercise it. (E2E)
 
-- [ ] ENGINE-REACTION-BUDGET — the rest of ENGINE-EXTRA-DEFENCE: extra-Reaction / extra-
+- [x] ENGINE-REACTION-BUDGET — the rest of ENGINE-EXTRA-DEFENCE: extra-Reaction / extra-
   attack count machinery with no current apply point. Needs a per-round combat-state
   tracker on the actor (Reactions used this round, reset on turn) — none exists today.
   Items: Step Aside (+1 Dodge/round), Wall of Steel (+1 Parry/round), Counter Attack
@@ -268,7 +268,43 @@ guard in the spec). Canon: `/mnt/project_data/RT/RT-DOCS/`.
   Attack hit), WAAAGH! (extra attack after a Charge hit). All are post-resolution /
   budget-gated → heavily Foundry-coupled (combat tracker hooks + UI), no clean pure-JS
   slice. RT Core / ItS. Design the Reaction-budget field first; add any extractable
-  helper + node test; E2E follow-up. (ENGINE)
+  helper + node test; E2E follow-up. (ENGINE) — done iter 32: designed the field +
+  shipped the extractable MAX-budget slice. Added schema `system.combat.reactions {base,
+  dodge:{max,value}, parry:{max,value}}` to the `creature` template (acolyte+npc). Pure
+  helper `reactionBudget(talents)` in `roll-helpers.mjs` → per-Round maxima: base 1
+  Reaction (Dodge OR Parry), +1 Dodge-only with Step Aside (RT Core p.119), +1 Parry-only
+  with Wall of Steel (RT Core p.121); base Reaction is shared (RT Core p.244). Wired into
+  `acolyte._computeCharacteristics()` derived data by talent name → sets `combat.reactions.
+  {base,dodge.max,parry.max}` (defensive `?.`/`if` guards for pre-schema NPC data). NOT an
+  AE (engine-applied by name) → Step Aside + Wall of Steel added to ratchet CODE_HANDLED
+  (double-apply guard). Node test `reaction_budget.test.mjs` (6 cases). Gate green (build
+  OK, 84 node tests). The used-this-Round tracking/reset and the extra-ATTACK triggers have
+  NO apply point yet → split to ENGINE-REACTION-BUDGET-TRACK + ENGINE-REACTION-ATTACK-TRIG
+  below; E2E-REACTION-BUDGET below.
+
+- [ ] E2E-REACTION-BUDGET — verify on rt-smoke (Playwright): an actor with the Step Aside
+  talent shows `system.combat.reactions.dodge.max === 2` (parry.max 1); an actor with Wall
+  of Steel shows `parry.max === 2` (dodge.max 1); both talents → both maxes 2; a plain
+  actor → all maxes 1; `base` is 1 throughout. Confirm NPC actors (creature template) also
+  compute the budget. Derived-data + Foundry-coupled — node gate can't exercise it. (E2E)
+
+- [ ] ENGINE-REACTION-BUDGET-TRACK — the per-Round Reaction USED counter + reset: nothing
+  manages `system.combat.reactions.{dodge,parry}.value` today (it defaults 0). Needs a
+  combat-tracker hook (`combatTurn`/`combatRound`) that resets the used counters on the
+  actor's turn, a decrement when a Dodge/Parry Reaction is spent (`acolyte.rollSkill('dodge'
+  |'parry')`), and a block/warn when `value >= max` (respecting the SHARED base Reaction —
+  total reactions ≤ dodge.max + parry.max − base). Heavily Foundry-coupled (combat hooks +
+  UI). RT Core p.244. Add any extractable spend/reset helper + node test; E2E follow-up.
+  (ENGINE)
+
+- [ ] ENGINE-REACTION-ATTACK-TRIG — the extra-ATTACK post-resolution triggers (separate
+  from the Reaction budget): Counter Attack (free attack after a successful Parry), Furious
+  Assault (extra attack after an All Out Attack hit), WAAAGH! (extra attack after a Charge
+  hit). Each grants an additional attack gated on a specific prior outcome — no apply point
+  exists (the attack flow doesn't surface "you may make a free attack now"). Needs an
+  attack-pipeline hook + a prompt/button on the result card. Heavily Foundry-coupled. RT
+  Core / ItS (Counter Attack p.115, Furious Assault p.117, WAAAGH! ItS). Add any extractable
+  eligibility helper + node test; E2E follow-up. (ENGINE)
 
 - [ ] ENGINE-ATTACK-TALENTS — Swift Attack (2 melee hits) / Lightning Attack (3 melee
   hits) as TALENTS (RT lists them as Talents, not actions; currently `legacy: true`

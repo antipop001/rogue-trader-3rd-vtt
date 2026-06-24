@@ -65,6 +65,10 @@ const CODE_HANDLED = [
     // Charge-gated +3 melee Damage applied by trait name in damage-data.mjs (Brutal
     // Charge, RT Core p.364) — engine-applied, must NOT also get an AE.
     'Brutal Charge',
+    // Per-Round Reaction budget computed by talent name in acolyte._computeCharacteristics
+    // (reactionBudget → system.combat.reactions.{dodge,parry}.max). RT Core p.119/121 —
+    // engine-applied, must NOT also get an AE. ENGINE-REACTION-BUDGET.
+    'Step Aside', 'Wall of Steel',
 ];
 // Intentionally text-only (narrative / per-DoS / PF / GM-adjudicated). These describe
 // a mechanic the system deliberately does NOT express as an AE/conditionalBonus

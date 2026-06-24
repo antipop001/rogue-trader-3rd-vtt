@@ -12,7 +12,7 @@ import { RogueTraderBaseActor } from './base-actor.mjs';
 import { ForceFieldData } from '../rolls/force-field-data.mjs';
 import { prepareForceFieldRoll } from '../prompts/force-field-prompt.mjs';
 import { DHBasicActionManager } from '../actions/basic-action-manager.mjs';
-import { getDegree, roll1d100, initiativeCharBonus } from '../rolls/roll-helpers.mjs';
+import { getDegree, roll1d100, initiativeCharBonus, reactionBudget } from '../rolls/roll-helpers.mjs';
 import { SYSTEM_ID } from '../hooks-manager.mjs';
 import { RogueTraderSettings } from '../rogue-trader-settings.mjs';
 
@@ -382,6 +382,20 @@ export class RogueTraderAcolyte extends RogueTraderBaseActor {
         this.fatigue.max = this.characteristics.toughness.bonus;
         this.fatigue.fatigued = this.fatigue.value >= 1;
         this.fatigue.unconscious = this.fatigue.value > this.fatigue.max;
+
+        // RT 1e Reaction budget (RT Core p.244): one Reaction per Round by default
+        // (Dodge or Parry). Step Aside (p.119) grants a second, Dodge-only Reaction;
+        // Wall of Steel (p.121) a second, Parry-only one. Expose the per-Round MAX
+        // Dodges/Parries here; tracking how many are USED this Round + resetting on the
+        // actor's turn is the combat-state follow-up (ENGINE-REACTION-BUDGET). Computed
+        // by talent name (engine-applied) — these talents must NOT also be AE'd.
+        const reactions = reactionBudget(this.items.filter((i) => i.type === 'talent'));
+        const rc = this.system.combat?.reactions;
+        if (rc) {
+            rc.base = reactions.base;
+            if (rc.dodge) rc.dodge.max = reactions.dodge;
+            if (rc.parry) rc.parry.max = reactions.parry;
+        }
     }
 
     _computeSkills() {

@@ -109,6 +109,19 @@
           "max": 0,
           "value": 0
         },
+        "combat": {
+          "reactions": {
+            "base": 1,
+            "dodge": {
+              "max": 1,
+              "value": 0
+            },
+            "parry": {
+              "max": 1,
+              "value": 0
+            }
+          }
+        },
         "fate": {
           "max": 0,
           "value": 0,

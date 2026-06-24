@@ -158,6 +158,34 @@ export function brutalChargeBonus(traits, action) {
     return has ? 3 : 0;
 }
 
+/**
+ * Reaction budget per Round (RT Core p.244): a character gets ONE Reaction each Round
+ * by default, spent on either a Dodge or a Parry. Two talents grant a SECOND, type-locked
+ * Reaction — Step Aside (RT Core p.119): "He may make an additional Dodge once per Round
+ * ... a second Reaction that may only be used to Dodge"; Wall of Steel (RT Core p.121):
+ * "He may make one additional Parry per Round ... a second Reaction that may only be used
+ * to Parry." So the per-Round MAXIMUM number of Dodges = 1 (the base Reaction, if spent
+ * on Dodge) + Step Aside; the maximum Parries = 1 + Wall of Steel. The base Reaction is
+ * shared (you cannot both Dodge and Parry off it in one Round) — enforcing that, and
+ * tracking how many Reactions have been USED this Round (reset on the actor's turn), is
+ * the combat-state half of ENGINE-REACTION-BUDGET (no per-Round tracker exists yet).
+ * `hasTalent` only matches `type==='talent'`, so callers pass the actor's talent items.
+ * Engine-applied by name — must NOT also be given an ActiveEffect (double-apply guard).
+ *
+ * @param {Array<{name?: string}>} talents  actor talent items
+ * @returns {{base: number, dodge: number, parry: number}} per-Round Reaction maxima
+ */
+export function reactionBudget(talents) {
+    const base = 1;
+    const has = (name) => Array.isArray(talents)
+        && talents.some((t) => t?.name && String(t.name).toLowerCase() === name);
+    return {
+        base,
+        dodge: base + (has('step aside') ? 1 : 0),
+        parry: base + (has('wall of steel') ? 1 : 0),
+    };
+}
+
 export async function roll1d100() {
     let formula = '1d100';
     const roll = new Roll(formula, {});
