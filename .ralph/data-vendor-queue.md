@@ -65,3 +65,4 @@ iter 16 | traits.yml -> Klan: Goffs AE removed (BG-FIX-001) -> Into the Storm, p
 #   "Trained skill" grants from Ork Klan choices — advance-level, not +modifier (BG-007).
 #   Ship-Bound Fighter Long-Range BS doubling, Headhunter toxin auto-pass, Stalker free-action stealth.
 # All canon-correctness review of the above is still OPEN (gate verifies structure only).
+iter 1 | loops/effects-audit/triage.md → triaged 37 talents + 10 traits into buckets (always-on/conditional/narrative/needs-engine); appended 7 WIRE-/ENGINE-/NARRATIVE- tasks to fix_plan.md; CODE_HANDLED ratchet seed (8 names) confirmed by grep of rolls/ → AUDIT-001 → RT Core Rulebook / Into the Storm (per-entry buckets in triage.md)

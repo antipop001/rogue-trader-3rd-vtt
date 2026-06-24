@@ -9,7 +9,7 @@ guard in the spec). Canon: `/mnt/project_data/RT/RT-DOCS/`.
 
 ## Active list
 
-- [ ] AUDIT-001 — Triage the first-pass `+N` sweep (37 talents + 10 traits, listed in
+- [x] AUDIT-001 — Triage the first-pass `+N` sweep (37 talents + 10 traits, listed in
   `BUGS.md` SWEEP). For each: read its benefit/description, grep `rolls/` to check if
   already code-handled, and classify into one bucket. Write the table to
   `loops/effects-audit/triage.md` and APPEND per-entry WIRE-/NARRATIVE- tasks (grouped
@@ -46,6 +46,46 @@ guard in the spec). Canon: `/mnt/project_data/RT/RT-DOCS/`.
 
 - [ ] AUDIT-004 — `weapon-mods` / `ammo` / `consumables`: find mechanical text with no
   structured effect. Append WIRE-/NARRATIVE- tasks. (AUDIT)
+
+- [ ] WIRE-FIELDCRAFT — `Fieldcraft` (trait): always-on AE +10 to `system.skills.
+  {concealment,shadowing,silentMove}.modifier` (mode 2). Kroot, ItS. Add to ratchet
+  `WIRED_EXPECTED` (kind ae). ("treat forests as open terrain" stays narrative.) (WIRE)
+
+- [ ] WIRE-MULTIPLEARMS — `Multiple Arms` (trait): always-on AE +10 to
+  `system.characteristics.toughness.modifier` (mode 2). RT Core. Add to ratchet.
+  (Str +10 on Climb/Swim = conditional note; "two attacks" = Multiple Attack action,
+  narrative — record both, don't wire.) (WIRE)
+
+- [ ] WIRE-COND-INTERACT — `conditionalBonuses` for social talents: Renowned Warrant
+  (+10 interaction skills "with those who respect the warrant"), Whispers (+10 Inquiry
+  "Investigation/Interview use"), Inspire Wrath (+20 charm/intimidate "inspiring hatred
+  or anger"). RT Core / ItS. Add the 3 to ratchet `WIRED_EXPECTED` (kind cond). (WIRE)
+
+- [ ] WIRE-COND-MISC — `conditionalBonuses`: Decadence (+10 toughness "resisting
+  addiction"), Electro Graft Use (+10 commonLore/inquiry/techUse "connected to a data
+  port"), Foresight (+10 intelligence "after 10 min study"), Sturdy trait (+20 strength
+  "resisting grapple or Takedown"). RT Core. Add the 4 to ratchet (kind cond). (WIRE)
+
+- [ ] ENGINE-INIT-EXTRA — after ENGINE-INIT lands `system.initiative.modifier`: AE Wary
+  (trait) `+1` and Lightning Reflexes (`+AgB`, i.e. add a second Agility-bonus term —
+  needs the multiplier handled in `acolyte.mjs` since AE can't read AgB). RT Core. Pure-JS
+  test on the initiative compute; E2E follow-up. Add both to ratchet. (ENGINE)
+
+- [ ] ENGINE-CRITDAMAGE — Crack Shot (+2 ranged crit dmg) & Crippling Strike (+4 melee
+  crit dmg): apply extra damage only when the attack causes Critical Damage. Hook in
+  `damage-data.mjs`/`assign-damage-data.mjs` by talent name (NOT an AE — it's
+  context-gated on crit). RT Core. Pure-JS test on any extractable matcher; E2E
+  follow-up. (Crack Shot is mis-grouped under ENGINE-WEAPONCLASS — it is crit-damage,
+  not weapon-class; handle it here.) (ENGINE)
+
+- [ ] NARRATIVE-RECORD — add the intentionally-unwired entries to the ratchet
+  `NARRATIVE` list (and they're already in `loops/effects-audit/triage.md`): talents
+  Ancestral Blessing, Binary Chatter, Blood of the Stalker, Bloodtracker, Concealed
+  Cavity, Dual Shot, Dual Strike, Electrical Succour, Exceptional Leader, Hard Bargain,
+  Hyperactive Nymune Organ, Into the Jaws of Hell, Last Man Standing, Luminen Charge,
+  Luminen Shock, Master & Commander, Master Enginseer, Mimic, Psy Rating, Warp Conduit;
+  traits 'Ard, Dynastic Warrant, Incorporeal, Instinctual Understanding, Mechanicus
+  Implants, Mob Rule. (NARRATIVE)
 
 - [ ] AUDIT-CRITIC — Completeness pass: re-run the ratchet, list anything still
   unresolved (unwired and not justified-narrative), confirm no code-handled entry got
