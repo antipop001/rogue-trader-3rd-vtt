@@ -141,10 +141,23 @@ guard in the spec). Canon: `/mnt/project_data/RT/RT-DOCS/`.
   into `rollData.modifiers.modifier` reaching the test total. Node gate can't exercise
   the roll prompt. (E2E)
 
-- [ ] WIRE-COND-MISC — `conditionalBonuses`: Decadence (+10 toughness "resisting
+- [x] WIRE-COND-MISC — `conditionalBonuses`: Decadence (+10 toughness "resisting
   addiction"), Electro Graft Use (+10 commonLore/inquiry/techUse "connected to a data
   port"), Foresight (+10 intelligence "after 10 min study"), Sturdy trait (+20 strength
   "resisting grapple or Takedown"). RT Core. Add the 4 to ratchet (kind cond). (WIRE)
+  — done iter 22: Decadence +10 toughness "resisting addiction" (RT Core p.103); Electro
+  Graft Use +10 [commonLore,inquiry,techUse] "connected to a data port" (RT Core p.103);
+  Foresight +10 intelligence "after ten minutes study" (RT Core p.104); Sturdy (trait)
+  +20 strength "resisting grapple or Takedown" (RT Core p.367). None in code-handled set
+  (no double-apply). Added all 4 to ratchet WIRED_EXPECTED (kind cond). Gate green (build
+  OK, 63 node tests). E2E follow-up below. (WIRE)
+
+- [ ] E2E-COND-MISC — verify on rt-smoke (Playwright): an actor with Decadence / Electro
+  Graft Use / Foresight / Sturdy sees the labelled checkbox on the relevant roll prompt
+  (Toughness char for Decadence; Common Lore/Inquiry/Tech-Use skills for Electro Graft
+  Use; Intelligence char for Foresight; Strength char for Sturdy), and ticking it adds
+  the bonus (+10/+10/+10/+20) into `rollData.modifiers.modifier` reaching the test total.
+  Node gate can't exercise the roll prompt. (E2E)
 
 - [ ] ENGINE-INIT-EXTRA — after ENGINE-INIT lands `system.initiative.modifier`: AE Wary
   (trait) `+1` and Lightning Reflexes (`+AgB`, i.e. add a second Agility-bonus term —

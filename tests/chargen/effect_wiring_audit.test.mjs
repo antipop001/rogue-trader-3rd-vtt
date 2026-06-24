@@ -33,6 +33,10 @@ const WIRED_EXPECTED = [
     { name: 'Renowned Warrant', kind: 'cond' },
     { name: 'Whispers', kind: 'cond' },
     { name: 'Inspire Wrath', kind: 'cond' },
+    { name: 'Decadence', kind: 'cond' },
+    { name: 'Electro Graft Use', kind: 'cond' },
+    { name: 'Foresight', kind: 'cond' },
+    { name: 'Sturdy', kind: 'cond' },
 ];
 // Already applied by name in src/module/rolls/* — must NOT also be AE'd.
 const CODE_HANDLED = [

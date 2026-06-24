@@ -552,11 +552,19 @@ data:
         a +10 bonus to resist the effects of addiction.
     cost: 0
     prerequisites: Toughness 30
-    source: Rogue Trader Core Rulebook
+    source: Rogue Trader Core Rulebook, p.103
     tier: '1'
 img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
 name: Decadence
 type: talent
+flags:
+    rt:
+        conditionalBonuses:
+        - applies:
+              skills: []
+              characteristics: [toughness]
+          value: 10
+          label: 'resisting addiction'
 ---
 data:
     aptitudes: ''
@@ -753,11 +761,19 @@ data:
         corrected to Mechanicus Implants.)'
     cost: 0
     prerequisites: Mechanicus Implants
-    source: Rogue Trader Core Rulebook
+    source: Rogue Trader Core Rulebook, p.103
     tier: '1'
 img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
 name: Electro Graft Use
 type: talent
+flags:
+    rt:
+        conditionalBonuses:
+        - applies:
+              skills: [commonLore, inquiry, techUse]
+              characteristics: []
+          value: 10
+          label: 'connected to a data port'
 ---
 data:
     aptitudes: ''
@@ -972,11 +988,19 @@ data:
         problem, he gains a +10 bonus to his next Intelligence Test.
     cost: 0
     prerequisites: Intelligence 30
-    source: Rogue Trader Core Rulebook
+    source: Rogue Trader Core Rulebook, p.104
     tier: '1'
 img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
 name: Foresight
 type: talent
+flags:
+    rt:
+        conditionalBonuses:
+        - applies:
+              skills: []
+              characteristics: [intelligence]
+          value: 10
+          label: 'after ten minutes study'
 ---
 data:
     aptitudes: ''
