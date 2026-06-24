@@ -1,0 +1,477 @@
+{
+  "_meta": {
+    "source": "Rogue Trader Core Rulebook",
+    "status": "Reconciled from Core Chapter X (The Game Master): the Insanity Track (Table 10-5, p.295) + Mental Traumas (Table 10-6, p.296); the Corruption Track (Table 10-7, p.299) + Malignancies (Table 10-8, p.301); plus the Minor Mutations table (Table 14-3, Ch. XIV, p.369). Effect strings are one-line mechanical summaries (numbers/names only, no flavour prose - GW IP). The Mutations d100 ranges are CONFIRMED FROM THE DARYL TOSE EXCEL MUTATIONS SHEET (RT BLOCK), errata-current: the d100 band widths now match the workbook's 'Mutations' sheet column B Rogue Trader block (29 entries) cell-for-cell. VERIFY the insanity/malignancy roll ranges + characteristic-loss dice vs the printed folios + errata v1.4.",
+    "scope": "Core only. Manual-dice parity: every test (Willpower) and every result-table roll may be player-entered OR app-rolled (ARCH-006).",
+    "vendored_from": "RTT_MAKER@80d8c30 rogue_trader/data",
+    "vendored_on": "2026-06-16",
+    "vendored_by": "tools/sync_chargen_data.py"
+  },
+  "insanity": {
+    "source": "Core",
+    "page": 295,
+    "test_dice": "1d10",
+    "test_interval": 10,
+    "_note": "Each 10 Insanity Points gained triggers one Trauma Test (Willpower, modified by the current degree's trauma_test_modifier). A FAILED test rolls on the Mental Traumas table at 1d100 + 10 per Degree of Failure.",
+    "degrees": [
+      {
+        "min": 0,
+        "max": 9,
+        "name": "Stable",
+        "trauma_test_modifier": 0
+      },
+      {
+        "min": 10,
+        "max": 39,
+        "name": "Unsettled",
+        "trauma_test_modifier": 10
+      },
+      {
+        "min": 40,
+        "max": 59,
+        "name": "Disturbed",
+        "trauma_test_modifier": 0
+      },
+      {
+        "min": 60,
+        "max": 79,
+        "name": "Unhinged",
+        "trauma_test_modifier": -10
+      },
+      {
+        "min": 80,
+        "max": 99,
+        "name": "Deranged",
+        "trauma_test_modifier": -20
+      },
+      {
+        "min": 100,
+        "max": null,
+        "name": "Terminally Insane",
+        "trauma_test_modifier": 0,
+        "retire": true
+      }
+    ],
+    "traumas": {
+      "source": "Core",
+      "page": 296,
+      "roll": "1d100 + 10 per Degree of Failure",
+      "rows": [
+        {
+          "min": 1,
+          "max": 40,
+          "name": "Withdrawn & Quiet",
+          "effect": "-10 to Fellowship Tests for 3d10 hours"
+        },
+        {
+          "min": 41,
+          "max": 70,
+          "name": "Compulsion",
+          "effect": "-10 to Intelligence, Fellowship and Perception Tests for 3d10 hours"
+        },
+        {
+          "min": 71,
+          "max": 100,
+          "name": "Fearful & Jumpy",
+          "effect": "+10 Perception, -10 Willpower for 1d5 days"
+        },
+        {
+          "min": 101,
+          "max": 120,
+          "name": "Severe Phobia",
+          "effect": "temporary phobia (Fear) for 1d5 days"
+        },
+        {
+          "min": 121,
+          "max": 130,
+          "name": "Agitated",
+          "effect": "Willpower Test each scene or -10 to all Tests, 1d5 days"
+        },
+        {
+          "min": 131,
+          "max": 140,
+          "name": "Vivid Nightmares",
+          "effect": "Fatigued each following day for 1d5 days"
+        },
+        {
+          "min": 141,
+          "max": 150,
+          "name": "Struck Dumb",
+          "effect": "unable to speak for 1d5 days"
+        },
+        {
+          "min": 151,
+          "max": 160,
+          "name": "Refuses Food & Drink",
+          "effect": "-10 to all Characteristics for 1d10 days"
+        },
+        {
+          "min": 161,
+          "max": 170,
+          "name": "Hysterical Blindness/Deafness",
+          "effect": "blind or deaf for 1d10 days"
+        },
+        {
+          "min": 171,
+          "max": 9999,
+          "name": "Completely Traumatised",
+          "effect": "cannot initiate actions for 1d10 days"
+        }
+      ]
+    }
+  },
+  "corruption": {
+    "source": "Core",
+    "page": 299,
+    "test_dice": "1d10",
+    "test_interval": 10,
+    "_note": "Each 10 Corruption Points gained triggers one Malignancy Test (Willpower, modified by the current degree's malignancy_test_modifier). A FAILED test rolls 1d100 on the Malignancies table (re-roll duplicates). Separately, on reaching each mutation_test_threshold the character tests Willpower against two Characteristics; failing either grants a Minor Mutation (Table 14-3, rolled 1d100 on the mutations table).",
+    "degrees": [
+      {
+        "min": 0,
+        "max": 0,
+        "name": "Pure",
+        "malignancy_test_modifier": 0
+      },
+      {
+        "min": 1,
+        "max": 30,
+        "name": "Tainted",
+        "malignancy_test_modifier": 0
+      },
+      {
+        "min": 31,
+        "max": 60,
+        "name": "Soiled",
+        "malignancy_test_modifier": -10
+      },
+      {
+        "min": 61,
+        "max": 90,
+        "name": "Debased",
+        "malignancy_test_modifier": -20
+      },
+      {
+        "min": 91,
+        "max": 99,
+        "name": "Profane",
+        "malignancy_test_modifier": -30
+      },
+      {
+        "min": 100,
+        "max": null,
+        "name": "Damned",
+        "malignancy_test_modifier": 0,
+        "retire": true
+      }
+    ],
+    "mutation_test_thresholds": [
+      30,
+      60,
+      90
+    ],
+    "malignancies": {
+      "source": "Core",
+      "page": 301,
+      "roll": "1d100",
+      "rows": [
+        {
+          "min": 1,
+          "max": 10,
+          "name": "Palsy",
+          "effect": "Agility reduced by 1d10"
+        },
+        {
+          "min": 11,
+          "max": 15,
+          "name": "Dark-hearted",
+          "effect": "Fellowship reduced by 1d10"
+        },
+        {
+          "min": 16,
+          "max": 20,
+          "name": "Ill-fortuned",
+          "effect": "on spending a Fate Point, roll 1d10; 7+ the point is lost with no effect"
+        },
+        {
+          "min": 21,
+          "max": 22,
+          "name": "Skin Afflictions",
+          "effect": "-20 to Charm Tests"
+        },
+        {
+          "min": 23,
+          "max": 25,
+          "name": "Night Eyes",
+          "effect": "-10 to Tests in bright light"
+        },
+        {
+          "min": 26,
+          "max": 30,
+          "name": "Morbid",
+          "effect": "Intelligence reduced by 1d10"
+        },
+        {
+          "min": 31,
+          "max": 33,
+          "name": "Witch-mark",
+          "effect": "minor concealable deformity"
+        },
+        {
+          "min": 34,
+          "max": 45,
+          "name": "Fell Obsession",
+          "effect": "sinister fixation (treat as a Minor mental disorder)"
+        },
+        {
+          "min": 46,
+          "max": 50,
+          "name": "Hatred",
+          "effect": "implacable hatred of a chosen group/class; will not aid them"
+        },
+        {
+          "min": 51,
+          "max": 55,
+          "name": "Irrational Nausea",
+          "effect": "Toughness Test near a specific thing or -10 to Tests"
+        },
+        {
+          "min": 56,
+          "max": 60,
+          "name": "Wasted Frame",
+          "effect": "Strength reduced by 1d10"
+        },
+        {
+          "min": 61,
+          "max": 63,
+          "name": "Night Terrors",
+          "effect": "daemonic dreams; suffers as Horrific Nightmares"
+        },
+        {
+          "min": 64,
+          "max": 70,
+          "name": "Poor Health",
+          "effect": "Toughness reduced by 1d10"
+        },
+        {
+          "min": 71,
+          "max": 75,
+          "name": "Distrustful",
+          "effect": "-10 to Fellowship Tests with strangers"
+        },
+        {
+          "min": 76,
+          "max": 80,
+          "name": "Malign Sight",
+          "effect": "Perception reduced by 1d10"
+        },
+        {
+          "min": 81,
+          "max": 83,
+          "name": "Ashen Taste",
+          "effect": "negative effects of Fatigue are doubled"
+        },
+        {
+          "min": 84,
+          "max": 90,
+          "name": "Bloodlust",
+          "effect": "Willpower Test to stop attacking or let a wounded enemy flee"
+        },
+        {
+          "min": 91,
+          "max": 93,
+          "name": "Blackouts",
+          "effect": "inexplicable blackouts (GM discretion)"
+        },
+        {
+          "min": 94,
+          "max": 100,
+          "name": "Strange Addiction",
+          "effect": "Minor compulsion toward a bizarre substance"
+        }
+      ]
+    },
+    "mutations": {
+      "source": "Core",
+      "page": 369,
+      "roll": "1d100",
+      "_note": "Table 14-3 (Core Ch. XIV, p.369, per errata v1.4 L301/L536). Failing a Mutation Test at a mutation_test_threshold rolls 1d100 here. The d100 ranges are CONFIRMED from the Daryl Tose Excel Mutations sheet (RT block), errata-current: read cell-for-cell from the workbook's 'Mutations' sheet column B Rogue Trader block (29 entries, the RT version - NOT the Dark Heresy or Navigator blocks also on that sheet). Entries, order, and effects are RAW-faithful. Effect strings are one-line mechanical summaries from the Core prose (no flavour - GW IP). Ranges are gapless/non-overlapping across 1-100.",
+      "rows": [
+        {
+          "min": 1,
+          "max": 5,
+          "name": "Grotesque",
+          "effect": "-20 to Fellowship Tests vs 'normals'; +10 to Intimidate Tests"
+        },
+        {
+          "min": 6,
+          "max": 10,
+          "name": "Tough Hide",
+          "effect": "gains Natural Armour (2) Trait"
+        },
+        {
+          "min": 11,
+          "max": 15,
+          "name": "Misshapen",
+          "effect": "cannot Run; Agility -2d10"
+        },
+        {
+          "min": 16,
+          "max": 20,
+          "name": "Feels No Pain",
+          "effect": "+5 Wounds; gains Iron Jaw talent"
+        },
+        {
+          "min": 21,
+          "max": 25,
+          "name": "Brute",
+          "effect": "Strength +10, Toughness +10"
+        },
+        {
+          "min": 26,
+          "max": 30,
+          "name": "Nightsider",
+          "effect": "gains Dark Sight Trait; -10 to all Tests in bright light unless shielded"
+        },
+        {
+          "min": 31,
+          "max": 35,
+          "name": "Mental Regressive",
+          "effect": "per mental Characteristic (Int/Per/WP/Fel) roll 1d10: 1-5 -1d10, 6-7 halve, 8-9 none, 10 set to 5; +1d10 Insanity"
+        },
+        {
+          "min": 36,
+          "max": 40,
+          "name": "Malformed Hands",
+          "effect": "WS -10, BS -10; -20 to fine-manipulation Tests"
+        },
+        {
+          "min": 41,
+          "max": 45,
+          "name": "Tox Blood",
+          "effect": "+20 Toughness Tests vs poison; Toughness -1d10, Intelligence -1d10; blood contact forces Difficult (-10) Toughness Test or 1d10 damage ignoring armour & Toughness"
+        },
+        {
+          "min": 46,
+          "max": 50,
+          "name": "Hulking",
+          "effect": "gains Hulking (Size) Trait; Strength +10; +5 Wounds"
+        },
+        {
+          "min": 51,
+          "max": 55,
+          "name": "Wyrdling",
+          "effect": "gains Psy Rating 2 (or next higher if already a psyker); gains 2 Psychic Techniques of choice, both from the same Discipline, must meet the techniques' requisites, and does NOT gain the Basic Technique (errata v1.4)"
+        },
+        {
+          "min": 56,
+          "max": 59,
+          "name": "Vile Deformity",
+          "effect": "gains Fear (1) Trait"
+        },
+        {
+          "min": 60,
+          "max": 63,
+          "name": "Aberration",
+          "effect": "Strength +10, Agility +10; Intelligence -1d10, Fellowship -10"
+        },
+        {
+          "min": 64,
+          "max": 67,
+          "name": "Degenerate Mind",
+          "effect": "Int -1d10, Fel -1d10; roll 1d10: 1-3 Frenzy talent, 4-7 Fearless talent, 8-0 From Beyond Trait"
+        },
+        {
+          "min": 68,
+          "max": 70,
+          "name": "Ravaged Body",
+          "effect": "roll 1d5 times on this table"
+        },
+        {
+          "min": 71,
+          "max": 74,
+          "name": "Clawed/Fanged",
+          "effect": "gains Natural Weapon Trait (Impact or Rending damage)"
+        },
+        {
+          "min": 75,
+          "max": 78,
+          "name": "Necrophage",
+          "effect": "Toughness +10; gains Regeneration Trait (must eat raw meat or starve)"
+        },
+        {
+          "min": 79,
+          "max": 81,
+          "name": "Corrupted Flesh",
+          "effect": "on taking Critical damage, gains Fear (2) for that round"
+        },
+        {
+          "min": 82,
+          "max": 85,
+          "name": "Venomous",
+          "effect": "gains Toxic Trait"
+        },
+        {
+          "min": 86,
+          "max": 89,
+          "name": "Hideous Strength",
+          "effect": "gains Unnatural Strength Trait"
+        },
+        {
+          "min": 90,
+          "max": 91,
+          "name": "Multiple Appendages",
+          "effect": "gains Ambidextrous and Two-Weapon Wielder talents; +10 Climb Tests and grapple attacks"
+        },
+        {
+          "min": 92,
+          "max": 93,
+          "name": "Worm",
+          "effect": "+5 Wounds; gains Crawler Trait"
+        },
+        {
+          "min": 94,
+          "max": 94,
+          "name": "Nightmarish",
+          "effect": "gains Fear (3) Trait"
+        },
+        {
+          "min": 95,
+          "max": 95,
+          "name": "Malleable",
+          "effect": "Agility +10; +20 Climb/grapple Tests; fits through spaces 1/4 body size"
+        },
+        {
+          "min": 96,
+          "max": 96,
+          "name": "Winged",
+          "effect": "gains Flyer Trait at rate = Agility Bonus x2"
+        },
+        {
+          "min": 97,
+          "max": 97,
+          "name": "Corpulent",
+          "effect": "+5 Wounds; gains Unnatural Toughness Trait; cannot Run"
+        },
+        {
+          "min": 98,
+          "max": 98,
+          "name": "Shadow Kin",
+          "effect": "gains Phase Trait; Strength -10, Toughness -10"
+        },
+        {
+          "min": 99,
+          "max": 99,
+          "name": "Corrosive Bile",
+          "effect": "ranged BS attack (Full action, dodgeable not parryable): 1d10+2 Rending or Energy with Tearing"
+        },
+        {
+          "min": 100,
+          "max": 100,
+          "name": "Hellspawn",
+          "effect": "gains Daemonic, Fear (2), and From Beyond Traits"
+        }
+      ]
+    }
+  }
+}

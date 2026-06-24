@@ -1,0 +1,5 @@
+# Ralph loop error log — failure reflections appended by each rejected iteration.
+# Format per entry:
+#   ## iter <N> · <UTC> · <task>
+#   cause: <gate + error>
+#   reflection: <why + what to try next>

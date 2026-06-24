@@ -59,7 +59,11 @@ export class HooksManager {
         Hooks.on('ready', HooksManager.ready);
         Hooks.on('hotbarDrop', HooksManager.hotbarDrop);
         Hooks.on('createItem', HooksManager.onCreateItem);
-        Hooks.on('renderActorDirectory', HooksManager.onRenderActorDirectory);
+        // CHARGEN BUILDER SHELVED (2026-06-23): the in-Foundry character-creation
+        // wizard is parked (advanced work lives on branch ralph/chargen) and kept
+        // out of releases. Re-enable by uncommenting this hook + the AcolyteSheetV2
+        // header control. The wizard code itself is intentionally left intact.
+        // Hooks.on('renderActorDirectory', HooksManager.onRenderActorDirectory);
 
         DHTargetedActionManager.initializeHooks();
         DHBasicActionManager.initializeHooks();

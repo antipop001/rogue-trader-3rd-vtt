@@ -1,0 +1,19 @@
+# chargen data-vendor review queue
+# The Ralph loop appends any re-vendor of src/module/chargen/data/*.json here for
+# separate RT-rules / OCR-correctness review (PROC-003). The green gate (build +
+# node test) does NOT verify that vendored content matches Rogue Trader Core + ItS.
+# Format: `iter <N> | <file> | <what arrived / changed> | <REQ-ID>`
+#
+# Reference for verification: /mnt/project_data/RT/RT-DOCS/ (Core + Into the Storm
+# markdown) and the RTT_MAKER rules-qa notes in /home/ahermon/RTT_MAKER/.ralph/.
+
+# NOTE (2026-06-23, branch ralph/backgrounds): refocused from the chargen wizard to
+# AUTHORING the Origin-Path background traits/talents as real compendium items (see
+# specs/04). careers.json + taint_tables.json were carried over from ralph/chargen as
+# the read-only worklist source for Ork/Kroot/taint background traits and STILL need
+# the rules review below. BG-AUTHOR/TAL-FIX iterations append their own entries here
+# (traits.yml/talents.yml items authored + RT-DOCS cites — canon correctness is not
+# gate-checked).
+
+iter 1 | careers.json | NEW — 10 RT Core + ItS careers (Rank-1 grants: starting_skills/talents/traits/special_abilities, char_advance_scheme, ranks[] advance tables, starting_equipment) vendored from RTT_MAKER@2a04a83 | VEND-001
+iter 17 | taint_tables.json | NEW — insanity + corruption tracks: degree bands (Stable→Terminally Insane / Pure→damned) with per-degree trauma_test_modifier, 10-point test intervals, mutation_test_thresholds [30,60,90], and the 3 result tables (Mental Traumas 10-6 ×10 rows, Malignancies 10-8 ×19 rows, Mutations 14-3 ×29 rows; d100 ranges per RTT_MAKER _meta sourced from Daryl Tose RT-block mutations sheet) vendored from RTT_MAKER@80d8c30. VERIFY insanity/malignancy roll ranges + char-loss dice vs printed folios + errata v1.4. | TAINT-001

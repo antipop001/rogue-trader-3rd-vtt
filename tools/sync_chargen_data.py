@@ -35,6 +35,10 @@ FILES = [
     "motivations.json",
     "warrant_and_ship.json",
     "species.json",
+    # Stage 3 (career XP advances) + career starting grants. VEND-001.
+    "careers.json",
+    # Taint result tables (Mental Traumas / Malignancies / Mutations). TAINT-001.
+    "taint_tables.json",
 ]
 
 

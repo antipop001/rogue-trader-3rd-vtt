@@ -6,6 +6,7 @@
     "version": "json -I -f package.json -e \"this.version='$npm_config_next'\" && json -I -f src/system.json -e \"this.version='$npm_config_next'\"",
     "clean": "gulp clean",
     "build": "gulp build",
+    "build:check": "gulp compile",
     "packs": "gulp packs",
     "scss": "gulp scss",
     "test": "node --test tests/chargen/*.test.mjs",

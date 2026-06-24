@@ -24,10 +24,18 @@ export class AcolyteSheetV2 extends ActorContainerSheetV2 {
         },
     };
 
-    /** Append a Character Creation control (opens/resumes the chargen wizard). */
+    /**
+     * Append a Character Creation control (opens/resumes the chargen wizard).
+     * CHARGEN BUILDER SHELVED (2026-06-23): the control is not exposed while the
+     * in-Foundry wizard is parked (see ralph/chargen) and kept out of releases.
+     * Re-enable by flipping CHARGEN_UI_ENABLED + the renderActorDirectory hook in
+     * hooks-manager.mjs. The handler and wizard code are left intact.
+     */
+    static CHARGEN_UI_ENABLED = false;
+
     _getHeaderControls() {
         const controls = super._getHeaderControls();
-        if (this.isEditable) {
+        if (AcolyteSheetV2.CHARGEN_UI_ENABLED && this.isEditable) {
             controls.push({
                 icon: 'fa-solid fa-hat-wizard',
                 label: 'Character Creation',

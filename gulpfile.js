@@ -138,5 +138,10 @@ exports.clean = gulp.series(cleanBuild);
 exports.scss = gulp.series(compileScss);
 exports.packs = gulp.series(compilePacks);
 exports.copy = gulp.series(copyFiles, watchCopy);
+// Lean verification build: clean + scss + copy + packs, WITHOUT the release-zip
+// step (createArchive) that `build` ends with. This is the Ralph-loop gate target
+// (`npm run build:check`) — catches SCSS/template/pack/syntax breakage without the
+// OOM-prone archive step.
+exports.compile = gulp.series(cleanBuild, compileScss, copyFiles, compilePacks);
 exports.build = gulp.series(cleanBuild, compileScss, copyFiles, compilePacks, createArchive);
 exports.default = gulp.series(cleanBuild, compileScss, copyFiles, compilePacks, watchUpdates);

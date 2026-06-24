@@ -1,0 +1,4 @@
+# Runtime artifacts — not committed. The tracked state is errors.log,
+# data-vendor-queue.md, and the STOP sentinel (when present).
+lock/
+loop.log
