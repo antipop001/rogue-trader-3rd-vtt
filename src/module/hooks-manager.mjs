@@ -59,6 +59,11 @@ export class HooksManager {
         Hooks.on('ready', HooksManager.ready);
         Hooks.on('hotbarDrop', HooksManager.hotbarDrop);
         Hooks.on('createItem', HooksManager.onCreateItem);
+        // RT 1e Reaction budget (RT Core p.244): a character's single Reaction (plus any
+        // type-locked extra from Step Aside / Wall of Steel) refreshes each Round, at the
+        // start of their turn. Reset the per-Round USED counters when it becomes the
+        // actor's turn. (ENGINE-REACTION-BUDGET-TRACK.)
+        Hooks.on('combatTurnChange', HooksManager.onCombatTurnChange);
         // CHARGEN BUILDER SHELVED (2026-06-23): the in-Foundry character-creation
         // wizard is parked (advanced work lives on branch ralph/chargen) and kept
         // out of releases. Re-enable by uncommenting this hook + the AcolyteSheetV2
@@ -153,6 +158,24 @@ Enable Debug with: game.rt.debug = true
         if (!game.settings.get(SYSTEM_ID, RogueTraderSettings.SETTINGS.processActiveEffectsDuringCombat)) {
             DHCombatActionManager.disableHooks();
         }
+    }
+
+    /**
+     * Reset an RT actor's per-Round Reaction USED counters when it becomes their turn
+     * (RT Core p.244 — Reactions refresh each Round). Only the active GM processes the
+     * update (single writer; players may not own the combatant). No-ops for non-RT actors
+     * and when nothing has been spent. (ENGINE-REACTION-BUDGET-TRACK.)
+     */
+    static async onCombatTurnChange(combat, _prior, current) {
+        if (game.user !== game.users?.activeGM) return;
+        const combatant = combat?.combatants?.get(current?.combatantId);
+        const rc = combatant?.actor?.system?.combat?.reactions;
+        if (!rc?.dodge || !rc?.parry) return;
+        if ((rc.dodge.value ?? 0) === 0 && (rc.parry.value ?? 0) === 0) return;
+        await combatant.actor.update({
+            'system.combat.reactions.dodge.value': 0,
+            'system.combat.reactions.parry.value': 0,
+        });
     }
 
     /**

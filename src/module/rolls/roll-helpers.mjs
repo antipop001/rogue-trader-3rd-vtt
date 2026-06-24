@@ -186,6 +186,37 @@ export function reactionBudget(talents) {
     };
 }
 
+/**
+ * Can a Dodge/Parry Reaction still be spent this Round, given the per-Round budget
+ * (from {@link reactionBudget}) and how many have already been USED? RT Core p.244: a
+ * character receives ONE Reaction each Round, spent on either a Dodge OR a Parry — the
+ * base Reaction is SHARED. Step Aside (p.119) adds a second, Dodge-only Reaction; Wall
+ * of Steel (p.121) a second, Parry-only one. So even though each type has its own cap
+ * (`dodge.max` / `parry.max`), the per-Round TOTAL is capped at `dodge.max + parry.max −
+ * base` (subtract the shared base once) — you cannot, e.g., both Dodge and Parry off the
+ * single base Reaction. Returns false once either the overall budget OR the per-type cap
+ * is exhausted. Pure helper for ENGINE-REACTION-BUDGET-TRACK; the spend/reset that
+ * mutates `system.combat.reactions.<type>.value` is the Foundry-coupled half
+ * (`acolyte.rollSkill` + combat-tracker reset, E2E follow-up).
+ *
+ * @param {{base?:number, dodge?:{max?:number,value?:number}, parry?:{max?:number,value?:number}}} reactions
+ * @param {'dodge'|'parry'} type  the Reaction being attempted
+ * @returns {boolean} true if a Reaction of `type` is available this Round
+ */
+export function canSpendReaction(reactions, type) {
+    if (!reactions || (type !== 'dodge' && type !== 'parry')) return false;
+    const base = reactions.base ?? 1;
+    const dMax = reactions.dodge?.max ?? base;
+    const pMax = reactions.parry?.max ?? base;
+    const dVal = reactions.dodge?.value ?? 0;
+    const pVal = reactions.parry?.value ?? 0;
+    const totalMax = dMax + pMax - base;           // shared base ⇒ counted once
+    if (dVal + pVal >= totalMax) return false;      // overall per-Round budget spent
+    const slotVal = type === 'dodge' ? dVal : pVal;
+    const slotMax = type === 'dodge' ? dMax : pMax;
+    return slotVal < slotMax;                        // type-specific cap
+}
+
 export async function roll1d100() {
     let formula = '1d100';
     const roll = new Roll(formula, {});

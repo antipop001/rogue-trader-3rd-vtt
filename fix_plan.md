@@ -288,14 +288,29 @@ guard in the spec). Canon: `/mnt/project_data/RT/RT-DOCS/`.
   actor → all maxes 1; `base` is 1 throughout. Confirm NPC actors (creature template) also
   compute the budget. Derived-data + Foundry-coupled — node gate can't exercise it. (E2E)
 
-- [ ] ENGINE-REACTION-BUDGET-TRACK — the per-Round Reaction USED counter + reset: nothing
-  manages `system.combat.reactions.{dodge,parry}.value` today (it defaults 0). Needs a
-  combat-tracker hook (`combatTurn`/`combatRound`) that resets the used counters on the
-  actor's turn, a decrement when a Dodge/Parry Reaction is spent (`acolyte.rollSkill('dodge'
-  |'parry')`), and a block/warn when `value >= max` (respecting the SHARED base Reaction —
-  total reactions ≤ dodge.max + parry.max − base). Heavily Foundry-coupled (combat hooks +
-  UI). RT Core p.244. Add any extractable spend/reset helper + node test; E2E follow-up.
-  (ENGINE)
+- [x] ENGINE-REACTION-BUDGET-TRACK — the per-Round Reaction USED counter + reset. Done
+  iter 33: pure gate helper `canSpendReaction(reactions, type)` in `roll-helpers.mjs` —
+  answers "is a Dodge/Parry Reaction still available?" enforcing BOTH the per-type cap
+  (`dodge.max`/`parry.max`) AND the SHARED-base overall cap (total ≤ dodge.max + parry.max
+  − base, so you can't Dodge AND Parry off the single base Reaction). Wired the spend into
+  `acolyte.rollSkill('dodge'|'parry')`: only while the actor is in an active, started combat
+  → block+warn when exhausted, else tick `system.combat.reactions.<type>.value` via update
+  (guarded so out-of-combat Dodge/Parry skill tests are unaffected). Wired the reset via a
+  new `combatTurnChange` hook (`HooksManager.onCombatTurnChange`) — the active GM zeroes the
+  used counters when it becomes the actor's turn (RT Core p.244, Reactions refresh each
+  Round). Step Aside / Wall of Steel stay CODE_HANDLED (no AE; this adds tracking, not new
+  wiring) → no ratchet change. Node test `reaction_track.test.mjs` (7 cases: shared base,
+  Step Aside/Wall of Steel/both, bad input, pre-schema fallback). Gate green (build OK, 91
+  node tests). The combat-hook reset + rollSkill spend are Foundry-coupled (node gate can't
+  exercise) → E2E-REACTION-TRACK below. (ENGINE)
+
+- [ ] E2E-REACTION-TRACK — verify on rt-smoke (Playwright): with an active combat, an actor
+  rolling Dodge then Parry on the same Round gets blocked on the second (shared base — warn
+  "No Parry Reaction remaining"); a Step Aside actor can Dodge twice but not also Parry; a
+  Wall of Steel actor can Parry twice but not Dodge; both-talents actor gets 3 total. On the
+  actor's next turn the used counters reset to 0. Out-of-combat Dodge/Parry skill rolls are
+  NOT blocked or counted. Combat hooks + rollSkill spend are Foundry-coupled — node gate
+  can't exercise them. (E2E)
 
 - [ ] ENGINE-REACTION-ATTACK-TRIG — the extra-ATTACK post-resolution triggers (separate
   from the Reaction budget): Counter Attack (free attack after a successful Parry), Furious

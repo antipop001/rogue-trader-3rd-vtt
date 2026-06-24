@@ -12,7 +12,7 @@ import { RogueTraderBaseActor } from './base-actor.mjs';
 import { ForceFieldData } from '../rolls/force-field-data.mjs';
 import { prepareForceFieldRoll } from '../prompts/force-field-prompt.mjs';
 import { DHBasicActionManager } from '../actions/basic-action-manager.mjs';
-import { getDegree, roll1d100, initiativeCharBonus, reactionBudget } from '../rolls/roll-helpers.mjs';
+import { getDegree, roll1d100, initiativeCharBonus, reactionBudget, canSpendReaction } from '../rolls/roll-helpers.mjs';
 import { SYSTEM_ID } from '../hooks-manager.mjs';
 import { RogueTraderSettings } from '../rogue-trader-settings.mjs';
 
@@ -156,6 +156,24 @@ export class RogueTraderAcolyte extends RogueTraderBaseActor {
         if (skill.untrained && !BASIC_SKILLS.has(skillName) && !skill.treatAsBasic) {
             ui.notifications.warn(`${label} is an Advanced Skill — cannot attempt untrained.`);
             return;
+        }
+        // RT 1e Reaction budget (RT Core p.244): Dodge and Parry are Reactions. While the
+        // actor is part of an active, started combat, declaring one spends from the
+        // per-Round budget (base 1 shared Reaction, + Step Aside Dodge-only / Wall of Steel
+        // Parry-only). Block when exhausted; otherwise tick the used counter. The reset is
+        // handled on the actor's turn by the combat-tracker hook. Guarded so out-of-combat
+        // Dodge/Parry skill tests are unaffected. (ENGINE-REACTION-BUDGET-TRACK.)
+        if ((skillName === 'dodge' || skillName === 'parry')
+            && game.combat?.started
+            && game.combat.combatants?.some((c) => c.actorId === this.id)) {
+            const rc = this.system.combat?.reactions;
+            if (rc?.[skillName]) {
+                if (!canSpendReaction(rc, skillName)) {
+                    ui.notifications.warn(`No ${skillName === 'dodge' ? 'Dodge' : 'Parry'} Reaction remaining this Round (RT Core p.244).`);
+                    return;
+                }
+                await this.update({ [`system.combat.reactions.${skillName}.value`]: (rc[skillName].value ?? 0) + 1 });
+            }
         }
         const simpleSkillData = new SimpleSkillData();
         const rollData = simpleSkillData.rollData;
