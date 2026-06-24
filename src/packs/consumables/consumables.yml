@@ -302,20 +302,6 @@ data:
     weight: 0
     equipped: false
     inBackpack: false
-    description: ''
-    source: Rogue Trader Core Rulebook
-    backpack:
-        inBackpack: false
-img: systems/rogue-trader-3rd/icons/items/buckets/consumable-drug-vial.png
-name: Tools
-type: drug
----
-data:
-    craftsmanship: common
-    availability: common
-    weight: 0
-    equipped: false
-    inBackpack: false
     description: A tech-device of the Divine Astrometricum, a Calixian faction of
         tech-priests concerned with cataloguing stars, nebulae, and distant events
         in the voids. Its clicking arrangement of spheres and hololithic projections

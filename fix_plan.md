@@ -869,9 +869,14 @@ guard in the spec). Canon: `/mnt/project_data/RT/RT-DOCS/`.
   ratchet) → gate green (build OK, 166 node tests). RT Core pp.133-135/142-150 + ItS
   Ch.III/p.131. (NARRATIVE)
 
-- [ ] CLEANUP-CONSUM-TOOLS-STRAY — the `Tools` entry in `consumables.yml` has an empty
+- [x] CLEANUP-CONSUM-TOOLS-STRAY — the `Tools` entry in `consumables.yml` has an empty
   description and `type: drug` — looks like a stray/misfiled row. Confirm against the pack
-  history, then remove it or fix its data. Trivial. (CLEANUP)
+  history, then remove it or fix its data. Trivial. (CLEANUP) — done iter 52: confirmed via
+  git (introduced 1d93753 "P2: add ItS Ch.III tools and consumables") that the row is the
+  leaked "TABLE 5-15: TOOLS" section header parsed as an empty item, NOT an acquirable
+  drug; removed the entry (and its `---` separator). Surrounding real tool rows (Almanac
+  Astrae Divinitus, Arms Coffer, Auspex/Scanner) untouched. Pure data deletion — no wiring,
+  outside the ratchet. Gate green (build OK, 166 node tests). (CLEANUP)
 
 ## Notes
 - Wire effects into the EXISTING packs (`talents`/`traits`/`cybernetics`/…); the `.db`
