@@ -123,6 +123,11 @@ const GRANTS_EXPECTED = [
     'Physical Perfection', // → Machine (ItS p.199)
     "'Ard",                // → Unnatural Toughness (x2) + Sturdy + Iron Jaw + True Grit (ItS)
     'Sixth Sense',         // → Rival (Inquisition), a pre-chosen pickable grant (ItS p.11)
+    // WIRE-CYBER-GRANTS — cybernetics that grant a Talent (reuse flags.rt.grants).
+    'Bionic Heart',        // → Sprint (RT Core p.133)
+    'Memorance Implant',   // → Total Recall (RT Core p.133)
+    'Vitae Supplacement',  // → Autosanguine (ItS p.142)
+    'Blackbone Bracing',   // → Bulging Biceps + Iron Jaw (ItS p.142; +2 unarmed dmg → ENGINE-NATWEAPONS)
 ];
 // Intentionally text-only (narrative / per-DoS / PF / GM-adjudicated). These describe
 // a mechanic the system deliberately does NOT express as an AE/conditionalBonus
@@ -162,6 +167,11 @@ const NARRATIVE = [
     'Internal Blade', 'Internal Power Cell', 'Locator Matrix',
     'Respiratory Filter Implant', 'Gastral Bionics', 'Pain Ward', 'Voidskin',
     'Volitor Implant', 'Vox Implant', 'Implant Systems',
+    // WIRE-CYBER-GRANTS — Augmented Senses grants "Heightened Senses for any one
+    // sense (sight, smell, etc.)" — a player choice among 5 distinct fixed pack docs
+    // (no pickable base). The clean name+type grant can't express "pick one of 5", so
+    // it stays narrative (player drags the chosen Heightened Senses talent). RT Core p.133.
+    'Augmented Senses',
     // ENGINE-WOUNDS-MOD — Eaters of the Dead (Kroot, ItS p.142) grants bonus Wounds
     // equal to a devoured corpse's unmodified Toughness Bonus, capped at the Kroot's own
     // TB and lasting TB hours, removed first when damaged. A timed/conditional/TB-derived

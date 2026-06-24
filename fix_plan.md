@@ -570,14 +570,34 @@ guard in the spec). Canon: `/mnt/project_data/RT/RT-DOCS/`.
   the choice embed, and the create hook are Foundry-coupled — node gate can't exercise them.
   (E2E)
 
-- [ ] WIRE-CYBER-GRANTS — cybernetics that GRANT a talent (reuse the ENGINE-TRAIT-GRANTS
+- [x] WIRE-CYBER-GRANTS — cybernetics that GRANT a talent (reuse the ENGINE-TRAIT-GRANTS
   `flags.rt.grants` machinery): Bionic Heart → Sprint, Vitae Supplacement → Autosanguine,
   Memorance Implant → Total Recall, Blackbone Bracing → Bulging Biceps + Iron Jaw,
   Augmented Senses → Heightened Senses (pickable sense — needs a pre-stamped choice, see
   WIRE-SIXTH-SENSE). Add `flags.rt.grants` to each; add the names to the ratchet
   `GRANTS_EXPECTED`. (Blackbone's +2 unarmed dmg stays ENGINE-NATWEAPONS; Augmented
   Senses' pickable-choice grant depends on the WIRE-SIXTH-SENSE decision.) RT Core / ItS,
-  cite pp.131-135. E2E follow-up. (WIRE)
+  cite pp.131-135. E2E follow-up. (WIRE) — done iter 44: wired the 4 DETERMINISTIC grants
+  via `flags.rt.grants` (the `applyItemGrants` hook runs for any item type, before the
+  talent-only early return, so cybernetic items grant fine): Bionic Heart → Sprint, Memorance
+  Implant → Total Recall (RT Core p.133); Vitae Supplacement → Autosanguine, Blackbone Bracing
+  → Bulging Biceps + Iron Jaw (ItS p.142). All 5 granted talents exist (type talent) and resolve
+  in the ratchet's GRANTS_EXPECTED check (added the 4 names). Blackbone's +2 unarmed dmg left
+  for ENGINE-NATWEAPONS. **Augmented Senses kept NARRATIVE** — "Heightened Senses for any one
+  sense" is a player choice among 5 distinct FIXED pack docs (no pickable base entry), so the
+  clean name+type grant can't express "pick one of 5"; the WIRE-SIXTH-SENSE `choice` field only
+  works for a single `flags.rt.pickable` talent, which Heightened Senses isn't. Added to ratchet
+  NARRATIVE. None in CODE_HANDLED (no double-apply). Page cites added to each `source:`. Gate
+  green (build OK, 145 node tests). E2E follow-up below. (WIRE)
+
+- [ ] E2E-CYBER-GRANTS — verify on rt-smoke (Playwright): dragging Bionic Heart onto an actor
+  auto-embeds a Sprint talent item; Memorance Implant → Total Recall; Vitae Supplacement →
+  Autosanguine; Blackbone Bracing → both Bulging Biceps AND Iron Jaw; re-adding the same
+  cybernetic does NOT add a second copy of any granted talent (pendingGrants dedup); and an
+  actor that already owns the granted talent before adding the cybernetic gets no duplicate.
+  Confirm Augmented Senses grants nothing automatically (narrative — player drags their chosen
+  Heightened Senses talent). Item-create hooks + compendium resolution are Foundry-coupled —
+  node gate can't exercise them. (E2E)
 
 - [ ] ENGINE-NATWEAPONS — natural-weapon / unarmed damage-formula overrides: Natural
   Weapons, Improved Natural Weapons, Unarmed Master (1d10+SB, no Primitive), Unarmed

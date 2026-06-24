@@ -184,7 +184,7 @@ data:
         or other catastrophe as the rest of the circulatory system is put under pressure.
         A character with this implant gains +1 armour to the body location—this bonus
         stacks with any armour worn—and gains the Sprint Talent.
-    source: Rogue Trader Core Rulebook
+    source: Rogue Trader Core Rulebook, p.133
     hasArmourPoints: true
     armourPoints:
         head: 0
@@ -195,6 +195,11 @@ data:
         rightLeg: 0
     backpack:
         inBackpack: false
+flags:
+    rt:
+        grants:
+            - name: Sprint
+              type: talent
 img: systems/rogue-trader-3rd/icons/items/buckets/cyber-bionic-heart.png
 name: Bionic Heart
 type: cybernetic
@@ -447,9 +452,14 @@ data:
         Tests, or other Tests in social situations where the recorded information
         provides leverage or value. The implant also grants the user the Total Recall
         Talent if he does not already possess it.
-    source: Rogue Trader Core Rulebook
+    source: Rogue Trader Core Rulebook, p.133
     backpack:
         inBackpack: false
+flags:
+    rt:
+        grants:
+            - name: Total Recall
+              type: talent
 img: systems/rogue-trader-3rd/icons/items/buckets/cyber-implant-system.png
 name: Memorance Implant
 type: cybernetic
@@ -733,9 +743,16 @@ data:
         as grant more protection in combat. A character with this Implant gains the
         Bulging Biceps and Iron Jaw Talents, and gains a +2 bonus to Damage for all
         unarmed attacks.
-    source: Into the Storm
+    source: Into the Storm, p.142
     backpack:
         inBackpack: false
+flags:
+    rt:
+        grants:
+            - name: Bulging Biceps
+              type: talent
+            - name: Iron Jaw
+              type: talent
 img: systems/rogue-trader-3rd/icons/items/buckets/cyber-implant-system.png
 name: Blackbone Bracing
 type: cybernetic
@@ -842,9 +859,14 @@ data:
         chance of not dying due to blood loss or other normally fatal consequences
         of severe wounds. Common Craftsmanship versions can preserve someone for up
         to four hours, Good and Best versions double and triple this time, respectively.
-    source: Into the Storm
+    source: Into the Storm, p.142
     backpack:
         inBackpack: false
+flags:
+    rt:
+        grants:
+            - name: Autosanguine
+              type: talent
 img: systems/rogue-trader-3rd/icons/items/buckets/cyber-implant-system.png
 name: Vitae Supplacement
 type: cybernetic
