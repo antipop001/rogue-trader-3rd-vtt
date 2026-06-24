@@ -56,7 +56,7 @@ export async function calculateAmmoAttackBonuses(rollData) {
     if (!ammo) return;
 
     switch (ammo.name) {
-        case 'Explosive Arrows/Quarrels':
+        case 'Explosive Arrows and Quarrels':
             rollData.specialModifiers['explosive arrows'] = -10;
             break;
     }
@@ -69,14 +69,15 @@ export async function calculateAmmoAttackSpecials(rollData) {
 
     game.rt.log('calculateAmmoAttackSpecials', ammo.name);
     switch (ammo.name) {
-        case 'Explosive Arrows/Quarrels':
+        case 'Explosive Arrows and Quarrels':
+            // RT Core p.137: Damage becomes Explosive (set in calculateAmmoSpecials),
+            // weapon loses the Primitive quality, -10 to hit. No Blast is granted.
             rollData.attackSpecials.findSplice((i) => i.name === 'Primitive');
-            rollData.attackSpecials.push({
-                name: 'Blast',
-                level: 1,
-            });
             break;
-        case 'Hot-Shot Charge Packs':
+        case 'Hot-Shot Charge Pack':
+            // RT Core p.137: loses Reliable; "rolls two dice for Damage and picks the
+            // highest" is expressed as Tearing (drop-lowest) for the 1d10 las weapons it
+            // is used with.
             rollData.attackSpecials.findSplice((i) => i.name === 'Reliable');
             rollData.attackSpecials.push({
                 name: 'Tearing',
@@ -89,7 +90,8 @@ export async function calculateAmmoAttackSpecials(rollData) {
                 level: true,
             });
             break;
-        case 'Tox Rounds':
+        case 'Toxic Shot':
+            // Into the Storm p.131: weapon gains the Toxic quality.
             rollData.attackSpecials.push({
                 name: 'Toxic',
                 level: 1,
@@ -105,12 +107,16 @@ export async function calculateAmmoSpecials(actionData, hit) {
 
     switch (ammo.name) {
         case 'Bleeder Rounds':
-            hit.addEffect('Bleeder Rounds', 'If the target takes damage, they suffer blood loss for [[1d5]] rounds.');
+            // RT Core p.137: +3 Damage vs living 'biological' targets only — Daemonic /
+            // Machine targets take no extra Damage (GM-adjudicated; the damage pipeline
+            // has no target traits at this point). The +3 is applied in
+            // calculateAmmoDamageBonuses.
+            hit.addEffect('Bleeder Rounds', '+3 Damage against living biological targets (no bonus vs Daemonic or Machine).');
             break;
         case 'Dumdum Bullets':
             hit.addEffect('Dumdum Bullets', 'Armour points count double against this hit.');
             break;
-        case 'Explosive Arrows/Quarrels':
+        case 'Explosive Arrows and Quarrels':
             hit.damageType = 'Explosive';
             break;
     }
@@ -129,17 +135,17 @@ export async function calculateAmmoDamageBonuses(actionData, hit) {
         case 'Amputator Shells':
             hit.modifiers['amputator shells'] = 2;
             break;
+        case 'Bleeder Rounds':
+            hit.modifiers['bleeder rounds'] = 3;
+            break;
         case 'Dumdum Bullets':
             hit.modifiers['dumdum bullets'] = 2;
             break;
         case 'Expander Rounds':
             hit.modifiers['expander rounds'] = 1;
             break;
-        case 'Hot-Shot Charge Packs':
+        case 'Hot-Shot Charge Pack':
             hit.modifiers['hot-shot charge pack'] = 1;
-            break;
-        case 'Tox Rounds':
-            hit.modifiers['tox rounds'] = -1;
             break;
     }
 }
@@ -157,7 +163,7 @@ export async function calculateAmmoPenetrationBonuses(actionData, hit) {
         case 'Expander Rounds':
             hit.penetrationModifiers['expander rounds'] = 1;
             break;
-        case 'Hot-Shot Charge Packs':
+        case 'Hot-Shot Charge Pack':
             hit.penetrationModifiers['hot-shot charge pack'] = 4;
             break;
         case 'Man-Stopper Bullets':
@@ -215,7 +221,7 @@ export function calculateAmmoInformation(rollData) {
     const ammunition = rollData.weapon.items.find((i) => i.isAmmunition);
     if (ammunition) {
         switch (ammunition.name) {
-            case 'Hot-Shot Charge Packs':
+            case 'Hot-Shot Charge Pack':
                 fireRate = 1;
         }
     }

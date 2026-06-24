@@ -355,7 +355,7 @@ guard in the spec). Canon: `/mnt/project_data/RT/RT-DOCS/`.
 
 ### AUDIT-004 follow-ups (`weapon-mods`/`ammo`/`consumables`; see `triage.md` AUDIT-004)
 
-- [ ] WIRE-AMMO-NAME-SYNC — fix already-written-but-inert ammo wiring (a bug, no new
+- [x] WIRE-AMMO-NAME-SYNC — fix already-written-but-inert ammo wiring (a bug, no new
   engine): align `src/module/rules/ammo.mjs` switch keys to the YAML `name:` fields —
   `Explosive Arrows/Quarrels`→`Explosive Arrows and Quarrels`, `Hot-Shot Charge Packs`→
   `Hot-Shot Charge Pack`, `Tox Rounds`→`Toxic Shot`. AND resolve the type-vs-apply-path
@@ -366,6 +366,27 @@ guard in the spec). Canon: `/mnt/project_data/RT/RT-DOCS/`.
   `weapon-modifiers.mjs`. Verify which is correct against how `roll-data.mjs:116` and
   `damage-data.mjs` select items. Pure-JS test on the name-match helper if extractable;
   E2E follow-up (attack card shows the bonus). RT Core / ItS (cite the page). (WIRE)
+  — done iter 30: confirmed `isAmmunition` = `type==='ammunition'` and the WHOLE ammo
+  apply path (ammo.mjs, called from damage-data.mjs) selects via `isAmmunition` → the
+  re-type+move is correct (a parallel weapon-modifiers switch would never fire in those
+  hooks). Renamed the 3 drifted case keys; moved the 6 docs weapon-mods.yml→ammo.yml
+  (36→30 / 12→18), re-typed `ammunition`, added target/effect/weaponType. Made the
+  now-live effects canon-faithful (specs/06: don't invent): dropped a non-canon Blast on
+  Explosive Arrows (RT Core p.137) and a non-canon -1 dmg on Toxic Shot (ItS p.131);
+  ADDED the canon +3 dmg for Bleeder Rounds (was unwired) and replaced its invented
+  blood-loss note with the living-targets-only canon text. New node guard
+  `tests/chargen/ammo_wiring.test.mjs` (every ammo.mjs `case`→ an ammunition-typed pack
+  entry; +the 6 moved rounds) since these packs have no ratchet coverage. NOT double-
+  applied (no code-handled overlap). Gate green (build OK, 74 node tests). E2E below.
+
+- [ ] E2E-AMMO-NAME-SYNC — verify on rt-smoke (Playwright): embed each special round
+  (Amputator/Bleeder/Dumdum/Expander/Explosive Arrows and Quarrels/Hot-Shot Charge Pack/
+  Toxic Shot) in a compatible weapon and confirm the attack card now shows the effect —
+  Amputator +2 dmg, Bleeder +3 dmg (note: living-only), Dumdum +2 dmg + AP-double note,
+  Expander +1 dmg/+1 pen, Explosive Arrows -10 hit + Explosive type + Primitive removed
+  (NO Blast), Hot-Shot +1 dmg/Tearing/+4 pen/clip→1/Reliable removed, Toxic Shot gains
+  Toxic (NO -1 dmg) — vs the same weapon with no round loaded showing none. Selection +
+  attack pipeline are Foundry-coupled — node gate can't exercise it. (E2E)
 
 - [ ] WIRE-AMMO-ADD-QUALITY — for ammo whose entire mechanic is "gains an
   engine-handled quality," push the quality in `ammo.mjs::calculateAmmoSpecials`: Snare

@@ -425,3 +425,195 @@ data:
 img: systems/rogue-trader-3rd/icons/items/buckets/ammo-stub-rounds.png
 name: Void Rounds
 type: ammunition
+---
+data:
+    craftsmanship: common
+    availability: common
+    weight: 0
+    equipped: false
+    inBackpack: false
+    description: 'Filled with explosive micro-shrapnel, these bullets are designed
+        to shear flesh and shatter bone, causing limbs to be blown away. Effects:
+        Amputator Shells add 2 to the weapon''s Damage. Used With: Stub revolvers,
+        stub automatics, shotguns (all types), hand cannons, autopistols, and autoguns.'
+    source: Rogue Trader Core Rulebook
+    damage: ''
+    damageType: ''
+    penetration: ''
+    special: {}
+    range: ''
+    attackType: ''
+    attackBonus: 0
+    rateOfFire:
+        single: 1
+        burst: 0
+        full: 0
+    target: ''
+    effect: ''
+    weaponType: ''
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/ammo-stub-rounds.png
+name: Amputator Shells
+type: ammunition
+---
+data:
+    craftsmanship: common
+    availability: common
+    weight: 0
+    equipped: false
+    inBackpack: false
+    description: 'This ammunition is treated with toxins to prevent coagulation and
+        keep wounds bleeding freely. These shells are designed to burst on penetration
+        and spread the anti-coagulants quickly. Effect: Bleeder rounds add 3 to the
+        weapon''s Damage against living ''biological'' targets (targets with the Daemonic
+        or Machine Traits do not suffer the additional Damage). Used With: Stub revolvers,
+        stub automatics, hand cannons, autopistols, and autoguns.'
+    source: Rogue Trader Core Rulebook
+    damage: ''
+    damageType: ''
+    penetration: ''
+    special: {}
+    range: ''
+    attackType: ''
+    attackBonus: 0
+    rateOfFire:
+        single: 1
+        burst: 0
+        full: 0
+    target: ''
+    effect: ''
+    weaponType: ''
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/ammo-stub-rounds.png
+name: Bleeder Rounds
+type: ammunition
+---
+data:
+    craftsmanship: common
+    availability: common
+    weight: 0
+    equipped: false
+    inBackpack: false
+    description: 'These heavy blunt bullets are designed to cause maximum tissue damage
+        and can tear apart soft targets, though they are less effective against armour.
+        Effect: Dumdum bullets add 2 to the weapon''s Damage, however Armour Points
+        count double against them. Used With: Stub revolvers, stub automatics, and
+        hand cannons.'
+    source: Rogue Trader Core Rulebook
+    damage: ''
+    damageType: ''
+    penetration: ''
+    special: {}
+    range: ''
+    attackType: ''
+    attackBonus: 0
+    rateOfFire:
+        single: 1
+        burst: 0
+        full: 0
+    target: ''
+    effect: ''
+    weaponType: ''
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/ammo-stub-rounds.png
+name: Dumdum Bullets
+type: ammunition
+---
+data:
+    craftsmanship: common
+    availability: common
+    weight: 0
+    equipped: false
+    inBackpack: false
+    description: 'Vicious and outlawed on some worlds, these dense shells are designed
+        to shred open after impact, creating huge exit wounds. Effect: Shots fired
+        with these rounds add 1 to both Damage and Penetration. Used With: Stub revolvers,
+        stub automatics, autopistols, and autoguns.'
+    source: Rogue Trader Core Rulebook
+    damage: ''
+    damageType: ''
+    penetration: ''
+    special: {}
+    range: ''
+    attackType: ''
+    attackBonus: 0
+    rateOfFire:
+        single: 1
+        burst: 0
+        full: 0
+    target: ''
+    effect: ''
+    weaponType: ''
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/ammo-stub-rounds.png
+name: Expander Rounds
+type: ammunition
+---
+data:
+    craftsmanship: common
+    availability: common
+    weight: 0
+    equipped: false
+    inBackpack: false
+    description: 'Explosive arrows and quarrels might be crudely tipped with shells,
+        or treated with one of a variety of unstable alchemical compounds. Effects:
+        Attacks are made with a -10 penalty, the weapon''s Damage type becomes Explosive,
+        and the weapon loses the Primitive quality. Used With: Bows, crossbows, and
+        hand bows.'
+    source: Rogue Trader Core Rulebook
+    damage: ''
+    damageType: ''
+    penetration: ''
+    special: {}
+    range: ''
+    attackType: ''
+    attackBonus: 0
+    rateOfFire:
+        single: 1
+        burst: 0
+        full: 0
+    target: ''
+    effect: ''
+    weaponType: ''
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/ammo-stub-rounds.png
+name: Explosive Arrows and Quarrels
+type: ammunition
+---
+data:
+    craftsmanship: common
+    availability: common
+    weight: 0
+    equipped: false
+    inBackpack: false
+    description: 'This is a powerful charge pack for a las weapon, favoured by snipers
+        in some Imperial Guard regiments. Each hot-shot charge pack is good for only
+        a single shot. Effects: A weapon using a hot-shot charge adds 1 to its Damage,
+        rolls two dice for its Damage and picks the highest, and gains a Penetration
+        of 4. However the weapon loses its Reliable special quality, and its clip
+        is reduced to 1. Used With: Laspistols, lascarbines, lasguns, and long-las.'
+    source: Rogue Trader Core Rulebook
+    damage: ''
+    damageType: ''
+    penetration: ''
+    special: {}
+    range: ''
+    attackType: ''
+    attackBonus: 0
+    rateOfFire:
+        single: 1
+        burst: 0
+        full: 0
+    target: ''
+    effect: ''
+    weaponType: ''
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/ammo-charge-pack.png
+name: Hot-Shot Charge Pack
+type: ammunition
