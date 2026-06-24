@@ -159,6 +159,31 @@ export function brutalChargeBonus(traits, action) {
 }
 
 /**
+ * Swift Attack / Lightning Attack — RT 1e melee multi-attack TALENTS (not actions).
+ * RT Core p.107 (Swift Attack): "As a Full Action, he may make TWO melee attacks on his
+ * Turn." RT Core p.102 (Lightning Attack): "As a Full Action, the character may make
+ * THREE melee attacks ... The effects of this Talent replace those of Swift Attack." So
+ * the bonus is a FLAT number of additional hits — Swift = 1 extra (two total), Lightning
+ * = 2 extra (three total) — NOT the DoS-scaled count the legacy DH2 action used. The
+ * talents are surfaced as melee Full-Action options only when the actor owns them
+ * (updateAvailableCombatActions), and the additional-hit count is applied by action name
+ * on the attack hit path — so these are engine-handled (no AE; double-apply guard).
+ *
+ * @param {string} action  the combat action name (`rollData.action`)
+ * @returns {number} flat extra melee hits (1 Swift, 2 Lightning, else 0)
+ */
+export function attackTalentExtraHits(action) {
+    switch (String(action)) {
+        case 'Swift Attack':
+            return 1;
+        case 'Lightning Attack':
+            return 2;
+        default:
+            return 0;
+    }
+}
+
+/**
  * Reaction budget per Round (RT Core p.244): a character gets ONE Reaction each Round
  * by default, spent on either a Dodge or a Parry. Two talents grant a SECOND, type-locked
  * Reaction — Step Aside (RT Core p.119): "He may make an additional Dodge once per Round

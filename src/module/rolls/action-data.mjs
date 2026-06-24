@@ -1,6 +1,6 @@
 import { PsychicRollData, RollData, WeaponRollData } from './roll-data.mjs';
 import { Hit, PsychicDamageData, scatterDirection, WeaponDamageData } from './damage-data.mjs';
-import { getDegree, getOpposedDegrees, roll1d100, sendActionDataToChat, uuid } from './roll-helpers.mjs';
+import { attackTalentExtraHits, getDegree, getOpposedDegrees, roll1d100, sendActionDataToChat, uuid } from './roll-helpers.mjs';
 import { refundAmmo, useAmmo } from '../rules/ammo.mjs';
 import { DHBasicActionManager } from '../actions/basic-action-manager.mjs';
 import { SYSTEM_ID } from '../hooks-manager.mjs';
@@ -229,7 +229,6 @@ export class ActionData {
 
                 if (actionItem) {
                     if (this.rollData.action === 'Semi-Auto Burst' ||
-                        this.rollData.action === 'Swift Attack' ||
                         actionItem.isPsychicBarrage ||
                         this.rollData.action === 'Suppressing Fire - Semi' ||
                         this.rollData.action === 'Suppressing Fire - Full') {
@@ -244,7 +243,7 @@ export class ActionData {
                         if (actionItem.isRanged && this.damageData.additionalHits > this.rollData.fireRate - 1) {
                             this.damageData.additionalHits = this.rollData.fireRate - 1;
                         }
-                    } else if (this.rollData.action === 'Full Auto Burst' || this.rollData.action === 'Lightning Attack' || actionItem.isPsychicStorm) {
+                    } else if (this.rollData.action === 'Full Auto Burst' || actionItem.isPsychicStorm) {
                         // Possible Full Rate
                         this.damageData.additionalHits += Math.floor(this.rollData.dos - 1);
 
@@ -254,6 +253,12 @@ export class ActionData {
                         }
                     }
                 }
+
+                // Swift Attack / Lightning Attack — RT 1e melee multi-attack TALENTS
+                // (RT Core p.107 / p.102): a flat number of extra hits on a successful
+                // WS test (Swift = 1 → two attacks, Lightning = 2 → three attacks), NOT
+                // the DoS-scaled count the legacy DH2 actions used. Applied by name.
+                this.damageData.additionalHits += attackTalentExtraHits(this.rollData.action);
 
                 if (this.rollData.dos > 1 && this.rollData.hasAttackSpecial('Twin-Linked')) {
                     if ((this.rollData.action === 'Standard Attack' || this.rollData.action === 'Called Shot') && this.rollData.dos > 2)

@@ -339,11 +339,31 @@ guard in the spec). Canon: `/mnt/project_data/RT/RT-DOCS/`.
   action, surfaces no offer; an actor without the talent never sees it. Attack/result-card
   pipeline + Reaction spend are Foundry-coupled — node gate can't exercise them. (E2E)
 
-- [ ] ENGINE-ATTACK-TALENTS — Swift Attack (2 melee hits) / Lightning Attack (3 melee
+- [x] ENGINE-ATTACK-TALENTS — Swift Attack (2 melee hits) / Lightning Attack (3 melee
   hits) as TALENTS (RT lists them as Talents, not actions; currently `legacy: true`
   actions per 0.7.22). Decide: grant the action when the talent is present, or apply the
   additional-hit count in the attack flow. Pure-JS test on the hit-count helper; E2E.
-  (ENGINE)
+  (ENGINE) — done iter 35: chose BOTH halves of "grant the action when present" + RT-canon
+  hit count. Corrected the two legacy action defs to RT canon (Half→Full, Lightning
+  modifier −10→0, descriptions = "two/three melee attacks") and surfaced each as a melee
+  Full-Action option in `updateAvailableCombatActions` ONLY when
+  `rollData.sourceActor.hasTalent(name)` (legacy flag still hides them by default). New
+  pure helper `attackTalentExtraHits(action)` in roll-helpers.mjs → flat extra hits Swift=1
+  / Lightning=2 (NOT the DH2 DoS-scaled count); removed Swift from the Semi-Auto branch +
+  Lightning from the Full-Auto branch in action-data.mjs and applied the flat count on the
+  success path. NOT an AE (engine-applied by name) → both added to ratchet CODE_HANDLED
+  (double-apply guard). RT Core p.107 (Swift) / p.102 (Lightning). Node test
+  `attack_talents.test.mjs` (5 cases). Gate green (build OK, 102 node tests). Two-Weapon
+  Wielder / "Lightning replaces Swift, not with Dual Strike" left narrative (both options
+  shown if both talents owned). E2E follow-up below. (ENGINE)
+
+- [ ] E2E-ATTACK-TALENTS — verify on rt-smoke (Playwright): an actor WITH the Swift Attack
+  talent wielding a melee weapon sees "Swift Attack" in the attack-action dropdown and a
+  successful hit scores 1 additional hit (2 total); WITH Lightning Attack sees it and scores
+  2 additional (3 total); an actor WITHOUT the talent sees neither option; the options do NOT
+  appear for a ranged weapon; Unbalanced/Unwieldy melee weapon still removes Lightning Attack.
+  Confirm the count is flat (does not scale with DoS) and reaches the damage card's hit count.
+  Attack pipeline + dropdown are Foundry-coupled — node gate can't exercise it. (E2E)
 
 - [ ] ENGINE-UNNATURAL — traits that SET/scale an Unnatural multiplier or double a bonus:
   Unnatural Characteristic, Unnatural Toughness (x2), Unnatural Speed, Quadruped (×AgB

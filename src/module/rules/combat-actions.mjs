@@ -42,6 +42,20 @@ export function updateAvailableCombatActions(rollData) {
             }
         });
 
+    // Swift Attack / Lightning Attack are RT 1e melee multi-attack TALENTS (RT Core
+    // p.107 / p.102) — `legacy` keeps them out of the default dropdown, but surface
+    // them as Full-Action melee options when the wielder owns the talent. Lightning
+    // Attack replaces Swift Attack; show whichever talents the actor has.
+    if (!rollData.weapon.isRanged) {
+        for (const talent of ['Swift Attack', 'Lightning Attack']) {
+            if (rollData.sourceActor?.hasTalent?.(talent)
+                && !actions.find((a) => a.name === talent)) {
+                const legacyAction = allCombatActions().find((a) => a.name === talent);
+                if (legacyAction) actions.push(legacyAction);
+            }
+        }
+    }
+
     if (rollData.hasAttackSpecial('Unbalanced') || rollData.hasAttackSpecial('Unwieldy')) {
         actions.findSplice((action) => action.name === 'Lightning Attack');
     }
@@ -200,15 +214,16 @@ function allCombatActions() {
             description: 'Make an opposed Strength test (with +10 if using Charge). 2+DoS gives (1d5-3)+SB Impact and 1 level of fatigue.',
         },
         {
-            // DH2-only — RT 1e Core lists Lightning Attack as a Talent, not an
-            // action. Kept here so legacy actors/macros don't break, but hidden
-            // from the attack dropdown via the `legacy` flag.
+            // RT 1e Core lists Lightning Attack as a TALENT, not a base action
+            // (RT Core p.102): "As a Full Action, the character may make three melee
+            // attacks." Surfaced in the dropdown only when the actor owns the talent
+            // (updateAvailableCombatActions); `legacy` keeps it out of the default list.
             name: 'Lightning Attack',
-            type: ['Half'],
+            type: ['Full'],
             subtype: ['Attack', 'Melee'],
-            description: 'Grants -10 WS, one hit for every DoS.',
+            description: 'Make three melee attacks (Lightning Attack talent). Two additional hits on a successful WS test; replaces Swift Attack.',
             attack: {
-                modifier: -10,
+                modifier: 0,
             },
             legacy: true,
         },
@@ -283,12 +298,14 @@ function allCombatActions() {
             },
         },
         {
-            // DH2-only — RT 1e Core lists Swift Attack as a Talent, not an
-            // action. Kept for legacy compatibility, hidden from dropdown.
+            // RT 1e Core lists Swift Attack as a TALENT, not a base action
+            // (RT Core p.107): "As a Full Action, he may make two melee attacks on his
+            // Turn." Surfaced in the dropdown only when the actor owns the talent
+            // (updateAvailableCombatActions); `legacy` keeps it out of the default list.
             name: 'Swift Attack',
-            type: ['Half'],
+            type: ['Full'],
             subtype: ['Attack', 'Melee'],
-            description: 'Grants +0 WS, additional hit for every two additional DoS.',
+            description: 'Make two melee attacks (Swift Attack talent). One additional hit on a successful WS test.',
             attack: {
                 modifier: 0,
             },

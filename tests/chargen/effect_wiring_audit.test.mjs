@@ -73,6 +73,11 @@ const CODE_HANDLED = [
     // roll-helpers.extraAttackEligibility (Counter Attack p.115, Furious Assault p.117,
     // WAAAGH! ItS p.173) — engine-applied, must NOT also get an AE. ENGINE-REACTION-ATTACK-TRIG.
     'Counter Attack', 'Furious Assault', 'WAAAGH!',
+    // Melee multi-attack talents — flat extra-hit count applied by action name in
+    // action-data (attackTalentExtraHits: Swift +1, Lightning +2) and surfaced as
+    // Full-Action melee options by talent name in combat-actions. RT Core p.107/p.102 —
+    // engine-applied, must NOT also get an AE. ENGINE-ATTACK-TALENTS.
+    'Swift Attack', 'Lightning Attack',
 ];
 // Intentionally text-only (narrative / per-DoS / PF / GM-adjudicated). These describe
 // a mechanic the system deliberately does NOT express as an AE/conditionalBonus
