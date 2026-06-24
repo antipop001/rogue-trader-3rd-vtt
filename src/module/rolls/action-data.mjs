@@ -84,7 +84,9 @@ export class ActionData {
 
     async checkForOpposed() {
         console.log('check for opposed');
-        if(this.rollData.isOpposed && this.rollData.targetActor) {
+        // Psychic powers resolve their opposed test via the prompted "Roll Opposed"
+        // button (BUG-007) — skip the silent auto-roll here so it isn't done twice.
+        if(this.rollData.isOpposed && this.rollData.targetActor && !this.rollData.power) {
             const rollCheck = await this.rollData.targetActor.rollCheck(this.rollData.opposedTarget);
             this.rollData.opposedRoll = rollCheck.roll;
             this.rollData.opposedDos = rollCheck.dos;

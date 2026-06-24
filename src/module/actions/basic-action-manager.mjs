@@ -21,6 +21,7 @@ export class BasicActionManager {
             $html.find('.roll-control__fate-reroll').click(async (ev) => await this._fateReroll(ev));
             $html.find('.roll-control__assign-damage').click(async (ev) => await this._assignDamage(ev));
             $html.find('.roll-control__apply-damage').click(async (ev) => await this._applyDamage(ev));
+            $html.find('.roll-control__roll-opposed').click(async (ev) => await this._rollOpposed(ev));
         });
 
         // Initialize Scene Control Buttons
@@ -224,6 +225,39 @@ export class BasicActionManager {
         await assignDamageData.update();
         await assignDamageData.finalize();
         await assignDamageData.performActionAndSendToChat();
+    }
+
+    async _rollOpposed(event) {
+        event.preventDefault();
+        const div = $(event.currentTarget);
+        const char = div.data('opposedChar');
+        const isSkill = div.data('opposedIsSkill') === true || div.data('opposedIsSkill') === 'true';
+        const powerName = div.data('powerName');
+        const targetUuid = div.data('targetUuid');
+
+        // Resolve the defender: the cast-time target, else the current target, else the
+        // selected token.
+        let defender;
+        if (targetUuid) {
+            const d = await fromUuid(targetUuid);
+            defender = d?.actor ?? d;
+        }
+        if (!defender) {
+            defender = Array.from(game.user.targets ?? [])[0]?.actor;
+        }
+        if (!defender) {
+            defender = canvas.tokens?.controlled?.[0]?.actor;
+        }
+        if (!defender) {
+            ui.notifications.warn('Target or select the defending token, then click Roll Opposed.');
+            return;
+        }
+
+        if (isSkill) {
+            await defender.rollSkill(char);
+        } else {
+            await defender.rollCharacteristic(char, `Opposed: ${powerName}`);
+        }
     }
 
     async assignDamageTool() {

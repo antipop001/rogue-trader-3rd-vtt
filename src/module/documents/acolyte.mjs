@@ -230,6 +230,7 @@ export class RogueTraderAcolyte extends RogueTraderBaseActor {
                 } else {
                     await DHTargetedActionManager.performPsychicAttack(this, null, item);
                 }
+                await this._promptOpposed(item);
                 return;
             case 'forceField':
                 if (!item.system.equipped || !item.system.activated) {
@@ -252,6 +253,33 @@ export class RogueTraderAcolyte extends RogueTraderBaseActor {
                     }),
                 });
         }
+    }
+
+    /**
+     * If a power calls for an Opposed test (`system.target.isOpposed`), post a chat
+     * card with a "Roll Opposed" button so the defender's resisting test is prompted
+     * — works in both simple- and full-cast modes, with or without a pre-selected
+     * target (the handler falls back to the current target / selected token). BUG-007.
+     */
+    async _promptOpposed(item) {
+        const target = item?.system?.target;
+        if (!target?.isOpposed) return;
+        const isSkill = !!target.useOpposedSkill;
+        const oppKey = isSkill ? target.opposedSkill : target.opposed;
+        if (!oppKey || oppKey === 'None') return;
+        const label = isSkill
+            ? (this.skills?.[oppKey]?.label ?? oppKey)
+            : (this.characteristics?.[oppKey]?.label ?? oppKey);
+        const targetUuid = Array.from(game.user.targets ?? [])[0]?.actor?.uuid ?? '';
+        const html = await renderTemplate(
+            'systems/rogue-trader-3rd/templates/chat/opposed-prompt-chat.hbs',
+            { powerName: item.name, opposedChar: oppKey, opposedLabel: label, isSkill, targetUuid },
+        );
+        await ChatMessage.create({
+            user: game.user.id,
+            speaker: ChatMessage.getSpeaker({ actor: this }),
+            content: html,
+        });
     }
 
     async damageItem(itemId) {

@@ -147,6 +147,15 @@ engine/roll fixes. Fix these directly, or in a dedicated follow-up loop.
 - **⚠ Foundry-coupled** (Roll + rollData) — verify on rt-smoke (Compel PR 4 → 20m).
 
 ## BUG-007 — Opposed powers don't prompt for the opposed check
+- **Status: ✅ FIXED 2026-06-23 (option a), verified live on rt-smoke (Playwright).**
+  Casting a power with `target.isOpposed` now posts a "Roll Opposed (X)" card
+  (`acolyte._promptOpposed` + `templates/chat/opposed-prompt-chat.hbs`), wired into BOTH
+  cast modes via `rollItem`. The button (`basic-action-manager._rollOpposed`) resolves
+  the defender (cast-time target → current target → selected token) and rolls their
+  opposed characteristic/skill test (prompted). The silent auto-roll in
+  `checkForOpposed` is now suppressed for psychic powers (`&& !this.rollData.power`) so
+  it isn't resolved twice. Live: Compel posts the WP button; non-opposed power posts
+  nothing.
 - **Symptom:** a power that calls for an Opposed test (e.g. Compel — "Opposed
   Willpower") should prompt for / resolve the opposed check; it doesn't. Reported
   2026-06-23.
