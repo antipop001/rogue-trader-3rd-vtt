@@ -807,12 +807,41 @@ guard in the spec). Canon: `/mnt/project_data/RT/RT-DOCS/`.
   wiring — name-keyed `ammo.mjs` effects (Snare/Airtorch/Toxic quality pushes) untouched, so
   the wiring + `ammo_wiring.test.mjs` stay green. Gate green (build OK, 154 node tests). (CLEANUP)
 
-- [ ] ENGINE-CONSUMABLE-ACTIVATE — a "use drug/consumable" action that applies a timed
+- [x] ENGINE-CONSUMABLE-ACTIVATE — a "use drug/consumable" action that applies a timed
   ActiveEffect (duration in rounds/minutes) for the ~11 activated combat consumables
   (Frenzon→Frenzy, Stimm, Slaught, Spur, Cold Fire, White Void, Wideawake, Attention
   Spanner) and weapon buffs (Sacred Unguents jam-immunity, Tox Dispenser). The only clean
   way to wire these; larger than a data edit. RT Core / ItS. Pure-JS test on any
-  extractable duration/parse helper; E2E follow-up. (ENGINE)
+  extractable duration/parse helper; E2E follow-up. (ENGINE) — done iter 50: built the
+  engine + 2 pure helpers. `parseConsumableDuration(text)` parses a prose duration → dice
+  formula + AE-duration mapping (rounds→`duration.rounds`, minutes→`seconds×60`,
+  hours→`seconds×3600`; ignores "per dose"; null when absent). `consumableActivation(name)`
+  = per-drug spec table for the 8 activated combat DRUGS (null for food/medikits/Recaf;
+  strips trailing "(drug)"). CLEAN mechanical bonuses wired as AE `changes` (mode 2): White
+  Void +20 WP (`characteristics.willpower.modifier`), Slaught +3 Ag/Per Bonus as
+  `characteristics.{agility,perception}.modifier += 30` (bonus=floor(value/10) ⇒ +30==+3
+  Bonus). Talent grants (Frenzon→Frenzy, Cold Fire→Battle Rage) flagged + on the chat card
+  (item embed left narrative — AE changes can't embed). Immunities / after-effects (Stimm/
+  Spur/Wideawake/Attention Spanner) ride in the effect note + chat card (NOT invented as
+  AE). Foundry-coupled apply point: a "Use" header button (shown when
+  `consumableActivation` matches) → `_useConsumable()` rolls the duration, builds the timed
+  AE (origin=item.uuid, flags.rt.consumable), posts a chat card. NOT double-applied (no
+  consumable in CODE_HANDLED; these packs are outside the talents/traits/cybernetics ratchet
+  → no ratchet change). RT Core p.142-143 / ItS Ch.III. Node test
+  `consumable_activate.test.mjs` (11 cases). Gate green (build OK, 166 node tests). The
+  weapon-buff consumables (Sacred Unguents jam-immunity, Tox Dispenser) are weapon-targeted,
+  not character-timed-effect → stay NARRATIVE-RECORD-MODS-AMMO-CONSUM. E2E follow-up below.
+  (ENGINE)
+
+- [ ] E2E-CONSUMABLE-ACTIVATE — verify on rt-smoke (Playwright): give an actor a White Void
+  drug item, open its sheet, click "Use" → a timed ActiveEffect named "White Void" lands on
+  the actor with `duration.seconds` set (1d10×60) and `changes` raising displayed Willpower
+  by +20; a Slaught dose raises Agility/Perception Bonus by +3 each (modifier +30); a
+  Frenzon dose posts a chat card naming the Frenzy-talent grant + Fear immunity and creates
+  the marker effect with `1d10 minutes` duration but NO characteristic change; a non-drug
+  consumable (Recaf/Medikit) shows no "Use" button; clicking Use on an UNOWNED drug (no
+  actor parent) warns instead of erroring. Item sheet + AE create + duration roll + chat are
+  Foundry-coupled — node gate can't exercise them. (E2E)
 
 - [ ] NARRATIVE-RECORD-MODS-AMMO-CONSUM — log every intentionally-unwired
   weapon-mod/ammo/consumable entry from `triage.md` AUDIT-004 to

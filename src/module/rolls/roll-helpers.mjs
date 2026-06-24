@@ -564,6 +564,102 @@ export function unarmedDamageProfile(talents, traits) {
     return { formula: '1d5-3', primitive: true, source: 'Unarmed' };
 }
 
+/**
+ * Parse a consumable's duration phrase (ENGINE-CONSUMABLE-ACTIVATE) into a dice
+ * formula + unit so the activation action can roll it and build the ActiveEffect
+ * `duration`. RT drug durations are prose — "1d10 minutes", "3d10 Rounds", "1d5 hours",
+ * "3d10 rounds per dose". Returns the first `<formula> <unit>` it finds (a plain integer
+ * is accepted too) and how to map it onto Foundry's AE duration:
+ *  - rounds → `duration.rounds = value`            (durationKey 'rounds', secondsPer 1)
+ *  - minutes → `duration.seconds = value * 60`     (durationKey 'seconds', secondsPer 60)
+ *  - hours → `duration.seconds = value * 3600`     (durationKey 'seconds', secondsPer 3600)
+ * No recognised duration → null (the action falls back to an unbounded effect).
+ *
+ * @param {string} text  a duration phrase (e.g. spec.durationText, or a description)
+ * @returns {{formula: string, unit: string, durationKey: string, secondsPer: number}|null}
+ */
+export function parseConsumableDuration(text) {
+    const raw = String(text ?? '').toLowerCase();
+    const m = raw.match(/(\d+d\d+|\d+)\s*(round|minute|hour)s?/);
+    if (!m) return null;
+    const formula = m[1];
+    const word = m[2];
+    if (word === 'round') return { formula, unit: 'rounds', durationKey: 'rounds', secondsPer: 1 };
+    if (word === 'minute') return { formula, unit: 'minutes', durationKey: 'seconds', secondsPer: 60 };
+    return { formula, unit: 'hours', durationKey: 'seconds', secondsPer: 3600 };
+}
+
+/**
+ * Activation specs for the ~8 activated combat drugs (ENGINE-CONSUMABLE-ACTIVATE).
+ * Each describes the timed effect a single dose applies. `changes` are AE changes
+ * (mode 2 = ADD) for the cleanly-mechanical, non-narrative bonuses ONLY — a +3
+ * Characteristic Bonus is expressed as +30 on `system.characteristics.<k>.modifier`
+ * (bonus = floor(value/10), so adding 30 always adds exactly 3 to the bonus). Effects
+ * that grant a Talent, confer immunities, or carry an after-effect penalty are NOT
+ * inventable as AE changes — they ride in `note` (surfaced on the effect + chat card)
+ * for the GM/player to apply, plus an optional `grantsTalent` flag for the two
+ * talent-granting drugs. Keyed by the pack name lowercased with a trailing "(drug)"
+ * stripped. Canon: RT Core p.142-143 (Frenzon/Stimm/Slaught); Into the Storm Ch.III
+ * (Spur/Cold Fire/White Void/Wideawake/Attention Spanner).
+ */
+const CONSUMABLE_ACTIVATIONS = {
+    frenzon: {
+        label: 'Frenzon', durationText: '1d10 minutes', grantsTalent: 'Frenzy', changes: [],
+        note: 'Gains the Frenzy talent and immunity to Fear for the duration. (RT Core p.142)',
+    },
+    stimm: {
+        label: 'Stimm', durationText: '3d10 rounds', changes: [],
+        note: 'Ignores negative Characteristic effects from Damage/Critical Damage and cannot be Stunned. When it wears off: −20 to Strength, Toughness and Agility Tests for one hour. (RT Core p.142)',
+    },
+    slaught: {
+        label: 'Slaught', durationText: '2d10 minutes',
+        changes: [
+            { key: 'system.characteristics.agility.modifier', mode: 2, value: '30' },
+            { key: 'system.characteristics.perception.modifier', mode: 2, value: '30' },
+        ],
+        note: '+3 Agility Bonus and +3 Perception Bonus. Afterwards: Test Toughness or take −20 to Agility and Perception Tests for 1d5 hours. (RT Core p.143)',
+    },
+    spur: {
+        label: 'Spur', durationText: '2d10 minutes', changes: [],
+        note: 'Cannot be Stunned and takes no Fatigue. Afterwards: −20 to Toughness and Agility Tests for one hour, plus one Fatigue level for every two that would have been gained. (Into the Storm)',
+    },
+    'cold fire': {
+        label: 'Cold Fire', durationText: '3d10 rounds', grantsTalent: 'Battle Rage', changes: [],
+        note: 'Gains the Battle Rage talent for the duration. (Into the Storm)',
+    },
+    'white void': {
+        label: 'White Void', durationText: '1d10 minutes',
+        changes: [{ key: 'system.characteristics.willpower.modifier', mode: 2, value: '20' }],
+        note: '+20 Willpower for the duration. (Into the Storm)',
+    },
+    wideawake: {
+        label: 'Wideawake', durationText: '1d5 hours', changes: [],
+        note: 'Ignores one level of Fatigue for the duration; additional doses prolong it but never counter more than one level. After it wears off: suffer an additional level of Fatigue. (Into the Storm)',
+    },
+    'attention spanner': {
+        label: 'Attention Spanner', durationText: '3d10 rounds', changes: [],
+        note: 'On a successful focus: +30 to all Intelligence-based Tests for the duration. On a failure: −20 to all Tests for the same period. (Into the Storm)',
+    },
+};
+
+/**
+ * Look up the activation spec for a consumable by name (ENGINE-CONSUMABLE-ACTIVATE).
+ * Returns null for non-activated consumables (food, medikits, Recaf, etc.) so the
+ * "Use" action only surfaces on the drugs that actually apply a timed effect. The
+ * name match strips a trailing "(drug)" suffix some pack entries carry and is
+ * case-insensitive. The returned object is a fresh shallow copy (callers must not
+ * mutate the shared table).
+ *
+ * @param {string} name  the consumable item name
+ * @returns {{label: string, durationText: string, changes: Array, note: string, grantsTalent?: string}|null}
+ */
+export function consumableActivation(name) {
+    const key = String(name ?? '').toLowerCase().replace(/\s*\(drug\)\s*$/, '').trim();
+    const spec = CONSUMABLE_ACTIVATIONS[key];
+    if (!spec) return null;
+    return { ...spec, changes: (spec.changes ?? []).map((c) => ({ ...c })) };
+}
+
 export async function roll1d100() {
     let formula = '1d100';
     const roll = new Roll(formula, {});
