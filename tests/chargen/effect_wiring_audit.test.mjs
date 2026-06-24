@@ -58,6 +58,76 @@ const WIRED_EXPECTED = [
     // Skill via an AE (UPGRADE system.skills.psyniscience.advance → 1) AND grants Rival
     // (Inquisition) via flags.rt.grants (listed in GRANTS_EXPECTED below).
     { name: 'Sixth Sense', kind: 'ae' },
+    // RATCHET-HARDEN-PREEXISTING (iter 49) — pre-existing wiring from the 0.7.6
+    // talent-mechanics overhaul + the backgrounds loop, brought under backpressure so a
+    // regression that strips their AE/conditionalBonus turns the gate red (previously only
+    // the soft shape test would notice, and only if malformed — not if deleted).
+    // talents — conditionalBonuses
+    { name: 'Berserk Charge', kind: 'cond' },
+    { name: 'Disturbing Voice', kind: 'cond' },
+    { name: 'Double Team', kind: 'cond' },
+    { name: 'Enemy', kind: 'cond' },
+    { name: 'Flagellant', kind: 'cond' },
+    { name: 'Frenzy', kind: 'cond' },
+    { name: 'Good Reputation', kind: 'cond' },
+    { name: 'Hatred', kind: 'cond' },
+    { name: 'Iron Discipline', kind: 'cond' },
+    { name: 'Litany of Hate', kind: 'cond' },
+    { name: 'Logis Implant', kind: 'cond' },
+    { name: 'Orthoproxy', kind: 'cond' },
+    { name: 'Peer', kind: 'cond' },
+    { name: 'Resistance (Cold)', kind: 'cond' },
+    { name: 'Resistance (Fear)', kind: 'cond' },
+    { name: 'Resistance (Heat)', kind: 'cond' },
+    { name: 'Resistance (Poisons)', kind: 'cond' },
+    { name: 'Resistance (Psychic Techniques)', kind: 'cond' },
+    { name: 'Rival', kind: 'cond' },
+    { name: 'Soul-Bound to the Emperor', kind: 'cond' },
+    { name: "Too 'Ard Ta Care", kind: 'cond' },
+    { name: 'Void Tactician', kind: 'cond' },
+    { name: 'Worky Gubbinz', kind: 'cond' },
+    // talents — always-on ActiveEffects
+    { name: 'Hotshot Pilot', kind: 'ae' },
+    { name: 'Infused Knowledge', kind: 'ae' },
+    { name: 'Machinator Array', kind: 'ae' },
+    { name: 'Master Chirurgeon', kind: 'ae' },
+    // traits — conditionalBonuses
+    { name: 'Blessed Ignorance', kind: 'cond' },
+    { name: 'Constant Combat Training', kind: 'cond' },
+    { name: 'Criminal', kind: 'cond' },
+    { name: 'Etiquette', kind: 'cond' },
+    { name: "Honour Amongst One's Peers", kind: 'cond' },
+    { name: 'Ill-omened', kind: 'cond' },
+    { name: 'Ill-starred', kind: 'cond' },
+    { name: 'Imperial Chauvinism', kind: 'cond' },
+    { name: 'Klan: Bad Moons', kind: 'cond' },
+    { name: 'Leery of Outsiders', kind: 'cond' },
+    { name: 'Loyalty', kind: 'cond' },
+    { name: 'Officer on Deck', kind: 'cond' },
+    { name: 'Paranoid', kind: 'cond' },
+    { name: 'Stranger to the Cult', kind: 'cond' },
+    { name: 'Street Knowledge', kind: 'cond' },
+    { name: 'Survivor', kind: 'cond' },
+    { name: 'The Face of the Enemy', kind: 'cond' },
+    { name: 'Xenophile', kind: 'cond' },
+    { name: 'Xenos Interaction', kind: 'cond' },
+    // traits — always-on ActiveEffects
+    { name: 'Blessed Scars', kind: 'ae' },
+    { name: 'Kindred: Cunning Hybrid', kind: 'ae' },
+    { name: 'Refined Tastes', kind: 'ae' },
+    // traits — carry BOTH an AE and a conditionalBonus (listed once per kind)
+    { name: 'Hivebound', kind: 'ae' },
+    { name: 'Hivebound', kind: 'cond' },
+    { name: 'Kindred: Bold Hunter', kind: 'ae' },
+    { name: 'Kindred: Bold Hunter', kind: 'cond' },
+];
+// RATCHET-HARDEN-PREEXISTING (iter 49) — pickable talents wired via `flags.rt.pickable`
+// (the choice is prompted on createItem; Talented builds its AE dynamically from the
+// pick, the others are conditional/engine-applied). They carry no static AE/cond, so they
+// can't sit in WIRED_EXPECTED — guarded below to assert the pickable flag survives.
+const PICKABLE_EXPECTED = [
+    'Exotic Weapon Training', 'Psychic Technique', 'Talented', 'Weapon Master',
+    'Warp Eye', 'Weapon Training', 'Resistance',
 ];
 // Already applied by name in src/module/rolls/* (or documents/acolyte.mjs) — must NOT
 // also be AE'd. Lightning Reflexes is computed in acolyte.mjs (Initiative ×AgB term)
@@ -239,6 +309,16 @@ test('no code-handled talent was given an AE/conditionalBonus (double-apply guar
         const hasAe = (d.effects ?? []).length > 0;
         const hasCond = (d.flags?.rt?.conditionalBonuses ?? []).length > 0;
         assert.ok(!hasAe && !hasCond, `code-handled "${name}" must not also be wired (double-apply risk)`);
+    }
+});
+
+test('every pickable entry still carries a flags.rt.pickable definition', () => {
+    for (const name of PICKABLE_EXPECTED) {
+        const d = byName.get(name);
+        assert.ok(d, `PICKABLE_EXPECTED "${name}" not found in any pack`);
+        const pick = d.flags?.rt?.pickable;
+        assert.ok(pick && typeof pick.kind === 'string',
+            `"${name}" expected a flags.rt.pickable with a kind`);
     }
 });
 

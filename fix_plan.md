@@ -639,7 +639,7 @@ guard in the spec). Canon: `/mnt/project_data/RT/RT-DOCS/`.
   + `loops/effects-audit/triage.md`. Verification/documentation only — no pack change.
   Gate green (build OK, 154 node tests). (AUDIT)
 
-- [ ] RATCHET-HARDEN-PREEXISTING — bring the 58 wired-but-untracked entries
+- [x] RATCHET-HARDEN-PREEXISTING — bring the 58 wired-but-untracked entries
   (AUDIT-CRITIC iter 48) under ratchet backpressure: add each to `WIRED_EXPECTED` (kind
   `ae`/`cond` per its wiring) or `GRANTS_EXPECTED` in
   `tests/chargen/effect_wiring_audit.test.mjs` so a regression that strips their wiring
@@ -649,7 +649,15 @@ guard in the spec). Canon: `/mnt/project_data/RT/RT-DOCS/`.
   Array, Frenzy, the Resistance variants, the pickable talents, the background
   traits/Klan/Kindred conds, etc. — full list in `.ralph/data-vendor-queue.md` iter 48).
   No data/code change — pure test hardening; gate must stay green. Split into a couple
-  of batches if the list is unwieldy. (WIRE)
+  of batches if the list is unwieldy. (WIRE) — done iter 49: authoritative re-scan (not
+  the prose list) found 51 entries with real effects/conditionalBonuses → added to
+  WIRED_EXPECTED (53 rows; Hivebound + Kindred: Bold Hunter dual ae+cond). The 7-entry
+  gap vs the prose "58" is pickable-only talents (Exotic Weapon Training, Psychic
+  Technique, Talented, Weapon Master, Warp Eye, Weapon Training, Resistance) — no static
+  AE/cond, so they can't sit in WIRED_EXPECTED → new PICKABLE_EXPECTED list + guard test
+  asserting each still carries flags.rt.pickable. None in CODE_HANDLED/NARRATIVE (classify
+  excluded every already-tracked name → no double-apply / no collision). Gate green (build
+  OK, 155 node tests; +1 pickable guard). Test-only — no E2E. (WIRE)
 
 ### AUDIT-003 follow-ups (`cybernetics`; see `loops/effects-audit/triage.md` AUDIT-003)
 
