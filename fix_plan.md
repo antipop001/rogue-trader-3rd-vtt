@@ -447,14 +447,16 @@ guard in the spec). Canon: `/mnt/project_data/RT/RT-DOCS/`.
   same defender without it. Assign-damage + opposed-psychic pipelines are Foundry-coupled —
   node gate can't exercise them. (E2E)
 
-- [ ] CLEANUP-BATTLE-RAGE — data bug found in iter 38: the `Battle Rage` entry in
-  `talents.yml` carries **Berserk Charge's** benefit ("+20 WS bonus when using the Charge
-  Action") with empty prereqs, instead of canon "He can Parry while Frenzied" (prereq: Frenzy
-  Talent; RT Core p.94). Part of an alphabetical off-by-one extraction shift (Bastion held
-  Battle Rage's text — fixed in iter 38 under ENGINE-UNNATURAL-DAMAGE). Berserk Charge already
-  carries the correct +20-charge `conditionalBonus` (0.7.6), so Battle Rage's text is a stray
-  duplicate. Restore Battle Rage's benefit/prereqs/source (p.94); confirm no entry beyond it
-  is also shifted. Pure data edit — no wiring (Parry-while-Frenzied is narrative). (CLEANUP)
+- [x] CLEANUP-BATTLE-RAGE — data bug found in iter 38. Done iter 39: the `Battle Rage`
+  entry in `talents.yml` actually held the **"doubles defensive Psy Rating"** text (a stray
+  duplicate of Bastion of Iron Will's, left when iter 38 fixed Bastion — fix_plan predicted
+  Berserk Charge's text, but the real stray was Bastion's, with prereqs "Psy Rating, Strong
+  Minded, Willpower 40"). Restored canon "Long experience and indomitable will ... He can
+  Parry while Frenzied." + prereq "Frenzy Talent" + `source: …p.94`. Berserk Charge (own
+  entry) already carries the correct +20-charge `conditionalBonus` (0.7.6); confirmed no
+  entry beyond Battle Rage is shifted (Berserk Charge, Best of the Best, Binary Chatter all
+  match canon). Pure data edit — no wiring (Parry-while-Frenzied is narrative). Gate green
+  (build OK, 125 node tests). (CLEANUP)
 
 - [ ] ENGINE-WOUNDS-MOD — additive Wounds term (mirror BUG-002's `initiative.modifier`):
   add `system.wounds.modifier` to `template.json`, fold into the Wounds compute in
