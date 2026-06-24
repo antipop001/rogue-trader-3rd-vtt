@@ -212,3 +212,91 @@ talents pack (implant = permanently installed); not gated on `equipped`.
   Interface, Internal Blade, Internal Power Cell, Locator Matrix, Respiratory Filter
   Implant, Gastral Bionics, Pain Ward, Voidskin, Volitor Implant, Vox Implant, Implant
   Systems, Memorance Implant (the +10 leverage part), Cortex Implants (Common/Poor part).
+
+---
+
+# Effect-wiring triage — AUDIT-004 (`weapon-mods` / `ammo` / `consumables`)
+
+All entries in the three packs classified per `specs/06`. Unlike talents/traits/
+cybernetics, these item types modify a **weapon** or an **attack** (or are an
+**activated/timed consumable**) — they almost never grant a standing CHARACTER bonus,
+so **zero entries are cleanly always-on-AE-able**. The applicable buckets here are
+**structured-already** (engine already consumes a name/flag), **needs-engine**, and
+**narrative**. Apply path: `roll-data.mjs:116` selects `actionItem.items.find(i =>
+i.isAmmunition)` and feeds it through `rules/ammo.mjs`; weapon mods go through
+`rules/weapon-modifiers.mjs`. Both match by `name` string in a switch.
+
+**Key discovery — already-written ammo wiring is silently inert (verified by grep):**
+- `ammo.mjs` switch keys `'Explosive Arrows/Quarrels'` (slash) but the YAML name is
+  `'Explosive Arrows and Quarrels'` → no match → effect never applies.
+- `ammo.mjs` keys `'Hot-Shot Charge Packs'` (plural) but YAML is `'Hot-Shot Charge
+  Pack'` (singular) → inert.
+- `ammo.mjs` keys `'Tox Rounds'` but YAML is `'Toxic Shot'` → Toxic quality never added.
+- 6 ammo-like rows (Explosive Arrows and Quarrels, Hot-Shot Charge Pack, Amputator
+  Shells, Bleeder Rounds, Dumdum Bullets, Expander Rounds) live in `weapon-mods.yml`
+  as `type: weaponModification`, but the ammo apply path only runs on `isAmmunition`
+  items — so even with a name fix they route through `weapon-modifiers.mjs`, which has
+  NO switch case for them. Type-vs-apply-path mismatch → also inert.
+→ Folded into **WIRE-AMMO-NAME-SYNC** (a bug fix, no new engine).
+
+Engine-handled special-quality flags (grep `damage-data.mjs`/`action-data.mjs`; do NOT
+re-wire): Tearing, Proven, Primitive, Lance, "Razer Sharp" (sic), Concussive, Corrosive,
+Crippling, Felling, Flame, Hammer Blow, Hallucinogenic, Haywire, Scatter, Scattershot,
+Shocking, Snare, Toxic, Sanctified, Accurate, Maximal, Overcharge, Overload, Melta,
+Vengeful, Destructive, Storm, Twin-Linked, Spray, Reliable, Unreliable, Overheats,
+Indirect, Defensive, Inaccurate. → ammo whose only job is to ADD one of these just needs
+its name pushed into the `ammo.mjs` switch (the damage engine already resolves it).
+
+## weapon-mods (`type: weaponModification`)
+
+| Entry | Described effect | Bucket | Wiring plan / why |
+|---|---|---|---|
+| Mono | drops Primitive, +2 Pen | structured-already | Engine-handled (name matches). Wired. |
+| Motion Predictor | +10 BS semi/full auto | structured-already | Engine-handled. Wired. |
+| Red-Dot Laser Sight | +10 BS single shot | structured-already | Engine-handled. Wired. |
+| Compact | ½ wt/clip/range, −1 dmg, −20 conceal | structured-already (partial) | Engine handles pen −1; the dmg/range/conceal deltas unwired → narrative remainder. |
+| Amputator/Dumdum/Expander Shells | +2 / +2&AP-double / +1&+1Pen | structured-already (BROKEN) | Effect in `ammo.mjs` but rows are `type: weaponModification` → wrong apply path → **WIRE-AMMO-NAME-SYNC**. |
+| Bleeder Rounds | +3 dmg vs biological | needs-engine (BROKEN) | Effect-note only; +3-vs-biological never applied; wrong type → **WIRE-AMMO-NAME-SYNC** + trait-gate stays narrative. |
+| Explosive Arrows and Quarrels | −10, Explosive, drops Primitive | structured-already (BROKEN) | name/type mismatch → inert → **WIRE-AMMO-NAME-SYNC**. |
+| Hot-Shot Charge Pack | +1 dmg, 2d10 pick-high, Pen 4, loses Reliable, clip 1 | structured-already (BROKEN) | plural/type mismatch → inert → **WIRE-AMMO-NAME-SYNC**. |
+| Fire Selector / Forearm Mounting / Melee Attachment / Omni-Scope / Overcharge Pack / Photo Sight / Preysense Sight / Silencer / Suspensors / Telescopic Sight / Vox-Operated | sights/mounts/clip mechanics | narrative / needs-engine | No lighting/range-band/multi-clip engine for mods. Record. |
+| Calamity Vents / Exterminator Cartridge / Tox Dispenser | overheat-purge / combi-flamer / activated Toxic | needs-engine | No overheat-vent/combi/activated-quality engine. Record. |
+| Arrows-Quarrels / Shot / Backpack Ammo Pack / Bullets / Shells / Charge Pack / Fuel / Bolt Shells / Melta Canister / Plasma Flask / Exotic / Unusual Ammo (header) | ammo-type descriptors / reserve ammo | narrative | Descriptors, no mechanical delta (Backpack reserve = no engine). Record. |
+
+## ammo (`type: ammunition`)
+
+| Entry | Described effect | Bucket | Wiring plan / why |
+|---|---|---|---|
+| Inferno Shells | Agility test or catch fire | structured-already | Pushes `Flame`; engine handles. Wired. |
+| Man-Stopper Bullets | Pen → 3 | structured-already | Pen set; engine handles (name matches). Wired. |
+| Toxic Shot | gains Toxic; 1d5 self-dmg on jam | structured-already (BROKEN) | `ammo.mjs` keys `'Tox Rounds'` not `'Toxic Shot'` → inert → **WIRE-AMMO-NAME-SYNC**. |
+| Snare Shells | −2 dmg, gains Snare | needs-engine (easy) | `Snare` IS engine-handled; just push the quality → **WIRE-AMMO-ADD-QUALITY**. |
+| Airtorch Canister | gains Scatter + Overheating, ½ range | needs-engine (easy) | `Scatter`/`Overheats` engine-handled; push qualities → **WIRE-AMMO-ADD-QUALITY** (range-halve stays narrative). |
+| Tempest Bolt Shells / Acid Shells / Microburst Flask / Nephium Fuel Tank / Organgrinder Rounds / Tracer Shells / Void Rounds | type change / dmg override / armour-degrade / per-DoF cascade / conditional BS / environment-conditional | narrative / needs-engine | Damage-override, armour-degrade, conditional/environmental, per-DoF — no clean apply point. Record. |
+
+## consumables (`type: drug`)
+
+| Entry | Described effect | Bucket | Wiring plan / why |
+|---|---|---|---|
+| Frenzon / Stimm / Slaught / Spur / Cold Fire / White Void / Wideawake / Attention Spanner | timed combat buffs (Frenzy/Battle Rage talent, +stat for N rounds, ignore Fatigue/Stun) | needs-engine | No drug-activation/duration engine → **ENGINE-CONSUMABLE-ACTIVATE**. Record. |
+| De-Tox / Obscura / Sacred Unguents | activated cleanse / hallucinogen / weapon jam-immunity | needs-engine | Activated, no duration engine. Record. |
+| Medikit / Medikit (Advanced) / Almanac Astrae Divinitus / Auspex-Scanner / Auto Quill | +20/+10 skill WHILE using the item | conditional (item-present) | Item-present bonus, not a character standing bonus → leave narrative (no AE/cond cleanly). Record. |
+| Amasec / Lho-Sticks / High Provender / Ration Packs / Recaf / Theosophist's Philtre / Tranq / Blush / Ploin Juice / Raenka / Injector / Arms Coffer | flavour / food / delivery / storage | narrative | No game effect. Record. |
+| Tools | empty description, `type: drug` | narrative (cleanup) | Stray/misfiled row → **CLEANUP-CONSUM-TOOLS-STRAY**. |
+
+## Bucket roll-up
+
+- **structured-already (wired, name matches — leave alone):** Mono, Motion Predictor,
+  Red-Dot Laser Sight, Compact (pen), Inferno Shells, Man-Stopper Bullets.
+- **structured-already but BROKEN (intended-wired, inert) → WIRE-AMMO-NAME-SYNC:**
+  Explosive Arrows and Quarrels, Hot-Shot Charge Pack, Toxic Shot, Amputator Shells,
+  Dumdum Bullets, Expander Rounds, Bleeder Rounds (the +3 stays partial).
+- **easy add-quality → WIRE-AMMO-ADD-QUALITY:** Snare Shells (Snare), Airtorch Canister
+  (Scatter/Overheats).
+- **always-on AE:** none (no standing character bonuses in these packs).
+- **needs-engine (record + future ENGINE):** all activated/timed consumables →
+  **ENGINE-CONSUMABLE-ACTIVATE**; unwired ItS ammo (Tempest Bolt/Acid/Microburst/
+  Nephium/Organgrinder/Tracer/Void); weapon-mod sights/mounts/cartridges.
+- **narrative (record-only) → NARRATIVE-RECORD-MODS-AMMO-CONSUM:** everything else
+  (descriptors, flavour, item-present skill bonuses, immunities).
+- **cleanup → CLEANUP-CONSUM-TOOLS-STRAY:** the empty `Tools` drug row.

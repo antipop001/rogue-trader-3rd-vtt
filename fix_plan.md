@@ -84,8 +84,17 @@ guard in the spec). Canon: `/mnt/project_data/RT/RT-DOCS/`.
   `craftsmanship: common` field → only Common-baseline unconditional bonuses are
   cleanly AE-able. Appended the 3 tasks below. Gate green (no pack change this iter).
 
-- [ ] AUDIT-004 — `weapon-mods` / `ammo` / `consumables`: find mechanical text with no
-  structured effect. Append WIRE-/NARRATIVE- tasks. (AUDIT)
+- [x] AUDIT-004 — `weapon-mods` / `ammo` / `consumables`: find mechanical text with no
+  structured effect. Append WIRE-/NARRATIVE- tasks. (AUDIT) — done iter 18: all 3 packs
+  triaged in `loops/effects-audit/triage.md` (AUDIT-004 section). Zero always-on-AE
+  candidates (these item types modify a weapon/attack or are activated consumables, not
+  standing character bonuses). **Headline bug:** several already-written ammo effects are
+  silently inert — `ammo.mjs` switch keys don't match the YAML `name:` (`Explosive
+  Arrows/Quarrels`≠`Explosive Arrows and Quarrels`, `Hot-Shot Charge Packs`≠`…Pack`,
+  `Tox Rounds`≠`Toxic Shot`), and 6 ammo rows are filed `type: weaponModification` while
+  the apply path only runs on `isAmmunition` (verified by grep). Engine-handled quality
+  flags re-confirmed (no double-wire). Appended the 5 tasks below. Gate green (no pack
+  change this iter).
 
 - [ ] WIRE-FIELDCRAFT — `Fieldcraft` (trait): always-on AE +10 to `system.skills.
   {concealment,shadowing,silentMove}.modifier` (mode 2). Kroot, ItS. Add to ratchet
@@ -218,6 +227,52 @@ guard in the spec). Canon: `/mnt/project_data/RT/RT-DOCS/`.
   Blackbone Bracing, Synthetic Muscle Grafts, Cortex Implants — extend the existing
   ENGINE-TRAIT-GRANTS / ENGINE-UNNATURAL / ENGINE-NATWEAPONS tasks, NOT this list.)
   Verify each is genuinely text-only before adding. (NARRATIVE)
+
+### AUDIT-004 follow-ups (`weapon-mods`/`ammo`/`consumables`; see `triage.md` AUDIT-004)
+
+- [ ] WIRE-AMMO-NAME-SYNC — fix already-written-but-inert ammo wiring (a bug, no new
+  engine): align `src/module/rules/ammo.mjs` switch keys to the YAML `name:` fields —
+  `Explosive Arrows/Quarrels`→`Explosive Arrows and Quarrels`, `Hot-Shot Charge Packs`→
+  `Hot-Shot Charge Pack`, `Tox Rounds`→`Toxic Shot`. AND resolve the type-vs-apply-path
+  mismatch: the 6 ammo rows in `weapon-mods.yml` (Explosive Arrows and Quarrels, Hot-Shot
+  Charge Pack, Amputator Shells, Bleeder Rounds, Dumdum Bullets, Expander Rounds) are
+  `type: weaponModification` but the bonus path runs on `isAmmunition` items — either
+  re-type them to `ammunition` (move to `ammo.yml`) or add a parallel switch in
+  `weapon-modifiers.mjs`. Verify which is correct against how `roll-data.mjs:116` and
+  `damage-data.mjs` select items. Pure-JS test on the name-match helper if extractable;
+  E2E follow-up (attack card shows the bonus). RT Core / ItS (cite the page). (WIRE)
+
+- [ ] WIRE-AMMO-ADD-QUALITY — for ammo whose entire mechanic is "gains an
+  engine-handled quality," push the quality in `ammo.mjs::calculateAmmoSpecials`: Snare
+  Shells→`Snare`, Airtorch Canister→`Scatter`+`Overheats` (the damage engine already
+  resolves these — only the trigger is missing). The −2 dmg / ½ range deltas stay
+  narrative (no clean apply). Pure-JS test on the quality-push helper; E2E follow-up.
+  RT/ItS. (WIRE)
+
+- [ ] ENGINE-CONSUMABLE-ACTIVATE — a "use drug/consumable" action that applies a timed
+  ActiveEffect (duration in rounds/minutes) for the ~11 activated combat consumables
+  (Frenzon→Frenzy, Stimm, Slaught, Spur, Cold Fire, White Void, Wideawake, Attention
+  Spanner) and weapon buffs (Sacred Unguents jam-immunity, Tox Dispenser). The only clean
+  way to wire these; larger than a data edit. RT Core / ItS. Pure-JS test on any
+  extractable duration/parse helper; E2E follow-up. (ENGINE)
+
+- [ ] NARRATIVE-RECORD-MODS-AMMO-CONSUM — log every intentionally-unwired
+  weapon-mod/ammo/consumable entry from `triage.md` AUDIT-004 to
+  `.ralph/data-vendor-queue.md` as text-faithful / no-AE: weapon-mod sights/mounts/
+  cartridges & ammo-type descriptors (Fire Selector, Forearm Mounting, Melee Attachment,
+  Omni-Scope, Overcharge Pack, Photo Sight, Preysense Sight, Silencer, Suspensors,
+  Telescopic Sight, Vox-Operated, Calamity Vents, Exterminator Cartridge, Tox Dispenser,
+  Backpack Ammo Pack/Power Pack, the ammo-type descriptor rows); unwired ItS ammo (Tempest
+  Bolt Shells, Acid Shells, Microburst Flask, Nephium Fuel Tank, Organgrinder Rounds,
+  Tracer Shells, Void Rounds, De-Tox, Obscura); item-present skill bonuses (Medikit,
+  Medikit (Advanced), Almanac Astrae Divinitus, Auspex/Scanner, Auto Quill); and the
+  flavour/food/utility rows. These packs have NO ratchet coverage (ratchet only spans
+  talents/traits/cybernetics) — record in the data-vendor-queue, not the test. Verify each
+  is genuinely text-only/needs-engine before recording. (NARRATIVE)
+
+- [ ] CLEANUP-CONSUM-TOOLS-STRAY — the `Tools` entry in `consumables.yml` has an empty
+  description and `type: drug` — looks like a stray/misfiled row. Confirm against the pack
+  history, then remove it or fix its data. Trivial. (CLEANUP)
 
 ## Notes
 - Wire effects into the EXISTING packs (`talents`/`traits`/`cybernetics`/…); the `.db`
