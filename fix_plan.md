@@ -458,10 +458,30 @@ guard in the spec). Canon: `/mnt/project_data/RT/RT-DOCS/`.
   match canon). Pure data edit — no wiring (Parry-while-Frenzied is narrative). Gate green
   (build OK, 125 node tests). (CLEANUP)
 
-- [ ] ENGINE-WOUNDS-MOD — additive Wounds term (mirror BUG-002's `initiative.modifier`):
+- [x] ENGINE-WOUNDS-MOD — additive Wounds term (mirror BUG-002's `initiative.modifier`):
   add `system.wounds.modifier` to `template.json`, fold into the Wounds compute in
   `acolyte.mjs`, then AE Sound Constitution `+1` (stackable) and Eaters of the Dead bonus
-  Wounds. Pure-JS test on the compute; E2E. (ENGINE)
+  Wounds. Pure-JS test on the compute; E2E. (ENGINE) — done iter 40: added `wounds.modifier:
+  0` to the base template; pure helper `woundsMax(base, modifier)` in `roll-helpers.mjs`
+  (string-coercing, null-safe, idempotent — wounds.max is stored, not otherwise recomputed,
+  so the fold-in can't accumulate); wired into `acolyte._computeCharacteristics` right after
+  the Initiative fold-in (covers acolyte+npc). **Sound Constitution WIRED** — AE (mode 2, _id
+  SoundConstitn001) on `system.wounds.modifier` += 1; stackable (each purchased instance is a
+  separate item → separate +1 AE); `source:` now cites RT Core p.111 (approx — talent pages
+  collapse per CLAUDE.md). **Eaters of the Dead NOT wired** — its "bonus Wounds = devoured
+  corpse's TB, capped at own TB, lasting TB hours, removed-first when damaged" is a timed/
+  conditional/TB-derived activated effect; a static AE would wrongly grant permanent Wounds.
+  Classified narrative/needs-engine (folds into ENGINE-CONSUMABLE-ACTIVATE) → added to ratchet
+  NARRATIVE. Sound Constitution → ratchet WIRED_EXPECTED (kind ae). NOT double-applied (neither
+  in CODE_HANDLED). Node test `wounds_mod.test.mjs` (4 cases). Gate green (build OK, 129 node
+  tests). E2E follow-up below. (ENGINE)
+
+- [ ] E2E-WOUNDS-MOD — verify on rt-smoke (Playwright): an actor with one Sound Constitution
+  talent shows displayed max Wounds +1 vs without it; three stacked instances show +3; the
+  token bar max reflects it. Confirm an NPC (creature template) with no `system.wounds.modifier`
+  in source still computes (the `Number(...) || 0` guard) and Eaters of the Dead grants NO
+  standing Wounds bonus (stays narrative until the activated-consumable engine lands). Derived
+  data + Foundry-coupled — node gate can't exercise it. (E2E)
 
 - [ ] ENGINE-RAPID-RELOAD — Rapid Reload halves weapon reload times in the attack/reload
   path. Hook in `action-data.mjs` (or reload handling) by talent name. Pure-JS test on the

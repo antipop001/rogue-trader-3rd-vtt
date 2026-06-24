@@ -51,6 +51,9 @@ const WIRED_EXPECTED = [
     // Optical Mechadendrite carries the always-on +10 Per AE (above) AND a +20
     // night-vision conditionalBonus wired here.
     { name: 'Optical Mechadendrite', kind: 'cond' },
+    // ENGINE-WOUNDS-MOD — additive system.wounds.modifier term (mirror of Initiative).
+    // Sound Constitution "+1 Wound" (stackable) via an AE on system.wounds.modifier.
+    { name: 'Sound Constitution', kind: 'ae' },
 ];
 // Already applied by name in src/module/rolls/* (or documents/acolyte.mjs) — must NOT
 // also be AE'd. Lightning Reflexes is computed in acolyte.mjs (Initiative ×AgB term)
@@ -138,6 +141,12 @@ const NARRATIVE = [
     'Internal Blade', 'Internal Power Cell', 'Locator Matrix',
     'Respiratory Filter Implant', 'Gastral Bionics', 'Pain Ward', 'Voidskin',
     'Volitor Implant', 'Vox Implant', 'Implant Systems',
+    // ENGINE-WOUNDS-MOD — Eaters of the Dead (Kroot, ItS p.142) grants bonus Wounds
+    // equal to a devoured corpse's unmodified Toughness Bonus, capped at the Kroot's own
+    // TB and lasting TB hours, removed first when damaged. A timed/conditional/TB-derived
+    // activated effect — a static AE would wrongly grant permanent Wounds. Needs the
+    // activated-consumable engine (ENGINE-CONSUMABLE-ACTIVATE), not a standing bonus.
+    'Eaters of the Dead',
 ];
 // ----------------------------------------------------------------------------
 

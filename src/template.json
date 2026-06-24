@@ -12,7 +12,8 @@
           "max": 0,
           "value": 0,
           "critical": 0,
-          "rolled": false
+          "rolled": false,
+          "modifier": 0
         },
         "initiative": {
           "characteristic": "agility",

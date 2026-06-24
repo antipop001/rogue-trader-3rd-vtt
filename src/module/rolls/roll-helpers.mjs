@@ -117,6 +117,23 @@ export function initiativeCharBonus(rawBonus, normalBonus, hasLightningReflexes,
 }
 
 /**
+ * Maximum Wounds = the rolled/stored base plus any additive modifier written by an
+ * effect (mirror of Initiative's additive `modifier` term — BUG-002). `wounds.max` is a
+ * stored value (set at chargen / by the NPC pipeline) and is NOT otherwise recomputed in
+ * derived data, so folding the modifier in here is idempotent across prepareData cycles
+ * (source resets each cycle; the AE only touches `wounds.modifier`). This makes Wounds
+ * generally effect-addressable: Sound Constitution (+1 each instance, stackable; RT Core
+ * p.111) writes `system.wounds.modifier += 1` via an ActiveEffect.
+ *
+ * @param {number} base  the stored/rolled wounds maximum (system.wounds.max from source)
+ * @param {number} modifier  the additive effect modifier (system.wounds.modifier)
+ * @returns {number} the effective maximum Wounds
+ */
+export function woundsMax(base, modifier) {
+    return (Number(base) || 0) + (Number(modifier) || 0);
+}
+
+/**
  * Crack Shot / Crippling Strike crit-damage bonus (RT Core p.96). Crack Shot: "When
  * his ranged attack causes Critical Damage, add +2 to the Damage." Crippling Strike:
  * "When the character's melee attack causes Critical Damage, add +4 Damage." These are

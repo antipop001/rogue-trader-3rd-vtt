@@ -2888,11 +2888,35 @@ data:
         of times it's been taken after the Talent, such as Sound Constitution 3.
     cost: 0
     prerequisites: ''
-    source: Rogue Trader Core Rulebook
+    source: Rogue Trader Core Rulebook, p.111
     tier: '1'
 img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
 name: Sound Constitution
 type: talent
+effects:
+- _id: SoundConstitn001
+  name: Sound Constitution
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  description: ''
+  origin: ''
+  disabled: false
+  transfer: true
+  tint: null
+  statuses: []
+  duration:
+    startTime: null
+    seconds: null
+    combat: null
+    rounds: null
+    turns: null
+    startRound: null
+    startTurn: null
+  changes:
+  - key: system.wounds.modifier
+    mode: 2
+    value: '1'
+    priority: null
+  flags: {}
 ---
 data:
     aptitudes: ''

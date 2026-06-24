@@ -12,7 +12,7 @@ import { RogueTraderBaseActor } from './base-actor.mjs';
 import { ForceFieldData } from '../rolls/force-field-data.mjs';
 import { prepareForceFieldRoll } from '../prompts/force-field-prompt.mjs';
 import { DHBasicActionManager } from '../actions/basic-action-manager.mjs';
-import { getDegree, roll1d100, initiativeCharBonus, reactionBudget, canSpendReaction, unnaturalCharacteristicMultipliers } from '../rolls/roll-helpers.mjs';
+import { getDegree, roll1d100, initiativeCharBonus, woundsMax, reactionBudget, canSpendReaction, unnaturalCharacteristicMultipliers } from '../rolls/roll-helpers.mjs';
 import { SYSTEM_ID } from '../hooks-manager.mjs';
 import { RogueTraderSettings } from '../rogue-trader-settings.mjs';
 
@@ -409,6 +409,12 @@ export class RogueTraderAcolyte extends RogueTraderBaseActor {
                 (initChar.unnatural ?? 0) > 0,
             )
             + (this.system.initiative.modifier ?? 0);
+        // RT 1e: maximum Wounds = the rolled/stored base plus any additive effect
+        // modifier (effect-addressable via system.wounds.modifier, mirroring Initiative —
+        // ENGINE-WOUNDS-MOD). wounds.max is a stored value (chargen/NPC-pipeline) and is
+        // not otherwise recomputed, so this fold-in is idempotent. Sound Constitution
+        // (RT Core p.111) writes system.wounds.modifier += 1 via an AE (stackable).
+        this.system.wounds.max = woundsMax(this.system.wounds.max, this.system.wounds.modifier);
         // RT 1e (RT Core p.251): a character functions with up to Toughness Bonus
         // levels of Fatigue; exceeding TB collapses him unconscious. (Was TB+WB — a DH2
         // threshold, BUG-004.) Any level (>=1) imposes -10 to all Tests.
