@@ -693,3 +693,159 @@ flags:
               characteristics: [fellowship]
           value: -5
           label: 'when dealing with members of the Imperial Cult'
+---
+data:
+    description: 'You will never willingly have dealings with your sworn enemy (such as Orks, Eldar, mutants, Chaos worshippers, the Imperial Guard, the Imperial Navy, or void pirates) except under the direst circumstances, and if you must do so, you suffer -10 to all Fellowship Tests in those dealings. Also, if given the slightest provocation, you will react violently towards them. (You may take a Willpower Test to avert this, modified by the provocation and the consequences of succumbing to your hatred.)'
+    source: 'Rogue Trader Core Rulebook, p.28'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'The Face of the Enemy'
+type: 'trait'
+flags:
+    rt:
+        category: 'Background'
+        originStep: 'Trials'
+        conditionalBonuses:
+        - applies:
+              skills: [charm, command, deceive, inquiry, barter, blather]
+              characteristics: [fellowship]
+          value: -10
+          label: 'when dealing with your sworn enemy'
+---
+data:
+    description: 'Thanks to your shadowed past, you have picked up some knowledge on the way that you would not normally have access to. You may either select a single additional Common Lore Skill or improve a Common Lore Skill you already have by one level.'
+    source: 'Rogue Trader Core Rulebook, p.28'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Common Lore Improvement'
+type: 'trait'
+flags:
+    rt:
+        category: 'Background'
+        originStep: 'Trials'
+---
+data:
+    description: 'Having endured captivity once, you have no intention of doing so again. You react violently towards the prospect of imprisonment or loss of your freedom. You may take a Willpower Test to avert this, modified by the provocation and the consequences (set by the GM) of succumbing to your dread.'
+    source: 'Rogue Trader Core Rulebook, p.28'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Jealous Freedom'
+type: 'trait'
+flags:
+    rt:
+        category: 'Background'
+        originStep: 'Trials'
+---
+data:
+    description: 'Whenever you spend a Fate Point to recover Wounds (see page 233), you may re-roll the dice if you wish but must accept the second result even if it is worse.'
+    source: 'Rogue Trader Core Rulebook, p.29'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Against All Odds'
+type: 'trait'
+flags:
+    rt:
+        category: 'Background'
+        originStep: 'Trials'
+---
+data:
+    description: 'You suffer -5 on Fellowship Tests when interacting with the void born, Rogue Traders, and other voidfarers who are not personal friends, if they have heard of your background and reputation.'
+    source: 'Rogue Trader Core Rulebook, p.29'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Ill-starred'
+type: 'trait'
+flags:
+    rt:
+        category: 'Background'
+        originStep: 'Trials'
+        conditionalBonuses:
+        - applies:
+              skills: [charm, command, deceive, inquiry, barter, blather]
+              characteristics: [fellowship]
+          value: -5
+          label: 'when interacting with void born, Rogue Traders, and voidfarers who know your reputation'
+---
+data:
+    description: 'You will allow no serious offence to your honour and person or those under your protection to pass unchallenged, meeting threat with threat and violence with violence. You may take a Willpower Test to avert this if you wish, modified by the provocation and the consequences (set by the GM) of succumbing to your rage.'
+    source: 'Rogue Trader Core Rulebook, p.30'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Brook No Insult'
+type: 'trait'
+flags:
+    rt:
+        category: 'Background'
+        originStep: 'Trials'
+---
+data:
+    description: 'You harbour a dark secret that you struggle to be rid of. Work with the GM to determine what it is and the difficult, rare, esoteric, and very dangerous circumstances required to remove it.'
+    source: 'Into the Storm, p.30'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Dark Secret'
+type: 'trait'
+flags:
+    rt:
+        category: 'Background'
+        originStep: 'Trials'
+---
+data:
+    description: 'You gain a +5 bonus to Charm Tests.'
+    source: 'Into the Storm, p.34'
+effects:
+- _id: RefTasteCharm001
+  name: 'Refined Tastes'
+  img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+  description: ''
+  origin: ''
+  disabled: false
+  transfer: true
+  tint: null
+  statuses: []
+  duration: { startTime: null, seconds: null, combat: null, rounds: null, turns: null, startRound: null, startTurn: null }
+  changes:
+  - key: 'system.skills.charm.modifier'
+    mode: 2
+    value: '5'
+    priority: null
+  flags: {}
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Refined Tastes'
+type: 'trait'
+flags:
+    rt:
+        category: 'Background'
+        originStep: 'Trials'
+---
+data:
+    description: 'Whenever you encounter a member of the rival faction with which you have a rivalry, you attempt to visit retribution upon them. A Difficult (-10) Willpower Test can be made to prevent this from happening once per scene.'
+    source: 'Into the Storm, p.32'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Vendetta of Rivals'
+type: 'trait'
+flags:
+    rt:
+        category: 'Background'
+        originStep: 'Trials'
+---
+data:
+    description: 'You gain an Heirloom Item rolled on Table 1-2: Heirloom Items (see page 31).'
+    source: 'Rogue Trader Core Rulebook, p.31'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Heirloom Item'
+type: 'trait'
+flags:
+    rt:
+        category: 'Background'
+        originStep: 'Motivation'
+---
+data:
+    description: 'You gain a +5 bonus to all Willpower and Fellowship Tests made while aboard the ship the character lives on.'
+    source: 'Into the Storm, p.27'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Loyalty'
+type: 'trait'
+flags:
+    rt:
+        category: 'Background'
+        originStep: 'Motivation'
+        conditionalBonuses:
+        - applies:
+              skills: []
+              characteristics: [willpower, fellowship]
+          value: 5
+          label: 'while aboard the ship you live on'

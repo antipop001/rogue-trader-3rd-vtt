@@ -46,10 +46,13 @@ stray talents resolve (TALENT_RESOLVED_FLOOR 72 → 79).
   Starting Wounds); Wary/Tenacious Survivalist text-only (Initiative not expressible —
   no `.modifier` field); Underground Resources/Vendetta/Void Accustomed narrative. (BG-AUTHOR)
 
-- [ ] BG-004 — Trials & Travails + Motivations (11): Against All Odds, Brook No Insult,
+- [x] BG-004 — Trials & Travails + Motivations (11): Against All Odds, Brook No Insult,
   Common Lore Improvement, Dark Secret, Ill-starred, Jealous Freedom, Refined Tastes,
   The Face of the Enemy, Vendetta of Rivals (`trials_and_travails.json`); Heirloom
-  Item, Loyalty (`motivations.json`). Target TRAIT floor 44. (BG-AUTHOR)
+  Item, Loyalty (`motivations.json`). TRAIT_RESOLVED_FLOOR=44. Wired: Ill-starred &
+  The Face of the Enemy (-5/-10 Fel conditionalBonus), Loyalty (+5 WP/Fel cond aboard
+  ship), Refined Tastes (AE +5 charm); 7 text-only (Fate-reroll / Common-Lore-pick /
+  narrative WP-test traits not expressible as a roll-prompt bonus). (BG-AUTHOR)
 
 - [ ] BG-005 — Lure of the Void + Birthright (7): Blessed Scars, Imperfect Bionic,
   Imperial Chauvinism, Mutant, Xenophile (`lure_of_the_void.json`); Mutation, Rival
