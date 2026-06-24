@@ -625,9 +625,31 @@ guard in the spec). Canon: `/mnt/project_data/RT/RT-DOCS/`.
   Primitive. Confirm a non-Unarmed melee weapon is unchanged, and the Strength Bonus is added
   exactly once. Attack/damage pipeline is Foundry-coupled — node gate can't exercise it. (E2E)
 
-- [ ] AUDIT-CRITIC — Completeness pass: re-run the ratchet, list anything still
+- [x] AUDIT-CRITIC — Completeness pass: re-run the ratchet, list anything still
   unresolved (unwired and not justified-narrative), confirm no code-handled entry got
-  an AE (grep), and regenerate the data-vendor-queue audit summary. (AUDIT)
+  an AE (grep), and regenerate the data-vendor-queue audit summary. (AUDIT) — done iter
+  48: scanned talents+traits+cybernetics (387 docs) for mechanical phrasing
+  cross-referenced against all four ratchet lists (159 unique tracked) → **0 unresolved**
+  (every mechanical entry wired or recorded). Double-apply guard re-confirmed: all 28
+  CODE_HANDLED names referenced by name in rolls/+documents/+roll-helpers.mjs, ratchet
+  guard passes (none double-AE'd). Found 58 wired-but-untracked entries (pre-existing
+  0.7.6 talent-mechanics + backgrounds-loop wiring, NOT this loop's gaps) — shape-valid
+  (soft test, 0 warnings) but not under WIRED_EXPECTED backpressure → appended
+  RATCHET-HARDEN-PREEXISTING below. Summary regenerated in `.ralph/data-vendor-queue.md`
+  + `loops/effects-audit/triage.md`. Verification/documentation only — no pack change.
+  Gate green (build OK, 154 node tests). (AUDIT)
+
+- [ ] RATCHET-HARDEN-PREEXISTING — bring the 58 wired-but-untracked entries
+  (AUDIT-CRITIC iter 48) under ratchet backpressure: add each to `WIRED_EXPECTED` (kind
+  `ae`/`cond` per its wiring) or `GRANTS_EXPECTED` in
+  `tests/chargen/effect_wiring_audit.test.mjs` so a regression that strips their wiring
+  turns the gate red (today only the soft shape test would notice, and only if the
+  wiring is malformed — not if it's deleted). These are valid pre-existing wirings from
+  the 0.7.6 talent-mechanics overhaul + the backgrounds loop (Hotshot Pilot, Machinator
+  Array, Frenzy, the Resistance variants, the pickable talents, the background
+  traits/Klan/Kindred conds, etc. — full list in `.ralph/data-vendor-queue.md` iter 48).
+  No data/code change — pure test hardening; gate must stay green. Split into a couple
+  of batches if the list is unwieldy. (WIRE)
 
 ### AUDIT-003 follow-ups (`cybernetics`; see `loops/effects-audit/triage.md` AUDIT-003)
 

@@ -300,3 +300,26 @@ its name pushed into the `ammo.mjs` switch (the damage engine already resolves i
 - **narrative (record-only) → NARRATIVE-RECORD-MODS-AMMO-CONSUM:** everything else
   (descriptors, flavour, item-present skill bonuses, immunities).
 - **cleanup → CLEANUP-CONSUM-TOOLS-STRAY:** the empty `Tools` drug row.
+
+## AUDIT-CRITIC completeness pass (iter 48)
+
+Scanned `talents` + `traits` + `cybernetics` (387 docs) for mechanical phrasing,
+cross-referenced against all four ratchet lists (WIRED_EXPECTED / CODE_HANDLED /
+GRANTS_EXPECTED / NARRATIVE — 159 unique tracked names).
+
+- **Unresolved (mechanical text, no wiring, not in any ratchet list): 0.** Every
+  mechanically-phrased entry across the three packs is now either wired
+  (ActiveEffect / conditionalBonus / `flags.rt.grants`) or recorded as
+  intentionally text-only (NARRATIVE) / engine-applied-by-name (CODE_HANDLED).
+- **Double-apply guard: clean.** All 28 CODE_HANDLED names are referenced by name in
+  `src/module/rolls/` + `documents/` + `roll-helpers.mjs`; the ratchet's
+  "no code-handled talent was given an AE/conditionalBonus" test passes — none is
+  double-applied.
+- **58 wired-but-untracked entries** (pre-existing wiring from the 0.7.6 talent-mechanics
+  overhaul + the backgrounds loop — NOT gaps this loop introduced or was scoped to fix).
+  They carry valid wiring (the soft "all pack effects/conditionalBonuses well-formed"
+  test validates SHAPE — 0 warnings) but are not under WIRED_EXPECTED/GRANTS_EXPECTED
+  backpressure. → follow-up **RATCHET-HARDEN-PREEXISTING** appended to `fix_plan.md`.
+
+Net: the effect-wiring audit's discovery goal is met — no described-but-unapplied
+mechanical effect remains untriaged in the three audited packs.
