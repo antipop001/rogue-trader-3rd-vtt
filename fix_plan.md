@@ -1,149 +1,62 @@
-# fix_plan — Origin-Path "Background" compendium automation
+# fix_plan — Effect-wiring audit (SEED — swap to ./fix_plan.md at launch)
 
-One task per iteration. The next task is the **top unchecked `[ ]`** in the active
-list. Each authoring task: write the named trait items into `src/packs/traits/
-traits.yml` per `specs/04-backgrounds-compendium.md` (canon text + `source:` page,
-ActiveEffect/conditionalBonus/pickable where mechanical, `name:` EXACT to the data
-grant), then RAISE the floor in `tests/chargen/background_coverage.test.mjs` to the
-stated target, gate green (`build:check` + `npm test`), commit, append a line to
-`.ralph/data-vendor-queue.md`. Canon source: `/mnt/project_data/RT/RT-DOCS/`.
-
-Goal: every origin-granted trait resolves (TRAIT_RESOLVED_FLOOR 8 → 103) and the 7
-stray talents resolve (TALENT_RESOLVED_FLOOR 72 → 79).
-
-## Done (setup, by hand outside the loop)
-- [x] BG-000 — Shelve the chargen wizard UI (disable `renderActorDirectory` hook in
-  `hooks-manager.mjs` + `CHARGEN_UI_ENABLED=false` in `acolyte-sheet-v2.mjs`); code
-  left intact. Seed `specs/04`, this backlog, and the coverage ratchet test.
+One task per iteration; top unchecked `[ ]` first. Wire each per
+`specs/06-effect-wiring-audit.md`: classify (code-handled / always-on / conditional /
+narrative / needs-engine), implement, cite canon in `source:`/AE, raise the ratchet in
+`tests/chargen/effect_wiring_audit.test.mjs`, gate green, commit, log to
+`.ralph/data-vendor-queue.md`. NEVER re-apply a code-handled talent (double-apply
+guard in the spec). Canon: `/mnt/project_data/RT/RT-DOCS/`.
 
 ## Active list
 
-- [x] TAL-FIX-001 — Resolved the 7 stub talents. Renamed `Chem Geld`→`Chem-Geld`;
-  authored `Pistol Weapon Training (Las)`, `Pistol Weapon Training (SP)`, `Xenos
-  Weapon Training (Ork)`, a pickable `Resistance` base (resolves `Resistance
-  (Interrogation)`; `Resistance (Psychic Powers)` still aliases→`(Psychic
-  Techniques)`), and a pickable `Weapon Training` base (resolves `Weapon Training
-  (choose one)`). TALENT_RESOLVED_FLOOR=79. (TAL-FIX)
+- [ ] AUDIT-001 — Triage the first-pass `+N` sweep (37 talents + 10 traits, listed in
+  `BUGS.md` SWEEP). For each: read its benefit/description, grep `rolls/` to check if
+  already code-handled, and classify into one bucket. Write the table to
+  `loops/effects-audit/triage.md` and APPEND per-entry WIRE-/NARRATIVE- tasks (grouped
+  sensibly) to the bottom of this active list. Seed `CODE_HANDLED` in the ratchet test
+  with the confirmed code-handled names. (AUDIT)
 
-- [x] BG-001 — Home World traits batch A (9): Accustomed to Crowds, Blessed Ignorance,
-  Charmed, Constant Combat Training, Criminal, Dynastic Warrant, Etiquette, Hivebound,
-  Honour Amongst One's Peers. Source: `home_worlds.json`. TRAIT_RESOLVED_FLOOR=17.
-  Hivebound got an AE (-10 survival) + out-of-hab conditional; Blessed Ignorance/
-  Etiquette/Criminal/Constant Combat Training/Honour are conditionalBonuses; Charmed/
-  Accustomed to Crowds/Dynastic Warrant are narrative text-only. (BG-AUTHOR)
+- [ ] WIRE-HEIGHTENED — `Heightened Senses (Sight/Smell/Sound/Taste/Touch)`: +10 to
+  tests relying on that sense → `conditionalBonuses` (Awareness/Per etc., "using <sense>").
+  RT Core. Add the 5 names to the ratchet. (WIRE)
 
-- [x] BG-002 — Home World traits batch B (8): Ill-omened, Leery of Outsiders, Officer
-  on Deck, Paranoid, Ship-Bound Fighter, Sixth Sense, Stranger to the Cult, Street
-  Knowledge. Source: `home_worlds.json`. TRAIT_RESOLVED_FLOOR=25. 6 conditionalBonuses;
-  Ship-Bound Fighter + Sixth Sense text-only (Initiative/BS-penalty & sibling-granted
-  skill/talent not expressible as a roll-prompt bonus — see vendor queue). (BG-AUTHOR)
+- [ ] ENGINE-INIT — BUG-002 Paranoia Initiative: add `system.initiative.modifier` to
+  `template.json`; `acolyte.mjs`/`base-actor.mjs` compute `bonus = char.bonus +
+  (modifier ?? 0)`; AE Paranoia `system.initiative.modifier += 2` (RT Core, "+2 on
+  Initiative rolls"). Pure-JS test on the compute helper if extractable; E2E follow-up.
+  (ENGINE)
 
-- [x] BG-003 — Home World traits batch C (8): Survivor, Tenacious Survivalist, Tough
-  as Grox-Hide, Underground Resources, Vendetta, Void Accustomed, Wary, Xenos
-  Interaction. Source: `home_worlds.json`. TRAIT_RESOLVED_FLOOR=33. Survivor +10 WP
-  (resist Pinning/Shock) & Xenos Interaction -5 social-vs-Imperial-Cult are
-  conditionalBonuses; Tough as Grox-Hide text-only (Wound already folded into
-  Starting Wounds); Wary/Tenacious Survivalist text-only (Initiative not expressible —
-  no `.modifier` field); Underground Resources/Vendetta/Void Accustomed narrative. (BG-AUTHOR)
+- [x] FIX-DOF — BUG-001: dropped `1 +` from `action-data.mjs:278` (DoF = tens diff).
+  Done by hand 2026-06-23 (verified 61/52→1, 92/62→3). DoS (line 226) left as-is — a
+  separate combat-pass task. (DoF)
 
-- [x] BG-004 — Trials & Travails + Motivations (11): Against All Odds, Brook No Insult,
-  Common Lore Improvement, Dark Secret, Ill-starred, Jealous Freedom, Refined Tastes,
-  The Face of the Enemy, Vendetta of Rivals (`trials_and_travails.json`); Heirloom
-  Item, Loyalty (`motivations.json`). TRAIT_RESOLVED_FLOOR=44. Wired: Ill-starred &
-  The Face of the Enemy (-5/-10 Fel conditionalBonus), Loyalty (+5 WP/Fel cond aboard
-  ship), Refined Tastes (AE +5 charm); 7 text-only (Fate-reroll / Common-Lore-pick /
-  narrative WP-test traits not expressible as a roll-prompt bonus). (BG-AUTHOR)
+- [ ] ENGINE-WEAPONCLASS — BUG-003 Weapon Master / Crack Shot: extend the
+  conditional-bonus (or attack/damage) path to apply a bonus when the used weapon's
+  `class` matches the talent's `system.choice`; wire Weapon Master (+10 hit / +2 dmg /
+  +2 init) and Crack Shot. Foundry-coupled → E2E follow-up; pure-JS unit test for any
+  extractable matcher. (ENGINE)
 
-- [x] BG-005 — Lure of the Void + Birthright (7): Blessed Scars, Imperfect Bionic,
-  Imperial Chauvinism, Mutant, Xenophile (`lure_of_the_void.json`); Mutation, Rival
-  (Underworld) (`birthrights.json`). Note `Mutant`/`Mutation` reference Table 14-3
-  (taint_tables.json). Target TRAIT floor 51. (BG-AUTHOR)
+- [ ] AUDIT-002 — Extend the sweep to NON-`+N` mechanical phrasings in `talents`+`traits`
+  ("doubles/halves/+Xd10/additional Reaction/ignores armour/re-roll/Unnatural"). Append
+  WIRE-/NARRATIVE- tasks. (AUDIT)
 
-- [x] BG-006 — Ork species core traits (5): Da Boyz, Madboyz, Medicae (Ork), No
-  Corruption, Unnatural Toughness (x2). Source: `species.json` (ItS pp.61-62).
-  TRAIT_RESOLVED_FLOOR=56. All five text-only: Unnatural Toughness (x2) is
-  multiplicative and the `.unnatural` field is a flat additive integer → no static AE
-  expresses x2 for arbitrary Toughness (LIMITATION, vendor queue); Medicae (Ork) +20
-  applies to the HEALER's roll not the Ork's own; Da Boyz/No Corruption/Madboyz are
-  behavioural/narrative. (BG-AUTHOR)
+- [ ] AUDIT-003 — `cybernetics`: find entries with described bonuses but no wiring
+  (CLAUDE.md notes ~16: Bionic Arm +10 Ag/Str, Calculus Logi +10 Literacy/Logic/Schol
+  Lore, Synthetic Muscle Grafts +1 SB, etc.). Append WIRE- tasks. (AUDIT)
 
-- [x] BG-007 — Ork Klan traits (6): Klan: Bad Moons, Klan: Blood Axes, Klan: Death
-  Skulls, Klan: Evil Suns, Klan: Goffs, Klan: Snakebites. Source: `careers.json` (ItS
-  pp.61-62). TRAIT_RESOLVED_FLOOR=62. Wired: Goffs (AE +3 Strength), Bad Moons
-  (conditionalBonus +20 Barter vs Orks). 4 text-only — skill-training choices + talent
-  grants (Blood Axes/Death Skulls/Evil Suns/Snakebites) not AE-expressible. (BG-AUTHOR)
+- [ ] AUDIT-004 — `weapon-mods` / `ammo` / `consumables`: find mechanical text with no
+  structured effect. Append WIRE-/NARRATIVE- tasks. (AUDIT)
 
-- [x] BG-008 — Ork Know-Wotz traits (6): Know-Wotz: Driva, Know-Wotz: Hunta, Know-Wotz:
-  Mekboy (Oddboy), Know-Wotz: Painboy (Oddboy), Know-Wotz: Runtherd (Oddboy), Know-Wotz:
-  Trappa. Source: `careers.json`. TRAIT_RESOLVED_FLOOR=68. ALL SIX TEXT-ONLY — each
-  Know-Wotz's Trained-Skill grant + the Mekboy/Painboy +5 Int are applied by SIBLING
-  grant_skill/char_mod effects; an AE would double-apply (confirmed in commit.mjs), so
-  faithful canon text only. (BG-AUTHOR)
+- [ ] AUDIT-CRITIC — Completeness pass: re-run the ratchet, list anything still
+  unresolved (unwired and not justified-narrative), confirm no code-handled entry got
+  an AE (grep), and regenerate the data-vendor-queue audit summary. (AUDIT)
 
-- [x] BG-009 — Kroot Kindred traits (5): Kindred: Bold Hunter, Kindred: Cunning Hybrid,
-  Kindred: Greenskin Hybrid, Kindred: Headhunter, Kindred: Stalker. Source:
-  `careers.json` (ItS pp.49-50). TRAIT_RESOLVED_FLOOR=73. Wired: Bold Hunter (AE +5
-  Wrangling + cond +10 WP vs Fear/Pinning), Cunning Hybrid (AE +5 Barter/+5 Deceive).
-  3 text-only — char_mod siblings (+5 BS/+10 Int/+10 T) handle the characteristic
-  bumps; Headhunter auto-pass-toxin/beak-quality + Stalker free-action stealth +
-  Cunning's +1 Initiative are not AE-expressible. (BG-AUTHOR)
+## Notes
+- Wire effects into the EXISTING packs (`talents`/`traits`/`cybernetics`/…); the `.db`
+  is rebuilt by `build:check`. AE convention: see `specs/06` / the talents pack.
+- Engine fixes touch Foundry-coupled code (`acolyte.mjs`, `rolls/*`) the node gate
+  can't fully exercise — implement + add any extractable pure-JS test + an E2E follow-up.
 
-- [x] BG-010 — Warrant: Acquisition (7): Acquisition: Administratum Trade Mandate,
-  Blackmail, Exile, Intrigue, Ministorum Bequest, Prize of War, Reward. Source:
-  `warrant_and_ship.json`. TRAIT_RESOLVED_FLOOR=80. All 7 text-only narrative chart
-  outcomes (ItS pp.38-39); PF/SP already applied by sibling profit_factor/ship_points
-  effects → no AE, no double-grant. (BG-AUTHOR)
-
-- [x] BG-011 — Warrant: Contacts (5): Contacts: Adeptus Mechanicus, Battlefleet,
-  Merchant House, Missionaria Galaxia, Pirates. Source: `warrant_and_ship.json`.
-  TRAIT_RESOLVED_FLOOR=85. All 5 text-only narrative chart outcomes (ItS pp.43-44);
-  PF/SP already applied by sibling profit_factor/ship_points effects → no AE, no
-  double-grant. (BG-AUTHOR)
-
-- [x] BG-012 — Warrant: Fortune & Fate (5): Fortune & Fate: Ascending, Fallen from
-  Grace, Rising Star, Stable, Struggling. Source: `warrant_and_ship.json`.
-  TRAIT_RESOLVED_FLOOR=90. All 5 narrative Warrant-chart outcomes (ItS p.37); PF/SP
-  already applied by sibling profit_factor/ship_points effects → text-only, no AE,
-  no double-grant. (BG-AUTHOR)
-
-- [x] BG-013 — Warrant: Sanction (5): Sanction: Age of Plunder, Angevin Crusade, Fall
-  of the Tellurian Combine, Halo Artefacts, The Meritech Wars. Source:
-  `warrant_and_ship.json`. TRAIT_RESOLVED_FLOOR=95. All 5 text-only narrative House-
-  history chart outcomes (ItS pp.40-41); PF/SP already applied by sibling
-  profit_factor/ship_points effects → no AE, no double-grant. (BG-AUTHOR)
-
-- [x] BG-014 — Warrant: Age + Renown (8): Warrant Age: Age of Apostasy, Age of
-  Redemption, The Age of Rebirth, The Forging, The Waning; Warrant Renown: Famous,
-  Infamous, Unknown. Source: `warrant_and_ship.json`. TRAIT_RESOLVED_FLOOR=103 (GOAL
-  REACHED — all 103 granted traits resolve). All 8 text-only narrative Warrant-chart
-  outcomes (ItS pp.35-36 Age, p.44 Renown); PF/SP already applied by sibling
-  profit_factor/ship_points effects → no AE, no double-grant. (BG-AUTHOR)
-
-- [x] BG-FIX-001 — `Klan: Goffs` (BG-007) carried an AE +3 Strength, but careers.json
-  grants Goffs a SIBLING `char_mod S+3` in the same option → committing via chargen
-  double-applied (+6 Str). Confirmed commit.mjs does NOT dedupe (`buildActorData` sums
-  `state.modifiers` independently of the embedded item's AE). Removed the Goffs AE,
-  leaving faithful canon text only — same as the BG-008 Know-Wotz traits. No floor
-  change (still a real item). (BG-AUTHOR)
-
-- [x] BG-015 — Final verify (BG-VERIFY): confirmed both ratchets at goal (TRAIT 103,
-  TALENT 79 — note: the "TALENT 95" in the earlier draft was a typo; goal is 79).
-  Added node tests in `commit.test.mjs` asserting `planItems` embeds REAL background
-  items (flags.rt.category 'Background' + canon text, not gap stubs) for `Mutant` +
-  `Void Accustomed` (both text-only — neither carries an AE), plus an AE-bearing
-  trait (`Hivebound`) that embeds its survival -10 ActiveEffect. Regenerated the
-  data-vendor-queue summary (authored inventory + cites + standing limitations).
-  GOAL REACHED — all 103 granted traits + 79 talents resolve to real items. (BG-VERIFY)
-
-## Notes / decisions
-- Items live in the EXISTING `traits` pack (not a new pack) so `commit.mjs` resolves
-  them from one index. Tag each with `flags.rt.category: 'Background'` + `originStep`.
-- ActiveEffect convention: mode 2 on `system.{characteristics.<k>|skills.<k>}.modifier`,
-  matching the talents pack. Situational → `conditionalBonuses`. "(choose one)" →
-  `pickable`. See `specs/04`.
-- Canon correctness is NOT gate-checked → every task logs to `.ralph/data-vendor-queue.md`.
-
-## Out of scope (do NOT seed)
-- The chargen wizard (shelved on `ralph/chargen`) — no wizard UI work here.
-- Re-vendoring `src/module/chargen/data/*.json` (read-only worklist).
-- A separate backgrounds pack; export/derived-stat/item-effect-engine work.
+## Out of scope
+- Inventing/rebalancing effects; the chargen wizard (shelved); DoS/combat-count changes
+  beyond the flagged DoF fix; the backgrounds work (separate completed loop).

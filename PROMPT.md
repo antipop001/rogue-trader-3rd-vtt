@@ -1,116 +1,83 @@
-# Ralph loop — one task per iteration (rogue-trader-3rd-vtt)
+# Ralph loop — one task per iteration (effect-wiring audit)
 
 You are one iteration of an autonomous build loop on the Rogue Trader 3rd Edition
-Foundry VTT system. You start from **fresh context** every time. Do exactly one
-task, verify it, commit it, stop.
+Foundry VTT system. Fresh context every time. Do exactly one task, verify, commit, stop.
 
-## Read first (the @ files are your authority)
-- @fix_plan.md — the mutable TODO list. The next task is the **single
-  highest-priority unchecked `[ ]` item** at the top of the active list.
-- @specs/README.md — index of the **frozen requirements** in `specs/`. Each task
-  cites a requirement ID; open the relevant `specs/*.md` to confirm intended behaviour.
-- @CLAUDE.md — project architecture, the V2-sheet gotchas, the Foundry V14 LevelDB
-  cache trap, the chargen conventions, and the deploy loop. Obey every landmine.
+## Read first (authority)
+- @fix_plan.md — the next task is the single top unchecked `[ ]` item.
+- @specs/06-effect-wiring-audit.md — the frozen requirements + the triage buckets.
+- @BUGS.md — BUG-001/002/003 + the SWEEP candidate list this loop drives down.
+- @CLAUDE.md — architecture, V2-sheet gotchas, V14 LevelDB cache, deploy loop.
 
-The current focus of this loop is **fully automating Origin-Path "background"
-content** — turning the ~95 background traits the origin-path data grants (Home
-World / Birthright / Lure / Trials / Motivation / Warrant & dynasty / Ork-klan /
-Kroot-kindred / taint outcomes such as `Mutant`, `Void Accustomed`, `Ill-Starred`,
-`Acquisition: …`, `Klan: …`) into **real `src/packs/traits/traits.yml` compendium
-items with full mechanical automation (ActiveEffects / conditionalBonuses)**, so
-they "work like everything else" (drag-drop onto a sheet, bonuses auto-apply, and
-they resolve at chargen-commit instead of stubbing). Plus the 3 talent grants that
-still stub. The in-Foundry chargen *wizard* is SHELVED (parked on branch
-ralph/chargen, UI disabled) — do NOT build wizard pages here. Canon source: RT
-Core + Into the Storm markdown at `/mnt/project_data/RT/RT-DOCS/`. The trait names
-to author come from `src/module/chargen/data/*.json` (the grant effects); match
-each new item's `name:` EXACTLY so chargen-commit resolves it. Do not invent
-mechanics — cite the book.
+The focus of this loop is **finding and fixing places where a compendium entry
+DESCRIBES a mechanical effect the system never applies** (e.g. Paranoia "+2
+Initiative", Weapon Master "+10/+2/+2 with chosen weapon class"). Wire each gap the
+way the system already wires effects — ActiveEffect / `flags.rt.conditionalBonuses` /
+`pickable`, or engine code — and prove the bonus reaches the roll. Do NOT invent or
+rebalance effects; only wire what the book describes (cite `/mnt/project_data/RT/
+RT-DOCS/`).
+
+## THE HARD RULE — never double-apply
+Talents already applied BY NAME in `src/module/rolls/{damage-data,action-data}.mjs`
+(Crushing Blow, Mighty Shot, Blademaster, Eye of Vengeance, Hammer Blow, Concussive,
+True Grit, Deathdealer — grep to confirm the live set) must NOT also get an AE/
+conditionalBonus. That recreates the 0.7.13 double-application bug. If unsure whether
+a bonus is already applied, grep `rolls/` + `documents/` BEFORE wiring.
 
 ## The rule: ONE task
-1. Pick the single most important unchecked item in @fix_plan.md. **Do only that.**
-   Do not start a second item. Do not "while I'm here" anything.
-2. Implement the smallest correct change that satisfies the cited requirement.
-3. Keep your own context lean (**< 100k tokens**): for anything that returns a lot
-   of output — grepping the codebase, reading large files (`origin.mjs`,
-   `careers.json` ~339KB, `equipment.json` ~173KB, `chargen-wizard.mjs`), reading
-   the RTT_MAKER `.py` reference, surveying tests — **spawn a subagent** (Agent
-   tool) and consume its summary, not the raw dump.
+1. Pick the single top unchecked item in @fix_plan.md. Do only that.
+2. Classify before wiring (code-handled / always-on / conditional / narrative /
+   needs-engine — see specs/06) and implement the smallest correct fix for that bucket.
+3. Keep context lean (< 100k): for big files (`talents.yml`, `damage-data.mjs`,
+   `acolyte.mjs`) or wide greps, spawn a subagent and consume its summary.
 
 ## Architecture landmines (a green gate does NOT license violating these)
-- **The chargen engine stays pure JS, no Foundry globals.** Everything under
-  `src/module/chargen/` (characteristics/state/mapping/origin/commit/data/xp/…)
-  must run under `node --test` with dice injected. Foundry-only glue lives in
-  `src/module/applications/chargen-wizard.mjs` and the Foundry half of `commit.mjs`.
-- **Chargen data is VENDORED from RTT_MAKER** via `tools/sync_chargen_data.py`.
-  Do NOT hand-edit the JSON in `src/module/chargen/data/` — add the file to the
-  sync script's FILES list and re-vendor (`python3 tools/sync_chargen_data.py
-  --execute`). If a fix can't come from RTT_MAKER, log the deviation. (ARCH-002.)
-- **Replay model:** wizard decisions live in `this.inputs`; `ChargenState` is
-  rebuilt from scratch on every change. Don't mutate committed state in place.
-- **Commit conventions:** `bio.homeWorld` is deliberately NEVER written (DH2
-  collision). Unmapped skills/specialities go to bio notes, never dropped.
-- **AppV2 gotcha:** the builder state property is `chargenState`, NOT `state`
-  (read-only getter). SCSS for the wizard imports at top level, outside `.rt-wrapper`.
+- Wire into the EXISTING packs (`talents`/`traits`/`cybernetics`/…). The `.db` is a
+  build artifact rebuilt by `build:check` — hand-edit only the `.yml`.
+- AE convention: copy the talents-pack shape (`mode 2` on
+  `system.{characteristics|skills}.<k>.modifier`; effect needs a unique 16-char `_id`).
+  Situational → `conditionalBonuses`. "(choose one)" → `pickable`. See specs/06.
+- Engine fixes touch Foundry-coupled code (`acolyte.mjs`, `base-actor.mjs`, `rolls/*`)
+  the node gate can't fully run — implement carefully, add any extractable pure-JS
+  test, and append an E2E follow-up item.
+- Do NOT change DoS / combat hit-count conventions beyond the flagged BUG-001 DoF fix.
 
-## Backpressure (a change is rejected unless the gate is green)
-Run, from the repo root, IN ORDER:
-1. `npm run build:check` — must exit 0 (`gulp compile`: clean + SCSS + copy +
-   packs; catches SCSS/template/pack/syntax breakage. This is the lean gate target —
-   it skips the release-zip step that `npm run build` does).
-2. `npm test` — `node --test tests/chargen/*.test.mjs` — must pass.
-   **New engine logic MUST ship with node tests** under `tests/chargen/`.
-3. E2E (Playwright `tests/e2e/`, run with the RTT_MAKER venv python — system
-   python lacks playwright; needs a deployed build + live rt-smoke world + free
-   GM seat) — **NOT run in the inner loop.** When your change lands a wizard-UI
-   stage, add a follow-up item to run/extend the matching `verify_*.py` E2E.
-All required checks (1 and 2) must be green. **If either fails, the change is
-REJECTED — never commit a red gate, and never leave your edits in the tree.** Do
-this, in order, exactly:
-1. **Discard ALL of your task's edits** so the working tree matches HEAD:
-   `git checkout -- .` then `git clean -fd`. Do NOT delete anything under `.ralph/`.
-2. Append a reflection to `.ralph/errors.log` (format below).
-3. Record the rejection and keep the tree clean:
-   `git add .ralph/errors.log && git commit -m "ralph(iter <N>): REJECTED <task> — <cause>"`.
-4. Confirm `git status --porcelain` is **empty**, then **stop**.
+## Backpressure (rejected unless the gate is green) — IN ORDER
+1. `npm run build:check` — must exit 0 (compiles packs; catches malformed YAML/AE).
+2. `npm test` — `node --test tests/chargen/*.test.mjs` — must pass. The wiring ratchet
+   (`tests/chargen/effect_wiring_audit.test.mjs`) validates AE/conditionalBonus shape
+   for every effect and asserts `WIRED_EXPECTED` names carry wiring; raise it as you go.
+   New extractable logic ships with a node test.
+If either fails: discard ALL your edits (`git checkout -- .` then `git clean -fd`; keep
+`.ralph/`), append a reflection to `.ralph/errors.log`, commit
+`ralph(iter <N>): REJECTED <task> — <cause>`, confirm clean tree, stop.
 
-## Compendium content you DO hand-author (the deliverable)
-The new trait/talent items go directly into `src/packs/traits/traits.yml` and
-`src/packs/talents/talents.yml` (hand-edited YAML — that IS the work; the `.db` is
-a build artifact rebuilt by `build:check`). This is the ONE exception to the
-"don't hand-edit data" rule, which still applies to `src/module/chargen/data/*.json`
-(vendored — never hand-edit those; they are the read-only worklist + canon text source).
-
-The green gate canNOT verify RT-rules correctness of authored content. So whenever
-you author/modify compendium entries, append a one-line entry to
-`@.ralph/data-vendor-queue.md` (`iter N | traits.yml → N items authored (names) →
-REQ-ID → canon cites`) for separate RT-rules review, and cite the RT-DOCS page in
-each entry's `source:` field. (PROC-003.)
+## On every authored change
+The gate cannot verify RT-rules correctness or that a bonus reaches the live roll. So
+append one line to `@.ralph/data-vendor-queue.md` (`iter N | <pack/file> → what wired
+→ REQ-ID → canon cite`) and cite the RT-DOCS page in each `source:`/AE. (PROC-003.)
 
 ## On success
-- `git add -A` and commit with this structured message:
+- `git add -A` and commit:
   ```
   ralph(iter <N>): <one-line what changed>
 
   Requirement: <REQ-ID(s)>
-  Verified: build OK, node test <count> passed (<key test(s) that prove it>)
+  Verified: build OK, node test <count> passed (<key test>)
 
   Co-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>
   ```
-  `<N>` is the current iteration from the `$RALPH_ITER` env var (fallback: count
-  prior `ralph(iter` commits + 1).
-- In @fix_plan.md: check the item `[x]`, and append any concrete follow-ups you
-  discovered to the bottom of the active list (small, single-iteration each).
-- Then **stop** (the outer loop starts a fresh iteration).
+  `<N>` from `$RALPH_ITER` (fallback: count prior `ralph(iter` commits + 1).
+- In @fix_plan.md: check the item `[x]`; AUDIT tasks APPEND the per-entry WIRE-/
+  NARRATIVE- tasks they discovered. Then stop.
 
 ## errors.log format (on failure)
 ```
-## iter <N> · <UTC timestamp> · <task title>
-cause: <what failed — the gate + the actual error, one or two lines>
-reflection: <why it happened and what the next attempt should do differently>
+## iter <N> · <UTC> · <task>
+cause: <gate + error>
+reflection: <why + next attempt>
 ```
 
 ## Stop condition
-If @fix_plan.md has no unchecked `[ ]` items in the active list (everything left is
-under "Needs clarification" / "Decisions"), create an empty file `.ralph/STOP` and
-exit without committing — the loop will halt.
+If @fix_plan.md has no unchecked `[ ]` items (all left is Notes/Out-of-scope), create
+empty `.ralph/STOP` and exit without committing.
