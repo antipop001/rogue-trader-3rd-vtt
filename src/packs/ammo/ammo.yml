@@ -99,7 +99,7 @@ type: ammunition
 ---
 data:
     craftsmanship: common
-    availability: common
+    availability: very rare
     weight: 0
     equipped: false
     inBackpack: false
@@ -113,7 +113,7 @@ data:
         will reduce its AP value by 1 (down to a minimum of 0); any armour damaged
         in this way must be repaired to regain its effectiveness. **Used With:** Shotguns,
         pump-action shotguns, shotgun pistols, shotcannons, bolt pistols, and bolters.
-    source: Into the Storm
+    source: Into the Storm, p.131
     damage: ''
     damageType: ''
     penetration: ''
@@ -136,7 +136,7 @@ type: ammunition
 ---
 data:
     craftsmanship: common
-    availability: common
+    availability: extremely rare
     weight: 0
     equipped: false
     inBackpack: false
@@ -149,7 +149,7 @@ data:
         suffer from the Overheating quality, as the heat is more than most melta weapons
         can withstand safely. The more rapid dispersal halves the weapon's Range as
         well. **Used With:** Inferno pistols and meltaguns.
-    source: Into the Storm
+    source: Into the Storm, p.131
     damage: ''
     damageType: ''
     penetration: ''
@@ -176,15 +176,15 @@ data:
     weight: 0
     equipped: false
     inBackpack: false
-    description: Whilst regular melta weapons are known for the tight focus of the
-        superheated blasts they generate, Airtorch ammunition allows them to burn
-        even hotter in a barely-controlled reaction that can almost set the air itself
-        on fire. Indeed, the heat is so intense that it generally overwhelms the barrel
-        allowing the blast to escape in a wide swath. **Effects:** Airtorch canisters
-        fire in a wide swath and gain the Scatter quality, but cause the weapon to
-        suffer from the Overheating quality, as the heat is more than most melta weapons
-        can withstand safely. The more rapid dispersal halves the weapon's Range as
-        well. **Used With:** Any Melta weapons.
+    description: 'Filled with much higher concentrations of heavy ions, Microburst
+        flasks allow a plasma weapon to fire smaller but denser bursts at farther
+        ranges and with greater armour penetration. Microburst plasmas are cooler,
+        however, but many users prefer it this way, given the normal thermal temperament
+        of the weapon. **Effects:** Plasma weapons using Microburst ammo add -2 Damage,
+        +2 Penetration and +10 metres to the weapon''s Range but cannot be fired in
+        Maximal Mode. Using microburst ammo keeps the weapon from Overheating as well.
+        Flasks add 1kg to the weapon weight. **Used With:** Plasma pistols and plasma
+        guns.'
     source: Into the Storm, p.131
     damage: ''
     damageType: ''
@@ -208,23 +208,18 @@ type: ammunition
 ---
 data:
     craftsmanship: common
-    availability: common
+    availability: very rare
     weight: 0
     equipped: false
     inBackpack: false
     description: 'Flame weapons use liquid fuel, commonly promethium. When promethium
         is laced with encapsulated nephium motes, a potent secondary ignition takes
         place a few seconds after the promethium is lit. Few groups make use of this
-        knowledge, |  TABLE 3-7: UNUSUAL AMMUNITION  |   | | --- | --- | |  Name |
-        Availability  | |  Acid Shells | Very Rare  | |  Airtorch Canister | Extremely
-        Rare  | |  Microburst Flask | Extremely Rare  | |  Nephium Fuel Tank | Very
-        Rare  | |  Organgrinder Rounds | Extremely Rare  | |  Snare Shells | Rare  |
-        |  Toxic Shot | Scarce  | |  Tracer Shells | Average  | |  Void Rounds | Rare  |
-        for it greatly increases the chance of accidental ignition of flamer fuel
-        stores, requiring expensive safeguards. **Effect:** Agility Tests made by
-        targets to avoid Damage suffer a -10 penalty and the weapon''s base damage
+        knowledge, for it greatly increases the chance of accidental ignition of flamer
+        fuel stores, requiring expensive safeguards. **Effect:** Agility Tests made
+        by targets to avoid Damage suffer a -10 penalty and the weapon''s base damage
         is increased by 2. **Used With:** Any Flame weapons.'
-    source: Into the Storm
+    source: Into the Storm, p.131
     damage: ''
     damageType: ''
     penetration: ''
@@ -247,7 +242,7 @@ type: ammunition
 ---
 data:
     craftsmanship: common
-    availability: common
+    availability: extremely rare
     weight: 0
     equipped: false
     inBackpack: false
@@ -266,7 +261,7 @@ data:
         2d5 points of Rending Damage to the victim with no reduction from Armour or
         Toughness Bonus. **Used With:** Hand cannons, heavy stubbers, and any Bolt
         weapons.
-    source: Into the Storm
+    source: Into the Storm, p.131
     damage: ''
     damageType: ''
     penetration: ''
@@ -289,7 +284,7 @@ type: ammunition
 ---
 data:
     craftsmanship: common
-    availability: common
+    availability: rare
     weight: 0
     equipped: false
     inBackpack: false
@@ -301,7 +296,7 @@ data:
         **Effects:** Snare Shells decrease the weapon's base damage by 2, but give
         the weapon the Snare Quality. **Used With:** Shotguns, pump-action shotguns,
         shotgun pistols, and shotcannons.
-    source: Into the Storm
+    source: Into the Storm, p.131
     damage: ''
     damageType: ''
     penetration: ''
@@ -324,17 +319,17 @@ type: ammunition
 ---
 data:
     craftsmanship: common
-    availability: rare
+    availability: scarce
     weight: 0
     equipped: false
     inBackpack: false
-    description: 'These shells contain a fluid similar to that used in webber weapons,
-        and on impact explode in a mass of ensnaring sticky filaments. Contact with
-        air causes them to solidify, making it almost impossible for the target to
-        escape. While not as capable as a proper web gun, snare shells are a handy
-        accessory for any shotgun user as no extra training is needed to use them.
-        **Effects:** Snare Shells decrease the weapon''s base damage by 2, but give
-        the weapon the Snare Quality. **Used With:** Any Solid Projectile weapons.'
+    description: 'Some feudal cultures have the unpleasant habit of preparing shot
+        with vermin poison, deadly spores, or worse. Many travellers in the Expanse
+        adopt this practice with more modern weapons, with horrifying results. Of
+        course, utilising such dangerous substances can be just as risky to the wielder.
+        **Effects:** The weapon gains the Toxic special quality. If the weapon ever
+        jams, the wielder takes 1d5 damage, ignoring Armour and Toughness. **Used
+        With:** Any Solid Projectile and Flame Weapons.'
     source: Into the Storm, p.131
     damage: ''
     damageType: ''
@@ -358,7 +353,7 @@ type: ammunition
 ---
 data:
     craftsmanship: common
-    availability: common
+    availability: average
     weight: 0
     equipped: false
     inBackpack: false
@@ -369,7 +364,7 @@ data:
         Shells, all subsequent Ballistic Skill Tests made to hit the user in fog,
         mist, shadow, smoke, and darkness also gain a +5 as the user gives away his
         position. Used With: Any Solid Projectile and Bolt weapons.'
-    source: Into the Storm
+    source: Into the Storm, p.131
     damage: ''
     damageType: ''
     penetration: ''
@@ -392,7 +387,7 @@ type: ammunition
 ---
 data:
     craftsmanship: common
-    availability: common
+    availability: rare
     weight: 0
     equipped: false
     inBackpack: false
@@ -405,7 +400,7 @@ data:
         used in a normal atmosphere, the added weight of the coating isn''t offset
         by the lack of atmosphere, and they suffer -1 Damage to the weapon''s normal
         effects.'
-    source: Into the Storm
+    source: Into the Storm, p.131
     damage: ''
     damageType: ''
     penetration: ''

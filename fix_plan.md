@@ -763,15 +763,19 @@ guard in the spec). Canon: `/mnt/project_data/RT/RT-DOCS/`.
   appears with no round loaded. Selection + attack pipeline are Foundry-coupled — node
   gate can't exercise it. (E2E)
 
-- [ ] CLEANUP-AMMO-DESC-SCRAMBLE — discovered iter 46: the ammo pack has a chain of
-  copy-pasted/OCR-scrambled descriptions. `Microburst Flask` currently holds the
-  **Nephium Fuel Tank** text (flame, −10 Agility / +2 dmg) AND an embedded "TABLE 3-7"
-  markdown blob; the correct Microburst-Flask plasma text (−2 dmg / +2 pen / +10m range /
-  no Maximal / no Overheat) was sitting in the Airtorch slot (now overwritten with canon
-  Airtorch text in iter 46). Audit `Microburst Flask` and `Nephium Fuel Tank` (and any
-  other ItS Unusual-Ammunition rows) against ItS p.131, restore each to its own canon
-  description + availability, and strip the table-blob OCR artifact. Verify `nephium fuel
-  tank` exists as its own entry. Pure data edit, no wiring. (CLEANUP)
+- [x] CLEANUP-AMMO-DESC-SCRAMBLE — discovered iter 46: the ammo pack has a chain of
+  copy-pasted/OCR-scrambled descriptions. Done iter 47: audited all 9 ItS Unusual-
+  Ammunition rows (Table 3-7) against ItS p.131 (intothestorm pages 4-5). **Microburst
+  Flask** held duplicate Airtorch text → restored canon plasma text (-2 dmg/+2 pen/+10m
+  Range/no Maximal/no Overheat; Plasma pistols+guns). **Toxic Shot** held Snare text →
+  restored canon poison text (gains Toxic; jam → 1d5 self-damage ignoring Armour/Toughness;
+  Any Solid Projectile+Flame). **Nephium Fuel Tank** → stripped the embedded "TABLE 3-7"
+  markdown blob from mid-description (kept canon -10 Agility/+2 dmg flame text); confirmed
+  it exists as its own entry. Corrected availability to canon across all 9 rows (Acid very
+  rare, Airtorch/Microburst/Organgrinder extremely rare, Nephium very rare, Snare/Void rare,
+  Toxic scarce, Tracer average) and added ", p.131" to every ItS source. Pure data edit, no
+  wiring — name-keyed `ammo.mjs` effects (Snare/Airtorch/Toxic quality pushes) untouched, so
+  the wiring + `ammo_wiring.test.mjs` stay green. Gate green (build OK, 154 node tests). (CLEANUP)
 
 - [ ] ENGINE-CONSUMABLE-ACTIVATE — a "use drug/consumable" action that applies a timed
   ActiveEffect (duration in rounds/minutes) for the ~11 activated combat consumables
