@@ -1349,6 +1349,14 @@ data:
 img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
 name: Heightened Senses (Sight)
 type: talent
+flags:
+    rt:
+        conditionalBonuses:
+        - applies:
+              skills: [awareness]
+              characteristics: [perception]
+          value: 10
+          label: 'using sight'
 ---
 data:
     aptitudes: ''
@@ -1362,6 +1370,14 @@ data:
 img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
 name: Heightened Senses (Smell)
 type: talent
+flags:
+    rt:
+        conditionalBonuses:
+        - applies:
+              skills: [awareness]
+              characteristics: [perception]
+          value: 10
+          label: 'using smell'
 ---
 data:
     aptitudes: ''
@@ -1374,6 +1390,14 @@ data:
 img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
 name: Heightened Senses (Sound)
 type: talent
+flags:
+    rt:
+        conditionalBonuses:
+        - applies:
+              skills: [awareness]
+              characteristics: [perception]
+          value: 10
+          label: 'using sound'
 ---
 data:
     aptitudes: ''
@@ -1387,6 +1411,14 @@ data:
 img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
 name: Heightened Senses (Taste)
 type: talent
+flags:
+    rt:
+        conditionalBonuses:
+        - applies:
+              skills: [awareness]
+              characteristics: [perception]
+          value: 10
+          label: 'using taste'
 ---
 data:
     aptitudes: ''
@@ -1400,6 +1432,14 @@ data:
 img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
 name: Heightened Senses (Touch)
 type: talent
+flags:
+    rt:
+        conditionalBonuses:
+        - applies:
+              skills: [awareness]
+              characteristics: [perception]
+          value: 10
+          label: 'using touch'
 ---
 data:
     aptitudes: ''

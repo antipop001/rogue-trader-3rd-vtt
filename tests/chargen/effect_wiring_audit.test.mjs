@@ -23,6 +23,11 @@ const PACKS = ['talents', 'traits', 'cybernetics'];
 // Entries the loop has wired with an AE ('ae') or a conditionalBonus ('cond').
 const WIRED_EXPECTED = [
     // { name: 'Paranoia', kind: 'ae' },
+    { name: 'Heightened Senses (Sight)', kind: 'cond' },
+    { name: 'Heightened Senses (Smell)', kind: 'cond' },
+    { name: 'Heightened Senses (Sound)', kind: 'cond' },
+    { name: 'Heightened Senses (Taste)', kind: 'cond' },
+    { name: 'Heightened Senses (Touch)', kind: 'cond' },
 ];
 // Already applied by name in src/module/rolls/* — must NOT also be AE'd.
 const CODE_HANDLED = [

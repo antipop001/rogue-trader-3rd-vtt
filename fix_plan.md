@@ -16,9 +16,11 @@ guard in the spec). Canon: `/mnt/project_data/RT/RT-DOCS/`.
   sensibly) to the bottom of this active list. Seed `CODE_HANDLED` in the ratchet test
   with the confirmed code-handled names. (AUDIT)
 
-- [ ] WIRE-HEIGHTENED — `Heightened Senses (Sight/Smell/Sound/Taste/Touch)`: +10 to
+- [x] WIRE-HEIGHTENED — `Heightened Senses (Sight/Smell/Sound/Taste/Touch)`: +10 to
   tests relying on that sense → `conditionalBonuses` (Awareness/Per etc., "using <sense>").
-  RT Core. Add the 5 names to the ratchet. (WIRE)
+  RT Core. Add the 5 names to the ratchet. (WIRE) — done iter 2: +10 conditionalBonus on
+  awareness skill + perception characteristic, label "using <sense>"; 5 names added to
+  ratchet WIRED_EXPECTED (kind cond). Gate green (59 tests).
 
 - [ ] ENGINE-INIT — BUG-002 Paranoia Initiative: add `system.initiative.modifier` to
   `template.json`; `acolyte.mjs`/`base-actor.mjs` compute `bonus = char.bonus +
