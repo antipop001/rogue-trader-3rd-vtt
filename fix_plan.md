@@ -67,9 +67,11 @@ stray talents resolve (TALENT_RESOLVED_FLOOR 72 → 79).
   applies to the HEALER's roll not the Ork's own; Da Boyz/No Corruption/Madboyz are
   behavioural/narrative. (BG-AUTHOR)
 
-- [ ] BG-007 — Ork Klan traits (6): Klan: Bad Moons, Klan: Blood Axes, Klan: Death
+- [x] BG-007 — Ork Klan traits (6): Klan: Bad Moons, Klan: Blood Axes, Klan: Death
   Skulls, Klan: Evil Suns, Klan: Goffs, Klan: Snakebites. Source: `careers.json` (ItS
-  pp.49-57). Target TRAIT floor 62. (BG-AUTHOR)
+  pp.61-62). TRAIT_RESOLVED_FLOOR=62. Wired: Goffs (AE +3 Strength), Bad Moons
+  (conditionalBonus +20 Barter vs Orks). 4 text-only — skill-training choices + talent
+  grants (Blood Axes/Death Skulls/Evil Suns/Snakebites) not AE-expressible. (BG-AUTHOR)
 
 - [ ] BG-008 — Ork Know-Wotz traits (6): Know-Wotz: Driva, Know-Wotz: Hunta, Know-Wotz:
   Mekboy (Oddboy), Know-Wotz: Painboy (Oddboy), Know-Wotz: Runtherd (Oddboy), Know-Wotz:

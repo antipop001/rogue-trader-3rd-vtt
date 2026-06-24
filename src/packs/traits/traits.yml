@@ -1019,3 +1019,92 @@ flags:
     rt:
         category: 'Background'
         originStep: 'Ork'
+---
+data:
+    description: 'These are the richest of the Orks, and tend to be the most inclined to flaunt their wealth and status. Their great fang-like teeth and tusks—collectively known as "Teef" and used as currency by the Orks—grow faster than those of the Orks of any other Klan, which means Bad Moons have greater wealth and a greater inclination to trade and barter than most. Bad Moons gain a +20 bonus on all Barter Tests when dealing with other Orks, and grant a +10 bonus to any Acquisition Test made to deal with Ork traders or obtain items of Ork equipment.'
+    source: 'Into the Storm, p.61'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Klan: Bad Moons'
+type: 'trait'
+flags:
+    rt:
+        category: 'Background'
+        originStep: 'Ork'
+        conditionalBonuses:
+        - applies:
+              skills: [barter]
+              characteristics: []
+          value: 20
+          label: 'on Barter Tests when dealing with other Orks'
+---
+data:
+    description: 'Largely distrusted by other Orks, Blood Axes have adopted many human ideas and tactics in their way of war, such as camouflage, and are notable for having traded with humans at various points in history. Blood Axes gain Common Lore (Imperium) (Int) or Concealment (Ag) as a Trained Skill, and +3 Perception or Agility.'
+    source: 'Into the Storm, p.61'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Klan: Blood Axes'
+type: 'trait'
+flags:
+    rt:
+        category: 'Background'
+        originStep: 'Ork'
+---
+data:
+    description: 'Justifiably considered to be thieves and looters by most other Orks, Death Skulls are superstitious plunderers who gleefully strip the fallen (and anyone else not paying attention) of their possessions. They are notable for wearing copious amounts of blue warpaint, as blue is considered a lucky colour amongst Orks in general and Death Skulls in particular. Death Skulls gain Tech-Use (Int) or Sleight of Hand (Ag) as a Trained Skill, and the Runtz Talent. Their blue warpaint and various talismans and lucky charms collectively count as a Charm.'
+    source: 'Into the Storm, p.62'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Klan: Death Skulls'
+type: 'trait'
+flags:
+    rt:
+        category: 'Background'
+        originStep: 'Ork'
+---
+data:
+    description: 'Addicted to speed almost as much as they are violence, Evil Suns love loud, fast-moving vehicles, often saving their Teef for a bike or another ramshackle vehicle so as to get to grips with the enemy even faster. Evil Suns gain Drive (Ground Vehicle) (Ag) or Tech-Use (Int) as a Trained Skill.'
+    source: 'Into the Storm, p.62'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Klan: Evil Suns'
+type: 'trait'
+flags:
+    rt:
+        category: 'Background'
+        originStep: 'Ork'
+---
+data:
+    description: 'Typically the largest, most aggressive, and most violent of a species renowned for its size, aggression, and propensity for violence, Goffs are intolerant of the other Klans, whose methods they consider to be entirely Un-Orky. Goffs increase their Strength by +3.'
+    source: 'Into the Storm, p.62'
+effects:
+- _id: KlanGoffsStr001
+  name: 'Klan: Goffs'
+  img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+  description: ''
+  origin: ''
+  disabled: false
+  transfer: true
+  tint: null
+  statuses: []
+  duration: { startTime: null, seconds: null, combat: null, rounds: null, turns: null, startRound: null, startTurn: null }
+  changes:
+  - key: 'system.characteristics.strength.modifier'
+    mode: 2
+    value: '3'
+    priority: null
+  flags: {}
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Klan: Goffs'
+type: 'trait'
+flags:
+    rt:
+        category: 'Background'
+        originStep: 'Ork'
+---
+data:
+    description: 'Tending to be primitive in outlook, Snakebites disdain the use of technology in favour of what they see as traditional methods. Their name comes from their initiation rites, in which a venomous snake is goaded into biting a young Ork (known as a "Yoof"). Given the Orks'' natural resilience, this rarely has a significant effect other than making the Ork more tolerant of poisons. Snakebites gain the Resistance (Poison) Talent, and either Survival (Int), Tracking (Int), or Wrangling (Int) as a Trained Skill.'
+    source: 'Into the Storm, p.62'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Klan: Snakebites'
+type: 'trait'
+flags:
+    rt:
+        category: 'Background'
+        originStep: 'Ork'
