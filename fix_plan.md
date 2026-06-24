@@ -59,10 +59,13 @@ stray talents resolve (TALENT_RESOLVED_FLOOR 72 → 79).
   (Underworld) (`birthrights.json`). Note `Mutant`/`Mutation` reference Table 14-3
   (taint_tables.json). Target TRAIT floor 51. (BG-AUTHOR)
 
-- [ ] BG-006 — Ork species core traits (5): Da Boyz, Madboyz, Medicae (Ork), No
-  Corruption, Unnatural Toughness (x2). Source: `species.json` (ItS Ork/Kroot). Wire
-  Unnatural Toughness via the actor's unnatural mechanism (see spec). Target TRAIT
-  floor 56. (BG-AUTHOR)
+- [x] BG-006 — Ork species core traits (5): Da Boyz, Madboyz, Medicae (Ork), No
+  Corruption, Unnatural Toughness (x2). Source: `species.json` (ItS pp.61-62).
+  TRAIT_RESOLVED_FLOOR=56. All five text-only: Unnatural Toughness (x2) is
+  multiplicative and the `.unnatural` field is a flat additive integer → no static AE
+  expresses x2 for arbitrary Toughness (LIMITATION, vendor queue); Medicae (Ork) +20
+  applies to the HEALER's roll not the Ork's own; Da Boyz/No Corruption/Madboyz are
+  behavioural/narrative. (BG-AUTHOR)
 
 - [ ] BG-007 — Ork Klan traits (6): Klan: Bad Moons, Klan: Blood Axes, Klan: Death
   Skulls, Klan: Evil Suns, Klan: Goffs, Klan: Snakebites. Source: `careers.json` (ItS

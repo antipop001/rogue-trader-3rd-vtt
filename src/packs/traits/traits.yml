@@ -964,3 +964,58 @@ flags:
     rt:
         category: 'Background'
         originStep: 'Birthright'
+---
+data:
+    description: 'Orks are extremely resilient, their bodies capable of withstanding injury that would kill a human. The Ork has the Unnatural Toughness (x2) Trait, doubling its Toughness Bonus for all relevant purposes. As with all Unnatural Characteristics, this does not modify the Ork''s movement, and it is not applied to starting Wounds.'
+    source: 'Into the Storm, p.61'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Unnatural Toughness (x2)'
+type: 'trait'
+flags:
+    rt:
+        category: 'Background'
+        originStep: 'Ork'
+---
+data:
+    description: 'Due to the Ork''s robust physiology, all Medicae Tests made to treat the injuries of an Ork gain a +20 bonus.'
+    source: 'Into the Storm, p.61'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Medicae (Ork)'
+type: 'trait'
+flags:
+    rt:
+        category: 'Background'
+        originStep: 'Ork'
+---
+data:
+    description: 'Orks are fundamentally genderless. Their reproduction is based on the spores they shed throughout their lives and at the moment of their deaths, and the notion of gender is of no concern to them. This, combined with their warlike and wholly inhuman outlook, means that it is fundamentally impossible to seduce an Ork.'
+    source: 'Into the Storm, p.62'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Da Boyz'
+type: 'trait'
+flags:
+    rt:
+        category: 'Background'
+        originStep: 'Ork'
+---
+data:
+    description: 'Orks aren''t easily tempted to Chaos, and are far more resistant to the warping influence of the Warp than humans, for reasons nobody has been able to define. Consequently, Orks do not gain Corruption Points.'
+    source: 'Into the Storm, p.62'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'No Corruption'
+type: 'trait'
+flags:
+    rt:
+        category: 'Background'
+        originStep: 'Ork'
+---
+data:
+    description: 'Orks accrue Insanity Points as normal, but they have no effect on the Ork until he accrues 100 Insanity. At this point he becomes a Madboy — prone to extremely unpredictable behaviour — and is removed from play.'
+    source: 'Into the Storm, p.62'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Madboyz'
+type: 'trait'
+flags:
+    rt:
+        category: 'Background'
+        originStep: 'Ork'
