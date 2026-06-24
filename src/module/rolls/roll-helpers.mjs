@@ -292,6 +292,36 @@ export function extraAttackEligibility(talents, ctx = {}) {
     return out;
 }
 
+/**
+ * Quadruped (RT Core p.366) movement multiplier. "To calculate their movement, double
+ * their Agility Bonus. ... Creatures with more than four legs may gain this Trait, but
+ * they increase the Agility Bonus by 1 multiplier for every extra set of legs (six legs
+ * equals AB × 3, eight legs AB × 4, and so on)." Table 13-2 summarises it as "Movement
+ * equals AB×2". So a Quadruped scales only the Agility-Bonus term of the movement formula
+ * (the size modifier stays additive). The multiplier is the trait's: plain `Quadruped` →
+ * ×2; an explicit `(xN)` in the name → N; an `(N legs)` count → N/2 (4 legs ×2, 6 ×3,
+ * 8 ×4). Trait-gated and engine-applied by name (NOT an AE — the value scales the derived
+ * Agility Bonus, which an AE can't read) so the trait must NOT also be given an AE; movement
+ * is fully computed in `_computeMovement` (never baked), so this never double-counts.
+ * `hasTalent` only matches talents — callers pass the actor's TRAIT items.
+ *
+ * @param {Array<{name?: string}>} traits  actor trait items
+ * @returns {number} Agility-Bonus multiplier for movement (1 when no Quadruped trait)
+ */
+export function quadrupedMoveMultiplier(traits) {
+    if (!Array.isArray(traits)) return 1;
+    for (const t of traits) {
+        const name = t?.name;
+        if (!name || !/^\s*quadruped\b/i.test(name)) continue;
+        const xMatch = name.match(/\(\s*[x×]\s*(\d+)\s*\)/i);
+        if (xMatch) return Math.max(2, parseInt(xMatch[1], 10));
+        const legMatch = name.match(/\(\s*(\d+)\s*legs?\s*\)/i);
+        if (legMatch) return Math.max(2, Math.floor(parseInt(legMatch[1], 10) / 2));
+        return 2;
+    }
+    return 1;
+}
+
 export async function roll1d100() {
     let formula = '1d100';
     const roll = new Roll(formula, {});

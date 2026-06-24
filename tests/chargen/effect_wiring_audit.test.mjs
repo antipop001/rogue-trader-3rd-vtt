@@ -78,6 +78,11 @@ const CODE_HANDLED = [
     // Full-Action melee options by talent name in combat-actions. RT Core p.107/p.102 —
     // engine-applied, must NOT also get an AE. ENGINE-ATTACK-TALENTS.
     'Swift Attack', 'Lightning Attack',
+    // Movement Agility-Bonus multiplier computed by trait name in
+    // base-actor._computeMovement (quadrupedMoveMultiplier: ×2 base / ×3 six legs /
+    // ×4 eight legs). RT Core p.366 — engine-applied (scales the derived AgB an AE
+    // can't read), must NOT also get an AE. ENGINE-UNNATURAL (Quadruped slice).
+    'Quadruped',
 ];
 // Intentionally text-only (narrative / per-DoS / PF / GM-adjudicated). These describe
 // a mechanic the system deliberately does NOT express as an AE/conditionalBonus

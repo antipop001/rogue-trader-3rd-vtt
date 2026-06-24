@@ -1,6 +1,7 @@
 import { prepareSimpleRoll } from '../prompts/simple-prompt.mjs';
 import { SimpleSkillData } from '../rolls/action-data.mjs';
 import { toCamelCase } from '../handlebars/handlebars-helpers.mjs';
+import { quadrupedMoveMultiplier } from '../rolls/roll-helpers.mjs';
 
 export class RogueTraderBaseActor extends Actor {
 
@@ -133,11 +134,18 @@ export class RogueTraderBaseActor extends Actor {
     _computeMovement() {
         let agility = this.characteristics.agility;
         let size = this.size;
+        // Quadruped (RT Core p.366) scales the Agility-Bonus term of movement (×2 base,
+        // ×3 six legs, ×4 eight legs); the size modifier stays additive. Trait-gated and
+        // applied by name (NOT an AE — it scales the derived AgB, which an AE can't read),
+        // so it never double-counts (movement is fully computed here, never baked).
+        // ENGINE-UNNATURAL slice.
+        const moveMult = quadrupedMoveMultiplier(this.items.filter((i) => i.type === 'trait'));
+        let base = agility.bonus * moveMult + size - 4;
         this.system.movement = {
-            half: agility.bonus + size - 4,
-            full: (agility.bonus + size - 4) * 2,
-            charge: (agility.bonus + size - 4) * 3,
-            run: (agility.bonus + size - 4) * 6,
+            half: base,
+            full: base * 2,
+            charge: base * 3,
+            run: base * 6,
         };
     }
 

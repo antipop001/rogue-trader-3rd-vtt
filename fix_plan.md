@@ -365,14 +365,46 @@ guard in the spec). Canon: `/mnt/project_data/RT/RT-DOCS/`.
   Confirm the count is flat (does not scale with DoS) and reaches the damage card's hit count.
   Attack pipeline + dropdown are Foundry-coupled — node gate can't exercise it. (E2E)
 
-- [ ] ENGINE-UNNATURAL — traits that SET/scale an Unnatural multiplier or double a bonus:
-  Unnatural Characteristic, Unnatural Toughness (x2), Unnatural Speed, Quadruped (×AgB
-  move), Daemonic (×2 TB vs damage), Bastion of Iron Will (×2 defensive PR). The sheet
-  already has `system.characteristics.<k>.unnatural` — wire traits to set it (AE on the
-  `.unnatural` key, or compute) where that's the right apply point; the ×2-vs-damage and
-  movement-doubling cases need engine code. Includes Greenskin Hybrid (+10 Toughness
-  "after calculating Wounds" — a Wounds-neutral bump an AE can't express). Pure-JS test;
-  E2E. (ENGINE)
+- [x] ENGINE-UNNATURAL — traits that SET/scale an Unnatural multiplier or double a bonus.
+  Done iter 36: shipped the ONE clean, double-apply-safe slice — **Quadruped** (×AgB move,
+  RT Core p.366). Movement is fully computed in `base-actor._computeMovement` (never baked),
+  so trait-gating it can't double-count. Pure helper `quadrupedMoveMultiplier(traits)` in
+  `roll-helpers.mjs` (plain Quadruped ×2; explicit `(xN)` → N; `(N legs)` → N/2, so 6 legs
+  ×3 / 8 legs ×4 per canon; min ×2; defensive). Wired into `_computeMovement` to scale ONLY
+  the Agility-Bonus term (`agility.bonus * mult + size - 4`), size modifier stays additive.
+  NOT an AE (scales the derived AgB an AE can't read) → ratchet CODE_HANDLED (double-apply
+  guard). Node test `quadruped_move.test.mjs` (7 cases). Gate green (build OK, 109 node
+  tests). The remaining members SET/scale `characteristics.<k>.unnatural` or hook the
+  damage/Wounds/psychic path and carry a **double-apply risk** (the NPC pipeline pre-bakes
+  `unnatural: N` into characteristics, and many of those NPCs ALSO embed an "Unnatural X"
+  trait item) → split to ENGINE-UNNATURAL-CHARS + ENGINE-UNNATURAL-DAMAGE below; E2E follow-up.
+  (ENGINE)
+
+- [ ] E2E-UNNATURAL-MOVE — verify on rt-smoke (Playwright): an NPC with the Quadruped
+  trait shows Half/Full/Charge/Run movement using 2×AgB (the AgB term doubled, size mod
+  unchanged) vs the same NPC without it; a `Quadruped (x3)` creature uses 3×AgB and a
+  `Quadruped (8 legs)` creature 4×AgB; a non-quadruped actor is unchanged. Derived-data +
+  Foundry-coupled — node gate can't exercise it. (E2E)
+
+- [ ] ENGINE-UNNATURAL-CHARS — the characteristic-`unnatural` members of ENGINE-UNNATURAL:
+  Unnatural Characteristic / Unnatural Toughness (x2) / Unnatural Strength / Unnatural Speed
+  etc., and Greenskin Hybrid (+10 Toughness "after calculating Wounds"). The sheet has
+  `system.characteristics.<k>.unnatural` (a pre-baked flat ADDITIVE on `bonus`, value =
+  baseBonus×(mult−1), so it is value-dependent — a fixed-value AE can't express ×2). **⚠
+  Double-apply trap:** the NPC pipeline ALREADY bakes `unnatural: N` into hundreds of NPC
+  characteristics, and many of those NPCs ALSO carry an "Unnatural X (x2)" trait item — so
+  engine-computing `.unnatural` from the trait would conflict with / double the baked value.
+  Before wiring: grep whether NPCs with `unnatural > 0` also embed the matching trait item;
+  decide SET-vs-skip semantics (e.g. only compute when baked value is 0, or have the pipeline
+  stop baking and let the engine own it). Pure-JS test on the multiplier→unnatural compute;
+  E2E. RT Core. (ENGINE)
+
+- [ ] ENGINE-UNNATURAL-DAMAGE — the damage/Wounds/psychic-path members of ENGINE-UNNATURAL
+  that can't be a characteristic AE: Daemonic (×2 TB vs damage — assign-damage reduction
+  path), Bastion of Iron Will (×2 defensive Psy Rating — opposed/resist-psychic path). Each
+  needs its own engine hook by trait/talent name in the relevant `rolls/*`; no clean pure-JS
+  slice without the surrounding pipeline. Add any extractable helper + node test; E2E. RT
+  Core / ItS. (ENGINE)
 
 - [ ] ENGINE-WOUNDS-MOD — additive Wounds term (mirror BUG-002's `initiative.modifier`):
   add `system.wounds.modifier` to `template.json`, fold into the Wounds compute in
