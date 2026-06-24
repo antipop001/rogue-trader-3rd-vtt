@@ -106,9 +106,11 @@ stray talents resolve (TALENT_RESOLVED_FLOOR 72 → 79).
   already applied by sibling profit_factor/ship_points effects → text-only, no AE,
   no double-grant. (BG-AUTHOR)
 
-- [ ] BG-013 — Warrant: Sanction (5): Sanction: Age of Plunder, Angevin Crusade, Fall
+- [x] BG-013 — Warrant: Sanction (5): Sanction: Age of Plunder, Angevin Crusade, Fall
   of the Tellurian Combine, Halo Artefacts, The Meritech Wars. Source:
-  `warrant_and_ship.json`. Target TRAIT floor 95. (BG-AUTHOR)
+  `warrant_and_ship.json`. TRAIT_RESOLVED_FLOOR=95. All 5 text-only narrative House-
+  history chart outcomes (ItS pp.40-41); PF/SP already applied by sibling
+  profit_factor/ship_points effects → no AE, no double-grant. (BG-AUTHOR)
 
 - [ ] BG-014 — Warrant: Age + Renown (8): Warrant Age: Age of Apostasy, Age of
   Redemption, The Age of Rebirth, The Forging, The Waning; Warrant Renown: Famous,

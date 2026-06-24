@@ -23,7 +23,7 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..')
 const DATA_DIR = path.join(ROOT, 'src/module/chargen/data');
 
 // --- RATCHET FLOORS (the loop raises these) ---------------------------------
-const TRAIT_RESOLVED_FLOOR = 90;   // of 103 granted; goal 103
+const TRAIT_RESOLVED_FLOOR = 95;   // of 103 granted; goal 103
 const TALENT_RESOLVED_FLOOR = 79;  // of 79 granted;  goal 79
 // ----------------------------------------------------------------------------
 

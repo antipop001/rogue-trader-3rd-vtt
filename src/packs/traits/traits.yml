@@ -1460,3 +1460,58 @@ flags:
     rt:
         category: 'Background'
         originStep: 'Warrant'
+---
+data:
+    description: 'Before the Angevin Crusade, the region now known as the Calixis Sector was a benighted area of space haunted by dark, horrific alien empires, a sanctuary for renegades, pariahs and outcasts intent upon establishing their own petty empires far from the prying eyes of the Adeptus Terra and the Inquisition. A Rogue Trader Dynasty that rose to power during the region''s Age of Plunder may have founded its fortunes upon barbarous acts of piracy, while other Houses were established amidst counter-pirate operations, making their fortunes on the bounties offered for the heads of the Imperium''s most notorious outcasts. Some of the most infamous turned their coats, becoming pirate and sanctioned pirate-hunter in turn. Though such houses may now be considered honourable and noble, there will often still linger echoes of a less than glorious past as well as the scars of old rivalries and vendettas. Ship Points: 12, Profit Factor: 2.'
+    source: 'Into the Storm, p.40'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Sanction: Age of Plunder'
+type: 'trait'
+flags:
+    rt:
+        category: 'Background'
+        originStep: 'Warrant'
+---
+data:
+    description: 'The Calixis Sector was founded in the fourth century of the 39th Millennium by the celebrated Golgenna Angevin, a Terran noble granted the rank of Lord Militant and charged with bringing the rule of the Imperium to the region formerly known as the Calyx Expanse. Ahead of his decades-long crusade ranged Rogue Trader and Explorator Fleets, charged with making contact with human populations and determining which would fight alongside the Lord Militant and which would stand against him; some of these Houses were already well established, others newly raised by the grace and favour of Lord Angevin himself. A Rogue Trader House that can trace its roots to this period is great indeed, wielding great influence in the Calixis Sector, able to draw upon the military resources of the sector and to call upon millennia-old pacts and alliances. Their fortunes are founded upon exploration and conquest. Ship Points: 10, Profit Factor: 4.'
+    source: 'Into the Storm, p.40'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Sanction: Angevin Crusade'
+type: 'trait'
+flags:
+    rt:
+        category: 'Background'
+        originStep: 'Warrant'
+---
+data:
+    description: 'In the early years of the third century of M41, the Calixis Sector faced a threat capable of destabilising the entire region. In 211.M41 the scavenging Meritech Clans of the Merates Cluster declared their secession from the Imperium and amassed sizable military might. The Imperium''s response was an overwhelming assault, and the Sector Governess Myram Harvala mustered a great force that included a number of Rogue Trader Houses — many newly raised, their Warrants of Trade granted in exchange for their aid. The ensuing conflict raged for seventeen years and saw the complete eradication of all life from the worlds of the Merates Cluster, the Meritech fielding heretical technology supplied by the tech-cult known as the Logicians. A great many Rogue Traders never emerged from the wars, but many others established the fortunes of future generations as ruthless and highly dependable mercenaries. Such dynasties are opportunist in nature, highly mercenary, and able to bring formidable military force to bear. Ship Points: 8, Profit Factor: 6.'
+    source: 'Into the Storm, pp.40-41'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Sanction: The Meritech Wars'
+type: 'trait'
+flags:
+    rt:
+        category: 'Background'
+        originStep: 'Warrant'
+---
+data:
+    description: 'For decades preceding 428.M41, the economy of the entire Calixis Sector came to be dominated by a mighty commercial interest known as the Tellurian Combine, and the fortunes of dozens of Rogue Trader Dynasties became entwined with those of the Combine. It was a great shock then when the Inquisition discovered that the Tellurian Combine was in fact a front for a malefic cult — the Brotherhood of the Horned Darkness, in thrall to a warp-spawned entity known as Balphomael — whose influence had spread to the very highest levels of sector government. A great many Houses with strong ties to the Combine came under the scrutiny of the Inquisition; many toppled along with it, and those that somehow survived the purges bear a terrible stigma to this day. There are those who whisper that such Dynasties still harbour followers of the Brotherhood, while other dynasties rose to power as their rivals fell, aiding the Inquisition and pursuing the traitors far beyond the Imperium''s borders. Ship Points: 6, Profit Factor: 8.'
+    source: 'Into the Storm, p.41'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Sanction: Fall of the Tellurian Combine'
+type: 'trait'
+flags:
+    rt:
+        category: 'Background'
+        originStep: 'Warrant'
+---
+data:
+    description: 'Artefacts of alien manufacture are proscribed the length and breadth of the Imperium, yet demand for them in certain circles is high, and the punishment for possession of even a harmless artefact could be terrible. Halo Artefacts are a particular class of xenos item — arcane devices invested with the power of long-lost alien civilizations, able to grant an owner powers undreamed of, yet at a terrible price that condemns the body and soul of the user. So dangerous are they that they have been placed under the highest prohibitions in the Calixis Sector by the Calixian Conclave of the Inquisition. Some Rogue Trader Dynasties are built entirely upon the acquisition of such artefacts, going out into the dark regions specifically to track them down and smuggle them back to the Imperium; even one or two discovered in a generation can fund a life of luxury, though the risks are as great as the rewards, for such Houses can make powerful enemies in the Inquisition. Ship Points: 4, Profit Factor: 10. One Xenostech component may be purchased.'
+    source: 'Into the Storm, p.41'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Sanction: Halo Artefacts'
+type: 'trait'
+flags:
+    rt:
+        category: 'Background'
+        originStep: 'Warrant'
