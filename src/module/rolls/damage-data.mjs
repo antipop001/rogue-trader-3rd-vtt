@@ -65,10 +65,8 @@ export class Hit {
             hit.location = additionalHitLocations()[initialHit][hitNumber <= 5 ? hitNumber : 5];
         }
 
-        // Determine Righteous Fury Effects
-        for(const righteousFury of hit.righteousFury) {
-            righteousFury.effect = getCriticalDamage(hit.damageType, hit.location, righteousFury.roll.total);
-        }
+        // Righteous Fury (RT 1e RAW) is resolved inside _calculateDamage — confirm
+        // attack + extra damage roll, not a Critical Hits table lookup. (BUG-008.)
 
         return hit;
     }
@@ -121,16 +119,17 @@ export class Hit {
 
         this.damage = this.damageRoll.total;
 
+        // Count natural 10s (or the Vengeful threshold) — Righteous Fury is resolved
+        // after the loop with a confirming attack + extra damage roll (RT 1e RAW).
+        let rfCount = 0;
+
         for (const term of this.damageRoll.terms) {
             if (!term.results) continue;
             for (const result of term.results) {
                 game.rt.log('_calculateDamage result:', result);
                 if (result.discarded || !result.active) continue;
                 if (result.result >= righteousFuryThreshold) {
-                    // Righteous fury hit
-                    const righteousFuryRoll = new Roll('1d5', {});
-                    await righteousFuryRoll.evaluate();
-                    this.righteousFury.push({roll: righteousFuryRoll, effect: ''});
+                    rfCount += 1;
                 }
 
                 if (attackData.rollData.hasAttackSpecial('Primitive')) {
@@ -147,6 +146,40 @@ export class Hit {
                     }
                 }
             }
+        }
+
+        // Righteous Fury (RT 1e RAW, RT Core p.250): each natural 10 (or the Vengeful
+        // threshold) on a damage die grants a CONFIRMING attack roll; on a hit, add
+        // another full weapon damage roll to the total. Extra rolls chain (their own
+        // 10s grant further confirms). Melee extras include the Strength Bonus; other
+        // per-hit talent bonuses (Crushing Blow, Mighty Shot, …) are not re-applied to
+        // the extra roll — a minor undercount, noted for follow-up. (BUG-008.)
+        const rfToHit = attackData.rollData.modifiedTarget ?? 0;
+        const rfMeleeBonus = actionItem.isMelee
+            ? (sourceActor.getCharacteristicFuzzy('Strength')?.bonus ?? 0) : 0;
+        let rfPending = rfCount;
+        let rfGuard = 20; // safety cap against runaway chains
+        while (rfPending > 0 && rfGuard-- > 0) {
+            rfPending -= 1;
+            const confirm = new Roll('1d100', {});
+            await confirm.evaluate();
+            const confirmHit = confirm.total !== 100 && confirm.total <= rfToHit;
+            const entry = { confirmRoll: confirm, confirmTarget: rfToHit, hit: confirmHit, extra: 0, extraRoll: null };
+            if (confirmHit) {
+                const extra = new Roll(rollFormula, attackData.rollData);
+                await extra.evaluate();
+                entry.extraRoll = extra;
+                entry.extra = extra.total + rfMeleeBonus;
+                this.damage += entry.extra;
+                for (const t of extra.terms) {
+                    if (!t.results) continue;
+                    for (const r of t.results) {
+                        if (r.discarded || !r.active) continue;
+                        if (r.result >= righteousFuryThreshold) rfPending += 1;
+                    }
+                }
+            }
+            this.righteousFury.push(entry);
         }
 
         if (actionItem.isMelee) {

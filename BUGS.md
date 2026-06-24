@@ -183,7 +183,15 @@ engine/roll fixes. Fix these directly, or in a dedicated follow-up loop.
 - **⚠ Foundry-coupled** (cast pipeline + a new prompt) — verify on rt-smoke.
 
 ## BUG-008 — Righteous Fury uses DH2-style crit-table effect, not RT 1e RAW
-- **Status: NEEDS DECISION** (RAW vs keep current). Audited 2026-06-23 at user request.
+- **Status: ✅ FIXED 2026-06-23 (RAW, user's call), verified live on rt-smoke
+  (Playwright, 80-trial statistical check).** `damage-data.mjs`: a natural 10 (or
+  Vengeful threshold) on a damage die now makes a **confirming attack roll**
+  (`1d100 ≤ modifiedTarget`); on a hit it adds **another full weapon damage roll** to
+  `this.damage` (melee extras include Strength Bonus) and **chains** on further 10s;
+  the 1d5 Critical-Hits-table lookup is gone. Chat card shows the confirm roll + bonus
+  damage (or "missed"). Known minor undercount: per-hit talent bonuses (Crushing Blow/
+  Mighty Shot) aren't re-applied to the extra roll — follow-up. Live: 6/6 natural-10s
+  confirmed + added damage; non-RF rolls unchanged.
 - **Current behaviour** (`src/module/rolls/damage-data.mjs:93-134` + RF block in
   `action-roll-chat.hbs`): any active damage die ≥ 10 (the `Vengeful` quality lowers the
   threshold) AUTO-triggers RF → rolls `1d5` → looks up the Critical Hits table
