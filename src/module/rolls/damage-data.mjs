@@ -2,7 +2,7 @@ import { additionalHitLocations, getHitLocationForRoll } from '../rules/hit-loca
 import { calculateAmmoDamageBonuses, calculateAmmoPenetrationBonuses, calculateAmmoSpecials } from '../rules/ammo.mjs';
 import { getCriticalDamage } from '../rules/critical-damage.mjs';
 import { calculateWeaponModifiersDamageBonuses, calculateWeaponModifiersPenetrationBonuses } from '../rules/weapon-modifiers.mjs';
-import { weaponMasterBonus, critDamageBonus } from './roll-helpers.mjs';
+import { weaponMasterBonus, critDamageBonus, brutalChargeBonus } from './roll-helpers.mjs';
 
 export class DamageData {
     template = '';
@@ -223,6 +223,12 @@ export class Hit {
                 const perBonus = sourceActor.getCharacteristicFuzzy('Perception').bonus;
                 this.modifiers['deathdealer melee'] = Math.ceil(perBonus / 2);
             }
+
+            // Brutal Charge (trait): +3 damage on a Charge (RT Core p.364). `hasTalent`
+            // only matches talents, so check the actor's trait items by name.
+            const traits = sourceActor?.items?.filter((i) => i.type === 'trait') ?? [];
+            const bc = brutalChargeBonus(traits, attackData.rollData.action);
+            if (bc) this.modifiers['brutal charge'] = bc;
 
         } else if (actionItem.isRanged) {
             // Scatter

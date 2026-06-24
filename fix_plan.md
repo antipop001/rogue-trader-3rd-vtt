@@ -235,13 +235,40 @@ guard in the spec). Canon: `/mnt/project_data/RT/RT-DOCS/`.
   (subset of triage.md AUDIT-002's broader narrative roll-up). None in CODE_HANDLED/
   WIRED_EXPECTED. Gate green (build OK, 72 node tests).
 
-- [ ] ENGINE-EXTRA-DEFENCE — extra-Reaction / extra-attack count machinery: Step Aside
+- [x] ENGINE-EXTRA-DEFENCE — extra-Reaction / extra-attack count machinery: Step Aside
   (+1 Dodge/round), Wall of Steel (+1 Parry/round), Counter Attack (free attack after
   Parry), Furious Assault (extra attack after All Out Attack hit), WAAAGH! (extra attack
   after Charge hit). Also Brutal Charge (+3 dmg charging — damage path, not skill/char,
   so `conditionalBonuses` can't express it). No current Reaction-budget tracker → likely
   E2E/UI + engine. RT Core / ItS. Pure-JS test on any extractable helper; E2E follow-up.
-  (ENGINE)
+  (ENGINE) — done iter 31: wired the ONE clean damage-path slice, **Brutal Charge**.
+  Found+fixed a data bug — the `Brutal Charge` trait carried the *Burrower* description
+  (copy-paste swap); restored canon "deals an extra 3 points of damage with attacks made
+  while charging" + `source: …p.364`. Pure helper `brutalChargeBonus(traits, action)` in
+  `roll-helpers.mjs` (+3 when a `type:'trait'` item named "Brutal Charge" is present and
+  `action==='Charge'`; `hasTalent` only matches talents, so the melee path passes trait
+  items). Wired in `damage-data._calculateDamage` melee block → `modifiers['brutal
+  charge']` reaches `_totalDamage`. NOT an AE (Charge-gated) → ratchet CODE_HANDLED
+  (double-apply guard). Node test `brutal_charge.test.mjs` (4 cases). Gate green (build
+  OK, 78 node tests). The 5 Reaction-budget/extra-attack items have NO apply point (no
+  per-round Reaction tracker) → split to ENGINE-REACTION-BUDGET below; E2E-BRUTAL-CHARGE
+  below.
+
+- [ ] E2E-BRUTAL-CHARGE — verify on rt-smoke (Playwright): an NPC/creature with the
+  Brutal Charge trait making a melee attack with the **Charge** action shows damage
+  raised by +3 on the attack card vs the same creature attacking with Standard Attack /
+  All Out Attack (no bonus), and vs a creature WITHOUT the trait (no bonus). Attack/damage
+  pipeline is Foundry-coupled — node gate can't exercise it. (E2E)
+
+- [ ] ENGINE-REACTION-BUDGET — the rest of ENGINE-EXTRA-DEFENCE: extra-Reaction / extra-
+  attack count machinery with no current apply point. Needs a per-round combat-state
+  tracker on the actor (Reactions used this round, reset on turn) — none exists today.
+  Items: Step Aside (+1 Dodge/round), Wall of Steel (+1 Parry/round), Counter Attack
+  (free attack after a successful Parry), Furious Assault (extra attack after an All Out
+  Attack hit), WAAAGH! (extra attack after a Charge hit). All are post-resolution /
+  budget-gated → heavily Foundry-coupled (combat tracker hooks + UI), no clean pure-JS
+  slice. RT Core / ItS. Design the Reaction-budget field first; add any extractable
+  helper + node test; E2E follow-up. (ENGINE)
 
 - [ ] ENGINE-ATTACK-TALENTS — Swift Attack (2 melee hits) / Lightning Attack (3 melee
   hits) as TALENTS (RT lists them as Talents, not actions; currently `legacy: true`

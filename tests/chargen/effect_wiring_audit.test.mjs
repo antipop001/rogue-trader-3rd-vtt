@@ -62,6 +62,9 @@ const CODE_HANDLED = [
     // Crit-gated extra Damage applied by name in damage-data/assign-damage-data
     // (must NOT also get an AE — would double-apply). RT Core p.96.
     'Crack Shot', 'Crippling Strike',
+    // Charge-gated +3 melee Damage applied by trait name in damage-data.mjs (Brutal
+    // Charge, RT Core p.364) — engine-applied, must NOT also get an AE.
+    'Brutal Charge',
 ];
 // Intentionally text-only (narrative / per-DoS / PF / GM-adjudicated). These describe
 // a mechanic the system deliberately does NOT express as an AE/conditionalBonus

@@ -140,6 +140,24 @@ export function critDamageBonus(talents, isMelee, isRanged) {
     return bonus;
 }
 
+/**
+ * Brutal Charge (trait) extra Damage (RT Core p.364): "A creature with this Trait deals
+ * an extra 3 points of damage with attacks made while charging." Gated on the attack
+ * using the Charge combat action (a melee Full Action), so it is NOT an ActiveEffect —
+ * the engine applies it by trait name on the melee damage path. `hasTalent` only matches
+ * `type==='talent'`, so the caller passes the actor's TRAIT items here. Exact
+ * (case-insensitive) name match — the trait carries no `system.choice`.
+ *
+ * @param {Array<{name?: string}>} traits  actor trait items
+ * @param {string} action  the combat action name (`attackData.rollData.action`)
+ * @returns {number} extra Damage to add (3 on a Charge with the trait, else 0)
+ */
+export function brutalChargeBonus(traits, action) {
+    if (!Array.isArray(traits) || String(action) !== 'Charge') return 0;
+    const has = traits.some((t) => t?.name && String(t.name).toLowerCase() === 'brutal charge');
+    return has ? 3 : 0;
+}
+
 export async function roll1d100() {
     let formula = '1d100';
     const roll = new Roll(formula, {});

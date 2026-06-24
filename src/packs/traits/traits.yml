@@ -27,8 +27,8 @@ name: 'Brutal Charge'
 type: 'trait'
 ---
 data:
-    description: 'A creature with this Trait can move through solid objects by burrowing through them. This Trait always includes a number to indicate speed. Such creatures can burrow through soil, rock, sand, and so on, though some (expressed in the creature entry) can burrow through metal. When a creature burrows, it leaves behind a tunnel. Creatures at least one size smaller than the creature that created the tunnel can enter these areas without impediment. There''s a 50% chance each round that the tunnel collapses behind the creature.'
-    source: 'Rogue Trader Core Rulebook'
+    description: 'A creature with this Trait deals an extra 3 points of damage with attacks made while charging.'
+    source: 'Rogue Trader Core Rulebook, p.364'
 img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
 name: 'Burrower'
 type: 'trait'
