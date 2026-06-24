@@ -54,6 +54,10 @@ const WIRED_EXPECTED = [
     // ENGINE-WOUNDS-MOD — additive system.wounds.modifier term (mirror of Initiative).
     // Sound Constitution "+1 Wound" (stackable) via an AE on system.wounds.modifier.
     { name: 'Sound Constitution', kind: 'ae' },
+    // WIRE-SIXTH-SENSE — Sixth Sense (trait, ItS p.11) grants Psyniscience as a Trained
+    // Skill via an AE (UPGRADE system.skills.psyniscience.advance → 1) AND grants Rival
+    // (Inquisition) via flags.rt.grants (listed in GRANTS_EXPECTED below).
+    { name: 'Sixth Sense', kind: 'ae' },
 ];
 // Already applied by name in src/module/rolls/* (or documents/acolyte.mjs) — must NOT
 // also be AE'd. Lightning Reflexes is computed in acolyte.mjs (Initiative ×AgB term)
@@ -118,6 +122,7 @@ const GRANTS_EXPECTED = [
     'The Flesh is Weak',   // → Machine (RT Core)
     'Physical Perfection', // → Machine (ItS p.199)
     "'Ard",                // → Unnatural Toughness (x2) + Sturdy + Iron Jaw + True Grit (ItS)
+    'Sixth Sense',         // → Rival (Inquisition), a pre-chosen pickable grant (ItS p.11)
 ];
 // Intentionally text-only (narrative / per-DoS / PF / GM-adjudicated). These describe
 // a mechanic the system deliberately does NOT express as an AE/conditionalBonus

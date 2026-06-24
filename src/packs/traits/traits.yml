@@ -625,10 +625,38 @@ data:
 img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
 name: 'Sixth Sense'
 type: 'trait'
+effects:
+- _id: SixthSensePsy001
+  name: Sixth Sense (Psyniscience Trained)
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  description: ''
+  origin: ''
+  disabled: false
+  transfer: true
+  tint: null
+  statuses: []
+  duration:
+    startTime: null
+    seconds: null
+    combat: null
+    rounds: null
+    turns: null
+    startRound: null
+    startTurn: null
+  changes:
+  - key: system.skills.psyniscience.advance
+    mode: 4
+    value: '1'
+    priority: null
+  flags: {}
 flags:
     rt:
         category: 'Background'
         originStep: 'Home World'
+        grants:
+        - name: 'Rival'
+          type: 'talent'
+          choice: 'Inquisition'
 ---
 data:
     description: 'Although forge world born citizens know that the Emperor is their god and saviour, they see the Imperial Creed through the lens of Cult Mechanicus doctrine. As a result, they can be surprisingly—and sometimes dangerously—ignorant of the common teachings and practices of the Ecclesiarchy, often failing to offer its clerics the level of deference they expect. Forge world characters suffer a -10 penalty on Tests involving knowledge of the Imperial Creed and a -5 penalty on Fellowship Tests to interact with members of the Ecclesiarchy in formal settings.'

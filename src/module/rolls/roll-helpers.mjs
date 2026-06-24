@@ -482,25 +482,34 @@ export function rapidReloadTime(reload, hasRapidReload = true) {
  * NOT a pickable choice), so no paren-stripping. Duplicate grants in the spec collapse
  * to one. Non-array / empty inputs return [] (no grants).
  *
- * @param {Array<{name?: string, type?: string, pack?: string}>} grants  flags.rt.grants
+ * A grant may carry a `choice` (WIRE-SIXTH-SENSE: Sixth Sense → Rival (Inquisition)) —
+ * a pre-chosen pickable talent. The embedded item is renamed "Rival (Inquisition)", so
+ * a re-add would otherwise not match the bare grant name; for choice grants the dedup
+ * compares against the existing item's BASE name (trailing parenthetical stripped).
+ *
+ * @param {Array<{name?: string, type?: string, pack?: string, choice?: string}>} grants  flags.rt.grants
  * @param {Array<{name?: string, type?: string}>} existingItems  actor's current items
- * @returns {Array<{name: string, type: string, pack?: string}>} grants still to embed
+ * @returns {Array<{name: string, type: string, pack?: string, choice?: string}>} grants still to embed
  */
 export function pendingGrants(grants, existingItems) {
     if (!Array.isArray(grants) || grants.length === 0) return [];
-    const have = new Set(
-        (Array.isArray(existingItems) ? existingItems : [])
-            .filter((i) => i?.name && i?.type)
-            .map((i) => `${i.type}::${String(i.name).toLowerCase()}`)
-    );
+    const items = (Array.isArray(existingItems) ? existingItems : []).filter((i) => i?.name && i?.type);
+    const haveFull = new Set(items.map((i) => `${i.type}::${String(i.name).toLowerCase()}`));
+    const haveBase = new Set(items.map((i) => `${i.type}::${String(i.name).replace(/\s*\(.*\)\s*$/, '').toLowerCase()}`));
     const out = [];
     const seen = new Set();
     for (const g of grants) {
         if (!g?.name || !g?.type) continue;
         const key = `${g.type}::${String(g.name).toLowerCase()}`;
+        // Choice grants match an existing item by base name (the embed carries the
+        // choice in parens); plain grants match the full name verbatim.
+        const have = g.choice ? haveBase : haveFull;
         if (have.has(key) || seen.has(key)) continue;
         seen.add(key);
-        out.push(g.pack ? { name: g.name, type: g.type, pack: g.pack } : { name: g.name, type: g.type });
+        const entry = { name: g.name, type: g.type };
+        if (g.pack) entry.pack = g.pack;
+        if (g.choice) entry.choice = g.choice;
+        out.push(entry);
     }
     return out;
 }

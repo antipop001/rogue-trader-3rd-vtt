@@ -276,6 +276,15 @@ Enable Debug with: game.rt.debug = true
             if (!src) { game.rt?.warn?.(`Item grant "${g.name}" not found in pack ${packName}`); continue; }
             const data = src.toObject();
             delete data._id;
+            // Pre-chosen pickable grant (e.g. Rival (Inquisition)): stamp the choice and
+            // append it to the name so onCreateItem skips the picker prompt (it returns
+            // early when system.choice is already set). The conditionalBonus already on
+            // the granted talent applies vs the chosen group.
+            if (g.choice) {
+                foundry.utils.setProperty(data, 'system.choice', g.choice);
+                const base = String(data.name ?? '').replace(/\s*\(.*\)\s*$/, '');
+                data.name = `${base} (${g.choice})`;
+            }
             foundry.utils.setProperty(data, 'flags.rt.grantedBy', item.id);
             toCreate.push(data);
         }

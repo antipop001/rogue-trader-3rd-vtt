@@ -60,3 +60,27 @@ test('bad / empty inputs return no grants', () => {
     // skips malformed grant entries (missing name or type)
     assert.deepEqual(pendingGrants([{ name: 'X' }, { type: 'trait' }, {}], []), []);
 });
+
+// --- WIRE-SIXTH-SENSE: pre-chosen pickable grants (choice field) ------------
+
+test('a choice grant carries the choice through to the pending entry', () => {
+    const grants = [{ name: 'Rival', type: 'talent', choice: 'Inquisition' }];
+    assert.deepEqual(pendingGrants(grants, []), [
+        { name: 'Rival', type: 'talent', choice: 'Inquisition' },
+    ]);
+});
+
+test('a choice grant dedups against the renamed embed (base-name match)', () => {
+    const grants = [{ name: 'Rival', type: 'talent', choice: 'Inquisition' }];
+    // the embedded item was renamed "Rival (Inquisition)" — must not re-grant
+    const existing = [{ name: 'Rival (Inquisition)', type: 'talent' }];
+    assert.deepEqual(pendingGrants(grants, existing), []);
+});
+
+test('a plain (non-choice) grant still requires a full-name match, not base-name', () => {
+    // "Unnatural Toughness (x2)" is a literal pack name; a base-name "Unnatural
+    // Toughness" item must NOT satisfy it (no paren-stripping for plain grants).
+    const grants = [{ name: 'Unnatural Toughness (x2)', type: 'trait' }];
+    const existing = [{ name: 'Unnatural Toughness', type: 'trait' }];
+    assert.deepEqual(pendingGrants(grants, existing), grants);
+});

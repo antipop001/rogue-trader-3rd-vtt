@@ -538,13 +538,37 @@ guard in the spec). Canon: `/mnt/project_data/RT/RT-DOCS/`.
   ordering edge). Item-create hooks + compendium resolution are Foundry-coupled — node gate
   can't exercise them. (E2E)
 
-- [ ] WIRE-SIXTH-SENSE — `Sixth Sense` (trait, ItS p.11): grants "Psyniscience as a Trained
+- [x] WIRE-SIXTH-SENSE — `Sixth Sense` (trait, ItS p.11): grants "Psyniscience as a Trained
   Skill" (a skill ADVANCE, not an embeddable item) + "Rival (Inquisition) Talent" (a
   PICKABLE talent needing a pre-stamped `system.choice`). Neither fits the clean name+type
   item-embed used by ENGINE-TRAIT-GRANTS. Decide: (a) extend the grant machinery to accept
   a skill-advance grant (set `skills.psyniscience.advance`) + a pre-chosen pickable-talent
   grant (embed Rival with `system.choice: 'Inquisition'` + its conditional/peer effect), or
-  (b) keep narrative. Pure-JS test on any extractable parse; E2E. (WIRE)
+  (b) keep narrative. Pure-JS test on any extractable parse; E2E. (WIRE) — done iter 43:
+  chose **(a)**, both halves. (1) **Psyniscience Trained** = AE on
+  `system.skills.psyniscience.advance`, **mode 4 (UPGRADE) → 1** — sets Trained, never
+  downgrades a higher advance, idempotent/stack-safe, reverts on trait removal (`advance` is
+  AE-applied before `_computeSkills` reads it; `_skillAdvanceToValue(1)=0` ⇒ tests at full
+  Per). → ratchet WIRED_EXPECTED (kind ae). (2) **Rival (Inquisition)** = extended the
+  existing `flags.rt.grants` machinery with an optional **`choice`** field: `applyItemGrants`
+  stamps `system.choice='Inquisition'` + renames the embed "Rival (Inquisition)" so
+  `onCreateItem` skips the picker (it returns early on a pre-set choice); `pendingGrants`
+  dedups choice grants by the embed's **BASE** name (parenthetical stripped) so a re-add
+  doesn't double-grant. Rival's existing -10 Fellowship conditionalBonus applies vs the
+  chosen group. → ratchet GRANTS_EXPECTED. NOT double-applied (neither in CODE_HANDLED). RT
+  canon ItS p.11 (already cited in `source:`). Node test `trait_grants.test.mjs` +3 (choice
+  passthrough, base-name dedup, plain-grant still full-name match). Gate green (build OK, 145
+  node tests). E2E follow-up below. (WIRE)
+
+- [ ] E2E-SIXTH-SENSE — verify on rt-smoke (Playwright): dragging the Sixth Sense trait onto
+  an actor (a) raises Psyniscience to Trained — `skills.psyniscience.advance >= 1`, the skill
+  no longer dimmed/blocked as untrained-Advanced, tests at full Perception — and does NOT
+  downgrade an actor who already has Psyniscience at +10/+20 (UPGRADE keeps the higher); (b)
+  auto-embeds a "Rival (Inquisition)" talent item with `system.choice === 'Inquisition'` and
+  NO picker prompt; re-adding Sixth Sense does NOT add a second Rival (base-name dedup);
+  ticking Rival's checkbox on a Fellowship test vs the Inquisition applies -10. AE-to-advance,
+  the choice embed, and the create hook are Foundry-coupled — node gate can't exercise them.
+  (E2E)
 
 - [ ] WIRE-CYBER-GRANTS — cybernetics that GRANT a talent (reuse the ENGINE-TRAIT-GRANTS
   `flags.rt.grants` machinery): Bionic Heart → Sprint, Vitae Supplacement → Autosanguine,
