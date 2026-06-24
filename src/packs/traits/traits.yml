@@ -312,3 +312,155 @@ data:
 img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
 name: 'Mob Rule'
 type: 'trait'
+---
+data:
+    description: 'Hivers grow up surrounded by crowds and are used to weaving through even the densest mobs with ease. Crowds do not count as Difficult Terrain for hivers, and when Running or Charging through a dense crowd, hivers take no penalty to the Agility Test to keep their feet.'
+    source: 'Rogue Trader Core Rulebook, p.21'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Accustomed to Crowds'
+type: 'trait'
+flags:
+    rt:
+        category: 'Background'
+        originStep: 'Home World'
+---
+data:
+    description: 'The folk of Imperial Worlds are taught that ignorance of the dark places of the galaxy is a blessing from the God-Emperor. This wise blindness imposes a -5 penalty on Forbidden Lore (Int) Tests.'
+    source: 'Rogue Trader Core Rulebook, p.22'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Blessed Ignorance'
+type: 'trait'
+flags:
+    rt:
+        category: 'Background'
+        originStep: 'Home World'
+        conditionalBonuses:
+        - applies:
+              skills: [forbiddenLore]
+              characteristics: []
+          value: -5
+          label: 'on Forbidden Lore Tests'
+---
+data:
+    description: 'The void born are touched by the fickle powers of the warp, making them preternaturally lucky. Whenever a void born character spends a Fate Point (though not if he burns one), roll 1d10. On the roll of a natural 9, the Fate Point is not lost.'
+    source: 'Rogue Trader Core Rulebook, p.20'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Charmed'
+type: 'trait'
+flags:
+    rt:
+        category: 'Background'
+        originStep: 'Home World'
+---
+data:
+    description: 'Fortress world characters are drilled relentlessly for war from an early age, but this single-minded focus leaves them ill at ease with matters unrelated to battle. They suffer a -5 penalty on Social Interaction Tests regarding non-combat topics (at the GM''s discretion).'
+    source: 'Into the Storm, p.11'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Constant Combat Training'
+type: 'trait'
+flags:
+    rt:
+        category: 'Background'
+        originStep: 'Home World'
+        conditionalBonuses:
+        - applies:
+              skills: [charm, command, deceive, inquiry, barter, blather]
+              characteristics: [fellowship]
+          value: -5
+          label: 'on Social Interaction Tests regarding non-combat topics'
+---
+data:
+    description: 'Those who spend time on a penal world gain a skewed outlook on the morality of the Imperium and a less than savoury reputation amongst Imperial authorities. They suffer a -20 penalty on Interaction Tests when dealing with the Adeptus Arbites, the Ecclesiarchy, Enforcers, and the Military should their home world become known (at the GM''s discretion).'
+    source: 'Into the Storm, p.13'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Criminal'
+type: 'trait'
+flags:
+    rt:
+        category: 'Background'
+        originStep: 'Home World'
+        conditionalBonuses:
+        - applies:
+              skills: [charm, command, deceive, inquiry, barter, blather, intimidate]
+              characteristics: [fellowship]
+          value: -20
+          label: 'vs Arbites, Ecclesiarchy, Enforcers, Military if home world known'
+---
+data:
+    description: 'Due to the prestigious heritage of a Child of Dynasty, they can bring considerable resources to bear when outfitting a starship. All Child of Dynasty characters add an extra +3 Ship Points to those already generated when building the group''s ship. However, a group with a Child of Dynasty character may not exchange their Ship Points for Profit Factor — any unspent Ship Points at the end of creating their starship are lost.'
+    source: 'Into the Storm, p.14'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Dynastic Warrant'
+type: 'trait'
+flags:
+    rt:
+        category: 'Background'
+        originStep: 'Home World'
+---
+data:
+    description: 'Nobles are schooled in how to comport themselves in all manner of formal situations. They gain a +10 bonus on Interaction Skill Tests when dealing with high authority and in formal situations.'
+    source: 'Rogue Trader Core Rulebook, p.23'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Etiquette'
+type: 'trait'
+flags:
+    rt:
+        category: 'Background'
+        originStep: 'Home World'
+        conditionalBonuses:
+        - applies:
+              skills: [charm, command, deceive, inquiry, barter, blather]
+              characteristics: [fellowship]
+          value: 10
+          label: 'when dealing with high authority or in formal situations'
+---
+data:
+    description: 'Hivers seldom endure the horrors of the open sky or the indignity of the great outdoors. They suffer a -10 penalty to all Survival Tests, and whilst out of a "proper hab" (places without manufactured goods, solid ceilings, and electrical power) the hiver suffers a -5 penalty to all Intelligence Tests.'
+    source: 'Rogue Trader Core Rulebook, p.21'
+effects:
+- _id: KKSLQJ3M6BVnYzQY
+  name: 'Hivebound'
+  img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+  description: ''
+  origin: ''
+  disabled: false
+  transfer: true
+  tint: null
+  statuses: []
+  duration: { startTime: null, seconds: null, combat: null, rounds: null, turns: null, startRound: null, startTurn: null }
+  changes:
+  - key: 'system.skills.survival.modifier'
+    mode: 2
+    value: '-10'
+    priority: null
+  flags: {}
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Hivebound'
+type: 'trait'
+flags:
+    rt:
+        category: 'Background'
+        originStep: 'Home World'
+        conditionalBonuses:
+        - applies:
+              skills: []
+              characteristics: [intelligence]
+          value: -5
+          label: 'while out of a proper hab'
+---
+data:
+    description: 'Even the most unimportant offspring of a Rogue Trader dynasty are likely to have grown up amongst the rarefied heights of Imperial aristocracy, and can handle themselves amongst them without embarrassment. A Child of Dynasty gains a +5 bonus to all Fellowship Tests to interact with high-ranking officials of the Imperium and members of the Imperial nobility in a formal setting (exactly when this bonus applies is up to the GM).'
+    source: 'Into the Storm, p.14'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Honour Amongst One''s Peers'
+type: 'trait'
+flags:
+    rt:
+        category: 'Background'
+        originStep: 'Home World'
+        conditionalBonuses:
+        - applies:
+              skills: [charm, command, deceive, inquiry, barter, blather]
+              characteristics: [fellowship]
+          value: 5
+          label: 'to interact with high-ranking Imperials in a formal setting'

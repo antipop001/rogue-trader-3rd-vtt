@@ -25,9 +25,12 @@ stray talents resolve (TALENT_RESOLVED_FLOOR 72 → 79).
   Techniques)`), and a pickable `Weapon Training` base (resolves `Weapon Training
   (choose one)`). TALENT_RESOLVED_FLOOR=79. (TAL-FIX)
 
-- [ ] BG-001 — Home World traits batch A (9): Accustomed to Crowds, Blessed Ignorance,
+- [x] BG-001 — Home World traits batch A (9): Accustomed to Crowds, Blessed Ignorance,
   Charmed, Constant Combat Training, Criminal, Dynastic Warrant, Etiquette, Hivebound,
-  Honour Amongst One's Peers. Source: `home_worlds.json`. Target TRAIT floor 17. (BG-AUTHOR)
+  Honour Amongst One's Peers. Source: `home_worlds.json`. TRAIT_RESOLVED_FLOOR=17.
+  Hivebound got an AE (-10 survival) + out-of-hab conditional; Blessed Ignorance/
+  Etiquette/Criminal/Constant Combat Training/Honour are conditionalBonuses; Charmed/
+  Accustomed to Crowds/Dynastic Warrant are narrative text-only. (BG-AUTHOR)
 
 - [ ] BG-002 — Home World traits batch B (8): Ill-omened, Leery of Outsiders, Officer
   on Deck, Paranoid, Ship-Bound Fighter, Sixth Sense, Stranger to the Cult, Street
