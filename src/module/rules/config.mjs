@@ -108,6 +108,7 @@ DarkHeresy.combat = {
         'Shock',
         'Taser',
         'Gauntlet',
+        'Unarmed',
     ],
     armour_type: ['Basic', 'Flak', 'Mesh', 'Carapace', 'Power'],
     characteristics: {

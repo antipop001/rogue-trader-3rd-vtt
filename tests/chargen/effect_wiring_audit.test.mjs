@@ -111,6 +111,12 @@ const CODE_HANDLED = [
     // owned ranged weapons). RT Core p.110 — engine-applied (rewrites a free-text field
     // an AE can't address), must NOT also get an AE. ENGINE-RAPID-RELOAD.
     'Rapid Reload',
+    // Unarmed / natural-weapon damage-formula overrides applied by name on the unarmed
+    // damage path in damage-data.mjs (unarmedDamageProfile → dice + Primitive flag for a
+    // Melee/type:'Unarmed' weapon). RT Core p.122 (Unarmed Master/Warrior) / p.367
+    // (Natural Weapons) / ItS (Improved Natural Weapons) — engine-applied (rewrites the
+    // damage formula an AE can't address), must NOT also get an AE. ENGINE-NATWEAPONS.
+    'Unarmed Master', 'Unarmed Warrior', 'Natural Weapons', 'Improved Natural Weapons',
 ];
 // ENGINE-TRAIT-GRANTS — entries that GRANT other compendium items via `flags.rt.grants`
 // (auto-embedded on the actor by hooks-manager.applyItemGrants). This is a third wiring

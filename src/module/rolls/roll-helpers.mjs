@@ -514,6 +514,56 @@ export function pendingGrants(grants, existingItems) {
     return out;
 }
 
+/**
+ * Unarmed / natural-weapon damage profile (ENGINE-NATWEAPONS). RT 1e overrides the
+ * dice (and the Primitive quality) of an unarmed strike based on the attacker's
+ * talents/traits — the Strength Bonus is added separately by the melee damage path,
+ * so the returned `formula` is the DICE ONLY (no +SB):
+ *
+ *  - Unarmed (default, RT Core p.241): "1d5–3 plus Strength Bonus ... counts as
+ *    Primitive."  → 1d5-3, Primitive.
+ *  - Unarmed Warrior (talent, RT Core p.122): "unarmed attacks do 1d10–3 (+SB) Damage
+ *    instead of the standard 1d5–3 ... still count as having the Primitive quality."
+ *    → 1d10-3, Primitive.
+ *  - Unarmed Master (talent, RT Core p.122): "unarmed combat attacks do 1d10+SB (I)
+ *    Damage and his attacks no longer have the Primitive quality." → 1d10, not Primitive.
+ *  - Natural Weapons (trait, RT Core p.367): "attacks deal 1d10 points of damage plus
+ *    its Strength Bonus ... always count as Primitive." → 1d10, Primitive.
+ *  - Improved Natural Weapons (trait, ItS): "deal 1d10 plus Strength Bonus ... but
+ *    unlike standard Natural Weapons these attacks do not count as Primitive." → 1d10,
+ *    not Primitive.
+ *
+ * Resolution picks the single best applicable profile: a non-Primitive 1d10 (Unarmed
+ * Master / Improved Natural Weapons) > a Primitive 1d10 (Natural Weapons) > 1d10-3
+ * Primitive (Unarmed Warrior) > the 1d5-3 Primitive baseline. Engine-applied by name on
+ * the unarmed-attack damage path (damage-data.mjs) — these talents/traits must NOT also
+ * be given an AE (double-apply guard). `hasTalent` only matches talents, so the caller
+ * passes the actor's talent items and trait items separately.
+ *
+ * @param {Array<{name?: string}>} talents  actor talent items
+ * @param {Array<{name?: string}>} traits   actor trait items
+ * @returns {{formula: string, primitive: boolean, source: string}} damage dice + Primitive flag
+ */
+export function unarmedDamageProfile(talents, traits) {
+    const tset = new Set((Array.isArray(talents) ? talents : [])
+        .map((t) => t?.name && String(t.name).toLowerCase()).filter(Boolean));
+    const trset = new Set((Array.isArray(traits) ? traits : [])
+        .map((t) => t?.name && String(t.name).toLowerCase()).filter(Boolean));
+    // Best: a non-Primitive 1d10.
+    if (tset.has('unarmed master'))
+        return { formula: '1d10', primitive: false, source: 'Unarmed Master' };
+    if (trset.has('improved natural weapons'))
+        return { formula: '1d10', primitive: false, source: 'Improved Natural Weapons' };
+    // Primitive 1d10.
+    if (trset.has('natural weapons'))
+        return { formula: '1d10', primitive: true, source: 'Natural Weapons' };
+    // Primitive 1d10-3.
+    if (tset.has('unarmed warrior'))
+        return { formula: '1d10-3', primitive: true, source: 'Unarmed Warrior' };
+    // Baseline unarmed strike.
+    return { formula: '1d5-3', primitive: true, source: 'Unarmed' };
+}
+
 export async function roll1d100() {
     let formula = '1d100';
     const roll = new Roll(formula, {});

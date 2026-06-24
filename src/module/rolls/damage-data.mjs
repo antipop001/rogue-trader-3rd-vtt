@@ -2,7 +2,7 @@ import { additionalHitLocations, getHitLocationForRoll } from '../rules/hit-loca
 import { calculateAmmoDamageBonuses, calculateAmmoPenetrationBonuses, calculateAmmoSpecials } from '../rules/ammo.mjs';
 import { getCriticalDamage } from '../rules/critical-damage.mjs';
 import { calculateWeaponModifiersDamageBonuses, calculateWeaponModifiersPenetrationBonuses } from '../rules/weapon-modifiers.mjs';
-import { weaponMasterBonus, critDamageBonus, brutalChargeBonus } from './roll-helpers.mjs';
+import { weaponMasterBonus, critDamageBonus, brutalChargeBonus, unarmedDamageProfile } from './roll-helpers.mjs';
 
 export class DamageData {
     template = '';
@@ -109,6 +109,20 @@ export class Hit {
             const bonus = Number(rollFormula) || 0;
             rollFormula = bonus >= 0 ? `1d10+${bonus}` : `1d10${bonus}`;
         }
+
+        // Unarmed / natural-weapon damage override (ENGINE-NATWEAPONS, RT Core p.122/p.241/
+        // p.367). An unarmed strike is a Melee-class weapon of `type: 'Unarmed'`; the dice
+        // (and whether the strike counts as Primitive) come from the attacker's best
+        // applicable talent/trait, not the item. The Strength Bonus is still added by the
+        // melee block below, so the override formula is the dice only.
+        let unarmed = null;
+        if (actionItem.type === 'weapon' && String(actionItem.system.type ?? '').toLowerCase() === 'unarmed') {
+            const talents = sourceActor?.items?.filter((i) => i.type === 'talent') ?? [];
+            const traits = sourceActor?.items?.filter((i) => i.type === 'trait') ?? [];
+            unarmed = unarmedDamageProfile(talents, traits);
+            rollFormula = unarmed.formula;
+        }
+
         this.damageRoll = new Roll(rollFormula, attackData.rollData);
 
         if (attackData.rollData.hasAttackSpecial('Tearing')) {
@@ -138,7 +152,9 @@ export class Hit {
                     rfCount += 1;
                 }
 
-                if (attackData.rollData.hasAttackSpecial('Primitive')) {
+                // Unarmed Master / Improved Natural Weapons remove the Primitive quality
+                // from unarmed strikes (unarmed.primitive === false) — suppress the cap.
+                if (attackData.rollData.hasAttackSpecial('Primitive') && !(unarmed && unarmed.primitive === false)) {
                     const primitive = attackData.rollData.getAttackSpecial('Primitive');
                     if (result.result > primitive.level) {
                         this.modifiers['primitive'] = primitive.level - result.result;

@@ -599,10 +599,31 @@ guard in the spec). Canon: `/mnt/project_data/RT/RT-DOCS/`.
   Heightened Senses talent). Item-create hooks + compendium resolution are Foundry-coupled —
   node gate can't exercise them. (E2E)
 
-- [ ] ENGINE-NATWEAPONS — natural-weapon / unarmed damage-formula overrides: Natural
+- [x] ENGINE-NATWEAPONS — natural-weapon / unarmed damage-formula overrides: Natural
   Weapons, Improved Natural Weapons, Unarmed Master (1d10+SB, no Primitive), Unarmed
   Warrior (1d10−3). Apply point is the unarmed-damage path in `damage-data.mjs`. Pure-JS
-  test on the formula selection; E2E. RT Core / ItS. (ENGINE)
+  test on the formula selection; E2E. RT Core / ItS. (ENGINE) — done iter 45: pure helper
+  `unarmedDamageProfile(talents, traits)` in `roll-helpers.mjs` returns `{formula,
+  primitive, source}` for the attacker's BEST applicable profile — Unarmed Master /
+  Improved Natural Weapons → 1d10 non-Primitive; Natural Weapons → 1d10 Primitive; Unarmed
+  Warrior → 1d10-3 Primitive; baseline → 1d5-3 Primitive (dice only; +SB added by the melee
+  path). Apply point: an unarmed strike is a **Melee-class weapon of `type: 'Unarmed'`**
+  (added 'Unarmed' to `weapon_type` config so the existing `isMelee`/SB/melee path keeps
+  working — class must stay 'Melee', since `isRanged` = `class !== 'melee'`). Wired in
+  `damage-data._calculateDamage`: overrides `rollFormula` before the Roll, and SUPPRESSES
+  the weapon's Primitive cap when the profile is non-Primitive (Unarmed Master / Improved
+  Natural Weapons' "no longer Primitive" benefit). RT Core p.122/p.241/p.367 + ItS. NOT an
+  AE (rewrites the damage formula) → all 4 added to ratchet CODE_HANDLED (double-apply
+  guard; none previously handled in `rolls/`). Node test `unarmed_damage.test.mjs` (8
+  cases). Gate green (build OK, 153 node tests). E2E follow-up below. (ENGINE)
+
+- [ ] E2E-NATWEAPONS — verify on rt-smoke (Playwright): give an actor a Melee-class weapon
+  with `system.type === 'Unarmed'` (carrying a Primitive (X) special) and confirm the attack
+  card's damage dice = 1d5-3 (+SB) baseline; add Unarmed Warrior → 1d10-3 (+SB), still capped
+  by Primitive; add Unarmed Master → 1d10 (+SB) with the Primitive cap GONE; a creature with
+  the Natural Weapons trait → 1d10 (+SB) Primitive; Improved Natural Weapons → 1d10 (+SB) no
+  Primitive. Confirm a non-Unarmed melee weapon is unchanged, and the Strength Bonus is added
+  exactly once. Attack/damage pipeline is Foundry-coupled — node gate can't exercise it. (E2E)
 
 - [ ] AUDIT-CRITIC — Completeness pass: re-run the ratchet, list anything still
   unresolved (unwired and not justified-narrative), confirm no code-handled entry got
