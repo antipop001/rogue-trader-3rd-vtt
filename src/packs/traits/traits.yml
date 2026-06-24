@@ -1273,3 +1273,80 @@ flags:
     rt:
         category: 'Background'
         originStep: 'Kroot'
+---
+data:
+    description: 'The most coveted of Rogue Trader Warrants are those granted in genuine recognition of great deeds performed in service to the Imperium. Such a reward is often not consciously sought and may come as a surprise to the recipient, gifted in a lavish ceremony attended by the great and good of the Imperium''s highest offices. The recipient is likely to have gathered many powerful allies — some might even have forged connections with Space Marine Chapters, sector lords, Admirals or Inquisitors. There is a darker side, however: the sponsor of the granting will often expect some form of recompense, a favour that may not be called in for many decades, and almost certainly at the most inconvenient time. Ship Points: 16, Profit Factor: 2.'
+    source: 'Into the Storm, p.38'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Acquisition: Reward'
+type: 'trait'
+flags:
+    rt:
+        category: 'Background'
+        originStep: 'Warrant'
+---
+data:
+    description: 'While a Warrant of Trade can change hands through overt aggression, a change in title is more likely to occur through underhanded methods — assassination, fraud, and most commonly outright bribery. This might occur when a Rogue Trader has overstepped the limits of his authority and a rival garners sufficient evidence of the transgression to force the Imperium to censure him. In such a case the rival takes power of the existing Warrant and all assets and rights associated with it; a new line is established and the old one slowly dissolved. Ship Points: 12, Profit Factor: 2. (Errata v1.4: formerly named "Bribery".)'
+    source: 'Into the Storm, p.38'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Acquisition: Intrigue'
+type: 'trait'
+flags:
+    rt:
+        category: 'Background'
+        originStep: 'Warrant'
+---
+data:
+    description: 'A Trade Mandate is one of countless administrative instruments employed by the Adeptus Terra — an instrument of strategy by which the division''s policies for managing the unmanageable are drawn up. By way of myriad incomprehensible cogitations, vast armies of scribes and factors plot the needs and means of the Imperium''s worlds. The cogitations have determined that at a particular date, in a particular region, the efforts and services of a Rogue Trader House will be required; the date might be centuries in the future, with entire armies of scribes spending their whole lives selecting the eventual recipient, even one not yet born. Ship Points: 10, Profit Factor: 4.'
+    source: 'Into the Storm, p.38'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Acquisition: Administratum Trade Mandate'
+type: 'trait'
+flags:
+    rt:
+        category: 'Background'
+        originStep: 'Warrant'
+---
+data:
+    description: 'The Ecclesiarchy cannot grant a Warrant of Trade — that privilege lies with the Adeptus Terra and the High Lords — but it holds great influence in the matter. While a Confessor preaches hate and bloodshed to the masses, his agents move amongst the Imperium''s institutions, making promises of favour and wealth to those who aid them and veiled threats to those who obstruct them. One such promise may be the granting of a Warrant of Trade, the confessor''s allies ensuring that individuals with the power to grant it are spoken to in return for certain favours being performed. Ship Points: 8, Profit Factor: 6. (Errata v1.4: formerly named "Ecclesiarchal Bequest".)'
+    source: 'Into the Storm, pp.38-39'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Acquisition: Ministorum Bequest'
+type: 'trait'
+flags:
+    rt:
+        category: 'Background'
+        originStep: 'Warrant'
+---
+data:
+    description: 'Many Warrants of Trade have been granted over the millennia as prizes of war. A powerful and successful lord militant might be promised the charter as inducement to undertake a crusade otherwise considered impossible — a crusade that might take decades and cost millions of lives, but by whose conclusion the lord militant will have earned his Warrant. Occasionally the prize is not won but taken: a powerful servant of the Imperium manoeuvres himself into a position to demand the Warrant as reward for service, or prizes an existing Warrant from an established Dynasty as the culmination of years of plotting. Ship Points: 6, Profit Factor: 8.'
+    source: 'Into the Storm, p.39'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Acquisition: Prize of War'
+type: 'trait'
+flags:
+    rt:
+        category: 'Background'
+        originStep: 'Warrant'
+---
+data:
+    description: 'Some Warrants of Trade have been obtained not by service or any other such means, but by the recipient demanding their granting as a form of blackmail. Although rare, such a situation might arise when a Lord Militant commands armies so vast that he can hold entire regions of the Imperium ransom, the granting of a Warrant being the price he demands for turning his conquests over to the Adeptus Terra. There have also been instances of far subtler manipulation, in which the would-be recipient holds power over an individual of great influence within the Adeptus Terra who is willing to sponsor the granting to keep his secret shame from his peers. Ship Points: 4, Profit Factor: 10.'
+    source: 'Into the Storm, p.39'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Acquisition: Blackmail'
+type: 'trait'
+flags:
+    rt:
+        category: 'Background'
+        originStep: 'Warrant'
+---
+data:
+    description: 'Those who strive to reach the very pinnacles of the Imperium''s power structures frequently stumble before gaining the ultimate power they crave. Such men and women are too dangerous to be allowed the power they seek, but too visible and well connected to quietly remove. The solution is often to grant the troublesome Imperial servant a Warrant of Trade, giving him licence to seek all the power he desires — but to do so far away from the Imperium. The exile is thus furnished with great means but cast out beyond the Emperor''s light, watching always for the enemies who drove him out. Ship Points: 2, Profit Factor: 16.'
+    source: 'Into the Storm, p.39'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Acquisition: Exile'
+type: 'trait'
+flags:
+    rt:
+        category: 'Background'
+        originStep: 'Warrant'

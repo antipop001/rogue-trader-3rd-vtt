@@ -88,10 +88,11 @@ stray talents resolve (TALENT_RESOLVED_FLOOR 72 → 79).
   bumps; Headhunter auto-pass-toxin/beak-quality + Stalker free-action stealth +
   Cunning's +1 Initiative are not AE-expressible. (BG-AUTHOR)
 
-- [ ] BG-010 — Warrant: Acquisition (7): Acquisition: Administratum Trade Mandate,
+- [x] BG-010 — Warrant: Acquisition (7): Acquisition: Administratum Trade Mandate,
   Blackmail, Exile, Intrigue, Ministorum Bequest, Prize of War, Reward. Source:
-  `warrant_and_ship.json`. Narrative chart outcomes — text-faithful items; don't
-  re-grant PF/SP (see spec "do NOT double-apply"). Target TRAIT floor 80. (BG-AUTHOR)
+  `warrant_and_ship.json`. TRAIT_RESOLVED_FLOOR=80. All 7 text-only narrative chart
+  outcomes (ItS pp.38-39); PF/SP already applied by sibling profit_factor/ship_points
+  effects → no AE, no double-grant. (BG-AUTHOR)
 
 - [ ] BG-011 — Warrant: Contacts (5): Contacts: Adeptus Mechanicus, Battlefleet,
   Merchant House, Missionaria Galaxia, Pirates. Source: `warrant_and_ship.json`.
