@@ -843,7 +843,7 @@ guard in the spec). Canon: `/mnt/project_data/RT/RT-DOCS/`.
   actor parent) warns instead of erroring. Item sheet + AE create + duration roll + chat are
   Foundry-coupled — node gate can't exercise them. (E2E)
 
-- [ ] NARRATIVE-RECORD-MODS-AMMO-CONSUM — log every intentionally-unwired
+- [x] NARRATIVE-RECORD-MODS-AMMO-CONSUM — log every intentionally-unwired
   weapon-mod/ammo/consumable entry from `triage.md` AUDIT-004 to
   `.ralph/data-vendor-queue.md` as text-faithful / no-AE: weapon-mod sights/mounts/
   cartridges & ammo-type descriptors (Fire Selector, Forearm Mounting, Melee Attachment,
@@ -855,7 +855,19 @@ guard in the spec). Canon: `/mnt/project_data/RT/RT-DOCS/`.
   Medikit (Advanced), Almanac Astrae Divinitus, Auspex/Scanner, Auto Quill); and the
   flavour/food/utility rows. These packs have NO ratchet coverage (ratchet only spans
   talents/traits/cybernetics) — record in the data-vendor-queue, not the test. Verify each
-  is genuinely text-only/needs-engine before recording. (NARRATIVE)
+  is genuinely text-only/needs-engine before recording. (NARRATIVE) — done iter 51:
+  verified all of weapon-mods/ammo/consumables/tools carry ZERO effects:/conditionalBonuses:
+  blocks (grep) → every recorded entry is genuinely text-only/needs-engine. Logged 7
+  grouped `iter 51 |` lines to `.ralph/data-vendor-queue.md`: weapon-mod sights/mounts/
+  cartridges (+Tox Dispenser left here by iter 50), ammo-type descriptor + Backpack reserve
+  rows, the 7 unwired ItS ammo rounds (damage-override/armour-degrade/conditional — no clean
+  apply point; the engine-resolvable Snare/Airtorch/Toxic were wired iters 46-47), De-Tox/
+  Obscura/Sacred Unguents (activated, NOT among the 8 drugs wired iter 50), item-present
+  skill bonuses (Medikit/etc. — +X WHILE using the item, not a standing char bonus → no
+  clean AE), and the flavour/food/storage rows. Stray `Tools` drug row excluded (own
+  CLEANUP-CONSUM-TOOLS-STRAY task). No pack/code/test change (these packs are outside the
+  ratchet) → gate green (build OK, 166 node tests). RT Core pp.133-135/142-150 + ItS
+  Ch.III/p.131. (NARRATIVE)
 
 - [ ] CLEANUP-CONSUM-TOOLS-STRAY — the `Tools` entry in `consumables.yml` has an empty
   description and `type: drug` — looks like a stray/misfiled row. Confirm against the pack
