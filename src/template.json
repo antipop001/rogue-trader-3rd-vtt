@@ -149,8 +149,7 @@
           "acrobatics": {
             "label": "Acrobatics",
             "characteristics": [
-              "Ag",
-              "S"
+              "Ag"
             ],
             "selectedCharacteristic": "",
             "advance": 0,
@@ -163,9 +162,7 @@
           "awareness": {
             "label": "Awareness",
             "characteristics": [
-              "Per",
-              "Fel",
-              "Int"
+              "Per"
             ],
             "advance": 0,
             "isSpecialist": false,
@@ -291,10 +288,7 @@
           "command": {
             "label": "Command",
             "characteristics": [
-              "Fel",
-              "Int",
-              "S",
-              "WP"
+              "Fel"
             ],
             "advance": 0,
             "isSpecialist": false,
@@ -318,8 +312,7 @@
           "commonLore": {
             "label": "Common Lore",
             "characteristics": [
-              "Int",
-              "Fel"
+              "Int"
             ],
             "advance": 0,
             "isSpecialist": true,
@@ -439,8 +432,7 @@
           "deceive": {
             "label": "Deceive",
             "characteristics": [
-              "Fel",
-              "Int"
+              "Fel"
             ],
             "advance": 0,
             "isSpecialist": false,
@@ -452,8 +444,7 @@
           "demolitions": {
             "label": "Demolitions",
             "characteristics": [
-              "Int",
-              "Ag"
+              "Int"
             ],
             "advance": 0,
             "isSpecialist": false,
@@ -531,8 +522,7 @@
           "forbiddenLore": {
             "label": "Forbidden Lore",
             "characteristics": [
-              "Int",
-              "Fel"
+              "Int"
             ],
             "advance": 0,
             "isSpecialist": true,
@@ -622,9 +612,7 @@
           "inquiry": {
             "label": "Inquiry",
             "characteristics": [
-              "Fel",
-              "Int",
-              "Per"
+              "Fel"
             ],
             "advance": 0,
             "isSpecialist": false,
@@ -636,8 +624,7 @@
           "interrogation": {
             "label": "Interrogation",
             "characteristics": [
-              "WP",
-              "Fel"
+              "WP"
             ],
             "advance": 0,
             "isSpecialist": false,
@@ -649,8 +636,7 @@
           "intimidate": {
             "label": "Intimidate",
             "characteristics": [
-              "S",
-              "WP"
+              "S"
             ],
             "advance": 0,
             "isSpecialist": false,
@@ -686,8 +672,7 @@
           "logic": {
             "label": "Logic",
             "characteristics": [
-              "Int",
-              "Ag"
+              "Int"
             ],
             "advance": 0,
             "isSpecialist": false,
@@ -699,9 +684,7 @@
           "medicae": {
             "label": "Medicae",
             "characteristics": [
-              "Int",
-              "Ag",
-              "Per"
+              "Int"
             ],
             "advance": 0,
             "isSpecialist": false,
@@ -713,8 +696,7 @@
           "navigate": {
             "label": "Navigate",
             "characteristics": [
-              "Int",
-              "Per"
+              "Int"
             ],
             "advance": 0,
             "isSpecialist": true,
@@ -756,9 +738,7 @@
           "performance": {
             "label": "Performance",
             "characteristics": [
-              "Fel",
-              "Int",
-              "Ag"
+              "Fel"
             ],
             "advance": 0,
             "isSpecialist": true,
@@ -825,8 +805,7 @@
           "psyniscience": {
             "label": "Psyniscience",
             "characteristics": [
-              "Per",
-              "WP"
+              "Per"
             ],
             "advance": 0,
             "isSpecialist": false,
@@ -838,8 +817,7 @@
           "scholasticLore": {
             "label": "Scholastic Lore",
             "characteristics": [
-              "Int",
-              "Fel"
+              "Int"
             ],
             "advance": 0,
             "isSpecialist": true,
@@ -947,8 +925,7 @@
           "scrutiny": {
             "label": "Scrutiny",
             "characteristics": [
-              "Per",
-              "Fel"
+              "Per"
             ],
             "advance": 0,
             "isSpecialist": false,
@@ -1026,8 +1003,7 @@
           "security": {
             "label": "Security",
             "characteristics": [
-              "Ag",
-              "Int"
+              "Ag"
             ],
             "advance": 0,
             "isSpecialist": false,
@@ -1063,8 +1039,7 @@
           "sleightOfHand": {
             "label": "Sleight of Hand",
             "characteristics": [
-              "Ag",
-              "Int"
+              "Ag"
             ],
             "advance": 0,
             "isSpecialist": false,
@@ -1154,8 +1129,7 @@
           "techUse": {
             "label": "Tech Use",
             "characteristics": [
-              "Int",
-              "Ag"
+              "Int"
             ],
             "advance": 0,
             "isSpecialist": false,
@@ -1179,9 +1153,7 @@
           "trade": {
             "label": "Trade",
             "characteristics": [
-              "Int",
-              "Ag",
-              "Fel"
+              "Int"
             ],
             "advance": 0,
             "isSpecialist": true,
