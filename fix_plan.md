@@ -10,7 +10,7 @@ CLAUDE.md's old audit list against current code — many are DONE.
 
 ## Active list
 
-- [ ] QA-DH-RULES — Audit `src/module/rules/{homeworlds,backgrounds,divinations,roles,elite-advances}.mjs`: DH2 content still present, what's wired into actors (`backgroundEffects`, aptitude pairs) vs orphaned by the shelved wizard, DH2 leaking into RT actors. Classify dead-code vs active-leak. (QA-AUDIT)
+- [x] QA-DH-RULES — Audited. 3 findings (QA-001..003): DH2 background/homeworld/role/divination pipeline still runs in live `prepareData()` (dormant but latent-leak), `divinations.mjs` = Emperor's Tarot (no RT analog), `elite-advances` dead-store. All DH2 modules confirmed live-imported by `acolyte.mjs` + `config.mjs` but no UI/pack data sets the legacy bio fields. (QA-AUDIT)
 - [ ] QA-DH-SCHEMA — Audit `src/template.json` for DH2-isms: `influence`, `aptitudes`, `threatLevel`, `subtlety`, DH2 `bio` fields, parry-as-skill, unused fields. Which are referenced by code vs dead. (QA-AUDIT)
 - [ ] QA-DH-NAMING — Catalogue `DarkHeresy*` class names (24 files) + "Dark Heresy" log/UI strings + fork cruft. Cosmetic; one rollup finding with the list. (QA-AUDIT)
 - [ ] QA-DH-SKILLS — RT-canon check of the skill list + specialty lists (Common/Forbidden/Scholastic Lore, Trade, Linguistics split) vs RT Core; flag any DH2 drift. (QA-AUDIT)
@@ -23,6 +23,7 @@ CLAUDE.md's old audit list against current code — many are DONE.
 - [ ] QA-SHEET-UI — Sheet fields shown but non-functional; computed-but-not-displayed; no-op controls. (QA-AUDIT)
 - [ ] QA-ACQUISITION — Profit Factor flows + acquisition modifier coverage vs RT Core p.270. (QA-AUDIT)
 - [ ] QA-DATA-QUALITY — NPC math (wounds.max=0, empty weapon `damage`, orphan skills), OCR artifacts in pack descriptions. (QA-AUDIT)
+- [ ] QA-DH-BONUSES-PANEL — `bonuses-panel.hbs` (renders `backgroundEffects.abilities`) is registered as a preload partial (`handlebars-manager.mjs:20`) but is NOT invoked by any sheet template (`{{> ...bonuses}}` appears nowhere). Verify it's truly dead and catalogue other registered-but-uninvoked partials. (QA-AUDIT)
 - [ ] QA-CRITIC — Completeness pass: which dimensions were shallow / which modality wasn't run? Append the gaps as new tasks. (QA-AUDIT)
 
 ## Notes
