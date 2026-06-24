@@ -1,83 +1,65 @@
-# Ralph loop — one task per iteration (effect-wiring audit)
+# Ralph loop — one task per iteration (QA / correctness audit)
 
-You are one iteration of an autonomous build loop on the Rogue Trader 3rd Edition
-Foundry VTT system. Fresh context every time. Do exactly one task, verify, commit, stop.
+You are one iteration of an autonomous QA-audit loop on the Rogue Trader 3rd Edition
+Foundry VTT system. Fresh context every time. Do exactly one audit task, file findings,
+commit, stop. **This is a DISCOVERY loop: you FIND and FILE issues — you do NOT fix**
+(except a trivially-safe, obviously-correct change, and only if the gate stays green).
 
 ## Read first (authority)
-- @fix_plan.md — the next task is the single top unchecked `[ ]` item.
-- @specs/06-effect-wiring-audit.md — the frozen requirements + the triage buckets.
-- @BUGS.md — BUG-001/002/003 + the SWEEP candidate list this loop drives down.
-- @CLAUDE.md — architecture, V2-sheet gotchas, V14 LevelDB cache, deploy loop.
+- @fix_plan.md — the next task is the single top unchecked `[ ]` item (one audit dimension).
+- @specs/07-qa-audit.md — the finding format, classification, hard rules, and dimensions.
+- @BUGS.md — already-FIXED engine bugs (BUG-001…010). Do NOT re-file these.
+- @QA_FINDINGS.md — findings filed so far. Do NOT duplicate. Append new ones (QA-NNN).
+- @CLAUDE.md — architecture + the "2026-05-13 System audit" / "Not yet done" maps (a
+  STARTING point — many of those items are now DONE; re-verify against current code).
 
-The focus of this loop is **finding and fixing places where a compendium entry
-DESCRIBES a mechanical effect the system never applies** (e.g. Paranoia "+2
-Initiative", Weapon Master "+10/+2/+2 with chosen weapon class"). Wire each gap the
-way the system already wires effects — ActiveEffect / `flags.rt.conditionalBonuses` /
-`pickable`, or engine code — and prove the bonus reaches the roll. Do NOT invent or
-rebalance effects; only wire what the book describes (cite `/mnt/project_data/RT/
-RT-DOCS/`).
+The goal: surface (a) leftover **Dark Heresy 2e** mechanics that should be RT 1e, and
+(b) general correctness/automation gaps — **described in rules/data/UI but the engine
+doesn't do it** ("not automated but should be"). Canon: `/mnt/project_data/RT/RT-DOCS/`.
 
-## THE HARD RULE — never double-apply
-Talents already applied BY NAME in `src/module/rolls/{damage-data,action-data}.mjs`
-(Crushing Blow, Mighty Shot, Blademaster, Eye of Vengeance, Hammer Blow, Concussive,
-True Grit, Deathdealer — grep to confirm the live set) must NOT also get an AE/
-conditionalBonus. That recreates the 0.7.13 double-application bug. If unsure whether
-a bonus is already applied, grep `rolls/` + `documents/` BEFORE wiring.
+## The rule: ONE dimension
+1. Pick the single top unchecked item in @fix_plan.md. Audit ONLY that dimension.
+2. grep + READ the relevant code/data. For each candidate issue, **VERIFY it's real**:
+   open the file:line, confirm the gap, and (for a rules/automation claim) find the RT
+   canon that says what SHOULD happen. **No speculation — if you can't confirm, don't file.**
+3. Append each verified issue to @QA_FINDINGS.md as a `QA-<NNN>` block in the
+   spec's format (area / kind / severity / evidence file:line / canon / gap / fix).
+4. Keep context lean (<100k): use a subagent for wide greps / large files; consume its
+   summary. Read excerpts, not whole files.
 
-## The rule: ONE task
-1. Pick the single top unchecked item in @fix_plan.md. Do only that.
-2. Classify before wiring (code-handled / always-on / conditional / narrative /
-   needs-engine — see specs/06) and implement the smallest correct fix for that bucket.
-3. Keep context lean (< 100k): for big files (`talents.yml`, `damage-data.mjs`,
-   `acolyte.mjs`) or wide greps, spawn a subagent and consume its summary.
+## Hard rules
+- **Verify before filing.** Every finding cites a real file:line you read + (for rules)
+  the RT canon ref. No "probably", no hallucinated line numbers.
+- **No duplicates.** Skip anything already in `BUGS.md` (fixed) or `QA_FINDINGS.md`.
+- **Discovery, not fixing.** Default = file it. Only make a code change for a
+  trivially-safe, unambiguous fix (dead DH2 string, one-line data typo) AND only if
+  `build:check` + `npm test` stay green. Anything needing rules judgement → file, don't fix.
+- Classify honestly: `not-a-bug` is a valid kind (record that you checked + it's fine).
 
-## Architecture landmines (a green gate does NOT license violating these)
-- Wire into the EXISTING packs (`talents`/`traits`/`cybernetics`/…). The `.db` is a
-  build artifact rebuilt by `build:check` — hand-edit only the `.yml`.
-- AE convention: copy the talents-pack shape (`mode 2` on
-  `system.{characteristics|skills}.<k>.modifier`; effect needs a unique 16-char `_id`).
-  Situational → `conditionalBonuses`. "(choose one)" → `pickable`. See specs/06.
-- Engine fixes touch Foundry-coupled code (`acolyte.mjs`, `base-actor.mjs`, `rolls/*`)
-  the node gate can't fully run — implement carefully, add any extractable pure-JS
-  test, and append an E2E follow-up item.
-- Do NOT change DoS / combat hit-count conventions beyond the flagged BUG-001 DoF fix.
-
-## Backpressure (rejected unless the gate is green) — IN ORDER
-1. `npm run build:check` — must exit 0 (compiles packs; catches malformed YAML/AE).
-2. `npm test` — `node --test tests/chargen/*.test.mjs` — must pass. The wiring ratchet
-   (`tests/chargen/effect_wiring_audit.test.mjs`) validates AE/conditionalBonus shape
-   for every effect and asserts `WIRED_EXPECTED` names carry wiring; raise it as you go.
-   New extractable logic ships with a node test.
-If either fails: discard ALL your edits (`git checkout -- .` then `git clean -fd`; keep
-`.ralph/`), append a reflection to `.ralph/errors.log`, commit
-`ralph(iter <N>): REJECTED <task> — <cause>`, confirm clean tree, stop.
-
-## On every authored change
-The gate cannot verify RT-rules correctness or that a bonus reaches the live roll. So
-append one line to `@.ralph/data-vendor-queue.md` (`iter N | <pack/file> → what wired
-→ REQ-ID → canon cite`) and cite the RT-DOCS page in each `source:`/AE. (PROC-003.)
+## Backpressure (gate) — IN ORDER
+1. `npm run build:check` — must exit 0 (catches any accidental breakage from a trivial fix).
+2. `npm test` — must pass.
+Pure-audit iterations (only edit `QA_FINDINGS.md` + `fix_plan.md`) pass trivially — that
+is expected; the product is the findings. If you made a trivial fix and the gate fails,
+**discard ALL edits to source** (`git checkout -- .` then `git clean -fd`, keep `.ralph/`
+and your `QA_FINDINGS.md`/`fix_plan.md` additions if separable; if not, drop the fix and
+just file the finding instead), append a note to `.ralph/errors.log`, and continue as a
+file-only iteration.
 
 ## On success
 - `git add -A` and commit:
   ```
-  ralph(iter <N>): <one-line what changed>
+  ralph(iter <N>): QA audit <dimension> — <K> findings (QA-<a>..<b>)
 
-  Requirement: <REQ-ID(s)>
-  Verified: build OK, node test <count> passed (<key test>)
+  Requirement: QA-AUDIT
+  Verified: build OK, node test <count> passed
 
   Co-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>
   ```
   `<N>` from `$RALPH_ITER` (fallback: count prior `ralph(iter` commits + 1).
-- In @fix_plan.md: check the item `[x]`; AUDIT tasks APPEND the per-entry WIRE-/
-  NARRATIVE- tasks they discovered. Then stop.
-
-## errors.log format (on failure)
-```
-## iter <N> · <UTC> · <task>
-cause: <gate + error>
-reflection: <why + next attempt>
-```
+- In @fix_plan.md: check the item `[x]`; APPEND any newly-discovered sub-areas as new
+  audit tasks. Then stop.
 
 ## Stop condition
-If @fix_plan.md has no unchecked `[ ]` items (all left is Notes/Out-of-scope), create
-empty `.ralph/STOP` and exit without committing.
+If @fix_plan.md has no unchecked `[ ]` items (all dimensions audited + the critic pass
+found nothing new), create empty `.ralph/STOP` and exit without committing.
