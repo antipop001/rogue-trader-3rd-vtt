@@ -531,3 +531,48 @@ Format per finding:
 - canon: RT Core p.270 (`:3428-3434`, `:3510-3514`) — PF is shared dynasty-wide; craftsmanship modifiers as listed.
 - gap: none — these aspects are faithful. The acquisition defects are confined to the Availability table (QA-052), Scale tiers (QA-053), Commerce scalar (QA-054), and the missing ship-component path (QA-055).
 - fix: n/a · autofixable: n/a
+
+### QA-057 — 27 NPCs have `wounds.max: 0` (no wound track; many are real combatants, not swarms)
+- area: data-quality
+- kind: data-quality
+- severity: P1 (NPC unusable in combat — Assign Damage / wound tracking has nothing to subtract from)
+- evidence: 27 NPC actors across the supplement packs carry `system.wounds: { max: 0, value: 0 }`. Confirmed real combatants, not swarms: `src/packs/thesoulreaver-npcs/thesoulreaver-npcs.yml:3987` **Wych** (WS 61, BS 41, etc.) with `wounds.max: 0` at `:4050`; same file `Hekatrix Bloodbride`; `src/packs/thekoronusbestiary-npcs/thekoronusbestiary-npcs.yml` `Howling Banshee`, `Sand Tiger`; `src/packs/starsofinequity-npcs/starsofinequity-npcs.yml:59` Apex Predator, `Shadowed Stalker`, `Venomous Terror`, `Representative`; `src/packs/faithandcoin-npcs/faithandcoin-npcs.yml:89,337,483,674`. Full enumeration via a yaml scan of `src/packs/*-npcs/*.yml` → 27 with `wounds.max==0`.
+- canon: RT Core — every creature stat block lists a Wounds value; the engine's damage pipeline (`assign-damage-data.mjs`, BUG-005) reduces `wounds.value`/`max`. A 0 Wounds combatant dies to any hit / can't be tracked. The Wych (Soul Reaver) and Howling Banshee (Koronus Bestiary) have published Wound totals in their source stat blocks.
+- gap: Upstream OCR/extraction (`tools/npc_pipeline/`) failed to parse the Wounds line for these 27 NPCs, leaving a 0 that the system has no way to know is wrong. CLAUDE.md 0.7.25 flagged "27 NPCs with wounds.max=0" as a known upstream bug — still unfixed and never filed as a tracked finding.
+- fix: Re-extract the Wounds value for the 27 affected NPCs from their source stat blocks (re-run `extract_all_npcs.py` with a Wounds-line fix, or hand-patch the 27). · autofixable: no (needs source-book values)
+
+### QA-058 — 3 NPCs have an all-zero characteristic block (every stat base 0 → unrollable)
+- area: data-quality
+- kind: data-quality
+- severity: P1 (NPC non-functional — every characteristic/skill test resolves against 0)
+- evidence: 3 NPCs whose entire `system.characteristics` block is `{ base: 0, unnatural: 0 }` for all nine stats: `src/packs/starsofinequity-npcs/starsofinequity-npcs.yml:10703` **Representative** (chars `:10717-10741`, also `wounds.max: 0`); `src/packs/thenavisprimer-npcs/thenavisprimer-npcs.yml:8847` **The Luminary** (skills present but every governing characteristic is 0); `:10537` **Plaguebearer**. Verified by yaml scan: exactly these 3 have all-zero characteristics.
+- canon: RT Core — every NPC/creature has a characteristic profile (WS/BS/S/T/Ag/Int/Per/WP/Fel). A 0 in all nine means `bonus = floor(0/10) = 0`, so every test target is the flat modifier only.
+- gap: Extraction produced placeholder zero stat blocks for these three — either the source entry is a narrative/abstract entity that shouldn't be an Actor, or the stat table failed to parse. Either way they ship as broken playable Actors.
+- fix: Either populate the source-book characteristics, or remove/re-tag these as non-statblock entries. · autofixable: no (needs source values or a design call)
+
+### QA-059 — 289 NPC-embedded weapon items have empty `damage`; 76 weapon "items" are OCR description-blobs mis-parsed as weapons
+- area: data-quality
+- kind: data-quality
+- severity: P1 (natural-weapon attacks roll no damage; junk items clutter sheets)
+- evidence: A yaml scan of `src/packs/*-npcs/*.yml` finds **289** embedded `type: weapon` items whose `system.damage` is `''`. Confirmed non-functional: `src/packs/starsofinequity-npcs/starsofinequity-npcs.yml:164` **Oversized claws** → `damage: ''`, `penetration: ''`, `class: ''`, `description: ''` (a natural weapon with no profile at all). Many are natural weapons (Fangs, Horns, Trample, Cruel talons, Barbed Tail). Separately, **76** embedded "weapon" names are OCR blobs — the inline weapon spec + the next NPC's description got swept into one item *name*: `:557` `name: 'or vicious beak (Melee; 1d10+4; Pen 0; Primitive) # Shadowed Stalker The most dangerous xenos beasts are not always…'` (counted via `grep` for names containing `(Melee;` / ` # ` / `Pen N` across the NPC packs → 76).
+- canon: RT Core creature stat blocks give each natural weapon a damage profile (e.g. claws `1d10+SB R`). The attack pipeline (`damage-data.mjs`) rolls `system.damage`; an empty string yields no damage roll.
+- gap: The NPC-pipeline inline-weapon parser (`tools/npc_pipeline/build_npc_yaml.py`) failed to populate `damage`/`penetration` for these natural weapons and, for the 76 blobs, mis-split the markdown so a weapon spec + trailing prose became a single item name. CLAUDE.md 0.7.25 noted "261 weapon items with empty damage field" as a known upstream bug — the count is now 289 (NPC-embedded) and still unaddressed. NOTE not-a-bug: the 9 empty-damage items in the standalone `weapons` pack (`Grenade Launcher (Mezoa/Voss)`, `Auto-Launcher`, `Missile Launcher (Locke/Retobi)`, `Blind/Hallucinogen/Smoke Grenade`) are *correctly* empty — launchers take their damage from the loaded munition and effect grenades deal no damage.
+- fix: Re-run the inline-weapon extraction with a fixed name/spec splitter and damage-field population; hand-verify the 76 blob items. · autofixable: no (needs source re-extraction)
+
+### QA-060 — Orphan pre-0.7.17 skill keys still on PoC NPCs (dead data; guarded, harmless)
+- area: data-quality
+- kind: data-quality
+- severity: P3 (no runtime effect — a defensive guard skips them)
+- evidence: `src/packs/npcs/npcs.yml` still carries removed consolidated skill keys: `linguistics` (`:485,1416`), `operate` (`:491`), `stealth` (`:493,1418,1771`), `athletics` (`:1408`) under Eldar Corsair / Kroot Mercenary skill blocks (7 instances). The 0.7.17/0.7.18 skill split removed these keys from `template.json`. The guard `src/module/documents/acolyte.mjs:446` `if (!skill.characteristic && (!Array.isArray(skill.characteristics) || skill.characteristics.length === 0)) continue;` skips them so `_computeSkills` doesn't abort.
+- canon: n/a — code/data smell. RT 1e split these into `climb`/`swim`, `concealment`/`silentMove`/`shadowing`, `speakLanguage`/…, `drive`/`pilot` (CLAUDE.md 0.7.17/0.7.18).
+- gap: Orphan keys are inert (guarded) but carry stale advance data that will never surface on the sheet; only the PoC `npcs.yml` pack retains them (the 334-NPC supplement packs were rebuilt post-split).
+- fix: Strip the orphan keys from `src/packs/npcs/npcs.yml` (4 xenos PoC NPCs), or regenerate that pack through the current pipeline. · autofixable: yes (data deletion, guard already protects)
+
+### QA-061 — OCR footnote daggers (†) left in NPC gear/name fields
+- area: data-quality
+- kind: cosmetic
+- severity: P2 (cosmetic — clutters equipment display)
+- evidence: 16 `†` occurrences across `src/packs/*-npcs/*.yml`, mostly in `rawGear`/`name` strings: `src/packs/edgeoftheabyss-npcs/edgeoftheabyss-npcs.yml:3087` `name: Stryxis Ghost-field† and robes`; `src/packs/starsofinequity-npcs/starsofinequity-npcs.yml:6098` `rawGear: Dispersal field†, 2 smoke grenades…`; `src/packs/thekoronusbestiary-npcs/thekoronusbestiary-npcs.yml:7312` `Swooping Hawk Wings††, …`; `:11233` `Kustom Force Field†††…`; `src/packs/thesoulreaver-npcs/thesoulreaver-npcs.yml:4623` `dominion mask† †Dominion Mask: The wearer…`.
+- canon: n/a — OCR artifact. The daggers are PDF footnote markers that point to a rules note printed elsewhere; they carry no in-app meaning.
+- gap: Footnote daggers survived extraction into item names/gear lists, rendering literally on sheets. Some (the Soul Reaver entry) also concatenated the footnote *body* onto the gear string.
+- fix: Strip standalone `†`/`††`/`†††` markers from item names and `rawGear` (and detach concatenated footnote bodies into the description). · autofixable: yes (string cleanup)
