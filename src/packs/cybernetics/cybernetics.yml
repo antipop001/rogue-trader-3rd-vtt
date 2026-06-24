@@ -202,12 +202,44 @@ data:
         intuition to vast reams of data far beyond the capabilities of a normal man.
         This implant grants the user a +10 bonus to any Literacy, Logic, or Scholastic
         Lore Tests.
-    source: Rogue Trader Core Rulebook
+    source: Rogue Trader Core Rulebook, p.132
     backpack:
         inBackpack: false
 img: systems/rogue-trader-3rd/icons/items/buckets/cyber-implant-system.png
 name: Calculus Logi Upgrade
 type: cybernetic
+effects:
+- _id: CalcLogiUpgrd001
+  name: Calculus Logi Upgrade
+  img: systems/rogue-trader-3rd/icons/items/buckets/cyber-implant-system.png
+  description: '+10 Literacy, Logic, Scholastic Lore — RT Core p.132'
+  origin: ''
+  disabled: false
+  transfer: true
+  tint: null
+  statuses: []
+  duration:
+    startTime: null
+    seconds: null
+    combat: null
+    rounds: null
+    turns: null
+    startRound: null
+    startTurn: null
+  changes:
+  - key: system.skills.literacy.modifier
+    mode: 2
+    value: '10'
+    priority: null
+  - key: system.skills.logic.modifier
+    mode: 2
+    value: '10'
+    priority: null
+  - key: system.skills.scholasticLore.modifier
+    mode: 2
+    value: '10'
+    priority: null
+  flags: {}
 ---
 data:
     craftsmanship: common
@@ -348,12 +380,40 @@ data:
         may be used to gain a $+10$ bonus to Interrogation Tests. This mechadendrite
         may be shoulder or sternum-mounted. A character must have the appropriate
         Mechadendrite Use talent to operate this implant.
-    source: Rogue Trader Core Rulebook
+    source: Rogue Trader Core Rulebook, p.134
     backpack:
         inBackpack: false
 img: systems/rogue-trader-3rd/icons/items/buckets/cyber-mechadendrite.png
 name: Medicae Mechadendrite
 type: cybernetic
+effects:
+- _id: MedicaeMechdnAE1
+  name: Medicae Mechadendrite
+  img: systems/rogue-trader-3rd/icons/items/buckets/cyber-mechadendrite.png
+  description: '+10 Medicae, +10 Interrogation — RT Core p.134'
+  origin: ''
+  disabled: false
+  transfer: true
+  tint: null
+  statuses: []
+  duration:
+    startTime: null
+    seconds: null
+    combat: null
+    rounds: null
+    turns: null
+    startRound: null
+    startTurn: null
+  changes:
+  - key: system.skills.medicae.modifier
+    mode: 2
+    value: '10'
+    priority: null
+  - key: system.skills.interrogation.modifier
+    mode: 2
+    value: '10'
+    priority: null
+  flags: {}
 ---
 data:
     craftsmanship: common
@@ -444,12 +504,36 @@ data:
         be tinted a variety of different colours, depending on the controller's whim.
         This mechadendrite may be shoulder or sternum-mounted. A character must have
         the appropriate Mechadendrite Use talent to operate this implant.
-    source: Rogue Trader Core Rulebook
+    source: Rogue Trader Core Rulebook, p.134
     backpack:
         inBackpack: false
 img: systems/rogue-trader-3rd/icons/items/buckets/cyber-mechadendrite.png
 name: Optical Mechadendrite
 type: cybernetic
+effects:
+- _id: OpticalMechdnAE1
+  name: Optical Mechadendrite
+  img: systems/rogue-trader-3rd/icons/items/buckets/cyber-mechadendrite.png
+  description: '+10 all Perception-based Tests — RT Core p.134 (night +20 is a conditionalBonus, WIRE-CYBER-COND)'
+  origin: ''
+  disabled: false
+  transfer: true
+  tint: null
+  statuses: []
+  duration:
+    startTime: null
+    seconds: null
+    combat: null
+    rounds: null
+    turns: null
+    startRound: null
+    startTurn: null
+  changes:
+  - key: system.characteristics.perception.modifier
+    mode: 2
+    value: '10'
+    priority: null
+  flags: {}
 ---
 data:
     craftsmanship: common
@@ -479,12 +563,36 @@ data:
         invaluable abilities for a sage. While somewhat disquieting in appearance,
         they are viewed with favour by hive-world scholars and lexmechanics. This
         implant gives the user a +10 bonus to all Investigation Skill Tests.
-    source: Rogue Trader Core Rulebook
+    source: Rogue Trader Core Rulebook, p.134
     backpack:
         inBackpack: false
 img: systems/rogue-trader-3rd/icons/items/buckets/cyber-implant-system.png
 name: Scribe-Tines
 type: cybernetic
+effects:
+- _id: ScribeTinesAE001
+  name: Scribe-Tines
+  img: systems/rogue-trader-3rd/icons/items/buckets/cyber-implant-system.png
+  description: '+10 all "Investigation" Tests — RT 1e has no Investigation skill; remapped to Inquiry. RT Core p.134'
+  origin: ''
+  disabled: false
+  transfer: true
+  tint: null
+  statuses: []
+  duration:
+    startTime: null
+    seconds: null
+    combat: null
+    rounds: null
+    turns: null
+    startRound: null
+    startTurn: null
+  changes:
+  - key: system.skills.inquiry.modifier
+    mode: 2
+    value: '10'
+    priority: null
+  flags: {}
 ---
 data:
     craftsmanship: common
@@ -550,12 +658,36 @@ data:
         Tech-Priest that rely on a sense of smell gain a +10 bonus. Finally, the
         mechadendrite contains a cutting blade. This counts as a knife with the
         Defensive quality and Mono upgrade.
-    source: Rogue Trader Core Rulebook
+    source: Rogue Trader Core Rulebook, p.134
     backpack:
         inBackpack: false
 img: systems/rogue-trader-3rd/icons/items/buckets/cyber-mechadendrite.png
 name: Utility Mechadendrite
 type: cybernetic
+effects:
+- _id: UtilityMechdnAE1
+  name: Utility Mechadendrite
+  img: systems/rogue-trader-3rd/icons/items/buckets/cyber-mechadendrite.png
+  description: '+10 all Tech-Use Tests (counts as a combitool) — RT Core p.134'
+  origin: ''
+  disabled: false
+  transfer: true
+  tint: null
+  statuses: []
+  duration:
+    startTime: null
+    seconds: null
+    combat: null
+    rounds: null
+    turns: null
+    startRound: null
+    startTurn: null
+  changes:
+  - key: system.skills.techUse.modifier
+    mode: 2
+    value: '10'
+    priority: null
+  flags: {}
 ---
 data:
     craftsmanship: common

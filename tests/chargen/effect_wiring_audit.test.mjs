@@ -38,6 +38,12 @@ const WIRED_EXPECTED = [
     { name: 'Foresight', kind: 'cond' },
     { name: 'Sturdy', kind: 'cond' },
     { name: 'Wary', kind: 'ae' },
+    // AUDIT-003 cybernetics (WIRE-CYBER-AE) — always-on AE on Common-baseline bonuses
+    { name: 'Calculus Logi Upgrade', kind: 'ae' },
+    { name: 'Optical Mechadendrite', kind: 'ae' },
+    { name: 'Medicae Mechadendrite', kind: 'ae' },
+    { name: 'Scribe-Tines', kind: 'ae' },
+    { name: 'Utility Mechadendrite', kind: 'ae' },
 ];
 // Already applied by name in src/module/rolls/* (or documents/acolyte.mjs) — must NOT
 // also be AE'd. Lightning Reflexes is computed in acolyte.mjs (Initiative ×AgB term)

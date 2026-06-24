@@ -284,7 +284,7 @@ guard in the spec). Canon: `/mnt/project_data/RT/RT-DOCS/`.
 
 ### AUDIT-003 follow-ups (`cybernetics`; see `loops/effects-audit/triage.md` AUDIT-003)
 
-- [ ] WIRE-CYBER-AE — always-on AEs on 5 cybernetics (Common-baseline unconditional
+- [x] WIRE-CYBER-AE — always-on AEs on 5 cybernetics (Common-baseline unconditional
   bonuses), copying the talents-pack AE shape (unique 16-char `_id`, `mode 2` on
   `system.{characteristics|skills}.<k>.modifier`, `transfer` default): Calculus Logi
   Upgrade (+10 `skills.{literacy,logic,scholasticLore}.modifier`), Optical Mechadendrite
@@ -292,7 +292,23 @@ guard in the spec). Canon: `/mnt/project_data/RT/RT-DOCS/`.
   `skills.{medicae,interrogation}.modifier`), Scribe-Tines (+10 `skills.inquiry.modifier`
   — "Investigation" remaps to `inquiry`; confirm vs `scrutiny` against the skill list),
   Utility Mechadendrite (+10 `skills.techUse.modifier`). Cite RT Core p.131-135 in each
-  `source:`/AE. Add the 5 names to ratchet `WIRED_EXPECTED` (kind ae). (WIRE)
+  `source:`/AE. Add the 5 names to ratchet `WIRED_EXPECTED` (kind ae). (WIRE) — done iter
+  27: 5 AEs added (mode 2; _ids CalcLogiUpgrd001/MedicaeMechdnAE1/OpticalMechdnAE1/
+  ScribeTinesAE001/UtilityMechdnAE1); each `source:` now cites the book page (Calculus
+  Logi p.132, the 4 mechadendrites/Scribe-Tines p.134) verified against RT-DOCS CoreBook
+  markdown. Scribe-Tines "+10 all Investigation Tests" remapped to `inquiry` (RT 1e has
+  no Investigation skill) — flagged for review in the data-vendor-queue. Optical's night
+  +20 vision and the conditional cybernetics left for WIRE-CYBER-COND. None in
+  CODE_HANDLED (no double-apply). Added the 5 to ratchet WIRED_EXPECTED (kind ae). Gate
+  green (build OK, 72 node tests). E2E follow-up below. (WIRE)
+
+- [ ] E2E-CYBER-AE — verify on rt-smoke (Playwright): an actor carrying each of the 5
+  cybernetic items shows the +10 reaching the relevant value — Calculus Logi → Literacy/
+  Logic/Scholastic Lore skill totals; Medicae → Medicae/Interrogation; Optical → displayed
+  Perception characteristic; Scribe-Tines → Inquiry; Utility → Tech-Use — vs the same actor
+  without the item (the item AE transfers via `_computeSkills`/characteristic modifier
+  two-pass). Confirm the scholasticLore (specialist) speciality rolls also pick up the base
+  +10. Foundry-coupled — node gate can't exercise it. (E2E)
 
 - [ ] WIRE-CYBER-COND — `flags.rt.conditionalBonuses` on 4 cybernetics: Bionic
   Respiratory System (+20 toughness "resisting airborne toxins/gas"), Manipulator
