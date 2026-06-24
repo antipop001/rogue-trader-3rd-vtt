@@ -26,8 +26,9 @@ guard in the spec). Canon: `/mnt/project_data/RT/RT-DOCS/`.
   Initiative rolls"). Pure-JS test on the compute helper if extractable; E2E follow-up.
   (ENGINE)
 
-- [ ] FIX-DOF — BUG-001: drop `1 +` from `action-data.mjs:278` (DoF = tens diff). Add a
-  pure-JS test over `getDegree`-based dof. Do NOT touch DoS (line 226). (DoF)
+- [x] FIX-DOF — BUG-001: dropped `1 +` from `action-data.mjs:278` (DoF = tens diff).
+  Done by hand 2026-06-23 (verified 61/52→1, 92/62→3). DoS (line 226) left as-is — a
+  separate combat-pass task. (DoF)
 
 - [ ] ENGINE-WEAPONCLASS — BUG-003 Weapon Master / Crack Shot: extend the
   conditional-bonus (or attack/damage) path to apply a bonus when the used weapon's

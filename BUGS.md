@@ -5,6 +5,10 @@ compendium content, and its gate (`build:check` + `tests/chargen`) can't verify
 engine/roll fixes. Fix these directly, or in a dedicated follow-up loop.
 
 ## BUG-001 — Degrees of Failure (and Success) inflated by 1
+- **Status: ✅ DoF FIXED 2026-06-23** — dropped the `1 +` at `action-data.mjs:278`
+  (DoF = tens difference). Verified: 61 vs 52 → 1, 92 vs 62 → 3; build + node tests
+  green. **DoS (line 226) intentionally left as `1 +`** — the combat additional-hits
+  math depends on it; correcting DoS is a separate combat-pass task (still open).
 - **Symptom:** a Skill/Characteristic test FAIL shows one extra Degree of Failure.
   Observed 2026-06-23 on Tech Use cards: roll **61** vs target **52** → shows DoF
   **2** (should be **1**); roll **92** vs target **62** → shows DoF **4** (should be

@@ -275,7 +275,11 @@ export class ActionData {
 
             } else {
                 this.rollData.dos = 0;
-                this.rollData.dof = 1 + getDegree(this.rollData.roll.total, this.rollData.modifiedTarget);
+                // RT 1e: Degrees of Failure = difference in the tens digit (RT Core
+                // p.22). The leading `1 +` was a DH2 carryover that over-counted by one
+                // (BUG-001). NB: DoS above (line ~226) keeps its `1 +` on purpose — the
+                // combat additional-hits math is written against that convention.
+                this.rollData.dof = getDegree(this.rollData.roll.total, this.rollData.modifiedTarget);
 
                 if (this.rollData.isThrown) {
                     this.addEffect('Deviation', `The attack deviates [[ 1d5 ]]m off course to the ${scatterDirection()}!`);
