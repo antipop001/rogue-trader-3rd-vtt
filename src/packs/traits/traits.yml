@@ -1108,3 +1108,69 @@ flags:
     rt:
         category: 'Background'
         originStep: 'Ork'
+---
+data:
+    description: 'Some Orks possess a natural affinity for vehicles, learning quickly how to get them to go as fast as possible. Drivas gain Drive (Ground Vehicle) (Ag), or Pilot (Flyer or Space Craft) (Ag) as a Trained Basic Skill.'
+    source: 'Into the Storm, p.62'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Know-Wotz: Driva'
+type: 'trait'
+flags:
+    rt:
+        category: 'Background'
+        originStep: 'Ork'
+---
+data:
+    description: 'Essential for survival in the early years of an Ork settlement, Huntas are skilled at tracking down prey for their tribe—a skill that remains useful when they start hunting enemies instead of food. Huntas gain Tracking (Int) as a Trained Skill.'
+    source: 'Into the Storm, p.62'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Know-Wotz: Hunta'
+type: 'trait'
+flags:
+    rt:
+        category: 'Background'
+        originStep: 'Ork'
+---
+data:
+    description: 'A common innate skill, some Orks possess a natural knack for making machines work. Mekboyz gain Tech-Use (Int) as a Trained Skill. As an Oddboy, a Mekboy also gains +5 Intelligence (Errata v1.4).'
+    source: 'Into the Storm, p.62'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Know-Wotz: Mekboy (Oddboy)'
+type: 'trait'
+flags:
+    rt:
+        category: 'Background'
+        originStep: 'Ork'
+---
+data:
+    description: 'Invaluable to other Orks, Painboys are Orks with an understanding of medicine. Painboys gain Medicae (Int) as a Trained Basic Skill. As an Oddboy, a Painboy also gains +5 Intelligence (Errata v1.4).'
+    source: 'Into the Storm, p.62'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Know-Wotz: Painboy (Oddboy)'
+type: 'trait'
+flags:
+    rt:
+        category: 'Background'
+        originStep: 'Ork'
+---
+data:
+    description: 'Possessed of a natural inclination to goad slaves and wild animals into the service of the Orks, Runtherds—also known as Slavers—gain Wrangling (Int) as a Trained Basic Skill.'
+    source: 'Into the Storm, p.62'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Know-Wotz: Runtherd (Oddboy)'
+type: 'trait'
+flags:
+    rt:
+        category: 'Background'
+        originStep: 'Ork'
+---
+data:
+    description: 'Aiding the Huntas during an Ork tribe''s formative years, Trappas are skilled at setting traps and guiding their kin through the most dangerous environments. Trappas gain Survival (Int) as a Trained Basic Skill.'
+    source: 'Into the Storm, p.62'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Know-Wotz: Trappa'
+type: 'trait'
+flags:
+    rt:
+        category: 'Background'
+        originStep: 'Ork'

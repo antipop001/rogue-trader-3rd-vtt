@@ -73,9 +73,12 @@ stray talents resolve (TALENT_RESOLVED_FLOOR 72 → 79).
   (conditionalBonus +20 Barter vs Orks). 4 text-only — skill-training choices + talent
   grants (Blood Axes/Death Skulls/Evil Suns/Snakebites) not AE-expressible. (BG-AUTHOR)
 
-- [ ] BG-008 — Ork Know-Wotz traits (6): Know-Wotz: Driva, Know-Wotz: Hunta, Know-Wotz:
+- [x] BG-008 — Ork Know-Wotz traits (6): Know-Wotz: Driva, Know-Wotz: Hunta, Know-Wotz:
   Mekboy (Oddboy), Know-Wotz: Painboy (Oddboy), Know-Wotz: Runtherd (Oddboy), Know-Wotz:
-  Trappa. Source: `careers.json`. Target TRAIT floor 68. (BG-AUTHOR)
+  Trappa. Source: `careers.json`. TRAIT_RESOLVED_FLOOR=68. ALL SIX TEXT-ONLY — each
+  Know-Wotz's Trained-Skill grant + the Mekboy/Painboy +5 Int are applied by SIBLING
+  grant_skill/char_mod effects; an AE would double-apply (confirmed in commit.mjs), so
+  faithful canon text only. (BG-AUTHOR)
 
 - [ ] BG-009 — Kroot Kindred traits (5): Kindred: Bold Hunter, Kindred: Cunning Hybrid,
   Kindred: Greenskin Hybrid, Kindred: Headhunter, Kindred: Stalker. Source:
@@ -101,6 +104,11 @@ stray talents resolve (TALENT_RESOLVED_FLOOR 72 → 79).
 - [ ] BG-014 — Warrant: Age + Renown (8): Warrant Age: Age of Apostasy, Age of
   Redemption, The Age of Rebirth, The Forging, The Waning; Warrant Renown: Famous,
   Infamous, Unknown. Source: `warrant_and_ship.json`. Target TRAIT floor 103. (BG-AUTHOR)
+
+- [ ] BG-FIX-001 — `Klan: Goffs` (BG-007) carries an AE +3 Strength, but careers.json
+  grants Goffs a SIBLING `char_mod S+3` in the same option → committing via chargen
+  double-applies (+6 Str). Remove the Goffs AE (text-only, like the Know-Wotz) OR
+  confirm commit.mjs dedupes; cite the do-not-double-apply rule. (BG-AUTHOR)
 
 - [ ] BG-015 — Final verify (BG-VERIFY): confirm both ratchets at goal (TRAIT 103,
   TALENT 95); add a node test asserting `commit.mjs` embeds a REAL item with its AE
