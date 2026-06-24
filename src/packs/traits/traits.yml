@@ -1174,3 +1174,102 @@ flags:
     rt:
         category: 'Background'
         originStep: 'Ork'
+---
+data:
+    description: 'This Kroot was born into a Kindred that has selected prey possessing great courage. Many such Kindreds have feasted upon the apex predators of a dozen worlds, passing on the gifts of increased bravery, excellent hand-eye coordination, and coolness under fire. The Kroot gains +5 BS, a +5 bonus to Wrangling Tests, and a +10 bonus to resist Fear or Pinning.'
+    source: 'Into the Storm, p.49'
+effects:
+- _id: KindredBoldHunt1
+  name: 'Kindred: Bold Hunter'
+  img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+  description: ''
+  origin: ''
+  disabled: false
+  transfer: true
+  tint: null
+  statuses: []
+  duration: { startTime: null, seconds: null, combat: null, rounds: null, turns: null, startRound: null, startTurn: null }
+  changes:
+  - key: 'system.skills.wrangling.modifier'
+    mode: 2
+    value: '5'
+    priority: null
+  flags: {}
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Kindred: Bold Hunter'
+type: 'trait'
+flags:
+    rt:
+        category: 'Background'
+        originStep: 'Kroot'
+        conditionalBonuses:
+        - applies:
+              skills: []
+              characteristics: [willpower]
+          value: 10
+          label: 'to resist Fear or Pinning'
+---
+data:
+    description: 'Upon entering the Koronus Expanse, the Kroot soon encountered the devious alien merchants known as the Stryxis. They were delicious. Shapers who have directed their Kindred to feed upon Stryxis notice a proclivity for cunning and deviousness in later generations of Kroot. The Kroot gains +10 Int, a +5 bonus to Barter and Deceive Tests, and a +1 bonus to Initiative.'
+    source: 'Into the Storm, p.49'
+effects:
+- _id: KindredCunHybrd1
+  name: 'Kindred: Cunning Hybrid'
+  img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+  description: ''
+  origin: ''
+  disabled: false
+  transfer: true
+  tint: null
+  statuses: []
+  duration: { startTime: null, seconds: null, combat: null, rounds: null, turns: null, startRound: null, startTurn: null }
+  changes:
+  - key: 'system.skills.barter.modifier'
+    mode: 2
+    value: '5'
+    priority: null
+  - key: 'system.skills.deceive.modifier'
+    mode: 2
+    value: '5'
+    priority: null
+  flags: {}
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Kindred: Cunning Hybrid'
+type: 'trait'
+flags:
+    rt:
+        category: 'Background'
+        originStep: 'Kroot'
+---
+data:
+    description: 'The Kroot have battled against Orks for centuries, and it was during a major battle on their homeworld of Pech that the Kroot and Tau first formed an alliance. Many times since, the Orks have encountered Kroot mercenaries as both enemies and allies, and the Shapers have learned to strengthen their Kindred by devouring Ork flesh. Doing so produces a startling resilience in a Kroot''s frame. The Kroot gains +10 Toughness. This bonus is applied after calculating starting Wounds.'
+    source: 'Into the Storm, p.49'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Kindred: Greenskin Hybrid'
+type: 'trait'
+flags:
+    rt:
+        category: 'Background'
+        originStep: 'Kroot'
+---
+data:
+    description: 'Certain Kindred of Kroot have fed upon the most poisonous creatures they could hunt. The resulting generations of Kroot are nearly impervious to all forms of poison and are capable of secreting a highly corrosive acid that burns the exposed flesh of their enemies. The Kroot automatically passes all Toughness Tests to resist toxins and weapons with the Toxic Quality. The Kroot''s beak loses the Primitive Quality and gains the Toxic Quality.'
+    source: 'Into the Storm, p.49'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Kindred: Headhunter'
+type: 'trait'
+flags:
+    rt:
+        category: 'Background'
+        originStep: 'Kroot'
+---
+data:
+    description: 'The predecessors of these Kroot habitually preyed upon chameleonic reptiles and other such creatures that blend into their surroundings. The resulting Kindred are incredibly stealthy, and their skin ripples with colours and patterns that make them nearly invisible when they wish to hide. The Kroot may make Concealment and Silent Move Tests as a Free Action and may do so even while being observed.'
+    source: 'Into the Storm, p.50'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Kindred: Stalker'
+type: 'trait'
+flags:
+    rt:
+        category: 'Background'
+        originStep: 'Kroot'

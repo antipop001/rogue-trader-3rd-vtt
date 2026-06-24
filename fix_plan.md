@@ -80,9 +80,13 @@ stray talents resolve (TALENT_RESOLVED_FLOOR 72 → 79).
   grant_skill/char_mod effects; an AE would double-apply (confirmed in commit.mjs), so
   faithful canon text only. (BG-AUTHOR)
 
-- [ ] BG-009 — Kroot Kindred traits (5): Kindred: Bold Hunter, Kindred: Cunning Hybrid,
+- [x] BG-009 — Kroot Kindred traits (5): Kindred: Bold Hunter, Kindred: Cunning Hybrid,
   Kindred: Greenskin Hybrid, Kindred: Headhunter, Kindred: Stalker. Source:
-  `careers.json`. Target TRAIT floor 73. (BG-AUTHOR)
+  `careers.json` (ItS pp.49-50). TRAIT_RESOLVED_FLOOR=73. Wired: Bold Hunter (AE +5
+  Wrangling + cond +10 WP vs Fear/Pinning), Cunning Hybrid (AE +5 Barter/+5 Deceive).
+  3 text-only — char_mod siblings (+5 BS/+10 Int/+10 T) handle the characteristic
+  bumps; Headhunter auto-pass-toxin/beak-quality + Stalker free-action stealth +
+  Cunning's +1 Initiative are not AE-expressible. (BG-AUTHOR)
 
 - [ ] BG-010 — Warrant: Acquisition (7): Acquisition: Administratum Trade Mandate,
   Blackmail, Exile, Intrigue, Ministorum Bequest, Prize of War, Reward. Source:
