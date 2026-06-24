@@ -4,6 +4,7 @@ import { damageTypeDropdown } from '../rules/damage-type.mjs';
 import { voidshipHitTypeDropdown } from '../rules/hit-type.mjs';
 import { voidshipHitLocationDropdown } from '../rules/voidship-hit-locations.mjs';
 import { getVoidshipCriticalDamage } from '../rules/voidship-critical-damage.mjs';
+import { daemonicToughnessMultiplier } from './roll-helpers.mjs';
 
 export class AssignDamageData {
     locations = hitDropdown();
@@ -48,6 +49,13 @@ export class AssignDamageData {
                 }
             }
         }
+        // Daemonic (RT Core p.364): a Daemonic target soaks all damage with DOUBLE its
+        // Toughness Bonus. Applied here so the boosted TB flows through both the main
+        // damage reduction and the True Grit crit reduction in finalize(). The canon
+        // exceptions (force weapons / psychic powers / holy attacks / other Daemonic
+        // creatures) are not surfaced in the assign-damage hitData — GM-adjudicated.
+        const traits = this.actor?.items?.filter?.((i) => i.type === 'trait') ?? [];
+        this.tb *= daemonicToughnessMultiplier(traits);
     }
 
     async finalize() {

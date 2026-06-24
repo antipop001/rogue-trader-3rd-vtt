@@ -89,6 +89,16 @@ const CODE_HANDLED = [
     // p.368 — engine-applied (multiplies the derived bonus an AE can't express), must NOT
     // also get an AE. ENGINE-UNNATURAL-CHARS.
     'Unnatural Toughness (x2)',
+    // Daemonic doubles the target's Toughness Bonus when soaking damage — applied by
+    // trait name in assign-damage-data.update (daemonicToughnessMultiplier ×2 on the
+    // per-location TB). RT Core p.364 — engine-applied (scales a per-hit soak an AE
+    // can't express), must NOT also get an AE. ENGINE-UNNATURAL-DAMAGE.
+    'Daemonic',
+    // Bastion of Iron Will doubles the defender's defensive Psy Rating on an Opposed
+    // Test (Psyniscience / Psychic Techniques) — multiplier via bastionPsyMultiplier;
+    // engine-applied by name (NOT an AE). The opposed-resist apply point itself is the
+    // Foundry-coupled follow-up. RT Core p.94. ENGINE-UNNATURAL-DAMAGE.
+    'Bastion of Iron Will',
 ];
 // Intentionally text-only (narrative / per-DoS / PF / GM-adjudicated). These describe
 // a mechanic the system deliberately does NOT express as an AE/conditionalBonus

@@ -413,12 +413,48 @@ guard in the spec). Canon: `/mnt/project_data/RT/RT-DOCS/`.
   the generic "Unnatural Characteristic" / "Unnatural Speed" / "Unnatural Senses" traits add
   no characteristic bonus. Derived-data + Foundry-coupled — node gate can't exercise it. (E2E)
 
-- [ ] ENGINE-UNNATURAL-DAMAGE — the damage/Wounds/psychic-path members of ENGINE-UNNATURAL
+- [x] ENGINE-UNNATURAL-DAMAGE — the damage/Wounds/psychic-path members of ENGINE-UNNATURAL
   that can't be a characteristic AE: Daemonic (×2 TB vs damage — assign-damage reduction
   path), Bastion of Iron Will (×2 defensive Psy Rating — opposed/resist-psychic path). Each
   needs its own engine hook by trait/talent name in the relevant `rolls/*`; no clean pure-JS
   slice without the surrounding pipeline. Add any extractable helper + node test; E2E. RT
-  Core / ItS. (ENGINE)
+  Core / ItS. (ENGINE) — done iter 38: shipped the clean Daemonic slice + both extractable
+  helpers. Pure helpers `daemonicToughnessMultiplier(traits)` (×2 if a `Daemonic` trait
+  present) and `bastionPsyMultiplier(talents)` (×2 if Bastion of Iron Will present) in
+  `roll-helpers.mjs`. **Daemonic WIRED**: `assign-damage-data.update()` doubles the
+  per-location `this.tb` when the target carries the Daemonic trait, so the boosted TB flows
+  through BOTH the main damage reduction and the True Grit crit reduction in `finalize()`
+  (RT Core p.364; the 4 canon exceptions — force/psychic/holy/other-Daemonic — aren't
+  surfaced in the assign-damage hitData, so they stay GM-adjudicated, documented not invented).
+  **Bastion**: fixed a data bug first — the `Bastion of Iron Will` entry carried Battle Rage's
+  benefit ("Parry while Frenzied", prereq Frenzy); restored canon "doubles his defensive Psy
+  Rating on any Opposed Test involving the Psyniscience Skill or Psychic Techniques" + prereqs
+  "Psy Rating, Strong Minded, Willpower 40" + `source: …p.94`. Helper shipped, but the BASE
+  mechanic (adding defensive Psy Rating to the opposed psychic-resist test) has no apply point
+  — `checkForOpposed` rolls a plain characteristic check — so the apply point is the
+  Foundry-coupled follow-up (E2E-UNNATURAL-DAMAGE below). Both NOT AEs (engine-applied by name)
+  → ratchet CODE_HANDLED (double-apply guard). Node test `unnatural_damage.test.mjs` (8 cases).
+  Gate green (build OK, 125 node tests). Found an adjacent data bug (Battle Rage carries
+  Berserk Charge's text) → CLEANUP-BATTLE-RAGE below. Bastion of Iron Will / Bastion of Iron
+  Will (x2 Psy Rating apply point) E2E below.
+
+- [ ] E2E-UNNATURAL-DAMAGE — verify on rt-smoke (Playwright): (Daemonic) assign damage to an
+  NPC with the Daemonic trait and confirm the soak uses 2×TB (e.g. 10 dmg / pen 0 to a Body
+  with worn AP 0 + TB 4 → Daemonic reduction 8, not 4) vs the same NPC without the trait;
+  confirm the doubled TB also feeds a True Grit crit reduction. (Bastion) once the base
+  opposed-psychic-resist contribution is wired, a defender with Bastion of Iron Will resolves
+  an Opposed Psyniscience/Psychic-Technique test with DOUBLE its defensive Psy Rating vs the
+  same defender without it. Assign-damage + opposed-psychic pipelines are Foundry-coupled —
+  node gate can't exercise them. (E2E)
+
+- [ ] CLEANUP-BATTLE-RAGE — data bug found in iter 38: the `Battle Rage` entry in
+  `talents.yml` carries **Berserk Charge's** benefit ("+20 WS bonus when using the Charge
+  Action") with empty prereqs, instead of canon "He can Parry while Frenzied" (prereq: Frenzy
+  Talent; RT Core p.94). Part of an alphabetical off-by-one extraction shift (Bastion held
+  Battle Rage's text — fixed in iter 38 under ENGINE-UNNATURAL-DAMAGE). Berserk Charge already
+  carries the correct +20-charge `conditionalBonus` (0.7.6), so Battle Rage's text is a stray
+  duplicate. Restore Battle Rage's benefit/prereqs/source (p.94); confirm no entry beyond it
+  is also shifted. Pure data edit — no wiring (Parry-while-Frenzied is narrative). (CLEANUP)
 
 - [ ] ENGINE-WOUNDS-MOD — additive Wounds term (mirror BUG-002's `initiative.modifier`):
   add `system.wounds.modifier` to `template.json`, fold into the Wounds compute in

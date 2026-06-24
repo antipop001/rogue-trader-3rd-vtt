@@ -361,6 +361,51 @@ export function unnaturalCharacteristicMultipliers(traits) {
     return out;
 }
 
+/**
+ * Daemonic (RT Core p.364) Toughness-Bonus multiplier for soaking damage. "Creatures
+ * with this Trait double their Toughness Bonus against all damage, except for damage
+ * inflicted by force weapons, psychic powers, holy attacks, or other creatures with this
+ * Trait." So a Daemonic target reduces incoming damage with ×2 its Toughness Bonus.
+ * Engine-applied by trait name on the assign-damage reduction path (NOT an AE — it scales
+ * the per-location TB used to soak a specific hit, which an AE on a characteristic cannot
+ * express), so the trait must NOT also be given an AE (double-apply guard). The four canon
+ * exceptions (force weapons / psychic powers / holy attacks / other Daemonic creatures) are
+ * not surfaced in the assign-damage hitData → the GM adjudicates them via the existing flow
+ * (e.g. assign with the raw figures); documented as a known limitation, not invented here.
+ * `hasTalent` only matches talents — callers pass the actor's TRAIT items.
+ *
+ * @param {Array<{name?: string}>} traits  target actor trait items
+ * @returns {number} Toughness-Bonus multiplier for damage soak (2 with Daemonic, else 1)
+ */
+export function daemonicToughnessMultiplier(traits) {
+    if (!Array.isArray(traits)) return 1;
+    const has = traits.some((t) => t?.name && String(t.name).toLowerCase() === 'daemonic');
+    return has ? 2 : 1;
+}
+
+/**
+ * Bastion of Iron Will (RT Core p.94) defensive Psy Rating multiplier. "He doubles his
+ * defensive Psy Rating on any Opposed Test involving the Psyniscience Skill or Psychic
+ * Techniques." So when this character resists a psychic effect via such an Opposed Test,
+ * the defensive Psy Rating he contributes is doubled. Engine-applied by talent name on the
+ * opposed-psychic-resist path (NOT an AE — it scales a context-gated opposed-test
+ * contribution, only on a Psyniscience/Psychic-Technique opposition), so it must NOT also
+ * be given an AE (double-apply guard). NOTE: the base mechanic — adding the defensive Psy
+ * Rating to the opposed test at all — has no apply point in the engine today
+ * (`ActionData.checkForOpposed` rolls a plain characteristic check). This helper supplies
+ * the doubling; wiring the base contribution + this multiplier into the opposed flow is the
+ * Foundry-coupled follow-up. `hasTalent` matches talents — callers pass the actor's TALENT
+ * items.
+ *
+ * @param {Array<{name?: string}>} talents  defender talent items
+ * @returns {number} defensive-Psy-Rating multiplier (2 with the talent, else 1)
+ */
+export function bastionPsyMultiplier(talents) {
+    if (!Array.isArray(talents)) return 1;
+    const has = talents.some((t) => t?.name && String(t.name).toLowerCase() === 'bastion of iron will');
+    return has ? 2 : 1;
+}
+
 export async function roll1d100() {
     let formula = '1d100';
     const roll = new Roll(formula, {});

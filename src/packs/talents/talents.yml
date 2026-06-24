@@ -203,12 +203,13 @@ type: talent
 ---
 data:
     aptitudes: ''
-    benefit: Long experience and indomitable will have allowed the Explorer to master
-        the beast within, directing its rage while keeping a level head. He can Parry
-        while Frenzied.
+    benefit: The Explorer's sheer willpower and psychic focus have become one and the
+        same over years of practice and training, such that their combined use is second
+        nature. He doubles his defensive Psy Rating on any Opposed Test involving the
+        Psyniscience Skill or Psychic Techniques.
     cost: 0
-    prerequisites: Frenzy
-    source: Rogue Trader Core Rulebook
+    prerequisites: Psy Rating, Strong Minded, Willpower 40
+    source: Rogue Trader Core Rulebook, p.94
     tier: '1'
 img: systems/rogue-trader-3rd/icons/psykana/evil-eye-red-1.jpg
 name: Battle Rage
