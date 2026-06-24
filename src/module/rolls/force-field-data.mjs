@@ -25,7 +25,7 @@ export class ForceFieldData {
     craftsmanshipToOverload(craftsmanship) {
         switch(craftsmanship) {
             case 'Poor':
-                return 15;
+                return 20;
             case 'Common':
                 return 10;
             case 'Good':

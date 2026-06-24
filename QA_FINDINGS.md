@@ -205,3 +205,57 @@ Format per finding:
 - canon: RT Core `CoreBook-1-200.pdf/markdown.md:5933` (Defensive) — "+15 bonus to tests made when used to Parry"; mirrored in `attack-specials.yml:42`.
 - gap: The Parry action's help text says +10 while the actual (correct) bonus is +15 — a misleading number shown to the user. The roll itself is correct.
 - fix: Change the "+10" in the `combat-actions.mjs:166` description string to "+15". Trivially-safe string edit (deferred this iteration to keep it pure-audit). · autofixable: yes
+
+### QA-021 — Force-field Poor-craftsmanship overload chance is 15; canon Table 3-10 says 20
+- area: armour
+- kind: data-quality
+- severity: P1 (wrong result in play — a Poor field overloads less often than RAW)
+- evidence: `src/module/rolls/force-field-data.mjs:25-36` `craftsmanshipToOverload()` returns Poor→**15**, Common→10, Good→5, Best(default)→1; consumed at `:20` (`this.overloadRating = …`) and `:45-47` (`if (this.roll.total <= this.overloadRating) this.overload = true`).
+- canon: Into the Storm `roguetrader_intothestorm-126-257.pdf/markdown.md:318-323` TABLE 3-10 (Field Craftsmanship → Overload Roll): "Poor | 01-20 / Common | 01-10 / Good | 01-05 / Best | 1". Confirmed identical in Faith & Coin Table 3-5 (`roguetrader_faithandcoin.pdf/markdown.md:2483-2488`: Poor 01–20). Tau Char Guide Table 1-6 references the same.
+- gap: A Poor-craftsmanship field overloads only on a d100 ≤ 15 instead of ≤ 20 — fields fail to burn out 5% less often than RAW. Common/Good/Best are all correct.
+- fix: **FIXED this iteration** — `force-field-data.mjs:28` Poor now returns 20. Trivially-safe canon-backed one-token fix; no test pins the value; gate green. · autofixable: yes (done)
+
+### QA-022 — `maxAgility` armour field is a DH2 leftover (no RT armour Max-Agility stat; no code consumer)
+- area: armour
+- kind: dh-leftover
+- severity: P3
+- evidence: `src/template.json:1617` armour type defines `maxAgility: 0`; present on many NPC armour items (e.g. `starsofinequity-npcs.yml:4211`, `thesoulreaver-npcs.yml:769`). Grep across `src/module` for `maxAgility` = **0 hits** — no derived-data path, sheet, or roll reads it. RT 1e armour table (`CoreBook-1-200.pdf/markdown.md:7160-7190`, "TABLE 5-12: ARMOUR") has columns Name | Locations Covered | AP | kg | Avail. — **no Max Agility column**.
+- canon: RT Core Ch.V armour table (`CoreBook-1-200.pdf/markdown.md:7160`) — RT does not gate Agility by armour; encumbrance from heavy gear is handled separately (Ch.IX p.267), and the only armour-borne Agility penalty is the *Poor craftsmanship* −10 (see QA-023). Max-Agility-caps-Agility is a DH2 mechanic.
+- gap: Dead DH2-only schema field on every armour item; defines a stat RT never uses and no code consumes. Pure cruft (no wrong-result impact).
+- fix: Remove `maxAgility` from the armour template + strip it from pack YAML (mechanical), or leave as inert documented cruft. Bundle with the broader DH2-schema cleanup (QA-004/005). · autofixable: yes (no consumers to break) — deferred (touches many pack files)
+
+### QA-023 — Poor-craftsmanship armour −10 Agility penalty not automated
+- area: armour
+- kind: automation-gap
+- severity: P2 (missing automation; manual workaround)
+- evidence: `src/module/documents/acolyte.mjs:547-645` `_computeArmour()` reads each armour's `craftsmanship` ONLY to grant Best's +1 AP (`:623-628`) and (via `item.totalWeight`) Best's half-weight; it never applies a Poor-armour Agility penalty, and `rollCharacteristic`/`rollSkill` add no such modifier. No `system.agility.modifier` is written for worn Poor armour anywhere.
+- canon: RT Core armour craftsmanship (`CoreBook-1-200.pdf/markdown.md:7148`): "Characters wearing **Poor** armour take a **−10 penalty to all Agility Tests**." (CLAUDE.md 0.7.9 already notes "Poor armour (-10 Ag) not automated.")
+- gap: Wearing Poor armour should impose −10 on all Agility Tests; the engine ignores Poor craftsmanship for armour entirely (only Best is wired). Manual GM application required.
+- fix: In `_computeArmour` (or the roll path), when any equipped armour is Poor craftsmanship, apply −10 to Agility-governed tests (an additive `system.agility.modifier`, or a Fatigue-style `'Poor Armour'` roll modifier on Agility skills/characteristic). · autofixable: no (needs roll-modifier wiring)
+
+### QA-024 — Good-craftsmanship armour +1 AP vs the first attack each round not automated
+- area: armour
+- kind: automation-gap
+- severity: P3 (situational; needs per-round state)
+- evidence: `src/module/documents/acolyte.mjs:623-628` only bumps AP for `maxArmourCraft[location] === 'Best'`; Good craftsmanship is never consulted in `_computeArmour`, and assign-damage (`assign-damage-data.mjs:44-49`) reads the static `armour.total` with no first-attack-this-round bump.
+- canon: RT Core armour craftsmanship (`CoreBook-1-200.pdf/markdown.md:7150`): "**Good** … Against the **first attack in any round**, the armour increases its AP by 1." (CLAUDE.md 0.7.9: "Good armour (+1 AP first attack/round) not automated — requires per-round state tracking.")
+- gap: Good armour should give +1 AP against the first incoming hit each Round; unimplemented. Lower priority — needs per-Round "first hit consumed" state (the Reaction-budget machinery reset on `combatTurnChange` could host the flag).
+- fix: Track a per-Round "first-attack-absorbed" flag per actor (reset on combatTurnChange like reactions); in assign-damage add +1 to the struck location's AP if the actor wears Good armour there and the flag is unset, then set it. · autofixable: no (combat-turn state)
+
+### QA-025 — Primitive armour half-AP vs non-Primitive weapons not automated
+- area: armour
+- kind: automation-gap
+- severity: P2 (wrong soak if relied on; manual workaround)
+- evidence: 7 armour entries carry `type: Primitive` (`src/packs/armour/armour.yml:14,35,54,73,92,112,770`). `assign-damage-data.mjs:42-49` reduces damage by `locationArmour.total` directly and never reads the armour's `system.type`; grep for `primitive` in `assign-damage-data.mjs`/`damage-data.mjs` shows the only Primitive handling is the *weapon*-quality damage-die cap (`damage-data.mjs:157-160`) + the unarmed/natural-weapon profile (`roll-helpers.mjs`). No path halves Primitive *armour* AP.
+- canon: RT Core (`CoreBook-1-200.pdf/markdown.md:7192`): "Armour with the **Primitive quality only offers full protection against weapons also having the Primitive quality**, otherwise it only provides **half its normal AP value (rounding up)**. Primitive armour's APs are halved **before** being reduced for the weapon's penetration."
+- gap: A character in Primitive armour (heavy leathers, grox hide, feudal plate, beast hide, squighide) struck by a modern weapon should soak only ⌈AP/2⌉ (before penetration); the engine applies full AP. Over-protects vs all non-Primitive weapons.
+- fix: In assign-damage, when the struck location's winning armour piece is `type: 'Primitive'` and the incoming weapon lacks the Primitive quality, halve that location's worn AP (round up) before subtracting penetration. Needs the armour `type` of the winning piece threaded to the damage step (currently only the summed `total` is exposed). · autofixable: no
+
+### QA-026 — Per-field force-field conditions/coverage not automated (rollup)
+- area: armour
+- kind: automation-gap
+- severity: P3 (situational)
+- evidence: `src/module/rolls/force-field-data.mjs:15-48` rolls a single `protectionRating` uniformly with no hit-location, attack-type, or post-block effect; `force-field-prompt.mjs:48-55` only gates on `activated`/`overloaded`. So canon per-field clauses are unimplemented: **Mirror Shield** "Protection Rating only applies to the Arm and Body" + Energy-reflect Reaction (ItS `…126-257.pdf/markdown.md:273`); **Power Field** "does not function against ranged attacks made within 3 metres, or melee attacks" + −40 stealth (ItS :325); **Conversion Field** photon-flash burst if it blocks >12 damage (ItS :296).
+- canon: ItS Force Fields section (`roguetrader_intothestorm-126-257.pdf/markdown.md:265-341`).
+- gap: The generic field roll ignores per-field location restrictions, attack-type exceptions, and on-block secondary effects — a Power Field wrongly blocks point-blank/melee, a Mirror Shield wrongly covers all locations, and Conversion/Mirror follow-on effects never fire. Genuinely per-item special handling the engine doesn't thread (hit location + attacker context into the field roll).
+- fix: Thread hit-location + attack-type into ForceFieldData and add per-field clauses (or surface them as chat-card effect text like the target-side weapon qualities in QA-019). Triage per field; mostly narrative. · autofixable: no
