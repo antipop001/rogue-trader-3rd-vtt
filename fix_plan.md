@@ -203,14 +203,19 @@ guard in the spec). Canon: `/mnt/project_data/RT/RT-DOCS/`.
   correctly with True Grit on the target. Attack/assign pipeline is Foundry-coupled — node
   gate can't exercise it. (E2E)
 
-- [ ] NARRATIVE-RECORD — add the intentionally-unwired entries to the ratchet
+- [x] NARRATIVE-RECORD — add the intentionally-unwired entries to the ratchet
   `NARRATIVE` list (and they're already in `loops/effects-audit/triage.md`): talents
   Ancestral Blessing, Binary Chatter, Blood of the Stalker, Bloodtracker, Concealed
   Cavity, Dual Shot, Dual Strike, Electrical Succour, Exceptional Leader, Hard Bargain,
   Hyperactive Nymune Organ, Into the Jaws of Hell, Last Man Standing, Luminen Charge,
   Luminen Shock, Master & Commander, Master Enginseer, Mimic, Psy Rating, Warp Conduit;
   traits 'Ard, Dynastic Warrant, Incorporeal, Instinctual Understanding, Mechanicus
-  Implants, Mob Rule. (NARRATIVE)
+  Implants, Mob Rule. (NARRATIVE) — done iter 25: all 26 added to ratchet `NARRATIVE`;
+  verified each carries no effects/conditionalBonuses (text-only) before recording, none
+  in CODE_HANDLED/WIRED_EXPECTED. Added a NEW guard test ("narrative entries carry no
+  wiring") so the list is real backpressure, not dead documentation (mirrors the
+  CODE_HANDLED double-apply guard) — catches a wrong later AE on a narrative entry. Gate
+  green (build OK, 72 node tests).
 
 ### AUDIT-002 follow-ups (non-`+N` sweep; see `loops/effects-audit/triage.md`)
 

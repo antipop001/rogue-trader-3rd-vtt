@@ -50,9 +50,21 @@ const CODE_HANDLED = [
     // (must NOT also get an AE — would double-apply). RT Core p.96.
     'Crack Shot', 'Crippling Strike',
 ];
-// Intentionally text-only (narrative / per-DoS / PF / GM-adjudicated).
+// Intentionally text-only (narrative / per-DoS / PF / GM-adjudicated). These describe
+// a mechanic the system deliberately does NOT express as an AE/conditionalBonus
+// (activated buff, per-DoS, PF/Endeavour flavor, immunity, ally-targeted, positional).
+// Guarded below: a NARRATIVE entry must NOT carry wiring (catches a wrong later AE).
 const NARRATIVE = [
-    // 'Bloodtracker',
+    // AUDIT-001 (first-pass +N sweep) — see loops/effects-audit/triage.md
+    // talents
+    'Ancestral Blessing', 'Binary Chatter', 'Blood of the Stalker', 'Bloodtracker',
+    'Concealed Cavity', 'Dual Shot', 'Dual Strike', 'Electrical Succour',
+    'Exceptional Leader', 'Hard Bargain', 'Hyperactive Nymune Organ',
+    'Into the Jaws of Hell', 'Last Man Standing', 'Luminen Charge', 'Luminen Shock',
+    'Master & Commander', 'Master Enginseer', 'Mimic', 'Psy Rating', 'Warp Conduit',
+    // traits
+    "'Ard", 'Dynastic Warrant', 'Incorporeal', 'Instinctual Understanding',
+    'Mechanicus Implants', 'Mob Rule',
 ];
 // ----------------------------------------------------------------------------
 
@@ -108,6 +120,16 @@ test('no code-handled talent was given an AE/conditionalBonus (double-apply guar
         const hasAe = (d.effects ?? []).length > 0;
         const hasCond = (d.flags?.rt?.conditionalBonuses ?? []).length > 0;
         assert.ok(!hasAe && !hasCond, `code-handled "${name}" must not also be wired (double-apply risk)`);
+    }
+});
+
+test('narrative (intentionally text-only) entries carry no wiring', () => {
+    for (const name of NARRATIVE) {
+        const d = byName.get(name);
+        assert.ok(d, `NARRATIVE "${name}" not found in any pack`);
+        const hasAe = (d.effects ?? []).length > 0;
+        const hasCond = (d.flags?.rt?.conditionalBonuses ?? []).length > 0;
+        assert.ok(!hasAe && !hasCond, `narrative "${name}" must stay text-only (no AE/conditionalBonus)`);
     }
 });
 
