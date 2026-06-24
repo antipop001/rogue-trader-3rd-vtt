@@ -212,7 +212,26 @@ engine/roll fixes. Fix these directly, or in a dedicated follow-up loop.
   which the running effects-audit loop may also edit (Weapon Master) — do when idle.
 
 ## BUG-009 — Item-grant machinery (`flags.rt.grants`) never embeds the granted item
-- **Status: OPEN — found by the 2026-06-24 verification sweep (Playwright).** The
+- **Status: MITIGATED, NOT FULLY VERIFIED 2026-06-24.** Root cause confirmed (below).
+  Applied a deferred + retry fix in `onCreateItem` (`hooks-manager.mjs`): schedule
+  `applyItemGrants` off the create-hook turn at 0ms AND ~750ms (idempotent via
+  `pendingGrants` dedup), to land the embed after the originating create's items
+  writeback. **Direct observation confirms it works** — an instrumented single-actor
+  timeline showed the granted Sprint talent CREATE (no DELETE) and persist from ~1.5s
+  through 6s. **But automated batch tests (rapid create/wait/check/delete loops) remain
+  inconsistent** (mixed/false), indicating a residual race I could not fully close on
+  the live box. Needs a **real in-UI confirmation** (add a Bionic Heart cybernetic to
+  an actor, confirm a Sprint talent appears within ~2s) and likely a proper
+  concurrency-safe rework (apply grants from a post-operation queue, or bake granted
+  items in at actor/item creation rather than via a post-create hook). The ~1.5s delay
+  also comes from `applyItemGrants` reloading the full talents pack via `getDocuments()`
+  on every grant — cache the pack index instead.
+- **Diagnosis (verified live):** the `createItem` hook fires correctly (userId match,
+  parent Actor, `flags.rt.grants` present); `pendingGrants` returns the grant; the pack
+  resolves the talent; the embed even SUCCEEDS in-memory ("items now: [Bionic Heart,
+  Sprint]") — but when initiated *during* the originating create flow it is dropped from
+  the persisted items on writeback. Deferring helps but does not fully eliminate the race.
+- **Was found by the 2026-06-24 verification sweep (Playwright).** The
   effects-audit loop's ENGINE-TRAIT-GRANTS feature (iters 42–44: Bionic Heart→Sprint,
   Memorance→Total Recall, Vitae→Autosanguine, Blackbone→Bulging Biceps+Iron Jaw, Sixth
   Sense→Rival(Inquisition)) does not actually grant anything.

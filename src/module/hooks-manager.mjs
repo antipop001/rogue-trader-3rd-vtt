@@ -226,9 +226,20 @@ Enable Debug with: game.rt.debug = true
         if (!item.parent || item.parent.documentName !== 'Actor') return;
 
         // ENGINE-TRAIT-GRANTS: a talent/trait that GRANTS other compendium items
-        // (flags.rt.grants) auto-embeds the missing ones on the actor. Runs for any
-        // item type ('Ard is a trait), before the pickable-talent logic.
-        await HooksManager.applyItemGrants(item, item.parent);
+        // (flags.rt.grants) auto-embeds the missing ones on the actor. DEFER off the
+        // create-hook turn — embedding *during* the originating create flow gets
+        // clobbered when that operation writes back the parent's items collection
+        // (BUG-009). A 0ms timeout runs the embed after the create settles.
+        const grantParent = item.parent;
+        const runGrants = () => HooksManager.applyItemGrants(item, grantParent)
+            .catch((e) => console.error('Dark Heresy | applyItemGrants failed', e));
+        // Defer + retry: a grant embedded during the originating create flow gets
+        // clobbered when that operation writes back the parent's items, and a single
+        // 0ms defer still races it intermittently. applyItemGrants is idempotent
+        // (pendingGrants dedups vs current items), so a second pass after the writeback
+        // window reliably lands (or is a no-op if the first stuck). BUG-009.
+        setTimeout(runGrants, 0);
+        setTimeout(runGrants, 750);
 
         if (item.type !== 'talent') return;
         const spec = foundry.utils.getProperty(item, 'flags.rt.pickable');
