@@ -54,7 +54,7 @@ stray talents resolve (TALENT_RESOLVED_FLOOR 72 → 79).
   ship), Refined Tastes (AE +5 charm); 7 text-only (Fate-reroll / Common-Lore-pick /
   narrative WP-test traits not expressible as a roll-prompt bonus). (BG-AUTHOR)
 
-- [ ] BG-005 — Lure of the Void + Birthright (7): Blessed Scars, Imperfect Bionic,
+- [x] BG-005 — Lure of the Void + Birthright (7): Blessed Scars, Imperfect Bionic,
   Imperial Chauvinism, Mutant, Xenophile (`lure_of_the_void.json`); Mutation, Rival
   (Underworld) (`birthrights.json`). Note `Mutant`/`Mutation` reference Table 14-3
   (taint_tables.json). Target TRAIT floor 51. (BG-AUTHOR)

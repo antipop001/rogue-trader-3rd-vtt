@@ -849,3 +849,118 @@ flags:
               characteristics: [willpower, fellowship]
           value: 5
           label: 'while aboard the ship you live on'
+---
+data:
+    description: 'Your zealous deeds have left their mark upon you. You gain +10 to Intimidate Tests and -10 to Charm Tests, and one poor-Craftsmanship bionic (you may spend 200 xp to upgrade it to common-Craftsmanship, or a total of 300 xp to upgrade it to good-Craftsmanship).'
+    source: 'Rogue Trader Core Rulebook, p.27'
+effects:
+- _id: BlessedScarsAE01
+  name: 'Blessed Scars'
+  img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+  description: ''
+  origin: ''
+  disabled: false
+  transfer: true
+  tint: null
+  statuses: []
+  duration: { startTime: null, seconds: null, combat: null, rounds: null, turns: null, startRound: null, startTurn: null }
+  changes:
+  - key: 'system.skills.intimidate.modifier'
+    mode: 2
+    value: '10'
+    priority: null
+  - key: 'system.skills.charm.modifier'
+    mode: 2
+    value: '-10'
+    priority: null
+  flags: {}
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Blessed Scars'
+type: 'trait'
+flags:
+    rt:
+        category: 'Background'
+        originStep: 'Lure'
+---
+data:
+    description: 'You were judged and found wanting, and bear an unworthy augmetic as a reminder. You gain one poor-Craftsmanship bionic limb or implant. You may spend 200 xp to upgrade it to common-Craftsmanship, or a total of 300 xp for good-Craftsmanship.'
+    source: 'Rogue Trader Core Rulebook, p.26'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Imperfect Bionic'
+type: 'trait'
+flags:
+    rt:
+        category: 'Background'
+        originStep: 'Lure'
+---
+data:
+    description: 'You hold humanity above all and regard anything outside the Imperium with contempt. You suffer a -10 penalty to Interaction Skill Tests when dealing with any source outside the Imperium (such as aliens and traitors).'
+    source: 'Rogue Trader Core Rulebook, p.26'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Imperial Chauvinism'
+type: 'trait'
+flags:
+    rt:
+        category: 'Background'
+        originStep: 'Lure'
+        conditionalBonuses:
+        - applies:
+              skills: [charm, command, deceive, inquiry, intimidate, barter, blather]
+              characteristics: [fellowship]
+          value: -10
+          label: 'when dealing with any source outside the Imperium (aliens, traitors)'
+---
+data:
+    description: 'The warp has touched your flesh. Roll once on Table 14-3: Mutations (see page 369); a result of 74 or lower applies (Errata v1.4 — the printed text reads "lower than 76-00"). If you choose, you may spend 200 xp to select one result of 74 or lower from the table instead of rolling randomly. Resolve and record the specific mutation off-engine.'
+    source: 'Rogue Trader Core Rulebook, p.25'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Mutant'
+type: 'trait'
+flags:
+    rt:
+        category: 'Background'
+        originStep: 'Lure'
+---
+data:
+    description: 'You harbour a fascination with the alien. You gain a bonus of +10 to Fellowship Tests when dealing with alien races or cultures, but suffer a -5 penalty to Willpower Tests involving alien artefacts and alien psychic powers.'
+    source: 'Rogue Trader Core Rulebook, p.27'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Xenophile'
+type: 'trait'
+flags:
+    rt:
+        category: 'Background'
+        originStep: 'Lure'
+        conditionalBonuses:
+        - applies:
+              skills: []
+              characteristics: [fellowship]
+          value: 10
+          label: 'when dealing with alien races or cultures'
+        - applies:
+              skills: []
+              characteristics: [willpower]
+          value: -5
+          label: 'involving alien artefacts or alien psychic powers'
+---
+data:
+    description: 'You were born changed by the contamination of your homeworld. Roll once on Table 14-3: Mutations (Rogue Trader Core Rulebook, p.369), re-rolling any result of 75 or higher. Resolve the specific mutation off-engine and record it here.'
+    source: 'Into the Storm, p.19'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Mutation'
+type: 'trait'
+flags:
+    rt:
+        category: 'Background'
+        originStep: 'Birthright'
+---
+data:
+    description: 'Your years in the fighting pits have earned you an enemy. You begin play with a rival drawn from the criminal underworld of the fighting pits.'
+    source: 'Into the Storm, p.19'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Rival (Underworld)'
+type: 'trait'
+flags:
+    rt:
+        category: 'Background'
+        originStep: 'Birthright'
