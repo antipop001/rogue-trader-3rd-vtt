@@ -296,6 +296,52 @@ Format per finding:
 - gap: A character's bionics craftsmanship has no mechanical effect beyond armour AP. Poor bionics impose none of their penalties; Good bionics grant none of their bonuses/talents. The whole craftsmanship-conditional layer of cybernetics is descriptive-only. (Most players ship Common, so the live impact is bounded — but Good/Poor are routinely chosen.)
 - fix: Add a cybernetic-craftsmanship resolution layer: per item, when `craftsmanship` is Good/Poor, apply the listed AE/conditionalBonus/grant/penalty (e.g. Good Bionic Locomotion → grant Sprint; Poor Bionic Arm → −10 WS/BS conditionalBonus). Mechanical but per-entry; triage Common-only vs craftsmanship-tiered. · autofixable: no
 
+### QA-032 — Hyperactive Nymune Organ: +1 Reaction/round + Full-Move/Run movement bonus recorded as narrative but automatable
+- area: talents
+- kind: automation-gap
+- severity: P2 (missing automation; a standing per-round combat bonus simply absent)
+- evidence: `src/packs/talents/talents.yml:1535` (Hyperactive Nymune Organ) — "The Kroot gains one additional Reaction per round. When taking the Full Move action, the Kroot may move an extra number of metres equal to his unmodified Agility Bonus. When taking the Run action, he may double his movement for one Round." No `effects`/`conditionalBonuses`/`grants`. It is recorded as intentionally text-only in the ratchet (`tests/chargen/effect_wiring_audit.test.mjs:218` NARRATIVE list). BUT the engine ALREADY computes a per-round Reaction budget by talent name (`acolyte.mjs:432` `reactionBudget(...)` → `system.combat.reactions.{dodge,parry}.max`; `roll-helpers.mjs:220-230` adds +1 for Step Aside/Wall of Steel), and movement is derived in `base-actor._computeMovement` — so "+1 Reaction" and "extra AgB metres" are the same class of effect already wired for two other talents.
+- canon: Into the Storm `roguetrader_intothestorm-1-125.pdf/markdown.md:2065` (Hyperactive Nymune Organ) — verbatim "gains one additional Reaction per round … move an extra number of metres equal to his unmodified Agility Bonus … double his movement [on Run]."
+- gap: A Kroot with this talent should have +1 Reaction each Round and a larger Full Move/Run; the engine grants neither. Caveat: the current reaction-budget model tracks `dodge.max`/`parry.max` as separate base-1 pools rather than RT's single shared Reaction (RT Core p.244), so "one additional Reaction" has no exact slot — same modelling gap that leaves Defensive Stance's "gain an additional Reaction" (`combat-actions.mjs:140`) unautomated.
+- fix: Extend `reactionBudget` to add the extra Reaction for this talent (and ideally rework dodge/parry into a shared pool to match RT), and add the Full-Move +AgB / Run-double to `_computeMovement` by talent name. Engine work, not a data AE. · autofixable: no
+- note: Listed only as an unverified candidate in the BUGS.md SWEEP block; this is the first verified finding (with canon) — not a re-file of a fixed bug.
+
+### QA-033 — Warp Conduit: +1 Psy Rating when pushing / −10 Psychic Phenomena recorded as narrative but automatable
+- area: talents
+- kind: automation-gap
+- severity: P2 (missing automation; affects every Push by a psyker with the talent)
+- evidence: `src/packs/talents/talents.yml:3365` (Warp Conduit) — "When pushing, he may add a +1 bonus to his Psy Rating and subtract -10 on any resultant Psychic Phenomenon rolls." No `effects`/`conditionalBonuses`; recorded as NARRATIVE in `effect_wiring_audit.test.mjs:219`. The psychic Push engine exists and is the natural host: `PsychicRollData.pushCap` getter + Fettered/Unfettered/Push PR resolution (`roll-data.mjs` ~L374+, per CLAUDE.md §H) and `checkForPerils` (`action-data.mjs:25`) already gate Phenomena on the rating-vs-PR relationship — a +1-PR-on-push and a −10-phenomena addend slot directly into that path.
+- canon: RT Core `CoreBook-1-200.pdf/markdown.md:4800` (Talent summary) "+1 to Psy Rating when pushing"; full text `:5674` (## WARP CONDUIT). Prereq table `:2441`.
+- gap: A psyker with Warp Conduit gets no PR bump and no phenomena mitigation when Pushing; both are unimplemented. Cross-refs the QA-PSYCHIC dimension (push/phenomena path).
+- fix: When the cast is a Push and the actor has Warp Conduit, add +1 to the effective Psy Rating used for the power and −10 to the Psychic Phenomena roll. Needs psyker/cast context (like QA-014's Force-weapon gap), so engine work. · autofixable: no
+
+### QA-034 — Combat-action-penalty-negating talents (Sharpshooter, Takedown) unwired — rollup
+- area: talents
+- kind: automation-gap
+- severity: P2 (the −20 penalty is engine-applied but never removed → wrong to-hit for these talents)
+- evidence: The engine applies the Called Shot and Stun −20 modifiers (`src/module/rules/combat-actions.mjs:124` Called Shot `attack.modifier: -20`; `:277` Stun `attack.modifier: -20`). Two talents negate exactly these but are unwired: **Sharpshooter** (`talents.yml:2886`) "When making a called shot, he does not incur the normal -20 penalty"; **Takedown** (`talents.yml:3027`) "When performing a Stun Action, the character does not suffer a -20 penalty to his Weapon Skill." Neither carries `effects`/`conditionalBonuses`; both sit in the NARRATIVE ratchet (`effect_wiring_audit.test.mjs:228,229`). `conditionalBonuses` key only on skills/characteristics (`base-actor.collectOptionalBonuses` `:87-90`), so they can't express "when the action is Called Shot/Stun" — the attack flow doesn't consult the talent.
+- canon: Sharpshooter — RT Core `CoreBook-1-200.pdf/markdown.md:4777` "No penalties for called shots"; Takedown — `:5576` "When performing a Stun Action, the character does not suffer a –20 penalty to his Weapon Skill."
+- gap: A character with Sharpshooter still eats −20 on Called Shots; with Takedown still eats −20 on Stun — the penalty the talent is supposed to cancel is applied unconditionally. Same engine shortfall as BUG-003 (Weapon Master): the conditional machinery has no "weapon-class / combat-action" condition. (Bulging Biceps' "no −30 for failing to brace" is the same class but the engine doesn't currently apply the brace −30 at all — `combat-actions.mjs:116` is description-only — so there's nothing to negate yet.)
+- fix: Extend the conditional/attack-specials machinery with an action-subtype (and weapon-class, per BUG-003) condition, and have the attack modifier sum skip/cancel the Called Shot/Stun −20 when the actor has the matching talent. Engine work. · autofixable: no
+
+### QA-035 — Polyglot: treat-all-languages-as-Basic (−10) recorded as narrative but expressible via the existing `treatAsBasic` path
+- area: talents
+- kind: automation-gap
+- severity: P3 (situational; Advanced-language tests are simply blocked-or-manual)
+- evidence: `src/packs/talents/talents.yml:2437` (Polyglot) — "He treats all languages as Basic Skills … tests using this Talent suffer a -10 penalty." Recorded as NARRATIVE (`effect_wiring_audit.test.mjs:227`). The `treatAsBasic` mechanism already exists (0.7.20): `acolyte.mjs:157` lets `rollSkill` proceed on an untrained skill when `skill.treatAsBasic`, and `:461-494` sets `treatAsBasic` per-skill — but only from the manual "As Basic" advance=-1 dropdown, never from a talent. Speak Language is an Advanced specialist skill, so without Polyglot wiring its untrained specialities stay blocked.
+- canon: RT Core `CoreBook-1-200.pdf/markdown.md:5417` (## POLYGLOT).
+- gap: Polyglot should let a character attempt any Speak Language test untrained at a −10 penalty; the engine grants neither the treat-as-Basic nor the −10. Manual workaround only.
+- fix: When the actor has Polyglot, set `treatAsBasic` on all Speak Language specialities in `_computeSkills` and add a −10 conditional on those rolls. Modest engine work (talent-driven `treatAsBasic` + a language-scoped conditional). · autofixable: no
+
+### QA-036 — not-a-bug rollup: re-roll / immunity / PF / positional talents correctly left narrative (no engine path)
+- area: talents
+- kind: not-a-bug
+- severity: P3
+- evidence: Verified during this talents/traits audit that the following NARRATIVE-listed entries are correctly text-only because the engine has no mechanism to express them: **re-roll-failed-Test** — Nerves of Steel (`talents.yml:2270` "re-roll failed Willpower Tests to avoid/recover from Pinning"), Strong Minded (`:2967` re-roll vs mind-affecting Psychic Techniques), Unshakeable Faith (`:3289` re-roll failed WP vs Fear), Die Hard (`:607` roll twice to avoid death) — there is NO re-roll-prompt path in the roll pipeline (`rollCharacteristic`/`rollSkill` produce a single 1d100), so a static AE/conditional can't model them; **immunity / condition-suppression** — Fearless (`:898`), Jaded (`:1700`), Duty Unto Death (`:737`), Iron Jaw (`:1685` Toughness-test-to-ignore-Stun), Hardy (`:1215`), Dark Soul (`:530` half Malignancy penalty) — these gate on conditions the engine doesn't track (Fear/Pinning/Stun/Malignancy state); **PF / Endeavour / Objective-points** — Hard Bargain (`:1187` +1 PF per Endeavour), Bloodtracker (`:337` +100 Objective Points), Master Enginseer (`:2087` Fate-Point auto-success) — group/Endeavour economy the engine doesn't orchestrate; **positional / ally-targeted** — Master & Commander (`:2028` no gang-up penalty for allies + boarding +10), Into the Jaws of Hell (`:1645` allies immune to Fear + ship +5 Morale), Ancestral Blessing/Blood of the Stalker (`:58`/`:323` once-per-day buff to N Kroot allies). Plus traits Auto-Stabilised (`traits.yml:5`), Dark Sight (`:54`), Regeneration (`:155`), Strange Physiology (`:183`) — all gate on combat-state/lighting/hit-location resolution the engine doesn't currently thread.
+- canon: RT Core Ch.III talents / Ch.XIV traits + ItS — as cited per entry above.
+- gap: None now — recording that these were checked and their NARRATIVE classification is currently correct. The re-roll cluster (Nerves of Steel / Strong Minded / Unshakeable Faith / Die Hard) becomes automatable only once a re-roll-prompt subsystem exists; the immunity cluster only once Fear/Pinning/Stun/Malignancy are tracked conditions.
+- fix: No action; revisit the re-roll cluster if/when a re-roll prompt path is added. · autofixable: n/a
+
 ### QA-031 — not-a-bug rollup: cybernetics correctly wired or correctly narrative-only
 - area: cybernetics
 - kind: not-a-bug
