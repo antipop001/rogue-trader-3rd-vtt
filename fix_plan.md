@@ -336,7 +336,7 @@ guard in the spec). Canon: `/mnt/project_data/RT/RT-DOCS/`.
   `rollData.modifiers.modifier` reaching the test total. Node gate can't exercise the
   roll prompt. (E2E)
 
-- [ ] NARRATIVE-RECORD-CYBER — add the intentionally-unwired cybernetics to the ratchet
+- [x] NARRATIVE-RECORD-CYBER — add the intentionally-unwired cybernetics to the ratchet
   `NARRATIVE` list (in `triage.md` AUDIT-003): Cybernetic Senses, Bionic Arm, Bionic
   Locomotion (legs, Hips, Pelvis, Etc.), Auger Arrays, Baleful Eye, Ballistic
   Mechadendrite, Miu Weapon Interface, Internal Blade, Internal Power Cell, Locator
@@ -345,7 +345,13 @@ guard in the spec). Canon: `/mnt/project_data/RT/RT-DOCS/`.
   cybernetics — Augmented Senses, Bionic Heart, Memorance Implant, Vitae Supplacement,
   Blackbone Bracing, Synthetic Muscle Grafts, Cortex Implants — extend the existing
   ENGINE-TRAIT-GRANTS / ENGINE-UNNATURAL / ENGINE-NATWEAPONS tasks, NOT this list.)
-  Verify each is genuinely text-only before adding. (NARRATIVE)
+  Verify each is genuinely text-only before adding. (NARRATIVE) — done iter 29: verified
+  all 17 carry no effects/conditionalBonuses (wiring blocks live only on the 8
+  WIRE-CYBER-AE/COND entries — Bionic Respiratory System, Calculus Logi, Manipulator/
+  Medicae/Optical/Utility Mechadendrite, Mind Impulse Unit, Scribe-Tines); exact names
+  match the pack; none in CODE_HANDLED/WIRED_EXPECTED. Added to ratchet `NARRATIVE`
+  (guarded by the "narrative entries carry no wiring" test). Gate green (build OK, 72
+  node tests). The 7 grant/SB/×2 cybernetics correctly excluded (extend ENGINE-* tasks).
 
 ### AUDIT-004 follow-ups (`weapon-mods`/`ammo`/`consumables`; see `triage.md` AUDIT-004)
 

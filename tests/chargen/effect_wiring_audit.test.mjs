@@ -91,6 +91,16 @@ const NARRATIVE = [
     // traits
     'Auto-Stabilised', 'Blind', 'Dark Sight', 'From Beyond', 'Phase', 'Regeneration',
     'Strange Physiology', 'The Stuff of Nightmares', 'Toxic', 'Warp Weapon',
+    // AUDIT-003 cybernetics (NARRATIVE-RECORD-CYBER) — intentionally text-only:
+    // weapons (item-like), immunities, comms/info utilities, duration extensions, and
+    // craftsmanship-gated bonuses whose Common baseline grants no standing bonus. See
+    // loops/effects-audit/triage.md AUDIT-003. (The talent-grant / SB / unarmed / ×2
+    // cybernetics extend ENGINE-TRAIT-GRANTS / ENGINE-UNNATURAL / ENGINE-NATWEAPONS.)
+    'Cybernetic Senses', 'Bionic Arm', 'Bionic Locomotion (legs, Hips, Pelvis, Etc.)',
+    'Auger Arrays', 'Baleful Eye', 'Ballistic Mechadendrite', 'Miu Weapon Interface',
+    'Internal Blade', 'Internal Power Cell', 'Locator Matrix',
+    'Respiratory Filter Implant', 'Gastral Bionics', 'Pain Ward', 'Voidskin',
+    'Volitor Implant', 'Vox Implant', 'Implant Systems',
 ];
 // ----------------------------------------------------------------------------
 
