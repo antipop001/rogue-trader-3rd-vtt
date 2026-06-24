@@ -508,11 +508,52 @@ guard in the spec). Canon: `/mnt/project_data/RT/RT-DOCS/`.
   talent derives the same. Derived-data on embedded items + sheet are Foundry-coupled — node
   gate can't exercise it. (E2E)
 
-- [ ] ENGINE-TRAIT-GRANTS — talents/traits that GRANT another trait/talent: Explorator
+- [x] ENGINE-TRAIT-GRANTS — talents/traits that GRANT another trait/talent: Explorator
   Implants (→ Mechanicus Implants), The Flesh is Weak / Physical Perfection (→ Machine),
   Sixth Sense (→ Psyniscience trained + Rival), 'Ard (meta-grant of Unnatural Toughness
   ×2 / Sturdy / Iron Jaw / True Grit). Needs item-grant machinery (auto-embed the granted
-  item on create). Larger than a data edit. RT Core / ItS. (ENGINE)
+  item on create). Larger than a data edit. RT Core / ItS. (ENGINE) — done iter 42: built
+  the item-grant machinery + wired the 4 clean item-grant entries. Granting entry carries
+  `flags.rt.grants=[{name,type}]`; pure helper `pendingGrants(grants, existingItems)` in
+  `roll-helpers.mjs` dedups vs the actor's current items (no double-grant on re-add or on
+  an NPC that already bakes the granted items); the Foundry-coupled half
+  `hooks-manager.applyItemGrants` resolves each from its pack by name+type and
+  `createEmbeddedDocuments` (tagged `flags.rt.grantedBy`), fixing the long-standing
+  `!item.parent.documentName === 'Actor'` always-false guard while there. Data:
+  Explorator Implants → Mechanicus Implants (RT Core); The Flesh is Weak → Machine (RT
+  Core); Physical Perfection → Machine (ItS p.199); 'Ard → Unnatural Toughness (x2) +
+  Sturdy + Iron Jaw + True Grit (ItS). NOT an AE/cond → new ratchet `GRANTS_EXPECTED`
+  list (validates the grants array + that every granted {name,type} resolves to a pack
+  doc). Multiple-take Machine leveling left narrative. Node test `trait_grants.test.mjs`
+  (6 cases). Gate green (build OK, 142 node tests). Sixth Sense (skill-grant + pickable
+  Rival) and the cybernetics talent-grants split to WIRE-SIXTH-SENSE / WIRE-CYBER-GRANTS
+  below; E2E follow-up below. (ENGINE)
+
+- [ ] E2E-TRAIT-GRANTS — verify on rt-smoke (Playwright): dragging Explorator Implants
+  onto an actor auto-embeds a Mechanicus Implants trait item; The Flesh is Weak / Physical
+  Perfection embeds a Machine trait; 'Ard embeds Unnatural Toughness (x2) + Sturdy + Iron
+  Jaw + True Grit; re-adding the same granting item does NOT add a second copy of any grant
+  (pendingGrants dedup); and a pre-built NPC that already bakes both the granting item AND
+  the granted items shows NO duplicates after import (the createItem-during-actor-creation
+  ordering edge). Item-create hooks + compendium resolution are Foundry-coupled — node gate
+  can't exercise them. (E2E)
+
+- [ ] WIRE-SIXTH-SENSE — `Sixth Sense` (trait, ItS p.11): grants "Psyniscience as a Trained
+  Skill" (a skill ADVANCE, not an embeddable item) + "Rival (Inquisition) Talent" (a
+  PICKABLE talent needing a pre-stamped `system.choice`). Neither fits the clean name+type
+  item-embed used by ENGINE-TRAIT-GRANTS. Decide: (a) extend the grant machinery to accept
+  a skill-advance grant (set `skills.psyniscience.advance`) + a pre-chosen pickable-talent
+  grant (embed Rival with `system.choice: 'Inquisition'` + its conditional/peer effect), or
+  (b) keep narrative. Pure-JS test on any extractable parse; E2E. (WIRE)
+
+- [ ] WIRE-CYBER-GRANTS — cybernetics that GRANT a talent (reuse the ENGINE-TRAIT-GRANTS
+  `flags.rt.grants` machinery): Bionic Heart → Sprint, Vitae Supplacement → Autosanguine,
+  Memorance Implant → Total Recall, Blackbone Bracing → Bulging Biceps + Iron Jaw,
+  Augmented Senses → Heightened Senses (pickable sense — needs a pre-stamped choice, see
+  WIRE-SIXTH-SENSE). Add `flags.rt.grants` to each; add the names to the ratchet
+  `GRANTS_EXPECTED`. (Blackbone's +2 unarmed dmg stays ENGINE-NATWEAPONS; Augmented
+  Senses' pickable-choice grant depends on the WIRE-SIXTH-SENSE decision.) RT Core / ItS,
+  cite pp.131-135. E2E follow-up. (WIRE)
 
 - [ ] ENGINE-NATWEAPONS — natural-weapon / unarmed damage-formula overrides: Natural
   Weapons, Improved Natural Weapons, Unarmed Master (1d10+SB, no Primitive), Unarmed

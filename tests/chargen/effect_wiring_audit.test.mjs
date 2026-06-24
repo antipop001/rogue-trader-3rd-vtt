@@ -108,6 +108,17 @@ const CODE_HANDLED = [
     // an AE can't address), must NOT also get an AE. ENGINE-RAPID-RELOAD.
     'Rapid Reload',
 ];
+// ENGINE-TRAIT-GRANTS — entries that GRANT other compendium items via `flags.rt.grants`
+// (auto-embedded on the actor by hooks-manager.applyItemGrants). This is a third wiring
+// kind (neither AE nor conditionalBonus): the granting entry carries metadata, the
+// granted items carry their own effects. Validated below: each granting entry has a
+// well-formed grants array AND every granted {name,type} resolves to a real pack doc.
+const GRANTS_EXPECTED = [
+    'Explorator Implants', // → Mechanicus Implants (RT Core)
+    'The Flesh is Weak',   // → Machine (RT Core)
+    'Physical Perfection', // → Machine (ItS p.199)
+    "'Ard",                // → Unnatural Toughness (x2) + Sturdy + Iron Jaw + True Grit (ItS)
+];
 // Intentionally text-only (narrative / per-DoS / PF / GM-adjudicated). These describe
 // a mechanic the system deliberately does NOT express as an AE/conditionalBonus
 // (activated buff, per-DoS, PF/Endeavour flavor, immunity, ally-targeted, positional).
@@ -207,6 +218,23 @@ test('no code-handled talent was given an AE/conditionalBonus (double-apply guar
         const hasAe = (d.effects ?? []).length > 0;
         const hasCond = (d.flags?.rt?.conditionalBonuses ?? []).length > 0;
         assert.ok(!hasAe && !hasCond, `code-handled "${name}" must not also be wired (double-apply risk)`);
+    }
+});
+
+test('every entry that grants items has a well-formed grants array resolving to real pack docs', () => {
+    for (const name of GRANTS_EXPECTED) {
+        const d = byName.get(name);
+        assert.ok(d, `GRANTS_EXPECTED "${name}" not found in any pack`);
+        const grants = d.flags?.rt?.grants;
+        assert.ok(Array.isArray(grants) && grants.length > 0, `"${name}" has no flags.rt.grants array`);
+        for (const g of grants) {
+            assert.ok(g && typeof g.name === 'string' && typeof g.type === 'string',
+                `"${name}" grant malformed: ${JSON.stringify(g)}`);
+            const target = byName.get(g.name);
+            assert.ok(target, `"${name}" grants "${g.name}" which is not in any pack`);
+            assert.equal(target.type, g.type,
+                `"${name}" grants "${g.name}" as type ${g.type} but pack doc is ${target.type}`);
+        }
     }
 });
 

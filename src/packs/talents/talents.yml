@@ -2384,6 +2384,11 @@ data:
     prerequisites: Augmenticist Alternate Career
     source: Into the Storm p.199
     tier: '1'
+flags:
+    rt:
+        grants:
+            - name: Machine
+              type: trait
 img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
 name: Physical Perfection
 type: talent
@@ -3128,6 +3133,11 @@ data:
     prerequisites: Mechanicus Implants
     source: Rogue Trader Core Rulebook
     tier: '1'
+flags:
+    rt:
+        grants:
+            - name: Machine
+              type: trait
 img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
 name: The Flesh is Weak
 type: talent
@@ -3545,6 +3555,9 @@ flags:
     rt:
         category: Career Special Ability
         career: Explorator
+        grants:
+            - name: Mechanicus Implants
+              type: trait
 img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
 name: Explorator Implants
 type: talent

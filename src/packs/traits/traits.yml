@@ -345,6 +345,17 @@ type: 'trait'
 data:
     description: 'Orks are extremely resilient, their bodies capable of withstanding and surviving injury that would kill humans, and recovering swiftly enough from even the most grievous wounds to get back into the fight within days. Orks gain the Unnatural Toughness (x2) and Sturdy Traits, and the Iron Jaw and True Grit Talents. Additionally, all Medicae tests to treat the injuries of an Ork gain a +20 bonus, due to the Ork''s robust physiology.'
     source: 'Into the Storm'
+flags:
+    rt:
+        grants:
+            - name: 'Unnatural Toughness (x2)'
+              type: 'trait'
+            - name: 'Sturdy'
+              type: 'trait'
+            - name: 'Iron Jaw'
+              type: 'talent'
+            - name: 'True Grit'
+              type: 'talent'
 img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
 name: '''Ard'
 type: 'trait'

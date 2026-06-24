@@ -466,6 +466,45 @@ export function rapidReloadTime(reload, hasRapidReload = true) {
     return fulls === 1 ? 'Full Action' : `${fulls} Full Actions`;
 }
 
+/**
+ * Item-grant machinery (ENGINE-TRAIT-GRANTS). Some talents/traits GRANT other
+ * compendium items: Explorator Implants → Mechanicus Implants (RT Core); The Flesh is
+ * Weak / Physical Perfection → Machine (RT Core / ItS); 'Ard → Unnatural Toughness (x2)
+ * + Sturdy + Iron Jaw + True Grit (ItS). The granting entry carries `flags.rt.grants`
+ * = an array of `{name, type}` describing the items to auto-embed on the actor when the
+ * granting item is first added. This pure helper computes which grants are NOT already
+ * on the actor (so re-adding the granting item, or an NPC that already bakes the granted
+ * items, does not double-grant) — the Foundry-coupled half (resolving each from its pack
+ * and `createEmbeddedDocuments`) lives in `hooks-manager.onCreateItem`.
+ *
+ * Match is by exact (case-insensitive) name AND type — granted names like
+ * "Unnatural Toughness (x2)" are the literal pack names (parens are part of the name,
+ * NOT a pickable choice), so no paren-stripping. Duplicate grants in the spec collapse
+ * to one. Non-array / empty inputs return [] (no grants).
+ *
+ * @param {Array<{name?: string, type?: string, pack?: string}>} grants  flags.rt.grants
+ * @param {Array<{name?: string, type?: string}>} existingItems  actor's current items
+ * @returns {Array<{name: string, type: string, pack?: string}>} grants still to embed
+ */
+export function pendingGrants(grants, existingItems) {
+    if (!Array.isArray(grants) || grants.length === 0) return [];
+    const have = new Set(
+        (Array.isArray(existingItems) ? existingItems : [])
+            .filter((i) => i?.name && i?.type)
+            .map((i) => `${i.type}::${String(i.name).toLowerCase()}`)
+    );
+    const out = [];
+    const seen = new Set();
+    for (const g of grants) {
+        if (!g?.name || !g?.type) continue;
+        const key = `${g.type}::${String(g.name).toLowerCase()}`;
+        if (have.has(key) || seen.has(key)) continue;
+        seen.add(key);
+        out.push(g.pack ? { name: g.name, type: g.type, pack: g.pack } : { name: g.name, type: g.type });
+    }
+    return out;
+}
+
 export async function roll1d100() {
     let formula = '1d100';
     const roll = new Roll(formula, {});

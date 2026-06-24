@@ -22,6 +22,7 @@ import {
 } from './macros/macro-manager.mjs';
 import { HandlebarManager } from './handlebars/handlebars-manager.mjs';
 import { promptForChoice, labelForChoice, buildEffectForChoice } from './pickers/talent-choice.mjs';
+import { pendingGrants } from './rolls/roll-helpers.mjs';
 import { DarkHeresyAmmoSheet } from './sheets/item/ammo-sheet.mjs';
 import { DarkHeresyPsychicPowerSheet } from './sheets/item/psychic-power-sheet.mjs';
 import { DarkHeresyStorageLocationSheet } from './sheets/item/storage-location-sheet.mjs';
@@ -222,7 +223,13 @@ Enable Debug with: game.rt.debug = true
      */
     static async onCreateItem(item, _options, userId) {
         if (userId !== game.user.id) return;            // only the creator prompts
-        if (!item.parent || !item.parent.documentName === 'Actor') return;
+        if (!item.parent || item.parent.documentName !== 'Actor') return;
+
+        // ENGINE-TRAIT-GRANTS: a talent/trait that GRANTS other compendium items
+        // (flags.rt.grants) auto-embeds the missing ones on the actor. Runs for any
+        // item type ('Ard is a trait), before the pickable-talent logic.
+        await HooksManager.applyItemGrants(item, item.parent);
+
         if (item.type !== 'talent') return;
         const spec = foundry.utils.getProperty(item, 'flags.rt.pickable');
         if (!spec || !spec.kind) return;
@@ -243,5 +250,35 @@ Enable Debug with: game.rt.debug = true
         if (effectData) {
             await item.createEmbeddedDocuments('ActiveEffect', [effectData]);
         }
+    }
+
+    /**
+     * Auto-embed the compendium items a granting talent/trait declares in
+     * `flags.rt.grants` (ENGINE-TRAIT-GRANTS). Resolves each grant from its pack by
+     * exact (case-insensitive) name + type, copies it onto the actor, and tags it
+     * `flags.rt.grantedBy` with the granting item's id. `pendingGrants` filters out
+     * grants the actor already has, so re-adding the talent or loading an NPC that
+     * already bakes the granted items does not double-grant. Granted items carry no
+     * further `flags.rt.grants`, so this does not recurse.
+     */
+    static async applyItemGrants(item, actor) {
+        const grants = foundry.utils.getProperty(item, 'flags.rt.grants');
+        const pending = pendingGrants(grants, actor.items.map((i) => ({ name: i.name, type: i.type })));
+        if (!pending.length) return;
+        const PACK_BY_TYPE = { trait: 'traits', talent: 'talents' };
+        const toCreate = [];
+        for (const g of pending) {
+            const packName = g.pack ?? PACK_BY_TYPE[g.type];
+            const pack = packName ? game.packs.get(`${SYSTEM_ID}.${packName}`) : null;
+            if (!pack) { game.rt?.warn?.(`Item grant "${g.name}": no pack for type ${g.type}`); continue; }
+            const docs = await pack.getDocuments();
+            const src = docs.find((d) => d.type === g.type && d.name?.toLowerCase() === String(g.name).toLowerCase());
+            if (!src) { game.rt?.warn?.(`Item grant "${g.name}" not found in pack ${packName}`); continue; }
+            const data = src.toObject();
+            delete data._id;
+            foundry.utils.setProperty(data, 'flags.rt.grantedBy', item.id);
+            toCreate.push(data);
+        }
+        if (toCreate.length) await actor.createEmbeddedDocuments('Item', toCreate);
     }
 }
