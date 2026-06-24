@@ -71,6 +71,33 @@ engine/roll fixes. Fix these directly, or in a dedicated follow-up loop.
 - **Verify:** Arch-militant with Weapon Master (Basic) gets +10/+2 on a basic-weapon
   attack card and +2 Initiative; no bonus with other weapon classes.
 
+## BUG-004 — Fatigue rule wrong (threshold + penalty) vs RT 1e
+- **Symptom:** Fatigue does ~nothing in play. Reported 2026-06-23.
+- **Canon (RT Core p.251):** a character functions with up to **Toughness Bonus**
+  levels of Fatigue; **any** level (≥1) imposes a flat **−10 to ALL Tests** (no
+  further penalty for more levels); exceeding TB → unconscious for 10−TB minutes, then
+  Fatigue reverts to TB. Recovery: 1 level/hour rest, all in 8 hours.
+- **Causes (`src/module/documents/acolyte.mjs`):**
+  1. **L334** `fatigue.max = toughness.bonus + willpower.bonus` — that's the **DH2**
+     threshold. RT 1e threshold is **Toughness Bonus only**.
+  2. **L324-327** halves a characteristic when `fatigue.value > characteristic.bonus`
+     — not an RT 1e mechanic. It rarely triggers (needs Fatigue above a stat's bonus)
+     and applies the wrong effect (halve one stat) instead of −10 to everything.
+  3. The **−10 penalty is never applied to rolls** — `rollCharacteristic`/`rollSkill`
+     (~L149+) add no fatigue modifier (they use `rollData.modifiers[...]`); attacks go
+     through `rollCharacteristic`, so they're un-penalised too. No unconscious handling.
+- **Fix:**
+  1. `fatigue.max = this.characteristics.toughness.bonus` (Outcast "+2 TB for Fatigue"
+     per `rules/backgrounds.mjs:88` should bump this if present).
+  2. Remove the L324-327 halving block.
+  3. In `rollCharacteristic` + `rollSkill`, when `this.fatigue.value >= 1` add
+     `rollData.modifiers['Fatigued'] = -10` (covers WS/BS attacks via rollCharacteristic).
+  4. Sheet (`templates/actor/panel/fatigue-panel.hbs`, used by acolyte + NPC): show Max
+     as TB; show "Fatigued (−10 all Tests)" when value ≥ 1; show "Unconscious" when
+     value > max.
+- **⚠ Foundry-coupled** (rolls + sheet) — the node gate can't exercise it; verify on
+  rt-smoke (fatigued actor shows −10 on a skill/characteristic/attack card; Max = TB).
+
 ## SWEEP — talents/traits with described bonuses that aren't wired
 Paranoia / Weapon Master are instances of a systemic gap: many compendium entries
 describe a numeric bonus in text but carry no `effects`/`conditionalBonuses`/
