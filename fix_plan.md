@@ -100,9 +100,11 @@ stray talents resolve (TALENT_RESOLVED_FLOOR 72 → 79).
   PF/SP already applied by sibling profit_factor/ship_points effects → no AE, no
   double-grant. (BG-AUTHOR)
 
-- [ ] BG-012 — Warrant: Fortune & Fate (5): Fortune & Fate: Ascending, Fallen from
-  Grace, Rising Star, Stable, Struggling. Source: `warrant_and_ship.json`. Target
-  TRAIT floor 90. (BG-AUTHOR)
+- [x] BG-012 — Warrant: Fortune & Fate (5): Fortune & Fate: Ascending, Fallen from
+  Grace, Rising Star, Stable, Struggling. Source: `warrant_and_ship.json`.
+  TRAIT_RESOLVED_FLOOR=90. All 5 narrative Warrant-chart outcomes (ItS p.37); PF/SP
+  already applied by sibling profit_factor/ship_points effects → text-only, no AE,
+  no double-grant. (BG-AUTHOR)
 
 - [ ] BG-013 — Warrant: Sanction (5): Sanction: Age of Plunder, Angevin Crusade, Fall
   of the Tellurian Combine, Halo Artefacts, The Meritech Wars. Source:

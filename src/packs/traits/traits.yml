@@ -1405,3 +1405,58 @@ flags:
     rt:
         category: 'Background'
         originStep: 'Warrant'
+---
+data:
+    description: 'Often only applicable to a newly created Rogue Trader House, the term ''rising star'' is used to describe a dynasty most definitely on the up. The bearer of the Warrant may be cresting a wave of success and influence, having recently been granted the Warrant or bequeathed the trappings — a fleet and military assets — that may have accompanied it. Many eyes will be watching the dynasty, some with hopeful expectation, others with jealousy. A great weight of responsibility rests on the shoulders of the bearer, and they may have a great deal to prove to earn the title ''Rogue Trader'' in the eyes of the Imperium and their peers. Alternately, the House may be more established but, thanks to a succession in leadership, enjoying a resurgence in its fortunes. Ship Points: 12, Profit Factor: 10.'
+    source: 'Into the Storm, p.37'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Fortune & Fate: Rising Star'
+type: 'trait'
+flags:
+    rt:
+        category: 'Background'
+        originStep: 'Warrant'
+---
+data:
+    description: 'Most Rogue Trader Houses undergo significant fluctuations in their fortunes, and a firm hand on the tiller is required to safely navigate the peaks and troughs. A dynasty said to be in the ascendant enjoys an upturn in its fortunes and an increase in its influence and prestige. Such a House proves itself a worthy investment to any who would join it in its endeavours, and its head will have little difficulty in attracting allies and backers. The only real problem a Rogue Trader in such a position may find is that of jealous rivals, for few dynasties survive long without attracting the ire of their peers — the most successful learn to anticipate and deal with such enemies before the fortunes of their House can be affected. Ship Points: 10, Profit Factor: 8.'
+    source: 'Into the Storm, p.37'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Fortune & Fate: Ascending'
+type: 'trait'
+flags:
+    rt:
+        category: 'Background'
+        originStep: 'Warrant'
+---
+data:
+    description: 'Stability is a luxury rarely afforded to most Rogue Trader Houses, and one that most are poorly disposed to suffer long. For many Rogue Traders, stability is a byword for stagnation or resting on one''s laurels, and as most are naturally inclined to risk taking, few find their fortunes stable for long. There are some Houses, however, that come to attain such a state — wealthy and powerful Houses that appear capable of absorbing almost any loss while still generating astronomical profits. These are in the main the very oldest of the dynasties, those whose risks are spread out across a vast web of investment and patronage, for whom a disastrous expedition that might bankrupt a smaller House is offset by a dozen other, more successful undertakings. Ship Points: 8, Profit Factor: 6.'
+    source: 'Into the Storm, p.37'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Fortune & Fate: Stable'
+type: 'trait'
+flags:
+    rt:
+        category: 'Background'
+        originStep: 'Warrant'
+---
+data:
+    description: 'A Rogue Trader dynasty might fall upon hard times for a wide range of reasons, from disaster to incompetence, and the transition from stable to struggling might be sudden and unanticipated if it is due to external factors. Perhaps the most common reason for a dynasty to find itself in such straits is through the activities of its rivals, particularly if these have found common cause and determined to ruin the fortunes of their enemy. Another reason a House might find itself struggling is when it comes to rely too heavily on a particular field of exploitation or revenue, only to find that resource has suddenly dried up. Nevertheless, Rogue Traders are uniquely optimistic individuals, and many are at their best when faced with a nigh insurmountable challenge. Ship Points: 6, Profit Factor: 4.'
+    source: 'Into the Storm, p.37'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Fortune & Fate: Struggling'
+type: 'trait'
+flags:
+    rt:
+        category: 'Background'
+        originStep: 'Warrant'
+---
+data:
+    description: 'The galaxy is a harsh place, and none are owed the success they seek. Countless numbers of Rogue Traders lose their livelihoods each year; indeed, the entire institution of the Warrant of Trade could be said to rely upon a constant ''pruning'' of the dynasties as a form of natural selection, ensuring that only the most driven and skilled of individuals continue to prosper. A House that has fallen from grace might retain scant resources — perhaps just a vessel and a skeleton crew of bonded retainers. Such a Rogue Trader would be fully aware of his situation and might be driven to extreme measures just to get by, even tempted to seek dealings with xenos or to explore regions long forbidden. Having fallen from grace does not imply permanent misfortune, however, and a Rogue Trader''s fortunes might yet turn full circle. Ship Points: 4, Profit Factor: 2.'
+    source: 'Into the Storm, p.37'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Fortune & Fate: Fallen from Grace'
+type: 'trait'
+flags:
+    rt:
+        category: 'Background'
+        originStep: 'Warrant'
