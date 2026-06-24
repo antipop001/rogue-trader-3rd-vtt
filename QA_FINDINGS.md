@@ -645,3 +645,43 @@ Format per finding:
 - canon: RT Core Table 9-1 (combat actions), Table 8-12 (critical hits), pp.245/262 (movement/encumbrance), Ch.VIII Fear/Pinning + Ch.VIII Insanity/Corruption, Ch.XII Endeavours — at `/mnt/project_data/RT/RT-DOCS/`.
 - gap: These dimensions weren't covered by the seed list, so genuine DH2-leftover / automation-gap issues in them remain unsurfaced. This finding records the coverage gap; the six follow-up tasks below schedule the actual audits.
 - fix: Append QA-COMBAT-ACTIONS, QA-CRIT-DAMAGE-TABLE, QA-MOVEMENT-ENCUMBRANCE, QA-CONDITIONS, QA-PSYCHOLOGY, QA-ENDEAVOURS to `fix_plan.md` as new discovery dimensions. · autofixable: n/a (process finding)
+
+### QA-069 — Manoeuvre action missing `Attack` subtype → never appears in the attack dropdown
+- area: rules
+- kind: data-quality
+- severity: P2 (action unselectable from combat)
+- evidence: `src/module/rules/combat-actions.mjs:230-236` defines `Manoeuvre` with `subtype: ['Movement', 'Melee']` (no `'Attack'`). `updateAvailableCombatActions` (`:31-43`) builds the weapon attack dropdown by `.filter((action) => action.subtype.includes('Attack'))` then Melee/Ranged — so Manoeuvre is filtered out and a melee attacker can never pick it. No other UI surfaces the action catalog.
+- canon: RT Core combat-actions table (`CoreBook-201-401.pdf/markdown.md:1853`) — `Manoeuvre | Half | Attack, Melee, Movement | Opposed WS Test, if you win, move enemy 1 metre.` Body text `:2083` "Type: Half Action  Subtype: Attack, Melee, Movement". Manoeuvre carries the **Attack** subtype.
+- gap: Code omits the `Attack` subtype, so Manoeuvre (an opposed-WS attack that shoves an enemy 1m) is hidden from the melee combat-action dropdown despite being a canon Attack action. Knock Down/Grapple/Stun etc. all carry `Attack` and appear; Manoeuvre is the lone Attack-subtype action that doesn't.
+- fix: Add `'Attack'` to Manoeuvre's `subtype` array → `['Attack', 'Melee', 'Movement']`. Data-only, matches canon. · autofixable: yes
+
+### QA-070 — Tactical Advance wrongly dropped as "DH2-only" (it is RT canon); several RT actions absent from the catalog
+- area: rules
+- kind: dh-leftover (mis-classification) + automation-gap
+- severity: P3
+- evidence: `src/module/rules/combat-actions.mjs` `allCombatActions()` (`:86-327`) has no `Tactical Advance`, `Move`, `Run`, `Stand/Mount`, `Focus Power`, or `Use a Skill` entry. CLAUDE.md §A ("2026-05-13 audit") asserts *"Tactical Advance: removed (DH2-only)"*. The RT Core combat-actions table lists all of these: `Tactical Advance | Full | Concentration, Movement | Move from cover to cover.` (`CoreBook-201-401.pdf/markdown.md:1869`); `Move`/`Run`/`Stand/Mount`/`Focus Power`/`Use a Skill` at `:1854,:1862,:1867,:1849,:1871`.
+- canon: RT Core combat-actions table `CoreBook-201-401.pdf/markdown.md:1841-1871`. Tactical Advance is a genuine RT 1e action, NOT a DH2-only carryover — the removal rationale recorded in CLAUDE.md is factually wrong.
+- gap: Tactical Advance was deleted on a false premise. The catalog also omits Move/Run/Stand/Focus Power/Use a Skill — most are non-attack and handled by other UI (movement panel, psychic tab, skill rolls), so their absence from the *attack* catalog is low-impact, EXCEPT **Run**, whose combat-relevant rider ("until your next turn, ranged attacks vs you −20 BS, melee +20 WS" — `:2138`) is unmodeled anywhere. None of these are DH2 leftovers.
+- fix: Re-add `Tactical Advance` (`Full`, `['Concentration','Movement']`) and correct the CLAUDE.md note. Optionally add `Run`/`Move` as catalog entries if the engine ever needs the Run easier-to-hit-in-melee modifier (currently QA-071 territory). · autofixable: partial (Tactical Advance re-add is trivial; Run modifier needs target-side wiring)
+
+### QA-071 — Combat-action SIDE-EFFECTS unautomated: only the actor's own to-hit modifier is applied
+- area: rules
+- kind: automation-gap
+- severity: P1 (missing automation; manual GM workaround per action)
+- evidence: `calculateCombatActionModifier` (`src/module/rules/combat-actions.mjs:7-26`) sets ONLY `rollData.modifiers['attack'] = actionInfo.attack.modifier` (the active character's own to-hit). No code applies the actions' defensive / opponent-facing / reaction riders:
+  - **Defensive Stance** (`:136-141`): "Gain an additional Reaction. Opponents suffer −20 WS." The reaction budget (`reactionBudget`/`canSpendReaction`, `roll-helpers.mjs:220,248`) is NOT bumped by Defensive Stance, and the −20 to opponents' WS is never applied to incoming attacks.
+  - **All Out Attack** "cannot Dodge or Parry": only a narrative chat line (`action-data.mjs:154-155 addEffect`) + Aim-suppression (`roll-data.mjs:216`). The Dodge/Parry spend gate (`acolyte.mjs:167-178`) checks only the per-Round budget via `canSpendReaction` — it never consults the All Out Attack flag, so the actor can still freely Dodge/Parry the Round he went All Out.
+  - **Guarded Attack** (`:196-203`): the −10 own attack IS applied, but the "+10 to all Dodge and Parry tests until your next turn" half is unmodeled.
+  - **Charge/Run** make the mover easier to hit in melee (`+20 WS` to attackers, `:2138`) — unmodeled.
+- canon: RT Core combat-actions table + bodies — Defensive Stance/All Out Attack/Guarded Attack/Run (`CoreBook-201-401.pdf/markdown.md:1830-1869`, Run rider `:2138`).
+- gap: The engine models each action as a flat self-to-hit number and ignores every reaction-grant, reaction-lockout, opponent penalty, and "easier to hit" rider — so Defensive Stance grants no extra Reaction, All Out Attack doesn't forfeit Reactions, Guarded Attack gives no defensive bonus, and Charge/Run targets aren't easier to hit. All require GM hand-tracking.
+- fix: Extend `calculateCombatActionModifier` (or a new post-action hook) to: bump `system.combat.reactions` for Defensive Stance; gate `canSpendReaction`/`acolyte.mjs:172` on an `All Out Attack`-this-round flag; add a +10 Dodge/Parry conditional for Guarded Attack; and tag the target's "easier to hit in melee" status from Charge/Run. Needs the reaction-budget + a status/condition layer (cf. QA-CONDITIONS). · autofixable: no (engine + state tracking)
+
+### QA-072 — Knock Down description: wrong Charge condition + omits "armour counts double"
+- area: rules
+- kind: data-quality
+- severity: P3 (cosmetic — action is GM-resolved, not engine-automated)
+- evidence: `src/module/rules/combat-actions.mjs:210-215` Knock Down description: "Make an opposed Strength test (with **+10 if using Charge**). 2+DoS gives (1d5-3)+SB Impact and 1 level of fatigue." The opposed-Strength test + 1d5−3+SB + Fatigue are correct, but the +10 condition and an armour clause are off.
+- canon: RT Core `CoreBook-201-401.pdf/markdown.md:2073-2080` — "+10 bonus to the test" applies "If the attacker spent **a Half Action to move** before performing the Knock-Down attack" (any move, not specifically Charge — and Charge is a Full Action so it can't precede a Half-Action Knock-Down in the same turn), and the 2-DoS damage is dealt "with **armour counting as double**". Also the reverse case (target wins by 2+ DoS → attacker knocked prone) is undocumented in the entry.
+- gap: Help text mis-states the +10 trigger (Charge vs "moved as a Half Action first") and drops the "armour counts double" rule. Display-only; the Knock Down action isn't mechanically resolved by the engine, so no roll is wrong — just the on-card guidance.
+- fix: Reword to "(+10 if you spent a Half Action to move first); on 2+ DoS deals 1d5−3+SB Impact with armour counting double, plus 1 level of Fatigue." · autofixable: yes (text only)
