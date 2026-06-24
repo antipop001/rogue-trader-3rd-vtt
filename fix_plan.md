@@ -18,13 +18,12 @@ stray talents resolve (TALENT_RESOLVED_FLOOR 72 → 79).
 
 ## Active list
 
-- [ ] TAL-FIX-001 — Resolve the 7 stub talents: `Chem-Geld`, `Pistol Weapon Training
-  (Las)`, `Pistol Weapon Training (SP)`, `Resistance (Interrogation)`, `Resistance
-  (Psychic Powers)`, `Weapon Training (choose one)`, `Xenos Weapon Training (Ork)`.
-  Author the missing talent(s) in `talents.yml`, or make the granted name resolve to
-  an existing pickable base (`Weapon Training (choose one)` → a `pickable`
-  weapon-class talent; `Resistance (X)` → a `Resistance` base). Set
-  TALENT_RESOLVED_FLOOR=79. (TAL-FIX)
+- [x] TAL-FIX-001 — Resolved the 7 stub talents. Renamed `Chem Geld`→`Chem-Geld`;
+  authored `Pistol Weapon Training (Las)`, `Pistol Weapon Training (SP)`, `Xenos
+  Weapon Training (Ork)`, a pickable `Resistance` base (resolves `Resistance
+  (Interrogation)`; `Resistance (Psychic Powers)` still aliases→`(Psychic
+  Techniques)`), and a pickable `Weapon Training` base (resolves `Weapon Training
+  (choose one)`). TALENT_RESOLVED_FLOOR=79. (TAL-FIX)
 
 - [ ] BG-001 — Home World traits batch A (9): Accustomed to Crowds, Blessed Ignorance,
   Charmed, Constant Combat Training, Criminal, Dynastic Warrant, Etiquette, Hivebound,

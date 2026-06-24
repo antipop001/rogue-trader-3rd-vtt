@@ -24,7 +24,7 @@ const DATA_DIR = path.join(ROOT, 'src/module/chargen/data');
 
 // --- RATCHET FLOORS (the loop raises these) ---------------------------------
 const TRAIT_RESOLVED_FLOOR = 8;    // of 103 granted; goal 103
-const TALENT_RESOLVED_FLOOR = 72;  // of 79 granted;  goal 79
+const TALENT_RESOLVED_FLOOR = 79;  // of 79 granted;  goal 79
 // ----------------------------------------------------------------------------
 
 /** Strip a trailing "(...)" so e.g. "Peer (Underworld)" matches a pickable base "Peer". */
