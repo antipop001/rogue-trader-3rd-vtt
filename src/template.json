@@ -213,8 +213,7 @@
           "charm": {
             "label": "Charm",
             "characteristics": [
-              "Fel",
-              "Inf"
+              "Fel"
             ],
             "advance": 0,
             "isSpecialist": false,
