@@ -486,3 +486,48 @@ Format per finding:
 - canon: n/a — code smell. RT 1e has no faction/subfaction actor mechanic; these are fork-era metadata fields.
 - gap: Two schema fields × three actor types with getters but no editor and no display — inert cruft alongside `threatLevel`.
 - fix: Drop `faction`/`subfaction` from the schema and the six getters, or add a header field if faction tagging is wanted. · autofixable: yes (no consumers to break)
+
+### QA-052 — Acquisition AVAILABILITY_MODS table does not match RT Core Table 9-35 (every tier wrong; "Abundant +50" missing)
+- area: acquisition
+- kind: data-quality
+- severity: P0 (wrong result in play — almost every Acquisition Test rolls against the wrong target)
+- evidence: `src/module/rules/acquisition.mjs:9-20` `AVAILABILITY_MODS = { ubiquitous: 30, plentiful: 20, common: 10, average: 0, scarce: -10, rare: -20, 'very rare': -30, 'extremely rare': -50, 'near unique': -60, unique: -70 }`. Used at `:104,107` to build the Acquisition target (`pf + availMod + ...`). The header comment claims "RT corebook p.270" and CLAUDE.md §G claims the table is "verbatim from RT corebook p.270" — it is NOT.
+- canon: RT Core p.270 Table 9-35 (`CoreBook-201-401.pdf/markdown.md:3489-3501`): Ubiquitous **+70**, Abundant **+50**, Plentiful **+30**, Common **+20**, Average **+10**, Scarce **+0**, Rare **−10**, Very Rare **−20**, Extremely Rare **−30**, Near Unique **−50**, Unique **−70**. Worked example `:3453` confirms Rare = −10.
+- gap: Every availability except Unique uses the wrong modifier — the code's values are shifted ~20-40 points harsher (Ubiquitous +30 vs +70, Common +10 vs +20, Scarce −10 vs +0, Extremely Rare −50 vs −30, Near Unique −60 vs −50), and the **Abundant (+50)** tier is absent entirely (an item with `availability: Abundant` falls through to `?? 0`). Net effect: acquisitions are systematically much harder than RAW, and the Herodor example (`:3453`, Rare −10 + Good −10 + Negligible +30 = +10, PF 40 → roll ≤ 50) cannot be reproduced.
+- fix: Replace AVAILABILITY_MODS with the Table 9-35 values above (add `abundant: 50`). · autofixable: yes (verbatim canon values)
+
+### QA-053 — Acquisition SCALE_MODS has Negligible and Trivial swapped and mis-valued vs Table 9-35
+- area: acquisition
+- kind: data-quality
+- severity: P0 (wrong result in play — small-quantity acquisitions get the wrong Scale bonus)
+- evidence: `src/module/rules/acquisition.mjs:29-37` `SCALE_MODS = { trivial: 30, negligible: 20, minor: 10, standard: 0, major: -10, significant: -20, vast: -30 }`.
+- canon: RT Core p.270 Table 9-35 (`CoreBook-201-401.pdf/markdown.md:3502-3509`): Negligible **+30** (Single Man), Trivial **+20** (Squad 3-5), Minor +10, Standard +0, Major −10, Significant −20, Vast −30. Herodor example `:3453` confirms Negligible = +30 ("a single pistol … Negligible Scale +30"); the Crew/`:3443` note also lists seven Scale categories "ranging from Negligible to Vast".
+- gap: The code gives Negligible +20 and Trivial +30 — the two smallest-scale tiers are swapped (and thus both wrong). A single-item acquisition (the overwhelmingly common case, Negligible) gets +20 instead of the canon +30, and the Herodor worked example again cannot be reproduced. Minor/Standard/Major/Significant/Vast are correct.
+- fix: Set `negligible: 30, trivial: 20` (the other five are already correct). · autofixable: yes
+
+### QA-054 — Commerce skill bonus to Acquisition applied as +10/DoS instead of RT's +2/DoS
+- area: acquisition
+- kind: automation-gap
+- severity: P1 (wrong result — Commerce help inflates the acquisition target 5× over RAW)
+- evidence: `src/module/rules/acquisition.mjs:107` `const target = pf + availMod + craftMod + scaleMod + (commerce * 10) + extraMod;` where `commerce` is the "Commerce DoS (optional)" field (`:77-78,100`). Each Degree of Success entered adds **+10** to the target.
+- canon: RT Core p.270 "Commerce and Acquisition" (`CoreBook-201-401.pdf/markdown.md:3534`): "For each degree the Explorer beats his opponent, he may increase his Profit Factor by **2 points**. For each degree his opponent beats him, however, he must decrease his Profit Factor by 2." Worked example `:3548`: beating by one degree = +2 PF.
+- gap: The dialog adds +10 per Commerce DoS rather than +2 — a 5× over-application of the Commerce contest bonus. A 3-DoS Commerce win gives +30 in code vs +6 RAW. (The opposed Commerce vs Commerce/Scrutiny contest itself is also not run — the user types in a net DoS by hand — which is acceptable for a manual dialog, but the per-DoS scalar must be ×2.)
+- fix: Change `(commerce * 10)` to `(commerce * 2)`; update the field label/help to read "Commerce net DoS (±2 PF each)". · autofixable: yes
+
+### QA-055 — Starship-component / starship acquisition uses the generic Scale modifier; Table 9-36 component types and the "no Scale bonus for components" rule are unmodelled
+- area: acquisition
+- kind: automation-gap
+- severity: P2 (manual workaround — GM must hand-enter the right modifier; the dialog offers the wrong Scale dropdown for ship gear)
+- evidence: `src/module/rules/acquisition.mjs:55-106` always exposes the generic `SCALE_MODS` dropdown and adds `scaleMod` to the target for any item. There is no ship-component branch (no reference to Table 9-36, component type, or Hull Modifier anywhere in the file).
+- canon: RT Core p.270 (`CoreBook-201-401.pdf/markdown.md:3558-3568`): for starship Components the GM works out the modifier from Availability + Craftsmanship and, **in place of Scale**, uses Table 9-36: Starship Component Acquisitions (by component type). Earlier `:509` is explicit: "when determining the Acquisition Threshold required to acquire starship Components, the GM should never give the players a bonus based on Scale." Acquiring a whole starship uses a Hull-Modifier (= hull Ship-Point value) and disallows all modifiers except a Commerce bonus (`:3568`).
+- gap: The Acquire button on ship components / ship weapons (any item with an `availability`) opens the same dialog that adds a Scale bonus — directly contradicting the "never give a Scale bonus for Components" rule — and offers no Table 9-36 component-type modifier. The Hull-Modifier path for buying a ship is absent. All of this is GM-tracked off-system.
+- fix: When the acquiring item is a `shipComponent`/`shipWeapon`, suppress the Scale dropdown and offer a Table 9-36 component-type modifier instead; add a Hull-Modifier path for whole-starship acquisition. · autofixable: no (needs item-type plumbing + Table 9-36 data)
+
+### QA-056 — Profit-Factor flows + craftsmanship modifiers are correct (not-a-bug rollup)
+- area: acquisition
+- kind: not-a-bug
+- severity: P3 (verification record)
+- evidence: PF is a single group-wide world setting (`src/module/rogue-trader-settings.mjs:51-76` `getProfitFactor`/`setProfitFactor`, default 30), read by the acquisition dialog (`acquisition.mjs:56`), the Endeavour reward flow (`endeavours.mjs:83,148` adds `pfReward` to the world PF), and chargen commit (`chargen/commit.mjs:301-304` adds the dynasty `state.profitFactor` to the world PF, GM-only). The CRAFTSMANSHIP_MODS table (`acquisition.mjs:22-27` Poor +10 / Common +0 / Good −10 / Best −30) matches Table 9-35 exactly (`CoreBook-201-401.pdf/markdown.md:3510-3514`). The "fair price ±30" GM fudge (`:3485`) is covered by the dialog's free "Additional modifier" field. The auto-pass (PF≥100) / auto-fail (PF≤0) edge rules (`:3467-3468`) are satisfied implicitly by the `1d100` range (target ≥100 → roll ≤100 always succeeds; target ≤0 → roll ≥1 always fails).
+- canon: RT Core p.270 (`:3428-3434`, `:3510-3514`) — PF is shared dynasty-wide; craftsmanship modifiers as listed.
+- gap: none — these aspects are faithful. The acquisition defects are confined to the Availability table (QA-052), Scale tiers (QA-053), Commerce scalar (QA-054), and the missing ship-component path (QA-055).
+- fix: n/a · autofixable: n/a
