@@ -65,6 +65,12 @@ export class RogueTraderBaseActor extends Actor {
         rollData.type = override ? override : 'Characteristic';
         rollData.baseTarget = characteristic.total;
         rollData.modifiers.modifier = 0;
+        // RT 1e: any level of Fatigue imposes -10 to all Tests (BUG-004). Covers WS/BS
+        // attacks too, which route through rollCharacteristic. Guarded for actor types
+        // (vehicle/voidship) that have no fatigue track.
+        if (this.system.fatigue?.value >= 1) {
+            rollData.modifiers['Fatigued'] = -10;
+        }
         rollData.optionalBonuses = this.collectOptionalBonuses({ characteristic: characteristicName });
         await prepareSimpleRoll(simpleSkillData);
     }

@@ -41,7 +41,9 @@ export class AssignDamageData {
         if(location) {
             for(const [name, locationArmour] of Object.entries(this.actor.system.armour)) {
                 if(location.replace(/\s/g, "").toUpperCase() === name.toUpperCase()) {
-                    this.armour = locationArmour.value;
+                    // `total` = worn + Natural-Armour + cybernetic AP (BUG-005); `value`
+                    // would be worn-only and silently ignore creature/cybernetic armour.
+                    this.armour = locationArmour.total;
                     this.tb = locationArmour.toughnessBonus;
                 }
             }
@@ -190,7 +192,7 @@ export class AssignDamageData {
     async performActionAndSendToChat() {
         // Assign Damage
         if (this.voidshipHit) {
-            this.actor = await this.actor.update({
+            await this.actor.update({
                 system: {
                     hull: {
                         value: this.actor.system.hull.value - this.voidshipHullDamage
@@ -204,7 +206,7 @@ export class AssignDamageData {
                 }
             });
         } else {
-            this.actor = await this.actor.update({
+            await this.actor.update({
                 system: {
                     wounds: {
                         value: this.actor.system.wounds.value - this.damageTaken,
@@ -219,8 +221,11 @@ export class AssignDamageData {
         game.rt.log('performActionAndSendToChat', this)
 
         const html = await renderTemplate('systems/rogue-trader-3rd/templates/chat/assign-damage-chat.hbs', this);
-        const actorData = this.actor;
-        const actor = game.actors.get(actorData._id);
+        // Use the live target document directly (do NOT re-fetch via game.actors by id —
+        // that returns the wrong document for unlinked token actors, and the previous
+        // `this.actor = await this.actor.update()` could clobber this.actor with the
+        // update() return value and crash the chat step — BUG-005).
+        const actor = this.actor;
         let chatData = {
             user: game.user.id,
             speaker: ChatMessage.getSpeaker({ actor}),

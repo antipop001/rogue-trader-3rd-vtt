@@ -164,6 +164,10 @@ export class RogueTraderAcolyte extends RogueTraderBaseActor {
         rollData.type = 'Skill';
         rollData.baseTarget = skill.current;
         rollData.modifiers.modifier = 0;
+        // RT 1e: any level of Fatigue imposes -10 to all Tests (BUG-004).
+        if (this.system.fatigue?.value >= 1) {
+            rollData.modifiers['Fatigued'] = -10;
+        }
         // Surface talents whose `flags.rt.conditionalBonuses` apply to this
         // skill or its driving characteristic, so the prompt can offer them
         // as optional checkboxes.
@@ -321,17 +325,21 @@ export class RogueTraderAcolyte extends RogueTraderBaseActor {
                 }
             }
 
-            if (this.fatigue.value > characteristic.bonus) {
-                characteristic.total = Math.ceil(characteristic.total / 2);
-                characteristic.bonus = Math.floor(characteristic.total / 10) + characteristic.unnatural;
-            }
+            // RT 1e: Fatigue does NOT halve characteristics (that was a DH carryover —
+            // BUG-004). Any level of Fatigue instead imposes a flat -10 to all Tests,
+            // applied as a roll modifier in rollCharacteristic / rollSkill.
         }
 
         this.system.insanityBonus = Math.floor(this.insanity / 10);
         this.system.corruptionBonus = Math.floor(this.corruption / 10);
         this.psy.currentRating = this.psy.rating - this.psy.sustained;
         this.initiative.bonus = this.characteristics[this.initiative.characteristic].bonus;
-        this.fatigue.max = this.characteristics.toughness.bonus + this.characteristics.willpower.bonus;
+        // RT 1e (RT Core p.251): a character functions with up to Toughness Bonus
+        // levels of Fatigue; exceeding TB collapses him unconscious. (Was TB+WB — a DH2
+        // threshold, BUG-004.) Any level (>=1) imposes -10 to all Tests.
+        this.fatigue.max = this.characteristics.toughness.bonus;
+        this.fatigue.fatigued = this.fatigue.value >= 1;
+        this.fatigue.unconscious = this.fatigue.value > this.fatigue.max;
     }
 
     _computeSkills() {
@@ -523,12 +531,14 @@ export class RogueTraderAcolyte extends RogueTraderBaseActor {
             }
         });
 
-        this.armour.head.value = maxArmour['head'];
-        this.armour.leftArm.value = maxArmour['leftArm'];
-        this.armour.rightArm.value = maxArmour['rightArm'];
-        this.armour.body.value = maxArmour['body'];
-        this.armour.leftLeg.value = maxArmour['leftLeg'];
-        this.armour.rightLeg.value = maxArmour['rightLeg'];
+        // `value` = worn armour AP (also the Best-craftsmanship reference). `total`
+        // already holds traitBonus + cybernetic AP; the per-location `total += value`
+        // lines below fold in the worn armour, so `total` = the COMPLETE armour at the
+        // location (worn + Natural Armour + cybernetic). Assign-damage reads `total`
+        // (BUG-005 fix in assign-damage-data.mjs) instead of worn-only `value`.
+        locations.forEach((location) => {
+            this.armour[location].value = maxArmour[location];
+        });
 
         this.armour.head.total += this.armour.head.value;
         this.armour.leftArm.total += this.armour.leftArm.value;

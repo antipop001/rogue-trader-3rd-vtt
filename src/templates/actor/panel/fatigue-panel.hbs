@@ -8,4 +8,15 @@
         <span class="rt-field__header">Value</span>
         <input type="number" data-dtype="Number" class="rt-field__input" name="system.fatigue.value" value="{{actor.fatigue.value}}" />
     </div>
+    {{#if actor.fatigue.unconscious}}
+        <div class="rt-field__wrapper">
+            <span class="rt-field__span" style="color: var(--rt-color-danger, #b04040); font-weight: bold;">Unconscious</span>
+        </div>
+    {{else}}
+        {{#if actor.fatigue.fatigued}}
+            <div class="rt-field__wrapper">
+                <span class="rt-field__span" style="color: var(--rt-color-danger, #b04040);">Fatigued (&minus;10 to all Tests)</span>
+            </div>
+        {{/if}}
+    {{/if}}
 </div>
