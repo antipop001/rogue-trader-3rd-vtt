@@ -8,6 +8,7 @@ import { calculateWeaponModifiersAttackBonuses, updateWeaponModifiers } from '..
 import { hitDropdown } from '../rules/hit-locations.mjs';
 import { DarkHeresy } from '../rules/config.mjs';
 import { shipFacings } from '../rules/ship-facings.mjs';
+import { weaponMasterBonus } from './roll-helpers.mjs';
 
 export class RollData {
     difficulties = rollDifficulties();
@@ -253,6 +254,14 @@ export class WeaponRollData extends RollData {
             this.updateOperatorBonus();
             this.updateShotsAmount();
             this.modifiers['attack'] = 0;
+        } else {
+            // Weapon Master (BUG-003): +10 to hit when the wielded weapon's class
+            // matches the talent's chosen class (RT Core p.73, Weapon Master). Damage +2 is
+            // applied in damage-data.mjs; +2 Initiative is situational (no weapon
+            // context at Initiative-roll time) and left for E2E follow-up.
+            const talents = this.sourceActor?.items?.filter((i) => i.type === 'talent') ?? [];
+            const wm = weaponMasterBonus(talents, this.weapon.system.class);
+            if (wm.toHit) this.modifiers['weapon master'] = wm.toHit;
         }
     }
 

@@ -67,6 +67,34 @@ export function normalizePsychicRange(raw, ctx = {}) {
     return Math.floor(value);
 }
 
+/**
+ * Weapon Master (and any future weapon-class conditional talent) bonus. RT Core p.73
+ * (Weapon Master, Arch-militant): "Choose one (and only one) class of weapon. When
+ * wielding a weapon of that chosen class in combat, the Arch-militant gains +10 to
+ * hit, +2 damage, and +2 Initiative." The chosen class is stored on the talent's
+ * `system.choice` (and appended to the item name, so name-exact `hasTalent('Weapon
+ * Master')` does NOT match) — scan by name substring + compare `choice` to the
+ * wielded weapon's `class`. (BUG-003.)
+ *
+ * @param {Array<{name?: string, system?: {choice?: string}}>} talents  actor talent items
+ * @param {string} weaponClass  wielded weapon's `system.class` (Pistol/Basic/Heavy/Melee/Thrown)
+ * @returns {{toHit: number, damage: number, initiative: number}} bonus (all 0 if no match)
+ */
+export function weaponMasterBonus(talents, weaponClass) {
+    const out = { toHit: 0, damage: 0, initiative: 0 };
+    if (!Array.isArray(talents) || !weaponClass) return out;
+    const wc = String(weaponClass).toLowerCase();
+    for (const t of talents) {
+        if (!t?.name || !/weapon master/i.test(t.name)) continue;
+        const choice = t.system?.choice;
+        if (!choice || String(choice).toLowerCase() !== wc) continue;
+        out.toHit += 10;
+        out.damage += 2;
+        out.initiative += 2;
+    }
+    return out;
+}
+
 export async function roll1d100() {
     let formula = '1d100';
     const roll = new Roll(formula, {});

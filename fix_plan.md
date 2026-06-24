@@ -35,17 +35,32 @@ guard in the spec). Canon: `/mnt/project_data/RT/RT-DOCS/`.
 - [ ] E2E-INIT — verify on rt-smoke (Playwright): an actor with the Paranoia talent
   shows displayed Initiative bonus raised by exactly +2 vs the same actor without it;
   NPC actors without `system.initiative.modifier` still compute (the `?? 0` guard).
-  Foundry-coupled — node gate can't exercise it. (E2E)
+  Foundry-coupled — node gate can't exercise it. (E2E) [SKIPPED by the autonomous loop
+  iter 4: live-deploy + single-GM-seat Playwright needs the user to vacate their browser
+  tab — not autonomously completable; deferred to an out-of-loop verification session.]
 
 - [x] FIX-DOF — BUG-001: dropped `1 +` from `action-data.mjs:278` (DoF = tens diff).
   Done by hand 2026-06-23 (verified 61/52→1, 92/62→3). DoS (line 226) left as-is — a
   separate combat-pass task. (DoF)
 
-- [ ] ENGINE-WEAPONCLASS — BUG-003 Weapon Master / Crack Shot: extend the
-  conditional-bonus (or attack/damage) path to apply a bonus when the used weapon's
-  `class` matches the talent's `system.choice`; wire Weapon Master (+10 hit / +2 dmg /
-  +2 init) and Crack Shot. Foundry-coupled → E2E follow-up; pure-JS unit test for any
-  extractable matcher. (ENGINE)
+- [x] ENGINE-WEAPONCLASS — BUG-003 Weapon Master: apply a bonus when the wielded
+  weapon's `class` matches the talent's `system.choice`. Done iter 4: pure helper
+  `weaponMasterBonus(talents, weaponClass)` in `roll-helpers.mjs` (name-substring match
+  + case-insensitive choice/class compare; handles the choice-appended-to-name issue
+  that breaks `hasTalent`); wired +10 to-hit in `WeaponRollData.update()` (non-ship) and
+  +2 damage in `DamageData._calculateDamage()` (any class). Both reach the roll via
+  `calculateTotalModifiers`/`_totalDamage` (sum all modifier keys). Node test
+  `tests/chargen/weapon_master.test.mjs` (4 cases). NOT double-applied (Weapon Master not
+  in the code-handled set). +2 Initiative left unwired (situational — no weapon context
+  at Initiative-roll time); Crack Shot deferred to ENGINE-CRITDAMAGE (it is crit-damage,
+  not weapon-class). RT Core p.73 (Weapon Master). Gate green (63 tests). E2E follow-up
+  below. (ENGINE)
+
+- [ ] E2E-WEAPONMASTER — verify on rt-smoke (Playwright): an Arch-militant with Weapon
+  Master (Basic) gets +10 to-hit and +2 damage on a basic-weapon attack card, and NO
+  bonus when attacking with a weapon of another class (e.g. Pistol/Melee). Also confirm
+  the +2 Initiative is still NOT applied (situational, intentionally unwired). Node gate
+  can't exercise the attack pipeline. (E2E)
 
 - [ ] AUDIT-002 — Extend the sweep to NON-`+N` mechanical phrasings in `talents`+`traits`
   ("doubles/halves/+Xd10/additional Reaction/ignores armour/re-roll/Unnatural"). Append

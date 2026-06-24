@@ -2,6 +2,7 @@ import { additionalHitLocations, getHitLocationForRoll } from '../rules/hit-loca
 import { calculateAmmoDamageBonuses, calculateAmmoPenetrationBonuses, calculateAmmoSpecials } from '../rules/ammo.mjs';
 import { getCriticalDamage } from '../rules/critical-damage.mjs';
 import { calculateWeaponModifiersDamageBonuses, calculateWeaponModifiersPenetrationBonuses } from '../rules/weapon-modifiers.mjs';
+import { weaponMasterBonus } from './roll-helpers.mjs';
 
 export class DamageData {
     template = '';
@@ -180,6 +181,15 @@ export class Hit {
                 }
             }
             this.righteousFury.push(entry);
+        }
+
+        // Weapon Master (BUG-003): +2 damage when the wielded weapon's class matches
+        // the talent's chosen class (RT Core p.73, Weapon Master). Applies to any class,
+        // so it sits outside the melee/ranged split. To-hit +10 is in roll-data.mjs.
+        if (actionItem.type === 'weapon') {
+            const talents = sourceActor?.items?.filter((i) => i.type === 'talent') ?? [];
+            const wm = weaponMasterBonus(talents, actionItem.system.class);
+            if (wm.damage) this.modifiers['weapon master'] = wm.damage;
         }
 
         if (actionItem.isMelee) {
