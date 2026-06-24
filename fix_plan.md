@@ -109,10 +109,18 @@ guard in the spec). Canon: `/mnt/project_data/RT/RT-DOCS/`.
   (AE feeds `skill.current` via the two-pass `_computeSkills`). Foundry-coupled — node
   gate can't exercise it. (E2E)
 
-- [ ] WIRE-MULTIPLEARMS — `Multiple Arms` (trait): always-on AE +10 to
+- [x] WIRE-MULTIPLEARMS — `Multiple Arms` (trait): always-on AE +10 to
   `system.characteristics.toughness.modifier` (mode 2). RT Core. Add to ratchet.
   (Str +10 on Climb/Swim = conditional note; "two attacks" = Multiple Attack action,
-  narrative — record both, don't wire.) (WIRE)
+  narrative — record both, don't wire.) (WIRE) — done iter 20: AE (mode 2, _id
+  MultipleArmsRT01) on toughness.modifier; source cites RT Core p.366; +10 Str-on-movement
+  and Multiple Attack left narrative; added to ratchet WIRED_EXPECTED (kind ae). Gate green
+  (build OK, 63 node tests). NOT double-applied (not in code-handled set). E2E follow-up below.
+
+- [ ] E2E-MULTIPLEARMS — verify on rt-smoke (Playwright): an actor with the Multiple Arms
+  trait shows displayed Toughness raised by +10 (the AE feeds `characteristics.toughness`
+  via the modifier term) vs without it; confirm derived TB/Wounds shift accordingly.
+  Foundry-coupled — node gate can't exercise it. (E2E)
 
 - [ ] WIRE-COND-INTERACT — `conditionalBonuses` for social talents: Renowned Warrant
   (+10 interaction skills "with those who respect the warrant"), Whispers (+10 Inquiry

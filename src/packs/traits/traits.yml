@@ -91,10 +91,34 @@ type: 'trait'
 ---
 data:
     description: 'This creature has more than one pair of arms. It increases its Toughness Characteristic by +10 and gains a +10 bonus on Strength Tests involving movement such as Climb and Swim. Finally, the creature may use the Multiple Attack action to gain two attacks on its turn.'
-    source: 'Rogue Trader Core Rulebook'
+    source: 'Rogue Trader Core Rulebook, p.366'
 img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
 name: 'Multiple Arms'
 type: 'trait'
+effects:
+- _id: MultipleArmsRT01
+  name: Multiple Arms
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  description: ''
+  origin: ''
+  disabled: false
+  transfer: true
+  tint: null
+  statuses: []
+  duration:
+    startTime: null
+    seconds: null
+    combat: null
+    rounds: null
+    turns: null
+    startRound: null
+    startTurn: null
+  changes:
+  - key: system.characteristics.toughness.modifier
+    mode: 2
+    value: '10'
+    priority: null
+  flags: {}
 ---
 data:
     description: 'This creature has a naturally tough hide or an exoskeleton, affording it some protection against attacks. This Trait always includes a numeric value to indicate how many Armour Points the creature gains to all locations.'
