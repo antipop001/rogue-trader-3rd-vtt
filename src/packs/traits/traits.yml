@@ -245,10 +245,42 @@ type: 'trait'
 ---
 data:
     description: 'Kroot gain a +10 bonus to all Concealment, Shadowing, and Silent Move Tests. In addition, Kroot treat forests, jungles, and similar environments as open terrain.'
-    source: 'Into the Storm'
+    source: 'Into the Storm, p.142'
 img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
 name: 'Fieldcraft'
 type: 'trait'
+effects:
+- _id: FieldcraftKr00t1
+  name: Fieldcraft
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  description: ''
+  origin: ''
+  disabled: false
+  transfer: true
+  tint: null
+  statuses: []
+  duration:
+    startTime: null
+    seconds: null
+    combat: null
+    rounds: null
+    turns: null
+    startRound: null
+    startTurn: null
+  changes:
+  - key: system.skills.concealment.modifier
+    mode: 2
+    value: '10'
+    priority: null
+  - key: system.skills.shadowing.modifier
+    mode: 2
+    value: '10'
+    priority: null
+  - key: system.skills.silentMove.modifier
+    mode: 2
+    value: '10'
+    priority: null
+  flags: {}
 ---
 data:
     description: 'The Kroot''s beak is a natural weapon with the following profile: 1d5+SB R, Primitive.'

@@ -28,6 +28,7 @@ const WIRED_EXPECTED = [
     { name: 'Heightened Senses (Sound)', kind: 'cond' },
     { name: 'Heightened Senses (Taste)', kind: 'cond' },
     { name: 'Heightened Senses (Touch)', kind: 'cond' },
+    { name: 'Fieldcraft', kind: 'ae' },
 ];
 // Already applied by name in src/module/rolls/* — must NOT also be AE'd.
 const CODE_HANDLED = [

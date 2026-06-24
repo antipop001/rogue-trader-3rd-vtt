@@ -96,9 +96,18 @@ guard in the spec). Canon: `/mnt/project_data/RT/RT-DOCS/`.
   flags re-confirmed (no double-wire). Appended the 5 tasks below. Gate green (no pack
   change this iter).
 
-- [ ] WIRE-FIELDCRAFT — `Fieldcraft` (trait): always-on AE +10 to `system.skills.
+- [x] WIRE-FIELDCRAFT — `Fieldcraft` (trait): always-on AE +10 to `system.skills.
   {concealment,shadowing,silentMove}.modifier` (mode 2). Kroot, ItS. Add to ratchet
   `WIRED_EXPECTED` (kind ae). ("treat forests as open terrain" stays narrative.) (WIRE)
+  — done iter 19: AE (mode 2, _id FieldcraftKr00t1) on the 3 skill modifiers; source
+  cites ItS p.142; "open terrain" left narrative; added to ratchet (kind ae). Gate green
+  (build OK, 63 node tests). NOT double-applied (not in code-handled set). E2E follow-up
+  below. (WIRE)
+
+- [ ] E2E-FIELDCRAFT — verify on rt-smoke (Playwright): a Kroot actor with the Fieldcraft
+  trait shows Concealment/Shadowing/Silent Move skill values raised by +10 vs without it
+  (AE feeds `skill.current` via the two-pass `_computeSkills`). Foundry-coupled — node
+  gate can't exercise it. (E2E)
 
 - [ ] WIRE-MULTIPLEARMS — `Multiple Arms` (trait): always-on AE +10 to
   `system.characteristics.toughness.modifier` (mode 2). RT Core. Add to ratchet.
