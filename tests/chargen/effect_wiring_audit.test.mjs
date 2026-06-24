@@ -22,7 +22,7 @@ const PACKS = ['talents', 'traits', 'cybernetics'];
 // --- RATCHET LISTS (the loop appends; never remove) -------------------------
 // Entries the loop has wired with an AE ('ae') or a conditionalBonus ('cond').
 const WIRED_EXPECTED = [
-    // { name: 'Paranoia', kind: 'ae' },
+    { name: 'Paranoia', kind: 'ae' },
     { name: 'Heightened Senses (Sight)', kind: 'cond' },
     { name: 'Heightened Senses (Smell)', kind: 'cond' },
     { name: 'Heightened Senses (Sound)', kind: 'cond' },

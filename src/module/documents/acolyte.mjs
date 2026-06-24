@@ -361,7 +361,12 @@ export class RogueTraderAcolyte extends RogueTraderBaseActor {
         this.system.insanityBonus = Math.floor(this.insanity / 10);
         this.system.corruptionBonus = Math.floor(this.corruption / 10);
         this.psy.currentRating = this.psy.rating - this.psy.sustained;
-        this.initiative.bonus = this.characteristics[this.initiative.characteristic].bonus;
+        // RT 1e: Initiative bonus = governing characteristic bonus + any additive
+        // modifier (effect-addressable via system.initiative.modifier so talents/gear
+        // like Paranoia "+2 Initiative" survive derived-data recompute). BUG-002.
+        this.initiative.bonus =
+            this.characteristics[this.initiative.characteristic].bonus
+            + (this.system.initiative.modifier ?? 0);
         // RT 1e (RT Core p.251): a character functions with up to Toughness Bonus
         // levels of Fatigue; exceeding TB collapses him unconscious. (Was TB+WB — a DH2
         // threshold, BUG-004.) Any level (>=1) imposes -10 to all Tests.

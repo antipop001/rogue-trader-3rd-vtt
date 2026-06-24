@@ -22,11 +22,20 @@ guard in the spec). Canon: `/mnt/project_data/RT/RT-DOCS/`.
   awareness skill + perception characteristic, label "using <sense>"; 5 names added to
   ratchet WIRED_EXPECTED (kind cond). Gate green (59 tests).
 
-- [ ] ENGINE-INIT — BUG-002 Paranoia Initiative: add `system.initiative.modifier` to
+- [x] ENGINE-INIT — BUG-002 Paranoia Initiative: add `system.initiative.modifier` to
   `template.json`; `acolyte.mjs`/`base-actor.mjs` compute `bonus = char.bonus +
   (modifier ?? 0)`; AE Paranoia `system.initiative.modifier += 2` (RT Core, "+2 on
   Initiative rolls"). Pure-JS test on the compute helper if extractable; E2E follow-up.
-  (ENGINE)
+  (ENGINE) — done iter 3: added `modifier: 0` to initiative schema; both compute sites
+  (acolyte.mjs:364, base-actor.mjs:126) now `char.bonus + (modifier ?? 0)`; Paranoia AE
+  mode2 +2 on `system.initiative.modifier`; source cites RT Core p.123. Compute is
+  inline/Foundry-coupled (not cleanly extractable) → ratchet (Paranoia kind ae) +
+  E2E-INIT follow-up below. Gate green (59 tests).
+
+- [ ] E2E-INIT — verify on rt-smoke (Playwright): an actor with the Paranoia talent
+  shows displayed Initiative bonus raised by exactly +2 vs the same actor without it;
+  NPC actors without `system.initiative.modifier` still compute (the `?? 0` guard).
+  Foundry-coupled — node gate can't exercise it. (E2E)
 
 - [x] FIX-DOF — BUG-001: dropped `1 +` from `action-data.mjs:278` (DoF = tens diff).
   Done by hand 2026-06-23 (verified 61/52→1, 92/62→3). DoS (line 226) left as-is — a

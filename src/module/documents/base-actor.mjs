@@ -123,7 +123,11 @@ export class RogueTraderBaseActor extends Actor {
             characteristic.bonus = Math.floor(characteristic.total / 10) + characteristic.unnatural;
         }
 
-        this.initiative.bonus = this.characteristics[this.initiative.characteristic].bonus;
+        // Additive modifier (system.initiative.modifier) lets effects like Paranoia
+        // "+2 Initiative" contribute; ?? 0 keeps NPCs without the field safe. BUG-002.
+        this.initiative.bonus =
+            this.characteristics[this.initiative.characteristic].bonus
+            + (this.system.initiative.modifier ?? 0);
     }
 
     _computeMovement() {

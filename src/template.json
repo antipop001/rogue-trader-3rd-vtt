@@ -16,7 +16,8 @@
         },
         "initiative": {
           "characteristic": "agility",
-          "base": "1d10"
+          "base": "1d10",
+          "modifier": 0
         },
         "size": 4,
         "characteristics": {
