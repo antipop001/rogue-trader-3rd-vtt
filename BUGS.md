@@ -212,7 +212,14 @@ engine/roll fixes. Fix these directly, or in a dedicated follow-up loop.
   which the running effects-audit loop may also edit (Weapon Master) — do when idle.
 
 ## BUG-009 — Item-grant machinery (`flags.rt.grants`) never embeds the granted item
-- **Status: MITIGATED, NOT FULLY VERIFIED 2026-06-24.** Root cause confirmed (below).
+- **Status: ✅ FIXED 2026-06-24 — confirmed in the live UI** (Bionic Heart → Sprint
+  talent appears). The earlier batch-test flakiness was a Playwright-harness artifact
+  (rapid create/check/delete churn), not a real race. The deferred+retry fix below is
+  correct for real usage. (Optional follow-up: cache the talents pack index instead of
+  reloading via `getDocuments()` per grant to drop the ~1.5s landing delay.)
+- **Fix applied (`hooks-manager.mjs` `onCreateItem`):** schedule `applyItemGrants` off
+  the create-hook turn at 0ms AND ~750ms (idempotent via `pendingGrants` dedup), so the
+  embed lands after the originating create's items writeback instead of being clobbered.
   Applied a deferred + retry fix in `onCreateItem` (`hooks-manager.mjs`): schedule
   `applyItemGrants` off the create-hook turn at 0ms AND ~750ms (idempotent via
   `pendingGrants` dedup), to land the embed after the originating create's items
