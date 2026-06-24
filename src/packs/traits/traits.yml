@@ -740,6 +740,30 @@ flags:
     rt:
         category: 'Background'
         originStep: 'Home World'
+effects:
+- _id: WaryInit1Bonus01
+  name: Wary
+  img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
+  description: 'RT Core p.21: "All hivers gain a +1 bonus to Initiative rolls."'
+  origin: ''
+  disabled: false
+  transfer: true
+  tint: null
+  statuses: []
+  duration:
+    startTime: null
+    seconds: null
+    combat: null
+    rounds: null
+    turns: null
+    startRound: null
+    startTurn: null
+  changes:
+  - key: system.initiative.modifier
+    mode: 2
+    value: '1'
+    priority: null
+  flags: {}
 ---
 data:
     description: 'It''s a common occurrence for humans on frontier worlds to interact and trade with xenos. Because of this interaction, Frontier World characters are immune to Fear when caused by a xenos with a Fear (2) or Fear (1). If the Fear Test difficulty is 3 or higher, however, it affects the character as normal. Of course, this outlook often puts them at odds with members of the Ecclesiarchy and as such they suffer a -5 penalty to all Interaction Tests when dealing with members of the Imperial Cult.'

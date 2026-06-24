@@ -159,10 +159,25 @@ guard in the spec). Canon: `/mnt/project_data/RT/RT-DOCS/`.
   the bonus (+10/+10/+10/+20) into `rollData.modifiers.modifier` reaching the test total.
   Node gate can't exercise the roll prompt. (E2E)
 
-- [ ] ENGINE-INIT-EXTRA — after ENGINE-INIT lands `system.initiative.modifier`: AE Wary
+- [x] ENGINE-INIT-EXTRA — after ENGINE-INIT lands `system.initiative.modifier`: AE Wary
   (trait) `+1` and Lightning Reflexes (`+AgB`, i.e. add a second Agility-bonus term —
   needs the multiplier handled in `acolyte.mjs` since AE can't read AgB). RT Core. Pure-JS
-  test on the initiative compute; E2E follow-up. Add both to ratchet. (ENGINE)
+  test on the initiative compute; E2E follow-up. Add both to ratchet. (ENGINE) — done iter
+  23: Wary AE mode2 +1 on `system.initiative.modifier` (_id WaryInit1Bonus01, RT Core
+  p.21) → ratchet WIRED_EXPECTED (kind ae). Lightning Reflexes engine-handled in
+  `acolyte.mjs` via pure helper `initiativeCharBonus(rawAgB, normalBonus, hasLR, hasUA)`
+  in `roll-helpers.mjs`: Initiative char term = ×2 the raw Agility Bonus (×3 with
+  Unnatural Agility), REPLACING the single bonus (avoids double-counting the unnatural
+  fold-in); returns normalBonus unchanged without the talent (RT Core ~p.110, text
+  verbatim). NOT given an AE (AE can't read AgB) → ratchet CODE_HANDLED (double-apply
+  guard). Node test `initiative_bonus.test.mjs` (3 cases). Gate green (build OK, 66 node
+  tests). E2E follow-up below. (ENGINE)
+
+- [ ] E2E-INIT-EXTRA — verify on rt-smoke (Playwright): an actor with the Wary trait
+  shows displayed Initiative bonus +1 vs without it; an actor with Lightning Reflexes
+  shows Initiative bonus = 2×Agility Bonus (3× if also Unnatural Agility) vs the plain
+  1×AgB without it; confirm the two stack (Wary +1 on top of the LR-multiplied term).
+  Derived-data + Foundry-coupled — node gate can't exercise it. (E2E)
 
 - [ ] ENGINE-CRITDAMAGE — Crack Shot (+2 ranged crit dmg) & Crippling Strike (+4 melee
   crit dmg): apply extra damage only when the attack causes Critical Damage. Hook in

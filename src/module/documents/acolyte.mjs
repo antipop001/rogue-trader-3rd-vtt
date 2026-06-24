@@ -12,7 +12,7 @@ import { RogueTraderBaseActor } from './base-actor.mjs';
 import { ForceFieldData } from '../rolls/force-field-data.mjs';
 import { prepareForceFieldRoll } from '../prompts/force-field-prompt.mjs';
 import { DHBasicActionManager } from '../actions/basic-action-manager.mjs';
-import { getDegree, roll1d100 } from '../rolls/roll-helpers.mjs';
+import { getDegree, roll1d100, initiativeCharBonus } from '../rolls/roll-helpers.mjs';
 import { SYSTEM_ID } from '../hooks-manager.mjs';
 import { RogueTraderSettings } from '../rogue-trader-settings.mjs';
 
@@ -363,9 +363,18 @@ export class RogueTraderAcolyte extends RogueTraderBaseActor {
         this.psy.currentRating = this.psy.rating - this.psy.sustained;
         // RT 1e: Initiative bonus = governing characteristic bonus + any additive
         // modifier (effect-addressable via system.initiative.modifier so talents/gear
-        // like Paranoia "+2 Initiative" survive derived-data recompute). BUG-002.
+        // like Paranoia "+2 Initiative" / Wary "+1" survive derived-data recompute).
+        // BUG-002. Lightning Reflexes (RT Core p.110) replaces the single AgB term with
+        // twice the raw Agility Bonus (×3 with Unnatural Agility) — handled here by name
+        // since an AE can't read AgB; do NOT also give that talent an AE. ENGINE-INIT-EXTRA.
+        const initChar = this.characteristics[this.initiative.characteristic];
         this.initiative.bonus =
-            this.characteristics[this.initiative.characteristic].bonus
+            initiativeCharBonus(
+                Math.floor(initChar.total / 10),
+                initChar.bonus,
+                this.hasTalent('Lightning Reflexes'),
+                (initChar.unnatural ?? 0) > 0,
+            )
             + (this.system.initiative.modifier ?? 0);
         // RT 1e (RT Core p.251): a character functions with up to Toughness Bonus
         // levels of Fatigue; exceeding TB collapses him unconscious. (Was TB+WB — a DH2

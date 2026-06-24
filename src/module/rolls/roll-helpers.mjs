@@ -95,6 +95,27 @@ export function weaponMasterBonus(talents, weaponClass) {
     return out;
 }
 
+/**
+ * Lightning Reflexes (RT Core p.110): "The character adds twice his Agility Bonus
+ * when rolling for Initiative. If he has Unnatural Agility, add +1 to the multiplier
+ * before factoring the bonus into the Initiative roll." So the governing-characteristic
+ * contribution to Initiative becomes ×2 the raw Agility Bonus (×3 with Unnatural
+ * Agility), REPLACING the normal single bonus (which itself already folds in the
+ * Unnatural addition — multiplying that would double-count). Without the talent the
+ * normal bonus is returned unchanged. AE can't express this (it must read AgB), so it
+ * is computed in acolyte.mjs by name and must NOT also be given an AE.
+ *
+ * @param {number} rawBonus  tens-digit characteristic bonus (Math.floor(total/10), no unnatural)
+ * @param {number} normalBonus  the full characteristic bonus (raw + unnatural) used by default
+ * @param {boolean} hasLightningReflexes  whether the actor has the talent
+ * @param {boolean} hasUnnatural  whether the governing characteristic is Unnatural
+ * @returns {number} the characteristic contribution to the Initiative bonus
+ */
+export function initiativeCharBonus(rawBonus, normalBonus, hasLightningReflexes, hasUnnatural) {
+    if (!hasLightningReflexes) return normalBonus;
+    return rawBonus * (hasUnnatural ? 3 : 2);
+}
+
 export async function roll1d100() {
     let formula = '1d100';
     const roll = new Roll(formula, {});

@@ -37,11 +37,15 @@ const WIRED_EXPECTED = [
     { name: 'Electro Graft Use', kind: 'cond' },
     { name: 'Foresight', kind: 'cond' },
     { name: 'Sturdy', kind: 'cond' },
+    { name: 'Wary', kind: 'ae' },
 ];
-// Already applied by name in src/module/rolls/* — must NOT also be AE'd.
+// Already applied by name in src/module/rolls/* (or documents/acolyte.mjs) — must NOT
+// also be AE'd. Lightning Reflexes is computed in acolyte.mjs (Initiative ×AgB term)
+// because an AE can't read the Agility Bonus; double-applying via AE is the risk.
 const CODE_HANDLED = [
     'Crushing Blow', 'Mighty Shot', 'Blademaster', 'Eye of Vengeance',
     'Hammer Blow', 'Concussive', 'True Grit', 'Deathdealer',
+    'Lightning Reflexes',
 ];
 // Intentionally text-only (narrative / per-DoS / PF / GM-adjudicated).
 const NARRATIVE = [
