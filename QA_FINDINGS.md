@@ -450,3 +450,39 @@ Format per finding:
 - canon: RT Core pp.213-220 (`CoreBook-201-401.pdf/markdown.md:862-1006`): combat runs in Strategic Rounds/Turns with an initiative order; each ship makes one Manoeuvre + one Shooting Action per Turn; distance/movement measured in VUs (1 VU ≈ 10,000 km, `:926`); weapons fire only at targets within their firing arc and incur range-band modifiers by VU distance.
 - gap: The system resolves only isolated ship attack/crew rolls; the turn economy (one Manoeuvre + one Shooting per Turn, Extended Actions, initiative), VU-measured movement/range, firing arcs, ramming and disengage are all GM-tracked off-system. (NOTE — not-a-bug sub-area: component-bonus wiring is broadly present — `grep -c "bonuses:" ship-components.yml` = 20 `bonuses:` blocks feeding `_computeComponentBonuses`, matching CLAUDE.md's 18-component claim; only ~4 components carry a "+N to <stat>" in prose, a small tail to verify but not a systemic gap.)
 - fix: Out of scope for a single pass — would need a Foundry Combat-tracker integration for Strategic Rounds plus a VU/arc movement layer. File as a known structural limitation; individual Manoeuvre/Shooting actions could be added incrementally. · autofixable: no
+
+### QA-048 — Vehicle "Rear" armour input displays the Side value (copy-paste typo) — FIXED (trivial)
+- area: sheet-ui
+- kind: data-quality
+- severity: P2 (the rear-armour field shows the wrong number; reverts to Side on every re-render)
+- evidence: `src/templates/actor/panel/vehicle-armour-panel.hbs:13` (before fix): `<input ... name="system.rear" value="{{actor.side}}" />`. The Front (`:5` `value="{{actor.front}}"`) and Side (`:9` `value="{{actor.side}}"`) rows bind their own getter, but the Rear row reused `{{actor.side}}`. The getters exist and are distinct: `src/module/documents/vehicle.mjs:38-42` `get rear() { return this.system.rear; }` / `get side()`. So a value typed into the Rear field saves to `system.rear` (the `name=` is correct) but the displayed value always reflects `system.side` after the next render — Rear and Side appear locked together.
+- canon: n/a — code-smell / copy-paste bug.
+- gap: The Rear armour input mis-displays the Side value, so editing Rear looks like it "doesn't stick" (it does persist, but the box redraws with the Side number). Pure display defect on the vehicle sheet.
+- fix: Change `value="{{actor.side}}"` → `value="{{actor.rear}}"` on the Rear row. **Applied this iteration** (trivially-safe template typo; gate green). · autofixable: yes (done)
+
+### QA-049 — Experience-spent breakdown (spentCharacteristics/Skills/Talents/PsychicPowers + calculatedTotal) is computed every prepareData but never displayed; the sheet drives Spent/Available from a hand-entered `used`
+- area: sheet-ui
+- kind: automation-gap
+- severity: P2 (the engine computes actual XP spent but the sheet ignores it; players manually track "Spent")
+- evidence: `src/module/documents/acolyte.mjs:517-544` `_computeExperience()` sums real XP spend into `experience.spentCharacteristics`, `.spentSkills`, `.spentTalents`, `.spentPsychicPowers` (from each characteristic/skill/speciality/talent/power `.cost`) and `experience.calculatedTotal` (`:542-543`). But `src/templates/actor/panel/experience-panel.hbs` renders only `system.experience.total` (input, `:5`), `system.experience.used` (a **manual** number input, `:9`), and `system.experience.available` (`:13`, where `available = total − used`, `acolyte.mjs:544`). A grep of `src/templates/` for `spentCharacteristics|spentSkills|spentTalents|calculatedTotal` returns nothing — none of the computed breakdown or the computed total spend is shown anywhere.
+- canon: n/a — automation/UX gap (RT Core p.24 XP-advance accounting; the values are correct, just unsurfaced).
+- gap: The system already knows exactly how much XP each actor has spent (`calculatedTotal`) and the per-category split, yet the sheet asks the user to type `used` by hand and computes Available from that manual figure. The auto-computed real spend never reaches the UI and never reconciles against `used`, so the two can silently disagree.
+- fix: Render `experience.calculatedTotal` (and ideally the per-category breakdown) in the Experience panel; consider driving `used`/`available` from `calculatedTotal` (or showing both with a mismatch indicator). · autofixable: no (UX decision: auto-drive vs. display-only)
+
+### QA-050 — `insanityBonus` / `corruptionBonus` are computed in derived data but have zero consumers (never displayed, never read by any roll)
+- area: sheet-ui
+- kind: not-a-bug
+- severity: P3 (dead computed values; no wrong result, pure cruft)
+- evidence: `src/module/documents/acolyte.mjs:395-396`: `this.system.insanityBonus = Math.floor(this.insanity / 10);` / `this.system.corruptionBonus = Math.floor(this.corruption / 10);`. A repo-wide grep (`grep -rn "insanityBonus\|corruptionBonus" src/`) returns ONLY these two write sites — no template renders them and no roll/rule reads them. The raw `system.insanity` / `system.corruption` ARE displayed (`insanity-panel.hbs:5`, `corruption-panel.hbs:5`), but the tens-bonus derivations are not.
+- canon: n/a — code smell. (In DH2 the insanity/corruption "bonus" gates Malignancy/Disorder/Mutation tables; RT 1e has no such automated table here, so the derived value has no purpose as wired.)
+- gap: Two derived fields recomputed on every `prepareData()` that nothing consumes — a DH2-shaped leftover. No correctness impact.
+- fix: Either surface them on the sheet (display the tens-bonus next to the raw track) or drop the two assignments. · autofixable: yes (removal is safe — no consumers)
+
+### QA-051 — `faction` / `subfaction` schema fields + getters (npc/vehicle/voidship) have no sheet input and no display (companion to QA-007 threatLevel)
+- area: schema
+- kind: dh-leftover
+- severity: P3 (dead schema + unused getters; no correctness impact)
+- evidence: `src/template.json:1286-1287` (`"faction": ""`, `"subfaction": ""`, in the same shared block as the QA-007 `threatLevel` at `:1289`). Getters exist on all three actor types: `src/module/documents/npc.mjs:6,10`, `vehicle.mjs:23,26`, `voidship.mjs:29,32` (`get faction()` / `get subfaction()`). No template binds an input to `system.faction`/`system.subfaction` (`grep 'name="system.faction"'` → none) and no template displays them. Same dead-field pattern QA-007 filed for `threatLevel`.
+- canon: n/a — code smell. RT 1e has no faction/subfaction actor mechanic; these are fork-era metadata fields.
+- gap: Two schema fields × three actor types with getters but no editor and no display — inert cruft alongside `threatLevel`.
+- fix: Drop `faction`/`subfaction` from the schema and the six getters, or add a header field if faction tagging is wanted. · autofixable: yes (no consumers to break)
