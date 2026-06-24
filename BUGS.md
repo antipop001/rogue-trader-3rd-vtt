@@ -98,6 +98,43 @@ engine/roll fixes. Fix these directly, or in a dedicated follow-up loop.
 - **⚠ Foundry-coupled** (rolls + sheet) — the node gate can't exercise it; verify on
   rt-smoke (fatigued actor shows −10 on a skill/characteristic/attack card; Max = TB).
 
+## BUG-005 — Assign Damage: armour mis-counted + wounds not applied to sheet
+- **Symptom:** assigning damage doesn't properly account for armour/TB/penetration and
+  doesn't reliably remove Wounds from the target's character/NPC sheet. Reported
+  2026-06-23.
+- **Confirmed cause A — armour split across disjoint fields** (`acolyte.mjs`
+  `_computeArmour`, L474-531): `armour.<loc>.value` = **worn armour only**
+  (`maxArmour`, +Best craft); `armour.<loc>.total` = **traitBonus (Natural Armour/
+  Machine) + cybernetic AP only** (worn armour is never added to `total`). The two are
+  disjoint — neither is the full AP.
+  - The **sheet shows `.total`** (`armour-display-panel.hbs` L9-48) → worn armour is
+    invisible on the sheet.
+  - **Assign-damage reads `.value`** (`assign-damage-data.mjs:44`) → Natural-Armour and
+    cybernetic AP are ignored when reducing damage (creatures/cybernetic armour take
+    full damage as if unarmoured).
+  - **Fix:** make ONE complete field = worn + traitBonus + cybernetic and use it on
+    BOTH surfaces. Simplest: in `_computeArmour` fold `maxArmour` into `.total`
+    (`total += maxArmour[loc]` so total = worn+trait+cyber), and change
+    `assign-damage-data.mjs:44` to read `.total` (keep `.value` = worn for the Best-
+    craft reference). TB stays separate (`toughnessBonus` field, added once in
+    finalize) — do NOT let `total` include TB (it currently doesn't).
+- **Cause B — Wounds not removed from the open sheet** (to confirm on rt-smoke). The
+  finalize() math is correct (`armour−pen`, `+TB`, wound/crit overflow), and
+  `performActionAndSendToChat` does `this.actor.update({system:{wounds:{value: … −
+  damageTaken}}})`. Candidates for the no-decrement report:
+  1. `damageTaken` ends 0 when `reducedDamage ≤ 0` (over-reduction) or when
+     `hit.totalDamage` arrives undefined → `Number.parseInt` = NaN → `reducedDamage > 0`
+     false → nothing applied. Check the data path feeding the clicked button.
+  2. **Token vs prototype actor:** `performActionAndSendToChat` L222-223 does
+     `game.actors.get(actorData._id)` (the BASE actor) for the chat speaker, hinting at
+     base/token conflation. For an unlinked NPC token, the update must hit the TOKEN's
+     actor (the one whose sheet is open); if it lands on the base actor (or vice-versa)
+     the open sheet won't change. Confirm the update targets the targeted token's actor
+     and that `wounds.value` persists.
+- **⚠ Foundry-coupled** (actor compute + chat dispatch + sheet) — node gate can't
+  exercise it. Verify on rt-smoke, e.g. 10 dmg / pen 2 to a Body with worn AP 4 + NA 2
+  + TB 3: usable armour = (4+2)−2 = 4; reduction 4+3 = 7; Wounds drop by 3 on the sheet.
+
 ## SWEEP — talents/traits with described bonuses that aren't wired
 Paranoia / Weapon Master are instances of a systemic gap: many compendium entries
 describe a numeric bonus in text but carry no `effects`/`conditionalBonuses`/
