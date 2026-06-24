@@ -38,9 +38,13 @@ stray talents resolve (TALENT_RESOLVED_FLOOR 72 → 79).
   Ship-Bound Fighter + Sixth Sense text-only (Initiative/BS-penalty & sibling-granted
   skill/talent not expressible as a roll-prompt bonus — see vendor queue). (BG-AUTHOR)
 
-- [ ] BG-003 — Home World traits batch C (8): Survivor, Tenacious Survivalist, Tough
+- [x] BG-003 — Home World traits batch C (8): Survivor, Tenacious Survivalist, Tough
   as Grox-Hide, Underground Resources, Vendetta, Void Accustomed, Wary, Xenos
-  Interaction. Source: `home_worlds.json`. Target TRAIT floor 33. (BG-AUTHOR)
+  Interaction. Source: `home_worlds.json`. TRAIT_RESOLVED_FLOOR=33. Survivor +10 WP
+  (resist Pinning/Shock) & Xenos Interaction -5 social-vs-Imperial-Cult are
+  conditionalBonuses; Tough as Grox-Hide text-only (Wound already folded into
+  Starting Wounds); Wary/Tenacious Survivalist text-only (Initiative not expressible —
+  no `.modifier` field); Underground Resources/Vendetta/Void Accustomed narrative. (BG-AUTHOR)
 
 - [ ] BG-004 — Trials & Travails + Motivations (11): Against All Odds, Brook No Insult,
   Common Lore Improvement, Dark Secret, Ill-starred, Jealous Freedom, Refined Tastes,

@@ -593,3 +593,103 @@ flags:
               characteristics: []
           value: -5
           label: 'except Tests involving the Koronus Expanse'
+---
+data:
+    description: 'Simply reaching adulthood is an achievement for death worlds. Having overcome myriad dangers to achieve this goal means that a hardened death world is less likely to succumb in the face of new threats. Death worlds gain a +10 bonus to any test to resist Pinning and Shock.'
+    source: 'Rogue Trader Core Rulebook, p.18'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Survivor'
+type: 'trait'
+flags:
+    rt:
+        category: 'Background'
+        originStep: 'Home World'
+        conditionalBonuses:
+        - applies:
+              skills: []
+              characteristics: [willpower]
+          value: 10
+          label: 'to resist Pinning and Shock'
+---
+data:
+    description: 'Life on the frontier can be filled with all manner of horrors. Frontier world characters learn at an early age to be wary of their surroundings, and react quickly in the face of danger. Frontier world characters may re-roll any Initiative Roll they make, though they must accept the results of the second roll.'
+    source: 'Into the Storm, p.9'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Tenacious Survivalist'
+type: 'trait'
+flags:
+    rt:
+        category: 'Background'
+        originStep: 'Home World'
+---
+data:
+    description: 'Due to their hardy physiques and general surliness, Frontier worlders begin with one additional wound (already included in their Starting Wounds).'
+    source: 'Into the Storm, p.9'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Tough as Grox-Hide'
+type: 'trait'
+flags:
+    rt:
+        category: 'Background'
+        originStep: 'Home World'
+---
+data:
+    description: 'Characters from penal worlds know many people of ill repute. As such, they can often acquire items much more readily than those working through legitimate channels. When making Acquisition Tests on a world with a criminal underworld, the penal world character can opt to make use of these resources (providing the GM rules they are available) to make the item''s Availability one "level" more common (to a minimum of Abundant). This ability can only be used once every other game session (at the GM''s discretion), and players should remember that the items this character procures are more than likely stolen—they should be prepared in case the authorities come knocking.'
+    source: 'Into the Storm, p.13'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Underground Resources'
+type: 'trait'
+flags:
+    rt:
+        category: 'Background'
+        originStep: 'Home World'
+---
+data:
+    description: 'Every noble house has its sworn enemies and rivals who would do it and its members harm. Even the protection of a Rogue Trader''s mission merely forces those who wish you harm to be a bit more cautious and subtle in exacting their vengeance. As a result, starting noble born characters have powerful enemies, perhaps in the shape of a rival noble house or some other powerful group. The details of these enemies are left to the player and the Game Master to define, working together to create a formidable threat. Whilst they do not dog the character''s steps at every turn, these enemies aim to inconvenience, harm, or kill him whenever he crosses their path. The noble character, of course, is free to return the favour when it''s expedient to do so.'
+    source: 'Rogue Trader Core Rulebook, p.24'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Vendetta'
+type: 'trait'
+flags:
+    rt:
+        category: 'Background'
+        originStep: 'Home World'
+---
+data:
+    description: 'Due to their strange and unnatural childhood, the void born are used to the vagaries of changing gravity. They are immune to space travel sickness. In addition, zero- or low-gravity environments are not considered Difficult Terrain for void born characters.'
+    source: 'Rogue Trader Core Rulebook, p.20'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Void Accustomed'
+type: 'trait'
+flags:
+    rt:
+        category: 'Background'
+        originStep: 'Home World'
+---
+data:
+    description: 'Hivers are constantly alert for the first hint of trouble, be it a gang shoot-out, hab riot, or hivequake. All hivers gain a +1 bonus to Initiative rolls.'
+    source: 'Rogue Trader Core Rulebook, p.21'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Wary'
+type: 'trait'
+flags:
+    rt:
+        category: 'Background'
+        originStep: 'Home World'
+---
+data:
+    description: 'It''s a common occurrence for humans on frontier worlds to interact and trade with xenos. Because of this interaction, Frontier World characters are immune to Fear when caused by a xenos with a Fear (2) or Fear (1). If the Fear Test difficulty is 3 or higher, however, it affects the character as normal. Of course, this outlook often puts them at odds with members of the Ecclesiarchy and as such they suffer a -5 penalty to all Interaction Tests when dealing with members of the Imperial Cult.'
+    source: 'Into the Storm, p.9'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Xenos Interaction'
+type: 'trait'
+flags:
+    rt:
+        category: 'Background'
+        originStep: 'Home World'
+        conditionalBonuses:
+        - applies:
+              skills: [charm, command, deceive, inquiry, barter, blather]
+              characteristics: [fellowship]
+          value: -5
+          label: 'when dealing with members of the Imperial Cult'
