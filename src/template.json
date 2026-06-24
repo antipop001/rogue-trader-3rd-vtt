@@ -306,14 +306,13 @@
           "commerce": {
             "label": "Commerce",
             "characteristics": [
-              "Int",
               "Fel"
             ],
             "advance": 0,
             "isSpecialist": false,
             "specialities": {},
             "cost": 0,
-            "characteristic": "Int",
+            "characteristic": "Fel",
             "modifier": 0
           },
           "commonLore": {
@@ -1131,15 +1130,13 @@
           "survival": {
             "label": "Survival",
             "characteristics": [
-              "Per",
-              "Ag",
               "Int"
             ],
             "advance": 0,
             "isSpecialist": false,
             "specialities": {},
             "cost": 0,
-            "characteristic": "Per",
+            "characteristic": "Int",
             "modifier": 0
           },
           "swim": {

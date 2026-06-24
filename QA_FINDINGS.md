@@ -106,3 +106,39 @@ Format per finding:
 - canon: n/a — code smell / branding. CLAUDE.md "Stale/branding things" §J + deviation #3 already note `DarkHeresy*` class names as cosmetic fork residue ("renaming would touch many template files for zero functional gain. Defer.").
 - gap: Fork-origin naming persists. No functional impact (globals are `rt`), but: the **main tour shows "Dark Heresy 2nd edition system"** to players (mislabels the system in-app); console boot/error lines say "Dark Heresy 2nd Edition" (confusing in logs/bug reports); a leftover debug `console.log` fires on every container update.
 - fix: Lowest-risk, highest-value first: (1) fix the **tour description** + the 4 `hooks-manager.mjs` console strings to "Rogue Trader 3rd" — pure string edits, gate-safe; (2) remove the stray debug `console.log` at `item-container.mjs:12`. Bulk class rename (`DarkHeresy*`→`RogueTrader*`/`RT*`, `DarkHeresy` const→`RogueTrader`) is mechanical but touches ~25 files + the `hooks-manager` registrations — defer to a dedicated rename pass per CLAUDE.md. · autofixable: yes for the strings (low risk); no for the bulk class rename (large mechanical churn, do as its own commit)
+
+### QA-010 — `commerce` skill governed by Intelligence; RT canon says Fellowship
+- area: schema
+- kind: data-quality
+- severity: P1 (wrong test target in play)
+- evidence: `src/template.json` (before fix) `commerce.characteristic: "Int"`, `characteristics: ["Int","Fel"]`. `acolyte.mjs:449` resolves the test characteristic as `skill.characteristic` (primary) → `:459-475` sets `skill.current` from it → `rollSkill` uses `skill.current` as `baseTarget` (`acolyte.mjs:184`). So every Commerce test rolled against Intelligence, not Fellowship.
+- canon: RT Core skills table `CoreBook-1-200.pdf/markdown.md:3793` "Commerce | Advanced | **Fellowship**"; skill header `:3997` "## COMMERCE (ADVANCED) **Fellowship**"; starting-skill notation `:1769`/`:3217` "Commerce (Fel)".
+- gap: Commerce tested at Int instead of Fel — a wrong characteristic for every Commerce roll (acquisition/haggling). Likely a DH2/fork carryover (Commerce was Int-flavoured in the fork's hybrid list).
+- fix: **FIXED this iteration** — set `commerce.characteristic: "Fel"` and trimmed `characteristics` to `["Fel"]`. Trivially-safe canon-backed data fix; gate green (build OK, 166 tests). · autofixable: yes (done)
+
+### QA-011 — `survival` skill governed by Perception; RT canon says Intelligence
+- area: schema
+- kind: data-quality
+- severity: P1 (wrong test target in play)
+- evidence: `src/template.json` (before fix) `survival.characteristic: "Per"`, `characteristics: ["Per","Ag","Int"]`. Same roll path as QA-010 (`acolyte.mjs:449,459-475,184`) → every Survival test rolled against Perception, not Intelligence.
+- canon: RT Core skills table `CoreBook-1-200.pdf/markdown.md:3826` "Survival | Advanced | **Intelligence** | Exploration"; in-text reference `:1014` "Survival (**Int**) Tests" (Hivebound home-world penalty); skill header `:4506` "# SURVIVAL (ADVANCED, EXPLORATION)".
+- gap: Survival tested at Per instead of Int. (Note: DH1/DH2 governed Survival by Int too — the `Per` here is a fork drift, not a DH2 mechanic per se.)
+- fix: **FIXED this iteration** — set `survival.characteristic: "Int"` and trimmed `characteristics` to `["Int"]`. Trivially-safe canon-backed data fix; gate green. · autofixable: yes (done)
+
+### QA-012 — not-a-bug: skill list + all specialist specialty lists now match RT canon (deviation #5 resolved)
+- area: schema
+- kind: not-a-bug
+- severity: P3
+- evidence: Full cross-check of `src/template.json:148-1286` (49 skills) against RT Core skills table `CoreBook-1-200.pdf/markdown.md:3784-3833` + per-skill specialty headers. All 48 RT-canon skills are present (the 49th is `parry`, the documented deliberate parry-as-skill deviation — CLAUDE.md #1). Specialty counts/names match canon EXACTLY: Common Lore 14 (`:4007`), Forbidden Lore 11 (`:4156`), Scholastic Lore 16 (`:4349`), Trade 13 (`:4551`), Speak Language 7 (`:4488`), Secret Tongue 7 (`:4431`), Ciphers 5 (`:3961`), Navigate Surface/Stellar/Warp (`:4278`), Pilot Personal/Flyer/SpaceCraft (`:4316`), Drive Ground/Skimmer/Walker (`:4141`), Performance Dancer/Musician/Singer/Storyteller (`:4298`). RT splits (Climb+Swim not Athletics; Concealment+Silent Move+Shadowing not Stealth; Speak Language+Secret Tongue+Ciphers+Literacy not Linguistics) are all in place; Barter (Fel/Basic) and Commerce (Fel/Advanced) both exist as distinct skills per canon.
+- canon: RT Core Ch.III Skills — as cited above.
+- gap: None — the specialty-list drift recorded as CLAUDE.md "Documented deviation #5" (Common Lore 8 vs 14, Forbidden 6 vs 11, Scholastic 9 vs 16, Trade 10 vs 13, Linguistics consolidation) was RESOLVED by the 0.7.17/0.7.18 skill rebuild. Recording that it was re-verified and is correct.
+- fix: No action; update CLAUDE.md deviation #5 to mark resolved when convenient. · autofixable: n/a
+
+### QA-013 — multi-entry `characteristics` arrays diverge from RT's single governing characteristic (vestigial)
+- area: schema
+- kind: data-quality
+- severity: P3
+- evidence: Many skills carry a `characteristics` array with >1 entry while RT lists exactly one governing characteristic — e.g. `src/template.json` `awareness.characteristics: ["Per","Fel","Int"]` (canon Perception only), `command: ["Fel","Int","S","WP"]` (canon Fellowship), `acrobatics: ["Ag","S"]` (canon Agility), `medicae: ["Int","Ag","Per"]` (canon Intelligence). The roll path uses only the singular `skill.characteristic` (`acolyte.mjs:449` falls back to `characteristics[0]` ONLY when `characteristic` is empty; `rollSkill` rolls `skill.current` from the primary), so these extra array entries are not actually offered as alternate roll characteristics anywhere — they are display/vestigial data.
+- canon: RT Core skills table `CoreBook-1-200.pdf/markdown.md:3784-3833` — one Characteristic column per skill.
+- gap: The arrays imply alternate governing characteristics that don't exist in RT and aren't honoured by the engine. No wrong-result impact (primary char drives rolls), but it's misleading fork-residue data and was the vector for the `charm`/`"Inf"` bug (QA-006) and masked the QA-010/011 primary-char errors (the correct char was buried in the array).
+- fix: Normalise every skill's `characteristics` array to the single canon governing characteristic (matching `characteristic`). Mechanical but touches ~15 skills + needs confirming no sheet/prompt code reads `characteristics[1+]`; file rather than bulk-edit this iteration. · autofixable: yes (data-only, low risk) but deferred — do as one reviewed pass
