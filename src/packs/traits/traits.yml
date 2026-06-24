@@ -1073,23 +1073,6 @@ flags:
 data:
     description: 'Typically the largest, most aggressive, and most violent of a species renowned for its size, aggression, and propensity for violence, Goffs are intolerant of the other Klans, whose methods they consider to be entirely Un-Orky. Goffs increase their Strength by +3.'
     source: 'Into the Storm, p.62'
-effects:
-- _id: KlanGoffsStr001
-  name: 'Klan: Goffs'
-  img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
-  description: ''
-  origin: ''
-  disabled: false
-  transfer: true
-  tint: null
-  statuses: []
-  duration: { startTime: null, seconds: null, combat: null, rounds: null, turns: null, startRound: null, startTurn: null }
-  changes:
-  - key: 'system.characteristics.strength.modifier'
-    mode: 2
-    value: '3'
-    priority: null
-  flags: {}
 img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
 name: 'Klan: Goffs'
 type: 'trait'

@@ -119,10 +119,12 @@ stray talents resolve (TALENT_RESOLVED_FLOOR 72 → 79).
   outcomes (ItS pp.35-36 Age, p.44 Renown); PF/SP already applied by sibling
   profit_factor/ship_points effects → no AE, no double-grant. (BG-AUTHOR)
 
-- [ ] BG-FIX-001 — `Klan: Goffs` (BG-007) carries an AE +3 Strength, but careers.json
+- [x] BG-FIX-001 — `Klan: Goffs` (BG-007) carried an AE +3 Strength, but careers.json
   grants Goffs a SIBLING `char_mod S+3` in the same option → committing via chargen
-  double-applies (+6 Str). Remove the Goffs AE (text-only, like the Know-Wotz) OR
-  confirm commit.mjs dedupes; cite the do-not-double-apply rule. (BG-AUTHOR)
+  double-applied (+6 Str). Confirmed commit.mjs does NOT dedupe (`buildActorData` sums
+  `state.modifiers` independently of the embedded item's AE). Removed the Goffs AE,
+  leaving faithful canon text only — same as the BG-008 Know-Wotz traits. No floor
+  change (still a real item). (BG-AUTHOR)
 
 - [ ] BG-015 — Final verify (BG-VERIFY): confirm both ratchets at goal (TRAIT 103,
   TALENT 95); add a node test asserting `commit.mjs` embeds a REAL item with its AE
