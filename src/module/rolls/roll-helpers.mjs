@@ -116,6 +116,30 @@ export function initiativeCharBonus(rawBonus, normalBonus, hasLightningReflexes,
     return rawBonus * (hasUnnatural ? 3 : 2);
 }
 
+/**
+ * Crack Shot / Crippling Strike crit-damage bonus (RT Core p.96). Crack Shot: "When
+ * his ranged attack causes Critical Damage, add +2 to the Damage." Crippling Strike:
+ * "When the character's melee attack causes Critical Damage, add +4 Damage." These are
+ * context-gated on the attack actually causing Critical Damage (resolved at assign-damage
+ * time against the target's Wounds/armour), so they are NOT ActiveEffects — the engine
+ * applies them by name. This pure helper returns the extra crit Damage; the gate on
+ * "did it crit" lives in assign-damage-data.mjs. Names carry no `system.choice`, so an
+ * exact (case-insensitive) name match is correct.
+ *
+ * @param {Array<{name?: string}>} talents  actor talent items
+ * @param {boolean} isMelee  the attack used a melee weapon
+ * @param {boolean} isRanged  the attack used a ranged weapon
+ * @returns {number} extra Critical Damage to add when the attack causes a crit (0 if none)
+ */
+export function critDamageBonus(talents, isMelee, isRanged) {
+    if (!Array.isArray(talents)) return 0;
+    const has = (name) => talents.some((t) => t?.name && String(t.name).toLowerCase() === name);
+    let bonus = 0;
+    if (isMelee && has('crippling strike')) bonus += 4;
+    if (isRanged && has('crack shot')) bonus += 2;
+    return bonus;
+}
+
 export async function roll1d100() {
     let formula = '1d100';
     const roll = new Roll(formula, {});

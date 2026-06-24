@@ -179,12 +179,29 @@ guard in the spec). Canon: `/mnt/project_data/RT/RT-DOCS/`.
   1×AgB without it; confirm the two stack (Wary +1 on top of the LR-multiplied term).
   Derived-data + Foundry-coupled — node gate can't exercise it. (E2E)
 
-- [ ] ENGINE-CRITDAMAGE — Crack Shot (+2 ranged crit dmg) & Crippling Strike (+4 melee
+- [x] ENGINE-CRITDAMAGE — Crack Shot (+2 ranged crit dmg) & Crippling Strike (+4 melee
   crit dmg): apply extra damage only when the attack causes Critical Damage. Hook in
   `damage-data.mjs`/`assign-damage-data.mjs` by talent name (NOT an AE — it's
   context-gated on crit). RT Core. Pure-JS test on any extractable matcher; E2E
   follow-up. (Crack Shot is mis-grouped under ENGINE-WEAPONCLASS — it is crit-damage,
-  not weapon-class; handle it here.) (ENGINE)
+  not weapon-class; handle it here.) (ENGINE) — done iter 24: pure helper
+  `critDamageBonus(talents, isMelee, isRanged)` in `roll-helpers.mjs` (exact
+  case-insensitive name match, melee→Crippling +4, ranged→Crack +2). Precomputed on the
+  Hit in `damage-data._calculateDamage` (attacker talents + melee/ranged known there),
+  carried chat-card→assign via new `data-critical-damage-bonus` attr +
+  `basic-action-manager._assignDamage`, and added to `criticalDamageTaken` in
+  `assign-damage-data.finalize()` ONLY when `hasCriticalDamage` (before True Grit so its
+  TB reduction + the Critical Hits table use the boosted total). Verified canon: both
+  benefit texts already correct in `talents.yml` (no data fix). NOT an AE → ratchet
+  CODE_HANDLED (double-apply guard). Node test `crit_damage.test.mjs` (5 cases). Gate
+  green (build OK, 71 node tests). E2E follow-up below. (ENGINE)
+
+- [ ] E2E-CRITDAMAGE — verify on rt-smoke (Playwright): an attacker with Crack Shot lands
+  a ranged hit that overflows into Critical Damage → assign-damage card shows crit damage
+  raised by +2 vs the same attack without the talent; Crippling Strike on a melee crit
+  shows +4; a hit that does NOT crit (stays within Wounds) shows no change; both stack
+  correctly with True Grit on the target. Attack/assign pipeline is Foundry-coupled — node
+  gate can't exercise it. (E2E)
 
 - [ ] NARRATIVE-RECORD — add the intentionally-unwired entries to the ratchet
   `NARRATIVE` list (and they're already in `loops/effects-audit/triage.md`): talents

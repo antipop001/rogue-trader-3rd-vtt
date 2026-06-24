@@ -46,6 +46,9 @@ const CODE_HANDLED = [
     'Crushing Blow', 'Mighty Shot', 'Blademaster', 'Eye of Vengeance',
     'Hammer Blow', 'Concussive', 'True Grit', 'Deathdealer',
     'Lightning Reflexes',
+    // Crit-gated extra Damage applied by name in damage-data/assign-damage-data
+    // (must NOT also get an AE — would double-apply). RT Core p.96.
+    'Crack Shot', 'Crippling Strike',
 ];
 // Intentionally text-only (narrative / per-DoS / PF / GM-adjudicated).
 const NARRATIVE = [

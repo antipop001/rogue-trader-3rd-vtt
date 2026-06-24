@@ -116,6 +116,7 @@ export class BasicActionManager {
         const totalPenetration = div.data('totalPenetration');
         const totalFatigue = div.data('totalFatigue');
         const damageType = div.data('damageType');
+        const criticalDamageBonus = div.data('criticalDamageBonus');
 
         const isHit = div.data('voidshipHitType') ? div.data('voidshipHitType') : false;
         const isCrit = div.data('voidshipCritType') ? div.data('voidshipCritType') : false;
@@ -128,6 +129,7 @@ export class BasicActionManager {
         hitData.totalPenetration = totalPenetration;
         hitData.totalFatigue = totalFatigue;
         hitData.damageType = damageType;
+        hitData.criticalDamageBonus = Number(criticalDamageBonus) || 0;
 
         if (isCrit) {
             if (overpenetration) {

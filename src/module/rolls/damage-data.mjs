@@ -2,7 +2,7 @@ import { additionalHitLocations, getHitLocationForRoll } from '../rules/hit-loca
 import { calculateAmmoDamageBonuses, calculateAmmoPenetrationBonuses, calculateAmmoSpecials } from '../rules/ammo.mjs';
 import { getCriticalDamage } from '../rules/critical-damage.mjs';
 import { calculateWeaponModifiersDamageBonuses, calculateWeaponModifiersPenetrationBonuses } from '../rules/weapon-modifiers.mjs';
-import { weaponMasterBonus } from './roll-helpers.mjs';
+import { weaponMasterBonus, critDamageBonus } from './roll-helpers.mjs';
 
 export class DamageData {
     template = '';
@@ -28,6 +28,11 @@ export class Hit {
     damageType = 'Impact';
     modifiers = {};
     totalDamage = 0;
+
+    // Crack Shot (+2 ranged) / Crippling Strike (+4 melee) extra Critical Damage,
+    // precomputed at damage time (attacker talents + melee/ranged are known here) and
+    // applied only if the attack causes Critical Damage in assign-damage-data. (RT Core p.96.)
+    criticalDamageBonus = 0;
 
     dos = 0;
 
@@ -190,6 +195,14 @@ export class Hit {
             const talents = sourceActor?.items?.filter((i) => i.type === 'talent') ?? [];
             const wm = weaponMasterBonus(talents, actionItem.system.class);
             if (wm.damage) this.modifiers['weapon master'] = wm.damage;
+        }
+
+        // Crack Shot / Crippling Strike: stash the crit-only Damage bonus on the Hit.
+        // It is added to the critical Damage in assign-damage-data ONLY when the attack
+        // causes Critical Damage (RT Core p.96) — NOT added to normal Damage here.
+        {
+            const talents = sourceActor?.items?.filter((i) => i.type === 'talent') ?? [];
+            this.criticalDamageBonus = critDamageBonus(talents, actionItem.isMelee, actionItem.isRanged);
         }
 
         if (actionItem.isMelee) {

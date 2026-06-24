@@ -144,6 +144,15 @@ export class AssignDamageData {
                 }
             }
 
+            // Crack Shot (+2 ranged) / Crippling Strike (+4 melee) add extra Critical
+            // Damage ONLY when the attack actually causes Critical Damage (RT Core p.96).
+            // The bonus was precomputed on the Hit at damage time (attacker talents +
+            // melee/ranged known there). Applied before True Grit so the talent's TB
+            // reduction and the Critical Hits table lookup use the boosted total.
+            if (this.hasCriticalDamage && Number(this.hit?.criticalDamageBonus) > 0) {
+                this.criticalDamageTaken += Number(this.hit.criticalDamageBonus);
+            }
+
             if (this.criticalDamageTaken > 0) {
 
                 // Handle True Grit Talent
