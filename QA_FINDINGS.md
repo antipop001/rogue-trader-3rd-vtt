@@ -142,3 +142,66 @@ Format per finding:
 - canon: RT Core skills table `CoreBook-1-200.pdf/markdown.md:3784-3833` — one Characteristic column per skill.
 - gap: The arrays imply alternate governing characteristics that don't exist in RT and aren't honoured by the engine. No wrong-result impact (primary char drives rolls), but it's misleading fork-residue data and was the vector for the `charm`/`"Inf"` bug (QA-006) and masked the QA-010/011 primary-char errors (the correct char was buried in the array).
 - fix: Normalise every skill's `characteristics` array to the single canon governing characteristic (matching `characteristic`). Mechanical but touches ~15 skills + needs confirming no sheet/prompt code reads `characteristics[1+]`; file rather than bulk-edit this iteration. · autofixable: yes (data-only, low risk) but deferred — do as one reviewed pass
+
+### QA-014 — Force-weapon psyker bonuses not automated (no +PR dmg/pen, no damage-type change, no Focus bonus)
+- area: weapons
+- kind: automation-gap
+- severity: P2 (missing automation, manual workaround; real combat impact for any psyker with a force weapon)
+- evidence: `src/packs/attack-specials/attack-specials.yml:252` (Force) — "the weapon deals bonus damage and gains bonus penetration equal to the psyker's Psy Rating … the damage type changes to Energy. In addition, whenever a psyker damages an opponent, he may make a Focus Power Test (Opposed Willpower) … for every degree of success, the force weapon's wielder deals an additional 1d10 E Damage, ignoring Armour or Toughness Bonus." The quality is listed in the catalog only (`src/module/rules/attack-specials.mjs:162` `{name:'Force', hasLevel:false}`) and is never consulted by the damage engine — `grep -niE "force" src/module/rolls/damage-data.mjs` = 0 hits (Force handling absent; only `roll-helpers.mjs` mentions a defensive-Psy-Rating multiplier, unrelated).
+- canon: Into the Storm `roguetrader_intothestorm-126-257.pdf/markdown.md:77` ("Force Weapons are unique…"); full bonus text mirrored in the pack at attack-specials.yml:252.
+- gap: A psyker wielding a Force weapon should add Psy Rating to its Damage AND Penetration, have its damage type become Energy, and (on a passed Focus Power Test) add +1d10 E per DoS ignoring armour/TB. The engine applies none of this — a Force weapon is just a Best-craftsmanship melee with no psyker scaling. The +PR damage/pen is a flat numeric loss on every force-weapon hit by a psyker.
+- fix: In the damage pipeline, when the wielder is a psyker and the weapon has the Force quality, add `@pr` to damage and penetration and set damageType to Energy; surface the optional Focus-Power bonus-damage roll (reuse the opposed-WP / Focus path) as a prompt/effect. Needs psyker context + an opposed test, so engine work, not a data edit. · autofixable: no
+
+### QA-015 — `Unstable` quality is unwired AND absent from the attack-specials catalog
+- area: weapons
+- kind: automation-gap
+- severity: P2 (silent no-op; also can't be added via UI)
+- evidence: `src/packs/attack-specials/attack-specials.yml:232` (Unstable) — "When an Unstable weapon scores a hit, roll 1d10. On a score of 1 it inflicts only half Damage, on a score of 2-9 it deals normal Damage, and on a score of 10 it inflicts twice the normal Damage." `grep -rni "unstable" src/module/` = **0 hits**: it is NOT in the `attackSpecials()` catalog (`src/module/rules/attack-specials.mjs:119-277`, every other quality is listed there) and NOT handled in `damage-data.mjs`. So a weapon carrying Unstable does nothing, and the quality can't even be selected from the special-quality picker.
+- canon: RT Core `CoreBook-1-200.pdf/markdown.md:6021` (Unstable weapon quality, Ch.IX weapon qualities).
+- gap: Per-hit damage variance (½ on a 1, ×2 on a 10) is unimplemented; the quality is also missing from the UI catalog list so it can't be authored. Double gap (engine + catalog).
+- fix: Add `{name:'Unstable', hasLevel:false}` to `attackSpecials()` and, in the per-hit damage calc (`damage-data.mjs`), roll 1d10 per hit and apply ½/×1/×2 to that hit's damage. · autofixable: no (needs damage-pipeline change)
+
+### QA-016 — `Recharge` not enforced (weapon can be fired every Round)
+- area: weapons
+- kind: automation-gap
+- severity: P2 (missing automation; manual workaround)
+- evidence: `src/packs/attack-specials/attack-specials.yml:112` (Recharge) — "the weapon must spend the Round after firing building up a charge and cannot be fired—in effect you can only fire the weapon every other Round." Listed in catalog only (`src/module/rules/attack-specials.mjs:218`); `grep -rni "recharge" src/module/` finds no enforcement — nothing flags the weapon as spent or blocks the next Round's attack.
+- canon: RT Core `CoreBook-1-200.pdf/markdown.md:5967` (Recharge weapon quality).
+- gap: A Recharge weapon should be unusable the Round after it fires; the engine never tracks or blocks this, so it can be fired every Round. (A per-Round Reaction-budget system already exists — `system.combat.reactions`, reset on `combatTurnChange`, per CLAUDE.md — so a "recharging until next turn" flag is feasible by the same machinery.)
+- fix: On firing a Recharge weapon, set a per-Round "spent" flag (e.g. on the weapon or actor combat state) cleared on the owner's next turn; block the attack while spent. · autofixable: no (needs combat-turn state)
+
+### QA-017 — `Power Field` parry-destroys-attacker's-weapon (75%) not automated
+- area: weapons
+- kind: automation-gap
+- severity: P3 (situational)
+- evidence: `src/packs/attack-specials/attack-specials.yml:92` (Power Field) — "When you successfully use this weapon to Parry an attack made with a weapon that lacks this quality, you have a 75% chance of destroying your attacker's weapon." The parry path `src/module/documents/acolyte.mjs:198-222` reads only Balanced (+10), Defensive (+15), Unwieldy/Unbalanced (cannot parry), and `parryBonus`; it never checks Power Field. The quality is catalog-only (`attack-specials.mjs:202`).
+- canon: RT Core `CoreBook-1-200.pdf/markdown.md:5959` (Power Field weapon quality). (The damage/penetration half of the quality is "already included in the weapon's profile" per canon, so only the parry-destroy effect is the gap.)
+- gap: A successful parry with a Power-Field weapon vs a non-field weapon should give a 75% chance to destroy the attacker's weapon; unimplemented. No wrong-result on the parry roll itself — only the follow-on destroy effect is missing.
+- fix: After a successful parry with a Power-Field melee weapon (and the incoming weapon lacks Power Field / Warp / Natural), prompt or auto-roll a 75% destroy check and post an effect. Needs the parry flow to know the attacker's weapon (defender-side context the engine doesn't currently thread). · autofixable: no
+
+### QA-018 — `Customised` quality's ½ reload time not honored
+- area: weapons
+- kind: automation-gap
+- severity: P3
+- evidence: `src/packs/attack-specials/attack-specials.yml:32` (Customised) — "Reloading this weapon takes ½ the listed time, rounding up to the next full action." `grep -rniE "customised|customized" src/module/` = 0 hits. The only reload-time helper, `rapidReloadTime()` (`src/module/rolls/roll-helpers.mjs:445`), halves reload solely for the Rapid Reload talent and does not consult the weapon's Customised quality; `item.mjs:89` only exposes a boolean `canReload`.
+- canon: RT Core `CoreBook-1-200.pdf/markdown.md:5915` (Customised weapon quality).
+- gap: A Customised weapon should reload in half the listed time; the engine ignores the quality entirely.
+- fix: Fold the Customised quality into the effective-reload computation (alongside Rapid Reload) so its displayed/used reload time halves. · autofixable: no (needs reload-time wiring; low risk but rules-adjacent)
+
+### QA-019 — Target-side weapon-effect qualities are descriptive-only (no forced test / condition applied) — rollup
+- area: weapons
+- kind: automation-gap
+- severity: P2 (missing automation; GM must resolve every effect by hand)
+- evidence: `src/module/rolls/damage-data.mjs:391-444` — for Blast, Concussive, Corrosive, Crippling, Felling, Flame, Graviton, Hallucinogenic, Haywire, Indirect, Shocking, Snare, Toxic, Warp the engine only calls `addEffect(name, <prose>)`, attaching a sentence to the chat card (e.g. Concussive ":397" → "Target must pass Toughness test … or be Stunned"; Toxic ":437" → "Target must pass Toughness test … or suffer 1d10 damage"; Snare ":427"; Shocking ":424"; Flame ":408"). None of these roll the target's resist Test, apply the resulting condition (Stunned/Snared/Prone/on-fire/Fatigue), or subtract armour-destroyed / extra damage. Adjacent: `Flexible` ("cannot be Parried", attack-specials.yml:62) and `Smoke` (attack-specials.yml — area concealment) are catalog/data-only with no engine hook either (`grep` finds no consumer), because they are defender-side / area effects the engine doesn't orchestrate.
+- canon: RT Core Ch.IX weapon qualities (`CoreBook-1-200.pdf/markdown.md` ~:5900-6030) — each quality specifies a concrete Test + condition.
+- gap: The qualities are surfaced as text instructions for the GM rather than automated. This is partially **by design** (most are target-side and need the defender/GM to roll), so the workaround exists and it isn't a wrong-result — but it is the "described but the engine doesn't do it" class. Highest-value automatable subset: Concussive/Toxic/Shocking (target Toughness Test → Stun/Fatigue/damage), Snare (target Agility Test → Snared), Flame (target Agility Test → on fire) — all resolvable via the existing target-resist-roll path used by opposed psychic powers.
+- fix: For the automatable subset, roll the named target Test against the listed modifier and apply the condition/secondary damage (reuse the opposed/target-roll machinery), leaving genuinely narrative ones (Smoke, Indirect deviation already auto-rolled, Warp) as text. Triage per quality; do NOT blanket-automate. · autofixable: no
+
+### QA-020 — Combat-action help text mislabels Defensive parry bonus as +10 (canon/code = +15)
+- area: weapons
+- kind: data-quality
+- severity: P3 (cosmetic — user-facing description string only)
+- evidence: `src/module/rules/combat-actions.mjs:166` Parry action description — "the Defensive quality grants +10, Unwieldy weapons cannot Parry." But the engine applies +15 (`src/module/documents/acolyte.mjs:211` `rollData.modifiers['Defensive'] = 15`) and canon is +15.
+- canon: RT Core `CoreBook-1-200.pdf/markdown.md:5933` (Defensive) — "+15 bonus to tests made when used to Parry"; mirrored in `attack-specials.yml:42`.
+- gap: The Parry action's help text says +10 while the actual (correct) bonus is +15 — a misleading number shown to the user. The roll itself is correct.
+- fix: Change the "+10" in the `combat-actions.mjs:166` description string to "+15". Trivially-safe string edit (deferred this iteration to keep it pure-audit). · autofixable: yes
