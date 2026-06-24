@@ -264,7 +264,19 @@ engine/roll fixes. Fix these directly, or in a dedicated follow-up loop.
   `scratchpad/dbg_grant4.py`.) Foundry-coupled — verify on rt-smoke.
 
 ## BUG-010 — Choice-grants (`flags.rt.grants` with a `choice`) don't embed
-- **Status: OPEN — found by the 2026-06-24 verification sweep.** Plain item-grants work
+- **Status: MITIGATED (fail-safe) 2026-06-24 — root cause unresolved.** Choice-grants
+  now SKIP with a warn (`applyItemGrants`) instead of hanging; **plain grants still work**
+  (verified: Bionic Heart→Sprint lands ~2.5s and persists), and Sixth Sense's other
+  effect (Psyniscience Trained, advance 0→1) applies. Only the auto-grant of the chosen
+  item is dropped — the GM adds it manually (e.g. Rival (Inquisition)). **Root cause not
+  cracked:** `createEmbeddedDocuments` for that specific granted talent HANGS when called
+  from the deferred-grant context (the `createItem` hook for it never even fires; no
+  error). The same item embeds fine top-level (incl. with `system.choice`+`grantedBy`,
+  pickable-flag stripped), and plain talents (Sprint) embed fine from the same context —
+  so it's a Foundry-internals stall specific to this talent+context that resisted ~15
+  instrumented iterations. Future fix: investigate the stall (try `Item.create` with the
+  parent, or pre-bake the granted item differently), then re-enable the `g.choice` path.
+- **Found by the 2026-06-24 verification sweep.** Plain item-grants work
   (verified live: Explorator Implants→Mechanicus Implants, Bionic Heart→Sprint), but a
   grant carrying a `choice` does not embed. Repro: Sixth Sense trait
   (`flags.rt.grants: [{name:Rival, type:talent, choice:Inquisition}]`) — its

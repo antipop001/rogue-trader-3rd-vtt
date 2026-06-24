@@ -228,16 +228,21 @@ Enable Debug with: game.rt.debug = true
         // ENGINE-TRAIT-GRANTS: a talent/trait that GRANTS other compendium items
         // (flags.rt.grants) auto-embeds the missing ones on the actor. DEFER off the
         // create-hook turn — embedding *during* the originating create flow gets
-        // clobbered when that operation writes back the parent's items collection
-        // (BUG-009). A 0ms timeout runs the embed after the create settles.
+        // clobbered when the operation writes back the parent's items (BUG-009). Run
+        // two passes SEQUENTIALLY (await the first before the second), NOT as two
+        // concurrent timers: concurrent createEmbeddedDocuments of the same grant
+        // deadlocks for slower pickable grants like Rival (BUG-010). The second pass
+        // recovers from the writeback clobber; pendingGrants dedups so it's a no-op
+        // when the first stuck.
         const grantParent = item.parent;
         const runGrants = () => HooksManager.applyItemGrants(item, grantParent)
             .catch((e) => console.error('Dark Heresy | applyItemGrants failed', e));
-        // Defer + retry: a grant embedded during the originating create flow gets
-        // clobbered when that operation writes back the parent's items, and a single
-        // 0ms defer still races it intermittently. applyItemGrants is idempotent
-        // (pendingGrants dedups vs current items), so a second pass after the writeback
-        // window reliably lands (or is a no-op if the first stuck). BUG-009.
+        // Defer + retry off the create-hook turn: a grant embedded during the
+        // originating create flow gets clobbered when the operation writes back the
+        // parent's items, and a single 0ms defer races it intermittently. Two passes
+        // (0ms + 750ms past the writeback) reliably land plain grants; pendingGrants
+        // dedups so the second is a no-op when the first stuck. (BUG-009; choice-grants
+        // are skipped in applyItemGrants per BUG-010.)
         setTimeout(runGrants, 0);
         setTimeout(runGrants, 750);
 
@@ -279,6 +284,16 @@ Enable Debug with: game.rt.debug = true
         const PACK_BY_TYPE = { trait: 'traits', talent: 'talents' };
         const toCreate = [];
         for (const g of pending) {
+            // Choice-grants (a pre-chosen pickable, e.g. Sixth Sense → Rival
+            // (Inquisition)) currently HANG `createEmbeddedDocuments` when embedded from
+            // this deferred-grant context — a Foundry-internals stall specific to that
+            // talent (plain grants like Sprint embed fine here; the same item embeds
+            // fine top-level). Skip them so the grant fails safe instead of leaking a
+            // hung promise; the GM adds the choice item manually. (BUG-010, open.)
+            if (g.choice) {
+                game.rt?.warn?.(`Item grant "${g.name} (${g.choice})" not auto-applied (BUG-010) — add it manually.`);
+                continue;
+            }
             const packName = g.pack ?? PACK_BY_TYPE[g.type];
             const pack = packName ? game.packs.get(`${SYSTEM_ID}.${packName}`) : null;
             if (!pack) { game.rt?.warn?.(`Item grant "${g.name}": no pack for type ${g.type}`); continue; }
@@ -287,15 +302,6 @@ Enable Debug with: game.rt.debug = true
             if (!src) { game.rt?.warn?.(`Item grant "${g.name}" not found in pack ${packName}`); continue; }
             const data = src.toObject();
             delete data._id;
-            // Pre-chosen pickable grant (e.g. Rival (Inquisition)): stamp the choice and
-            // append it to the name so onCreateItem skips the picker prompt (it returns
-            // early when system.choice is already set). The conditionalBonus already on
-            // the granted talent applies vs the chosen group.
-            if (g.choice) {
-                foundry.utils.setProperty(data, 'system.choice', g.choice);
-                const base = String(data.name ?? '').replace(/\s*\(.*\)\s*$/, '');
-                data.name = `${base} (${g.choice})`;
-            }
             foundry.utils.setProperty(data, 'flags.rt.grantedBy', item.id);
             toCreate.push(data);
         }
