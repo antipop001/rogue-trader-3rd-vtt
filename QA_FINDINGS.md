@@ -712,3 +712,39 @@ Format per finding:
 - canon: RT Core p.220+ critical-damage rules — damage reduced by Armour + TB each hit; damage past 0 Wounds is Critical Damage cross-referenced against the running Critical total; "10+" is the cap row. Matches the code.
 - gap: none — the index math, TB handling, armour-minus-penetration, and damageType selection are all RT-correct. The ONLY problems on the personal-critical path are the table TEXT edition (QA-073) and the limb-location lookup (QA-074).
 - fix: none. · autofixable: n/a
+
+### QA-076 — Movement has no minimum-1 floor: negative / zero movement for small or low-Agility actors
+- area: rules
+- kind: automation-gap
+- severity: P2 (wrong movement values for AgB-0 actors and small low-AgB creatures — but only at the extreme low end)
+- evidence: `src/module/documents/base-actor.mjs:143` — `let base = agility.bonus * moveMult + size - 4;` then `movement = {half: base, full: base*2, charge: base*3, run: base*6}` (`:144-149`). No clamp. The `size - 4` term correctly maps the Size trait's "Base Movement" column (Average size=4 → +0, Hulking 5 → +1 … Miniscule 1 → −3), but nothing floors the result. A Miniscule (size 1) creature with Agility Bonus 2 → `base = 2 + 1 − 4 = −1` → movement `{half:−1, full:−2, charge:−3, run:−6}` (negative). An Average actor with AgB 0 → `base = 0` → all movement `0`.
+- canon: RT Core Table 9-16 Size (`CoreBook-201-401.pdf/markdown.md:6810,6824-6833`): "When calculating a creature's movement, apply the size modifier first, and then other modifiers from other Traits or talents. **Base movement can never be reduced below 1.**" Size Base-Movement column is AB−3 (Miniscule) … AB+3 (Massive). Also Table 9-30 Structured Time Movement (`:3098-3110`) lists the **AB 0** row as Half ½ / Full 1 / Charge 2 / Run 3 (non-zero), not 0/0/0/0.
+- gap: The engine emits negative movement for small low-Agility creatures and 0 movement for any AgB-0 actor, instead of applying the RT "base movement never below 1" floor (creatures) / the Table 9-30 AB-0 row (½/1/2/3). The displayed movement panel (`movement-panel.hbs:11-23`) shows these wrong values directly.
+- fix: Clamp `base` to a minimum of 1 after the size+quadruped math (`base = Math.max(1, …)`), matching the canon floor; optionally special-case AgB 0 (Average) to the Table 9-30 ½/1/2/3 row. Note the size-modifier arithmetic itself is RT-correct — only the floor is missing. · autofixable: yes (one-line `Math.max(1, …)`, but a rules call on the AB-0 ½-row → verify on rt-smoke; file for the fix loop)
+
+### QA-077 — Unnatural Speed trait not wired into movement (doubled Agility Bonus ignored)
+- area: traits
+- kind: automation-gap
+- severity: P1 (missing automation — affects every NPC with the trait; manual GM override needed)
+- evidence: `src/module/documents/base-actor.mjs:142-143` — `_computeMovement` applies only `quadrupedMoveMultiplier(...)` to the Agility-Bonus term; there is no Unnatural-Speed handling. `roll-helpers.mjs:352,374` explicitly EXCLUDE "Unnatural Speed" from `unnaturalCharacteristicMultipliers` ("Unnatural Speed (movement only) … NOT characteristic multipliers and are skipped"), and no other code path consumes it for movement. The trait exists in `src/packs/traits/traits.yml` and is applied to live NPCs across packs (`corebook-npcs`, `starsofinequity-npcs`, `thesoulreaver-npcs`, `thekoronusbestiary-npcs`, `citadelofskulls-npcs`, `hostileacquisitions-npcs`, `lureoftheexpanse-npcs`, `npcs`).
+- canon: RT Core Unnatural Speed trait (`CoreBook-201-401.pdf/markdown.md:6867`): "The creature moves with incredible speed. For the purposes of determining movement, the creature **doubles its Agility Bonus** (after modifiers from other Traits and factors, specifically size)." I.e. movement base should be `(AgB + size mod) × 2`.
+- gap: Creatures with Unnatural Speed move at standard (un-doubled) rates in the engine; the trait's only mechanical effect (doubled movement) is silently dropped. Quadruped (a sibling movement multiplier) IS wired — Unnatural Speed was missed.
+- fix: In `_computeMovement`, after the size modifier, double the base when an "Unnatural Speed" trait is present (canon: applies AFTER size, so `base = (AgB×quadMult + sizeMod); if unnaturalSpeed: base *= 2`). Add a `hasUnnaturalSpeed(traits)` helper mirroring `quadrupedMoveMultiplier`. Engine-applied by name (no AE — movement is fully derived). · autofixable: yes (small helper + one multiply; verify on rt-smoke)
+
+### QA-078 — Encumbered penalty (−10 movement tests, −1 Agility Bonus) never applied
+- area: rules
+- kind: automation-gap
+- severity: P1 (missing automation — the engine flags Encumbered but applies none of its effects)
+- evidence: `src/module/documents/acolyte.mjs:765-767` sets `this.encumbrance.encumbered = true` when `value > max`, and the Carrying-Weight table (`:696-763`) is RT-correct (matches Table 9-33's Carrying column verbatim, sum SB+TB 0→20). But `encumbered` has NO consumer: a repo-wide grep finds it only set at `:691` (init) and `:766` (assignment) — no roll path reads it. `rollCharacteristic`/`rollSkill` never add an Encumbered modifier, and `_computeMovement` (`base-actor.mjs:143`) uses the full Agility Bonus with no −1 reduction.
+- canon: RT Core Encumbered Characters (`CoreBook-201-401.pdf/markdown.md:3299`): "An Encumbered character takes a **−10 penalty to all movement-related tests** and **reduces his Agility Bonus by one** for the purposes of determining movement rates and Initiative." (Plus a per-TB-hours Toughness Test for Fatigue — narrative.)
+- gap: Carrying more than the Carrying Weight limit visibly toggles the "Encumbered" flag on the sheet but changes nothing mechanically — movement rates, Initiative, and movement-related skill tests (Dodge, Acrobatics, Climb, etc.) are all unpenalised.
+- fix: When `encumbrance.encumbered`, (a) subtract 1 from the Agility Bonus feeding `_computeMovement` and Initiative (floor per QA-076), and (b) add a `−10 'Encumbered'` modifier to movement-related tests (needs a "movement-related" skill tag, or apply to Dodge/Acrobatics/Climb/Swim + the move actions). Larger than a data edit — file for the fix loop. · autofixable: no
+
+### QA-079 — Lifting / Pushing weights not derived (Carrying only) — minor
+- area: sheet-ui
+- kind: not-a-bug
+- severity: P3 (nice-to-have; the modeled value is correct, the unmodeled ones are GM-narrative)
+- evidence: `src/module/documents/acolyte.mjs:688-763` computes only `encumbrance.max` = Carrying Weight from the SB+TB sum; there is no Lifting Weight or Pushing Weight derivation, and no sheet field for them (`encumbrance-panel`/`movement-panel` show carry value/max only).
+- canon: RT Core Table 9-33 (`CoreBook-201-401.pdf/markdown.md:3267-3289`) lists three columns — Maximum Carrying, Lifting (≈2× carry), and Pushing (≈4× carry) Weight — used for the Lift (Full Action) and Push/Throw (`:3303-3309`, throw up to ½ Lifting Weight) rules.
+- gap: Players must compute Lifting/Pushing/throw limits by hand. The Carrying column the engine DOES model is RT-correct, so this is a coverage gap, not a wrong result.
+- fix: Optionally derive `encumbrance.lift`/`encumbrance.push` from the same SB+TB index (add the Lifting/Pushing columns) and surface them on the encumbrance panel; leave the throw/lift action resolution narrative. · autofixable: yes (additive data, low value)
