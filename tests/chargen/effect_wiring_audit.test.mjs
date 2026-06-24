@@ -65,6 +65,19 @@ const NARRATIVE = [
     // traits
     "'Ard", 'Dynastic Warrant', 'Incorporeal', 'Instinctual Understanding',
     'Mechanicus Implants', 'Mob Rule',
+    // AUDIT-002 (non-`+N` sweep) — see loops/effects-audit/triage.md AUDIT-002
+    // talents
+    'Blessed Radiance', 'Bulging Biceps', 'Da Nekst Best Fing', 'Dark Soul',
+    "Ded 'Ard", 'Ded Sneaky', 'Die Hard', 'Duty Unto Death', 'Favoured by the Warp',
+    'Fearless', 'Give it Sum Dakka!', 'Greed is Good', 'Hardy', 'Improved Warp Sense',
+    'Iron Jaw', 'Jaded', 'Kroot Leap', 'Legendary', 'Light Sleeper', 'Master Orator',
+    'Mercenary', 'More fer Me!', 'Nerves of Steel', 'Polyglot', 'Prophetic Dreams',
+    'Prosanguine', 'Rapid Reaction', 'Sharpshooter', 'Sprint', 'Strong Minded',
+    'Survival Master', 'Takedown', 'Unshakeable Faith', 'Warp Affinity',
+    'Watchful For Betrayal', 'See Without Eyes', 'Blind Fighting',
+    // traits
+    'Auto-Stabilised', 'Blind', 'Dark Sight', 'From Beyond', 'Phase', 'Regeneration',
+    'Strange Physiology', 'The Stuff of Nightmares', 'Toxic', 'Warp Weapon',
 ];
 // ----------------------------------------------------------------------------
 

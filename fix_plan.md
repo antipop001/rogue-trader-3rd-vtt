@@ -219,7 +219,7 @@ guard in the spec). Canon: `/mnt/project_data/RT/RT-DOCS/`.
 
 ### AUDIT-002 follow-ups (non-`+N` sweep; see `loops/effects-audit/triage.md`)
 
-- [ ] NARRATIVE-RECORD-2 — add the AUDIT-002 intentionally-unwired entries to the ratchet
+- [x] NARRATIVE-RECORD-2 — add the AUDIT-002 intentionally-unwired entries to the ratchet
   `NARRATIVE` list (they're in `triage.md` AUDIT-002 section): talents Blessed Radiance,
   Bulging Biceps, Da Nekst Best Fing, Dark Soul, Ded 'Ard, Ded Sneaky, Die Hard, Duty
   Unto Death, Favoured by the Warp, Fearless, Give it Sum Dakka!, Greed is Good, Hardy,
@@ -229,7 +229,11 @@ guard in the spec). Canon: `/mnt/project_data/RT/RT-DOCS/`.
   Takedown, Unshakeable Faith, Warp Affinity, Watchful For Betrayal, See Without Eyes,
   Blind Fighting; traits Auto-Stabilised, Blind, Dark Sight, From Beyond, Phase,
   Regeneration, Strange Physiology, The Stuff of Nightmares, Toxic, Warp Weapon. Verify
-  each is genuinely text-only before adding. (NARRATIVE)
+  each is genuinely text-only before adding. (NARRATIVE) — done iter 26: verified all 47
+  carry no effects/conditionalBonuses before recording; added to ratchet `NARRATIVE`
+  (guarded by the "narrative entries carry no wiring" test). Used the fix_plan name list
+  (subset of triage.md AUDIT-002's broader narrative roll-up). None in CODE_HANDLED/
+  WIRED_EXPECTED. Gate green (build OK, 72 node tests).
 
 - [ ] ENGINE-EXTRA-DEFENCE — extra-Reaction / extra-attack count machinery: Step Aside
   (+1 Dodge/round), Wall of Steel (+1 Parry/round), Counter Attack (free attack after
