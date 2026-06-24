@@ -263,6 +263,20 @@ engine/roll fixes. Fix these directly, or in a dedicated follow-up loop.
 - **Verify:** add Bionic Heart to an actor → a Sprint talent auto-embeds. (Live test:
   `scratchpad/dbg_grant4.py`.) Foundry-coupled — verify on rt-smoke.
 
+## BUG-010 — Choice-grants (`flags.rt.grants` with a `choice`) don't embed
+- **Status: OPEN — found by the 2026-06-24 verification sweep.** Plain item-grants work
+  (verified live: Explorator Implants→Mechanicus Implants, Bionic Heart→Sprint), but a
+  grant carrying a `choice` does not embed. Repro: Sixth Sense trait
+  (`flags.rt.grants: [{name:Rival, type:talent, choice:Inquisition}]`) — its
+  Psyniscience skill-upgrade AE applies (advance 0→1 ✓), but no `Rival (Inquisition)`
+  talent appears on the actor. A talent named exactly `Rival` exists (talents.yml:2832),
+  so resolution should succeed; `applyItemGrants` even has a `g.choice` branch (stamps
+  `system.choice` + renames). Likely the same defer/clobber race as BUG-009 hitting the
+  choice path specifically, or the rename/`system.choice` stamp interacting with the
+  pickable `Rival`'s `onCreateItem` early-return. Needs the same instrument-and-defer
+  debugging BUG-009 got. Verify: add Sixth Sense → a `Rival (Inquisition)` talent
+  appears within ~2s.
+
 ## SWEEP — talents/traits with described bonuses that aren't wired
 Paranoia / Weapon Master are instances of a systemic gap: many compendium entries
 describe a numeric bonus in text but carry no `effects`/`conditionalBonuses`/
