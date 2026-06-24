@@ -386,18 +386,32 @@ guard in the spec). Canon: `/mnt/project_data/RT/RT-DOCS/`.
   `Quadruped (8 legs)` creature 4×AgB; a non-quadruped actor is unchanged. Derived-data +
   Foundry-coupled — node gate can't exercise it. (E2E)
 
-- [ ] ENGINE-UNNATURAL-CHARS — the characteristic-`unnatural` members of ENGINE-UNNATURAL:
-  Unnatural Characteristic / Unnatural Toughness (x2) / Unnatural Strength / Unnatural Speed
-  etc., and Greenskin Hybrid (+10 Toughness "after calculating Wounds"). The sheet has
-  `system.characteristics.<k>.unnatural` (a pre-baked flat ADDITIVE on `bonus`, value =
-  baseBonus×(mult−1), so it is value-dependent — a fixed-value AE can't express ×2). **⚠
-  Double-apply trap:** the NPC pipeline ALREADY bakes `unnatural: N` into hundreds of NPC
-  characteristics, and many of those NPCs ALSO carry an "Unnatural X (x2)" trait item — so
-  engine-computing `.unnatural` from the trait would conflict with / double the baked value.
-  Before wiring: grep whether NPCs with `unnatural > 0` also embed the matching trait item;
-  decide SET-vs-skip semantics (e.g. only compute when baked value is 0, or have the pipeline
-  stop baking and let the engine own it). Pure-JS test on the multiplier→unnatural compute;
-  E2E. RT Core. (ENGINE)
+- [x] ENGINE-UNNATURAL-CHARS — the characteristic-`unnatural` members of ENGINE-UNNATURAL:
+  Unnatural Characteristic / Unnatural Toughness (x2) / Unnatural Strength etc. (Unnatural
+  Speed = movement-only, Unnatural Senses = sensory → both skipped, not char multipliers;
+  "Greenskin Hybrid" as described in this task does NOT exist — the pack's `Kindred: Greenskin
+  Hybrid` is poison immunity, narrative, not +10 T). Done iter 37: chose the **SET-when-unset**
+  semantics the task suggested. Pure helper `unnaturalCharacteristicMultipliers(traits)` in
+  `roll-helpers.mjs` parses "Unnatural <Char> (xN)" trait names → {lowercased label →
+  multiplier≥2} (no-parens ⇒ ×2; generic/Speed/Senses skipped). Wired into
+  `acolyte._computeCharacteristics`: derive `.unnatural = rawBonus×(mult−1)` ONLY when no value
+  is already present (`if (!(characteristic.unnatural > 0))`), so a drag-dropped trait doubles
+  the Characteristic Bonus while the NPC-pipeline pre-baked additive (hundreds of NPCs bake
+  `unnatural:N` AND carry the trait) is never doubled. NPCs inherit acolyte's compute (npc.mjs
+  is a thin subclass). NOT an AE (multiplies a value-dependent derived bonus) → ratchet
+  CODE_HANDLED ('Unnatural Toughness (x2)' — the one specific-char Unnatural trait that is a
+  standalone pack entry). RT Core p.368. Node test `unnatural_chars.test.mjs` (8 cases). Gate
+  green (build OK, 117 node tests). Movement-exclusion caveat (RT p.368: movement uses UNMODIFIED
+  AgB; `_computeMovement` reads the multiplied `agility.bonus`, a pre-existing NPC deviation) left
+  to ENGINE-UNNATURAL-MOVE. E2E follow-up below. (ENGINE)
+
+- [ ] E2E-UNNATURAL-CHARS — verify on rt-smoke (Playwright): a PC with a drag-dropped
+  "Unnatural Toughness (x2)" trait (and `characteristics.toughness.unnatural` 0 in source)
+  shows displayed Toughness Bonus doubled (and derived TB/Wounds/Fatigue-max shift) vs
+  without it; an "Unnatural Strength (x3)" trait triples the Strength Bonus; an existing NPC
+  with a pre-baked `unnatural` value AND the matching trait is UNCHANGED (no double-apply);
+  the generic "Unnatural Characteristic" / "Unnatural Speed" / "Unnatural Senses" traits add
+  no characteristic bonus. Derived-data + Foundry-coupled — node gate can't exercise it. (E2E)
 
 - [ ] ENGINE-UNNATURAL-DAMAGE — the damage/Wounds/psychic-path members of ENGINE-UNNATURAL
   that can't be a characteristic AE: Daemonic (×2 TB vs damage — assign-damage reduction

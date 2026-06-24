@@ -83,6 +83,12 @@ const CODE_HANDLED = [
     // ×4 eight legs). RT Core p.366 — engine-applied (scales the derived AgB an AE
     // can't read), must NOT also get an AE. ENGINE-UNNATURAL (Quadruped slice).
     'Quadruped',
+    // Unnatural Characteristic multiplier derived by trait name in
+    // acolyte._computeCharacteristics (unnaturalCharacteristicMultipliers → SET-when-unset
+    // on system.characteristics.<k>.unnatural; doubles the Characteristic Bonus). RT Core
+    // p.368 — engine-applied (multiplies the derived bonus an AE can't express), must NOT
+    // also get an AE. ENGINE-UNNATURAL-CHARS.
+    'Unnatural Toughness (x2)',
 ];
 // Intentionally text-only (narrative / per-DoS / PF / GM-adjudicated). These describe
 // a mechanic the system deliberately does NOT express as an AE/conditionalBonus

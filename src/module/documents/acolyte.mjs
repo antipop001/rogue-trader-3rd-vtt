@@ -12,7 +12,7 @@ import { RogueTraderBaseActor } from './base-actor.mjs';
 import { ForceFieldData } from '../rolls/force-field-data.mjs';
 import { prepareForceFieldRoll } from '../prompts/force-field-prompt.mjs';
 import { DHBasicActionManager } from '../actions/basic-action-manager.mjs';
-import { getDegree, roll1d100, initiativeCharBonus, reactionBudget, canSpendReaction } from '../rolls/roll-helpers.mjs';
+import { getDegree, roll1d100, initiativeCharBonus, reactionBudget, canSpendReaction, unnaturalCharacteristicMultipliers } from '../rolls/roll-helpers.mjs';
 import { SYSTEM_ID } from '../hooks-manager.mjs';
 import { RogueTraderSettings } from '../rogue-trader-settings.mjs';
 
@@ -358,9 +358,24 @@ export class RogueTraderAcolyte extends RogueTraderBaseActor {
     }
 
     _computeCharacteristics() {
+        // RT 1e Unnatural Characteristic (RT Core p.368): an "Unnatural <Char> (xN)"
+        // trait multiplies that Characteristic Bonus by N. The instantiated trait carries
+        // the characteristic + multiplier in its name; map them here by label.
+        const unnaturalMults = unnaturalCharacteristicMultipliers(this.items.filter((i) => i.type === 'trait'));
         for (const [name, characteristic] of Object.entries(this.characteristics)) {
             characteristic.total = characteristic.base + characteristic.advance * 5 + characteristic.modifier;
-            characteristic.bonus = Math.floor(characteristic.total / 10) + characteristic.unnatural;
+            const rawBonus = Math.floor(characteristic.total / 10);
+            // Derive `.unnatural` (the extra additive = rawBonus×(N−1)) from the trait, but
+            // SET-when-unset only: the NPC pipeline pre-bakes `.unnatural`, so recomputing
+            // it from the trait when a value is already present would double-apply
+            // (ENGINE-UNNATURAL-CHARS). Trait-gated/engine-applied by name — the matched
+            // trait must NOT also be given an AE. (Movement uses the unmodified AgB per
+            // RT Core p.368 — handled in _computeMovement, not here.)
+            if (!(characteristic.unnatural > 0)) {
+                const mult = unnaturalMults[String(characteristic.label ?? '').toLowerCase()];
+                if (mult >= 2) characteristic.unnatural = rawBonus * (mult - 1);
+            }
+            characteristic.bonus = rawBonus + characteristic.unnatural;
 
             // Homeworld Bonus or Negative
             if (this.backgroundEffects.homeworld) {

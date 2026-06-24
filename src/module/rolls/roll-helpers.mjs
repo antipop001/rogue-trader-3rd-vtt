@@ -322,6 +322,45 @@ export function quadrupedMoveMultiplier(traits) {
     return 1;
 }
 
+/**
+ * Unnatural Characteristic (RT Core p.368) multipliers. "Each time this Trait is
+ * gained, select a Characteristic, and double its bonus. ... one selection multiplies
+ * the Characteristic Bonus by ×2, two selections by ×3, and three selections by ×4."
+ * An instantiated trait carries the characteristic + multiplier in its NAME — e.g.
+ * "Unnatural Toughness (x2)", "Unnatural Strength (x3)", or just "Unnatural Perception"
+ * (no parens ⇒ ×2). This parses those into a map of lowercased characteristic LABEL
+ * (matching `characteristic.label`, e.g. "weapon skill") → multiplier (≥2), so the
+ * engine can derive `.unnatural` for actors that carry the trait but have no pre-baked
+ * value. The generic "Unnatural Characteristic" (no chosen target in the data),
+ * "Unnatural Speed" (movement only) and "Unnatural Senses" (sensory) are NOT
+ * characteristic multipliers and are skipped. RT Core p.368 also notes movement uses
+ * the UNMODIFIED Agility Bonus — the caller must not feed this into movement.
+ *
+ * Engine-applied by name in acolyte._computeCharacteristics (SET-when-unset only — the
+ * NPC pipeline pre-bakes the additive into `.unnatural`, so deriving it from the trait
+ * when a value is already present would double-apply). The matched traits must NOT also
+ * be given an ActiveEffect. ENGINE-UNNATURAL-CHARS. Callers pass the actor's TRAIT items.
+ *
+ * @param {Array<{name?: string}>} traits  actor trait items
+ * @returns {Object<string, number>} lowercased characteristic label → multiplier (≥2)
+ */
+export function unnaturalCharacteristicMultipliers(traits) {
+    const out = {};
+    if (!Array.isArray(traits)) return out;
+    for (const t of traits) {
+        const name = t?.name;
+        if (!name) continue;
+        // "Unnatural <Characteristic> (xN)" — the (xN) is optional and defaults to ×2.
+        const m = String(name).match(/^\s*unnatural\s+(.+?)\s*(?:\(\s*[x×]\s*(\d+)\s*\)\s*)?$/i);
+        if (!m) continue;
+        const label = m[1].trim().toLowerCase();
+        if (label === 'characteristic' || label === 'speed' || label === 'senses') continue;
+        const mult = m[2] ? Math.max(2, parseInt(m[2], 10)) : 2;
+        out[label] = Math.max(out[label] ?? 0, mult);
+    }
+    return out;
+}
+
 export async function roll1d100() {
     let formula = '1d100';
     const roll = new Roll(formula, {});
