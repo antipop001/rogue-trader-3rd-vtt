@@ -146,6 +146,33 @@ engine/roll fixes. Fix these directly, or in a dedicated follow-up loop.
   to a real Roll formula like `5 * @pr` — more entries, but data stays declarative.)
 - **⚠ Foundry-coupled** (Roll + rollData) — verify on rt-smoke (Compel PR 4 → 20m).
 
+## BUG-007 — Opposed powers don't prompt for the opposed check
+- **Symptom:** a power that calls for an Opposed test (e.g. Compel — "Opposed
+  Willpower") should prompt for / resolve the opposed check; it doesn't. Reported
+  2026-06-23.
+- **Findings:** the data + engine partly support it — power `target` carries
+  `isOpposed: true` + `opposed: willpower`; `PsychicRollData` (`roll-data.mjs` ~L431-444)
+  sets `isOpposed`/`opposedTarget` *when a target token is selected*; and
+  `ActionData.checkForOpposed` (`action-data.mjs` L85-97) rolls the target's resist test
+  and compares DoS. Gaps:
+  1. **Simple-cast bypass:** with the `simplePsychicRolls` setting on, `rollItem` casts
+     via `rollCharacteristic('willpower', name)` (`acolyte.mjs` ~L224), a plain Focus
+     test that never calls `checkForOpposed` — so opposed powers ignore the opposition
+     entirely. Only the full `performPsychicAttack` path resolves it.
+  2. **Needs a target:** `isOpposed` only engages when `this.targetActor` is set (a
+     targeted token); otherwise nothing happens.
+  3. **No prompt:** even when engaged, `checkForOpposed` *auto-rolls* the defender's test
+     silently (`targetActor.rollCheck(opposedTarget)`) — the user wants a prompt for the
+     check (let the defender/GM roll, apply modifiers).
+- **Fix (design):** when casting a power whose `target.isOpposed` is true, surface the
+  opposed test as a prompt/roll rather than skipping or silently auto-rolling — and make
+  it fire in the simple-cast path too (route opposed powers through the opposed flow, or
+  add an opposed-roll prompt/chat-card button so the defender rolls). Decide the UX:
+  (a) dialog at cast time, (b) a "Roll Opposed (WP)" button on the result card for the
+  defender/GM, or (c) keep the auto-roll but always show it. Needs a target or a
+  manual-entry fallback.
+- **⚠ Foundry-coupled** (cast pipeline + a new prompt) — verify on rt-smoke.
+
 ## SWEEP — talents/traits with described bonuses that aren't wired
 Paranoia / Weapon Master are instances of a systemic gap: many compendium entries
 describe a numeric bonus in text but carry no `effects`/`conditionalBonuses`/
