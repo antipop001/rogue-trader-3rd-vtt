@@ -464,3 +464,132 @@ flags:
               characteristics: [fellowship]
           value: 5
           label: 'to interact with high-ranking Imperials in a formal setting'
+---
+data:
+    description: 'Whether because of their strange looks, clannish ways, or unwholesome air, the void born are shunned and mistrusted by most. In addition, the void born are most likely to attract any negative attention that the party of Explorers creates—accusations of deceit in trade, disgruntled negotiators, mobs armed with stones, and so on. Because of this, void born characters suffer a -5 penalty on all Fellowship Tests made to interact with non-void born humans.'
+    source: 'Rogue Trader Core Rulebook, p.20'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Ill-omened'
+type: 'trait'
+flags:
+    rt:
+        category: 'Background'
+        originStep: 'Home World'
+        conditionalBonuses:
+        - applies:
+              skills: [charm, command, deceive, inquiry, barter, blather]
+              characteristics: [fellowship]
+          value: -5
+          label: 'to interact with non-void born humans'
+---
+data:
+    description: 'Frontier world characters are suspicious by nature. Because of this outlook, frontier world characters suffer a -10 penalty on all Fellowship Tests when dealing with someone they have not previously met (exactly when to apply this check is up to the GM).'
+    source: 'Into the Storm, p.10'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Leery of Outsiders'
+type: 'trait'
+flags:
+    rt:
+        category: 'Background'
+        originStep: 'Home World'
+        conditionalBonuses:
+        - applies:
+              skills: [charm, command, deceive, inquiry, barter, blather]
+              characteristics: [fellowship]
+          value: -10
+          label: 'when dealing with someone not previously met'
+---
+data:
+    description: 'Battlefleet characters are generally officers, and as such they are used to giving orders and having those orders obeyed. All Battlefleet characters gain a +5 bonus to all Command Tests while aboard any spacecraft.'
+    source: 'Into the Storm, p.13'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Officer on Deck'
+type: 'trait'
+flags:
+    rt:
+        category: 'Background'
+        originStep: 'Home World'
+        conditionalBonuses:
+        - applies:
+              skills: [command]
+              characteristics: []
+          value: 5
+          label: 'on Command Tests while aboard any spacecraft'
+---
+data:
+    description: 'The inherently dangerous conditions of a death world encourage distrust and doubt. Death worlds tend to be slow to put their faith in anyone other than themselves and chafe against the petty strictures of a more complex society. They suffer a -10 penalty to all Interaction Skill Tests made in formal surroundings.'
+    source: 'Rogue Trader Core Rulebook, p.18'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Paranoid'
+type: 'trait'
+flags:
+    rt:
+        category: 'Background'
+        originStep: 'Home World'
+        conditionalBonuses:
+        - applies:
+              skills: [charm, command, deceive, inquiry, barter, blather]
+              characteristics: [fellowship]
+          value: -10
+          label: 'on Interaction Tests made in formal surroundings'
+---
+data:
+    description: 'Living and training on a spacecraft is vastly different than living and training on the ground. Because of the close-in nature of ships, Battlefleet characters are unaccustomed to fighting in open spaces or on the "dirtside" of planets. While they are on a planet they suffer a -2 penalty to Initiative Tests and double the Ballistic Skill penalty for firing weapons at Long Range or greater. These penalties don''t apply to the character if they are inside a tunnel or other confined space.'
+    source: 'Into the Storm, p.13'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Ship-Bound Fighter'
+type: 'trait'
+flags:
+    rt:
+        category: 'Background'
+        originStep: 'Home World'
+---
+data:
+    description: 'Though they cannot explain it, the true Footfallen have a strange attunement to the Expanse that borders on the supernatural. All Footfallen characters gain Psyniscience as a Trained Skill, although they do not count as psykers. However, they are of an interest to the Inquisition, and begin the game with the Rival (Inquisition) Talent.'
+    source: 'Into the Storm, p.11'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Sixth Sense'
+type: 'trait'
+flags:
+    rt:
+        category: 'Background'
+        originStep: 'Home World'
+---
+data:
+    description: 'Although forge world born citizens know that the Emperor is their god and saviour, they see the Imperial Creed through the lens of Cult Mechanicus doctrine. As a result, they can be surprisingly—and sometimes dangerously—ignorant of the common teachings and practices of the Ecclesiarchy, often failing to offer its clerics the level of deference they expect. Forge world characters suffer a -10 penalty on Tests involving knowledge of the Imperial Creed and a -5 penalty on Fellowship Tests to interact with members of the Ecclesiarchy in formal settings.'
+    source: 'Rogue Trader Core Rulebook, p.21'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Stranger to the Cult'
+type: 'trait'
+flags:
+    rt:
+        category: 'Background'
+        originStep: 'Home World'
+        conditionalBonuses:
+        - applies:
+              skills: [commonLore]
+              characteristics: []
+          value: -10
+          label: 'on Tests involving knowledge of the Imperial Creed'
+        - applies:
+              skills: [charm, command, deceive, inquiry, barter, blather]
+              characteristics: [fellowship]
+          value: -5
+          label: 'to interact with members of the Ecclesiarchy in formal settings'
+---
+data:
+    description: 'As a result of their living on the "streets," the Footfallen suffer a -5 penalty on all Scholastic Lore Tests except those that involve information on the Koronus Expanse (whether or not a given Scholastic Lore Test involves the Koronus expanse is up to the GM).'
+    source: 'Into the Storm, p.11'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Street Knowledge'
+type: 'trait'
+flags:
+    rt:
+        category: 'Background'
+        originStep: 'Home World'
+        conditionalBonuses:
+        - applies:
+              skills: [scholasticLore]
+              characteristics: []
+          value: -5
+          label: 'except Tests involving the Koronus Expanse'

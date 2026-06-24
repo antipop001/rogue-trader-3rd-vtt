@@ -32,9 +32,11 @@ stray talents resolve (TALENT_RESOLVED_FLOOR 72 → 79).
   Etiquette/Criminal/Constant Combat Training/Honour are conditionalBonuses; Charmed/
   Accustomed to Crowds/Dynastic Warrant are narrative text-only. (BG-AUTHOR)
 
-- [ ] BG-002 — Home World traits batch B (8): Ill-omened, Leery of Outsiders, Officer
+- [x] BG-002 — Home World traits batch B (8): Ill-omened, Leery of Outsiders, Officer
   on Deck, Paranoid, Ship-Bound Fighter, Sixth Sense, Stranger to the Cult, Street
-  Knowledge. Source: `home_worlds.json`. Target TRAIT floor 25. (BG-AUTHOR)
+  Knowledge. Source: `home_worlds.json`. TRAIT_RESOLVED_FLOOR=25. 6 conditionalBonuses;
+  Ship-Bound Fighter + Sixth Sense text-only (Initiative/BS-penalty & sibling-granted
+  skill/talent not expressible as a roll-prompt bonus — see vendor queue). (BG-AUTHOR)
 
 - [ ] BG-003 — Home World traits batch C (8): Survivor, Tenacious Survivalist, Tough
   as Grox-Hide, Underground Resources, Vendetta, Void Accustomed, Wary, Xenos
