@@ -122,6 +122,25 @@ engine/roll fixes. Fix these directly, or in a dedicated follow-up loop.
   unlinked token. **Fix:** don't reassign `this.actor`; use the live target doc directly
   for the chat speaker. Confirmed live: wounds now persist to the sheet.
 
+## BUG-006 — Psychic power ranges are prose, not Roll formulas (Compel + most powers)
+- **Symptom:** Compel has range issues. Reported 2026-06-23.
+- **Cause:** `src/packs/psychic-powers/psychic-powers.yml` stores `range` as human text —
+  Compel = `5m x Psy Rating` (canon: RT Core "Range: 5m × Psy Rating"). But
+  `calculatePsychicAbilityMaxRange` (`src/module/rules/range.mjs` ~L55-75) only handles a
+  plain integer or '' and otherwise feeds the string to Foundry's `Roll(...).evaluate()`
+  → `"5m x Psy Rating"` isn't a valid formula → catch → "Range formula failed - setting
+  to 0" → range 0.
+- **Systemic:** nearly all pack ranges are prose — `1km x Psy Rating`, `10m`, `100m`,
+  `Personal`, `Self`, `Gaze`, `1m x Psy Rating radius`, `1 VU x Willpower Bonus`,
+  `any person he can see` — so most ranged powers parse to 0 (even plain `10m` fails: the
+  `m` makes it an invalid Roll).
+- **Fix (preferred): a normaliser in `range.mjs`** that converts the prose to a number
+  before/instead of `Roll()`: strip `m`; `km`→×1000; `Psy Rating`→`@pr`; `Willpower
+  Bonus`→willpower bonus; `VU`→VU distance; `Self`/`Personal`/`Gaze`/"can see"→0 or a
+  sentinel. One code change covers all ~79 powers. (Alternative: rewrite every `range:`
+  to a real Roll formula like `5 * @pr` — more entries, but data stays declarative.)
+- **⚠ Foundry-coupled** (Roll + rollData) — verify on rt-smoke (Compel PR 4 → 20m).
+
 ## SWEEP — talents/traits with described bonuses that aren't wired
 Paranoia / Weapon Master are instances of a systemic gap: many compendium entries
 describe a numeric bonus in text but carry no `effects`/`conditionalBonuses`/
