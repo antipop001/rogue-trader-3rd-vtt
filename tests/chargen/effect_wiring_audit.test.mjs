@@ -102,6 +102,11 @@ const CODE_HANDLED = [
     // engine-applied by name (NOT an AE). The opposed-resist apply point itself is the
     // Foundry-coupled follow-up. RT Core p.94. ENGINE-UNNATURAL-DAMAGE.
     'Bastion of Iron Will',
+    // Rapid Reload halves a weapon's reload time — applied by talent name in
+    // acolyte._computeWeaponReload (rapidReloadTime → derived system.effectiveReload on
+    // owned ranged weapons). RT Core p.110 — engine-applied (rewrites a free-text field
+    // an AE can't address), must NOT also get an AE. ENGINE-RAPID-RELOAD.
+    'Rapid Reload',
 ];
 // Intentionally text-only (narrative / per-DoS / PF / GM-adjudicated). These describe
 // a mechanic the system deliberately does NOT express as an AE/conditionalBonus

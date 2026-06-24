@@ -131,6 +131,14 @@
                                         {{selectOptions (arrayToObject rt.combat.action_speeds) selected=item.system.reload}}
                                     </select>
                                 </div>
+                                {{#if item.system.effectiveReload}}
+                                {{#unless (eq item.system.effectiveReload item.system.reload)}}
+                                <div class="rt-field__wrapper">
+                                    <span class="rt-field__header">Effective</span>
+                                    <span class="rt-field__input" title="Rapid Reload (RT Core p.110)">{{item.system.effectiveReload}}</span>
+                                </div>
+                                {{/unless}}
+                                {{/if}}
                                 <div class="rt-field__wrapper">
                                     <span class="rt-field__header">Current</span>
                                     <input class="rt-field__input" type="number" data-dtype="Number"

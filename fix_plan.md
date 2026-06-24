@@ -483,9 +483,30 @@ guard in the spec). Canon: `/mnt/project_data/RT/RT-DOCS/`.
   standing Wounds bonus (stays narrative until the activated-consumable engine lands). Derived
   data + Foundry-coupled — node gate can't exercise it. (E2E)
 
-- [ ] ENGINE-RAPID-RELOAD — Rapid Reload halves weapon reload times in the attack/reload
+- [x] ENGINE-RAPID-RELOAD — Rapid Reload halves weapon reload times in the attack/reload
   path. Hook in `action-data.mjs` (or reload handling) by talent name. Pure-JS test on the
-  reload-time helper; E2E. RT Core. (ENGINE)
+  reload-time helper; E2E. RT Core. (ENGINE) — done iter 41: first found+fixed a data bug —
+  the `Rapid Reload` talent carried **Renowned Warrant's** benefit text ("+10 Interaction");
+  restored canon "halves all reload times, rounding down (Half→Free, Full→Half, and so on)"
+  + `source: …p.110`. No live reload action exists (`system.reload` is a free-text reference
+  field nothing consumed), so the apply point is a derived **`system.effectiveReload`** set on
+  every owned ranged weapon in `acolyte._computeWeaponReload()` (covers acolyte+npc): equals
+  `system.reload` without the talent, halved by the pure helper `rapidReloadTime(reload,
+  hasRapidReload)` in `roll-helpers.mjs` with it. Helper parses pack short-forms ('Half',
+  'Full', '2 Full') AND config full-forms ('Half Action'…), converts to Full-Action units,
+  halves, rounds DOWN to {Free/Half/N-Full}, returns config-style strings; N/A/''/Special pass
+  through. Weapon item sheet shows "Effective: X" (titled Rapid Reload) when it differs.
+  Engine-applied by talent name → NOT an AE → ratchet CODE_HANDLED (double-apply guard). Node
+  test `rapid_reload.test.mjs` (6 cases). Gate green (build OK, 135 node tests). E2E follow-up
+  below. (ENGINE)
+
+- [ ] E2E-RAPID-RELOAD — verify on rt-smoke (Playwright): give an actor the Rapid Reload
+  talent and an owned ranged weapon with `reload: 'Full'` → the weapon item sheet shows
+  "Effective: Half Action" (and `weapon.system.effectiveReload === 'Half Action'`); a `2 Full`
+  weapon shows "Full Action"; a `Half` weapon shows "Free Action"; remove the talent → no
+  "Effective" row and `effectiveReload === reload`. Confirm an NPC (creature template) with the
+  talent derives the same. Derived-data on embedded items + sheet are Foundry-coupled — node
+  gate can't exercise it. (E2E)
 
 - [ ] ENGINE-TRAIT-GRANTS — talents/traits that GRANT another trait/talent: Explorator
   Implants (→ Mechanicus Implants), The Flesh is Weak / Physical Perfection (→ Machine),

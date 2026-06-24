@@ -12,7 +12,7 @@ import { RogueTraderBaseActor } from './base-actor.mjs';
 import { ForceFieldData } from '../rolls/force-field-data.mjs';
 import { prepareForceFieldRoll } from '../prompts/force-field-prompt.mjs';
 import { DHBasicActionManager } from '../actions/basic-action-manager.mjs';
-import { getDegree, roll1d100, initiativeCharBonus, woundsMax, reactionBudget, canSpendReaction, unnaturalCharacteristicMultipliers } from '../rolls/roll-helpers.mjs';
+import { getDegree, roll1d100, initiativeCharBonus, woundsMax, reactionBudget, canSpendReaction, unnaturalCharacteristicMultipliers, rapidReloadTime } from '../rolls/roll-helpers.mjs';
 import { SYSTEM_ID } from '../hooks-manager.mjs';
 import { RogueTraderSettings } from '../rogue-trader-settings.mjs';
 
@@ -89,6 +89,7 @@ export class RogueTraderAcolyte extends RogueTraderBaseActor {
         this._computeArmour();
         this._computeMovement();
         this._computeEncumbrance();
+        this._computeWeaponReload();
         await super.prepareData();
         // Active Effects apply during super.prepareData(); recompute skills
         // afterward so `skill.modifier` changes (e.g. Master Chirurgeon's
@@ -641,6 +642,21 @@ export class RogueTraderAcolyte extends RogueTraderBaseActor {
         this.armour.body.total += this.armour.body.value;
         this.armour.leftLeg.total += this.armour.leftLeg.value;
         this.armour.rightLeg.total += this.armour.rightLeg.value;
+    }
+
+    _computeWeaponReload() {
+        // Rapid Reload (RT Core p.110) halves all reload times. There is no live reload
+        // action in the engine — `system.reload` is a free-text reference field — so the
+        // talent's effect is surfaced as a derived `system.effectiveReload` on every owned
+        // ranged weapon (transient, not persisted). When the owner lacks the talent it
+        // equals `system.reload`; with it, the value is halved (rounding down) by
+        // `rapidReloadTime`. Applied by talent name → NOT an AE (double-apply guard).
+        const hasRapidReload = this.hasTalent('Rapid Reload');
+        this.items
+            .filter((item) => item.type === 'weapon' && item.isRanged)
+            .forEach((weapon) => {
+                weapon.system.effectiveReload = rapidReloadTime(weapon.system.reload, hasRapidReload);
+            });
     }
 
     _computeEncumbrance() {

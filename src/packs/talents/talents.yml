@@ -2614,14 +2614,14 @@ type: talent
 ---
 data:
     aptitudes: ''
-    benefit: The Explorer's Warrant of Trade is ancient and hallowed, signed before
-        the Imperium knew of the Expanse, and garners the respect of merchants and
-        officials alike. The character gains a +10 bonus to Interaction Skill Tests
-        with those who understand the importance of the warrant, such as other traders
-        and Imperial officials.
+    benefit: The practice bays aboard the Explorer's vessel are like a second home, and
+        he has reloaded countless magazines or power cells for his weapons until he can
+        replace them with his eyes closed. The Explorer halves all reload times, rounding
+        down. Thus, a Half Action reload becomes a Free Action, a Full Action reload
+        becomes a Half Action, and so on.
     cost: 0
     prerequisites: ''
-    source: Rogue Trader Core Rulebook
+    source: Rogue Trader Core Rulebook, p.110
     tier: '1'
 img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
 name: Renowned Warrant

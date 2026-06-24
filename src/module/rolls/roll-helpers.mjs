@@ -423,6 +423,49 @@ export function bastionPsyMultiplier(talents) {
     return has ? 2 : 1;
 }
 
+/**
+ * Rapid Reload (RT Core p.110): "The Explorer halves all reload times, rounding down.
+ * Thus, a Half Action reload becomes a Free Action, a Full Action reload becomes a Half
+ * Action, and so on." Reload is a free-text field on the weapon (`system.reload`), holding
+ * either pack short-forms ('Half', 'Full', '2 Full') or config full-forms ('Half Action',
+ * 'Full Action', '2 Full Actions') — no engine consumed it before, so this is the
+ * extractable apply point: it converts the reload string to a quantity of Full-Actions
+ * (Half = 0.5, Full = 1, "N Full" = N), halves it, then rounds DOWN to the nearest
+ * representable step {Free(0), Half(0.5), 1+ Full}. Returns config-style full-form strings.
+ * Non-numeric reloads (N/A, '', Special) and the un-talented path pass through unchanged.
+ *
+ * Mapping: Half→Free, Full→Half, 2 Full→Full, 3 Full→Full (1.5↓1), 4 Full→2 Full,
+ * 5 Full→2 Full (2.5↓2). NOT an AE (it rewrites a free-text field by talent name) —
+ * the actor applies it by name on owned ranged weapons (double-apply guard: CODE_HANDLED).
+ *
+ * @param {string} reload  the weapon's `system.reload`
+ * @param {boolean} [hasRapidReload=true]  whether the owner has the Rapid Reload talent
+ * @returns {string} the (possibly halved) reload time
+ */
+export function rapidReloadTime(reload, hasRapidReload = true) {
+    const raw = String(reload ?? '').trim();
+    if (!hasRapidReload || raw === '') return reload;
+    const norm = raw.toLowerCase();
+    // Non-numeric / no-reload values pass through untouched.
+    if (norm === 'n/a' || norm === 'special') return reload;
+
+    let actions; // quantity in Full-Action units
+    if (norm === 'free' || norm === 'free action') actions = 0;
+    else if (norm === 'half' || norm === 'half action') actions = 0.5;
+    else if (norm === 'full' || norm === 'full action') actions = 1;
+    else {
+        const m = norm.match(/^(\d+)\s*full/);
+        if (!m) return reload; // unrecognised — leave as-is
+        actions = Number(m[1]);
+    }
+
+    const halved = actions / 2;
+    if (halved < 0.5) return 'Free Action';
+    if (halved < 1) return 'Half Action';
+    const fulls = Math.floor(halved);
+    return fulls === 1 ? 'Full Action' : `${fulls} Full Actions`;
+}
+
 export async function roll1d100() {
     let formula = '1d100';
     const roll = new Roll(formula, {});
