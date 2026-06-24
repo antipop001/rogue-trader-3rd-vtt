@@ -211,6 +211,32 @@ engine/roll fixes. Fix these directly, or in a dedicated follow-up loop.
   ⚠ Foundry-coupled (damage pipeline) — verify on rt-smoke. ⚠ Touches `damage-data.mjs`,
   which the running effects-audit loop may also edit (Weapon Master) — do when idle.
 
+## BUG-009 — Item-grant machinery (`flags.rt.grants`) never embeds the granted item
+- **Status: OPEN — found by the 2026-06-24 verification sweep (Playwright).** The
+  effects-audit loop's ENGINE-TRAIT-GRANTS feature (iters 42–44: Bionic Heart→Sprint,
+  Memorance→Total Recall, Vitae→Autosanguine, Blackbone→Bulging Biceps+Iron Jaw, Sixth
+  Sense→Rival(Inquisition)) does not actually grant anything.
+- **Evidence (all preconditions verified live, yet no embed):**
+  - `createItem` hook is registered; fires for Bionic Heart with `userId === game.user.id`,
+    `item.parent.documentName === 'Actor'`, and `flags.rt.grants = [{name:Sprint,type:talent}]`
+    present on both source and embedded item.
+  - `pendingGrants(...)` would return `[Sprint]` (actor has no Sprint).
+  - The talents pack resolves Sprint (`type:talent`, name match) and a manual
+    `createEmbeddedDocuments` of it succeeds.
+  - But after adding Bionic Heart, no Sprint talent appears — and **no exception, no
+    `console.error`, no `game.rt.warn`** is emitted. So `applyItemGrants`
+    (`hooks-manager.mjs:264`) reaches neither its `!pack`/`!src` warns nor a throw, yet
+    its final `await actor.createEmbeddedDocuments('Item', toCreate)` has no effect.
+- **Likely cause (to confirm with one logging line):** the embed is initiated from
+  inside the `createItem` hook callback (Hooks.callAll does not await it), so the nested
+  `createEmbeddedDocuments` on the same parent is being dropped/swallowed by Foundry's
+  create flow even though `await pack.getDocuments()` yields first. Candidate fix: defer
+  the grant embed off the hook turn (e.g. resolve grants and `createEmbeddedDocuments`
+  from a `queueMicrotask`/`setTimeout(…,0)` or a later hook), and/or have
+  `applyItemGrants` log the `toCreate` length so the exact branch is visible.
+- **Verify:** add Bionic Heart to an actor → a Sprint talent auto-embeds. (Live test:
+  `scratchpad/dbg_grant4.py`.) Foundry-coupled — verify on rt-smoke.
+
 ## SWEEP — talents/traits with described bonuses that aren't wired
 Paranoia / Weapon Master are instances of a systemic gap: many compendium entries
 describe a numeric bonus in text but carry no `effects`/`conditionalBonuses`/
