@@ -34,3 +34,34 @@ iter 13 | traits.yml -> 5 items authored (Fortune & Fate: Rising Star, Ascending
 iter 14 | traits.yml -> 5 items authored (Sanction: Age of Plunder, Sanction: Angevin Crusade, Sanction: The Meritech Wars, Sanction: Fall of the Tellurian Combine, Sanction: Halo Artefacts) -> BG-013 -> Into the Storm, pp.40-41. Narrative Warrant-chart (House history) outcomes; PF/SP already applied by sibling profit_factor/ship_points effects -> text-only, no AE (no double-grant). Halo Artefacts notes the one-Xenostech-component purchase. TRAIT_RESOLVED_FLOOR 90->95.
 iter 15 | traits.yml -> 8 items authored (Warrant Age: Age of Apostasy, Age of Redemption, The Age of Rebirth, The Forging, The Waning; Warrant Renown: Famous, Infamous, Unknown) -> BG-014 -> Into the Storm pp.35-36 (Age), p.44 (Renown). Narrative Warrant-chart outcomes; PF/SP already applied by sibling profit_factor/ship_points effects -> text-only, no AE (no double-grant). TRAIT_RESOLVED_FLOOR 95->103 (GOAL REACHED: all 103 granted traits resolve).
 iter 16 | traits.yml -> Klan: Goffs AE removed (BG-FIX-001) -> Into the Storm, p.62. The Goffs origin option (careers.json) grants S+3 via a SIBLING char_mod AND the Klan: Goffs trait; commit.mjs sums state.modifiers in buildActorData independently of the embedded item's AE (no dedupe), so committing a Goffs Ork double-applied (+6 Str). Removed the trait's +3-Strength ActiveEffect, leaving faithful canon text only (the sibling char_mod is the single source of the +3) — same pattern as the BG-008 Know-Wotz text-only traits. No floor change (still resolves to a real item, not a stub).
+
+# === BG-015 / BG-VERIFY — FINAL SUMMARY (2026-06-23) =========================
+# GOAL REACHED: both coverage ratchets at goal in tests/chargen/background_coverage.test.mjs
+#   TRAIT_RESOLVED_FLOOR = 103 (of 103 origin-granted trait names resolve to real traits.yml items)
+#   TALENT_RESOLVED_FLOOR = 79 (of 79 origin-granted talent names resolve to real talents.yml items)
+# New node test (tests/chargen/commit.test.mjs): planItems embeds REAL background items
+#   (flags.rt.category 'Background' + canon text, _id stripped) for Mutant + Void Accustomed
+#   instead of gap stubs, and an AE-bearing trait (Hivebound) carries its survival -10 ActiveEffect.
+# Authored inventory (per-iter cites above are authoritative; this is the index):
+#   TAL-FIX-001 (iter1): 5 talents authored + Chem-Geld rename — RT Core pp.121/122/31, ItS p.61
+#   BG-001 (iter2): 9 Home World traits A — RT Core pp.20-23, ItS pp.11-14
+#   BG-002 (iter3): 8 Home World traits B — RT Core pp.18-21, ItS pp.10-13
+#   BG-003 (iter4): 8 Home World traits C — RT Core pp.18-24, ItS pp.9-13
+#   BG-004 (iter5): 11 Trials & Travails + Motivation — RT Core pp.28-31, ItS pp.27-34
+#   BG-005 (iter6): 7 Lure + Birthright (incl. Mutant/Mutation Table 14-3) — RT Core pp.25-27, ItS p.19
+#   BG-006 (iter7): 5 Ork species core (all text-only) — ItS pp.61-62
+#   BG-007 (iter8): 6 Ork Klan — ItS pp.61-62 (Goffs AE later removed in BG-FIX-001)
+#   BG-008 (iter9): 6 Ork Know-Wotz (all text-only, sibling-applied) — ItS p.62
+#   BG-009 (iter10): 5 Kroot Kindred — ItS pp.49-50
+#   BG-010 (iter11): 7 Warrant Acquisition — ItS pp.38-39
+#   BG-011 (iter12): 5 Warrant Contacts — ItS pp.43-44
+#   BG-012 (iter13): 5 Warrant Fortune & Fate — ItS p.37
+#   BG-013 (iter14): 5 Warrant Sanction — ItS pp.40-41
+#   BG-014 (iter15): 8 Warrant Age + Renown — ItS pp.35-36, p.44
+#   BG-FIX-001 (iter16): Klan: Goffs double-apply fix — ItS p.62
+# Standing LIMITATIONS (apply manually — not AE-expressible, flagged in cites above):
+#   Initiative bonuses (no system.bio Initiative .modifier field): Wary, Sixth Sense partial, Cunning Hybrid +1 init.
+#   Unnatural Toughness (x2) — multiplicative; .unnatural is additive-only (BG-006).
+#   "Trained skill" grants from Ork Klan choices — advance-level, not +modifier (BG-007).
+#   Ship-Bound Fighter Long-Range BS doubling, Headhunter toxin auto-pass, Stalker free-action stealth.
+# All canon-correctness review of the above is still OPEN (gate verifies structure only).

@@ -5,6 +5,7 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
+import yaml from 'js-yaml';
 
 import { ChargenState } from '../../src/module/chargen/state.mjs';
 import { fixedSet } from '../../src/module/chargen/characteristics.mjs';
@@ -137,4 +138,56 @@ test('buildActorData: unmapped skills and item gaps surface in bio notes', () =>
     const data = buildActorData(s, { itemGaps: { talents: ['Chem-Geld'], traits: [] } });
     assert.match(data.system.bio.notes, /Unmapped skill: Totally Unknown Skill/);
     assert.match(data.system.bio.notes, /Talents without compendium entry: Chem-Geld/);
+});
+
+/* --- BG-VERIFY: granted background traits resolve to REAL automated items ---- */
+
+const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
+
+/** Index a pack YAML by doc name, mirroring collectItems()'s name->doc map. */
+function packIndex(rel) {
+    const idx = {};
+    for (const d of yaml.loadAll(readFileSync(path.join(ROOT, rel), 'utf8'))) {
+        if (d?.name) idx[d.name] = d;
+    }
+    return idx;
+}
+
+test('planItems: Mutant + Void Accustomed embed REAL background items, not stubs', () => {
+    const traitIndex = packIndex('src/packs/traits/traits.yml');
+    const s = new ChargenState();
+    s.addTrait('Mutant', 'origin text', 'origin');
+    s.addTrait('Void Accustomed', 'origin text', 'origin');
+    const { items, gaps } = planItems(s, { traitIndex });
+
+    // Neither falls through to a gap stub.
+    assert.equal(gaps.traits.length, 0);
+
+    for (const name of ['Mutant', 'Void Accustomed']) {
+        const item = items.find((i) => i.name === name);
+        assert.ok(item, `${name} should resolve to a real item`);
+        assert.equal(item.type, 'trait');
+        // Real cloned pack doc: tagged Background, carries canon text from the
+        // pack (top-level `data:`), NOT the stub shape (item-bag img + level fields).
+        assert.equal(item.flags?.rt?.category, 'Background');
+        assert.notEqual(item.img, 'icons/svg/item-bag.svg');
+        assert.ok(item.data?.description?.length > 0, `${name} keeps its canon description`);
+        assert.equal(item.data.source, traitIndex[name].data.source);
+        // foundryClone strips _id.
+        assert.equal(item._id, undefined);
+    }
+});
+
+test('planItems: an AE-bearing background trait (Hivebound) embeds its ActiveEffect', () => {
+    const traitIndex = packIndex('src/packs/traits/traits.yml');
+    const s = new ChargenState();
+    s.addTrait('Hivebound', 'origin text', 'origin');
+    const { items, gaps } = planItems(s, { traitIndex });
+    assert.equal(gaps.traits.length, 0);
+    const item = items.find((i) => i.name === 'Hivebound');
+    assert.ok(item, 'Hivebound resolves to a real item');
+    assert.ok(Array.isArray(item.effects) && item.effects.length > 0, 'carries an ActiveEffect');
+    const change = item.effects[0].changes.find((c) => c.key === 'system.skills.survival.modifier');
+    assert.ok(change, 'AE bumps the survival skill modifier');
+    assert.equal(change.value, '-10');
 });

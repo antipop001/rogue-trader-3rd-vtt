@@ -126,10 +126,14 @@ stray talents resolve (TALENT_RESOLVED_FLOOR 72 → 79).
   leaving faithful canon text only — same as the BG-008 Know-Wotz traits. No floor
   change (still a real item). (BG-AUTHOR)
 
-- [ ] BG-015 — Final verify (BG-VERIFY): confirm both ratchets at goal (TRAIT 103,
-  TALENT 95); add a node test asserting `commit.mjs` embeds a REAL item with its AE
-  (not a stub) for `Mutant` + `Void Accustomed`; regenerate the data-vendor-queue
-  summary of all authored items + canon cites.
+- [x] BG-015 — Final verify (BG-VERIFY): confirmed both ratchets at goal (TRAIT 103,
+  TALENT 79 — note: the "TALENT 95" in the earlier draft was a typo; goal is 79).
+  Added node tests in `commit.test.mjs` asserting `planItems` embeds REAL background
+  items (flags.rt.category 'Background' + canon text, not gap stubs) for `Mutant` +
+  `Void Accustomed` (both text-only — neither carries an AE), plus an AE-bearing
+  trait (`Hivebound`) that embeds its survival -10 ActiveEffect. Regenerated the
+  data-vendor-queue summary (authored inventory + cites + standing limitations).
+  GOAL REACHED — all 103 granted traits + 79 talents resolve to real items. (BG-VERIFY)
 
 ## Notes / decisions
 - Items live in the EXISTING `traits` pack (not a new pack) so `commit.mjs` resolves
