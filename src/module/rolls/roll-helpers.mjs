@@ -38,6 +38,35 @@ export function getOpposedDegrees(dos, dof, opposedDos, opposedDof) {
     }
 }
 
+/**
+ * Normalise a psychic-power range into a number of metres. Powers store `range`
+ * as prose — "5m x Psy Rating", "1km x Psy Rating", "10m", "Self", "Gaze",
+ * "1 VU x Willpower Bonus", "Personal (1m x Psy Rating)" — which Foundry's `Roll()`
+ * cannot evaluate (it would throw and fall back to 0). This parses the magnitude,
+ * unit, and any per-stat multiplier instead. (BUG-006.)
+ *
+ * @param {string|number} raw  the power's `system.range`
+ * @param {{pr?: number, actor?: any}} [ctx]  effective Psy Rating + caster actor
+ * @returns {number} range in metres (0 = self / no positional range)
+ */
+export function normalizePsychicRange(raw, ctx = {}) {
+    if (raw == null || raw === '') return 0;
+    if (Number.isInteger(raw)) return raw;
+    const s = String(raw).toLowerCase().trim();
+    const hasDigit = /\d/.test(s);
+    // Self-targeted / no positional range.
+    if (!hasDigit && /\b(self|personal|touch)\b/.test(s)) return 0;
+    // Line-of-sight powers ("Gaze", "any person he can see") — effectively unbounded.
+    if (!hasDigit && /(gaze|line of sight|can see|sight)/.test(s)) return Number.MAX_SAFE_INTEGER;
+    const m = s.match(/(\d+(?:\.\d+)?)\s*(km|vu|m)?/);
+    if (!m) return 0;
+    let value = parseFloat(m[1]);
+    if (m[2] === 'km') value *= 1000;            // 'm'/'vu' keep their magnitude
+    if (/psy rating/.test(s)) value *= (ctx.pr ?? 1);
+    if (/willpower bonus/.test(s)) value *= (ctx.actor?.characteristics?.willpower?.bonus ?? 1);
+    return Math.floor(value);
+}
+
 export async function roll1d100() {
     let formula = '1d100';
     const roll = new Roll(formula, {});

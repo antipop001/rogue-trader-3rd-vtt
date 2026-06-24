@@ -1,4 +1,5 @@
 import { PsychicRollData, RollData, WeaponRollData } from '../rolls/roll-data.mjs';
+import { normalizePsychicRange } from '../rolls/roll-helpers.mjs';
 
 /**
  * @param rollData {WeaponRollData}
@@ -57,24 +58,10 @@ async function calculatePsychicAbilityMaxRange(rollData) {
         rollData.maxRange = 0;
         return;
     }
-
-    let range;
-    if (Number.isInteger(rollData.power.system.range)) {
-        range = rollData.power.system.range;
-    } else if (rollData.power.system.range === '') {
-        range = 0;
-    } else {
-        try {
-            const rangeCalculation = new Roll(rollData.power.system.range, rollData);
-            await rangeCalculation.evaluate();
-            range = rangeCalculation.total ?? 0;
-        } catch (error) {
-            ui.notifications.warn('Range formula failed - setting to 0');
-            range = 0;
-        }
-    }
-
-    rollData.maxRange = range;
+    // Power ranges are stored as prose ("5m x Psy Rating", "Gaze", "Self", ...) which
+    // Foundry's Roll() can't evaluate — normalise to metres instead (BUG-006). `pr` is
+    // the effective Psy Rating; `actor` supplies Willpower Bonus for the few WB ranges.
+    rollData.maxRange = normalizePsychicRange(rollData.power.system.range, rollData);
 }
 
 /**

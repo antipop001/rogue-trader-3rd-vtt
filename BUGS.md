@@ -123,6 +123,11 @@ engine/roll fixes. Fix these directly, or in a dedicated follow-up loop.
   for the chat speaker. Confirmed live: wounds now persist to the sheet.
 
 ## BUG-006 — Psychic power ranges are prose, not Roll formulas (Compel + most powers)
+- **Status: ✅ FIXED 2026-06-23, verified live on rt-smoke (Playwright).** Added
+  `normalizePsychicRange()` (pure, in `roll-helpers.mjs`) and used it in
+  `calculatePsychicAbilityMaxRange` instead of `Roll()`. Node test
+  `tests/chargen/psychic_range.test.mjs`. Live: Compel's `5m x Psy Rating` → maxRange 20
+  at PR 4 (1km×PR3→3000, Self→0, 10m→10); no more "Range formula failed" warning.
 - **Symptom:** Compel has range issues. Reported 2026-06-23.
 - **Cause:** `src/packs/psychic-powers/psychic-powers.yml` stores `range` as human text —
   Compel = `5m x Psy Rating` (canon: RT Core "Range: 5m × Psy Rating"). But
