@@ -97,6 +97,28 @@ export async function calculateAmmoAttackSpecials(rollData) {
                 level: 1,
             });
             break;
+        case 'Snare Shells':
+            // Into the Storm p.131: weapon gains the Snare quality (base Challenging
+            // +0 immobilise test — level 0 → no test penalty). The -2 base damage
+            // stays narrative.
+            rollData.attackSpecials.push({
+                name: 'Snare',
+                level: 0,
+            });
+            break;
+        case 'Airtorch Canister':
+            // Into the Storm p.131: the melta blast escapes in a wide swath — the
+            // weapon gains the Scatter quality and suffers the Overheating quality.
+            // The halved Range stays narrative.
+            rollData.attackSpecials.push({
+                name: 'Scatter',
+                level: true,
+            });
+            rollData.attackSpecials.push({
+                name: 'Overheats',
+                level: true,
+            });
+            break;
     }
 }
 

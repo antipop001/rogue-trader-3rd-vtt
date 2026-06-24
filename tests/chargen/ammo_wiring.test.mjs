@@ -52,3 +52,35 @@ test('the formerly-mis-typed special rounds are now ammunition-typed', () => {
         assert.equal(d.type, 'ammunition', `"${name}" must be type ammunition`);
     }
 });
+
+// Pull the body of a `case '<name>':` block out of ammo.mjs (up to the next case/closing).
+function ammoCaseBody(name) {
+    const src = readFileSync(path.join(ROOT, 'src/module/rules/ammo.mjs'), 'utf8');
+    const re = new RegExp(`case\\s+'${name.replace(/[.*+?^${}()|[\\]\\\\]/g, '\\$&')}'\\s*:([\\s\\S]*?)(?:case\\s+'|\\n\\s*}\\s*\\n)`);
+    const m = src.match(re);
+    return m ? m[1] : '';
+}
+
+// Valid engine-resolved attack-special names (from attack-specials.mjs definitions).
+function attackSpecialNames() {
+    const src = readFileSync(path.join(ROOT, 'src/module/rules/attack-specials.mjs'), 'utf8');
+    const names = new Set();
+    for (const m of src.matchAll(/name:\s+'([^']+)'/g)) names.add(m[1]);
+    return names;
+}
+
+test('WIRE-AMMO-ADD-QUALITY: Snare Shells / Airtorch Canister push engine-resolved qualities', () => {
+    const specials = attackSpecialNames();
+
+    // Snare Shells → Snare quality.
+    const snare = ammoCaseBody('Snare Shells');
+    assert.match(snare, /name:\s*'Snare'/, 'Snare Shells must push the Snare quality');
+    assert.ok(specials.has('Snare'), 'Snare must be a defined attack-special the engine resolves');
+
+    // Airtorch Canister → Scatter + Overheats.
+    const airtorch = ammoCaseBody('Airtorch Canister');
+    assert.match(airtorch, /name:\s*'Scatter'/, 'Airtorch Canister must push the Scatter quality');
+    assert.match(airtorch, /name:\s*'Overheats'/, 'Airtorch Canister must push the Overheats quality');
+    assert.ok(specials.has('Scatter'), 'Scatter must be a defined attack-special');
+    assert.ok(specials.has('Overheats'), 'Overheats must be a defined attack-special');
+});

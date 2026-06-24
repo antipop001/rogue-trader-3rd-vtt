@@ -735,12 +735,43 @@ guard in the spec). Canon: `/mnt/project_data/RT/RT-DOCS/`.
   Toxic (NO -1 dmg) — vs the same weapon with no round loaded showing none. Selection +
   attack pipeline are Foundry-coupled — node gate can't exercise it. (E2E)
 
-- [ ] WIRE-AMMO-ADD-QUALITY — for ammo whose entire mechanic is "gains an
+- [x] WIRE-AMMO-ADD-QUALITY — for ammo whose entire mechanic is "gains an
   engine-handled quality," push the quality in `ammo.mjs::calculateAmmoSpecials`: Snare
   Shells→`Snare`, Airtorch Canister→`Scatter`+`Overheats` (the damage engine already
   resolves these — only the trigger is missing). The −2 dmg / ½ range deltas stay
   narrative (no clean apply). Pure-JS test on the quality-push helper; E2E follow-up.
-  RT/ItS. (WIRE)
+  RT/ItS. (WIRE) — done iter 46: pushed in `calculateAmmoAttackSpecials` (the existing
+  Toxic/Flame/Tearing apply point that runs BEFORE the roll, so Scatter's to-hit/range
+  delta + the Overheats jam check both engage; the task's `calculateAmmoSpecials`
+  reference was the per-hit fn — wrong place for pre-roll qualities). Snare → `{name:
+  'Snare', level: 0}` (canon base Challenging +0 immobilise test; the snare effect text
+  reads `level*-10` ⇒ +0); Airtorch → `{name:'Scatter'}` + `{name:'Overheats'}` (level-
+  less, like Flame). All three verified engine-resolved (damage-data Scatter ±3, action-
+  data Overheats jam, damage-data snare effect) and present in attack-specials.mjs.
+  **Data bug fixed first:** both entries carried wrong copy-pasted descriptions (Snare
+  Shells held Toxic-Shot poison text; Airtorch held Microburst-Flask plasma text) —
+  restored canon descriptions + availability (rare / extremely rare) so the entry text
+  matches the wired quality (ItS p.131). −2 dmg (Snare) / ½ Range (Airtorch) left
+  narrative. None in CODE_HANDLED (no double-apply). Extended `ammo_wiring.test.mjs` (the
+  first guard already auto-covers the new case names; added a focused mapping+validity
+  test). Gate green (build OK, 154 node tests). E2E follow-up + CLEANUP below. (WIRE)
+
+- [ ] E2E-AMMO-ADD-QUALITY — verify on rt-smoke (Playwright): load Snare Shells in a
+  Solid-Projectile weapon → attack card shows the Snare effect (Challenging +0 immobilise
+  test); load Airtorch Canister in a Melta weapon → the weapon gains Scatter (close-range
+  +3 / long −3 damage adjustment) and can Overheat (jam at 91+). Confirm no quality
+  appears with no round loaded. Selection + attack pipeline are Foundry-coupled — node
+  gate can't exercise it. (E2E)
+
+- [ ] CLEANUP-AMMO-DESC-SCRAMBLE — discovered iter 46: the ammo pack has a chain of
+  copy-pasted/OCR-scrambled descriptions. `Microburst Flask` currently holds the
+  **Nephium Fuel Tank** text (flame, −10 Agility / +2 dmg) AND an embedded "TABLE 3-7"
+  markdown blob; the correct Microburst-Flask plasma text (−2 dmg / +2 pen / +10m range /
+  no Maximal / no Overheat) was sitting in the Airtorch slot (now overwritten with canon
+  Airtorch text in iter 46). Audit `Microburst Flask` and `Nephium Fuel Tank` (and any
+  other ItS Unusual-Ammunition rows) against ItS p.131, restore each to its own canon
+  description + availability, and strip the table-blob OCR artifact. Verify `nephium fuel
+  tank` exists as its own entry. Pure data edit, no wiring. (CLEANUP)
 
 - [ ] ENGINE-CONSUMABLE-ACTIVATE — a "use drug/consumable" action that applies a timed
   ActiveEffect (duration in rounds/minutes) for the ~11 activated combat consumables
