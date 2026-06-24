@@ -60,6 +60,14 @@ data:
 img: systems/rogue-trader-3rd/icons/items/buckets/cyber-bionic-heart.png
 name: Bionic Respiratory System
 type: cybernetic
+flags:
+    rt:
+        conditionalBonuses:
+        - applies:
+              skills: []
+              characteristics: [toughness]
+          value: 20
+          label: 'resisting airborne toxins or gas (Common, RT Core p.132)'
 ---
 data:
     craftsmanship: common
@@ -362,6 +370,14 @@ data:
 img: systems/rogue-trader-3rd/icons/items/buckets/cyber-mechadendrite.png
 name: Manipulator Mechadendrite
 type: cybernetic
+flags:
+    rt:
+        conditionalBonuses:
+        - applies:
+              skills: []
+              characteristics: [strength]
+          value: 20
+          label: 'using the manipulator mechadendrite (RT Core p.134)'
 ---
 data:
     craftsmanship: common
@@ -464,6 +480,14 @@ data:
 img: systems/rogue-trader-3rd/icons/items/buckets/cyber-implant-system.png
 name: Mind Impulse Unit (miu)
 type: cybernetic
+flags:
+    rt:
+        conditionalBonuses:
+        - applies:
+              skills: [techUse, pilot, drive]
+              characteristics: []
+          value: 10
+          label: 'in conjunction with MIU-linked devices (Common, RT Core p.134)'
 ---
 data:
     craftsmanship: common
@@ -534,6 +558,14 @@ effects:
     value: '10'
     priority: null
   flags: {}
+flags:
+    rt:
+        conditionalBonuses:
+        - applies:
+              skills: []
+              characteristics: [perception]
+          value: 20
+          label: 'vision-based Perception Tests at night (RT Core p.134)'
 ---
 data:
     craftsmanship: common

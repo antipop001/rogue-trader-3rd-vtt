@@ -44,6 +44,13 @@ const WIRED_EXPECTED = [
     { name: 'Medicae Mechadendrite', kind: 'ae' },
     { name: 'Scribe-Tines', kind: 'ae' },
     { name: 'Utility Mechadendrite', kind: 'ae' },
+    // AUDIT-003 cybernetics (WIRE-CYBER-COND) — situational conditionalBonuses
+    { name: 'Bionic Respiratory System', kind: 'cond' },
+    { name: 'Manipulator Mechadendrite', kind: 'cond' },
+    { name: 'Mind Impulse Unit (miu)', kind: 'cond' },
+    // Optical Mechadendrite carries the always-on +10 Per AE (above) AND a +20
+    // night-vision conditionalBonus wired here.
+    { name: 'Optical Mechadendrite', kind: 'cond' },
 ];
 // Already applied by name in src/module/rolls/* (or documents/acolyte.mjs) — must NOT
 // also be AE'd. Lightning Reflexes is computed in acolyte.mjs (Initiative ×AgB term)

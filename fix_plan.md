@@ -310,13 +310,31 @@ guard in the spec). Canon: `/mnt/project_data/RT/RT-DOCS/`.
   two-pass). Confirm the scholasticLore (specialist) speciality rolls also pick up the base
   +10. Foundry-coupled — node gate can't exercise it. (E2E)
 
-- [ ] WIRE-CYBER-COND — `flags.rt.conditionalBonuses` on 4 cybernetics: Bionic
+- [x] WIRE-CYBER-COND — `flags.rt.conditionalBonuses` on 4 cybernetics: Bionic
   Respiratory System (+20 toughness "resisting airborne toxins/gas"), Manipulator
   Mechadendrite (+20 strength "using the manipulator mechadendrite"), Optical
   Mechadendrite (+20 perception "vision-based at night" — second cond on the same item
   wired in WIRE-CYBER-AE), Mind Impulse Unit (+10 techUse/pilot/drive "interfaced with
   MIU systems"). RT Core p.131-135. Add the 4 to ratchet `WIRED_EXPECTED` (kind cond).
-  (WIRE)
+  (WIRE) — done iter 28: Bionic Respiratory System +20 toughness "resisting airborne
+  toxins or gas" (Common, RT Core p.132); Manipulator Mechadendrite +20 strength "using
+  the manipulator mechadendrite" (p.134); Mind Impulse Unit (miu) +10 [techUse,pilot,
+  drive] "in conjunction with MIU-linked devices" (Common, p.134 — verified the YAML
+  entry already holds the correct canonical MIU description, NOT the weapon-interface
+  text); Optical Mechadendrite +20 perception "vision-based at night" (p.134, alongside
+  its iter-27 +10 always-on AE). None in CODE_HANDLED (no double-apply); only the
+  Common-baseline conditionals wired (craftsmanship deltas stay narrative). Added the 4
+  to ratchet WIRED_EXPECTED (kind cond; Optical as a 2nd entry). Gate green (build OK,
+  72 node tests). E2E follow-up below. (WIRE)
+
+- [ ] E2E-CYBER-COND — verify on rt-smoke (Playwright): an actor carrying each of the 4
+  cybernetic items sees the labelled checkbox on the relevant roll prompt — Bionic
+  Respiratory System on a Toughness test, Manipulator Mechadendrite on a Strength test,
+  Mind Impulse Unit on Tech-Use/Pilot/Drive skill rolls, Optical Mechadendrite on a
+  Perception test (the night +20 cond, in addition to its always-on +10 AE already in the
+  base value) — and ticking it adds the bonus (+20/+20/+10/+20) into
+  `rollData.modifiers.modifier` reaching the test total. Node gate can't exercise the
+  roll prompt. (E2E)
 
 - [ ] NARRATIVE-RECORD-CYBER — add the intentionally-unwired cybernetics to the ratchet
   `NARRATIVE` list (in `triage.md` AUDIT-003): Cybernetic Senses, Bionic Arm, Bionic
