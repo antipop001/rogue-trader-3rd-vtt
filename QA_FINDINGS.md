@@ -1028,3 +1028,21 @@ Format per finding:
 - canon: RT Core p.241 — `# KNOCK-DOWN` (`/mnt/project_data/RT/RT-DOCS/CoreBook-201-401.pdf/markdown.md:2076`): "If the attacker succeeds by two or more degrees of success, the target also suffers 1d5–3+SB damage, **with armour counting as double**, and one level of Fatigue."
 - gap: The Knock-Down bonus-damage text drops the "armour counts as double" mitigation, so a GM applying the chat-card damage manually would under-protect the target.
 - fix: Append ", with armour counting as double," to the Knock-Down 2+DoS effect string (and the `combat-actions.mjs` description). If/when Knock-Down damage is ever auto-applied through assign-damage, double the target's AP for that hit. · autofixable: yes (text-only) — left to the fix loop to bundle with any Knock-Down automation.
+
+### QA-109 — Target-size to-hit modifier wrongly applied to MELEE attacks (RT size mod is ranged-only)
+- area: rules
+- kind: automation-gap
+- severity: P2 (wrong to-hit on every melee attack vs a non-Average creature — fires constantly vs common foes like Hulking Orks; borderline P1)
+- evidence: `src/module/rolls/roll-data.mjs:276-283` (`WeaponRollData.initialize()`) sets `this.modifiers['target-size'] = (size - 4) * 10` whenever `this.targetActor.system.size` is present — with **no weapon-class / ranged guard**. `initialize()` and `updateBaseTarget()` (`:308-323`) run for BOTH branches: ranged → BS (`:311-313`), melee → WS (`:314-317`); the `target-size` key then flows into the summed modifiers (it's a standing key, confirmed summed by `calculateTotalModifiers`, cf. QA-022). So a melee (WS) attack against a Hulking (size 5) target gets a spurious +10, vs a Scrawny (size 3) target a spurious −10, etc.
+- canon: RT Core p.247 — `## SIZE` (`/mnt/project_data/RT/RT-DOCS/CoreBook-201-401.pdf/markdown.md:2495`): *"Size is an important factor when **shooting ranged weapons**… **Ballistic Skill Tests** made to attack targets…"* Table 9-9 (`:2500-2509`) is in the ranged-modifiers chapter. The general modifier table 9-7 (`:2369-2394`) phrases every size entry as "**Shooting** a Massive/Enormous/Hulking/Scrawny/Puny/Minuscule target." Melee (Weapon Skill) modifiers in the same table are outnumbering (+10/+20), attacking a Prone opponent in melee (+10), higher ground (+10), darkness (−20) — there is **no melee size modifier** in RT 1e. (The reverse — a large attacker hitting easier in melee — is also absent; size only ever modifies the *shooter's* BS.)
+- gap: The engine treats target size as a universal to-hit modifier; RT 1e restricts it to ranged (BS) attacks. Every melee attack against a creature whose size ≠ Average (4) gets an incorrect ±N to its WS test.
+- fix: Gate the `target-size` assignment on `this.weapon.isRanged` (and exclude ship weapons, which already branch earlier) so it only applies to Ballistic Skill attacks. One-line guard; Foundry-coupled — verify on rt-smoke (a melee attack vs a Hulking token shows no `target-size` row; a ranged attack still shows +10). · autofixable: no (combat-resolution logic; Fix loop — verify live)
+
+### QA-110 — NOT-A-BUG: ranged target-size modifier values + the size dropdown are canon-correct
+- area: rules
+- kind: not-a-bug
+- severity: P3
+- evidence: `src/module/rolls/roll-data.mjs:279` `(size - 4) * 10` with the size enumeration in `src/module/rules/config.mjs:47-58` (1 Minuscule … 10 Titanic) yields, for a ranged attack: Minuscule −30, Puny −20, Scrawny −10, Average +0, Hulking +10, Enormous +20, Massive +30, Immense +40, Monumental +50, Titanic +60.
+- canon: RT Core Table 9-9: Target Size Modifiers (`/mnt/project_data/RT/RT-DOCS/CoreBook-201-401.pdf/markdown.md:2500-2509`) lists exactly those ten tiers with exactly those modifiers.
+- gap: none — the formula reproduces Table 9-9 verbatim across all ten size categories, the config dropdown offers all ten (rendered on the acolyte movement panel `templates/actor/panel/movement-panel.hbs:5-6` and the vehicle panel), the modifier is correctly target-side (not attacker-side), and the comment "Size Bonus should not change after initial targeting" matches RT's once-per-attack model. The only defect in this subsystem is the melee over-application (QA-109); the values themselves are right.
+- fix: n/a (verified correct). · autofixable: n/a
