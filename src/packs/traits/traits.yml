@@ -1515,3 +1515,91 @@ flags:
     rt:
         category: 'Background'
         originStep: 'Warrant'
+---
+data:
+    description: 'During the Age of Apostasy, the Imperium was plunged into anarchy by the insane High Lord Goge Vandire. Rogue Trader Houses established during this turbulent period were forged in the fire of adversity, and many charters granted at that time were reduced to ashes within scant decades. Vandire was unstable and paranoid, executing or declaring heretical his own favoured recipients at whim. Very few of the Houses that came into being during the Age of Apostasy are extant in the 41st Millennium, and those that are keep the details of their founding far from prying eyes.'
+    source: 'Into the Storm, p.35'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Warrant Age: Age of Apostasy'
+type: 'trait'
+flags:
+    rt:
+        category: 'Background'
+        originStep: 'Warrant'
+---
+data:
+    description: 'The Age of Redemption was a second great time of re-conquest and expansion, beginning in the immediate aftermath of the Age of Apostasy. The Warrants of Trade issued in this period reflect the spirit of the times — a renaissance in faith and fervour following the example of Saint Sebastian Thor. Many Rogue Traders commissioned in this era were men of great zeal, warriors and captains rewarded for deeds in the Apostasy''s wars, and they spearheaded crusades across the galaxy to bring the lost back into the Imperial fold. The scion of a House established during this age will be steeped in duty and zeal.'
+    source: 'Into the Storm, p.36'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Warrant Age: Age of Redemption'
+type: 'trait'
+flags:
+    rt:
+        category: 'Background'
+        originStep: 'Warrant'
+---
+data:
+    description: 'A charter granted during the Age of Rebirth is not only a potent symbol of its bearer''s power and influence, but a sacred relic in its own right. The age marked the first chapter in the annals of the Imperium as it stands today, born in the immediate aftermath of the Horus Heresy — a period of rebuilding, recovery, and great deeds that would form the basis of myths and legends told across the Imperium for millennia. To bear such a Warrant is to rank amongst the very highest of the Imperium''s servants.'
+    source: 'Into the Storm, p.35'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Warrant Age: The Age of Rebirth'
+type: 'trait'
+flags:
+    rt:
+        category: 'Background'
+        originStep: 'Warrant'
+---
+data:
+    description: 'Following the Age of Rebirth, the Imperium entered a sustained period of growth, establishing the institutions and power structures that would sustain it until the 41st Millennium. A Warrant granted during the Forging was issued as part of that great drive to consolidate the Adeptus Terra''s primacy. During this age the Imperium''s borders were pushed outward to nearly their pre-Heresy extent, and Rogue Traders played no small part; many Houses founded during the Forging established entire realms at the Imperium''s borders that eventually became formalised sectors.'
+    source: 'Into the Storm, p.35'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Warrant Age: The Forging'
+type: 'trait'
+flags:
+    rt:
+        category: 'Background'
+        originStep: 'Warrant'
+---
+data:
+    description: 'As the glories of the Age of Redemption recede into a bloody present, the Imperium is slowly descending into another dark age of anarchy and war. Yet even in such a turbulent age, the High Lords have continued to grant new Warrants of Trade. Many of these are granted with the express condition that the Rogue Trader undertake missions to re-conquer worlds lost to anarchy and invasion; some are little more than political tools, and countless Rogue Traders have lost all they owned attempting to satisfy these nigh-impossible demands. Some do succeed, however, and the most exceptional have gone on to found the mightiest of the Rogue Trader Houses active in the present age.'
+    source: 'Into the Storm, p.36'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Warrant Age: The Waning'
+type: 'trait'
+flags:
+    rt:
+        category: 'Background'
+        originStep: 'Warrant'
+---
+data:
+    description: 'Whether or not they openly admit it, the great majority of Rogue Traders crave fame and the attendant powers and privileges that accompany it. To have one''s name spoken with awe and respect by High Lords and commoners the length and breadth of the Imperium is for many the ultimate reward — perhaps even greater than the vast personal wealth they amass — and to be remembered after one''s time in a galaxy where billions are lost daily is perhaps the greatest reward one can aspire to.'
+    source: 'Into the Storm, p.44'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Warrant Renown: Famous'
+type: 'trait'
+flags:
+    rt:
+        category: 'Background'
+        originStep: 'Warrant'
+---
+data:
+    description: 'Some Rogue Trader Dynasties are known for all the wrong reasons. A House might be held as an object lesson in the follies of dabbling in things man should have no truck with, or be known for the ruthlessness of its actions, and although respected are not regarded with any warmth. A Rogue Trader from such a House would be wise to consider very carefully how widely he broadcasts his name when operating beyond Imperial Space, for there are many rivals who might take advantage of even temporary vulnerability.'
+    source: 'Into the Storm, p.44'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Warrant Renown: Infamous'
+type: 'trait'
+flags:
+    rt:
+        category: 'Background'
+        originStep: 'Warrant'
+---
+data:
+    description: 'For many Rogue Trader dynasties, the condition of being unknown is likely to be only temporary. Most Rogue Traders seek fame, and despite many preferring to operate quietly, most have not become all-powerful servants of the Imperium without promoting themselves and their abilities to some degree. Most seek fame, even if they ultimately earn only infamy.'
+    source: 'Into the Storm, p.44'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Warrant Renown: Unknown'
+type: 'trait'
+flags:
+    rt:
+        category: 'Background'
+        originStep: 'Warrant'

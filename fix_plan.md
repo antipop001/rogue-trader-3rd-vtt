@@ -112,9 +112,12 @@ stray talents resolve (TALENT_RESOLVED_FLOOR 72 → 79).
   history chart outcomes (ItS pp.40-41); PF/SP already applied by sibling
   profit_factor/ship_points effects → no AE, no double-grant. (BG-AUTHOR)
 
-- [ ] BG-014 — Warrant: Age + Renown (8): Warrant Age: Age of Apostasy, Age of
+- [x] BG-014 — Warrant: Age + Renown (8): Warrant Age: Age of Apostasy, Age of
   Redemption, The Age of Rebirth, The Forging, The Waning; Warrant Renown: Famous,
-  Infamous, Unknown. Source: `warrant_and_ship.json`. Target TRAIT floor 103. (BG-AUTHOR)
+  Infamous, Unknown. Source: `warrant_and_ship.json`. TRAIT_RESOLVED_FLOOR=103 (GOAL
+  REACHED — all 103 granted traits resolve). All 8 text-only narrative Warrant-chart
+  outcomes (ItS pp.35-36 Age, p.44 Renown); PF/SP already applied by sibling
+  profit_factor/ship_points effects → no AE, no double-grant. (BG-AUTHOR)
 
 - [ ] BG-FIX-001 — `Klan: Goffs` (BG-007) carries an AE +3 Strength, but careers.json
   grants Goffs a SIBLING `char_mod S+3` in the same option → committing via chargen
