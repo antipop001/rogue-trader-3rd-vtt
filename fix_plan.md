@@ -94,9 +94,11 @@ stray talents resolve (TALENT_RESOLVED_FLOOR 72 → 79).
   outcomes (ItS pp.38-39); PF/SP already applied by sibling profit_factor/ship_points
   effects → no AE, no double-grant. (BG-AUTHOR)
 
-- [ ] BG-011 — Warrant: Contacts (5): Contacts: Adeptus Mechanicus, Battlefleet,
+- [x] BG-011 — Warrant: Contacts (5): Contacts: Adeptus Mechanicus, Battlefleet,
   Merchant House, Missionaria Galaxia, Pirates. Source: `warrant_and_ship.json`.
-  Target TRAIT floor 85. (BG-AUTHOR)
+  TRAIT_RESOLVED_FLOOR=85. All 5 text-only narrative chart outcomes (ItS pp.43-44);
+  PF/SP already applied by sibling profit_factor/ship_points effects → no AE, no
+  double-grant. (BG-AUTHOR)
 
 - [ ] BG-012 — Warrant: Fortune & Fate (5): Fortune & Fate: Ascending, Fallen from
   Grace, Rising Star, Stable, Struggling. Source: `warrant_and_ship.json`. Target

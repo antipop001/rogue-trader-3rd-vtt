@@ -1350,3 +1350,58 @@ flags:
     rt:
         category: 'Background'
         originStep: 'Warrant'
+---
+data:
+    description: 'Many Rogue Traders maintain contacts in the battlefleets of the Imperial Navy, for many second sons and daughters will have served their time as officers there before returning to serve their Houses. Friends and contacts made during service are rarely forgotten, and many such Rogue Traders take every opportunity to look up old compatriots when stopping over at a naval base. Out beyond the fringes such contacts transcend the cordialities of the officers'' mess and take on a far more serious aspect. A Rogue Trader vessel that comes to grief fighting alien raiders might hold little hope of help ever arriving, but there are countless tales of such vessels being rescued by the timely arrival of a long range navy patrol vessel, the master of which happened to recognize the cipher attached to a distress call and was willing to divert and offer aid. Of course, this works both ways, and many are the times a Rogue Trader has been obliged to set aside his own mission to bolster the forces of a naval squadron against one of the many enemies that lurk in the cold void of the Expanse. Ship Points: 12, Profit Factor: 2.'
+    source: 'Into the Storm, p.43'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Contacts: Battlefleet'
+type: 'trait'
+flags:
+    rt:
+        category: 'Background'
+        originStep: 'Warrant'
+---
+data:
+    description: 'It is not uncommon for the paths of Rogue Traders and Explorators to cross, particularly out amongst the unexplored systems beyond the Imperium''s borders. On occasion the two factions will have cause to join forces, and as both generally have quite different objectives to their exploration this is often a successful course of action. There are plenty of times however when the interests of the two groups will clash, such as when an Explorator Fleet wishes to strip mine a newly discovered world while a Rogue Trader wishes to trade with its native population. Nonetheless, many Rogue Traders maintain ties with Explorators they have worked alongside in the past. By doing so, the Rogue Trader can utilise information the Explorators have gathered, gaining exclusive access to systems the Explorators have discovered. A Rogue Trader with contacts within the Explorator Fleets will know of such worlds long before his rivals, and have a unique opportunity to investigate them for opportunities from which his House might profit. Ship Points: 10, Profit Factor: 4.'
+    source: 'Into the Storm, p.43'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Contacts: Adeptus Mechanicus'
+type: 'trait'
+flags:
+    rt:
+        category: 'Background'
+        originStep: 'Warrant'
+---
+data:
+    description: 'Contacts within the Missionaria Galaxia can prove extremely useful, for this division of the Ecclesiarchy maintains holdings far beyond the fringes. It may well be that a single preacher operating out of an isolated mission proves a staunch ally in a crisis, for he will be well-schooled in the ways of the native population and well able to defend himself should the need arise. The Missionaria does not lend its aid to just anyone however, and any preacher to whom a Rogue Trader is forced to turn for aid will only help him out after determining the individual''s moral purity. Even when aid is forthcoming, the preacher may well make demands in return, often including requests for support in his own mission or substantial donations to the mission of taking the Word of the Emperor to the ignorant souls beyond the fringes. Ship Points: 8, Profit Factor: 6.'
+    source: 'Into the Storm, p.43'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Contacts: Missionaria Galaxia'
+type: 'trait'
+flags:
+    rt:
+        category: 'Background'
+        originStep: 'Warrant'
+---
+data:
+    description: 'Those Rogue Trader Dynasties whose fortunes are built upon the acquisition and generation of vast sums of wealth will have dealings with commercial combines across entire sectors and beyond. They will have bonded scribes and factors operating in the courts of the greatest of commercial concerns and these will have the ear of the most influential merchants in the region. It is important to remember that the great merchant houses, particularly those who span several worlds let alone whole sectors, are powerful institutions, and not ones to be crossed lightly. Merchant contacts have a great many uses, for they allow the Rogue Trader to tap into the vast web of influence and power of the merchant houses in question. This network will extend to the major settlements on almost every major world in the region and in many cases beyond. For a price, the Rogue Trader will be able to call upon any service, from repair facilities for a damaged vessel to the services of the merchant house''s indentured mercenaries. Ship Points: 6, Profit Factor: 8.'
+    source: 'Into the Storm, p.44'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Contacts: Merchant House'
+type: 'trait'
+flags:
+    rt:
+        category: 'Background'
+        originStep: 'Warrant'
+---
+data:
+    description: 'The space lanes of the Imperium are plagued with outlaws and pirates. Some are human but others are alien, such as the dread Eldar Corsairs and brutal Ork Raiders. The closer to Wilderness Space and the Fringes a Rogue Trader operates, the more likely he is to come into contact with such scum, and worse, humans who have cast aside even a pirate''s limited sensibilities and given themselves over to the nightmarish veneration of the Ruinous Powers. Every Rogue Trader will have faced pirates in battle, and some will have had cause to join together with them too from time to time. Out beyond the borders one cannot afford to be too choosy who one allies with when the enemy is a ravening alien horror or a gestalt swarm consciousness intent upon feeding upon the Rogue Trader and his friends. Such alliances are more often than not short-lived, for Rogue Traders and pirates exist at opposite ends of the scale in terms of the Imperium''s institutions, yet it could be said that both share a similar outlook in life — both parties see the galaxy as there to be exploited in one way or another. Ship Points: 4, Profit Factor: 10.'
+    source: 'Into the Storm, p.44'
+img: 'systems/rogue-trader-3rd/icons/talents/blue/b_18.png'
+name: 'Contacts: Pirates'
+type: 'trait'
+flags:
+    rt:
+        category: 'Background'
+        originStep: 'Warrant'
