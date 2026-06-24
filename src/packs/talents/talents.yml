@@ -1597,6 +1597,14 @@ data:
 img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
 name: Inspire Wrath
 type: talent
+flags:
+    rt:
+        conditionalBonuses:
+        - applies:
+              skills: [charm, intimidate]
+              characteristics: []
+          value: 20
+          label: 'inspiring hatred or anger (Rogue Trader Core p.100)'
 ---
 data:
     aptitudes: ''
@@ -2594,6 +2602,14 @@ data:
 img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
 name: Renowned Warrant
 type: talent
+flags:
+    rt:
+        conditionalBonuses:
+        - applies:
+              skills: [barter, blather, charm, command, deceive, inquiry, intimidate]
+              characteristics: []
+          value: 10
+          label: 'with those who respect the warrant (Rogue Trader Core p.106)'
 ---
 data:
     aptitudes: ''
@@ -3332,6 +3348,14 @@ data:
 img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
 name: Whispers
 type: talent
+flags:
+    rt:
+        conditionalBonuses:
+        - applies:
+              skills: [inquiry]
+              characteristics: []
+          value: 10
+          label: 'Investigation or Interview use of Inquiry (Rogue Trader Core p.108)'
 ---
 data:
     aptitudes: ''

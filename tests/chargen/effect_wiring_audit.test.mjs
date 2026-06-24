@@ -30,6 +30,9 @@ const WIRED_EXPECTED = [
     { name: 'Heightened Senses (Touch)', kind: 'cond' },
     { name: 'Fieldcraft', kind: 'ae' },
     { name: 'Multiple Arms', kind: 'ae' },
+    { name: 'Renowned Warrant', kind: 'cond' },
+    { name: 'Whispers', kind: 'cond' },
+    { name: 'Inspire Wrath', kind: 'cond' },
 ];
 // Already applied by name in src/module/rolls/* — must NOT also be AE'd.
 const CODE_HANDLED = [

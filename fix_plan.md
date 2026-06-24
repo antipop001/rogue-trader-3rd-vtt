@@ -122,10 +122,24 @@ guard in the spec). Canon: `/mnt/project_data/RT/RT-DOCS/`.
   via the modifier term) vs without it; confirm derived TB/Wounds shift accordingly.
   Foundry-coupled — node gate can't exercise it. (E2E)
 
-- [ ] WIRE-COND-INTERACT — `conditionalBonuses` for social talents: Renowned Warrant
+- [x] WIRE-COND-INTERACT — `conditionalBonuses` for social talents: Renowned Warrant
   (+10 interaction skills "with those who respect the warrant"), Whispers (+10 Inquiry
   "Investigation/Interview use"), Inspire Wrath (+20 charm/intimidate "inspiring hatred
   or anger"). RT Core / ItS. Add the 3 to ratchet `WIRED_EXPECTED` (kind cond). (WIRE)
+  — done iter 21: Renowned Warrant +10 conditionalBonus on the 7 interaction skills
+  (barter/blather/charm/command/deceive/inquiry/intimidate), label "with those who
+  respect the warrant" (RT Core p.106); Whispers +10 on inquiry, label "Investigation
+  or Interview use of Inquiry" (RT Core p.108); Inspire Wrath +20 on charm/intimidate,
+  label "inspiring hatred or anger" (RT Core p.100). None in code-handled set (no
+  double-apply). Added all 3 to ratchet WIRED_EXPECTED (kind cond). Gate green (build
+  OK, 63 node tests). E2E follow-up below. (WIRE)
+
+- [ ] E2E-COND-INTERACT — verify on rt-smoke (Playwright): an actor with Renowned
+  Warrant / Whispers / Inspire Wrath sees the labelled checkbox on the relevant skill
+  roll prompt (Inquiry for Whispers; Charm/Intimidate for Inspire Wrath; the 7
+  interaction skills for Renowned Warrant), and ticking it adds the bonus (+10/+10/+20)
+  into `rollData.modifiers.modifier` reaching the test total. Node gate can't exercise
+  the roll prompt. (E2E)
 
 - [ ] WIRE-COND-MISC — `conditionalBonuses`: Decadence (+10 toughness "resisting
   addiction"), Electro Graft Use (+10 commonLore/inquiry/techUse "connected to a data
