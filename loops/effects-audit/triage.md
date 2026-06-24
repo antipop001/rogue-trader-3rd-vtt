@@ -69,3 +69,71 @@ no double-apply risk for any entry below. The 8 names are seeded in the ratchet
 - **conditional → conditionalBonuses**: Heightened Senses ×5 (WIRE-HEIGHTENED), Renowned Warrant, Whispers, Inspire Wrath (WIRE-COND-INTERACT), Decadence, Electro Graft Use, Foresight, Sturdy (WIRE-COND-MISC).
 - **needs-engine**: Paranoia (ENGINE-INIT), Wary + Lightning Reflexes (ENGINE-INIT-EXTRA), Crack Shot + Crippling Strike (ENGINE-CRITDAMAGE), Weapon Master + Crack Shot weapon-class part (ENGINE-WEAPONCLASS).
 - **narrative (record-only, intentionally unwired)**: Ancestral Blessing, Binary Chatter, Blood of the Stalker, Bloodtracker, Concealed Cavity, Dual Shot, Dual Strike, Electrical Succour, Exceptional Leader, Hard Bargain, Hyperactive Nymune Organ, Into the Jaws of Hell, Last Man Standing, Luminen Charge, Luminen Shock, Master & Commander, Master Enginseer, Mimic, Psy Rating, Warp Conduit; traits 'Ard, Dynastic Warrant, Incorporeal, Instinctual Understanding, Mechanicus Implants, Mob Rule. → NARRATIVE-RECORD.
+
+---
+
+# AUDIT-002 — non-`+N` mechanical phrasings sweep (`talents` + `traits`)
+
+Second-pass sweep for NON-`+N` mechanical text ("doubles/halves/twice/+Xd10/additional
+Reaction/extra attack/ignores armour/re-roll/Unnatural/counts as/immune/per-DoS"),
+excluding the AUDIT-001 `+N` entries. Canon: RT Core / Into the Storm.
+
+**Headline:** non-`+N` effects almost never map to a clean AE / conditionalBonus —
+they are overwhelmingly **narrative** (intentionally unwired) or **needs-engine** (the
+apply point — extra Reaction/attack count, Unnatural multiplier, Wound additive,
+reload-time, trait/talent grant, natural-weapon damage override — does not exist yet).
+Code-handled set re-confirmed unchanged (no double-apply risk introduced).
+
+## Buckets
+
+- **code-handled** (confirm only): Blademaster, Crushing Blow, Mighty Shot, True Grit,
+  Weapon Master — already applied by name in `rolls/*`. (`Weapon Master` weapon-class
+  +10/+2 wired iter 4 in `roll-helpers.mjs`.)
+
+- **needs-engine** (no apply point — queued as ENGINE-* tasks in `fix_plan.md`):
+  - *Extra Reaction / extra attack count*: Step Aside (+1 Dodge/round), Wall of Steel
+    (+1 Parry/round), Counter Attack, Furious Assault, WAAAGH! → ENGINE-EXTRA-DEFENCE.
+  - *Multi-attack talents*: Swift Attack (2 melee), Lightning Attack (3 melee) — RT
+    lists as Talents; currently `legacy` actions (0.7.22) → ENGINE-ATTACK-TALENTS.
+  - *Unnatural multiplier / doubling*: Unnatural Characteristic, Unnatural Toughness
+    (x2), Unnatural Speed, Quadruped (×AgB move), Daemonic (×2 TB vs damage), Bastion
+    of Iron Will (×2 defensive PR) → ENGINE-UNNATURAL. (`system.characteristics.<k>.
+    unnatural` exists on the sheet — traits should SET it; multiplier paths partial.)
+  - *Wound additive*: Sound Constitution (+1 Wound, stackable), Eaters of the Dead
+    (bonus Wounds) → ENGINE-WOUNDS-MOD (needs `system.wounds.modifier`, cf. BUG-002's
+    `initiative.modifier`).
+  - *Reload time*: Rapid Reload (halve reload) → ENGINE-RAPID-RELOAD.
+  - *Trait/talent grant*: Explorator Implants (→ Mechanicus Implants), The Flesh is
+    Weak / Physical Perfection (→ Machine), Sixth Sense (→ Psyniscience skill + Rival),
+    'Ard (meta-grant) → ENGINE-TRAIT-GRANTS (needs item-grant machinery).
+  - *Natural-weapon / unarmed damage override*: Natural Weapons, Improved Natural
+    Weapons, Unarmed Master, Unarmed Warrior → ENGINE-NATWEAPONS.
+  - *Damage conditional on charge*: Brutal Charge (+3 dmg charging) — `conditionalBonuses`
+    only key skills/characteristics, not damage rolls → folded into ENGINE-EXTRA-DEFENCE
+    notes / damage path. Recorded, not a clean WIRE.
+  - *Greenskin Hybrid +10 Toughness "after calculating Wounds"*: an AE on toughness
+    modifier would feed back into the Wounds compute (over-grant) — needs a
+    Wounds-neutral characteristic bump → ENGINE-UNNATURAL notes / narrative.
+
+- **partially wired** (an AE/conditionalBonus already exists for one effect; an in-scope
+  effect remains unwired — flagged for AUDIT-CRITIC, NOT re-wired): Infused Knowledge
+  ("treat Lore as untrained Basic" unwired), Master Chirurgeon ("heal 2 on Crit/Heavy",
+  "+20 limb-loss" unwired), Worky Gubbinz ("Ork weapons Reliable" unwired), Soul-Bound
+  to the Emperor ("extra d10 discard one" on Perils unwired), Machine trait (immunities
+  unwired; AP handled in `_computeArmour`), Frontier World Xenos Interaction ("immune to
+  Fear (1)/(2)" unwired), Kindred: Bold Hunter (+5 BS is a `+N`, prior pass).
+
+- **narrative (record-only, intentionally unwired)** → NARRATIVE-RECORD-2:
+  - Talents: Blessed Radiance, Bulging Biceps, Da Nekst Best Fing, Dark Soul, Ded 'Ard,
+    Ded Sneaky, Die Hard, Duty Unto Death, Favoured by the Warp, Fearless, Give it Sum
+    Dakka!, Greed is Good, Hardy, Improved Warp Sense, Iron Jaw, Jaded, Kroot Leap,
+    Legendary, Light Sleeper, Lissen Ta Me Cos I'z Da Biggest, Master Orator, Mercenary,
+    More fer Me!, Nerves of Steel, Polyglot, Prophetic Dreams, Prosanguine, Rapid
+    Reaction, Rite of Fear, Rite of Awe, Rite of Pure Thought, Rite of Sanctioning,
+    Sharpshooter, Sprint, Strong Minded, Survival Master, Takedown, Unshakeable Faith,
+    Warp Affinity, Watchful For Betrayal, See Without Eyes, Mastery of Space, Mastery of
+    Gunnery, Mastery of Augurs, Mastery of Small Craft, Blind Fighting.
+  - Traits: Auto-Stabilised, Blind, Dark Sight, Fear, From Beyond, Phase, Regeneration,
+    Soul-Bound, Strange Physiology, The Stuff of Nightmares, Toxic, Unnatural Senses,
+    Warp Instability, Warp Weapon, Kroot Physiology, Da Boyz, No Corruption, Madboyz,
+    Medicae (Ork), Kindred: Headhunter, Kindred: Stalker.

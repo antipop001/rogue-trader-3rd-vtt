@@ -62,9 +62,16 @@ guard in the spec). Canon: `/mnt/project_data/RT/RT-DOCS/`.
   the +2 Initiative is still NOT applied (situational, intentionally unwired). Node gate
   can't exercise the attack pipeline. (E2E)
 
-- [ ] AUDIT-002 — Extend the sweep to NON-`+N` mechanical phrasings in `talents`+`traits`
+- [x] AUDIT-002 — Extend the sweep to NON-`+N` mechanical phrasings in `talents`+`traits`
   ("doubles/halves/+Xd10/additional Reaction/ignores armour/re-roll/Unnatural"). Append
-  WIRE-/NARRATIVE- tasks. (AUDIT)
+  WIRE-/NARRATIVE- tasks. (AUDIT) — done iter 5: subagent-scanned both packs; findings +
+  buckets in `loops/effects-audit/triage.md` (AUDIT-002 section). Headline: non-`+N`
+  effects almost never map to a clean AE/conditionalBonus — overwhelmingly **narrative**
+  or **needs-engine** (extra Reaction/attack count, Unnatural multiplier, Wound additive,
+  reload time, trait grant, natural-weapon damage). Code-handled set re-confirmed (no
+  double-apply). Appended ENGINE-EXTRA-DEFENCE, ENGINE-ATTACK-TALENTS, ENGINE-UNNATURAL,
+  ENGINE-WOUNDS-MOD, ENGINE-RAPID-RELOAD, ENGINE-TRAIT-GRANTS, ENGINE-NATWEAPONS,
+  NARRATIVE-RECORD-2 below; flagged 7 partially-wired entries for AUDIT-CRITIC. Gate green.
 
 - [ ] AUDIT-003 — `cybernetics`: find entries with described bonuses but no wiring
   (CLAUDE.md notes ~16: Bionic Arm +10 Ag/Str, Calculus Logi +10 Literacy/Logic/Schol
@@ -112,6 +119,63 @@ guard in the spec). Canon: `/mnt/project_data/RT/RT-DOCS/`.
   Luminen Shock, Master & Commander, Master Enginseer, Mimic, Psy Rating, Warp Conduit;
   traits 'Ard, Dynastic Warrant, Incorporeal, Instinctual Understanding, Mechanicus
   Implants, Mob Rule. (NARRATIVE)
+
+### AUDIT-002 follow-ups (non-`+N` sweep; see `loops/effects-audit/triage.md`)
+
+- [ ] NARRATIVE-RECORD-2 — add the AUDIT-002 intentionally-unwired entries to the ratchet
+  `NARRATIVE` list (they're in `triage.md` AUDIT-002 section): talents Blessed Radiance,
+  Bulging Biceps, Da Nekst Best Fing, Dark Soul, Ded 'Ard, Ded Sneaky, Die Hard, Duty
+  Unto Death, Favoured by the Warp, Fearless, Give it Sum Dakka!, Greed is Good, Hardy,
+  Improved Warp Sense, Iron Jaw, Jaded, Kroot Leap, Legendary, Light Sleeper, Master
+  Orator, Mercenary, More fer Me!, Nerves of Steel, Polyglot, Prophetic Dreams,
+  Prosanguine, Rapid Reaction, Sharpshooter, Sprint, Strong Minded, Survival Master,
+  Takedown, Unshakeable Faith, Warp Affinity, Watchful For Betrayal, See Without Eyes,
+  Blind Fighting; traits Auto-Stabilised, Blind, Dark Sight, From Beyond, Phase,
+  Regeneration, Strange Physiology, The Stuff of Nightmares, Toxic, Warp Weapon. Verify
+  each is genuinely text-only before adding. (NARRATIVE)
+
+- [ ] ENGINE-EXTRA-DEFENCE — extra-Reaction / extra-attack count machinery: Step Aside
+  (+1 Dodge/round), Wall of Steel (+1 Parry/round), Counter Attack (free attack after
+  Parry), Furious Assault (extra attack after All Out Attack hit), WAAAGH! (extra attack
+  after Charge hit). Also Brutal Charge (+3 dmg charging — damage path, not skill/char,
+  so `conditionalBonuses` can't express it). No current Reaction-budget tracker → likely
+  E2E/UI + engine. RT Core / ItS. Pure-JS test on any extractable helper; E2E follow-up.
+  (ENGINE)
+
+- [ ] ENGINE-ATTACK-TALENTS — Swift Attack (2 melee hits) / Lightning Attack (3 melee
+  hits) as TALENTS (RT lists them as Talents, not actions; currently `legacy: true`
+  actions per 0.7.22). Decide: grant the action when the talent is present, or apply the
+  additional-hit count in the attack flow. Pure-JS test on the hit-count helper; E2E.
+  (ENGINE)
+
+- [ ] ENGINE-UNNATURAL — traits that SET/scale an Unnatural multiplier or double a bonus:
+  Unnatural Characteristic, Unnatural Toughness (x2), Unnatural Speed, Quadruped (×AgB
+  move), Daemonic (×2 TB vs damage), Bastion of Iron Will (×2 defensive PR). The sheet
+  already has `system.characteristics.<k>.unnatural` — wire traits to set it (AE on the
+  `.unnatural` key, or compute) where that's the right apply point; the ×2-vs-damage and
+  movement-doubling cases need engine code. Includes Greenskin Hybrid (+10 Toughness
+  "after calculating Wounds" — a Wounds-neutral bump an AE can't express). Pure-JS test;
+  E2E. (ENGINE)
+
+- [ ] ENGINE-WOUNDS-MOD — additive Wounds term (mirror BUG-002's `initiative.modifier`):
+  add `system.wounds.modifier` to `template.json`, fold into the Wounds compute in
+  `acolyte.mjs`, then AE Sound Constitution `+1` (stackable) and Eaters of the Dead bonus
+  Wounds. Pure-JS test on the compute; E2E. (ENGINE)
+
+- [ ] ENGINE-RAPID-RELOAD — Rapid Reload halves weapon reload times in the attack/reload
+  path. Hook in `action-data.mjs` (or reload handling) by talent name. Pure-JS test on the
+  reload-time helper; E2E. RT Core. (ENGINE)
+
+- [ ] ENGINE-TRAIT-GRANTS — talents/traits that GRANT another trait/talent: Explorator
+  Implants (→ Mechanicus Implants), The Flesh is Weak / Physical Perfection (→ Machine),
+  Sixth Sense (→ Psyniscience trained + Rival), 'Ard (meta-grant of Unnatural Toughness
+  ×2 / Sturdy / Iron Jaw / True Grit). Needs item-grant machinery (auto-embed the granted
+  item on create). Larger than a data edit. RT Core / ItS. (ENGINE)
+
+- [ ] ENGINE-NATWEAPONS — natural-weapon / unarmed damage-formula overrides: Natural
+  Weapons, Improved Natural Weapons, Unarmed Master (1d10+SB, no Primitive), Unarmed
+  Warrior (1d10−3). Apply point is the unarmed-damage path in `damage-data.mjs`. Pure-JS
+  test on the formula selection; E2E. RT Core / ItS. (ENGINE)
 
 - [ ] AUDIT-CRITIC — Completeness pass: re-run the ratchet, list anything still
   unresolved (unwired and not justified-narrative), confirm no code-handled entry got
