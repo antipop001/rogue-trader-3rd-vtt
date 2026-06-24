@@ -290,6 +290,39 @@ engine/roll fixes. Fix these directly, or in a dedicated follow-up loop.
   debugging BUG-009 got. Verify: add Sixth Sense → a `Rival (Inquisition)` talent
   appears within ~2s.
 
+## BUG-011 — Focus Power Test missing the +5 × Psy Rating bonus (every psychic test too low)
+- **Status: OPEN — P0, promoted from QA-audit finding QA-037 (2026-06-24).**
+- **Symptom:** every Focus Power Test rolls 15-25 points too hard, so psykers' powers
+  fail far more than RAW across the whole psychic subsystem.
+- **Cause:** `roll-data.mjs:415` — the Focus Power target gets NO Psy-Rating bonus; the
+  only PR-adjacent modifier is a homebrew flat `focus` +10 toggled by `psy.hasFocus`.
+  Effective PR (`:392-400`) feeds damage/range/phenomena but is never added to the test
+  target. 0.7.12 correctly removed the DH2 "±10 per PR-difference" term but never added
+  RT 1e's distinct **+5 per Psy Rating level** (CLAUDE.md §H's "preserved correct PR
+  bonus" claim is false).
+- **Canon:** RT Core p.157 — "the Psyker adds **+5 to his Focus Power score for each
+  level of Psy Rating**." Example: WP 45 + PR 5×5 = **70**.
+- **Fix:** in `PsychicRollData.update()` add `this.modifiers['psy rating'] = 5 * this.pr`
+  (effective PR already handles Fettered/Unfettered/Push); remove or re-justify the flat
+  `focus` +10. ⚠ Foundry-coupled — verify on rt-smoke (PR 5 Unfettered, WP 45 → target 70).
+
+## BUG-012 — Acquisition modifier tables wrong vs RT Core Table 9-35 (availability + scale)
+- **Status: OPEN — P0, promoted from QA-audit findings QA-052 + QA-053 (2026-06-24).**
+  Autofixable (verbatim canon values).
+- **Symptom:** almost every Acquisition Test rolls against the wrong target — systematically
+  much harder than RAW; the Herodor worked example can't be reproduced.
+- **Cause:** `rules/acquisition.mjs` — `AVAILABILITY_MODS` (:9-20) is shifted ~20-40 points
+  harsher than canon and is **missing the Abundant (+50) tier** (falls through to `?? 0`);
+  `SCALE_MODS` (:29-37) has **Negligible/Trivial swapped** (Negligible+20/Trivial+30 vs
+  canon +30/+20). The header comment + CLAUDE.md §G wrongly claim "verbatim p.270".
+- **Canon (Table 9-35):** Availability — Ubiquitous +70, Abundant +50, Plentiful +30,
+  Common +20, Average +10, Scarce +0, Rare −10, Very Rare −20, Extremely Rare −30, Near
+  Unique −50, Unique −70. Scale — Negligible +30, Trivial +20, Minor +10, Standard 0,
+  Major −10, Significant −20, Vast −30.
+- **Fix:** replace both tables with the Table 9-35 values (add `abundant: 50`; set
+  `negligible: 30, trivial: 20`). Related: QA-054 (Commerce Acquisition bonus is +10/DoS,
+  RT is **+2/DoS** — P1, in QA_FINDINGS.md).
+
 ## SWEEP — talents/traits with described bonuses that aren't wired
 Paranoia / Weapon Master are instances of a systemic gap: many compendium entries
 describe a numeric bonus in text but carry no `effects`/`conditionalBonuses`/
