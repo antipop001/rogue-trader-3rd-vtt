@@ -235,16 +235,16 @@ Enable Debug with: game.rt.debug = true
         // recovers from the writeback clobber; pendingGrants dedups so it's a no-op
         // when the first stuck.
         const grantParent = item.parent;
-        const runGrants = () => HooksManager.applyItemGrants(item, grantParent)
-            .catch((e) => console.error('Dark Heresy | applyItemGrants failed', e));
-        // Defer + retry off the create-hook turn: a grant embedded during the
-        // originating create flow gets clobbered when the operation writes back the
-        // parent's items, and a single 0ms defer races it intermittently. Two passes
-        // (0ms + 750ms past the writeback) reliably land plain grants; pendingGrants
-        // dedups so the second is a no-op when the first stuck. (BUG-009; choice-grants
-        // are skipped in applyItemGrants per BUG-010.)
-        setTimeout(runGrants, 0);
-        setTimeout(runGrants, 750);
+        // Defer the grant off the create-hook turn (embedding *during* the originating
+        // create flow gets clobbered by its items writeback — BUG-009), and embed on a
+        // freshly-fetched live actor (the captured ref goes stale when an AE re-prepares
+        // the actor, which hung the create — BUG-010). A SINGLE pass: with the live-actor
+        // fetch the embed is reliable, so no retry is needed (a retry would double-embed
+        // because the slow pack load makes it race the first pass's dedup).
+        setTimeout(() => {
+            HooksManager.applyItemGrants(item, grantParent)
+                .catch((e) => console.error('Dark Heresy | applyItemGrants failed', e));
+        }, 0);
 
         if (item.type !== 'talent') return;
         const spec = foundry.utils.getProperty(item, 'flags.rt.pickable');
@@ -278,22 +278,18 @@ Enable Debug with: game.rt.debug = true
      * further `flags.rt.grants`, so this does not recurse.
      */
     static async applyItemGrants(item, actor) {
+        // Use a freshly-fetched actor doc, not the reference captured when the create
+        // hook fired — a granting item with an ActiveEffect (e.g. Sixth Sense's
+        // Psyniscience upgrade) re-prepares the actor, leaving that captured ref
+        // stale/detached, and createEmbeddedDocuments on a stale actor HANGS (BUG-010).
+        // Falls back to the passed ref for unlinked token actors (not in game.actors).
+        const liveActor = (actor?.id && game.actors?.get(actor.id)) || actor;
         const grants = foundry.utils.getProperty(item, 'flags.rt.grants');
-        const pending = pendingGrants(grants, actor.items.map((i) => ({ name: i.name, type: i.type })));
+        const pending = pendingGrants(grants, liveActor.items.map((i) => ({ name: i.name, type: i.type })));
         if (!pending.length) return;
         const PACK_BY_TYPE = { trait: 'traits', talent: 'talents' };
         const toCreate = [];
         for (const g of pending) {
-            // Choice-grants (a pre-chosen pickable, e.g. Sixth Sense → Rival
-            // (Inquisition)) currently HANG `createEmbeddedDocuments` when embedded from
-            // this deferred-grant context — a Foundry-internals stall specific to that
-            // talent (plain grants like Sprint embed fine here; the same item embeds
-            // fine top-level). Skip them so the grant fails safe instead of leaking a
-            // hung promise; the GM adds the choice item manually. (BUG-010, open.)
-            if (g.choice) {
-                game.rt?.warn?.(`Item grant "${g.name} (${g.choice})" not auto-applied (BUG-010) — add it manually.`);
-                continue;
-            }
             const packName = g.pack ?? PACK_BY_TYPE[g.type];
             const pack = packName ? game.packs.get(`${SYSTEM_ID}.${packName}`) : null;
             if (!pack) { game.rt?.warn?.(`Item grant "${g.name}": no pack for type ${g.type}`); continue; }
@@ -302,9 +298,16 @@ Enable Debug with: game.rt.debug = true
             if (!src) { game.rt?.warn?.(`Item grant "${g.name}" not found in pack ${packName}`); continue; }
             const data = src.toObject();
             delete data._id;
+            // Pre-chosen pickable grant (e.g. Rival (Inquisition)): stamp the choice and
+            // append it to the name so onCreateItem skips the picker prompt.
+            if (g.choice) {
+                foundry.utils.setProperty(data, 'system.choice', g.choice);
+                const base = String(data.name ?? '').replace(/\s*\(.*\)\s*$/, '');
+                data.name = `${base} (${g.choice})`;
+            }
             foundry.utils.setProperty(data, 'flags.rt.grantedBy', item.id);
             toCreate.push(data);
         }
-        if (toCreate.length) await actor.createEmbeddedDocuments('Item', toCreate);
+        if (toCreate.length) await liveActor.createEmbeddedDocuments('Item', toCreate);
     }
 }

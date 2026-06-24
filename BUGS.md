@@ -264,18 +264,19 @@ engine/roll fixes. Fix these directly, or in a dedicated follow-up loop.
   `scratchpad/dbg_grant4.py`.) Foundry-coupled — verify on rt-smoke.
 
 ## BUG-010 — Choice-grants (`flags.rt.grants` with a `choice`) don't embed
-- **Status: MITIGATED (fail-safe) 2026-06-24 — root cause unresolved.** Choice-grants
-  now SKIP with a warn (`applyItemGrants`) instead of hanging; **plain grants still work**
-  (verified: Bionic Heart→Sprint lands ~2.5s and persists), and Sixth Sense's other
-  effect (Psyniscience Trained, advance 0→1) applies. Only the auto-grant of the chosen
-  item is dropped — the GM adds it manually (e.g. Rival (Inquisition)). **Root cause not
-  cracked:** `createEmbeddedDocuments` for that specific granted talent HANGS when called
-  from the deferred-grant context (the `createItem` hook for it never even fires; no
-  error). The same item embeds fine top-level (incl. with `system.choice`+`grantedBy`,
-  pickable-flag stripped), and plain talents (Sprint) embed fine from the same context —
-  so it's a Foundry-internals stall specific to this talent+context that resisted ~15
-  instrumented iterations. Future fix: investigate the stall (try `Item.create` with the
-  parent, or pre-bake the granted item differently), then re-enable the `g.choice` path.
+- **Status: ✅ FIXED 2026-06-24 — root cause found.** The deferred grant embedded on the
+  actor reference *captured when the createItem hook fired* (`item.parent`). When the
+  granting item carries an **ActiveEffect** (Sixth Sense's Psyniscience upgrade), creating
+  it re-prepares the actor, leaving that captured ref **stale/detached** — and
+  `createEmbeddedDocuments` on a stale actor doc **hangs** (its own createItem hook never
+  fires). Bionic Heart (no AE) didn't re-prepare → its ref stayed valid → Sprint worked,
+  which is why it looked talent-specific. **Fix:** `applyItemGrants` now embeds on a
+  freshly-fetched live actor (`game.actors.get(actor.id) ?? actor`). Choice-grant path
+  re-enabled. **This also fixed BUG-009's flakiness** (same stale-ref root cause), so the
+  two-pass 0+750ms retry was dropped for a single deferred pass — no more double-create.
+  Verified (single-actor polled): Sixth Sense → `Rival (Inquisition)` lands ~2s, exactly
+  once, persists, Psyniscience upgrade applies; Bionic Heart → `Sprint` likewise (one
+  CREATE, persists). 166 node tests pass.
 - **Found by the 2026-06-24 verification sweep.** Plain item-grants work
   (verified live: Explorator Implants→Mechanicus Implants, Bionic Heart→Sprint), but a
   grant carrying a `choice` does not embed. Repro: Sixth Sense trait
