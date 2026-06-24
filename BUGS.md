@@ -182,6 +182,27 @@ engine/roll fixes. Fix these directly, or in a dedicated follow-up loop.
   manual-entry fallback.
 - **⚠ Foundry-coupled** (cast pipeline + a new prompt) — verify on rt-smoke.
 
+## BUG-008 — Righteous Fury uses DH2-style crit-table effect, not RT 1e RAW
+- **Status: NEEDS DECISION** (RAW vs keep current). Audited 2026-06-23 at user request.
+- **Current behaviour** (`src/module/rolls/damage-data.mjs:93-134` + RF block in
+  `action-roll-chat.hbs`): any active damage die ≥ 10 (the `Vengeful` quality lowers the
+  threshold) AUTO-triggers RF → rolls `1d5` → looks up the Critical Hits table
+  (`getCriticalDamage(damageType, location, 1d5)`) and shows "Righteous fury hits for a
+  level X critical effect." No confirmation to-hit roll; no extra damage added to the
+  total (only a crit *effect* is attached).
+- **RT 1e canon** (RT Core p.250): a natural 10 on a damage die → attacker makes a
+  **second, identical attack roll (WS/BS test)**; only **if it hits** does RF apply, and
+  RF = **roll another full damage roll and add it** to the total (chains on further 10s).
+  RT 1e RF does NOT roll the Critical Hits table. Edge rules: unarmed 10s count as 5s;
+  helpless target rolls damage twice, two 10s = automatic RF.
+- **Deviation:** DH2 carryover — auto crit-table effect with no confirm and no bonus
+  damage, vs RT 1e's confirm-to-hit + extra damage roll.
+- **Fix (if RAW wanted):** on a natural 10, make a confirming attack roll (reuse the
+  attack BS/WS); on a hit, add another full weapon damage roll to `this.damage` and
+  re-check the new dice for chained RF; drop the 1d5 crit-table lookup. Unarmed 10→5.
+  ⚠ Foundry-coupled (damage pipeline) — verify on rt-smoke. ⚠ Touches `damage-data.mjs`,
+  which the running effects-audit loop may also edit (Weapon Master) — do when idle.
+
 ## SWEEP — talents/traits with described bonuses that aren't wired
 Paranoia / Weapon Master are instances of a systemic gap: many compendium entries
 describe a numeric bonus in text but carry no `effects`/`conditionalBonuses`/
