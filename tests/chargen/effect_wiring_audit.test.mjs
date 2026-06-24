@@ -69,6 +69,10 @@ const CODE_HANDLED = [
     // (reactionBudget → system.combat.reactions.{dodge,parry}.max). RT Core p.119/121 —
     // engine-applied, must NOT also get an AE. ENGINE-REACTION-BUDGET.
     'Step Aside', 'Wall of Steel',
+    // Outcome-gated extra-ATTACK triggers, eligibility computed by talent name in
+    // roll-helpers.extraAttackEligibility (Counter Attack p.115, Furious Assault p.117,
+    // WAAAGH! ItS p.173) — engine-applied, must NOT also get an AE. ENGINE-REACTION-ATTACK-TRIG.
+    'Counter Attack', 'Furious Assault', 'WAAAGH!',
 ];
 // Intentionally text-only (narrative / per-DoS / PF / GM-adjudicated). These describe
 // a mechanic the system deliberately does NOT express as an AE/conditionalBonus

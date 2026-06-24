@@ -217,6 +217,56 @@ export function canSpendReaction(reactions, type) {
     return slotVal < slotMax;                        // type-specific cap
 }
 
+/**
+ * Extra-ATTACK post-resolution triggers (ENGINE-REACTION-ATTACK-TRIG). Three talents
+ * grant an ADDITIONAL attack gated on a specific prior outcome — distinct from the
+ * Reaction budget ({@link reactionBudget}), these fire on the result of an action:
+ *
+ *  - Counter Attack (RT Core p.115): after SUCCESSFULLY Parrying an opponent's attack,
+ *    "he may immediately make an attack against that opponent using the Parry weapon as
+ *    a Free Action. This attack suffers a -20 penalty." (Free Action — does NOT spend a
+ *    Reaction.)
+ *  - Furious Assault (RT Core p.117): "If he successfully hits his target using the All
+ *    Out Attack Action, he may spend his Reaction to make an additional attack using the
+ *    same bonuses or penalties as the original attack." (Spends a Reaction.)
+ *  - WAAAGH! (Into the Storm p.173): same as Furious Assault but on a successful Charge
+ *    Action hit. (Spends a Reaction.)
+ *
+ * No apply point exists yet — the attack flow doesn't surface "you may make a free attack
+ * now". This pure helper answers WHICH triggers are eligible given the prior outcome; the
+ * Foundry-coupled half (a prompt/button on the result card that rolls the extra attack, and
+ * the Reaction spend for Furious Assault/WAAAGH! via {@link canSpendReaction}) is the E2E
+ * follow-up. Engine-applied by name — these talents must NOT also be given an ActiveEffect.
+ * `hasTalent` matches `type==='talent'`, so callers pass the actor's talent items.
+ *
+ * @param {Array<{name?: string}>} talents  attacker talent items
+ * @param {{action?: string, hit?: boolean, parrySuccess?: boolean}} [ctx]
+ *        action = the resolved combat action name; hit = the attack succeeded;
+ *        parrySuccess = a Parry Reaction just succeeded.
+ * @returns {Array<{talent: string, trigger: string, cost: string, toHitMod: number}>}
+ *          eligible extra-attack triggers (empty when none apply)
+ */
+export function extraAttackEligibility(talents, ctx = {}) {
+    const out = [];
+    const has = (name) => Array.isArray(talents)
+        && talents.some((t) => t?.name && String(t.name).toLowerCase() === name);
+    const action = String(ctx.action ?? '');
+    // Counter Attack — triggers off a SUCCESSFUL Parry (a Free Action attack at -20),
+    // independent of which attack action the original was.
+    if (ctx.parrySuccess && has('counter attack')) {
+        out.push({ talent: 'Counter Attack', trigger: 'parry', cost: 'Free Action', toHitMod: -20 });
+    }
+    // Furious Assault — a successful hit using the All Out Attack action; spends a Reaction.
+    if (ctx.hit && action === 'All Out Attack' && has('furious assault')) {
+        out.push({ talent: 'Furious Assault', trigger: 'allOutAttack', cost: 'Reaction', toHitMod: 0 });
+    }
+    // WAAAGH! — a successful hit using the Charge action; spends a Reaction.
+    if (ctx.hit && action === 'Charge' && has('waaagh!')) {
+        out.push({ talent: 'WAAAGH!', trigger: 'charge', cost: 'Reaction', toHitMod: 0 });
+    }
+    return out;
+}
+
 export async function roll1d100() {
     let formula = '1d100';
     const roll = new Roll(formula, {});

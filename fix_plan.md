@@ -312,14 +312,32 @@ guard in the spec). Canon: `/mnt/project_data/RT/RT-DOCS/`.
   NOT blocked or counted. Combat hooks + rollSkill spend are Foundry-coupled — node gate
   can't exercise them. (E2E)
 
-- [ ] ENGINE-REACTION-ATTACK-TRIG — the extra-ATTACK post-resolution triggers (separate
+- [x] ENGINE-REACTION-ATTACK-TRIG — the extra-ATTACK post-resolution triggers (separate
   from the Reaction budget): Counter Attack (free attack after a successful Parry), Furious
   Assault (extra attack after an All Out Attack hit), WAAAGH! (extra attack after a Charge
   hit). Each grants an additional attack gated on a specific prior outcome — no apply point
   exists (the attack flow doesn't surface "you may make a free attack now"). Needs an
   attack-pipeline hook + a prompt/button on the result card. Heavily Foundry-coupled. RT
   Core / ItS (Counter Attack p.115, Furious Assault p.117, WAAAGH! ItS). Add any extractable
-  eligibility helper + node test; E2E follow-up. (ENGINE)
+  eligibility helper + node test; E2E follow-up. (ENGINE) — done iter 34: shipped the
+  extractable eligibility slice. Pure helper `extraAttackEligibility(talents, ctx)` in
+  `roll-helpers.mjs` — given the resolved outcome (`{action, hit, parrySuccess}`) returns the
+  eligible triggers with cost + to-hit mod: Counter Attack on `parrySuccess` (Free Action,
+  -20; RT Core p.115), Furious Assault on a `hit` with `action==='All Out Attack'` (spends a
+  Reaction; RT Core p.117), WAAAGH! on a `hit` with `action==='Charge'` (spends a Reaction;
+  ItS p.173). Action strings match `combat-actions.mjs` exactly. NOT an AE (outcome-gated,
+  engine-applied by name) → ratchet CODE_HANDLED (double-apply guard). Node test
+  `extra_attack_trigger.test.mjs` (6 cases). Gate green (build OK, 97 node tests). The
+  prompt/button on the result card that rolls the extra attack + the Reaction spend (via
+  `canSpendReaction`) have NO apply point yet → E2E-REACTION-ATTACK-TRIG below. (ENGINE)
+
+- [ ] E2E-REACTION-ATTACK-TRIG — verify on rt-smoke (Playwright): an actor with Furious
+  Assault landing an All Out Attack hit sees a "free additional attack" prompt/button on the
+  result card and rolling it spends a Reaction; the same actor with WAAAGH! on a successful
+  Charge sees it; an actor with Counter Attack after a successful Parry sees a Free-Action
+  attack offer at -20 (no Reaction spent); a missed All Out Attack / Charge, or the wrong
+  action, surfaces no offer; an actor without the talent never sees it. Attack/result-card
+  pipeline + Reaction spend are Foundry-coupled — node gate can't exercise them. (E2E)
 
 - [ ] ENGINE-ATTACK-TALENTS — Swift Attack (2 melee hits) / Lightning Attack (3 melee
   hits) as TALENTS (RT lists them as Talents, not actions; currently `legacy: true`
