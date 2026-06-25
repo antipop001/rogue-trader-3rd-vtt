@@ -307,8 +307,11 @@ engine/roll fixes. Fix these directly, or in a dedicated follow-up loop.
   `focus` +10. ⚠ Foundry-coupled — verify on rt-smoke (PR 5 Unfettered, WP 45 → target 70).
 
 ## BUG-012 — Acquisition modifier tables wrong vs RT Core Table 9-35 (availability + scale)
-- **Status: OPEN — P0, promoted from QA-audit findings QA-052 + QA-053 (2026-06-24).**
-  Autofixable (verbatim canon values).
+- **Status: ✅ FIXED 2026-06-24, verified live on rt-smoke.** `acquisition.mjs`
+  `AVAILABILITY_MODS`/`SCALE_MODS` replaced with the verbatim Table 9-35 values
+  (added `abundant: 50`; un-swapped `negligible: 30` / `trivial: 20`). Live import
+  confirmed: ubiquitous 70, abundant 50, rare −10, near-unique −50, unique −70;
+  negligible 30, trivial 20. (From QA-052 + QA-053.)
 - **Symptom:** almost every Acquisition Test rolls against the wrong target — systematically
   much harder than RAW; the Herodor worked example can't be reproduced.
 - **Cause:** `rules/acquisition.mjs` — `AVAILABILITY_MODS` (:9-20) is shifted ~20-40 points
@@ -342,6 +345,73 @@ engine/roll fixes. Fix these directly, or in a dedicated follow-up loop.
   to QA-025). Reconcile `hasLevel` (Primitive is unleveled in RT). Related: QA-137
   (multi-die Primitive/Proven overwrite + dead Proven path, P1). ⚠ live-verify on
   rt-smoke (Flintlock rolls full `1d10+2`; armour doubled vs it).
+
+## QA-audit P1 backlog — missing automation / correctness (promoted 2026-06-24)
+
+42 verified P1 findings from the QA-audit loop (39 open, 3 already
+auto-fixed). Full detail (file:line + canon) per entry in `QA_FINDINGS.md`. These are
+real automation/correctness gaps to fix deliberately. P0s = BUG-011 / 012 (fixed) /
+013 above. The 114 P2/P3 findings stay in `QA_FINDINGS.md`.
+
+**rules** (18)
+- QA-071 — Combat-action SIDE-EFFECTS unautomated: only the actor's own to-hit modifier is applied
+- QA-078 — Encumbered penalty (−10 movement tests, −1 Agility Bonus) never applied
+- QA-080 — No condition/status-effect layer: Stunned/Prone/Pinned/Blinded/on-fire/Blood-Loss outcomes are produced as chat text only,…
+- QA-081 — Fear / Shock subsystem unautomated: no Fear Test, Fear (N) trait never tested, Shock RollTable orphaned
+- QA-082 — Pinning subsystem unautomated: Pinning Test is description-only, no Pinned state or −20 BS / Half-Action enforcement
+- QA-083 — Insanity / Corruption tracks are inert: no Trauma / Malignancy / Mutation tests on threshold, item types + tables absent
+- QA-087 — Hit-location digit-reversal omits zero-padding: single-digit to-hit rolls (1–9) map to the WRONG location
+- QA-090 — Five of the six standard Fate-point uses are unmodeled; the one wired (re-roll) is combat/psychic-only and doesn't gate on…
+- QA-094 — Degrees of Success over-counted by the DH2 `1 +` (and tens-digit method) — displayed DoS, opposed tests, and auto-fire hit…
+- QA-095 — Combat recurring-damage handler (On Fire / Blood Loss) is an orphaned consumer: nothing in the engine ever creates the `Bu…
+- QA-101 — Force-field protection roll is a standalone manual sheet action, never integrated into damage resolution; overloaded field…
+- QA-111 — Cover is entirely unmodelled — no cover-AP damage interception, no cover degradation
+- QA-113 — Dodge/Parry Reactions are not part of attack resolution — a successful Dodge/Parry never negates the incoming hit
+- QA-115 — Vehicle damage is unwired: facing Armour + Structural Integrity ignored; the personal-creature path reads a non-existent `…
+- QA-118 — Surprise / Unaware-target +30 to-hit bonus (and the Surprise Round) is unwired
+- QA-121 — Stun action bypasses the WS-to-hit gate and uses a static (DH2) defence instead of the defender's 1d10 roll
+- QA-124 — Weapon Training proficiency penalty (−20 WS/BS for untrained weapons) is never enforced
+- QA-160 — "Gain an additional Reaction" effects (Defensive Stance, Hyperactive Nymune Organ) are unexpressible — only Step Aside / W…
+
+**ship** (7)
+- QA-042 — Voidship hull-damage model is homebrew (fixed 1–4 by penetration tier) instead of RT's Damage − Armour → Hull Integrity
+- QA-043 — Voidship critical-damage results use a homebrew Nonpen/Pen/Crit × component × d10 matrix, not RT Table 8-12 (the canonical…
+- QA-044 — Voidship critical-hit TRIGGER uses a fixed roll ≤ target/10 (≈10 DoS), not the weapon's Crit Rating; `shipWeapon` has no `…
+- QA-045 — Void shields are permanently decremented and never restored per Strategic Round (or between attackers in a Round)
+- QA-147 — Voidship turret resolution is invented offensive fire, not RT's defensive modifier
+- QA-148 — Boarding-action resolution is a homebrew per-action d100 loop, not RT's single opposed Command Test
+- QA-153 — Ship-weapon to-hit rolls Strength *independent* BS tests; RT is one test scoring `1 + DoS` hits capped at Strength
+
+**weapons** (7)
+- QA-063 — Damage-class/quality-changing ammo unwired (Tempest Bolt Shells, Acid Shells)
+- QA-099 — Overheats weapons still Jam; canon says an Overheats weapon never jams (and any would-be jam becomes an overheat)
+- QA-100 — Overheat result deals no self-damage to the wielder, frames the drop as forced (canon: it's a choice), and skips the coold…
+- QA-104 — No Reload action: clip is never refilled by the engine; `effectiveReload` time is computed/displayed but purely cosmetic
+- QA-128 — Unbraced Heavy weapon −30 BS penalty never applied (no braced state in the engine)
+- QA-131 — Flame weapons require a Ballistic Skill test; the no-BS-test cone is keyed on the non-RT "Spray" quality (dead code)
+- QA-158 — Thrown muscle-powered weapons get no Strength Bonus to damage (only class='melee' does)
+
+**data-quality** (3)
+- QA-057 — 27 NPCs have `wounds.max: 0` (no wound track; many are real combatants, not swarms)
+- QA-058 — 3 NPCs have an all-zero characteristic block (every stat base 0 → unrollable)
+- QA-059 — 289 NPC-embedded weapon items have empty `damage`; 76 weapon "items" are OCR description-blobs mis-parsed as weapons
+
+**schema** (2)
+- QA-010 ✅ fixed — `commerce` skill governed by Intelligence; RT canon says Fellowship
+- QA-011 ✅ fixed — `survival` skill governed by Perception; RT canon says Intelligence
+
+**traits** (2)
+- QA-077 — Unnatural Speed trait not wired into movement (doubled Agility Bonus ignored)
+- QA-142 — Daemonic TB-doubling silently fails on the canonical "Daemonic (TB X)" trait name (exact-match, not prefix) — 15 NPC entri…
+
+**armour** (1)
+- QA-021 ✅ fixed — Force-field Poor-craftsmanship overload chance is 15; canon Table 3-10 says 20
+
+**psychic** (1)
+- QA-038 — Push psychic-phenomena logic wrong: Push+doubles diverted to Perils (no such RT rule); Push must ALWAYS roll Phenomena
+
+**acquisition** (1)
+- QA-054 — Commerce skill bonus to Acquisition applied as +10/DoS instead of RT's +2/DoS
 
 ## SWEEP — talents/traits with described bonuses that aren't wired
 Paranoia / Weapon Master are instances of a systemic gap: many compendium entries

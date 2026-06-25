@@ -2,20 +2,22 @@ import { SYSTEM_ID } from '../hooks-manager.mjs';
 import { RogueTraderSettings } from '../rogue-trader-settings.mjs';
 
 /**
- * RT corebook p.270 — Acquisition Test modifiers.
- * Negative numbers make the test harder (rarer / better quality / larger scale
- * each reduce the chance to acquire).
+ * RT Core p.270 Table 9-35 — Acquisition Test modifiers. Values verbatim from the
+ * table (corrected 2026-06-24, BUG-012 / QA-052,053 — the prior availability values
+ * were shifted ~20-40 points harsher and missing the Abundant tier; Scale had
+ * Negligible/Trivial swapped). Negative numbers make the test harder.
  */
 export const AVAILABILITY_MODS = {
-    ubiquitous: 30,
-    plentiful: 20,
-    common: 10,
-    average: 0,
-    scarce: -10,
-    rare: -20,
-    'very rare': -30,
-    'extremely rare': -50,
-    'near unique': -60,
+    ubiquitous: 70,
+    abundant: 50,
+    plentiful: 30,
+    common: 20,
+    average: 10,
+    scarce: 0,
+    rare: -10,
+    'very rare': -20,
+    'extremely rare': -30,
+    'near unique': -50,
     unique: -70,
 };
 
@@ -27,8 +29,8 @@ export const CRAFTSMANSHIP_MODS = {
 };
 
 export const SCALE_MODS = {
-    trivial: 30,
-    negligible: 20,
+    negligible: 30,
+    trivial: 20,
     minor: 10,
     standard: 0,
     major: -10,
