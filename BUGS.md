@@ -399,7 +399,7 @@ real automation/correctness gaps to fix deliberately. P0s = BUG-011 / 012 (fixed
 - ✅ QA-063 (fixed 2026-06-25) — Damage-class/quality-changing ammo unwired (Tempest Bolt Shells, Acid Shells)
 - ✅ QA-099 (fixed 2026-06-25) — Overheats weapons still Jam; canon says an Overheats weapon never jams (and any would-be jam becomes an overheat)
 - ✅ QA-100 (fixed 2026-06-25) — Overheat result deals no self-damage to the wielder, frames the drop as forced (canon: it's a choice), and skips the coold…
-- QA-104 — No Reload action: clip is never refilled by the engine; `effectiveReload` time is computed/displayed but purely cosmetic
+- ✅ QA-104 (fixed 2026-06-25) — Reload action added (RT Core p.249). The weapon item sheet now shows a **Reload** header button (for any weapon with `clip.max > 0`) that refills `clip.value` to `clip.max` and posts a chat note with the reload time (the already-computed `effectiveReload`, incl. the Rapid Reload halving). Previously the clip only drained — refill was a manual sheet edit despite the empty-clip warning telling the player to reload. Already-full reload is a no-op. Live-verified on rt-smoke (button present for clipped weapons / absent for melee; 5→30 refill). Action-economy cost (Full/Half) stays the GM's to spend — no action-economy engine.
 - ✅ QA-128 (fixed 2026-06-25) — Unbraced Heavy weapon −30 BS penalty never applied (no braced state in the engine)
 - ✅ QA-131 (fixed 2026-06-25) — Flame weapons require a Ballistic Skill test; the no-BS-test cone is keyed on the non-RT "Spray" quality (dead code)
 - ✅ QA-158 (fixed 2026-06-25) — Thrown muscle-powered weapons get no Strength Bonus to damage (only class='melee' does)

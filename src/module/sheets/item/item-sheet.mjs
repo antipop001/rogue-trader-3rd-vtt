@@ -50,6 +50,16 @@ export class DarkHeresyItemSheet extends ItemSheet {
                 },
             });
         }
+        // Reload button for any weapon with a clip — the Reload action (RT Core p.249) the
+        // engine previously never performed; refills clip.value to clip.max. (QA-104.)
+        if (this.item.type === 'weapon' && Number(sys.clip?.max) > 0) {
+            buttons.unshift({
+                label: 'Reload',
+                class: 'reload',
+                icon: 'fas fa-sync',
+                onclick: () => this._reloadWeapon(),
+            });
+        }
         return buttons;
     }
 
@@ -63,6 +73,27 @@ export class DarkHeresyItemSheet extends ItemSheet {
         html.find('.effect-create').click(async (ev) => await this._effectCreate(ev));
         html.find('.effect-enable').click(async (ev) => await this._effectEnable(ev));
         html.find('.effect-disable').click(async (ev) => await this._effectDisable(ev));
+    }
+
+    // Perform the Reload action (RT Core p.249): refill the clip to its maximum. The reload
+    // TIME (incl. the Rapid Reload halving) is computed elsewhere as `effectiveReload` and
+    // surfaced in the chat note; the action-economy cost is the GM's to spend. (QA-104.)
+    async _reloadWeapon() {
+        const sys = this.item.system ?? {};
+        const max = Number(sys.clip?.max) || 0;
+        if (max <= 0) return;
+        if (Number(sys.clip?.value) >= max) {
+            ui.notifications?.info(`${this.item.name} is already fully loaded (${max}/${max}).`);
+            return;
+        }
+        await this.item.update({ 'system.clip.value': max });
+        const reloadTime = sys.effectiveReload ?? sys.reload;
+        const actor = this.item.parent;
+        const speaker = actor?.documentName === 'Actor' ? ChatMessage.getSpeaker({ actor }) : {};
+        await ChatMessage.create({
+            speaker,
+            content: `<p><strong>Reload</strong> — ${this.item.name} reloaded to ${max}/${max}${reloadTime ? ` (Reload: ${reloadTime})` : ''}.</p>`,
+        });
     }
 
     // Apply an activated drug as a timed ActiveEffect on the carrying actor
