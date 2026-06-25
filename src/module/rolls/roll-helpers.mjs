@@ -396,8 +396,20 @@ export function unnaturalCharacteristicMultipliers(traits) {
  */
 export function daemonicToughnessMultiplier(traits) {
     if (!Array.isArray(traits)) return 1;
-    const has = traits.some((t) => t?.name && String(t.name).toLowerCase() === 'daemonic');
+    // Match "Daemonic" and the canonical "Daemonic (TB X)" stat-block form, but NOT
+    // "Daemonic Presence" (QA-142) — like the quadruped/unnatural helpers tolerate "(xN)".
+    const has = traits.some((t) => t?.name && /^\s*daemonic\s*(\(|$)/i.test(t.name));
     return has ? 2 : 1;
+}
+
+/**
+ * RT Core Unnatural Speed — the creature doubles its Agility Bonus for movement
+ * (applied after size). True if any trait is "Unnatural Speed" (QA-077).
+ * @param {Array<{name?: string}>} traits
+ * @returns {boolean}
+ */
+export function hasUnnaturalSpeed(traits) {
+    return Array.isArray(traits) && traits.some((t) => t?.name && /^\s*unnatural speed\b/i.test(t.name));
 }
 
 /**

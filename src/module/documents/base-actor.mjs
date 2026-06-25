@@ -1,7 +1,7 @@
 import { prepareSimpleRoll } from '../prompts/simple-prompt.mjs';
 import { SimpleSkillData } from '../rolls/action-data.mjs';
 import { toCamelCase } from '../handlebars/handlebars-helpers.mjs';
-import { quadrupedMoveMultiplier } from '../rolls/roll-helpers.mjs';
+import { quadrupedMoveMultiplier, hasUnnaturalSpeed } from '../rolls/roll-helpers.mjs';
 
 export class RogueTraderBaseActor extends Actor {
 
@@ -141,6 +141,9 @@ export class RogueTraderBaseActor extends Actor {
         // ENGINE-UNNATURAL slice.
         const moveMult = quadrupedMoveMultiplier(this.items.filter((i) => i.type === 'trait'));
         let base = agility.bonus * moveMult + size - 4;
+        // Unnatural Speed (RT Core p.366): double the Agility Bonus for movement, applied
+        // AFTER the size modifier — so double the whole base. (QA-077.)
+        if (hasUnnaturalSpeed(this.items.filter((i) => i.type === 'trait'))) base *= 2;
         this.system.movement = {
             half: base,
             full: base * 2,

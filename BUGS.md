@@ -359,8 +359,8 @@ engine/roll fixes. Fix these directly, or in a dedicated follow-up loop.
 
 ## QA-audit P1 backlog — missing automation / correctness (promoted 2026-06-24)
 
-42 verified P1 findings from the QA-audit loop (39 open, 3 already
-auto-fixed). Full detail (file:line + canon) per entry in `QA_FINDINGS.md`. These are
+42 verified P1 findings from the QA-audit loop (34 open, 8 fixed —
+3 auto-fixed + QA-054/077/087/142/158). Full detail (file:line + canon) per entry in `QA_FINDINGS.md`. These are
 real automation/correctness gaps to fix deliberately. P0s = BUG-011 / 012 (fixed) /
 013 above. The 114 P2/P3 findings stay in `QA_FINDINGS.md`.
 
@@ -371,7 +371,7 @@ real automation/correctness gaps to fix deliberately. P0s = BUG-011 / 012 (fixed
 - QA-081 — Fear / Shock subsystem unautomated: no Fear Test, Fear (N) trait never tested, Shock RollTable orphaned
 - QA-082 — Pinning subsystem unautomated: Pinning Test is description-only, no Pinned state or −20 BS / Half-Action enforcement
 - QA-083 — Insanity / Corruption tracks are inert: no Trauma / Malignancy / Mutation tests on threshold, item types + tables absent
-- QA-087 — Hit-location digit-reversal omits zero-padding: single-digit to-hit rolls (1–9) map to the WRONG location
+- ✅ QA-087 (fixed 2026-06-25) — Hit-location digit-reversal omits zero-padding: single-digit to-hit rolls (1–9) map to the WRONG location
 - QA-090 — Five of the six standard Fate-point uses are unmodeled; the one wired (re-roll) is combat/psychic-only and doesn't gate on…
 - QA-094 — Degrees of Success over-counted by the DH2 `1 +` (and tens-digit method) — displayed DoS, opposed tests, and auto-fire hit…
 - QA-095 — Combat recurring-damage handler (On Fire / Blood Loss) is an orphaned consumer: nothing in the engine ever creates the `Bu…
@@ -400,7 +400,7 @@ real automation/correctness gaps to fix deliberately. P0s = BUG-011 / 012 (fixed
 - QA-104 — No Reload action: clip is never refilled by the engine; `effectiveReload` time is computed/displayed but purely cosmetic
 - QA-128 — Unbraced Heavy weapon −30 BS penalty never applied (no braced state in the engine)
 - QA-131 — Flame weapons require a Ballistic Skill test; the no-BS-test cone is keyed on the non-RT "Spray" quality (dead code)
-- QA-158 — Thrown muscle-powered weapons get no Strength Bonus to damage (only class='melee' does)
+- ✅ QA-158 (fixed 2026-06-25) — Thrown muscle-powered weapons get no Strength Bonus to damage (only class='melee' does)
 
 **data-quality** (3)
 - QA-057 — 27 NPCs have `wounds.max: 0` (no wound track; many are real combatants, not swarms)
@@ -412,8 +412,8 @@ real automation/correctness gaps to fix deliberately. P0s = BUG-011 / 012 (fixed
 - QA-011 ✅ fixed — `survival` skill governed by Perception; RT canon says Intelligence
 
 **traits** (2)
-- QA-077 — Unnatural Speed trait not wired into movement (doubled Agility Bonus ignored)
-- QA-142 — Daemonic TB-doubling silently fails on the canonical "Daemonic (TB X)" trait name (exact-match, not prefix) — 15 NPC entri…
+- ✅ QA-077 (fixed 2026-06-25) — Unnatural Speed trait not wired into movement (doubled Agility Bonus ignored)
+- ✅ QA-142 (fixed 2026-06-25) — Daemonic TB-doubling silently fails on the canonical "Daemonic (TB X)" trait name (exact-match, not prefix) — 15 NPC entri…
 
 **armour** (1)
 - QA-021 ✅ fixed — Force-field Poor-craftsmanship overload chance is 15; canon Table 3-10 says 20
@@ -422,7 +422,7 @@ real automation/correctness gaps to fix deliberately. P0s = BUG-011 / 012 (fixed
 - QA-038 — Push psychic-phenomena logic wrong: Push+doubles diverted to Perils (no such RT rule); Push must ALWAYS roll Phenomena
 
 **acquisition** (1)
-- QA-054 — Commerce skill bonus to Acquisition applied as +10/DoS instead of RT's +2/DoS
+- ✅ QA-054 (fixed 2026-06-25) — Commerce skill bonus to Acquisition applied as +10/DoS instead of RT's +2/DoS
 
 ## SWEEP — talents/traits with described bonuses that aren't wired
 Paranoia / Weapon Master are instances of a systemic gap: many compendium entries

@@ -106,7 +106,7 @@ export async function openAcquisitionDialog({ itemName = '', availability = 'ave
                         const availMod = AVAILABILITY_MODS[availabilityKey] ?? 0;
                         const craftMod = CRAFTSMANSHIP_MODS[craftsmanshipKey] ?? 0;
                         const scaleMod = SCALE_MODS[scaleKey] ?? 0;
-                        const target = pf + availMod + craftMod + scaleMod + (commerce * 10) + extraMod;
+                        const target = pf + availMod + craftMod + scaleMod + (commerce * 2) + extraMod;
 
                         const roll = await new Roll('1d100').roll();
                         const total = roll.total;
@@ -123,7 +123,7 @@ export async function openAcquisitionDialog({ itemName = '', availability = 'ave
                             `Availability ${availMod >= 0 ? '+' : ''}${availMod}`,
                             `Craftsmanship ${craftMod >= 0 ? '+' : ''}${craftMod}`,
                             `Scale ${scaleMod >= 0 ? '+' : ''}${scaleMod}`,
-                            commerce ? `Commerce DoS +${commerce * 10}` : null,
+                            commerce ? `Commerce DoS +${commerce * 2}` : null,
                             extraMod ? `Mod ${extraMod >= 0 ? '+' : ''}${extraMod}` : null,
                         ].filter(Boolean).join(' &nbsp;|&nbsp; ');
 

@@ -176,7 +176,9 @@ export class Hit {
         // per-hit talent bonuses (Crushing Blow, Mighty Shot, …) are not re-applied to
         // the extra roll — a minor undercount, noted for follow-up. (BUG-008.)
         const rfToHit = attackData.rollData.modifiedTarget ?? 0;
-        const rfMeleeBonus = actionItem.isMelee
+        const rfStrengthHit = actionItem.isMelee
+            || (actionItem.isThrown && actionItem.system?.type !== 'Grenade');
+        const rfMeleeBonus = rfStrengthHit
             ? (sourceActor.getCharacteristicFuzzy('Strength')?.bonus ?? 0) : 0;
         let rfPending = rfCount;
         let rfGuard = 20; // safety cap against runaway chains
@@ -218,6 +220,12 @@ export class Hit {
         {
             const talents = sourceActor?.items?.filter((i) => i.type === 'talent') ?? [];
             this.criticalDamageBonus = critDamageBonus(talents, actionItem.isMelee, actionItem.isRanged);
+        }
+
+        // Thrown muscle-powered weapons add Strength Bonus to damage (RT Core p.117),
+        // except grenades/explosives which carry system.type 'Grenade' (QA-158).
+        if (actionItem.isThrown && actionItem.system?.type !== 'Grenade') {
+            this.modifiers['strength bonus'] = sourceActor.getCharacteristicFuzzy('Strength').bonus;
         }
 
         if (actionItem.isMelee) {

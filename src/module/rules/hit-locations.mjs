@@ -1,6 +1,8 @@
 export function getHitLocationForRoll(roll) {
     game.rt.log('getHitLocationForRoll', roll);
-    const rollString = roll.toString().split('');
+    // Percentile rolls are two-digit: a roll of 7 is "07" → reverses to "70", not "7"
+    // (RT Core hit-location step). Zero-pad before reversing; normalise 100 → "00". QA-087.
+    const rollString = String(roll % 100).padStart(2, '0').split('');
     const reverseArray = rollString.reverse();
     const joinArray = reverseArray.join('');
     const reverseInt = parseInt(joinArray);
