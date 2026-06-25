@@ -369,7 +369,7 @@ real automation/correctness gaps to fix deliberately. P0s = BUG-011 / 012 (fixed
 **rules** (18)
 - QA-071 — Combat-action SIDE-EFFECTS unautomated: only the actor's own to-hit modifier is applied
 - QA-078 — Encumbered penalty (−10 movement tests, −1 Agility Bonus) never applied
-- QA-080 — No condition/status-effect layer: Stunned/Prone/Pinned/Blinded/on-fire/Blood-Loss outcomes are produced as chat text only,…
+- 🔨 QA-080 (foundation landed 2026-06-25) — No condition/status-effect layer: Stunned/Prone/Pinned/Blinded/on-fire/Blood-Loss outcomes are produced as chat text only,…
 - QA-081 — Fear / Shock subsystem unautomated: no Fear Test, Fear (N) trait never tested, Shock RollTable orphaned
 - QA-082 — Pinning subsystem unautomated: Pinning Test is description-only, no Pinned state or −20 BS / Half-Action enforcement
 - QA-083 — Insanity / Corruption tracks are inert: no Trauma / Malignancy / Mutation tests on threshold, item types + tables absent

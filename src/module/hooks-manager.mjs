@@ -46,6 +46,7 @@ import { checkAndMigrateWorld } from './rogue-trader-migrations.mjs';
 import { DHTourMain } from './tours/main-tour.mjs';
 import { openAcquisitionDialog } from './rules/acquisition.mjs';
 import { openEndeavoursDialog } from './rules/endeavours.mjs';
+import { RT_CONDITIONS } from './rules/conditions.mjs';
 import { ChargenWizard } from './applications/chargen-wizard.mjs';
 
 import * as documents from './documents/_module.mjs'
@@ -106,6 +107,12 @@ Enable Debug with: game.rt.debug = true
         // Add custom constants for configuration.
         CONFIG.rt = DarkHeresy;
         CONFIG.Combat.initiative = { formula: '@initiative.base + @initiative.bonus', decimals: 0 };
+
+        // RT 1e condition layer (QA-080): replace the generic Foundry status effects with
+        // the RT condition set so they are clickable on the token HUD and tracked on
+        // `actor.statuses` for the combat engine to read.
+        CONFIG.statusEffects = RT_CONDITIONS;
+        CONFIG.specialStatusEffects.DEFEATED = 'unconscious';
 
         // Define custom Document classes
         CONFIG.Actor.documentClass = RogueTraderActorProxy;
