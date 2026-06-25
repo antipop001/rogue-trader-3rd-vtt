@@ -369,14 +369,14 @@ real automation/correctness gaps to fix deliberately. P0s = BUG-011 / 012 (fixed
 **rules** (18)
 - QA-071 — Combat-action SIDE-EFFECTS unautomated: only the actor's own to-hit modifier is applied
 - QA-078 — Encumbered penalty (−10 movement tests, −1 Agility Bonus) never applied
-- 🔨 QA-080 (foundation landed 2026-06-25) — No condition/status-effect layer: Stunned/Prone/Pinned/Blinded/on-fire/Blood-Loss outcomes are produced as chat text only,…
+- 🔨 QA-080 (inc.1-4 landed 2026-06-25) — Condition/status-effect layer. **inc.1** registered RT conditions in `CONFIG.statusEffects` + to-hit read. **inc.2** outcomes now attach `[Apply: X]` buttons (Knock Down→Prone, Stun→Stunned, Flame→On Fire) that toggle the status on the target (GM/owner-clicked, like Assign Damage). **inc.3** recurring On Fire/Blood Loss handler re-keyed onto `actor.statuses` (was the orphaned legacy `Burning`/`Bleeding` names — see QA-095); On Fire self-clears on a successful WP test. **inc.4** Stunned/Helpless/Unconscious lock out Dodge/Parry Reactions (`reactionsLocked`). Remaining: auto-apply Concussive→Stunned + Blood-Loss-from-crit (need the damage-card path), Pinned enforcement (QA-082).
 - QA-081 — Fear / Shock subsystem unautomated: no Fear Test, Fear (N) trait never tested, Shock RollTable orphaned
 - QA-082 — Pinning subsystem unautomated: Pinning Test is description-only, no Pinned state or −20 BS / Half-Action enforcement
 - QA-083 — Insanity / Corruption tracks are inert: no Trauma / Malignancy / Mutation tests on threshold, item types + tables absent
 - ✅ QA-087 (fixed 2026-06-25) — Hit-location digit-reversal omits zero-padding: single-digit to-hit rolls (1–9) map to the WRONG location
 - QA-090 — Five of the six standard Fate-point uses are unmodeled; the one wired (re-roll) is combat/psychic-only and doesn't gate on…
 - QA-094 — Degrees of Success over-counted by the DH2 `1 +` (and tens-digit method) — displayed DoS, opposed tests, and auto-fire hit…
-- QA-095 — Combat recurring-damage handler (On Fire / Blood Loss) is an orphaned consumer: nothing in the engine ever creates the `Bu…
+- ✅ QA-095 (fixed 2026-06-25, QA-080 inc.3) — Combat recurring-damage handler (On Fire / Blood Loss) was an orphaned consumer keyed on legacy `Burning`/`Bleeding` ActiveEffect names nothing created; re-keyed onto the `actor.statuses` condition layer (`onFire`/`bloodLoss`), with On Fire self-extinguishing on a successful WP test.
 - QA-101 — Force-field protection roll is a standalone manual sheet action, never integrated into damage resolution; overloaded field…
 - QA-111 — Cover is entirely unmodelled — no cover-AP damage interception, no cover degradation
 - QA-113 — Dodge/Parry Reactions are not part of attack resolution — a successful Dodge/Parry never negates the incoming hit

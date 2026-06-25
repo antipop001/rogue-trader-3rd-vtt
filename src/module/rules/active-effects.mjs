@@ -21,6 +21,11 @@ export async function handleOnFire(actor) {
     const damageRoll = new Roll('1d10', {});
     await damageRoll.evaluate();
     context.damage = damageRoll.total;
+    // A successful Willpower test beats out the flames (RT Core p.260). Clear the On Fire
+    // status so the recurring handler stops firing next Round. (QA-080 inc.3.)
+    if (context.success && actor.statuses?.has('onFire') && actor.isOwner) {
+        await actor.toggleStatusEffect('onFire', { active: false });
+    }
     await sendActiveEffectMessage(context);
 }
 

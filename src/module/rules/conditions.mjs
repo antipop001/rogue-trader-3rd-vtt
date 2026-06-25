@@ -39,3 +39,29 @@ export function conditionToHitModifier(statuses, isMelee = false) {
     if (s.has('prone')) mod += isMelee ? 10 : -10;
     return mod;
 }
+
+/** Conditions that forbid spending Reactions (Dodge/Parry) entirely (RT Core p.244, 247). */
+const REACTION_LOCKING = new Set(['stunned', 'helpless', 'unconscious']);
+
+/**
+ * Whether a creature in these conditions may take Reactions. A Stunned, Helpless, or
+ * Unconscious creature "can take no Actions or Reactions" — so Dodge/Parry are unavailable
+ * regardless of the Reaction budget. (QA-080 increment 4.)
+ * @param {Iterable<string>|Set<string>} statuses  the actor's active status ids
+ * @returns {boolean} true if Reactions are locked out
+ */
+export function reactionsLocked(statuses) {
+    const s = statuses instanceof Set ? statuses : new Set(Array.from(statuses ?? []));
+    for (const id of REACTION_LOCKING) if (s.has(id)) return true;
+    return false;
+}
+
+/**
+ * Look up a condition's display metadata ({id, name, img}) by id — used to build the
+ * "Apply: <name>" buttons attached to a combat outcome. Returns null for unknown ids.
+ * @param {string} id  a condition id (e.g. 'prone', 'stunned', 'onFire')
+ * @returns {{id: string, name: string, img: string}|null}
+ */
+export function conditionMeta(id) {
+    return RT_CONDITIONS.find((c) => c.id === id) ?? null;
+}

@@ -29,15 +29,20 @@ export class CombatActionManager {
         game.rt.log('processCombatActiveEffects', currentCombatant);
 
         if (currentCombatant) {
-            // Handle Actor Effects
-            if(currentCombatant.actor && currentCombatant.actor.effects) {
-                for(const effect of currentCombatant.actor.effects.contents) {
-                    // On Fire!
-                    if(effect.name === 'Burning') {
-                        await handleOnFire(currentCombatant.actor);
-                    } else if (effect.name === 'Bleeding') {
-                        await handleBleeding(currentCombatant.actor);
-                    }
+            // Recurring-damage conditions (QA-080 inc.3 / QA-095). Key on the RT condition
+            // layer's status ids (`actor.statuses`, set by the token HUD or the "Apply: On
+            // Fire" outcome button) rather than the legacy 'Burning'/'Bleeding' ActiveEffect
+            // names that nothing in the engine ever created. Legacy names kept as a fallback
+            // so any hand-made effects on existing actors still fire.
+            const actor = currentCombatant.actor;
+            if (actor) {
+                const statuses = actor.statuses ?? new Set();
+                const hasLegacy = (name) => actor.effects?.some((e) => e.name === name);
+                if (statuses.has('onFire') || hasLegacy('Burning')) {
+                    await handleOnFire(actor);
+                }
+                if (statuses.has('bloodLoss') || hasLegacy('Bleeding')) {
+                    await handleBleeding(actor);
                 }
             }
         }

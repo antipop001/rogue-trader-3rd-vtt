@@ -14,6 +14,7 @@ import { prepareForceFieldRoll } from '../prompts/force-field-prompt.mjs';
 import { DHBasicActionManager } from '../actions/basic-action-manager.mjs';
 import { getDegree, roll1d100, initiativeCharBonus, woundsMax, reactionBudget, canSpendReaction, unnaturalCharacteristicMultipliers, rapidReloadTime } from '../rolls/roll-helpers.mjs';
 import { SYSTEM_ID } from '../hooks-manager.mjs';
+import { reactionsLocked } from '../rules/conditions.mjs';
 import { RogueTraderSettings } from '../rogue-trader-settings.mjs';
 
 const BASIC_SKILLS = new Set([
@@ -167,6 +168,12 @@ export class RogueTraderAcolyte extends RogueTraderBaseActor {
         if ((skillName === 'dodge' || skillName === 'parry')
             && game.combat?.started
             && game.combat.combatants?.some((c) => c.actorId === this.id)) {
+            // Stunned / Helpless / Unconscious creatures can take no Reactions at all,
+            // regardless of the budget (RT Core p.244, 247). (QA-080 increment 4.)
+            if (reactionsLocked(this.statuses)) {
+                ui.notifications.warn(`This character cannot take Reactions while Stunned, Helpless, or Unconscious (RT Core p.244).`);
+                return;
+            }
             const rc = this.system.combat?.reactions;
             if (rc?.[skillName]) {
                 if (!canSpendReaction(rc, skillName)) {

@@ -21,6 +21,7 @@ export class BasicActionManager {
             $html.find('.roll-control__fate-reroll').click(async (ev) => await this._fateReroll(ev));
             $html.find('.roll-control__assign-damage').click(async (ev) => await this._assignDamage(ev));
             $html.find('.roll-control__apply-damage').click(async (ev) => await this._applyDamage(ev));
+            $html.find('.roll-control__apply-condition').click(async (ev) => await this._applyCondition(ev));
             $html.find('.roll-control__roll-opposed').click(async (ev) => await this._rollOpposed(ev));
         });
 
@@ -175,6 +176,41 @@ export class BasicActionManager {
 
         const assignData = new AssignDamageData(targetActor, hitData);
         await prepareAssignDamageRoll(assignData);
+    }
+
+    /**
+     * Apply a combat-outcome condition (Prone / Stunned / On Fire …) to the target token
+     * actor. Button-driven like Assign Damage so it runs on a client with write permission
+     * to the target (GM or owner) — the attacker's client cannot mutate another actor.
+     * (QA-080 increment 2.)
+     */
+    async _applyCondition(event) {
+        event.preventDefault();
+        const div = $(event.currentTarget);
+        const conditionId = div.data('condition-id');
+        const targetUuid = div.data('target-uuid');
+        if (!conditionId) return;
+
+        let targetActor;
+        if (targetUuid) {
+            targetActor = await fromUuid(targetUuid);
+            if (targetActor?.actor !== undefined) targetActor = targetActor.actor;
+        }
+        if (!targetActor) {
+            const targeted = game.user.targets;
+            if (targeted && targeted.size > 0) targetActor = targeted.values().next().value.actor;
+        }
+        if (!targetActor) {
+            ui.notifications.warn(`Cannot determine target actor to apply the condition.`);
+            return;
+        }
+        if (!targetActor.isOwner) {
+            ui.notifications.warn(`Only the GM or the token's owner can apply a condition to ${targetActor.name}.`);
+            return;
+        }
+        // toggleStatusEffect (Foundry v12+) flips the status; force it on.
+        await targetActor.toggleStatusEffect(conditionId, { active: true });
+        ui.notifications.info(`Applied ${conditionId} to ${targetActor.name}.`);
     }
 
     async _applyDamage(event) {

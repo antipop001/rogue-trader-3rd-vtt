@@ -1,7 +1,7 @@
 // QA-080 condition layer — to-hit modifier helper.
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { conditionToHitModifier, RT_CONDITIONS } from '../../src/module/rules/conditions.mjs';
+import { conditionToHitModifier, reactionsLocked, conditionMeta, RT_CONDITIONS } from '../../src/module/rules/conditions.mjs';
 
 test('QA-080: RT_CONDITIONS registers the expected condition ids', () => {
     const ids = RT_CONDITIONS.map((c) => c.id);
@@ -22,4 +22,21 @@ test('QA-080: conditionToHitModifier applies the RT to-hit steps', () => {
     assert.equal(conditionToHitModifier(['stunned', 'prone'], true), 30); // 20 + 10
     assert.equal(conditionToHitModifier(new Set(['stunned'])), 20);      // Set input
     assert.equal(conditionToHitModifier(null), 0);                       // safe
+});
+
+test('QA-080 inc.4: reactionsLocked blocks Dodge/Parry for Stunned/Helpless/Unconscious', () => {
+    assert.equal(reactionsLocked([]), false);
+    assert.equal(reactionsLocked(['prone']), false);          // Prone doesn't lock Reactions
+    assert.equal(reactionsLocked(['stunned']), true);
+    assert.equal(reactionsLocked(['helpless']), true);
+    assert.equal(reactionsLocked(['unconscious']), true);
+    assert.equal(reactionsLocked(new Set(['blinded', 'stunned'])), true);
+    assert.equal(reactionsLocked(null), false);               // safe
+});
+
+test('QA-080 inc.2: conditionMeta resolves outcome condition ids to button metadata', () => {
+    assert.deepEqual(conditionMeta('prone'), { id: 'prone', name: 'Prone', img: 'icons/svg/falling.svg' });
+    assert.equal(conditionMeta('stunned').name, 'Stunned');
+    assert.equal(conditionMeta('onFire').name, 'On Fire');
+    assert.equal(conditionMeta('nonsense'), null);            // unknown id
 });

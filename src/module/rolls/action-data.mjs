@@ -3,6 +3,7 @@ import { Hit, PsychicDamageData, scatterDirection, WeaponDamageData } from './da
 import { attackTalentExtraHits, getDegree, getOpposedDegrees, roll1d100, sendActionDataToChat, uuid } from './roll-helpers.mjs';
 import { refundAmmo, useAmmo } from '../rules/ammo.mjs';
 import { DHBasicActionManager } from '../actions/basic-action-manager.mjs';
+import { conditionMeta } from '../rules/conditions.mjs';
 import { SYSTEM_ID } from '../hooks-manager.mjs';
 import { RogueTraderSettings } from '../rogue-trader-settings.mjs';
 
@@ -113,9 +114,9 @@ export class ActionData {
                 const opposedDegrees = getOpposedDegrees(this.rollData.dos, this.rollData.dof, this.rollData.opposedDos, this.rollData.opposedDof);
                 if(opposedDegrees >= 2) {
                     const strengthBonus = this.rollData.sourceActor?.characteristics?.strength?.bonus ?? 0;
-                    this.addEffect('Knock Down', `The target is knocked Prone and must use a Stand action in his turn to regain his feet! The impact deals [[1d5-3+${strengthBonus}]] (min 0) damage and one level of fatigue to the target!`);
+                    this.addEffect('Knock Down', `The target is knocked Prone and must use a Stand action in his turn to regain his feet! The impact deals [[1d5-3+${strengthBonus}]] (min 0) damage and one level of fatigue to the target!`, ['prone']);
                 } else if (opposedDegrees > 0) {
-                    this.addEffect('Knock Down', `The target is knocked Prone and must use a Stand action in his turn to regain his feet!`);
+                    this.addEffect('Knock Down', `The target is knocked Prone and must use a Stand action in his turn to regain his feet!`, ['prone']);
                 } else if (opposedDegrees > -2) {
                     this.addEffect('Knock Down', `The character fails to knock down the target!`);
                 } else {
@@ -164,7 +165,7 @@ export class ActionData {
                         const defense = headArmour.total + headArmour.toughnessBonus;
                         if (stunRoll.total >= defense) {
                             this.rollData.success = true;
-                            this.addEffect('Stun Attack', `Stun roll of ${stunRoll.total} vs ${defense}. Target is stunned for ${stunRoll.total - defense} rounds and gains 1 level of fatigue.`);
+                            this.addEffect('Stun Attack', `Stun roll of ${stunRoll.total} vs ${defense}. Target is stunned for ${stunRoll.total - defense} rounds and gains 1 level of fatigue.`, ['stunned']);
                         } else {
                             this.rollData.success = false;
                             this.addEffect('Stun Attack', `Stun roll of ${stunRoll.total} vs ${defense}. The attack fails to stun the target!`);
@@ -183,7 +184,7 @@ export class ActionData {
                     this.rollData.success = true;
                     this.rollData.dos = 1;
                     this.rollData.dof = 0;
-                    this.addEffect('Flame', 'No BS test — each creature in the 30° cone must pass an Agility Test or be hit (in the body).')
+                    this.addEffect('Flame', 'No BS test — each creature in the 30° cone must pass an Agility Test or be hit (in the body). A struck target is set On Fire (RT Core p.142).', ['onFire'])
                 }
 
                 if (actionItem.isMelee) {
@@ -577,10 +578,16 @@ export class ActionData {
         }
     }
 
-    addEffect(name, effect) {
+    addEffect(name, effect, conditions = null) {
         this.effectOutput.push({
             name: name,
-            effect: effect
+            effect: effect,
+            // QA-080 inc.2: optional condition ids this outcome lets the GM apply to the
+            // target (rendered as "Apply: <name>" buttons on the chat card). Resolved to
+            // {id, name} metadata here so the template stays logic-free.
+            conditions: (conditions ?? [])
+                .map((id) => conditionMeta(id))
+                .filter(Boolean),
         })
     }
 
