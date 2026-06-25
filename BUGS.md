@@ -359,9 +359,10 @@ engine/roll fixes. Fix these directly, or in a dedicated follow-up loop.
 
 ## QA-audit P1 backlog — missing automation / correctness (promoted 2026-06-24)
 
-42 verified P1 findings from the QA-audit loop (28 open, 14 fixed —
-3 auto + QA-054/077/087/142/158 + QA-038/099/118/128 + QA-131/063).
-QA-153 + ship cluster (042-045/147/153/154) deferred to a focused ship pass. Full detail (file:line + canon) per entry in `QA_FINDINGS.md`. These are
+42 verified P1 findings from the QA-audit loop (25 open, 17 fixed —
+3 auto + QA-054/077/087/142/158 + QA-038/099/118/128 + QA-131/063 + QA-124/100/160).
+QA-153 + ship cluster (042-045/147/153/154) deferred to a focused ship pass.
+QA-100 auto-assign/cooldown-state + QA-160 AE-addressability are noted follow-ups. Full detail (file:line + canon) per entry in `QA_FINDINGS.md`. These are
 real automation/correctness gaps to fix deliberately. P0s = BUG-011 / 012 (fixed) /
 013 above. The 114 P2/P3 findings stay in `QA_FINDINGS.md`.
 
@@ -382,8 +383,8 @@ real automation/correctness gaps to fix deliberately. P0s = BUG-011 / 012 (fixed
 - QA-115 — Vehicle damage is unwired: facing Armour + Structural Integrity ignored; the personal-creature path reads a non-existent `…
 - ✅ QA-118 (fixed 2026-06-25) — Surprise / Unaware-target +30 to-hit bonus (and the Surprise Round) is unwired
 - QA-121 — Stun action bypasses the WS-to-hit gate and uses a static (DH2) defence instead of the defender's 1d10 roll
-- QA-124 — Weapon Training proficiency penalty (−20 WS/BS for untrained weapons) is never enforced
-- QA-160 — "Gain an additional Reaction" effects (Defensive Stance, Hyperactive Nymune Organ) are unexpressible — only Step Aside / W…
+- ✅ QA-124 (fixed 2026-06-25) — Weapon Training proficiency penalty (−20 WS/BS for untrained weapons) is never enforced
+- ✅ QA-160 (fixed 2026-06-25) — "Gain an additional Reaction" effects (Defensive Stance, Hyperactive Nymune Organ) are unexpressible — only Step Aside / W…
 
 **ship** (7)
 - QA-042 — Voidship hull-damage model is homebrew (fixed 1–4 by penetration tier) instead of RT's Damage − Armour → Hull Integrity
@@ -397,7 +398,7 @@ real automation/correctness gaps to fix deliberately. P0s = BUG-011 / 012 (fixed
 **weapons** (7)
 - ✅ QA-063 (fixed 2026-06-25) — Damage-class/quality-changing ammo unwired (Tempest Bolt Shells, Acid Shells)
 - ✅ QA-099 (fixed 2026-06-25) — Overheats weapons still Jam; canon says an Overheats weapon never jams (and any would-be jam becomes an overheat)
-- QA-100 — Overheat result deals no self-damage to the wielder, frames the drop as forced (canon: it's a choice), and skips the coold…
+- ✅ QA-100 (fixed 2026-06-25) — Overheat result deals no self-damage to the wielder, frames the drop as forced (canon: it's a choice), and skips the coold…
 - QA-104 — No Reload action: clip is never refilled by the engine; `effectiveReload` time is computed/displayed but purely cosmetic
 - ✅ QA-128 (fixed 2026-06-25) — Unbraced Heavy weapon −30 BS penalty never applied (no braced state in the engine)
 - ✅ QA-131 (fixed 2026-06-25) — Flame weapons require a Ballistic Skill test; the no-BS-test cone is keyed on the non-RT "Spray" quality (dead code)

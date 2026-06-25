@@ -10,7 +10,7 @@ import { reactionBudget } from '../../src/module/rolls/roll-helpers.mjs';
 
 test('no talents → one base Reaction, one Dodge, one Parry', () => {
     const b = reactionBudget([]);
-    assert.deepEqual(b, { base: 1, dodge: 1, parry: 1 });
+    assert.deepEqual(b, { base: 1, modifier: 0, dodge: 1, parry: 1 });
 });
 
 test('Step Aside grants a second Dodge only', () => {
@@ -39,6 +39,6 @@ test('match is case-insensitive and ignores unrelated talents', () => {
 });
 
 test('null / non-array input is safe', () => {
-    assert.deepEqual(reactionBudget(null), { base: 1, dodge: 1, parry: 1 });
-    assert.deepEqual(reactionBudget(undefined), { base: 1, dodge: 1, parry: 1 });
+    assert.deepEqual(reactionBudget(null), { base: 1, modifier: 0, dodge: 1, parry: 1 });
+    assert.deepEqual(reactionBudget(undefined), { base: 1, modifier: 0, dodge: 1, parry: 1 });
 });

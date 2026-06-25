@@ -433,8 +433,15 @@ export class RogueTraderAcolyte extends RogueTraderBaseActor {
         const rc = this.system.combat?.reactions;
         if (rc) {
             rc.base = reactions.base;
-            if (rc.dodge) rc.dodge.max = reactions.dodge;
-            if (rc.parry) rc.parry.max = reactions.parry;
+            // Additive +Reaction modifier (talent-derived: Hyperactive Nymune Organ). Baked
+            // into BOTH pools so the extra Reaction is usable as either Dodge or Parry; the
+            // shared total is de-double-counted in canSpendReaction. Assigned (not summed)
+            // from the deterministic reactionBudget value so it stays idempotent across the
+            // repeated derived-data passes. (QA-160. AE-addressability on this field is a
+            // follow-up — the derived pass would need to isolate the AE contribution.)
+            rc.modifier = reactions.modifier;
+            if (rc.dodge) rc.dodge.max = reactions.dodge + reactions.modifier;
+            if (rc.parry) rc.parry.max = reactions.parry + reactions.modifier;
         }
     }
 

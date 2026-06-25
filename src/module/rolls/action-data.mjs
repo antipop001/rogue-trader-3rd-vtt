@@ -593,9 +593,25 @@ export class ActionData {
                 case 'blademaster':
                     this.addEffect('Blademaster', `Original roll of ${this.rollData.previousRolls[0].total} rerolled.`);
                     break;
-                case 'overheat':
-                    this.addEffect('Overheats', `The weapon overheats forcing it to be dropped on the ground!`);
+                case 'overheat': {
+                    // RT Core p.116: the wielder suffers energy damage equal to the weapon's
+                    // damage at Penetration 0 to an arm, OR may drop the weapon (a Free
+                    // Action) to avoid it; the weapon then cools down and cannot be fired
+                    // until the round after next. (QA-100. Auto-assigning the arm hit and the
+                    // per-weapon cooldown round-state are deferred — they need the round-state
+                    // machinery; here we roll the damage number and state the choice.)
+                    const overheatFormula = this.rollData.weapon?.system?.damage;
+                    let overheatDmg = '';
+                    if (overheatFormula) {
+                        try {
+                            const r = new Roll(String(overheatFormula), {});
+                            await r.evaluate();
+                            overheatDmg = ` (${r.total} Energy damage, Pen 0, to an arm)`;
+                        } catch (e) { /* unparseable formula — describe without a number */ }
+                    }
+                    this.addEffect('Overheats', `The weapon overheats! The wielder suffers energy damage equal to the weapon's damage at Penetration 0 to an arm${overheatDmg}, or may drop the weapon (a Free Action) to avoid the damage. The weapon must cool down and cannot be fired again until the round after next.`);
                     break;
+                }
                 case 'jam':
                     this.addEffect('Jam', `The weapon jams!`);
                     break;

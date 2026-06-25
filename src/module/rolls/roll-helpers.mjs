@@ -221,8 +221,13 @@ export function reactionBudget(talents) {
     const base = 1;
     const has = (name) => Array.isArray(talents)
         && talents.some((t) => t?.name && String(t.name).toLowerCase() === name);
+    // Generic "+1 Reaction per Round" sources (usable as EITHER Dodge or Parry) accumulate
+    // in `modifier`; per-type sources bump only their own pool. (QA-160.)
+    let modifier = 0;
+    if (has('hyperactive nymune organ')) modifier += 1;
     return {
         base,
+        modifier,
         dodge: base + (has('step aside') ? 1 : 0),
         parry: base + (has('wall of steel') ? 1 : 0),
     };
@@ -252,7 +257,10 @@ export function canSpendReaction(reactions, type) {
     const pMax = reactions.parry?.max ?? base;
     const dVal = reactions.dodge?.value ?? 0;
     const pVal = reactions.parry?.value ?? 0;
-    const totalMax = dMax + pMax - base;           // shared base ⇒ counted once
+    const mod = reactions.modifier ?? 0;
+    // dMax/pMax each bake in `mod` (so the extra is usable as either type), so subtract it
+    // once here — a "+1 Reaction" must raise the SHARED total by 1, not 2. (QA-160.)
+    const totalMax = dMax + pMax - base - mod;     // shared base + modifier ⇒ counted once
     if (dVal + pVal >= totalMax) return false;      // overall per-Round budget spent
     const slotVal = type === 'dodge' ? dVal : pVal;
     const slotMax = type === 'dodge' ? dMax : pMax;
@@ -410,6 +418,35 @@ export function daemonicToughnessMultiplier(traits) {
  */
 export function hasUnnaturalSpeed(traits) {
     return Array.isArray(traits) && traits.some((t) => t?.name && /^\s*unnatural speed\b/i.test(t.name));
+}
+
+/**
+ * RT Core p.142 Weapon Training — using a weapon without the matching Weapon Training
+ * talent is a −20 WS/BS penalty. Returns −20 (untrained) or 0. Honours the "(Universal)"
+ * wildcard and the Flame/Exotic/Thrown groups; permissive (no penalty on unknown class).
+ * Apply to player characters only — NPCs are assumed proficient with their listed weapons.
+ * (QA-124.)
+ * @param {Array<{name?: string}>} talents
+ * @param {string} weaponClass  Pistol/Basic/Heavy/Melee/Thrown
+ * @param {string} weaponType   Bolt/Las/SP/.../Flame/Exotic/Primitive
+ * @returns {number} -20 or 0
+ */
+export function weaponUntrainedPenalty(talents, weaponClass, weaponType) {
+    const names = (talents || []).map((t) => String(t?.name || '').toLowerCase());
+    const cls = String(weaponClass || '').toLowerCase();
+    const type = String(weaponType || '').toLowerCase();
+    if (!cls) return 0;
+    const has = (pred) => names.some(pred);
+    if (cls === 'thrown') {
+        return has((n) => n.startsWith('thrown weapon training')) ? 0 : -20;
+    }
+    if (type === 'exotic') {
+        return has((n) => n.startsWith('exotic weapon training') || n.startsWith('xenos weapon training')) ? 0 : -20;
+    }
+    const group = `${cls} weapon training`;
+    const trained = has((n) => n.startsWith(group) && (n.includes(`(${type})`) || n.includes('(universal)')))
+        || (type === 'flame' && has((n) => n.startsWith('flame weapon training')));
+    return trained ? 0 : -20;
 }
 
 /**

@@ -113,6 +113,7 @@
         "combat": {
           "reactions": {
             "base": 1,
+            "modifier": 0,
             "dodge": {
               "max": 1,
               "value": 0

@@ -8,7 +8,7 @@ import { calculateWeaponModifiersAttackBonuses, updateWeaponModifiers } from '..
 import { hitDropdown } from '../rules/hit-locations.mjs';
 import { DarkHeresy } from '../rules/config.mjs';
 import { shipFacings } from '../rules/ship-facings.mjs';
-import { weaponMasterBonus } from './roll-helpers.mjs';
+import { weaponMasterBonus, weaponUntrainedPenalty } from './roll-helpers.mjs';
 
 export class RollData {
     difficulties = rollDifficulties();
@@ -221,6 +221,13 @@ export class WeaponRollData extends RollData {
         // per-attack toggle (the Brace Heavy Weapon action / prompt checkbox). (QA-128.)
         this.isHeavyWeapon = this.weapon?.system?.class === 'Heavy';
         this.modifiers['unbraced'] = (this.isHeavyWeapon && !this.braced) ? -30 : 0;
+        // Weapon Training: −20 WS/BS for a weapon the character isn't trained with (RT
+        // Core p.142). PCs only — NPCs are assumed proficient with their listed weapons.
+        // (QA-124.)
+        if (this.sourceActor?.type === 'acolyte') {
+            const talents = this.sourceActor?.items?.filter((i) => i.type === 'talent') ?? [];
+            this.modifiers['untrained'] = weaponUntrainedPenalty(talents, this.weapon?.system?.class, this.weapon?.system?.type);
+        }
         this.canAim = this.action !== 'All Out Attack';
         this.isLasWeapon = this.weapon.system.type === 'Las';
         // Flame weapons auto-hit the cone with no BS test (RT Core p.142). RT 1e has no
