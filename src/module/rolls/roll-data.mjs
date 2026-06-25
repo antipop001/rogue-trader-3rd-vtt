@@ -175,6 +175,8 @@ export class WeaponRollData extends RollData {
     weapons = [];
     weapon;
     weaponSelect = false;
+    targetSurprised = false;   // QA-118 — +30 WS/BS vs a Surprised/Unaware target
+    braced = false;            // QA-128 — Heavy weapons take -30 unless braced
 
     weaponModifications = [];
     isCalledShot = false;
@@ -212,6 +214,13 @@ export class WeaponRollData extends RollData {
         if(this.weapon.system.attackBonus) {
             this.modifiers['weapon'] = this.weapon.system.attackBonus;
         }
+        // Surprised / Unaware target: +30 WS/BS (RT Core p.235/246). Manual prompt toggle
+        // until the condition layer (QA-080) can read it off the target. (QA-118.)
+        this.modifiers['surprise'] = this.targetSurprised ? 30 : 0;
+        // Heavy weapons fired unbraced take -30 to hit (RT Core p.116). `braced` is a
+        // per-attack toggle (the Brace Heavy Weapon action / prompt checkbox). (QA-128.)
+        this.isHeavyWeapon = this.weapon?.system?.class === 'Heavy';
+        this.modifiers['unbraced'] = (this.isHeavyWeapon && !this.braced) ? -30 : 0;
         this.canAim = this.action !== 'All Out Attack';
         this.isLasWeapon = this.weapon.system.type === 'Las';
         this.isSpray = this.hasAttackSpecial('Spray');

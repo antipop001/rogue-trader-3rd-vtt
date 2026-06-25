@@ -55,30 +55,29 @@ export class ActionData {
         // Unfettered (pr === rating): trigger on doubles.
         // Push (pr > rating): trigger on any non-doubles.
         let triggerPhenomena = false;
-        let triggerPerils = false;
         let label = '';
         if (pr > rating) {
-            if (!isDoubles) {
-                triggerPhenomena = true;
-                label = 'Push';
-            }
-            // Push + doubles is also a Perils trigger per RT corebook p.181.
-            if (isDoubles) {
-                triggerPerils = true;
-                label = 'Push doubles';
-            }
-        } else if (isDoubles) {
+            // Push (RT Core p.157 Table 6-1): ALWAYS rolls Psychic Phenomena, doubles or
+            // not. There is no "Push + doubles → Perils" rule — that was a DH2 leftover.
+            // Perils is reached only via a 75+ Phenomena result, escalated below. (QA-038.)
             triggerPhenomena = true;
+            label = 'Push';
+        } else if (isDoubles) {
+            // Unfettered (pr === rating): Phenomena on doubles.
+            triggerPhenomena = true;
+            label = 'Unfettered';
         }
 
-        if (triggerPerils) {
-            const perils = await drawFromTable('Perils of the Warp');
-            const text = perils ? `The Perils of the Warp claim the psyker! ${perils}` : 'Perils of the Warp triggered — roll on the table manually.';
-            this.addEffect('Perils of the Warp', text + (label ? ` (${label})` : ''));
-        } else if (triggerPhenomena) {
+        if (triggerPhenomena) {
             const phenom = await drawFromTable('Psychic Phenomena');
             const text = phenom ? `The warp convulses with energy! ${phenom}` : 'The warp convulses with energy! — roll Psychic Phenomena manually.';
             this.addEffect('Psychic Phenomena', text + (label ? ` (${label})` : ''));
+            // A 75+ Psychic Phenomena result escalates to Perils of the Warp (RT Core
+            // p.157 — the 75+ row says "roll on Table 6-3 instead").
+            if (phenom && /perils of the warp/i.test(phenom)) {
+                const perils = await drawFromTable('Perils of the Warp');
+                if (perils) this.addEffect('Perils of the Warp', `The Perils of the Warp claim the psyker! ${perils}`);
+            }
         }
     }
 
@@ -203,9 +202,7 @@ export class ActionData {
 
                     const rollTotal = this.rollData.roll.total;
                     const isBestRanged = actionItem.isRanged && actionItem.system.craftsmanship === 'Best';
-                    if (rollTotal > 91 && this.rollData.hasAttackSpecial('Overheats') && !isBestRanged) {
-                        this.effects.push('overheat');
-                    }
+                    const isOverheats = this.rollData.hasAttackSpecial('Overheats');
                     let jamThreshold = 96;
                     if (isBestRanged) {
                         jamThreshold = 101;
@@ -214,7 +211,14 @@ export class ActionData {
                     } else if (this.rollData.hasAttackSpecial('Unreliable')) {
                         jamThreshold = 91;
                     }
-                    if (rollTotal >= jamThreshold) {
+                    if (isOverheats) {
+                        // RT Core p.116: an Overheats weapon NEVER jams — it overheats at
+                        // 91+, and any roll that WOULD jam overheats instead. Best-craft
+                        // ranged suppresses it. (QA-098/099.)
+                        if (!isBestRanged && (rollTotal >= 91 || rollTotal >= jamThreshold)) {
+                            this.effects.push('overheat');
+                        }
+                    } else if (rollTotal >= jamThreshold) {
                         this.effects.push('jam');
                         this.rollData.success = false;
                     }

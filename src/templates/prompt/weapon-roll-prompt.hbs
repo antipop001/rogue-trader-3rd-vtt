@@ -123,6 +123,20 @@
                         </span>
                     </div>
                 {{/if}}
+                <div class="rt-field__wrapper">
+                    <span class="rt-field__span">Target Surprised / Unaware (+30)</span>
+                    <span class="rt-field__input check">
+                        <input data-dtype="Boolean" type="checkbox" name="targetSurprised" {{checked this.targetSurprised}} />
+                    </span>
+                </div>
+                {{#if this.isHeavyWeapon}}
+                    <div class="rt-field__wrapper">
+                        <span class="rt-field__span">Braced (Heavy; −30 if unbraced)</span>
+                        <span class="rt-field__input check">
+                            <input data-dtype="Boolean" type="checkbox" name="braced" {{checked this.braced}} />
+                        </span>
+                    </div>
+                {{/if}}
                 {{#if this.modifiers.attack}}
                     <div class="rt-field__wrapper">
                         <span class="rt-field__span">Attack Modifier</span>
