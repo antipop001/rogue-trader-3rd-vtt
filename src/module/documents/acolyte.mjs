@@ -24,6 +24,9 @@ const BASIC_SKILLS = new Set([
     'scrutiny', 'search', 'silentMove', 'swim',
 ]);
 
+// Movement-related skills that take the −10 Encumbered penalty (RT Core p.249). (QA-078.)
+const MOVEMENT_SKILLS = new Set(['dodge', 'acrobatics', 'climb', 'swim', 'contortionist']);
+
 export class RogueTraderAcolyte extends RogueTraderBaseActor {
 
     get backpack() {
@@ -193,6 +196,10 @@ export class RogueTraderAcolyte extends RogueTraderBaseActor {
         // RT 1e: any level of Fatigue imposes -10 to all Tests (BUG-004).
         if (this.system.fatigue?.value >= 1) {
             rollData.modifiers['Fatigued'] = -10;
+        }
+        // Encumbered: -10 to movement-related tests (RT Core p.249). (QA-078.)
+        if (this.encumbrance?.encumbered && MOVEMENT_SKILLS.has(skillName)) {
+            rollData.modifiers['Encumbered'] = -10;
         }
         // Surface talents whose `flags.rt.conditionalBonuses` apply to this
         // skill or its driving characteristic, so the prompt can offer them
@@ -409,10 +416,13 @@ export class RogueTraderAcolyte extends RogueTraderBaseActor {
         // twice the raw Agility Bonus (×3 with Unnatural Agility) — handled here by name
         // since an AE can't read AgB; do NOT also give that talent an AE. ENGINE-INIT-EXTRA.
         const initChar = this.characteristics[this.initiative.characteristic];
+        // Encumbered: reduce the Agility Bonus by 1 for Initiative (RT Core p.249). Applied
+        // to the AgB INPUT so Lightning Reflexes doubles the already-reduced bonus. (QA-078.)
+        const initEncPenalty = this.encumbrance?.encumbered ? 1 : 0;
         this.initiative.bonus =
             initiativeCharBonus(
-                Math.floor(initChar.total / 10),
-                initChar.bonus,
+                Math.max(0, Math.floor(initChar.total / 10) - initEncPenalty),
+                Math.max(0, initChar.bonus - initEncPenalty),
                 this.hasTalent('Lightning Reflexes'),
                 (initChar.unnatural ?? 0) > 0,
             )

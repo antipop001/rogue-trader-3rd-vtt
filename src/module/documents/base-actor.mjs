@@ -140,7 +140,12 @@ export class RogueTraderBaseActor extends Actor {
         // so it never double-counts (movement is fully computed here, never baked).
         // ENGINE-UNNATURAL slice.
         const moveMult = quadrupedMoveMultiplier(this.items.filter((i) => i.type === 'trait'));
-        let base = agility.bonus * moveMult + size - 4;
+        // Encumbered: reduce the Agility Bonus by 1 for movement rates (RT Core p.249,
+        // "Encumbered Characters"). `encumbrance` is computed before the final movement pass
+        // (acolyte prepareData); undefined for actors without a carry track. (QA-078.)
+        const encPenalty = this.encumbrance?.encumbered ? 1 : 0;
+        const agBonus = Math.max(0, agility.bonus - encPenalty);
+        let base = agBonus * moveMult + size - 4;
         // Unnatural Speed (RT Core p.366): double the Agility Bonus for movement, applied
         // AFTER the size modifier — so double the whole base. (QA-077.)
         if (hasUnnaturalSpeed(this.items.filter((i) => i.type === 'trait'))) base *= 2;
