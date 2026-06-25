@@ -1039,3 +1039,592 @@ formula: 1d10
 replacement: true
 displayRoll: true
 
+
+---
+name: Mental Traumas
+img: systems/rogue-trader-3rd/icons/talents/red/r_08.png
+description: "RT Core Table 10-6. If a character fails a Trauma Test, roll 1d100 and add +10 for every Degree of Failure."
+results:
+  - type: 0
+    weight: 40
+    range:
+      - 1
+      - 40
+    drawn: false
+    documentCollection: ''
+    _id: nDVnmD0ZesAPOexB
+    text: "The character becomes withdrawn and quiet. The character is at -10 to all Fellowship-based Tests. This lasts for 3d10 hours."
+    img: icons/svg/d20-black.svg
+    documentId:
+    flags: {}
+  - type: 0
+    weight: 30
+    range:
+      - 41
+      - 70
+    drawn: false
+    documentCollection: ''
+    _id: RlieAQc6U8f9KOzp
+    text: "The character must compulsively perform an action such as fevered praying, frantically cleaning a weapon, reciting verse, and so on, and pays little attention to anything else. All Tests based on Intelligence, Fellowship, or Perception suffer a -10 penalty. This lasts for 3d10 hours."
+    img: icons/svg/d20-black.svg
+    documentId:
+    flags: {}
+  - type: 0
+    weight: 30
+    range:
+      - 71
+      - 100
+    drawn: false
+    documentCollection: ''
+    _id: E3XUge3vzPnkYOdp
+    text: "The character is constantly fearful, seeing danger everywhere, and is extremely jumpy. The character gains a +10 bonus to all Perception-based Tests and is at a -10 penalty to his Willpower for the next 1d5 days."
+    img: icons/svg/d20-black.svg
+    documentId:
+    flags: {}
+  - type: 0
+    weight: 20
+    range:
+      - 101
+      - 120
+    drawn: false
+    documentCollection: ''
+    _id: 6bYvItqDfEYCYfV9
+    text: "The character suffers from a temporary severe phobia (see Disorders, page 296). This effect lasts for 1d5 days."
+    img: icons/svg/d20-black.svg
+    documentId:
+    flags: {}
+  - type: 0
+    weight: 10
+    range:
+      - 121
+      - 130
+    drawn: false
+    documentCollection: ''
+    _id: yFBuhkNDZpMfFAvz
+    text: "The character reacts to the slightest stress by becoming extremely agitated. When performing any task that involves a Test, he must first pass a Willpower Test or suffer a -10 modifier. If he gets into combat, all Tests during combat automatically suffer a -10 modifier. This lasts for 1d5 days."
+    img: icons/svg/d20-black.svg
+    documentId:
+    flags: {}
+  - type: 0
+    weight: 10
+    range:
+      - 131
+      - 140
+    drawn: false
+    documentCollection: ''
+    _id: Hch9R9rvw0lXntNz
+    text: "The character suffers vivid and extreme nightmares whenever he tries to sleep. For the next 1d10 days he is exhausted by lack of sleep and gains a level of fatigue. This lasts for 1d5 days."
+    img: icons/svg/d20-black.svg
+    documentId:
+    flags: {}
+  - type: 0
+    weight: 10
+    range:
+      - 141
+      - 150
+    drawn: false
+    documentCollection: ''
+    _id: 42wZhfxI7nWLZfx2
+    text: "The character is struck dumb and is unable to speak. This lasts for 1d5 days."
+    img: icons/svg/d20-black.svg
+    documentId:
+    flags: {}
+  - type: 0
+    weight: 10
+    range:
+      - 151
+      - 160
+    drawn: false
+    documentCollection: ''
+    _id: auI2U63Eh0dTfc6X
+    text: "Extremely distressed and unfocused, the character refuses to eat or drink. He takes a -10 penalty to all Characteristics (no Characteristic below 1) for 1d10 days."
+    img: icons/svg/d20-black.svg
+    documentId:
+    flags: {}
+  - type: 0
+    weight: 10
+    range:
+      - 161
+      - 170
+    drawn: false
+    documentCollection: ''
+    _id: iyt23FMZbcIH7BtX
+    text: "The character temporarily becomes hysterically blind or deaf. This lasts for 1d10 days."
+    img: icons/svg/d20-black.svg
+    documentId:
+    flags: {}
+  - type: 0
+    weight: 30
+    range:
+      - 171
+      - 200
+    drawn: false
+    documentCollection: ''
+    _id: dHywvKNEeM1MCsRI
+    text: "The character becomes completely traumatised and virtually unresponsive. He can't initiate actions but may be gently led. This lasts for 1d10 days."
+    img: icons/svg/d20-black.svg
+    documentId:
+    flags: {}
+formula: 1d100
+replacement: true
+displayRoll: true
+---
+name: Malignancies
+img: systems/rogue-trader-3rd/icons/talents/red/r_08.png
+description: "RT Core Table 10-8. Rolled when a character fails a Malignancy Test. If a result is duplicated, roll again."
+results:
+  - type: 0
+    weight: 10
+    range:
+      - 1
+      - 10
+    drawn: false
+    documentCollection: ''
+    _id: zzKcdAWuTwx67vqH
+    text: "Palsy: The character suffers numerous minor tics, shakes, and tremors with no medical cause. Reduce his Agility by 1d10."
+    img: icons/svg/d20-black.svg
+    documentId:
+    flags: {}
+  - type: 0
+    weight: 5
+    range:
+      - 11
+      - 15
+    drawn: false
+    documentCollection: ''
+    _id: wzd9fhU2SMbqEFy2
+    text: "Dark-hearted: The character grows increasingly cruel, callous, and vindictive. Reduce his Fellowship by 1d10."
+    img: icons/svg/d20-black.svg
+    documentId:
+    flags: {}
+  - type: 0
+    weight: 5
+    range:
+      - 16
+      - 20
+    drawn: false
+    documentCollection: ''
+    _id: xKmVDPmLMeL9WvST
+    text: "Ill-fortuned: Whenever the character uses a Fate Point, roll a d10. On a 7, 8, 9 or 10 it has no effect but is lost anyway."
+    img: icons/svg/d20-black.svg
+    documentId:
+    flags: {}
+  - type: 0
+    weight: 2
+    range:
+      - 21
+      - 22
+    drawn: false
+    documentCollection: ''
+    _id: 2nIjPWrfuGXHLRLh
+    text: "Skin Afflictions: The character is plagued by boils, scabs, and weeping sores. He takes a -20 penalty to all Charm Tests."
+    img: icons/svg/d20-black.svg
+    documentId:
+    flags: {}
+  - type: 0
+    weight: 3
+    range:
+      - 23
+      - 25
+    drawn: false
+    documentCollection: ''
+    _id: kUFCrx93GBOrbRno
+    text: "Night Eyes: Light pains the character; unless he shields his eyes he suffers a -10 penalty on all Tests in bright light."
+    img: icons/svg/d20-black.svg
+    documentId:
+    flags: {}
+  - type: 0
+    weight: 5
+    range:
+      - 26
+      - 30
+    drawn: false
+    documentCollection: ''
+    _id: 7ZPyebgVvsQDDwmn
+    text: "Morbid: Macabre visions fill the character's mind. His Intelligence is reduced by 1d10."
+    img: icons/svg/d20-black.svg
+    documentId:
+    flags: {}
+  - type: 0
+    weight: 3
+    range:
+      - 31
+      - 33
+    drawn: false
+    documentCollection: ''
+    _id: jvOCbmxIehVSTjU3
+    text: "Witch-mark: The character develops a minor physical deformity or easily concealable mutation. He must hide it well."
+    img: icons/svg/d20-black.svg
+    documentId:
+    flags: {}
+  - type: 0
+    weight: 12
+    range:
+      - 34
+      - 45
+    drawn: false
+    documentCollection: ''
+    _id: KC8uR3r1uadI4xT2
+    text: "Fell Obsession: As the Obsession Disorder (page 297), but with a sinister or malign focus such as finger-bone trophies or ritual scarification."
+    img: icons/svg/d20-black.svg
+    documentId:
+    flags: {}
+  - type: 0
+    weight: 5
+    range:
+      - 46
+      - 50
+    drawn: false
+    documentCollection: ''
+    _id: RNAOWu4wEQb3qVsD
+    text: "Hatred: The character develops an implacable hatred of a single group, individual, or social class."
+    img: icons/svg/d20-black.svg
+    documentId:
+    flags: {}
+  - type: 0
+    weight: 5
+    range:
+      - 51
+      - 55
+    drawn: false
+    documentCollection: ''
+    _id: QNiqrZO5ZXxQPWRn
+    text: "Irrational Nausea: Some innocuous thing sickens the character. When he encounters it he must Test Toughness or suffer -10 to all Tests while it remains."
+    img: icons/svg/d20-black.svg
+    documentId:
+    flags: {}
+  - type: 0
+    weight: 5
+    range:
+      - 56
+      - 60
+    drawn: false
+    documentCollection: ''
+    _id: I54FLtM1or7M4yGd
+    text: "Wasted Frame: The character's muscles waste away. His Strength is reduced by 1d10."
+    img: icons/svg/d20-black.svg
+    documentId:
+    flags: {}
+  - type: 0
+    weight: 3
+    range:
+      - 61
+      - 63
+    drawn: false
+    documentCollection: ''
+    _id: ube1GbV7vLsSOhfp
+    text: "Night Terrors: The character is plagued by daemonic visions in his sleep (see Horrific Nightmares, page 298)."
+    img: icons/svg/d20-black.svg
+    documentId:
+    flags: {}
+  - type: 0
+    weight: 7
+    range:
+      - 64
+      - 70
+    drawn: false
+    documentCollection: ''
+    _id: 3TzBnFCxp30QcmJn
+    text: "Poor Health: The character constantly suffers petty illnesses and phantom pains. His Toughness is reduced by 1d10."
+    img: icons/svg/d20-black.svg
+    documentId:
+    flags: {}
+  - type: 0
+    weight: 5
+    range:
+      - 71
+      - 75
+    drawn: false
+    documentCollection: ''
+    _id: r5m2q8VqYZRwi9jF
+    text: "Distrustful: The character takes a -10 penalty to Fellowship Tests when dealing with strangers."
+    img: icons/svg/d20-black.svg
+    documentId:
+    flags: {}
+  - type: 0
+    weight: 5
+    range:
+      - 76
+      - 80
+    drawn: false
+    documentCollection: ''
+    _id: GGpdXI9q8dmmwkkG
+    text: "Malign Sight: The world seems to rot when he looks at it. His Perception is reduced by 1d10."
+    img: icons/svg/d20-black.svg
+    documentId:
+    flags: {}
+  - type: 0
+    weight: 3
+    range:
+      - 81
+      - 83
+    drawn: false
+    documentCollection: ''
+    _id: 354zqCQNdnRB5llC
+    text: "Ashen Taste: Food offers little sustenance; the character doubles the negative effects of Fatigue."
+    img: icons/svg/d20-black.svg
+    documentId:
+    flags: {}
+  - type: 0
+    weight: 7
+    range:
+      - 84
+      - 90
+    drawn: false
+    documentCollection: ''
+    _id: TGW5r34oVQNXgxs9
+    text: "Bloodlust: After being wounded in combat, the character must Test Willpower to incapacitate or allow enemies to flee rather than kill them outright."
+    img: icons/svg/d20-black.svg
+    documentId:
+    flags: {}
+  - type: 0
+    weight: 3
+    range:
+      - 91
+      - 93
+    drawn: false
+    documentCollection: ''
+    _id: Lb1izOxJi9dK8BBV
+    text: "Blackouts: The character suffers inexplicable blackouts; when and what happens is up to the GM."
+    img: icons/svg/d20-black.svg
+    documentId:
+    flags: {}
+  - type: 0
+    weight: 7
+    range:
+      - 94
+      - 100
+    drawn: false
+    documentCollection: ''
+    _id: ZskYXNwHbqA41sQL
+    text: "Strange Addiction: The character is addicted to a bizarre and unnatural substance. Acts as a Minor Compulsion (page 296) but is freakish enough to cause suspicion if found out."
+    img: icons/svg/d20-black.svg
+    documentId:
+    flags: {}
+formula: 1d100
+replacement: true
+displayRoll: true
+---
+name: Mutations
+img: systems/rogue-trader-3rd/icons/talents/red/r_08.png
+description: "RT Core Table 14-3 (Minor Mutations, 1-100). Rolled when a character fails a Mutation Test (every 30 CP)."
+results:
+  - type: 0
+    weight: 5
+    range:
+      - 1
+      - 5
+    drawn: false
+    documentCollection: ''
+    _id: MTuCLYg9BwEAmcnX
+    text: "Grotesque: The mutant is badly deformed or bestial. -20 on Fellowship Tests to interact with 'normals', but +10 to Intimidate Tests."
+    img: icons/svg/d20-black.svg
+    documentId:
+    flags: {}
+  - type: 0
+    weight: 5
+    range:
+      - 6
+      - 10
+    drawn: false
+    documentCollection: ''
+    _id: uG1LLvR0i7Be1UX0
+    text: "Tough Hide: Dense skin and thick scar tissue grant the Natural Armour 2 Trait."
+    img: icons/svg/d20-black.svg
+    documentId:
+    flags: {}
+  - type: 0
+    weight: 5
+    range:
+      - 11
+      - 15
+    drawn: false
+    documentCollection: ''
+    _id: VUwO6ZZ8B9rf9Hvo
+    text: "Misshapen: The mutant's spine and limbs are twisted. It may no longer Run and reduces its Agility by 2d10."
+    img: icons/svg/d20-black.svg
+    documentId:
+    flags: {}
+  - type: 0
+    weight: 5
+    range:
+      - 16
+      - 20
+    drawn: false
+    documentCollection: ''
+    _id: mDSpwlm5cRYJOJnt
+    text: "Feels No Pain: The mutant gains +5 Wounds and the Iron Jaw talent."
+    img: icons/svg/d20-black.svg
+    documentId:
+    flags: {}
+  - type: 0
+    weight: 5
+    range:
+      - 21
+      - 25
+    drawn: false
+    documentCollection: ''
+    _id: skIkr0WCoCAkkSL6
+    text: "Brute: Deformed slab-like muscle. Increase Strength and Toughness by 10 each."
+    img: icons/svg/d20-black.svg
+    documentId:
+    flags: {}
+  - type: 0
+    weight: 5
+    range:
+      - 26
+      - 30
+    drawn: false
+    documentCollection: ''
+    _id: 847kbi5qZV8TfxMN
+    text: "Nightside: The mutant gains the Dark Sight Trait, but takes -10 to all Tests in bright light unless its eyes are shielded."
+    img: icons/svg/d20-black.svg
+    documentId:
+    flags: {}
+  - type: 0
+    weight: 10
+    range:
+      - 31
+      - 40
+    drawn: false
+    documentCollection: ''
+    _id: PXl51DHgujG7Shc0
+    text: "Mental Regressive: Roll 1d10 for Int, Per, WP and Fel separately. 1-5 reduce by 1d10; 6-7 halve; 8-9 no change; 10 reduce to 5. Also gains 1d10 Insanity Points."
+    img: icons/svg/d20-black.svg
+    documentId:
+    flags: {}
+  - type: 0
+    weight: 5
+    range:
+      - 41
+      - 45
+    drawn: false
+    documentCollection: ''
+    _id: wjESZBOURpr6ydcI
+    text: "Malformed Hands: Reduce Weapon Skill and Ballistic Skill by 10; -20 to any test requiring fine manipulation."
+    img: icons/svg/d20-black.svg
+    documentId:
+    flags: {}
+  - type: 0
+    weight: 5
+    range:
+      - 46
+      - 50
+    drawn: false
+    documentCollection: ''
+    _id: tAZEdnDmqiOm2Asm
+    text: "Tox Blood: +20 to Toughness Tests vs poison, but reduce Toughness and Intelligence by 1d10. Its blood deals 1d10 damage ignoring Armour and Toughness on contact (Difficult Toughness Test to resist)."
+    img: icons/svg/d20-black.svg
+    documentId:
+    flags: {}
+  - type: 0
+    weight: 5
+    range:
+      - 51
+      - 55
+    drawn: false
+    documentCollection: ''
+    _id: hZVfu9tPORv21dpg
+    text: "Hulking: The mutant gains the Hulking Size Trait, +10 Strength, and +5 Wounds."
+    img: icons/svg/d20-black.svg
+    documentId:
+    flags: {}
+  - type: 0
+    weight: 4
+    range:
+      - 56
+      - 59
+    drawn: false
+    documentCollection: ''
+    _id: OZbXItyQuf68Lror
+    text: "Wyrdling: The mutant gains the Psy Rating 2 talent (or the next-highest it lacks) and 2 Psychic Techniques of its choice."
+    img: icons/svg/d20-black.svg
+    documentId:
+    flags: {}
+  - type: 0
+    weight: 4
+    range:
+      - 60
+      - 63
+    drawn: false
+    documentCollection: ''
+    _id: bF9RrfhS1xqzBoDd
+    text: "Vile Deformity: A terrible warp-touched deformity. The mutant gains the Fear 1 Trait."
+    img: icons/svg/d20-black.svg
+    documentId:
+    flags: {}
+  - type: 0
+    weight: 7
+    range:
+      - 64
+      - 70
+    drawn: false
+    documentCollection: ''
+    _id: bKTohCzBoSPwjecj
+    text: "Aberration: A weird man-animal hybrid. +10 Strength and Agility, -1d10 Intelligence, -10 Fellowship."
+    img: icons/svg/d20-black.svg
+    documentId:
+    flags: {}
+  - type: 0
+    weight: 11
+    range:
+      - 71
+      - 81
+    drawn: false
+    documentCollection: ''
+    _id: KdILU2ceDAsdPXNP
+    text: "Degenerate Mind: Reduce Intelligence and Fellowship each by 1d10. Roll 1d10: 1-3 gains Frenzy; 4-7 gains Fearless; 8-0 gains the From Beyond Trait."
+    img: icons/svg/d20-black.svg
+    documentId:
+    flags: {}
+  - type: 0
+    weight: 8
+    range:
+      - 82
+      - 89
+    drawn: false
+    documentCollection: ''
+    _id: F7TwXPrZQ3rA2Vd9
+    text: "Ravaged Body: The mutant's body is entirely remade by the Warp. Roll 1d5 times more on this table."
+    img: icons/svg/d20-black.svg
+    documentId:
+    flags: {}
+  - type: 0
+    weight: 4
+    range:
+      - 90
+      - 93
+    drawn: false
+    documentCollection: ''
+    _id: 8wEmR9WkcKDGw4Ps
+    text: "Clawed/Fanged: Razor claws, a fanged maw, or barbed flesh grant the Natural Weapon Trait (I or R damage)."
+    img: icons/svg/d20-black.svg
+    documentId:
+    flags: {}
+  - type: 0
+    weight: 5
+    range:
+      - 94
+      - 98
+    drawn: false
+    documentCollection: ''
+    _id: ckswGXMWtHotATNl
+    text: "Necrophage: +10 Toughness and the Regeneration Trait, but must eat copious raw meat or starve."
+    img: icons/svg/d20-black.svg
+    documentId:
+    flags: {}
+  - type: 0
+    weight: 2
+    range:
+      - 99
+      - 100
+    drawn: false
+    documentCollection: ''
+    _id: FVcnV6el84gIEIDW
+    text: "Corrupted Flesh: A blasphemous transformation beneath the skin. Whenever the mutant takes critical damage, it gains Fear 2 for that round."
+    img: icons/svg/d20-black.svg
+    documentId:
+    flags: {}
+formula: 1d100
+replacement: true
+displayRoll: true

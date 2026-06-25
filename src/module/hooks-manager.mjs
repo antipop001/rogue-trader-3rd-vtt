@@ -47,6 +47,7 @@ import { DHTourMain } from './tours/main-tour.mjs';
 import { openAcquisitionDialog } from './rules/acquisition.mjs';
 import { openEndeavoursDialog } from './rules/endeavours.mjs';
 import { openFearDialog } from './rules/fear.mjs';
+import { processDegradation } from './rules/degradation.mjs';
 import { RT_CONDITIONS } from './rules/conditions.mjs';
 import { ChargenWizard } from './applications/chargen-wizard.mjs';
 
@@ -67,6 +68,11 @@ export class HooksManager {
         // start of their turn. Reset the per-Round USED counters when it becomes the
         // actor's turn. (ENGINE-REACTION-BUDGET-TRACK.)
         Hooks.on('combatTurnChange', HooksManager.onCombatTurnChange);
+        // RT 1e Insanity / Corruption degradation (RT Core p.296-301): crossing a point
+        // threshold forces a Trauma / Malignancy / Mutation test. Capture the pre-update
+        // totals, then fire the tests post-update (first-GM only). (QA-083.)
+        Hooks.on('preUpdateActor', HooksManager.onPreUpdateActorDegradation);
+        Hooks.on('updateActor', HooksManager.onUpdateActorDegradation);
         // CHARGEN BUILDER SHELVED (2026-06-23): the in-Foundry character-creation
         // wizard is parked (advanced work lives on branch ralph/chargen) and kept
         // out of releases. Re-enable by uncommenting this hook + the AcolyteSheetV2
@@ -186,6 +192,31 @@ Enable Debug with: game.rt.debug = true
             'system.combat.reactions.dodge.value': 0,
             'system.combat.reactions.parry.value': 0,
         });
+    }
+
+    /**
+     * Stash the pre-update Insanity/Corruption totals on the update `options` so the
+     * post-update hook can detect a threshold crossing. (QA-083.)
+     */
+    static onPreUpdateActorDegradation(actor, changed, options) {
+        const sys = changed?.system;
+        if (!sys || (sys.insanity === undefined && sys.corruption === undefined)) return;
+        options.rtDegradation = {
+            oldInsanity: actor.system?.insanity ?? 0,
+            oldCorruption: actor.system?.corruption ?? 0,
+        };
+    }
+
+    /**
+     * After an Insanity/Corruption change, fire the Trauma/Malignancy/Mutation tests for any
+     * threshold crossed. First-GM only (single writer; players may not own the actor and the
+     * tests must run once). (QA-083.)
+     */
+    static async onUpdateActorDegradation(actor, _changed, options) {
+        const prev = options?.rtDegradation;
+        if (!prev) return;
+        if (game.user !== game.users?.activeGM) return;
+        await processDegradation(actor, prev);
     }
 
     /**
