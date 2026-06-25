@@ -1,7 +1,7 @@
 // QA-080 condition layer — to-hit modifier helper.
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { conditionToHitModifier, reactionsLocked, conditionMeta, RT_CONDITIONS } from '../../src/module/rules/conditions.mjs';
+import { conditionToHitModifier, reactionsLocked, conditionMeta, conditionsFromCriticalText, RT_CONDITIONS } from '../../src/module/rules/conditions.mjs';
 
 test('QA-080: RT_CONDITIONS registers the expected condition ids', () => {
     const ids = RT_CONDITIONS.map((c) => c.id);
@@ -39,4 +39,20 @@ test('QA-080 inc.2: conditionMeta resolves outcome condition ids to button metad
     assert.equal(conditionMeta('stunned').name, 'Stunned');
     assert.equal(conditionMeta('onFire').name, 'On Fire');
     assert.equal(conditionMeta('nonsense'), null);            // unknown id
+});
+
+test('QA-080 inc.2: conditionsFromCriticalText auto-detects crit-table conditions', () => {
+    // Real phrasings from critical-damage.mjs
+    assert.deepEqual(
+        conditionsFromCriticalText('He is Stunned for 1 round and is knocked Prone. The arm is Useless for 1d10 rounds.'),
+        ['stunned', 'prone']);
+    assert.deepEqual(
+        conditionsFromCriticalText('The target suffers Blood Loss and 1d5 levels of Fatigue.'),
+        ['bloodLoss']);
+    assert.deepEqual(
+        conditionsFromCriticalText('he is Blinded for 1d10 rounds and Stunned for 1 round.'),
+        ['stunned', 'blinded']);                              // returned in RT_CONDITIONS order
+    assert.deepEqual(conditionsFromCriticalText('The target is knocked back 1d5 metres.'), []);
+    assert.deepEqual(conditionsFromCriticalText(''), []);
+    assert.deepEqual(conditionsFromCriticalText(null), []);
 });

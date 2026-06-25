@@ -326,6 +326,15 @@
                                     <div class="rt-roll__row--full">
                                         <span class='rt-roll__label'>{{effect.name}}</span> - {{effect.effect}}
                                     </div>
+                                    {{#if @root.rollData.targetActor.uuid}}
+                                        {{#each effect.conditions as |cond|}}
+                                            <div class="rt-control-button roll-control__apply-condition"
+                                                 data-target-uuid="{{@root.rollData.targetActor.uuid}}"
+                                                 data-condition-id="{{cond.id}}">
+                                                Apply: {{cond.name}}
+                                            </div>
+                                        {{/each}}
+                                    {{/if}}
                                 {{/each}}
 
                                 <div class="rt-roll__notice">

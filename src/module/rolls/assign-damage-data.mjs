@@ -4,6 +4,7 @@ import { damageTypeDropdown } from '../rules/damage-type.mjs';
 import { voidshipHitTypeDropdown } from '../rules/hit-type.mjs';
 import { voidshipHitLocationDropdown } from '../rules/voidship-hit-locations.mjs';
 import { getVoidshipCriticalDamage } from '../rules/voidship-critical-damage.mjs';
+import { conditionsFromCriticalText } from '../rules/conditions.mjs';
 import { daemonicToughnessMultiplier } from './roll-helpers.mjs';
 
 export class AssignDamageData {
@@ -252,6 +253,18 @@ export class AssignDamageData {
                     }
                 }
             });
+        }
+
+        // QA-080 inc.2: Critical effects are deterministic (no test to pass), and this runs
+        // GM-side on the live target with write permission, so auto-apply the conditions the
+        // crit text inflicts (Blood Loss, Stunned, Prone, Blinded, On Fire …). Use this.actor
+        // directly — never re-fetch by id (BUG-005). Non-voidship targets only.
+        if (!this.voidshipHit && this.criticalEffect && this.actor?.isOwner) {
+            for (const id of conditionsFromCriticalText(this.criticalEffect)) {
+                if (!this.actor.statuses?.has(id)) {
+                    await this.actor.toggleStatusEffect(id, { active: true });
+                }
+            }
         }
         game.rt.log('performActionAndSendToChat', this)
 

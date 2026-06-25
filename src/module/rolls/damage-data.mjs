@@ -3,6 +3,7 @@ import { calculateAmmoDamageBonuses, calculateAmmoPenetrationBonuses, calculateA
 import { getCriticalDamage } from '../rules/critical-damage.mjs';
 import { calculateWeaponModifiersDamageBonuses, calculateWeaponModifiersPenetrationBonuses } from '../rules/weapon-modifiers.mjs';
 import { weaponMasterBonus, critDamageBonus, brutalChargeBonus, unarmedDamageProfile } from './roll-helpers.mjs';
+import { conditionMeta } from '../rules/conditions.mjs';
 
 export class DamageData {
     template = '';
@@ -405,7 +406,7 @@ export class Hit {
                     this.addEffect(special.name, `Everyone within ${special.level}m of the location is hit!`);
                     break;
                 case 'concussive':
-                    this.addEffect(special.name, `Target must pass Toughness test with ${special.level * -10} or be Stunned for 1 round per DoF. If the attack did more damage than the targets Strength Bonus, it is knocked Prone!`);
+                    this.addEffect(special.name, `Target must pass Toughness test with ${special.level * -10} or be Stunned for 1 round per DoF. If the attack did more damage than the targets Strength Bonus, it is knocked Prone!`, ['stunned', 'prone']);
                     break;
                 case 'corrosive':
                     this.addEffect(special.name, `The targets armor melts with [[1d10]] of armour being destroyed! Additional damage is dealt as wounds and not reduced by toughness.`);
@@ -417,7 +418,7 @@ export class Hit {
                     this.addEffect(special.name, `The targets unnatural toughness is reduced by ${special.level} while calculating wounds!`);
                     break;
                 case 'flame':
-                    this.addEffect(special.name, `The target must make an Agility test or be set on fire!`);
+                    this.addEffect(special.name, `The target must make an Agility test or be set on fire!`, ['onFire']);
                     break;
                 case 'graviton':
                     this.addEffect(special.name, `This attack deals additional damage equal to the targets Armour points on the struck location!`);
@@ -433,7 +434,7 @@ export class Hit {
                     this.addEffect(special.name, `The attack deviates [[ 1d10 - ${bs}]]m (minimum of 0m) off course to the ${scatterDirection()}!`);
                     break;
                 case 'shocking':
-                    this.addEffect(special.name, `Target must pass a Challenging (+0) Toughness test. If he fails, he suffers 1 level of Fatigue and is Stunned for a number of rounds equal to half of his degrees of failure (rounding up).`);
+                    this.addEffect(special.name, `Target must pass a Challenging (+0) Toughness test. If he fails, he suffers 1 level of Fatigue and is Stunned for a number of rounds equal to half of his degrees of failure (rounding up).`, ['stunned']);
                     break;
                 case 'snare':
                     this.addEffect(special.name, `Target must pass Agility test with ${special.level * -10} or become immobilised.  Also, gains +5 per Unnatural 
@@ -455,10 +456,16 @@ export class Hit {
         }
     }
 
-    addEffect(name, effect) {
+    addEffect(name, effect, conditions = null) {
         this.effects.push({
             name: name,
-            effect: effect
+            effect: effect,
+            // QA-080 inc.2 (damage-card path): optional condition ids the GM may apply to the
+            // target once they adjudicate the special's test (e.g. Concussive → Stunned on a
+            // failed Toughness test). Rendered as "Apply: <name>" buttons on the hit's card.
+            conditions: (conditions ?? [])
+                .map((id) => conditionMeta(id))
+                .filter(Boolean),
         })
     }
 }

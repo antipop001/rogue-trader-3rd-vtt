@@ -65,3 +65,34 @@ export function reactionsLocked(statuses) {
 export function conditionMeta(id) {
     return RT_CONDITIONS.find((c) => c.id === id) ?? null;
 }
+
+/** Condition-id → matcher for scanning Critical-effect prose. Order = RT_CONDITIONS order. */
+const CRIT_TEXT_MATCHERS = [
+    ['stunned', /\bstunned\b/i],
+    ['prone', /\bprone\b/i],                                   // "knocked Prone", "falls Prone"
+    ['blinded', /\bblinded\b/i],
+    ['deafened', /\bdeafened\b/i],
+    ['onFire', /catches fire|on fire|set (?:on fire|ablaze)|bursts into flame/i],
+    ['bloodLoss', /\bblood loss\b/i],
+    ['unconscious', /\bunconscious\b/i],
+    ['helpless', /\bhelpless\b/i],
+];
+
+/**
+ * Scan a Critical-Hit effect description for the conditions it inflicts, returning the
+ * matching condition ids. Critical effects are DETERMINISTIC (no test to pass), so the
+ * caller auto-applies these to the target — unlike the test-gated weapon-special outcomes,
+ * which surface a button instead. Keyword-anchored to the phrasings in the RT crit tables
+ * (`critical-damage.mjs`). Durations (e.g. "Stunned for 1d10 rounds") are NOT modelled —
+ * the persistent status is applied and the GM clears it via the token HUD. (QA-080 inc.2.)
+ * @param {string} text  a Critical-Hit effect description
+ * @returns {string[]} unique condition ids found, in RT_CONDITIONS order
+ */
+export function conditionsFromCriticalText(text) {
+    if (!text || typeof text !== 'string') return [];
+    const found = [];
+    for (const [id, re] of CRIT_TEXT_MATCHERS) {
+        if (re.test(text)) found.push(id);
+    }
+    return found;
+}
