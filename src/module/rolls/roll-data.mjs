@@ -412,7 +412,11 @@ export class PsychicRollData extends RollData {
     }
 
     async update() {
-        this.modifiers['focus'] = this.hasFocus ? 10 : 0;
+        // RT Core p.157: a Focus Power Test adds +5 to the score for EACH level of Psy
+        // Rating (WP 45 + PR 5×5 = 70). `this.pr` is the effective rating (Fettered/
+        // Unfettered/Push already applied). Replaces the non-canon flat `hasFocus`+10
+        // (BUG-011 / QA-037 — there is no inherent +10 for focusing in RT 1e).
+        this.modifiers['psy rating'] = 5 * this.pr;
         this.modifiers['power'] = this.power.system.target.bonus ?? 0;
         this.hasDamage = this.power.system.subtype.includes('Attack');
         await updateAttackSpecials(this);

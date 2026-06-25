@@ -291,7 +291,11 @@ engine/roll fixes. Fix these directly, or in a dedicated follow-up loop.
   appears within ~2s.
 
 ## BUG-011 — Focus Power Test missing the +5 × Psy Rating bonus (every psychic test too low)
-- **Status: OPEN — P0, promoted from QA-audit finding QA-037 (2026-06-24).**
+- **Status: ✅ FIXED 2026-06-24, verified live on rt-smoke.** `roll-data.mjs`
+  `PsychicRollData.update()` now sets `modifiers['psy rating'] = 5 * this.pr` (effective
+  PR handles Fettered/Unfettered/Push); removed the non-canon flat `hasFocus`+10 and its
+  dead "Has Focus" prompt checkbox. Live: WP 45 / PR 5 Unfettered → modifiedTarget **70**
+  (45 + 25), matching the RT Core p.157 example. (From QA-037.)
 - **Symptom:** every Focus Power Test rolls 15-25 points too hard, so psykers' powers
   fail far more than RAW across the whole psychic subsystem.
 - **Cause:** `roll-data.mjs:415` — the Focus Power target gets NO Psy-Rating bonus; the

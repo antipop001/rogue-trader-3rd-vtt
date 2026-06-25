@@ -81,12 +81,9 @@
                     <span class="rt-field__span">Psychic Rating</span>
                     <input class="rt-field__input" type="number" data-dtype="Number" id="pr" name="pr" value="{{pr}}" />
                 </div>
-                <div class="rt-field__wrapper">
-                    <span class="rt-field__span">Has Focus</span>
-                    <span class="rt-field__input check">
-                        <input type="checkbox" data-dtype="Boolean" {{checked hasFocus}} name="hasFocus" />
-                    </span>
-                </div>
+                {{!-- "Has Focus" +10 removed (BUG-011): RT 1e has no inherent focus
+                      bonus; the Focus Power Test gets +5 per Psy Rating, applied
+                      automatically as the "psy rating" modifier. --}}
             </div>
             <div class="rt-panel rt-grid-col-6">
                 <div class="rt-header">
