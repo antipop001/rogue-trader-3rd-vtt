@@ -323,6 +323,26 @@ engine/roll fixes. Fix these directly, or in a dedicated follow-up loop.
   `negligible: 30, trivial: 20`). Related: QA-054 (Commerce Acquisition bonus is +10/DoS,
   RT is **+2/DoS** — P1, in QA_FINDINGS.md).
 
+## BUG-013 — Primitive weapons deal 0 damage dice (DH2 die-cap resolves to 0) + wrong RT rule
+- **Status: OPEN — P0, promoted from QA-audit finding QA-136 (2026-06-24).**
+- **Symptom:** all 29 Primitive-quality weapons deal NO dice damage — only their flat
+  bonus / Strength Bonus survives (a Flintlock Pistol `1d10+2` does a flat 2).
+- **Cause:** `damage-data.mjs:155-162` implements Primitive as a DH2 per-die value cap;
+  the cap level comes from the pack attack-special which is `hasLevel:false, level:0`, so
+  `result > 0` is true for every die → `modifiers['primitive'] = 0 − dieValue`, negating
+  the whole die (no min-clamp in `_totalDamage`). Config/pack also disagree on `hasLevel`
+  (config `true` vs pack `false`).
+- **Canon:** RT Core p.142 — Primitive is a **defender-side** rule: the target's Armour
+  Points are **doubled** against Primitive weapons (unless the armour is also Primitive).
+  It does NOT cap or reduce the weapon's dice. The "Primitive (X) caps dice" mechanic is
+  DH2 / Black Crusade.
+- **Fix:** delete the die-cap block in `damage-data.mjs`; implement RT Primitive in
+  `assign-damage-data.mjs` (double the struck location's AP before penetration when the
+  attacking weapon is Primitive and that armour piece isn't — the defender-side companion
+  to QA-025). Reconcile `hasLevel` (Primitive is unleveled in RT). Related: QA-137
+  (multi-die Primitive/Proven overwrite + dead Proven path, P1). ⚠ live-verify on
+  rt-smoke (Flintlock rolls full `1d10+2`; armour doubled vs it).
+
 ## SWEEP — talents/traits with described bonuses that aren't wired
 Paranoia / Weapon Master are instances of a systemic gap: many compendium entries
 describe a numeric bonus in text but carry no `effects`/`conditionalBonuses`/
