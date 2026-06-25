@@ -382,7 +382,7 @@ real automation/correctness gaps to fix deliberately. P0s = BUG-011 / 012 (fixed
 - QA-113 — Dodge/Parry Reactions are not part of attack resolution — a successful Dodge/Parry never negates the incoming hit
 - QA-115 — Vehicle damage is unwired: facing Armour + Structural Integrity ignored; the personal-creature path reads a non-existent `…
 - ✅ QA-118 (fixed 2026-06-25) — Surprise / Unaware-target +30 to-hit bonus (and the Surprise Round) is unwired
-- QA-121 — Stun action bypasses the WS-to-hit gate and uses a static (DH2) defence instead of the defender's 1d10 roll
+- ✅ QA-121 (fixed 2026-06-25) — Stun action now resolves RAW (RT Core p.250): the −20 WS Test gates the action (a miss reports "no Stun" and stops — was resolving regardless of the WS result); on a hit the attacker rolls 1d10+SB against the **defender's** 1d10 + TB + head AP (was a static `AP+TB` value, ~5.5 easier), with the head **Armour Points doubled when unarmed or Primitive** (`stunDefenceBonus` helper; unarmed detected by weapon `type==='Unarmed'`, not a null weapon). Stunned rounds = the roll difference; the Stunned condition attaches via the QA-080 `[Apply]` button. Helper node-tested; WS-gate + defender-roll + AP-doubling (armed/unarmed/Primitive) live-verified on rt-smoke.
 - ✅ QA-124 (fixed 2026-06-25) — Weapon Training proficiency penalty (−20 WS/BS for untrained weapons) is never enforced
 - ✅ QA-160 (fixed 2026-06-25) — "Gain an additional Reaction" effects (Defensive Stance, Hyperactive Nymune Organ) are unexpressible — only Step Aside / W…
 

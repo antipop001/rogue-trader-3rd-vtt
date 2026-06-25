@@ -22,6 +22,22 @@ export function getDegree(a, b) {
     return Math.floor(a / 10) - Math.floor(b / 10);
 }
 
+/**
+ * The flat bonus added to a Stun defender's 1d10 (RT Core p.250): Toughness Bonus + 1 per
+ * Armour Point protecting the head, with the head Armour Points DOUBLED when the attack is
+ * unarmed or the weapon is Primitive. (QA-121.)
+ * @param {number} headAp           head Armour Points (worn + Natural + cybernetic)
+ * @param {number} toughnessBonus   the defender's Toughness Bonus
+ * @param {boolean} unarmed         the attack is unarmed
+ * @param {boolean} primitive       the weapon has the Primitive quality
+ * @returns {number} the defender's flat bonus
+ */
+export function stunDefenceBonus(headAp, toughnessBonus, unarmed = false, primitive = false) {
+    const ap = Math.max(0, Math.floor(Number(headAp) || 0));
+    const tb = Math.max(0, Math.floor(Number(toughnessBonus) || 0));
+    return tb + ap * (unarmed || primitive ? 2 : 1);
+}
+
 export function getOpposedDegrees(dos, dof, opposedDos, opposedDof) {
     if(dos > 0) {
         if(opposedDos > 0) {

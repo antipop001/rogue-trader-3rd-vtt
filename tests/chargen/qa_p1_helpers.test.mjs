@@ -1,7 +1,15 @@
 // QA P1 pure-helper fixes.
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { daemonicToughnessMultiplier, hasUnnaturalSpeed, weaponUntrainedPenalty, reactionBudget, canSpendReaction } from '../../src/module/rolls/roll-helpers.mjs';
+import { daemonicToughnessMultiplier, hasUnnaturalSpeed, weaponUntrainedPenalty, reactionBudget, canSpendReaction, stunDefenceBonus } from '../../src/module/rolls/roll-helpers.mjs';
+
+test('QA-121: stunDefenceBonus = TB + headAP, AP doubled when unarmed or Primitive', () => {
+    assert.equal(stunDefenceBonus(3, 4, false, false), 7);   // armed, non-primitive: TB4 + AP3
+    assert.equal(stunDefenceBonus(3, 4, true, false), 10);   // unarmed: TB4 + AP3*2
+    assert.equal(stunDefenceBonus(3, 4, false, true), 10);   // Primitive: TB4 + AP3*2
+    assert.equal(stunDefenceBonus(0, 5, true, false), 5);    // no head armour: just TB
+    assert.equal(stunDefenceBonus(2, 0, false, false), 2);   // no TB
+});
 
 test('QA-142: Daemonic TB-doubling matches "Daemonic" + "Daemonic (TB X)", not "Daemonic Presence"', () => {
     assert.equal(daemonicToughnessMultiplier([{ name: 'Daemonic' }]), 2);

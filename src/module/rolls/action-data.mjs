@@ -1,6 +1,6 @@
 import { PsychicRollData, RollData, WeaponRollData } from './roll-data.mjs';
 import { Hit, PsychicDamageData, scatterDirection, WeaponDamageData } from './damage-data.mjs';
-import { attackTalentExtraHits, getDegree, getOpposedDegrees, roll1d100, sendActionDataToChat, uuid } from './roll-helpers.mjs';
+import { attackTalentExtraHits, getDegree, getOpposedDegrees, roll1d100, sendActionDataToChat, stunDefenceBonus, uuid } from './roll-helpers.mjs';
 import { refundAmmo, useAmmo } from '../rules/ammo.mjs';
 import { DHBasicActionManager } from '../actions/basic-action-manager.mjs';
 import { conditionMeta } from '../rules/conditions.mjs';
@@ -154,25 +154,43 @@ export class ActionData {
                     this.addEffect('All Out Attack', 'The character cannot attempt Dodge or Parry Reactions until the beginning of his next turn.');
                 }
 
-                // Stun Action
+                // Stun Action (RT Core p.250): a Hard (-20) Weapon Skill Test to hit; only
+                // ON A HIT does the attacker roll 1d10+SB against the defender's 1d10 + TB +
+                // 1 per head Armour Point (head AP DOUBLED when unarmed or Primitive). Target
+                // is Stunned for (attacker − defender) rounds + 1 Fatigue. The WS test (with
+                // its −20) was already resolved at _calculateHit() above; honour it. (QA-121.)
                 if (this.rollData.isStun) {
-                    const stunRoll = new Roll(`1d10+${this.rollData.sourceActor.getCharacteristicFuzzy('Strength').bonus}`, {});
-                    await stunRoll.evaluate();
-                    this.rollData.roll = stunRoll;
+                    if (!this.rollData.success) {
+                        this.addEffect('Stun Attack', `The Weapon Skill Test misses — no Stun.`);
+                        return;
+                    }
+                    const sb = this.rollData.sourceActor.getCharacteristicFuzzy('Strength').bonus;
+                    const attackRoll = new Roll(`1d10+${sb}`, {});
+                    await attackRoll.evaluate();
+                    this.rollData.roll = attackRoll;
 
+                    const isPrimitive = this.rollData.hasAttackSpecial('Primitive');
+                    // An unarmed strike is a Melee weapon of `type: 'Unarmed'` (ENGINE-NATWEAPONS,
+                    // cf. damage-data.mjs) — NOT a null weapon, so detect it by type.
+                    const isUnarmed = String(this.rollData.weapon?.system?.type ?? '').toLowerCase() === 'unarmed';
+                    const doubled = isPrimitive || isUnarmed;
                     if (this.rollData.targetActor) {
                         const headArmour = this.rollData.targetActor.system.armour.head;
-                        const defense = headArmour.total + headArmour.toughnessBonus;
-                        if (stunRoll.total >= defense) {
+                        const defBonus = stunDefenceBonus(headArmour.total, headArmour.toughnessBonus, isUnarmed, isPrimitive);
+                        const defenceRoll = new Roll(`1d10+${defBonus}`, {});
+                        await defenceRoll.evaluate();
+                        const note = doubled ? ' (head AP doubled)' : '';
+                        if (attackRoll.total >= defenceRoll.total) {
                             this.rollData.success = true;
-                            this.addEffect('Stun Attack', `Stun roll of ${stunRoll.total} vs ${defense}. Target is stunned for ${stunRoll.total - defense} rounds and gains 1 level of fatigue.`, ['stunned']);
+                            const rounds = attackRoll.total - defenceRoll.total;
+                            this.addEffect('Stun Attack', `Hit! Stun ${attackRoll.total} (1d10+SB) vs defence ${defenceRoll.total} (1d10+TB+headAP${note}). Target is Stunned for ${rounds} round${rounds === 1 ? '' : 's'} and gains 1 level of Fatigue.`, ['stunned']);
                         } else {
                             this.rollData.success = false;
-                            this.addEffect('Stun Attack', `Stun roll of ${stunRoll.total} vs ${defense}. The attack fails to stun the target!`);
+                            this.addEffect('Stun Attack', `Hit, but Stun ${attackRoll.total} (1d10+SB) vs defence ${defenceRoll.total} (1d10+TB+headAP${note}) — the target shrugs it off.`);
                         }
                     } else {
                         this.rollData.success = true;
-                        this.addEffect('Stun Attack', `Stun roll of ${stunRoll.total}. Compare to the target’s total of his Toughness bonus +1 per Armour point protecting his head. If the attacker’s roll is equal to or higher than this value, the target is Stunned for a number of rounds equal to the difference between the two values and gains one level of Fatigue.`);
+                        this.addEffect('Stun Attack', `Hit! Stun roll ${attackRoll.total} (1d10+SB). The target rolls 1d10 + Toughness Bonus + 1 per head Armour Point${doubled ? ' (doubled — unarmed/Primitive)' : ''}; if your roll is equal or higher, he is Stunned for the difference in rounds and gains 1 level of Fatigue.`, ['stunned']);
                     }
                     return;
                 }
