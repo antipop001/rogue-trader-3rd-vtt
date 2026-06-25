@@ -31,9 +31,13 @@ doesn't do it** ("not automated but should be"). Canon: `/mnt/project_data/RT/RT
 - **Verify before filing.** Every finding cites a real file:line you read + (for rules)
   the RT canon ref. No "probably", no hallucinated line numbers.
 - **No duplicates.** Skip anything already in `BUGS.md` (fixed) or `QA_FINDINGS.md`.
-- **Discovery, not fixing.** Default = file it. Only make a code change for a
-  trivially-safe, unambiguous fix (dead DH2 string, one-line data typo) AND only if
-  `build:check` + `npm test` stay green. Anything needing rules judgement → file, don't fix.
+- **DISCOVERY-ONLY — DO NOT FIX (tightened 2026-06-24).** File findings; make **NO**
+  code changes. Rules-load-bearing fixes need live rt-smoke verification the inner loop
+  cannot do, so they are done deliberately by a human later from `BUGS.md` /
+  `QA_FINDINGS.md`. **Do NOT create `*-FIX` tasks.** If the top unchecked item in
+  `fix_plan.md` is an existing `*-FIX` task, do NOT implement it — check it `[x]` with the
+  note `(deferred — discovery-only; tracked for human fix)` and stop. (The trivial fixes
+  already committed stand; make no new ones.)
 - Classify honestly: `not-a-bug` is a valid kind (record that you checked + it's fine).
 
 ## Backpressure (gate) — IN ORDER
@@ -58,7 +62,7 @@ file-only iteration.
   ```
   `<N>` from `$RALPH_ITER` (fallback: count prior `ralph(iter` commits + 1).
 - In @fix_plan.md: check the item `[x]`; APPEND any newly-discovered sub-areas as new
-  audit tasks. Then stop.
+  **AUDIT** tasks ONLY — never `*-FIX` tasks (file the finding instead). Then stop.
 
 ## Stop condition
 If @fix_plan.md has no unchecked `[ ]` items (all dimensions audited + the critic pass
