@@ -176,11 +176,14 @@ export class ActionData {
                     return;
                 }
 
-                if (this.rollData.hasAttackSpecial('Spray')) {
+                if (this.rollData.hasAttackSpecial('Flame')) {
+                    // Flame weapons make no BS test — they auto-hit (RT Core p.142).
+                    // Everyone in the 30° cone must pass an Agility Test or be struck (in
+                    // the body — the location is forced to Body in createHit). (QA-131.)
                     this.rollData.success = true;
                     this.rollData.dos = 1;
                     this.rollData.dof = 0;
-                    this.addEffect('Spray', 'Everyone in 30 degree arc must pass an agility test or be hit.')
+                    this.addEffect('Flame', 'No BS test — each creature in the 30° cone must pass an Agility Test or be hit (in the body).')
                 }
 
                 if (actionItem.isMelee) {

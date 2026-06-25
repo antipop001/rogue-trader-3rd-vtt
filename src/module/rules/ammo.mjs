@@ -97,6 +97,13 @@ export async function calculateAmmoAttackSpecials(rollData) {
                 level: 1,
             });
             break;
+        case 'Tempest Bolt Shells':
+            // RT Core: the weapon gains the Shock quality. (QA-063.)
+            rollData.attackSpecials.push({
+                name: 'Shock',
+                level: true,
+            });
+            break;
         case 'Snare Shells':
             // Into the Storm p.131: weapon gains the Snare quality (base Challenging
             // +0 immobilise test — level 0 → no test penalty). The -2 base damage
@@ -140,6 +147,20 @@ export async function calculateAmmoSpecials(actionData, hit) {
             break;
         case 'Explosive Arrows and Quarrels':
             hit.damageType = 'Explosive';
+            break;
+        case 'Tempest Bolt Shells':
+            // RT Core: damage class becomes Energy; the weapon gains Shock (added in
+            // calculateAmmoAttackSpecials). +3 Damage vs the Machine Trait is
+            // GM-adjudicated (no target traits in the damage pipeline). (QA-063.)
+            hit.damageType = 'Energy';
+            hit.addEffect('Tempest Bolt Shells', 'Damage class is Energy; weapon gains Shock. +3 Damage vs targets with the Machine Trait (GM-applied).');
+            break;
+        case 'Acid Shells':
+            // Into the Storm p.131: Energy damage; the target may be set on Fire and each
+            // hit reduces the struck location\'s AP by 1. (QA-063 — the listed flat
+            // 2d10/Pen 0 base-damage replacement needs a pre-roll formula hook; deferred.)
+            hit.damageType = 'Energy';
+            hit.addEffect('Acid Shells', 'Energy damage. Target must test or be set on Fire; each hit reduces the struck location\'s Armour Points by 1.');
             break;
     }
 }

@@ -359,8 +359,9 @@ engine/roll fixes. Fix these directly, or in a dedicated follow-up loop.
 
 ## QA-audit P1 backlog — missing automation / correctness (promoted 2026-06-24)
 
-42 verified P1 findings from the QA-audit loop (30 open, 12 fixed —
-3 auto + QA-054/077/087/142/158 + QA-038/099/118/128). Full detail (file:line + canon) per entry in `QA_FINDINGS.md`. These are
+42 verified P1 findings from the QA-audit loop (28 open, 14 fixed —
+3 auto + QA-054/077/087/142/158 + QA-038/099/118/128 + QA-131/063).
+QA-153 + ship cluster (042-045/147/153/154) deferred to a focused ship pass. Full detail (file:line + canon) per entry in `QA_FINDINGS.md`. These are
 real automation/correctness gaps to fix deliberately. P0s = BUG-011 / 012 (fixed) /
 013 above. The 114 P2/P3 findings stay in `QA_FINDINGS.md`.
 
@@ -394,12 +395,12 @@ real automation/correctness gaps to fix deliberately. P0s = BUG-011 / 012 (fixed
 - QA-153 — Ship-weapon to-hit rolls Strength *independent* BS tests; RT is one test scoring `1 + DoS` hits capped at Strength
 
 **weapons** (7)
-- QA-063 — Damage-class/quality-changing ammo unwired (Tempest Bolt Shells, Acid Shells)
+- ✅ QA-063 (fixed 2026-06-25) — Damage-class/quality-changing ammo unwired (Tempest Bolt Shells, Acid Shells)
 - ✅ QA-099 (fixed 2026-06-25) — Overheats weapons still Jam; canon says an Overheats weapon never jams (and any would-be jam becomes an overheat)
 - QA-100 — Overheat result deals no self-damage to the wielder, frames the drop as forced (canon: it's a choice), and skips the coold…
 - QA-104 — No Reload action: clip is never refilled by the engine; `effectiveReload` time is computed/displayed but purely cosmetic
 - ✅ QA-128 (fixed 2026-06-25) — Unbraced Heavy weapon −30 BS penalty never applied (no braced state in the engine)
-- QA-131 — Flame weapons require a Ballistic Skill test; the no-BS-test cone is keyed on the non-RT "Spray" quality (dead code)
+- ✅ QA-131 (fixed 2026-06-25) — Flame weapons require a Ballistic Skill test; the no-BS-test cone is keyed on the non-RT "Spray" quality (dead code)
 - ✅ QA-158 (fixed 2026-06-25) — Thrown muscle-powered weapons get no Strength Bonus to damage (only class='melee' does)
 
 **data-quality** (3)

@@ -223,7 +223,9 @@ export class WeaponRollData extends RollData {
         this.modifiers['unbraced'] = (this.isHeavyWeapon && !this.braced) ? -30 : 0;
         this.canAim = this.action !== 'All Out Attack';
         this.isLasWeapon = this.weapon.system.type === 'Las';
-        this.isSpray = this.hasAttackSpecial('Spray');
+        // Flame weapons auto-hit the cone with no BS test (RT Core p.142). RT 1e has no
+        // "Spray" quality — the flag keys on Flame. (QA-131.)
+        this.isSpray = this.hasAttackSpecial('Flame');
         this.isStun = this.action === 'Stun';
         this.isFeint = this.action === 'Feint';
         this.isKnockDown = this.action === 'Knock Down';

@@ -67,6 +67,10 @@ export class Hit {
 
         if (attackData.rollData.isCalledShot) {
             hit.location = attackData.rollData.calledShotLocation;
+        } else if (attackData.rollData.hasAttackSpecial('Flame')) {
+            // Flame weapons make no roll to hit, so they always strike the body
+            // (RT Core p.142). (QA-131.)
+            hit.location = 'Body';
         } else {
             const initialHit = getHitLocationForRoll(attackData.rollData.roll.total);
             hit.location = additionalHitLocations()[initialHit][hitNumber <= 5 ? hitNumber : 5];
