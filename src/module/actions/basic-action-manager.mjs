@@ -22,6 +22,7 @@ export class BasicActionManager {
             $html.find('.roll-control__assign-damage').click(async (ev) => await this._assignDamage(ev));
             $html.find('.roll-control__apply-damage').click(async (ev) => await this._applyDamage(ev));
             $html.find('.roll-control__apply-condition').click(async (ev) => await this._applyCondition(ev));
+            $html.find('.roll-control__pinning-test').click(async (ev) => await this._rollPinningTest(ev));
             $html.find('.roll-control__roll-opposed').click(async (ev) => await this._rollOpposed(ev));
         });
 
@@ -211,6 +212,55 @@ export class BasicActionManager {
         // toggleStatusEffect (Foundry v12+) flips the status; force it on.
         await targetActor.toggleStatusEffect(conditionId, { active: true });
         ui.notifications.info(`Applied ${conditionId} to ${targetActor.name}.`);
+    }
+
+    /**
+     * Roll a target's Pinning Test (a Willpower Test at the suppressing action's difficulty)
+     * and apply the Pinned condition on a failure (RT Core p.248). Button-driven so it runs
+     * on a client with write permission to the target (GM/owner). (QA-082.)
+     */
+    async _rollPinningTest(event) {
+        event.preventDefault();
+        const div = $(event.currentTarget);
+        const targetUuid = div.data('target-uuid');
+        const difficulty = Number(div.data('difficulty')) || 0;
+
+        let targetActor;
+        if (targetUuid) {
+            targetActor = await fromUuid(targetUuid);
+            if (targetActor?.actor !== undefined) targetActor = targetActor.actor;
+        }
+        if (!targetActor) {
+            const targeted = game.user.targets;
+            if (targeted && targeted.size > 0) targetActor = targeted.values().next().value.actor;
+        }
+        if (!targetActor) {
+            ui.notifications.warn(`Cannot determine target actor for the Pinning Test.`);
+            return;
+        }
+        if (!targetActor.isOwner) {
+            ui.notifications.warn(`Only the GM or the token's owner can roll ${targetActor.name}'s Pinning Test.`);
+            return;
+        }
+
+        const wp = targetActor.characteristics?.willpower?.total ?? 0;
+        const target = wp + difficulty;
+        const roll = new Roll('1d100', {});
+        await roll.evaluate();
+        // RT: a roll of 1 always succeeds, 100 always fails; otherwise <= target succeeds.
+        const success = roll.total === 1 || (roll.total <= target && roll.total !== 100);
+        if (!success) {
+            await targetActor.toggleStatusEffect('pinned', { active: true });
+        }
+        const verdict = success
+            ? `<strong>passes</strong> — acts normally.`
+            : `<strong>fails</strong> — is now <strong>Pinned</strong> (Half Actions only, −20 BS).`;
+        await ChatMessage.create({
+            user: game.user.id,
+            speaker: ChatMessage.getSpeaker({ actor: targetActor }),
+            content: `<p><strong>Pinning Test</strong> (Willpower ${wp}${difficulty >= 0 ? '+' : ''}${difficulty} = ${target}): rolled <strong>${roll.total}</strong>. ${targetActor.name} ${verdict}</p>`,
+            rolls: [roll],
+        });
     }
 
     async _applyDamage(event) {

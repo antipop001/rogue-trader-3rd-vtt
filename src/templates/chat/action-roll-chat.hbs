@@ -231,6 +231,13 @@
                                         Apply: {{cond.name}}
                                     </div>
                                 {{/each}}
+                                {{#if effect.pinning}}
+                                    <div class="rt-control-button roll-control__pinning-test"
+                                         data-target-uuid="{{@root.rollData.targetActor.uuid}}"
+                                         data-difficulty="{{effect.pinning.difficulty}}">
+                                        Roll Pinning Test ({{numberFormat effect.pinning.difficulty sign=true}})
+                                    </div>
+                                {{/if}}
                             {{/if}}
                         {{/each}}
 

@@ -1,7 +1,7 @@
 // QA-080 condition layer — to-hit modifier helper.
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { conditionToHitModifier, reactionsLocked, conditionMeta, conditionsFromCriticalText, RT_CONDITIONS } from '../../src/module/rules/conditions.mjs';
+import { conditionToHitModifier, attackerConditionModifier, reactionsLocked, conditionMeta, conditionsFromCriticalText, RT_CONDITIONS } from '../../src/module/rules/conditions.mjs';
 
 test('QA-080: RT_CONDITIONS registers the expected condition ids', () => {
     const ids = RT_CONDITIONS.map((c) => c.id);
@@ -22,6 +22,14 @@ test('QA-080: conditionToHitModifier applies the RT to-hit steps', () => {
     assert.equal(conditionToHitModifier(['stunned', 'prone'], true), 30); // 20 + 10
     assert.equal(conditionToHitModifier(new Set(['stunned'])), 20);      // Set input
     assert.equal(conditionToHitModifier(null), 0);                       // safe
+});
+
+test('QA-082: attackerConditionModifier applies -20 BS to a Pinned shooter (ranged only)', () => {
+    assert.equal(attackerConditionModifier(['pinned'], true), -20);   // Pinned + ranged
+    assert.equal(attackerConditionModifier(['pinned'], false), 0);    // Pinned but melee (WS)
+    assert.equal(attackerConditionModifier([], true), 0);             // not Pinned
+    assert.equal(attackerConditionModifier(new Set(['pinned', 'prone']), true), -20);
+    assert.equal(attackerConditionModifier(null, true), 0);           // safe
 });
 
 test('QA-080 inc.4: reactionsLocked blocks Dodge/Parry for Stunned/Helpless/Unconscious', () => {

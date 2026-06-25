@@ -40,6 +40,21 @@ export function conditionToHitModifier(statuses, isMelee = false) {
     return mod;
 }
 
+/**
+ * The to-hit penalty a SHOOTER suffers for their OWN conditions (distinct from
+ * {@link conditionToHitModifier}, which reads the target's). A Pinned character suffers
+ * −20 to all Ballistic Skill Tests (RT Core p.248). Melee (WS) attacks are unaffected.
+ * @param {Iterable<string>|Set<string>} statuses  the attacker's active status ids
+ * @param {boolean} isRanged  whether the attack is a Ballistic Skill (ranged) test
+ * @returns {number} the BS to-hit penalty (0 or −20)
+ */
+export function attackerConditionModifier(statuses, isRanged = false) {
+    const s = statuses instanceof Set ? statuses : new Set(Array.from(statuses ?? []));
+    let mod = 0;
+    if (isRanged && s.has('pinned')) mod -= 20;
+    return mod;
+}
+
 /** Conditions that forbid spending Reactions (Dodge/Parry) entirely (RT Core p.244, 247). */
 const REACTION_LOCKING = new Set(['stunned', 'helpless', 'unconscious']);
 

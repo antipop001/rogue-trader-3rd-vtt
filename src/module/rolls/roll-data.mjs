@@ -9,7 +9,7 @@ import { hitDropdown } from '../rules/hit-locations.mjs';
 import { DarkHeresy } from '../rules/config.mjs';
 import { shipFacings } from '../rules/ship-facings.mjs';
 import { weaponMasterBonus, weaponUntrainedPenalty } from './roll-helpers.mjs';
-import { conditionToHitModifier } from '../rules/conditions.mjs';
+import { conditionToHitModifier, attackerConditionModifier } from '../rules/conditions.mjs';
 
 export class RollData {
     difficulties = rollDifficulties();
@@ -222,6 +222,9 @@ export class WeaponRollData extends RollData {
         // to-hit modifier (Stunned +20, Unaware/Helpless +30, Prone ±10). Reads
         // `actor.statuses`; 0 when there is no target.
         this.modifiers['target condition'] = conditionToHitModifier(this.targetActor?.statuses, this.weapon?.isMelee);
+        // A Pinned shooter takes −20 to all BS Tests (RT Core p.248). Reads the ATTACKER's
+        // own conditions; ranged only. (QA-082.)
+        this.modifiers['pinned'] = attackerConditionModifier(this.sourceActor?.statuses, this.weapon?.isRanged);
         // Heavy weapons fired unbraced take -30 to hit (RT Core p.116). `braced` is a
         // per-attack toggle (the Brace Heavy Weapon action / prompt checkbox). (QA-128.)
         this.isHeavyWeapon = this.weapon?.system?.class === 'Heavy';

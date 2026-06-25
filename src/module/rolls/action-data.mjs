@@ -197,11 +197,14 @@ export class ActionData {
                         }
                     }
                 } else if (actionItem.isRanged) {
-                    // Suppressing Fire
+                    // Suppressing Fire / Overwatch — targets in the arc make a Pinning Test
+                    // (Willpower) or become Pinned (RT Core p.248). (QA-082.)
                     if (this.rollData.action === 'Suppressing Fire - Semi') {
-                        this.addEffect('Suppressing', 'All targets within a 30 degree arc must pass a Difficult (-10) Pinning test for become Pinned.')
+                        this.addEffect('Suppressing', 'All targets within a 30 degree arc must pass a Difficult (-10) Pinning test or become Pinned.', null, -10)
                     } else if (this.rollData.action === 'Suppressing Fire - Full') {
-                        this.addEffect('Suppressing', 'All targets within a 45 degree arc must pass a Hard (-20) Pinning test for become Pinned.')
+                        this.addEffect('Suppressing', 'All targets within a 45 degree arc must pass a Hard (-20) Pinning test or become Pinned.', null, -20)
+                    } else if (this.rollData.action === 'Overwatch') {
+                        this.addEffect('Overwatch', 'Targets in the 45 degree kill zone must pass an Ordinary (+0) Pinning test or become Pinned, even if the attack did no damage.', null, 0)
                     }
 
                     const rollTotal = this.rollData.roll.total;
@@ -578,7 +581,7 @@ export class ActionData {
         }
     }
 
-    addEffect(name, effect, conditions = null) {
+    addEffect(name, effect, conditions = null, pinning = null) {
         this.effectOutput.push({
             name: name,
             effect: effect,
@@ -588,6 +591,10 @@ export class ActionData {
             conditions: (conditions ?? [])
                 .map((id) => conditionMeta(id))
                 .filter(Boolean),
+            // QA-082: when set, the card shows a "Roll Pinning Test" button at this WP-test
+            // difficulty; on failure the target becomes Pinned. `pinning` is the modifier
+            // (e.g. -10 Difficult, -20 Hard, 0 Ordinary).
+            pinning: (pinning === null || pinning === undefined) ? null : { difficulty: pinning },
         })
     }
 
