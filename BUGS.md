@@ -331,7 +331,14 @@ engine/roll fixes. Fix these directly, or in a dedicated follow-up loop.
   RT is **+2/DoS** — P1, in QA_FINDINGS.md).
 
 ## BUG-013 — Primitive weapons deal 0 damage dice (DH2 die-cap resolves to 0) + wrong RT rule
-- **Status: OPEN — P0, promoted from QA-audit finding QA-136 (2026-06-24).**
+- **Status: ✅ FIXED 2026-06-24, verified live on rt-smoke.** (1) Removed the DH2 per-die
+  cap in `damage-data.mjs` — primitive weapons now deal full dice (verified: `1d10+2` rolls
+  8-12, was a flat ~2). (2) Implemented the RT 1e defender-side rule: a `Hit.primitive` flag
+  (set in `_calculateDamage`, threaded via the chat card's `data-primitive` →
+  `_assignDamage`) makes `assign-damage-data.finalize()` **double the struck location's AP
+  before penetration** (`_armourIsPrimitive()` exempts Primitive-type armour). Verified:
+  20 dmg vs body AP 4 → 13 taken normal, **9 taken primitive** (AP doubled to 8). (From
+  QA-136; QA-137 multi-die Primitive/Proven overwrite remains a separate P1.)
 - **Symptom:** all 29 Primitive-quality weapons deal NO dice damage — only their flat
   bonus / Strength Bonus survives (a Flintlock Pistol `1d10+2` does a flat 2).
 - **Cause:** `damage-data.mjs:155-162` implements Primitive as a DH2 per-die value cap;

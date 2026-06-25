@@ -50,6 +50,7 @@ export class Hit {
     effects = [];
     righteousFury = [];
     scatter = {};
+    primitive = false;
 
     /**
      * @param attackData
@@ -152,15 +153,6 @@ export class Hit {
                     rfCount += 1;
                 }
 
-                // Unarmed Master / Improved Natural Weapons remove the Primitive quality
-                // from unarmed strikes (unarmed.primitive === false) — suppress the cap.
-                if (attackData.rollData.hasAttackSpecial('Primitive') && !(unarmed && unarmed.primitive === false)) {
-                    const primitive = attackData.rollData.getAttackSpecial('Primitive');
-                    if (result.result > primitive.level) {
-                        this.modifiers['primitive'] = primitive.level - result.result;
-                    }
-                }
-
                 if (attackData.rollData.hasAttackSpecial('Proven')) {
                     const proven = attackData.rollData.getAttackSpecial('Proven');
                     if (result.result < proven.level) {
@@ -169,6 +161,13 @@ export class Hit {
                 }
             }
         }
+
+        // RT 1e Primitive (RT Core p.142) is a DEFENDER-side rule — the target's armour
+        // is doubled in assign-damage (BUG-013), NOT a per-die damage cap (that DH2 cap
+        // is removed). Flag the hit; Unarmed Master / Improved Natural Weapons clear the
+        // Primitive quality from unarmed strikes (`unarmed.primitive === false`).
+        this.primitive = attackData.rollData.hasAttackSpecial('Primitive')
+            && !(unarmed && unarmed.primitive === false);
 
         // Righteous Fury (RT 1e RAW, RT Core p.250): each natural 10 (or the Vengeful
         // threshold) on a damage die grants a CONFIRMING attack roll; on a hit, add

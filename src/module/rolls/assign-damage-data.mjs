@@ -58,6 +58,18 @@ export class AssignDamageData {
         this.tb *= daemonicToughnessMultiplier(traits);
     }
 
+    /** True if the struck location's worn armour is itself Primitive — RT Core p.142:
+     *  Primitive armour is NOT doubled against Primitive weapons (BUG-013). */
+    _armourIsPrimitive() {
+        const norm = this.hit?.location?.replace(/\s/g, '').toUpperCase();
+        const key = ['head', 'leftArm', 'rightArm', 'body', 'leftLeg', 'rightLeg']
+            .find((k) => k.toUpperCase() === norm);
+        if (!key) return false;
+        return (this.actor?.items ?? []).some((i) => i.type === 'armour' && i.system?.equipped
+            && String(i.system?.type ?? '').toLowerCase() === 'primitive'
+            && Number(i.system?.armourPoints?.[key] ?? 0) > 0);
+    }
+
     async finalize() {
         if(this.hit.voidshipHit) {
             this.voidshipHit = true;
@@ -119,8 +131,14 @@ export class AssignDamageData {
             let totalDamage = Number.parseInt(this.hit.totalDamage);
             let totalPenetration = Number.parseInt(this.hit.totalPenetration);
 
-            // Reduce Armour by Penetration
+            // RT Core p.142: a Primitive weapon doubles the target's Armour Points
+            // (before penetration is applied), unless the struck location's armour is
+            // ALSO Primitive (BUG-013).
             let usableArmour = this.armour;
+            if (this.hit.primitive && !this._armourIsPrimitive()) {
+                usableArmour = usableArmour * 2;
+            }
+            // Reduce Armour by Penetration
             usableArmour = usableArmour - totalPenetration;
             if (usableArmour < 0) {
                 usableArmour = 0;
