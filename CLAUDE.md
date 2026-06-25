@@ -102,6 +102,24 @@ After `npm run build`, rsync each subdirectory of `build/rogue-trader-3rd/` to t
 
 Then restart: `sudo systemctl restart foundry.service`.
 
+### Disk discipline — release zips + old artifacts live on the mount, NOT local `/`
+
+The dev LXC's root `/` is a **10 GB ZFS subvol that runs ~97% full** (`.git` ≈1.4 GB, `build/` ≈550 MB). A single release zip is ~567 MB, so it will NOT fit on `/` — and `gulp createArchive` (gulp-zip buffers the whole archive in memory) gets **OOM-killed** in the 2 GB RAM box anyway. Rules:
+
+- **Build release zips straight onto the mount** `/mnt/project_data/RT/rt-vtt-archive/` (17 TB `data2` pool), never into the repo's `./archive/`. There is no `zip`/`unzip` binary on this host — stream with Python:
+  ```bash
+  python3 - <<'PY'
+  import os, zipfile
+  src="build/rogue-trader-3rd"; dest="/mnt/project_data/RT/rt-vtt-archive/rogue-trader-3rd-vtt-<VER>.zip"
+  with zipfile.ZipFile(dest,"w",zipfile.ZIP_DEFLATED,compresslevel=6) as z:
+      for r,_,fs in os.walk(src):
+          for f in fs: z.write(os.path.join(r,f), os.path.relpath(os.path.join(r,f), src))
+  PY
+  ```
+  Entries are relative to `build/rogue-trader-3rd/` so `system.json` sits at the zip root (matches the gulp-zip layout Foundry expects).
+- **Always move old/large artifacts off `/` to the mount when done** — release zips, stale `build/` copies, big scratch outputs. The archive of past releases (0.7.25–0.7.32, ~4 GB) already lives at `/mnt/project_data/RT/rt-vtt-archive/`.
+- ZFS free-space accounting lags after a cross-filesystem `mv` (snapshot/pool delay), so `df /` may not drop immediately — that's expected, not a failed move.
+
 ### Compendium changes need a cache-clear (Foundry V14 gotcha)
 
 Foundry V14 auto-migrates each system NeDB `.db` compendium into a **LevelDB cache** as a subdirectory next to the .db file on first read:
