@@ -46,6 +46,7 @@ import { checkAndMigrateWorld } from './rogue-trader-migrations.mjs';
 import { DHTourMain } from './tours/main-tour.mjs';
 import { openAcquisitionDialog } from './rules/acquisition.mjs';
 import { openEndeavoursDialog } from './rules/endeavours.mjs';
+import { openFearDialog } from './rules/fear.mjs';
 import { RT_CONDITIONS } from './rules/conditions.mjs';
 import { ChargenWizard } from './applications/chargen-wizard.mjs';
 
@@ -100,6 +101,7 @@ Enable Debug with: game.rt.debug = true
             rollCharacteristicMacro,
             acquisition: openAcquisitionDialog,
             endeavours: openEndeavoursDialog,
+            fearTest: openFearDialog,
         };
 
         //CONFIG.debug.hooks = true;

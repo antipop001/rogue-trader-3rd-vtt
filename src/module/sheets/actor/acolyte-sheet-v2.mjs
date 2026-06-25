@@ -21,6 +21,7 @@ export class AcolyteSheetV2 extends ActorContainerSheetV2 {
             parry: AcolyteSheetV2._onParry,
             addSkill: AcolyteSheetV2._onAddSkill,
             openChargen: AcolyteSheetV2._onOpenChargen,
+            fearTest: AcolyteSheetV2._onFearTest,
         },
     };
 
@@ -42,11 +43,24 @@ export class AcolyteSheetV2 extends ActorContainerSheetV2 {
                 action: 'openChargen',
             });
         }
+        // Fear Test control (QA-081) — opens a dialog to roll a Willpower Fear Test
+        // against a source's Fear Rating; combat failures draw the Shock Table.
+        if (this.isEditable) {
+            controls.push({
+                icon: 'fa-solid fa-ghost',
+                label: 'Fear Test',
+                action: 'fearTest',
+            });
+        }
         return controls;
     }
 
     static _onOpenChargen() {
         new ChargenWizard({ actor: this.actor }).render(true);
+    }
+
+    static _onFearTest() {
+        game.rt.fearTest(this.actor);
     }
 
     static PARTS = {
