@@ -1,6 +1,6 @@
 import { PsychicRollData, RollData, WeaponRollData } from './roll-data.mjs';
 import { Hit, PsychicDamageData, scatterDirection, WeaponDamageData } from './damage-data.mjs';
-import { attackTalentExtraHits, degreesOfSuccess, degreesOfFailure, getOpposedDegrees, roll1d100, sendActionDataToChat, stunDefenceBonus, uuid } from './roll-helpers.mjs';
+import { attackTalentExtraHits, degreesOfSuccess, degreesOfFailure, getOpposedDegrees, roll1d100, sendActionDataToChat, stunDefenceBonus, uuid, voidshipWeaponHits } from './roll-helpers.mjs';
 import { refundAmmo, useAmmo } from '../rules/ammo.mjs';
 import { DHBasicActionManager } from '../actions/basic-action-manager.mjs';
 import { conditionMeta } from '../rules/conditions.mjs';
@@ -386,35 +386,33 @@ export class ActionData {
             }
         }
         if (type === "Weapon") {
-            for (let i = 0; i < amount; i++) {
-                let result = {
-                    isCritical: false,
-                    isHit: false,
-                    isMiss: false,
-                    isFumble: false,
-                    penetration: false,
-                    overpenetration: false,
-                    roll: 0,
-                    location: ""
-                };
-                this.rollData.roll = await roll1d100();
-                let rollTotal = this.rollData.roll.total;
-                const target = this.rollData.modifiedTarget;
-                if (rollTotal <= target / 10 && rollTotal !== 100) {
-                    result.isCritical = true;
-                } else if (rollTotal <= target && rollTotal !== 100) {
-                    result.isHit = true;
-                } else if (rollTotal <= (100 - (10 - target/10)) && rollTotal !== 100) {
-                    result.isMiss = true;
-                } else {
-                    result.isFumble = true;
-                }
-                if (this.rollData.hasAttackSpecial('Destructive') && result.isHit) {
-                    result.isCritical = true;
-                    result.isHit = false;
-                }
-                result.roll = rollTotal;
-                this.rollData.voidshipResults.push(result);
+            // RT RAW (RT Core p.217-219): a SINGLE BS test scores 1 hit + 1 per Degree of
+            // Success, capped at the weapon's Strength; a Critical Hit triggers when DoS ≥
+            // the weapon's Crit Rating. (QA-153 / QA-044 — replaces the homebrew "Strength
+            // independent rolls" + fixed "≤ target/10" crit threshold.)
+            this.rollData.roll = await roll1d100();
+            const rollTotal = this.rollData.roll.total;
+            const target = this.rollData.modifiedTarget;
+            const strength = amount ?? this.rollData.weapon?.system?.strength ?? 1;
+            const critRating = this.rollData.weapon?.system?.critRating ?? 0;
+            const res = voidshipWeaponHits(rollTotal, target, strength, critRating);
+            this.rollData.dos = res.dos;
+            // Destructive: a normal hit is upgraded to a Critical Hit (RT Core p.218).
+            const critical = res.critical || (res.hit && this.rollData.hasAttackSpecial('Destructive'));
+            for (let i = 0; i < res.hits; i++) {
+                this.rollData.voidshipResults.push({
+                    isCritical: critical, isHit: !critical, isMiss: false, isFumble: false,
+                    penetration: false, overpenetration: false, roll: rollTotal, location: "",
+                });
+            }
+            if (res.hits > 0) {
+                this.rollData.success = true;
+            } else {
+                // record the miss / fumble so the result card still renders
+                this.rollData.voidshipResults.push({
+                    isCritical: false, isHit: false, isMiss: rollTotal !== 100, isFumble: rollTotal === 100,
+                    penetration: false, overpenetration: false, roll: rollTotal, location: "",
+                });
             }
         }
     }

@@ -1554,6 +1554,7 @@
         "rangeLong": 0,
         "strength": 0,
         "damage": 0,
+        "critRating": 5,
         "attackBonus": 0
       }
     },

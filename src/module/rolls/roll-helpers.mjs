@@ -49,6 +49,28 @@ export function degreesOfFailure(target, roll) {
 }
 
 /**
+ * Resolve a void-ship weapon attack as RT RAW (RT Core p.217-219): a SINGLE Ballistic Skill
+ * test scores one hit plus one additional hit per Degree of Success, capped at the weapon's
+ * Strength (the max hits). The shot is a Critical Hit when the DoS meets or exceeds the
+ * weapon's Crit Rating. Replaces the homebrew "Strength independent 1d100 rolls" model
+ * (QA-153) and the fixed "≤ target/10" crit threshold (QA-044).
+ * @param {number} roll        the 1d100 result
+ * @param {number} target      the modified BS target
+ * @param {number} strength    weapon Strength = maximum hits
+ * @param {number} critRating  weapon Crit Rating (DoS needed for a critical; 0 = never)
+ * @returns {{hit:boolean, dos:number, hits:number, critical:boolean}}
+ */
+export function voidshipWeaponHits(roll, target, strength, critRating) {
+    if (roll === 100 || roll > target) return { hit: false, dos: 0, hits: 0, critical: false };
+    const dos = degreesOfSuccess(target, roll);
+    const maxHits = Math.max(1, Math.floor(Number(strength) || 1));
+    const hits = Math.min(1 + dos, maxHits);
+    const cr = Math.floor(Number(critRating) || 0);
+    const critical = cr > 0 && dos >= cr;
+    return { hit: true, dos, hits, critical };
+}
+
+/**
  * The flat bonus added to a Stun defender's 1d10 (RT Core p.250): Toughness Bonus + 1 per
  * Armour Point protecting the head, with the head Armour Points DOUBLED when the attack is
  * unarmed or the weapon is Primitive. (QA-121.)
