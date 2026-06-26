@@ -91,41 +91,20 @@ export class AssignDamageData {
                     }
                 })
             }
-            switch (this.hit.voidshipHitType) {
-                case 'Overpenetrating Hit': {
-                    this.voidshipHullDamage = 2;
-                    let component = targetedComponents[Math.floor(Math.random() * targetedComponents.length)];
-                    await this.executeCritical(component);
-                    component = targetedComponents[Math.floor(Math.random() * targetedComponents.length)];
-                    await this.executeCritical(component);
-                    break;
-                }
-                case 'Penetrating Hit': {
-                    this.voidshipHullDamage = 1;
-                    let component = targetedComponents[Math.floor(Math.random() * targetedComponents.length)];
-                    await this.executeCritical(component);
-                    break;
-                }
-                case 'Overpenetrating Critical Hit': {
-                    this.voidshipHullDamage = 4;
-                    let component = targetedComponents[Math.floor(Math.random() * targetedComponents.length)];
-                    await this.executeCritical(component);
-                    component = targetedComponents[Math.floor(Math.random() * targetedComponents.length)];
-                    await this.executeCritical(component);
-                    break;
-                }
-                case 'Penetrating Critical Hit': {
-                    this.voidshipHullDamage = 2;
-                    let component = targetedComponents[Math.floor(Math.random() * targetedComponents.length)];
-                    await this.executeCritical(component);
-                    break;
-                }
-                case 'Nonpenetrating Critical Hit': {
-                    this.voidshipHullDamage = 1;
-                    let component = targetedComponents[Math.floor(Math.random() * targetedComponents.length)];
-                    await this.executeCritical(component);
-                    break;
-                }
+            // RT Core p.216: Hull Integrity lost = the salvo's combined rolled Damage minus
+            // the facing Armour once (macro) / ignoring Armour (lance), computed at attack
+            // resolution and carried on the hit. A Critical Hit that did 0 Hull still inflicts
+            // 1 automatic point, then rolls 1d5 on the canonical chart (per critical hit).
+            // (QA-042 — replaces the fixed 1/2/4 tier constants.)
+            this.voidshipHullDamage = Math.max(0, Number(this.hit.voidshipHullDamage) || 0);
+            const critHits = Math.max(0, Number(this.hit.voidshipCritHits) || 0)
+                || (/Critical/.test(this.hit.voidshipHitType || '') ? 1 : 0);
+            if (critHits > 0 && this.voidshipHullDamage <= 0) {
+                this.voidshipHullDamage = 1;
+            }
+            for (let i = 0; i < critHits; i++) {
+                const component = targetedComponents[Math.floor(Math.random() * targetedComponents.length)];
+                await this.executeCritical(component);
             }
         } else {
 

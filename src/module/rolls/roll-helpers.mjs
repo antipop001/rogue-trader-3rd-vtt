@@ -60,6 +60,23 @@ export function degreesOfFailure(target, roll) {
  * @param {number} critRating  weapon Crit Rating (DoS needed for a critical; 0 = never)
  * @returns {{hit:boolean, dos:number, hits:number, critical:boolean}}
  */
+/**
+ * Combined Hull-Integrity damage for a void-ship salvo (RT Core p.216). Macrobatteries
+ * combine all hits' rolled Damage into ONE total, then subtract the target's facing Armour
+ * ONCE; if the result is ≤ 0 the Armour stopped it (0 Hull lost). Lances resolve each hit
+ * separately and IGNORE Armour, so the total goes straight to Hull. (QA-042 — replaces the
+ * fixed 1/2/4 per-hit tier constants.)
+ * @param {number[]} perHitDamages  the rolled Damage (1d10 + bonus) for each non-shielded hit
+ * @param {number} armour           the target's facing Armour
+ * @param {boolean} ignoreArmour    true for lances (armour bypassed)
+ * @returns {number} Hull Integrity points lost (≥ 0)
+ */
+export function voidshipHullDamage(perHitDamages, armour, ignoreArmour = false) {
+    const total = (perHitDamages ?? []).reduce((a, b) => a + (Number(b) || 0), 0);
+    if (ignoreArmour) return Math.max(0, total);
+    return Math.max(0, total - (Number(armour) || 0));
+}
+
 export function voidshipWeaponHits(roll, target, strength, critRating) {
     if (roll === 100 || roll > target) return { hit: false, dos: 0, hits: 0, critical: false };
     const dos = degreesOfSuccess(target, roll);

@@ -125,6 +125,8 @@ export class BasicActionManager {
         const isCrit = div.data('voidshipCritType') ? div.data('voidshipCritType') : false;
         const penetration = div.data('voidshipPenetration');
         const overpenetration = div.data('voidshipOverpenetration');
+        const voidshipHullDamage = div.data('voidshipHullDamage');   // QA-042: combined salvo Hull loss
+        const voidshipCritHits = div.data('voidshipCritHits');
 
         const primitive = div.data('primitive');
         const hitData = new Hit();
@@ -135,6 +137,8 @@ export class BasicActionManager {
         hitData.damageType = damageType;
         hitData.criticalDamageBonus = Number(criticalDamageBonus) || 0;
         hitData.primitive = primitive === true || primitive === 'true';
+        hitData.voidshipHullDamage = Number(voidshipHullDamage) || 0;   // QA-042
+        hitData.voidshipCritHits = Number(voidshipCritHits) || 0;
 
         if (isCrit) {
             if (overpenetration) {

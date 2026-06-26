@@ -1,6 +1,6 @@
 import { PsychicRollData, RollData, WeaponRollData } from './roll-data.mjs';
 import { Hit, PsychicDamageData, scatterDirection, WeaponDamageData } from './damage-data.mjs';
-import { attackTalentExtraHits, degreesOfSuccess, degreesOfFailure, getOpposedDegrees, roll1d100, sendActionDataToChat, stunDefenceBonus, uuid, voidshipWeaponHits } from './roll-helpers.mjs';
+import { attackTalentExtraHits, degreesOfSuccess, degreesOfFailure, getOpposedDegrees, roll1d100, sendActionDataToChat, stunDefenceBonus, uuid, voidshipWeaponHits, voidshipHullDamage } from './roll-helpers.mjs';
 import { refundAmmo, useAmmo } from '../rules/ammo.mjs';
 import { DHBasicActionManager } from '../actions/basic-action-manager.mjs';
 import { conditionMeta } from '../rules/conditions.mjs';
@@ -525,19 +525,8 @@ export class ActionData {
     async calculatePenetration() {
         let damage = this.rollData.weapon.system.damage;
 
-        if (this.rollData.weapon.system.type === "Lance") {
-            this.rollData.voidshipDamage = damage;
-            if (this.rollData.targetActor && this.rollData.targetActor.type === "voidship") {
-                this.rollData.voidshipTarget = true;
-                this.rollData.voidshipResults.forEach((result) => {
-                    if (result.isCritical || result.isHit) {
-                        result.penetration = true;
-                    }
-                });
-            }
-            return;
-        }
-
+        // Lances take no range Damage modifier and ignore Armour; they fall through to the
+        // unified hull-damage computation below (handled via the isLance flag). (QA-042.)
         if (this.rollData.weapon.system.type === "Macrocannon") {
             if (this.rollData.hasAttackSpecial('Scattershot')) {
                 switch (this.rollData.rangeName) {
@@ -568,47 +557,41 @@ export class ActionData {
         this.rollData.voidshipDamage = damage;
         if (this.rollData.targetActor && this.rollData.targetActor.type === "voidship") {
             this.rollData.voidshipTarget = true;
+            const isLance = this.rollData.weapon.system.type === "Lance";
             const baseArmour = this.rollData.targetActor.system.armour;
             const cb = this.rollData.targetActor.system.componentBonuses ?? {};
-            const armour = {
-                prow: (baseArmour.prow || 0) + (cb.armour || 0) + (cb.armourProw || 0),
-                side: (baseArmour.side || 0) + (cb.armour || 0),
-                rear: (baseArmour.rear || 0) + (cb.armour || 0)
+            const armourByFacing = {
+                0: (baseArmour.prow || 0) + (cb.armour || 0) + (cb.armourProw || 0),
+                1: (baseArmour.side || 0) + (cb.armour || 0),
+                2: (baseArmour.side || 0) + (cb.armour || 0),
+                3: (baseArmour.rear || 0) + (cb.armour || 0),
             };
-            this.rollData.voidshipResults.forEach((result) => {
-                if (result.isCritical || result.isHit ) {
-                    switch (this.rollData.voidshipFacing) {
-                        case 0:
-                            if (damage >= (armour.prow+3)){
-                                result.overpenetration = true;
-                            } else if (damage >= armour.prow) {
-                                result.penetration = true;
-                            }
-                            break;
-                        case 1:
-                            if (damage >= (armour.side+3)){
-                                result.overpenetration = true;
-                            } else if (damage >= armour.side) {
-                                result.penetration = true;
-                            }
-                            break;
-                        case 2:
-                            if (damage >= (armour.side+3)){
-                                result.overpenetration = true;
-                            } else if (damage >= armour.side) {
-                                result.penetration = true;
-                            }
-                            break;
-                        case 3:
-                            if (damage >= (armour.rear+3)){
-                                result.overpenetration = true;
-                            } else if (damage >= armour.rear) {
-                                result.penetration = true;
-                            }
-                            break;
-                    }
-                }
-            })
+            const facingArmour = armourByFacing[this.rollData.voidshipFacing] ?? 0;
+
+            // RT Core p.216: roll the weapon's Damage (1d10 + the stored bonus) once per
+            // non-shielded hit. Macrobatteries SUM the rolls then subtract the facing Armour
+            // ONCE; lances resolve each hit ignoring Armour, straight to Hull. (QA-042 —
+            // replaces the homebrew penetration-tier / fixed 1-4 hull constants.)
+            const hits = this.rollData.voidshipResults.filter((r) => r.isCritical || r.isHit);
+            const perHit = [];
+            for (const r of hits) {
+                const dr = new Roll(`1d10+${damage}`, {});
+                await dr.evaluate();
+                r.damageRoll = dr.total;
+                perHit.push(dr.total);
+            }
+            const hull = voidshipHullDamage(perHit, facingArmour, isLance);
+            const critCount = hits.filter((r) => r.isCritical).length;
+            this.rollData.voidshipHullDamage = hull;
+            this.rollData.voidshipCritHits = critCount;
+            this.rollData.voidshipDamageRolls = perHit;
+            // The combined salvo total is applied ONCE — attach it to the primary hit so a
+            // single Assign carries the whole salvo; subsequent hits carry 0.
+            hits.forEach((r, i) => {
+                r.voidshipHull = i === 0 ? hull : 0;
+                r.voidshipCritHits = i === 0 ? critCount : 0;
+                r.penetration = true;   // (legacy flag the card/assign still read; tiering removed)
+            });
         }
     }
 

@@ -46,6 +46,8 @@ export class Hit {
     voidshipHitType = "Penetrating Hit";
     voidshipHitLocation = "Main";
     voidshipHit = false;
+    voidshipHullDamage = 0;   // QA-042: combined salvo Hull Integrity loss (Damage − Armour once)
+    voidshipCritHits = 0;     // QA-042: number of Critical Hits in the salvo
 
     specials = [];
     effects = [];

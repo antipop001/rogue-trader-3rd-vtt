@@ -25,3 +25,16 @@ test('QA-044: critical when DoS >= Crit Rating', () => {
     assert.equal(voidshipWeaponHits(11, 58, 1, 3).dos, 4);
     assert.equal(voidshipWeaponHits(29, 58, 4, 0).critical, false);  // CR 0 -> never
 });
+
+import { voidshipHullDamage } from '../../src/module/rolls/roll-helpers.mjs';
+test('QA-042: macrobattery combines hits then subtracts Armour once; lance ignores Armour', () => {
+    // macro: 3 hits 8+9+7=24, armour 10 -> 14 hull
+    assert.equal(voidshipHullDamage([8,9,7], 10, false), 14);
+    // armour stops it -> 0
+    assert.equal(voidshipHullDamage([4], 10, false), 0);
+    assert.equal(voidshipHullDamage([3,4], 10, false), 0);
+    // lance: ignore armour, straight to hull
+    assert.equal(voidshipHullDamage([12], 10, true), 12);
+    assert.equal(voidshipHullDamage([9,9], 20, true), 18);
+    assert.equal(voidshipHullDamage([], 5, false), 0);
+});
