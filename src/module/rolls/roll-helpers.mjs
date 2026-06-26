@@ -61,6 +61,23 @@ export function degreesOfFailure(target, roll) {
  * @returns {{hit:boolean, dos:number, hits:number, critical:boolean}}
  */
 /**
+ * The +mod to one side's Command Test in a void-ship boarding action (RT Core p.219-220):
+ * +10 per full 10 Crew Population advantage, +10 per full 10 Hull Integrity advantage, and
+ * +10 per point of that side's OWN turret rating. (QA-148.)
+ * @param {{crew:number, hull:number, turrets:number}} self
+ * @param {{crew:number, hull:number}} foe
+ * @returns {number} the Command-Test bonus for `self`
+ */
+export function boardingCommandBonus(self, foe) {
+    let mod = 10 * Math.max(0, Math.floor(Number(self.turrets) || 0));
+    const crewAdv = (Number(self.crew) || 0) - (Number(foe.crew) || 0);
+    if (crewAdv > 0) mod += 10 * Math.floor(crewAdv / 10);
+    const hullAdv = (Number(self.hull) || 0) - (Number(foe.hull) || 0);
+    if (hullAdv > 0) mod += 10 * Math.floor(hullAdv / 10);
+    return mod;
+}
+
+/**
  * Combined Hull-Integrity damage for a void-ship salvo (RT Core p.216). Macrobatteries
  * combine all hits' rolled Damage into ONE total, then subtract the target's facing Armour
  * ONCE; if the result is ≤ 0 the Armour stopped it (0 Hull lost). Lances resolve each hit

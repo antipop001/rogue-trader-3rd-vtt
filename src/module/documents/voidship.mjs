@@ -3,6 +3,7 @@ import { DHTargetedActionManager } from '../actions/targeted-action-manager.mjs'
 import { SimpleSkillData } from '../rolls/action-data.mjs';
 import { prepareCrewRoll, prepareTurretsRoll, prepareBoardingRoll} from '../prompts/crew-prompt.mjs';
 import { DHBasicActionManager } from '../actions/basic-action-manager.mjs';
+import { roll1d100, degreesOfSuccess, degreesOfFailure, getOpposedDegrees, boardingCommandBonus } from '../rolls/roll-helpers.mjs';
 
 export class RogueTraderVoidship extends RogueTraderBaseActor {
 
@@ -141,19 +142,62 @@ export class RogueTraderVoidship extends RogueTraderBaseActor {
         });
     }
 
+    // RT Core p.219-220: a boarding action (initiated by a Hard −20 Pilot test, GM-gated) is
+    // resolved each Strategic Turn by a SINGLE opposed Command Test between the two ships'
+    // leaders, modified by Crew Population / Hull Integrity advantage and turret rating. The
+    // loser takes 1d5 Crew + 1d5 Morale (or 1 Hull) per degree, then makes a Morale check to
+    // keep fighting. Replaces the homebrew per-action d100 loop. (QA-148.)
     async rollBoarding(operator) {
-        const simpleSkillData = new SimpleSkillData();
-        const rollData = simpleSkillData.rollData;
-        rollData.actor = this;
-        rollData.nameOverride = "Boarding";
-        rollData.voidshipBoarding = true;
-        rollData.type = 'Check';
-        rollData.baseTarget = this.system.crewRating;
-        rollData.boardingAttacks = this.system.boarding.actions;
-        rollData.boardingDamage = this.system.boarding.damage;
-        rollData.modifiers.modifier = 0;
-        rollData.modifiers.operator = operator ? operator : 0;
-        await prepareBoardingRoll(simpleSkillData);
+        const target = [...(game.user?.targets ?? [])][0]?.actor;
+        if (!target || target.type !== 'voidship') {
+            ui.notifications?.warn('Target an enemy ship to resolve a boarding action (RT Core p.219).');
+            return;
+        }
+        const stat = (s) => ({
+            crew: s.system.crew?.value ?? 0,
+            hull: s.system.hull?.value ?? 0,
+            turrets: (s.system.turrets || 0) + (s.system.componentBonuses?.turrets || 0),
+        });
+        const aS = stat(this), dS = stat(target);
+        const aMod = boardingCommandBonus(aS, dS) + (Number(operator) || 0);
+        const dMod = boardingCommandBonus(dS, aS);
+        const aTarget = (this.system.crewRating || 0) + aMod;
+        const dTarget = (target.system.crewRating || 0) + dMod;
+        const aRoll = await roll1d100(); const dRoll = await roll1d100();
+        const aSucc = aRoll.total === 1 || (aRoll.total <= aTarget && aRoll.total !== 100);
+        const dSucc = dRoll.total === 1 || (dRoll.total <= dTarget && dRoll.total !== 100);
+        const aDoS = aSucc ? degreesOfSuccess(aTarget, aRoll.total) : 0;
+        const aDoF = aSucc ? 0 : degreesOfFailure(aTarget, aRoll.total);
+        const dDoS = dSucc ? degreesOfSuccess(dTarget, dRoll.total) : 0;
+        const dDoF = dSucc ? 0 : degreesOfFailure(dTarget, dRoll.total);
+        const net = getOpposedDegrees(aSucc, aDoS, aDoF, dSucc, dDoS, dDoF);
+
+        let body;
+        if (net === 0) {
+            body = `<strong>Stalemate</strong> — neither boarding party gains the upper hand this turn.`;
+        } else {
+            const winner = net > 0 ? this : target;
+            const loser = net > 0 ? target : this;
+            const margin = Math.abs(net);
+            const crewLoss = (await new Roll(`${margin}d5`).evaluate()).total;
+            const moraleLoss = (await new Roll(`${margin}d5`).evaluate()).total;
+            const loserMorale = loser.system.morale?.value ?? 0;
+            const mRoll = await roll1d100();
+            const routs = mRoll.total > loserMorale;
+            body = `<strong>${winner.name} wins by ${margin} degree${margin === 1 ? '' : 's'}</strong>. `
+                + `${loser.name} loses <strong>${crewLoss} Crew Population + ${moraleLoss} Morale</strong> `
+                + `(or, the winner's choice, ${margin} Hull Integrity). `
+                + `Morale check: ${mRoll.total} vs ${loserMorale} — ${loser.name} ${routs ? '<strong>routs or surrenders</strong>' : 'fights on'}.`;
+        }
+        const fmt = (n, base, mod, succ, dos, dof, roll) =>
+            `${n}: Command ${base}${mod >= 0 ? '+' : ''}${mod} = ${base + mod}, rolled ${roll} → ${succ ? `${dos} DoS` : `fail (${dof} DoF)`}`;
+        await ChatMessage.create({
+            user: game.user.id,
+            speaker: ChatMessage.getSpeaker({ actor: this }),
+            content: `<p><strong>Boarding Action — opposed Command Test</strong> (RT Core p.219)<br/>`
+                + `${fmt(this.name, this.system.crewRating || 0, aMod, aSucc, aDoS, aDoF, aRoll.total)}<br/>`
+                + `${fmt(target.name, target.system.crewRating || 0, dMod, dSucc, dDoS, dDoF, dRoll.total)}<br/>${body}</p>`,
+        });
     }
 
     async rollItem(itemId) {
