@@ -1111,45 +1111,6 @@ items:
   sort: 0
   system: {}
   type: trait
-- _id: SKk5WmEhFmL7vCP2
-  effects: []
-  flags: {}
-  img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
-  name: The Skitarii has a single Basic or Heavy ranged weapon built into his arm or body
-  ownership:
-    default: 3
-  sort: 0
-  system:
-    attackBonus: 0
-    attackType: ''
-    availability: Common
-    backpack:
-      inBackpack: false
-    class: ''
-    clip:
-      max: 0
-      value: 0
-    craftsmanship: Common
-    damage: ''
-    damageType: ''
-    description: ''
-    effect: ''
-    equipped: true
-    inBackpack: false
-    modifications: []
-    penetration: ''
-    range: ''
-    rateOfFire:
-      burst: 0
-      full: 0
-      single: 1
-    reload: ''
-    source: The Frozen Reaches
-    special: {}
-    target: ''
-    type: ''
-    weight: 0
-  type: weapon
 name: Damaris Skitarii Tech-Guard
 prototypeToken:
   actorLink: false
@@ -1719,45 +1680,6 @@ items:
     source: Rogue Trader Core Rulebook
     tier: '1'
   type: talent
-- _id: RYiF0y9F68h88ng9
-  effects: []
-  flags: {}
-  img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
-  name: None
-  ownership:
-    default: 3
-  sort: 0
-  system:
-    attackBonus: 0
-    attackType: ''
-    availability: Common
-    backpack:
-      inBackpack: false
-    class: ''
-    clip:
-      max: 0
-      value: 0
-    craftsmanship: Common
-    damage: ''
-    damageType: ''
-    description: ''
-    effect: ''
-    equipped: true
-    inBackpack: false
-    modifications: []
-    penetration: ''
-    range: ''
-    rateOfFire:
-      burst: 0
-      full: 0
-      single: 1
-    reload: ''
-    source: The Frozen Reaches
-    special: {}
-    target: ''
-    type: ''
-    weight: 0
-  type: weapon
 name: Bishop Mikael Arint
 prototypeToken:
   actorLink: false

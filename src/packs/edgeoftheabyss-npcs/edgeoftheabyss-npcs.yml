@@ -4359,45 +4359,6 @@ items:
     type: ''
     weight: 0
   type: weapon
-- _id: SHDmgCU2UUEfhWeW
-  effects: []
-  flags: {}
-  img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
-  name: but shields itself from attacks using the raw power of the Warp
-  ownership:
-    default: 3
-  sort: 0
-  system:
-    attackBonus: 0
-    attackType: ''
-    availability: Common
-    backpack:
-      inBackpack: false
-    class: ''
-    clip:
-      max: 0
-      value: 0
-    craftsmanship: Common
-    damage: ''
-    damageType: ''
-    description: ''
-    effect: ''
-    equipped: true
-    inBackpack: false
-    modifications: []
-    penetration: ''
-    range: ''
-    rateOfFire:
-      burst: 0
-      full: 0
-      single: 1
-    reload: ''
-    source: Edge of the Abyss
-    special: {}
-    target: ''
-    type: ''
-    weight: 0
-  type: weapon
 name: Greater Daemon (Walking Nightmare)
 prototypeToken:
   actorLink: false
