@@ -164,7 +164,7 @@ items:
       max: 0
       value: 0
     craftsmanship: Common
-    damage: ''
+    damage: 2d10+4
     damageType: ''
     description: ''
     effect: ''
@@ -179,7 +179,8 @@ items:
       single: 1
     reload: ''
     source: Forsaken Bounty
-    special: {}
+    special:
+      powerField: true
     target: ''
     type: ''
     weight: 0

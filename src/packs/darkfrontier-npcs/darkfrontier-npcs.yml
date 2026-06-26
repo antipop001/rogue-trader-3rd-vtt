@@ -56,7 +56,7 @@ items:
       max: 0
       value: 0
     craftsmanship: Common
-    damage: ''
+    damage: 1d10+4
     damageType: ''
     description: ''
     effect: ''
@@ -212,7 +212,7 @@ items:
       max: 0
       value: 0
     craftsmanship: Common
-    damage: ''
+    damage: 2d10+10
     damageType: ''
     description: ''
     effect: ''
@@ -246,20 +246,20 @@ items:
     availability: Common
     backpack:
       inBackpack: false
-    class: Melee
+    class: Pistol
     clip:
       max: 0
       value: 0
     craftsmanship: Common
-    damage: ''
-    damageType: ''
+    damage: 1d10+4
+    damageType: Energy
     description: ''
     effect: ''
     equipped: true
     inBackpack: false
     modifications: []
-    penetration: ''
-    range: ''
+    penetration: '7'
+    range: '35'
     rateOfFire:
       burst: 0
       full: 0

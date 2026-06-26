@@ -119,7 +119,7 @@ items:
       max: 0
       value: 0
     craftsmanship: Common
-    damage: ''
+    damage: 1d10+8
     damageType: ''
     description: ''
     effect: ''
@@ -134,7 +134,8 @@ items:
       single: 1
     reload: ''
     source: The Game Master's Kit
-    special: {}
+    special:
+      primitive: true
     target: ''
     type: ''
     weight: 0

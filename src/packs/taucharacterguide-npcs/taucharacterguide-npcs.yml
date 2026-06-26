@@ -56,9 +56,9 @@ system:
   skills: {}
   wounds:
     critical: 0
-    max: 0
+    max: 13
     rolled: true
-    value: 0
+    value: 13
 type: npc
 ---
 effects: []

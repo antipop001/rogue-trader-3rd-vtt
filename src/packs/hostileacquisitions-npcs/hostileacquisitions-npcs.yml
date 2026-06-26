@@ -1455,9 +1455,9 @@ system:
       advance: 20
   wounds:
     critical: 0
-    max: 0
+    max: 15
     rolled: true
-    value: 0
+    value: 15
 type: npc
 ---
 effects: []

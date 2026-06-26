@@ -1032,13 +1032,13 @@ items:
     availability: Common
     backpack:
       inBackpack: false
-    class: Basic
+    class: Pistol
     clip:
       max: 6
       value: 6
     craftsmanship: Common
-    damage: ''
-    damageType: ''
+    damage: 1d10+4
+    damageType: Impact
     description: ''
     effect: ''
     equipped: true
@@ -1047,10 +1047,10 @@ items:
     penetration: '0'
     range: '20'
     rateOfFire:
-      burst: 0
+      burst: 3
       full: 0
       single: 1
-    reload: ''
+    reload: Full
     source: Fallen Suns
     special:
       tearing: true
@@ -1077,8 +1077,8 @@ items:
       max: 0
       value: 0
     craftsmanship: Common
-    damage: ''
-    damageType: ''
+    damage: 1d10+7
+    damageType: Rending
     description: ''
     effect: ''
     equipped: true
@@ -6876,9 +6876,9 @@ system:
   skills: {}
   wounds:
     critical: 0
-    max: 0
+    max: 20
     rolled: true
-    value: 0
+    value: 20
 type: npc
 ---
 effects: []
