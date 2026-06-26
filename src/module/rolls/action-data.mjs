@@ -121,7 +121,7 @@ export class ActionData {
                 const opposedDegrees = getOpposedDegrees(this.rollData.success, this.rollData.dos, this.rollData.dof, this.rollData.opposedSuccess, this.rollData.opposedDos, this.rollData.opposedDof);
                 if(opposedDegrees >= 2) {
                     const strengthBonus = this.rollData.sourceActor?.characteristics?.strength?.bonus ?? 0;
-                    this.addEffect('Knock Down', `The target is knocked Prone and must use a Stand action in his turn to regain his feet! The impact deals [[1d5-3+${strengthBonus}]] (min 0) damage and one level of fatigue to the target!`, ['prone']);
+                    this.addEffect('Knock Down', `The target is knocked Prone and must use a Stand action in his turn to regain his feet! The impact deals [[1d5-3+${strengthBonus}]] (min 0) damage, with armour counting as double, and one level of fatigue to the target!`, ['prone']);
                 } else if (opposedDegrees > 0) {
                     this.addEffect('Knock Down', `The target is knocked Prone and must use a Stand action in his turn to regain his feet!`, ['prone']);
                 } else if (opposedDegrees > -2) {
@@ -131,7 +131,7 @@ export class ActionData {
                 }
             } else {
                 if(this.rollData.success) {
-                    this.addEffect('Knock Down', `Compare to targets Strength check. If the attacker wins, the target is knocked Prone and must use a Stand action in his turn to regain his feet. If the attacker succeeds by two or more degrees of success, he can choose to inflict 1d5–3+SB Impact damage and one level of Fatigue on the target. If the target wins the test, he keeps his footing. If the target wins by two or more degrees of success, the attacker is knocked Prone instead.`);
+                    this.addEffect('Knock Down', `Compare to targets Strength check. If the attacker wins, the target is knocked Prone and must use a Stand action in his turn to regain his feet. If the attacker succeeds by two or more degrees of success, he can choose to inflict 1d5–3+SB Impact damage (with armour counting as double) and one level of Fatigue on the target. If the target wins the test, he keeps his footing. If the target wins by two or more degrees of success, the attacker is knocked Prone instead.`);
                 } else {
                     this.addEffect('Knock Down', `The character fails to knock down the target!`);
                 }

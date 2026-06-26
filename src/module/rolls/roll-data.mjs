@@ -19,7 +19,6 @@ export class RollData {
     lasModes = DarkHeresy.combat.las_fire_modes;
 
     // Chat Controls
-    ignoreModifiers = false;
     ignoreDegrees = false;
     ignoreSuccess = false;
     ignoreControls = false;
@@ -245,7 +244,7 @@ export class WeaponRollData extends RollData {
         this.isFeint = this.action === 'Feint';
         this.isKnockDown = this.action === 'Knock Down';
 
-        this.ignoreModifiers = this.isSpray || this.isStun;
+        // QA-123: ignoreModifiers was assigned here but never read anywhere — removed.
         this.ignoreDegrees = this.isSpray || this.isStun;
         this.ignoreSuccess = this.isSpray;
         this.ignoreControls = this.isFeint || this.isStun || this.isKnockDown;
