@@ -816,9 +816,9 @@ system:
   skills: {}
   wounds:
     critical: 0
-    max: 0
+    max: 35
     rolled: true
-    value: 0
+    value: 35
 type: npc
 ---
 effects: []
@@ -878,9 +878,9 @@ system:
   skills: {}
   wounds:
     critical: 0
-    max: 0
+    max: 10
     rolled: true
-    value: 0
+    value: 10
 type: npc
 ---
 effects: []
@@ -3399,13 +3399,13 @@ items:
     availability: Common
     backpack:
       inBackpack: false
-    class: Basic
+    class: Pistol
     clip:
       max: 6
       value: 6
     craftsmanship: Common
-    damage: ''
-    damageType: ''
+    damage: 1d10+4
+    damageType: Impact
     description: ''
     effect: ''
     equipped: true
@@ -3417,7 +3417,7 @@ items:
       burst: 3
       full: 0
       single: 1
-    reload: ''
+    reload: Full
     source: The Frozen Reaches
     special:
       tearing: true
@@ -3444,8 +3444,8 @@ items:
       max: 0
       value: 0
     craftsmanship: Common
-    damage: ''
-    damageType: ''
+    damage: 1d10+7
+    damageType: Rending
     description: ''
     effect: ''
     equipped: true
@@ -4073,14 +4073,14 @@ items:
       max: 0
       value: 0
     craftsmanship: Common
-    damage: ''
-    damageType: ''
+    damage: 1d10+9
+    damageType: Energy
     description: ''
     effect: ''
     equipped: true
     inBackpack: false
     modifications: []
-    penetration: '2'
+    penetration: '4'
     range: ''
     rateOfFire:
       burst: 0
@@ -4089,6 +4089,7 @@ items:
     reload: ''
     source: The Frozen Reaches
     special:
+      powerField: true
       shocking: true
     target: ''
     type: ''

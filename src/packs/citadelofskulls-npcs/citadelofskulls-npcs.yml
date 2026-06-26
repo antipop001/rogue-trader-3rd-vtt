@@ -4576,12 +4576,12 @@ items:
     availability: Common
     backpack:
       inBackpack: false
-    class: ''
+    class: Melee
     clip:
       max: 0
       value: 0
     craftsmanship: Common
-    damage: ''
+    damage: 1d10+5
     damageType: ''
     description: ''
     effect: ''
@@ -4615,12 +4615,12 @@ items:
     availability: Common
     backpack:
       inBackpack: false
-    class: ''
+    class: Melee
     clip:
       max: 0
       value: 0
     craftsmanship: Common
-    damage: ''
+    damage: 1d10+5
     damageType: ''
     description: ''
     effect: ''
@@ -4654,12 +4654,12 @@ items:
     availability: Common
     backpack:
       inBackpack: false
-    class: ''
+    class: Melee
     clip:
       max: 0
       value: 0
     craftsmanship: Common
-    damage: ''
+    damage: 1d10+5
     damageType: ''
     description: ''
     effect: ''
@@ -5092,7 +5092,7 @@ items:
       max: 0
       value: 0
     craftsmanship: Common
-    damage: ''
+    damage: 1d5+8
     damageType: ''
     description: ''
     effect: ''
@@ -5181,12 +5181,13 @@ items:
     penetration: ''
     range: '60'
     rateOfFire:
-      burst: 0
-      full: 0
-      single: 1
+      burst: false
+      full: false
+      single: true
     reload: Full
     source: Citadel of Skulls
-    special: {}
+    special:
+      inaccurate: true
     target: ''
     type: ''
     weight: 0
@@ -7614,7 +7615,7 @@ items:
       max: 0
       value: 0
     craftsmanship: Common
-    damage: ''
+    damage: 1d10+4
     damageType: ''
     description: ''
     effect: ''

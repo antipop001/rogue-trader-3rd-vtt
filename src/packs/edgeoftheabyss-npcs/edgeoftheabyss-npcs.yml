@@ -5834,8 +5834,8 @@ items:
       max: 0
       value: 0
     craftsmanship: Common
-    damage: ''
-    damageType: ''
+    damage: 1d10+16
+    damageType: Energy
     description: ''
     effect: ''
     equipped: true
@@ -5850,6 +5850,7 @@ items:
     reload: ''
     source: Edge of the Abyss
     special:
+      powerField: true
       unbalanced: true
     target: ''
     type: ''
@@ -5874,8 +5875,8 @@ items:
       max: 60
       value: 60
     craftsmanship: Common
-    damage: ''
-    damageType: ''
+    damage: 1d10+7
+    damageType: Energy
     description: ''
     effect: ''
     equipped: true
@@ -5887,7 +5888,7 @@ items:
       burst: 2
       full: 4
       single: 1
-    reload: ''
+    reload: Full
     source: Edge of the Abyss
     special:
       shocking: true
@@ -5916,8 +5917,8 @@ items:
       max: 6
       value: 6
     craftsmanship: Common
-    damage: ''
-    damageType: ''
+    damage: 2d10+6
+    damageType: Explosive
     description: ''
     effect: ''
     equipped: true
@@ -5929,7 +5930,7 @@ items:
       burst: 0
       full: 0
       single: 1
-    reload: ''
+    reload: Full
     source: Edge of the Abyss
     special:
       inaccurate: true
@@ -7160,27 +7161,28 @@ items:
     availability: Common
     backpack:
       inBackpack: false
-    class: ''
+    class: Basic
     clip:
-      max: 0
-      value: 0
+      max: 24
+      value: 24
     craftsmanship: Common
-    damage: ''
-    damageType: ''
+    damage: 1d10+5
+    damageType: Explosive
     description: ''
     effect: ''
     equipped: true
     inBackpack: false
     modifications: []
-    penetration: ''
-    range: ''
+    penetration: '4'
+    range: '90'
     rateOfFire:
-      burst: 0
-      full: 0
+      burst: 2
+      full: 4
       single: 1
-    reload: ''
+    reload: Half
     source: Edge of the Abyss
-    special: {}
+    special:
+      tearing: true
     target: ''
     type: ''
     weight: 0

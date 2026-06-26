@@ -174,9 +174,9 @@ system:
       advance: 10
   wounds:
     critical: 0
-    max: 0
+    max: 20
     rolled: true
-    value: 0
+    value: 20
 type: npc
 ---
 effects: []
@@ -337,8 +337,8 @@ items:
       max: 0
       value: 0
     craftsmanship: Common
-    damage: ''
-    damageType: ''
+    damage: 1d10+10
+    damageType: Rending
     description: ''
     effect: ''
     equipped: true
@@ -409,9 +409,9 @@ system:
       advance: 10
   wounds:
     critical: 0
-    max: 0
+    max: 35
     rolled: true
-    value: 0
+    value: 35
 type: npc
 ---
 effects: []
@@ -483,7 +483,7 @@ items:
       max: 0
       value: 0
     craftsmanship: Common
-    damage: ''
+    damage: 1d10+3
     damageType: ''
     description: ''
     effect: ''
@@ -558,9 +558,9 @@ system:
       advance: 20
   wounds:
     critical: 0
-    max: 0
+    max: 10
     rolled: true
-    value: 0
+    value: 10
 type: npc
 ---
 effects: []
@@ -674,7 +674,7 @@ items:
       max: 0
       value: 0
     craftsmanship: Common
-    damage: ''
+    damage: 1d10+5
     damageType: ''
     description: ''
     effect: ''
@@ -745,9 +745,9 @@ system:
       advance: 0
   wounds:
     critical: 0
-    max: 0
+    max: 20
     rolled: true
-    value: 0
+    value: 20
 type: npc
 ---
 effects: []
@@ -873,7 +873,7 @@ items:
       max: 0
       value: 0
     craftsmanship: Common
-    damage: ''
+    damage: 2d10+8
     damageType: ''
     description: ''
     effect: ''
@@ -1063,9 +1063,9 @@ system:
       advance: 0
   wounds:
     critical: 0
-    max: 0
+    max: 24
     rolled: true
-    value: 0
+    value: 24
 type: npc
 ---
 effects: []
@@ -1371,7 +1371,7 @@ items:
       max: 0
       value: 0
     craftsmanship: Common
-    damage: ''
+    damage: 1d10+5
     damageType: ''
     description: ''
     effect: ''
@@ -1521,7 +1521,7 @@ system:
       advance: 10
   wounds:
     critical: 0
-    max: 0
+    max: 45
     rolled: true
-    value: 0
+    value: 45
 type: npc

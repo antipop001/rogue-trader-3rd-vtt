@@ -449,9 +449,9 @@ system:
       advance: 0
   wounds:
     critical: 0
-    max: 0
+    max: 10
     rolled: true
-    value: 0
+    value: 10
 type: npc
 ---
 effects: []
@@ -703,9 +703,9 @@ system:
       advance: 0
   wounds:
     critical: 0
-    max: 0
+    max: 5
     rolled: true
-    value: 0
+    value: 5
 type: npc
 ---
 effects: []
@@ -886,9 +886,9 @@ system:
   skills: {}
   wounds:
     critical: 0
-    max: 0
+    max: 10
     rolled: true
-    value: 0
+    value: 10
 type: npc
 ---
 effects: []
@@ -1000,7 +1000,7 @@ items:
       max: 0
       value: 0
     craftsmanship: Common
-    damage: ''
+    damage: 1d10+1
     damageType: ''
     description: ''
     effect: ''
@@ -1609,7 +1609,7 @@ items:
       max: 0
       value: 0
     craftsmanship: Common
-    damage: ''
+    damage: 1d10+2
     damageType: ''
     description: ''
     effect: ''
@@ -3838,9 +3838,9 @@ system:
       advance: 0
   wounds:
     critical: 0
-    max: 0
+    max: 18
     rolled: true
-    value: 0
+    value: 18
 type: npc
 ---
 effects: []
@@ -4134,9 +4134,9 @@ system:
       advance: 0
   wounds:
     critical: 0
-    max: 0
+    max: 15
     rolled: true
-    value: 0
+    value: 15
 type: npc
 ---
 effects: []
@@ -6342,7 +6342,7 @@ items:
       max: 0
       value: 0
     craftsmanship: Common
-    damage: ''
+    damage: 1d10+8
     damageType: ''
     description: ''
     effect: ''
@@ -6824,7 +6824,7 @@ items:
       max: 0
       value: 0
     craftsmanship: Common
-    damage: ''
+    damage: 1d10+10
     damageType: ''
     description: ''
     effect: ''
@@ -7432,7 +7432,7 @@ items:
       max: 0
       value: 0
     craftsmanship: Common
-    damage: ''
+    damage: 1d10+17
     damageType: ''
     description: ''
     effect: ''
@@ -8861,31 +8861,31 @@ prototypeToken:
 system:
   characteristics:
     agility:
-      base: 0
+      base: 51
       unnatural: 0
     ballisticSkill:
-      base: 0
+      base: 42
       unnatural: 0
     fellowship:
-      base: 0
+      base: 60
       unnatural: 0
     intelligence:
-      base: 0
+      base: 51
       unnatural: 0
     perception:
-      base: 0
+      base: 42
       unnatural: 0
     strength:
-      base: 0
+      base: 42
       unnatural: 0
     toughness:
-      base: 0
+      base: 33
       unnatural: 0
     weaponSkill:
-      base: 0
+      base: 51
       unnatural: 0
     willpower:
-      base: 0
+      base: 51
       unnatural: 0
   npc:
     faction: ''
@@ -10476,7 +10476,7 @@ items:
       max: 0
       value: 0
     craftsmanship: Common
-    damage: ''
+    damage: 1d10+13
     damageType: ''
     description: ''
     effect: ''
@@ -10516,7 +10516,7 @@ items:
       max: 0
       value: 0
     craftsmanship: Common
-    damage: ''
+    damage: 1d10+8
     damageType: ''
     description: ''
     effect: ''
@@ -10551,31 +10551,31 @@ prototypeToken:
 system:
   characteristics:
     agility:
-      base: 0
+      base: 30
       unnatural: 0
     ballisticSkill:
-      base: 0
+      base: 30
       unnatural: 0
     fellowship:
-      base: 0
+      base: 10
       unnatural: 0
     intelligence:
-      base: 0
+      base: 30
       unnatural: 0
     perception:
-      base: 0
+      base: 30
       unnatural: 0
     strength:
-      base: 0
+      base: 43
       unnatural: 0
     toughness:
-      base: 0
+      base: 55
       unnatural: 0
     weaponSkill:
-      base: 0
+      base: 45
       unnatural: 0
     willpower:
-      base: 0
+      base: 30
       unnatural: 0
   npc:
     faction: ''

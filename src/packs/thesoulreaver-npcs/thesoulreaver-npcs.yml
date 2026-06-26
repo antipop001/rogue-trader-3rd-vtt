@@ -4051,9 +4051,9 @@ system:
       advance: 0
   wounds:
     critical: 0
-    max: 0
+    max: 10
     rolled: true
-    value: 0
+    value: 10
 type: npc
 ---
 effects: []
@@ -4606,9 +4606,9 @@ system:
       advance: 0
   wounds:
     critical: 0
-    max: 0
+    max: 13
     rolled: true
-    value: 0
+    value: 13
 type: npc
 ---
 effects: []
@@ -6463,19 +6463,19 @@ items:
     availability: Common
     backpack:
       inBackpack: false
-    class: ''
+    class: Melee
     clip:
       max: 0
       value: 0
     craftsmanship: Common
-    damage: ''
-    damageType: ''
+    damage: 1d10+6
+    damageType: Rending
     description: ''
     effect: ''
     equipped: true
     inBackpack: false
     modifications: []
-    penetration: ''
+    penetration: '2'
     range: ''
     rateOfFire:
       burst: 0
@@ -6483,7 +6483,9 @@ items:
       single: 1
     reload: ''
     source: The Soul Reaver
-    special: {}
+    special:
+      tearing: true
+      toxic: true
     target: ''
     type: ''
     weight: 0
@@ -7499,14 +7501,14 @@ items:
       max: 0
       value: 0
     craftsmanship: Common
-    damage: ''
+    damage: 1d10+12
     damageType: ''
     description: ''
     effect: ''
     equipped: true
     inBackpack: false
     modifications: []
-    penetration: ''
+    penetration: '4'
     range: ''
     rateOfFire:
       burst: 0
@@ -7539,7 +7541,7 @@ items:
       max: 0
       value: 0
     craftsmanship: Common
-    damage: ''
+    damage: 1d10+8
     damageType: ''
     description: ''
     effect: ''
@@ -7554,7 +7556,8 @@ items:
       single: 1
     reload: ''
     source: The Soul Reaver
-    special: {}
+    special:
+      flame: true
     target: ''
     type: ''
     weight: 0
@@ -7578,14 +7581,14 @@ items:
       max: 0
       value: 0
     craftsmanship: Common
-    damage: ''
+    damage: 1d10+6
     damageType: ''
     description: ''
     effect: ''
     equipped: true
     inBackpack: false
     modifications: []
-    penetration: ''
+    penetration: '4'
     range: '30'
     rateOfFire:
       burst: 0
@@ -7593,7 +7596,8 @@ items:
       single: 1
     reload: ''
     source: The Soul Reaver
-    special: {}
+    special:
+      blast: 5
     target: ''
     type: ''
     weight: 0
@@ -8084,7 +8088,7 @@ items:
       max: 0
       value: 0
     craftsmanship: Common
-    damage: ''
+    damage: 1d5+3
     damageType: ''
     description: ''
     effect: ''
@@ -8847,8 +8851,8 @@ items:
       max: 0
       value: 0
     craftsmanship: Common
-    damage: ''
-    damageType: ''
+    damage: 1d5-1
+    damageType: Rending
     description: ''
     effect: ''
     equipped: true
@@ -12964,13 +12968,13 @@ items:
     availability: Common
     backpack:
       inBackpack: false
-    class: Basic
+    class: Melee
     clip:
       max: 0
       value: 0
     craftsmanship: Common
-    damage: ''
-    damageType: ''
+    damage: 1d10
+    damageType: Rending
     description: ''
     effect: ''
     equipped: true
