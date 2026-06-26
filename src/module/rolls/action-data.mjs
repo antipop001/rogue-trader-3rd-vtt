@@ -149,9 +149,23 @@ export class ActionData {
             // Action Item
             if (actionItem) {
 
-                // All Out Attack
+                // All Out Attack — the attacker forfeits Dodge/Parry Reactions until his next
+                // turn (RT Core p.245). Flag the actor so the Reaction gate blocks them; the
+                // flag clears on his turn (onCombatTurnChange). (QA-071.)
                 if (this.rollData.action === 'All Out Attack') {
                     this.addEffect('All Out Attack', 'The character cannot attempt Dodge or Parry Reactions until the beginning of his next turn.');
+                    if (game.combat?.started && this.rollData.sourceActor?.system?.combat) {
+                        await this.rollData.sourceActor.update({ 'system.combat.allOutAttack': true });
+                    }
+                }
+
+                // Guarded Attack — +10 to all Dodge and Parry Tests until his next turn
+                // (RT Core p.245). Flag the actor; cleared on his turn. (QA-071.)
+                if (this.rollData.action === 'Guarded Attack') {
+                    this.addEffect('Guarded Attack', 'The character gains +10 to all Dodge and Parry Tests until the beginning of his next turn.');
+                    if (game.combat?.started && this.rollData.sourceActor?.system?.combat) {
+                        await this.rollData.sourceActor.update({ 'system.combat.guardedAttack': true });
+                    }
                 }
 
                 // Stun Action (RT Core p.250): a Hard (-20) Weapon Skill Test to hit; only

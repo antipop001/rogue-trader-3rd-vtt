@@ -122,7 +122,9 @@
               "max": 1,
               "value": 0
             }
-          }
+          },
+          "allOutAttack": false,
+          "guardedAttack": false
         },
         "fate": {
           "max": 0,

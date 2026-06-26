@@ -177,6 +177,12 @@ export class RogueTraderAcolyte extends RogueTraderBaseActor {
                 ui.notifications.warn(`This character cannot take Reactions while Stunned, Helpless, or Unconscious (RT Core p.244).`);
                 return;
             }
+            // All Out Attack forfeits Dodge/Parry until the actor's next turn (RT Core p.245,
+            // QA-071). The flag is set when the action resolves and cleared on his turn.
+            if (this.system.combat?.allOutAttack) {
+                ui.notifications.warn(`This character went All Out Attack and cannot Dodge or Parry until his next turn (RT Core p.245).`);
+                return;
+            }
             const rc = this.system.combat?.reactions;
             if (rc?.[skillName]) {
                 if (!canSpendReaction(rc, skillName)) {
@@ -200,6 +206,11 @@ export class RogueTraderAcolyte extends RogueTraderBaseActor {
         // Encumbered: -10 to movement-related tests (RT Core p.249). (QA-078.)
         if (this.encumbrance?.encumbered && MOVEMENT_SKILLS.has(skillName)) {
             rollData.modifiers['Encumbered'] = -10;
+        }
+        // Guarded Attack: +10 to Dodge/Parry until the actor's next turn (RT Core p.245,
+        // QA-071). Flag set when the action resolves; cleared on his turn.
+        if ((skillName === 'dodge' || skillName === 'parry') && this.system.combat?.guardedAttack) {
+            rollData.modifiers['Guarded Attack'] = 10;
         }
         // Surface talents whose `flags.rt.conditionalBonuses` apply to this
         // skill or its driving characteristic, so the prompt can offer them

@@ -185,13 +185,18 @@ Enable Debug with: game.rt.debug = true
     static async onCombatTurnChange(combat, _prior, current) {
         if (game.user !== game.users?.activeGM) return;
         const combatant = combat?.combatants?.get(current?.combatantId);
-        const rc = combatant?.actor?.system?.combat?.reactions;
+        const cb = combatant?.actor?.system?.combat;
+        const rc = cb?.reactions;
         if (!rc?.dodge || !rc?.parry) return;
-        if ((rc.dodge.value ?? 0) === 0 && (rc.parry.value ?? 0) === 0) return;
-        await combatant.actor.update({
-            'system.combat.reactions.dodge.value': 0,
-            'system.combat.reactions.parry.value': 0,
-        });
+        const update = {};
+        // Refresh the per-Round Reaction budget at the start of the actor's turn.
+        if ((rc.dodge.value ?? 0) !== 0) update['system.combat.reactions.dodge.value'] = 0;
+        if ((rc.parry.value ?? 0) !== 0) update['system.combat.reactions.parry.value'] = 0;
+        // Clear the "until your next turn" action riders (All Out / Guarded Attack). (QA-071.)
+        if (cb.allOutAttack) update['system.combat.allOutAttack'] = false;
+        if (cb.guardedAttack) update['system.combat.guardedAttack'] = false;
+        if (Object.keys(update).length === 0) return;
+        await combatant.actor.update(update);
     }
 
     /**
