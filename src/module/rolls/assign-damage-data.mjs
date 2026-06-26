@@ -3,7 +3,7 @@ import { getCriticalDamage } from '../rules/critical-damage.mjs';
 import { damageTypeDropdown } from '../rules/damage-type.mjs';
 import { voidshipHitTypeDropdown } from '../rules/hit-type.mjs';
 import { voidshipHitLocationDropdown } from '../rules/voidship-hit-locations.mjs';
-import { getVoidshipCriticalDamage } from '../rules/voidship-critical-damage.mjs';
+import { drawShipCriticalResult } from '../rules/voidship-critical-damage.mjs';
 import { conditionsFromCriticalText } from '../rules/conditions.mjs';
 import { daemonicToughnessMultiplier } from './roll-helpers.mjs';
 
@@ -95,35 +95,35 @@ export class AssignDamageData {
                 case 'Overpenetrating Hit': {
                     this.voidshipHullDamage = 2;
                     let component = targetedComponents[Math.floor(Math.random() * targetedComponents.length)];
-                    this.executeCritical("Penetrating", component);
+                    await this.executeCritical(component);
                     component = targetedComponents[Math.floor(Math.random() * targetedComponents.length)];
-                    this.executeCritical("Penetrating", component);
+                    await this.executeCritical(component);
                     break;
                 }
                 case 'Penetrating Hit': {
                     this.voidshipHullDamage = 1;
                     let component = targetedComponents[Math.floor(Math.random() * targetedComponents.length)];
-                    this.executeCritical("Penetrating", component);
+                    await this.executeCritical(component);
                     break;
                 }
                 case 'Overpenetrating Critical Hit': {
                     this.voidshipHullDamage = 4;
                     let component = targetedComponents[Math.floor(Math.random() * targetedComponents.length)];
-                    this.executeCritical("Critical", component);
+                    await this.executeCritical(component);
                     component = targetedComponents[Math.floor(Math.random() * targetedComponents.length)];
-                    this.executeCritical("Critical", component);
+                    await this.executeCritical(component);
                     break;
                 }
                 case 'Penetrating Critical Hit': {
                     this.voidshipHullDamage = 2;
                     let component = targetedComponents[Math.floor(Math.random() * targetedComponents.length)];
-                    this.executeCritical("Critical", component);
+                    await this.executeCritical(component);
                     break;
                 }
                 case 'Nonpenetrating Critical Hit': {
                     this.voidshipHullDamage = 1;
                     let component = targetedComponents[Math.floor(Math.random() * targetedComponents.length)];
-                    this.executeCritical("Nonpenetrating", component);
+                    await this.executeCritical(component);
                     break;
                 }
             }
@@ -202,27 +202,18 @@ export class AssignDamageData {
         }
     }
 
-    executeCritical(type, component) {
-        if(component.type === 'shipWeapon') {
-            if (this.criticalEffect === '') {
-                this.criticalEffect = component.name + ': ' + getVoidshipCriticalDamage(type, "Weapon");
-            }
-            else {
-                this.criticalEffect = this.criticalEffect + '\n' + component.name + ': ' + getVoidshipCriticalDamage(type, "Weapon");
-            }
-        } else {
-            if (this.criticalEffect === '') {
-                this.criticalEffect = component.name + ': ' + getVoidshipCriticalDamage(type, component.system.componentType);
-            }
-            else {
-                this.criticalEffect = this.criticalEffect + '\n' + component.name + ': ' + getVoidshipCriticalDamage(type, component.system.componentType);
-            }
+    // Apply ONE Critical Hit from the canonical RT Table 8-12 (RT Core p.232) — a 1d5 draw
+    // on the `Critical Hits to Starships` RollTable, not the homebrew penetration×component
+    // matrix (QA-043). The struck component (if any) loses a hit point as engine tracking.
+    async executeCritical(component) {
+        const result = await drawShipCriticalResult();
+        const label = component?.name ? `${component.name}: ` : '';
+        this.criticalEffect = this.criticalEffect
+            ? `${this.criticalEffect}\n${label}${result}`
+            : `${label}${result}`;
+        if (component) {
+            await component.update({ system: { hitPoints: component.system.hitPoints - 1 } });
         }
-        component.update({
-            system: {
-                hitPoints: component.system.hitPoints - 1
-            }
-        })
     }
 
     async performActionAndSendToChat() {

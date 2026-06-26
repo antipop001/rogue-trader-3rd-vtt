@@ -344,3 +344,33 @@ export function getVoidshipCriticalDamage(type, location) {
     const critical = Math.floor(Math.random() * 10) + 1;
     return locationMap[critical];
 }
+
+/**
+ * Draw a Critical Hit result from the CANONICAL RT Core Table 8-12 (p.232), authored as the
+ * `Critical Hits to Starships` RollTable in the `tables` pack. RT RAW: a normal Critical
+ * rolls 1d5 on the chart; a result of 11+ (only reachable via the crippled-ship
+ * damage-past-Hull path) escalates to the Catastrophic Damage sub-table. Replaces the
+ * homebrew Nonpen/Pen/Crit × component × d10 matrix (QA-043).
+ * @param {number} [value] explicit chart index (crippled-ship damage-past-Hull); default 1d5.
+ * @returns {Promise<string>} the rolled critical-effect text
+ */
+export async function drawShipCriticalResult(value = null) {
+    const pack = game?.packs?.get('rogue-trader-3rd.tables');
+    let n = value;
+    if (n == null) { const r = new Roll('1d5'); await r.evaluate(); n = r.total; }
+    if (!pack) return `Roll 1d5 (=${n}) on the Critical Hits to Starships chart.`;
+    const idx = pack.index?.size ? pack.index : await pack.getIndex();
+    const draw = async (name, v) => {
+        const e = idx.find((x) => x.name === name);
+        if (!e) return '';
+        const t = await pack.getDocument(e._id);
+        const res = t?.getResultsForRoll ? t.getResultsForRoll(v) : [];
+        return (res ?? []).map((r) => r.text ?? r.description ?? '').filter(Boolean).join(' ');
+    };
+    if (n >= 11) {
+        const cat = await draw('Catastrophic Damage', (await (async () => { const c = new Roll('1d10'); await c.evaluate(); return c.total; })()));
+        return `Catastrophic! ${cat}`;
+    }
+    const text = await draw('Critical Hits to Starships', n);
+    return `(1d5=${n}) ${text}`;
+}

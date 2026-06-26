@@ -388,7 +388,7 @@ real automation/correctness gaps to fix deliberately. P0s = BUG-011 / 012 (fixed
 
 **ship** (7)
 - QA-042 — Voidship hull-damage model is homebrew (fixed 1–4 by penetration tier) instead of RT's Damage − Armour → Hull Integrity
-- QA-043 — Voidship critical-damage results use a homebrew Nonpen/Pen/Crit × component × d10 matrix, not RT Table 8-12 (the canonical…
+- ✅ QA-043 (fixed 2026-06-26) — Critical Hits now draw the CANONICAL RT Table 8-12 (`Critical Hits to Starships` RollTable, already in the pack) instead of the homebrew Nonpen/Pen/Crit × component × d10 matrix. New `drawShipCriticalResult()` rolls 1d5 on the chart (11+ → Catastrophic Damage sub-table); `executeCritical` is now async and draws it. Live-verified on rt-smoke (1d5 draws return canonical rows — Holed/Internal/Sensors/Thrusters/Fire; value 11 → Catastrophic). The homebrew `voidship-critical-damage.mjs` matrix is no longer used by the engine.
 - ✅ QA-044 (fixed 2026-06-26) — Critical Hit now triggers when DoS ≥ the weapon's **Crit Rating** (RT Core p.219), not a fixed `≤ target/10`. Added `critRating` to the `shipAttack` schema + populated all 17 ship weapons from canon (lances CR 3, macrocannons 5-6, las/plasma/melta 4). Live-verified.
 - QA-045 — Void shields are permanently decremented and never restored per Strategic Round (or between attackers in a Round)
 - QA-147 — Voidship turret resolution is invented offensive fire, not RT's defensive modifier
