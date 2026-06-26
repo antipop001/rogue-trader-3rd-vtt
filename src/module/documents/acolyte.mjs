@@ -419,7 +419,9 @@ export class RogueTraderAcolyte extends RogueTraderBaseActor {
 
         this.system.insanityBonus = Math.floor(this.insanity / 10);
         this.system.corruptionBonus = Math.floor(this.corruption / 10);
-        this.psy.currentRating = this.psy.rating - this.psy.sustained;
+        // Effective Psy Rating can't drop below 0 (a power sustaining beyond the rating ends
+        // rather than yielding a negative PR; RT Core p.156). (QA-152.)
+        this.psy.currentRating = Math.max(0, this.psy.rating - this.psy.sustained);
         // RT 1e: Initiative bonus = governing characteristic bonus + any additive
         // modifier (effect-addressable via system.initiative.modifier so talents/gear
         // like Paranoia "+2 Initiative" / Wary "+1" survive derived-data recompute).

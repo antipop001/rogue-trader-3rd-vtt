@@ -92,7 +92,13 @@ export class ActionData {
             this.rollData.opposedDof = rollCheck.dof;
             this.rollData.opposedSuccess = rollCheck.success;
             if(rollCheck.success) {
-                if(this.rollData.opposedDos >= this.rollData.dos) {
+                // Opposed test (RT Core p.23): the higher Degrees of Success wins; a TIE is
+                // broken by the higher governing Characteristic, NOT auto-awarded to the
+                // defender. The defender beats the attacker only with strictly more DoS, or on
+                // an equal-DoS tie when its Characteristic (opposedTarget) is higher. (QA-106.)
+                const tieToDefender = this.rollData.opposedDos === this.rollData.dos
+                    && (this.rollData.opposedTarget ?? 0) > (this.rollData.modifiedTarget ?? 0);
+                if(this.rollData.opposedDos > this.rollData.dos || tieToDefender) {
                     this.rollData.success = false;
                 }
             }
