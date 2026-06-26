@@ -125,16 +125,20 @@ export class RogueTraderVoidship extends RogueTraderBaseActor {
     }
 
     async rollTurrets() {
-        const simpleSkillData = new SimpleSkillData();
-        const rollData = simpleSkillData.rollData;
-        rollData.actor = this;
-        rollData.nameOverride = "Turrets";
-        rollData.voidshipTurrets = true;
-        rollData.type = 'Check';
-        rollData.baseTarget = this.system.crewRating;
-        rollData.turretsShot = (this.system.turrets || 0) + (this.system.componentBonuses?.turrets || 0);
-        rollData.modifiers.modifier = 0;
-        await prepareTurretsRoll(simpleSkillData);
+        // Turrets are a purely DEFENSIVE rating (RT Core p.220) — they never make a
+        // Ballistic/percentile to-hit roll. Each point imposes −10 on the Pilot test of any
+        // Hit-and-Run Attack against this ship, and adds +10 to this ship's Command Test in a
+        // boarding action. Post the rating + its effects instead of rolling bogus fire. (QA-147.)
+        const rating = (this.system.turrets || 0) + (this.system.componentBonuses?.turrets || 0);
+        const content = `<p><strong>Turrets — rating ${rating}</strong> (defensive only):<br/>`
+            + `−${rating * 10} to the Pilot (Space Craft) test of any Hit-and-Run Attack against this ship; `
+            + `+${rating * 10} to this ship's Command Test during a boarding action (RT Core p.220). `
+            + `Turrets do not make attack rolls.</p>`;
+        await ChatMessage.create({
+            user: game.user.id,
+            speaker: ChatMessage.getSpeaker({ actor: this }),
+            content,
+        });
     }
 
     async rollBoarding(operator) {
