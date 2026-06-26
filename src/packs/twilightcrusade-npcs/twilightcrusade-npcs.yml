@@ -2986,25 +2986,25 @@ items:
     availability: Common
     backpack:
       inBackpack: false
-    class: ''
+    class: Pistol
     clip:
-      max: 0
-      value: 0
+      max: 3
+      value: 3
     craftsmanship: Common
-    damage: ''
-    damageType: ''
+    damage: 2d10+8
+    damageType: Energy
     description: ''
     effect: ''
     equipped: true
     inBackpack: false
     modifications: []
-    penetration: ''
-    range: ''
+    penetration: '13'
+    range: '10'
     rateOfFire:
       burst: 0
       full: 0
       single: 1
-    reload: ''
+    reload: Full
     source: Twilight Crusade
     special: {}
     target: ''
@@ -10498,19 +10498,19 @@ items:
     availability: Common
     backpack:
       inBackpack: false
-    class: ''
+    class: Melee
     clip:
       max: 0
       value: 0
     craftsmanship: Common
-    damage: ''
-    damageType: ''
+    damage: 1d10+10
+    damageType: Energy
     description: ''
     effect: ''
     equipped: true
     inBackpack: false
     modifications: []
-    penetration: ''
+    penetration: '5'
     range: ''
     rateOfFire:
       burst: 0
@@ -10518,7 +10518,9 @@ items:
       single: 1
     reload: ''
     source: Twilight Crusade
-    special: {}
+    special:
+      balanced: true
+      powerField: true
     target: ''
     type: ''
     weight: 0
@@ -13645,9 +13647,9 @@ system:
       advance: 0
   wounds:
     critical: 0
-    max: 0
+    max: 13
     rolled: true
-    value: 0
+    value: 13
 type: npc
 ---
 effects: []
@@ -13999,7 +14001,7 @@ system:
       advance: 0
   wounds:
     critical: 0
-    max: 0
+    max: 15
     rolled: true
-    value: 0
+    value: 15
 type: npc

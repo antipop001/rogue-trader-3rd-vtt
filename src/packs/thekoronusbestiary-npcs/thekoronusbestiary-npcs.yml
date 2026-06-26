@@ -2852,9 +2852,9 @@ system:
       advance: 10
   wounds:
     critical: 0
-    max: 0
+    max: 9
     rolled: true
-    value: 0
+    value: 9
 type: npc
 ---
 effects: []
@@ -5380,13 +5380,13 @@ items:
     availability: Common
     backpack:
       inBackpack: false
-    class: Basic
+    class: Heavy
     clip:
       max: 60
       value: 60
     craftsmanship: Common
-    damage: ''
-    damageType: ''
+    damage: 2d10+2
+    damageType: Explosive
     description: ''
     effect: ''
     equipped: true
@@ -5466,8 +5466,8 @@ items:
       max: 0
       value: 0
     craftsmanship: Common
-    damage: ''
-    damageType: ''
+    damage: 1d5+4
+    damageType: Rending
     description: ''
     effect: ''
     equipped: true
@@ -5864,8 +5864,8 @@ items:
       max: 6
       value: 6
     craftsmanship: Common
-    damage: ''
-    damageType: ''
+    damage: 2d10+9
+    damageType: Energy
     description: ''
     effect: ''
     equipped: true
@@ -5944,8 +5944,8 @@ items:
       max: 0
       value: 0
     craftsmanship: Common
-    damage: ''
-    damageType: ''
+    damage: 1d5+4
+    damageType: Rending
     description: ''
     effect: ''
     equipped: true
@@ -6086,9 +6086,9 @@ system:
   skills: {}
   wounds:
     critical: 0
-    max: 0
+    max: 15
     rolled: true
-    value: 0
+    value: 15
 type: npc
 ---
 effects: []
@@ -6471,8 +6471,8 @@ items:
       max: 60
       value: 60
     craftsmanship: Common
-    damage: ''
-    damageType: ''
+    damage: 2d10+4
+    damageType: Energy
     description: ''
     effect: ''
     equipped: true
@@ -6486,7 +6486,8 @@ items:
       single: 1
     reload: Full, Reliable
     source: The Koronus Bestiary
-    special: {}
+    special:
+      reliable: true
     target: ''
     type: ''
     weight: 0
@@ -6550,8 +6551,8 @@ items:
       max: 0
       value: 0
     craftsmanship: Common
-    damage: ''
-    damageType: ''
+    damage: 1d5+4
+    damageType: Rending
     description: ''
     effect: ''
     equipped: true
@@ -7021,8 +7022,8 @@ items:
       max: 0
       value: 0
     craftsmanship: Common
-    damage: ''
-    damageType: ''
+    damage: 1d10+6
+    damageType: Rending
     description: ''
     effect: ''
     equipped: true
@@ -7584,8 +7585,8 @@ items:
       max: 60
       value: 60
     craftsmanship: Common
-    damage: ''
-    damageType: ''
+    damage: 1d10+3
+    damageType: Energy
     description: ''
     effect: ''
     equipped: true
@@ -7599,7 +7600,8 @@ items:
       single: 1
     reload: Full, Reliable
     source: The Koronus Bestiary
-    special: {}
+    special:
+      reliable: true
     target: ''
     type: ''
     weight: 0
@@ -7702,8 +7704,8 @@ items:
       max: 0
       value: 0
     craftsmanship: Common
-    damage: ''
-    damageType: ''
+    damage: 1d5+4
+    damageType: Rending
     description: ''
     effect: ''
     equipped: true
@@ -9534,8 +9536,8 @@ items:
       max: 0
       value: 0
     craftsmanship: Common
-    damage: ''
-    damageType: ''
+    damage: 1d5+4
+    damageType: Rending
     description: ''
     effect: ''
     equipped: true
@@ -14816,7 +14818,7 @@ items:
       max: 0
       value: 0
     craftsmanship: Common
-    damage: ''
+    damage: 1d10+3
     damageType: ''
     description: ''
     effect: ''
@@ -15626,8 +15628,8 @@ items:
       max: 0
       value: 0
     craftsmanship: Common
-    damage: ''
-    damageType: ''
+    damage: 1d5+2
+    damageType: Energy
     description: ''
     effect: ''
     equipped: true
@@ -15831,8 +15833,8 @@ items:
       max: 0
       value: 0
     craftsmanship: Common
-    damage: ''
-    damageType: ''
+    damage: 1d10+3
+    damageType: Impact
     description: ''
     effect: ''
     equipped: true
@@ -16881,8 +16883,8 @@ items:
       max: 0
       value: 0
     craftsmanship: Common
-    damage: ''
-    damageType: ''
+    damage: 1d10+15
+    damageType: Rending
     description: ''
     effect: ''
     equipped: true
@@ -17308,8 +17310,8 @@ items:
       max: 0
       value: 0
     craftsmanship: Common
-    damage: ''
-    damageType: ''
+    damage: 1d10+12
+    damageType: Impact
     description: ''
     effect: ''
     equipped: true
@@ -18781,19 +18783,19 @@ items:
     availability: Common
     backpack:
       inBackpack: false
-    class: ''
+    class: Melee
     clip:
       max: 0
       value: 0
     craftsmanship: Common
-    damage: ''
-    damageType: ''
+    damage: 1d10+2
+    damageType: Rending
     description: ''
     effect: ''
     equipped: true
     inBackpack: false
     modifications: []
-    penetration: ''
+    penetration: '0'
     range: ''
     rateOfFire:
       burst: 0
@@ -18820,19 +18822,19 @@ items:
     availability: Common
     backpack:
       inBackpack: false
-    class: ''
+    class: Melee
     clip:
       max: 0
       value: 0
     craftsmanship: Common
-    damage: ''
-    damageType: ''
+    damage: 1d10+2
+    damageType: Impact
     description: ''
     effect: ''
     equipped: true
     inBackpack: false
     modifications: []
-    penetration: ''
+    penetration: '0'
     range: ''
     rateOfFire:
       burst: 0
@@ -19031,19 +19033,19 @@ items:
     availability: Common
     backpack:
       inBackpack: false
-    class: ''
+    class: Melee
     clip:
       max: 0
       value: 0
     craftsmanship: Common
-    damage: ''
-    damageType: ''
+    damage: 1d10+6
+    damageType: Rending
     description: ''
     effect: ''
     equipped: true
     inBackpack: false
     modifications: []
-    penetration: ''
+    penetration: '0'
     range: ''
     rateOfFire:
       burst: 0
@@ -19070,19 +19072,19 @@ items:
     availability: Common
     backpack:
       inBackpack: false
-    class: ''
+    class: Melee
     clip:
       max: 0
       value: 0
     craftsmanship: Common
-    damage: ''
-    damageType: ''
+    damage: 1d10+6
+    damageType: Impact
     description: ''
     effect: ''
     equipped: true
     inBackpack: false
     modifications: []
-    penetration: ''
+    penetration: '0'
     range: ''
     rateOfFire:
       burst: 0
@@ -19291,19 +19293,19 @@ items:
     availability: Common
     backpack:
       inBackpack: false
-    class: ''
+    class: Melee
     clip:
       max: 0
       value: 0
     craftsmanship: Common
-    damage: ''
-    damageType: ''
+    damage: 1d10+9
+    damageType: Rending
     description: ''
     effect: ''
     equipped: true
     inBackpack: false
     modifications: []
-    penetration: ''
+    penetration: '1'
     range: ''
     rateOfFire:
       burst: 0
@@ -19311,7 +19313,8 @@ items:
       single: 1
     reload: ''
     source: The Koronus Bestiary
-    special: {}
+    special:
+      tearing: true
     target: ''
     type: ''
     weight: 0
@@ -19330,19 +19333,19 @@ items:
     availability: Common
     backpack:
       inBackpack: false
-    class: ''
+    class: Melee
     clip:
       max: 0
       value: 0
     craftsmanship: Common
-    damage: ''
-    damageType: ''
+    damage: 1d10+9
+    damageType: Impact
     description: ''
     effect: ''
     equipped: true
     inBackpack: false
     modifications: []
-    penetration: ''
+    penetration: '1'
     range: ''
     rateOfFire:
       burst: 0
@@ -19350,7 +19353,8 @@ items:
       single: 1
     reload: ''
     source: The Koronus Bestiary
-    special: {}
+    special:
+      tearing: true
     target: ''
     type: ''
     weight: 0
@@ -20047,19 +20051,19 @@ items:
     availability: Common
     backpack:
       inBackpack: false
-    class: ''
+    class: Melee
     clip:
       max: 0
       value: 0
     craftsmanship: Common
-    damage: ''
-    damageType: ''
+    damage: 1d10+4
+    damageType: Impact
     description: ''
     effect: ''
     equipped: true
     inBackpack: false
     modifications: []
-    penetration: ''
+    penetration: '0'
     range: ''
     rateOfFire:
       burst: 0
@@ -20086,19 +20090,19 @@ items:
     availability: Common
     backpack:
       inBackpack: false
-    class: ''
+    class: Melee
     clip:
       max: 0
       value: 0
     craftsmanship: Common
-    damage: ''
-    damageType: ''
+    damage: 1d10+4
+    damageType: Impact
     description: ''
     effect: ''
     equipped: true
     inBackpack: false
     modifications: []
-    penetration: ''
+    penetration: '0'
     range: ''
     rateOfFire:
       burst: 0
@@ -20643,19 +20647,19 @@ items:
     availability: Common
     backpack:
       inBackpack: false
-    class: ''
+    class: Melee
     clip:
       max: 0
       value: 0
     craftsmanship: Common
-    damage: ''
-    damageType: ''
+    damage: 1d10
+    damageType: Rending
     description: ''
     effect: ''
     equipped: true
     inBackpack: false
     modifications: []
-    penetration: ''
+    penetration: 1d5
     range: ''
     rateOfFire:
       burst: 0
@@ -20663,7 +20667,8 @@ items:
       single: 1
     reload: ''
     source: The Koronus Bestiary
-    special: {}
+    special:
+      tearing: true
     target: ''
     type: ''
     weight: 0
@@ -20682,19 +20687,19 @@ items:
     availability: Common
     backpack:
       inBackpack: false
-    class: ''
+    class: Melee
     clip:
       max: 0
       value: 0
     craftsmanship: Common
-    damage: ''
-    damageType: ''
+    damage: 1d10
+    damageType: Rending
     description: ''
     effect: ''
     equipped: true
     inBackpack: false
     modifications: []
-    penetration: ''
+    penetration: 1d5
     range: ''
     rateOfFire:
       burst: 0
@@ -20702,7 +20707,8 @@ items:
       single: 1
     reload: ''
     source: The Koronus Bestiary
-    special: {}
+    special:
+      tearing: true
     target: ''
     type: ''
     weight: 0
@@ -20915,19 +20921,19 @@ items:
     availability: Common
     backpack:
       inBackpack: false
-    class: ''
+    class: Melee
     clip:
       max: 0
       value: 0
     craftsmanship: Common
-    damage: ''
-    damageType: ''
+    damage: 1d10+6
+    damageType: Impact
     description: ''
     effect: ''
     equipped: true
     inBackpack: false
     modifications: []
-    penetration: ''
+    penetration: '0'
     range: ''
     rateOfFire:
       burst: 0
@@ -20954,19 +20960,19 @@ items:
     availability: Common
     backpack:
       inBackpack: false
-    class: ''
+    class: Melee
     clip:
       max: 0
       value: 0
     craftsmanship: Common
-    damage: ''
-    damageType: ''
+    damage: 1d10+6
+    damageType: Impact
     description: ''
     effect: ''
     equipped: true
     inBackpack: false
     modifications: []
-    penetration: ''
+    penetration: '0'
     range: ''
     rateOfFire:
       burst: 0
