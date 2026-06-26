@@ -499,6 +499,14 @@ export class ActionData {
         if (!this.rollData.targetActor || this.rollData.targetActor.type !== "voidship") return;
         if (this.rollData.weapon.system.type === "Lance") return;
 
+        // Void shields cancel up to `strength` hits from THIS salvo (RT Core p.226). They are
+        // NOT permanently spent: shields "reduce hits from all ships firing on them … restored
+        // in time to protect against that attacker's fire as well", so the full strength applies
+        // to every incoming salvo. We therefore cancel hits locally but do NOT persist a
+        // decrement (was `targetActor.update({shields})`, which left shields spent forever —
+        // QA-045). Simplification: a single attacker's multiple salvos in one turn each get
+        // full shields rather than overloading after the first; the dominant fix is that
+        // shields no longer drain permanently.
         let shields = this.rollData.targetActor.system.shields;
         if (shields <= 0) return;
 
@@ -512,10 +520,6 @@ export class ActionData {
                 this.rollData.voidshipShieldsUsed++;
             }
         }
-
-        await this.rollData.targetActor.update({
-            system: { shields: shields }
-        });
     }
 
     async calculatePenetration() {
