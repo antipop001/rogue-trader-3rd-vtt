@@ -163,7 +163,7 @@ function allCombatActions() {
             type: ['Reaction'],
             subtype: ['Defence', 'Melee'],
             description:
-                'Attempt to parry an incoming melee attack with a Weapon Skill test. Some weapons grant a bonus or penalty to the Parry test; the Defensive quality grants +10, Unwieldy weapons cannot Parry.',
+                'Attempt to parry an incoming melee attack with a Weapon Skill test. Some weapons grant a bonus or penalty to the Parry test; the Defensive quality grants +15, Unwieldy weapons cannot Parry.',
         },
         {
             // RT Living Errata v1.4 removes the 'Attack' subtype so Feint

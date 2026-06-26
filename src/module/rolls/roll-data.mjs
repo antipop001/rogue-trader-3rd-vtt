@@ -298,8 +298,9 @@ export class WeaponRollData extends RollData {
         this.modifiers['operator'] = 0;
         this.modifiers['modifier'] = 0;
 
-        // Size Bonus should not change after initial targeting
-        if(this.targetActor && this.targetActor.system.size) {
+        // Target Size to-hit modifier — RANGED attacks only (RT Core p.247: the Size table
+        // modifies Ballistic Skill; melee to-hit is unaffected by target Size). (QA-109.)
+        if(this.targetActor && this.targetActor.system.size && this.weapon?.isRanged) {
             try {
                 const size = Number.parseInt(this.targetActor.system.size);
                 this.modifiers['target-size'] = (size - 4) * 10;

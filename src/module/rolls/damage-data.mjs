@@ -439,19 +439,22 @@ export class Hit {
                     this.addEffect(special.name, `The attack deviates [[ 1d10 - ${bs}]]m (minimum of 0m) off course to the ${scatterDirection()}!`);
                     break;
                 case 'shocking':
-                    this.addEffect(special.name, `Target must pass a Challenging (+0) Toughness test. If he fails, he suffers 1 level of Fatigue and is Stunned for a number of rounds equal to half of his degrees of failure (rounding up).`, ['stunned']);
+                    // RT Core p.145: if the target took ≥1 Damage (after Armour + TB), it makes
+                    // a Toughness Test (+10 per Armour point on the hit location) or is Stunned
+                    // for rounds = half the Damage suffered. (QA-125 — was DH2 text.)
+                    this.addEffect(special.name, `If the target took Damage, it must make a Toughness Test (+10 per Armour point on the hit location) or be Stunned for a number of Rounds equal to half the Damage suffered.`, ['stunned']);
                     break;
                 case 'snare':
-                    this.addEffect(special.name, `Target must pass Agility test with ${special.level * -10} or become immobilised.  Also, gains +5 per Unnatural 
-                    Strength or Unnatural Agility to this test. Also, -/+10 per Size difference between the attacker and target. On a failed test, the target is Snared. 
-                    While Snared, the target takes a penalty to any actions that require a roll equal to the penalty to escape from the bonds, can only perform a single 
-                    Half Action per Round (or a Half or Full Action to attempt to escape), and cannot take any actions with the Movement Subtype. The character must 
-                    spend a Half or Full Action to attempt to escape their bonds with a ${special.level * -10} Strength or Agility test. If the test is made at Half 
-                    Action, the snared character doesn't gain bonuses for Unnatural Strength or Unnatural Agility. If the test is made at Full Action, the snared character 
-                    gains +10 per Unnatural Strength or Unnatural Agility to the test. Both Half Action and Full Action gain -/+10 per Size difference between the attacker and snared.`);
+                    // RT Core p.145: on a hit, the target makes an Agility Test or is immobilised
+                    // — it can take no action except to escape (a Strength Test to burst the bonds
+                    // or an Agility Test to wriggle free) and is Helpless until it does. (QA-127.)
+                    this.addEffect(special.name, `The target must make an Agility Test or be immobilised: it can take no actions except to escape — a Strength Test to burst the bonds or an Agility Test to wriggle free — and is Helpless until it escapes.`, ['helpless']);
                     break;
                 case 'toxic':
-                    this.addEffect(special.name, `Target must pass Toughness test with ${special.level * -10} or suffer [[1d10]] ${actionItem.system.damageType} damage.`);
+                    // RT Core p.145: the target makes a Toughness Test at −5 per point of Damage
+                    // taken (after Armour + TB); failure → an immediate 1d10 Impact Damage that
+                    // ignores Armour and Toughness. (QA-126 — was the `level*-10` "with 0" text.)
+                    this.addEffect(special.name, `The target must make a Toughness Test at −5 per point of Damage taken (after Armour and Toughness) or suffer an immediate [[1d10]] Impact Damage, ignoring Armour and Toughness.`);
                     break;
                 case 'warp':
                     this.addEffect(special.name, `Ignores mundane armor and cover! Holy armor negates this.`);

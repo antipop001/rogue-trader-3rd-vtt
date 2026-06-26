@@ -149,6 +149,9 @@ export class RogueTraderBaseActor extends Actor {
         // Unnatural Speed (RT Core p.366): double the Agility Bonus for movement, applied
         // AFTER the size modifier — so double the whole base. (QA-077.)
         if (hasUnnaturalSpeed(this.items.filter((i) => i.type === 'trait'))) base *= 2;
+        // RT Core p.249: a character always has a minimum Half Move of 1 metre — small or
+        // very low-Agility actors never drop to 0/negative movement. (QA-076.)
+        base = Math.max(1, base);
         this.system.movement = {
             half: base,
             full: base * 2,
