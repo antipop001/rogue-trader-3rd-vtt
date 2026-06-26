@@ -230,9 +230,18 @@ function allCombatActions() {
         {
             name: 'Manoeuvre',
             type: ['Half'],
-            subtype: ['Movement', 'Melee'],
+            subtype: ['Attack', 'Movement', 'Melee'],   // QA-069: Attack so it appears in the melee attack dropdown
             description:
                 'Make an opposed WS test against character in melee range; if successful, move them up to 1 metre in direction of choice (character may advance 1 metre as well). Cannot push into obstacles or characters, but can push off of cliffs or edges.',
+        },
+        {
+            // RT Core p.248 / Table 9-4 — Tactical Advance IS RT canon (was wrongly dropped
+            // as DH2-only). A Full Action to move from cover to cover. (QA-070.)
+            name: 'Tactical Advance',
+            type: ['Full'],
+            subtype: ['Concentration', 'Movement'],
+            description:
+                'Move from cover to cover: move up to your Full Move, but you must begin and end the move in cover.',
         },
         {
             name: 'Overwatch',

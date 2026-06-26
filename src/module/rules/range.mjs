@@ -104,7 +104,9 @@ function calculateRangeNameAndBonus(rollData) {
     } else if (targetDistance > 0 && targetDistance <= 1) {
         rollData.rangeName = 'Melee';
         rollData.rangeBonus = 0;
-    }  else if (targetDistance > 1 && targetDistance <= 3) {
+    }  else if (targetDistance > 1 && targetDistance <= 2) {
+        // RT Core p.247: Point Blank Range is "two metres away or closer" (+30 BS). ≤1m is
+        // treated as Melee above (the bonus doesn't apply when engaged in melee). (QA-097.)
         rollData.rangeName = 'Point Blank';
         rollData.rangeBonus = 30;
     } else if (targetDistance <= maxRange / 2) {
