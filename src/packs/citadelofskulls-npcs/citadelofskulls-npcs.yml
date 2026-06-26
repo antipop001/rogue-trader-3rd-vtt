@@ -3524,7 +3524,7 @@ items:
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
-  name: Good Craftsmanship Shock Staff (1d5+7 I; Pen 0; Shocking) or Good Craftsmanship Groxwhip
+  name: Good Craftsmanship Shock Staff
   ownership:
     default: 3
   sort: 0
@@ -3534,13 +3534,13 @@ items:
     availability: Common
     backpack:
       inBackpack: false
-    class: Basic
+    class: Melee
     clip:
       max: 0
       value: 0
     craftsmanship: Common
-    damage: ''
-    damageType: ''
+    damage: 1d5+7
+    damageType: Impact
     description: ''
     effect: ''
     equipped: true
@@ -3556,6 +3556,7 @@ items:
     source: Citadel of Skulls
     special:
       flexible: true
+      shocking: true
       tearing: true
     target: ''
     type: ''
@@ -3963,7 +3964,7 @@ items:
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
-  name: Good Craftsmanship Lasgun (100m; S/3/–; 1d10+3 E; Pen 0; Clip 60; Rld Full; Reliable) or Good Craftsmanship Autogun
+  name: Good Craftsmanship Lasgun
   ownership:
     default: 3
   sort: 0
@@ -3975,25 +3976,26 @@ items:
       inBackpack: false
     class: Basic
     clip:
-      max: 30
-      value: 30
+      max: 60
+      value: 60
     craftsmanship: Common
     damage: 1d10+3
-    damageType: Impact
+    damageType: Energy
     description: ''
     effect: ''
     equipped: true
     inBackpack: false
     modifications: []
     penetration: '0'
-    range: '90'
+    range: '100'
     rateOfFire:
       burst: 3
-      full: 10
+      full: 0
       single: 1
-    reload: ''
+    reload: Full
     source: Citadel of Skulls
-    special: {}
+    special:
+      reliable: true
     target: ''
     type: ''
     weight: 0
@@ -4041,7 +4043,7 @@ items:
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
-  name: Frag Grenades (9m; S/–/–; 2d10 X; Pen 0; Blast (4))
+  name: Frag Grenades
   ownership:
     default: 3
   sort: 0
@@ -4051,20 +4053,20 @@ items:
     availability: Common
     backpack:
       inBackpack: false
-    class: ''
+    class: Basic
     clip:
       max: 0
       value: 0
     craftsmanship: Common
-    damage: ''
-    damageType: ''
+    damage: 2d10
+    damageType: Explosive
     description: ''
     effect: ''
     equipped: true
     inBackpack: false
     modifications: []
-    penetration: ''
-    range: ''
+    penetration: '0'
+    range: '9'
     rateOfFire:
       burst: 0
       full: 0
@@ -5154,7 +5156,7 @@ items:
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
-  name: Grenade Launcher (60m; S/-/-; Dam *; Pen *; Clip 6; Rld Full; *, innaccurate) or Missile Launcher
+  name: Grenade Launcher
   ownership:
     default: 3
   sort: 0
@@ -5177,12 +5179,12 @@ items:
     inBackpack: false
     modifications: []
     penetration: ''
-    range: '200'
+    range: '60'
     rateOfFire:
       burst: 0
       full: 0
       single: 1
-    reload: ''
+    reload: Full
     source: Citadel of Skulls
     special: {}
     target: ''
@@ -6778,9 +6780,7 @@ items:
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
-  name: Teeth (1d10+1 R; Toxic). A victim who suffers damage from a Nurgling's bite must pass an Ordinary (+10) Toughness
-    Test or contract a virulent disease. The exact nature of the disease should be left up to the GM's discretion. A diseased
-    victim loses 1d5 points of Toughness permanently
+  name: Teeth
   ownership:
     default: 3
   sort: 0
@@ -6790,13 +6790,13 @@ items:
     availability: Common
     backpack:
       inBackpack: false
-    class: ''
+    class: Melee
     clip:
       max: 0
       value: 0
     craftsmanship: Common
-    damage: ''
-    damageType: ''
+    damage: 1d10+1
+    damageType: Rending
     description: ''
     effect: ''
     equipped: true
@@ -6810,7 +6810,8 @@ items:
       single: 1
     reload: ''
     source: Citadel of Skulls
-    special: {}
+    special:
+      toxic: true
     target: ''
     type: ''
     weight: 0
@@ -7638,8 +7639,7 @@ items:
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
-  name: Talons (1d10+4; Tearing). * A victim who takes damage from a Tunnel Horror's bite must make a successful Very Hard
-    (–30) Toughness Test or be Stunned for 1d5 rounds. This replaces the normal effects of Toxic
+  name: Talons
   ownership:
     default: 3
   sort: 0
@@ -7649,12 +7649,12 @@ items:
     availability: Common
     backpack:
       inBackpack: false
-    class: ''
+    class: Melee
     clip:
       max: 0
       value: 0
     craftsmanship: Common
-    damage: ''
+    damage: 1d10+4
     damageType: ''
     description: ''
     effect: ''
@@ -7669,7 +7669,8 @@ items:
       single: 1
     reload: ''
     source: Citadel of Skulls
-    special: {}
+    special:
+      tearing: true
     target: ''
     type: ''
     weight: 0

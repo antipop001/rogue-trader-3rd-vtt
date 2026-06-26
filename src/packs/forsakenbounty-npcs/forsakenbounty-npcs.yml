@@ -37,7 +37,7 @@ items:
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
-  name: Warp-enhanced jagged debris (1d5+6; Pen 2) or laspistol
+  name: Warp-enhanced jagged debris
   ownership:
     default: 3
   sort: 0
@@ -52,14 +52,14 @@ items:
       max: 0
       value: 0
     craftsmanship: Common
-    damage: ''
+    damage: 1d5+6
     damageType: ''
     description: ''
     effect: ''
     equipped: true
     inBackpack: false
     modifications: []
-    penetration: ''
+    penetration: '2'
     range: ''
     rateOfFire:
       burst: 0

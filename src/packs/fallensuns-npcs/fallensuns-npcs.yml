@@ -4045,7 +4045,7 @@ items:
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
-  name: Autogun (90m; S/3/10; 1d10+3 I; Pen 0; Clip 30; Rld 2 Full) or Good Craftsmanship Combat Shotgun
+  name: Autogun
   ownership:
     default: 3
   sort: 0
@@ -4057,10 +4057,10 @@ items:
       inBackpack: false
     class: Basic
     clip:
-      max: 18
-      value: 18
+      max: 30
+      value: 30
     craftsmanship: Common
-    damage: 1d10+4
+    damage: 1d10+3
     damageType: Impact
     description: ''
     effect: ''
@@ -4068,12 +4068,12 @@ items:
     inBackpack: false
     modifications: []
     penetration: '0'
-    range: '30'
+    range: '90'
     rateOfFire:
-      burst: 0
-      full: 0
+      burst: 3
+      full: 10
       single: 1
-    reload: ''
+    reload: 2 Full
     source: Fallen Suns
     special:
       scatter: true
@@ -6593,7 +6593,7 @@ items:
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
-  name: Death Spinner (40m; S/–/–; 4d10+5 R; Pen 2; Clip 30; Rld 2 Full; Blast (2), Reliable, Tearing)
+  name: Death Spinner
   ownership:
     default: 3
   sort: 0
@@ -6603,25 +6603,25 @@ items:
     availability: Common
     backpack:
       inBackpack: false
-    class: ''
+    class: Basic
     clip:
-      max: 0
-      value: 0
+      max: 30
+      value: 30
     craftsmanship: Common
-    damage: ''
-    damageType: ''
+    damage: 4d10+5
+    damageType: Rending
     description: ''
     effect: ''
     equipped: true
     inBackpack: false
     modifications: []
-    penetration: ''
-    range: ''
+    penetration: '2'
+    range: '40'
     rateOfFire:
       burst: 0
       full: 0
       single: 1
-    reload: ''
+    reload: 2 Full
     source: Fallen Suns
     special: {}
     target: ''

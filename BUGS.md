@@ -407,7 +407,7 @@ real automation/correctness gaps to fix deliberately. P0s = BUG-011 / 012 (fixed
 **data-quality** (3)
 - QA-057 — 27 NPCs have `wounds.max: 0` (no wound track; many are real combatants, not swarms)
 - QA-058 — 3 NPCs have an all-zero characteristic block (every stat base 0 → unrollable)
-- QA-059 — 289 NPC-embedded weapon items have empty `damage`; 76 weapon "items" are OCR description-blobs mis-parsed as weapons
+- 🔨 QA-059 (partial 2026-06-26) — **76 OCR-blob weapon items FIXED → 0**: the inline weapon spec embedded in the item *name* (`vicious beak (Melee; 1d10+4; Pen 0; Primitive) # …prose`) is now parsed into the structured fields (damage/class/penetration/range/RoF/clip/reload/special) and the name cleaned (`tools/npc_pipeline/fix_blob_weapons.py` — PyYAML round-trip matching the pipeline's dump settings for minimal diffs; handles leading-class / comma-separated / `Melee/Thrown` / letterless-melee-damage / OCR-dash forms). 78 parsed + 12 prose-trimmed across 16 packs; compilePacks round-trips clean; live-verified on rt-smoke (0 blob names, `vicious beak`=1d10+4, `Slugga`=1d10+4). This also dropped empty-`damage` weapons **289 → 239**. **Remaining: the 239 genuine natural-weapon items with empty `damage` (claws/fangs/etc. with no spec in the name) still need source-book damage profiles — a per-creature extraction pass.**
 
 **schema** (2)
 - QA-010 ✅ fixed — `commerce` skill governed by Intelligence; RT canon says Fellowship

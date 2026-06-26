@@ -2604,7 +2604,7 @@ items:
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
-  name: Splinter rifle (Basic; 80m; S/3/5; 1d10+2 R; Pen 3; Clip 200; Rld 2 Full; Toxic) or
+  name: Splinter rifle
   ownership:
     default: 3
   sort: 0
@@ -2614,27 +2614,28 @@ items:
     availability: Common
     backpack:
       inBackpack: false
-    class: Melee
+    class: Basic
     clip:
-      max: 0
-      value: 0
+      max: 200
+      value: 200
     craftsmanship: Common
-    damage: 1d10+3
+    damage: 1d10+2
     damageType: Rending
     description: ''
     effect: ''
     equipped: true
     inBackpack: false
     modifications: []
-    penetration: '2'
-    range: ''
+    penetration: '3'
+    range: '80'
     rateOfFire:
-      burst: 0
-      full: 0
+      burst: 3
+      full: 5
       single: 1
-    reload: ''
+    reload: 2 Full
     source: The Soul Reaver
-    special: {}
+    special:
+      toxic: true
     target: ''
     type: ''
     weight: 0
@@ -3434,7 +3435,7 @@ items:
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
-  name: Splinter pistol (Pistol; 30m; S/3/–; 1d10+2 R; Pen 3; Clip 120; Rld 2 Full; Toxic) or
+  name: Splinter pistol
   ownership:
     default: 3
   sort: 0
@@ -3444,27 +3445,28 @@ items:
     availability: Common
     backpack:
       inBackpack: false
-    class: Melee
+    class: Pistol
     clip:
-      max: 0
-      value: 0
+      max: 120
+      value: 120
     craftsmanship: Common
-    damage: 1d5+3
+    damage: 1d10+2
     damageType: Rending
     description: ''
     effect: ''
     equipped: true
     inBackpack: false
     modifications: []
-    penetration: '2'
-    range: ''
+    penetration: '3'
+    range: '30'
     rateOfFire:
-      burst: 0
+      burst: 3
       full: 0
       single: 1
-    reload: ''
+    reload: 2 Full
     source: The Soul Reaver
-    special: {}
+    special:
+      toxic: true
     target: ''
     type: ''
     weight: 0
@@ -3870,7 +3872,7 @@ items:
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
-  name: Splinter pistol (Pistol; 30m; S/3/–; 1d10+2 R; Pen 3; Clip 120; Rld 2 Full; Toxic) or
+  name: Splinter pistol
   ownership:
     default: 3
   sort: 0
@@ -3880,27 +3882,28 @@ items:
     availability: Common
     backpack:
       inBackpack: false
-    class: Melee
+    class: Pistol
     clip:
-      max: 0
-      value: 0
+      max: 120
+      value: 120
     craftsmanship: Common
-    damage: 1d5+4
+    damage: 1d10+2
     damageType: Rending
     description: ''
     effect: ''
     equipped: true
     inBackpack: false
     modifications: []
-    penetration: '2'
-    range: ''
+    penetration: '3'
+    range: '30'
     rateOfFire:
-      burst: 0
+      burst: 3
       full: 0
       single: 1
-    reload: ''
+    reload: 2 Full
     source: The Soul Reaver
-    special: {}
+    special:
+      toxic: true
     target: ''
     type: ''
     weight: 0
@@ -4423,7 +4426,7 @@ items:
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
-  name: Splinter pistol (Pistol; 30m; S/3/–; 1d10+2 R; Pen 3; Clip 120; Rld 2 Full; Toxic) or
+  name: Splinter pistol
   ownership:
     default: 3
   sort: 0
@@ -4433,27 +4436,28 @@ items:
     availability: Common
     backpack:
       inBackpack: false
-    class: Melee
+    class: Pistol
     clip:
-      max: 0
-      value: 0
+      max: 120
+      value: 120
     craftsmanship: Common
-    damage: 1d5+5
+    damage: 1d10+2
     damageType: Rending
     description: ''
     effect: ''
     equipped: true
     inBackpack: false
     modifications: []
-    penetration: '2'
-    range: ''
+    penetration: '3'
+    range: '30'
     rateOfFire:
-      burst: 0
+      burst: 3
       full: 0
       single: 1
-    reload: ''
+    reload: 2 Full
     source: The Soul Reaver
-    special: {}
+    special:
+      toxic: true
     target: ''
     type: ''
     weight: 0

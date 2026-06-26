@@ -1552,8 +1552,7 @@ items:
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
-  name: 'needle pistol (Pistol; 30m; S/-/-; 1d10 R; Pen 0; Clip 6; Reload Full; Accurate, Toxic) # MAGOS FORCYZ Unlike his
-    one-time brethren in the Adeptus Mechanicus'
+  name: needle pistol
   ownership:
     default: 3
   sort: 0
@@ -1563,27 +1562,29 @@ items:
     availability: Common
     backpack:
       inBackpack: false
-    class: ''
+    class: Pistol
     clip:
-      max: 0
-      value: 0
+      max: 6
+      value: 6
     craftsmanship: Common
-    damage: ''
-    damageType: ''
+    damage: 1d10
+    damageType: Rending
     description: ''
     effect: ''
     equipped: true
     inBackpack: false
     modifications: []
-    penetration: ''
-    range: ''
+    penetration: '0'
+    range: '30'
     rateOfFire:
       burst: 0
       full: 0
       single: 1
-    reload: ''
+    reload: Full
     source: Twilight Crusade
-    special: {}
+    special:
+      accurate: true
+      toxic: true
     target: ''
     type: ''
     weight: 0
@@ -2700,7 +2701,7 @@ items:
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
-  name: 'omnissian axe (Melee; 2d10+8 E; Pen 6; Power Field; Unbalanced) Equipment: Two Best Craftsmanship bionic arms'
+  name: omnissian axe
   ownership:
     default: 3
   sort: 0
@@ -2710,19 +2711,19 @@ items:
     availability: Common
     backpack:
       inBackpack: false
-    class: ''
+    class: Melee
     clip:
       max: 0
       value: 0
     craftsmanship: Common
-    damage: ''
-    damageType: ''
+    damage: 2d10+8
+    damageType: Energy
     description: ''
     effect: ''
     equipped: true
     inBackpack: false
     modifications: []
-    penetration: ''
+    penetration: '6'
     range: ''
     rateOfFire:
       burst: 0
@@ -2730,7 +2731,9 @@ items:
       single: 1
     reload: ''
     source: Twilight Crusade
-    special: {}
+    special:
+      powerField: true
+      unbalanced: true
     target: ''
     type: ''
     weight: 0
@@ -2973,7 +2976,7 @@ items:
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
-  name: 'inferno pistol reloads NPC APPENDIX # FLEET MASTER SABINA ALSUNET At one point in her life'
+  name: inferno pistol reloads NPC APPENDIX
   ownership:
     default: 3
   sort: 0
@@ -3554,7 +3557,7 @@ items:
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
-  name: Best Craftsmanship mono sword (Melee; 1d10+4 R; Pen 2; Balanced) **Equipment:** 2 boltgun reloads
+  name: Best Craftsmanship mono sword
   ownership:
     default: 3
   sort: 0
@@ -3564,19 +3567,19 @@ items:
     availability: Common
     backpack:
       inBackpack: false
-    class: ''
+    class: Melee
     clip:
       max: 0
       value: 0
     craftsmanship: Common
-    damage: ''
-    damageType: ''
+    damage: 1d10+4
+    damageType: Rending
     description: ''
     effect: ''
     equipped: true
     inBackpack: false
     modifications: []
-    penetration: ''
+    penetration: '2'
     range: ''
     rateOfFire:
       burst: 0
@@ -3584,7 +3587,8 @@ items:
       single: 1
     reload: ''
     source: Twilight Crusade
-    special: {}
+    special:
+      balanced: true
     target: ''
     type: ''
     weight: 0
@@ -4255,7 +4259,7 @@ items:
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
-  name: 'shot-raker gun (Basic; 20m; S/-/2; 2d10 I; Pen 1; Clip 10; Reload Full; Scatter) Equipment: Trophies'
+  name: shot-raker gun
   ownership:
     default: 3
   sort: 0
@@ -4265,27 +4269,28 @@ items:
     availability: Common
     backpack:
       inBackpack: false
-    class: ''
+    class: Basic
     clip:
-      max: 0
-      value: 0
+      max: 10
+      value: 10
     craftsmanship: Common
-    damage: ''
-    damageType: ''
+    damage: 2d10
+    damageType: Impact
     description: ''
     effect: ''
     equipped: true
     inBackpack: false
     modifications: []
-    penetration: ''
-    range: ''
+    penetration: '1'
+    range: '20'
     rateOfFire:
       burst: 0
-      full: 0
+      full: 2
       single: 1
-    reload: ''
+    reload: Full
     source: Twilight Crusade
-    special: {}
+    special:
+      scatter: true
     target: ''
     type: ''
     weight: 0
@@ -4372,7 +4377,7 @@ items:
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
-  name: 'flask of rum # GARGOFF ''EADBREAKA Like all Orks'
+  name: flask of rum
   ownership:
     default: 3
   sort: 0
@@ -5108,7 +5113,7 @@ items:
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
-  name: 'power klaw (Melee; 2d10+5 E, Pen 10; Power Field, Tearing, Unwieldy) Equipment: Grisly trophies'
+  name: power klaw
   ownership:
     default: 3
   sort: 0
@@ -5118,19 +5123,19 @@ items:
     availability: Common
     backpack:
       inBackpack: false
-    class: ''
+    class: Melee
     clip:
       max: 0
       value: 0
     craftsmanship: Common
-    damage: ''
-    damageType: ''
+    damage: 2d10+5
+    damageType: Energy
     description: ''
     effect: ''
     equipped: true
     inBackpack: false
     modifications: []
-    penetration: ''
+    penetration: '10'
     range: ''
     rateOfFire:
       burst: 0
@@ -5138,7 +5143,10 @@ items:
       single: 1
     reload: ''
     source: Twilight Crusade
-    special: {}
+    special:
+      powerField: true
+      tearing: true
+      unwieldy: true
     target: ''
     type: ''
     weight: 0
@@ -5936,8 +5944,7 @@ items:
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
-  name: Best Craftsmanship shuriken pistol (Pistol; 30m; S/3/5; 1d10+2 R; Pen 4; Clip 40; Reload 2 Full; Reliable) **Equipment:**
-    3 reloads for shuriken pistol
+  name: Best Craftsmanship shuriken pistol
   ownership:
     default: 3
   sort: 0
@@ -5947,27 +5954,28 @@ items:
     availability: Common
     backpack:
       inBackpack: false
-    class: ''
+    class: Pistol
     clip:
-      max: 0
-      value: 0
+      max: 40
+      value: 40
     craftsmanship: Common
-    damage: ''
-    damageType: ''
+    damage: 1d10+2
+    damageType: Rending
     description: ''
     effect: ''
     equipped: true
     inBackpack: false
     modifications: []
-    penetration: ''
-    range: ''
+    penetration: '4'
+    range: '30'
     rateOfFire:
-      burst: 0
-      full: 0
+      burst: 3
+      full: 5
       single: 1
-    reload: ''
+    reload: 2 Full
     source: Twilight Crusade
-    special: {}
+    special:
+      reliable: true
     target: ''
     type: ''
     weight: 0
@@ -6015,8 +6023,7 @@ items:
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
-  name: 'xenos cloth bag containing three Eldar spirit stones # CAPTAIN ONTKEAN HESTERON Commanding the Navy cruiser *Valurous
-    Charge* in the tumultuous Jericho Reach would be a challenge for any Imperial officer'
+  name: xenos cloth bag containing three Eldar spirit stones
   ownership:
     default: 3
   sort: 0
@@ -6624,7 +6631,7 @@ items:
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
-  name: officer's cutlass (Melee; 1d10+3 R; Pen 0; Shocking) **Equipment:** 4 reloads for naval pistol
+  name: officer's cutlass
   ownership:
     default: 3
   sort: 0
@@ -6634,19 +6641,19 @@ items:
     availability: Common
     backpack:
       inBackpack: false
-    class: ''
+    class: Melee
     clip:
       max: 0
       value: 0
     craftsmanship: Common
-    damage: ''
-    damageType: ''
+    damage: 1d10+3
+    damageType: Rending
     description: ''
     effect: ''
     equipped: true
     inBackpack: false
     modifications: []
-    penetration: ''
+    penetration: '0'
     range: ''
     rateOfFire:
       burst: 0
@@ -6654,7 +6661,8 @@ items:
       single: 1
     reload: ''
     source: Twilight Crusade
-    special: {}
+    special:
+      shocking: true
     target: ''
     type: ''
     weight: 0
@@ -6702,8 +6710,7 @@ items:
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
-  name: 'respirator MRC APPENDIX # DIAMNAS CHAR The battlefields of the Imperium breed two distinct types of soldier; survivors
-    and corpses. Diamnas Char is a survivor. Thrown into battle across countless theatres of war'
+  name: respirator MRC APPENDIX
   ownership:
     default: 3
   sort: 0
@@ -7251,7 +7258,7 @@ items:
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
-  name: hellpistols (Pistol, 35m, S/2/–; 1d10+4 E; Pen 7; Clip 40; Reload 2 Full) **Equipment:** 4 reloads for hellpistols
+  name: hellpistols
   ownership:
     default: 3
   sort: 0
@@ -7261,25 +7268,25 @@ items:
     availability: Common
     backpack:
       inBackpack: false
-    class: ''
+    class: Pistol
     clip:
-      max: 0
-      value: 0
+      max: 40
+      value: 40
     craftsmanship: Common
-    damage: ''
-    damageType: ''
+    damage: 1d10+4
+    damageType: Energy
     description: ''
     effect: ''
     equipped: true
     inBackpack: false
     modifications: []
-    penetration: ''
-    range: ''
+    penetration: '7'
+    range: '35'
     rateOfFire:
-      burst: 0
+      burst: 2
       full: 0
       single: 1
-    reload: ''
+    reload: 2 Full
     source: Twilight Crusade
     special: {}
     target: ''
@@ -7329,7 +7336,7 @@ items:
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
-  name: 'lucky charm NPC APPENDIX # GULETTE ANHD A powerful telepath in the service of Inquisitor Silberthorne'
+  name: lucky charm NPC APPENDIX
   ownership:
     default: 3
   sort: 0
@@ -7962,7 +7969,7 @@ items:
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
-  name: 'mono knife (Melee; 1d5+3 R; Pen 2) Equipment: 1 reload for laspistol'
+  name: mono knife
   ownership:
     default: 3
   sort: 0
@@ -7972,19 +7979,19 @@ items:
     availability: Common
     backpack:
       inBackpack: false
-    class: ''
+    class: Melee
     clip:
       max: 0
       value: 0
     craftsmanship: Common
-    damage: ''
-    damageType: ''
+    damage: 1d5+3
+    damageType: Rending
     description: ''
     effect: ''
     equipped: true
     inBackpack: false
     modifications: []
-    penetration: ''
+    penetration: '2'
     range: ''
     rateOfFire:
       burst: 0
@@ -8430,7 +8437,7 @@ items:
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
-  name: 'Storm of Force THE WALL STREET JOURNAL 102 # SHAPER T''NAAK As Shaper to his kindred'
+  name: Storm of Force THE WALL STREET JOURNAL 102
   ownership:
     default: 3
   sort: 0
@@ -8942,8 +8949,7 @@ items:
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
-  name: Kroot rifle (Basic/Melee; 110m; S/2/–; 1d10+5 E/1d10+6 R; Pen 1/0; Clip 6; Reload 2 Full; Balanced) **Equipment:**
-    1 reload for Kroot rifle
+  name: Kroot rifle
   ownership:
     default: 3
   sort: 0
@@ -8953,27 +8959,28 @@ items:
     availability: Common
     backpack:
       inBackpack: false
-    class: ''
+    class: Basic
     clip:
-      max: 0
-      value: 0
+      max: 6
+      value: 6
     craftsmanship: Common
-    damage: ''
-    damageType: ''
+    damage: 1d10+11
+    damageType: Energy
     description: ''
     effect: ''
     equipped: true
     inBackpack: false
     modifications: []
-    penetration: ''
-    range: ''
+    penetration: '1'
+    range: '110'
     rateOfFire:
-      burst: 0
+      burst: 2
       full: 0
       single: 1
-    reload: ''
+    reload: 2 Full
     source: Twilight Crusade
-    special: {}
+    special:
+      balanced: true
     target: ''
     type: ''
     weight: 0
@@ -9021,7 +9028,7 @@ items:
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
-  name: 'various bone charms and talismans # ORTHOS KORRELL Korrell has always been a vicious and ruthless man'
+  name: various bone charms and talismans
   ownership:
     default: 3
   sort: 0
@@ -9701,7 +9708,7 @@ items:
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
-  name: Chainaxe (Melee; 2d10+8 R; Pen 2; Tearing; Unwieldy) **Equipment:** Skull trophies
+  name: Chainaxe
   ownership:
     default: 3
   sort: 0
@@ -9711,19 +9718,19 @@ items:
     availability: Common
     backpack:
       inBackpack: false
-    class: ''
+    class: Melee
     clip:
       max: 0
       value: 0
     craftsmanship: Common
-    damage: ''
-    damageType: ''
+    damage: 2d10+8
+    damageType: Rending
     description: ''
     effect: ''
     equipped: true
     inBackpack: false
     modifications: []
-    penetration: ''
+    penetration: '2'
     range: ''
     rateOfFire:
       burst: 0
@@ -9731,7 +9738,9 @@ items:
       single: 1
     reload: ''
     source: Twilight Crusade
-    special: {}
+    special:
+      tearing: true
+      unwieldy: true
     target: ''
     type: ''
     weight: 0
@@ -9740,8 +9749,7 @@ items:
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
-  name: 'respirator MICA ARTILISK 108 # AUBERON SHEOL Ambition and a callous disregard for human life define Auberon Sheol.
-    Until he entered into Vir Modren''s service'
+  name: respirator MICA ARTILISK 108
   ownership:
     default: 3
   sort: 0
@@ -9987,7 +9995,7 @@ items:
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
-  name: 'Compact laspistol (Pistol; 15m; S/-/-; 1d10+1 E; Pen 0; Clip 15; Reload Full, Reliable) Equipment: Smart clothes'
+  name: Compact laspistol
   ownership:
     default: 3
   sort: 0
@@ -9997,27 +10005,28 @@ items:
     availability: Common
     backpack:
       inBackpack: false
-    class: ''
+    class: Pistol
     clip:
-      max: 0
-      value: 0
+      max: 15
+      value: 15
     craftsmanship: Common
-    damage: ''
-    damageType: ''
+    damage: 1d10+1
+    damageType: Energy
     description: ''
     effect: ''
     equipped: true
     inBackpack: false
     modifications: []
-    penetration: ''
-    range: ''
+    penetration: '0'
+    range: '15'
     rateOfFire:
       burst: 0
       full: 0
       single: 1
-    reload: ''
+    reload: Full
     source: Twilight Crusade
-    special: {}
+    special:
+      reliable: true
     target: ''
     type: ''
     weight: 0
@@ -10065,8 +10074,7 @@ items:
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
-  name: 'scribe servo skull # INQUISITOR JYRANO KAISON Inquisitor Jyrano Kaison has been a staunch and unbreakable defender
-    of humanity all his life. Raised in the Schola Progenium like countless other Imperial orphans before him'
+  name: scribe servo skull
   ownership:
     default: 3
   sort: 0
@@ -10519,8 +10527,7 @@ items:
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
-  name: Flamer (Basic; 20m; S/--/--; 1d10+4 E; Pen 2; Clip 6; Reload 2 Full; Flame) **Equipment:** Auto-senses and preysense
-    helmet upgrades
+  name: Flamer
   ownership:
     default: 3
   sort: 0
@@ -10530,27 +10537,28 @@ items:
     availability: Common
     backpack:
       inBackpack: false
-    class: ''
+    class: Basic
     clip:
-      max: 0
-      value: 0
+      max: 6
+      value: 6
     craftsmanship: Common
-    damage: ''
-    damageType: ''
+    damage: 1d10+4
+    damageType: Energy
     description: ''
     effect: ''
     equipped: true
     inBackpack: false
     modifications: []
-    penetration: ''
-    range: ''
+    penetration: '2'
+    range: '20'
     rateOfFire:
       burst: 0
       full: 0
       single: 1
-    reload: ''
+    reload: 2 Full
     source: Twilight Crusade
-    special: {}
+    special:
+      flame: true
     target: ''
     type: ''
     weight: 0
@@ -10639,7 +10647,7 @@ items:
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
-  name: 'frag grenades ## ETHEREAL AUN''ROH None can fathom the mind of an Ethereal'
+  name: frag grenades
   ownership:
     default: 3
   sort: 0
@@ -11360,7 +11368,7 @@ items:
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
-  name: 'hand cannon (Pistol; 35m; S/-/-; 1d10+4 I; Pen 2; Clip 5; Reload 2 Full) Equipment: 2 reloads for boltgun'
+  name: hand cannon
   ownership:
     default: 3
   sort: 0
@@ -11370,25 +11378,25 @@ items:
     availability: Common
     backpack:
       inBackpack: false
-    class: ''
+    class: Pistol
     clip:
-      max: 0
-      value: 0
+      max: 5
+      value: 5
     craftsmanship: Common
-    damage: ''
-    damageType: ''
+    damage: 1d10+4
+    damageType: Impact
     description: ''
     effect: ''
     equipped: true
     inBackpack: false
     modifications: []
-    penetration: ''
-    range: ''
+    penetration: '2'
+    range: '35'
     rateOfFire:
       burst: 0
       full: 0
       single: 1
-    reload: ''
+    reload: 2 Full
     source: Twilight Crusade
     special: {}
     target: ''
@@ -11728,7 +11736,7 @@ items:
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
-  name: 'Hellpistol (Pistol; 35m; S/2/-; 1d10+4 E; Pen 7; Clip 40; Reload 2 Full) Equipment: 1 reload for hellpistol'
+  name: Hellpistol
   ownership:
     default: 3
   sort: 0
@@ -11738,25 +11746,25 @@ items:
     availability: Common
     backpack:
       inBackpack: false
-    class: ''
+    class: Pistol
     clip:
-      max: 0
-      value: 0
+      max: 40
+      value: 40
     craftsmanship: Common
-    damage: ''
-    damageType: ''
+    damage: 1d10+4
+    damageType: Energy
     description: ''
     effect: ''
     equipped: true
     inBackpack: false
     modifications: []
-    penetration: ''
-    range: ''
+    penetration: '7'
+    range: '35'
     rateOfFire:
-      burst: 0
+      burst: 2
       full: 0
       single: 1
-    reload: ''
+    reload: 2 Full
     source: Twilight Crusade
     special: {}
     target: ''
@@ -12399,8 +12407,48 @@ items:
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
-  name: Two reaper autocannons (Heavy; 300m; S/4/–; 3d10+8 I; Pen 6; Clip –; Reload –; Reliable, Twin-Linked) or two assault
-    cannons (Heavy; 150m; –/–/10; 2d10+10 I; Pen 6; Clip –; Reload –; Tearing) or two ectoplasma cannons
+  name: Two reaper autocannons
+  ownership:
+    default: 3
+  sort: 0
+  system:
+    attackBonus: 0
+    attackType: ''
+    availability: Common
+    backpack:
+      inBackpack: false
+    class: Heavy
+    clip:
+      max: 0
+      value: 0
+    craftsmanship: Common
+    damage: 3d10+8
+    damageType: Impact
+    description: ''
+    effect: ''
+    equipped: true
+    inBackpack: false
+    modifications: []
+    penetration: '6'
+    range: '300'
+    rateOfFire:
+      burst: 4
+      full: 0
+      single: 1
+    reload: –
+    source: Twilight Crusade
+    special:
+      reliable: true
+      twinLinked: true
+    target: ''
+    type: ''
+    weight: 0
+  type: weapon
+- _id: BJLDXwCcIQr2BOep
+  effects: []
+  flags: {}
+  img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
+  name: claws and fangs
   ownership:
     default: 3
   sort: 0
@@ -12415,54 +12463,14 @@ items:
       max: 0
       value: 0
     craftsmanship: Common
-    damage: 1d10+9
-    damageType: Energy
+    damage: 1d10+12
+    damageType: Rending
     description: ''
     effect: ''
     equipped: true
     inBackpack: false
     modifications: []
-    penetration: '6'
-    range: ''
-    rateOfFire:
-      burst: 0
-      full: 0
-      single: 1
-    reload: –
-    source: Twilight Crusade
-    special: {}
-    target: ''
-    type: ''
-    weight: 0
-  type: weapon
-- _id: BJLDXwCcIQr2BOep
-  effects: []
-  flags: {}
-  img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
-  name: 'claws and fangs (Melee; 1d10+12 R; Pen 3, Tearing) # MAULERFIEND Brutal beasts of Daemonic energy trapped in a body
-    of twisted steel and fuelled by hate alone'
-  ownership:
-    default: 3
-  sort: 0
-  system:
-    attackBonus: 0
-    attackType: ''
-    availability: Common
-    backpack:
-      inBackpack: false
-    class: ''
-    clip:
-      max: 0
-      value: 0
-    craftsmanship: Common
-    damage: ''
-    damageType: ''
-    description: ''
-    effect: ''
-    equipped: true
-    inBackpack: false
-    modifications: []
-    penetration: ''
+    penetration: '3'
     range: ''
     rateOfFire:
       burst: 0
@@ -12470,7 +12478,8 @@ items:
       single: 1
     reload: ''
     source: Twilight Crusade
-    special: {}
+    special:
+      tearing: true
     target: ''
     type: ''
     weight: 0
@@ -12865,8 +12874,7 @@ items:
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
-  name: magma cutters (Melee; 2d10+14 E; Pen 24; Unwieldy) or lasher tendrils (Melee; 1d10+12 I; Pen 0; Flexible, Snare [3])
-    **Overwhelming:** A Maulerfiend may attack a Grappled opponent with its magma cutters as a Reaction
+  name: magma cutters
   ownership:
     default: 3
   sort: 0
@@ -12876,19 +12884,19 @@ items:
     availability: Common
     backpack:
       inBackpack: false
-    class: ''
+    class: Melee
     clip:
       max: 0
       value: 0
     craftsmanship: Common
-    damage: ''
-    damageType: ''
+    damage: 2d10+14
+    damageType: Energy
     description: ''
     effect: ''
     equipped: true
     inBackpack: false
     modifications: []
-    penetration: ''
+    penetration: '24'
     range: ''
     rateOfFire:
       burst: 0
@@ -12896,7 +12904,8 @@ items:
       single: 1
     reload: ''
     source: Twilight Crusade
-    special: {}
+    special:
+      unwieldy: true
     target: ''
     type: ''
     weight: 0
@@ -13070,7 +13079,7 @@ items:
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
-  name: Hades autocannon (Heavy; 300m; 3/6/12; 3d10+8 I; Pen 6; Storm) or baleflamer
+  name: Hades autocannon
   ownership:
     default: 3
   sort: 0
@@ -13080,20 +13089,20 @@ items:
     availability: Common
     backpack:
       inBackpack: false
-    class: Basic
+    class: Heavy
     clip:
       max: 0
       value: 0
     craftsmanship: Common
-    damage: 2d10+3
-    damageType: Energy
+    damage: 3d10+8
+    damageType: Impact
     description: ''
     effect: ''
     equipped: true
     inBackpack: false
     modifications: []
     penetration: '6'
-    range: '45'
+    range: '300'
     rateOfFire:
       burst: 0
       full: 0
@@ -13102,6 +13111,7 @@ items:
     source: Twilight Crusade
     special:
       flame: true
+      storm: true
     target: ''
     type: ''
     weight: 0
@@ -13150,8 +13160,7 @@ items:
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
-  name: 'wings (Melee; 3d10+5 R; Pen 6) NPC APPLICATIONS # TAU NPCS Full rules for characters and NPCs hailing from this xenos
-    culture can be found in the TAU CHARACTER GUIDE supplement. For those who do not own that document'
+  name: wings
   ownership:
     default: 3
   sort: 0
@@ -13161,19 +13170,19 @@ items:
     availability: Common
     backpack:
       inBackpack: false
-    class: ''
+    class: Melee
     clip:
       max: 0
       value: 0
     craftsmanship: Common
-    damage: ''
-    damageType: ''
+    damage: 3d10+5
+    damageType: Rending
     description: ''
     effect: ''
     equipped: true
     inBackpack: false
     modifications: []
-    penetration: ''
+    penetration: '6'
     range: ''
     rateOfFire:
       burst: 0
@@ -13229,7 +13238,7 @@ items:
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
-  name: 'simplified rules instead: ## TAU SKILLS A handful of NPCs in this appendix possess the following'
+  name: 'simplified rules instead:'
   ownership:
     default: 3
   sort: 0
@@ -13398,8 +13407,7 @@ items:
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
-  name: Pulse rifle (Basic; 150m; S/2/4; 2d10+3 E; Pen 4; Clip 36; Reload Half; Gyro-Stabilised) or rail rifle (Basic; 150m;
-    S/-/-; 2d10+3 I; Pen 4; Clip 12; Reload Full; Felling; Proven [3]) **Equipment:** 2 reloads for primary weapon
+  name: Pulse rifle
   ownership:
     default: 3
   sort: 0
@@ -13409,25 +13417,25 @@ items:
     availability: Common
     backpack:
       inBackpack: false
-    class: ''
+    class: Basic
     clip:
-      max: 0
-      value: 0
+      max: 36
+      value: 36
     craftsmanship: Common
-    damage: ''
-    damageType: ''
+    damage: 2d10+3
+    damageType: Energy
     description: ''
     effect: ''
     equipped: true
     inBackpack: false
     modifications: []
-    penetration: ''
-    range: ''
+    penetration: '4'
+    range: '150'
     rateOfFire:
-      burst: 0
-      full: 0
+      burst: 2
+      full: 4
       single: 1
-    reload: ''
+    reload: Half
     source: Twilight Crusade
     special: {}
     target: ''
@@ -13753,9 +13761,7 @@ items:
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
-  name: 'Pulse rifle (Basic; 150m; S/2/4; 2d10+3 E; Pen 4; Clip 36; Reload Half; Gyro-Stabilised) or Pulse Carbine (Basic;
-    60m; S/-/3; 2d10+2 E; Pen 4; Clip: 24; Reload Half; Gyro-stabilised) or Rail Rifle (Basic; 150m; S/-/-; 2d10+3 I; Pen
-    4; Clip 12; Reload Full; Felling; Proven [3]) **Equipment:** 2 reloads for primary weapon'
+  name: Pulse rifle
   ownership:
     default: 3
   sort: 0
@@ -13765,25 +13771,25 @@ items:
     availability: Common
     backpack:
       inBackpack: false
-    class: ''
+    class: Basic
     clip:
-      max: 0
-      value: 0
+      max: 36
+      value: 36
     craftsmanship: Common
-    damage: ''
-    damageType: ''
+    damage: 2d10+3
+    damageType: Energy
     description: ''
     effect: ''
     equipped: true
     inBackpack: false
     modifications: []
-    penetration: ''
-    range: ''
+    penetration: '4'
+    range: '150'
     rateOfFire:
-      burst: 0
-      full: 0
+      burst: 2
+      full: 4
       single: 1
-    reload: ''
+    reload: Half
     source: Twilight Crusade
     special: {}
     target: ''
@@ -13872,7 +13878,7 @@ items:
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
-  name: 'target lock MRC APPLICATION # IMPORTANT VESSELS The following voidships play a prominent role throughout this adventure'
+  name: target lock MRC APPLICATION
   ownership:
     default: 3
   sort: 0

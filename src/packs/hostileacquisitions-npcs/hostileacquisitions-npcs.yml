@@ -1780,9 +1780,7 @@ items:
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
-  name: Best-Craftsmanship Shotcannon with Amputator shells (40m; S/3/–; 2d10+6 I; Clip 24; Rld 2 Full; Scatter) or MIU-linked
-    Mezoa-pattern Flamer (20m; S/–/–; 1d10+4 E; Pen 2; Clip 6; Rld 2 Full; Flame) or MIU-linked Mezoa-pattern Meltagun (20m;
-    S/–/–; 2d10+8 E; Pen 13; Clip 10; Rld 3 Full) or MIU-linked Compact Storm Bolter
+  name: Best-Craftsmanship Shotcannon with Amputator shells
   ownership:
     default: 3
   sort: 0
@@ -1794,25 +1792,26 @@ items:
       inBackpack: false
     class: Basic
     clip:
-      max: 30
-      value: 30
+      max: 24
+      value: 24
     craftsmanship: Common
-    damage: 1d10+4
-    damageType: Explosive
+    damage: 2d10+6
+    damageType: Impact
     description: ''
     effect: ''
     equipped: true
     inBackpack: false
     modifications: []
     penetration: '4'
-    range: '45'
+    range: '40'
     rateOfFire:
-      burst: 2
-      full: 4
+      burst: 3
+      full: 0
       single: 1
-    reload: ''
+    reload: 2 Full
     source: Hostile Acquisitions
     special:
+      scatter: true
       storm: true
       tearing: true
     target: ''

@@ -569,7 +569,7 @@ items:
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
-  name: '** Sneaky boot knife (Melee; 1d5+1 R; Pen 0). Gretchin may also be armed with any SP Pistol'
+  name: '** Sneaky boot knife'
   ownership:
     default: 3
   sort: 0
@@ -579,19 +579,19 @@ items:
     availability: Common
     backpack:
       inBackpack: false
-    class: ''
+    class: Melee
     clip:
       max: 0
       value: 0
     craftsmanship: Common
-    damage: ''
-    damageType: ''
+    damage: 1d5+1
+    damageType: Rending
     description: ''
     effect: ''
     equipped: true
     inBackpack: false
     modifications: []
-    penetration: ''
+    penetration: '0'
     range: ''
     rateOfFire:
       burst: 0
@@ -802,8 +802,7 @@ items:
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
-  name: Grossly oversized maw (Melee; 1d10+6 R; Pen 0; Tearing). Squigs are also sometimes fitted with explosive payloads
-    by their Ork keepers
+  name: Grossly oversized maw
   ownership:
     default: 3
   sort: 0
@@ -813,19 +812,19 @@ items:
     availability: Common
     backpack:
       inBackpack: false
-    class: ''
+    class: Melee
     clip:
       max: 0
       value: 0
     craftsmanship: Common
-    damage: ''
-    damageType: ''
+    damage: 1d10+6
+    damageType: Rending
     description: ''
     effect: ''
     equipped: true
     inBackpack: false
     modifications: []
-    penetration: ''
+    penetration: '0'
     range: ''
     rateOfFire:
       burst: 0
@@ -833,7 +832,8 @@ items:
       single: 1
     reload: ''
     source: The Navis Primer
-    special: {}
+    special:
+      tearing: true
     target: ''
     type: ''
     weight: 0
@@ -4682,7 +4682,7 @@ items:
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
-  name: witchblade (Melee; 1d10+14; Pen 5; Balanced, Power Field, Witch-Edge) or singing spear
+  name: witchblade
   ownership:
     default: 3
   sort: 0
@@ -4697,14 +4697,14 @@ items:
       max: 0
       value: 0
     craftsmanship: Common
-    damage: ''
+    damage: 1d10+14
     damageType: ''
     description: ''
     effect: ''
     equipped: true
     inBackpack: false
     modifications: []
-    penetration: ''
+    penetration: '5'
     range: ''
     rateOfFire:
       burst: 0
@@ -4712,7 +4712,9 @@ items:
       single: 1
     reload: ''
     source: The Navis Primer
-    special: {}
+    special:
+      balanced: true
+      powerField: true
     target: ''
     type: ''
     weight: 0
@@ -7826,8 +7828,7 @@ items:
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
-  name: 'Implanted Yu''Vath Crystalblades (Melee; 1d10+10 R; Pen 4; Force). +Hunting Frenzy: Rak''Gol are utterly merciless
-    and unrelenting in battle'
+  name: Implanted Yu'Vath Crystalblades
   ownership:
     default: 3
   sort: 0
@@ -7837,19 +7838,19 @@ items:
     availability: Common
     backpack:
       inBackpack: false
-    class: ''
+    class: Melee
     clip:
       max: 0
       value: 0
     craftsmanship: Common
-    damage: ''
-    damageType: ''
+    damage: 1d10+10
+    damageType: Rending
     description: ''
     effect: ''
     equipped: true
     inBackpack: false
     modifications: []
-    penetration: ''
+    penetration: '4'
     range: ''
     rateOfFire:
       burst: 0
@@ -7857,7 +7858,8 @@ items:
       single: 1
     reload: ''
     source: The Navis Primer
-    special: {}
+    special:
+      force: true
     target: ''
     type: ''
     weight: 0
@@ -8769,7 +8771,7 @@ items:
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
-  name: Pincer Claw (Melee; 1d10+4 R; Pen 3; Tearing). **Soporific Musk:** As a Daemonette
+  name: Pincer Claw
   ownership:
     default: 3
   sort: 0
@@ -8779,19 +8781,19 @@ items:
     availability: Common
     backpack:
       inBackpack: false
-    class: ''
+    class: Melee
     clip:
       max: 0
       value: 0
     craftsmanship: Common
-    damage: ''
-    damageType: ''
+    damage: 1d10+4
+    damageType: Rending
     description: ''
     effect: ''
     equipped: true
     inBackpack: false
     modifications: []
-    penetration: ''
+    penetration: '3'
     range: ''
     rateOfFire:
       burst: 0
@@ -8799,7 +8801,8 @@ items:
       single: 1
     reload: ''
     source: The Navis Primer
-    special: {}
+    special:
+      tearing: true
     target: ''
     type: ''
     weight: 0

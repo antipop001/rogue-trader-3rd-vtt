@@ -7608,7 +7608,7 @@ items:
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
-  name: 'Swooping Hawk Grenade Pack (Range: special; S/-/=; 1d10+5X; Pen 4; Blast (3); Clip 10; Reload 2 Full, Reliable)'
+  name: Swooping Hawk Grenade Pack
   ownership:
     default: 3
   sort: 0
@@ -7618,19 +7618,19 @@ items:
     availability: Common
     backpack:
       inBackpack: false
-    class: ''
+    class: Melee
     clip:
       max: 0
       value: 0
     craftsmanship: Common
-    damage: ''
-    damageType: ''
+    damage: 1d10+5
+    damageType: Explosive
     description: ''
     effect: ''
     equipped: true
     inBackpack: false
     modifications: []
-    penetration: ''
+    penetration: '4'
     range: ''
     rateOfFire:
       burst: 0
@@ -8524,7 +8524,7 @@ items:
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
-  name: two Wraithlord Fists (each 2d10+18 I; Pen 10) or one Wraithlord Fist and one Wraithsword
+  name: two Wraithlord Fists
   ownership:
     default: 3
   sort: 0
@@ -8539,8 +8539,8 @@ items:
       max: 0
       value: 0
     craftsmanship: Common
-    damage: 2d10+22
-    damageType: Energy
+    damage: 2d10+18
+    damageType: Impact
     description: ''
     effect: ''
     equipped: true
@@ -10507,7 +10507,7 @@ items:
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
-  name: Slugga (20m; S/3/-; 1d10+4 I; Pen 0; Clip 18; Reload Full; Inaccurate, Unreliable) or Shoota
+  name: Slugga
   ownership:
     default: 3
   sort: 0
@@ -10519,21 +10519,21 @@ items:
       inBackpack: false
     class: Basic
     clip:
-      max: 30
-      value: 30
+      max: 18
+      value: 18
     craftsmanship: Common
-    damage: ''
-    damageType: ''
+    damage: 1d10+4
+    damageType: Impact
     description: ''
     effect: ''
     equipped: true
     inBackpack: false
     modifications: []
     penetration: '0'
-    range: '60'
+    range: '20'
     rateOfFire:
       burst: 3
-      full: 10
+      full: 0
       single: 1
     reload: Full
     source: The Koronus Bestiary
@@ -11016,7 +11016,7 @@ items:
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
-  name: Slugga (20m; S/3/-; 1d10+4 I; Pen 0; Clip 18; Reload Full; Inaccurate, Unreliable) or Shoota
+  name: Slugga
   ownership:
     default: 3
   sort: 0
@@ -11028,21 +11028,21 @@ items:
       inBackpack: false
     class: Basic
     clip:
-      max: 30
-      value: 30
+      max: 18
+      value: 18
     craftsmanship: Common
-    damage: ''
-    damageType: ''
+    damage: 1d10+4
+    damageType: Impact
     description: ''
     effect: ''
     equipped: true
     inBackpack: false
     modifications: []
     penetration: '0'
-    range: '60'
+    range: '20'
     rateOfFire:
       burst: 3
-      full: 10
+      full: 0
       single: 1
     reload: Full
     source: The Koronus Bestiary
@@ -11560,7 +11560,7 @@ items:
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
-  name: Slugga (20m; S/3/-; 1d10+4 I; Pen 0; Clip 18; Reload Full; Inaccurate, Unreliable) or Shoota
+  name: Slugga
   ownership:
     default: 3
   sort: 0
@@ -11572,21 +11572,21 @@ items:
       inBackpack: false
     class: Basic
     clip:
-      max: 30
-      value: 30
+      max: 18
+      value: 18
     craftsmanship: Common
-    damage: ''
-    damageType: ''
+    damage: 1d10+4
+    damageType: Impact
     description: ''
     effect: ''
     equipped: true
     inBackpack: false
     modifications: []
     penetration: '0'
-    range: '60'
+    range: '20'
     rateOfFire:
       burst: 3
-      full: 10
+      full: 0
       single: 1
     reload: Full
     source: The Koronus Bestiary
@@ -12037,7 +12037,7 @@ items:
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
-  name: Slugga (20m; S/3/-; 1d10+4 I; Pen 0; Clip 18; Reload Full; Inaccurate, Unreliable) or Shoota
+  name: Slugga
   ownership:
     default: 3
   sort: 0
@@ -12049,21 +12049,21 @@ items:
       inBackpack: false
     class: Basic
     clip:
-      max: 30
-      value: 30
+      max: 18
+      value: 18
     craftsmanship: Common
-    damage: ''
-    damageType: ''
+    damage: 1d10+4
+    damageType: Impact
     description: ''
     effect: ''
     equipped: true
     inBackpack: false
     modifications: []
     penetration: '0'
-    range: '60'
+    range: '20'
     rateOfFire:
       burst: 3
-      full: 10
+      full: 0
       single: 1
     reload: Full
     source: The Koronus Bestiary
@@ -12709,7 +12709,7 @@ items:
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
-  name: Grot Blasta (30m; S/-/-; 1d10+3 I; Pen 0; Clip 5; Reload 2 Full; Inaccurate, Unreliable) or Slugga
+  name: Grot Blasta
   ownership:
     default: 3
   sort: 0
@@ -12721,10 +12721,10 @@ items:
       inBackpack: false
     class: Basic
     clip:
-      max: 18
-      value: 18
+      max: 5
+      value: 5
     craftsmanship: Common
-    damage: 1d10+4
+    damage: 1d10+3
     damageType: Impact
     description: ''
     effect: ''
@@ -12732,12 +12732,12 @@ items:
     inBackpack: false
     modifications: []
     penetration: '0'
-    range: '20'
+    range: '30'
     rateOfFire:
       burst: 3
       full: 0
       single: 1
-    reload: Full
+    reload: 2 Full
     source: The Koronus Bestiary
     special:
       inaccurate: true
@@ -13363,7 +13363,7 @@ items:
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
-  name: Bite (1d10+6 R; Pen 0; Tearing); Bomb Harness
+  name: Bite
   ownership:
     default: 3
   sort: 0
@@ -13378,14 +13378,14 @@ items:
       max: 0
       value: 0
     craftsmanship: Common
-    damage: 2d10+4
-    damageType: Explosive
+    damage: 1d10+6
+    damageType: Rending
     description: ''
     effect: ''
     equipped: true
     inBackpack: false
     modifications: []
-    penetration: '1'
+    penetration: '0'
     range: ''
     rateOfFire:
       burst: 0
@@ -13395,6 +13395,7 @@ items:
     source: The Koronus Bestiary
     special:
       blast: true
+      tearing: true
     target: ''
     type: ''
     weight: 0
@@ -15206,7 +15207,7 @@ items:
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
-  name: Truncheon (Melee; 1d10+3; Pen 0;) or Parrying Dagger
+  name: Truncheon
   ownership:
     default: 3
   sort: 0
@@ -15221,7 +15222,7 @@ items:
       max: 0
       value: 0
     craftsmanship: Common
-    damage: 1d5+3
+    damage: 1d10+3
     damageType: Rending
     description: ''
     effect: ''
@@ -21159,7 +21160,7 @@ items:
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
-  name: Hunting Spear (Melee/Thrown; 5m; 1d10+3 R; Pen 0) or Heavy Club
+  name: Hunting Spear
   ownership:
     default: 3
   sort: 0
@@ -21174,15 +21175,15 @@ items:
       max: 0
       value: 0
     craftsmanship: Common
-    damage: 1d10+4
-    damageType: Impact
+    damage: 1d10+3
+    damageType: Rending
     description: ''
     effect: ''
     equipped: true
     inBackpack: false
     modifications: []
     penetration: '0'
-    range: ''
+    range: '5'
     rateOfFire:
       burst: 0
       full: 0

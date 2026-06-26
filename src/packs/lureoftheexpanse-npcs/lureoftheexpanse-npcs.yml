@@ -2557,7 +2557,7 @@ items:
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
-  name: Bolt pistol (30m; S/2/–; 1d10+5 I; pen 4; clip 8; reload full; Tearing). Chainsword
+  name: Bolt pistol
   ownership:
     default: 3
   sort: 0
@@ -2567,25 +2567,25 @@ items:
     availability: Common
     backpack:
       inBackpack: false
-    class: Melee
+    class: Basic
     clip:
-      max: 0
-      value: 0
+      max: 8
+      value: 8
     craftsmanship: Common
-    damage: 1d10+4
-    damageType: Rending
+    damage: 1d10+5
+    damageType: Impact
     description: ''
     effect: ''
     equipped: true
     inBackpack: false
     modifications: []
-    penetration: '2'
-    range: ''
+    penetration: '4'
+    range: '30'
     rateOfFire:
-      burst: 0
+      burst: 2
       full: 0
       single: 1
-    reload: ''
+    reload: full
     source: Lure of the Expanse
     special:
       balanced: true
@@ -2994,7 +2994,7 @@ items:
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
-  name: two-handed chain axe (2d10+7 R; pen 2; Tearing, unbalanced). **Implants:** Bionic arms
+  name: two-handed chain axe
   ownership:
     default: 3
   sort: 0
@@ -3009,14 +3009,14 @@ items:
       max: 0
       value: 0
     craftsmanship: Common
-    damage: ''
-    damageType: ''
+    damage: 2d10+7
+    damageType: Rending
     description: ''
     effect: ''
     equipped: true
     inBackpack: false
     modifications: []
-    penetration: ''
+    penetration: '2'
     range: ''
     rateOfFire:
       burst: 0
@@ -3024,7 +3024,9 @@ items:
       single: 1
     reload: ''
     source: Lure of the Expanse
-    special: {}
+    special:
+      tearing: true
+      unbalanced: true
     target: ''
     type: ''
     weight: 0
@@ -3492,7 +3494,7 @@ items:
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
-  name: Heavy stubber (120m; -/-/10; 1d10+5 I; pen 3; clip 40; reload full) or naval shotcannon
+  name: Heavy stubber
   ownership:
     default: 3
   sort: 0
@@ -3504,23 +3506,23 @@ items:
       inBackpack: false
     class: Basic
     clip:
-      max: 24
-      value: 24
+      max: 40
+      value: 40
     craftsmanship: Common
-    damage: 2d10+4
+    damage: 1d10+5
     damageType: Impact
     description: ''
     effect: ''
     equipped: true
     inBackpack: false
     modifications: []
-    penetration: '0'
-    range: '40'
+    penetration: '3'
+    range: '120'
     rateOfFire:
-      burst: 3
-      full: 0
-      single: 1
-    reload: 2 full
+      burst: 0
+      full: 10
+      single: 0
+    reload: full
     source: Lure of the Expanse
     special:
       scatter: true
@@ -5394,7 +5396,7 @@ items:
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
-  name: 'Staff of Office (1d10+3 I; Pen 0: Balanced, Primitive)'
+  name: Staff of Office
   ownership:
     default: 3
   sort: 0
@@ -5404,19 +5406,19 @@ items:
     availability: Common
     backpack:
       inBackpack: false
-    class: ''
+    class: Melee
     clip:
       max: 0
       value: 0
     craftsmanship: Common
-    damage: ''
-    damageType: ''
+    damage: 1d10+3
+    damageType: Impact
     description: ''
     effect: ''
     equipped: true
     inBackpack: false
     modifications: []
-    penetration: ''
+    penetration: '0'
     range: ''
     rateOfFire:
       burst: 0
@@ -5424,7 +5426,8 @@ items:
       single: 1
     reload: ''
     source: Lure of the Expanse
-    special: {}
+    special:
+      primitive: true
     target: ''
     type: ''
     weight: 0
@@ -7601,7 +7604,7 @@ items:
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
-  name: fist (1d10+10 I). **Wraithsight:** Wraithguard are animated by the souls of ancient
+  name: fist
   ownership:
     default: 3
   sort: 0
@@ -7611,13 +7614,13 @@ items:
     availability: Common
     backpack:
       inBackpack: false
-    class: ''
+    class: Melee
     clip:
       max: 0
       value: 0
     craftsmanship: Common
-    damage: ''
-    damageType: ''
+    damage: 1d10+10
+    damageType: Impact
     description: ''
     effect: ''
     equipped: true

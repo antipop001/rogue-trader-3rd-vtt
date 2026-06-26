@@ -899,7 +899,7 @@ items:
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
-  name: tongue lash (Pistol; 15m; 1d10+4; Ensnaring Grasp). **Ensnaring Grasp:** If it hits a target with this attack
+  name: tongue lash
   ownership:
     default: 3
   sort: 0
@@ -909,12 +909,12 @@ items:
     availability: Common
     backpack:
       inBackpack: false
-    class: ''
+    class: Pistol
     clip:
       max: 0
       value: 0
     craftsmanship: Common
-    damage: ''
+    damage: 1d10+4
     damageType: ''
     description: ''
     effect: ''
@@ -922,7 +922,7 @@ items:
     inBackpack: false
     modifications: []
     penetration: ''
-    range: ''
+    range: '15'
     rateOfFire:
       burst: 0
       full: 0

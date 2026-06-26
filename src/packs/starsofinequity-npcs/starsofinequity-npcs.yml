@@ -554,10 +554,7 @@ items:
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
-  name: 'or vicious beak (Melee; 1d10+4; Pen 0; Primitive) # Shadowed Stalker The most dangerous xenos beasts are not always
-    the largest or most physically imposing. Many Rogue Traders have found that clever or stealthy predators can ruin their
-    operations in ways that no frenzied rampage by mightier creatures could manage. Some worlds seem to have an entire secondary
-    ecosystem hidden in the shadows of the first'
+  name: vicious beak
   ownership:
     default: 3
   sort: 0
@@ -567,19 +564,19 @@ items:
     availability: Common
     backpack:
       inBackpack: false
-    class: ''
+    class: Melee
     clip:
       max: 0
       value: 0
     craftsmanship: Common
-    damage: ''
+    damage: 1d10+4
     damageType: ''
     description: ''
     effect: ''
     equipped: true
     inBackpack: false
     modifications: []
-    penetration: ''
+    penetration: '0'
     range: ''
     rateOfFire:
       burst: 0
@@ -587,7 +584,8 @@ items:
       single: 1
     reload: ''
     source: Stars of Inequity
-    special: {}
+    special:
+      primitive: true
     target: ''
     type: ''
     weight: 0
@@ -1103,7 +1101,7 @@ items:
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
-  name: Stone club (Melee; 2d10 I + 4; Pen 0; Primitive, Unbalanced) or spear
+  name: Stone club
   ownership:
     default: 3
   sort: 0
@@ -1118,8 +1116,8 @@ items:
       max: 0
       value: 0
     craftsmanship: Common
-    damage: ''
-    damageType: ''
+    damage: 2d10+4
+    damageType: Impact
     description: ''
     effect: ''
     equipped: true
@@ -1135,6 +1133,7 @@ items:
     source: Stars of Inequity
     special:
       primitive: true
+      unbalanced: true
     target: ''
     type: ''
     weight: 0
@@ -1353,9 +1352,7 @@ items:
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
-  name: Blowgun (Basic; 15m; S/-/-; 1d5 R; Pen 0; Clip 1; Reload Full; Primitive, Toxic) or bow (Basic; 30m; S/-/-; 1d10 R;
-    Pen 0; Clip 1; Reload Half; Primitive, Reliable) or sling (Basic; 15m; S/-/-; 1d10-2 I; Pen 0; Clip 1; Reload Full; Primitive)
-    or Squig-skull shield
+  name: Blowgun
   ownership:
     default: 3
   sort: 0
@@ -1365,29 +1362,30 @@ items:
     availability: Common
     backpack:
       inBackpack: false
-    class: Melee
+    class: Basic
     clip:
-      max: 0
-      value: 0
+      max: 1
+      value: 1
     craftsmanship: Common
-    damage: 1d5+1
-    damageType: Impact
+    damage: 1d5
+    damageType: Rending
     description: ''
     effect: ''
     equipped: true
     inBackpack: false
     modifications: []
     penetration: '0'
-    range: ''
+    range: '15'
     rateOfFire:
       burst: 0
       full: 0
       single: 1
-    reload: ''
+    reload: Full
     source: Stars of Inequity
     special:
       defensive: true
       primitive: true
+      toxic: true
     target: ''
     type: ''
     weight: 0
@@ -1612,8 +1610,7 @@ items:
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
-  name: 'Bite (Melee; 1d10+5 R; Pen 0; Tearing) ## MARKED FOR DEATH Rogue Traders—especially successful ones—are likely to
-    make numerous enemies during the course of their careers'
+  name: Bite
   ownership:
     default: 3
   sort: 0
@@ -1623,19 +1620,19 @@ items:
     availability: Common
     backpack:
       inBackpack: false
-    class: ''
+    class: Melee
     clip:
       max: 0
       value: 0
     craftsmanship: Common
-    damage: ''
-    damageType: ''
+    damage: 1d10+5
+    damageType: Rending
     description: ''
     effect: ''
     equipped: true
     inBackpack: false
     modifications: []
-    penetration: ''
+    penetration: '0'
     range: ''
     rateOfFire:
       burst: 0
@@ -1643,7 +1640,8 @@ items:
       single: 1
     reload: ''
     source: Stars of Inequity
-    special: {}
+    special:
+      tearing: true
     target: ''
     type: ''
     weight: 0
@@ -2942,7 +2940,7 @@ items:
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
-  name: long-las (Basic; 150m; S/–/–; 1d10+3 E; Pen 1; Clip 40; Reload Full; Accurate, Reliable) or pump-action shotgun
+  name: long-las
   ownership:
     default: 3
   sort: 0
@@ -2954,25 +2952,27 @@ items:
       inBackpack: false
     class: Basic
     clip:
-      max: 8
-      value: 8
+      max: 40
+      value: 40
     craftsmanship: Common
-    damage: 1d10+4
-    damageType: Impact
+    damage: 1d10+3
+    damageType: Energy
     description: ''
     effect: ''
     equipped: true
     inBackpack: false
     modifications: []
-    penetration: '0'
-    range: '30'
+    penetration: '1'
+    range: '150'
     rateOfFire:
       burst: 0
       full: 0
       single: 1
-    reload: 2 Full
+    reload: Full
     source: Stars of Inequity
     special:
+      accurate: true
+      reliable: true
       scatter: true
     target: ''
     type: ''
@@ -7454,7 +7454,7 @@ items:
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
-  name: Shuriken catapult (Basic; 60m; S/3/10; 1d10+6 R; Pen 6; Clip 100; Reload 2 Full; Reliable) or heavy bolter
+  name: Shuriken catapult
   ownership:
     default: 3
   sort: 0
@@ -7466,25 +7466,26 @@ items:
       inBackpack: false
     class: Basic
     clip:
-      max: 60
-      value: 60
+      max: 100
+      value: 100
     craftsmanship: Common
-    damage: 2d10+4
-    damageType: Explosive
+    damage: 1d10+6
+    damageType: Rending
     description: ''
     effect: ''
     equipped: true
     inBackpack: false
     modifications: []
-    penetration: '5'
-    range: '120'
+    penetration: '6'
+    range: '60'
     rateOfFire:
-      burst: 0
+      burst: 3
       full: 10
-      single: 0
-    reload: Full
+      single: 1
+    reload: 2 Full
     source: Stars of Inequity
     special:
+      reliable: true
       tearing: true
     target: ''
     type: ''
@@ -10002,7 +10003,7 @@ items:
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
-  name: Pulse carbine (Basic; 60m; S/–/3; 2d10+2 E; Pen 4; Clip 24; Reload Full; Gyro-Stabilised) and integral grenade launcher
+  name: Pulse carbine
   ownership:
     default: 3
   sort: 0
@@ -10014,23 +10015,23 @@ items:
       inBackpack: false
     class: Basic
     clip:
-      max: 1
-      value: 1
+      max: 24
+      value: 24
     craftsmanship: Common
-    damage: ''
-    damageType: ''
+    damage: 2d10+2
+    damageType: Energy
     description: ''
     effect: ''
     equipped: true
     inBackpack: false
     modifications: []
-    penetration: '0'
-    range: '80'
+    penetration: '4'
+    range: '60'
     rateOfFire:
       burst: 0
-      full: 0
+      full: 3
       single: 1
-    reload: Half
+    reload: Full
     source: Stars of Inequity
     special: {}
     target: ''

@@ -732,7 +732,7 @@ items:
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
-  name: mono-sword (1d10+3 R; Pen 2) or officer's cutlass
+  name: mono-sword
   ownership:
     default: 3
   sort: 0
@@ -754,7 +754,7 @@ items:
     equipped: true
     inBackpack: false
     modifications: []
-    penetration: ''
+    penetration: '2'
     range: ''
     rateOfFire:
       burst: 0
@@ -1416,7 +1416,7 @@ items:
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
-  name: and either a sword (1d10+3 R; Balanced, Primitive) or chainsword
+  name: either a sword
   ownership:
     default: 3
   sort: 0
@@ -1431,7 +1431,7 @@ items:
       max: 0
       value: 0
     craftsmanship: Common
-    damage: 1d10+5
+    damage: 1d10+3
     damageType: Rending
     description: ''
     effect: ''
@@ -1448,6 +1448,7 @@ items:
     source: Rogue Trader Core Rulebook
     special:
       balanced: true
+      primitive: true
       tearing: true
     target: ''
     type: ''
@@ -2656,7 +2657,7 @@ items:
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
-  name: either chain axe (1d10+12 R; Tearing) or shock glove
+  name: either chain axe
   ownership:
     default: 3
   sort: 0
@@ -2671,8 +2672,8 @@ items:
       max: 0
       value: 0
     craftsmanship: Common
-    damage: 1d10+8
-    damageType: Impact
+    damage: 1d10+12
+    damageType: Rending
     description: ''
     effect: ''
     equipped: true
@@ -2688,6 +2689,7 @@ items:
     source: Rogue Trader Core Rulebook
     special:
       shocking: true
+      tearing: true
     target: ''
     type: ''
     weight: 0
@@ -2854,8 +2856,7 @@ items:
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
-  name: plasma cannon (120m; S/—/—; 2d10+10 E; Pen 8; Clip 16; Reload 5Full; Blast (1), Overheat, Unreliable) or multi-melta
-    (90m; S/—/—; 4d10+5 E; Pen 13; Clip 10; Reload 2Full; Blast (1))
+  name: plasma cannon
   ownership:
     default: 3
   sort: 0
@@ -2865,25 +2866,25 @@ items:
     availability: Common
     backpack:
       inBackpack: false
-    class: ''
+    class: Basic
     clip:
-      max: 0
-      value: 0
+      max: 16
+      value: 16
     craftsmanship: Common
-    damage: ''
-    damageType: ''
+    damage: 2d10+10
+    damageType: Energy
     description: ''
     effect: ''
     equipped: true
     inBackpack: false
     modifications: []
-    penetration: ''
-    range: ''
+    penetration: '8'
+    range: '120'
     rateOfFire:
       burst: 0
       full: 0
       single: 1
-    reload: ''
+    reload: 5Full
     source: Rogue Trader Core Rulebook
     special: {}
     target: ''

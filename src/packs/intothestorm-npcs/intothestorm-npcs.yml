@@ -155,7 +155,7 @@ items:
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
-  name: although Sluggas are likely the most common. They inevitably have a sneaky boot knife as well (1d5+1 R)
+  name: although Sluggas are likely the most common. They inevitably have a sneaky boot knife as well
   ownership:
     default: 3
   sort: 0
@@ -165,13 +165,13 @@ items:
     availability: Common
     backpack:
       inBackpack: false
-    class: ''
+    class: Melee
     clip:
       max: 0
       value: 0
     craftsmanship: Common
-    damage: ''
-    damageType: ''
+    damage: 1d5+1
+    damageType: Rending
     description: ''
     effect: ''
     equipped: true
@@ -337,7 +337,7 @@ items:
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
-  name: Grossly oversized maw (1d10+6, R, Tearing) Includes Strength Bonus Improved Natural Weapons are not Primitive
+  name: Grossly oversized maw
   ownership:
     default: 3
   sort: 0
@@ -347,12 +347,12 @@ items:
     availability: Common
     backpack:
       inBackpack: false
-    class: ''
+    class: Melee
     clip:
       max: 0
       value: 0
     craftsmanship: Common
-    damage: ''
+    damage: 1d10+6
     damageType: ''
     description: ''
     effect: ''
@@ -367,7 +367,8 @@ items:
       single: 1
     reload: ''
     source: Into the Storm
-    special: {}
+    special:
+      tearing: true
     target: ''
     type: ''
     weight: 0

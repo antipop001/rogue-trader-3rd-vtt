@@ -462,7 +462,7 @@ items:
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-axe.png
-  name: Claws (1d10+8 R; Pen 2) and Whip Coils
+  name: Claws
   ownership:
     default: 3
   sort: 0
@@ -477,14 +477,14 @@ items:
       max: 0
       value: 0
     craftsmanship: Common
-    damage: 1d10+4
-    damageType: Impact
+    damage: 1d10+8
+    damageType: Rending
     description: ''
     effect: ''
     equipped: true
     inBackpack: false
     modifications: []
-    penetration: '0'
+    penetration: '2'
     range: ''
     rateOfFire:
       burst: 0
