@@ -300,6 +300,21 @@
                                     <span class="rt-control-button__span material-icons">casino</span>
                                     <span class="rt-control-button__label">Re-roll</span>
                                 </div>
+                                {{!-- Defender Reactions (QA-113): roll Dodge/Parry to negate the hit --}}
+                                {{#if success}}
+                                    {{#if targetActor.uuid}}
+                                        <div class="rt-control-button roll-control__evade"
+                                             data-target-uuid="{{targetActor.uuid}}" data-reaction-type="dodge">
+                                            <span class="rt-control-button__span material-icons">directions_run</span>
+                                            <span class="rt-control-button__label">Dodge</span>
+                                        </div>
+                                        <div class="rt-control-button roll-control__evade"
+                                             data-target-uuid="{{targetActor.uuid}}" data-reaction-type="parry">
+                                            <span class="rt-control-button__span material-icons">shield</span>
+                                            <span class="rt-control-button__label">Parry</span>
+                                        </div>
+                                    {{/if}}
+                                {{/if}}
                             </div>
                         {{/unless}}
                     </div>

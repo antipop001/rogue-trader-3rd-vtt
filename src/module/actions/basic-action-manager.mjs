@@ -23,6 +23,7 @@ export class BasicActionManager {
             $html.find('.roll-control__apply-damage').click(async (ev) => await this._applyDamage(ev));
             $html.find('.roll-control__apply-condition').click(async (ev) => await this._applyCondition(ev));
             $html.find('.roll-control__pinning-test').click(async (ev) => await this._rollPinningTest(ev));
+            $html.find('.roll-control__evade').click(async (ev) => await this._evadeAttack(ev));
             $html.find('.roll-control__roll-opposed').click(async (ev) => await this._rollOpposed(ev));
         });
 
@@ -212,6 +213,59 @@ export class BasicActionManager {
         // toggleStatusEffect (Foundry v12+) flips the status; force it on.
         await targetActor.toggleStatusEffect(conditionId, { active: true });
         ui.notifications.info(`Applied ${conditionId} to ${targetActor.name}.`);
+    }
+
+    /**
+     * Defender Reaction (QA-113): roll the target's Dodge or Parry to negate the incoming
+     * hit (RT Core p.246 — "if the Dodge or Parry is successful, the attack is negated and
+     * no damage is dealt"). Driven from the attacker's result card so the Reaction is tied
+     * to an actual attack and spends the per-Round budget; on success the assign-damage
+     * button(s) for the negated hit(s) are disabled (Dodge negates 1 + DoS hits vs auto-fire
+     * per RT Core p.238; Parry negates 1). Owner/GM clicked, like Assign Damage.
+     */
+    async _evadeAttack(event) {
+        event.preventDefault();
+        const div = $(event.currentTarget);
+        const type = div.data('reaction-type');
+        const targetUuid = div.data('target-uuid');
+        let actor = targetUuid ? await fromUuid(targetUuid) : null;
+        if (actor?.actor !== undefined) actor = actor.actor;
+        if (!actor) {
+            const targeted = game.user.targets;
+            if (targeted && targeted.size > 0) actor = targeted.values().next().value.actor;
+        }
+        if (!actor) { ui.notifications.warn(`Cannot determine the defender to react.`); return; }
+        if (!actor.isOwner) { ui.notifications.warn(`Only ${actor.name}'s owner or the GM can react.`); return; }
+        if (typeof actor.rollReaction !== 'function') { ui.notifications.warn(`${actor.name} cannot take Reactions.`); return; }
+
+        const label = type === 'parry' ? 'Parry' : 'Dodge';
+        const res = await actor.rollReaction(type);
+        if (res.blocked || !res.attempted) {
+            const why = {
+                locked: 'is Stunned, Helpless, or Unconscious',
+                'all-out': 'went All Out Attack this Round',
+                'no-reaction': 'has no Reaction left this Round',
+                'no-skill': `has no ${label} skill`,
+            }[res.reason] ?? `cannot ${label}`;
+            ui.notifications.warn(`${actor.name} ${why}.`);
+            return;
+        }
+
+        let negated = 0;
+        if (res.success) {
+            const perHit = type === 'parry' ? 1 : (1 + (res.dos ?? 0));
+            const card = div.closest('.chat-message');
+            const assignBtns = card.find('.roll-control__assign-damage');
+            negated = assignBtns.length ? Math.min(perHit, assignBtns.length) : perHit;
+            assignBtns.slice(0, negated).each(function () {
+                $(this).css({ opacity: 0.4, 'pointer-events': 'none' });
+                $(this).find('.rt-control-button__label').text('Negated');
+            });
+        }
+        const outcome = res.success
+            ? `<strong>${label} SUCCESS</strong> (${res.roll} vs ${res.target}${res.dos ? `, ${res.dos} DoS` : ''}) — the attack is negated${negated > 1 ? ` (${negated} hits)` : ''}; do not assign that damage.`
+            : `<strong>${label} FAILED</strong> (${res.roll} vs ${res.target}) — the hit stands.`;
+        await ChatMessage.create({ speaker: ChatMessage.getSpeaker({ actor }), content: `<p>${outcome}</p>` });
     }
 
     /**

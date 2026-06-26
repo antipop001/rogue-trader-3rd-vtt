@@ -866,6 +866,35 @@ export class RogueTraderAcolyte extends RogueTraderBaseActor {
         }
     }
 
+    /**
+     * Roll a Dodge or Parry Reaction to negate an incoming hit (RT Core p.238/242/246),
+     * driven from the attacker's result card (QA-113). Applies the per-Round Reaction budget
+     * + the lockouts (Stunned/Helpless, All Out Attack) the same way `rollSkill` does, then
+     * rolls the skill directly (no prompt). Returns the outcome for the card handler.
+     * NOTE: the quick-reaction Parry uses the flat skill value — weapon Parry modifiers
+     * (Balanced/Defensive) only apply via the full sheet Parry control.
+     * @param {'dodge'|'parry'} type
+     * @returns {Promise<{attempted:boolean, blocked?:boolean, reason?:string, success?:boolean, dos?:number, roll?:number, target?:number}>}
+     */
+    async rollReaction(type) {
+        if (type !== 'dodge' && type !== 'parry') return { attempted: false, blocked: true, reason: 'bad-type' };
+        const skill = this.system.skills?.[type];
+        if (!skill) return { attempted: false, blocked: true, reason: 'no-skill' };
+        if (game.combat?.started && game.combat.combatants?.some((c) => c.actorId === this.id)) {
+            if (reactionsLocked(this.statuses)) return { attempted: false, blocked: true, reason: 'locked' };
+            if (this.system.combat?.allOutAttack) return { attempted: false, blocked: true, reason: 'all-out' };
+            const rc = this.system.combat?.reactions;
+            if (rc?.[type]) {
+                if (!canSpendReaction(rc, type)) return { attempted: false, blocked: true, reason: 'no-reaction' };
+                await this.update({ [`system.combat.reactions.${type}.value`]: (rc[type].value ?? 0) + 1 });
+            }
+        }
+        let target = skill.current ?? 0;
+        if (this.system.combat?.guardedAttack) target += 10;   // Guarded Attack +10 (QA-071)
+        const result = await this.rollCheck(target);
+        return { attempted: true, success: result.success, dos: result.dos, roll: result.roll.total, target };
+    }
+
     async opposedTest(rollCheckSource, rollCheckTarget) {
         if(!rollCheckSource) {
             return null;
