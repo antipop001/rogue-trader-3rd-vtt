@@ -341,6 +341,9 @@ export class Hit {
         }
 
         if (actionItem.isMelee) {
+            // Melee "Lance" has no canon RT DoS rule (Lance is a starship quality); the
+            // existing per-degree penetration scaling is kept and now consumes the corrected
+            // canon DoS — `(dos - 1)` reads as "extra Pen per degree beyond the first". (QA-094.)
             if (this.penetration && attackData.rollData.hasAttackSpecial('Lance')) {
                 this.penetrationModifiers['lance'] = this.penetration * (attackData.rollData.dos - 1);
             }

@@ -1,6 +1,6 @@
 import { PsychicRollData, RollData, WeaponRollData } from './roll-data.mjs';
 import { Hit, PsychicDamageData, scatterDirection, WeaponDamageData } from './damage-data.mjs';
-import { attackTalentExtraHits, getDegree, getOpposedDegrees, roll1d100, sendActionDataToChat, stunDefenceBonus, uuid } from './roll-helpers.mjs';
+import { attackTalentExtraHits, degreesOfSuccess, degreesOfFailure, getOpposedDegrees, roll1d100, sendActionDataToChat, stunDefenceBonus, uuid } from './roll-helpers.mjs';
 import { refundAmmo, useAmmo } from '../rules/ammo.mjs';
 import { DHBasicActionManager } from '../actions/basic-action-manager.mjs';
 import { conditionMeta } from '../rules/conditions.mjs';
@@ -90,6 +90,7 @@ export class ActionData {
             this.rollData.opposedRoll = rollCheck.roll;
             this.rollData.opposedDos = rollCheck.dos;
             this.rollData.opposedDof = rollCheck.dof;
+            this.rollData.opposedSuccess = rollCheck.success;
             if(rollCheck.success) {
                 if(this.rollData.opposedDos >= this.rollData.dos) {
                     this.rollData.success = false;
@@ -111,7 +112,7 @@ export class ActionData {
 
         if (this.rollData.isKnockDown) {
             if(this.rollData.targetActor) {
-                const opposedDegrees = getOpposedDegrees(this.rollData.dos, this.rollData.dof, this.rollData.opposedDos, this.rollData.opposedDof);
+                const opposedDegrees = getOpposedDegrees(this.rollData.success, this.rollData.dos, this.rollData.dof, this.rollData.opposedSuccess, this.rollData.opposedDos, this.rollData.opposedDof);
                 if(opposedDegrees >= 2) {
                     const strengthBonus = this.rollData.sourceActor?.characteristics?.strength?.bonus ?? 0;
                     this.addEffect('Knock Down', `The target is knocked Prone and must use a Stand action in his turn to regain his feet! The impact deals [[1d5-3+${strengthBonus}]] (min 0) damage and one level of fatigue to the target!`, ['prone']);
@@ -267,7 +268,10 @@ export class ActionData {
 
             if (this.rollData.success) {
                 this.rollData.dof = 0;
-                this.rollData.dos = 1 + getDegree(this.rollData.modifiedTarget, this.rollData.roll.total);
+                // Canon Degrees of Success = full 10-point bands the roll is under the target
+                // (RT Core p.22) — NOT the DH2 `1 + tens-digit-diff`, which over-counted (a
+                // bare success is now 0 DoS). (QA-094.)
+                this.rollData.dos = degreesOfSuccess(this.rollData.modifiedTarget, this.rollData.roll.total);
 
                 if (actionItem) {
                     if (this.rollData.action === 'Semi-Auto Burst' ||
@@ -278,16 +282,18 @@ export class ActionData {
                             this.rollData.dos += 1;
                         }
 
-                        // Possible Semi Rate
-                        this.damageData.additionalHits += Math.floor((this.rollData.dos - 1) / 2);
+                        // Semi-Auto Burst: one additional hit per TWO degrees of success
+                        // (RT Core Table 9-1). Canon DoS → floor(dos/2). (QA-094.)
+                        this.damageData.additionalHits += Math.floor(this.rollData.dos / 2);
 
                         // But Max at fire rate (Ammo available / ammo per shot || rate of fire - whichever is lower)
                         if (actionItem.isRanged && this.damageData.additionalHits > this.rollData.fireRate - 1) {
                             this.damageData.additionalHits = this.rollData.fireRate - 1;
                         }
                     } else if (this.rollData.action === 'Full Auto Burst' || actionItem.isPsychicStorm) {
-                        // Possible Full Rate
-                        this.damageData.additionalHits += Math.floor(this.rollData.dos - 1);
+                        // Full Auto Burst: one additional hit per degree of success (RT Core
+                        // Table 9-1; example p.22 — 2 DoS → 3 hits). Canon DoS → dos. (QA-094.)
+                        this.damageData.additionalHits += this.rollData.dos;
 
                         // But Max at weapon rate
                         if (actionItem.usesAmmo && this.damageData.additionalHits > this.rollData.fireRate - 1) {
@@ -302,6 +308,9 @@ export class ActionData {
                 // the DoS-scaled count the legacy DH2 actions used. Applied by name.
                 this.damageData.additionalHits += attackTalentExtraHits(this.rollData.action);
 
+                // Twin-Linked: RT Core never prints a DoS rule for this quality (only the
+                // ItS Ork upgrade references it), so the existing formula shape is kept and
+                // now consumes the corrected canon DoS — less inflated than before. (QA-094.)
                 if (this.rollData.dos > 1 && this.rollData.hasAttackSpecial('Twin-Linked')) {
                     if ((this.rollData.action === 'Standard Attack' || this.rollData.action === 'Called Shot') && this.rollData.dos > 2)
                     {
@@ -324,11 +333,11 @@ export class ActionData {
 
             } else {
                 this.rollData.dos = 0;
-                // RT 1e: Degrees of Failure = difference in the tens digit (RT Core
-                // p.22). The leading `1 +` was a DH2 carryover that over-counted by one
-                // (BUG-001). NB: DoS above (line ~226) keeps its `1 +` on purpose — the
-                // combat additional-hits math is written against that convention.
-                this.rollData.dof = getDegree(this.rollData.roll.total, this.rollData.modifiedTarget);
+                // Canon Degrees of Failure = full 10-point bands the roll is over the target
+                // (RT Core p.22) — same band method as DoS, replacing the tens-digit-diff
+                // (BUG-001 dropped the `1 +`; QA-094 moves it onto the band method so opposed
+                // tests mix DoS and DoF consistently).
+                this.rollData.dof = degreesOfFailure(this.rollData.modifiedTarget, this.rollData.roll.total);
 
                 if (this.rollData.isThrown) {
                     this.addEffect('Deviation', `The attack deviates [[ 1d5 ]]m off course to the ${scatterDirection()}!`);

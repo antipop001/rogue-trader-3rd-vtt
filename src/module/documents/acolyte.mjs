@@ -12,7 +12,7 @@ import { RogueTraderBaseActor } from './base-actor.mjs';
 import { ForceFieldData } from '../rolls/force-field-data.mjs';
 import { prepareForceFieldRoll } from '../prompts/force-field-prompt.mjs';
 import { DHBasicActionManager } from '../actions/basic-action-manager.mjs';
-import { getDegree, roll1d100, initiativeCharBonus, woundsMax, reactionBudget, canSpendReaction, unnaturalCharacteristicMultipliers, rapidReloadTime } from '../rolls/roll-helpers.mjs';
+import { degreesOfSuccess, degreesOfFailure, roll1d100, initiativeCharBonus, woundsMax, reactionBudget, canSpendReaction, unnaturalCharacteristicMultipliers, rapidReloadTime } from '../rolls/roll-helpers.mjs';
 import { SYSTEM_ID } from '../hooks-manager.mjs';
 import { reactionsLocked } from '../rules/conditions.mjs';
 import { RogueTraderSettings } from '../rogue-trader-settings.mjs';
@@ -849,10 +849,12 @@ export class RogueTraderAcolyte extends RogueTraderBaseActor {
         let dos = 0;
         let dof = 0;
 
+        // Canon band-method DoS/DoF (RT Core p.22) — matches the attacker side so opposed
+        // tests compare like with like. Was the DH2 `1 + tens-diff`. (QA-094.)
         if(success) {
-            dos = 1 + getDegree(targetNumber, roll.total);
+            dos = degreesOfSuccess(targetNumber, roll.total);
         } else {
-            dof = 1 + getDegree(roll.total, targetNumber);
+            dof = degreesOfFailure(targetNumber, roll.total);
         }
 
         return {

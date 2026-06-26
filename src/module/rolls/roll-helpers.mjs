@@ -23,6 +23,32 @@ export function getDegree(a, b) {
 }
 
 /**
+ * Degrees of Success — RT Core p.22: "For each full 10 points by which the Characteristic
+ * was exceeded, one degree of success is achieved." This is the BAND count
+ * `floor((target − roll)/10)`, NOT the DH2 `1 + tens-digit-difference` (which over-counts by
+ * 1, plus another 1 when the roll's units digit exceeds the target's). A bare success
+ * (exceeded by < 10) is 0 DoS. Worked example: roll 18 vs Fellowship 42 → 2. (QA-094.)
+ * @param {number} target  the modified Characteristic/skill score
+ * @param {number} roll    the d100 result (assumed a success, i.e. roll ≤ target)
+ * @returns {number} degrees of success (≥ 0)
+ */
+export function degreesOfSuccess(target, roll) {
+    return Math.max(0, Math.floor((target - roll) / 10));
+}
+
+/**
+ * Degrees of Failure — the symmetric band count `floor((roll − target)/10)` (RT Core p.22).
+ * A bare failure (missed by < 10) is 0 DoF. (QA-094 — companion to the BUG-001 DoF fix,
+ * now on the same band method as DoS.)
+ * @param {number} target  the modified Characteristic/skill score
+ * @param {number} roll    the d100 result (assumed a failure, i.e. roll > target)
+ * @returns {number} degrees of failure (≥ 0)
+ */
+export function degreesOfFailure(target, roll) {
+    return Math.max(0, Math.floor((roll - target) / 10));
+}
+
+/**
  * The flat bonus added to a Stun defender's 1d10 (RT Core p.250): Toughness Bonus + 1 per
  * Armour Point protecting the head, with the head Armour Points DOUBLED when the attack is
  * unarmed or the weapon is Primitive. (QA-121.)
@@ -38,20 +64,19 @@ export function stunDefenceBonus(headAp, toughnessBonus, unarmed = false, primit
     return tb + ap * (unarmed || primitive ? 2 : 1);
 }
 
-export function getOpposedDegrees(dos, dof, opposedDos, opposedDof) {
-    if(dos > 0) {
-        if(opposedDos > 0) {
-            return dos - opposedDos;
-        } else {
-            return dos + opposedDof;
-        }
-    } else {
-        if (opposedDos > 0) {
-            return -1 * (dof + opposedDos);
-        } else {
-            return -1 * (dof - opposedDof);
-        }
-    }
+/**
+ * Net degrees in an opposed test = attacker margin − defender margin, where each side's
+ * margin is its DoS on a success and −(DoF + 1) on a failure (RT Core p.23 — a success
+ * always beats a failure; among successes, more DoS wins; the +1 keeps a bare failure,
+ * DoF 0, ranked below a bare success, DoS 0). MUST take the success flags now that a bare
+ * success can have 0 DoS under the canon band method (QA-094) — `dos > 0` no longer means
+ * "succeeded". Positive = attacker wins; ≥ 2 = wins by two or more degrees.
+ * @returns {number} net degrees (attacker positive)
+ */
+export function getOpposedDegrees(success, dos, dof, opposedSuccess, opposedDos, opposedDof) {
+    const attacker = success ? dos : -((dof ?? 0) + 1);
+    const defender = opposedSuccess ? opposedDos : -((opposedDof ?? 0) + 1);
+    return attacker - defender;
 }
 
 /**

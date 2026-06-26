@@ -111,9 +111,10 @@ export async function openAcquisitionDialog({ itemName = '', availability = 'ave
                         const roll = await new Roll('1d100').roll();
                         const total = roll.total;
                         const success = total <= target;
-                        const dosRaw = (target - total) / 10;
-                        const dos = success ? Math.floor(dosRaw) + 1 : 0;
-                        const dof = success ? 0 : Math.floor((total - target) / 10) + 1;
+                        // Canon band-method DoS/DoF (RT Core p.22) — was the DH2 `+1`
+                        // over-count, consistent with the rest of the system now. (QA-094.)
+                        const dos = success ? Math.floor((target - total) / 10) : 0;
+                        const dof = success ? 0 : Math.floor((total - target) / 10);
 
                         const summary = success
                             ? `<strong>SUCCESS</strong> — ${itemNameVal} acquired (${dos} DoS)`
