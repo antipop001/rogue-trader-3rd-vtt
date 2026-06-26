@@ -389,11 +389,11 @@ real automation/correctness gaps to fix deliberately. P0s = BUG-011 / 012 (fixed
 **ship** (7)
 - QA-042 — Voidship hull-damage model is homebrew (fixed 1–4 by penetration tier) instead of RT's Damage − Armour → Hull Integrity
 - QA-043 — Voidship critical-damage results use a homebrew Nonpen/Pen/Crit × component × d10 matrix, not RT Table 8-12 (the canonical…
-- QA-044 — Voidship critical-hit TRIGGER uses a fixed roll ≤ target/10 (≈10 DoS), not the weapon's Crit Rating; `shipWeapon` has no `…
+- ✅ QA-044 (fixed 2026-06-26) — Critical Hit now triggers when DoS ≥ the weapon's **Crit Rating** (RT Core p.219), not a fixed `≤ target/10`. Added `critRating` to the `shipAttack` schema + populated all 17 ship weapons from canon (lances CR 3, macrocannons 5-6, las/plasma/melta 4). Live-verified.
 - QA-045 — Void shields are permanently decremented and never restored per Strategic Round (or between attackers in a Round)
 - QA-147 — Voidship turret resolution is invented offensive fire, not RT's defensive modifier
 - QA-148 — Boarding-action resolution is a homebrew per-action d100 loop, not RT's single opposed Command Test
-- QA-153 — Ship-weapon to-hit rolls Strength *independent* BS tests; RT is one test scoring `1 + DoS` hits capped at Strength
+- ✅ QA-153 (fixed 2026-06-26) — Ship-weapon to-hit now a SINGLE BS test scoring `1 + DoS` hits capped at Strength (RT Core p.217), via `voidshipWeaponHits()` (was N independent 1d100 rolls = Strength). Node-tested (canon example: target 58, roll 29 → 2 DoS → 3 hits) + live-verified over 60 runs.
 
 **weapons** (7)
 - ✅ QA-063 (fixed 2026-06-25) — Damage-class/quality-changing ammo unwired (Tempest Bolt Shells, Acid Shells)
