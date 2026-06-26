@@ -5631,7 +5631,7 @@ flags:
   rt:
     description: ''
     movement: 5/10/15/30
-    rawGear: Dispersal field†, 2 smoke grenades, 2 clips for archeotech laspistol, micro-bead, extravagant hat and coat.
+    rawGear: Dispersal field, 2 smoke grenades, 2 clips for archeotech laspistol, micro-bead, extravagant hat and coat.
     source: Stars of Inequity
 img: systems/rogue-trader-3rd/images/npcs/starsofinequity/corsair-captain-jalthas-methere.png
 items:
@@ -8511,7 +8511,7 @@ flags:
   rt:
     description: ''
     movement: 5/10/15/30
-    rawGear: 3 clips for shoots, 4 smoke grenades, 3 frag grenades, 8 kg of "demulishun wotsits." †See Kaptin Graffletz's
+    rawGear: 3 clips for shoots, 4 smoke grenades, 3 frag grenades, 8 kg of "demulishun wotsits."
       entry on page 135.
     source: Stars of Inequity
 img: systems/rogue-trader-3rd/images/npcs/starsofinequity/skabgob.png

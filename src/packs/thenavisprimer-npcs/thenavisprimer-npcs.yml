@@ -4,7 +4,7 @@ flags:
   rt:
     description: ''
     movement: ''
-    rawGear: Pockets full of bullets (equivalent to two Slugga clips), several Teef, special hat or hair squig. **†Keep an
+    rawGear: Pockets full of bullets (equivalent to two Slugga clips), several Teef, special hat or hair squig. **Keep an
       Eye on 'Im:** Minderz have been tasked with keeping an eye on the Weirdboy; they make every effort to stay within 5
       metres of their charge at all times, and refuse to leave (especially at his own behest) unless convinced with an Intimidate
       Test as per the Might Makes Right Trait (see page 52) or some other appropriately strenuous form of coercion.
@@ -9048,7 +9048,7 @@ flags:
   rt:
     description: ''
     movement: 5/10/15/30
-    rawGear: Collar of Khorne††, psyker-skull necklace.
+    rawGear: Collar of Khorne, psyker-skull necklace.
     source: The Navis Primer
 img: systems/rogue-trader-3rd/images/npcs/thenavisprimer/the-huntsman.png
 items:
@@ -9579,7 +9579,7 @@ flags:
   rt:
     description: ''
     movement: 9/18/27/54
-    rawGear: Collar Of Khorne††.
+    rawGear: Collar Of Khorne.
     source: The Navis Primer
 img: systems/rogue-trader-3rd/images/npcs/thenavisprimer/huntsman-s-flesh-hound.png
 items:

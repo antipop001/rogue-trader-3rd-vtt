@@ -1,11 +1,5 @@
-import { RollData } from '../rolls/roll-data.mjs';
-
-/**
- * @param rollData {RollData}
- */
-export function calculateAimBonus(rollData) {
-    let actionItem = rollData.weapon ?? rollData.power;
-}
+// QA-088: the former `calculateAimBonus()` was a dead no-op (it read the weapon/power and did
+// nothing) with no callers — Aim applies directly via `rollData.modifiers.aim`. Removed.
 
 export function aimModifiers() {
     return {

@@ -438,7 +438,7 @@ flags:
       are a fearsome prospect for the crew of many illegal ships.
     movement: 4/8/12/24
     rawGear: Micro-bead, photo-visor, 2 combat shotgun magazines, combat shotgun magazine of executioner shells, manacles,
-      auspex, suppression shield†.
+      auspex, suppression shield.
     source: Hostile Acquisitions
 img: systems/rogue-trader-3rd/images/npcs/hostileacquisitions/arbitrator.png
 items:

@@ -4,7 +4,7 @@ flags:
   rt:
     description: ''
     movement: 6/12/18/36
-    rawGear: Shadow field (Protection 80, Overloads upon failure), 3 doses of Corpse Obmulen, soul trap†.
+    rawGear: Shadow field (Protection 80, Overloads upon failure), 3 doses of Corpse Obmulen, soul trap.
     source: The Soul Reaver
 img: systems/rogue-trader-3rd/images/npcs/thesoulreaver/archon-salaine-morn.png
 items:
@@ -4624,7 +4624,7 @@ flags:
       that inflict debilitating shocks to a target are favoured tools of Beastmasters, allowing them to cow their charges
       into submission and savour the pain and helplessness that such devices inflict.'
     movement: 6/12/18/36
-    rawGear: 'Skyboard, dominion mask† †Dominion Mask: The wearer of a dominion mask may re-roll failed Intimidate and Wrangling
+    rawGear: 'Skyboard, dominion mask Dominion Mask: The wearer of a dominion mask may re-roll failed Intimidate and Wrangling
       Tests.'
     source: The Soul Reaver
 img: systems/rogue-trader-3rd/images/npcs/thesoulreaver/wych-beastmaster.png
@@ -6631,7 +6631,7 @@ flags:
   rt:
     description: ''
     movement: 4/8/12/24
-    rawGear: Stimulant injectors†.
+    rawGear: Stimulant injectors.
     source: The Soul Reaver
 img: systems/rogue-trader-3rd/images/npcs/thesoulreaver/grotesque.png
 items:
@@ -10634,7 +10634,7 @@ flags:
       arena of the Withered Blade thanks to the machinations of a rival Wych cult seeking to gain a foothold in the Nexus
       of Shadows. For her part, Neija is biding her time before some new calamity befalls her captors.'
     movement: 3/6/9/18
-    rawGear: Psychic Suppressor†.
+    rawGear: Psychic Suppressor.
     source: The Soul Reaver
 img: systems/rogue-trader-3rd/images/npcs/thesoulreaver/neija-tromean-warp-wyrd.png
 items:
@@ -13903,7 +13903,7 @@ flags:
       remorseless creatures, seeking only the deaths of those around them and to slake the unholy thirst that still burns
       their hollow souls.'
     movement: 6/12/18/36
-    rawGear: Stimulant injectors†.
+    rawGear: Stimulant injectors.
     source: The Soul Reaver
 img: systems/rogue-trader-3rd/images/npcs/thesoulreaver/murderfiend-servitor.png
 items:

@@ -3083,7 +3083,7 @@ items:
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/armour-primitive.png
-  name: Stryxis Ghost-field† and robes
+  name: Stryxis Ghost-field and robes
   ownership:
     default: 3
   sort: 0

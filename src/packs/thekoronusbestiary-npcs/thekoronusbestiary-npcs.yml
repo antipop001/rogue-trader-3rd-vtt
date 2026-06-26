@@ -6132,7 +6132,7 @@ flags:
       these warriors are used in other roles than battlefield terror weapons, but as of yet there are none who have lived
       to speak of them.'
     movement: 5/10/15/30
-    rawGear: Spectre Jet Pack (confers the Flyer 12 Trait), Personal Holo-field††, 2 extra prism rifle clips, 2 clips of shuriken
+    rawGear: Spectre Jet Pack (confers the Flyer 12 Trait), Personal Holo-field, 2 extra prism rifle clips, 2 clips of shuriken
       pistol ammunition, xenos-crafted medikit, waystone gem, scanner, and helm (incorporating re-breather, photo-visor, and
       micro-bead).
     source: The Koronus Bestiary
@@ -7310,7 +7310,7 @@ flags:
   rt:
     description: ''
     movement: 5/10/15/30
-    rawGear: Swooping Hawk Wings††, 2 extra Lasblaster clips, 2 clips of shuriken pistol ammunition, xenos-crafted medikit,
+    rawGear: Swooping Hawk Wings, 2 extra Lasblaster clips, 2 clips of shuriken pistol ammunition, xenos-crafted medikit,
       waystone gem, scanner, and helm (incorporating re-breather, photo-visor, and micro-bead).
     source: The Koronus Bestiary
 img: systems/rogue-trader-3rd/images/npcs/thekoronusbestiary/swooping-hawk.png
@@ -11232,7 +11232,7 @@ flags:
   rt:
     description: ''
     movement: 3/6/9/18
-    rawGear: 2 Ammo clips, 2d10 Ork teeth ("teef"), Kustom Force Field†††, Mekboy tools, Grot Assistant (carries 3 extra ammo
+    rawGear: 2 Ammo clips, 2d10 Ork teeth ("teef"), Kustom Force Field, Mekboy tools, Grot Assistant (carries 3 extra ammo
       clips).
     source: The Koronus Bestiary
 img: systems/rogue-trader-3rd/images/npcs/thekoronusbestiary/mekboy.png
@@ -15652,7 +15652,7 @@ items:
   effects: []
   flags: {}
   img: systems/rogue-trader-3rd/icons/items/buckets/armour-primitive.png
-  name: Stryxis Ghost-Field†
+  name: Stryxis Ghost-Field
   ownership:
     default: 3
   sort: 0
