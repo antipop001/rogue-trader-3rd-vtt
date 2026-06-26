@@ -14,6 +14,14 @@
         <span class="rt-field__header">Max Enc.</span>
         <span class="rt-field__span">{{actor.encumbrance.max}}</span>
     </div>
+    <div class="rt-field__wrapper">
+        <span class="rt-field__header">Lift (kg)</span>
+        <span class="rt-field__span">{{actor.encumbrance.lifting}}</span>
+    </div>
+    <div class="rt-field__wrapper">
+        <span class="rt-field__header">Push (kg)</span>
+        <span class="rt-field__span">{{actor.encumbrance.pushing}}</span>
+    </div>
     {{#if actor.backpack.hasBackpack}}
         {{#unless actor.backpack.isCombatVest}}
             <div class="rt-field__wrapper">

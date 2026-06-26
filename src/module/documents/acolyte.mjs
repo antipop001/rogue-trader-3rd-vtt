@@ -417,8 +417,6 @@ export class RogueTraderAcolyte extends RogueTraderBaseActor {
             // applied as a roll modifier in rollCharacteristic / rollSkill.
         }
 
-        this.system.insanityBonus = Math.floor(this.insanity / 10);
-        this.system.corruptionBonus = Math.floor(this.corruption / 10);
         // Effective Psy Rating can't drop below 0 (a power sustaining beyond the rating ends
         // rather than yielding a negative PR; RT Core p.156). (QA-152.)
         this.psy.currentRating = Math.max(0, this.psy.rating - this.psy.sustained);
@@ -798,6 +796,11 @@ export class RogueTraderAcolyte extends RogueTraderBaseActor {
                 this.encumbrance.max = 2250;
                 break;
         }
+
+        // RT Core Table 9-33: Lifting Weight = 2× and Pushing Weight = 4× the Carrying
+        // Weight (the table is built on doubling; exact for SB+TB ≥ 1). (QA-079.)
+        this.encumbrance.lifting = this.encumbrance.max * 2;
+        this.encumbrance.pushing = this.encumbrance.max * 4;
 
         if (this.encumbrance.value > this.encumbrance.max) {
             this.encumbrance.encumbered = true;
