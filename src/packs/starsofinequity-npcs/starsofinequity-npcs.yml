@@ -56,9 +56,9 @@ system:
   skills: {}
   wounds:
     critical: 0
-    max: 0
+    max: 15
     rolled: true
-    value: 0
+    value: 15
 type: npc
 ---
 effects: []
@@ -171,19 +171,19 @@ items:
     availability: Common
     backpack:
       inBackpack: false
-    class: ''
+    class: Melee
     clip:
       max: 0
       value: 0
     craftsmanship: Common
-    damage: ''
-    damageType: ''
+    damage: 1d10+7
+    damageType: Impact
     description: ''
     effect: ''
     equipped: true
     inBackpack: false
     modifications: []
-    penetration: ''
+    penetration: '0'
     range: ''
     rateOfFire:
       burst: 0
@@ -191,7 +191,8 @@ items:
       single: 1
     reload: ''
     source: Stars of Inequity
-    special: {}
+    special:
+      primitive: true
     target: ''
     type: ''
     weight: 0
@@ -210,19 +211,19 @@ items:
     availability: Common
     backpack:
       inBackpack: false
-    class: ''
+    class: Melee
     clip:
       max: 0
       value: 0
     craftsmanship: Common
-    damage: ''
-    damageType: ''
+    damage: 1d10+7
+    damageType: Impact
     description: ''
     effect: ''
     equipped: true
     inBackpack: false
     modifications: []
-    penetration: ''
+    penetration: '0'
     range: ''
     rateOfFire:
       burst: 0
@@ -230,7 +231,8 @@ items:
       single: 1
     reload: ''
     source: Stars of Inequity
-    special: {}
+    special:
+      primitive: true
     target: ''
     type: ''
     weight: 0
@@ -249,19 +251,19 @@ items:
     availability: Common
     backpack:
       inBackpack: false
-    class: ''
+    class: Melee
     clip:
       max: 0
       value: 0
     craftsmanship: Common
-    damage: ''
-    damageType: ''
+    damage: 1d10+7
+    damageType: Impact
     description: ''
     effect: ''
     equipped: true
     inBackpack: false
     modifications: []
-    penetration: ''
+    penetration: '0'
     range: ''
     rateOfFire:
       burst: 0
@@ -269,7 +271,8 @@ items:
       single: 1
     reload: ''
     source: Stars of Inequity
-    special: {}
+    special:
+      primitive: true
     target: ''
     type: ''
     weight: 0
@@ -333,7 +336,7 @@ items:
       max: 0
       value: 0
     craftsmanship: Common
-    damage: ''
+    damage: 2d10+7
     damageType: ''
     description: ''
     effect: ''
@@ -486,19 +489,19 @@ items:
     availability: Common
     backpack:
       inBackpack: false
-    class: ''
+    class: Melee
     clip:
       max: 0
       value: 0
     craftsmanship: Common
-    damage: ''
+    damage: 1d10+4
     damageType: ''
     description: ''
     effect: ''
     equipped: true
     inBackpack: false
     modifications: []
-    penetration: ''
+    penetration: '0'
     range: ''
     rateOfFire:
       burst: 0
@@ -506,7 +509,8 @@ items:
       single: 1
     reload: ''
     source: Stars of Inequity
-    special: {}
+    special:
+      primitive: true
     target: ''
     type: ''
     weight: 0
@@ -525,19 +529,19 @@ items:
     availability: Common
     backpack:
       inBackpack: false
-    class: ''
+    class: Melee
     clip:
       max: 0
       value: 0
     craftsmanship: Common
-    damage: ''
+    damage: 1d10+4
     damageType: ''
     description: ''
     effect: ''
     equipped: true
     inBackpack: false
     modifications: []
-    penetration: ''
+    penetration: '0'
     range: ''
     rateOfFire:
       burst: 0
@@ -545,7 +549,8 @@ items:
       single: 1
     reload: ''
     source: Stars of Inequity
-    special: {}
+    special:
+      primitive: true
     target: ''
     type: ''
     weight: 0
@@ -822,9 +827,9 @@ system:
   skills: {}
   wounds:
     critical: 0
-    max: 0
+    max: 12
     rolled: true
-    value: 0
+    value: 12
 type: npc
 ---
 effects: []
@@ -884,9 +889,9 @@ system:
   skills: {}
   wounds:
     critical: 0
-    max: 0
+    max: 6
     rolled: true
-    value: 0
+    value: 6
 type: npc
 ---
 effects: []

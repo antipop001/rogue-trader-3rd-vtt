@@ -21,11 +21,16 @@ Input JSON (one file per pack) shape:
 Re-dumps with the pipeline's exact PyYAML settings so unchanged docs are byte-identical
 (diff confined to the changed values). Reports unmatched NPCs/weapons so nothing is silent.
 """
-import sys, json, yaml
+import sys, json, re, yaml
 yaml.SafeDumper.add_representer(type(None), lambda d, _: d.represent_scalar("tag:yaml.org,2002:null", ""))
 
 CHAR_KEYS = {'weaponSkill','ballisticSkill','strength','toughness','agility',
              'intelligence','perception','willpower','fellowship'}
+DTYPE = {'R':'Rending','E':'Energy','I':'Impact','X':'Explosive'}
+
+def norm_dtype(v):
+    """Normalise a damage type: a single letter R/E/I/X -> the full word; else pass through."""
+    return DTYPE.get(str(v).strip().upper(), v) if v and len(str(v).strip()) == 1 else v
 
 def dump_docs(docs):
     parts = [yaml.safe_dump(d, allow_unicode=True, sort_keys=True, default_flow_style=False, width=120) for d in docs if d]
@@ -40,7 +45,10 @@ def apply(pack_yaml, fixes):
     report = {'npcsApplied': 0, 'woundsSet': 0, 'charsSet': 0, 'weaponsSet': 0,
               'missingNpcs': [], 'missingWeapons': [], 'skipped': 0}
     for npc, fx in fixes.items():
-        d = by_name.get(npc)
+        # The work-list annotated weapon-NPC keys as "Name (SB n)"; strip that to match the
+        # real actor name.
+        clean = re.sub(r'\s*\(SB\s*\d+\)\s*$', '', npc)
+        d = by_name.get(npc) or by_name.get(clean)
         if not d:
             report['missingNpcs'].append(npc); continue
         report['npcsApplied'] += 1
@@ -64,7 +72,7 @@ def apply(pack_yaml, fixes):
                 report['skipped'] += 1; continue
             s = it.setdefault('system', {})
             for field in ('damage', 'damageType', 'penetration', 'class', 'range', 'reload', 'attackType'):
-                if field in wfx: s[field] = wfx[field]
+                if field in wfx: s[field] = norm_dtype(wfx[field]) if field == 'damageType' else wfx[field]
             if 'clip' in wfx: s['clip'] = {'max': int(wfx['clip']), 'value': int(wfx['clip'])}
             if 'rateOfFire' in wfx: s['rateOfFire'] = wfx['rateOfFire']
             if 'special' in wfx: s.setdefault('special', {}).update(wfx['special'])

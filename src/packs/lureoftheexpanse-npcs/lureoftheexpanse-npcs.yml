@@ -6026,7 +6026,7 @@ items:
       max: 0
       value: 0
     craftsmanship: Common
-    damage: ''
+    damage: 2d10+8
     damageType: ''
     description: ''
     effect: ''
@@ -6065,7 +6065,7 @@ items:
       max: 0
       value: 0
     craftsmanship: Common
-    damage: ''
+    damage: 1d10+10
     damageType: ''
     description: ''
     effect: ''
@@ -6206,7 +6206,7 @@ items:
       max: 0
       value: 0
     craftsmanship: Common
-    damage: ''
+    damage: 1d10+3
     damageType: ''
     description: ''
     effect: ''
@@ -6714,8 +6714,8 @@ items:
       max: 0
       value: 0
     craftsmanship: Common
-    damage: ''
-    damageType: ''
+    damage: 1d5+4
+    damageType: Rending
     description: ''
     effect: ''
     equipped: true
@@ -7575,7 +7575,7 @@ items:
     availability: Common
     backpack:
       inBackpack: false
-    class: Basic
+    class: Heavy
     clip:
       max: 0
       value: 0
