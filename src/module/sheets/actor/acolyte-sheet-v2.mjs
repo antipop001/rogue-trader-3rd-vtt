@@ -14,7 +14,6 @@ export class AcolyteSheetV2 extends ActorContainerSheetV2 {
         actions: {
             rollCharacteristic: AcolyteSheetV2._onRollCharacteristic,
             rollSkill: AcolyteSheetV2._onRollSkill,
-            bonusVocalize: AcolyteSheetV2._onBonusVocalize,
             attack: AcolyteSheetV2._onCombatAttack,
             'assign-damage': AcolyteSheetV2._onAssignDamage,
             dodge: AcolyteSheetV2._onDodge,
@@ -112,17 +111,6 @@ export class AcolyteSheetV2 extends ActorContainerSheetV2 {
 
     static async _onRollSkill(event, target) {
         await this.actor.rollSkill(target.dataset.skill, target.dataset.specialty);
-    }
-
-    static async _onBonusVocalize(event, target) {
-        const bonus = this.actor.backgroundEffects?.abilities?.find(a => a.name === target.dataset.bonusName);
-        if (!bonus) return;
-        await DHBasicActionManager.sendItemVocalizeChat({
-            actor: this.actor.name,
-            name: bonus.name,
-            type: bonus.source,
-            description: bonus.benefit,
-        });
     }
 
     static async _onCombatAttack(event, target) {

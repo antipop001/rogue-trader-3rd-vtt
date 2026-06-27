@@ -50,7 +50,6 @@ export class AcolyteSheet extends ActorContainerSheet {
         html.find('.roll-characteristic').click(async (ev) => await this._prepareRollCharacteristic(ev));
         html.find('.roll-skill').click(async (ev) => await this._prepareRollSkill(ev));
         html.find('.acolyte-homeWorld').change((ev) => this._onHomeworldChange(ev));
-        html.find('.bonus-vocalize').click(async (ev) => await this._onBonusVocalize(ev));
 
         html.find('.combat-control').click(async (ev) => await this._combatControls(ev));
     }
@@ -75,20 +74,6 @@ export class AcolyteSheet extends ActorContainerSheet {
             case 'parry':
                 await this.actor.rollSkill('parry');
                 break;
-        }
-    }
-
-    async _onBonusVocalize(event) {
-        event.preventDefault();
-        const div = $(event.currentTarget);
-        let bonus = this.actor.backgroundEffects.abilities.find((a) => a.name === div.data('bonusName'));
-        if (bonus) {
-            await DHBasicActionManager.sendItemVocalizeChat({
-                actor: this.actor.name,
-                name: bonus.name,
-                type: bonus.source,
-                description: bonus.benefit,
-            });
         }
     }
 

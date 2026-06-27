@@ -17,7 +17,6 @@ export class HandlebarManager {
             'systems/rogue-trader-3rd/templates/actor/panel/armour-display-panel.hbs',
             'systems/rogue-trader-3rd/templates/actor/panel/armour-panel.hbs',
             'systems/rogue-trader-3rd/templates/actor/panel/backpack-panel.hbs',
-            'systems/rogue-trader-3rd/templates/actor/panel/bonuses-panel.hbs',
             'systems/rogue-trader-3rd/templates/actor/panel/skills-advanced-panel.hbs',
             'systems/rogue-trader-3rd/templates/actor/panel/characteristic-panel.hbs',
             'systems/rogue-trader-3rd/templates/actor/panel/characteristic-roller-panel.hbs',
