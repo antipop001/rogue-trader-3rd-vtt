@@ -107,14 +107,6 @@
                         </select>
                     </div>
                 {{/if}}
-                {{#if this.isLasWeapon}}
-                    <div class="rt-field__wrapper">
-                        <span class="rt-field__span">Las Firing Mode</span>
-                        <select class="rt-field__input" name="lasMode" id="lasMode">
-                            {{selectOptions (arrayToObject lasModes) selected=this.lasMode}}
-                        </select>
-                    </div>
-                {{/if}}
                 {{#if this.hasEyeOfVengeanceAvailable}}
                     <div class="rt-field__wrapper">
                         <span class="rt-field__span">Use Eye of Vengeance</span>

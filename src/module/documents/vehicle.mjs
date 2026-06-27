@@ -28,9 +28,6 @@ export class RogueTraderVehicle extends RogueTraderBaseActor {
     get subtype() {
         return this.system.type;
     }
-    get threatLevel() {
-        return this.system.threatLevel;
-    }
     get front() {
         return this.system.front;
     }

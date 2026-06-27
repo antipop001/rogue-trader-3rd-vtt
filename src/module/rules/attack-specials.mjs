@@ -15,30 +15,9 @@ export async function updateAttackSpecials(rollData) {
         }
     }
 
-    // Las Variable Setting
-    if(rollData.lasMode) {
-        switch(rollData.lasMode) {
-            case 'Standard':
-                break;
-            case 'Overload':
-                rollData.attackSpecials.findSplice((i) => i.name === 'Reliable');
-                rollData.attackSpecials.push({
-                    name: 'Unreliable',
-                    level: true,
-                });
-                rollData.attackSpecials.push({
-                    name: rollData.lasMode,
-                    level: true
-                });
-                break;
-            case 'Overcharge':
-                rollData.attackSpecials.push({
-                    name: rollData.lasMode,
-                    level: true
-                });
-                break;
-        }
-    }
+    // QA-135: the DH2/Only War per-shot "Las Firing Mode" (Standard/Overcharge/Overload
+    // toggle) has no RT 1e Core basis and was removed. The Overcharge weapon quality is still
+    // honoured when granted innately or by the Overcharge Pack weapon modification.
 
     if (actionItem.isRanged) {
         await calculateAmmoAttackSpecials(rollData);

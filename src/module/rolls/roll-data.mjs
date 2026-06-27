@@ -16,7 +16,6 @@ export class RollData {
     aims = aimModifiers();
     shipFacings = shipFacings();
     locations = hitDropdown();
-    lasModes = DarkHeresy.combat.las_fire_modes;
 
     // Chat Controls
     ignoreDegrees = false;
@@ -195,7 +194,6 @@ export class WeaponRollData extends RollData {
     isThrown = false;
     isSpray = false;
     isLasWeapon = false;
-    lasMode = 'Standard';
 
     constructor() {
         super();

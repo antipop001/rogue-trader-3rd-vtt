@@ -14,8 +14,4 @@ export class RogueTraderNPC extends RogueTraderAcolyte {
         return this.system.type;
     }
 
-    get threatLevel() {
-        return this.system.threatLevel;
-    }
-
 }

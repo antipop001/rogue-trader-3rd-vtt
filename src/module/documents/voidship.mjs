@@ -35,9 +35,6 @@ export class RogueTraderVoidship extends RogueTraderBaseActor {
     get subtype() {
         return this.system.type;
     }
-    get threatLevel() {
-        return this.system.threatLevel;
-    }
 
     get crewRating() {
         return this.system.crewRating;

@@ -1260,8 +1260,7 @@
       "npc": {
         "faction": "",
         "subfaction": "",
-        "type": "troop",
-        "threatLevel": 0
+        "type": "troop"
       },
       "vehicle": {
         "front": "",
@@ -1590,7 +1589,6 @@
       "containerTypes": [
         "armourModification"
       ],
-      "maxAgility": 0,
       "protectionRating": 0,
       "overloadOn": 0
     },
