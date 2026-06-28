@@ -23,6 +23,15 @@ export function calculateCombatActionModifier(rollData) {
     } else {
         rollData.modifiers['attack'] = 0;
     }
+
+    // Penalty-negating talents (RT Core): Sharpshooter cancels the −20 for Called Shots;
+    // Takedown cancels the −20 for the Stun Action. (QA-034.)
+    const actor = rollData.sourceActor;
+    if (rollData.action === 'Called Shot' && actor?.hasTalent?.('Sharpshooter')) {
+        rollData.modifiers['attack'] = 0;
+    } else if (rollData.action === 'Stun' && actor?.hasTalent?.('Takedown')) {
+        rollData.modifiers['attack'] = 0;
+    }
 }
 
 /**

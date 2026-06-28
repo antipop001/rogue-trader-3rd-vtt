@@ -247,7 +247,14 @@ export class WeaponRollData extends RollData {
         // Heavy weapons fired unbraced take -30 to hit (RT Core p.116). `braced` is a
         // per-attack toggle (the Brace Heavy Weapon action / prompt checkbox). (QA-128.)
         this.isHeavyWeapon = this.weapon?.system?.class === 'Heavy';
-        this.modifiers['unbraced'] = (this.isHeavyWeapon && !this.braced) ? -30 : 0;
+        // Auto-counts-as-braced (RT Core p.116/123): the Auto-Stabilised trait, the Bulging
+        // Biceps talent, or a Suspensor-equipped weapon cancel the unbraced -30. (QA-130.)
+        const autoBraced = !!(
+            this.sourceActor?.hasTalent?.('Bulging Biceps')
+            || this.sourceActor?.items?.some?.((i) => i.type === 'trait' && i.name === 'Auto-Stabilised')
+            || this.weapon?.items?.some?.((i) => i.isWeaponModification && i.name === 'Suspensors' && (i.system?.equipped || i.system?.enabled))
+        );
+        this.modifiers['unbraced'] = (this.isHeavyWeapon && !this.braced && !autoBraced) ? -30 : 0;
         // Weapon Training: −20 WS/BS for a weapon the character isn't trained with (RT
         // Core p.142). PCs only — NPCs are assumed proficient with their listed weapons.
         // (QA-124.)
