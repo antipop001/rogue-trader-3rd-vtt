@@ -47,6 +47,7 @@ import { DHTourMain } from './tours/main-tour.mjs';
 import { openAcquisitionDialog } from './rules/acquisition.mjs';
 import { openEndeavoursDialog } from './rules/endeavours.mjs';
 import { openFearDialog } from './rules/fear.mjs';
+import { openGrappleDialog } from './rules/grapple.mjs';
 import { processDegradation } from './rules/degradation.mjs';
 import { RT_CONDITIONS } from './rules/conditions.mjs';
 import { ChargenWizard } from './applications/chargen-wizard.mjs';
@@ -108,6 +109,7 @@ Enable Debug with: game.rt.debug = true
             acquisition: openAcquisitionDialog,
             endeavours: openEndeavoursDialog,
             fearTest: openFearDialog,
+            grapple: openGrappleDialog,
         };
 
         //CONFIG.debug.hooks = true;

@@ -32,6 +32,16 @@ export function calculateCombatActionModifier(rollData) {
     } else if (rollData.action === 'Stun' && actor?.hasTalent?.('Takedown')) {
         rollData.modifiers['attack'] = 0;
     }
+
+    // Two-Weapon Fighting (RT Core p.243): with the Two-Weapon Wielder talent, each attack of
+    // a Multiple Attacks action (one per weapon — resolve the action once per hand) suffers
+    // −20, dropping to −10 with Ambidextrous. (QA-119.)
+    if (rollData.action === 'Multiple Attacks') {
+        const hasTWW = actor?.items?.some?.((i) => i.type === 'talent' && /^two-?weapon wielder/i.test(i.name));
+        if (hasTWW) {
+            rollData.modifiers['attack'] = actor?.hasTalent?.('Ambidextrous') ? -10 : -20;
+        }
+    }
 }
 
 /**

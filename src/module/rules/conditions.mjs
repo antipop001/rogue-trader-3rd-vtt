@@ -19,6 +19,7 @@ export const RT_CONDITIONS = [
     { id: 'unconscious', name: 'Unconscious', img: 'icons/svg/unconscious.svg' },
     { id: 'helpless', name: 'Helpless', img: 'icons/svg/paralysis.svg' },
     { id: 'unaware', name: 'Unaware', img: 'icons/svg/invisible.svg' },
+    { id: 'grappled', name: 'Grappled', img: 'icons/svg/net.svg' },
 ];
 
 /**

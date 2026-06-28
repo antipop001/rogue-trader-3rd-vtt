@@ -21,6 +21,7 @@ export class AcolyteSheetV2 extends ActorContainerSheetV2 {
             addSkill: AcolyteSheetV2._onAddSkill,
             openChargen: AcolyteSheetV2._onOpenChargen,
             fearTest: AcolyteSheetV2._onFearTest,
+            grapple: AcolyteSheetV2._onGrapple,
             restDay: AcolyteSheetV2._onRestDay,
             restWeek: AcolyteSheetV2._onRestWeek,
             spendFate: AcolyteSheetV2._onSpendFate,
@@ -54,6 +55,12 @@ export class AcolyteSheetV2 extends ActorContainerSheetV2 {
                 label: 'Fear Test',
                 action: 'fearTest',
             });
+            // Grapple control (QA-122) — opposed Strength Test vs the targeted opponent.
+            controls.push({
+                icon: 'fa-solid fa-hand-fist',
+                label: 'Grapple',
+                action: 'grapple',
+            });
         }
         return controls;
     }
@@ -64,6 +71,10 @@ export class AcolyteSheetV2 extends ActorContainerSheetV2 {
 
     static _onFearTest() {
         game.rt.fearTest(this.actor);
+    }
+
+    static _onGrapple() {
+        game.rt.grapple(this.actor);
     }
 
     static async _onRestDay() {
