@@ -429,7 +429,17 @@ export class Hit {
                     this.addEffect(special.name, `A creature stuck by this much make a toughness test with ${special.level * -10} or suffer a delusion!`);
                     break;
                 case 'haywire':
-                    this.addEffect(special.name, `Everything within ${special.level * -10}m suffers the Haywire Field at strength [[1d10]]!`);
+                    // ItS p.135 (RT): all electrical devices within the Blast radius cease to
+                    // operate for 1d5 rounds; a direct hit on a vehicle/ship inflicts an
+                    // automatic Critical Hit (resolved as Righteous Fury, +1 to the result).
+                    // (QA-112 — was DH2 "Haywire Field at strength", with a negative radius.)
+                    this.addEffect(special.name, `All electrical devices within the Blast radius cease to operate for [[1d5]] rounds. A direct hit on a vehicle or starship inflicts an automatic Critical Hit (as Righteous Fury, +1 to the result).`);
+                    break;
+                case 'unstable':
+                    // RT Core (Unstable): roll 1d10 for each hit — on a 1 it deals HALF Damage,
+                    // 2-9 normal, 10 DOUBLE Damage. Surfaced as a note; the per-hit ×½/×2 in the
+                    // damage pipeline is a follow-up. (QA-015 — quality added to the catalog.)
+                    this.addEffect(special.name, `Unstable: for each hit roll 1d10 — on a 1 it deals half Damage, on a 10 double Damage (2-9 normal).`);
                     break;
                 case 'indirect':
                     const bs = sourceActor.getCharacteristicFuzzy('ballisticSkill').bonus;

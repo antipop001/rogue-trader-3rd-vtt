@@ -5243,6 +5243,7 @@ data:
     source: Into the Storm, p.135
     special:
         blast: 2
+        haywire: true
     type: Grenade
     weight: 0.5
 img: systems/rogue-trader-3rd/icons/items/buckets/thrown-grenade.png

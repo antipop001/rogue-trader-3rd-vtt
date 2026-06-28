@@ -250,6 +250,10 @@ export function attackSpecials() {
             hasLevel: false,
         },
         {
+            name: 'Unstable',
+            hasLevel: false,
+        },
+        {
             name: 'Vengeful',
             hasLevel: true,
         },
