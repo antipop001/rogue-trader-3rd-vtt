@@ -665,7 +665,13 @@ export class RogueTraderAcolyte extends RogueTraderBaseActor {
         this.items
             .filter((item) => item.type === 'weapon' && item.isRanged)
             .forEach((weapon) => {
-                weapon.system.effectiveReload = rapidReloadTime(weapon.system.reload, hasRapidReload);
+                let reload = weapon.system.reload;
+                // Customised quality (RT Core p.143): reload takes ½ the listed time, rounding
+                // UP. Composes with Rapid Reload (which then halves again, rounding down). (QA-018.)
+                if (weapon.system.special?.customised) {
+                    reload = rapidReloadTime(reload, true, true);
+                }
+                weapon.system.effectiveReload = rapidReloadTime(reload, hasRapidReload);
             });
     }
 

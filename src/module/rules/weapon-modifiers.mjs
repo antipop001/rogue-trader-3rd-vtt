@@ -60,6 +60,19 @@ export async function calculateWeaponModifiersAttackSpecials(rollData) {
             case 'Mono':
                 rollData.attackSpecials.findSplice((i) => i.name === 'Primitive');
                 break;
+            case 'Overcharge Pack':
+                // RT Core p.135: an overcharge pack adds 1 to a las weapon's Damage. Grant the
+                // Overcharge quality so the existing +1 damage handler applies. (QA-066.)
+                if (!rollData.attackSpecials.find((s) => s.name === 'Overcharge')) {
+                    rollData.attackSpecials.push({ name: 'Overcharge', level: true });
+                }
+                break;
+            case 'Tox Dispenser':
+                // ItS: the weapon gains the Toxic quality for one Round. (Mechanism completion.)
+                if (!rollData.attackSpecials.find((s) => s.name === 'Toxic')) {
+                    rollData.attackSpecials.push({ name: 'Toxic', level: 1 });
+                }
+                break;
         }
     }
 }

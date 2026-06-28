@@ -625,7 +625,7 @@ export function bastionPsyMultiplier(talents) {
  * @param {boolean} [hasRapidReload=true]  whether the owner has the Rapid Reload talent
  * @returns {string} the (possibly halved) reload time
  */
-export function rapidReloadTime(reload, hasRapidReload = true) {
+export function rapidReloadTime(reload, hasRapidReload = true, roundUp = false) {
     const raw = String(reload ?? '').trim();
     if (!hasRapidReload || raw === '') return reload;
     const norm = raw.toLowerCase();
@@ -643,6 +643,14 @@ export function rapidReloadTime(reload, hasRapidReload = true) {
     }
 
     const halved = actions / 2;
+    if (roundUp) {
+        // Customised (RT Core p.143): halve, rounding UP to the next Full Action — except a
+        // ½ Action stays a ½ Action (so Full→Half, 2 Full→Full, 3 Full→2 Full). (QA-018.)
+        if (halved === 0) return 'Free Action';
+        if (halved <= 0.5) return 'Half Action';
+        const fullsUp = Math.ceil(halved);
+        return fullsUp === 1 ? 'Full Action' : `${fullsUp} Full Actions`;
+    }
     if (halved < 0.5) return 'Free Action';
     if (halved < 1) return 'Half Action';
     const fulls = Math.floor(halved);

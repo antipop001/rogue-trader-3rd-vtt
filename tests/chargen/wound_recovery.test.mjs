@@ -21,3 +21,12 @@ test('QA-092: recovery amounts per state + rest period', () => {
     assert.equal(woundRecovery('Critically Damaged', 4, 'day'), 0);  // day insufficient
     assert.equal(woundRecovery('Healthy', 4, 'week'), 0);
 });
+
+import { rapidReloadTime } from '../../src/module/rolls/roll-helpers.mjs';
+test('QA-018: Customised reload halves rounding UP (vs Rapid Reload rounding down)', () => {
+    assert.equal(rapidReloadTime('Full', true, true), 'Half Action');      // 1 -> 0.5 -> Half
+    assert.equal(rapidReloadTime('2 Full', true, true), 'Full Action');    // 2 -> 1 -> Full
+    assert.equal(rapidReloadTime('3 Full', true, true), '2 Full Actions'); // 3 -> 1.5 -> ceil 2
+    assert.equal(rapidReloadTime('Half', true, true), 'Half Action');      // 0.5 stays 0.5
+    assert.equal(rapidReloadTime('3 Full', true, false), 'Full Action');   // round-down unchanged: floor 1
+});
