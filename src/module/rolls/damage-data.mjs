@@ -154,6 +154,16 @@ export class Hit {
 
         this.damage = this.damageRoll.total;
 
+        // Force weapon (ItS): a psyker wielding a Force weapon adds their Psy Rating to Damage
+        // here (and to Penetration in _calculatePenetration; the damage type becomes Energy in
+        // _calculateSpecials). The damage modifier MUST be set before _totalDamage() runs. The
+        // optional Focus-Power +1d10/DoS bonus (ignoring armour/TB) remains a manual follow-up.
+        // (QA-014.)
+        const forcePsyRating = sourceActor?.psy?.rating ?? 0;
+        if (forcePsyRating > 0 && attackData.rollData.hasAttackSpecial('Force')) {
+            this.modifiers['force'] = forcePsyRating;
+        }
+
         // Per-DoS damage scaling (QA-040): a power/weapon carrying a `perDoSDamage` Roll formula
         // rolls it once per Degree of Success (minimum 1 on a success) and adds the result —
         // e.g. a psychic power's "1d10 per Degree of Success" (ItS). Lets per-DoS damage reach
@@ -396,6 +406,13 @@ export class Hit {
             }
         }
 
+        // Force weapon (ItS): a psyker adds their Psy Rating to Penetration (QA-014). Set before
+        // _totalPenetration() sums the modifiers.
+        const forcePen = sourceActor?.psy?.rating ?? 0;
+        if (forcePen > 0 && attackData.rollData.hasAttackSpecial('Force')) {
+            this.penetrationModifiers['force'] = forcePen;
+        }
+
         if (actionItem.isMelee) {
             // Melee "Lance" has no canon RT DoS rule (Lance is a starship quality); the
             // existing per-degree penetration scaling is kept and now consumes the corrected
@@ -445,6 +462,11 @@ export class Hit {
         const sourceActor = attackData.rollData.sourceActor;
 
         this.damageType = actionItem.system.damageType;
+
+        // Force weapon (ItS): for a psyker wielder the damage type becomes Energy. (QA-014.)
+        if ((sourceActor?.psy?.rating ?? 0) > 0 && attackData.rollData.hasAttackSpecial('Force')) {
+            this.damageType = 'Energy';
+        }
 
         // QA-140: removed a dead All-Out-Attack + Hammer Blow → inject Concussive block —
         // 'Hammer Blow' is a DH2 talent absent from the RT pack and 'Concussive' is not an RT
