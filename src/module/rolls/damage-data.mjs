@@ -147,11 +147,32 @@ export class Hit {
 
         this.damage = this.damageRoll.total;
 
+        // QA-157 — Helpless target (coup de grace, RT Core p.244): "roll twice and add the
+        // results". Roll the weapon's damage a SECOND time and sum it; two natural 10s across
+        // the two rolls make a Righteous Fury automatic (handled below). The to-hit already
+        // auto-favours a Helpless target via the +30 condition modifier.
+        const helplessTarget = !!attackData.rollData.targetActor?.statuses?.has?.('helpless');
+        const damageRolls = [this.damageRoll];
+        if (helplessTarget) {
+            this.damageRoll2 = new Roll(rollFormula, attackData.rollData);
+            if (attackData.rollData.hasAttackSpecial('Tearing')) {
+                this.damageRoll2.terms.filter(term => term instanceof foundry.dice.terms.Die).forEach(die => {
+                    if (die.modifiers.includes('kh')) return;
+                    die.modifiers.push('kh' + die.number);
+                    die.number += 1;
+                });
+            }
+            await this.damageRoll2.evaluate();
+            this.damage += this.damageRoll2.total;
+            damageRolls.push(this.damageRoll2);
+        }
+
         // Count natural 10s (or the Vengeful threshold) — Righteous Fury is resolved
         // after the loop with a confirming attack + extra damage roll (RT 1e RAW).
         let rfCount = 0;
 
-        for (const term of this.damageRoll.terms) {
+        for (const dmgRoll of damageRolls)
+        for (const term of dmgRoll.terms) {
             if (!term.results) continue;
             for (const result of term.results) {
                 game.rt.log('_calculateDamage result:', result);
@@ -189,14 +210,19 @@ export class Hit {
             || (actionItem.isThrown && actionItem.system?.type !== 'Grenade');
         const rfMeleeBonus = rfStrengthHit
             ? (sourceActor.getCharacteristicFuzzy('Strength')?.bonus ?? 0) : 0;
+        // QA-157: against a Helpless target, two (or more) natural 10s make the first Righteous
+        // Fury AUTOMATIC — no confirming attack roll needed (the extra damage roll is still added).
+        let autoRfRemaining = (helplessTarget && rfCount >= 2) ? 1 : 0;
         let rfPending = rfCount;
         let rfGuard = 20; // safety cap against runaway chains
         while (rfPending > 0 && rfGuard-- > 0) {
             rfPending -= 1;
+            const autoConfirm = autoRfRemaining > 0;
+            if (autoConfirm) autoRfRemaining -= 1;
             const confirm = new Roll('1d100', {});
             await confirm.evaluate();
-            const confirmHit = confirm.total !== 100 && confirm.total <= rfToHit;
-            const entry = { confirmRoll: confirm, confirmTarget: rfToHit, hit: confirmHit, extra: 0, extraRoll: null };
+            const confirmHit = autoConfirm || (confirm.total !== 100 && confirm.total <= rfToHit);
+            const entry = { confirmRoll: confirm, confirmTarget: rfToHit, hit: confirmHit, extra: 0, extraRoll: null, auto: autoConfirm };
             if (confirmHit) {
                 const extra = new Roll(rollFormula, attackData.rollData);
                 await extra.evaluate();
