@@ -8,7 +8,7 @@ import { calculateWeaponModifiersAttackBonuses, updateWeaponModifiers } from '..
 import { hitDropdown } from '../rules/hit-locations.mjs';
 import { DarkHeresy } from '../rules/config.mjs';
 import { shipFacings } from '../rules/ship-facings.mjs';
-import { weaponMasterBonus, weaponUntrainedPenalty } from './roll-helpers.mjs';
+import { weaponMasterBonus, weaponUntrainedPenalty, shootingIntoMeleePenalty } from './roll-helpers.mjs';
 import { conditionToHitModifier, attackerConditionModifier } from '../rules/conditions.mjs';
 
 export class RollData {
@@ -222,6 +222,28 @@ export class WeaponRollData extends RollData {
         // A Pinned shooter takes −20 to all BS Tests (RT Core p.248). Reads the ATTACKER's
         // own conditions; ranged only. (QA-082.)
         this.modifiers['pinned'] = attackerConditionModifier(this.sourceActor?.statuses, this.weapon?.isRanged);
+        // Shooting into Melee (RT Core p.244): −20 to a ranged shot at a target engaged in
+        // melee (auto-detected — an opposite-disposition token adjacent to the target token),
+        // waived if any engaged character is Stunned/Helpless/Unaware. 0 off-canvas. (QA-156.)
+        this.modifiers['into-melee'] = 0;
+        if (this.weapon?.isRanged && this.targetActor && globalThis.canvas?.tokens?.placeables?.length) {
+            const targetToken = this.targetActor.getActiveTokens?.()?.[0];
+            if (targetToken) {
+                const gs = canvas.grid?.size || 100;
+                const isWaived = (s) => !!(s?.has?.('stunned') || s?.has?.('helpless') || s?.has?.('unaware'));
+                const tc = targetToken.center;
+                const tDisp = targetToken.document.disposition;
+                const adjacentEnemies = canvas.tokens.placeables
+                    .filter((t) => t.id !== targetToken.id && t.document.disposition !== tDisp)
+                    .filter((t) => {
+                        const c = t.center;
+                        const gridDist = Math.max(Math.abs(c.x - tc.x), Math.abs(c.y - tc.y)) / gs;
+                        return gridDist <= 1.5;   // adjacent (token size + diagonals)
+                    })
+                    .map((t) => ({ waived: isWaived(t.actor?.statuses) }));
+                this.modifiers['into-melee'] = shootingIntoMeleePenalty(isWaived(this.targetActor.statuses), adjacentEnemies);
+            }
+        }
         // Heavy weapons fired unbraced take -30 to hit (RT Core p.116). `braced` is a
         // per-attack toggle (the Brace Heavy Weapon action / prompt checkbox). (QA-128.)
         this.isHeavyWeapon = this.weapon?.system?.class === 'Heavy';

@@ -61,6 +61,22 @@ export function degreesOfFailure(target, roll) {
  * @returns {{hit:boolean, dos:number, hits:number, critical:boolean}}
  */
 /**
+ * "Shooting into Melee Combat" penalty (RT Core p.244): a Ballistic Skill test to hit a target
+ * engaged in melee is Hard (−20). The penalty is IGNORED if any character engaged in that melee
+ * (the target or an adjacent enemy) is Stunned, Helpless, or Unaware. (QA-156.)
+ * @param {boolean} targetWaived           target is Stunned/Helpless/Unaware
+ * @param {Array<{waived:boolean}>} adjacentEnemies  enemies of the target within melee range
+ * @returns {number} the to-hit modifier (−20 or 0)
+ */
+export function shootingIntoMeleePenalty(targetWaived, adjacentEnemies) {
+    const enemies = Array.isArray(adjacentEnemies) ? adjacentEnemies : [];
+    if (enemies.length === 0) return 0;                 // target not engaged in melee
+    if (targetWaived) return 0;                          // target Stunned/Helpless/Unaware
+    if (enemies.some((e) => e?.waived)) return 0;        // an engaged meleer is Stunned/Helpless/Unaware
+    return -20;
+}
+
+/**
  * The RT Damage state of a character (RT Core p.262). "Damage taken" is max Wounds minus
  * current Wounds; Critically Damaged means Damage in excess of Wounds (at/below 0). (QA-093.)
  * @returns {'Healthy'|'Lightly Damaged'|'Heavily Damaged'|'Critically Damaged'}
