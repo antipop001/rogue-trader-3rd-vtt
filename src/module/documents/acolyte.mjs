@@ -455,6 +455,12 @@ export class RogueTraderAcolyte extends RogueTraderBaseActor {
                         speciality.current = Math.floor(characteristic.total / 2) + mod;
                         speciality.untrained = true;
                         speciality.treatAsBasic = true;
+                    } else if (sAdv === 0 && name === 'speakLanguage' && this.hasTalent('Polyglot')) {
+                        // Polyglot (RT Core p.130): may attempt any Speak Language untrained,
+                        // testing at half the governing Characteristic with a −10 penalty. (QA-035.)
+                        speciality.current = Math.floor(characteristic.total / 2) + mod - 10;
+                        speciality.untrained = true;
+                        speciality.treatAsBasic = true;
                     } else if (sAdv === 0) {
                         speciality.current = 0;
                         speciality.untrained = true;
