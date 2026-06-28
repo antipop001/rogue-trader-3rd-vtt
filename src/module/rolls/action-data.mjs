@@ -677,6 +677,17 @@ export class ActionData {
         // Expend Ammo
         await useAmmo(this);
 
+        // Recharge (RT Core p.143): a Recharge weapon must spend the Round after firing
+        // building a charge — it can only fire every other Round. Stamp it as recharging with
+        // the round it fired; cleared two Rounds later by the combat-turn hook. (QA-016.)
+        const weapon = this.rollData.weapon;
+        if (weapon?.update && this.rollData.hasAttackSpecial?.('Recharge')) {
+            await weapon.update({
+                'system.recharging': true,
+                'system.rechargedRound': game.combat?.round ?? 0,
+            });
+        }
+
         // Use a Fate for Eye of Vengeance
         if(this.rollData.eyeOfVengeance) {
             await this.rollData.sourceActor.spendFate();

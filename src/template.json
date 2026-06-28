@@ -1771,6 +1771,8 @@
       "type": "",
       "reload": "",
       "jammed": false,
+      "recharging": false,
+      "rechargedRound": 0,
       "clip": {
         "max": 0,
         "value": 0

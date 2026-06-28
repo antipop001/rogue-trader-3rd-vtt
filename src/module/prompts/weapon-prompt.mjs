@@ -84,6 +84,11 @@ export async function prepareWeaponRoll(weaponAttackData) {
         ui.notifications?.warn(`${weapon.name} is jammed — use "Clear Jam" on the weapon sheet (a Full Action Ballistic Skill Test) before firing again.`);
         return;
     }
+    // RT Core p.143: a Recharge weapon can only fire every other Round. (QA-016.)
+    if (weapon?.system?.recharging) {
+        ui.notifications?.warn(`${weapon.name} is recharging — a Recharge weapon can only be fired every other Round.`);
+        return;
+    }
     const prompt = new WeaponAttackDialog(weaponAttackData);
     prompt.render(true);
 }
