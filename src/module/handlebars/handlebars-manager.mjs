@@ -13,7 +13,6 @@ export class HandlebarManager {
         return loadTemplates([
             // Actor partials.
             'systems/rogue-trader-3rd/templates/actor/panel/active-effects-panel.hbs',
-            'systems/rogue-trader-3rd/templates/actor/panel/aptitude-panel.hbs',
             'systems/rogue-trader-3rd/templates/actor/panel/armour-display-panel.hbs',
             'systems/rogue-trader-3rd/templates/actor/panel/armour-panel.hbs',
             'systems/rogue-trader-3rd/templates/actor/panel/backpack-panel.hbs',

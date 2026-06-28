@@ -59,9 +59,6 @@ export class RogueTraderAcolyte extends RogueTraderBaseActor {
         return this.system.corruption;
     }
 
-    get aptitudes() {
-        return this.system.aptitudes;
-    }
 
     get armour() {
         return this.system.armour;

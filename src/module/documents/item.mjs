@@ -37,9 +37,6 @@ export class RogueTraderItem extends RogueTraderItemContainer {
         return this.type === 'trait';
     }
 
-    get isAptitude() {
-        return this.type === 'aptitude';
-    }
 
     get isSpecialAbility() {
         return this.type === 'specialAbility';
