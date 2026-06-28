@@ -221,7 +221,10 @@ export function getCriticalDamage(type, location, amount) {
     const criticalDamageMap = criticalDamage();
     const damageMap = getFuzzy(criticalDamageMap, type);
     if(!damageMap) return null;
-    const locationMap = getFuzzy(damageMap, location);
+    // Hit locations are "Right Arm"/"Left Leg"/… but the crit tables are keyed by limb only
+    // (Arm/Leg/Head/Body); strip the side so limb hits resolve to a table. (QA-074.)
+    const limb = String(location ?? '').replace(/^\s*(right|left)\s+/i, '');
+    const locationMap = getFuzzy(damageMap, limb);
     if(!locationMap) return null;
     return locationMap[amount > 10 ? 10 : amount];
 }

@@ -57,7 +57,7 @@ export const SYSTEM_ID = 'rogue-trader-3rd';
 
 export class HooksManager {
     static registerHooks() {
-        console.log('Dark Heresy 2nd Edition | Registering system hooks');
+        console.log('Rogue Trader 3rd Edition | Registering system hooks');
 
         Hooks.once('init', HooksManager.init);
         Hooks.on('ready', HooksManager.ready);
@@ -85,7 +85,7 @@ export class HooksManager {
     }
 
     static init() {
-        console.log(`Loading Dark Heresy 2nd Edition System
+        console.log(`Loading Rogue Trader 3rd Edition System
 ______________  _________ 
 ___  __ \__  / / /_|__  /
 __  / / /_  /_/ /____/ /
@@ -165,7 +165,7 @@ Enable Debug with: game.rt.debug = true
     }
 
     static async ready() {
-        console.log(`DH2e Loaded!`);
+        console.log(`Rogue Trader 3rd Edition Loaded!`);
         await checkAndMigrateWorld();
 
         game.tours.register(SYSTEM_ID, "main-tour", new DHTourMain());

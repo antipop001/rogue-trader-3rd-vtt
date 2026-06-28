@@ -143,8 +143,13 @@ export class RogueTraderBaseActor extends Actor {
         // Encumbered: reduce the Agility Bonus by 1 for movement rates (RT Core p.249,
         // "Encumbered Characters"). `encumbrance` is computed before the final movement pass
         // (acolyte prepareData); undefined for actors without a carry track. (QA-078.)
+        // RT Core p.368: movement uses the UNMODIFIED Agility Bonus — Unnatural Agility (which
+        // inflates `agility.bonus` via `.unnatural`) does NOT speed a character up. Derive the
+        // raw bonus from the total here; Unnatural SPEED (a separate trait) still doubles the
+        // result below. (QA-141.)
+        const rawAgBonus = Math.floor((agility.total ?? 0) / 10);
         const encPenalty = this.encumbrance?.encumbered ? 1 : 0;
-        const agBonus = Math.max(0, agility.bonus - encPenalty);
+        const agBonus = Math.max(0, rawAgBonus - encPenalty);
         let base = agBonus * moveMult + size - 4;
         // Unnatural Speed (RT Core p.366): double the Agility Bonus for movement, applied
         // AFTER the size modifier — so double the whole base. (QA-077.)

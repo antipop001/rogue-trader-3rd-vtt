@@ -254,6 +254,11 @@ export class RogueTraderItem extends RogueTraderItemContainer {
                     attackSpecial.system.enabled = specialData[special];
                 }
                 specials.push(attackSpecial);
+            } else if (specialData[special]) {
+                // A truthy special flag with no matching attack-specials pack entry is dropped
+                // — surface it so silently-unwired qualities are noticed rather than vanishing.
+                // (QA-139.)
+                console.warn(`[rt] weapon "${this.name}" has special "${specialName}" with no attack-specials pack entry — its effect will not apply.`);
             }
         }
         return specials;
