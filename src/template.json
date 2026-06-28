@@ -1770,6 +1770,7 @@
       "class": "",
       "type": "",
       "reload": "",
+      "jammed": false,
       "clip": {
         "max": 0,
         "value": 0

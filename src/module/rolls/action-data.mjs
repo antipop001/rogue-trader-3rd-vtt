@@ -660,7 +660,12 @@ export class ActionData {
                     break;
                 }
                 case 'jam':
-                    this.addEffect('Jam', `The weapon jams!`);
+                    // RT Core p.238: a jammed weapon cannot be fired again until cleared with a
+                    // Full Action Ballistic Skill Test. Persist the state on the weapon. (QA-105.)
+                    this.addEffect('Jam', `The weapon jams! It cannot be fired again until cleared — a Full Action Ballistic Skill Test (use the weapon sheet's "Clear Jam" control).`);
+                    if (this.rollData.weapon?.update) {
+                        await this.rollData.weapon.update({ 'system.jammed': true });
+                    }
                     break;
             }
         }

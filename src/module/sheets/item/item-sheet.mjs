@@ -60,6 +60,15 @@ export class DarkHeresyItemSheet extends ItemSheet {
                 onclick: () => this._reloadWeapon(),
             });
         }
+        // Clear Jam — only while the weapon is jammed (RT Core p.238). (QA-105.)
+        if (this.item.type === 'weapon' && sys.jammed) {
+            buttons.unshift({
+                label: 'Clear Jam',
+                class: 'clear-jam',
+                icon: 'fas fa-wrench',
+                onclick: () => this._clearJam(),
+            });
+        }
         return buttons;
     }
 
@@ -93,6 +102,27 @@ export class DarkHeresyItemSheet extends ItemSheet {
         await ChatMessage.create({
             speaker,
             content: `<p><strong>Reload</strong> — ${this.item.name} reloaded to ${max}/${max}${reloadTime ? ` (Reload: ${reloadTime})` : ''}.</p>`,
+        });
+    }
+
+    // Clear a jammed weapon (RT Core p.238): a Full Action Ballistic Skill Test. On success the
+    // weapon may fire again; on failure it stays jammed. With no owning actor (a loose item in a
+    // pack) just clear it. (QA-105.)
+    async _clearJam() {
+        const actor = this.item.parent;
+        if (actor?.documentName !== 'Actor' || !actor.characteristics?.ballisticSkill) {
+            await this.item.update({ 'system.jammed': false });
+            ui.notifications?.info(`${this.item.name}: jam cleared.`);
+            return;
+        }
+        const bs = actor.characteristics.ballisticSkill.total ?? 0;
+        const roll = await new Roll('1d100').evaluate();
+        const success = roll.total === 1 || (roll.total <= bs && roll.total !== 100);
+        if (success) await this.item.update({ 'system.jammed': false });
+        await ChatMessage.create({
+            speaker: ChatMessage.getSpeaker({ actor }),
+            content: `<p><strong>Clear Jam</strong> (Full Action) — ${this.item.name}: Ballistic Skill Test rolled ${roll.total} vs ${bs} — `
+                + `${success ? 'success! The jam is cleared and the weapon can fire again.' : 'failed. The weapon remains jammed.'}</p>`,
         });
     }
 

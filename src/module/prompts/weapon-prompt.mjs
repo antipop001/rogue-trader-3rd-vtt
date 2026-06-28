@@ -77,6 +77,13 @@ export class WeaponAttackDialog extends FormApplication {
  * @param weaponAttackData {WeaponActionData}
  */
 export async function prepareWeaponRoll(weaponAttackData) {
+    // RT Core p.238: a jammed weapon can't be fired until cleared. Block the attack dialog
+    // for the selected weapon while it's jammed. (QA-105.)
+    const weapon = weaponAttackData?.rollData?.weapon;
+    if (weapon?.system?.jammed) {
+        ui.notifications?.warn(`${weapon.name} is jammed — use "Clear Jam" on the weapon sheet (a Full Action Ballistic Skill Test) before firing again.`);
+        return;
+    }
     const prompt = new WeaponAttackDialog(weaponAttackData);
     prompt.render(true);
 }
