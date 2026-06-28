@@ -61,6 +61,40 @@ export function degreesOfFailure(target, roll) {
  * @returns {{hit:boolean, dos:number, hits:number, critical:boolean}}
  */
 /**
+ * The RT Damage state of a character (RT Core p.262). "Damage taken" is max Wounds minus
+ * current Wounds; Critically Damaged means Damage in excess of Wounds (at/below 0). (QA-093.)
+ * @returns {'Healthy'|'Lightly Damaged'|'Heavily Damaged'|'Critically Damaged'}
+ */
+export function woundDamageState(currentValue, maxValue, toughnessBonus) {
+    const cur = Number(currentValue) || 0;
+    const damageTaken = Math.max(0, (Number(maxValue) || 0) - cur);
+    if (cur <= 0 && damageTaken > 0) return 'Critically Damaged';
+    if (damageTaken <= 0) return 'Healthy';
+    if (damageTaken <= 2 * (Number(toughnessBonus) || 0)) return 'Lightly Damaged';
+    return 'Heavily Damaged';
+}
+
+/**
+ * Wounds removed by natural healing for a given Damage state + rest period (RT Core p.262):
+ * Lightly — 1/day passively, or Toughness Bonus for a full day's bed rest. Heavily — 1/week,
+ * or TB for a full week's complete rest. Critically — 1 Critical/week (needs medical care).
+ * (QA-092.)
+ * @param {string} state  woundDamageState() result
+ * @param {number} toughnessBonus
+ * @param {'day'|'week'} rest
+ * @returns {number} Wounds recovered (≥ 0)
+ */
+export function woundRecovery(state, toughnessBonus, rest) {
+    const tb = Math.max(0, Number(toughnessBonus) || 0);
+    switch (state) {
+        case 'Lightly Damaged': return rest === 'day' ? tb : tb;        // bed-rest day = TB; a week ≥ that
+        case 'Heavily Damaged': return rest === 'week' ? tb : 1;        // 1/day passive, TB for a full week
+        case 'Critically Damaged': return rest === 'week' ? 1 : 0;      // 1 Critical/week, day does nothing
+        default: return 0;
+    }
+}
+
+/**
  * The +mod to one side's Command Test in a void-ship boarding action (RT Core p.219-220):
  * +10 per full 10 Crew Population advantage, +10 per full 10 Hull Integrity advantage, and
  * +10 per point of that side's OWN turret rating. (QA-148.)

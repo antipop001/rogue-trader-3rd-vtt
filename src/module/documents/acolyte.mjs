@@ -6,7 +6,7 @@ import { RogueTraderBaseActor } from './base-actor.mjs';
 import { ForceFieldData } from '../rolls/force-field-data.mjs';
 import { prepareForceFieldRoll } from '../prompts/force-field-prompt.mjs';
 import { DHBasicActionManager } from '../actions/basic-action-manager.mjs';
-import { degreesOfSuccess, degreesOfFailure, roll1d100, initiativeCharBonus, woundsMax, reactionBudget, canSpendReaction, unnaturalCharacteristicMultipliers, rapidReloadTime } from '../rolls/roll-helpers.mjs';
+import { degreesOfSuccess, degreesOfFailure, roll1d100, initiativeCharBonus, woundsMax, reactionBudget, canSpendReaction, unnaturalCharacteristicMultipliers, rapidReloadTime, woundDamageState, woundRecovery } from '../rolls/roll-helpers.mjs';
 import { SYSTEM_ID } from '../hooks-manager.mjs';
 import { reactionsLocked } from '../rules/conditions.mjs';
 import { RogueTraderSettings } from '../rogue-trader-settings.mjs';
@@ -378,6 +378,11 @@ export class RogueTraderAcolyte extends RogueTraderBaseActor {
         // not otherwise recomputed, so this fold-in is idempotent. Sound Constitution
         // (RT Core p.111) writes system.wounds.modifier += 1 via an AE (stackable).
         this.system.wounds.max = woundsMax(this.system.wounds.max, this.system.wounds.modifier);
+        // RT Damage state (RT Core p.262) — drives the natural-healing rate. Any Critical
+        // Damage makes the character Critically Damaged regardless of remaining Wounds. (QA-093.)
+        this.system.wounds.state = (this.system.wounds.critical > 0)
+            ? 'Critically Damaged'
+            : woundDamageState(this.system.wounds.value, this.system.wounds.max, this.characteristics.toughness.bonus);
         // RT 1e (RT Core p.251): a character functions with up to Toughness Bonus
         // levels of Fatigue; exceeding TB collapses him unconscious. (Was TB+WB — a DH2
         // threshold, BUG-004.) Any level (>=1) imposes -10 to all Tests.
@@ -516,6 +521,37 @@ export class RogueTraderAcolyte extends RogueTraderBaseActor {
         this.experience.calculatedTotal =
             this.experience.spentCharacteristics + this.experience.spentSkills + this.experience.spentTalents + this.experience.spentPsychicPowers;
         this.experience.available = this.experience.total - this.experience.used;
+    }
+
+    /**
+     * Natural healing for a period of rest (RT Core p.262). Lightly/Heavily Damaged restore
+     * Wounds; Critically Damaged removes Critical Damage (medical care assumed). Posts a chat
+     * card with the result. (QA-092.)
+     * @param {'day'|'week'} period
+     */
+    async applyRest(period) {
+        const tb = this.characteristics.toughness.bonus;
+        const state = this.system.wounds.state;
+        const amount = woundRecovery(state, tb, period);
+        const label = period === 'week' ? "a week's complete rest" : "a day's bed rest";
+        let text;
+        if (amount <= 0) {
+            text = `${this.name} takes ${label} but is ${state} — no Damage is recovered (a longer rest or medical care is needed).`;
+        } else if (state === 'Critically Damaged') {
+            const newCrit = Math.max(0, (this.system.wounds.critical || 0) - amount);
+            await this.update({ 'system.wounds.critical': newCrit });
+            text = `${this.name} takes ${label} and removes ${amount} Critical Damage (now ${newCrit}).`;
+        } else {
+            const newValue = Math.min(this.system.wounds.max, this.system.wounds.value + amount);
+            const healed = newValue - this.system.wounds.value;
+            await this.update({ 'system.wounds.value': newValue });
+            text = `${this.name} takes ${label} (${state}) and recovers ${healed} Wounds (now ${newValue}/${this.system.wounds.max}).`;
+        }
+        await ChatMessage.create({
+            user: game.user.id,
+            speaker: ChatMessage.getSpeaker({ actor: this }),
+            content: `<p><strong>Rest &amp; Recovery</strong> — ${text}</p>`,
+        });
     }
 
     _computeArmour() {

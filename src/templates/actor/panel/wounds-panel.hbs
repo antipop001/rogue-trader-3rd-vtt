@@ -12,6 +12,14 @@
         <span class="rt-field__header">Critical</span>
         <input type="number" data-dtype="Number" class="rt-field__input" name="system.wounds.critical" value="{{actor.wounds.critical}}" />
     </div>
+    <div class="rt-field__wrapper">
+        <span class="rt-field__header">State</span>
+        <span class="rt-field__span">{{defaultVal actor.system.wounds.state 'Healthy'}}</span>
+    </div>
+    <div class="rt-field__wrapper">
+        <label class="rt-control-button" data-action="restDay" data-tooltip="Natural healing — a day's bed rest (RT Core p.262)">Rest (Day)</label>
+        <label class="rt-control-button" data-action="restWeek" data-tooltip="Natural healing — a week's complete rest (RT Core p.262)">Rest (Week)</label>
+    </div>
     <div class="rt-table--border rt-criticalinjurytable--border">
         <div class="table-row--head">
             <div class="table-cell--span2">Critical Injuries</div>

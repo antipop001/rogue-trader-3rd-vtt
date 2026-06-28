@@ -21,6 +21,8 @@ export class AcolyteSheetV2 extends ActorContainerSheetV2 {
             addSkill: AcolyteSheetV2._onAddSkill,
             openChargen: AcolyteSheetV2._onOpenChargen,
             fearTest: AcolyteSheetV2._onFearTest,
+            restDay: AcolyteSheetV2._onRestDay,
+            restWeek: AcolyteSheetV2._onRestWeek,
         },
     };
 
@@ -60,6 +62,14 @@ export class AcolyteSheetV2 extends ActorContainerSheetV2 {
 
     static _onFearTest() {
         game.rt.fearTest(this.actor);
+    }
+
+    static async _onRestDay() {
+        await this.actor.applyRest('day');
+    }
+
+    static async _onRestWeek() {
+        await this.actor.applyRest('week');
     }
 
     static PARTS = {
