@@ -1258,8 +1258,6 @@
         }
       },
       "npc": {
-        "faction": "",
-        "subfaction": "",
         "type": "troop"
       },
       "vehicle": {

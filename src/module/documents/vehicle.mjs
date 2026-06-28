@@ -19,12 +19,6 @@ export class RogueTraderVehicle extends RogueTraderBaseActor {
         await super.prepareData();
     }
 
-    get faction() {
-        return this.system.faction;
-    }
-    get subfaction() {
-        return this.system.subfaction;
-    }
     get subtype() {
         return this.system.type;
     }

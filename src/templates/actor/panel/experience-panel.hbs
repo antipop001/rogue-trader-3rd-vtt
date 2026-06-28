@@ -5,11 +5,31 @@
         <input class="rt-field__input" data-dtype="Number" type="number" name="system.experience.total" value="{{actor.system.experience.total}}" />
     </div>
     <div class="rt-field__wrapper">
-        <span class="rt-field__header">Spent</span>
+        <span class="rt-field__header">Spent (manual)</span>
         <input class="rt-field__input" data-dtype="Number" type="number" name="system.experience.used" value="{{actor.system.experience.used}}" />
     </div>
     <div class="rt-field__wrapper">
         <span class="rt-field__header">Available</span>
         <span class="rt-field__span">{{actor.system.experience.available}}</span>
+    </div>
+    <div class="rt-field__wrapper">
+        <span class="rt-field__header">Calculated Spend</span>
+        <span class="rt-field__span">{{actor.system.experience.calculatedTotal}}</span>
+    </div>
+    <div class="rt-field__wrapper">
+        <span class="rt-field__header">&mdash; Characteristics</span>
+        <span class="rt-field__span">{{actor.system.experience.spentCharacteristics}}</span>
+    </div>
+    <div class="rt-field__wrapper">
+        <span class="rt-field__header">&mdash; Skills</span>
+        <span class="rt-field__span">{{actor.system.experience.spentSkills}}</span>
+    </div>
+    <div class="rt-field__wrapper">
+        <span class="rt-field__header">&mdash; Talents</span>
+        <span class="rt-field__span">{{actor.system.experience.spentTalents}}</span>
+    </div>
+    <div class="rt-field__wrapper">
+        <span class="rt-field__header">&mdash; Psychic Powers</span>
+        <span class="rt-field__span">{{actor.system.experience.spentPsychicPowers}}</span>
     </div>
 </div>

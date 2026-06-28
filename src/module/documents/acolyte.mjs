@@ -485,27 +485,32 @@ export class RogueTraderAcolyte extends RogueTraderBaseActor {
 
     _computeExperience() {
         if(!this.experience) return;
+        // Sum the real XP spend per category for the Experience panel breakdown (QA-049).
+        // Every term is guarded with `|| 0` so a missing/blank cost never poisons the
+        // displayed total with NaN. NOTE: talent/power cost lives at `item.system.cost`
+        // (the Item document has no `.cost` getter — reading `item.cost` yielded NaN).
+        const num = (v) => parseInt(v, 10) || 0;
         this.experience.spentCharacteristics = 0;
         this.experience.spentSkills = 0;
         this.experience.spentTalents = 0;
-        this.experience.spentPsychicPowers = this.psy.cost;
+        this.experience.spentPsychicPowers = num(this.psy?.cost);
         for (let characteristic of Object.values(this.characteristics)) {
-            this.experience.spentCharacteristics += parseInt(characteristic.cost, 10);
+            this.experience.spentCharacteristics += num(characteristic.cost);
         }
         for (let skill of Object.values(this.skills)) {
             if (skill.isSpecialist) {
                 for (let speciality of Object.values(skill.specialities)) {
-                    this.experience.spentSkills += parseInt(speciality.cost, 10);
+                    this.experience.spentSkills += num(speciality.cost);
                 }
             } else {
-                this.experience.spentSkills += parseInt(skill.cost, 10);
+                this.experience.spentSkills += num(skill.cost);
             }
         }
         for (let item of this.items) {
             if (item.isTalent) {
-                this.experience.spentTalents += parseInt(item.cost, 10);
+                this.experience.spentTalents += num(item.system?.cost);
             } else if (item.isPsychicPower) {
-                this.experience.spentPsychicPowers += parseInt(item.cost, 10);
+                this.experience.spentPsychicPowers += num(item.system?.cost);
             }
         }
         this.experience.calculatedTotal =

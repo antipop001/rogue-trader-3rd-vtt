@@ -26,12 +26,6 @@ export class RogueTraderVoidship extends RogueTraderBaseActor {
         this._computeComponentBonuses();
     }
 
-    get faction() {
-        return this.system.faction;
-    }
-    get subfaction() {
-        return this.system.subfaction;
-    }
     get subtype() {
         return this.system.type;
     }
