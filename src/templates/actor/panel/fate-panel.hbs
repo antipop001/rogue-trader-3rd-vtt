@@ -8,4 +8,16 @@
         <span class="rt-field__header">Value</span>
         <input type="number" data-dtype="Number" class="rt-field__input" name="system.fate.value" value="{{actor.fate.value}}" />
     </div>
+    <div class="rt-field__wrapper">
+        <span class="rt-field__header">Spend Fate</span>
+        <span class="rt-fate-actions">
+            <label class="rt-control-button" data-action="spendFate" data-fate-kind="reroll" data-tooltip="Re-roll a failed Test (accept the new result)">Re-roll</label>
+            <label class="rt-control-button" data-action="spendFate" data-fate-kind="plus10" data-tooltip="Add +10 to a Test">+10</label>
+            <label class="rt-control-button" data-action="spendFate" data-fate-kind="degree" data-tooltip="Add one Degree of Success">+1 DoS</label>
+            <label class="rt-control-button" data-action="spendFate" data-fate-kind="initiative" data-tooltip="Act first this Round (Initiative 10)">Act 1st</label>
+            <label class="rt-control-button" data-action="spendFate" data-fate-kind="wounds" data-tooltip="Instantly recover 1d5 Wounds">Heal 1d5</label>
+            <label class="rt-control-button" data-action="spendFate" data-fate-kind="fatigue" data-tooltip="Remove all Fatigue">Un-tire</label>
+            <label class="rt-control-button rt-control-button--danger" data-action="burnFate" data-tooltip="Permanently lose 1 max Fate to survive a fatal injury">Burn</label>
+        </span>
+    </div>
 </div>

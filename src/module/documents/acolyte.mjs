@@ -554,6 +554,66 @@ export class RogueTraderAcolyte extends RogueTraderBaseActor {
         });
     }
 
+    /**
+     * Spend a Fate Point (RT Core p.233). Mechanical spends (recover Wounds, remove Fatigue)
+     * apply automatically; roll-coupled spends (re-roll, +10, +1 Degree, act-first) post a
+     * note for the player to apply to their roll. Always costs 1 Fate. (QA-090.)
+     * @param {'reroll'|'plus10'|'degree'|'wounds'|'fatigue'|'initiative'} kind
+     */
+    async spendFate(kind) {
+        if ((this.system.fate?.value ?? 0) <= 0) {
+            ui.notifications?.warn(`${this.name} has no Fate Points to spend.`);
+            return;
+        }
+        const updates = { 'system.fate.value': this.system.fate.value - 1 };
+        let effect;
+        switch (kind) {
+            case 'reroll': effect = 're-roll a failed Test (must accept the new result)'; break;
+            case 'plus10': effect = 'add +10 to a Test'; break;
+            case 'degree': effect = 'add one Degree of Success to a successful Test'; break;
+            case 'initiative': effect = 'count Initiative as a 10 — act first this Round'; break;
+            case 'fatigue':
+                updates['system.fatigue.value'] = 0;
+                effect = 'remove all Fatigue';
+                break;
+            case 'wounds': {
+                const r = await new Roll('1d5').evaluate();
+                const healed = Math.min(this.system.wounds.max - this.system.wounds.value, r.total);
+                updates['system.wounds.value'] = this.system.wounds.value + healed;
+                effect = `instantly recover ${healed} Wounds (rolled ${r.total})`;
+                break;
+            }
+            default: effect = null;   // no-arg / unknown (existing re-roll & Eye of Vengeance callers post their own message)
+        }
+        await this.update(updates);
+        if (effect) {
+            await ChatMessage.create({
+                user: game.user.id,
+                speaker: ChatMessage.getSpeaker({ actor: this }),
+                content: `<p><strong>Fate Point spent</strong> — ${this.name} spends a Fate Point to ${effect}. (${updates['system.fate.value']}/${this.system.fate.max} Fate remaining)</p>`,
+            });
+        }
+    }
+
+    /**
+     * Burn a Fate Point (RT Core p.233): permanently reduce maximum Fate by 1 to cheat death —
+     * survive an otherwise-fatal injury (alive but incapacitated, at the GM's discretion). (QA-091.)
+     */
+    async burnFate() {
+        if ((this.system.fate?.max ?? 0) <= 0) {
+            ui.notifications?.warn(`${this.name} has no Fate Points to burn.`);
+            return;
+        }
+        const newMax = this.system.fate.max - 1;
+        const newValue = Math.min(this.system.fate.value, newMax);
+        await this.update({ 'system.fate.max': newMax, 'system.fate.value': newValue });
+        await ChatMessage.create({
+            user: game.user.id,
+            speaker: ChatMessage.getSpeaker({ actor: this }),
+            content: `<p><strong>Fate Point BURNED</strong> — ${this.name} permanently sacrifices a Fate Point (maximum Fate is now ${newMax}) to be snatched from the jaws of death — surviving an otherwise-fatal injury (alive but incapacitated, GM's discretion).</p>`,
+        });
+    }
+
     _computeArmour() {
         let locations = [
             'body',
@@ -801,16 +861,6 @@ export class RogueTraderAcolyte extends RogueTraderBaseActor {
                 if (!t.name.includes(word)) return false;
             }
             return true;
-        });
-    }
-
-    async spendFate() {
-        await this.update({
-            system: {
-                fate: {
-                    value: this.system.fate.value - 1
-                }
-            }
         });
     }
 

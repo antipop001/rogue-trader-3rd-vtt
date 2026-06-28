@@ -23,6 +23,8 @@ export class AcolyteSheetV2 extends ActorContainerSheetV2 {
             fearTest: AcolyteSheetV2._onFearTest,
             restDay: AcolyteSheetV2._onRestDay,
             restWeek: AcolyteSheetV2._onRestWeek,
+            spendFate: AcolyteSheetV2._onSpendFate,
+            burnFate: AcolyteSheetV2._onBurnFate,
         },
     };
 
@@ -70,6 +72,14 @@ export class AcolyteSheetV2 extends ActorContainerSheetV2 {
 
     static async _onRestWeek() {
         await this.actor.applyRest('week');
+    }
+
+    static async _onSpendFate(event, target) {
+        await this.actor.spendFate(target.dataset.fateKind);
+    }
+
+    static async _onBurnFate() {
+        await this.actor.burnFate();
     }
 
     static PARTS = {
