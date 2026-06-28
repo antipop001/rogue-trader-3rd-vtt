@@ -59,6 +59,10 @@ export async function calculateAmmoAttackBonuses(rollData) {
         case 'Explosive Arrows and Quarrels':
             rollData.specialModifiers['explosive arrows'] = -10;
             break;
+        case 'Tracer Shells':
+            // ItS: +5 BS when firing on Full Auto. (QA-065.)
+            if (rollData.action === 'Full Auto Burst') rollData.modifiers['tracer shells'] = 5;
+            break;
     }
 }
 
@@ -162,6 +166,11 @@ export async function calculateAmmoSpecials(actionData, hit) {
             hit.damageType = 'Energy';
             hit.addEffect('Acid Shells', 'Energy damage. Target must test or be set on Fire; each hit reduces the struck location\'s Armour Points by 1.');
             break;
+        case 'Organgrinder Rounds':
+            // ItS: if the round penetrates, the target makes a Toughness Test at −10 per point
+            // of Damage taken (after Armour + TB) or suffers ongoing internal damage. (QA-065.)
+            hit.addEffect('Organgrinder Rounds', 'If the target took Damage, it must make a Toughness Test at −10 per point of Damage taken (after Armour and Toughness) or the round twists deeper, inflicting Blood Loss.');
+            break;
     }
 }
 
@@ -190,6 +199,14 @@ export async function calculateAmmoDamageBonuses(actionData, hit) {
         case 'Hot-Shot Charge Pack':
             hit.modifiers['hot-shot charge pack'] = 1;
             break;
+        case 'Microburst Flask':
+            // ItS: −2 Damage, +2 Penetration (and no Overheating / no Maximal). (QA-064.)
+            hit.modifiers['microburst flask'] = -2;
+            break;
+        case 'Nephium Fuel Tank':
+            // ItS: +2 base Damage (targets also take −10 Agility to avoid Damage — GM-applied). (QA-064.)
+            hit.modifiers['nephium fuel tank'] = 2;
+            break;
     }
 }
 
@@ -205,6 +222,9 @@ export async function calculateAmmoPenetrationBonuses(actionData, hit) {
     switch (ammo.name) {
         case 'Expander Rounds':
             hit.penetrationModifiers['expander rounds'] = 1;
+            break;
+        case 'Microburst Flask':
+            hit.penetrationModifiers['microburst flask'] = 2;   // ItS: +2 Pen (QA-064)
             break;
         case 'Hot-Shot Charge Pack':
             hit.penetrationModifiers['hot-shot charge pack'] = 4;
