@@ -122,6 +122,11 @@ data:
     source: Rogue Trader Core Rulebook
     backpack:
         inBackpack: false
+flags:
+    rt:
+        grants:
+            - name: Heightened Senses (Sight)
+              type: talent
 img: systems/rogue-trader-3rd/icons/items/buckets/cyber-implant-system.png
 name: Augmented Senses
 type: cybernetic
