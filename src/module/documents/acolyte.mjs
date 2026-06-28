@@ -328,6 +328,10 @@ export class RogueTraderAcolyte extends RogueTraderBaseActor {
         // trait multiplies that Characteristic Bonus by N. The instantiated trait carries
         // the characteristic + multiplier in its name; map them here by label.
         const unnaturalMults = unnaturalCharacteristicMultipliers(this.items.filter((i) => i.type === 'trait'));
+        // Synthetic Muscle Grafts (RT Core): +1 to the Strength Bonus (NOT +10 raw Strength).
+        // Applied by cybernetic name into the bonus formula — same pattern as Unnatural, which
+        // an AE can't express without inflating the raw characteristic. (QA-027.)
+        const cyberStrengthBonus = this.items.some((i) => i.type === 'cybernetic' && i.name === 'Synthetic Muscle Grafts') ? 1 : 0;
         for (const [name, characteristic] of Object.entries(this.characteristics)) {
             characteristic.total = characteristic.base + characteristic.advance * 5 + characteristic.modifier;
             const rawBonus = Math.floor(characteristic.total / 10);
@@ -341,7 +345,7 @@ export class RogueTraderAcolyte extends RogueTraderBaseActor {
                 const mult = unnaturalMults[String(characteristic.label ?? '').toLowerCase()];
                 if (mult >= 2) characteristic.unnatural = rawBonus * (mult - 1);
             }
-            characteristic.bonus = rawBonus + characteristic.unnatural;
+            characteristic.bonus = rawBonus + characteristic.unnatural + (name === 'strength' ? cyberStrengthBonus : 0);
 
             // RT 1e: Fatigue does NOT halve characteristics (that was a DH carryover —
             // BUG-004). Any level of Fatigue instead imposes a flat -10 to all Tests,

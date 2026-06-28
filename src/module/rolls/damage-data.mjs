@@ -129,6 +129,10 @@ export class Hit {
             const traits = sourceActor?.items?.filter((i) => i.type === 'trait') ?? [];
             unarmed = unarmedDamageProfile(talents, traits);
             rollFormula = unarmed.formula;
+            // Blackbone Bracing (ItS): +2 Damage to all unarmed attacks. (QA-028.)
+            if (sourceActor?.items?.some((i) => i.type === 'cybernetic' && i.name === 'Blackbone Bracing')) {
+                this.modifiers['blackbone bracing'] = 2;
+            }
         }
 
         this.damageRoll = new Roll(rollFormula, attackData.rollData);
