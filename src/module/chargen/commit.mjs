@@ -8,10 +8,9 @@
  * Mapping decisions follow the validated RTT_MAKER exporter
  * (`rogue_trader/export/foundry.py`), with two deliberate upgrades:
  *  - characteristics use the real base/modifier split;
- *  - the legacy free-text `bio.homeWorld` is NEVER written — "Forge World" and
- *    "Hive World" exist in BOTH the RT origin data and the DH2-legacy
- *    `homeworlds()` list that `_computeBackgroundFields` matches against, and
- *    writing it would inject DH2 bonus abilities onto the sheet.
+ *  - the legacy free-text `bio.homeWorld` is NEVER written — it was a DH2-fork
+ *    field whose background-effects pipeline has since been removed; the Origin
+ *    Path panel is the sole home-world record, so writing it serves no purpose.
  * Unmappable skills/talents are surfaced in bio notes — never silently dropped.
  */
 

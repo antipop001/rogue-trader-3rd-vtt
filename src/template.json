@@ -1399,10 +1399,7 @@
       },
       "insanity": 0,
       "corruption": 0,
-      "aptitudes": {},
-      "backgroundEffects": {
-        "abilities": []
-      }
+      "aptitudes": {}
     },
     "npc": {
       "templates": [

@@ -94,11 +94,6 @@ export class AcolyteSheetV2 extends ActorContainerSheetV2 {
         // V2's tab framework only activates tabs on click; first render needs an explicit pass.
         const initial = this.tabGroups.primary ?? 'main';
         this.changeTab(initial, 'primary', { force: true, updatePosition: false });
-
-        if (!this.isEditable) return;
-
-        const hw = this.element.querySelector('select.acolyte-homeWorld');
-        if (hw) hw.addEventListener('change', (ev) => this._onHomeworldChange(ev));
     }
 
     /* --------------------------------------------------------- */
@@ -134,32 +129,5 @@ export class AcolyteSheetV2 extends ActorContainerSheetV2 {
             return;
         }
         await prepareCreateSpecialistSkillPrompt({ actor: this.actor, skill, skillName });
-    }
-
-    /* --------------------------------------------------------- */
-    /*  Homeworld-change prompt                                  */
-    /* --------------------------------------------------------- */
-
-    _onHomeworldChange(event) {
-        event.preventDefault();
-        foundry.applications.api.DialogV2.confirm({
-            window: { title: 'Roll Characteristics?' },
-            content: '<p>Would you like to roll Wounds and Fate for this homeworld?</p>',
-            modal: true,
-        }).then(async (yes) => {
-            if (!yes) return;
-            if (!this.actor.backgroundEffects?.homeworld) return;
-
-            const woundRoll = new Roll(this.actor.backgroundEffects.homeworld.wounds);
-            await woundRoll.evaluate();
-            this.actor.wounds.max = woundRoll.total;
-
-            const fateRoll = new Roll('1d10');
-            await fateRoll.evaluate();
-            this.actor.fate.max =
-                parseInt(this.actor.backgroundEffects.homeworld.fate_threshold) +
-                (fateRoll.total >= this.actor.backgroundEffects.homeworld.emperors_blessing ? 1 : 0);
-            this.render(true);
-        });
     }
 }

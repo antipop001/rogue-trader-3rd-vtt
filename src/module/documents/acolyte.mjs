@@ -1,9 +1,3 @@
-import { homeworlds } from '../rules/homeworlds.mjs';
-import { backgrounds } from '../rules/backgrounds.mjs';
-import { divinations } from '../rules/divinations.mjs';
-import { roles } from '../rules/roles.mjs';
-import { eliteAdvances } from '../rules/elite-advances.mjs';
-import { fieldMatch } from '../rules/config.mjs';
 import { prepareSimpleRoll } from '../prompts/simple-prompt.mjs';
 import { DHTargetedActionManager } from '../actions/targeted-action-manager.mjs';
 import { prepareDamageRoll } from '../prompts/damage-prompt.mjs';
@@ -77,16 +71,8 @@ export class RogueTraderAcolyte extends RogueTraderBaseActor {
         return this.system.encumbrance;
     }
 
-    get backgroundEffects() {
-        return this.system.backgroundEffects;
-    }
-
     async prepareData() {
-        this.system.backgroundEffects = {
-            abilities: [],
-        };
         this._ensureOriginPath();
-        this._computeBackgroundFields();
         this._computeCharacteristics();
         this._computeSkills();
         this._computeExperience();
@@ -340,49 +326,6 @@ export class RogueTraderAcolyte extends RogueTraderBaseActor {
         }
     }
 
-    _computeBackgroundFields() {
-        if (this.bio?.homeWorld) {
-            this.backgroundEffects.homeworld = homeworlds().find((h) => h.name === this.bio.homeWorld);
-            if (this.backgroundEffects.homeworld) {
-                this.backgroundEffects.abilities.push({
-                    source: 'Homeworld',
-                    ...this.backgroundEffects.homeworld.home_world_bonus,
-                });
-            }
-        }
-        if (this.bio?.background) {
-            this.backgroundEffects.background = backgrounds().find((h) => h.name === this.bio.background);
-            if (this.backgroundEffects.background) {
-                this.backgroundEffects.abilities.push({
-                    source: 'Background',
-                    ...this.backgroundEffects.background.background_bonus,
-                });
-            }
-        }
-        if (this.bio?.role) {
-            this.backgroundEffects.role = roles().find((h) => h.name === this.bio.role);
-            if (this.backgroundEffects.role) {
-                this.backgroundEffects.abilities.push({
-                    source: 'Role',
-                    ...this.backgroundEffects.role.role_bonus,
-                });
-            }
-        }
-        if (this.bio?.divination) {
-            this.backgroundEffects.divination = divinations().find((h) => h.name === this.bio.divination);
-            if (this.backgroundEffects.divination) {
-                this.backgroundEffects.abilities.push({
-                    source: 'Divination',
-                    name: this.backgroundEffects.divination.name,
-                    benefit: this.backgroundEffects.divination.effect,
-                });
-            }
-        }
-        if (this.bio?.elite) {
-            this.backgroundEffects.eliteAdvance = eliteAdvances().find((h) => h.name === this.bio.elite);
-        }
-    }
-
     _computeCharacteristics() {
         // RT 1e Unnatural Characteristic (RT Core p.368): an "Unnatural <Char> (xN)"
         // trait multiplies that Characteristic Bonus by N. The instantiated trait carries
@@ -402,15 +345,6 @@ export class RogueTraderAcolyte extends RogueTraderBaseActor {
                 if (mult >= 2) characteristic.unnatural = rawBonus * (mult - 1);
             }
             characteristic.bonus = rawBonus + characteristic.unnatural;
-
-            // Homeworld Bonus or Negative
-            if (this.backgroundEffects.homeworld) {
-                if (this.backgroundEffects.homeworld.bonus_characteristics.some((c) => fieldMatch(c, name))) {
-                    characteristic.has_bonus = true;
-                } else if (fieldMatch(this.backgroundEffects.homeworld.negative_characteristic, name)) {
-                    characteristic.has_negative = true;
-                }
-            }
 
             // RT 1e: Fatigue does NOT halve characteristics (that was a DH carryover —
             // BUG-004). Any level of Fatigue instead imposes a flat -10 to all Tests,

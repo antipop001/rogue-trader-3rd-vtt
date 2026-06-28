@@ -49,7 +49,6 @@ export class AcolyteSheet extends ActorContainerSheet {
 
         html.find('.roll-characteristic').click(async (ev) => await this._prepareRollCharacteristic(ev));
         html.find('.roll-skill').click(async (ev) => await this._prepareRollSkill(ev));
-        html.find('.acolyte-homeWorld').change((ev) => this._onHomeworldChange(ev));
 
         html.find('.combat-control').click(async (ev) => await this._combatControls(ev));
     }
@@ -90,30 +89,4 @@ export class AcolyteSheet extends ActorContainerSheet {
         await this.actor.rollSkill(skillName, specialtyName);
     }
 
-    _onHomeworldChange(event) {
-        event.preventDefault();
-        Dialog.confirm({
-            title: 'Roll Characteristics?',
-            content: '<p>Would you like to roll Wounds and Fate for this homeworld?</p>',
-            yes: async () => {
-                // Something is probably wrong -- we will skip this
-                if(!this.actor.backgroundEffects?.homeworld) return;
-
-                // Roll Wounds
-                let woundRoll = new Roll(this.actor.backgroundEffects.homeworld.wounds);
-                await woundRoll.evaluate();
-                this.actor.wounds.max = woundRoll.total;
-
-                // Roll Fate
-                let fateRoll = new Roll('1d10');
-                await fateRoll.evaluate();
-                this.actor.fate.max =
-                    parseInt(this.actor.backgroundEffects.homeworld.fate_threshold) +
-                    (fateRoll.total >= this.actor.backgroundEffects.homeworld.emperors_blessing ? 1 : 0);
-                this.render(true);
-            },
-            no: () => {},
-            defaultYes: false,
-        });
-    }
 }

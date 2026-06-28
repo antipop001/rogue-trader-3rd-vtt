@@ -1,9 +1,4 @@
-import { eliteAdvancesNames } from './elite-advances.mjs';
-import { homeworldNames } from './homeworlds.mjs';
 import { attackSpecialsNames } from './attack-specials.mjs';
-import { backgroundNames } from './backgrounds.mjs';
-import { roleNames } from './roles.mjs';
-import { divinationNames } from './divinations.mjs';
 import { homeWorldOptions } from './origin-path/homeworlds.mjs';
 import { birthrightOptions } from './origin-path/birthrights.mjs';
 import { lureOfTheVoidOptions } from './origin-path/lures.mjs';
@@ -32,11 +27,6 @@ DarkHeresy.originPath = {
 };
 
 DarkHeresy.bio = {
-    homeWorld: homeworldNames(),
-    background: backgroundNames(),
-    role: roleNames(),
-    elite: eliteAdvancesNames(),
-    divination: divinationNames(),
     // DH2-fork primary fields hidden from the header (replaced by Origin Path).
     primary: [],
     // Skipped by the generic bio loop entirely. The DH2 fields stay in
