@@ -94,11 +94,14 @@ export function voidshipHullDamage(perHitDamages, armour, ignoreArmour = false) 
     return Math.max(0, total - (Number(armour) || 0));
 }
 
-export function voidshipWeaponHits(roll, target, strength, critRating) {
+export function voidshipWeaponHits(roll, target, strength, critRating, isLance = false) {
     if (roll === 100 || roll > target) return { hit: false, dos: 0, hits: 0, critical: false };
     const dos = degreesOfSuccess(target, roll);
     const maxHits = Math.max(1, Math.floor(Number(strength) || 1));
-    const hits = Math.min(1 + dos, maxHits);
+    // RT Core p.216: a macrobattery scores 1 hit + 1 per DoS; a LANCE scores 1 hit + 1 per
+    // THREE DoS. Both are capped at the weapon's Strength. (QA-154.)
+    const extraHits = isLance ? Math.floor(dos / 3) : dos;
+    const hits = Math.min(1 + extraHits, maxHits);
     const cr = Math.floor(Number(critRating) || 0);
     const critical = cr > 0 && dos >= cr;
     return { hit: true, dos, hits, critical };

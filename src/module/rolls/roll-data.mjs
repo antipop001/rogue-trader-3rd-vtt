@@ -412,7 +412,9 @@ export class PsychicRollData extends RollData {
         this.baseTarget = 0;
         this.modifiers['difficulty'] = 0;
         this.modifiers['modifier'] = 0;
-        const rating = this.sourceActor.psy.rating ?? 0;
+        // Use the sustained-reduced effective rating (currentRating = rating − sustained,
+        // floored at 0) so casting while sustaining other powers uses the lowered PR. (QA-151.)
+        const rating = this.sourceActor.psy.currentRating ?? this.sourceActor.psy.rating ?? 0;
         this.strength = (this.sourceActor.psy.strength ?? 'unfettered').toLowerCase();
         if (this.strength === 'fettered') {
             this.pr = Math.max(1, Math.ceil(rating / 2));

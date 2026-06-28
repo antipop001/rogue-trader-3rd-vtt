@@ -401,7 +401,8 @@ export class ActionData {
             const target = this.rollData.modifiedTarget;
             const strength = amount ?? this.rollData.weapon?.system?.strength ?? 1;
             const critRating = this.rollData.weapon?.system?.critRating ?? 0;
-            const res = voidshipWeaponHits(rollTotal, target, strength, critRating);
+            const isLance = this.rollData.weapon?.system?.type === 'Lance';
+            const res = voidshipWeaponHits(rollTotal, target, strength, critRating, isLance);
             this.rollData.dos = res.dos;
             // Destructive: a normal hit is upgraded to a Critical Hit (RT Core p.218).
             const critical = res.critical || (res.hit && this.rollData.hasAttackSpecial('Destructive'));

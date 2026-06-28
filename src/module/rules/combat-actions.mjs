@@ -211,7 +211,7 @@ function allCombatActions() {
             name: 'Knock Down',
             type: ['Half'],
             subtype: ['Attack', 'Melee'],
-            description: 'Make an opposed Strength test (with +10 if using Charge). 2+DoS gives (1d5-3)+SB Impact and 1 level of fatigue.',
+            description: 'Make an opposed Strength test. If you win, the target is knocked Prone; on 2+DoS it also suffers (1d5-3)+SB Impact damage (with armour counting as double) and 1 level of fatigue.',
         },
         {
             // RT 1e Core lists Lightning Attack as a TALENT, not a base action

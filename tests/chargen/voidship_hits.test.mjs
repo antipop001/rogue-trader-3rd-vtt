@@ -38,3 +38,15 @@ test('QA-042: macrobattery combines hits then subtracts Armour once; lance ignor
     assert.equal(voidshipHullDamage([9,9], 20, true), 18);
     assert.equal(voidshipHullDamage([], 5, false), 0);
 });
+
+import { voidshipWeaponHits as vwh } from '../../src/module/rolls/roll-helpers.mjs';
+test('QA-154: lances score 1 hit + 1 per 3 DoS (vs macro 1+DoS), capped at Strength', () => {
+    // target 60, roll 10 -> dos = floor((60-10)/10) = 5
+    const macro = vwh(10, 60, 10, 0, false);   // 1+5 = 6 hits
+    assert.equal(macro.hits, 6);
+    const lance = vwh(10, 60, 10, 0, true);     // 1 + floor(5/3)=1 -> 2 hits
+    assert.equal(lance.hits, 2);
+    // cap at strength
+    const capped = vwh(10, 60, 2, 0, false);    // 1+5=6 capped at 2
+    assert.equal(capped.hits, 2);
+});

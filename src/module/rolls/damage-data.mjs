@@ -163,7 +163,9 @@ export class Hit {
                 if (attackData.rollData.hasAttackSpecial('Proven')) {
                     const proven = attackData.rollData.getAttackSpecial('Proven');
                     if (result.result < proven.level) {
-                        this.modifiers['proven'] = proven.level - result.result;
+                        // Accumulate across dice — a multi-die weapon bumps EACH die below the
+                        // Proven value, so the bonus must sum, not overwrite per die. (QA-137.)
+                        this.modifiers['proven'] = (this.modifiers['proven'] || 0) + (proven.level - result.result);
                     }
                 }
             }
@@ -392,14 +394,9 @@ export class Hit {
 
         this.damageType = actionItem.system.damageType;
 
-        if (attackData.rollData.action === 'All Out Attack' && sourceActor.hasTalent('Hammer Blow')) {
-            if(!attackData.rollData.attackSpecials.find(s => s.name === 'Concussive')) {
-                attackData.rollData.attackSpecials.push({
-                    name: 'Concussive',
-                    level: 2
-                });
-            }
-        }
+        // QA-140: removed a dead All-Out-Attack + Hammer Blow → inject Concussive block —
+        // 'Hammer Blow' is a DH2 talent absent from the RT pack and 'Concussive' is not an RT
+        // weapon quality (neither exists), so the branch could never fire.
 
         if (actionItem.isRanged) {
             await calculateAmmoSpecials(attackData, this);

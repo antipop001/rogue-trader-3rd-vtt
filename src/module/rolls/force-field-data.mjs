@@ -50,18 +50,17 @@ export class ForceFieldData {
     async performActionAndSendToChat() {
         game.rt.log('performActionAndSendToChat', this)
 
-        // Update to overloaded if necessary
+        // Update to overloaded if necessary. Must be awaited and NOT reassigned — the old
+        // `this.forceField = this.forceField.update(...)` clobbered the item doc with the
+        // update Promise (fire-and-forget). (QA-103, same class as BUG-005.)
         if(this.overload) {
-            this.forceField = this.forceField.update({
-                system: {
-                    overloaded: true
-                }
-            })
+            await this.forceField.update({ system: { overloaded: true } });
         }
 
         const html = await renderTemplate('systems/rogue-trader-3rd/templates/chat/force-field-roll-chat.hbs', this);
-        const actorData = this.actor;
-        const actor = game.actors.get(actorData._id);
+        // Use the actor reference we were handed — `game.actors.get(this.actor._id)` returns
+        // the wrong document (or none) for unlinked tokens. (QA-102, same class as BUG-005.)
+        const actor = this.actor;
         let chatData = {
             user: game.user.id,
             speaker: ChatMessage.getSpeaker({ actor}),
