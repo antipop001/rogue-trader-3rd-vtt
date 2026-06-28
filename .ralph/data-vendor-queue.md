@@ -140,3 +140,7 @@ QA-083 | tables.yml → AUTHORED 3 RollTables for the Insanity/Corruption degrad
 - src/module/rules/critical-damage.mjs — all 160 entries (4 damage types × 4 locations × 10 severities) re-authored from RT 1e canon, replacing the prior Dark Heresy 2e text.
 - Extraction: per-damage-type subagents from RT-DOCS markdown; cross-verified against the corebook PDF via NotebookLM (5 numeric/text spot-checks all matched, incl. the book's own printed "noise" typo at Impact/Head 8, kept faithful).
 - Needs: a human RT-rules review pass for full faithfulness (page-number references inside the text — e.g. "page 210"/"page 248" — are the RT corebook's own cross-refs and may not match this system's pagination).
+
+## QA-040 — per-DoS psychic damage scaling
+- Engine hook added: a `perDoSDamage` Roll-formula field (on the shared `damage` template) is rolled once per Degree of Success (min 1 on a success) and added to the damage (src/module/rolls/damage-data.mjs). Banishment wired to `perDoSDamage: '1d10'` (ItS "1d10 per Degree of Success" variant; was a flat 1d10).
+- Remaining (different mechanisms, not done): per-Psy-Rating EFFECT scaling (Terrify +1 Fear level per 3 PR), tiered-success outcomes (Mind Scan 1/2/3/4-success), and Force Shards' per-DoS vs Barrage (per-2-DoS) tag. Triage per power for an RT-rules review.

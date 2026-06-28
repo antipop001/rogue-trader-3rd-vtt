@@ -109,8 +109,11 @@ export class Hit {
         }
 
         let rollFormula = actionItem.system.damage;
-        if(!rollFormula || rollFormula === '') {
-            rollFormula = 0;
+        if(!rollFormula || rollFormula === '' || rollFormula === 0) {
+            // String '0' (not number 0) — Foundry v13's Roll constructor rejects a non-string
+            // formula. A power/weapon with no base damage (e.g. a per-DoS-only psychic power)
+            // hits this path. (QA-040.)
+            rollFormula = '0';
         }
         // Ship weapons store damage as a numeric modifier; each hit rolls 1d10 + that value (RT corebook p.215, lances p.216).
         if (actionItem.type === 'shipWeapon') {
@@ -150,6 +153,25 @@ export class Hit {
         game.rt.log('Damage Roll', this.damageRoll);
 
         this.damage = this.damageRoll.total;
+
+        // Per-DoS damage scaling (QA-040): a power/weapon carrying a `perDoSDamage` Roll formula
+        // rolls it once per Degree of Success (minimum 1 on a success) and adds the result —
+        // e.g. a psychic power's "1d10 per Degree of Success" (ItS). Lets per-DoS damage reach
+        // the roll instead of living only in the description text.
+        const perDoSFormula = actionItem.system?.perDoSDamage;
+        if (perDoSFormula && String(perDoSFormula).trim() !== '') {
+            const dosCount = Math.max(1, attackData.rollData.dos ?? 1);
+            this.perDoSRolls = [];
+            let perDoSTotal = 0;
+            for (let i = 0; i < dosCount; i++) {
+                const r = new Roll(String(perDoSFormula), attackData.rollData);
+                await r.evaluate();
+                perDoSTotal += r.total;
+                this.perDoSRolls.push(r);
+            }
+            this.damage += perDoSTotal;
+            this.perDoSDamage = perDoSTotal;
+        }
 
         // QA-157 — Helpless target (coup de grace, RT Core p.244): "roll twice and add the
         // results". Roll the weapon's damage a SECOND time and sum it; two natural 10s across

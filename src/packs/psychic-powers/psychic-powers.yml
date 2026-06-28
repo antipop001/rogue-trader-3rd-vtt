@@ -1282,7 +1282,8 @@ data:
     attackBonus: 0
     attackType: Psychic Bolt
     cost: 500
-    damage: 1d10
+    damage: ''
+    perDoSDamage: 1d10
     damageType: Energy
     discipline: Theosophamy
     description: 'Banishment disrupts the connection between daemons and the warp,

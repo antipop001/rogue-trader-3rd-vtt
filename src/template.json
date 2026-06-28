@@ -1496,7 +1496,8 @@
         "damage": "",
         "damageType": "",
         "penetration": "",
-        "special": {}
+        "special": {},
+        "perDoSDamage": ""
       },
       "action": {
         "target": "",
