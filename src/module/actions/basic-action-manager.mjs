@@ -6,6 +6,7 @@ import { DHTargetedActionManager } from './targeted-action-manager.mjs';
 import { Hit } from '../rolls/damage-data.mjs';
 import { RogueTraderSettings } from '../rogue-trader-settings.mjs';
 import { SYSTEM_ID } from '../hooks-manager.mjs';
+import { expireDrug, checkAllDrugExpiries } from '../rules/drugs.mjs';
 
 export class BasicActionManager {
     // This is stored rolls for allowing re-rolls, ammo refund, etc.
@@ -25,6 +26,14 @@ export class BasicActionManager {
             $html.find('.roll-control__pinning-test').click(async (ev) => await this._rollPinningTest(ev));
             $html.find('.roll-control__evade').click(async (ev) => await this._evadeAttack(ev));
             $html.find('.roll-control__roll-opposed').click(async (ev) => await this._rollOpposed(ev));
+            $html.find('.roll-control__drug-expire').click(async (ev) => await this._drugExpire(ev));
+        });
+
+        // Expire elapsed drug effects when the GM advances the world clock (out-of-combat
+        // wear-off, since duration.seconds AEs don't self-expire without worldTime ticking).
+        // GM-only so the writes happen once. (QA-145.)
+        Hooks.on('updateWorldTime', async () => {
+            if (game.users?.activeGM === game.user) await checkAllDrugExpiries();
         });
 
         // Initialize Scene Control Buttons
@@ -190,6 +199,17 @@ export class BasicActionManager {
      * to the target (GM or owner) — the attacker's client cannot mutate another actor.
      * (QA-080 increment 2.)
      */
+    async _drugExpire(event) {
+        event.preventDefault();
+        const div = $(event.currentTarget);
+        const actorUuid = div.data('actor-uuid');
+        const drugId = div.data('drug-id');
+        let actor = actorUuid ? await fromUuid(actorUuid) : null;
+        if (actor?.actor !== undefined) actor = actor.actor;
+        if (!actor) { ui.notifications?.warn('Cannot find the actor to wear off the drug.'); return; }
+        await expireDrug(actor, String(drugId));
+    }
+
     async _applyCondition(event) {
         event.preventDefault();
         const div = $(event.currentTarget);

@@ -817,6 +817,15 @@ const CONSUMABLE_ACTIVATIONS = {
     stimm: {
         label: 'Stimm', durationText: '3d10 rounds', changes: [],
         note: 'Ignores negative Characteristic effects from Damage/Critical Damage and cannot be Stunned. When it wears off: −20 to Strength, Toughness and Agility Tests for one hour. (RT Core p.142)',
+        comedown: {
+            note: 'Stimm wears off: −20 to Strength, Toughness and Agility Tests for one hour.',
+            durationText: '1 hour',
+            changes: [
+                { key: 'system.characteristics.strength.modifier', mode: 2, value: '-20' },
+                { key: 'system.characteristics.toughness.modifier', mode: 2, value: '-20' },
+                { key: 'system.characteristics.agility.modifier', mode: 2, value: '-20' },
+            ],
+        },
     },
     slaught: {
         label: 'Slaught', durationText: '2d10 minutes',
@@ -825,10 +834,23 @@ const CONSUMABLE_ACTIVATIONS = {
             { key: 'system.characteristics.perception.modifier', mode: 2, value: '30' },
         ],
         note: '+3 Agility Bonus and +3 Perception Bonus. Afterwards: Test Toughness or take −20 to Agility and Perception Tests for 1d5 hours. (RT Core p.143)',
+        comedown: {
+            // The −20 is gated on a Toughness Test the engine doesn't auto-roll, so the comedown
+            // is surfaced as a note for the GM rather than an auto-applied AE.
+            note: 'Slaught wears off: Test Toughness or take −20 to Agility and Perception Tests for 1d5 hours.',
+        },
     },
     spur: {
         label: 'Spur', durationText: '2d10 minutes', changes: [],
         note: 'Cannot be Stunned and takes no Fatigue. Afterwards: −20 to Toughness and Agility Tests for one hour, plus one Fatigue level for every two that would have been gained. (Into the Storm)',
+        comedown: {
+            note: 'Spur wears off: −20 to Toughness and Agility Tests for one hour, plus one Fatigue level for every two that would have been gained.',
+            durationText: '1 hour',
+            changes: [
+                { key: 'system.characteristics.toughness.modifier', mode: 2, value: '-20' },
+                { key: 'system.characteristics.agility.modifier', mode: 2, value: '-20' },
+            ],
+        },
     },
     'cold fire': {
         label: 'Cold Fire', durationText: '3d10 rounds', grantsTalent: 'Battle Rage', changes: [],
@@ -842,9 +864,13 @@ const CONSUMABLE_ACTIVATIONS = {
     wideawake: {
         label: 'Wideawake', durationText: '1d5 hours', changes: [],
         note: 'Ignores one level of Fatigue for the duration; additional doses prolong it but never counter more than one level. After it wears off: suffer an additional level of Fatigue. (Into the Storm)',
+        comedown: {
+            note: 'Wideawake wears off: suffer an additional level of Fatigue.',
+            fatigue: 1,
+        },
     },
     'attention spanner': {
-        label: 'Attention Spanner', durationText: '3d10 rounds', changes: [],
+        label: 'Attention Spanner', durationText: '3d10 rounds', changes: [], focusTest: true,
         note: 'On a successful focus: +30 to all Intelligence-based Tests for the duration. On a failure: −20 to all Tests for the same period. (Into the Storm)',
     },
 };

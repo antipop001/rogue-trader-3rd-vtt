@@ -1,4 +1,5 @@
 import { handleBleeding, handleOnFire } from '../rules/active-effects.mjs';
+import { checkDrugExpiries } from '../rules/drugs.mjs';
 
 export class CombatActionManager {
     combatTurnHook;
@@ -45,6 +46,8 @@ export class CombatActionManager {
                         await w.update({ 'system.recharging': false });
                     }
                 }
+                // Expire any round-duration drug effects that have elapsed (QA-145).
+                await checkDrugExpiries(actor);
                 const statuses = actor.statuses ?? new Set();
                 const hasLegacy = (name) => actor.effects?.some((e) => e.name === name);
                 if (statuses.has('onFire') || hasLegacy('Burning')) {

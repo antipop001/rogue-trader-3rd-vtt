@@ -1,5 +1,6 @@
 import { toggleUIExpanded } from '../../rules/config.mjs';
 import { consumableActivation, parseConsumableDuration } from '../../rolls/roll-helpers.mjs';
+import { useDrug } from '../../rules/drugs.mjs';
 
 export class DarkHeresyItemSheet extends ItemSheet {
     static get defaultOptions() {
@@ -131,49 +132,15 @@ export class DarkHeresyItemSheet extends ItemSheet {
     // Slaught +3 Ag/Per Bonus) ride as AE `changes`; talent grants / immunities /
     // after-effects ride in the effect description + chat card for manual handling.
     async _useConsumable() {
-        const spec = consumableActivation(this.item.name);
-        if (!spec) return;
         const actor = this.item.parent;
         if (!actor || actor.documentName !== 'Actor') {
             ui.notifications?.warn('Drop this drug onto a character before using it.');
             return;
         }
-
-        // Roll the duration so the effect expires on its own.
-        const dur = parseConsumableDuration(spec.durationText);
-        const duration = {};
-        let durationLabel = spec.durationText;
-        if (dur) {
-            const roll = new Roll(dur.formula);
-            await roll.evaluate();
-            const value = roll.total;
-            if (dur.durationKey === 'rounds') duration.rounds = value;
-            else duration.seconds = value * dur.secondsPer;
-            durationLabel = `${value} ${dur.unit}`;
-        }
-
-        const effectData = {
-            name: spec.label ?? this.item.name,
-            img: this.item.img ?? 'icons/svg/aura.svg',
-            origin: this.item.uuid,
-            duration,
-            disabled: false,
-            description: spec.note ?? '',
-            changes: (spec.changes ?? []).map((c) => ({ ...c, value: String(c.value), priority: null })),
-            flags: { rt: { consumable: true } },
-        };
-        await actor.createEmbeddedDocuments('ActiveEffect', [effectData]);
-
-        const grantLine = spec.grantsTalent
-            ? `<p><em>Grant the ${spec.grantsTalent} talent for the duration.</em></p>` : '';
-        ChatMessage.create({
-            user: game.user.id,
-            speaker: ChatMessage.getSpeaker({ actor }),
-            content: `<div class="rt-consumable-use"><h3>${actor.name} uses ${this.item.name}</h3>`
-                + `<p><strong>Duration:</strong> ${durationLabel}</p>${grantLine}`
-                + `<p>${spec.note ?? ''}</p></div>`,
-            style: CONST.CHAT_MESSAGE_STYLES.OTHER,
-        });
+        // Drug timed-effect subsystem (QA-143/144/145): applies the benefit (AE + optional
+        // granted talent / focus-test branch), records the rolled duration, and registers the
+        // wear-off (comedown + grant removal) handled by the expiry hooks / "Wears off now" button.
+        await useDrug(actor, this.item);
     }
 
     async _sheetControlHideToggle(event) {
