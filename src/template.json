@@ -127,7 +127,8 @@
           "guardedAttack": false,
           "cover": {
             "ap": 0
-          }
+          },
+          "activeVehicleId": ""
         },
         "fate": {
           "max": 0,

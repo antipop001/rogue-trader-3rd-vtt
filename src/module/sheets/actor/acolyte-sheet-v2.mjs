@@ -23,6 +23,7 @@ export class AcolyteSheetV2 extends ActorContainerSheetV2 {
             fearTest: AcolyteSheetV2._onFearTest,
             grapple: AcolyteSheetV2._onGrapple,
             takeCover: AcolyteSheetV2._onTakeCover,
+            operateVehicle: AcolyteSheetV2._onOperateVehicle,
             restDay: AcolyteSheetV2._onRestDay,
             restWeek: AcolyteSheetV2._onRestWeek,
             spendFate: AcolyteSheetV2._onSpendFate,
@@ -68,6 +69,13 @@ export class AcolyteSheetV2 extends ActorContainerSheetV2 {
                 label: 'Take Cover',
                 action: 'takeCover',
             });
+            // Operate Vehicle control (QA-116) — link an active vehicle so its Manoeuvrability
+            // modifies Drive/Pilot Tests.
+            controls.push({
+                icon: 'fa-solid fa-car-side',
+                label: 'Operate Vehicle',
+                action: 'operateVehicle',
+            });
         }
         return controls;
     }
@@ -86,6 +94,10 @@ export class AcolyteSheetV2 extends ActorContainerSheetV2 {
 
     static _onTakeCover() {
         game.rt.takeCover(this.actor);
+    }
+
+    static _onOperateVehicle() {
+        game.rt.operateVehicle(this.actor);
     }
 
     static async _onRestDay() {

@@ -49,6 +49,7 @@ import { openEndeavoursDialog } from './rules/endeavours.mjs';
 import { openFearDialog } from './rules/fear.mjs';
 import { openGrappleDialog } from './rules/grapple.mjs';
 import { openCoverDialog } from './rules/cover.mjs';
+import { openVehicleDialog } from './rules/vehicle-ops.mjs';
 import { processDegradation } from './rules/degradation.mjs';
 import { RT_CONDITIONS } from './rules/conditions.mjs';
 import { ChargenWizard } from './applications/chargen-wizard.mjs';
@@ -112,6 +113,7 @@ Enable Debug with: game.rt.debug = true
             fearTest: openFearDialog,
             grapple: openGrappleDialog,
             takeCover: openCoverDialog,
+            operateVehicle: openVehicleDialog,
         };
 
         //CONFIG.debug.hooks = true;

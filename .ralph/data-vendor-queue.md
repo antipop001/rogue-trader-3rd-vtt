@@ -163,3 +163,7 @@ Implemented: hits to a concealed location (Body / Left Leg / Right Leg — the c
 ## QA-115 / QA-117 — Vehicle damage + Vehicle Critical Hit Chart (ItS Table 5-2)
 - src/module/rules/vehicle-critical-damage.mjs — the ItS Table 5-2 chart (Jarring Blow → Explodes), authored from the supplement; cumulative by total critical damage. Needs an RT-rules review pass (a couple of OCR-truncated entries in the source, e.g. the Fire/Explodes rows, were completed from context).
 - Interpretation: Penetration reduces the vehicle's facing Armour the same way it reduces personal armour (canon: vehicle Armour works "in the same manner as an individual's armour"). No Toughness Bonus for vehicles.
+
+## QA-116 / QA-117 — vehicle manoeuvrability + combat actions
+- QA-116 done: a character's active vehicle (system.combat.activeVehicleId, set via the "Operate Vehicle" control) applies its Manoeuvrability to Drive/Pilot Tests.
+- QA-117 partial: the Vehicle Critical Hit Chart (0.8.x) + the 5 ItS vehicle Combat Actions (Tactical Manoeuvring / Evasive Manoeuvring / Floor it! / Ram / Manoeuvre) are now in the action catalog (tagged vehicle:true, Vehicle subtype). Remaining (need per-turn movement/speed tracking the engine doesn't have): the move-then-shoot −10/−20 penalty (vehicle moved tactical / twice tactical), Ram damage auto-resolution (facing AP + 1d10/2d10), the vehicle Dodge Reaction (one shot avoided per DoS), and crash-on-Drive-fail-by-5. These stay GM-adjudicated and tie into the same absent Strategic-Round movement layer (QA-047).

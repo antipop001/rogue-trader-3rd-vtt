@@ -352,5 +352,44 @@ function allCombatActions() {
                 modifier: 0,
             },
         },
+        // Vehicle Combat Actions (Into the Storm Ch.V). Tagged `vehicle: true` and given the
+        // Vehicle subtype so they are documented + filterable without entering the personal
+        // weapon-attack dropdown. Movement/speed resolution (the move-then-shoot −10/−20 penalty,
+        // Ram damage, crash-on-fail-by-5) is GM-adjudicated. (QA-117.)
+        {
+            name: 'Tactical Manoeuvring',
+            type: ['Half', 'Full'],
+            subtype: ['Movement', 'Vehicle'],
+            vehicle: true,
+            description: 'The vehicle moves its tactical speed (Half) or twice its tactical speed (Full). Shooting from the vehicle this Round suffers −10 (tactical) or −20 (twice tactical) to hit.',
+        },
+        {
+            name: 'Evasive Manoeuvring',
+            type: ['Full'],
+            subtype: ['Movement', 'Vehicle'],
+            vehicle: true,
+            description: 'Move tactical speed and make a Challenging (+0) Drive Test; on success (and per extra DoS) impose −10 on all attacks against the vehicle until its next turn — and on its own shooting. Fail by 5+ DoF → crash.',
+        },
+        {
+            name: 'Floor it!',
+            type: ['Full'],
+            subtype: ['Movement', 'Vehicle'],
+            vehicle: true,
+            description: 'Move twice tactical speed (one turn only) with a Difficult (−10) Drive Test; success grants +5m per DoS of extra movement. All shooting at or from the vehicle suffers −20. Walkers may not use this. Fail by 5+ DoF → crash.',
+        },
+        {
+            name: 'Ram',
+            type: ['Full'],
+            subtype: ['Attack', 'Vehicle'],
+            vehicle: true,
+            description: 'Move at least tactical speed in a straight line and make a Challenging (+0) Drive/Pilot Test. On a hit, deal damage = the striking facing\'s AP + 1d10 (2d10 at twice tactical speed); ramming another solid object also damages your own vehicle by its AP + 1d5. Moves the target 1m per damage point.',
+        },
+        {
+            name: 'Manoeuvre (Vehicle)',
+            type: ['Half', 'Full'],
+            subtype: ['Movement', 'Vehicle'],
+            vehicle: true,
+            description: 'A catch-all driver manoeuvre (base Challenging +0, GM modifies by complexity) — e.g. ducking a low arch or boosting a skimmer over a chasm.',
+        },
     ];
 }
