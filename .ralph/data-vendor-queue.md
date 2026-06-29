@@ -182,3 +182,8 @@ Implemented: hits to a concealed location (Body / Left Leg / Right Leg — the c
 - Ship Ram (RT Core p.219): hull-size dice (1d5 transport/raider, 1d10 frigate, 2d5 light cruiser, 2d10 cruiser) + prow Armour, ignores shields; self damage = target Armour + 1d5; spends the Shooting Action. The Hard (−20) Pilot test is surfaced for the helmsman to roll.
 - Ship Come About (Adjust Speed & Bearing, Hard −20) + Disengage (Challenging +0, opposed Detection+Scrutiny, not within 8 VU, no firing) resolve as Manoeuvre Actions that enforce the economy + post the canon test/requirement.
 - Vehicle Dodge (ItS): gated on the vehicle having moved ≥ tactical speed; rolls the driver's Drive (+ Manoeuvrability) and avoids 1 + DoS shots; the vehicle size penalty is surfaced for the GM (vehicles carry no structured size modifier).
+
+## QA-084/085 — Endeavours full-canon model + Misfortune
+- src/module/rules/endeavours-helpers.mjs (pure, node-tested) + endeavours.mjs (dialog): Endeavours now have a SIZE (Lesser/Greater/Grand → +1/+3/+5 PF), a nested Objective sub-structure (each themed Exploration/Trade/Military/Criminal/Creed with its own AP/target), excess-AP→PF on completion (+1 per full 100 over target), and the Misfortune roll (Table 9-41: 50-65 −1 / 66-90 −2 / 91+ −1d5 PF, recoverable).
+- Interpretation for review: Lesser/Greater rewards span +1/+2 and +3/+4 in canon; the size auto-fills the lower value (+1/+3) into an effectively-editable pfReward — a GM bumping to +2/+4 is a manual edit (not surfaced as a second control). Misfortune is a GM button (Foundry has no "session" event to auto-fire it once per session).
+- QA-086 (Renown): confirmed NOT-A-BUG — RT 1e has no Renown mechanic; nothing built.
