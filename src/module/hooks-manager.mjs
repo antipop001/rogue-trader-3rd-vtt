@@ -49,7 +49,7 @@ import { openEndeavoursDialog } from './rules/endeavours.mjs';
 import { openFearDialog } from './rules/fear.mjs';
 import { openGrappleDialog } from './rules/grapple.mjs';
 import { openCoverDialog } from './rules/cover.mjs';
-import { openVehicleDialog } from './rules/vehicle-ops.mjs';
+import { openVehicleDialog, openRamDialog } from './rules/vehicle-ops.mjs';
 import { rollShipInitiative, shipManoeuvre } from './rules/ship-combat.mjs';
 import { processDegradation } from './rules/degradation.mjs';
 import { RT_CONDITIONS } from './rules/conditions.mjs';
@@ -117,6 +117,7 @@ Enable Debug with: game.rt.debug = true
             operateVehicle: openVehicleDialog,
             shipInitiative: rollShipInitiative,
             shipManoeuvre: (ship, fraction, degrees) => shipManoeuvre(ship ?? canvas.tokens?.controlled?.[0]?.actor, fraction, degrees),
+            vehicleRam: openRamDialog,
         };
 
         //CONFIG.debug.hooks = true;

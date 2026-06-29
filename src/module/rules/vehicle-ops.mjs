@@ -50,3 +50,44 @@ export async function openVehicleDialog(actor = null) {
         await setActiveVehicle(subject, '');
     }
 }
+
+// Ram (ItS Ch.V): a vehicle ramming does damage = its striking-facing AP + 1d10 (2d10 at twice
+// tactical speed) and pushes the target 1m per damage point; ramming another vehicle/solid object
+// also damages the rammer by the target's AP + 1d5. Computes + announces the figures (apply via
+// Assign Damage). (QA-117 follow-up.)
+export async function vehicleRam(rammer, target, twiceSpeed = false) {
+    if (rammer?.type !== 'vehicle') { ui.notifications?.warn('Select a vehicle to Ram with.'); return; }
+    const facingAP = Number(rammer.system?.front) || 0;
+    const dice = twiceSpeed ? '2d10' : '1d10';
+    const dmgRoll = await new Roll(`${facingAP} + ${dice}`).evaluate();
+    const targetDamage = dmgRoll.total;
+    let selfLine = '';
+    if (target?.type === 'vehicle') {
+        const targetAP = Number(target.system?.front) || 0;
+        const selfRoll = await new Roll(`${targetAP} + 1d5`).evaluate();
+        selfLine = `<br/>${rammer.name} takes <strong>${selfRoll.total}</strong> damage in return (target front AP ${targetAP} + 1d5).`;
+    }
+    await ChatMessage.create({
+        user: game.user.id,
+        speaker: ChatMessage.getSpeaker({ actor: rammer }),
+        content: `<p><strong>${rammer.name} rams${target ? ' ' + target.name : ''}</strong> at ${twiceSpeed ? 'twice tactical' : 'tactical'} speed: `
+            + `<strong>${targetDamage}</strong> damage (front AP ${facingAP} + ${dice}); the target is pushed ${targetDamage} metres. Apply via Assign Damage.${selfLine}</p>`,
+    });
+}
+
+export async function openRamDialog(rammer = null) {
+    const subject = rammer ?? canvas.tokens?.controlled?.[0]?.actor;
+    if (subject?.type !== 'vehicle') { ui.notifications?.warn('Select a vehicle to Ram with.'); return; }
+    const target = [...(game.user?.targets ?? [])][0]?.actor ?? null;
+    const content = `<form class="rt-ram" autocomplete="off"><div class="form-group"><label><input type="checkbox" name="twice"/> Moved twice tactical speed (2d10)</label></div></form>`;
+    const DialogV2 = foundry.applications?.api?.DialogV2;
+    if (DialogV2) {
+        await DialogV2.prompt({
+            window: { title: `Ram — ${subject.name}${target ? ' → ' + target.name : ''}` },
+            content,
+            ok: { label: 'Ram', callback: (_e, btn) => vehicleRam(subject, target, btn.form.twice.checked) },
+        });
+    } else {
+        await vehicleRam(subject, target, false);
+    }
+}
