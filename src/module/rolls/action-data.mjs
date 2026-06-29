@@ -11,7 +11,7 @@ import { RogueTraderSettings } from '../rogue-trader-settings.mjs';
  * Roll the named RollTable from the system's `tables` compendium and return
  * the result text. Returns null if the table or compendium can't be located.
  */
-async function drawFromTable(tableName) {
+async function drawFromTable(tableName, modifier = 0) {
     try {
         const pack = game.packs.get(`${SYSTEM_ID}.tables`);
         if (!pack) return null;
@@ -20,7 +20,9 @@ async function drawFromTable(tableName) {
         if (!entry) return null;
         const table = await pack.getDocument(entry._id);
         if (!table) return null;
-        const draw = await table.roll();
+        // A positive modifier pushes the d100 toward the higher (more dangerous) rows — RT's
+        // Push / Sustaining modifiers to the Psychic Phenomena roll (QA-039).
+        const draw = modifier ? await table.roll({ roll: new Roll(`1d100 + ${modifier}`) }) : await table.roll();
         const results = draw?.results ?? [];
         return results.map(r => r.text ?? r.description ?? '').filter(Boolean).join(' ');
     } catch (err) {
@@ -47,6 +49,9 @@ export class ActionData {
 
     async checkForPerils() {
         if (!this.rollData.power) return;
+        // Navigators never roll for Psychic Phenomena or Perils of the Warp (RT Core p.180).
+        // Their powers are a separate discipline that doesn't draw on the same warp channel. (QA-041.)
+        if (/navigator/i.test(this.rollData.power.system?.discipline ?? '')) return;
         const rating = this.rollData.sourceActor.psy.rating ?? 0;
         const pr = this.rollData.pr ?? 0;
         const isDoubles = /^(.)\1+$/.test(this.rollData.roll.total);
@@ -70,9 +75,23 @@ export class ActionData {
         }
 
         if (triggerPhenomena) {
-            const phenom = await drawFromTable('Psychic Phenomena');
+            // Push makes the Phenomena roll progressively more dangerous (RT Core p.157 Table
+            // 6-1): +5 per rating pushed for a Sanctioned psyker, +10 for a Renegade/Unsanctioned
+            // one. Sustaining other powers adds a further +10. The harder you Push, the worse the
+            // expected result. (QA-039.)
+            let phenomBonus = 0;
+            if (pr > rating) {
+                const pushed = pr - rating;
+                const psyClass = String(this.rollData.sourceActor.system?.psy?.class ?? '').toLowerCase();
+                const renegade = psyClass === 'unsanctioned' || psyClass === 'unbound' || psyClass === 'renegade';
+                phenomBonus += pushed * (renegade ? 10 : 5);
+            }
+            const sustained = Number(this.rollData.sourceActor.system?.psy?.sustained ?? 0);
+            if (sustained > 0) phenomBonus += 10;
+            const phenom = await drawFromTable('Psychic Phenomena', phenomBonus);
             const text = phenom ? `The warp convulses with energy! ${phenom}` : 'The warp convulses with energy! — roll Psychic Phenomena manually.';
-            this.addEffect('Psychic Phenomena', text + (label ? ` (${label})` : ''));
+            const modNote = phenomBonus ? ` [+${phenomBonus} to the roll]` : '';
+            this.addEffect('Psychic Phenomena', text + (label ? ` (${label})` : '') + modNote);
             // A 75+ Psychic Phenomena result escalates to Perils of the Warp (RT Core
             // p.157 — the 75+ row says "roll on Table 6-3 instead").
             if (phenom && /perils of the warp/i.test(phenom)) {

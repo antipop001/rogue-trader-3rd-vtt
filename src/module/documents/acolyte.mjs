@@ -935,7 +935,29 @@ export class RogueTraderAcolyte extends RogueTraderBaseActor {
         let target = skill.current ?? 0;
         if (this.system.combat?.guardedAttack) target += 10;   // Guarded Attack +10 (QA-071)
         const result = await this.rollCheck(target);
-        return { attempted: true, success: result.success, dos: result.dos, roll: result.roll.total, target };
+
+        // Power Field (RT Core p.142): on a successful Parry with a Power-Field weapon, there is
+        // a 75% chance to destroy the attacker's weapon — unless that weapon also has a power
+        // field (the GM confirms that from the attacker's gear). Resolve the 75% and post a
+        // note; the parry result itself is unchanged. (QA-017.)
+        let powerFieldDestroy = null;
+        if (type === 'parry' && result.success) {
+            const meleeWeapon = this.items.find(i => i.type === 'weapon' && i.isMelee && i.system.equipped);
+            const hasPowerField = meleeWeapon && (
+                meleeWeapon.items?.some(it => it.isAttackSpecial && it.name === 'Power Field')
+                || meleeWeapon.system.special?.powerField
+            );
+            if (hasPowerField) {
+                powerFieldDestroy = (await new Roll('1d100').evaluate()).total <= 75;
+                await ChatMessage.create({
+                    speaker: ChatMessage.getSpeaker({ actor: this }),
+                    content: `<p><strong>${meleeWeapon.name}</strong> (Power Field) parries — `
+                        + `${powerFieldDestroy ? "<strong>destroys the attacker's weapon</strong>" : "the attacker's weapon survives"} `
+                        + `(75% to destroy, unless that weapon also has a power field).</p>`,
+                });
+            }
+        }
+        return { attempted: true, success: result.success, dos: result.dos, roll: result.roll.total, target, powerFieldDestroy };
     }
 
     async opposedTest(rollCheckSource, rollCheckTarget) {

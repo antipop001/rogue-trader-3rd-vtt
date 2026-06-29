@@ -144,3 +144,13 @@ QA-083 | tables.yml → AUTHORED 3 RollTables for the Insanity/Corruption degrad
 ## QA-040 — per-DoS psychic damage scaling
 - Engine hook added: a `perDoSDamage` Roll-formula field (on the shared `damage` template) is rolled once per Degree of Success (min 1 on a success) and added to the damage (src/module/rolls/damage-data.mjs). Banishment wired to `perDoSDamage: '1d10'` (ItS "1d10 per Degree of Success" variant; was a flat 1d10).
 - Remaining (different mechanisms, not done): per-Psy-Rating EFFECT scaling (Terrify +1 Fear level per 3 PR), tiered-success outcomes (Mind Scan 1/2/3/4-success), and Force Shards' per-DoS vs Barrage (per-2-DoS) tag. Triage per power for an RT-rules review.
+
+## Stragglers (0.8.16) — remaining per-power psychic scaling (data + RT-rules review)
+These use per-power mechanisms, not single engine fixes, and need an RT-rules review pass:
+- Navigator power TIER scaling (Novice/Adept/Master): +0/+10/+20 test bonus + tier-scaled effects (e.g. Lidless Stare 1d10+WPB → 2d10+WPB+Insanity → save-or-die). The 21 Navigator powers carry no tier data; the schema `tier`/`level` fields are unused. (Navigator Phenomena/Perils IMMUNITY is now done — QA-041.)
+- Terrify: +1 Fear level per 3 Psy Rating (per-rating EFFECT scaling).
+- Mind Scan: tiered 1/2/3/4-success outcomes.
+These are authoring tasks (set per-power tier/effect data + a small engine reader), deferred for review.
+
+## QA-019 — target-side weapon-effect resist tests: BY DESIGN
+Concussive/Toxic/Shocking/Snare/Flame etc. surface their resist Test + condition as outcome text and, since 0.8.1, as `[Apply: X]` buttons on the chat card. The resist roll stays a button (not auto-rolled) per the apply-from-outcomes design rule: the attacker's client can't write to the target. Not a bug.
