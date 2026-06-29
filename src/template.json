@@ -1280,6 +1280,9 @@
           "max": 0,
           "value": 0,
           "critical": 0
+        },
+        "combat": {
+          "movedThisTurn": 0
         }
       },
       "voidship": {

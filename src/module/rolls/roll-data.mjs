@@ -255,6 +255,15 @@ export class WeaponRollData extends RollData {
             || this.weapon?.items?.some?.((i) => i.isWeaponModification && i.name === 'Suspensors' && (i.system?.equipped || i.system?.enabled))
         );
         this.modifiers['unbraced'] = (this.isHeavyWeapon && !this.braced && !autoBraced) ? -30 : 0;
+        // Vehicle move-then-shoot (ItS Ch.V): firing from a vehicle that moved its tactical speed
+        // this turn is at −10 BS, twice its tactical speed −20. Read from the operator's active
+        // vehicle (set via the Operate Vehicle dialog). (QA-117 follow-up.)
+        if (this.weapon?.isRanged && this.sourceActor) {
+            const vid = this.sourceActor.system?.combat?.activeVehicleId;
+            const vehicle = vid ? game.actors?.get(vid) : null;
+            const moved = Number(vehicle?.system?.combat?.movedThisTurn) || 0;
+            this.modifiers['vehicle movement'] = moved >= 2 ? -20 : (moved === 1 ? -10 : 0);
+        }
         // Weapon Training: −20 WS/BS for a weapon the character isn't trained with (RT
         // Core p.142). PCs only — NPCs are assumed proficient with their listed weapons.
         // (QA-124.)
