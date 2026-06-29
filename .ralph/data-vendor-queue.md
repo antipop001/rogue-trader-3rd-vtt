@@ -154,3 +154,8 @@ These are authoring tasks (set per-power tier/effect data + a small engine reade
 
 ## QA-019 — target-side weapon-effect resist tests: BY DESIGN
 Concussive/Toxic/Shocking/Snare/Flame etc. surface their resist Test + condition as outcome text and, since 0.8.1, as `[Apply: X]` buttons on the chat card. The resist roll stays a button (not auto-rolled) per the apply-from-outcomes design rule: the attacker's client can't write to the target. Not a bug.
+
+## QA-111 — Cover (RT Core p.245) — interpretation note
+Implemented: hits to a concealed location (Body / Left Leg / Right Leg — the canon "general rule") are absorbed by the cover's AP first; Penetration reduces the cover's effective AP (canon: "it does affect cover"); only the excess reaches the target and is then resolved against the target's own armour + TB as normal; each hit that gets excess through erodes the cover's AP by 1. Matches the printed Titus/sandbags worked example exactly (8→7→6).
+- Interpretation choice for RT-rules review: when excess passes through, the weapon's Penetration ALSO still applies to the target's own worn armour (the "Penetration applies to each armour layer it meets" reading). The canon worked example has Pen 0, so it doesn't disambiguate whether Penetration should be "spent" on the cover. If review prefers the spent-on-cover reading, zero totalPenetration after cover absorbs.
+- Which locations count as concealed is the general rule (body+legs); per-situation exposure (e.g. only legs) is GM-set via the cover AP toggle, not modelled per-location.

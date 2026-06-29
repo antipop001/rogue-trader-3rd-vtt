@@ -20,6 +20,9 @@
             {{else}}
                 <h1>{{this.actor.name}}</h1>
                 {{#if hasDamage}}<h2>{{this.hit.location}} Hit</h2>{{/if}}
+                {{#if this.coverApplied}}
+                    <div class="rt-roll__label">Cover (AP {{this.coverAp}}) absorbed {{this.coverAbsorbed}}{{#if this.coverDegraded}} — cover AP reduced to {{this.coverApAfter}}{{/if}}</div>
+                {{/if}}
                 <div class="rt-roll__divider"></div>
 
                 <div class="rt-roll__row rt-roll__row--number">

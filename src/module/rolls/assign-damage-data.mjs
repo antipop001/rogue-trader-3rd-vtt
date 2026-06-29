@@ -111,6 +111,25 @@ export class AssignDamageData {
             let totalDamage = Number.parseInt(this.hit.totalDamage);
             let totalPenetration = Number.parseInt(this.hit.totalPenetration);
 
+            // Cover (RT Core p.245): if the struck location is concealed behind cover, the
+            // cover's Armour Points absorb the hit FIRST (Penetration does reduce cover AP),
+            // and only the excess reaches the target — then resolved against the target's own
+            // armour + TB as normal. Each hit that gets any excess damage through erodes the
+            // cover's AP by 1. General rule: a character firing around/over cover has body and
+            // legs concealed, so only Body/Leg hits are intercepted. (QA-111.)
+            const coverAp = Number(this.actor.system?.combat?.cover?.ap) || 0;
+            const struckLoc = String(this.hit?.location ?? '').replace(/\s/g, '').toUpperCase();
+            if (coverAp > 0 && ['BODY', 'LEFTLEG', 'RIGHTLEG'].includes(struckLoc)) {
+                const effectiveCover = Math.max(0, coverAp - totalPenetration);
+                const excess = Math.max(0, totalDamage - effectiveCover);
+                this.coverApplied = true;
+                this.coverAp = coverAp;
+                this.coverAbsorbed = totalDamage - excess;
+                this.coverDegraded = excess > 0;
+                this.coverApAfter = excess > 0 ? Math.max(0, coverAp - 1) : coverAp;
+                totalDamage = excess;
+            }
+
             // RT Core p.142: a Primitive weapon doubles the target's Armour Points
             // (before penetration is applied), unless the struck location's armour is
             // ALSO Primitive (BUG-013).
@@ -220,7 +239,10 @@ export class AssignDamageData {
                     },
                     fatigue: {
                         value: this.actor.system.fatigue.value + this.fatigueTaken
-                    }
+                    },
+                    // Persist cover degradation (QA-111): a hit that got excess damage through
+                    // erodes the cover's AP by 1.
+                    ...(this.coverApplied ? { combat: { cover: { ap: this.coverApAfter } } } : {})
                 }
             });
         }

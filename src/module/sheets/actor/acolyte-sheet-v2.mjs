@@ -22,6 +22,7 @@ export class AcolyteSheetV2 extends ActorContainerSheetV2 {
             openChargen: AcolyteSheetV2._onOpenChargen,
             fearTest: AcolyteSheetV2._onFearTest,
             grapple: AcolyteSheetV2._onGrapple,
+            takeCover: AcolyteSheetV2._onTakeCover,
             restDay: AcolyteSheetV2._onRestDay,
             restWeek: AcolyteSheetV2._onRestWeek,
             spendFate: AcolyteSheetV2._onSpendFate,
@@ -61,6 +62,12 @@ export class AcolyteSheetV2 extends ActorContainerSheetV2 {
                 label: 'Grapple',
                 action: 'grapple',
             });
+            // Take Cover control (QA-111) — set/clear the character's cover Armour Points.
+            controls.push({
+                icon: 'fa-solid fa-shield-halved',
+                label: 'Take Cover',
+                action: 'takeCover',
+            });
         }
         return controls;
     }
@@ -75,6 +82,10 @@ export class AcolyteSheetV2 extends ActorContainerSheetV2 {
 
     static _onGrapple() {
         game.rt.grapple(this.actor);
+    }
+
+    static _onTakeCover() {
+        game.rt.takeCover(this.actor);
     }
 
     static async _onRestDay() {

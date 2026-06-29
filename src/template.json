@@ -124,7 +124,10 @@
             }
           },
           "allOutAttack": false,
-          "guardedAttack": false
+          "guardedAttack": false,
+          "cover": {
+            "ap": 0
+          }
         },
         "fate": {
           "max": 0,
