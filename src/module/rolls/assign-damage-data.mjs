@@ -1,5 +1,6 @@
 import { hitDropdown } from '../rules/hit-locations.mjs';
 import { getCriticalDamage } from '../rules/critical-damage.mjs';
+import { getVehicleCritical } from '../rules/vehicle-critical-damage.mjs';
 import { damageTypeDropdown } from '../rules/damage-type.mjs';
 import { voidshipHitTypeDropdown } from '../rules/hit-type.mjs';
 import { voidshipHitLocationDropdown } from '../rules/voidship-hit-locations.mjs';
@@ -31,14 +32,31 @@ export class AssignDamageData {
     voidshipHit = false;
     voidshipHullDamage = 0;
 
+    // Vehicle damage (QA-115): facing Armour by arc → Structural Integrity, no TB.
+    isVehicle = false;
+    facing = 'front';
+    facingDropdown = { front: 'Front', side: 'Side', rear: 'Rear' };
+    facingArmour = 0;
+    integrityDamage = 0;
+    integrityCritical = 0;
+
     constructor(actor, hit) {
         this.actor = actor;
         this.hit = hit;
+        this.isVehicle = actor?.type === 'vehicle';
     }
 
     async update() {
         this.armour = 0;
         this.tb = 0;
+        // Vehicles have no per-location `system.armour` map — entering the creature loop below
+        // would `Object.entries(undefined)` and throw (QA-115). Read the selected facing's
+        // Armour Points instead (front/side/rear, stored as strings).
+        if (this.isVehicle) {
+            const apStr = this.actor.system?.[this.facing] ?? this.actor.system?.front ?? '0';
+            this.facingArmour = Number.parseInt(apStr) || 0;
+            return;
+        }
         const location = this.hit?.location;
         if(location) {
             for(const [name, locationArmour] of Object.entries(this.actor.system.armour)) {
@@ -105,6 +123,33 @@ export class AssignDamageData {
             for (let i = 0; i < critHits; i++) {
                 const component = targetedComponents[Math.floor(Math.random() * targetedComponents.length)];
                 await this.executeCritical(component);
+            }
+        } else if (this.isVehicle) {
+            // Vehicle damage (ItS Ch.V, QA-115): the struck facing's Armour reduces the hit
+            // (Penetration applies, as for personal armour; NO Toughness Bonus), and the result
+            // is applied to Structural Integrity. Overflow past current integrity accrues as
+            // integrity.critical (the producer the field previously lacked) and triggers the
+            // Vehicle Critical Hit chart (QA-117).
+            const totalDamage = Number.parseInt(this.hit.totalDamage);
+            const totalPenetration = Number.parseInt(this.hit.totalPenetration);
+            let armour = this.ignoreArmour ? 0 : Math.max(0, this.facingArmour - totalPenetration);
+            const reduced = totalDamage - armour;
+            if (reduced > 0) {
+                const intVal = Number(this.actor.system.integrity?.value) || 0;
+                if (intVal >= reduced) {
+                    this.integrityDamage = reduced;
+                } else {
+                    this.integrityDamage = intVal;
+                    this.integrityCritical = reduced - intVal;
+                    this.hasCriticalDamage = true;
+                }
+                this.damageTaken = this.integrityDamage;
+                this.hasDamage = this.integrityDamage > 0;
+            }
+            if (this.integrityCritical > 0) {
+                // Cumulative chart (ItS Table 5-2): index by the vehicle's TOTAL critical damage.
+                const cumulative = (Number(this.actor.system.integrity?.critical) || 0) + this.integrityCritical;
+                this.criticalEffect = getVehicleCritical(cumulative);
             }
         } else {
 
@@ -230,6 +275,17 @@ export class AssignDamageData {
                     }
                 }
             });
+        } else if (this.isVehicle) {
+            // Vehicle writeback (QA-115): Structural Integrity, with overflow accruing to
+            // integrity.critical (the cumulative Vehicle Critical Hit total).
+            await this.actor.update({
+                system: {
+                    integrity: {
+                        value: (Number(this.actor.system.integrity?.value) || 0) - this.integrityDamage,
+                        critical: (Number(this.actor.system.integrity?.critical) || 0) + this.integrityCritical,
+                    }
+                }
+            });
         } else {
             await this.actor.update({
                 system: {
@@ -251,7 +307,7 @@ export class AssignDamageData {
         // GM-side on the live target with write permission, so auto-apply the conditions the
         // crit text inflicts (Blood Loss, Stunned, Prone, Blinded, On Fire …). Use this.actor
         // directly — never re-fetch by id (BUG-005). Non-voidship targets only.
-        if (!this.voidshipHit && this.criticalEffect && this.actor?.isOwner) {
+        if (!this.voidshipHit && !this.isVehicle && this.criticalEffect && this.actor?.isOwner) {
             for (const id of conditionsFromCriticalText(this.criticalEffect)) {
                 if (!this.actor.statuses?.has(id)) {
                     await this.actor.toggleStatusEffect(id, { active: true });

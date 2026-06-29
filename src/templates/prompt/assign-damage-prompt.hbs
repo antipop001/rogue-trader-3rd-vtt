@@ -47,6 +47,50 @@
                         </select>
                     </div>
                 </div>
+            {{else}}{{#if this.isVehicle}}
+                <div class="rt-panel rt-grid-col-6">
+                    <div class="rt-field__wrapper">
+                        <span class="rt-field__span">Vehicle</span>
+                        <span class="rt-field__span">{{this.actor.name}}</span>
+                    </div>
+                    <div class="rt-field__wrapper">
+                        <span class="rt-field__span">Structural Integrity</span>
+                        <span class="rt-field__span">{{this.actor.system.integrity.value}} / {{this.actor.system.integrity.max}}</span>
+                    </div>
+                    <div class="rt-field__wrapper">
+                        <span class="rt-field__span">Critical</span>
+                        <span class="rt-field__span">{{this.actor.system.integrity.critical}}</span>
+                    </div>
+                </div>
+                <div class="rt-panel rt-grid-col-6">
+                    <div class="rt-header">
+                        <div class="rt-header__info">
+                            <div class="rt-header__item-wrapper--span-4 rt-header__borderless">
+                                <span class="rt-header__subtitle">Damage</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rt-field__wrapper">
+                        <span class="rt-field__span">Facing Hit</span>
+                        <select class="rt-field__input" name="facing" id="facing">
+                            {{selectOptions facingDropdown selected=this.facing}}
+                        </select>
+                    </div>
+                    <div class="rt-field__wrapper">
+                        <span class="rt-field__span">Facing Armour</span>
+                        <span class="rt-field__span">{{this.facingArmour}}</span>
+                    </div>
+                    <div class="rt-field__wrapper">
+                        <span class="rt-field__span">Damage</span>
+                        <input class="rt-field__input" type="number" data-dtype="Number" name="hit.totalDamage"
+                               value="{{this.hit.totalDamage}}" />
+                    </div>
+                    <div class="rt-field__wrapper">
+                        <span class="rt-field__span">Penetration</span>
+                        <input class="rt-field__input" type="number" data-dtype="Number" name="hit.totalPenetration"
+                               value="{{this.hit.totalPenetration}}" />
+                    </div>
+                </div>
             {{else}}
                 <div class="rt-panel rt-grid-col-6">
                     <div class="rt-field__wrapper">
@@ -115,7 +159,7 @@
                                value="{{this.tb}}" />
                     </div>
                 </div>
-            {{/if}}
+            {{/if}}{{/if}}
         </div>
     </form>
 </div>

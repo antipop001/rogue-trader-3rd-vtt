@@ -17,6 +17,32 @@
                     <span>Hull Damage</span>
                 </div>
                 <div class="rt-roll__label">{{this.criticalEffect}}</div>
+            {{else}}{{#if this.isVehicle}}
+                <h1>{{this.actor.name}}</h1>
+                <h2>{{this.facing}} facing hit</h2>
+                <div class="rt-roll__divider"></div>
+                <div class="rt-roll__row rt-roll__row--number">
+                    <div class="rt-roll__label">Integrity</div>
+                    <div class="rt-roll__value">{{this.actor.system.integrity.value}}
+                        / {{this.actor.system.integrity.max}}</div>
+                </div>
+                <div class="rt-roll__row rt-roll__row--number">
+                    <div class="rt-roll__label">Critical</div>
+                    <div class="rt-roll__value">{{this.actor.system.integrity.critical}}</div>
+                </div>
+                {{#if this.hasDamage}}
+                    <div class="rt-roll__fail">
+                        <span>{{this.integrityDamage}}</span>
+                        <span>Integrity Damage</span>
+                    </div>
+                {{/if}}
+                {{#if this.hasCriticalDamage}}
+                    <div class="rt-roll__fail">
+                        <span>{{this.integrityCritical}}</span>
+                        <span>Critical Damage</span>
+                    </div>
+                    <div class="rt-roll__label">{{this.criticalEffect}}</div>
+                {{/if}}
             {{else}}
                 <h1>{{this.actor.name}}</h1>
                 {{#if hasDamage}}<h2>{{this.hit.location}} Hit</h2>{{/if}}
@@ -59,7 +85,7 @@
                     </div>
                     <div class="rt-roll__label">{{this.criticalEffect}}</div>
                 {{/if}}
-            {{/if}}
+            {{/if}}{{/if}}
         </div>
     </div>
 </div>
