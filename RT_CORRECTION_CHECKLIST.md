@@ -9,6 +9,12 @@ Priorities:
 
 Tick a box once done. Notes in italics belong inline.
 
+> **STATUS (0.8.23, 2026-06-29):** this checklist is **historical** — it captured the original
+> 2026-05-13 audit. The work it scoped (combat-math fixes, the RT-canon content rebuild, and the
+> Path A vs Path B character-creation decision → Origin Path) all shipped, and the much larger
+> follow-on QA audit (`QA_FINDINGS.md`, 160 findings) has since been fully worked down through
+> release 0.8.23. See `CLAUDE.md` for the authoritative per-version changelog.
+
 ---
 
 ## P0 — Mechanical correctness — DONE

@@ -5,6 +5,15 @@ is verified against the source (file:line read) + RT canon. This is a triage lis
 human / a later fix-loop — confirmed P0/P1 engine bugs get promoted to `BUGS.md`.
 Already-fixed bugs live in `BUGS.md` (BUG-001…010) and are NOT re-filed here.
 
+> **STATUS (as of 0.8.23, 2026-06-29): this audit has been fully worked down.** All 160
+> findings have been triaged and addressed across releases 0.8.0–0.8.23 — fixed, built as a
+> new subsystem, or confirmed not-a-bug (see the per-version changelog in `CLAUDE.md`). The
+> only residual work is a human **RT-rules review pass** over authored/extracted content
+> (critical tables, ship range-band thresholds & firing arcs, drug comedowns, Endeavour
+> reward spans, NPC stat extractions), logged to `.ralph/data-vendor-queue.md`. The
+> individual entries below are kept verbatim as the audit record; their fix status is
+> reflected in the changelog rather than edited inline.
+
 Format per finding:
 ```
 ### QA-<NNN> — <title>

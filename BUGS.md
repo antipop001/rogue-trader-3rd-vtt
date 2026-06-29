@@ -4,6 +4,10 @@ Tracked here rather than in `fix_plan.md`: the `ralph/backgrounds` loop is scope
 compendium content, and its gate (`build:check` + `tests/chargen`) can't verify
 engine/roll fixes. Fix these directly, or in a dedicated follow-up loop.
 
+> **STATUS: all bugs below are ✅ FIXED** — BUG-001…013 landed in **0.8.0** (each entry carries
+> its inline fix + live-verify note). This file is retained as the historical record; new
+> correctness work is tracked in `QA_FINDINGS.md` and the `CLAUDE.md` changelog.
+
 ## BUG-001 — Degrees of Failure (and Success) inflated by 1
 - **Status: ✅ DoF FIXED 2026-06-23** — dropped the `1 +` at `action-data.mjs:278`
   (DoF = tens difference). Verified: 61 vs 52 → 1, 92 vs 62 → 3; build + node tests
