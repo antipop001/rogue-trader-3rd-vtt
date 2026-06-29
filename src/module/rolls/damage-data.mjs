@@ -334,8 +334,11 @@ export class Hit {
                 }
             }
 
-            // Add Accurate — RT corebook p.143: +1d10 per 2 DoS when Aimed, max +2d10
-            if (attackData.rollData.action === 'Standard Attack' || attackData.rollData.action === 'Called Shot') {
+            // Add Accurate — RT corebook p.143: when firing a single shot from a single
+            // BASIC weapon with Accurate benefiting from Aim, +1d10 per 2 DoS, max +2d10.
+            // The bonus damage is Basic-class only (Pistols/Heavy with Accurate don't get it).
+            if (actionItem.system.class === 'Basic'
+                && (attackData.rollData.action === 'Standard Attack' || attackData.rollData.action === 'Called Shot')) {
                 if (attackData.rollData.hasAttackSpecial('Accurate') && attackData.rollData.modifiers.aim > 0) {
                     const dice = Math.min(Math.floor(attackData.rollData.dos / 2), 2);
                     if (dice > 0) {
