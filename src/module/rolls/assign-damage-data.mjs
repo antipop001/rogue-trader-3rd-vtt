@@ -227,8 +227,8 @@ export class AssignDamageData {
 
                 // Handle True Grit Talent
                 if (this.actor.hasTalent('True Grit')) {
-                    // Reduces by Toughness Bonus to minimum of 1
-                    this.criticalDamageTaken = this.criticalDamageTaken - this.tb < 1 ? 1 : this.criticalDamageTaken - this.tb;
+                    // RT Core p.96: halve the Critical Damage (rounding up). (Was a DH2 TB-subtract.)
+                    this.criticalDamageTaken = Math.ceil(this.criticalDamageTaken / 2);
                 }
 
                 this.criticalEffect = getCriticalDamage(this.hit.damageType, this.hit.location, this.actor.system.wounds.critical + this.criticalDamageTaken);
