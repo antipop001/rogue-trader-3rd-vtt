@@ -89,6 +89,15 @@ export class VoidshipSheet extends ActorContainerSheet {
             case 'manoeuvre':
                 await game.rt.shipManoeuvre(this.actor, 'full', 0);
                 break;
+            case 'comeAbout':
+                await game.rt.shipComeAbout(this.actor);
+                break;
+            case 'disengage':
+                await game.rt.shipDisengage(this.actor);
+                break;
+            case 'ram':
+                await game.rt.shipRam(this.actor);
+                break;
         }
     }
 }

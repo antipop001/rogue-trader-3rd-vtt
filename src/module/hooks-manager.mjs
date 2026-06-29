@@ -49,8 +49,8 @@ import { openEndeavoursDialog } from './rules/endeavours.mjs';
 import { openFearDialog } from './rules/fear.mjs';
 import { openGrappleDialog } from './rules/grapple.mjs';
 import { openCoverDialog } from './rules/cover.mjs';
-import { openVehicleDialog, openRamDialog } from './rules/vehicle-ops.mjs';
-import { rollShipInitiative, shipManoeuvre } from './rules/ship-combat.mjs';
+import { openVehicleDialog, openRamDialog, vehicleDodge } from './rules/vehicle-ops.mjs';
+import { rollShipInitiative, shipManoeuvre, shipRam, shipComeAbout, shipDisengage } from './rules/ship-combat.mjs';
 import { processDegradation } from './rules/degradation.mjs';
 import { RT_CONDITIONS } from './rules/conditions.mjs';
 import { ChargenWizard } from './applications/chargen-wizard.mjs';
@@ -117,7 +117,11 @@ Enable Debug with: game.rt.debug = true
             operateVehicle: openVehicleDialog,
             shipInitiative: rollShipInitiative,
             shipManoeuvre: (ship, fraction, degrees) => shipManoeuvre(ship ?? canvas.tokens?.controlled?.[0]?.actor, fraction, degrees),
+            shipRam: (ship) => shipRam(ship ?? canvas.tokens?.controlled?.[0]?.actor, [...(game.user?.targets ?? [])][0]?.actor ?? null),
+            shipComeAbout: (ship) => shipComeAbout(ship ?? canvas.tokens?.controlled?.[0]?.actor),
+            shipDisengage: (ship) => shipDisengage(ship ?? canvas.tokens?.controlled?.[0]?.actor),
             vehicleRam: openRamDialog,
+            vehicleDodge: vehicleDodge,
         };
 
         //CONFIG.debug.hooks = true;

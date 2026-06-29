@@ -264,6 +264,9 @@ export class WeaponRollData extends RollData {
             const moved = Number(vehicle?.system?.combat?.movedThisTurn) || 0;
             this.modifiers['vehicle movement'] = moved >= 2 ? -20 : (moved === 1 ? -10 : 0);
         }
+        // Ship VU range-band BS modifier (QA-047): set on the rollData by the Strategic-Round
+        // Shooting check; re-applied here so it survives the dialog's repeated update() passes.
+        if (this.shipRangeModifier) this.modifiers['range band'] = Number(this.shipRangeModifier) || 0;
         // Weapon Training: −20 WS/BS for a weapon the character isn't trained with (RT
         // Core p.142). PCs only — NPCs are assumed proficient with their listed weapons.
         // (QA-124.)

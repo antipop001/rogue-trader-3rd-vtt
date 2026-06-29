@@ -159,14 +159,76 @@ export async function shipShootingCheck(ship, weapon) {
     const res = shipShootingResolution({ distanceVU, weaponRangeVU, slot, targetArc });
     if (!res.canFire) {
         ui.notifications?.warn(res.reason);
-        return false;
+        return { ok: false, modifier: 0 };
     }
-    if (!(await spendShipShooting(ship))) return false;
+    if (!(await spendShipShooting(ship))) return { ok: false, modifier: 0 };
     const modTxt = res.modifier >= 0 ? `+${res.modifier}` : `${res.modifier}`;
     await ChatMessage.create({
         user: game.user.id,
         speaker: ChatMessage.getSpeaker({ actor: ship }),
-        content: `<p><strong>${ship.name} fires ${weapon.name}</strong> into the ${targetArc} arc at ${distanceVU} VU — <strong>${res.band}</strong> range (${modTxt} BS). Apply the modifier to the attack roll.</p>`,
+        content: `<p><strong>${ship.name} fires ${weapon.name}</strong> into the ${targetArc} arc at ${distanceVU} VU — <strong>${res.band}</strong> range (${modTxt} BS, applied to the attack).</p>`,
     });
-    return true;
+    return { ok: true, modifier: res.modifier };
+}
+
+/** Ramming dice by hull size (RT Core p.219): transport/raider 1d5, frigate 1d10, light cruiser 2d5, cruiser 2d10. */
+export function shipRamDice(shipType) {
+    const t = String(shipType ?? '').toLowerCase();
+    if (t.includes('cruiser') && t.includes('light')) return '2d5';
+    if (t.includes('cruiser')) return '2d10';
+    if (t.includes('frigate')) return '1d10';
+    return '1d5'; // transports, raiders, and equivalents
+}
+
+/**
+ * Ram (RT Core p.219): within 1 VU and bow-on, a ship may give up its Shooting Action to ram.
+ * Damage = prow Armour + the hull-size die (ignoring void shields); the rammer takes the target's
+ * Armour + 1d5 to its own prow (also ignoring shields). The Hard (−20) Pilot test is the
+ * helmsman's to roll; this resolves and announces the damage figures. (QA-047 follow-up.)
+ */
+export async function shipRam(rammer, target) {
+    if (rammer?.type !== 'voidship') { ui.notifications?.warn('Select a void-ship to ram with.'); return; }
+    if (!(await spendShipShooting(rammer))) return; // ramming uses the Shooting Action
+    const prowArmour = Number(rammer.system?.armour?.prow ?? rammer.system?.armour) || 0;
+    const dice = shipRamDice(rammer.system?.shipType);
+    const dmg = await new Roll(`${prowArmour} + ${dice}`).evaluate();
+    let selfLine = '';
+    if (target?.type === 'voidship') {
+        const targetArmour = Number(target.system?.armour?.prow ?? target.system?.armour) || 0;
+        const self = await new Roll(`${targetArmour} + 1d5`).evaluate();
+        selfLine = `<br/>${rammer.name} takes <strong>${self.total}</strong> to its prow (target Armour ${targetArmour} + 1d5, ignoring shields).`;
+    }
+    await ChatMessage.create({
+        user: game.user.id,
+        speaker: ChatMessage.getSpeaker({ actor: rammer }),
+        content: `<p><strong>${rammer.name} rams${target ? ' ' + target.name : ''}!</strong> Helmsman makes a Hard (−20) Pilot (Space Craft)+Manoeuvrability Test; on a hit it deals <strong>${dmg.total}</strong> (prow Armour ${prowArmour} + ${dice}, ignoring void shields).${selfLine}</p>`,
+    });
+}
+
+/** Come About — a Manoeuvre Action (Adjust Speed & Bearing, Hard −20) to turn earlier than normal. */
+export async function shipComeAbout(ship) {
+    if (ship?.type !== 'voidship') return;
+    const turn = ship.system?.combat?.strategicTurn ?? blankTurn();
+    if (turn.manoeuvre) { ui.notifications?.warn(`${ship.name} has already made its Manoeuvre Action this Turn.`); return; }
+    const moved = shipManoeuvreDistance(ship.system?.speed, 'full');
+    await ship.update({ 'system.combat.strategicTurn': { ...turn, manoeuvre: true, movedVU: moved } });
+    await ChatMessage.create({
+        user: game.user.id,
+        speaker: ChatMessage.getSpeaker({ actor: ship }),
+        content: `<p><strong>${ship.name} — Come About</strong> (Adjust Speed &amp; Bearing): helmsman makes a Hard (−20) Pilot (Space Craft)+Manoeuvrability Test. On a success (and per DoS) the ship may turn after moving 1 VU less, and adjust its ${moved} VU move by ±1.</p>`,
+    });
+}
+
+/** Disengage — a Manoeuvre Action to flee combat (RT Core p.219): not within 8 VU of an enemy; no firing this turn. */
+export async function shipDisengage(ship) {
+    if (ship?.type !== 'voidship') return;
+    const turn = ship.system?.combat?.strategicTurn ?? blankTurn();
+    if (turn.manoeuvre) { ui.notifications?.warn(`${ship.name} has already made its Manoeuvre Action this Turn.`); return; }
+    // Disengaging forfeits the Shooting Action and spends the Manoeuvre.
+    await ship.update({ 'system.combat.strategicTurn': { ...turn, manoeuvre: true, shooting: true, movedVU: shipManoeuvreDistance(ship.system?.speed, 'full') } });
+    await ChatMessage.create({
+        user: game.user.id,
+        speaker: ChatMessage.getSpeaker({ actor: ship }),
+        content: `<p><strong>${ship.name} attempts to Disengage</strong> (may not be within 8 VU of any enemy): helmsman makes a Challenging (+0) Pilot (Space Craft)+Manoeuvrability Test, opposed by each enemy within 20 VU (Detection+Scrutiny). Beat them all to leave combat. The ship fires no weapons this turn.</p>`,
+    });
 }

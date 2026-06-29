@@ -75,6 +75,33 @@ export async function vehicleRam(rammer, target, twiceSpeed = false) {
     });
 }
 
+// Vehicle Dodge Reaction (ItS Ch.V): only if the vehicle moved at least its tactical speed; the
+// driver makes a Drive Test (at a penalty equal to the vehicle's size modifier — GM-applied) and
+// avoids one shot from a single source per success (1 + DoS). Fail by 5+ → crash. (QA-117 follow-up.)
+export async function vehicleDodge(driver = null) {
+    const subject = driver ?? game.user.character ?? canvas.tokens?.controlled?.[0]?.actor;
+    if (!subject) { ui.notifications?.warn('Select the driver to perform a vehicle Dodge.'); return; }
+    const vid = subject.system?.combat?.activeVehicleId;
+    const vehicle = vid ? game.actors?.get(vid) : null;
+    if (!vehicle) { ui.notifications?.warn('Set an active vehicle (Operate Vehicle) before dodging.'); return; }
+    if ((Number(vehicle.system?.combat?.movedThisTurn) || 0) < 1) {
+        ui.notifications?.warn('A vehicle Dodge requires the vehicle to have moved at least its tactical speed this turn.');
+        return;
+    }
+    const base = Number(subject.system?.skills?.drive?.current) || 0;
+    const man = Number(vehicle.system?.manoeuverability) || 0;
+    const target = base + man;
+    const r = await subject.rollCheck(target);
+    const avoided = r.success ? 1 + r.dos : 0;
+    const crash = !r.success && r.dof >= 5 ? ' <strong>Failed by 5+ — the vehicle crashes!</strong>' : '';
+    await ChatMessage.create({
+        user: game.user.id,
+        speaker: ChatMessage.getSpeaker({ actor: subject }),
+        content: `<p><strong>${subject.name} — Vehicle Dodge</strong> (Drive ${target}${man ? `, incl. +${man} Manoeuvrability` : ''}): rolled ${r.roll.total} → `
+            + `${r.success ? `<strong>avoids ${avoided} shot(s)</strong> from a single source` : 'fails'}. Apply the vehicle's size penalty to the Test.${crash}</p>`,
+    });
+}
+
 export async function openRamDialog(rammer = null) {
     const subject = rammer ?? canvas.tokens?.controlled?.[0]?.actor;
     if (subject?.type !== 'vehicle') { ui.notifications?.warn('Select a vehicle to Ram with.'); return; }

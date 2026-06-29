@@ -202,9 +202,11 @@ export class RogueTraderVoidship extends RogueTraderBaseActor {
                     return;
                 }
                 // Strategic-Round Shooting check (QA-047): firing arc + VU range band + the
-                // once-per-Turn Shooting Action. Aborts an out-of-arc / out-of-range shot.
-                if (!(await shipShootingCheck(this, item))) return;
-                await DHTargetedActionManager.performShipWeaponAttack(this, null, item);
+                // once-per-Turn Shooting Action. Aborts an out-of-arc / out-of-range shot and
+                // passes the range-band BS modifier into the attack.
+                const shotCheck = await shipShootingCheck(this, item);
+                if (!shotCheck?.ok) return;
+                await DHTargetedActionManager.performShipWeaponAttack(this, null, item, shotCheck.modifier);
                 return;
             default:
                 await DHBasicActionManager.sendItemVocalizeChat({

@@ -138,7 +138,7 @@ export class TargetedActionManager {
         };
     }
 
-    async performShipWeaponAttack(source = null, target = null, weapon = null) {
+    async performShipWeaponAttack(source = null, target = null, weapon = null, rangeModifier = 0) {
         game.rt.log('performShipWeaponAttack', { source, target, weapon });
         const rollData = this.createSourceAndTargetData(source, target);
         if (!rollData) return;
@@ -155,6 +155,9 @@ export class TargetedActionManager {
         weaponRollData.sourceActor = rollData.actor;
         weaponRollData.targetActor = rollData.target;
         weaponRollData.distance = rollData.distance;
+        // VU range-band BS modifier from the Strategic-Round Shooting check (QA-047). Stored as a
+        // named field so update() re-applies it on every re-render.
+        weaponRollData.shipRangeModifier = Number(rangeModifier) || 0;
         await prepareShipWeaponRoll(weaponAttack);
     }
 
