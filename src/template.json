@@ -1341,6 +1341,13 @@
           "helm": 0,
           "boarding": 0,
           "augurs": 0
+        },
+        "combat": {
+          "strategicTurn": {
+            "manoeuvre": false,
+            "shooting": false,
+            "movedVU": 0
+          }
         }
       }
     },

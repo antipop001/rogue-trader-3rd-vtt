@@ -83,6 +83,12 @@ export class VoidshipSheet extends ActorContainerSheet {
             case 'crew':
                 await this.actor.rollCrew("Crew", 0);
                 break;
+            case 'initiative':
+                await game.rt.shipInitiative();
+                break;
+            case 'manoeuvre':
+                await game.rt.shipManoeuvre(this.actor, 'full', 0);
+                break;
         }
     }
 }

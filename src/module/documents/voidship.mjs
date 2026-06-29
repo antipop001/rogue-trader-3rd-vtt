@@ -4,6 +4,7 @@ import { SimpleSkillData } from '../rolls/action-data.mjs';
 import { prepareCrewRoll, prepareTurretsRoll, prepareBoardingRoll} from '../prompts/crew-prompt.mjs';
 import { DHBasicActionManager } from '../actions/basic-action-manager.mjs';
 import { roll1d100, degreesOfSuccess, degreesOfFailure, getOpposedDegrees, boardingCommandBonus } from '../rolls/roll-helpers.mjs';
+import { shipShootingCheck } from '../rules/ship-combat.mjs';
 
 export class RogueTraderVoidship extends RogueTraderBaseActor {
 
@@ -200,6 +201,9 @@ export class RogueTraderVoidship extends RogueTraderBaseActor {
                     ui.notifications.warn('Weapon is Destroyed and cannot shoot!');
                     return;
                 }
+                // Strategic-Round Shooting check (QA-047): firing arc + VU range band + the
+                // once-per-Turn Shooting Action. Aborts an out-of-arc / out-of-range shot.
+                if (!(await shipShootingCheck(this, item))) return;
                 await DHTargetedActionManager.performShipWeaponAttack(this, null, item);
                 return;
             default:

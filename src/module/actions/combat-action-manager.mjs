@@ -1,5 +1,6 @@
 import { handleBleeding, handleOnFire } from '../rules/active-effects.mjs';
 import { checkDrugExpiries } from '../rules/drugs.mjs';
+import { resetStrategicTurn } from '../rules/ship-combat.mjs';
 
 export class CombatActionManager {
     combatTurnHook;
@@ -48,6 +49,8 @@ export class CombatActionManager {
                 }
                 // Expire any round-duration drug effects that have elapsed (QA-145).
                 await checkDrugExpiries(actor);
+                // Reset a void-ship's Strategic-Turn action economy at the start of its turn (QA-047).
+                if (actor.type === 'voidship') await resetStrategicTurn(actor);
                 const statuses = actor.statuses ?? new Set();
                 const hasLegacy = (name) => actor.effects?.some((e) => e.name === name);
                 if (statuses.has('onFire') || hasLegacy('Burning')) {
