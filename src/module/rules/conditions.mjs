@@ -35,10 +35,24 @@ export const RT_CONDITIONS = [
 export function conditionToHitModifier(statuses, isMelee = false) {
     const s = statuses instanceof Set ? statuses : new Set(Array.from(statuses ?? []));
     let mod = 0;
-    if (s.has('unaware') || s.has('helpless')) mod += 30;
+    if (s.has('unaware') || isHelplessTarget(s)) mod += 30;
     else if (s.has('stunned')) mod += 20;
     if (s.has('prone')) mod += isMelee ? 10 : -10;
     return mod;
+}
+
+/**
+ * Whether a target counts as helpless for combat purposes. RT Core p.248 defines automatic
+ * hits / coup-de-grace against "a sleeping, unconscious or otherwise helpless target"; p.250
+ * (CoreBook-201-401.pdf/markdown.md:2948) confirms "An unconscious character ... is also
+ * treated as a helpless target (see page 248)." The system models `unconscious` as a status
+ * distinct from `helpless`, so both must be checked. (BUG-Q-220.)
+ * @param {Iterable<string>|Set<string>} statuses  the target's active status ids
+ * @returns {boolean}
+ */
+export function isHelplessTarget(statuses) {
+    const s = statuses instanceof Set ? statuses : new Set(Array.from(statuses ?? []));
+    return s.has('helpless') || s.has('unconscious');
 }
 
 /**
@@ -60,8 +74,9 @@ export function attackerConditionModifier(statuses, isRanged = false) {
  * Whether a Weapon Skill (melee) Test to hit automatically succeeds because the target is
  * helpless. RT Core p.248: "Weapon Skill Tests made to hit a sleeping, unconscious or
  * otherwise helpless target automatically succeed." Ranged (BS) shots do NOT auto-hit — they
- * only gain the +30 condition modifier from {@link conditionToHitModifier}. Keyed on the
- * `helpless` status to stay in lockstep with the coup-de-grace damage doubling
+ * only gain the +30 condition modifier from {@link conditionToHitModifier}. Counts both the
+ * `helpless` and `unconscious` statuses (an unconscious target is "treated as a helpless
+ * target", RT Core p.250), staying in lockstep with the coup-de-grace damage doubling
  * (damage-data.mjs). (BUG-Q-220.)
  * @param {boolean} isMelee  whether the attack is a Weapon Skill (melee) test
  * @param {Iterable<string>|Set<string>} statuses  the target's active status ids
@@ -69,8 +84,7 @@ export function attackerConditionModifier(statuses, isRanged = false) {
  */
 export function meleeAutoHitsHelpless(isMelee, statuses) {
     if (!isMelee) return false;
-    const s = statuses instanceof Set ? statuses : new Set(Array.from(statuses ?? []));
-    return s.has('helpless');
+    return isHelplessTarget(statuses);
 }
 
 /** Conditions that forbid spending Reactions (Dodge/Parry) entirely (RT Core p.244, 247). */

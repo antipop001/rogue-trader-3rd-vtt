@@ -3,7 +3,7 @@ import { calculateAmmoDamageBonuses, calculateAmmoPenetrationBonuses, calculateA
 import { getCriticalDamage } from '../rules/critical-damage.mjs';
 import { calculateWeaponModifiersDamageBonuses, calculateWeaponModifiersPenetrationBonuses } from '../rules/weapon-modifiers.mjs';
 import { weaponMasterBonus, critDamageBonus, brutalChargeBonus, unarmedDamageProfile } from './roll-helpers.mjs';
-import { conditionMeta } from '../rules/conditions.mjs';
+import { conditionMeta, isHelplessTarget } from '../rules/conditions.mjs';
 
 export class DamageData {
     template = '';
@@ -237,7 +237,7 @@ export class Hit {
         // results". Roll the weapon's damage a SECOND time and sum it; two natural 10s across
         // the two rolls make a Righteous Fury automatic (handled below). The to-hit already
         // auto-favours a Helpless target via the +30 condition modifier.
-        const helplessTarget = !!attackData.rollData.targetActor?.statuses?.has?.('helpless');
+        const helplessTarget = isHelplessTarget(attackData.rollData.targetActor?.statuses);
         const damageRolls = [this.damageRoll, ...bonusDamageRolls];
         if (helplessTarget) {
             this.damageRoll2 = new Roll(rollFormula, attackData.rollData);

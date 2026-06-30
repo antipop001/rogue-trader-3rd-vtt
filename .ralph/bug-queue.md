@@ -731,7 +731,7 @@ RT Core p.218 (Critical Hits): "If the number of Degrees of Success is equal to 
 - verify:
 
 ## BUG-Q-220 — Melee attacks against Helpless targets do not automatically hit
-- status: disputed
+- status: fixed
 - found-by: agy Gemini 3.1 Pro (High) · iter <RALPH_ITER>
 - area: rules
 - severity: P0 (wrong result in play)
@@ -740,3 +740,14 @@ RT Core p.218 (Critical Hits): "If the number of Degrees of Success is equal to 
 - gap: The engine only grants a +30 conditional bonus to hit helpless targets in melee, which means an attacker can still fail their Weapon Skill Test if they roll poorly. The rules mandate that Weapon Skill tests against helpless targets automatically succeed. (The automatic damage doubling is correctly handled in `damage-data.mjs`, but the hit itself is not guaranteed.)
 - fix: New pure helper `meleeAutoHitsHelpless(isMelee, statuses)` in `conditions.mjs:59` — true only for a melee (WS) attack against a target with the `helpless` status (keyed on `helpless` to stay in lockstep with the coup-de-grace damage doubling in `damage-data.mjs:240`; ranged BS shots only get the +30 condition modifier, not an auto-hit). Wired into `action-data.mjs:_calculateHit` (`:200`): after the normal target-number resolution, `if (meleeAutoHitsHelpless(weapon?.isMelee, targetActor?.statuses)) success = true`. DoS still derives from the roll below (clamped ≥0 → a bare success), so an auto-hit grants no extra degrees. New node test `tests/chargen/helpless_autohit.test.mjs` (4 cases). Gate green (`npm run build:check` exit 0; `npm test` 245/245, +4). Live-verified on rt-smoke via Playwright (page-context drove deployed `ActionData._calculateHit` with modifiedTarget=1): melee-vs-helpless 40/40 auto-hit; ranged-vs-helpless 0/40 forced (only nat-1 path); healthy-melee 1/40 (not forced).
 - verify: disputed: incomplete fix. The cited canon explicitly includes "unconscious" targets, and the system natively implements 'unconscious' as a distinct status effect (e.g. applied by fatigue, listed in REACTION_LOCKING). By strictly mirroring `damage-data.mjs` and keying only on `helpless`, the fix fails to auto-hit `unconscious` targets. `meleeAutoHitsHelpless`, along with the `conditionToHitModifier` +30 bonus and the `helplessTarget` damage doubling in `damage-data.mjs:240`, must all be expanded to check `statuses.has('helpless') || statuses.has('unconscious')`.
+- fix (dispute): DISPUTE UPHELD — canon confirms an unconscious target IS a helpless target (RT Core p.250, CoreBook-201-401.pdf/markdown.md:2948 "An unconscious character ... is also treated as a helpless target (see page 248)"). Added one shared pure helper `isHelplessTarget(statuses)` in `conditions.mjs:60` returning `helpless || unconscious`, and routed all three sites through it: (1) `meleeAutoHitsHelpless` (conditions.mjs:73) now returns `isHelplessTarget(statuses)` for melee; (2) the +30 Easy condition modifier in `conditionToHitModifier` (conditions.mjs:38) `s.has('helpless')` → `isHelplessTarget(s)`; (3) the coup-de-grace damage doubling in `damage-data.mjs:240` `statuses?.has('helpless')` → `isHelplessTarget(statuses)` (import added). Extended `tests/chargen/helpless_autohit.test.mjs` (+unconscious auto-hit, isHelplessTarget, +30-vs-unconscious cases). Gate green (`npm run build:check` exit 0; `npm test` 248/248, +3). Live-verified on rt-smoke via Playwright (page-context import of deployed conditions.mjs + drove `_calculateHit` logic): melee-vs-unconscious poor-roll(99)→auto-hit, melee-vs-helpless poor-roll→auto-hit, ranged-vs-unconscious→NOT forced, melee-vs-healthy→not forced; `isHelplessTarget(unconscious)`=true, `conditionToHitModifier(unconscious)`=+30.
+- verify:
+
+## BUG-Q-221 — Maintaining a single psychic power incorrectly applies a -1 Psy Rating penalty
+- status: open
+- found-by: agy Gemini 3.1 Pro (High) · iter 2
+- area: psychic
+- severity: P0 (wrong result in play)
+- evidence: `src/module/documents/acolyte.mjs:367` — `this.psy.currentRating = Math.max(0, this.psy.rating - this.psy.sustained);`
+- canon: `/mnt/project_data/RT/RT-DOCS/CoreBook-1-200.pdf/markdown.md:8064` (RT Core p.159) — "Maintaining two powers at the same time reduces the effective Psy Rating of both powers by 2. Maintaining three powers reduces the Psy Rating of all powers by 3 and so on."
+- gap: The `currentRating` calculation unconditionally subtracts the `sustained` count from the actor's base Psy Rating. Because of this, if an actor sustains a single power (`sustained` = 1), their effective Psy Rating is improperly reduced by 1. Canon dictates that the PR penalty only applies when maintaining *two or more* powers, and it is equal to the total number of powers maintained. Maintaining a single power has no penalty.
