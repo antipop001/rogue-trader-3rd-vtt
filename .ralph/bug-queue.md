@@ -134,7 +134,7 @@ checker runs elsewhere) syncs via git.
 - verify: confirmed: the rewrite correctly applies standard test logic (`success`, `dos`, `dof`) with auto-success/fail on natural 1/100, natively dropping down to the standard `{{#if success}}` branch in the chat card. Edge cases including missing targets perfectly match standard roll behavior.
 
 ## BUG-Q-170 — Voidship Boarding and Turret actions are incorrectly simulated as multiple d100 rolls instead of standard single RT tests
-- status: fixed
+- status: verified
 - found-by: agy Gemini 3.1 Pro (High) · iter 3
 - area: ship
 - severity: P0 (wrong result in play)
@@ -142,7 +142,7 @@ checker runs elsewhere) syncs via git.
 - canon: `/mnt/project_data/RT/RT-DOCS/CoreBook-201-401.pdf/markdown.md:990` (RT Core p.219) — boarding is a single opposed Command Test; `:1196-1198` (RT Core p.220) — turrets are a passive defensive RATING (−10 enemy Hit-and-Run Pilot / +10 own boarding Command), NOT an offensive to-hit action. (Note: the filer's "Turrets = single BS test, each DoS kills a torpedo/bomber" prescription is itself off-canon — RT Core has no such turret action.)
 - gap: The cited `_calculateVoidshipHits` "Boarding"/"Turrets" branches use a homebrew per-attack d100 loop. They are also DEAD CODE: the live sheet buttons route through `voidship.rollTurrets()` / `rollBoarding()` (rewritten to canon in 0.8.4, QA-147/148), and the only callers of the old branches (`prepareTurretsRoll`/`prepareBoardingRoll`) are imported but never invoked. The wrong mechanic survives only as a latent landmine that could be rewired.
 - fix: Removed the dead path so there is one canon-correct resolution source (matching the boarding/turret rewrite in 0.8.4). `src/module/rolls/action-data.mjs` — deleted the "Boarding" + "Turrets" homebrew d100-loop branches from `_calculateVoidshipHits` (kept only the live "Weapon" branch), and simplified `calculateResultVoidship()` to call the standard `_calculateVoidshipHit()` (crew Extended Action = standard RT Test, RT Core p.215). `src/module/prompts/crew-prompt.mjs` — deleted the now-orphan `prepareTurretsRoll`/`prepareBoardingRoll` dialog functions. `src/module/documents/voidship.mjs:4` — trimmed the import to `prepareCrewRoll` only. Live behaviour unchanged (turrets/boarding already resolved via `rollTurrets`/`rollBoarding`). Gate green (build:check exit 0, 206 node tests). Live-verified on rt-smoke via Playwright (page-context import): `crew-prompt` now exports only `prepareCrewRoll`; `_calculateVoidshipHits` has no Boarding/Turrets branch (Weapon branch intact); `calculateResultVoidship` calls `_calculateVoidshipHit`; `voidship.rollTurrets`/`rollBoarding` still present.
-- verify:
+- verify: confirmed: properly removed dead homebrew d100 loops and orphaned dialog prompts, leaving the canonical voidship document resolvers as the sole resolution path, and returning other extended actions to standard test evaluation.
 
 ## BUG-Q-171 — Burst-fire additional hits cap is missing or broken for ammo-less weapons
 - status: open
