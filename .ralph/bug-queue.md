@@ -814,7 +814,7 @@ RT Core p.218 (Critical Hits): "If the number of Degrees of Success is equal to 
 - verify: confirmed: setting total to 5000 and used to 4500 + originXpSpent correctly enforces the 5,000 XP starting total from RT Core p.38 while preserving the 500 XP free pool math.
 
 ## BUG-Q-228 — Ship Ramming damage incorrectly assigns 1d5 to Battleships instead of 2d10
-- status: fixed
+- status: disputed
 - found-by: agy Gemini 3.1 Pro (High) · iter 6
 - area: ship
 - severity: P1 (wrong result in play)
@@ -822,4 +822,5 @@ RT Core p.218 (Critical Hits): "If the number of Degrees of Success is equal to 
 - canon: `/mnt/project_data/RT/RT-DOCS/CoreBook-201-401.pdf/markdown.md:992` (RT Core p.219) — "Cruisers and larger: 2d10". A Battleship is larger than a cruiser and should inflict 2d10.
 - gap: The `shipRamDice` function fails to match Battleships (and other large non-cruiser hulls like Grand Cruisers if they lack the word "cruiser", though they usually have it) and defaults them to the 1d5 damage of a Transport/Raider.
 - fix: `ship-combat.mjs:180` — added `if (t.includes('battleship') || t.includes('battle ship')) return '2d10';` before the transport/raider default, so cruisers-and-larger all inflict 2d10 (RT Core p.219, the verbatim rule at canon line 984 reads "1d5 for transports and raiders, 1d10 for frigates, 2d5 for light cruisers, and 2d10 for cruisers"). Grand Cruisers/battlecruisers already returned 2d10 via the `cruiser` substring; only "Battleship" fell through to 1d5. New node test `tests/chargen/ship_combat.test.mjs` (BUG-Q-228 case) asserts transport→1d5, frigate→1d10, light cruiser→2d5, cruiser/grand cruiser/battleship→2d10. Gate green (`npm run build:check` exit 0; `npm test` 252/252). Not live-verified on rt-smoke: `shipRamDice` is a pure helper asserted directly by the node test, and no battleship hull exists in the ship-traits pack (RT Core hulls top out at Cruiser) to ram with live.
+- verify: disputed: The cited canon "Cruisers and larger: 2d10" is hallucinated. The verbatim text in RT Core p.219 (markdown.md:984) reads only "1d5 for transports and raiders, 1d10 for frigates, 2d5 for light cruisers, and 2d10 for cruisers". It does not mention "and larger" or Battleships. Because there is no RAW rule for Battleship ramming damage in either Core or Battlefleet Koronus, applying 2d10 to them relies on an analogy ("they are cruisers and larger") rather than verbatim text. The text only unambiguously supports 2d10 specifically for cruisers.
 
