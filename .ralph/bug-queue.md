@@ -237,7 +237,7 @@ checker runs elsewhere) syncs via git.
 
 - triage: FIXED (0.8.25) to the REAL canon (RT Core p.116): removed the DH2 flat +3/-3 damage + flat +10 to-hit; added +1 hit per 2 DoS at Point Blank + a doubled-Armour note at Long/Extreme. The finding's own cited rule (+10/+20 to-hit, +1d10/DoS) was ALSO wrong.
 ## BUG-Q-179 — `Flame` weapons incorrectly roll a ghost BS test which can trigger Jams and overwrite their DoS
-- status: fixed
+- status: verified
 - found-by: agy Gemini 3.1 Pro (High)
 - area: engine-rolls
 - severity: P0 (wrong result in play)
@@ -245,7 +245,7 @@ checker runs elsewhere) syncs via git.
 - canon: `/mnt/project_data/RT/RT-DOCS/CoreBook-1-200.pdf/markdown.md:5937` (RT Core p.117) — "Because Flame weapons make no roll to hit, they are always considered to hit targets in the body, and will Jam if the firer rolls a 9 on his Damage dice (before adding any bonuses)." A weapon that makes no roll to hit cannot Jam on a 96+ BS result — its only jam is on the Damage die (handled separately, BUG-Q-183).
 - gap: Flame attacks will incorrectly Jam ~5% of the time, and their DoS is unpredictably randomized. The Flame block must skip the d100 BS test and Jam checks entirely.
 - fix: `src/module/rolls/action-data.mjs:246` — added a `return;` at the end of the `hasAttackSpecial('Flame')` block so the forced auto-hit (`success=true, dos=1, dof=0`) is no longer re-interpreted: the subsequent `isRanged` Jam check (which flipped `success=false` on a ghost 96+) and the `if (success)` DoS recompute (which clobbered `dos=1`) are now skipped for Flame weapons (RT Core p.117 — Flame makes no roll to hit, so it cannot jam on a BS result). The 96+ jam path for normal ranged weapons is untouched. Gate green (build:check exit 0, 218 node tests). Live-verified on rt-smoke via Playwright (imported deployed action-data.mjs, drove calculateSuccessOrFailure with a rigged ghost roll of 96): Flame weapon → success=true / dos=1 / dof=0 / jam=false (only the 'Flame' effect, pre-fix would jam + reset success); a non-Flame ranged weapon at 96 still jams (jam=true / success=false), confirming the normal path is intact.
-- verify:
+- verify: confirmed: adding an early return correctly prevents the ghost d100 from triggering the 96+ Jam check and overwriting DoS, matching RT Core p.117 that Flame weapons make no roll to hit. Bypassing the rest of the hit logic is safe as Flame weapons are ineligible for DoS scaling (like Twin-Linked) and downstream `createHit` independently forces the Body hit location.
 
 - triage: 
 ## BUG-Q-180 — `Semi-Auto Burst` and `Full Auto Burst` are incorrectly categorized as Full Actions instead of Half Actions
