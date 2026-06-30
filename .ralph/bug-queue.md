@@ -364,13 +364,14 @@ checker runs elsewhere) syncs via git.
 - verify: confirmed: properly scales the multiplier by using the actual Unnatural trait value (N+1) instead of hardcoding to 3, ensuring Initiative scales accurately for Unnatural x3 or higher without penalizing them, matching RT Core p.110.
 
 ## BUG-Q-189 — `Shooting into Melee Combat` penalty is incorrectly waived if ANY combatant is Stunned instead of just the target
-- status: open
+- status: wontfix
 - found-by: agy Gemini 3.1 Pro (High) · iter 5
 - area: rules
 - severity: P0 (wrong result in play)
 - evidence: `src/module/rolls/roll-helpers.mjs:74-75` — `shootingIntoMeleePenalty` checks `if (enemies.some((e) => e?.waived)) return 0;` which waives the -20 penalty if an adjacent enemy of the target is Stunned/Helpless.
 - canon: `/mnt/project_data/RT/RT-DOCS/CoreBook-201-401.pdf/markdown.md:2197` (RT Core p.244) — "If the target is Stunned, Helpless, or Unaware, this penalty is ignored."
 - gap: The engine waives the -20 penalty if the *target's opponent* is Stunned or Helpless. It should only be waived if the target being shot at is Stunned or Helpless.
+- fix: NOT A BUG — the finding's cited canon is hallucinated. The actual "Shooting into Melee Combat" sidebar is at `CoreBook-201-401.pdf/markdown.md:2421` (RT Core p.247): "Ballistic Skill Tests made to hit a target engaged in melee combat are Hard (-20). If **one or more Characters engaged in the melee** is Stunned, Helpless, or Unaware, this penalty is ignored." "Characters engaged in the melee" = the target AND its adjacent melee opponents, so waiving on either is correct. The finding misquotes the rule as "If the target is..." (a narrowing not in the book) and cites line 2197, which is the Tactical Advance action, not this rule. Current code (and its doc comment, roll-helpers.mjs:65-66) already implements the canon-correct interpretation. No change.
 
 ## BUG-Q-190 — `Customised` weapon quality is miswired to halve reload times instead of adding +5 to hit
 - status: open
@@ -379,4 +380,39 @@ checker runs elsewhere) syncs via git.
 - severity: P0 (wrong result in play)
 - evidence: `src/module/documents/acolyte.mjs:754-758` — `if (weapon.system.special?.customised) { reload = rapidReloadTime(reload, true, true); }` applies a reload-halving effect for the "Customised" quality.
 - canon: `/mnt/project_data/RT/RT-DOCS/CoreBook-1-200.pdf/markdown.md:5993` (RT Core p.131) — Customised: "Weapons with this quality add a +5 to Ballistic Skill Tests made to fire them." (The upgrade that halves reload time is "Quick-Release", p.143).
-- gap: The engine conflates the "Customised" weapon quality with the "Quick-Release" weapon upgrade. As a result, Customised halves reload time instead of adding +5 to BS, and Quick-Release is entirely missing.
+- gap: The engine conflates the "Customised" weapon quality with the "Quick-Release" weapon upgrade. As a result, Customised halves reload time instead of adding +5 to BS, and Quick-Release is entirely missing.## BUG-Q-191 — `Sturdy` trait fails to negate the unbraced penalty for Heavy weapons
+- status: new
+- found-by: agy Gemini 3.1 Pro (High)
+- file: src/module/rolls/roll-data.mjs:252
+- canon: RT Core p.368
+
+**Description:**
+The `autoBraced` calculation in `roll-data.mjs` correctly checks for `Bulging Biceps`, `Auto-Stabilised`, and `Suspensors` to negate the -30 penalty for firing an unbraced Heavy weapon, but it entirely omits the `Sturdy` trait. 
+
+**Canon Rule:**
+RT Core p.368 ("Sturdy"): "Sturdy characters do not suffer the normal penalties for being prone, nor do they suffer any penalties to their tests as a result of using heavy weapons."
+
+## BUG-Q-192 — `Prone` characters fail to suffer their own penalties (-10 to WS/BS, -20 to Dodge), which should also be negated by `Sturdy`
+- status: new
+- found-by: agy Gemini 3.1 Pro (High)
+- file: src/module/rules/conditions.mjs:52, src/module/documents/acolyte.mjs
+- canon: RT Core p.267, RT Core p.368
+
+**Description:**
+The engine fails to apply the penalties to a Prone character's own tests. `attackerConditionModifier` correctly handles the `pinned` penalty for attackers but entirely omits the -10 WS/BS penalty for being `prone`. Additionally, `acolyte.mjs` does not apply the -20 penalty to Dodge tests when a character is Prone. Both of these penalties must be implemented and should be waived if the character possesses the `Sturdy` trait.
+
+**Canon Rule:**
+RT Core p.267 ("Prone"): "While Prone, a character suffers a -10 penalty to Weapon Skill and Ballistic Skill Tests, and a -20 penalty to Dodge Tests."
+RT Core p.368 ("Sturdy"): "Sturdy characters do not suffer the normal penalties for being prone..."
+
+## BUG-Q-193 — The `Shocking` weapon quality is missing from the system definitions and miswired by Tempest Bolt Shells
+- status: new
+- found-by: agy Gemini 3.1 Pro (High)
+- file: src/module/rules/attack-specials.mjs:104, src/module/rules/ammo.mjs:105
+- canon: RT Core p.132
+
+**Description:**
+The `Shocking` weapon quality is completely omitted from the `attackSpecials()` list in `attack-specials.mjs`, making it impossible to add to a weapon (it appears to have been mistakenly swapped with the DH2 `Concussive` quality). Although `damage-data.mjs` has a `case 'shocking':` block to handle it, `ammo.mjs` incorrectly pushes `{name: 'Shock'}` for Tempest Bolt Shells. This mismatch prevents the stun logic from ever triggering.
+
+**Canon Rule:**
+RT Core p.132: "Shocking: A weapon with this Quality can Stun its opponent..."
