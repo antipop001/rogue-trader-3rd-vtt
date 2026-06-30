@@ -8,6 +8,7 @@ import {
     shipRangeBand,
     firingArcAllows,
     shipShootingResolution,
+    shipRamDice,
 } from '../../src/module/rules/ship-combat.mjs';
 
 test('QA-047: initiative bonus = tens digit of Detection', () => {
@@ -47,6 +48,18 @@ test('QA-047: firing arc — prow=fore, beam weapons own arc, dorsal/keel any-bu
     assert.equal(firingArcAllows('dorsal', 'aft'), false);
     assert.equal(firingArcAllows('keel', 'starboard'), true);
     assert.equal(firingArcAllows('special', 'aft'), true);
+});
+
+test('BUG-Q-228: ram dice by hull — cruisers and larger inflict 2d10', () => {
+    assert.equal(shipRamDice('Jericho-class Transport'), '1d5');
+    assert.equal(shipRamDice('Hazeroth-class Raider'), '1d5');
+    assert.equal(shipRamDice('Sword-class Frigate'), '1d10');
+    assert.equal(shipRamDice('Dauntless-class Light Cruiser'), '2d5');
+    assert.equal(shipRamDice('Lunar-class Cruiser'), '2d10');
+    assert.equal(shipRamDice('Grand Cruiser'), '2d10');
+    // Battleships are larger than cruisers — must not fall through to the transport/raider 1d5.
+    assert.equal(shipRamDice('Retribution-class Battleship'), '2d10');
+    assert.equal(shipRamDice(''), '1d5');
 });
 
 test('QA-047: shooting resolution combines arc eligibility + range band', () => {

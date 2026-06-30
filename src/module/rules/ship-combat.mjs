@@ -171,11 +171,13 @@ export async function shipShootingCheck(ship, weapon) {
     return { ok: true, modifier: res.modifier };
 }
 
-/** Ramming dice by hull size (RT Core p.219): transport/raider 1d5, frigate 1d10, light cruiser 2d5, cruiser 2d10. */
+/** Ramming dice by hull size (RT Core p.219): transport/raider 1d5, frigate 1d10, light cruiser 2d5, cruiser-and-larger 2d10. */
 export function shipRamDice(shipType) {
     const t = String(shipType ?? '').toLowerCase();
     if (t.includes('cruiser') && t.includes('light')) return '2d5';
     if (t.includes('cruiser')) return '2d10';
+    // "Cruisers and larger" all inflict 2d10 — battleships/grand cruisers larger than a cruiser.
+    if (t.includes('battleship') || t.includes('battle ship')) return '2d10';
     if (t.includes('frigate')) return '1d10';
     return '1d5'; // transports, raiders, and equivalents
 }
