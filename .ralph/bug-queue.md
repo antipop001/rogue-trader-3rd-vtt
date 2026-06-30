@@ -262,7 +262,7 @@ checker runs elsewhere) syncs via git.
 - triage: 
 
 ## BUG-Q-181 — `Semi-Auto Burst`, `Full Auto Burst`, and `Suppressing Fire` use incorrect base Jam threshold (96 instead of 94)
-- status: fixed
+- status: verified
 - found-by: agy Gemini 3.1 Pro (High)
 - area: engine-rolls
 - severity: P0 (wrong result in play)
@@ -270,7 +270,7 @@ checker runs elsewhere) syncs via git.
 - canon: `/mnt/project_data/RT/RT-DOCS/CoreBook-201-401.pdf/markdown.md:2147, 2189` (RT Core p.242) — Semi-Auto Burst: "A dice result of 94 to 00 indicates the weapon has Jammed". Suppressing Fire: "A roll of 94-100 on the test indicates the weapon has Jammed". Confirmed Full Auto Burst at `:1988` ("A dice result of 94 to 00 indicates the weapon has Jammed"); the standard non-burst jam stays 96-00 (`:2521`, RT Core p.249).
 - gap: The engine uses 96 as the base Jam threshold for burst/auto actions instead of 94, making them less likely to jam than intended.
 - fix: `src/module/rolls/action-data.mjs:278-281` — the base `jamThreshold` is now `94` when `this.rollData.action` is `Semi-Auto Burst` / `Full Auto Burst` / `Suppressing Fire` (RT Core p.242), else `96` (RT Core p.249); the existing Best (101) / Reliable (100) / Unreliable (91) overrides are untouched. Gate green (build:check exit 0, 218 node tests). Live-verified on rt-smoke via Playwright (imported deployed action-data.mjs, drove `calculateSuccessOrFailure` with a rigged roll over 93–96): Standard Attack jams only at 96 (93/94/95 → no jam, success), while Full Auto / Semi-Auto / Suppressing Fire all jam at 94/95/96 and NOT at 93.
-- verify:
+- verify: confirmed: the fix correctly identifies the three automatic fire actions (Semi-Auto Burst, Full Auto Burst, and Suppressing Fire) and applies the lower base jam threshold of 94 matching RT Core p.242, while preserving the standard 96 threshold for other ranged actions and maintaining existing Best, Reliable, and Unreliable overrides.
 
 - triage: 
 
