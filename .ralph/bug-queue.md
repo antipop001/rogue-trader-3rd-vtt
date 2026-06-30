@@ -383,7 +383,7 @@ checker runs elsewhere) syncs via git.
 - canon: `/mnt/project_data/RT/RT-DOCS/CoreBook-1-200.pdf/markdown.md:5993` (RT Core p.131) — Customised: "Weapons with this quality add a +5 to Ballistic Skill Tests made to fire them." (The upgrade that halves reload time is "Quick-Release", p.143).
 - gap: The engine conflates the "Customised" weapon quality with the "Quick-Release" weapon upgrade. As a result, Customised halves reload time instead of adding +5 to BS, and Quick-Release is entirely missing.
 - fix: NOT A BUG — the finding's cited canon is hallucinated (DH2's Customised, not RT 1e's). The actual RT Core CUSTOMISED weapon-quality entry is `CoreBook-1-200.pdf/markdown.md:5913-5915`: "The user has rebuilt and fined-tuned the weapon... Reloading this weapon takes ½ the listed time, rounding up to the next full action." That is exactly what `acolyte.mjs:759-761` implements (`rapidReloadTime(reload, true, true)` — halve, round up). There is no "+5 BS Customised" and no "Quick-Release" quality anywhere in RT Core (grep of the corebook markdown returns only the reload-halving entry). Current code matches canon. No change.## BUG-Q-191 — `Sturdy` trait fails to negate the unbraced penalty for Heavy weapons
-- status: open
+- status: wontfix
 - found-by: agy Gemini 3.1 Pro (High)
 - file: src/module/rolls/roll-data.mjs:252
 - canon: RT Core p.368
