@@ -364,40 +364,11 @@ export class ActionData {
     }
 
     async _calculateVoidshipHits(type, amount) {
-        if (type === "Boarding") {
-            for (let i = 0; i < amount; i++) {
-                this.rollData.roll = await roll1d100();
-                let rollTotal = this.rollData.roll.total;
-                this.rollData.voidshipResults.push(rollTotal);
-                const target = this.rollData.modifiedTarget;
-                if (rollTotal <= target / 10 && rollTotal !== 100) {
-                    this.rollData.boardingSuccess++;
-                    this.rollData.boardingSuccess++;
-                } else if (rollTotal <= target && rollTotal !== 100) {
-                    this.rollData.boardingSuccess++;
-                }
-            }
-            if (this.rollData.boardingSuccess > 0) {
-                this.rollData.success = true;
-            }
-        }
-        if (type === "Turrets") {
-            for (let i = 0; i < amount; i++) {
-                this.rollData.roll = await roll1d100();
-                let rollTotal = this.rollData.roll.total;
-                this.rollData.voidshipResults.push(rollTotal);
-                const target = this.rollData.modifiedTarget;
-                if (rollTotal <= target / 10 && rollTotal !== 100) {
-                    this.rollData.turretsHit++;
-                    this.rollData.turretsHit++;
-                } else if (rollTotal <= target && rollTotal !== 100) {
-                    this.rollData.turretsHit++;
-                }
-            }
-            if (this.rollData.turretsHit > 0) {
-                this.rollData.success = true;
-            }
-        }
+        // NOTE — Turret defence and boarding actions are NOT resolved here. They have dedicated
+        // canon-correct resolvers on the voidship document: turrets are a passive defensive rating
+        // (RT Core p.220, no to-hit roll) and a boarding action is a single opposed Command Test
+        // (RT Core p.219). The old homebrew per-attack d100 loops were removed — see
+        // voidship.rollTurrets() / voidship.rollBoarding(). (BUG-Q-170.)
         if (type === "Weapon") {
             // RT RAW (RT Core p.217-219): a SINGLE BS test scores 1 hit + 1 per Degree of
             // Success, capped at the weapon's Strength; a Critical Hit triggers when DoS ≥
@@ -451,13 +422,10 @@ export class ActionData {
     }
 
     async calculateResultVoidship() {
-        if (this.rollData.name === "Turrets") {
-            await this._calculateVoidshipHits(this.rollData.name, this.rollData.turretsShot);
-        } else if (this.rollData.name === "Boarding") {
-            await this._calculateVoidshipHits(this.rollData.name, this.rollData.boardingAttacks);
-        } else {
-            await this._calculateVoidshipHit();
-        }
+        // Crew Extended Actions resolve as a standard RT Test (RT Core p.215). Turret defence and
+        // boarding actions are handled by their own canon resolvers (voidship.rollTurrets /
+        // rollBoarding), not through this path. (BUG-Q-170.)
+        await this._calculateVoidshipHit();
     }
 
     reverseD100(roll) {

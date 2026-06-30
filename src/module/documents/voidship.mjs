@@ -1,7 +1,7 @@
 import { RogueTraderBaseActor } from './base-actor.mjs';
 import { DHTargetedActionManager } from '../actions/targeted-action-manager.mjs';
 import { SimpleSkillData } from '../rolls/action-data.mjs';
-import { prepareCrewRoll, prepareTurretsRoll, prepareBoardingRoll} from '../prompts/crew-prompt.mjs';
+import { prepareCrewRoll } from '../prompts/crew-prompt.mjs';
 import { DHBasicActionManager } from '../actions/basic-action-manager.mjs';
 import { roll1d100, degreesOfSuccess, degreesOfFailure, getOpposedDegrees, boardingCommandBonus } from '../rolls/roll-helpers.mjs';
 import { shipShootingCheck } from '../rules/ship-combat.mjs';

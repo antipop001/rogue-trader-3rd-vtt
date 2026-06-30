@@ -134,14 +134,14 @@ checker runs elsewhere) syncs via git.
 - verify: confirmed: the rewrite correctly applies standard test logic (`success`, `dos`, `dof`) with auto-success/fail on natural 1/100, natively dropping down to the standard `{{#if success}}` branch in the chat card. Edge cases including missing targets perfectly match standard roll behavior.
 
 ## BUG-Q-170 — Voidship Boarding and Turret actions are incorrectly simulated as multiple d100 rolls instead of standard single RT tests
-- status: open
+- status: fixed
 - found-by: agy Gemini 3.1 Pro (High) · iter 3
 - area: ship
 - severity: P0 (wrong result in play)
 - evidence: `src/module/rolls/action-data.mjs:376-410` — `_calculateVoidshipHits` for "Boarding" and "Turrets" repeatedly rolls a d100 `amount` times in a `for` loop, counting successes.
-- canon: `/mnt/project_data/RT/RT-DOCS/CoreBook-201-401.pdf/markdown.md:2145` (RT Core p.219-220) — "Boarding Action" is a single Opposed Command Test. "Turrets" is a single Ballistic Skill Test where every Degree of Success destroys one torpedo or bomber.
-- gap: Boarding and Turret actions roll 1d100 repeatedly (equal to the number of turrets or "boarding attacks") instead of using the canon single-test mechanic driven by Degrees of Success.
-- fix: 
+- canon: `/mnt/project_data/RT/RT-DOCS/CoreBook-201-401.pdf/markdown.md:990` (RT Core p.219) — boarding is a single opposed Command Test; `:1196-1198` (RT Core p.220) — turrets are a passive defensive RATING (−10 enemy Hit-and-Run Pilot / +10 own boarding Command), NOT an offensive to-hit action. (Note: the filer's "Turrets = single BS test, each DoS kills a torpedo/bomber" prescription is itself off-canon — RT Core has no such turret action.)
+- gap: The cited `_calculateVoidshipHits` "Boarding"/"Turrets" branches use a homebrew per-attack d100 loop. They are also DEAD CODE: the live sheet buttons route through `voidship.rollTurrets()` / `rollBoarding()` (rewritten to canon in 0.8.4, QA-147/148), and the only callers of the old branches (`prepareTurretsRoll`/`prepareBoardingRoll`) are imported but never invoked. The wrong mechanic survives only as a latent landmine that could be rewired.
+- fix: Removed the dead path so there is one canon-correct resolution source (matching the boarding/turret rewrite in 0.8.4). `src/module/rolls/action-data.mjs` — deleted the "Boarding" + "Turrets" homebrew d100-loop branches from `_calculateVoidshipHits` (kept only the live "Weapon" branch), and simplified `calculateResultVoidship()` to call the standard `_calculateVoidshipHit()` (crew Extended Action = standard RT Test, RT Core p.215). `src/module/prompts/crew-prompt.mjs` — deleted the now-orphan `prepareTurretsRoll`/`prepareBoardingRoll` dialog functions. `src/module/documents/voidship.mjs:4` — trimmed the import to `prepareCrewRoll` only. Live behaviour unchanged (turrets/boarding already resolved via `rollTurrets`/`rollBoarding`). Gate green (build:check exit 0, 206 node tests). Live-verified on rt-smoke via Playwright (page-context import): `crew-prompt` now exports only `prepareCrewRoll`; `_calculateVoidshipHits` has no Boarding/Turrets branch (Weapon branch intact); `calculateResultVoidship` calls `_calculateVoidshipHit`; `voidship.rollTurrets`/`rollBoarding` still present.
 - verify:
 
 ## BUG-Q-171 — Burst-fire additional hits cap is missing or broken for ammo-less weapons
@@ -152,5 +152,27 @@ checker runs elsewhere) syncs via git.
 - evidence: `src/module/rolls/action-data.mjs:312,321` caps additional hits for burst fire using `this.rollData.fireRate`. But `fireRate` defaults to 1 and is ONLY updated to the weapon's actual RoF if the weapon tracks ammo (`src/module/rules/ammo.mjs:245` early returns if `!rollData.weapon.usesAmmo`).
 - canon: `/mnt/project_data/RT/RT-DOCS/CoreBook-1-200.pdf/markdown.md:2097` (RT Core p.242) — "scores one hit... plus one additional hit for each Degree of Success (up to the maximum firing rate of the weapon)". The weapon's firing rate is a physical limit, regardless of whether the system is tracking ammo consumption for it.
 - gap: For ammo-less ranged weapons (e.g. many creature ranged attacks), Semi-Auto Burst (line 312, gating on `actionItem.isRanged`) caps `additionalHits` at `1 - 1 = 0`, breaking the action entirely. Full Auto Burst (line 321, gating on `actionItem.usesAmmo`) bypasses the cap entirely, allowing infinite hits based on DoS rather than capping at `rateOfFire.full`.
+- fix: 
+- verify:
+
+## BUG-Q-172 — Lances bypass Void Shields entirely instead of just ignoring armour
+- status: open
+- found-by: agy Gemini 3.1 Pro (High) · iter 3
+- area: ship
+- severity: P0 (wrong result in play)
+- evidence: `src/module/rolls/action-data.mjs:515` — `if (this.rollData.weapon.system.type === "Lance") return;` inside `calculateVoidShields()` exits before void shields can cancel hits.
+- canon: `/mnt/project_data/RT/RT-DOCS/CoreBook-201-401.pdf/markdown.md:1214` (RT Core p.21-22 and p.215) — "when resolving a lance hit against the target, ignore the target's armour ... but not void shields."
+- gap: Lances bypass void shields entirely, rather than ignoring only armour as the rules state. They should be intercepted by void shields just like macrobatteries.
+- fix: 
+- verify:
+
+## BUG-Q-173 — Twin-Linked weapons missing the +20 bonus to hit
+- status: open
+- found-by: agy Gemini 3.1 Pro (High) · iter 3
+- area: combat
+- severity: P0 (wrong result in play)
+- evidence: `src/module/rules/attack-specials.mjs:52-96` — `calculateAttackSpecialAttackBonuses` sets bonuses for Accurate, Scatter, Defensive, etc. but `Twin-Linked` is entirely absent.
+- canon: `/mnt/project_data/RT/RT-DOCS/CoreBook-201-401.pdf/markdown.md:8646` (RT Core p.121) — "Twin-Linked: A weapon with the Twin-linked Quality grants a +20 bonus to hit when fired..."
+- gap: The `Twin-Linked` quality consumes double ammunition and handles the extra hit on 2+ DoS, but completely fails to apply the foundational +20 bonus to the BS/WS test to hit.
 - fix: 
 - verify:
