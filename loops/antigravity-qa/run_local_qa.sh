@@ -29,7 +29,9 @@ QUEUE=".ralph/bug-queue.md"
 
 MAX_ITERS="${1:-15}"
 LOCAL_MODEL="${LOCAL_MODEL:-qwen2.5-coder:14b}"
-OLLAMA_HOST="${OLLAMA_HOST:-http://192.168.11.22:11434}"
+# Default to the SSH tunnel (whisperx :11434 is firewalled to :8188 only — see README). Start it
+# with:  ssh -fN -L 11434:127.0.0.1:11434 ahermon@192.168.11.22
+OLLAMA_HOST="${OLLAMA_HOST:-http://127.0.0.1:11434}"
 CHECK_MODEL="${CHECK_MODEL:-Gemini 3.1 Pro (High)}"   # agy model for the VERIFY phase
 FIX_MODEL="${FIX_MODEL:-opus}"
 MIN_OPEN="${MIN_OPEN:-3}"
@@ -42,8 +44,11 @@ command -v claude >/dev/null || { echo "ERROR: 'claude' not on PATH." >&2; exit 
 
 # Reachability check for the local model server.
 if ! curl -fsS --max-time 8 "${OLLAMA_HOST}/api/tags" >/dev/null 2>&1; then
-  echo "ERROR: cannot reach Ollama at ${OLLAMA_HOST}. Start it on the GPU box:" >&2
-  echo "       OLLAMA_HOST=0.0.0.0:11434 ollama serve   (and: ollama pull ${LOCAL_MODEL})" >&2
+  echo "ERROR: cannot reach Ollama at ${OLLAMA_HOST}." >&2
+  echo "  1) On the GPU box: ~/ollama-bin/bin/ollama serve   (OLLAMA_HOST=0.0.0.0:11434)" >&2
+  echo "     and: ~/ollama-bin/bin/ollama pull ${LOCAL_MODEL}" >&2
+  echo "  2) On this host (since :11434 is firewalled): open the tunnel —" >&2
+  echo "     ssh -fN -L 11434:127.0.0.1:11434 ahermon@192.168.11.22" >&2
   exit 1
 fi
 echo "local checker: ${LOCAL_MODEL} @ ${OLLAMA_HOST} · fixer: claude/${FIX_MODEL} · verifier: agy/${CHECK_MODEL}"

@@ -55,16 +55,29 @@ the high-volume / low-stakes discovery, and via a CONSTRAINED per-file review (w
 open-ended agentic exploration) — `local_check.py` feeds it one engine file at a time and asks for
 findings in a strict JSON schema, then dedups (against existing queue titles only) and appends.
 
-**Setup — on the GPU box (the RTX 3060 host):**
+**Setup — on the GPU box (whisperx, RTX 3060).** It has no passwordless sudo and its driver is
+535 (too old for Ollama's CUDA build, which wants 550+) — so install Ollama **userspace** and let
+it fall back to **Vulkan** (still GPU-accelerated; ~9 GB of the 14B model loads on the card):
 ```bash
-curl -fsSL https://ollama.com/install.sh | sh          # if not installed
-OLLAMA_HOST=0.0.0.0:11434 ollama serve &               # listen on the LAN
-ollama pull qwen2.5-coder:14b                           # ~9 GB Q4 — fits 12 GB; the best code model at this size
+mkdir -p ~/ollama-bin && cd ~/ollama-bin
+curl -fL https://github.com/ollama/ollama/releases/latest/download/ollama-linux-amd64.tar.zst -o /tmp/o.tar.zst
+tar --zstd -xf /tmp/o.tar.zst -C ~/ollama-bin
+OLLAMA_HOST=0.0.0.0:11434 ~/ollama-bin/bin/ollama serve &      # listen on the LAN
+~/ollama-bin/bin/ollama pull qwen2.5-coder:14b                  # ~9 GB; best code model at this size
 ```
-**Run (from tmux, dedicated branch), pointing at it:**
+(The driver-535 → CUDA warning is expected; the next log line shows `library=Vulkan … 12.0 GiB` —
+it IS using the GPU. ComfyUI shares this 12 GB card, so stop/idle it during a run: it loads ~6-8 GB
+when generating, which won't co-exist with the 14B model.)
+
+**Tunnel — `:11434` is firewalled (only `:8188` is open to the LAN), so reach it over SSH from the
+loop host:**
+```bash
+ssh -fN -L 11434:127.0.0.1:11434 ahermon@192.168.11.22         # dev-LXC:11434 → whisperx:11434
+```
+**Run (from tmux, dedicated branch)** — the driver defaults `OLLAMA_HOST` to the tunnel:
 ```bash
 git switch -c ralph/agy-qa-local
-OLLAMA_HOST=http://192.168.11.22:11434 ./loops/antigravity-qa/run_local_qa.sh 15
+./loops/antigravity-qa/run_local_qa.sh 15
 ```
 Expect lower signal-to-noise than the Gemini checker — more false findings and shakier canon
 citations (the local brief tells it to say `canon: unsure` rather than invent a rule). The fixer's

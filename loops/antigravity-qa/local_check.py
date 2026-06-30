@@ -41,12 +41,14 @@ BRIEF = (KIT / "bug_check_local.md").read_text()
 
 # Injected for testing: a stub may replace `chat` to avoid a live model call.
 def chat(system: str, user: str) -> str:
+    # NOTE: deliberately NOT using Ollama's `format:"json"` — forcing JSON suppresses the model's
+    # reasoning (it just emits the simplest valid object, e.g. `{}`, and misses obvious bugs). We
+    # let it reason and END with a JSON object, then extract it (see _parse_findings).
     body = json.dumps({
         "model": MODEL,
         "messages": [{"role": "system", "content": system}, {"role": "user", "content": user}],
         "stream": False,
-        "format": "json",                       # Ollama forces valid JSON output
-        "options": {"temperature": 0.2, "num_ctx": 16384},
+        "options": {"temperature": 0.3, "num_ctx": 16384, "num_predict": 1024},
     }).encode()
     req = urllib.request.Request(f"{OLLAMA}/api/chat", data=body,
                                  headers={"Content-Type": "application/json"})
@@ -55,22 +57,24 @@ def chat(system: str, user: str) -> str:
 
 
 def _parse_findings(raw: str):
-    """Robustly pull a findings list out of the model's reply."""
-    raw = raw.strip()
-    raw = re.sub(r"^```(?:json)?|```$", "", raw, flags=re.M).strip()
-    try:
-        data = json.loads(raw)
-    except Exception:
-        m = re.search(r"(\{.*\}|\[.*\])", raw, re.S)
-        if not m:
-            return []
+    """Pull the findings list out of the model's reasoning reply (the JSON object is emitted at the
+    end, optionally fenced)."""
+    # Primary: the {...} object that contains a "findings" array.
+    m = re.search(r'\{[^{}]*"findings"\s*:\s*\[.*?\]\s*\}', raw, re.S)
+    if m:
         try:
-            data = json.loads(m.group(1))
+            return json.loads(m.group(0)).get("findings", []) or []
         except Exception:
-            return []
-    if isinstance(data, dict):
-        return data.get("findings", []) or []
-    return data if isinstance(data, list) else []
+            pass
+    # Fallback: a bare top-level array of finding objects.
+    m2 = re.search(r'\[\s*\{.*\}\s*\]', raw, re.S)
+    if m2:
+        try:
+            d = json.loads(m2.group(0))
+            return d if isinstance(d, list) else []
+        except Exception:
+            pass
+    return []
 
 
 def _queue_titles() -> list:
@@ -117,13 +121,15 @@ def main() -> int:
         if not p.exists():
             continue
         snippet = p.read_text()[:48000]      # keep within the model's context window
-        user = (f"FILE: {rel}\n```javascript\n{snippet}\n```\n\n"
-                f"Report up to {MAX_PER_FILE} REAL, evidence-backed RT-1e correctness bugs in THIS "
-                f"file as JSON: {{\"findings\":[{{\"title\":\"...\",\"area\":\"...\","
-                f"\"severity\":\"P0|P1|P2|P3\",\"evidence\":\"the line/code + a short quote\","
-                f"\"canon\":\"the RT rule (+page if you are sure, else 'unsure')\","
-                f"\"gap\":\"does X, should do Y\"}}]}}. Empty findings list if you find nothing "
-                f"certain. Do NOT invent a rule — if unsure of the canon, set canon to 'unsure'.")
+        user = (f"Review this file for up to {MAX_PER_FILE} REAL, evidence-backed Rogue Trader 1e "
+                f"correctness bugs. Think briefly, then END your reply with ONE JSON object on its "
+                f"own line.\n\nFILE: {rel}\n```javascript\n{snippet}\n```\n\n"
+                f"Final line format:\n"
+                f'{{"findings":[{{"title":"...","area":"weapons|rules|psychic|ship|vehicle|...",'
+                f'"severity":"P0|P1|P2|P3","evidence":"the code line + a short quote",'
+                f'"canon":"the RT rule, or \'unsure\' if you are not certain","gap":"does X, should do Y"}}]}}\n'
+                f"Use an empty findings list only if there is genuinely no bug. Do NOT invent a rule "
+                f"— if unsure of the Rogue Trader canon, set canon to 'unsure'.")
         try:
             raw = chat(BRIEF, user)
         except Exception as e:
