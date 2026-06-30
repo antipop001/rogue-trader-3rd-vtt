@@ -38,8 +38,9 @@ export function calculateCombatActionModifier(rollData) {
     // −20, dropping to −10 with Ambidextrous. (QA-119.)
     if (rollData.action === 'Multiple Attacks') {
         const hasTWW = actor?.items?.some?.((i) => i.type === 'talent' && /^two-?weapon wielder/i.test(i.name));
-        if (hasTWW) {
-            rollData.modifiers['attack'] = actor?.hasTalent?.('Ambidextrous') ? -10 : -20;
+        rollData.modifiers['attack'] = -20;
+        if (hasTWW && actor?.hasTalent?.('Ambidextrous')) {
+            rollData.modifiers['attack'] = -10;
         }
     }
 }

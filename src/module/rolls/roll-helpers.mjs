@@ -566,6 +566,35 @@ export function daemonicToughnessMultiplier(traits) {
 }
 
 /**
+ * Daemonic (RT Core p.364) doubles a creature's Toughness Bonus against damage. When the
+ * creature ALSO has Unnatural Toughness (which already multiplies the bonus), RT 1e stacks
+ * the two multipliers ADDITIVELY, not multiplicatively: the Unnatural Characteristic Trait
+ * (RT Core p.368) establishes the game's rule that repeated Toughness multipliers increment
+ * the multiplier by 1 per source (1/2/3 selections → ×2/×3/×4), they do not compound. So a
+ * creature with Unnatural Toughness (×2) AND Daemonic (×2) soaks at ×3, NOT ×4 — multiplying
+ * the already-doubled `toughnessBonus` by 2 again (BUG-Q-196) double-counts the base bonus.
+ *
+ * Implemented as `base × (unnaturalSteps + daemonicMultiplier)` where `base` is the unmodified
+ * Toughness Bonus and `unnaturalSteps` is the current Unnatural-Toughness multiplier minus one
+ * (read off the post-Felling bonus so Felling composes correctly). With no Unnatural Toughness
+ * this collapses to `base × daemonicMultiplier`, the plain doubling.
+ *
+ * @param {number} toughnessBonus      the soak Toughness Bonus (post-Felling, incl. Unnatural)
+ * @param {number} baseToughnessBonus  the unmodified Toughness Bonus (no Unnatural extra)
+ * @param {number} daemonicMultiplier  the Daemonic multiplier (1 = no Daemonic, 2 = Daemonic)
+ * @returns {number} the Toughness Bonus after applying Daemonic additively
+ */
+export function daemonicToughnessBonus(toughnessBonus, baseToughnessBonus, daemonicMultiplier) {
+    const tb = Number(toughnessBonus) || 0;
+    const base = Number(baseToughnessBonus) || 0;
+    const dm = Number(daemonicMultiplier) || 1;
+    if (dm <= 1) return tb;            // no Daemonic — unchanged
+    if (base <= 0) return tb * dm;     // can't derive the base — fall back to plain doubling
+    const unnaturalSteps = Math.max(0, Math.round((tb - base) / base)); // Unnatural mult − 1
+    return base * (unnaturalSteps + dm);
+}
+
+/**
  * Felling (X) (RT, p.131 / The Soul Reaver p.150): "If the weapon hits, it ignores a
  * number of levels of Unnatural Toughness possessed by the target equal to the number in
  * parenthesis. For instance, a Felling (1) weapon ignores the benefits of Unnatural

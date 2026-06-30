@@ -441,14 +441,14 @@ RT Core p.132: "Shocking: A weapon with this Quality can Stun its opponent..."
 - verify: confirmed: correctly calculates the base TB and multiplier steps from the additive unnatural value, then safely strips exactly X levels of Unnatural Toughness (matching Soul Reaver p.150) without dipping below the base TB.
 
 ## BUG-Q-196 — `Daemonic` trait compounds with `Unnatural Toughness` instead of adding, violating the Multiple Multipliers rule
-- status: open
+- status: fixed
 - found-by: agy Gemini 3.1 Pro (High) · iter 6
 - area: rules
 - severity: P0 (wrong result in play)
 - evidence: `src/module/rolls/assign-damage-data.mjs:77` — `this.tb *= daemonicToughnessMultiplier(traits);` multiplies the `this.tb` value, which already includes the `Unnatural Toughness` multiplier.
 - canon: `/mnt/project_data/RT/RT-DOCS/CoreBook-201-401.pdf/markdown.md` (RT Core p.254, Multiple Multipliers) — "When this happens, the multipliers are added together, rather than multiplied by each other."
 - gap: If a creature has Unnatural Toughness (x2) and Daemonic (x2), its base Toughness Bonus should be multiplied by x3 (2 + 2 - 1). The current code computes x4 because it multiplies the already-doubled TB by 2 again (`this.tb *= 2`). The code must compute the net multiplier additively.
-- fix: 
+- fix: NOTE — the filer's cited "RT Core p.254 Multiple Multipliers" rule does NOT exist in RT 1e (it's a Black Crusade p.254 sidebar — the page number matches that book, not RT; grep of all RT-DOCS for "added together rather than multiplied"/"multiple multipliers" returns nothing). But the bug is real: the additive-stacking principle IS RT 1e canon via the Unnatural Characteristic trait (RT Core p.368, CoreBook-201-401.pdf/markdown.md:6857 — "one selection multiplies the Characteristic Bonus by ×2, two by ×3, three by ×4", i.e. repeated Toughness multipliers increment by 1, they don't compound). New pure helper `daemonicToughnessBonus(toughnessBonus, baseToughnessBonus, daemonicMultiplier)` in `roll-helpers.mjs:567` returns `base × (unnaturalSteps + daemonicMultiplier)` (steps read off the post-Felling bonus so Felling composes; collapses to plain ×2 with no Unnatural). `assign-damage-data.mjs:79-90` now captures `baseTb = this.tb − unnatural` before Felling and calls the helper instead of `this.tb *= daemonicToughnessMultiplier(...)`. New node test `tests/chargen/daemonic_toughness.test.mjs` (7 cases). Gate green (build:check exit 0, 232 node tests, +7). Live-verified on rt-smoke via Playwright (imported deployed assign-damage-data.mjs, drove `AssignDamageData.update()` on mock body-hit targets): UT(×2)+Daemonic → TB 8→12 (×3, was 16/×4); UT(×3)+Daemonic → 12→16 (×4, was 24); Daemonic-only → 4→8 (×2, unchanged); UT(×2) no Daemonic → 8 (unchanged); UT(×2)+Daemonic+Felling(1) → 8 (UT stripped then ×2); "Daemonic (TB 8)" stat-block form → 12.
 - verify:
 
 ## BUG-Q-197 — `Overheats` weapon quality fails to cause the attack to miss
@@ -486,3 +486,8 @@ The `Vengeful` weapon quality is registered in `attack-specials.mjs` and activel
 
 **Canon Rule:**
 RT Core p.116-122 (Weapon Special Qualities): `Vengeful` is absent from the core rules, and missing from all RT expansion books.
+
+- **BUG-Q-183**: `combat-actions.mjs` applies a `0` modifier for the "Multiple Attacks" action when the actor lacks the Two-Weapon Wielder talent, instead of the canonical `-20`.
+  - **Location**: `src/module/rules/combat-actions.mjs` (line 39)
+  - **Rule Source**: *RT Core p.240* ("If the character does not have the Two-Weapon Wielder Talent, the penalty to the attack rolls increases to -20.")
+  - **Fix**: Apply a base `-20` penalty for `Multiple Attacks`. Only reduce to `-10` if the actor possesses *both* Two-Weapon Wielder and Ambidextrous. If they lack Two-Weapon Wielder, it remains `-20`.
