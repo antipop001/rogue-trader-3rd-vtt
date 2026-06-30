@@ -433,19 +433,20 @@ export class ActionData {
 
     async _calculateVoidshipHit() {
         this.rollData.roll = await roll1d100();
-        let rollTotal = this.rollData.roll.total;
+        const rollTotal = this.rollData.roll.total;
         const target = this.rollData.modifiedTarget;
-        // this.rollData.success = rollTotal === 1 || (rollTotal <= target && rollTotal !== 100);
-        if (rollTotal <= target/10 && rollTotal !== 100) {
-            this.rollData.voidshipFlawless = true;
-        } else if (rollTotal <= target && rollTotal !== 100) {
-            this.rollData.voidshipSuccess = true;
-        } else if (rollTotal <= (target + 10) && rollTotal !== 100) {
-            this.rollData.voidshipFlawedSuccess = true;
-        } else if (rollTotal <= (100 - (10 - target/10)) && rollTotal !== 100) {
-            this.rollData.voidshipFailure = true;
+        // RT RAW (RT Core p.215): a void-ship Extended Action is a standard Test —
+        // Success/Failure with Degrees of Success/Failure as normal, NOT the homebrew
+        // "Flawless / Flawed Success" scale. Set the real `success` flag so downstream
+        // rules integrate (the chat card falls through to the standard Success+DoS /
+        // Fail+DoF branch). (BUG-Q-169.)
+        this.rollData.success = rollTotal === 1 || (rollTotal <= target && rollTotal !== 100);
+        if (this.rollData.success) {
+            this.rollData.dof = 0;
+            this.rollData.dos = degreesOfSuccess(target, rollTotal);
         } else {
-            this.rollData.voidshipFumble = true;
+            this.rollData.dos = 0;
+            this.rollData.dof = degreesOfFailure(target, rollTotal);
         }
     }
 

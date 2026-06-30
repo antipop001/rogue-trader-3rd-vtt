@@ -123,14 +123,14 @@ checker runs elsewhere) syncs via git.
 - verify: confirmed: The fix correctly changes the mutation from `penetrationModifiers` to `modifiers` for the `compact` key, accurately reducing Damage by 1 instead of Penetration, matching RT Core p.134.
 
 ## BUG-Q-169 — Voidship extended actions bypass standard mechanics in favour of an undocumented "Flawless / Flawed" scale, dropping the success flag
-- status: open
+- status: fixed
 - found-by: agy Gemini 3.1 Pro (High) · iter 3
 - area: ship
 - severity: P0 (wrong result in play)
 - evidence: `src/module/rolls/action-data.mjs:443-458` — `_calculateVoidshipHit()` creates boolean properties like `voidshipFlawless` (target/10), `voidshipFlawedSuccess` (target+10), and `voidshipFumble` instead of establishing a standard success/fail + DoS check, and comments out the standard assignment `this.rollData.success = ...`.
 - canon: `/mnt/project_data/RT/RT-DOCS/CoreBook-201-401.pdf/markdown.md:2097` (RT Core p.215) — All Extended Actions in ship combat use standard Tests (e.g. Piloting+Manoeuvrability), determining Success or Failure and tracking Degrees of Success as normal. The rulebook does not use a "Flawless" or "Flawed Success" mechanic.
 - gap: Extended actions in voidship combat (all non-weapon/turret/boarding tests) use a completely homebrew resolution scale and fail to actually set `this.rollData.success`, breaking downstream rules integration.
-- fix: 
+- fix: `src/module/rolls/action-data.mjs:434-450` — `_calculateVoidshipHit()` rewritten to a standard RT test: sets `this.rollData.success = roll === 1 || (roll <= target && roll !== 100)`, then `dos = degreesOfSuccess(target, roll)` / `dof = 0` on success (or `dof = degreesOfFailure(target, roll)` / `dos = 0` on fail), dropping the homebrew Flawless/voidshipSuccess/FlawedSuccess/Failure/Fumble flags entirely (they default `false` in roll-data.mjs, so the chat card now falls through to the standard `{{#if success}}` Success+DoS / Fail+DoF branch — RT Core p.215). Gate green (build:check exit 0, 206 node tests). Live-verified on rt-smoke via Playwright (imported deployed action-data.mjs, ran `_calculateVoidshipHit` over 400 trials at target 45): `success` matched `roll<=target` in all 400 (0 mismatches), all five homebrew flags never set (0), DoS/DoF correct on every success/fail, both outcomes observed.
 - verify:
 
 ## BUG-Q-170 — Voidship Boarding and Turret actions are incorrectly simulated as multiple d100 rolls instead of standard single RT tests
@@ -141,5 +141,16 @@ checker runs elsewhere) syncs via git.
 - evidence: `src/module/rolls/action-data.mjs:376-410` — `_calculateVoidshipHits` for "Boarding" and "Turrets" repeatedly rolls a d100 `amount` times in a `for` loop, counting successes.
 - canon: `/mnt/project_data/RT/RT-DOCS/CoreBook-201-401.pdf/markdown.md:2145` (RT Core p.219-220) — "Boarding Action" is a single Opposed Command Test. "Turrets" is a single Ballistic Skill Test where every Degree of Success destroys one torpedo or bomber.
 - gap: Boarding and Turret actions roll 1d100 repeatedly (equal to the number of turrets or "boarding attacks") instead of using the canon single-test mechanic driven by Degrees of Success.
+- fix: 
+- verify:
+
+## BUG-Q-171 — Burst-fire additional hits cap is missing or broken for ammo-less weapons
+- status: open
+- found-by: agy Gemini 3.1 Pro (High) · iter 3
+- area: combat actions
+- severity: P0 (wrong result in play)
+- evidence: `src/module/rolls/action-data.mjs:312,321` caps additional hits for burst fire using `this.rollData.fireRate`. But `fireRate` defaults to 1 and is ONLY updated to the weapon's actual RoF if the weapon tracks ammo (`src/module/rules/ammo.mjs:245` early returns if `!rollData.weapon.usesAmmo`).
+- canon: `/mnt/project_data/RT/RT-DOCS/CoreBook-1-200.pdf/markdown.md:2097` (RT Core p.242) — "scores one hit... plus one additional hit for each Degree of Success (up to the maximum firing rate of the weapon)". The weapon's firing rate is a physical limit, regardless of whether the system is tracking ammo consumption for it.
+- gap: For ammo-less ranged weapons (e.g. many creature ranged attacks), Semi-Auto Burst (line 312, gating on `actionItem.isRanged`) caps `additionalHits` at `1 - 1 = 0`, breaking the action entirely. Full Auto Burst (line 321, gating on `actionItem.usesAmmo`) bypasses the cap entirely, allowing infinite hits based on DoS rather than capping at `rateOfFire.full`.
 - fix: 
 - verify:
