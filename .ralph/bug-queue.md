@@ -419,7 +419,7 @@ The `Shocking` weapon quality is completely omitted from the `attackSpecials()` 
 RT Core p.132: "Shocking: A weapon with this Quality can Stun its opponent..."
 
 ## BUG-Q-194 — `Accurate` and `Maximal` weapon qualities still bypass Righteous Fury, Tearing, and Proven
-- status: fixed
+- status: verified
 - found-by: agy Gemini 3.1 Pro (High) · iter 6
 - area: weapons
 - severity: P0 (wrong result in play)
@@ -427,7 +427,7 @@ RT Core p.132: "Shocking: A weapon with this Quality can Stun its opponent..."
 - canon: `/mnt/project_data/RT/RT-DOCS/CoreBook-1-200.pdf/markdown.md:2298` (Righteous Fury) — "If a character rolls a 10 on any damage die (including additional dice from talents, weapon qualities, etc.)".
 - gap: The previous fixes for `Maximal` and `Accurate` completely missed integrating the extra damage dice into the base `damageRoll.terms` or `rollFormula`. By adding them as flat `modifiers` after the base roll is evaluated, the extra dice do not benefit from `Tearing` or `Proven`, and any natural 10s rolled on these dice completely fail to trigger Righteous Fury (which only iterates `damageRoll.terms`). These dice MUST be added to the `damageRoll` constructed at the start.
 - fix: `src/module/rolls/damage-data.mjs` — moved the Accurate (`+Nd10`/2 DoS, Basic+Aim) and Maximal (`+1d10`) rolls UP to BEFORE the Righteous-Fury / Proven dice scan, collected into a new `bonusDamageRolls` array that is merged into `damageRolls = [this.damageRoll, ...bonusDamageRolls]` (the array the RF/Proven loop iterates). Tearing now applies its extra-die `kh` modifier to these bonus rolls too. Removed the old post-hoc flat-modifier blocks from the ranged section. Their totals still surface as named `accurate`/`maximal` damage modifiers (display/total unchanged); kept OUT of `rollFormula` so RF-extra / helpless re-rolls don't duplicate the one-shot bonus. Deliberately scoped to Accurate+Maximal as filed (Mighty Shot/Eye-of-Vengeance are flat +N, not dice). Verified: `npm run build:check` + `npm test` (218 pass) green; live on rt-smoke via Playwright page-context — forced every Die `_roll` to max face, ran `_calculateDamage` on a base-`'0'` Maximal weapon → `modifiers.maximal === 10` AND `righteousFury.length === 1` (the maximal natural-10 triggered RF; was 0 under the old flat-modifier path), control without Maximal → 0 RF / no modifier.
-- verify:
+- verify: confirmed: properly surfaces Accurate and Maximal extra dice as Rolls within `bonusDamageRolls`, evaluating them and folding them into the Righteous Fury and Proven loop while correctly appending the `kh` modifier for Tearing. Leaving them out of `rollFormula` correctly prevents duplicative scaling during the Righteous Fury extra roll itself.
 
 ## BUG-Q-195 — `Felling` weapon quality fails to reduce Unnatural Toughness when assigning damage
 - status: open
