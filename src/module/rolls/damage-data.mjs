@@ -159,10 +159,11 @@ export class Hit {
         // here (and to Penetration in _calculatePenetration; the damage type becomes Energy in
         // _calculateSpecials). The damage modifier MUST be set before _totalDamage() runs. The
         // optional Focus-Power +1d10/DoS bonus (ignoring armour/TB) remains a manual follow-up.
-        // (QA-014.) Use the sustained-reduced effective rating (currentRating = rating −
-        // sustained) — Errata v1.4 p.12: "In all cases, you use effective Psy Rating", including
-        // force-weapon bonuses. (BUG-Q-219.)
-        const forcePsyRating = sourceActor?.psy?.currentRating ?? sourceActor?.psy?.rating ?? 0;
+        // (QA-014.) Uses BASE Psy Rating: ItS p.126 RAW says the bonus is "equal to the psyker's
+        // Psy Rating" with no "effective" qualifier, and the Errata v1.4 p.12 effective-rating
+        // ruling is explicitly scoped to "Psychic Techniques" — a Force weapon's passive bonus is
+        // not one. (BUG-Q-219 — fix reverted to base rating on dispute.)
+        const forcePsyRating = sourceActor?.psy?.rating ?? 0;
         if (forcePsyRating > 0 && attackData.rollData.hasAttackSpecial('Force')) {
             this.modifiers['force'] = forcePsyRating;
         }
@@ -454,9 +455,10 @@ export class Hit {
         }
 
         // Force weapon (ItS): a psyker adds their Psy Rating to Penetration (QA-014). Set before
-        // _totalPenetration() sums the modifiers. Effective (sustained-reduced) rating per
-        // Errata v1.4 p.12. (BUG-Q-219.)
-        const forcePen = sourceActor?.psy?.currentRating ?? sourceActor?.psy?.rating ?? 0;
+        // _totalPenetration() sums the modifiers. Uses BASE Psy Rating per ItS p.126 RAW (no
+        // "effective" qualifier; Errata's effective-rating ruling is scoped to Psychic Techniques).
+        // (BUG-Q-219 — fix reverted to base rating on dispute.)
+        const forcePen = sourceActor?.psy?.rating ?? 0;
         if (forcePen > 0 && attackData.rollData.hasAttackSpecial('Force')) {
             this.penetrationModifiers['force'] = forcePen;
         }
