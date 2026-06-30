@@ -836,14 +836,14 @@ RT Core p.218 (Critical Hits): "If the number of Degrees of Success is equal to 
 - verify:
 
 ## BUG-Q-230 — Suppressing Fire forces Full Auto fire rate and computes incorrect ammo cost
-- status: open
+- status: wontfix
 - found-by: agy Gemini 3.1 Pro (High) · iter 6
 - area: weapons
 - severity: P0 (wrong result in play)
 - evidence: `src/module/rules/ammo.mjs:252-257` hardcodes `fireRate = rollData.weapon.system.rateOfFire.full` for Suppressing Fire, causing it to evaluate to 0 for Semi-Auto-only weapons (which breaks the action). It then calculates `ammoUsed = fireRate * ammoPerShot` (line 300) instead of consuming 10 shells or half a clip.
 - canon: `/mnt/project_data/RT/RT-DOCS/CoreBook-201-401.pdf/markdown.md:2185` (RT Core p.248) — "A character with a weapon capable of Semi-Auto or Full Auto Burst may expend 10 shells/charges (or half a clip of ammunition... whichever is greater) to lay down Suppressing Fire." Additionally, "If the weapon normally scores a hit for each Degree of Success (as it would on full auto), it continues to do so." (The engine incorrectly forces `additionalHits += Math.floor(dos / 2)` in `action-data.mjs:381`).
 - gap: Suppressing Fire incorrectly consumes ammo equal to a normal Full Auto burst instead of the mandatory `max(10, Math.ceil(clip_max / 2))`. Furthermore, Semi-Auto capable weapons without Full Auto break entirely because `rateOfFire.full` is 0. Full Auto weapons incorrectly score 1 extra hit per 2 DoS instead of 1 extra hit per DoS.
-- fix: 
+- fix: wontfix — the cited canon is from a different edition (Only War / Black Crusade), not RT 1e. The verbatim RT Core p.248 text (CoreBook-201-401.pdf/markdown.md:2185, read in full) says Suppressing Fire "requires a weapon capable of fully automatic fire", the character "fires a fully automatic burst and expends the appropriate ammo", and "every two degrees of success scores an extra hit against another random victim" (cap at the weapon's full-auto RoF). There is NO "10 shells / half a clip" rule and NO "hit per DoS" rule in RT 1e. So the current engine is RAW-correct on all three counts: `ammo.mjs:252-253` fireRate=full (a Semi-Auto-only weapon legitimately can't perform the action, full=0), `ammo.mjs:300` ammoUsed = fireRate*ammoPerShot (= a full-auto burst's worth = "the appropriate ammo"), and `action-data.mjs:377-386` groups it with Semi-Auto Burst at floor(dos/2) extra hits (= "every two degrees of success"). No code change.
 - verify:
 
 ### BUG-Q-231: Righteous Fury on vehicles inflicts raw damage instead of a Critical Hit roll
