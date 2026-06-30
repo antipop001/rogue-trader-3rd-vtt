@@ -275,14 +275,14 @@ checker runs elsewhere) syncs via git.
 - triage: 
 
 ## BUG-Q-182 — Thrown Weapons incorrectly Jam on 96+; Grenades fail to implement dud/detonate Jam rules
-- status: new
+- status: fixed
 - found-by: agy Gemini 3.1 Pro (High)
 - area: engine-rolls
 - severity: P0 (wrong result in play)
 - evidence: `src/module/documents/item.mjs:77-80` defines `isRanged` to include `isThrown`. `src/module/rolls/action-data.mjs:284` jams all `isRanged` weapons on `96+`, applying `system.jammed = true`. No logic exists for Grenades exploding or duding.
-- canon: `/mnt/project_data/RT/RT-DOCS/CoreBook-1-200.pdf/markdown.md:5937` (RT Core p.117) — Thrown weapons: "These weapons do not jam." `CoreBook-1-200.pdf/markdown.md:6461` (RT Core p.126) — "Whenever a jam results from throwing a grenade... Roll 1d10. On any result other than 10, the explosive is simply a dud... On a 10, the explosive detonates immediately with the effect centred on the attacker."
+- canon: `/mnt/project_data/RT/RT-DOCS/CoreBook-201-401.pdf/markdown.md:2521` (RT Core p.249 Weapon Jams) — the 96-00 jam is a malfunction of *fired* ranged weapons ("machine spirit ... poor design"); a muscle-thrown knife/spear cannot jam. `CoreBook-1-200.pdf/markdown.md:6461` (RT Core p.126 "When a Grenade Jams") — "Roll 1d10. On any result other than 10, the explosive is simply a dud and nothing happens. On a 10, the explosive detonates immediately with the effect centred on the attacker."
 - gap: Ordinary thrown weapons (like spears/knives) incorrectly receive the 'Jammed' state on a 96+ roll. Grenades also incorrectly get the standard 'Jammed' state instead of resolving the 1d10 dud/detonate effect.
-- fix: 
+- fix: `src/module/rolls/action-data.mjs:296-310` — the 96+ jam branch now splits on `actionItem.isThrown`: a fired ranged weapon still pushes `'jam'` (RT Core p.249), a thrown weapon never gets the mechanical jam state, and a thrown GRENADE (`system.type === 'Grenade'`) instead pushes a new `'grenade-jam'` effect. `createEffectData` gains a `case 'grenade-jam'` that rolls 1d10 and resolves the dud/detonate rule (RT Core p.126: 10 → detonate centred on the attacker, else dud), with NO `system.jammed` writeback. Note: the filer's cited "p.117 — These weapons do not jam" quote isn't literal in RT-DOCS, but the jam rule (p.249) is explicitly about firing mechanical weapons, so a thrown weapon jamming is a category error — the bug is real. Gate green (build:check exit 0, 232 node tests). Live-verified on rt-smoke via Playwright (imported deployed action-data.mjs, drove `calculateSuccessOrFailure` + `createEffectData` with a rigged roll of 96): thrown grenade → `grenade-jam` effect, output is Grenade Dud/Detonates (never a 'Jam', no jammed state); ordinary thrown weapon → no jam at all (empty effects); fired ranged weapon → still jams (`jam` effect + 'Jam' output) at 96 and not at 95.
 - verify:
 
 - triage: 
@@ -491,3 +491,135 @@ RT Core p.116-122 (Weapon Special Qualities): `Vengeful` is absent from the core
   - **Location**: `src/module/rules/combat-actions.mjs` (line 39)
   - **Rule Source**: *RT Core p.240* ("If the character does not have the Two-Weapon Wielder Talent, the penalty to the attack rolls increases to -20.")
   - **Fix**: Apply a base `-20` penalty for `Multiple Attacks`. Only reduce to `-10` if the actor possesses *both* Two-Weapon Wielder and Ambidextrous. If they lack Two-Weapon Wielder, it remains `-20`.
+
+## BUG-Q-200 — `perDoSDamage` dice (Psychic Powers) are excluded from the `damageRolls` array, never triggering Righteous Fury
+- status: new
+- found-by: agy Gemini (High)
+- file: src/module/rolls/damage-data.mjs:172, 257
+- canon: RT Core p.159, p.245
+
+**Description:**
+When a psychic power (or any attack) uses the `perDoSDamage` formula, `damage-data.mjs` correctly evaluates the dice and pushes them to `this.perDoSRolls` (lines 172-185), adding their total to `this.damage`. However, `this.perDoSRolls` is never appended to the `bonusDamageRolls` or `damageRolls` arrays. When the Righteous Fury loop scans the dice (`for (const dmgRoll of damageRolls) ...`), the `perDoSDamage` dice are entirely excluded. A natural 10 rolled on a `perDoSDamage` die will never trigger Righteous Fury.
+
+**Canon Rule:**
+RT Core p.159 (Psychic Powers): "Psychic powers that cause Damage can also cause Righteous Fury unless otherwise noted."
+RT Core p.245 (Righteous Fury): "If a natural 10 is rolled on any damage die, there is a chance of Righteous Fury."
+
+## BUG-Q-201 — Cover AP is not doubled against Primitive weapons
+- status: new
+- found-by: agy Gemini (High)
+- file: src/module/rolls/assign-damage-data.mjs:179-198
+- canon: RT Core p.142, p.245
+
+**Description:**
+In `assign-damage-data.mjs`, when an attack strikes a covered location, the cover's AP (`coverAp`) reduces the `totalDamage` first. The remaining `totalDamage` is then evaluated against the target's personal armour (`this.armour`), and only at this step is the armour doubled if the weapon is Primitive (`usableArmour = usableArmour * 2`). Because `coverAp` is evaluated entirely separately and earlier in the block, it is never doubled against Primitive weapons. A Primitive weapon effectively bypasses modern cover just as easily as a modern weapon would.
+
+**Canon Rule:**
+RT Core p.142 (Primitive): "Primitive weapons are very ineffective against modern armour. All Armour Points (with the exception of armour that also has the Primitive quality) are doubled against hits from Primitive weapons."
+RT Core p.245 (Cover): "Cover provides a number of Armour Points...".
+
+## BUG-Q-202 — `Tearing` exact string match on modifier fails to detect existing keep-highest modifiers, causing double-application
+- status: new
+- found-by: agy Gemini (High)
+- file: src/module/rolls/damage-data.mjs:147, 163, 197
+- canon: Foundry VTT Roll syntax
+
+**Description:**
+When evaluating the `Tearing` quality, `damage-data.mjs` checks `if (die.modifiers.includes('kh')) return;` to prevent applying the Tearing modifier multiple times. However, Foundry VTT parses modifiers as they appear in the formula (e.g. `'kh1'`). Furthermore, the code itself dynamically pushes `'kh' + die.number` (e.g., `'kh1'` or `'kh2'`). The exact string `includes('kh')` check will return false if the array contains `'kh1'`. If a weapon formula already has a keep-highest modifier natively (e.g. `2d10kh1`), the check fails, the code pushes another `'kh2'`, increments the dice number, and constructs invalid dice terms like `3d10kh1kh2`. The check must use a substring or prefix match (e.g. `some(m => m.startsWith('kh'))`).
+
+**Canon Rule:**
+Engine logic / Foundry Roll syntax constraint.
+
+## BUG-Q-203 — `Multiple Attacks` action applies incorrect penalties for Two-Weapon Wielder, Ambidextrous, and Gunslinger
+- status: new
+- found-by: agy Gemini (High)
+- file: src/module/rules/combat-actions.mjs:42
+- canon: RT Core p.243, p.99
+
+**Description:**
+The engine incorrectly calculates the penalties for the Multiple Attacks action. Currently, it assigns a flat -20 base penalty, and only drops it to -10 if the character possesses *both* the `Two-Weapon Wielder` and `Ambidextrous` talents. It never drops to +0. Furthermore, it completely ignores the `Gunslinger` talent for pistol weapons.
+
+**Canon Rule:**
+RT Core p.243 (Two-Weapon Fighting): "If he does not possess the Two-Weapon Wielder Talent, he suffers a -20 penalty to Weapon Skill and Ballistic Skill Tests... If he possesses the Two-Weapon Wielder Talent, the penalty drops to -10. If he also possesses the Ambidextrous Talent, the penalty drops to +0."
+RT Core p.99 (Gunslinger): "A character with this Talent reduces the penalty for fighting with two weapons by 10... If he also possesses the Two-Weapon Wielder (Ballistic) Talent, the penalty drops to +0. This only applies when using Pistols."
+
+## BUG-Q-204 — `Marksman` talent is completely missing from range penalty calculations
+- status: new
+- found-by: agy Gemini (High)
+- file: src/module/rules/range.mjs:136-142
+- canon: RT Core p.102
+
+**Description:**
+The `Marksman` talent is present in the talents pack but has zero mechanical effect. When calculating range modifiers in `range.mjs`, the engine checks for `Telescopic Sight` and `Omni-Scope` (which require Aiming) to waive negative range penalties, but entirely omits checking for the `Marksman` talent.
+
+**Canon Rule:**
+RT Core p.102: "Marksman: The character suffers no penalties for firing at Long or Extreme Range."
+
+## BUG-Q-205 — `Deadeye Shot` talent fails to reduce the Called Shot penalty
+- status: new
+- found-by: agy Gemini (High)
+- file: src/module/rules/combat-actions.mjs:32-37
+- canon: RT Core p.98
+
+**Description:**
+The `Deadeye Shot` talent exists in the talents pack but has no mechanical hook. `combat-actions.mjs` correctly waives the entire Called Shot penalty (-20 to 0) for the `Sharpshooter` talent, but fails to reduce the penalty to -10 for characters who only possess `Deadeye Shot`. 
+
+**Canon Rule:**
+RT Core p.98: "Deadeye Shot: When making a Called Shot (see page 239) the character's penalty is reduced to -10."
+
+## BUG-Q-206 — Cover AP incorrectly applies its full penetration reduction to both cover and the target's armour
+- status: new
+- found-by: agy Gemini (High)
+- file: src/module/rolls/assign-damage-data.mjs:176-189
+- canon: RT Core p.245
+
+**Description:**
+In `assign-damage-data.mjs`, when an attack strikes a covered location, the cover's AP (`coverAp`) absorbs some or all of the weapon's `totalDamage`. Although the cover's effectiveness is correctly reduced by the weapon's `totalPenetration`, the `totalPenetration` value itself is never reduced. As a result, the full weapon penetration is applied a *second* time against the character's personal armour (`usableArmour = usableArmour - totalPenetration`). This effectively doubles the weapon's penetration against entrenched targets.
+
+**Canon Rule:**
+RT Core p.245 (Cover): "it does affect cover, reducing its APs by the weapon's Penetration, and any remaining Penetration affects the target's Armour."
+
+## BUG-Q-207 — Voidship critical hits are improperly multiplied by the number of hits in a salvo
+- status: new
+- found-by: agy Gemini (High)
+- file: src/module/rolls/action-data.mjs:409-415
+- canon: RT Core p.218
+
+**Description:**
+In `action-data.mjs`, when a voidship weapon scores a critical hit (either via its Crit Rating or the Destructive quality), the engine incorrectly flags every single hit in the salvo as a critical hit (`isCritical: true`). Later in `assign-damage-data.mjs`, this causes the `executeCritical` loop to roll on the Critical Hits chart once per *hit* in the salvo, rather than once per *salvo*.
+
+**Canon Rule:**
+RT Core p.218 (Critical Hits): "If the number of Degrees of Success is equal to or greater than the weapon's Crit Rating, the weapon scores a Critical Hit... A macrobattery that scores a Critical Hit on its target also inflicts one normal hit for every additional Degree of Success." (Only one hit is critical, the rest are normal).
+
+## BUG-Q-208 — Vehicle Armour is not doubled against Primitive weapons
+- status: open
+- found-by: agy Gemini 3.1 Pro (High) · iter 1
+- area: vehicle
+- severity: P0 (wrong result in play)
+- evidence: `src/module/rolls/assign-damage-data.mjs:149` — `let armour = this.ignoreArmour ? 0 : Math.max(0, this.facingArmour - totalPenetration);`
+- canon: `/mnt/project_data/RT/RT-DOCS/CoreBook-1-200.pdf/markdown.md:6873` (RT Core p.142) — "Primitive weapons are very ineffective against modern armour. All Armour Points (with the exception of armour that also has the Primitive quality) are doubled against hits from Primitive weapons."
+- gap: The `isVehicle` block completely bypasses the Primitive weapon check. While personal combat correctly doubles armour against Primitive weapons, vehicles subtract only their base `facingArmour`, allowing Primitive weapons to be just as effective against a tank as modern weapons.
+- fix: 
+- verify: 
+
+## BUG-Q-209 — Melee `Lance` quality completely zeroes the weapon's Penetration on a bare success (0 DoS)
+- status: open
+- found-by: agy Gemini 3.1 Pro (High) · iter 1
+- area: rules
+- severity: P0 (wrong result in play)
+- evidence: `src/module/rolls/damage-data.mjs:466` — `this.penetrationModifiers['lance'] = this.penetration * (attackData.rollData.dos - 1);`
+- canon: QA-094 established that `dos - 1` meant "extra Pen per degree beyond the first", but also shifted the baseline of a bare success to `0 DoS`. 
+- gap: Because a bare success (e.g. rolling 45 against target 49) yields `dos = 0`, the expression evaluates to `(0 - 1) = -1`. The engine multiplies the base penetration by `-1` and applies it as a modifier, which reduces the weapon's `totalPenetration` to exactly 0 (base - base = 0). The formula must guard against `dos < 1` to prevent stripping penetration on 0 DoS hits.
+- fix: 
+- verify: 
+
+## BUG-Q-210 — Firing with insufficient ammo for a high-consumption shot resolves the attack for free without using ammo
+- status: open
+- found-by: agy Gemini 3.1 Pro (High) · iter 1
+- area: weapons
+- severity: P0 (wrong result in play)
+- evidence: `src/module/rules/ammo.mjs:282-286` combined with `src/module/rolls/action-data.mjs:610-612` — if `availableAmmo` is less than `ammoPerShot`, `maximumHits` evaluates to `0`. `fireRate` drops to `0`, setting `ammoUsed` to `0`. 
+- canon: `/mnt/project_data/RT/RT-DOCS/CoreBook-1-200.pdf/markdown.md:5930` (RT Core p.115) — "A weapon cannot be fired if it does not have enough ammunition."
+- gap: When firing a weapon mode that consumes more ammo per shot than remains in the clip (e.g. a Maximal shot requiring 3 ammo when only 2 remain, or a Twin-Linked weapon requiring 2 when only 1 remains), the engine clamps `ammoUsed` to `0` but fails to abort the attack. The attack completes, generates the base hit, and subtracts 0 ammo, allowing infinite free shots.
+- fix: 
+- verify: 

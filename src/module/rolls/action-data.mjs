@@ -294,8 +294,20 @@ export class ActionData {
                             this.effects.push('overheat');
                         }
                     } else if (rollTotal >= jamThreshold) {
-                        this.effects.push('jam');
-                        this.rollData.success = false;
+                        // Thrown weapons are propelled by muscle, not a machine spirit, so
+                        // they do not "jam" like fired ranged weapons (RT Core p.249 Weapon
+                        // Jams — the rule is about firing). A jam result from throwing a
+                        // grenade instead resolves the dud/detonate rule (RT Core p.126); an
+                        // ordinary thrown weapon (knife/spear) simply misses. (BUG-Q-182.)
+                        if (actionItem.isThrown) {
+                            if (actionItem.system?.type === 'Grenade') {
+                                this.effects.push('grenade-jam');
+                            }
+                            this.rollData.success = false;
+                        } else {
+                            this.effects.push('jam');
+                            this.rollData.success = false;
+                        }
                     }
                 }
             }
@@ -671,6 +683,20 @@ export class ActionData {
                         await this.rollData.weapon.update({ 'system.jammed': true });
                     }
                     break;
+                case 'grenade-jam': {
+                    // RT Core p.126 (When a Grenade "Jams"): a jam from throwing a grenade
+                    // does not leave the weapon jammed — roll 1d10. On any result other than
+                    // 10 the explosive is simply a dud and nothing happens; on a 10 it
+                    // detonates immediately, centred on the attacker. (BUG-Q-182.)
+                    const dudRoll = new Roll('1d10', {});
+                    await dudRoll.evaluate();
+                    if (dudRoll.total === 10) {
+                        this.addEffect('Grenade Detonates!', `The throw goes catastrophically wrong (1d10 → ${dudRoll.total}): the explosive detonates immediately, centred on the attacker with its normal effect!`);
+                    } else {
+                        this.addEffect('Grenade Dud', `The throw misfires (1d10 → ${dudRoll.total}): the explosive is simply a dud and nothing happens.`);
+                    }
+                    break;
+                }
             }
         }
     }
