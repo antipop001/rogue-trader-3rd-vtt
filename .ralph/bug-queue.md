@@ -825,14 +825,14 @@ RT Core p.218 (Critical Hits): "If the number of Degrees of Success is equal to 
 - verify: disputed: The cited canon "Cruisers and larger: 2d10" is hallucinated. The verbatim text in RT Core p.219 (markdown.md:984) reads only "1d5 for transports and raiders, 1d10 for frigates, 2d5 for light cruisers, and 2d10 for cruisers". It does not mention "and larger" or Battleships. Because there is no RAW rule for Battleship ramming damage in either Core or Battlefleet Koronus, applying 2d10 to them relies on an analogy ("they are cruisers and larger") rather than verbatim text. The text only unambiguously supports 2d10 specifically for cruisers.
 - fix (dispute → wontfix): Conceded — the dispute is canonically correct. Reverted the speculative `battleship` special-case in `ship-combat.mjs:174-182`: RT Core p.219 (verbatim, CoreBook-201-401.pdf/markdown.md:992) lists ONLY transport/raider 1d5, frigate 1d10, light cruiser 2d5, cruiser 2d10 — no "and larger" and no Battleship. No battleship hull exists in the ship-traits pack (RT Core hulls top out at Cruiser), so the branch was unreachable dead code, and adding a non-RAW rule violates minimal-correct-change. `shipRamDice` now matches the verbatim table; `tests/chargen/ship_combat.test.mjs` BUG-Q-228 case drops the battleship assertion. Cruiser/Grand-Cruiser still → 2d10 via the pre-existing `cruiser` substring (untouched). Gate green (`npm run build:check` exit 0; `npm test` 252/252). No live-verify: pure helper asserted by node test, no battleship hull to ram with live.
 ## BUG-Q-229 — Renegade Psyker Unfettered fails to add +5 per Psy Rating to Phenomena
-- status: open
+- status: fixed
 - found-by: agy Gemini 3.1 Pro (High) · iter 6
 - area: psychic
 - severity: P0 (wrong result in play)
 - evidence: `src/module/rolls/action-data.mjs:88-94` — The phenomena bonus is only computed inside the `strength === 'push'` branch. When `strength === 'unfettered'` and the psyker rolls doubles, the bonus stays at 0.
 - canon: `/mnt/project_data/RT/RT-DOCS/CoreBook-1-200.pdf/markdown.md:8045` (RT Core p.157, Table 6-1) — For Renegade Psykers And Sorcerers under Unfettered: "If the psyker rolls doubles during a Focus Power Test, roll on the Psychic Phenomena Table (see page 160), add +5 per Psy Rating used."
 - gap: Renegade Psykers using Unfettered strength incorrectly roll on the Psychic Phenomena table with no modifier (a flat 1d100) instead of receiving the mandated +5 per Psy Rating used modifier.
-- fix: 
+- fix: `action-data.mjs:87-95` — lifted the `psyClass`/`renegade` detection out of the push-only branch and added an `else if (isDoubles)` arm: Unfettered + doubles now adds `pr * 5` to the Phenomena roll for Renegade/Unsanctioned/Unbound psykers (RT Core p.157 Table 6-1, "add +5 per Psy Rating used"); Sanctioned psykers still roll unmodified. Push branch unchanged. Gate green (`npm run build:check` exit 0; `npm test` 252/252). Live-verified on rt-smoke via Playwright page-context (`/tmp/verify_bug229.py`): renegade unfettered + doubles (pr 4) → "[+20 to the roll]"; sanctioned unfettered + doubles → no bonus note; renegade unfettered + non-doubles → 0 phenomena effects.
 - verify:
 
 ## BUG-Q-230 — Suppressing Fire forces Full Auto fire rate and computes incorrect ammo cost

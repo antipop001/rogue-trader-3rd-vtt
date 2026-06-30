@@ -85,12 +85,17 @@ export class ActionData {
             // one. Sustaining other powers adds a further +10. The harder you Push, the worse the
             // expected result. (QA-039.)
             let phenomBonus = 0;
+            const psyClass = String(this.rollData.sourceActor.system?.psy?.class ?? '').toLowerCase();
+            const renegade = psyClass === 'unsanctioned' || psyClass === 'unbound' || psyClass === 'renegade';
             if (strength === 'push') {
                 // Calculate push amount based on current effective rating (QA-151 compliance)
                 const pushed = pr - currentRating;
-                const psyClass = String(this.rollData.sourceActor.system?.psy?.class ?? '').toLowerCase();
-                const renegade = psyClass === 'unsanctioned' || psyClass === 'unbound' || psyClass === 'renegade';
                 phenomBonus += pushed * (renegade ? 10 : 5);
+            } else if (isDoubles) {
+                // Unfettered + doubles (RT Core p.157 Table 6-1): a Renegade Psyker/Sorcerer
+                // adds +5 per Psy Rating used to the Phenomena roll; Sanctioned psykers roll
+                // unmodified. (BUG-Q-229.)
+                if (renegade) phenomBonus += pr * 5;
             }
             const sustained = Number(this.rollData.sourceActor.system?.psy?.sustained ?? 0);
             if (sustained > 0) phenomBonus += 10;
