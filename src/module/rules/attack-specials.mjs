@@ -116,8 +116,10 @@ export function attackSpecials() {
             hasLevel: true,
         },
         {
-            name: 'Concussive',
-            hasLevel: true,
+            // RT 1e's quality is Shocking (RT Core p.145), not DH2's Concussive (which appears in
+            // RT only as crit-table prose). Tempest Bolt Shells grant it. (BUG-Q-193.)
+            name: 'Shocking',
+            hasLevel: false,
         },
         {
             name: 'Corrosive',
@@ -189,7 +191,7 @@ export function attackSpecials() {
         },
         {
             name: 'Primitive',
-            hasLevel: true,
+            hasLevel: false,   // RT 1e Primitive takes no level — doubles armour, no damage cap (BUG-Q-198)
         },
         {
             name: 'Proven',
@@ -217,11 +219,11 @@ export function attackSpecials() {
         },
         {
             name: 'Smoke',
-            hasLevel: true,
+            hasLevel: false,   // RT 1e Smoke: flat 3d10m cloud, no level (BUG-Q-198)
         },
         {
             name: 'Snare',
-            hasLevel: true,
+            hasLevel: false,   // RT 1e Snare: flat Agility test, no level (BUG-Q-198)
         },
         {
             name: 'Spray',
@@ -237,7 +239,7 @@ export function attackSpecials() {
         },
         {
             name: 'Toxic',
-            hasLevel: true,
+            hasLevel: false,   // RT 1e Toxic: flat -5/point of damage, no level (BUG-Q-198)
         },
         {
             name: 'Twin-Linked',
@@ -259,10 +261,7 @@ export function attackSpecials() {
             name: 'Unstable',
             hasLevel: false,
         },
-        {
-            name: 'Vengeful',
-            hasLevel: true,
-        },
+        // (Vengeful removed — not an RT 1e weapon quality; DH2/Only War import. BUG-Q-186.)
     ];
 }
 

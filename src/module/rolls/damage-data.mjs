@@ -103,11 +103,10 @@ export class Hit {
         if (!actionItem) return;
         const sourceActor = attackData.rollData.sourceActor;
 
-        let righteousFuryThreshold = 10;
-        if (attackData.rollData.hasAttackSpecial('Vengeful')) {
-            righteousFuryThreshold = attackData.rollData.getAttackSpecial('Vengeful').level ?? 10;
-            game.rt.log('_calculateDamage has vengeful: ', righteousFuryThreshold);
-        }
+        // Righteous Fury triggers on a natural 10 (RT Core p.245) — fixed. "Vengeful" is not an
+        // RT 1e weapon quality (it appears nowhere in the corebook glossary or any pack); the
+        // configurable RF threshold was a DH2/Only War import. (BUG-Q-186.)
+        const righteousFuryThreshold = 10;
 
         let rollFormula = actionItem.system.damage;
         if(!rollFormula || rollFormula === '' || rollFormula === 0) {
@@ -144,7 +143,7 @@ export class Hit {
         if (attackData.rollData.hasAttackSpecial('Tearing')) {
             game.rt.log('Modifying dice due to tearing');
             this.damageRoll.terms.filter(term => term instanceof foundry.dice.terms.Die).forEach(die => {
-                if (die.modifiers.includes('kh')) return;
+                if (die.modifiers.some(m => m.startsWith('kh'))) return;  // kh1/kh2, not literal 'kh' (BUG-Q-202)
                 die.modifiers.push('kh' + die.number);
                 die.number += 1;
             });
@@ -154,6 +153,18 @@ export class Hit {
         game.rt.log('Damage Roll', this.damageRoll);
 
         this.damage = this.damageRoll.total;
+
+        // Flame weapons make no roll to hit, so their ONLY jam path is a natural 9 on the Damage
+        // dice, before bonuses (RT Core p.117). Push the jam effect on attackData so createEffectData
+        // persists `system.jammed`; guard against double-push across a multi-hit cone. (BUG-Q-183.)
+        if (attackData.rollData.hasAttackSpecial('Flame')) {
+            const flameNine = this.damageRoll.terms
+                .filter(t => t instanceof foundry.dice.terms.Die)
+                .some(die => (die.results ?? []).some(r => r.result === 9));
+            if (flameNine && Array.isArray(attackData.effects) && !attackData.effects.includes('jam')) {
+                attackData.effects.push('jam');
+            }
+        }
 
         // Force weapon (ItS): a psyker wielding a Force weapon adds their Psy Rating to Damage
         // here (and to Penetration in _calculatePenetration; the damage type becomes Energy in
@@ -174,7 +185,10 @@ export class Hit {
         // the roll instead of living only in the description text.
         const perDoSFormula = actionItem.system?.perDoSDamage;
         if (perDoSFormula && String(perDoSFormula).trim() !== '') {
-            const dosCount = Math.max(1, attackData.rollData.dos ?? 1);
+            // One roll per Degree of Success, floored at 0 — a BARE success is 0 DoS under RT 1e's
+            // band method (QA-094), so it adds NO per-DoS dice (e.g. Banishment "1d10 per Degree of
+            // Success" → 0 at 0 DoS). The old `Math.max(1, …)` overpaid a die on a bare win. (BUG-Q-222.)
+            const dosCount = Math.max(0, attackData.rollData.dos ?? 0);
             this.perDoSRolls = [];
             let perDoSTotal = 0;
             for (let i = 0; i < dosCount; i++) {
@@ -207,7 +221,7 @@ export class Hit {
                     const accurateRoll = new Roll(`${dice}d10`, attackData.rollData);
                     if (attackData.rollData.hasAttackSpecial('Tearing')) {
                         accurateRoll.terms.filter(t => t instanceof foundry.dice.terms.Die).forEach(die => {
-                            if (die.modifiers.includes('kh')) return;
+                            if (die.modifiers.some(m => m.startsWith('kh'))) return;  // kh1/kh2, not literal 'kh' (BUG-Q-202)
                             die.modifiers.push('kh' + die.number);
                             die.number += 1;
                         });
@@ -222,7 +236,7 @@ export class Hit {
                 const maximalRoll = new Roll('1d10', attackData.rollData);
                 if (attackData.rollData.hasAttackSpecial('Tearing')) {
                     maximalRoll.terms.filter(t => t instanceof foundry.dice.terms.Die).forEach(die => {
-                        if (die.modifiers.includes('kh')) return;
+                        if (die.modifiers.some(m => m.startsWith('kh'))) return;  // kh1/kh2, not literal 'kh' (BUG-Q-202)
                         die.modifiers.push('kh' + die.number);
                         die.number += 1;
                     });
@@ -238,12 +252,15 @@ export class Hit {
         // the two rolls make a Righteous Fury automatic (handled below). The to-hit already
         // auto-favours a Helpless target via the +30 condition modifier.
         const helplessTarget = isHelplessTarget(attackData.rollData.targetActor?.statuses);
-        const damageRolls = [this.damageRoll, ...bonusDamageRolls];
+        // Per-DoS damage dice (e.g. Banishment) are damage dice too, so a natural 10 on them can
+        // trigger Righteous Fury (RT Core p.245/250; psychic powers RF unless noted, p.159). They
+        // were excluded from the scan, so a per-DoS-only power could never RF. (BUG-Q-200/216.)
+        const damageRolls = [this.damageRoll, ...bonusDamageRolls, ...(this.perDoSRolls ?? [])];
         if (helplessTarget) {
             this.damageRoll2 = new Roll(rollFormula, attackData.rollData);
             if (attackData.rollData.hasAttackSpecial('Tearing')) {
                 this.damageRoll2.terms.filter(term => term instanceof foundry.dice.terms.Die).forEach(die => {
-                    if (die.modifiers.includes('kh')) return;
+                    if (die.modifiers.some(m => m.startsWith('kh'))) return;  // kh1/kh2, not literal 'kh' (BUG-Q-202)
                     die.modifiers.push('kh' + die.number);
                     die.number += 1;
                 });
@@ -317,7 +334,7 @@ export class Hit {
                 // like the base roll. (BUG-Q-164.)
                 if (attackData.rollData.hasAttackSpecial('Tearing')) {
                     extra.terms.filter(term => term instanceof foundry.dice.terms.Die).forEach(die => {
-                        if (die.modifiers.includes('kh')) return;
+                        if (die.modifiers.some(m => m.startsWith('kh'))) return;  // kh1/kh2, not literal 'kh' (BUG-Q-202)
                         die.modifiers.push('kh' + die.number);
                         die.number += 1;
                     });
@@ -379,11 +396,8 @@ export class Hit {
                 this.modifiers['crushing blow'] = 2;
             }
 
-            // Deathdealer
-            if (sourceActor.hasTalentFuzzyWords(['Deathdealer', 'Melee'])) {
-                const perBonus = sourceActor.getCharacteristicFuzzy('Perception').bonus;
-                this.modifiers['deathdealer melee'] = Math.ceil(perBonus / 2);
-            }
+            // (Deathdealer removed — a DH2 talent that exists in no RT 1e pack or canon, so the
+            // fuzzy match never fired; dead code. BUG-Q-226.)
 
             // Brutal Charge (trait): +3 damage on a Charge (RT Core p.364). `hasTalent`
             // only matches talents, so check the actor's trait items by name.
@@ -419,11 +433,7 @@ export class Hit {
                 this.modifiers['mighty shot'] = 2;
             }
 
-            // Deathdealer
-            if (sourceActor.hasTalentFuzzyWords(['Deathdealer', 'Ranged'])) {
-                const perBonus = sourceActor.getCharacteristicFuzzy('Perception').bonus;
-                this.modifiers['deathdealer ranged'] = Math.ceil(perBonus / 2);
-            }
+            // (Deathdealer removed — DH2 talent, not in any RT 1e pack/canon; dead code. BUG-Q-226.)
 
             // Ammo
             await calculateAmmoDamageBonuses(attackData, this);

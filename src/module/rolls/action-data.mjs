@@ -323,43 +323,45 @@ export class ActionData {
                     const isBurstFire = this.rollData.action === 'Semi-Auto Burst'
                         || this.rollData.action === 'Full Auto Burst'
                         || this.rollData.action === 'Suppressing Fire';
-                    let jamThreshold = isBurstFire ? 94 : 96;
-                    if (isBestRanged) {
-                        jamThreshold = 101;
-                    } else if (this.rollData.hasAttackSpecial('Reliable')) {
-                        jamThreshold = 100;
-                    } else if (this.rollData.hasAttackSpecial('Unreliable')) {
-                        jamThreshold = 91;
-                    }
+                    // RT Core p.249: an unmodified 96+ (94+ on Semi/Full/Suppressing burst) is an
+                    // automatic MISS, and normally also a Jam. Craftsmanship / Reliable change only
+                    // whether it ALSO jams — NOT the miss (BUG-Q-184: Reliable/Best previously raised
+                    // the threshold to 100/101, so 96-99 wrongly stayed a HIT). (BUG-Q-181/184.)
+                    const failThreshold = isBurstFire ? 94 : 96;
+                    const unreliableFail = this.rollData.hasAttackSpecial('Unreliable') && rollTotal >= 91;
                     if (isOverheats) {
-                        // RT Core p.116: an Overheats weapon NEVER jams — it overheats at
-                        // 91+, and any roll that WOULD jam overheats instead. Best-craft
-                        // ranged suppresses it. (QA-098/099.)
-                        if (!isBestRanged && (rollTotal >= 91 || rollTotal >= jamThreshold)) {
+                        // RT Core p.116: an Overheats weapon overheats at 91+ instead of jamming,
+                        // and the shot does NOT fire (BUG-Q-197 — overheat previously left it a hit).
+                        // Best-craft ranged suppresses the overheat. (QA-098/099.)
+                        if (!isBestRanged && rollTotal >= 91) {
                             this.effects.push('overheat');
+                            this.rollData.success = false;
                         }
-                    } else if (rollTotal >= jamThreshold) {
-                        // Thrown weapons are propelled by muscle, not a machine spirit, so
-                        // they do not "jam" like fired ranged weapons (RT Core p.249 Weapon
-                        // Jams — the rule is about firing). A jam result from throwing a
-                        // grenade instead resolves the dud/detonate rule (RT Core p.126); an
-                        // ordinary thrown weapon (knife/spear) simply misses. (BUG-Q-182.)
+                    } else if (rollTotal >= failThreshold || unreliableFail) {
+                        // Automatic miss (RT Core p.249) — applies regardless of craftsmanship/quality.
+                        this.rollData.success = false;
+                        // Thrown weapons are propelled by muscle, not a machine spirit, so they do
+                        // not "jam" like fired ranged weapons (RT Core p.249). A jam from throwing a
+                        // grenade resolves the dud/detonate rule (RT Core p.126); an ordinary thrown
+                        // weapon simply misses. (BUG-Q-182.)
                         if (actionItem.isThrown) {
                             if (actionItem.system?.type === 'Grenade') {
                                 this.effects.push('grenade-jam');
                             }
-                            this.rollData.success = false;
                         } else if (actionItem.system?.type === 'Launcher') {
                             // A jam when FIRING a grenade launcher (or similar) follows the same
                             // dud/detonate rule as a thrown grenade, except on a 10 the explosive
                             // detonates IN THE BARREL — its normal effect AND the weapon is
-                            // destroyed (RT Core p.126). (BUG-Q-182 completion — verify caught that
-                            // launchers are isRanged and were falling through to the standard jam.)
+                            // destroyed (RT Core p.126). (BUG-Q-182.)
                             this.effects.push('launcher-jam');
-                            this.rollData.success = false;
+                        } else if (isBestRanged) {
+                            // Best craftsmanship: a miss, but the weapon never jams. (QA-099.)
+                        } else if (this.rollData.hasAttackSpecial('Reliable')) {
+                            // Reliable (RT Core p.116): roll 1d10 — only on a 10 does it actually
+                            // Jam, otherwise it just misses (already set above). (BUG-Q-184.)
+                            this.effects.push('reliable-jam');
                         } else {
                             this.effects.push('jam');
-                            this.rollData.success = false;
                         }
                     }
                 }
@@ -476,8 +478,12 @@ export class ActionData {
             // p.35: "If this weapon generates a crit, add 1 to the result rolled"). (BUG-Q-213.)
             const critical = res.critical;
             for (let i = 0; i < res.hits; i++) {
+                // A macrobattery salvo scores exactly ONE Critical Hit, plus normal hits for the
+                // remaining DoS (RT Core p.218) — not one Critical per hit. Flag only the first hit
+                // as critical so `critCount` resolves to 1, not the whole hit count. (BUG-Q-207.)
+                const isCrit = critical && i === 0;
                 this.rollData.voidshipResults.push({
-                    isCritical: critical, isHit: !critical, isMiss: false, isFumble: false,
+                    isCritical: isCrit, isHit: !isCrit, isMiss: false, isFumble: false,
                     penetration: false, overpenetration: false, roll: rollTotal, location: "",
                 });
             }
@@ -753,6 +759,21 @@ export class ActionData {
                         await this.rollData.weapon.update({ 'system.jammed': true });
                     }
                     break;
+                case 'reliable-jam': {
+                    // Reliable (RT Core p.116): a jam result rolls 1d10 — only on a 10 does the
+                    // weapon actually Jam; otherwise the shot just misses (already applied). (BUG-Q-184.)
+                    const rel = new Roll('1d10', {});
+                    await rel.evaluate();
+                    if (rel.total === 10) {
+                        this.addEffect('Jam', `Despite its Reliable quality the weapon jams (1d10 → 10)! It cannot be fired again until cleared — a Full Action Ballistic Skill Test.`);
+                        if (this.rollData.weapon?.update) {
+                            await this.rollData.weapon.update({ 'system.jammed': true });
+                        }
+                    } else {
+                        this.addEffect('Misfire', `The shot fails (96+) but the Reliable weapon does not jam (1d10 → ${rel.total}) — it just misses.`);
+                    }
+                    break;
+                }
                 case 'grenade-jam': {
                     // RT Core p.126 (When a Grenade "Jams"): a jam from throwing a grenade
                     // does not leave the weapon jammed — roll 1d10. On any result other than

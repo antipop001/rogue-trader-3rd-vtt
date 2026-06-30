@@ -187,14 +187,21 @@ export class AssignDamageData {
             // legs concealed, so only Body/Leg hits are intercepted. (QA-111.)
             const coverAp = Number(this.actor.system?.combat?.cover?.ap) || 0;
             const struckLoc = String(this.hit?.location ?? '').replace(/\s/g, '').toUpperCase();
+            let penToArmour = totalPenetration;
             if (coverAp > 0 && ['BODY', 'LEFTLEG', 'RIGHTLEG'].includes(struckLoc)) {
-                const effectiveCover = Math.max(0, coverAp - totalPenetration);
+                // Cover absorbs by its Armour Points — and a Primitive weapon doubles those too
+                // (RT Core p.142, same as worn armour — BUG-Q-201). Penetration is spent against the
+                // cover layer FIRST; only the EXCESS carries to the target's own armour, so it is not
+                // counted twice (BUG-Q-206 — pen was previously subtracted from both cover AND armour).
+                const effCoverAp = this.hit.primitive ? coverAp * 2 : coverAp;
+                const effectiveCover = Math.max(0, effCoverAp - totalPenetration);
+                penToArmour = Math.max(0, totalPenetration - effCoverAp);
                 const excess = Math.max(0, totalDamage - effectiveCover);
                 this.coverApplied = true;
                 this.coverAp = coverAp;
                 this.coverAbsorbed = totalDamage - excess;
                 this.coverDegraded = excess > 0;
-                this.coverApAfter = excess > 0 ? Math.max(0, coverAp - 1) : coverAp;
+                this.coverApAfter = excess > 0 ? Math.max(0, coverAp - 1) : coverAp;  // erode the BASE AP
                 totalDamage = excess;
             }
 
@@ -205,8 +212,8 @@ export class AssignDamageData {
             if (this.hit.primitive && !this._armourIsPrimitive()) {
                 usableArmour = usableArmour * 2;
             }
-            // Reduce Armour by Penetration
-            usableArmour = usableArmour - totalPenetration;
+            // Reduce Armour by the Penetration NOT already spent on cover (BUG-Q-206).
+            usableArmour = usableArmour - penToArmour;
             if (usableArmour < 0) {
                 usableArmour = 0;
             }

@@ -15,10 +15,11 @@ export function shipInitiativeBonus(detection) {
     return Math.floor((Number(detection) || 0) / 10);
 }
 
-/** VUs moved by a Manoeuvre Action: full Speed, or half Speed (rounded down). Ships always move. */
+/** VUs moved by a Manoeuvre Action: full Speed, or half Speed (rounded UP — RT's default fractional
+ *  rounding, RT Core p.17). Ships always move. (BUG-Q-223.) */
 export function shipManoeuvreDistance(speed, fraction = 'full') {
     const s = Math.max(0, Number(speed) || 0);
-    return fraction === 'half' ? Math.floor(s / 2) : s;
+    return fraction === 'half' ? Math.ceil(s / 2) : s;
 }
 
 /** Max turn after moving: 90° for frigate-or-smaller hulls, 45° otherwise (RT Core p.214). */

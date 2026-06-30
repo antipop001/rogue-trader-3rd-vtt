@@ -204,6 +204,10 @@ export class RogueTraderAcolyte extends RogueTraderBaseActor {
         if ((skillName === 'dodge' || skillName === 'parry') && this.system.combat?.guardedAttack) {
             rollData.modifiers['Guarded Attack'] = 10;
         }
+        // A Prone character takes −20 to Dodge Tests (RT Core p.248). (BUG-Q-192.)
+        if (skillName === 'dodge' && this.statuses?.has?.('prone')) {
+            rollData.modifiers['Prone'] = -20;
+        }
         // Surface talents whose `flags.rt.conditionalBonuses` apply to this
         // skill or its driving characteristic, so the prompt can offer them
         // as optional checkboxes.

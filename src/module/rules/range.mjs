@@ -82,19 +82,20 @@ function calculateRangeNameAndBonus(rollData) {
         let short = ranges.short || Math.floor(ranges.long / 3);
         let medium = ranges.medium || Math.floor(ranges.long * 2 / 3);
         let long = ranges.long;
+        // Ship weapons get their range modifier from the Strategic-Round shipShootingCheck dialog
+        // (Short +10 / Long −10, RT Core p.217), applied as modifiers['range band']. This canvas
+        // pass only labels the band for display — it must NOT also add a (non-canon, DH-style)
+        // +20/−20, or the to-hit double-dips the range modifier. (BUG-Q-225.)
         if (targetDistance <= short) {
             rollData.rangeName = 'Short Range';
-            rollData.rangeBonus = 20;
         } else if (targetDistance <= medium) {
             rollData.rangeName = 'Medium Range';
-            rollData.rangeBonus = 0;
         } else if (targetDistance <= long) {
             rollData.rangeName = 'Long Range';
-            rollData.rangeBonus = -20;
         } else {
             rollData.rangeName = 'Can`t Shoot';
-            rollData.rangeBonus = 0;
         }
+        rollData.rangeBonus = 0;
         return;
     }
 
@@ -137,6 +138,12 @@ export async function calculateWeaponRange(rollData) {
     if (rollData.rangeBonus < 0) {
         const aiming = rollData.modifiers['aim'] > 0;
         if (aiming && (rollData.hasWeaponModification('Telescopic Sight') || rollData.hasWeaponModification('Omni-Scope'))) {
+            rollData.rangeBonus = 0;
+        }
+        // Marksman (RT Core p.102): "no penalties for firing at long or extreme range" — no Aim
+        // required, unlike the scopes. The talent was in the pack but mechanically inert. (BUG-Q-204.)
+        if ((rollData.rangeName === 'Long Range' || rollData.rangeName === 'Extreme Range')
+            && rollData.sourceActor?.hasTalent?.('Marksman')) {
             rollData.rangeBonus = 0;
         }
     }

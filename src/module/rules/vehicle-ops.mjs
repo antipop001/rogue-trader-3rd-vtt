@@ -55,17 +55,20 @@ export async function openVehicleDialog(actor = null) {
 // tactical speed) and pushes the target 1m per damage point; ramming another vehicle/solid object
 // also damages the rammer by the target's AP + 1d5. Computes + announces the figures (apply via
 // Assign Damage). (QA-117 follow-up.)
-export async function vehicleRam(rammer, target, twiceSpeed = false) {
+export async function vehicleRam(rammer, target, twiceSpeed = false, { rammerFacing = 'front', targetFacing = 'front' } = {}) {
     if (rammer?.type !== 'vehicle') { ui.notifications?.warn('Select a vehicle to Ram with.'); return; }
-    const facingAP = Number(rammer.system?.front) || 0;
+    // ItS Ch.V: damage uses the rammer's STRIKING facing AP, and the return damage the target's
+    // STRUCK facing AP — which can be side or rear, not always front. Parameterised so a side/rear
+    // strike isn't forced to front. (BUG-Q-217 — defaults keep the common head-on case.)
+    const facingAP = Number(rammer.system?.[rammerFacing] ?? rammer.system?.front) || 0;
     const dice = twiceSpeed ? '2d10' : '1d10';
     const dmgRoll = await new Roll(`${facingAP} + ${dice}`).evaluate();
     const targetDamage = dmgRoll.total;
     let selfLine = '';
     if (target?.type === 'vehicle') {
-        const targetAP = Number(target.system?.front) || 0;
+        const targetAP = Number(target.system?.[targetFacing] ?? target.system?.front) || 0;
         const selfRoll = await new Roll(`${targetAP} + 1d5`).evaluate();
-        selfLine = `<br/>${rammer.name} takes <strong>${selfRoll.total}</strong> damage in return (target front AP ${targetAP} + 1d5).`;
+        selfLine = `<br/>${rammer.name} takes <strong>${selfRoll.total}</strong> damage in return (target ${targetFacing} AP ${targetAP} + 1d5).`;
     }
     await ChatMessage.create({
         user: game.user.id,

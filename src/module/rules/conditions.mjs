@@ -67,6 +67,9 @@ export function attackerConditionModifier(statuses, isRanged = false) {
     const s = statuses instanceof Set ? statuses : new Set(Array.from(statuses ?? []));
     let mod = 0;
     if (isRanged && s.has('pinned')) mod -= 20;
+    // A Prone attacker takes −10 to WEAPON SKILL tests (RT Core p.248) — melee only; there is no
+    // BS penalty for a prone shooter. (BUG-Q-192. The DH2 "Sturdy negates prone" clause is not RT 1e.)
+    if (!isRanged && s.has('prone')) mod -= 10;
     return mod;
 }
 

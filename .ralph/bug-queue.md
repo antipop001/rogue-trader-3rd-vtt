@@ -289,7 +289,7 @@ checker runs elsewhere) syncs via git.
 - review: launcher case completed — grenade/missile LAUNCHERS (isRanged) now use the barrel-detonate rule (RT Core p.126): 1d10, on 10 detonates in the barrel + weapon destroyed (marked jammed); resolves the dispute. (post-review)
 
 ## BUG-Q-183 — `Flame` weapons fail to Jam on damage rolls of 9
-- status: open
+- status: fixed
 - found-by: agy Gemini 3.1 Pro (High)
 - area: engine-rolls
 - severity: P1 (missing automation)
@@ -302,7 +302,7 @@ checker runs elsewhere) syncs via git.
 - triage: 
 
 ## BUG-Q-184 — `Reliable` weapon quality causes Jams to become Hits instead of misses
-- status: open
+- status: fixed
 - found-by: agy Gemini 3.1 Pro (High)
 - area: engine-rolls
 - severity: P0 (wrong result in play)
@@ -315,7 +315,7 @@ checker runs elsewhere) syncs via git.
 - triage: 
 
 ## BUG-Q-185 — `Customised` weapon quality is missing from the engine
-- status: open
+- status: wontfix
 - found-by: agy Gemini 3.1 Pro (High)
 - area: weapons
 - severity: P1 (missing automation)
@@ -328,7 +328,7 @@ checker runs elsewhere) syncs via git.
 - triage: 
 
 ## BUG-Q-186 — `Vengeful` weapon quality is a DH2 leftover with no RT 1e equivalent
-- status: open
+- status: fixed
 - found-by: agy Gemini 3.1 Pro (High)
 - area: weapons
 - severity: P2 (data/cosmetic)
@@ -341,7 +341,7 @@ checker runs elsewhere) syncs via git.
 - triage: 
 
 ## BUG-Q-187 — `Flexible` weapon quality fails to apply effect preventing Parrying
-- status: open
+- status: fixed
 - found-by: agy Gemini 3.1 Pro (High)
 - area: weapons
 - severity: P1 (missing automation)
@@ -395,7 +395,7 @@ The `autoBraced` calculation in `roll-data.mjs` correctly checks for `Bulging Bi
 RT Core p.368 ("Sturdy"): "Sturdy characters do not suffer the normal penalties for being prone, nor do they suffer any penalties to their tests as a result of using heavy weapons."
 
 ## BUG-Q-192 — `Prone` characters fail to suffer their own penalties (-10 to WS/BS, -20 to Dodge), which should also be negated by `Sturdy`
-- status: open
+- status: fixed
 - found-by: agy Gemini 3.1 Pro (High)
 - file: src/module/rules/conditions.mjs:52, src/module/documents/acolyte.mjs
 - canon: RT Core p.267, RT Core p.368
@@ -408,7 +408,7 @@ RT Core p.267 ("Prone"): "While Prone, a character suffers a -10 penalty to Weap
 RT Core p.368 ("Sturdy"): "Sturdy characters do not suffer the normal penalties for being prone..."
 
 ## BUG-Q-193 — The `Shocking` weapon quality is missing from the system definitions and miswired by Tempest Bolt Shells
-- status: open
+- status: fixed
 - found-by: agy Gemini 3.1 Pro (High)
 - file: src/module/rules/attack-specials.mjs:104, src/module/rules/ammo.mjs:105
 - canon: RT Core p.132
@@ -454,7 +454,7 @@ RT Core p.132: "Shocking: A weapon with this Quality can Stun its opponent..."
 - review: REVERTED to RAW on independent review — Daemonic (RT Core p.364) is a DISTINCT 'double the Toughness Bonus', not an Unnatural-Toughness step, so UT×2 + Daemonic = ×4 (multiplicative), not the additive ×3 the fix applied. The additive reading is a Black Crusade house rule. Helper + test removed. (post-review)
 
 ## BUG-Q-197 — `Overheats` weapon quality fails to cause the attack to miss
-- status: open
+- status: fixed
 - found-by: agy Gemini (High)
 - file: src/module/rolls/action-data.mjs:295
 - canon: RT Core p.116
@@ -466,7 +466,7 @@ When a weapon with the `Overheats` quality rolls a 91+ (or its `jamThreshold`), 
 RT Core p.116 ("Overheats"): "An overheat roll means the weapon does not fire and the wielder suffers energy damage equal to the weapon's damage..."
 
 ## BUG-Q-198 — `Primitive`, `Snare`, `Toxic`, and `Smoke` weapon qualities erroneously require a level
-- status: open
+- status: fixed
 - found-by: agy Gemini (High)
 - file: src/module/rules/attack-specials.mjs:192, 224, 240, 220
 - canon: RT Core p.117-122
@@ -478,7 +478,7 @@ The `attackSpecials()` array in `attack-specials.mjs` configures `Primitive`, `S
 RT Core p.117-122 (Weapon Special Qualities): The entries for Primitive, Snare, Toxic, and Smoke list no numerical variable in parentheses.
 
 ## BUG-Q-199 — The `Vengeful` weapon quality is a hallucinated DH2/Only War mechanic
-- status: open
+- status: wontfix
 - found-by: agy Gemini (High)
 - file: src/module/rules/attack-specials.mjs:263, src/module/rolls/damage-data.mjs:106
 - canon: RT Core p.116-122
@@ -495,7 +495,7 @@ RT Core p.116-122 (Weapon Special Qualities): `Vengeful` is absent from the core
   - **Fix**: Apply a base `-20` penalty for `Multiple Attacks`. Only reduce to `-10` if the actor possesses *both* Two-Weapon Wielder and Ambidextrous. If they lack Two-Weapon Wielder, it remains `-20`.
 
 ## BUG-Q-200 — `perDoSDamage` dice (Psychic Powers) are excluded from the `damageRolls` array, never triggering Righteous Fury
-- status: open
+- status: fixed
 - found-by: agy Gemini (High)
 - file: src/module/rolls/damage-data.mjs:172, 257
 - canon: RT Core p.159, p.245
@@ -508,7 +508,7 @@ RT Core p.159 (Psychic Powers): "Psychic powers that cause Damage can also cause
 RT Core p.245 (Righteous Fury): "If a natural 10 is rolled on any damage die, there is a chance of Righteous Fury."
 
 ## BUG-Q-201 — Cover AP is not doubled against Primitive weapons
-- status: open
+- status: fixed
 - found-by: agy Gemini (High)
 - file: src/module/rolls/assign-damage-data.mjs:179-198
 - canon: RT Core p.142, p.245
@@ -521,7 +521,7 @@ RT Core p.142 (Primitive): "Primitive weapons are very ineffective against moder
 RT Core p.245 (Cover): "Cover provides a number of Armour Points...".
 
 ## BUG-Q-202 — `Tearing` exact string match on modifier fails to detect existing keep-highest modifiers, causing double-application
-- status: open
+- status: fixed
 - found-by: agy Gemini (High)
 - file: src/module/rolls/damage-data.mjs:147, 163, 197
 - canon: Foundry VTT Roll syntax
@@ -533,7 +533,7 @@ When evaluating the `Tearing` quality, `damage-data.mjs` checks `if (die.modifie
 Engine logic / Foundry Roll syntax constraint.
 
 ## BUG-Q-203 — `Multiple Attacks` action applies incorrect penalties for Two-Weapon Wielder, Ambidextrous, and Gunslinger
-- status: open
+- status: fixed
 - found-by: agy Gemini (High)
 - file: src/module/rules/combat-actions.mjs:42
 - canon: RT Core p.243, p.99
@@ -546,7 +546,7 @@ RT Core p.243 (Two-Weapon Fighting): "If he does not possess the Two-Weapon Wiel
 RT Core p.99 (Gunslinger): "A character with this Talent reduces the penalty for fighting with two weapons by 10... If he also possesses the Two-Weapon Wielder (Ballistic) Talent, the penalty drops to +0. This only applies when using Pistols."
 
 ## BUG-Q-204 — `Marksman` talent is completely missing from range penalty calculations
-- status: open
+- status: fixed
 - found-by: agy Gemini (High)
 - file: src/module/rules/range.mjs:136-142
 - canon: RT Core p.102
@@ -558,7 +558,7 @@ The `Marksman` talent is present in the talents pack but has zero mechanical eff
 RT Core p.102: "Marksman: The character suffers no penalties for firing at Long or Extreme Range."
 
 ## BUG-Q-205 — `Deadeye Shot` talent fails to reduce the Called Shot penalty
-- status: open
+- status: fixed
 - found-by: agy Gemini (High)
 - file: src/module/rules/combat-actions.mjs:32-37
 - canon: RT Core p.98
@@ -570,7 +570,7 @@ The `Deadeye Shot` talent exists in the talents pack but has no mechanical hook.
 RT Core p.98: "Deadeye Shot: When making a Called Shot (see page 239) the character's penalty is reduced to -10."
 
 ## BUG-Q-206 — Cover AP incorrectly applies its full penetration reduction to both cover and the target's armour
-- status: open
+- status: fixed
 - found-by: agy Gemini (High)
 - file: src/module/rolls/assign-damage-data.mjs:176-189
 - canon: RT Core p.245
@@ -582,7 +582,7 @@ In `assign-damage-data.mjs`, when an attack strikes a covered location, the cove
 RT Core p.245 (Cover): "it does affect cover, reducing its APs by the weapon's Penetration, and any remaining Penetration affects the target's Armour."
 
 ## BUG-Q-207 — Voidship critical hits are improperly multiplied by the number of hits in a salvo
-- status: open
+- status: fixed
 - found-by: agy Gemini (High)
 - file: src/module/rolls/action-data.mjs:409-415
 - canon: RT Core p.218
@@ -687,7 +687,7 @@ RT Core p.218 (Critical Hits): "If the number of Degrees of Success is equal to 
 - verify: confirmed: correctly implements the Astropath Transcendent Perils mitigation by rolling three d10s and computing the most favourable (lowest) percentile reading, properly converting 00 to 100, and resolving the forced total on the Perils table, matching RT Core p.159.
 
 ## BUG-Q-216 — Per-DoS damage (Psychic Powers) bypasses the Righteous Fury scan
-- status: open
+- status: wontfix
 - found-by: agy Gemini
 - area: psychic
 - severity: P0 (wrong result in play)
@@ -696,7 +696,7 @@ RT Core p.218 (Critical Hits): "If the number of Degrees of Success is equal to 
 - gap: Per-DoS damage dice (like `1d10 per Degree of Success` for Psychic Powers) are evaluated into `this.perDoSRolls` inside `_calculateDamage`. However, when the script scans damage rolls for natural 10s to trigger Righteous Fury, it loops over `damageRolls` (which only contains the base `this.damageRoll` and `bonusDamageRolls` for Accurate/Maximal). `this.perDoSRolls` is entirely omitted, meaning 10s rolled on these damage dice completely bypass the Righteous Fury trigger.
 
 ## BUG-Q-217 — Vehicle Ramming unconditionally hardcodes the target's "front" Armour Points
-- status: open
+- status: fixed
 - found-by: agy Gemini
 - area: vehicle
 - severity: P0 (wrong result in play)
@@ -755,7 +755,7 @@ RT Core p.218 (Critical Hits): "If the number of Degrees of Success is equal to 
 - verify: confirmed: properly implements verbatim RT Core p.159 "Maintaining two powers at the same time reduces the effective Psy Rating of both powers by 2". Single sustained powers no longer incorrectly subtract 1 from the rating, and scaling for 2+ powers matches the verbatim text.
 
 ## BUG-Q-222 — `perDoSDamage` incorrectly grants a minimum of 1 roll on a 0-DoS success, breaking linear scaling
-- status: open
+- status: fixed
 - found-by: agy Gemini
 - area: core mechanics / psychic
 - severity: P1 (wrong result in play)
@@ -764,7 +764,7 @@ RT Core p.218 (Critical Hits): "If the number of Degrees of Success is equal to 
 - gap: The `Math.max(1, ...)` floor treats 0 Degrees of Success as 1, causing a 0-DoS success to deal exactly the same per-DoS damage (1d10) as a 1-DoS success. A 0-DoS success on a strictly "per DoS" scaling formula should yield 0 damage rolls, maintaining the mathematical curve.
 
 ## BUG-Q-223 — `shipManoeuvreDistance` incorrectly rounds half-Speed down instead of up
-- status: open
+- status: fixed
 - found-by: agy Gemini
 - area: ship combat
 - severity: P1 (wrong result in play)
@@ -773,7 +773,7 @@ RT Core p.218 (Critical Hits): "If the number of Degrees of Success is equal to 
 - gap: The `Math.floor()` explicitly rounds the half-speed Manoeuvre distance down, violating the system's universal round-up rule for division. A Speed 5 ship should have a half-speed of 3, but the function returns 2.
 
 ## BUG-Q-224 — Grapple Push distance incorrectly uses the Opposed Test's "net margin" instead of the attacker's DoS
-- status: open
+- status: fixed
 - found-by: agy Gemini
 - area: combat actions / grapple
 - severity: P2 (wrong result in play, edge case)
@@ -782,7 +782,7 @@ RT Core p.218 (Critical Hits): "If the number of Degrees of Success is equal to 
 - gap: Using `net` (the Opposed Test margin) heavily inflates the push distance if the defender fails the opposed test (since `net` incorporates the defender's Degrees of Failure). If an attacker scores 0 DoS and the defender fails with 6 DoF, the attacker currently pushes them 8 metres (`1 + (0 - (-7))`), when it should only be 1 metre (`1 + 0`). It must be `1 + (a.success ? a.dos : 0)`.
 
 ## BUG-Q-225 — Ship weapon attacks incorrectly double-dip range modifiers, mixing token distance with Strategic Round dialog distance
-- status: open
+- status: fixed
 - found-by: agy Gemini
 - area: ship combat
 - severity: P0 (wrong result in play, corrupts all ship shooting)
@@ -794,7 +794,7 @@ RT Core p.218 (Critical Hits): "If the number of Degrees of Success is equal to 
 - gap: Ship shooting receives two stacking range modifiers. The dialog computes the correct +10/-10 based on the user's VU input, but `range.mjs` silently adds a +20/0/-20 modifier based on canvas token distance (which is often 0/unscaled in ship combat). `range.mjs` must yield 0 `rangeBonus` for ship weapons, relying entirely on the `shipRangeModifier` passed from the dialog.
 
 ## BUG-Q-226 — `damage-data.mjs` incorrectly implements Dark Heresy 2e `Deathdealer` talent
-- status: open
+- status: fixed
 - found-by: agy Gemini
 - area: combat actions / damage
 - severity: P2 (DH2 leftover)

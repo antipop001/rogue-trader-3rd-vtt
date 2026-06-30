@@ -18,9 +18,10 @@ test('QA-047: initiative bonus = tens digit of Detection', () => {
     assert.equal(shipInitiativeBonus(undefined), 0);
 });
 
-test('QA-047: manoeuvre distance is full or half Speed (rounded down)', () => {
+test('QA-047: manoeuvre distance is full or half Speed (rounded UP — BUG-Q-223)', () => {
     assert.equal(shipManoeuvreDistance(7, 'full'), 7);
-    assert.equal(shipManoeuvreDistance(7, 'half'), 3);
+    assert.equal(shipManoeuvreDistance(7, 'half'), 4);   // RT default fractional rounding is up
+    assert.equal(shipManoeuvreDistance(8, 'half'), 4);
     assert.equal(shipManoeuvreDistance(0, 'full'), 0);
 });
 

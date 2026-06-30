@@ -102,10 +102,11 @@ export async function calculateAmmoAttackSpecials(rollData) {
             });
             break;
         case 'Tempest Bolt Shells':
-            // RT Core: the weapon gains the Shock quality. (QA-063.)
+            // RT Core: the weapon gains the Shocking quality. The damage handler matches
+            // 'shocking' (lowercased), so 'Shock' never fired the Stun effect. (BUG-Q-193.)
             rollData.attackSpecials.push({
-                name: 'Shock',
-                level: true,
+                name: 'Shocking',
+                level: false,
             });
             break;
         case 'Snare Shells':
