@@ -676,7 +676,7 @@ RT Core p.218 (Critical Hits): "If the number of Degrees of Success is equal to 
 - verify: confirmed: the `isPsychicDoubles` helper properly detects two-digit multiples of 11 (11-99) and correctly handles a roll of 100 as the `00` doubles result, explicitly matching the RT Errata v1.4 and Core p.157 requirement without being tripped up by the string representation of 100.
 
 ## BUG-Q-215 — Astropath Transcendent Perils of the Warp reduction is unimplemented
-- status: fixed
+- status: verified
 - found-by: agy Gemini 3.1 Pro (High) · iter 3
 - area: psychic
 - severity: P0 (wrong result in play)
@@ -684,4 +684,4 @@ RT Core p.218 (Critical Hits): "If the number of Degrees of Success is equal to 
 - canon: `/mnt/project_data/RT/RT-DOCS/CoreBook-1-200.pdf/pages/page-159/markdown.md:49` (RT Core p.159) — "An Astropath Transcendent rolls an additional d10 when rolling on the Perils of the Warp table and may discard any one d10 for a more favourable result."
 - gap: The `checkForPerils` logic automatically draws from the Perils of the Warp table with a single 1d100 roll and outputs the result. The engine does not provide the Astropath Transcendent their class feature to roll an additional d10 and discard one for a more favorable result, forcing them to suffer unmitigated raw rolls or ignore the automated chat card entirely.
 - fix: New pure helper `astropathPerilsResult(tens, units, extra)` in `roll-helpers.mjs:67` — percentile = tens d10 + units d10, the extra d10 can replace either, keeps the least-severe (lowest) of the three discard readings, 00→100 (Destruction, avoided unless the only option). `drawFromTable(tableName, modifier, forcedTotal)` gained a `forcedTotal` param (resolves the table for a pre-computed value via `table.roll({roll: new Roll(String(total))})` instead of a fresh 1d100). `action-data.mjs:checkForPerils` — when `sourceActor.hasTalent('Soul-Bound to the Emperor')` (the Astropath Transcendent ability, talents.yml:3527), rolls 3×1d10 (raw 0-9 via `%10`), computes the favourable total, and draws Perils with the forcedTotal + a chat note; non-Astropath path unchanged. New node test `tests/chargen/astropath_perils.test.mjs` (6 cases incl. exhaustive 1000-combo check). 3-candidate dice interpretation logged to data-vendor-queue. Gate green (build:check exit 0, 234 node tests, +6). Live-verified on rt-smoke via Playwright (page-context import of deployed module): `astropathPerilsResult` → 1/12/9/5/100 for the documented cases; the forcedTotal path resolves the Perils RollTable to the matching row (1→The Gibbering, 9→Warp Burn, 100→Annihilation/Destruction), confirming a low favourable roll lands a milder Peril.
-- verify:
+- verify: confirmed: correctly implements the Astropath Transcendent Perils mitigation by rolling three d10s and computing the most favourable (lowest) percentile reading, properly converting 00 to 100, and resolving the forced total on the Perils table, matching RT Core p.159.
