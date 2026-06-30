@@ -62,6 +62,14 @@ count_status() { awk -v s="$1" '/<!-- findings below this line -->/{f=1; next} f
 open_count() { count_status open; }
 # total findings filed (any status) — to detect whether a discovery pass actually added anything.
 findings_count() { awk '/<!-- findings below this line -->/{f=1; next} f && /^## BUG-Q-/{c++} END{print c+0}' "$QUEUE" 2>/dev/null; }
+# Robustness: the discovery model occasionally writes a non-standard status word (e.g. "discovery")
+# instead of "open", which would strand the finding (the fixer only sees `status: open`). Rewrite
+# any unrecognised status to "open" so every filed finding is actually actionable.
+normalize_status() {
+  awk 'BEGIN{for(s in a)delete a[s]; ok["open"]=ok["fixing"]=ok["fixed"]=ok["verified"]=ok["disputed"]=ok["wontfix"]=1}
+       /^- status: /{ if(!($3 in ok)){ print "- status: open"; next } }
+       {print}' "$QUEUE" > "$QUEUE.tmp" 2>/dev/null && mv "$QUEUE.tmp" "$QUEUE"
+}
 
 i=0
 dry=0   # consecutive discovery passes that produced NO new findings
@@ -78,6 +86,7 @@ while [ ! -f .ralph/STOP ] && [ "$i" -lt "$MAX_ITERS" ]; do
     RALPH_ITER="$i" agy -p "$(cat "$KIT/bug_check.agy.md")" \
         --model "$CHECK_MODEL" --dangerously-skip-permissions --print-timeout 20m 2>&1 \
         | tee -a .ralph/loop.log
+    normalize_status   # canonicalise any non-standard status the model wrote → "open"
     if [ "$(findings_count)" -le "$before" ]; then
       dry=$((dry + 1))
       echo "── discovery dry ($dry/$DRY_LIMIT) — no new findings ──" | tee -a .ralph/loop.log
