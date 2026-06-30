@@ -241,6 +241,21 @@ export async function calculateAmmoPenetrationBonuses(actionData, hit) {
 export function calculateAmmoInformation(rollData) {
     const availableAmmo = rollData.weapon.system.clip.value;
 
+    // The weapon's firing rate caps the additional hits a burst action can score
+    // (RT Core p.242, "up to the maximum firing rate of the weapon"). That is a
+    // physical property of the weapon, so it applies even to ranged weapons that
+    // don't track ammo (e.g. many creature ranged attacks) — without this, an
+    // ammo-less weapon kept the default fireRate of 1, breaking Semi-Auto Burst
+    // (cap 0) and uncapping Full Auto Burst. (BUG-Q-171.) Ammo availability lowers
+    // it further below when ammo IS tracked.
+    let fireRate = 1;
+    if (rollData.action === 'Full Auto Burst' || rollData.action === 'Suppressing Fire') {
+        fireRate = rollData.weapon.system.rateOfFire.full;
+    } else if (rollData.action === 'Semi-Auto Burst') {
+        fireRate = rollData.weapon.system.rateOfFire.burst;
+    }
+    rollData.fireRate = fireRate;
+
     if(!rollData.weapon.usesAmmo) {
         return;
     }
@@ -265,15 +280,6 @@ export function calculateAmmoInformation(rollData) {
 
     // Max hits with available ammo
     const maximumHits = Math.floor(availableAmmo / ammoPerShot);
-    let fireRate = 1;
-
-    if (rollData.action === 'Full Auto Burst' || rollData.action === 'Semi-Auto Burst' || rollData.action === 'Suppressing Fire') {
-        if (rollData.action === 'Full Auto Burst' || rollData.action === 'Suppressing Fire') {
-            fireRate = rollData.weapon.system.rateOfFire.full;
-        } else if (rollData.action === 'Semi-Auto Burst') {
-            fireRate = rollData.weapon.system.rateOfFire.burst;
-        }
-    }
 
     // Not enough ammo available -- lower to max hits
     if (maximumHits < fireRate) {

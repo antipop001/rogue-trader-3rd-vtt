@@ -317,8 +317,11 @@ export class ActionData {
                         // Table 9-1; example p.22 — 2 DoS → 3 hits). Canon DoS → dos. (QA-094.)
                         this.damageData.additionalHits += this.rollData.dos;
 
-                        // But Max at weapon rate
-                        if (actionItem.usesAmmo && this.damageData.additionalHits > this.rollData.fireRate - 1) {
+                        // But Max at weapon rate. Gate on isRanged (not usesAmmo) so the
+                        // cap also applies to ammo-less ranged weapons — fireRate is now
+                        // set from the printed RoF regardless of ammo tracking (BUG-Q-171).
+                        // Psychic Storm (isPsychicStorm, not isRanged) stays uncapped.
+                        if (actionItem.isRanged && this.damageData.additionalHits > this.rollData.fireRate - 1) {
                             this.damageData.additionalHits = this.rollData.fireRate - 1;
                         }
                     }
