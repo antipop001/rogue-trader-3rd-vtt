@@ -145,7 +145,7 @@ checker runs elsewhere) syncs via git.
 - verify: confirmed: properly removed dead homebrew d100 loops and orphaned dialog prompts, leaving the canonical voidship document resolvers as the sole resolution path, and returning other extended actions to standard test evaluation.
 
 ## BUG-Q-171 — Burst-fire additional hits cap is missing or broken for ammo-less weapons
-- status: fixed
+- status: verified
 - found-by: agy Gemini 3.1 Pro (High) · iter 3
 - area: combat actions
 - severity: P0 (wrong result in play)
@@ -153,7 +153,7 @@ checker runs elsewhere) syncs via git.
 - canon: `/mnt/project_data/RT/RT-DOCS/CoreBook-1-200.pdf/markdown.md:2097` (RT Core p.242) — "scores one hit... plus one additional hit for each Degree of Success (up to the maximum firing rate of the weapon)". The weapon's firing rate is a physical limit, regardless of whether the system is tracking ammo consumption for it.
 - gap: For ammo-less ranged weapons (e.g. many creature ranged attacks), Semi-Auto Burst (line 312, gating on `actionItem.isRanged`) caps `additionalHits` at `1 - 1 = 0`, breaking the action entirely. Full Auto Burst (line 321, gating on `actionItem.usesAmmo`) bypasses the cap entirely, allowing infinite hits based on DoS rather than capping at `rateOfFire.full`.
 - fix: `src/module/rules/ammo.mjs:248-262` — `calculateAmmoInformation` now derives `rollData.fireRate` from the weapon's printed `rateOfFire` (full for Full Auto / Suppressing Fire, burst for Semi-Auto) and assigns it BEFORE the `!usesAmmo` early-return, so ammo-less ranged weapons get the real firing rate instead of the default 1 (the ammo-tracking path still lowers it by available ammo; the now-duplicate fireRate-from-RoF block there was removed). `src/module/rolls/action-data.mjs:320-325` — the Full Auto additional-hits cap now gates on `actionItem.isRanged` (not `usesAmmo`) so it applies to ammo-less ranged weapons too, while Psychic Storm (isPsychicStorm, not isRanged) stays uncapped. Added node test `tests/chargen/ammo_firerate.test.mjs`. Gate green (build:check exit 0, 210 node tests). Live-verified on rt-smoke via Playwright (imported deployed ammo.mjs): ammo-less Full Auto → fireRate 10 (was 1), ammo-less Semi-Auto → fireRate 3 (was 1, cap no longer clamps to 0), ammo-less Standard → 1, ammo-tracking Full Auto w/ 2 rounds → fireRate 2 / ammoUsed 2.
-- verify:
+- verify: confirmed: deriving `fireRate` from the weapon's `rateOfFire` before exiting on `!usesAmmo` correctly sets the physical firing rate cap for ammo-less weapons. Gating the cap on `isRanged` instead of `usesAmmo` properly limits additional hits for all ranged weapons while leaving Psychic Storm correctly uncapped, matching the intent of RT Core p.242.
 
 ## BUG-Q-172 — Lances bypass Void Shields entirely instead of just ignoring armour
 - status: open
