@@ -272,7 +272,13 @@ export class ActionData {
                     const rollTotal = this.rollData.roll.total;
                     const isBestRanged = actionItem.isRanged && actionItem.system.craftsmanship === 'Best';
                     const isOverheats = this.rollData.hasAttackSpecial('Overheats');
-                    let jamThreshold = 96;
+                    // Base weapon jam is 96+ (RT Core p.249), but Semi-Auto Burst, Full Auto
+                    // Burst, and Suppressing Fire jam more readily on 94+ (RT Core p.242).
+                    // Reliable/Unreliable/Best still override below. (BUG-Q-181.)
+                    const isBurstFire = this.rollData.action === 'Semi-Auto Burst'
+                        || this.rollData.action === 'Full Auto Burst'
+                        || this.rollData.action === 'Suppressing Fire';
+                    let jamThreshold = isBurstFire ? 94 : 96;
                     if (isBestRanged) {
                         jamThreshold = 101;
                     } else if (this.rollData.hasAttackSpecial('Reliable')) {
