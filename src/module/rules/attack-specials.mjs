@@ -59,9 +59,9 @@ export async function calculateAttackSpecialAttackBonuses(rollData) {
         if (!item.isAttackSpecial) continue;
         switch (item.name) {
             case 'Scatter':
-                if (rollData.rangeName === 'Point Blank' || rollData.rangeName === 'Short Range') {
-                    rollData.specialModifiers['Scatter'] = 10;
-                }
+                // BUG-Q-178: RT 1e Scatter has NO flat to-hit modifier (the DH2 +10 was removed).
+                // Its effect is extra HITS per 2 DoS at Point Blank + doubled target Armour at
+                // Long/Extreme range — handled in action-data / damage-data, not as a to-hit mod.
                 break;
             case 'Indirect':
                 rollData.specialModifiers['Indirect'] = 10;

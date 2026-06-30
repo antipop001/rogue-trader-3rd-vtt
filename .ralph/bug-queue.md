@@ -189,7 +189,7 @@ checker runs elsewhere) syncs via git.
 - verify: confirmed: properly splits the conflated qualities, correctly applying -999 to Unwieldy and -10 to Unbalanced matching RT Core p.132, defaulting to the stricter Unwieldy penalty if both are present.
 
 ## BUG-Q-175 — Several weapon qualities (Toxic, Snare, Shocking) lack automation for secondary resistance tests
-- status: open
+- status: wontfix
 - found-by: agy Gemini 3.1 Pro (High) · iter 4
 - area: rules
 - severity: P1 (missing automation)
@@ -199,8 +199,9 @@ checker runs elsewhere) syncs via git.
 - fix: 
 - verify:
 
+- triage: Re-files QA-019 (by design): the target-side resist Test stays an [Apply: X] button — a player's client cannot roll the target's resist. Effect text already exists (QA-125/126/127).
 ## BUG-Q-176 — `Melta` weapon quality incorrectly doubles Penetration at Point Blank/Short Range
-- status: open
+- status: verified
 - found-by: agy Gemini 3.1 Pro (High) · iter 4
 - area: weapons
 - severity: P0 (wrong result in play)
@@ -210,8 +211,9 @@ checker runs elsewhere) syncs via git.
 - fix: 
 - verify:
 
+- triage: FIXED (0.8.25). NotebookLM-confirmed (RT Core p.122): Melta is NOT a Weapon Special Quality — no pen-doubling in RT 1e. Removed the DH2 doubling.
 ## BUG-Q-177 — `Maximal` weapon quality adds +1d10 as an unintegrated modifier, bypassing Righteous Fury, Tearing, and Proven
-- status: open
+- status: verified
 - found-by: agy Gemini 3.1 Pro (High) · iter 4
 - area: weapons
 - severity: P0 (wrong result in play)
@@ -221,8 +223,9 @@ checker runs elsewhere) syncs via git.
 - fix: 
 - verify:
 
+- triage: FIXED (0.8.25). NotebookLM-confirmed (RT Core p.123): RT Maximal grants +1d10 Damage + Recharge + Blast, NOT +2 Pen. Removed the DH2 +2 Pen; kept the +1d10.
 ## BUG-Q-178 — `Scatter` weapon quality implements DH2 +3/-3 flat damage scaling and to-hit modifiers instead of RT 1e DoS scaling
-- status: open
+- status: verified
 - found-by: agy Gemini 3.1 Pro (High) · iter 4
 - area: weapons
 - severity: P0 (wrong result in play)
@@ -231,3 +234,5 @@ checker runs elsewhere) syncs via git.
 - gap: The engine uses Dark Heresy 2e logic for Scatter (flat +/-3 damage, flat +10 hit at close range). It misses the RT 1e to-hit modifiers (PB +10, Short +20, >Short -30) and completely fails to implement the RT 1e +1d10 additional damage per 2 DoS.
 - fix: 
 - verify:
+
+- triage: FIXED (0.8.25) to the REAL canon (RT Core p.116): removed the DH2 flat +3/-3 damage + flat +10 to-hit; added +1 hit per 2 DoS at Point Blank + a doubled-Armour note at Long/Extreme. The finding's own cited rule (+10/+20 to-hit, +1d10/DoS) was ALSO wrong.

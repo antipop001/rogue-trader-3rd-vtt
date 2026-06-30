@@ -327,6 +327,14 @@ export class ActionData {
                     }
                 }
 
+                // BUG-Q-178: Scatter at Point Blank scores +1 HIT per two Degrees of Success
+                // (RT Core p.116 / Table 9-5 Multiple Hits) — a weapon-spread effect independent
+                // of the fire action (no flat damage or to-hit modifier in RT 1e).
+                if (actionItem?.isRanged && this.rollData.hasAttackSpecial('Scatter')
+                    && this.rollData.rangeName === 'Point Blank') {
+                    this.damageData.additionalHits += Math.floor(this.rollData.dos / 2);
+                }
+
                 // Swift Attack / Lightning Attack — RT 1e melee multi-attack TALENTS
                 // (RT Core p.107 / p.102): a flat number of extra hits on a successful
                 // WS test (Swift = 1 → two attacks, Lightning = 2 → three attacks), NOT

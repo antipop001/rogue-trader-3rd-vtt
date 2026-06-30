@@ -342,14 +342,11 @@ export class Hit {
             if (bc) this.modifiers['brutal charge'] = bc;
 
         } else if (actionItem.isRanged) {
-            // Scatter
-            if (attackData.rollData.hasAttackSpecial('Scatter')) {
-                if (attackData.rollData.rangeName === 'Point Blank') {
-                    this.modifiers['scatter'] = 3;
-                } else if (attackData.rollData.rangeName !== 'Short Range') {
-                    this.modifiers['scatter'] = -3;
-                }
-            }
+            // BUG-Q-178: RT 1e Scatter (RT Core p.116, NotebookLM-confirmed) has NO flat damage or
+            // to-hit modifier. It grants +1 HIT per two Degrees of Success at Point Blank (handled
+            // in action-data's additional-hits logic) and DOUBLES the target's Armour at Long /
+            // Extreme range (noted as an Apply effect in _calculateSpecials). The DH2 flat +3/−3
+            // damage was removed here.
 
             // Add Accurate — RT corebook p.143: when firing a single shot from a single
             // BASIC weapon with Accurate benefiting from Aim, +1d10 per 2 DoS, max +2d10.
@@ -446,9 +443,9 @@ export class Hit {
                 this.penetrationModifiers['hammer blow'] = Math.ceil(strBonus / 2);
             }
         } else if (actionItem.isRanged) {
-            if (attackData.rollData.hasAttackSpecial('Maximal')) {
-                this.penetrationModifiers['maximal'] = 2;
-            }
+            // BUG-Q-177: RT 1e Maximal (plasma firing mode, RT Core p.123, NotebookLM-confirmed)
+            // grants +10m range, +1d10 Damage, Recharge, and +2 Blast — but NO Penetration bonus.
+            // The +2 Pen was a DH2 leftover, removed. (The +1d10 Damage is applied below.)
 
             // Las Modes
             if (attackData.rollData.hasAttackSpecial('Overload')) {
@@ -467,11 +464,10 @@ export class Hit {
             this.penetrationModifiers['eye of vengeance'] = attackData.rollData.dos;
         }
 
-        if (attackData.rollData.rangeName === 'Short Range' || attackData.rollData.rangeName === 'Point Blank') {
-            if (attackData.rollData.hasAttackSpecial('Melta')) {
-                this.penetrationModifiers['melta'] = this.penetration;
-            }
-        }
+        // BUG-Q-176: "Melta" is NOT a Weapon Special Quality in RT 1e (RT Core p.122,
+        // NotebookLM-confirmed) — it is a weapon group, and meltaguns simply carry a high base
+        // Penetration (e.g. 13). The short-range Penetration-DOUBLING was a DH2/Only War rule that
+        // does not exist in RT 1e, so it is removed.
 
         await calculateWeaponModifiersPenetrationBonuses(attackData, this);
     }
@@ -486,6 +482,14 @@ export class Hit {
         // Force weapon (ItS): for a psyker wielder the damage type becomes Energy. (QA-014.)
         if ((sourceActor?.psy?.rating ?? 0) > 0 && attackData.rollData.hasAttackSpecial('Force')) {
             this.damageType = 'Energy';
+        }
+
+        // BUG-Q-178: a Scatter weapon firing at Long/Extreme range has the target's Armour Points
+        // DOUBLED against the hit (RT Core p.116). Surfaced as a note for the GM to apply when
+        // assigning damage (the assign-damage flow is defender-entered and has no range context).
+        if (attackData.rollData.hasAttackSpecial('Scatter')
+            && (attackData.rollData.rangeName === 'Long Range' || attackData.rollData.rangeName === 'Extreme Range')) {
+            this.addEffect('Scatter', "Spread at long range: the target's Armour Points are DOUBLED against this hit (RT Core p.116) — apply when assigning damage.");
         }
 
         // QA-140: removed a dead All-Out-Attack + Hammer Blow → inject Concussive block —
