@@ -56,6 +56,23 @@ export function attackerConditionModifier(statuses, isRanged = false) {
     return mod;
 }
 
+/**
+ * Whether a Weapon Skill (melee) Test to hit automatically succeeds because the target is
+ * helpless. RT Core p.248: "Weapon Skill Tests made to hit a sleeping, unconscious or
+ * otherwise helpless target automatically succeed." Ranged (BS) shots do NOT auto-hit — they
+ * only gain the +30 condition modifier from {@link conditionToHitModifier}. Keyed on the
+ * `helpless` status to stay in lockstep with the coup-de-grace damage doubling
+ * (damage-data.mjs). (BUG-Q-220.)
+ * @param {boolean} isMelee  whether the attack is a Weapon Skill (melee) test
+ * @param {Iterable<string>|Set<string>} statuses  the target's active status ids
+ * @returns {boolean}
+ */
+export function meleeAutoHitsHelpless(isMelee, statuses) {
+    if (!isMelee) return false;
+    const s = statuses instanceof Set ? statuses : new Set(Array.from(statuses ?? []));
+    return s.has('helpless');
+}
+
 /** Conditions that forbid spending Reactions (Dodge/Parry) entirely (RT Core p.244, 247). */
 const REACTION_LOCKING = new Set(['stunned', 'helpless', 'unconscious']);
 

@@ -3,7 +3,7 @@ import { Hit, PsychicDamageData, scatterDirection, WeaponDamageData } from './da
 import { astropathPerilsResult, attackTalentExtraHits, degreesOfSuccess, degreesOfFailure, getOpposedDegrees, getOpposedDegreesWithTiebreak, isPsychicDoubles, roll1d100, sendActionDataToChat, stunDefenceBonus, uuid, voidshipWeaponHits, voidshipHullDamage } from './roll-helpers.mjs';
 import { refundAmmo, useAmmo } from '../rules/ammo.mjs';
 import { DHBasicActionManager } from '../actions/basic-action-manager.mjs';
-import { conditionMeta } from '../rules/conditions.mjs';
+import { conditionMeta, meleeAutoHitsHelpless } from '../rules/conditions.mjs';
 import { SYSTEM_ID } from '../hooks-manager.mjs';
 import { RogueTraderSettings } from '../rogue-trader-settings.mjs';
 
@@ -196,6 +196,13 @@ export class ActionData {
         let rollTotal = this.rollData.roll.total;
         const target = this.rollData.modifiedTarget;
         this.rollData.success = rollTotal === 1 || (rollTotal <= target && rollTotal !== 100);
+        // Helpless targets (RT Core p.248): a Weapon Skill (melee) Test to hit a sleeping,
+        // unconscious or otherwise helpless target automatically succeeds — a poor roll cannot
+        // miss. DoS still derives from the roll below (clamped to ≥0, a bare success). The +30
+        // condition modifier only makes a ranged shot easier; melee is guaranteed. (BUG-Q-220.)
+        if (meleeAutoHitsHelpless(this.rollData.weapon?.isMelee, this.rollData.targetActor?.statuses)) {
+            this.rollData.success = true;
+        }
     }
 
     async calculateSuccessOrFailure() {
