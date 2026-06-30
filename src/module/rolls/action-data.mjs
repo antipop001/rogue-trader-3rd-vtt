@@ -243,6 +243,12 @@ export class ActionData {
                     this.rollData.dos = 1;
                     this.rollData.dof = 0;
                     this.addEffect('Flame', 'No BS test — each creature in the 30° cone must pass an Agility Test or be hit (in the body). A struck target is set On Fire (RT Core p.142).', ['onFire'])
+                    // Flame weapons make NO roll to hit (RT Core p.117), so the ghost d100 must
+                    // not be re-interpreted: skip the ranged Jam check (a Flame weapon never
+                    // jams on a 96+ BS result — it only jams on a Damage die of 9, handled in
+                    // damage resolution) and skip the DoS recompute that would clobber dos=1.
+                    // (BUG-Q-179.)
+                    return;
                 }
 
                 if (actionItem.isMelee) {
@@ -266,7 +272,13 @@ export class ActionData {
                     const rollTotal = this.rollData.roll.total;
                     const isBestRanged = actionItem.isRanged && actionItem.system.craftsmanship === 'Best';
                     const isOverheats = this.rollData.hasAttackSpecial('Overheats');
-                    let jamThreshold = 96;
+                    // Base weapon jam is 96+ (RT Core p.249), but Semi-Auto Burst, Full Auto
+                    // Burst, and Suppressing Fire jam more readily on 94+ (RT Core p.242).
+                    // Reliable/Unreliable/Best still override below. (BUG-Q-181.)
+                    const isBurstFire = this.rollData.action === 'Semi-Auto Burst'
+                        || this.rollData.action === 'Full Auto Burst'
+                        || this.rollData.action === 'Suppressing Fire';
+                    let jamThreshold = isBurstFire ? 94 : 96;
                     if (isBestRanged) {
                         jamThreshold = 101;
                     } else if (this.rollData.hasAttackSpecial('Reliable')) {
@@ -282,8 +294,28 @@ export class ActionData {
                             this.effects.push('overheat');
                         }
                     } else if (rollTotal >= jamThreshold) {
-                        this.effects.push('jam');
-                        this.rollData.success = false;
+                        // Thrown weapons are propelled by muscle, not a machine spirit, so
+                        // they do not "jam" like fired ranged weapons (RT Core p.249 Weapon
+                        // Jams — the rule is about firing). A jam result from throwing a
+                        // grenade instead resolves the dud/detonate rule (RT Core p.126); an
+                        // ordinary thrown weapon (knife/spear) simply misses. (BUG-Q-182.)
+                        if (actionItem.isThrown) {
+                            if (actionItem.system?.type === 'Grenade') {
+                                this.effects.push('grenade-jam');
+                            }
+                            this.rollData.success = false;
+                        } else if (actionItem.system?.type === 'Launcher') {
+                            // A jam when FIRING a grenade launcher (or similar) follows the same
+                            // dud/detonate rule as a thrown grenade, except on a 10 the explosive
+                            // detonates IN THE BARREL — its normal effect AND the weapon is
+                            // destroyed (RT Core p.126). (BUG-Q-182 completion — verify caught that
+                            // launchers are isRanged and were falling through to the standard jam.)
+                            this.effects.push('launcher-jam');
+                            this.rollData.success = false;
+                        } else {
+                            this.effects.push('jam');
+                            this.rollData.success = false;
+                        }
                     }
                 }
             }
@@ -595,6 +627,16 @@ export class ActionData {
     }
 
     async calculateHits() {
+        // A ranged weapon that uses ammo cannot fire if the clip lacks enough rounds for even one
+        // shot of this action: calculateAmmoInformation clamps fireRate to 0 when availableAmmo <
+        // ammoPerShot (e.g. a Maximal shot needs 3 with 2 left). Produce NO hits and flag it, so
+        // the attack can't resolve "for free" via a programmatic / non-dialog path (the weapon
+        // dialog has its own fireRate===0 guard). (BUG-Q-210 — RT Core p.115: "A weapon cannot be
+        // fired if it does not have enough ammunition.")
+        if (this.rollData.usesAmmo && !this.rollData.isThrown && (this.rollData.fireRate ?? 0) <= 0) {
+            this.addEffect('Out of Ammo', 'Not enough ammunition remains to fire this action.');
+            return;
+        }
         if (this.rollData.success || this.rollData.isThrown) {
             let hit = await Hit.createHit(this, 0);
             this.damageData.hits.push(hit);
@@ -659,6 +701,39 @@ export class ActionData {
                         await this.rollData.weapon.update({ 'system.jammed': true });
                     }
                     break;
+                case 'grenade-jam': {
+                    // RT Core p.126 (When a Grenade "Jams"): a jam from throwing a grenade
+                    // does not leave the weapon jammed — roll 1d10. On any result other than
+                    // 10 the explosive is simply a dud and nothing happens; on a 10 it
+                    // detonates immediately, centred on the attacker. (BUG-Q-182.)
+                    const dudRoll = new Roll('1d10', {});
+                    await dudRoll.evaluate();
+                    if (dudRoll.total === 10) {
+                        this.addEffect('Grenade Detonates!', `The throw goes catastrophically wrong (1d10 → ${dudRoll.total}): the explosive detonates immediately, centred on the attacker with its normal effect!`);
+                    } else {
+                        this.addEffect('Grenade Dud', `The throw misfires (1d10 → ${dudRoll.total}): the explosive is simply a dud and nothing happens.`);
+                    }
+                    break;
+                }
+                case 'launcher-jam': {
+                    // RT Core p.126: a jam when FIRING a grenade launcher (or similar) — roll 1d10.
+                    // On any result other than 10 the round is a dud and nothing happens; on a 10
+                    // it detonates IN THE BARREL with its normal effect AND destroys the weapon.
+                    // (BUG-Q-182 completion — the thrown-grenade path is `grenade-jam` above. Full
+                    // item destruction is left as a GM follow-up; the weapon is marked jammed so it
+                    // can't keep firing.)
+                    const barrelRoll = new Roll('1d10', {});
+                    await barrelRoll.evaluate();
+                    if (barrelRoll.total === 10) {
+                        this.addEffect('Launcher Detonates!', `The launcher misfires catastrophically (1d10 → ${barrelRoll.total}): the explosive detonates in the barrel — its normal effect is centred on the attacker AND the weapon is destroyed.`);
+                        if (this.rollData.weapon?.update) {
+                            await this.rollData.weapon.update({ 'system.jammed': true });
+                        }
+                    } else {
+                        this.addEffect('Launcher Dud', `The launcher misfires (1d10 → ${barrelRoll.total}): the round is a dud and nothing happens.`);
+                    }
+                    break;
+                }
             }
         }
     }

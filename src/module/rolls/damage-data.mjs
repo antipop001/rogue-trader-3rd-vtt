@@ -54,6 +54,7 @@ export class Hit {
     righteousFury = [];
     scatter = {};
     primitive = false;
+    fellingLevel = 0;   // Felling (X): levels of Unnatural Toughness ignored at soak (BUG-Q-195)
 
     /**
      * @param attackData
@@ -183,12 +184,58 @@ export class Hit {
             this.perDoSDamage = perDoSTotal;
         }
 
+        // BUG-Q-194: Accurate (RT Core p.143) and Maximal (RT Core p.123) add extra damage
+        // dice. They are rolled HERE — before the Righteous-Fury / Proven dice scan — and
+        // folded into that scan, so a natural 10 on these dice triggers Righteous Fury and
+        // they honour Proven, per RT Core p.245 ("If a natural 10 is rolled on any damage
+        // die, there is a chance of Righteous Fury"). Tearing applies to them as to the base
+        // dice. Their totals still surface as named damage modifiers (display unchanged). They
+        // are NOT folded into the base rollFormula, so RF-extra / helpless re-rolls don't
+        // duplicate these one-shot bonuses.
+        const bonusDamageRolls = [];
+        if (actionItem.isRanged) {
+            // Accurate — single shot from a Basic Accurate weapon benefiting from Aim:
+            // +1d10 per 2 DoS, max +2d10 (Basic-class only).
+            if (actionItem.system.class === 'Basic'
+                && (attackData.rollData.action === 'Standard Attack' || attackData.rollData.action === 'Called Shot')
+                && attackData.rollData.hasAttackSpecial('Accurate') && attackData.rollData.modifiers.aim > 0) {
+                const dice = Math.min(Math.floor(attackData.rollData.dos / 2), 2);
+                if (dice > 0) {
+                    const accurateRoll = new Roll(`${dice}d10`, attackData.rollData);
+                    if (attackData.rollData.hasAttackSpecial('Tearing')) {
+                        accurateRoll.terms.filter(t => t instanceof foundry.dice.terms.Die).forEach(die => {
+                            if (die.modifiers.includes('kh')) return;
+                            die.modifiers.push('kh' + die.number);
+                            die.number += 1;
+                        });
+                    }
+                    await accurateRoll.evaluate();
+                    this.modifiers['accurate'] = accurateRoll.total;
+                    bonusDamageRolls.push(accurateRoll);
+                }
+            }
+            // Maximal (plasma firing mode): +1d10 Damage.
+            if (attackData.rollData.hasAttackSpecial('Maximal')) {
+                const maximalRoll = new Roll('1d10', attackData.rollData);
+                if (attackData.rollData.hasAttackSpecial('Tearing')) {
+                    maximalRoll.terms.filter(t => t instanceof foundry.dice.terms.Die).forEach(die => {
+                        if (die.modifiers.includes('kh')) return;
+                        die.modifiers.push('kh' + die.number);
+                        die.number += 1;
+                    });
+                }
+                await maximalRoll.evaluate();
+                this.modifiers['maximal'] = maximalRoll.total;
+                bonusDamageRolls.push(maximalRoll);
+            }
+        }
+
         // QA-157 — Helpless target (coup de grace, RT Core p.244): "roll twice and add the
         // results". Roll the weapon's damage a SECOND time and sum it; two natural 10s across
         // the two rolls make a Righteous Fury automatic (handled below). The to-hit already
         // auto-favours a Helpless target via the +30 condition modifier.
         const helplessTarget = !!attackData.rollData.targetActor?.statuses?.has?.('helpless');
-        const damageRolls = [this.damageRoll];
+        const damageRolls = [this.damageRoll, ...bonusDamageRolls];
         if (helplessTarget) {
             this.damageRoll2 = new Roll(rollFormula, attackData.rollData);
             if (attackData.rollData.hasAttackSpecial('Tearing')) {
@@ -348,20 +395,8 @@ export class Hit {
             // Extreme range (noted as an Apply effect in _calculateSpecials). The DH2 flat +3/−3
             // damage was removed here.
 
-            // Add Accurate — RT corebook p.143: when firing a single shot from a single
-            // BASIC weapon with Accurate benefiting from Aim, +1d10 per 2 DoS, max +2d10.
-            // The bonus damage is Basic-class only (Pistols/Heavy with Accurate don't get it).
-            if (actionItem.system.class === 'Basic'
-                && (attackData.rollData.action === 'Standard Attack' || attackData.rollData.action === 'Called Shot')) {
-                if (attackData.rollData.hasAttackSpecial('Accurate') && attackData.rollData.modifiers.aim > 0) {
-                    const dice = Math.min(Math.floor(attackData.rollData.dos / 2), 2);
-                    if (dice > 0) {
-                        const accurateRoll = new Roll(`${dice}d10`, {});
-                        await accurateRoll.evaluate();
-                        this.modifiers['accurate'] = accurateRoll.total;
-                    }
-                }
-            }
+            // Accurate / Maximal extra damage dice are rolled earlier (BUG-Q-194) so their
+            // natural 10s feed Righteous Fury and they share Tearing/Proven.
 
             // Eye of Vengeance
             if (attackData.rollData.eyeOfVengeance) {
@@ -373,13 +408,6 @@ export class Hit {
                 this.modifiers['overcharge'] = 1;
             } else if (attackData.rollData.hasAttackSpecial('Overload')) {
                 this.modifiers['overload'] = 2;
-            }
-
-            // Maximal
-            if (attackData.rollData.hasAttackSpecial('Maximal')) {
-                const maximalRoll = new Roll('1d10', {});
-                await maximalRoll.evaluate();
-                this.modifiers['maximal'] = maximalRoll.total;
             }
 
             // Mighty Shot — RT Core p.151: flat +2 Damage with ranged weapons
@@ -435,7 +463,10 @@ export class Hit {
             // existing per-degree penetration scaling is kept and now consumes the corrected
             // canon DoS — `(dos - 1)` reads as "extra Pen per degree beyond the first". (QA-094.)
             if (this.penetration && attackData.rollData.hasAttackSpecial('Lance')) {
-                this.penetrationModifiers['lance'] = this.penetration * (attackData.rollData.dos - 1);
+                // `dos - 1` is "extra Pen per degree beyond the first" — but a BARE success is 0
+                // DoS (QA-094), so guard against `dos < 1` which would otherwise apply
+                // `pen × −1` and strip the weapon's whole Penetration on a bare hit. (BUG-Q-209.)
+                this.penetrationModifiers['lance'] = this.penetration * Math.max(0, attackData.rollData.dos - 1);
             }
 
             if (attackData.rollData.action === 'All Out Attack' && sourceActor.hasTalent('Hammer Blow')) {
@@ -515,6 +546,9 @@ export class Hit {
                     this.addEffect(special.name, `If the target suffers a wound it is considered crippled. If they take more than a half action on a turn, they suffer ${special.level} damage not reduced by Armour or Toughness!`);
                     break;
                 case 'felling':
+                    // Carry the level onto the hit so the assign-damage soak path can ignore
+                    // that many levels of the target's Unnatural Toughness (BUG-Q-195).
+                    this.fellingLevel = Math.max(this.fellingLevel, special.level ?? 1);
                     this.addEffect(special.name, `The targets unnatural toughness is reduced by ${special.level} while calculating wounds!`);
                     break;
                 case 'flame':

@@ -249,21 +249,26 @@ export function weaponMasterBonus(talents, weaponClass) {
  * Lightning Reflexes (RT Core p.110): "The character adds twice his Agility Bonus
  * when rolling for Initiative. If he has Unnatural Agility, add +1 to the multiplier
  * before factoring the bonus into the Initiative roll." So the governing-characteristic
- * contribution to Initiative becomes ×2 the raw Agility Bonus (×3 with Unnatural
- * Agility), REPLACING the normal single bonus (which itself already folds in the
- * Unnatural addition — multiplying that would double-count). Without the talent the
- * normal bonus is returned unchanged. AE can't express this (it must read AgB), so it
- * is computed in acolyte.mjs by name and must NOT also be given an AE.
+ * contribution to Initiative becomes the raw Agility Bonus times (Unnatural multiplier +
+ * 1), REPLACING the normal single bonus (which itself already folds in the Unnatural
+ * addition — multiplying that would double-count). With no Unnatural the multiplier is 1,
+ * so the term is ×2 the raw bonus; with Unnatural Agility (×N) it is ×(N+1) — the canon
+ * "+1 to the multiplier" scales off the actual Unnatural level, NOT a fixed ×3 (BUG-Q-188).
+ * A fixed ×3 under-counts for Unnatural Agility (×3)/(×4): the normal bonus is already
+ * rawBonus×N, so ×3 would tie (N=3) or LOSE (N=4) — a talent must never reduce Initiative.
+ * Without the talent the normal bonus is returned unchanged. AE can't express this (it must
+ * read AgB), so it is computed in acolyte.mjs by name and must NOT also be given an AE.
  *
  * @param {number} rawBonus  tens-digit characteristic bonus (Math.floor(total/10), no unnatural)
  * @param {number} normalBonus  the full characteristic bonus (raw + unnatural) used by default
  * @param {boolean} hasLightningReflexes  whether the actor has the talent
- * @param {boolean} hasUnnatural  whether the governing characteristic is Unnatural
+ * @param {number} unnaturalMult  the Unnatural multiplier on the governing characteristic (≥2, else 1/falsy)
  * @returns {number} the characteristic contribution to the Initiative bonus
  */
-export function initiativeCharBonus(rawBonus, normalBonus, hasLightningReflexes, hasUnnatural) {
+export function initiativeCharBonus(rawBonus, normalBonus, hasLightningReflexes, unnaturalMult) {
     if (!hasLightningReflexes) return normalBonus;
-    return rawBonus * (hasUnnatural ? 3 : 2);
+    const mult = Number(unnaturalMult) >= 2 ? Number(unnaturalMult) : 1;
+    return rawBonus * (mult + 1);
 }
 
 /**
@@ -558,6 +563,37 @@ export function daemonicToughnessMultiplier(traits) {
     // "Daemonic Presence" (QA-142) — like the quadruped/unnatural helpers tolerate "(xN)".
     const has = traits.some((t) => t?.name && /^\s*daemonic\s*(\(|$)/i.test(t.name));
     return has ? 2 : 1;
+}
+
+/**
+ * Felling (X) (RT, p.131 / The Soul Reaver p.150): "If the weapon hits, it ignores a
+ * number of levels of Unnatural Toughness possessed by the target equal to the number in
+ * parenthesis. For instance, a Felling (1) weapon ignores the benefits of Unnatural
+ * Toughness (x2) and would reduce the benefits of Unnatural Toughness (x3) by one
+ * multiplier." So Felling reduces the target's Toughness-Bonus MULTIPLIER by X (floored at
+ * the base ×1), discarding the per-step Unnatural extra — it does NOT touch the base
+ * Toughness Bonus, force fields, or armour. Engine-applied on the assign-damage soak path
+ * (BUG-Q-195): the cosmetic chat note in damage-data.mjs had no mechanical effect.
+ *
+ * `unnatural` is the additive Unnatural extra the actor bakes (= rawBonus × (mult − 1), so
+ * the base bonus is `toughnessBonus − unnatural` and each multiplier step is worth that
+ * base). Removing X steps subtracts min(X, steps-available) × base from the bonus.
+ *
+ * @param {number} toughnessBonus  the target's full Toughness Bonus (incl. Unnatural extra)
+ * @param {number} unnatural       the Unnatural-Toughness additive (characteristic.unnatural)
+ * @param {number} fellingLevel    the weapon's Felling level (X)
+ * @returns {number} the Toughness Bonus after Felling (≥ the base bonus)
+ */
+export function fellingToughnessBonus(toughnessBonus, unnatural, fellingLevel) {
+    const tb = Number(toughnessBonus) || 0;
+    const un = Number(unnatural) || 0;
+    const x = Math.max(0, Math.floor(Number(fellingLevel) || 0));
+    if (x === 0 || un <= 0) return tb;
+    const base = tb - un;                       // base Toughness Bonus (no Unnatural)
+    if (base <= 0) return tb;                    // can't derive multiplier steps
+    const steps = Math.round(un / base);         // = multiplier − 1
+    const removed = Math.min(x, steps);
+    return tb - removed * base;
 }
 
 /**

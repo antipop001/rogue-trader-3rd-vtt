@@ -369,9 +369,12 @@ export class RogueTraderAcolyte extends RogueTraderBaseActor {
         // modifier (effect-addressable via system.initiative.modifier so talents/gear
         // like Paranoia "+2 Initiative" / Wary "+1" survive derived-data recompute).
         // BUG-002. Lightning Reflexes (RT Core p.110) replaces the single AgB term with
-        // twice the raw Agility Bonus (×3 with Unnatural Agility) — handled here by name
+        // the raw Agility Bonus times (Unnatural multiplier + 1) — handled here by name
         // since an AE can't read AgB; do NOT also give that talent an AE. ENGINE-INIT-EXTRA.
+        // BUG-Q-188: the multiplier scales off the actual Unnatural Agility level (×N → ×N+1),
+        // not a fixed ×3 — so it never under-counts an Unnatural Agility (×3)/(×4) creature.
         const initChar = this.characteristics[this.initiative.characteristic];
+        const initUnnaturalMult = unnaturalMults[String(initChar.label ?? '').toLowerCase()] ?? 1;
         // Encumbered: reduce the Agility Bonus by 1 for Initiative (RT Core p.249). Applied
         // to the AgB INPUT so Lightning Reflexes doubles the already-reduced bonus. (QA-078.)
         const initEncPenalty = this.encumbrance?.encumbered ? 1 : 0;
@@ -380,7 +383,7 @@ export class RogueTraderAcolyte extends RogueTraderBaseActor {
                 Math.max(0, Math.floor(initChar.total / 10) - initEncPenalty),
                 Math.max(0, initChar.bonus - initEncPenalty),
                 this.hasTalent('Lightning Reflexes'),
-                (initChar.unnatural ?? 0) > 0,
+                initUnnaturalMult,
             )
             + (this.system.initiative.modifier ?? 0);
         // RT 1e: maximum Wounds = the rolled/stored base plus any additive effect
