@@ -45,6 +45,7 @@ export class RollData {
     opposedDof = 0;
     opposedDos = 0;
     opposedRoll;
+    opposedNetDegrees = 0;
 
     baseAim = 0;
     modifiers = {

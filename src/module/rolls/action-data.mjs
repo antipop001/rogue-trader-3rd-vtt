@@ -1,6 +1,6 @@
 import { PsychicRollData, RollData, WeaponRollData } from './roll-data.mjs';
 import { Hit, PsychicDamageData, scatterDirection, WeaponDamageData } from './damage-data.mjs';
-import { astropathPerilsResult, attackTalentExtraHits, degreesOfSuccess, degreesOfFailure, getOpposedDegrees, isPsychicDoubles, roll1d100, sendActionDataToChat, stunDefenceBonus, uuid, voidshipWeaponHits, voidshipHullDamage } from './roll-helpers.mjs';
+import { astropathPerilsResult, attackTalentExtraHits, degreesOfSuccess, degreesOfFailure, getOpposedDegrees, getOpposedDegreesWithTiebreak, isPsychicDoubles, roll1d100, sendActionDataToChat, stunDefenceBonus, uuid, voidshipWeaponHits, voidshipHullDamage } from './roll-helpers.mjs';
 import { refundAmmo, useAmmo } from '../rules/ammo.mjs';
 import { DHBasicActionManager } from '../actions/basic-action-manager.mjs';
 import { conditionMeta } from '../rules/conditions.mjs';
@@ -126,16 +126,29 @@ export class ActionData {
             this.rollData.opposedDos = rollCheck.dos;
             this.rollData.opposedDof = rollCheck.dof;
             this.rollData.opposedSuccess = rollCheck.success;
-            if(rollCheck.success) {
-                // Opposed test (RT Core p.23): the higher Degrees of Success wins; a TIE is
-                // broken by the higher governing Characteristic, NOT auto-awarded to the
-                // defender. The defender beats the attacker only with strictly more DoS, or on
-                // an equal-DoS tie when its Characteristic (opposedTarget) is higher. (QA-106.)
-                const tieToDefender = this.rollData.opposedDos === this.rollData.dos
-                    && (this.rollData.opposedTarget ?? 0) > (this.rollData.modifiedTarget ?? 0);
-                if(this.rollData.opposedDos > this.rollData.dos || tieToDefender) {
-                    this.rollData.success = false;
-                }
+            // Opposed test (RT Core p.232): whoever succeeds wins; among two successes the
+            // higher Degrees of Success wins; on an equal-DoS tie the higher Characteristic
+            // Bonus wins; if STILL tied the lower dice roll wins — NOT auto-awarded to either
+            // side. Feint opposes Weapon Skill, Knock-Down opposes Strength (both sides use
+            // the same Characteristic). (QA-106 / BUG-Q-218.)
+            const charKey = this.rollData.opposedChar === 'S' ? 'strength' : 'weaponSkill';
+            const attacker = {
+                success: this.rollData.success,
+                dos: this.rollData.dos,
+                dof: this.rollData.dof,
+                bonus: this.rollData.sourceActor?.characteristics?.[charKey]?.bonus ?? 0,
+                roll: this.rollData.roll?.total ?? 0,
+            };
+            const defender = {
+                success: rollCheck.success,
+                dos: this.rollData.opposedDos,
+                dof: this.rollData.opposedDof,
+                bonus: this.rollData.targetActor?.characteristics?.[charKey]?.bonus ?? 0,
+                roll: this.rollData.opposedRoll?.total ?? 0,
+            };
+            this.rollData.opposedNetDegrees = getOpposedDegreesWithTiebreak(attacker, defender);
+            if (this.rollData.opposedNetDegrees < 0) {
+                this.rollData.success = false;
             }
         }
 
@@ -153,7 +166,11 @@ export class ActionData {
 
         if (this.rollData.isKnockDown) {
             if(this.rollData.targetActor) {
-                const opposedDegrees = getOpposedDegrees(this.rollData.success, this.rollData.dos, this.rollData.dof, this.rollData.opposedSuccess, this.rollData.opposedDos, this.rollData.opposedDof);
+                // Reuse the tiebroken net degrees computed above (RT Core p.232): a DoS tie is
+                // decided by Characteristic Bonus then dice roll, not auto-awarded to the
+                // defender. (BUG-Q-218.)
+                const opposedDegrees = this.rollData.opposedNetDegrees
+                    ?? getOpposedDegrees(this.rollData.success, this.rollData.dos, this.rollData.dof, this.rollData.opposedSuccess, this.rollData.opposedDos, this.rollData.opposedDof);
                 if(opposedDegrees >= 2) {
                     const strengthBonus = this.rollData.sourceActor?.characteristics?.strength?.bonus ?? 0;
                     this.addEffect('Knock Down', `The target is knocked Prone and must use a Stand action in his turn to regain his feet! The impact deals [[1d5-3+${strengthBonus}]] (min 0) damage, with armour counting as double, and one level of fatigue to the target!`, ['prone']);
