@@ -109,8 +109,9 @@ test('buildActorData: skills, originPath labels, notes, xp, no legacy homeWorld'
     assert.equal(data.system.bio.originPath.career.value, 'Arch-Militant');
     // CRITICAL: legacy DH2 field must never be written (Forge/Hive World collide).
     assert.equal(data.system.bio.homeWorld, undefined);
-    // XP pool recorded once origin picks exist.
-    assert.deepEqual(data.system.experience, { total: 500, used: 0 });
+    // XP recorded once origin picks exist: RT Core p.38 — 5,000 total, 4,500
+    // pre-spent on the career (+ any origin xp_cost spend on top).
+    assert.deepEqual(data.system.experience, { total: 5000, used: 4500 });
     assert.equal(data.flags.rt.chargen.origin.home_world, 'Void Born');
 });
 

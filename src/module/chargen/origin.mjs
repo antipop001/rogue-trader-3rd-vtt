@@ -32,6 +32,12 @@ export const STEP_ORDER = [
 /** The starting-XP pool ItS origin xp_costs are charged against (RT 500). */
 export const STARTING_XP_POOL = 500;
 
+/** RT Core p.38: every starting Explorer begins play with 5,000 xp, of which
+ *  4,500 are already spent on the career (the final 500 = STARTING_XP_POOL is
+ *  the free pool the player may spend during creation). */
+export const TOTAL_STARTING_XP = 5000;
+export const PRESPENT_STARTING_XP = TOTAL_STARTING_XP - STARTING_XP_POOL;
+
 export class OriginError extends Error {}
 
 /* ------------------------------------------------------------------------ */

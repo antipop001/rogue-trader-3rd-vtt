@@ -753,3 +753,72 @@ RT Core p.218 (Critical Hits): "If the number of Degrees of Success is equal to 
 - gap: The `currentRating` calculation unconditionally subtracts the `sustained` count from the actor's base Psy Rating. Because of this, if an actor sustains a single power (`sustained` = 1), their effective Psy Rating is improperly reduced by 1. Canon dictates that the PR penalty only applies when maintaining *two or more* powers, and it is equal to the total number of powers maintained. Maintaining a single power has no penalty.
 - fix: New pure helper `sustainedPsyPenalty(sustained)` in `src/module/rules/psychic.mjs` returns `n >= 2 ? n : 0` (RT Core p.159 — penalty only at two or more maintained powers, then equal to the count; one sustained power has no penalty). Wired into `acolyte.mjs:370`: `currentRating = max(0, rating - sustainedPsyPenalty(sustained))` (was `rating - sustained`). New node test `tests/chargen/sustained_psy_penalty.test.mjs` (3 cases). Gate green (`npm run build:check` exit 0; `npm test` 251/251, +3). Live-verified on rt-smoke via Playwright (imported deployed psychic.mjs, drove the currentRating calc for a PR-4 psyker): sustained 0→PR4, 1→PR4 (was wrongly 3), 2→PR2, 3→PR1.
 - verify: confirmed: properly implements verbatim RT Core p.159 "Maintaining two powers at the same time reduces the effective Psy Rating of both powers by 2". Single sustained powers no longer incorrectly subtract 1 from the rating, and scaling for 2+ powers matches the verbatim text.
+
+## BUG-Q-222 — `perDoSDamage` incorrectly grants a minimum of 1 roll on a 0-DoS success, breaking linear scaling
+- status: discovery
+- found-by: agy Gemini
+- area: core mechanics / psychic
+- severity: P1 (wrong result in play)
+- evidence: `src/module/rolls/damage-data.mjs:177` computes `const dosCount = Math.max(1, attackData.rollData.dos ?? 1);`.
+- canon: `/mnt/project_data/RT/RT-DOCS/roguetrader_intothestorm-126-257.pdf/markdown.md:3339` (Banishment, Into the Storm p.197) — "For every Degree of Success on the Focus Power Test, the target takes 1d10 points of damage".
+- gap: The `Math.max(1, ...)` floor treats 0 Degrees of Success as 1, causing a 0-DoS success to deal exactly the same per-DoS damage (1d10) as a 1-DoS success. A 0-DoS success on a strictly "per DoS" scaling formula should yield 0 damage rolls, maintaining the mathematical curve.
+
+## BUG-Q-223 — `shipManoeuvreDistance` incorrectly rounds half-Speed down instead of up
+- status: discovery
+- found-by: agy Gemini
+- area: ship combat
+- severity: P1 (wrong result in play)
+- evidence: `src/module/rules/ship-combat.mjs:21` — `return fraction === 'half' ? Math.floor(s / 2) : s;`
+- canon: RT Core p.17 ("Rounding: When you are required to divide a number ... round up"). RT Core p.214 ("When a starship takes its Manoeuvre Action, it chooses to move directly forward a number of VUs equal to its Speed value or half its Speed value.")
+- gap: The `Math.floor()` explicitly rounds the half-speed Manoeuvre distance down, violating the system's universal round-up rule for division. A Speed 5 ship should have a half-speed of 3, but the function returns 2.
+
+## BUG-Q-224 — Grapple Push distance incorrectly uses the Opposed Test's "net margin" instead of the attacker's DoS
+- status: discovery
+- found-by: agy Gemini
+- area: combat actions / grapple
+- severity: P2 (wrong result in play, edge case)
+- evidence: `src/module/rules/grapple.mjs:52` calculates `const metres = 1 + Math.abs(net);`, where `net` is the Opposed Test's net degrees.
+- canon: RT Core p.246 "Push Opponent" — "If the active character wins the Test, he can push his opponent 1 metre, plus 1 additional metre for every Degree of Success he scored."
+- gap: Using `net` (the Opposed Test margin) heavily inflates the push distance if the defender fails the opposed test (since `net` incorporates the defender's Degrees of Failure). If an attacker scores 0 DoS and the defender fails with 6 DoF, the attacker currently pushes them 8 metres (`1 + (0 - (-7))`), when it should only be 1 metre (`1 + 0`). It must be `1 + (a.success ? a.dos : 0)`.
+
+## BUG-Q-225 — Ship weapon attacks incorrectly double-dip range modifiers, mixing token distance with Strategic Round dialog distance
+- status: discovery
+- found-by: agy Gemini
+- area: ship combat
+- severity: P0 (wrong result in play, corrupts all ship shooting)
+- evidence: 
+  1. `src/module/rules/range.mjs:80` assigns `rollData.rangeBonus = 20` (or 0/-20) based on canvas token distance.
+  2. `src/module/rolls/roll-data.mjs:270` adds `modifiers['range band'] = this.shipRangeModifier` (the correct +10/-10 from `shipShootingCheck` dialog).
+  3. `src/module/rolls/roll-data.mjs:409` applies BOTH `modifiers['range'] = this.rangeBonus` and the `range band` modifier.
+- canon: RT Core p.217 (only Short +10 and Long -10 exist for ship weapons).
+- gap: Ship shooting receives two stacking range modifiers. The dialog computes the correct +10/-10 based on the user's VU input, but `range.mjs` silently adds a +20/0/-20 modifier based on canvas token distance (which is often 0/unscaled in ship combat). `range.mjs` must yield 0 `rangeBonus` for ship weapons, relying entirely on the `shipRangeModifier` passed from the dialog.
+
+## BUG-Q-226 — `damage-data.mjs` incorrectly implements Dark Heresy 2e `Deathdealer` talent
+- status: discovery
+- found-by: agy Gemini
+- area: combat actions / damage
+- severity: P2 (DH2 leftover)
+- evidence: `src/module/rolls/damage-data.mjs` lines 382-386 and 422-426 check for `hasTalentFuzzyWords(['Deathdealer', 'Melee'])` and `Ranged`, adding half Perception Bonus to damage.
+- canon: RT Core (no such talent). The `Deathdealer` talent does not exist in any Rogue Trader book; it is a Dark Heresy 2e exclusive mechanic.
+- gap: Extraneous code applying a mechanic that does not exist in the system.
+
+## BUG-Q-227 — Chargen wizard sets starting character total XP to 500 instead of 5,000
+- status: fixed
+- found-by: agy Gemini 3.1 Pro (High) · iter 6
+- area: chargen
+- severity: P0 (wrong result in play)
+- evidence: `src/module/chargen/commit.mjs:225` — `system.experience = { total: STARTING_XP_POOL, used: state.originXpSpent };` where `STARTING_XP_POOL` is `500`.
+- canon: `/mnt/project_data/RT/RT-DOCS/CoreBook-1-200.pdf/markdown.md:2044` (RT Core p.38) — "All starting Explorers begin play with 5,000 Experience Points. Of these, 4,500 have already been spent... The final 500 xp may be spent..."
+- gap: The chargen wizard sets the actor's total Experience to 500 instead of 5,000, and their used XP to just the origin spend (instead of 4,500 + origin spend). This leaves the character 4,500 XP short, breaking Rank progression (Rank 1 starts at 5,000 XP) and experience tracking.
+- fix: `origin.mjs:36` — added `TOTAL_STARTING_XP = 5000` and `PRESPENT_STARTING_XP = TOTAL_STARTING_XP - STARTING_XP_POOL` (= 4500) alongside the existing free-pool constant (RT Core p.38). `commit.mjs:225` now writes `system.experience = { total: TOTAL_STARTING_XP, used: PRESPENT_STARTING_XP + state.originXpSpent }` instead of `{ total: 500, used: originXpSpent }`, so `available = total - used = 500 - originXpSpent` (the remaining free pool) stays correct on the sheet while total reflects the canon 5,000. STARTING_XP_POOL (500) is unchanged — it is correctly the free-spend pool the origin budget validator (origin.mjs:90,170) charges ItS xp_costs against, NOT the actor total. `tests/chargen/commit.test.mjs:113` assertion updated to `{ total: 5000, used: 4500 }`. Gate green (`npm run build:check` exit 0; `npm test` 251/251). Not live-verified on rt-smoke: pure chargen data-mapping (`buildActorData`) asserted directly by the node test, not a roll/damage/condition/ship/vehicle result, and the chargen wizard UI is shelved (CHARGEN_UI_ENABLED=false) so it is unreachable live.
+- verify:
+
+## BUG-Q-228 — Ship Ramming damage incorrectly assigns 1d5 to Battleships instead of 2d10
+- status: open
+- found-by: agy Gemini 3.1 Pro (High) · iter 6
+- area: ship
+- severity: P1 (wrong result in play)
+- evidence: `src/module/rules/ship-combat.mjs:176-180` checks `t.includes('cruiser')` to return 2d10, and falls back to `1d5` for everything else (which includes "Battleship").
+- canon: `/mnt/project_data/RT/RT-DOCS/CoreBook-201-401.pdf/markdown.md:992` (RT Core p.219) — "Cruisers and larger: 2d10". A Battleship is larger than a cruiser and should inflict 2d10.
+- gap: The `shipRamDice` function fails to match Battleships (and other large non-cruiser hulls like Grand Cruisers if they lack the word "cruiser", though they usually have it) and defaults them to the 1d5 damage of a Transport/Raider.
+
