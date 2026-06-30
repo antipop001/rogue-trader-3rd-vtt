@@ -234,22 +234,25 @@ export function getOpposedDegrees(success, dos, dof, opposedSuccess, opposedDos,
  * (BUG-Q-218 / QA-106): "Whoever succeeds wins. If both succeed, the one with the most
  * degrees of success wins. If the degrees of success are the same, the highest
  * Characteristic Bonus wins. If the result is still a tie, the lowest dice roll wins."
- * Builds on {@link getOpposedDegrees} for the cross success/failure magnitude, then breaks
- * an exact net of 0 — which can ONLY be two equal-DoS successes or two equal-DoF failures.
- * Two successes are resolved by Characteristic Bonus → lower dice roll (returning ±1, a
- * bare tiebreak win); two failures are a stalemate (0, nobody wins — RT Core: "either there
- * is a stalemate and nothing happens or both parties re-roll"). A perfect tie (equal DoS,
- * Bonus, and dice roll) defaults to the active character (the attacker).
+ * Two failures are ALWAYS a stalemate (0, nobody wins — RT Core: "either there is a stalemate
+ * and nothing happens or both parties re-roll"), checked first. Otherwise it builds on
+ * {@link getOpposedDegrees} for the cross success/failure magnitude, then breaks an exact net
+ * of 0 — which can now ONLY be two equal-DoS successes — by Characteristic Bonus → lower dice
+ * roll (returning ±1, a bare tiebreak win). A perfect tie (equal DoS, Bonus, and dice roll)
+ * defaults to the active character (the attacker).
  * @param {{success:boolean, dos:number, dof:number, bonus:number, roll:number}} a attacker
  * @param {{success:boolean, dos:number, dof:number, bonus:number, roll:number}} d defender
  * @returns {number} attacker's net degrees: >0 attacker wins, <0 defender wins, 0 stalemate
  */
 export function getOpposedDegreesWithTiebreak(a, d) {
+    // RT Core p.232: "Should both parties fail, one of two things occurs. Either there is a
+    // stalemate and nothing happens or both parties should re-roll." A double failure is NEVER
+    // a win for the "less wrong" side, so short-circuit to a stalemate BEFORE consulting the
+    // signed magnitude — otherwise a fail-by-0 vs fail-by-2 would net +2 and wrongly win.
+    if (!a.success && !d.success) return 0;
     const net = getOpposedDegrees(a.success, a.dos, a.dof, d.success, d.dos, d.dof);
     if (net !== 0) return net;
-    // net === 0: two equal-DoS successes (apply the tiebreak chain) or two failures
-    // (stalemate — neither side wins).
-    if (!a.success || !d.success) return 0;
+    // net === 0 with at least one success ⇒ two equal-DoS successes: apply the tiebreak chain.
     const aBonus = Number(a.bonus) || 0, dBonus = Number(d.bonus) || 0;
     if (aBonus !== dBonus) return aBonus > dBonus ? 1 : -1;
     const aRoll = Number(a.roll) || 0, dRoll = Number(d.roll) || 0;

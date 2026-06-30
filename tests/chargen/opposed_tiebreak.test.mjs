@@ -35,7 +35,8 @@ test('two failures are a stalemate — neither side wins', () => {
     assert.equal(getOpposedDegreesWithTiebreak(A({ success: false, dof: 1 }), A({ success: false, dof: 1 })), 0);
 });
 
-test('among two failures, the smaller failure still wins via getOpposedDegrees magnitude', () => {
-    // attacker fails by 0, defender fails by 2 → attacker is "less wrong" → positive net.
-    assert.ok(getOpposedDegreesWithTiebreak(A({ success: false, dof: 0 }), A({ success: false, dof: 2 })) > 0);
+test('two failures are a stalemate even when DoF differ (RT Core p.232 — no "less wrong" win)', () => {
+    // attacker fails by 0, defender fails by 2: NOT a win for the "less wrong" side — stalemate.
+    assert.equal(getOpposedDegreesWithTiebreak(A({ success: false, dof: 0 }), A({ success: false, dof: 2 })), 0);
+    assert.equal(getOpposedDegreesWithTiebreak(A({ success: false, dof: 3 }), A({ success: false, dof: 1 })), 0);
 });
