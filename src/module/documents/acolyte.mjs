@@ -226,8 +226,10 @@ export class RogueTraderAcolyte extends RogueTraderBaseActor {
                 if (hasSpecial('Defensive')) {
                     rollData.modifiers['Defensive'] = 15;
                 }
-                if (hasSpecial('Unwieldy') || hasSpecial('Unbalanced')) {
+                if (hasSpecial('Unwieldy')) {
                     rollData.modifiers['Cannot Parry'] = -999;
+                } else if (hasSpecial('Unbalanced')) {
+                    rollData.modifiers['Unbalanced'] = -10;
                 }
 
                 const parryBonus = Number(meleeWeapon.system.parryBonus) || 0;

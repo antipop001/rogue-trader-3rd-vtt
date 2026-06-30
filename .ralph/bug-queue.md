@@ -178,14 +178,14 @@ checker runs elsewhere) syncs via git.
 - verify: confirmed: the +20 bonus is correctly applied in calculateAttackSpecialAttackBonuses, and the new doubleReloadTime helper properly scales the reload string before halving qualities so that they accurately compose, perfectly matching RT Core p.117.
 
 ## BUG-Q-174 — Unbalanced weapon quality incorrectly prevents Parrying entirely instead of applying a -10 penalty
-- status: open
+- status: fixed
 - found-by: agy Gemini 3.1 Pro (High) · iter 4
 - area: rules
 - severity: P0 (wrong result in play)
 - evidence: `src/module/documents/acolyte.mjs:229-231` — `if (hasSpecial('Unwieldy') || hasSpecial('Unbalanced')) { rollData.modifiers['Cannot Parry'] = -999; }`
-- canon: `/mnt/project_data/RT/RT-DOCS/CoreBook-1-200.pdf/markdown.md:5993` (RT Core p.132) — Unbalanced: "Heavy and difficult to ready after an attack, these kinds of weapons impose a -10% penalty when used to Parry."
+- canon: `/mnt/project_data/RT/RT-DOCS/CoreBook-1-200.pdf/markdown.md:6011` (RT Core p.132) — Unbalanced: "Heavy and difficult to ready after an attack, these kinds of weapons impose a -10% penalty when used to Parry." Unwieldy (markdown.md:6023): "too awkward to be used defensively. Unwieldy weapons cannot be used to Parry."
 - gap: The engine conflates `Unbalanced` with `Unwieldy` and makes it impossible to Parry (`-999` modifier). Unbalanced should only impose a `-10` penalty to Parry tests.
-- fix: 
+- fix: `src/module/documents/acolyte.mjs:229-233` — split the conflated branch: `Unwieldy` keeps `rollData.modifiers['Cannot Parry'] = -999` (RT Core p.132 "cannot be used to Parry"); `Unbalanced` now sets `rollData.modifiers['Unbalanced'] = -10` (RT Core p.132 "-10% penalty when used to Parry") via an `else if`, so a weapon with both is treated as Unwieldy (the stricter rule). Gate green (build:check exit 0, 216 node tests). Live-verified on rt-smoke via Playwright (created actor + equipped melee weapon with `system.special`, drove `rollSkill('parry')` through a stubbed Dialog auto-firing the Roll callback, read the resulting chat card): Unbalanced weapon → card shows `UNBALANCED -10` / Target -10; Unwieldy weapon → `CANNOT PARRY -999` / Target -60.
 - verify:
 
 ## BUG-Q-175 — Several weapon qualities (Toxic, Snare, Shocking) lack automation for secondary resistance tests
@@ -196,5 +196,38 @@ checker runs elsewhere) syncs via git.
 - evidence: `src/module/rolls/damage-data.mjs` and `src/module/rolls/assign-damage-data.mjs` — No Toughness/Agility test logic exists for Toxic, Snare, or Shocking when targets take damage.
 - canon: `/mnt/project_data/RT/RT-DOCS/CoreBook-1-200.pdf/markdown.md:5993` (RT Core p.132) — e.g., Toxic: "If the attack causes any Damage ... the target must pass a Toughness Test ... or take an additional 1d10 points of Damage."
 - gap: The engine doesn't automate or prompt for the required secondary resistance tests (Toughness/Agility) when these qualities take effect. Note: `Concussive` and `Flame` are documented as manual in QA-080, but these others are also missing.
+- fix: 
+- verify:
+
+## BUG-Q-176 — `Melta` weapon quality incorrectly doubles Penetration at Point Blank/Short Range
+- status: open
+- found-by: agy Gemini 3.1 Pro (High) · iter 4
+- area: weapons
+- severity: P0 (wrong result in play)
+- evidence: `src/module/rolls/damage-data.mjs:470-474` — `if (attackData.rollData.hasAttackSpecial('Melta')) { this.penetrationModifiers['melta'] = this.penetration; }` doubles penetration at short ranges.
+- canon: `/mnt/project_data/RT/RT-DOCS/CoreBook-1-200.pdf/markdown.md:5415, 6656` — Melta is a weapon group, not a weapon special quality that doubles penetration. RT 1e meltaguns have a naturally high base penetration (e.g. 13) without any doubling rule. (The doubling rule is a DH2/Only War mechanic).
+- gap: The engine incorrectly applies a DH2 weapon quality rule to Melta weapons, doubling their already massive base penetration at short range (e.g., 13 -> 26). This quality should be removed.
+- fix: 
+- verify:
+
+## BUG-Q-177 — `Maximal` weapon quality adds +1d10 as an unintegrated modifier, bypassing Righteous Fury, Tearing, and Proven
+- status: open
+- found-by: agy Gemini 3.1 Pro (High) · iter 4
+- area: weapons
+- severity: P0 (wrong result in play)
+- evidence: `src/module/rolls/damage-data.mjs:382-386` — `const maximalRoll = new Roll('1d10', {}); await maximalRoll.evaluate(); this.modifiers['maximal'] = maximalRoll.total;`
+- canon: `/mnt/project_data/RT/RT-DOCS/CoreBook-1-200.pdf/markdown.md:5993` (RT Core p.132) — Maximal: "+10 to range, +1d10 damage, +2 pen, uses 3 shots, Recharge." The bonus is to the weapon's Damage roll.
+- gap: Because the +1d10 is rolled separately and added as a flat modifier to `this.modifiers['maximal']`, it is never included in the base `damageRoll`. This means the extra die completely bypasses the Righteous Fury check, and does not benefit from qualities like Tearing or Proven, which only scan the base `damageRoll.terms`. It must be integrated into the `rollFormula` before the roll is constructed.
+- fix: 
+- verify:
+
+## BUG-Q-178 — `Scatter` weapon quality implements DH2 +3/-3 flat damage scaling and to-hit modifiers instead of RT 1e DoS scaling
+- status: open
+- found-by: agy Gemini 3.1 Pro (High) · iter 4
+- area: weapons
+- severity: P0 (wrong result in play)
+- evidence: `src/module/rolls/damage-data.mjs:346-352` (adds flat `this.modifiers['scatter'] = 3` at PB, `-3` at >Short) and `src/module/rules/attack-specials.mjs:71-73` (adds flat +10 to-hit at PB/Short).
+- canon: `/mnt/project_data/RT/RT-DOCS/CoreBook-1-200.pdf/markdown.md:5993` (RT Core p.132) — Scatter: "At Point Blank Range, it gains a +10 to hit, and at Short Range, +20 to hit. At ranges further than Short Range, it suffers a -30 to hit. In addition, when it hits, the target takes 1d10 additional Damage for every two Degrees of Success on the attack roll."
+- gap: The engine uses Dark Heresy 2e logic for Scatter (flat +/-3 damage, flat +10 hit at close range). It misses the RT 1e to-hit modifiers (PB +10, Short +20, >Short -30) and completely fails to implement the RT 1e +1d10 additional damage per 2 DoS.
 - fix: 
 - verify:
