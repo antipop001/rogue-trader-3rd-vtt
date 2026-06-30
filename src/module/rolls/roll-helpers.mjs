@@ -249,21 +249,26 @@ export function weaponMasterBonus(talents, weaponClass) {
  * Lightning Reflexes (RT Core p.110): "The character adds twice his Agility Bonus
  * when rolling for Initiative. If he has Unnatural Agility, add +1 to the multiplier
  * before factoring the bonus into the Initiative roll." So the governing-characteristic
- * contribution to Initiative becomes ×2 the raw Agility Bonus (×3 with Unnatural
- * Agility), REPLACING the normal single bonus (which itself already folds in the
- * Unnatural addition — multiplying that would double-count). Without the talent the
- * normal bonus is returned unchanged. AE can't express this (it must read AgB), so it
- * is computed in acolyte.mjs by name and must NOT also be given an AE.
+ * contribution to Initiative becomes the raw Agility Bonus times (Unnatural multiplier +
+ * 1), REPLACING the normal single bonus (which itself already folds in the Unnatural
+ * addition — multiplying that would double-count). With no Unnatural the multiplier is 1,
+ * so the term is ×2 the raw bonus; with Unnatural Agility (×N) it is ×(N+1) — the canon
+ * "+1 to the multiplier" scales off the actual Unnatural level, NOT a fixed ×3 (BUG-Q-188).
+ * A fixed ×3 under-counts for Unnatural Agility (×3)/(×4): the normal bonus is already
+ * rawBonus×N, so ×3 would tie (N=3) or LOSE (N=4) — a talent must never reduce Initiative.
+ * Without the talent the normal bonus is returned unchanged. AE can't express this (it must
+ * read AgB), so it is computed in acolyte.mjs by name and must NOT also be given an AE.
  *
  * @param {number} rawBonus  tens-digit characteristic bonus (Math.floor(total/10), no unnatural)
  * @param {number} normalBonus  the full characteristic bonus (raw + unnatural) used by default
  * @param {boolean} hasLightningReflexes  whether the actor has the talent
- * @param {boolean} hasUnnatural  whether the governing characteristic is Unnatural
+ * @param {number} unnaturalMult  the Unnatural multiplier on the governing characteristic (≥2, else 1/falsy)
  * @returns {number} the characteristic contribution to the Initiative bonus
  */
-export function initiativeCharBonus(rawBonus, normalBonus, hasLightningReflexes, hasUnnatural) {
+export function initiativeCharBonus(rawBonus, normalBonus, hasLightningReflexes, unnaturalMult) {
     if (!hasLightningReflexes) return normalBonus;
-    return rawBonus * (hasUnnatural ? 3 : 2);
+    const mult = Number(unnaturalMult) >= 2 ? Number(unnaturalMult) : 1;
+    return rawBonus * (mult + 1);
 }
 
 /**

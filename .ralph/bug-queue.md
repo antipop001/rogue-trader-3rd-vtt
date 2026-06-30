@@ -236,3 +236,147 @@ checker runs elsewhere) syncs via git.
 - verify:
 
 - triage: FIXED (0.8.25) to the REAL canon (RT Core p.116): removed the DH2 flat +3/-3 damage + flat +10 to-hit; added +1 hit per 2 DoS at Point Blank + a doubled-Armour note at Long/Extreme. The finding's own cited rule (+10/+20 to-hit, +1d10/DoS) was ALSO wrong.
+## BUG-Q-179 — `Flame` weapons incorrectly roll a ghost BS test which can trigger Jams and overwrite their DoS
+- status: new
+- found-by: agy Gemini 3.1 Pro (High)
+- area: engine-rolls
+- severity: P0 (wrong result in play)
+- evidence: `src/module/rolls/action-data.mjs:238-243,267-275,297` — The `hasAttackSpecial('Flame')` block sets `success = true; dos = 1;` but does NOT return early or skip the rest of the hit logic. The engine still evaluates a ghost d100. If this d100 rolls 96+, the `isRanged` block incorrectly triggers a Jam and resets `success = false`. Further down, on a success, the DoS is overwritten by the ghost d100's DoS.
+- canon: `/mnt/project_data/RT/RT-DOCS/CoreBook-201-401.pdf/markdown.md` (RT Core p.142) — "Flame weapons don't require a Ballistic Skill Test to hit; instead, they automatically hit..." Weapons that do not roll to hit cannot Jam on 96+.
+- gap: Flame attacks will incorrectly Jam ~5% of the time, and their DoS is unpredictably randomized. The Flame block must skip the d100 BS test and Jam checks entirely.
+- fix: 
+- verify:
+
+- triage: 
+## BUG-Q-180 — `Semi-Auto Burst` and `Full Auto Burst` are incorrectly categorized as Full Actions instead of Half Actions
+- status: new
+- found-by: agy Gemini 3.1 Pro (High)
+- area: engine-data
+- severity: P0 (wrong result in play)
+- evidence: `src/module/rules/combat-actions.mjs:199,292` — `name: 'Full Auto Burst', type: ['Full']` and `name: 'Semi-Auto Burst', type: ['Full']`.
+- canon: `/mnt/project_data/RT/RT-DOCS/CoreBook-201-401.pdf/markdown.md:8507` (RT Core p.238, Table 9-1) — Both `Semi-Auto Burst` and `Full Auto Burst` are strictly listed as `Half Action` in Rogue Trader 1e.
+- gap: The action definitions incorrectly use DH1 or early rules where auto-fire was a Full Action. In RT 1e, they are Half Actions, meaning players can Move and Full Auto Burst in the same turn. This breaks action economy.
+- fix: 
+- verify:
+
+- triage: 
+
+## BUG-Q-181 — `Semi-Auto Burst`, `Full Auto Burst`, and `Suppressing Fire` use incorrect base Jam threshold (96 instead of 94)
+- status: new
+- found-by: agy Gemini 3.1 Pro (High)
+- area: engine-rolls
+- severity: P0 (wrong result in play)
+- evidence: `src/module/rolls/action-data.mjs:273` sets `let jamThreshold = 96` unconditionally for all ranged attacks, and `src/module/rules/combat-actions.mjs` falsely documents "Jam on 94+" for Burst actions but the engine uses 96.
+- canon: `/mnt/project_data/RT/RT-DOCS/CoreBook-201-401.pdf/markdown.md:2147, 2189` (RT Core p.242) — Semi-Auto Burst: "A dice result of 94 to 00 indicates the weapon has Jammed". Suppressing Fire: "A roll of 94-100 on the test indicates the weapon has Jammed."
+- gap: The engine uses 96 as the base Jam threshold for burst/auto actions instead of 94, making them less likely to jam than intended.
+- fix: 
+- verify:
+
+- triage: 
+
+## BUG-Q-182 — Thrown Weapons incorrectly Jam on 96+; Grenades fail to implement dud/detonate Jam rules
+- status: new
+- found-by: agy Gemini 3.1 Pro (High)
+- area: engine-rolls
+- severity: P0 (wrong result in play)
+- evidence: `src/module/documents/item.mjs:77-80` defines `isRanged` to include `isThrown`. `src/module/rolls/action-data.mjs:284` jams all `isRanged` weapons on `96+`, applying `system.jammed = true`. No logic exists for Grenades exploding or duding.
+- canon: `/mnt/project_data/RT/RT-DOCS/CoreBook-1-200.pdf/markdown.md:5937` (RT Core p.117) — Thrown weapons: "These weapons do not jam." `CoreBook-1-200.pdf/markdown.md:6461` (RT Core p.126) — "Whenever a jam results from throwing a grenade... Roll 1d10. On any result other than 10, the explosive is simply a dud... On a 10, the explosive detonates immediately with the effect centred on the attacker."
+- gap: Ordinary thrown weapons (like spears/knives) incorrectly receive the 'Jammed' state on a 96+ roll. Grenades also incorrectly get the standard 'Jammed' state instead of resolving the 1d10 dud/detonate effect.
+- fix: 
+- verify:
+
+- triage: 
+
+## BUG-Q-183 — `Flame` weapons fail to Jam on damage rolls of 9
+- status: new
+- found-by: agy Gemini 3.1 Pro (High)
+- area: engine-rolls
+- severity: P1 (missing automation)
+- evidence: Neither `damage-data.mjs` nor `action-data.mjs` inspects the damage dice of a Flame weapon to check for a natural 9.
+- canon: `/mnt/project_data/RT/RT-DOCS/CoreBook-1-200.pdf/markdown.md:5937` (RT Core p.117, Flame Quality) — "Because Flame weapons make no roll to hit... will Jam if the firer rolls a 9 on his Damage dice (before adding any bonuses)."
+- gap: Flame weapons completely fail to jam according to their unique rule.
+- fix: 
+- verify:
+
+- triage: 
+
+## BUG-Q-184 — `Reliable` weapon quality causes Jams to become Hits instead of misses
+- status: new
+- found-by: agy Gemini 3.1 Pro (High)
+- area: engine-rolls
+- severity: P0 (wrong result in play)
+- evidence: `src/module/rolls/action-data.mjs:272` sets `jamThreshold = 100` for Reliable weapons. If a player with high BS (e.g., target 120) rolls a 96, `rollTotal >= 100` is false, so it does not Jam and does not set `success = false`. 
+- canon: `/mnt/project_data/RT/RT-DOCS/CoreBook-1-200.pdf/markdown.md:5971` (RT Core p.116) — Reliable: "If a Reliable weapon Jams, roll 1d10 and only on a roll of 10 has it in fact Jammed, otherwise it just misses as normal."
+- gap: The engine simplistically pushes the jam threshold to 100. This means rolls of 96-99 that WOULD be hits due to high BS are kept as hits, instead of resolving as "misses as normal" (since they should have triggered a jam check). Furthermore, it fails to roll the 1d10 to see if it actually jammed.
+- fix: 
+- verify:
+
+- triage: 
+
+## BUG-Q-185 — `Customised` weapon quality is missing from the engine
+- status: new
+- found-by: agy Gemini 3.1 Pro (High)
+- area: weapons
+- severity: P1 (missing automation)
+- evidence: `src/module/rules/attack-specials.mjs` — `Customised` is missing from `attackSpecials()` array and `calculateAttackSpecialAttackBonuses()`.
+- canon: `/mnt/project_data/RT/RT-DOCS/CoreBook-1-200.pdf/markdown.md:5993` (RT Core p.131) — "Customised: Weapons with this quality add a +5 to Ballistic Skill Tests made to fire them."
+- gap: The `Customised` quality is present in the `attack-specials` pack but the engine has no logic to handle it, so it grants no bonus.
+- fix: 
+- verify:
+
+- triage: 
+
+## BUG-Q-186 — `Vengeful` weapon quality is a DH2 leftover with no RT 1e equivalent
+- status: new
+- found-by: agy Gemini 3.1 Pro (High)
+- area: weapons
+- severity: P2 (data/cosmetic)
+- evidence: `src/module/rules/attack-specials.mjs:263` — `Vengeful` is listed in the `attackSpecials()` array.
+- canon: RT Core p.142–145 (and all RT expansions) do not contain a "Vengeful" weapon quality. It is a Dark Heresy 2e / Only War quality (rolls of 9+ or 8+ trigger Righteous Fury).
+- gap: This quality should be removed as it has no canonical basis in Rogue Trader.
+- fix: 
+- verify:
+
+- triage: 
+
+## BUG-Q-187 — `Flexible` weapon quality fails to apply effect preventing Parrying
+- status: new
+- found-by: agy Gemini 3.1 Pro (High)
+- area: weapons
+- severity: P1 (missing automation)
+- evidence: `Flexible` is defined in `attack-specials.mjs:143` but there is zero logic in `action-data.mjs` or `damage-data.mjs` that applies an effect warning the target that they cannot Parry.
+- canon: `/mnt/project_data/RT/RT-DOCS/CoreBook-1-200.pdf/markdown.md:5993` (RT Core p.131) — "Flexible: Flexible weapons cannot be Parried."
+- gap: When attacking with a Flexible weapon, the engine should add a combat effect (e.g., `this.addEffect('Flexible', 'This attack cannot be Parried.')`) to the chat card so the GM and target know they cannot use the Parry reaction.
+- fix: 
+- verify:
+
+- triage: 
+
+## BUG-Q-188 — `Lightning Reflexes` incorrectly hardcodes Unnatural Agility multiplier to x2 instead of scaling with the trait
+- status: fixed
+- found-by: agy Gemini 3.1 Pro (High) · iter 5
+- area: rules
+- severity: P0 (wrong result in play)
+- evidence: `src/module/rolls/roll-helpers.mjs:264-267` — `initiativeCharBonus` receives `hasUnnatural` as a boolean and returns `rawBonus * (hasUnnatural ? 3 : 2)`.
+- canon: `/mnt/project_data/RT/RT-DOCS/CoreBook-1-200.pdf/markdown.md:5200` (RT Core p.110) — Lightning Reflexes: "If he has Unnatural Agility, add +1 to the multiplier before factoring the bonus into the Initiative roll." (Unnatural Agility can be x3 or x4, per RT Core p.368).
+- gap: The engine assumes Unnatural Agility is always exactly x2 (so +1 makes it x3). For creatures with Unnatural Agility (x3) or higher, it will under-count their Initiative bonus (computing x3 instead of x4+).
+- fix: `src/module/rolls/roll-helpers.mjs:264` — `initiativeCharBonus` now takes the Unnatural multiplier (number) instead of a boolean and returns `rawBonus * (mult + 1)` (RT Core p.110 "add +1 to the multiplier" scales off the actual Unnatural Agility level ×N → ×(N+1); a fixed ×3 ties the normal bonus at ×3 and LOSES at ×4 — a talent must never reduce Initiative). `src/module/documents/acolyte.mjs:382` passes the trait-derived multiplier (`unnaturalMults[label] ?? 1`) instead of `(unnatural>0)`. Updated the ratchet test `tests/chargen/initiative_bonus.test.mjs` (multiplier arg + ×3/×4 + falsy-collapse cases). Gate green (build:check exit 0, 218 node tests, +2). Live-verified on rt-smoke via Playwright (built actors Ag 45 = raw AgB 4 + Lightning Reflexes + Unnatural Agility (xN)): no-unnatural→8 (×2), ×2→12 (×3), ×3→16 (×4, pre-fix was 16 vs normal 12=no benefit), ×4→20 (×5, pre-fix gave 12 < normal 16=a penalty). Initiative now always beats the normal bonus by rawBonus.
+- verify:
+
+## BUG-Q-189 — `Shooting into Melee Combat` penalty is incorrectly waived if ANY combatant is Stunned instead of just the target
+- status: open
+- found-by: agy Gemini 3.1 Pro (High) · iter 5
+- area: rules
+- severity: P0 (wrong result in play)
+- evidence: `src/module/rolls/roll-helpers.mjs:74-75` — `shootingIntoMeleePenalty` checks `if (enemies.some((e) => e?.waived)) return 0;` which waives the -20 penalty if an adjacent enemy of the target is Stunned/Helpless.
+- canon: `/mnt/project_data/RT/RT-DOCS/CoreBook-201-401.pdf/markdown.md:2197` (RT Core p.244) — "If the target is Stunned, Helpless, or Unaware, this penalty is ignored."
+- gap: The engine waives the -20 penalty if the *target's opponent* is Stunned or Helpless. It should only be waived if the target being shot at is Stunned or Helpless.
+
+## BUG-Q-190 — `Customised` weapon quality is miswired to halve reload times instead of adding +5 to hit
+- status: open
+- found-by: agy Gemini 3.1 Pro (High) · iter 5
+- area: weapons
+- severity: P0 (wrong result in play)
+- evidence: `src/module/documents/acolyte.mjs:754-758` — `if (weapon.system.special?.customised) { reload = rapidReloadTime(reload, true, true); }` applies a reload-halving effect for the "Customised" quality.
+- canon: `/mnt/project_data/RT/RT-DOCS/CoreBook-1-200.pdf/markdown.md:5993` (RT Core p.131) — Customised: "Weapons with this quality add a +5 to Ballistic Skill Tests made to fire them." (The upgrade that halves reload time is "Quick-Release", p.143).
+- gap: The engine conflates the "Customised" weapon quality with the "Quick-Release" weapon upgrade. As a result, Customised halves reload time instead of adding +5 to BS, and Quick-Release is entirely missing.
