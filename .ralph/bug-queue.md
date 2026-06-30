@@ -275,7 +275,7 @@ checker runs elsewhere) syncs via git.
 - triage: 
 
 ## BUG-Q-182 — Thrown Weapons incorrectly Jam on 96+; Grenades fail to implement dud/detonate Jam rules
-- status: fixed
+- status: disputed
 - found-by: agy Gemini 3.1 Pro (High)
 - area: engine-rolls
 - severity: P0 (wrong result in play)
@@ -283,7 +283,7 @@ checker runs elsewhere) syncs via git.
 - canon: `/mnt/project_data/RT/RT-DOCS/CoreBook-201-401.pdf/markdown.md:2521` (RT Core p.249 Weapon Jams) — the 96-00 jam is a malfunction of *fired* ranged weapons ("machine spirit ... poor design"); a muscle-thrown knife/spear cannot jam. `CoreBook-1-200.pdf/markdown.md:6461` (RT Core p.126 "When a Grenade Jams") — "Roll 1d10. On any result other than 10, the explosive is simply a dud and nothing happens. On a 10, the explosive detonates immediately with the effect centred on the attacker."
 - gap: Ordinary thrown weapons (like spears/knives) incorrectly receive the 'Jammed' state on a 96+ roll. Grenades also incorrectly get the standard 'Jammed' state instead of resolving the 1d10 dud/detonate effect.
 - fix: `src/module/rolls/action-data.mjs:296-310` — the 96+ jam branch now splits on `actionItem.isThrown`: a fired ranged weapon still pushes `'jam'` (RT Core p.249), a thrown weapon never gets the mechanical jam state, and a thrown GRENADE (`system.type === 'Grenade'`) instead pushes a new `'grenade-jam'` effect. `createEffectData` gains a `case 'grenade-jam'` that rolls 1d10 and resolves the dud/detonate rule (RT Core p.126: 10 → detonate centred on the attacker, else dud), with NO `system.jammed` writeback. Note: the filer's cited "p.117 — These weapons do not jam" quote isn't literal in RT-DOCS, but the jam rule (p.249) is explicitly about firing mechanical weapons, so a thrown weapon jamming is a category error — the bug is real. Gate green (build:check exit 0, 232 node tests). Live-verified on rt-smoke via Playwright (imported deployed action-data.mjs, drove `calculateSuccessOrFailure` + `createEffectData` with a rigged roll of 96): thrown grenade → `grenade-jam` effect, output is Grenade Dud/Detonates (never a 'Jam', no jammed state); ordinary thrown weapon → no jam at all (empty effects); fired ranged weapon → still jams (`jam` effect + 'Jam' output) at 96 and not at 95.
-- verify:
+- verify: disputed: incomplete fix. The fix correctly resolves thrown weapons and thrown grenades, but completely misses grenade launchers. Per the cited RT Core p.126 canon ("Whenever a jam results from throwing a grenade or firing a grenade launcher or similar weapon... If the explosive was fired from a launcher, it detonates in the barrel, having its normal effect as well as destroying the weapon"), grenade launchers must also use the dud/detonate rule, not the standard mechanical jam. Because grenade launchers are `isRanged` (not `isThrown`), they currently fall through to the standard `'jam'` effect. The fix needs to intercept weapons with `system.type === 'Launcher'` (or similar), apply the `grenade-jam` logic, adjust the chat text ("The launcher misfires..." instead of "The throw..."), and implement the weapon destruction on a 10.
 
 - triage: 
 
