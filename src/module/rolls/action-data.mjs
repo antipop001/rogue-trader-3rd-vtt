@@ -330,22 +330,13 @@ export class ActionData {
                 // the DoS-scaled count the legacy DH2 actions used. Applied by name.
                 this.damageData.additionalHits += attackTalentExtraHits(this.rollData.action);
 
-                // Twin-Linked: RT Core never prints a DoS rule for this quality (only the
-                // ItS Ork upgrade references it), so the existing formula shape is kept and
-                // now consumes the corrected canon DoS — less inflated than before. (QA-094.)
+                // Twin-Linked: scores ONE additional hit if the attack succeeds by two or
+                // more degrees of success (RT Core p.121, "# TWIN-LINKED"). Flat +1 for any
+                // action — RT prints no fire-mode DoS scaling. This stacks on top of the
+                // fire-mode additional hits computed above; it must never overwrite them.
+                // (BUG-Q-167: the old per-mode `=` formulas actively reduced the hit count.)
                 if (this.rollData.dos > 1 && this.rollData.hasAttackSpecial('Twin-Linked')) {
-                    if ((this.rollData.action === 'Standard Attack' || this.rollData.action === 'Called Shot') && this.rollData.dos > 2)
-                    {
-                        this.damageData.additionalHits++;
-                    }
-                    if (this.rollData.action === 'Semi-Auto Burst')
-                    {
-                        this.damageData.additionalHits = Math.floor(this.rollData.dos / 3);
-                    }
-                    if (this.rollData.action === 'Full Auto Burst')
-                    {
-                        this.damageData.additionalHits = Math.floor(this.rollData.dos / 2);
-                    }
+                    this.damageData.additionalHits++;
                 }
 
                 // Storm: every hit counts as two hits (RT Core p.121)
