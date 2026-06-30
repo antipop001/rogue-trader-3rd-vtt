@@ -163,6 +163,12 @@ export class AssignDamageData {
                 this.damageTaken = this.integrityDamage;
                 this.hasDamage = this.integrityDamage > 0;
             }
+
+            // Crack Shot / Crippling Strike add extra Critical Damage (QA-149).
+            if (this.hasCriticalDamage && Number(this.hit?.criticalDamageBonus) > 0) {
+                this.integrityCritical += Number(this.hit.criticalDamageBonus);
+            }
+
             if (this.integrityCritical > 0) {
                 // Cumulative chart (ItS Table 5-2): index by the vehicle's TOTAL critical damage.
                 const cumulative = (Number(this.actor.system.integrity?.critical) || 0) + this.integrityCritical;
@@ -266,7 +272,10 @@ export class AssignDamageData {
     // on the `Critical Hits to Starships` RollTable, not the homebrew penetration×component
     // matrix (QA-043). The struck component (if any) loses a hit point as engine tracking.
     async executeCritical(component) {
-        const result = await drawShipCriticalResult();
+        // Destructive weapons add +1 to the Critical Hits chart roll (Battlefleet Koronus
+        // p.35 — only when a crit is actually generated, which is the precondition here). (BUG-Q-213.)
+        const bonus = this.hit?.voidshipDestructive ? 1 : 0;
+        const result = await drawShipCriticalResult(null, bonus);
         const label = component?.name ? `${component.name}: ` : '';
         this.criticalEffect = this.criticalEffect
             ? `${this.criticalEffect}\n${label}${result}`

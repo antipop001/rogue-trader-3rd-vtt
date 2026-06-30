@@ -628,3 +628,49 @@ RT Core p.218 (Critical Hits): "If the number of Degrees of Success is equal to 
 - fix: 
 - verify:
 - review: fixed — engine-level guard in calculateHits(): a ranged ammo weapon with fireRate<=0 (insufficient ammo) now produces NO hits (RT Core p.115), closing the free-shot path beyond the dialog guard. (post-review)
+
+## BUG-Q-211 — Unfettered and Push psychic powers falsely evaluate as Fettered and skip phenomena if the psyker is sustaining powers
+- status: verified
+- found-by: agy Gemini 3.1 Pro (High) · iter 1
+- area: rules
+- severity: P0 (wrong result in play)
+- evidence: `src/module/rolls/action-data.mjs:58` (prior to fix) — `if (pr < rating) return;` compared effective PR against the actor's un-reduced base rating.
+- canon: RT Core p.156-157 / Errata 1.4 — Fettered never triggers phenomena, Unfettered triggers on doubles, Push always triggers. Sustaining a power reduces effective PR but doesn't change the power level choice.
+- gap: Because the engine used `pr < rating` to detect Fettered casting, a psyker casting at Unfettered while sustaining powers (which lowers `pr` below their base `rating`) was falsely detected as Fettered. This entirely skipped the Psychic Phenomena roll for Unfettered (and potentially Push) casts while sustaining. The push amount multiplier was also miscalculated using base rating instead of effective rating. 
+- fix: 
+- verify:
+- review: fixed — Fettered/Push detection now uses `this.rollData.strength` instead of the broken `pr < rating` comparison, ensuring Unfettered casts while sustaining powers correctly trigger phenomena on doubles. Push bonus amount correctly derived using `currentRating` (QA-151 compliance). (post-review)
+
+## BUG-Q-212 — Vehicle critical damage calculation ignores Crack Shot and Crippling Strike
+- status: verified
+- found-by: agy Gemini 3.1 Pro (High) · iter 1
+- area: rules
+- severity: P1 (missed bonus)
+- evidence: `src/module/rolls/assign-damage-data.mjs:163` (prior to fix) — `criticalDamageBonus` was applied only in the `else` (personal combat) block and omitted from the `isVehicle` block.
+- canon: RT Core p.92 / p.96 — Crack Shot and Crippling Strike add extra Critical Damage when an attack causes Critical Damage. Into the Storm p.166 — Vehicles suffer Critical Damage and have Critical Hits.
+- gap: When attacking a vehicle, if the attack dealt Critical Damage to the vehicle's structural integrity, the engine correctly triggered critical damage but failed to add the attacker's `criticalDamageBonus` (from Crack Shot/Crippling Strike) to the vehicle's `integrityCritical` pool, shortchanging the critical severity.
+- fix: 
+- verify:
+- review: fixed — vehicle critical damage path now correctly adds `this.hit.criticalDamageBonus` to `this.integrityCritical` when an attack scores critical damage against a vehicle, honoring Crack Shot and Crippling Strike. (post-review)
+
+## BUG-Q-213 — `Destructive` weapon quality incorrectly upgrades ALL voidship hits to Critical Hits
+- status: fixed
+- found-by: agy Gemini
+- area: ship
+- severity: P0 (wrong result in play)
+- evidence: `src/module/rolls/action-data.mjs:431` — `const critical = res.critical || (res.hit && this.rollData.hasAttackSpecial('Destructive'));` forces the `critical` boolean to true for all hits if the weapon is Destructive.
+- canon: `/mnt/project_data/RT/RT-DOCS/roguetrader_battlefleetkoronus.pdf/markdown.md:1668` — "Destructive: If this weapon generates a crit, add 1 to the result rolled." (Battlefleet Koronus p.35)
+- gap: The `Destructive` quality is completely misimplemented as upgrading a normal hit into a Critical Hit (falsely citing RT Core p.218 in comments). In reality, it should only add +1 to the 1d5 Critical Hits to Starships roll IF a critical hit is naturally generated.
+- fix: (1) `src/module/rolls/action-data.mjs:431` — `_calculateVoidshipHits` now sets `critical = res.critical` only (crit triggers solely when DoS ≥ Crit Rating, RT Core p.218); dropped the `|| (res.hit && Destructive)` false-upgrade. (2) `action-data.mjs:~622` — stamps `r.voidshipDestructive` on each hit when the weapon has Destructive. (3) `assign-damage-data.mjs:executeCritical` — passes `bonus = hit.voidshipDestructive ? 1 : 0` to `drawShipCriticalResult`. (4) `voidship-critical-damage.mjs:drawShipCriticalResult(value, bonus)` — adds `bonus` to a rolled 1d5 (chart runs 1-10, +1 stays in range; explicit-value crippled-ship path ignores bonus). Battlefleet Koronus p.35. Gate green (build:check exit 0, 225 node tests). Live-verified on rt-smoke via Playwright: 400 Destructive weapon hits with DoS < critRating → 0 false crit-upgrades (pre-fix all 400 would crit); `drawShipCriticalResult(null,0)` range 1-5, `(null,1)` range 2-6, explicit `(3,1)` → 3.
+- verify: 
+
+## BUG-Q-214 — Psychic Phenomena 'doubles' detection fails on a roll of 100
+- status: open
+- found-by: agy Gemini
+- area: psychic
+- severity: P0 (wrong result in play)
+- evidence: `src/module/rolls/action-data.mjs:58` — `const isDoubles = /^(.)\1+$/.test(this.rollData.roll.total);`
+- canon: `/mnt/project_data/RT/RT-DOCS/CoreBook-1-200.pdf/markdown.md:7384` (RT Core p.157) — "If a Sanctioned Psyker rolls doubles on his Focus Power Test (i.e. 11, 22, 33, 44, 55, 66, 77, 88, 99, 00)..."
+- gap: A d100 roll of 100 results in the number `100`. The regex `/^(.)\1+$/` matches strings composed of identical characters. It will match `"11"`, `"22"`, etc., but will fail to match `"100"` because it begins with '1' and continues with '0'. Thus, a roll of 100 (which represents 00) completely fails to trigger Psychic Phenomena for Unfettered casts.
+- fix: 
+- verify: 

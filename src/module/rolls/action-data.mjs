@@ -52,17 +52,18 @@ export class ActionData {
         // Navigators never roll for Psychic Phenomena or Perils of the Warp (RT Core p.180).
         // Their powers are a separate discipline that doesn't draw on the same warp channel. (QA-041.)
         if (/navigator/i.test(this.rollData.power.system?.discipline ?? '')) return;
-        const rating = this.rollData.sourceActor.psy.rating ?? 0;
+        const baseRating = this.rollData.sourceActor.psy.rating ?? 0;
+        const currentRating = this.rollData.sourceActor.psy.currentRating ?? baseRating;
         const pr = this.rollData.pr ?? 0;
         const isDoubles = /^(.)\1+$/.test(this.rollData.roll.total);
-        // RT 1e: Fettered (pr < rating) never triggers Psychic Phenomena.
-        if (pr < rating) return;
+        const strength = this.rollData.strength ?? 'unfettered';
 
-        // Unfettered (pr === rating): trigger on doubles.
-        // Push (pr > rating): trigger on any non-doubles.
+        // RT 1e: Fettered never triggers Psychic Phenomena.
+        if (strength === 'fettered') return;
+
         let triggerPhenomena = false;
         let label = '';
-        if (pr > rating) {
+        if (strength === 'push') {
             // Push (RT Core p.157 Table 6-1): ALWAYS rolls Psychic Phenomena, doubles or
             // not. There is no "Push + doubles → Perils" rule — that was a DH2 leftover.
             // Perils is reached only via a 75+ Phenomena result, escalated below. (QA-038.)
@@ -80,8 +81,9 @@ export class ActionData {
             // one. Sustaining other powers adds a further +10. The harder you Push, the worse the
             // expected result. (QA-039.)
             let phenomBonus = 0;
-            if (pr > rating) {
-                const pushed = pr - rating;
+            if (strength === 'push') {
+                // Calculate push amount based on current effective rating (QA-151 compliance)
+                const pushed = pr - currentRating;
                 const psyClass = String(this.rollData.sourceActor.system?.psy?.class ?? '').toLowerCase();
                 const renegade = psyClass === 'unsanctioned' || psyClass === 'unbound' || psyClass === 'renegade';
                 phenomBonus += pushed * (renegade ? 10 : 5);
@@ -425,8 +427,11 @@ export class ActionData {
             const isLance = this.rollData.weapon?.system?.type === 'Lance';
             const res = voidshipWeaponHits(rollTotal, target, strength, critRating, isLance);
             this.rollData.dos = res.dos;
-            // Destructive: a normal hit is upgraded to a Critical Hit (RT Core p.218).
-            const critical = res.critical || (res.hit && this.rollData.hasAttackSpecial('Destructive'));
+            // A Critical Hit triggers ONLY when DoS ≥ the weapon's Crit Rating (RT Core p.218).
+            // Destructive does NOT upgrade a normal hit to a Critical — it adds +1 to the 1d5
+            // Critical Hits chart roll WHEN a crit is naturally generated (Battlefleet Koronus
+            // p.35: "If this weapon generates a crit, add 1 to the result rolled"). (BUG-Q-213.)
+            const critical = res.critical;
             for (let i = 0; i < res.hits; i++) {
                 this.rollData.voidshipResults.push({
                     isCritical: critical, isHit: !critical, isMiss: false, isFumble: false,
@@ -613,6 +618,9 @@ export class ActionData {
             }
             const hull = voidshipHullDamage(perHit, facingArmour, isLance);
             const critCount = hits.filter((r) => r.isCritical).length;
+            // Destructive: +1 to the Critical Hits chart roll when a crit is generated
+            // (Battlefleet Koronus p.35). Carried on the hit so executeCritical can apply it.
+            const destructive = this.rollData.hasAttackSpecial('Destructive');
             this.rollData.voidshipHullDamage = hull;
             this.rollData.voidshipCritHits = critCount;
             this.rollData.voidshipDamageRolls = perHit;
@@ -621,6 +629,7 @@ export class ActionData {
             hits.forEach((r, i) => {
                 r.voidshipHull = i === 0 ? hull : 0;
                 r.voidshipCritHits = i === 0 ? critCount : 0;
+                r.voidshipDestructive = destructive;
                 r.penetration = true;   // (legacy flag the card/assign still read; tiering removed)
             });
         }
