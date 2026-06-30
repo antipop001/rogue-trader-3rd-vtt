@@ -430,7 +430,7 @@ RT Core p.132: "Shocking: A weapon with this Quality can Stun its opponent..."
 - verify: confirmed: properly surfaces Accurate and Maximal extra dice as Rolls within `bonusDamageRolls`, evaluating them and folding them into the Righteous Fury and Proven loop while correctly appending the `kh` modifier for Tearing. Leaving them out of `rollFormula` correctly prevents duplicative scaling during the Righteous Fury extra roll itself.
 
 ## BUG-Q-195 — `Felling` weapon quality fails to reduce Unnatural Toughness when assigning damage
-- status: fixed
+- status: verified
 - found-by: agy Gemini 3.1 Pro (High) · iter 6
 - area: rules
 - severity: P0 (wrong result in play)
@@ -438,7 +438,7 @@ RT Core p.132: "Shocking: A weapon with this Quality can Stun its opponent..."
 - canon: `/mnt/project_data/RT/RT-DOCS/CoreBook-1-200.pdf/markdown.md:5993` (RT Core p.131) — Felling: "ignores a number of levels of Unnatural Toughness equal to the number in parentheses." (Full rule text in The Soul Reaver p.150: "a Felling (1) weapon ignores the benefits of Unnatural Toughness (x2) and would reduce the benefits of Unnatural Toughness (x3) by one multiplier.")
 - gap: The `Felling` quality only prints a cosmetic chat note in `damage-data.mjs` but has zero mechanical implementation in the damage assignment pipeline. It must subtract its level from the defender's Unnatural Toughness multiplier when calculating the effective Toughness Bonus to soak the hit.
 - fix: New pure helper `fellingToughnessBonus(toughnessBonus, unnatural, fellingLevel)` in `roll-helpers.mjs` — derives the base TB (`bonus − unnatural`), counts the available Unnatural multiplier steps (`round(unnatural/base)` = mult−1), removes `min(X, steps)` of them, and returns the reduced bonus (floored at base; never touches base TB/armour/fields). `Hit.fellingLevel` field added in `damage-data.mjs` and populated in the `felling` case of `_calculateSpecials` (`max(level, 1)`). `AssignDamageData.update()` reads `this.hit.fellingLevel` + the target's `characteristics.toughness.unnatural` and reduces `this.tb` BEFORE the Daemonic ×2 (BUG-Q-196 untouched). Verified: `npm run build:check` (exit 0) + `npm test` (225 pass, +7 new in `tests/chargen/felling.test.mjs`) green; LIVE on rt-smoke via Playwright page-context — drove deployed `AssignDamageData.update()` on a mock UT(x2)/(x3) target: Felling(1)/UT(x2)→TB 8→4, Felling(1)/UT(x3)→12→8, Felling(2)/UT(x3)→12→4, Felling(5)/UT(x2)→8→4 (clamped), no-Felling→8, no-UT→4 — all correct.
-- verify:
+- verify: confirmed: correctly calculates the base TB and multiplier steps from the additive unnatural value, then safely strips exactly X levels of Unnatural Toughness (matching Soul Reaver p.150) without dipping below the base TB.
 
 ## BUG-Q-196 — `Daemonic` trait compounds with `Unnatural Toughness` instead of adding, violating the Multiple Multipliers rule
 - status: open
