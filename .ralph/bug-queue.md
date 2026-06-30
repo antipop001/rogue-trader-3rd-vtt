@@ -803,7 +803,7 @@ RT Core p.218 (Critical Hits): "If the number of Degrees of Success is equal to 
 - gap: Extraneous code applying a mechanic that does not exist in the system.
 
 ## BUG-Q-227 — Chargen wizard sets starting character total XP to 500 instead of 5,000
-- status: fixed
+- status: verified
 - found-by: agy Gemini 3.1 Pro (High) · iter 6
 - area: chargen
 - severity: P0 (wrong result in play)
@@ -811,7 +811,7 @@ RT Core p.218 (Critical Hits): "If the number of Degrees of Success is equal to 
 - canon: `/mnt/project_data/RT/RT-DOCS/CoreBook-1-200.pdf/markdown.md:2044` (RT Core p.38) — "All starting Explorers begin play with 5,000 Experience Points. Of these, 4,500 have already been spent... The final 500 xp may be spent..."
 - gap: The chargen wizard sets the actor's total Experience to 500 instead of 5,000, and their used XP to just the origin spend (instead of 4,500 + origin spend). This leaves the character 4,500 XP short, breaking Rank progression (Rank 1 starts at 5,000 XP) and experience tracking.
 - fix: `origin.mjs:36` — added `TOTAL_STARTING_XP = 5000` and `PRESPENT_STARTING_XP = TOTAL_STARTING_XP - STARTING_XP_POOL` (= 4500) alongside the existing free-pool constant (RT Core p.38). `commit.mjs:225` now writes `system.experience = { total: TOTAL_STARTING_XP, used: PRESPENT_STARTING_XP + state.originXpSpent }` instead of `{ total: 500, used: originXpSpent }`, so `available = total - used = 500 - originXpSpent` (the remaining free pool) stays correct on the sheet while total reflects the canon 5,000. STARTING_XP_POOL (500) is unchanged — it is correctly the free-spend pool the origin budget validator (origin.mjs:90,170) charges ItS xp_costs against, NOT the actor total. `tests/chargen/commit.test.mjs:113` assertion updated to `{ total: 5000, used: 4500 }`. Gate green (`npm run build:check` exit 0; `npm test` 251/251). Not live-verified on rt-smoke: pure chargen data-mapping (`buildActorData`) asserted directly by the node test, not a roll/damage/condition/ship/vehicle result, and the chargen wizard UI is shelved (CHARGEN_UI_ENABLED=false) so it is unreachable live.
-- verify:
+- verify: confirmed: setting total to 5000 and used to 4500 + originXpSpent correctly enforces the 5,000 XP starting total from RT Core p.38 while preserving the 500 XP free pool math.
 
 ## BUG-Q-228 — Ship Ramming damage incorrectly assigns 1d5 to Battleships instead of 2d10
 - status: open
