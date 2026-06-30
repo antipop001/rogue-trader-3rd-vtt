@@ -257,12 +257,10 @@ export class ActionData {
                 } else if (actionItem.isRanged) {
                     // Suppressing Fire / Overwatch — targets in the arc make a Pinning Test
                     // (Willpower) or become Pinned (RT Core p.248). (QA-082.)
-                    if (this.rollData.action === 'Suppressing Fire - Semi') {
-                        this.addEffect('Suppressing', 'All targets within a 30 degree arc must pass a Difficult (-10) Pinning test or become Pinned.', null, -10)
-                    } else if (this.rollData.action === 'Suppressing Fire - Full') {
-                        this.addEffect('Suppressing', 'All targets within a 45 degree arc must pass a Hard (-20) Pinning test or become Pinned.', null, -20)
+                    if (this.rollData.action === 'Suppressing Fire') {
+                        this.addEffect('Suppressing', 'All targets within the 45 degree kill zone must pass a Hard (-20) Pinning test or become Pinned.', null, -20)
                     } else if (this.rollData.action === 'Overwatch') {
-                        this.addEffect('Overwatch', 'Targets in the 45 degree kill zone must pass an Ordinary (+0) Pinning test or become Pinned, even if the attack did no damage.', null, 0)
+                        this.addEffect('Overwatch', 'Targets caught in the 45 degree kill zone must pass a Hard (-20) Pinning test or become Pinned, even if the attack did no damage.', null, -20)
                     }
 
                     const rollTotal = this.rollData.roll.total;
@@ -301,8 +299,7 @@ export class ActionData {
                 if (actionItem) {
                     if (this.rollData.action === 'Semi-Auto Burst' ||
                         actionItem.isPsychicBarrage ||
-                        this.rollData.action === 'Suppressing Fire - Semi' ||
-                        this.rollData.action === 'Suppressing Fire - Full') {
+                        this.rollData.action === 'Suppressing Fire') {
                         if (actionItem.isRanged && this.rollData.hasWeaponModification('Fluid Action')) {
                             this.rollData.dos += 1;
                         }

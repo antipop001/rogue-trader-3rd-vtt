@@ -82,11 +82,12 @@ export function updateAvailableCombatActions(rollData) {
     if (rollData.weapon.isRanged) {
         if (rollData.weapon.system.rateOfFire.burst <= 0) {
             actions.findSplice((action) => action.name === 'Semi-Auto Burst');
-            actions.findSplice((action) => action.name === 'Suppressing Fire - Semi');
         }
         if (rollData.weapon.system.rateOfFire.full <= 0) {
             actions.findSplice((action) => action.name === 'Full Auto Burst');
-            actions.findSplice((action) => action.name === 'Suppressing Fire - Full');
+            // Suppressing Fire requires a weapon capable of fully automatic fire
+            // (RT Core p.242).
+            actions.findSplice((action) => action.name === 'Suppressing Fire');
         }
     }
 
@@ -267,7 +268,7 @@ function allCombatActions() {
             type: ['Full'],
             subtype: ['Attack', 'Concentration', 'Ranged'],
             description:
-                'Shoot targets coming into a set 45-degree kill zone with Standard/Semi-Auto/Full-Auto attack (specify which) at -20 BS. Targets of an Overwatch shot must make a +0 Pinning test or become Pinned, even if the attack did no damage.',
+                'Shoot targets coming into a set 45-degree kill zone with Standard/Semi-Auto/Full-Auto attack (specify which) at -20 BS. Targets caught in the kill zone must make a Hard (-20) Pinning test or become Pinned, even if the attack did no damage.',
             attack: {
                 modifier: -20,
             },
@@ -306,21 +307,15 @@ function allCombatActions() {
             },
         },
         {
-            name: 'Suppressing Fire - Semi',
+            // RT Core p.242: a single action requiring a weapon capable of fully
+            // automatic fire. Establishes a 45-degree kill zone; everyone caught in it
+            // makes a Hard (-20) Pinning Test, and the firer makes a Hard (-20) BS Test
+            // to see if the wild spray hits anyone.
+            name: 'Suppressing Fire',
             type: ['Full'],
             subtype: ['Attack', 'Ranged'],
             description:
-                'Fires a semi-auto (in 30 degree arc) burst at -20 to BS. Enemies in the arc must make a -10 Pinning save or become pinned.',
-            attack: {
-                modifier: -20,
-            },
-        },
-        {
-            name: 'Suppressing Fire - Full',
-            type: ['Full'],
-            subtype: ['Attack', 'Ranged'],
-            description:
-                'Fires a full-auto (in 45 degree arc) burst at -20 to BS. Enemies in the arc must make a -20 Pinning save or become pinned.',
+                'Fires a fully automatic burst into a 45 degree kill zone at -20 BS. Everyone in the kill zone must make a Hard (-20) Pinning test or become Pinned.',
             attack: {
                 modifier: -20,
             },
