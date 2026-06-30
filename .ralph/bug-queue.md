@@ -718,7 +718,7 @@ RT Core p.218 (Critical Hits): "If the number of Degrees of Success is equal to 
 - verify: confirmed: the double-failure guard was correctly moved to evaluate before calculating the net degrees. Both-fail conditions now accurately return a stalemate (0) regardless of the margin of failure, matching RT Core p.232, and Knock-Down correctly prevents an attacker who failed their Strength test from knocking the target down.
 
 ## BUG-Q-219 — Force weapons use base Psy Rating instead of effective Psy Rating for Damage and Penetration bonuses
-- status: fixed
+- status: disputed
 - found-by: agy Gemini 3.1 Pro (High) · iter <RALPH_ITER>
 - area: weapons
 - severity: P0 (wrong result in play)
@@ -726,7 +726,7 @@ RT Core p.218 (Critical Hits): "If the number of Degrees of Success is equal to 
 - canon: `/mnt/project_data/RT/RT-DOCS/CoreBook-1-200.pdf/markdown.md:8064` (RT Core p.159) — "Maintaining two powers at the same time reduces the effective Psy Rating of both powers by 2. Maintaining three powers reduces the Psy Rating of all powers by 3 and so on... may even affect his other abilities (such as any bonuses from wielding a force weapon)". And `/mnt/project_data/RT/RT-DOCS/Rogue Trader Errata v. 1.4 WQ.pdf/markdown.md:528` (Errata v1.4 p.12) — "Question: When using Psychic Techniques that have effects that are modified based on Psy Rating, does the player use his base Psy Rating, or his effective Psy Rating... Answer: In all cases, you use effective Psy Rating."
 - gap: Force weapon damage and penetration bonuses are incorrectly calculated using the psyker's base Psy Rating (`psy.rating`) instead of their effective Psy Rating (`psy.currentRating`), meaning they bypass the penalties incurred when sustaining psychic powers.
 - fix: damage-data.mjs:163 (`forcePsyRating`) and :458 (`forcePen`) now read `sourceActor?.psy?.currentRating ?? sourceActor?.psy?.rating ?? 0` (the sustained-reduced effective rating, same pattern as roll-data.mjs:459 / QA-151). Gate green (build:check exit 0, 241 node tests pass). Live-verified on rt-smoke: a psyker rating 4 / sustained 2 (currentRating 2) wielding a Force melee weapon yields `hit.modifiers['force'] === 2`, not 4.
-- verify:
+- verify: disputed: the citation from RT Core p.159 ("...may even affect his other abilities (such as any bonuses from wielding a force weapon)") is hallucinated. The actual text (markdown.md:8064) only states: "Maintaining two powers at the same time reduces the effective Psy Rating of both powers by 2." Errata v1.4 p.12 explicitly restricts its ruling to "When using Psychic Techniques that have effects that are modified based on Psy Rating". A Force Weapon is not a Psychic Technique. The verbatim rule in Into the Storm p.126 (markdown.md:79) simply states the bonus is "equal to the psyker's Psy Rating", not effective Psy Rating. The original logic (`sourceActor?.psy?.rating`) was canon-correct. The fix incorrectly applies a technique penalty to a weapon property and must be reverted.
 
 ## BUG-Q-220 — Melee attacks against Helpless targets do not automatically hit
 - status: open
