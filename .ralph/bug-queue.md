@@ -167,7 +167,7 @@ checker runs elsewhere) syncs via git.
 - verify: confirmed: removing the early return correctly subjects lances to void shield cancellation, while 'isLance' continues to ensure they ignore armour during damage calculation, perfectly matching RT Core p.216 RAW.
 
 ## BUG-Q-173 — Twin-Linked weapons missing the +20 bonus to hit
-- status: fixed
+- status: verified
 - found-by: agy Gemini 3.1 Pro (High) · iter 3
 - area: combat
 - severity: P0 (wrong result in play)
@@ -175,7 +175,7 @@ checker runs elsewhere) syncs via git.
 - canon: `/mnt/project_data/RT/RT-DOCS/CoreBook-1-200.pdf/markdown.md:6009` (RT Core p.117) — "A weapon with the Twin-linked Quality gains a +20% bonus to hit when fired and uses twice as much ammunition. In addition, the weapon may score one additional hit if the attack roll succeeds by two or more degrees of success. Lastly, the weapon's reload time is doubled."
 - gap: The `Twin-Linked` quality consumes double ammunition and handles the extra hit on 2+ DoS, but completely fails to apply the foundational +20 bonus to the BS/WS test to hit. Additionally, the doubling of the weapon's reload time is missing from the reload calculations.
 - fix: Both missing halves of Twin-Linked wired (RT Core p.117). (1) **+20 to hit:** `src/module/rules/attack-specials.mjs:72` — added a `case 'Twin-Linked':` to `calculateAttackSpecialAttackBonuses` setting `specialModifiers['Twin-Linked'] = 20`, which merges into `modifiers` (roll-data.mjs:404-406) like the other attack-special bonuses. (2) **Doubled reload:** new pure helper `doubleReloadTime()` in `src/module/rolls/roll-helpers.mjs:676` (doubles a reload string in the same Full-Action unit space as `rapidReloadTime`); `src/module/documents/acolyte.mjs:_computeWeaponReload` now doubles the reload (detected from the embedded Twin-Linked attack-special item, legacy `system.special.twinLinked` fallback) BEFORE the halving qualities so they compose (Twin-Linked + Rapid Reload cancel). Ammo-doubling (ammo.mjs:271) and the extra hit on 2+ DoS (action-data.mjs:341) were already correct. New node test `tests/chargen/twin_linked_reload.test.mjs` (6 cases incl. the compose-to-cancel case). Gate green (build:check exit 0, 216 node tests). Live-verified on rt-smoke via Playwright (imported deployed attack-specials.mjs, ran `calculateAttackSpecialAttackBonuses`): Twin-Linked weapon → `specialModifiers['Twin-Linked']=20`; non-Twin-Linked weapon → no such modifier.
-- verify:
+- verify: confirmed: the +20 bonus is correctly applied in calculateAttackSpecialAttackBonuses, and the new doubleReloadTime helper properly scales the reload string before halving qualities so that they accurately compose, perfectly matching RT Core p.117.
 
 ## BUG-Q-174 — Unbalanced weapon quality incorrectly prevents Parrying entirely instead of applying a -10 penalty
 - status: open
