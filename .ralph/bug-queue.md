@@ -430,14 +430,14 @@ RT Core p.132: "Shocking: A weapon with this Quality can Stun its opponent..."
 - verify: confirmed: properly surfaces Accurate and Maximal extra dice as Rolls within `bonusDamageRolls`, evaluating them and folding them into the Righteous Fury and Proven loop while correctly appending the `kh` modifier for Tearing. Leaving them out of `rollFormula` correctly prevents duplicative scaling during the Righteous Fury extra roll itself.
 
 ## BUG-Q-195 — `Felling` weapon quality fails to reduce Unnatural Toughness when assigning damage
-- status: open
+- status: fixed
 - found-by: agy Gemini 3.1 Pro (High) · iter 6
 - area: rules
 - severity: P0 (wrong result in play)
 - evidence: `src/module/rolls/assign-damage-data.mjs:62-67` reads `this.tb = locationArmour.toughnessBonus`, which already includes Unnatural Toughness. No logic anywhere in the file inspects the attack for the `Felling` quality to reduce this value.
-- canon: `/mnt/project_data/RT/RT-DOCS/CoreBook-1-200.pdf/markdown.md:5993` (RT Core p.131) — Felling: "ignores a number of levels of Unnatural Toughness equal to the number in parentheses."
+- canon: `/mnt/project_data/RT/RT-DOCS/CoreBook-1-200.pdf/markdown.md:5993` (RT Core p.131) — Felling: "ignores a number of levels of Unnatural Toughness equal to the number in parentheses." (Full rule text in The Soul Reaver p.150: "a Felling (1) weapon ignores the benefits of Unnatural Toughness (x2) and would reduce the benefits of Unnatural Toughness (x3) by one multiplier.")
 - gap: The `Felling` quality only prints a cosmetic chat note in `damage-data.mjs` but has zero mechanical implementation in the damage assignment pipeline. It must subtract its level from the defender's Unnatural Toughness multiplier when calculating the effective Toughness Bonus to soak the hit.
-- fix: 
+- fix: New pure helper `fellingToughnessBonus(toughnessBonus, unnatural, fellingLevel)` in `roll-helpers.mjs` — derives the base TB (`bonus − unnatural`), counts the available Unnatural multiplier steps (`round(unnatural/base)` = mult−1), removes `min(X, steps)` of them, and returns the reduced bonus (floored at base; never touches base TB/armour/fields). `Hit.fellingLevel` field added in `damage-data.mjs` and populated in the `felling` case of `_calculateSpecials` (`max(level, 1)`). `AssignDamageData.update()` reads `this.hit.fellingLevel` + the target's `characteristics.toughness.unnatural` and reduces `this.tb` BEFORE the Daemonic ×2 (BUG-Q-196 untouched). Verified: `npm run build:check` (exit 0) + `npm test` (225 pass, +7 new in `tests/chargen/felling.test.mjs`) green; LIVE on rt-smoke via Playwright page-context — drove deployed `AssignDamageData.update()` on a mock UT(x2)/(x3) target: Felling(1)/UT(x2)→TB 8→4, Felling(1)/UT(x3)→12→8, Felling(2)/UT(x3)→12→4, Felling(5)/UT(x2)→8→4 (clamped), no-Felling→8, no-UT→4 — all correct.
 - verify:
 
 ## BUG-Q-196 — `Daemonic` trait compounds with `Unnatural Toughness` instead of adding, violating the Multiple Multipliers rule
@@ -450,3 +450,39 @@ RT Core p.132: "Shocking: A weapon with this Quality can Stun its opponent..."
 - gap: If a creature has Unnatural Toughness (x2) and Daemonic (x2), its base Toughness Bonus should be multiplied by x3 (2 + 2 - 1). The current code computes x4 because it multiplies the already-doubled TB by 2 again (`this.tb *= 2`). The code must compute the net multiplier additively.
 - fix: 
 - verify:
+
+## BUG-Q-197 — `Overheats` weapon quality fails to cause the attack to miss
+- status: new
+- found-by: agy Gemini (High)
+- file: src/module/rolls/action-data.mjs:295
+- canon: RT Core p.116
+
+**Description:**
+When a weapon with the `Overheats` quality rolls a 91+ (or its `jamThreshold`), the engine correctly pushes the `overheat` effect but completely fails to set `this.rollData.success = false`. Because the jam logic is inside an `else if`, overheats bypass the jam failure state entirely. If the attacker has an effective BS of 91 or higher, the weapon will overheat (meaning it did not fire) but the attack will still successfully hit and deal damage to the target.
+
+**Canon Rule:**
+RT Core p.116 ("Overheats"): "An overheat roll means the weapon does not fire and the wielder suffers energy damage equal to the weapon's damage..."
+
+## BUG-Q-198 — `Primitive`, `Snare`, `Toxic`, and `Smoke` weapon qualities erroneously require a level
+- status: new
+- found-by: agy Gemini (High)
+- file: src/module/rules/attack-specials.mjs:192, 224, 240, 220
+- canon: RT Core p.117-122
+
+**Description:**
+The `attackSpecials()` array in `attack-specials.mjs` configures `Primitive`, `Snare`, `Toxic`, and `Smoke` with `hasLevel: true`. This is a hallucinated mechanic carried over from Dark Heresy 2e / Only War, where these qualities possessed numerical levels (e.g., `Toxic (X)` imposing a `-10 * X` penalty, or `Primitive (X)` capping damage). In Rogue Trader 1e, none of these qualities have levels: `Toxic` applies a flat `-5` per point of damage, `Primitive` doubles armour, `Snare` prompts a flat Agility test, and `Smoke` creates a 3d10 radius cloud. The UI should not prompt the user to enter a level when applying these qualities to a weapon.
+
+**Canon Rule:**
+RT Core p.117-122 (Weapon Special Qualities): The entries for Primitive, Snare, Toxic, and Smoke list no numerical variable in parentheses.
+
+## BUG-Q-199 — The `Vengeful` weapon quality is a hallucinated DH2/Only War mechanic
+- status: new
+- found-by: agy Gemini (High)
+- file: src/module/rules/attack-specials.mjs:263, src/module/rolls/damage-data.mjs:106
+- canon: RT Core p.116-122
+
+**Description:**
+The `Vengeful` weapon quality is registered in `attack-specials.mjs` and actively evaluated in `damage-data.mjs` to override the Righteous Fury threshold (e.g. `Vengeful (8)` triggering RF on a damage die of 8+). This is entirely a Dark Heresy 2e / Only War mechanic. The `Vengeful` quality does not exist anywhere in Rogue Trader 1e canon (the word only appears as a ship name, the *Vengeful Martyr*, in Hostile Acquisitions). Righteous Fury in RT 1e triggers exclusively on a natural 10 (RT Core p.245). This quality should be removed.
+
+**Canon Rule:**
+RT Core p.116-122 (Weapon Special Qualities): `Vengeful` is absent from the core rules, and missing from all RT expansion books.

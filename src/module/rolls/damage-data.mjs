@@ -54,6 +54,7 @@ export class Hit {
     righteousFury = [];
     scatter = {};
     primitive = false;
+    fellingLevel = 0;   // Felling (X): levels of Unnatural Toughness ignored at soak (BUG-Q-195)
 
     /**
      * @param attackData
@@ -542,6 +543,9 @@ export class Hit {
                     this.addEffect(special.name, `If the target suffers a wound it is considered crippled. If they take more than a half action on a turn, they suffer ${special.level} damage not reduced by Armour or Toughness!`);
                     break;
                 case 'felling':
+                    // Carry the level onto the hit so the assign-damage soak path can ignore
+                    // that many levels of the target's Unnatural Toughness (BUG-Q-195).
+                    this.fellingLevel = Math.max(this.fellingLevel, special.level ?? 1);
                     this.addEffect(special.name, `The targets unnatural toughness is reduced by ${special.level} while calculating wounds!`);
                     break;
                 case 'flame':

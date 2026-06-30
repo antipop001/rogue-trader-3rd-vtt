@@ -6,7 +6,7 @@ import { voidshipHitTypeDropdown } from '../rules/hit-type.mjs';
 import { voidshipHitLocationDropdown } from '../rules/voidship-hit-locations.mjs';
 import { drawShipCriticalResult } from '../rules/voidship-critical-damage.mjs';
 import { conditionsFromCriticalText } from '../rules/conditions.mjs';
-import { daemonicToughnessMultiplier } from './roll-helpers.mjs';
+import { daemonicToughnessMultiplier, fellingToughnessBonus } from './roll-helpers.mjs';
 
 export class AssignDamageData {
     locations = hitDropdown();
@@ -73,6 +73,14 @@ export class AssignDamageData {
         // damage reduction and the True Grit crit reduction in finalize(). The canon
         // exceptions (force weapons / psychic powers / holy attacks / other Daemonic
         // creatures) are not surfaced in the assign-damage hitData — GM-adjudicated.
+        // Felling (X) (RT p.131): the attack ignores X levels of the target's Unnatural
+        // Toughness, reducing the soak TB toward its base before any Daemonic doubling.
+        // (BUG-Q-195 — was a cosmetic-only chat note.)
+        const fellingLevel = Number(this.hit?.fellingLevel) || 0;
+        if (fellingLevel > 0) {
+            const unnatural = Number(this.actor?.system?.characteristics?.toughness?.unnatural) || 0;
+            this.tb = fellingToughnessBonus(this.tb, unnatural, fellingLevel);
+        }
         const traits = this.actor?.items?.filter?.((i) => i.type === 'trait') ?? [];
         this.tb *= daemonicToughnessMultiplier(traits);
     }

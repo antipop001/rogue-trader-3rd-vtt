@@ -566,6 +566,37 @@ export function daemonicToughnessMultiplier(traits) {
 }
 
 /**
+ * Felling (X) (RT, p.131 / The Soul Reaver p.150): "If the weapon hits, it ignores a
+ * number of levels of Unnatural Toughness possessed by the target equal to the number in
+ * parenthesis. For instance, a Felling (1) weapon ignores the benefits of Unnatural
+ * Toughness (x2) and would reduce the benefits of Unnatural Toughness (x3) by one
+ * multiplier." So Felling reduces the target's Toughness-Bonus MULTIPLIER by X (floored at
+ * the base ×1), discarding the per-step Unnatural extra — it does NOT touch the base
+ * Toughness Bonus, force fields, or armour. Engine-applied on the assign-damage soak path
+ * (BUG-Q-195): the cosmetic chat note in damage-data.mjs had no mechanical effect.
+ *
+ * `unnatural` is the additive Unnatural extra the actor bakes (= rawBonus × (mult − 1), so
+ * the base bonus is `toughnessBonus − unnatural` and each multiplier step is worth that
+ * base). Removing X steps subtracts min(X, steps-available) × base from the bonus.
+ *
+ * @param {number} toughnessBonus  the target's full Toughness Bonus (incl. Unnatural extra)
+ * @param {number} unnatural       the Unnatural-Toughness additive (characteristic.unnatural)
+ * @param {number} fellingLevel    the weapon's Felling level (X)
+ * @returns {number} the Toughness Bonus after Felling (≥ the base bonus)
+ */
+export function fellingToughnessBonus(toughnessBonus, unnatural, fellingLevel) {
+    const tb = Number(toughnessBonus) || 0;
+    const un = Number(unnatural) || 0;
+    const x = Math.max(0, Math.floor(Number(fellingLevel) || 0));
+    if (x === 0 || un <= 0) return tb;
+    const base = tb - un;                       // base Toughness Bonus (no Unnatural)
+    if (base <= 0) return tb;                    // can't derive multiplier steps
+    const steps = Math.round(un / base);         // = multiplier − 1
+    const removed = Math.min(x, steps);
+    return tb - removed * base;
+}
+
+/**
  * RT Core Unnatural Speed — the creature doubles its Agility Bonus for movement
  * (applied after size). True if any trait is "Unnatural Speed" (QA-077).
  * @param {Array<{name?: string}>} traits
