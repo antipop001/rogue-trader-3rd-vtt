@@ -156,7 +156,7 @@ checker runs elsewhere) syncs via git.
 - verify: confirmed: deriving `fireRate` from the weapon's `rateOfFire` before exiting on `!usesAmmo` correctly sets the physical firing rate cap for ammo-less weapons. Gating the cap on `isRanged` instead of `usesAmmo` properly limits additional hits for all ranged weapons while leaving Psychic Storm correctly uncapped, matching the intent of RT Core p.242.
 
 ## BUG-Q-172 — Lances bypass Void Shields entirely instead of just ignoring armour
-- status: fixed
+- status: verified
 - found-by: agy Gemini 3.1 Pro (High) · iter 3
 - area: ship
 - severity: P0 (wrong result in play)
@@ -164,7 +164,7 @@ checker runs elsewhere) syncs via git.
 - canon: `/mnt/project_data/RT/RT-DOCS/CoreBook-201-401.pdf/markdown.md:1214` (RT Core p.21-22 and p.215) — "when resolving a lance hit against the target, ignore the target's armour ... but not void shields."
 - gap: Lances bypass void shields entirely, rather than ignoring only armour as the rules state. They should be intercepted by void shields just like macrobatteries.
 - fix: `src/module/rolls/action-data.mjs:486` — deleted the `if (weapon.system.type === "Lance") return;` early-return in `calculateVoidShields()` so lance hits fall through the same void-shield cancellation loop as macrobatteries (RT Core p.216, markdown.md:1214 "ignore the target's armour … but not void shields"; worked example :1252 — the lance only struck "unimpeded" because the shields were already down). Lances still ignore Armour via the `isLance` branch in `calculatePenetration` (unchanged). Gate green (build:check exit 0, 210 node tests). Live-verified on rt-smoke via Playwright (imported deployed action-data.mjs, ran `calculateVoidShields` on a voidship target with shields=1 + two hits): Lance now matches Macrocannon — `shieldsUsed=1`, `shielded=[true,false]`, `hits=[false,true]` (first hit cancelled by the shield, second passes); pre-fix both lance hits passed unshielded.
-- verify:
+- verify: confirmed: removing the early return correctly subjects lances to void shield cancellation, while 'isLance' continues to ensure they ignore armour during damage calculation, perfectly matching RT Core p.216 RAW.
 
 ## BUG-Q-173 — Twin-Linked weapons missing the +20 bonus to hit
 - status: open
