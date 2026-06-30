@@ -6,7 +6,7 @@ import { RogueTraderBaseActor } from './base-actor.mjs';
 import { ForceFieldData } from '../rolls/force-field-data.mjs';
 import { prepareForceFieldRoll } from '../prompts/force-field-prompt.mjs';
 import { DHBasicActionManager } from '../actions/basic-action-manager.mjs';
-import { degreesOfSuccess, degreesOfFailure, roll1d100, initiativeCharBonus, woundsMax, reactionBudget, canSpendReaction, unnaturalCharacteristicMultipliers, rapidReloadTime, woundDamageState, woundRecovery } from '../rolls/roll-helpers.mjs';
+import { degreesOfSuccess, degreesOfFailure, roll1d100, initiativeCharBonus, woundsMax, reactionBudget, canSpendReaction, unnaturalCharacteristicMultipliers, rapidReloadTime, doubleReloadTime, woundDamageState, woundRecovery } from '../rolls/roll-helpers.mjs';
 import { SYSTEM_ID } from '../hooks-manager.mjs';
 import { reactionsLocked } from '../rules/conditions.mjs';
 import { RogueTraderSettings } from '../rogue-trader-settings.mjs';
@@ -741,6 +741,14 @@ export class RogueTraderAcolyte extends RogueTraderBaseActor {
             .filter((item) => item.type === 'weapon' && item.isRanged)
             .forEach((weapon) => {
                 let reload = weapon.system.reload;
+                // Twin-Linked (RT Core p.117): "the weapon's reload time is doubled." Applied
+                // before the halving qualities so it composes (e.g. Twin-Linked + Rapid Reload
+                // cancel out). Detected from the embedded attack-special items (the legacy
+                // `system.special` flag is nulled out post-migration). (BUG-Q-173.)
+                if (weapon.items?.some?.((i) => i.isAttackSpecial && i.name === 'Twin-Linked')
+                    || weapon.system.special?.twinLinked) {
+                    reload = doubleReloadTime(reload);
+                }
                 // Customised quality (RT Core p.143): reload takes ½ the listed time, rounding
                 // UP. Composes with Rapid Reload (which then halves again, rounding down). (QA-018.)
                 if (weapon.system.special?.customised) {

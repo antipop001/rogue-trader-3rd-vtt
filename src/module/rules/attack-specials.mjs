@@ -69,6 +69,12 @@ export async function calculateAttackSpecialAttackBonuses(rollData) {
             case 'Defensive':
                 rollData.specialModifiers['Defensive'] = -10;
                 break;
+            case 'Twin-Linked':
+                // RT Core p.117: "gains a +20% bonus to hit when fired". (The doubled ammo,
+                // extra hit on 2+ DoS, and doubled reload are handled in ammo.mjs /
+                // action-data.mjs / _computeWeaponReload respectively.)
+                rollData.specialModifiers['Twin-Linked'] = 20;
+                break;
             case 'Accurate':
                 if (rollData.modifiers['aim'] > 0) {
                     rollData.specialModifiers['Accurate'] = 10;

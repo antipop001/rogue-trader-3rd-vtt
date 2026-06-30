@@ -674,6 +674,35 @@ export function rapidReloadTime(reload, hasRapidReload = true, roundUp = false) 
 }
 
 /**
+ * Twin-Linked (RT Core p.117): "the weapon's reload time is doubled." Doubles a reload
+ * string in the same Full-Action unit space as `rapidReloadTime` (Half→Full, Full→2 Full,
+ * 2 Full→4 Full). Composes with Rapid Reload / Customised (apply this first, then halve).
+ * Non-numeric reloads (N/A, Special, '', Free) and unrecognised forms pass through unchanged.
+ *
+ * @param {string} reload  the weapon's `system.reload`
+ * @returns {string} the doubled reload time
+ */
+export function doubleReloadTime(reload) {
+    const raw = String(reload ?? '').trim();
+    if (raw === '') return reload;
+    const norm = raw.toLowerCase();
+    if (norm === 'n/a' || norm === 'special' || norm === 'free' || norm === 'free action') return reload;
+
+    let actions; // quantity in Full-Action units
+    if (norm === 'half' || norm === 'half action') actions = 0.5;
+    else if (norm === 'full' || norm === 'full action') actions = 1;
+    else {
+        const m = norm.match(/^(\d+)\s*full/);
+        if (!m) return reload; // unrecognised — leave as-is
+        actions = Number(m[1]);
+    }
+
+    const doubled = actions * 2;
+    if (doubled < 1) return 'Half Action';
+    return doubled === 1 ? 'Full Action' : `${doubled} Full Actions`;
+}
+
+/**
  * Item-grant machinery (ENGINE-TRAIT-GRANTS). Some talents/traits GRANT other
  * compendium items: Explorator Implants → Mechanicus Implants (RT Core); The Flesh is
  * Weak / Physical Perfection → Machine (RT Core / ItS); 'Ard → Unnatural Toughness (x2)
