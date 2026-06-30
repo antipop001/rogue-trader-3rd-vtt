@@ -459,7 +459,7 @@ export class Hit {
             await calculateAmmoPenetrationBonuses(attackData, this);
         }
 
-        if (attackData.rollData.dos > 2 && attackData.rollData.hasAttackSpecial('Razer Sharp')) {
+        if (attackData.rollData.dos > 2 && attackData.rollData.hasAttackSpecial('Razor Sharp')) {
             this.penetrationModifiers['razor sharp'] = this.penetration;
         }
 
