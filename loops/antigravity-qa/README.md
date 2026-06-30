@@ -12,10 +12,12 @@ correctness bugs Claude's own model would rubber-stamp — and Gemini then verif
 before it's accepted. Findings flow through one shared file, `.ralph/bug-queue.md`.
 
 ## How one iteration works (`run_agy_qa.sh`)
-1. **Discovery** — if the queue has fewer than `MIN_OPEN` (default 3) open findings, `agy` reviews
-   the engine (`src/module/rolls`, `rules`, `documents`) against RT canon and appends new findings
+1. **Discovery** — if the queue has fewer than `MIN_OPEN` (default 1 → only when empty) open
+   findings, `agy` reviews the code against RT canon and appends 0–2 high-confidence findings
    (`bug_check.agy.md` is its brief). It dedups against the queue, `QA_FINDINGS.md`, and the
-   changelog.
+   changelog. If discovery finds nothing new `DRY_LIMIT` (default 2) passes running and the queue
+   is empty, the run **stops** — the loop runs until dry rather than manufacturing marginal
+   findings to fill iterations.
 2. **Fix** — `claude` takes the top open (or `disputed`) finding, confirms it's real, fixes it,
    runs the gate (`npm run build:check` + `npm test`) and a live rt-smoke check if behavioural,
    marks it `fixed`, and commits (`fix.prompt.md` is its brief).
@@ -44,8 +46,25 @@ full sweep re-checks the gate.
 |---|---|---|
 | `CHECK_MODEL` | `Gemini 3.1 Pro (High)` | agy model for discovery + verify (see `agy models`) |
 | `FIX_MODEL` | `opus` | claude model for fixes |
-| `MIN_OPEN` | `3` | replenish discovery when open findings drop below this |
+| `MIN_OPEN` | `1` | run discovery when open findings drop below this (1 = only on an empty queue) |
+| `DRY_LIMIT` | `2` | stop the run after this many consecutive discovery passes that find nothing new |
 | `VERIFY` | `1` | run the agy cross-model verify phase (`0` to skip) |
+
+## Operating notes / lessons (tuned after the 0.8.24–0.8.26 runs)
+- **Always do an independent pre-merge review.** The loop's own `agy` verify is strong but shares
+  a failure mode with the fixer on subtle rules: a fix that reasons by ANALOGY can pass both fix
+  and verify (it happened with Daemonic stacking — the verbatim trait gives ×4, both models said
+  ×3). Before merging a run, fan out one independent canon reviewer per `verified` finding (read
+  the diff + the verbatim RT-DOCS rule). Cheap relative to a bad merge; it's what caught it.
+- **Point each run at fresh surface.** The combat core is picked over (0.8.0–0.8.26); re-sweeping
+  it yields mostly false positives. Aim a new run at a subsystem not yet swept (Navigator/psychic,
+  chargen commit, NPC data, ship/vehicle edges) where real-bug density is higher.
+- **Quality over quota.** The discovery brief asks for 0–2 high-confidence findings and treats
+  "nothing solid this pass" as a valid result; `DRY_LIMIT` ends the run when the well is dry.
+  Resist re-raising `MIN_OPEN` — a backlog target is exactly what manufactures marginal findings.
+- **Most false findings cite the wrong book.** DH2 / Black Crusade / Only War rules read as
+  plausible but aren't RT 1e; the local RT-DOCS qualities glossary is incomplete. Both briefs now
+  require a verbatim RT-1e file:line and treat a non-RT citation as disqualifying.
 
 ## Local-model variant (optional)
 

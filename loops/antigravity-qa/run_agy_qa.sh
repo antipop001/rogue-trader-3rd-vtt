@@ -32,7 +32,12 @@ QUEUE=".ralph/bug-queue.md"
 MAX_ITERS="${1:-15}"
 CHECK_MODEL="${CHECK_MODEL:-Gemini 3.1 Pro (High)}"
 FIX_MODEL="${FIX_MODEL:-opus}"
-MIN_OPEN="${MIN_OPEN:-3}"
+# MIN_OPEN=1: only run discovery when the queue is EMPTY (was 3 — topping up to a backlog of 3
+# pressured the model to keep filing marginal findings on a picked-over codebase; quality > quota).
+MIN_OPEN="${MIN_OPEN:-1}"
+# DRY_LIMIT: stop the whole run after this many consecutive discovery passes that find NOTHING new
+# (and nothing left to fix) — loop-until-dry, so the run ends instead of manufacturing noise.
+DRY_LIMIT="${DRY_LIMIT:-2}"
 VERIFY="${VERIFY:-1}"
 
 command -v agy    >/dev/null || { echo "ERROR: 'agy' (Antigravity CLI) not on PATH." >&2; exit 1; }
@@ -55,18 +60,34 @@ trap 'rm -rf "$LOCK"' EXIT INT TERM
 # format example in the queue header is never miscounted.
 count_status() { awk -v s="$1" '/<!-- findings below this line -->/{f=1; next} f && $0=="- status: "s {c++} END{print c+0}' "$QUEUE" 2>/dev/null; }
 open_count() { count_status open; }
+# total findings filed (any status) — to detect whether a discovery pass actually added anything.
+findings_count() { awk '/<!-- findings below this line -->/{f=1; next} f && /^## BUG-Q-/{c++} END{print c+0}' "$QUEUE" 2>/dev/null; }
 
 i=0
+dry=0   # consecutive discovery passes that produced NO new findings
 while [ ! -f .ralph/STOP ] && [ "$i" -lt "$MAX_ITERS" ]; do
   i=$((i + 1))
   echo "════ agy-qa iter $i · $(date -u +%FT%TZ) ════" | tee -a .ralph/loop.log
 
-  # 1) DISCOVERY — top up the queue when it runs low (and always on an empty queue).
+  # 1) DISCOVERY — only when the queue is empty (MIN_OPEN=1). Track a "dry" streak: if discovery
+  #    finds nothing new DRY_LIMIT times running and there's nothing left to fix, the well is dry —
+  #    stop, rather than grind out marginal findings to fill iterations.
   if [ "$(open_count)" -lt "$MIN_OPEN" ]; then
+    before=$(findings_count)
     echo "── [agy] discovery (open=$(open_count) < $MIN_OPEN) ──" | tee -a .ralph/loop.log
     RALPH_ITER="$i" agy -p "$(cat "$KIT/bug_check.agy.md")" \
         --model "$CHECK_MODEL" --dangerously-skip-permissions --print-timeout 20m 2>&1 \
         | tee -a .ralph/loop.log
+    if [ "$(findings_count)" -le "$before" ]; then
+      dry=$((dry + 1))
+      echo "── discovery dry ($dry/$DRY_LIMIT) — no new findings ──" | tee -a .ralph/loop.log
+      if [ "$dry" -ge "$DRY_LIMIT" ] && [ "$(open_count)" -eq 0 ]; then
+        echo "agy-qa: discovery dry ${DRY_LIMIT}× with an empty queue — stopping (well is dry, no noise-filling)." | tee -a .ralph/loop.log
+        break
+      fi
+    else
+      dry=0
+    fi
   fi
 
   # 2) FIX — Claude fixes the top open finding (gate-green or revert).

@@ -34,7 +34,7 @@ LOCAL_MODEL="${LOCAL_MODEL:-qwen2.5-coder:14b}"
 OLLAMA_HOST="${OLLAMA_HOST:-http://127.0.0.1:11434}"
 CHECK_MODEL="${CHECK_MODEL:-Gemini 3.1 Pro (High)}"   # agy model for the VERIFY phase
 FIX_MODEL="${FIX_MODEL:-opus}"
-MIN_OPEN="${MIN_OPEN:-3}"
+MIN_OPEN="${MIN_OPEN:-1}"   # only discover when the queue is empty (quality > quota)
 VERIFY="${VERIFY:-1}"
 export LOCAL_MODEL OLLAMA_HOST
 

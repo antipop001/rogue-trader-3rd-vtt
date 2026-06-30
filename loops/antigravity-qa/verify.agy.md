@@ -17,6 +17,20 @@ value is catching plausible-but-wrong fixes the fixer's own model would rubber-s
    - Did it introduce a regression or break an adjacent rule?
    - Is the cited canon actually what the rule says?
 
+# Verbatim-canon rule (READ THIS — it is where the loop has been wrong)
+The most dangerous fixes are ones where the fixer reasoned by ANALOGY to a similar rule rather
+than the actual text — and a same-family verifier rubber-stamps the same reasoning. A real case:
+a fix made the **Daemonic** trait stack *additively* with Unnatural Toughness by analogy to the
+"Unnatural Characteristic" stacking rule; both fixer and verify agreed — but the verbatim Daemonic
+text ("double their Toughness Bonus") is a DISTINCT doubling, so the right answer was ×4, not ×3.
+So whenever a fix turns on a stacking / multiplier / threshold / "counts as" interpretation:
+   - QUOTE the governing rule VERBATIM from RT-DOCS (file:line). Do not accept a paraphrase or an
+     "it's like rule X" justification — find the actual sentence.
+   - Check the cited canon is RT 1e, not DH2 / Black Crusade / Only War (a non-RT citation, or a
+     page number that matches another book, is an automatic `disputed`).
+   - If the verbatim text doesn't unambiguously support the fix's reading, `disputed` it and say
+     which reading the text actually supports.
+
 # Record the verdict in `.ralph/bug-queue.md`
 - If correct: set `status: verified` and write a one-line `verify:` note ("confirmed: <why>").
 - If wrong, incomplete, or a regression: set `status: disputed` and write a SPECIFIC `verify:`
