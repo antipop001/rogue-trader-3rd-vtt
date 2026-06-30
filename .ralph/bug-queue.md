@@ -249,14 +249,14 @@ checker runs elsewhere) syncs via git.
 
 - triage: 
 ## BUG-Q-180 — `Semi-Auto Burst` and `Full Auto Burst` are incorrectly categorized as Full Actions instead of Half Actions
-- status: new
+- status: wontfix
 - found-by: agy Gemini 3.1 Pro (High)
 - area: engine-data
 - severity: P0 (wrong result in play)
 - evidence: `src/module/rules/combat-actions.mjs:199,292` — `name: 'Full Auto Burst', type: ['Full']` and `name: 'Semi-Auto Burst', type: ['Full']`.
 - canon: `/mnt/project_data/RT/RT-DOCS/CoreBook-201-401.pdf/markdown.md:8507` (RT Core p.238, Table 9-1) — Both `Semi-Auto Burst` and `Full Auto Burst` are strictly listed as `Half Action` in Rogue Trader 1e.
 - gap: The action definitions incorrectly use DH1 or early rules where auto-fire was a Full Action. In RT 1e, they are Half Actions, meaning players can Move and Full Auto Burst in the same turn. This breaks action economy.
-- fix: 
+- fix: NOT A BUG — the finding's cited canon is wrong. RT Core Table 9-1 (the actual action summary table, `CoreBook-201-401.pdf/markdown.md:1848,1861`) lists BOTH `Full Auto Burst` and `Semi-Auto Burst` as `Full | Attack, Ranged` actions. The cited line 8507 is the index entry ("Semi-Auto Burst ... 242"), not the table. Confirmed by `:2191` — "Note that Suppressing Fire is a separate Full Action from Full Auto Burst." The current code `type: ['Full']` is canon-correct; no change.
 - verify:
 
 - triage: 
