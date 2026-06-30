@@ -261,6 +261,17 @@ export class Hit {
             const entry = { confirmRoll: confirm, confirmTarget: rfToHit, hit: confirmHit, extra: 0, extraRoll: null, auto: autoConfirm };
             if (confirmHit) {
                 const extra = new Roll(rollFormula, attackData.rollData);
+                // A Righteous Fury extra is "another full damage roll for the weapon"
+                // (RT Core p.250), so it carries the weapon's dice-modifying qualities —
+                // Tearing (extra die, keep highest) and Proven (per-die minimum) — exactly
+                // like the base roll. (BUG-Q-164.)
+                if (attackData.rollData.hasAttackSpecial('Tearing')) {
+                    extra.terms.filter(term => term instanceof foundry.dice.terms.Die).forEach(die => {
+                        if (die.modifiers.includes('kh')) return;
+                        die.modifiers.push('kh' + die.number);
+                        die.number += 1;
+                    });
+                }
                 await extra.evaluate();
                 entry.extraRoll = extra;
                 entry.extra = extra.total + rfMeleeBonus;
@@ -270,6 +281,12 @@ export class Hit {
                     for (const r of t.results) {
                         if (r.discarded || !r.active) continue;
                         if (r.result >= righteousFuryThreshold) rfPending += 1;
+                        if (attackData.rollData.hasAttackSpecial('Proven')) {
+                            const proven = attackData.rollData.getAttackSpecial('Proven');
+                            if (r.result < proven.level) {
+                                this.modifiers['proven'] = (this.modifiers['proven'] || 0) + (proven.level - r.result);
+                            }
+                        }
                     }
                 }
             }
