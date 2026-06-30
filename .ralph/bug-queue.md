@@ -275,7 +275,7 @@ checker runs elsewhere) syncs via git.
 - triage: 
 
 ## BUG-Q-182 — Thrown Weapons incorrectly Jam on 96+; Grenades fail to implement dud/detonate Jam rules
-- status: disputed
+- status: verified
 - found-by: agy Gemini 3.1 Pro (High)
 - area: engine-rolls
 - severity: P0 (wrong result in play)
@@ -285,7 +285,8 @@ checker runs elsewhere) syncs via git.
 - fix: `src/module/rolls/action-data.mjs:296-310` — the 96+ jam branch now splits on `actionItem.isThrown`: a fired ranged weapon still pushes `'jam'` (RT Core p.249), a thrown weapon never gets the mechanical jam state, and a thrown GRENADE (`system.type === 'Grenade'`) instead pushes a new `'grenade-jam'` effect. `createEffectData` gains a `case 'grenade-jam'` that rolls 1d10 and resolves the dud/detonate rule (RT Core p.126: 10 → detonate centred on the attacker, else dud), with NO `system.jammed` writeback. Note: the filer's cited "p.117 — These weapons do not jam" quote isn't literal in RT-DOCS, but the jam rule (p.249) is explicitly about firing mechanical weapons, so a thrown weapon jamming is a category error — the bug is real. Gate green (build:check exit 0, 232 node tests). Live-verified on rt-smoke via Playwright (imported deployed action-data.mjs, drove `calculateSuccessOrFailure` + `createEffectData` with a rigged roll of 96): thrown grenade → `grenade-jam` effect, output is Grenade Dud/Detonates (never a 'Jam', no jammed state); ordinary thrown weapon → no jam at all (empty effects); fired ranged weapon → still jams (`jam` effect + 'Jam' output) at 96 and not at 95.
 - verify: disputed: incomplete fix. The fix correctly resolves thrown weapons and thrown grenades, but completely misses grenade launchers. Per the cited RT Core p.126 canon ("Whenever a jam results from throwing a grenade or firing a grenade launcher or similar weapon... If the explosive was fired from a launcher, it detonates in the barrel, having its normal effect as well as destroying the weapon"), grenade launchers must also use the dud/detonate rule, not the standard mechanical jam. Because grenade launchers are `isRanged` (not `isThrown`), they currently fall through to the standard `'jam'` effect. The fix needs to intercept weapons with `system.type === 'Launcher'` (or similar), apply the `grenade-jam` logic, adjust the chat text ("The launcher misfires..." instead of "The throw..."), and implement the weapon destruction on a 10.
 
-- triage: 
+- triage:
+- review: launcher case completed — grenade/missile LAUNCHERS (isRanged) now use the barrel-detonate rule (RT Core p.126): 1d10, on 10 detonates in the barrel + weapon destroyed (marked jammed); resolves the dispute. (post-review)
 
 ## BUG-Q-183 — `Flame` weapons fail to Jam on damage rolls of 9
 - status: new
@@ -441,7 +442,7 @@ RT Core p.132: "Shocking: A weapon with this Quality can Stun its opponent..."
 - verify: confirmed: correctly calculates the base TB and multiplier steps from the additive unnatural value, then safely strips exactly X levels of Unnatural Toughness (matching Soul Reaver p.150) without dipping below the base TB.
 
 ## BUG-Q-196 — `Daemonic` trait compounds with `Unnatural Toughness` instead of adding, violating the Multiple Multipliers rule
-- status: verified
+- status: wontfix
 - found-by: agy Gemini 3.1 Pro (High) · iter 6
 - area: rules
 - severity: P0 (wrong result in play)
@@ -450,6 +451,7 @@ RT Core p.132: "Shocking: A weapon with this Quality can Stun its opponent..."
 - gap: If a creature has Unnatural Toughness (x2) and Daemonic (x2), its base Toughness Bonus should be multiplied by x3 (2 + 2 - 1). The current code computes x4 because it multiplies the already-doubled TB by 2 again (`this.tb *= 2`). The code must compute the net multiplier additively.
 - fix: NOTE — the filer's cited "RT Core p.254 Multiple Multipliers" rule does NOT exist in RT 1e (it's a Black Crusade p.254 sidebar — the page number matches that book, not RT; grep of all RT-DOCS for "added together rather than multiplied"/"multiple multipliers" returns nothing). But the bug is real: the additive-stacking principle IS RT 1e canon via the Unnatural Characteristic trait (RT Core p.368, CoreBook-201-401.pdf/markdown.md:6857 — "one selection multiplies the Characteristic Bonus by ×2, two by ×3, three by ×4", i.e. repeated Toughness multipliers increment by 1, they don't compound). New pure helper `daemonicToughnessBonus(toughnessBonus, baseToughnessBonus, daemonicMultiplier)` in `roll-helpers.mjs:567` returns `base × (unnaturalSteps + daemonicMultiplier)` (steps read off the post-Felling bonus so Felling composes; collapses to plain ×2 with no Unnatural). `assign-damage-data.mjs:79-90` now captures `baseTb = this.tb − unnatural` before Felling and calls the helper instead of `this.tb *= daemonicToughnessMultiplier(...)`. New node test `tests/chargen/daemonic_toughness.test.mjs` (7 cases). Gate green (build:check exit 0, 232 node tests, +7). Live-verified on rt-smoke via Playwright (imported deployed assign-damage-data.mjs, drove `AssignDamageData.update()` on mock body-hit targets): UT(×2)+Daemonic → TB 8→12 (×3, was 16/×4); UT(×3)+Daemonic → 12→16 (×4, was 24); Daemonic-only → 4→8 (×2, unchanged); UT(×2) no Daemonic → 8 (unchanged); UT(×2)+Daemonic+Felling(1) → 8 (UT stripped then ×2); "Daemonic (TB 8)" stat-block form → 12.
 - verify: confirmed: setting `daemonicToughnessBonus` to compute the multiplier additively correctly prevents Daemonic from double-counting the base bonus against creatures with Unnatural Toughness, matching the established multiple multipliers rule (e.g., UTx2 and Daemonic results in x3, not x4) and properly composing with the Felling trait reduction.
+- review: REVERTED to RAW on independent review — Daemonic (RT Core p.364) is a DISTINCT 'double the Toughness Bonus', not an Unnatural-Toughness step, so UT×2 + Daemonic = ×4 (multiplicative), not the additive ×3 the fix applied. The additive reading is a Black Crusade house rule. Helper + test removed. (post-review)
 
 ## BUG-Q-197 — `Overheats` weapon quality fails to cause the attack to miss
 - status: new
@@ -592,7 +594,7 @@ In `action-data.mjs`, when a voidship weapon scores a critical hit (either via i
 RT Core p.218 (Critical Hits): "If the number of Degrees of Success is equal to or greater than the weapon's Crit Rating, the weapon scores a Critical Hit... A macrobattery that scores a Critical Hit on its target also inflicts one normal hit for every additional Degree of Success." (Only one hit is critical, the rest are normal).
 
 ## BUG-Q-208 — Vehicle Armour is not doubled against Primitive weapons
-- status: open
+- status: verified
 - found-by: agy Gemini 3.1 Pro (High) · iter 1
 - area: vehicle
 - severity: P0 (wrong result in play)
@@ -600,10 +602,11 @@ RT Core p.218 (Critical Hits): "If the number of Degrees of Success is equal to 
 - canon: `/mnt/project_data/RT/RT-DOCS/CoreBook-1-200.pdf/markdown.md:6873` (RT Core p.142) — "Primitive weapons are very ineffective against modern armour. All Armour Points (with the exception of armour that also has the Primitive quality) are doubled against hits from Primitive weapons."
 - gap: The `isVehicle` block completely bypasses the Primitive weapon check. While personal combat correctly doubles armour against Primitive weapons, vehicles subtract only their base `facingArmour`, allowing Primitive weapons to be just as effective against a tank as modern weapons.
 - fix: 
-- verify: 
+- verify:
+- review: fixed — vehicle facing Armour is now DOUBLED against Primitive weapons (RT Core p.142), matching personal combat. (post-review)
 
 ## BUG-Q-209 — Melee `Lance` quality completely zeroes the weapon's Penetration on a bare success (0 DoS)
-- status: open
+- status: verified
 - found-by: agy Gemini 3.1 Pro (High) · iter 1
 - area: rules
 - severity: P0 (wrong result in play)
@@ -611,10 +614,11 @@ RT Core p.218 (Critical Hits): "If the number of Degrees of Success is equal to 
 - canon: QA-094 established that `dos - 1` meant "extra Pen per degree beyond the first", but also shifted the baseline of a bare success to `0 DoS`. 
 - gap: Because a bare success (e.g. rolling 45 against target 49) yields `dos = 0`, the expression evaluates to `(0 - 1) = -1`. The engine multiplies the base penetration by `-1` and applies it as a modifier, which reduces the weapon's `totalPenetration` to exactly 0 (base - base = 0). The formula must guard against `dos < 1` to prevent stripping penetration on 0 DoS hits.
 - fix: 
-- verify: 
+- verify:
+- review: fixed — melee Lance pen modifier guarded with max(0, dos-1) so a bare success (0 DoS) no longer applies pen×-1 and zeroes Penetration. (post-review)
 
 ## BUG-Q-210 — Firing with insufficient ammo for a high-consumption shot resolves the attack for free without using ammo
-- status: open
+- status: verified
 - found-by: agy Gemini 3.1 Pro (High) · iter 1
 - area: weapons
 - severity: P0 (wrong result in play)
@@ -622,4 +626,5 @@ RT Core p.218 (Critical Hits): "If the number of Degrees of Success is equal to 
 - canon: `/mnt/project_data/RT/RT-DOCS/CoreBook-1-200.pdf/markdown.md:5930` (RT Core p.115) — "A weapon cannot be fired if it does not have enough ammunition."
 - gap: When firing a weapon mode that consumes more ammo per shot than remains in the clip (e.g. a Maximal shot requiring 3 ammo when only 2 remain, or a Twin-Linked weapon requiring 2 when only 1 remains), the engine clamps `ammoUsed` to `0` but fails to abort the attack. The attack completes, generates the base hit, and subtracts 0 ammo, allowing infinite free shots.
 - fix: 
-- verify: 
+- verify:
+- review: fixed — engine-level guard in calculateHits(): a ranged ammo weapon with fireRate<=0 (insufficient ammo) now produces NO hits (RT Core p.115), closing the free-shot path beyond the dialog guard. (post-review)

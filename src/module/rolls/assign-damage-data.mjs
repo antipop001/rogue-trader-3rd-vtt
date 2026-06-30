@@ -6,7 +6,7 @@ import { voidshipHitTypeDropdown } from '../rules/hit-type.mjs';
 import { voidshipHitLocationDropdown } from '../rules/voidship-hit-locations.mjs';
 import { drawShipCriticalResult } from '../rules/voidship-critical-damage.mjs';
 import { conditionsFromCriticalText } from '../rules/conditions.mjs';
-import { daemonicToughnessMultiplier, daemonicToughnessBonus, fellingToughnessBonus } from './roll-helpers.mjs';
+import { daemonicToughnessMultiplier, fellingToughnessBonus } from './roll-helpers.mjs';
 
 export class AssignDamageData {
     locations = hitDropdown();
@@ -77,18 +77,17 @@ export class AssignDamageData {
         // Toughness, reducing the soak TB toward its base before any Daemonic doubling.
         // (BUG-Q-195 — was a cosmetic-only chat note.)
         const unnatural = Number(this.actor?.system?.characteristics?.toughness?.unnatural) || 0;
-        const baseTb = this.tb - unnatural; // unmodified Toughness Bonus (no Unnatural extra)
         const fellingLevel = Number(this.hit?.fellingLevel) || 0;
         if (fellingLevel > 0) {
             this.tb = fellingToughnessBonus(this.tb, unnatural, fellingLevel);
         }
-        // Daemonic stacks with Unnatural Toughness ADDITIVELY, not multiplicatively (RT Core
-        // p.368 Unnatural Characteristic: repeated Toughness multipliers increment by 1 per
-        // source → ×2/×3/×4, they don't compound). A plain `this.tb *= 2` would double-count
-        // the base bonus for a creature with both (BUG-Q-196). Reads the post-Felling bonus so
-        // Felling composes correctly; collapses to plain doubling when there's no Unnatural.
+        // Daemonic (RT Core p.364): "double their Toughness Bonus against all damage" — a DISTINCT
+        // ×2 applied on top of any Unnatural Toughness, per strict RT 1e RAW. (The additive reading
+        // — Unnatural ×2 + Daemonic = ×3 — is a Black Crusade house rule, not RT 1e; review of
+        // BUG-Q-196 confirmed the verbatim Daemonic wording is a separate doubling.) Applied AFTER
+        // Felling, so it doubles whatever TB survives: e.g. Unnatural Toughness ×2 (TB 8) → 16.
         const traits = this.actor?.items?.filter?.((i) => i.type === 'trait') ?? [];
-        this.tb = daemonicToughnessBonus(this.tb, baseTb, daemonicToughnessMultiplier(traits));
+        this.tb *= daemonicToughnessMultiplier(traits);
     }
 
     /** True if the struck location's worn armour is itself Primitive — RT Core p.142:
@@ -146,7 +145,11 @@ export class AssignDamageData {
             // Vehicle Critical Hit chart (QA-117).
             const totalDamage = Number.parseInt(this.hit.totalDamage);
             const totalPenetration = Number.parseInt(this.hit.totalPenetration);
-            let armour = this.ignoreArmour ? 0 : Math.max(0, this.facingArmour - totalPenetration);
+            // Primitive weapons are doubled against modern armour (RT Core p.142) — this applies to
+            // vehicle facing Armour too, not just personal armour. Vehicle armour is never itself
+            // Primitive, so no exception is needed here. (BUG-Q-208.)
+            const facing = this.hit.primitive ? this.facingArmour * 2 : this.facingArmour;
+            let armour = this.ignoreArmour ? 0 : Math.max(0, facing - totalPenetration);
             const reduced = totalDamage - armour;
             if (reduced > 0) {
                 const intVal = Number(this.actor.system.integrity?.value) || 0;

@@ -463,7 +463,10 @@ export class Hit {
             // existing per-degree penetration scaling is kept and now consumes the corrected
             // canon DoS — `(dos - 1)` reads as "extra Pen per degree beyond the first". (QA-094.)
             if (this.penetration && attackData.rollData.hasAttackSpecial('Lance')) {
-                this.penetrationModifiers['lance'] = this.penetration * (attackData.rollData.dos - 1);
+                // `dos - 1` is "extra Pen per degree beyond the first" — but a BARE success is 0
+                // DoS (QA-094), so guard against `dos < 1` which would otherwise apply
+                // `pen × −1` and strip the weapon's whole Penetration on a bare hit. (BUG-Q-209.)
+                this.penetrationModifiers['lance'] = this.penetration * Math.max(0, attackData.rollData.dos - 1);
             }
 
             if (attackData.rollData.action === 'All Out Attack' && sourceActor.hasTalent('Hammer Blow')) {
