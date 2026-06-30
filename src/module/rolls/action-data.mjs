@@ -243,6 +243,12 @@ export class ActionData {
                     this.rollData.dos = 1;
                     this.rollData.dof = 0;
                     this.addEffect('Flame', 'No BS test — each creature in the 30° cone must pass an Agility Test or be hit (in the body). A struck target is set On Fire (RT Core p.142).', ['onFire'])
+                    // Flame weapons make NO roll to hit (RT Core p.117), so the ghost d100 must
+                    // not be re-interpreted: skip the ranged Jam check (a Flame weapon never
+                    // jams on a 96+ BS result — it only jams on a Damage die of 9, handled in
+                    // damage resolution) and skip the DoS recompute that would clobber dos=1.
+                    // (BUG-Q-179.)
+                    return;
                 }
 
                 if (actionItem.isMelee) {
