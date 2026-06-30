@@ -267,8 +267,8 @@ export function calculateAmmoInformation(rollData) {
     const maximumHits = Math.floor(availableAmmo / ammoPerShot);
     let fireRate = 1;
 
-    if (rollData.action === 'Full Auto Burst' || rollData.action === 'Semi-Auto Burst') {
-        if (rollData.action === 'Full Auto Burst') {
+    if (rollData.action === 'Full Auto Burst' || rollData.action === 'Semi-Auto Burst' || rollData.action === 'Suppressing Fire') {
+        if (rollData.action === 'Full Auto Burst' || rollData.action === 'Suppressing Fire') {
             fireRate = rollData.weapon.system.rateOfFire.full;
         } else if (rollData.action === 'Semi-Auto Burst') {
             fireRate = rollData.weapon.system.rateOfFire.burst;
