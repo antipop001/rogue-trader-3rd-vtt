@@ -47,54 +47,24 @@ full sweep re-checks the gate.
 | `MIN_OPEN` | `3` | replenish discovery when open findings drop below this |
 | `VERIFY` | `1` | run the agy cross-model verify phase (`0` to skip) |
 
-## Local-model variant — swap the CHECKER to a local LLM (`run_local_qa.sh`)
+## Local-model variant (optional)
 
-A hybrid: a **local model finds**, **Claude fixes**, **`agy`/Gemini verifies** (keep the strong
-model for the costly judgment). The local model is the weakest link at this task, so it does only
-the high-volume / low-stakes discovery, and via a CONSTRAINED per-file review (weak models flail at
-open-ended agentic exploration) — `local_check.py` feeds it one engine file at a time and asks for
-findings in a strict JSON schema, then dedups (against existing queue titles only) and appends.
-
-**Setup — on the GPU box (whisperx, RTX 3060).** It has no passwordless sudo and its driver is
-535 (too old for Ollama's CUDA build, which wants 550+) — so install Ollama **userspace** and let
-it fall back to **Vulkan** (still GPU-accelerated; ~9 GB of the 14B model loads on the card):
-```bash
-mkdir -p ~/ollama-bin && cd ~/ollama-bin
-curl -fL https://github.com/ollama/ollama/releases/latest/download/ollama-linux-amd64.tar.zst -o /tmp/o.tar.zst
-tar --zstd -xf /tmp/o.tar.zst -C ~/ollama-bin
-OLLAMA_HOST=0.0.0.0:11434 ~/ollama-bin/bin/ollama serve &      # listen on the LAN
-~/ollama-bin/bin/ollama pull qwen2.5-coder:14b                  # ~9 GB; best code model at this size
-```
-(The driver-535 → CUDA warning is expected; the next log line shows `library=Vulkan … 12.0 GiB` —
-it IS using the GPU. ComfyUI shares this 12 GB card, so stop/idle it during a run: it loads ~6-8 GB
-when generating, which won't co-exist with the 14B model.)
-
-**Tunnel — `:11434` is firewalled (only `:8188` is open to the LAN), so reach it over SSH from the
-loop host:**
-```bash
-ssh -fN -L 11434:127.0.0.1:11434 ahermon@192.168.11.22         # dev-LXC:11434 → whisperx:11434
-```
-**Run (from tmux, dedicated branch)** — the driver defaults `OLLAMA_HOST` to the tunnel:
-```bash
-git switch -c ralph/agy-qa-local
-./loops/antigravity-qa/run_local_qa.sh 15
-```
-Expect lower signal-to-noise than the Gemini checker — more false findings and shakier canon
-citations (the local brief tells it to say `canon: unsure` rather than invent a rule). The fixer's
-confirm-or-`wontfix` gate + the strong-model verify are what keep it honest. Knobs: `LOCAL_MODEL`
-(default `qwen2.5-coder:14b`), `OLLAMA_HOST`, `MIN_OPEN`, `VERIFY`.
+`run_agy_qa.sh` (Antigravity/Gemini) is the **primary, recommended** loop — a strong independent
+model is what makes the cross-model pass worth running. There is also a lower-signal **hybrid**
+that swaps only the *checker* to a local LLM (Qwen2.5-Coder via Ollama), keeping Claude as fixer and
+`agy`/Gemini as verifier — useful for a cheap/offline first pass. It is fully documented separately:
+**see [`LOCAL_MODEL_SETUP.md`](LOCAL_MODEL_SETUP.md)** (driver/Vulkan/firewall workarounds, the SSH
+tunnel, `run_local_qa.sh`, and an optional always-on watchdog).
 
 ## Files
 | File | Becomes / role |
 |---|---|
-| `run_agy_qa.sh` | all-Antigravity loop driver (cd's to repo root) |
-| `run_local_qa.sh` | **hybrid** driver — local checker + claude fixer + agy verifier |
-| `local_check.py` | local-model per-file review harness (Ollama HTTP, stdlib only) |
+| `run_agy_qa.sh` | **primary** all-Antigravity loop driver (cd's to repo root) |
 | `bug_check.agy.md` | agy discovery brief |
-| `bug_check_local.md` | tighter local-model discovery brief (guards against hallucinated canon) |
 | `fix.prompt.md` | claude fix brief |
 | `verify.agy.md` | agy verify brief |
 | `bug-queue.seed.md` | seeds `.ralph/bug-queue.md` (the shared work queue) |
+| `LOCAL_MODEL_SETUP.md` + `run_local_qa.sh` / `local_check.py` / `bug_check_local.md` / `ollama_watchdog.sh` | the optional local-model variant |
 | `spec.md` | → `specs/08-antigravity-qa.md` (the loop's requirements) |
 
 ## Notes
