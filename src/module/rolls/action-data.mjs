@@ -483,7 +483,12 @@ export class ActionData {
 
     async calculateVoidShields() {
         if (!this.rollData.targetActor || this.rollData.targetActor.type !== "voidship") return;
-        if (this.rollData.weapon.system.type === "Lance") return;
+
+        // Lances ignore the target's ARMOUR (handled in calculatePenetration via isLance) but
+        // NOT void shields — "ignore the target's armour … but not void shields" (RT Core p.216,
+        // markdown.md:1214; worked example :1252 has the lance strike "unimpeded" only because
+        // the shields were already down). So lances fall through the same cancellation loop as
+        // macrobatteries instead of skipping it.
 
         // Void shields cancel up to `strength` hits from THIS salvo (RT Core p.226). They are
         // NOT permanently spent: shields "reduce hits from all ships firing on them … restored
