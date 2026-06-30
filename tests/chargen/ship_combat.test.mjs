@@ -50,15 +50,13 @@ test('QA-047: firing arc — prow=fore, beam weapons own arc, dorsal/keel any-bu
     assert.equal(firingArcAllows('special', 'aft'), true);
 });
 
-test('BUG-Q-228: ram dice by hull — cruisers and larger inflict 2d10', () => {
+test('BUG-Q-228: ram dice by hull (RT Core p.219 verbatim table)', () => {
     assert.equal(shipRamDice('Jericho-class Transport'), '1d5');
     assert.equal(shipRamDice('Hazeroth-class Raider'), '1d5');
     assert.equal(shipRamDice('Sword-class Frigate'), '1d10');
     assert.equal(shipRamDice('Dauntless-class Light Cruiser'), '2d5');
     assert.equal(shipRamDice('Lunar-class Cruiser'), '2d10');
     assert.equal(shipRamDice('Grand Cruiser'), '2d10');
-    // Battleships are larger than cruisers — must not fall through to the transport/raider 1d5.
-    assert.equal(shipRamDice('Retribution-class Battleship'), '2d10');
     assert.equal(shipRamDice(''), '1d5');
 });
 

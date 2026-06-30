@@ -814,7 +814,7 @@ RT Core p.218 (Critical Hits): "If the number of Degrees of Success is equal to 
 - verify: confirmed: setting total to 5000 and used to 4500 + originXpSpent correctly enforces the 5,000 XP starting total from RT Core p.38 while preserving the 500 XP free pool math.
 
 ## BUG-Q-228 — Ship Ramming damage incorrectly assigns 1d5 to Battleships instead of 2d10
-- status: disputed
+- status: wontfix
 - found-by: agy Gemini 3.1 Pro (High) · iter 6
 - area: ship
 - severity: P1 (wrong result in play)
@@ -823,4 +823,35 @@ RT Core p.218 (Critical Hits): "If the number of Degrees of Success is equal to 
 - gap: The `shipRamDice` function fails to match Battleships (and other large non-cruiser hulls like Grand Cruisers if they lack the word "cruiser", though they usually have it) and defaults them to the 1d5 damage of a Transport/Raider.
 - fix: `ship-combat.mjs:180` — added `if (t.includes('battleship') || t.includes('battle ship')) return '2d10';` before the transport/raider default, so cruisers-and-larger all inflict 2d10 (RT Core p.219, the verbatim rule at canon line 984 reads "1d5 for transports and raiders, 1d10 for frigates, 2d5 for light cruisers, and 2d10 for cruisers"). Grand Cruisers/battlecruisers already returned 2d10 via the `cruiser` substring; only "Battleship" fell through to 1d5. New node test `tests/chargen/ship_combat.test.mjs` (BUG-Q-228 case) asserts transport→1d5, frigate→1d10, light cruiser→2d5, cruiser/grand cruiser/battleship→2d10. Gate green (`npm run build:check` exit 0; `npm test` 252/252). Not live-verified on rt-smoke: `shipRamDice` is a pure helper asserted directly by the node test, and no battleship hull exists in the ship-traits pack (RT Core hulls top out at Cruiser) to ram with live.
 - verify: disputed: The cited canon "Cruisers and larger: 2d10" is hallucinated. The verbatim text in RT Core p.219 (markdown.md:984) reads only "1d5 for transports and raiders, 1d10 for frigates, 2d5 for light cruisers, and 2d10 for cruisers". It does not mention "and larger" or Battleships. Because there is no RAW rule for Battleship ramming damage in either Core or Battlefleet Koronus, applying 2d10 to them relies on an analogy ("they are cruisers and larger") rather than verbatim text. The text only unambiguously supports 2d10 specifically for cruisers.
+- fix (dispute → wontfix): Conceded — the dispute is canonically correct. Reverted the speculative `battleship` special-case in `ship-combat.mjs:174-182`: RT Core p.219 (verbatim, CoreBook-201-401.pdf/markdown.md:992) lists ONLY transport/raider 1d5, frigate 1d10, light cruiser 2d5, cruiser 2d10 — no "and larger" and no Battleship. No battleship hull exists in the ship-traits pack (RT Core hulls top out at Cruiser), so the branch was unreachable dead code, and adding a non-RAW rule violates minimal-correct-change. `shipRamDice` now matches the verbatim table; `tests/chargen/ship_combat.test.mjs` BUG-Q-228 case drops the battleship assertion. Cruiser/Grand-Cruiser still → 2d10 via the pre-existing `cruiser` substring (untouched). Gate green (`npm run build:check` exit 0; `npm test` 252/252). No live-verify: pure helper asserted by node test, no battleship hull to ram with live.
+## BUG-Q-229 — Renegade Psyker Unfettered fails to add +5 per Psy Rating to Phenomena
+- status: open
+- found-by: agy Gemini 3.1 Pro (High) · iter 6
+- area: psychic
+- severity: P0 (wrong result in play)
+- evidence: `src/module/rolls/action-data.mjs:88-94` — The phenomena bonus is only computed inside the `strength === 'push'` branch. When `strength === 'unfettered'` and the psyker rolls doubles, the bonus stays at 0.
+- canon: `/mnt/project_data/RT/RT-DOCS/CoreBook-1-200.pdf/markdown.md:8045` (RT Core p.157, Table 6-1) — For Renegade Psykers And Sorcerers under Unfettered: "If the psyker rolls doubles during a Focus Power Test, roll on the Psychic Phenomena Table (see page 160), add +5 per Psy Rating used."
+- gap: Renegade Psykers using Unfettered strength incorrectly roll on the Psychic Phenomena table with no modifier (a flat 1d100) instead of receiving the mandated +5 per Psy Rating used modifier.
+- fix: 
+- verify:
 
+## BUG-Q-230 — Suppressing Fire forces Full Auto fire rate and computes incorrect ammo cost
+- status: open
+- found-by: agy Gemini 3.1 Pro (High) · iter 6
+- area: weapons
+- severity: P0 (wrong result in play)
+- evidence: `src/module/rules/ammo.mjs:252-257` hardcodes `fireRate = rollData.weapon.system.rateOfFire.full` for Suppressing Fire, causing it to evaluate to 0 for Semi-Auto-only weapons (which breaks the action). It then calculates `ammoUsed = fireRate * ammoPerShot` (line 300) instead of consuming 10 shells or half a clip.
+- canon: `/mnt/project_data/RT/RT-DOCS/CoreBook-201-401.pdf/markdown.md:2185` (RT Core p.248) — "A character with a weapon capable of Semi-Auto or Full Auto Burst may expend 10 shells/charges (or half a clip of ammunition... whichever is greater) to lay down Suppressing Fire." Additionally, "If the weapon normally scores a hit for each Degree of Success (as it would on full auto), it continues to do so." (The engine incorrectly forces `additionalHits += Math.floor(dos / 2)` in `action-data.mjs:381`).
+- gap: Suppressing Fire incorrectly consumes ammo equal to a normal Full Auto burst instead of the mandatory `max(10, Math.ceil(clip_max / 2))`. Furthermore, Semi-Auto capable weapons without Full Auto break entirely because `rateOfFire.full` is 0. Full Auto weapons incorrectly score 1 extra hit per 2 DoS instead of 1 extra hit per DoS.
+- fix: 
+- verify:
+
+### BUG-Q-231: Righteous Fury on vehicles inflicts raw damage instead of a Critical Hit roll
+- **canon:** *Into the Storm* p. 177: "Righteous Fury: Against vehicles... NO ADDITIONAL DAMAGE IS ROLLED. Instead, roll 1d5 on the Critical Hit chart, and apply the result."
+- **location:** `src/module/rolls/damage-data.mjs` (Righteous Fury extra damage loop ignores `targetActor?.type === 'vehicle'`) and `src/module/rolls/assign-damage-data.mjs` (fails to roll/apply the 1d5 Critical Hit for a vehicle Righteous Fury).
+- **description:** Righteous Fury on a vehicle incorrectly rolls a second damage die and adds it to the attack's total damage (causing severe structural integrity damage/cumulative crit), entirely skipping the canon rule to forego extra damage and instead trigger a flat 1d5 roll on the Critical Hit chart.
+
+### BUG-Q-232: Flame weapons do not jam on a damage die of 9
+- **canon:** *RT Core* p. 131: "[Flame weapons] will Jam if the firer rolls a 9 on his Damage dice (before adding any bonuses)."
+- **location:** `src/module/rolls/damage-data.mjs` (missing check for result.result === 9 when `hasAttackSpecial('Flame')`) and `src/module/rolls/action-data.mjs` (Line 288 claims it's handled in damage resolution).
+- **description:** `action-data.mjs` explicitly skips the 96+ BS jam check for Flame weapons, claiming it is handled on the damage die of 9 in damage resolution. However, `damage-data.mjs` lacks any logic to trigger a Jam condition when a 9 is rolled on a Flame weapon's damage die, leaving them immune to jamming.
