@@ -9,6 +9,7 @@ import { DHBasicActionManager } from '../actions/basic-action-manager.mjs';
 import { degreesOfSuccess, degreesOfFailure, roll1d100, initiativeCharBonus, woundsMax, reactionBudget, canSpendReaction, unnaturalCharacteristicMultipliers, rapidReloadTime, doubleReloadTime, woundDamageState, woundRecovery } from '../rolls/roll-helpers.mjs';
 import { SYSTEM_ID } from '../hooks-manager.mjs';
 import { reactionsLocked } from '../rules/conditions.mjs';
+import { sustainedPsyPenalty } from '../rules/psychic.mjs';
 import { RogueTraderSettings } from '../rogue-trader-settings.mjs';
 
 const BASIC_SKILLS = new Set([
@@ -364,7 +365,9 @@ export class RogueTraderAcolyte extends RogueTraderBaseActor {
 
         // Effective Psy Rating can't drop below 0 (a power sustaining beyond the rating ends
         // rather than yielding a negative PR; RT Core p.156). (QA-152.)
-        this.psy.currentRating = Math.max(0, this.psy.rating - this.psy.sustained);
+        // Sustaining penalty only applies at TWO or more maintained powers, then equals the
+        // total count (RT Core p.159); one sustained power has no penalty. (BUG-Q-221.)
+        this.psy.currentRating = Math.max(0, this.psy.rating - sustainedPsyPenalty(this.psy.sustained));
         // RT 1e: Initiative bonus = governing characteristic bonus + any additive
         // modifier (effect-addressable via system.initiative.modifier so talents/gear
         // like Paranoia "+2 Initiative" / Wary "+1" survive derived-data recompute).

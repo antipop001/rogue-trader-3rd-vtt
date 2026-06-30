@@ -744,10 +744,12 @@ RT Core p.218 (Critical Hits): "If the number of Degrees of Success is equal to 
 - verify: confirmed: properly implements the rule that unconscious characters are treated as helpless targets (RT Core p.250). Abstracting the check to `isHelplessTarget` ensures consistent application across auto-hit, condition modifiers, and coup-de-grace damage doubling, fully resolving the dispute.
 
 ## BUG-Q-221 — Maintaining a single psychic power incorrectly applies a -1 Psy Rating penalty
-- status: open
+- status: fixed
 - found-by: agy Gemini 3.1 Pro (High) · iter 2
 - area: psychic
 - severity: P0 (wrong result in play)
 - evidence: `src/module/documents/acolyte.mjs:367` — `this.psy.currentRating = Math.max(0, this.psy.rating - this.psy.sustained);`
 - canon: `/mnt/project_data/RT/RT-DOCS/CoreBook-1-200.pdf/markdown.md:8064` (RT Core p.159) — "Maintaining two powers at the same time reduces the effective Psy Rating of both powers by 2. Maintaining three powers reduces the Psy Rating of all powers by 3 and so on."
 - gap: The `currentRating` calculation unconditionally subtracts the `sustained` count from the actor's base Psy Rating. Because of this, if an actor sustains a single power (`sustained` = 1), their effective Psy Rating is improperly reduced by 1. Canon dictates that the PR penalty only applies when maintaining *two or more* powers, and it is equal to the total number of powers maintained. Maintaining a single power has no penalty.
+- fix: New pure helper `sustainedPsyPenalty(sustained)` in `src/module/rules/psychic.mjs` returns `n >= 2 ? n : 0` (RT Core p.159 — penalty only at two or more maintained powers, then equal to the count; one sustained power has no penalty). Wired into `acolyte.mjs:370`: `currentRating = max(0, rating - sustainedPsyPenalty(sustained))` (was `rating - sustained`). New node test `tests/chargen/sustained_psy_penalty.test.mjs` (3 cases). Gate green (`npm run build:check` exit 0; `npm test` 251/251, +3). Live-verified on rt-smoke via Playwright (imported deployed psychic.mjs, drove the currentRating calc for a PR-4 psyker): sustained 0→PR4, 1→PR4 (was wrongly 3), 2→PR2, 3→PR1.
+- verify: <agy fills on verify>.
