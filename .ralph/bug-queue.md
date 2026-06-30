@@ -353,7 +353,7 @@ checker runs elsewhere) syncs via git.
 - triage: 
 
 ## BUG-Q-188 — `Lightning Reflexes` incorrectly hardcodes Unnatural Agility multiplier to x2 instead of scaling with the trait
-- status: fixed
+- status: verified
 - found-by: agy Gemini 3.1 Pro (High) · iter 5
 - area: rules
 - severity: P0 (wrong result in play)
@@ -361,7 +361,7 @@ checker runs elsewhere) syncs via git.
 - canon: `/mnt/project_data/RT/RT-DOCS/CoreBook-1-200.pdf/markdown.md:5200` (RT Core p.110) — Lightning Reflexes: "If he has Unnatural Agility, add +1 to the multiplier before factoring the bonus into the Initiative roll." (Unnatural Agility can be x3 or x4, per RT Core p.368).
 - gap: The engine assumes Unnatural Agility is always exactly x2 (so +1 makes it x3). For creatures with Unnatural Agility (x3) or higher, it will under-count their Initiative bonus (computing x3 instead of x4+).
 - fix: `src/module/rolls/roll-helpers.mjs:264` — `initiativeCharBonus` now takes the Unnatural multiplier (number) instead of a boolean and returns `rawBonus * (mult + 1)` (RT Core p.110 "add +1 to the multiplier" scales off the actual Unnatural Agility level ×N → ×(N+1); a fixed ×3 ties the normal bonus at ×3 and LOSES at ×4 — a talent must never reduce Initiative). `src/module/documents/acolyte.mjs:382` passes the trait-derived multiplier (`unnaturalMults[label] ?? 1`) instead of `(unnatural>0)`. Updated the ratchet test `tests/chargen/initiative_bonus.test.mjs` (multiplier arg + ×3/×4 + falsy-collapse cases). Gate green (build:check exit 0, 218 node tests, +2). Live-verified on rt-smoke via Playwright (built actors Ag 45 = raw AgB 4 + Lightning Reflexes + Unnatural Agility (xN)): no-unnatural→8 (×2), ×2→12 (×3), ×3→16 (×4, pre-fix was 16 vs normal 12=no benefit), ×4→20 (×5, pre-fix gave 12 < normal 16=a penalty). Initiative now always beats the normal bonus by rawBonus.
-- verify:
+- verify: confirmed: properly scales the multiplier by using the actual Unnatural trait value (N+1) instead of hardcoding to 3, ensuring Initiative scales accurately for Unnatural x3 or higher without penalizing them, matching RT Core p.110.
 
 ## BUG-Q-189 — `Shooting into Melee Combat` penalty is incorrectly waived if ANY combatant is Stunned instead of just the target
 - status: open
