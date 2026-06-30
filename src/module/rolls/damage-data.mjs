@@ -323,10 +323,10 @@ export class Hit {
                 this.modifiers['best craftsmanship'] = 1;
             }
 
-            // Crushing Blow
+            // Crushing Blow — RT Core p.149: flat +2 Damage with melee weapons
+            // (the DH2 ⌈WSB/2⌉ scaling was a fork leftover).
             if (sourceActor.hasTalent('Crushing Blow')) {
-                const wsBonus = sourceActor.getCharacteristicFuzzy('WeaponSkill').bonus;
-                this.modifiers['crushing blow'] = Math.ceil(wsBonus / 2);
+                this.modifiers['crushing blow'] = 2;
             }
 
             // Deathdealer
@@ -385,10 +385,10 @@ export class Hit {
                 this.modifiers['maximal'] = maximalRoll.total;
             }
 
-            // Mighty Shot
+            // Mighty Shot — RT Core p.151: flat +2 Damage with ranged weapons
+            // (the DH2 ⌈BSB/2⌉ scaling was a fork leftover).
             if (sourceActor.hasTalent('Mighty Shot')) {
-                const bsBonus = sourceActor.getCharacteristicFuzzy('ballisticSkill').bonus;
-                this.modifiers['mighty shot'] = Math.ceil(bsBonus / 2);
+                this.modifiers['mighty shot'] = 2;
             }
 
             // Deathdealer
