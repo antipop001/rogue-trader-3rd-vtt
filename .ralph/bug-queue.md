@@ -731,7 +731,7 @@ RT Core p.218 (Critical Hits): "If the number of Degrees of Success is equal to 
 - verify:
 
 ## BUG-Q-220 — Melee attacks against Helpless targets do not automatically hit
-- status: fixed
+- status: disputed
 - found-by: agy Gemini 3.1 Pro (High) · iter <RALPH_ITER>
 - area: rules
 - severity: P0 (wrong result in play)
@@ -739,4 +739,4 @@ RT Core p.218 (Critical Hits): "If the number of Degrees of Success is equal to 
 - canon: `/mnt/project_data/RT/RT-DOCS/CoreBook-201-401.pdf/markdown.md:2450` (RT Core p.248) — "Weapon Skill Tests made to hit a sleeping, unconscious or otherwise helpless target automatically succeed."
 - gap: The engine only grants a +30 conditional bonus to hit helpless targets in melee, which means an attacker can still fail their Weapon Skill Test if they roll poorly. The rules mandate that Weapon Skill tests against helpless targets automatically succeed. (The automatic damage doubling is correctly handled in `damage-data.mjs`, but the hit itself is not guaranteed.)
 - fix: New pure helper `meleeAutoHitsHelpless(isMelee, statuses)` in `conditions.mjs:59` — true only for a melee (WS) attack against a target with the `helpless` status (keyed on `helpless` to stay in lockstep with the coup-de-grace damage doubling in `damage-data.mjs:240`; ranged BS shots only get the +30 condition modifier, not an auto-hit). Wired into `action-data.mjs:_calculateHit` (`:200`): after the normal target-number resolution, `if (meleeAutoHitsHelpless(weapon?.isMelee, targetActor?.statuses)) success = true`. DoS still derives from the roll below (clamped ≥0 → a bare success), so an auto-hit grants no extra degrees. New node test `tests/chargen/helpless_autohit.test.mjs` (4 cases). Gate green (`npm run build:check` exit 0; `npm test` 245/245, +4). Live-verified on rt-smoke via Playwright (page-context drove deployed `ActionData._calculateHit` with modifiedTarget=1): melee-vs-helpless 40/40 auto-hit; ranged-vs-helpless 0/40 forced (only nat-1 path); healthy-melee 1/40 (not forced).
-- verify:
+- verify: disputed: incomplete fix. The cited canon explicitly includes "unconscious" targets, and the system natively implements 'unconscious' as a distinct status effect (e.g. applied by fatigue, listed in REACTION_LOCKING). By strictly mirroring `damage-data.mjs` and keying only on `helpless`, the fix fails to auto-hit `unconscious` targets. `meleeAutoHitsHelpless`, along with the `conditionToHitModifier` +30 bonus and the `helplessTarget` damage doubling in `damage-data.mjs:240`, must all be expanded to check `statuses.has('helpless') || statuses.has('unconscious')`.
