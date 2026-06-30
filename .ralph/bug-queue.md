@@ -374,13 +374,14 @@ checker runs elsewhere) syncs via git.
 - fix: NOT A BUG — the finding's cited canon is hallucinated. The actual "Shooting into Melee Combat" sidebar is at `CoreBook-201-401.pdf/markdown.md:2421` (RT Core p.247): "Ballistic Skill Tests made to hit a target engaged in melee combat are Hard (-20). If **one or more Characters engaged in the melee** is Stunned, Helpless, or Unaware, this penalty is ignored." "Characters engaged in the melee" = the target AND its adjacent melee opponents, so waiving on either is correct. The finding misquotes the rule as "If the target is..." (a narrowing not in the book) and cites line 2197, which is the Tactical Advance action, not this rule. Current code (and its doc comment, roll-helpers.mjs:65-66) already implements the canon-correct interpretation. No change.
 
 ## BUG-Q-190 — `Customised` weapon quality is miswired to halve reload times instead of adding +5 to hit
-- status: open
+- status: wontfix
 - found-by: agy Gemini 3.1 Pro (High) · iter 5
 - area: weapons
 - severity: P0 (wrong result in play)
 - evidence: `src/module/documents/acolyte.mjs:754-758` — `if (weapon.system.special?.customised) { reload = rapidReloadTime(reload, true, true); }` applies a reload-halving effect for the "Customised" quality.
 - canon: `/mnt/project_data/RT/RT-DOCS/CoreBook-1-200.pdf/markdown.md:5993` (RT Core p.131) — Customised: "Weapons with this quality add a +5 to Ballistic Skill Tests made to fire them." (The upgrade that halves reload time is "Quick-Release", p.143).
-- gap: The engine conflates the "Customised" weapon quality with the "Quick-Release" weapon upgrade. As a result, Customised halves reload time instead of adding +5 to BS, and Quick-Release is entirely missing.## BUG-Q-191 — `Sturdy` trait fails to negate the unbraced penalty for Heavy weapons
+- gap: The engine conflates the "Customised" weapon quality with the "Quick-Release" weapon upgrade. As a result, Customised halves reload time instead of adding +5 to BS, and Quick-Release is entirely missing.
+- fix: NOT A BUG — the finding's cited canon is hallucinated (DH2's Customised, not RT 1e's). The actual RT Core CUSTOMISED weapon-quality entry is `CoreBook-1-200.pdf/markdown.md:5913-5915`: "The user has rebuilt and fined-tuned the weapon... Reloading this weapon takes ½ the listed time, rounding up to the next full action." That is exactly what `acolyte.mjs:759-761` implements (`rapidReloadTime(reload, true, true)` — halve, round up). There is no "+5 BS Customised" and no "Quick-Release" quality anywhere in RT Core (grep of the corebook markdown returns only the reload-halving entry). Current code matches canon. No change.## BUG-Q-191 — `Sturdy` trait fails to negate the unbraced penalty for Heavy weapons
 - status: new
 - found-by: agy Gemini 3.1 Pro (High)
 - file: src/module/rolls/roll-data.mjs:252
@@ -416,3 +417,36 @@ The `Shocking` weapon quality is completely omitted from the `attackSpecials()` 
 
 **Canon Rule:**
 RT Core p.132: "Shocking: A weapon with this Quality can Stun its opponent..."
+
+## BUG-Q-194 — `Accurate` and `Maximal` weapon qualities still bypass Righteous Fury, Tearing, and Proven
+- status: open
+- found-by: agy Gemini 3.1 Pro (High) · iter 6
+- area: weapons
+- severity: P0 (wrong result in play)
+- evidence: `src/module/rolls/damage-data.mjs:360-362` and `380-382` — The `Accurate` and `Maximal` extra damage dice are rolled separately (`accurateRoll` and `maximalRoll`) and added to `this.modifiers['accurate']` / `['maximal']`.
+- canon: `/mnt/project_data/RT/RT-DOCS/CoreBook-1-200.pdf/markdown.md:2298` (Righteous Fury) — "If a character rolls a 10 on any damage die (including additional dice from talents, weapon qualities, etc.)".
+- gap: The previous fixes for `Maximal` and `Accurate` completely missed integrating the extra damage dice into the base `damageRoll.terms` or `rollFormula`. By adding them as flat `modifiers` after the base roll is evaluated, the extra dice do not benefit from `Tearing` or `Proven`, and any natural 10s rolled on these dice completely fail to trigger Righteous Fury (which only iterates `damageRoll.terms`). These dice MUST be added to the `damageRoll` constructed at the start.
+- fix: 
+- verify:
+
+## BUG-Q-195 — `Felling` weapon quality fails to reduce Unnatural Toughness when assigning damage
+- status: open
+- found-by: agy Gemini 3.1 Pro (High) · iter 6
+- area: rules
+- severity: P0 (wrong result in play)
+- evidence: `src/module/rolls/assign-damage-data.mjs:62-67` reads `this.tb = locationArmour.toughnessBonus`, which already includes Unnatural Toughness. No logic anywhere in the file inspects the attack for the `Felling` quality to reduce this value.
+- canon: `/mnt/project_data/RT/RT-DOCS/CoreBook-1-200.pdf/markdown.md:5993` (RT Core p.131) — Felling: "ignores a number of levels of Unnatural Toughness equal to the number in parentheses."
+- gap: The `Felling` quality only prints a cosmetic chat note in `damage-data.mjs` but has zero mechanical implementation in the damage assignment pipeline. It must subtract its level from the defender's Unnatural Toughness multiplier when calculating the effective Toughness Bonus to soak the hit.
+- fix: 
+- verify:
+
+## BUG-Q-196 — `Daemonic` trait compounds with `Unnatural Toughness` instead of adding, violating the Multiple Multipliers rule
+- status: open
+- found-by: agy Gemini 3.1 Pro (High) · iter 6
+- area: rules
+- severity: P0 (wrong result in play)
+- evidence: `src/module/rolls/assign-damage-data.mjs:77` — `this.tb *= daemonicToughnessMultiplier(traits);` multiplies the `this.tb` value, which already includes the `Unnatural Toughness` multiplier.
+- canon: `/mnt/project_data/RT/RT-DOCS/CoreBook-201-401.pdf/markdown.md` (RT Core p.254, Multiple Multipliers) — "When this happens, the multipliers are added together, rather than multiplied by each other."
+- gap: If a creature has Unnatural Toughness (x2) and Daemonic (x2), its base Toughness Bonus should be multiplied by x3 (2 + 2 - 1). The current code computes x4 because it multiplies the already-doubled TB by 2 again (`this.tb *= 2`). The code must compute the net multiplier additively.
+- fix: 
+- verify:
