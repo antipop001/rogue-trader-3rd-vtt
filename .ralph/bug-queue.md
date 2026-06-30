@@ -178,7 +178,7 @@ checker runs elsewhere) syncs via git.
 - verify: confirmed: the +20 bonus is correctly applied in calculateAttackSpecialAttackBonuses, and the new doubleReloadTime helper properly scales the reload string before halving qualities so that they accurately compose, perfectly matching RT Core p.117.
 
 ## BUG-Q-174 — Unbalanced weapon quality incorrectly prevents Parrying entirely instead of applying a -10 penalty
-- status: fixed
+- status: verified
 - found-by: agy Gemini 3.1 Pro (High) · iter 4
 - area: rules
 - severity: P0 (wrong result in play)
@@ -186,7 +186,7 @@ checker runs elsewhere) syncs via git.
 - canon: `/mnt/project_data/RT/RT-DOCS/CoreBook-1-200.pdf/markdown.md:6011` (RT Core p.132) — Unbalanced: "Heavy and difficult to ready after an attack, these kinds of weapons impose a -10% penalty when used to Parry." Unwieldy (markdown.md:6023): "too awkward to be used defensively. Unwieldy weapons cannot be used to Parry."
 - gap: The engine conflates `Unbalanced` with `Unwieldy` and makes it impossible to Parry (`-999` modifier). Unbalanced should only impose a `-10` penalty to Parry tests.
 - fix: `src/module/documents/acolyte.mjs:229-233` — split the conflated branch: `Unwieldy` keeps `rollData.modifiers['Cannot Parry'] = -999` (RT Core p.132 "cannot be used to Parry"); `Unbalanced` now sets `rollData.modifiers['Unbalanced'] = -10` (RT Core p.132 "-10% penalty when used to Parry") via an `else if`, so a weapon with both is treated as Unwieldy (the stricter rule). Gate green (build:check exit 0, 216 node tests). Live-verified on rt-smoke via Playwright (created actor + equipped melee weapon with `system.special`, drove `rollSkill('parry')` through a stubbed Dialog auto-firing the Roll callback, read the resulting chat card): Unbalanced weapon → card shows `UNBALANCED -10` / Target -10; Unwieldy weapon → `CANNOT PARRY -999` / Target -60.
-- verify:
+- verify: confirmed: properly splits the conflated qualities, correctly applying -999 to Unwieldy and -10 to Unbalanced matching RT Core p.132, defaulting to the stricter Unwieldy penalty if both are present.
 
 ## BUG-Q-175 — Several weapon qualities (Toxic, Snare, Shocking) lack automation for secondary resistance tests
 - status: open
