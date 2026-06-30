@@ -65,6 +65,31 @@ export function isPsychicDoubles(total) {
 }
 
 /**
+ * Astropath Transcendent Perils mitigation (RT Core p.159): "rolls an additional d10 when
+ * rolling on the Perils of the Warp table and may discard any one d10 for a more favourable
+ * result." Percentile dice are a tens d10 + a units d10; the extra d10 can stand in for
+ * either, so there are three readings — discard the extra (tens,units), discard the tens
+ * (extra fills tens), or discard the units (extra fills units). We keep the least severe
+ * outcome (lowest result), where 00 reads as 100 (Destruction — the worst row, so it is
+ * never chosen unless it is the only option). (BUG-Q-215.)
+ * @param {number} tens   raw tens die digit, 0-9
+ * @param {number} units  raw units die digit, 0-9
+ * @param {number} extra  raw extra die digit, 0-9
+ * @returns {number} the most-favourable Perils result, 1-100
+ */
+export function astropathPerilsResult(tens, units, extra) {
+    const toPercent = (t, u) => {
+        const v = ((Number(t) % 10) + 10) % 10 * 10 + ((Number(u) % 10) + 10) % 10;
+        return v === 0 ? 100 : v;                 // 00 → 100 (Destruction)
+    };
+    return Math.min(
+        toPercent(tens, units),  // discard the extra
+        toPercent(extra, units), // discard the tens — extra fills the tens slot
+        toPercent(tens, extra),  // discard the units — extra fills the units slot
+    );
+}
+
+/**
  * Resolve a void-ship weapon attack as RT RAW (RT Core p.217-219): a SINGLE Ballistic Skill
  * test scores one hit plus one additional hit per Degree of Success, capped at the weapon's
  * Strength (the max hits). The shot is a Critical Hit when the DoS meets or exceeds the

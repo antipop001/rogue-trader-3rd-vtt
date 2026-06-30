@@ -1,6 +1,6 @@
 import { PsychicRollData, RollData, WeaponRollData } from './roll-data.mjs';
 import { Hit, PsychicDamageData, scatterDirection, WeaponDamageData } from './damage-data.mjs';
-import { attackTalentExtraHits, degreesOfSuccess, degreesOfFailure, getOpposedDegrees, isPsychicDoubles, roll1d100, sendActionDataToChat, stunDefenceBonus, uuid, voidshipWeaponHits, voidshipHullDamage } from './roll-helpers.mjs';
+import { astropathPerilsResult, attackTalentExtraHits, degreesOfSuccess, degreesOfFailure, getOpposedDegrees, isPsychicDoubles, roll1d100, sendActionDataToChat, stunDefenceBonus, uuid, voidshipWeaponHits, voidshipHullDamage } from './roll-helpers.mjs';
 import { refundAmmo, useAmmo } from '../rules/ammo.mjs';
 import { DHBasicActionManager } from '../actions/basic-action-manager.mjs';
 import { conditionMeta } from '../rules/conditions.mjs';
@@ -11,7 +11,7 @@ import { RogueTraderSettings } from '../rogue-trader-settings.mjs';
  * Roll the named RollTable from the system's `tables` compendium and return
  * the result text. Returns null if the table or compendium can't be located.
  */
-async function drawFromTable(tableName, modifier = 0) {
+async function drawFromTable(tableName, modifier = 0, forcedTotal = null) {
     try {
         const pack = game.packs.get(`${SYSTEM_ID}.tables`);
         if (!pack) return null;
@@ -21,8 +21,12 @@ async function drawFromTable(tableName, modifier = 0) {
         const table = await pack.getDocument(entry._id);
         if (!table) return null;
         // A positive modifier pushes the d100 toward the higher (more dangerous) rows — RT's
-        // Push / Sustaining modifiers to the Psychic Phenomena roll (QA-039).
-        const draw = modifier ? await table.roll({ roll: new Roll(`1d100 + ${modifier}`) }) : await table.roll();
+        // Push / Sustaining modifiers to the Psychic Phenomena roll (QA-039). A forcedTotal
+        // resolves the table for a pre-computed value (the Astropath Transcendent's extra-d10
+        // Perils result, BUG-Q-215) instead of rolling a fresh d100.
+        const draw = forcedTotal != null
+            ? await table.roll({ roll: new Roll(String(forcedTotal)) })
+            : modifier ? await table.roll({ roll: new Roll(`1d100 + ${modifier}`) }) : await table.roll();
         const results = draw?.results ?? [];
         return results.map(r => r.text ?? r.description ?? '').filter(Boolean).join(' ');
     } catch (err) {
@@ -97,8 +101,18 @@ export class ActionData {
             // A 75+ Psychic Phenomena result escalates to Perils of the Warp (RT Core
             // p.157 — the 75+ row says "roll on Table 6-3 instead").
             if (phenom && /perils of the warp/i.test(phenom)) {
-                const perils = await drawFromTable('Perils of the Warp');
-                if (perils) this.addEffect('Perils of the Warp', `The Perils of the Warp claim the psyker! ${perils}`);
+                // An Astropath Transcendent (Soul-Bound to the Emperor) rolls an extra d10 on
+                // the Perils table and discards one die for a more favourable result (RT Core
+                // p.159) — resolve the chosen percentile rather than a raw 1d100. (BUG-Q-215.)
+                if (this.rollData.sourceActor?.hasTalent?.('Soul-Bound to the Emperor')) {
+                    const d10 = async () => { const r = new Roll('1d10'); await r.evaluate(); return r.total % 10; };
+                    const total = astropathPerilsResult(await d10(), await d10(), await d10());
+                    const perils = await drawFromTable('Perils of the Warp', 0, total);
+                    if (perils) this.addEffect('Perils of the Warp', `The Perils of the Warp claim the psyker — soul-bound, he rolls an extra d10 and discards one for a more favourable result! ${perils}`);
+                } else {
+                    const perils = await drawFromTable('Perils of the Warp');
+                    if (perils) this.addEffect('Perils of the Warp', `The Perils of the Warp claim the psyker! ${perils}`);
+                }
             }
         }
     }
