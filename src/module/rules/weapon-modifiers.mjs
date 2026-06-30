@@ -26,7 +26,7 @@ export async function calculateWeaponModifiersDamageBonuses(actionData, hit) {
         if (!item.isWeaponModification) continue;
         switch (item.name) {
             case 'Compact':
-                hit.penetrationModifiers['compact'] = -1;
+                hit.modifiers['compact'] = -1;
                 break;
         }
     }

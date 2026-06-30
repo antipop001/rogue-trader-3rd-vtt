@@ -112,14 +112,14 @@ checker runs elsewhere) syncs via git.
 - verify: confirmed: changing to `this.damageData.additionalHits++` properly stacks the single additional hit granted by Twin-Linked on 2+ DoS on top of the base hits for all fire modes, no longer overwriting them. Order of operations is correct (evaluated after RoF caps and before Storm multiplier).
 
 ## BUG-Q-168 — Compact weapon modification reduces Penetration instead of Damage
-- status: open
+- status: fixed
 - found-by: agy Gemini 3.1 Pro (High) · iter 2
 - area: weapons
 - severity: P0 (wrong result in play)
 - evidence: `src/module/rules/weapon-modifiers.mjs:27-31` — `calculateWeaponModifiersDamageBonuses` sets `hit.penetrationModifiers['compact'] = -1`.
 - canon: `/mnt/project_data/RT/RT-DOCS/CoreBook-1-200.pdf/markdown.md:6847` (RT Core p.134) — Compact: "halves its clip size and range as well as reducing its Damage by 1."
 - gap: The Compact modification reduces the weapon's Penetration by 1 instead of its Damage by 1. The code is placed in the `DamageBonuses` function but incorrectly mutates `penetrationModifiers` rather than `modifiers`.
-- fix: 
+- fix: `src/module/rules/weapon-modifiers.mjs:29` — `hit.penetrationModifiers['compact'] = -1` → `hit.modifiers['compact'] = -1` so Compact reduces Damage by 1 (RT Core p.134 "reducing its Damage by 1"), not Penetration. `hit.modifiers` feeds `_totalDamage()` (damage-data.mjs:89), `penetrationModifiers` feeds `_totalPenetration()` (:93). Gate green (build:check exit 0, 206 node tests). Live-verified on rt-smoke via Playwright (imported deployed weapon-modifiers.mjs, ran calculateWeaponModifiersDamageBonuses with an equipped Compact mod): `modifiers={compact:-1}`, `penetrationModifiers={}` (pre-fix the −1 landed on penetration).
 - verify:
 
 ## BUG-Q-169 — Voidship extended actions bypass standard mechanics in favour of an undocumented "Flawless / Flawed" scale, dropping the success flag
