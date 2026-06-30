@@ -47,11 +47,38 @@ full sweep re-checks the gate.
 | `MIN_OPEN` | `3` | replenish discovery when open findings drop below this |
 | `VERIFY` | `1` | run the agy cross-model verify phase (`0` to skip) |
 
+## Local-model variant — swap the CHECKER to a local LLM (`run_local_qa.sh`)
+
+A hybrid: a **local model finds**, **Claude fixes**, **`agy`/Gemini verifies** (keep the strong
+model for the costly judgment). The local model is the weakest link at this task, so it does only
+the high-volume / low-stakes discovery, and via a CONSTRAINED per-file review (weak models flail at
+open-ended agentic exploration) — `local_check.py` feeds it one engine file at a time and asks for
+findings in a strict JSON schema, then dedups (against existing queue titles only) and appends.
+
+**Setup — on the GPU box (the RTX 3060 host):**
+```bash
+curl -fsSL https://ollama.com/install.sh | sh          # if not installed
+OLLAMA_HOST=0.0.0.0:11434 ollama serve &               # listen on the LAN
+ollama pull qwen2.5-coder:14b                           # ~9 GB Q4 — fits 12 GB; the best code model at this size
+```
+**Run (from tmux, dedicated branch), pointing at it:**
+```bash
+git switch -c ralph/agy-qa-local
+OLLAMA_HOST=http://192.168.11.22:11434 ./loops/antigravity-qa/run_local_qa.sh 15
+```
+Expect lower signal-to-noise than the Gemini checker — more false findings and shakier canon
+citations (the local brief tells it to say `canon: unsure` rather than invent a rule). The fixer's
+confirm-or-`wontfix` gate + the strong-model verify are what keep it honest. Knobs: `LOCAL_MODEL`
+(default `qwen2.5-coder:14b`), `OLLAMA_HOST`, `MIN_OPEN`, `VERIFY`.
+
 ## Files
 | File | Becomes / role |
 |---|---|
-| `run_agy_qa.sh` | the loop driver (cd's to repo root) |
+| `run_agy_qa.sh` | all-Antigravity loop driver (cd's to repo root) |
+| `run_local_qa.sh` | **hybrid** driver — local checker + claude fixer + agy verifier |
+| `local_check.py` | local-model per-file review harness (Ollama HTTP, stdlib only) |
 | `bug_check.agy.md` | agy discovery brief |
+| `bug_check_local.md` | tighter local-model discovery brief (guards against hallucinated canon) |
 | `fix.prompt.md` | claude fix brief |
 | `verify.agy.md` | agy verify brief |
 | `bug-queue.seed.md` | seeds `.ralph/bug-queue.md` (the shared work queue) |
