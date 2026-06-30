@@ -665,7 +665,7 @@ RT Core p.218 (Critical Hits): "If the number of Degrees of Success is equal to 
 - verify: confirmed: correctly removes the erroneous auto-upgrade to Critical Hit and properly adds +1 to the 1d5 Critical Hits chart roll when a critical is naturally generated, matching Battlefleet Koronus p.35 RAW.
 
 ## BUG-Q-214 — Psychic Phenomena 'doubles' detection fails on a roll of 100
-- status: fixed
+- status: verified
 - found-by: agy Gemini
 - area: psychic
 - severity: P0 (wrong result in play)
@@ -673,4 +673,4 @@ RT Core p.218 (Critical Hits): "If the number of Degrees of Success is equal to 
 - canon: `/mnt/project_data/RT/RT-DOCS/CoreBook-1-200.pdf/markdown.md:7384` (RT Core p.157) — "If a Sanctioned Psyker rolls doubles on his Focus Power Test (i.e. 11, 22, 33, 44, 55, 66, 77, 88, 99, 00)..."
 - gap: A d100 roll of 100 results in the number `100`. The regex `/^(.)\1+$/` matches strings composed of identical characters. It will match `"11"`, `"22"`, etc., but will fail to match `"100"` because it begins with '1' and continues with '0'. Thus, a roll of 100 (which represents 00) completely fails to trigger Psychic Phenomena for Unfettered casts.
 - fix: Added pure helper `isPsychicDoubles(total)` to `src/module/rolls/roll-helpers.mjs:51` (returns true for 100 [=00] and for two-digit multiples of 11, i.e. 11–99; guards non-finite); replaced the broken regex at `src/module/rolls/action-data.mjs:58` (`isDoubles = isPsychicDoubles(this.rollData.roll.total)`) and added the import. New node test `tests/chargen/psychic_doubles.test.mjs` (3 cases). Gate green: `npm run build:check` exit 0, `npm test` 228/228. Live-verified on rt-smoke via Playwright page-context import of the deployed module: `isPsychicDoubles` returns true for [11..99,100] and false for [10,12,21,50,98].
-- verify: 
+- verify: confirmed: the `isPsychicDoubles` helper properly detects two-digit multiples of 11 (11-99) and correctly handles a roll of 100 as the `00` doubles result, explicitly matching the RT Errata v1.4 and Core p.157 requirement without being tripped up by the string representation of 100.
