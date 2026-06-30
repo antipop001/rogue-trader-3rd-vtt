@@ -49,6 +49,22 @@ export function degreesOfFailure(target, roll) {
 }
 
 /**
+ * Psychic-Phenomena "doubles" detection on a Focus Power Test (RT Core p.157): doubles are
+ * 11, 22, 33, 44, 55, 66, 77, 88, 99, and 00 — the latter being a d100 result of 100. A naive
+ * string-identity test (`/^(.)\1+$/`) matches 11–99 but FAILS on 100 ("1","0","0" differ), so a
+ * Phenomena-triggering 00 was silently missed. The matching values are exactly the two-digit
+ * multiples of 11 plus 100. (BUG-Q-214.)
+ * @param {number} total  the d100 Focus Power Test result (1–100)
+ * @returns {boolean} true if the roll is doubles
+ */
+export function isPsychicDoubles(total) {
+    const t = Number(total);
+    if (!Number.isFinite(t)) return false;
+    if (t === 100) return true;                  // 00
+    return t >= 11 && t <= 99 && t % 11 === 0;   // 11, 22, … 99
+}
+
+/**
  * Resolve a void-ship weapon attack as RT RAW (RT Core p.217-219): a SINGLE Ballistic Skill
  * test scores one hit plus one additional hit per Degree of Success, capped at the weapon's
  * Strength (the max hits). The shot is a Critical Hit when the DoS meets or exceeds the

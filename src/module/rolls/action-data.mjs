@@ -1,6 +1,6 @@
 import { PsychicRollData, RollData, WeaponRollData } from './roll-data.mjs';
 import { Hit, PsychicDamageData, scatterDirection, WeaponDamageData } from './damage-data.mjs';
-import { attackTalentExtraHits, degreesOfSuccess, degreesOfFailure, getOpposedDegrees, roll1d100, sendActionDataToChat, stunDefenceBonus, uuid, voidshipWeaponHits, voidshipHullDamage } from './roll-helpers.mjs';
+import { attackTalentExtraHits, degreesOfSuccess, degreesOfFailure, getOpposedDegrees, isPsychicDoubles, roll1d100, sendActionDataToChat, stunDefenceBonus, uuid, voidshipWeaponHits, voidshipHullDamage } from './roll-helpers.mjs';
 import { refundAmmo, useAmmo } from '../rules/ammo.mjs';
 import { DHBasicActionManager } from '../actions/basic-action-manager.mjs';
 import { conditionMeta } from '../rules/conditions.mjs';
@@ -55,7 +55,7 @@ export class ActionData {
         const baseRating = this.rollData.sourceActor.psy.rating ?? 0;
         const currentRating = this.rollData.sourceActor.psy.currentRating ?? baseRating;
         const pr = this.rollData.pr ?? 0;
-        const isDoubles = /^(.)\1+$/.test(this.rollData.roll.total);
+        const isDoubles = isPsychicDoubles(this.rollData.roll.total);
         const strength = this.rollData.strength ?? 'unfettered';
 
         // RT 1e: Fettered never triggers Psychic Phenomena.
