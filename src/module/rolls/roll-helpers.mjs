@@ -649,6 +649,31 @@ export function unnaturalExtra(traitMult, bakedUnnatural, baselineBonus, liveRaw
 }
 
 /**
+ * RT Core p.368 ("Unnatural Characteristic"): "During Opposed Characteristic Tests, on a
+ * success, the bonus multiplier is added to the degree of success." So a side with an
+ * Unnatural (xN) governing Characteristic adds N to its Degrees of Success when it succeeds
+ * the opposed test (e.g. Feint, Knock-Down, Grapple). Returns 0 on a failure or with no
+ * Unnatural (multiplier < 2). The multiplier is recovered from the computed characteristic:
+ * `unnatural = rawBonus × (N − 1)` ⇒ `N = bonus / (bonus − unnatural)` (rounded — tolerant of
+ * a small flat cyber bonus baked into `bonus`).
+ *
+ * @param {number} bonus      the full characteristic bonus (raw + unnatural)
+ * @param {number} unnatural  the Unnatural additive extra (`characteristic.unnatural`)
+ * @param {boolean} success   whether this side succeeded the test
+ * @returns {number} DoS bonus to add (the multiplier N when Unnatural + success, else 0)
+ */
+export function unnaturalOpposedDoSBonus(bonus, unnatural, success) {
+    if (!success) return 0;
+    const un = Number(unnatural) || 0;
+    const b = Number(bonus) || 0;
+    if (un <= 0) return 0;
+    const rawBonus = b - un;
+    if (rawBonus <= 0) return 0;
+    const mult = Math.round(b / rawBonus);
+    return mult >= 2 ? mult : 0;
+}
+
+/**
  * Daemonic (RT Core p.364) Toughness-Bonus multiplier for soaking damage. "Creatures
  * with this Trait double their Toughness Bonus against all damage, except for damage
  * inflicted by force weapons, psychic powers, holy attacks, or other creatures with this
