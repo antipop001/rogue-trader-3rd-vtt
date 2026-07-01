@@ -1,6 +1,6 @@
 data:
     craftsmanship: common
-    availability: common
+    availability: Rare
     weight: 0
     equipped: false
     inBackpack: false
@@ -32,7 +32,7 @@ type: ammunition
 ---
 data:
     craftsmanship: common
-    availability: common
+    availability: Scarce
     weight: 0
     equipped: false
     inBackpack: false
@@ -63,7 +63,7 @@ type: ammunition
 ---
 data:
     craftsmanship: common
-    availability: common
+    availability: Near Unique
     weight: 0
     equipped: false
     inBackpack: false
@@ -423,7 +423,7 @@ type: ammunition
 ---
 data:
     craftsmanship: common
-    availability: common
+    availability: Extremely Rare
     weight: 0
     equipped: false
     inBackpack: false
@@ -454,7 +454,7 @@ type: ammunition
 ---
 data:
     craftsmanship: common
-    availability: common
+    availability: Rare
     weight: 0
     equipped: false
     inBackpack: false
@@ -487,7 +487,7 @@ type: ammunition
 ---
 data:
     craftsmanship: common
-    availability: common
+    availability: Scarce
     weight: 0
     equipped: false
     inBackpack: false
@@ -519,7 +519,7 @@ type: ammunition
 ---
 data:
     craftsmanship: common
-    availability: common
+    availability: Scarce
     weight: 0
     equipped: false
     inBackpack: false
@@ -582,7 +582,7 @@ type: ammunition
 ---
 data:
     craftsmanship: common
-    availability: common
+    availability: Scarce
     weight: 0
     equipped: false
     inBackpack: false
