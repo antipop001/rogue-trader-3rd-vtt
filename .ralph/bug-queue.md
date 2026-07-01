@@ -952,7 +952,7 @@ RT Core p.218 (Critical Hits): "If the number of Degrees of Success is equal to 
 - canon: `/mnt/project_data/RT/RT-DOCS/CoreBook-201-401.pdf/markdown.md:3297` (RT Core p.268) — "Encumbered Characters: An Encumbered character takes a -10 penalty to all movement-related tests and reduces his Agility Bonus by one for the purposes of determining movement rates and Initiative."
 - gap: `_computeMovement` evaluates `this.encumbrance?.encumbered ? 1 : 0`, and `_computeCharacteristics` does the same for Initiative. However, `system.encumbrance` is a purely derived object generated during `_computeEncumbrance()`. Because the computation ordering is backwards, `this.encumbrance` is `undefined` when Movement and Initiative are calculated. The canon -1 penalty to Agility Bonus for Movement and Initiative is never applied (it is effectively dead code).
 - fix: NOT A BUG — the finding's premise overlooks the base-actor recompute pass. `acolyte.prepareData()` computes encumbrance (acolyte.mjs:81) BEFORE calling `super.prepareData()` (:83), which runs `RogueTraderBaseActor.prepareData()` (base-actor.mjs:53-57) — that recomputes `_computeCharacteristics()` (initiative) and `_computeMovement()` a SECOND time, now with `this.encumbrance` populated. Foundry's prepareData cycle does not reset `system.encumbrance` between these passes, so the -1 AgB penalty reaches the FINAL derived values. base-actor.mjs:144-145 documents this intent ("encumbrance is computed before the final movement pass"). Acolyte's own early `_computeMovement`/`_computeCharacteristics` produce stale values that are harmlessly overwritten. Live-verified on rt-smoke 0.8.27 (/tmp/verify_bugq240.py): an actor AgB 3 / carry-max 36kg with a 60kg item becomes encumbered → movement.half 3→2 and initiative.bonus 3→2 (the penalty IS applied). No code change.
-- verify:
+- verify: confirmed: the double-pass correctly applies the computed encumbrance value on the second derivation inside `RogueTraderBaseActor.prepareData()`. Stale data is safely overwritten.
 
 ## BUG-Q-241
 - status: verified
@@ -964,3 +964,36 @@ RT Core p.218 (Critical Hits): "If the number of Degrees of Success is equal to 
 - gap: The `base` movement calculation multiplies the Agility Bonus by the Quadruped trait multiplier (`moveMult`) *before* adding the size modifier. The canon rule explicitly requires the size modifier to be applied *first* (modifying the base AB), and then having multipliers like Quadruped scale that adjusted total. For example, a Quadruped (x2) Hulking (+1) creature with AB 3 currently computes as `3 * 2 + 1 = 7`, when it should be `(3 + 1) * 2 = 8`.
 - fix: Real bug — confirmed against RT Core p.368 Size trait ("apply the size modifier first, and then other modifiers from other Traits or talents"). Extracted a pure `baseHalfMove(agBonus, size, moveMult, unnaturalSpeed)` helper (roll-helpers.mjs:741) that adds the size modifier `(size − 4)` to the Agility Bonus FIRST, then applies the Quadruped multiplier, then Unnatural Speed ×2, floored at 1; base-actor.mjs:_computeMovement now delegates to it (replaced `agBonus * moveMult + size - 4`). Verified: `npm test` 282 pass (new tests/chargen/base_half_move.test.mjs asserts the ordering — Quadruped ×2 Hulking AB 3 = 8) + `npm run build:check` exit 0 + live on rt-smoke (Quadruped + Size 5 + AB 3 npc → movement.half 8, was 7).
 - verify: confirmed: the fix correctly implements RT Core p.368 RAW by applying the size modifier to the Agility Bonus before applying the Quadruped and Unnatural Speed multipliers. The `Math.max(1, base)` safely enforces the minimum movement rule.
+
+## BUG-Q-242 — Backpack contents are incorrectly excluded from character's total encumbrance
+- status: fixed
+- found-by: agy Gemini 3.1 Pro (High) · iter 8
+- area: rules
+- severity: P0 (wrong result in play)
+- evidence: `src/module/documents/acolyte.mjs:424` — `this.items.filter(...).forEach((item) => { if (item.system.backpack?.inBackpack) { backpackCurrentWeight += item.totalWeight; } else { currentWeight += item.totalWeight; } });`
+- canon: `/mnt/project_data/RT/RT-DOCS/CoreBook-1-200.pdf/markdown.md:7265` (RT Core p.141) — "A backpack can usually carry approximately 50 kilograms." The rules do not state that the weight of the backpack or its contents is negated for the character carrying it; it merely provides the physical capacity to carry items.
+- gap: Items placed inside a standard backpack (where `isCombatVest` is false) are added to `backpackCurrentWeight` but are completely excluded from `currentWeight`. Since the character's encumbrance limits are checked against `currentWeight`, the contents of the backpack are treated as completely weightless, granting free infinite encumbrance up to the backpack's max limit. The weight of items in a backpack must still count towards the character's overall carry weight.
+- fix: Real bug — RT has no weight-negation rule for backpacks (p.141 "~50 kilograms" is physical capacity; the ONLY explicit carry-weight exclusion in RT is power armour, p.230). `src/module/documents/acolyte.mjs:_computeEncumbrance` (~788) — removed the `if (isCombatVest)` gate that only folded backpack contents into `currentWeight` for combat vests; backpack contents now ALWAYS add to `currentWeight` while still being tracked separately against the backpack's own capacity (`backpack_value`/`backpack_max`). Gate green (build:check exit 0, node tests pass). Live-verified on rt-smoke via Playwright: acolyte + non-combat-vest backpack, one 10kg carried weapon + one 10kg backpacked weapon → encumbrance.value=20 (was 10 pre-fix), backpack_value=10 (still tracked separately).
+- verify: 
+
+## BUG-Q-243 — Data preparation methods improperly declared as async
+- status: open
+- found-by: agy Gemini 3.1 Pro (High) · iter 8
+- area: other
+- severity: P1 (missing automation)
+- evidence: `src/module/documents/acolyte.mjs:74` and `src/module/documents/base-actor.mjs:53` — `async prepareData() { await super.prepareData(); ... }`
+- canon: n/a — code smell.
+- gap: Foundry VTT's document data preparation pipeline (including `prepareData`) is strictly synchronous. Declaring it as `async` causes it to return a Promise that the engine does NOT await during document updates or initialization. This creates race conditions where the derived data (like computed characteristics, movement, or AE-modified skills) is not yet ready when the canvas renders or when downstream modules read the actor data immediately following an update. The methods must be synchronous.
+- fix: 
+- verify: 
+
+## BUG-Q-244 — Movement derivation fails completely if actor size is missing
+- status: open
+- found-by: agy Gemini 3.1 Pro (High) · iter 8
+- area: movement
+- severity: P0 (wrong result in play)
+- evidence: `src/module/documents/base-actor.mjs:45-47` — `get size() { return Number.parseInt(this.system.size); }` propagates directly to `_computeMovement` where it subtracts 4.
+- canon: n/a — code smell.
+- gap: If `this.system.size` is undefined or malformed (which can occur for newly initialized actors or during edge case migrations), `get size()` returns `NaN`. This propagates to `baseHalfMove`, causing all calculated movement values to be `NaN`. A fallback value (e.g., `4` for Average) must be provided so movement does not completely break on actors with uninitialized sizes.
+- fix: 
+- verify: 

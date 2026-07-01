@@ -785,9 +785,12 @@ export class RogueTraderAcolyte extends RogueTraderBaseActor {
                 }
             });
 
-            if (this.backpack.isCombatVest) {
-                currentWeight += backpackCurrentWeight;
-            }
+            // RT Core p.141/p.267: a backpack provides physical capacity (~50 kg) but does
+            // NOT negate the weight of its contents for the wearer's own carry limit. The
+            // ONLY explicit carry-weight exclusion in RT is power armour (p.230). Backpack
+            // contents therefore always count toward the character's encumbrance AND are
+            // tracked separately against the backpack's own capacity. (BUG-Q-242.)
+            currentWeight += backpackCurrentWeight;
         } else {
             // No backpack -- add everything
             this.items.filter((item) => !item.isStorageLocation).forEach((item) => (currentWeight += item.totalWeight));
