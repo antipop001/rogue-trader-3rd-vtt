@@ -1717,15 +1717,15 @@ data:
     availability: Near Unique
     class: Basic
     clip:
-        max: 1
-        value: 1
+        max: 8
+        value: 8
     craftsmanship: Common
     damage: 1d10+5
     damageType: Energy
     description: 'Special: Accurate'
     equipped: false
     modifications: []
-    penetration: 1
+    penetration: 3
     range: 150
     rateOfFire:
         burst: 0

@@ -13,6 +13,12 @@ SOURCES = [
     "CoreBook-1-200.pdf/markdown.md",
     "roguetrader_intothestorm-1-125.pdf/markdown.md",
     "roguetrader_intothestorm-126-257.pdf/markdown.md",
+    "roguetrader_faithandcoin.pdf/markdown.md",
+    "roguetrader_hostileacquisitions.pdf/markdown.md",
+    "roguetrader_thesoulreaver.pdf/markdown.md",
+    "roguetrader_twilightcrusade.pdf/markdown.md",
+    "roguetrader_taucharacterguide.pdf/markdown.md",
+    "roguetrader_lureoftheexpanse.pdf/markdown.md",
 ]
 DMG_TYPE = {"R": "Rending", "X": "Explosive", "I": "Impact", "E": "Energy"}
 
@@ -45,8 +51,14 @@ def parse_damage(tok):
     if not m: return (None, None)
     return (m.group(1), DMG_TYPE.get(m.group(2)) if m.group(2) else None)
 
+def base_name(nn):
+    """Strip a trailing '(Pattern)' qualifier so a generic pack name matches a patterned source
+    row: 'boltgun locke' -> 'boltgun'.  (norm_name already dropped the parens.)"""
+    return re.sub(r'\s+(ceres|locke|mars|voss|mezoa|hecate|cadian|belasco|scutum|triplex|umbra|ryza)\b.*$', '', nn).strip()
+
 def parse_source():
-    """Scan source files for weapon-table rows. Returns {norm_name: {fields..., _src}}."""
+    """Scan source files for weapon-table rows (11-col ranged AND 8-col melee layouts). Returns
+    {norm_name: {fields..., _src}}. A leading empty cell (some melee rows) is dropped first."""
     weapons = {}
     for rel in SOURCES:
         path = DOCS / rel
@@ -54,28 +66,32 @@ def parse_source():
         for lineno, line in enumerate(path.read_text(errors='replace').split('\n'), 1):
             if not line.startswith('|'): continue
             cells = [c.strip() for c in line.strip().strip('|').split('|')]
-            if len(cells) != 11: continue
-            name = cells[0]
-            klass = cells[1]
+            if cells and cells[0] == '': cells = cells[1:]   # drop leading empty cell (melee rows)
+            if not cells or cells[0].lower() in ('name', ''): continue
+            klass = cells[1] if len(cells) > 1 else ''
             if klass not in ('Pistol', 'Basic', 'Heavy', 'Thrown', 'Melee'): continue
-            if name.lower() in ('name',): continue
-            rng = cells[2].replace('–', '-').strip()
-            rof = parse_rof(cells[3])
-            dmg, dtype = parse_damage(cells[4])
-            pen = re.match(r'-?\d+', cells[5].replace('–', '-'))
-            clip = re.match(r'-?\d+', cells[6].replace('–', '-'))
-            w = {
-                'name': name, 'class': klass,
-                'range': int(re.match(r'\d+', rng).group()) if re.match(r'\d+', rng) else None,
-                'rof': rof, 'damage': dmg, 'damageType': dtype,
-                'pen': int(pen.group()) if pen else None,
-                'clip': int(clip.group()) if clip else None,
-                'reload': cells[7].replace('–', '-').strip(),
-                'special': cells[8].strip(),
-                'availability': cells[10].strip(),
-                '_src': f"{rel}:{lineno}",
-            }
-            weapons[norm_name(name)] = w
+            name = cells[0]
+            if len(cells) == 11:            # ranged: Name Class Range RoF Dam Pen Clip Rld Special Wt Avail
+                rng = cells[2].replace('–', '-').strip(); rof = parse_rof(cells[3])
+                dmg, dtype = parse_damage(cells[4])
+                pen = re.match(r'-?\d+', cells[5].replace('–', '-')); clip = re.match(r'-?\d+', cells[6].replace('–', '-'))
+                reload, special, avail = cells[7], cells[8], cells[10]
+            elif len(cells) == 8 and klass == 'Melee':   # melee: Name Class Range Dam Pen Special Wt Avail
+                rng = cells[2].replace('–', '-').strip(); rof = None
+                dmg, dtype = parse_damage(cells[3])
+                pen = re.match(r'-?\d+', cells[4].replace('–', '-')); clip = None
+                reload, special, avail = '', cells[5], cells[7]
+            else:
+                continue
+            w = {'name': name, 'class': klass,
+                 'range': int(re.match(r'\d+', rng).group()) if re.match(r'\d+', rng) else None,
+                 'rof': rof, 'damage': dmg, 'damageType': dtype,
+                 'pen': int(pen.group()) if pen else None,
+                 'clip': int(clip.group()) if clip else None,
+                 'reload': reload.replace('–', '-').strip(), 'special': special.strip(),
+                 'availability': avail.strip(), '_src': f"{rel}:{lineno}"}
+            nn = norm_name(name); weapons[nn] = w
+            weapons.setdefault(base_name(nn), w)   # also index by base name for generic-pack matching
     return weapons
 
 def parse_pack():
@@ -103,7 +119,7 @@ def main():
     print(f"source weapons parsed: {len(src)}   pack weapons parsed: {len(pack)}\n")
     mismatches = 0; matched = 0; unmatched = []
     for nn, pw in sorted(pack.items()):
-        sw = src.get(nn)
+        sw = src.get(nn) or src.get(base_name(nn))   # exact, then generic-vs-patterned fallback
         if not sw:
             unmatched.append(pw['name']); continue
         matched += 1
