@@ -387,7 +387,14 @@ export class RogueTraderAcolyte extends RogueTraderBaseActor {
             // also be given an AE. (Movement uses the unmodified AgB — handled in _computeMovement.)
             const traitMult = unnaturalMults[String(characteristic.label ?? '').toLowerCase()];
             const baselineBonus = Math.floor((characteristic.base + characteristic.advance * 5) / 10);
-            characteristic.unnatural = unnaturalExtra(traitMult, characteristic.unnatural, baselineBonus, rawBonus);
+            // Read the *pre-baked* Unnatural extra from immutable source, NOT from the (already
+            // derived) `characteristic.unnatural`. `_computeCharacteristics` runs twice per
+            // prepareData pass (once pre-AE here, once inside super.prepareData post-AE); reading
+            // the live value would make `unnaturalExtra` treat its own first-pass output as the
+            // baked figure on the second pass — failing the multiplier-recovery check and aborting
+            // scaling for any AE that raised the Characteristic between the two calls. (BUG-Q-251.)
+            const bakedUnnatural = Number(this._source?.system?.characteristics?.[name]?.unnatural) || 0;
+            characteristic.unnatural = unnaturalExtra(traitMult, bakedUnnatural, baselineBonus, rawBonus);
             characteristic.bonus = rawBonus + characteristic.unnatural + (name === 'strength' ? cyberStrengthBonus : 0);
 
             // RT 1e: Fatigue does NOT halve characteristics (that was a DH carryover —
@@ -407,10 +414,14 @@ export class RogueTraderAcolyte extends RogueTraderBaseActor {
         this._computeInitiative();
         // RT 1e: maximum Wounds = the rolled/stored base plus any additive effect
         // modifier (effect-addressable via system.wounds.modifier, mirroring Initiative —
-        // ENGINE-WOUNDS-MOD). wounds.max is a stored value (chargen/NPC-pipeline) and is
-        // not otherwise recomputed, so this fold-in is idempotent. Sound Constitution
-        // (RT Core p.111) writes system.wounds.modifier += 1 via an AE (stackable).
-        this.system.wounds.max = woundsMax(this.system.wounds.max, this.system.wounds.modifier);
+        // ENGINE-WOUNDS-MOD). Sound Constitution (RT Core p.111) writes system.wounds.modifier
+        // += 1 via an AE (stackable). Fold from the IMMUTABLE source base, not the live
+        // `wounds.max`: `_computeCharacteristics` runs twice per prepareData pass (pre-AE here,
+        // post-AE inside super.prepareData), so reading the derived value would add `modifier`
+        // twice whenever it is present in source data. (BUG-Q-251.)
+        const srcWoundsMax = this._source?.system?.wounds?.max;
+        const woundsBase = srcWoundsMax == null ? this.system.wounds.max : srcWoundsMax;
+        this.system.wounds.max = woundsMax(woundsBase, this.system.wounds.modifier);
         // RT Damage state (RT Core p.262) — drives the natural-healing rate. Any Critical
         // Damage makes the character Critically Damaged regardless of remaining Wounds. (QA-093.)
         this.system.wounds.state = (this.system.wounds.critical > 0)

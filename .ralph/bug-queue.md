@@ -1071,14 +1071,14 @@ RT Core p.218 (Critical Hits): "If the number of Degrees of Success is equal to 
 - verify: confirmed: the fix correctly implements the rule from RT Core p.262 that Heavily Damaged characters heal 1 damage per week, meaning a single day recovers nothing. The previous pass correctly handles the Lightly Damaged 7*TB weekly bed rest scaling.
 
 ## BUG-Q-251 — Repeated `_computeCharacteristics` calls corrupt source modifiers for `wounds.max` and `characteristic.unnatural`
-- status: open
+- status: fixed
 - found-by: Antigravity/Gemini
 - area: rules
 - severity: P0 (wrong result in play / state corruption)
 - evidence: `src/module/documents/acolyte.mjs:78` calls `this._computeCharacteristics()`, then at line 86 `super.prepareData()` triggers `RogueTraderBaseActor.prepareData()`, which calls `this._computeCharacteristics()` again within the same cycle. Lines 393 and 402 mutate `characteristic.unnatural` and `system.wounds.max` in place.
 - canon: Not a rule-book citation, but an architectural data-lifecycle law in Foundry VTT: derived data computed from source data must be idempotent within a single `prepareData` pass. 
 - gap: Because the pipeline does not restore `wounds.max` or `characteristic.unnatural` to their pre-mutation source values between the first and second calls, the second call treats the *already-mutated* value as the source data. If an NPC has a non-zero `characteristic.modifier` (or `system.wounds.modifier`) in its source data, the first pass scales the unnatural extra/adds the wound modifier. On the second pass, `unnaturalExtra()` misinterprets the now-larger `bakedUnnatural` value, fails the `baselineBonus * (mult - 1) !== bakedUnnatural` mathematical check, and permanently aborts scaling for any further Active Effect modifiers. Likewise, `woundsMax()` double-counts any hardcoded `wounds.modifier`.
-- fix: 
+- fix: `acolyte.mjs:390` now reads the pre-baked Unnatural extra from `this._source.system.characteristics[name].unnatural` (immutable source) instead of the live, already-derived `characteristic.unnatural`; `acolyte.mjs:413` folds `wounds.modifier` onto `this._source.system.wounds.max` (nullish-guarded fallback to live) instead of the live `wounds.max`. Both fold-ins are now idempotent across the two `_computeCharacteristics` calls per prepareData pass (pre-AE in acolyte.prepareData + post-AE inside super.prepareData). Added regression test `tests/chargen/idempotent_source_fold.test.mjs` (source-driven double-fold is stable; buggy live-driven fold double-counts / aborts). Gate green (build:check exit 0; npm test 291 pass). LIVE-VERIFIED on rt-smoke (`/tmp/verify_bug_q_251{,b}.py`, page-context `Actor.create` + AE): (1) source wounds{max:10, modifier:2} → wounds.max=12 (old double-fold=14); (2) baked Unnatural(x2) Toughness base40+mod10, AE +10 (total 60) → unnatural=6, bonus=12 (old aborted scaling=5/11).
 - verify: 
 
 ## BUG-Q-252 — Encumbered penalty is erroneously multiplied by Lightning Reflexes for Initiative
