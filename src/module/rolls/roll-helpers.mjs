@@ -739,6 +739,26 @@ export function hasUnnaturalSpeed(traits) {
 }
 
 /**
+ * RT Core p.368 Half Move. The Size trait is explicit about ordering: "When calculating a
+ * creature's movement, apply the size modifier first, and then other modifiers from other
+ * Traits or talents. Base movement can never be reduced below 1." So the size modifier
+ * (`size − 4`, Average = 4 ⇒ +0) is added to the Agility Bonus FIRST, and only then do the
+ * trait multipliers scale that adjusted total — Quadruped (×2/×3/×4) then Unnatural Speed (×2).
+ * Applying the multiplier before the size add (as the code did pre-BUG-Q-241) mis-scaled every
+ * Quadruped-with-Size creature. Floored at 1. (QA-076/077/141, BUG-Q-241.)
+ * @param {number} agBonus     movement Agility Bonus (already encumbrance/Unnatural-adjusted)
+ * @param {number} size        Size-trait value (Average = 4)
+ * @param {number} moveMult    Quadruped multiplier (1 when not a Quadruped)
+ * @param {boolean} unnaturalSpeed  doubles the whole base after the size add
+ * @returns {number} Half Move in metres (≥ 1)
+ */
+export function baseHalfMove(agBonus, size, moveMult = 1, unnaturalSpeed = false) {
+    let base = (agBonus + (size - 4)) * moveMult;
+    if (unnaturalSpeed) base *= 2;
+    return Math.max(1, base);
+}
+
+/**
  * RT Core p.142 Weapon Training — using a weapon without the matching Weapon Training
  * talent is a −20 WS/BS penalty. Returns −20 (untrained) or 0. Honours the "(Universal)"
  * wildcard and the Flame/Exotic/Thrown groups; permissive (no penalty on unknown class).

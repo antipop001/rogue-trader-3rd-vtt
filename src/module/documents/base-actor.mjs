@@ -1,7 +1,7 @@
 import { prepareSimpleRoll } from '../prompts/simple-prompt.mjs';
 import { SimpleSkillData } from '../rolls/action-data.mjs';
 import { toCamelCase } from '../handlebars/handlebars-helpers.mjs';
-import { quadrupedMoveMultiplier, hasUnnaturalSpeed } from '../rolls/roll-helpers.mjs';
+import { quadrupedMoveMultiplier, hasUnnaturalSpeed, baseHalfMove } from '../rolls/roll-helpers.mjs';
 
 export class RogueTraderBaseActor extends Actor {
 
@@ -150,13 +150,15 @@ export class RogueTraderBaseActor extends Actor {
         const rawAgBonus = Math.floor((agility.total ?? 0) / 10);
         const encPenalty = this.encumbrance?.encumbered ? 1 : 0;
         const agBonus = Math.max(0, rawAgBonus - encPenalty);
-        let base = agBonus * moveMult + size - 4;
-        // Unnatural Speed (RT Core p.366): double the Agility Bonus for movement, applied
-        // AFTER the size modifier — so double the whole base. (QA-077.)
-        if (hasUnnaturalSpeed(this.items.filter((i) => i.type === 'trait'))) base *= 2;
-        // RT Core p.249: a character always has a minimum Half Move of 1 metre — small or
-        // very low-Agility actors never drop to 0/negative movement. (QA-076.)
-        base = Math.max(1, base);
+        // RT Core p.368: apply the size modifier to the Agility Bonus FIRST, then the trait
+        // multipliers (Quadruped, then Unnatural Speed) scale that adjusted total; floored at 1
+        // (a character always keeps a minimum Half Move of 1m). (QA-076/077, BUG-Q-241.)
+        const base = baseHalfMove(
+            agBonus,
+            size,
+            moveMult,
+            hasUnnaturalSpeed(this.items.filter((i) => i.type === 'trait')),
+        );
         this.system.movement = {
             half: base,
             full: base * 2,
