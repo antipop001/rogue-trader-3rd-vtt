@@ -966,7 +966,7 @@ RT Core p.218 (Critical Hits): "If the number of Degrees of Success is equal to 
 - verify: confirmed: the fix correctly implements RT Core p.368 RAW by applying the size modifier to the Agility Bonus before applying the Quadruped and Unnatural Speed multipliers. The `Math.max(1, base)` safely enforces the minimum movement rule.
 
 ## BUG-Q-242 — Backpack contents are incorrectly excluded from character's total encumbrance
-- status: fixed
+- status: verified
 - found-by: agy Gemini 3.1 Pro (High) · iter 8
 - area: rules
 - severity: P0 (wrong result in play)
@@ -974,7 +974,7 @@ RT Core p.218 (Critical Hits): "If the number of Degrees of Success is equal to 
 - canon: `/mnt/project_data/RT/RT-DOCS/CoreBook-1-200.pdf/markdown.md:7265` (RT Core p.141) — "A backpack can usually carry approximately 50 kilograms." The rules do not state that the weight of the backpack or its contents is negated for the character carrying it; it merely provides the physical capacity to carry items.
 - gap: Items placed inside a standard backpack (where `isCombatVest` is false) are added to `backpackCurrentWeight` but are completely excluded from `currentWeight`. Since the character's encumbrance limits are checked against `currentWeight`, the contents of the backpack are treated as completely weightless, granting free infinite encumbrance up to the backpack's max limit. The weight of items in a backpack must still count towards the character's overall carry weight.
 - fix: Real bug — RT has no weight-negation rule for backpacks (p.141 "~50 kilograms" is physical capacity; the ONLY explicit carry-weight exclusion in RT is power armour, p.230). `src/module/documents/acolyte.mjs:_computeEncumbrance` (~788) — removed the `if (isCombatVest)` gate that only folded backpack contents into `currentWeight` for combat vests; backpack contents now ALWAYS add to `currentWeight` while still being tracked separately against the backpack's own capacity (`backpack_value`/`backpack_max`). Gate green (build:check exit 0, node tests pass). Live-verified on rt-smoke via Playwright: acolyte + non-combat-vest backpack, one 10kg carried weapon + one 10kg backpacked weapon → encumbrance.value=20 (was 10 pre-fix), backpack_value=10 (still tracked separately).
-- verify: 
+- verify: confirmed: the fix correctly implements RT RAW by removing the `if (isCombatVest)` check, unconditionally adding the weight of the backpack's contents to the character's `currentWeight`. This ensures they count toward the character's encumbrance (as there is no weight-negation rule for backpacks, unlike Power Armour on RT Core p.141) while still properly tracking them against the backpack's own physical capacity.
 
 ## BUG-Q-243 — Data preparation methods improperly declared as async
 - status: open
