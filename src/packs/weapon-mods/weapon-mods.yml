@@ -1,6 +1,6 @@
 data:
     craftsmanship: common
-    availability: common
+    availability: Average
     weight: 0
     equipped: false
     inBackpack: false
@@ -39,7 +39,7 @@ type: weaponModification
 ---
 data:
     craftsmanship: common
-    availability: common
+    availability: Scarce
     weight: 0
     equipped: false
     inBackpack: false
@@ -69,7 +69,7 @@ type: weaponModification
 ---
 data:
     craftsmanship: common
-    availability: common
+    availability: Scarce
     weight: 0
     equipped: false
     inBackpack: false
@@ -99,7 +99,7 @@ type: weaponModification
 ---
 data:
     craftsmanship: common
-    availability: common
+    availability: Plentiful
     weight: 0
     equipped: false
     inBackpack: false
@@ -127,7 +127,7 @@ type: weaponModification
 ---
 data:
     craftsmanship: common
-    availability: common
+    availability: Scarce
     weight: 0
     equipped: false
     inBackpack: false
@@ -163,7 +163,7 @@ type: weaponModification
 ---
 data:
     craftsmanship: common
-    availability: common
+    availability: Very Rare
     weight: 0
     equipped: false
     inBackpack: false
@@ -194,7 +194,7 @@ type: weaponModification
 ---
 data:
     craftsmanship: common
-    availability: common
+    availability: Near Unique
     weight: 0
     equipped: false
     inBackpack: false
@@ -313,7 +313,7 @@ type: weaponModification
 ---
 data:
     craftsmanship: common
-    availability: common
+    availability: Scarce
     weight: 0
     equipped: false
     inBackpack: false
@@ -341,7 +341,7 @@ type: weaponModification
 ---
 data:
     craftsmanship: common
-    availability: common
+    availability: Plentiful
     weight: 0
     equipped: false
     inBackpack: false
@@ -370,7 +370,7 @@ type: weaponModification
 ---
 data:
     craftsmanship: common
-    availability: common
+    availability: Extremely Rare
     weight: 0
     equipped: false
     inBackpack: false
@@ -401,7 +401,7 @@ type: weaponModification
 ---
 data:
     craftsmanship: common
-    availability: common
+    availability: Average
     weight: 0
     equipped: false
     inBackpack: false
@@ -569,7 +569,7 @@ type: weaponModification
 ---
 data:
     craftsmanship: common
-    availability: common
+    availability: Plentiful
     weight: 0
     equipped: false
     inBackpack: false
@@ -654,7 +654,7 @@ type: weaponModification
 ---
 data:
     craftsmanship: common
-    availability: common
+    availability: Scarce
     weight: 0
     equipped: false
     inBackpack: false
@@ -683,7 +683,7 @@ type: weaponModification
 ---
 data:
     craftsmanship: common
-    availability: common
+    availability: Rare
     weight: 0
     equipped: false
     inBackpack: false
@@ -711,7 +711,7 @@ type: weaponModification
 ---
 data:
     craftsmanship: common
-    availability: common
+    availability: Very Rare
     weight: 0
     equipped: false
     inBackpack: false
@@ -739,7 +739,7 @@ type: weaponModification
 ---
 data:
     craftsmanship: common
-    availability: common
+    availability: Rare
     weight: 0
     equipped: false
     inBackpack: false
@@ -767,7 +767,7 @@ type: weaponModification
 ---
 data:
     craftsmanship: common
-    availability: common
+    availability: Very Rare
     weight: 0
     equipped: false
     inBackpack: false
@@ -903,7 +903,7 @@ type: weaponModification
 ---
 data:
     craftsmanship: common
-    availability: common
+    availability: Rare
     weight: 0
     equipped: false
     inBackpack: false
