@@ -955,7 +955,7 @@ RT Core p.218 (Critical Hits): "If the number of Degrees of Success is equal to 
 - verify:
 
 ## BUG-Q-241
-- status: fixed
+- status: verified
 - found-by: agy Gemini 3.1 Pro (High) · iter 3
 - area: movement / traits
 - severity: high
@@ -963,3 +963,4 @@ RT Core p.218 (Critical Hits): "If the number of Degrees of Success is equal to 
 - canon: `/mnt/project_data/RT/RT-DOCS/CoreBook-201-401.pdf/markdown.md:6810` (RT Core p.368) — Size trait: "When calculating a creatures movement, apply the size modifier first, and then other modifiers from other Traits or talents."
 - gap: The `base` movement calculation multiplies the Agility Bonus by the Quadruped trait multiplier (`moveMult`) *before* adding the size modifier. The canon rule explicitly requires the size modifier to be applied *first* (modifying the base AB), and then having multipliers like Quadruped scale that adjusted total. For example, a Quadruped (x2) Hulking (+1) creature with AB 3 currently computes as `3 * 2 + 1 = 7`, when it should be `(3 + 1) * 2 = 8`.
 - fix: Real bug — confirmed against RT Core p.368 Size trait ("apply the size modifier first, and then other modifiers from other Traits or talents"). Extracted a pure `baseHalfMove(agBonus, size, moveMult, unnaturalSpeed)` helper (roll-helpers.mjs:741) that adds the size modifier `(size − 4)` to the Agility Bonus FIRST, then applies the Quadruped multiplier, then Unnatural Speed ×2, floored at 1; base-actor.mjs:_computeMovement now delegates to it (replaced `agBonus * moveMult + size - 4`). Verified: `npm test` 282 pass (new tests/chargen/base_half_move.test.mjs asserts the ordering — Quadruped ×2 Hulking AB 3 = 8) + `npm run build:check` exit 0 + live on rt-smoke (Quadruped + Size 5 + AB 3 npc → movement.half 8, was 7).
+- verify: confirmed: the fix correctly implements RT Core p.368 RAW by applying the size modifier to the Agility Bonus before applying the Quadruped and Unnatural Speed multipliers. The `Math.max(1, base)` safely enforces the minimum movement rule.
