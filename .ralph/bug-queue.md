@@ -892,15 +892,14 @@ RT Core p.218 (Critical Hits): "If the number of Degrees of Success is equal to 
 - verify: 
 
 ## BUG-Q-235 — Lifting / Pushing weight derivation hardcodes exact *2/*4 multipliers, deviating from canon Table 9-33 for high TB+SB
-- status: fixed
+- status: verified
 - found-by: agy Gemini 3.1 Pro (High) · iter 1
 - area: `src/module/documents/acolyte.mjs` encumbrance
 - severity: medium
 - evidence: `_computeEncumbrance()` computes lifting weight as `this.encumbrance.max * 2` and pushing as `max * 4`. The comment claims "exact for SB+TB ≥ 1". However, for SB+TB = 10, carrying is 78kg. 78 * 2 = 156kg (table says 157kg), and 78 * 4 = 312kg (table says 315kg). For SB+TB = 14, carrying is 337kg. 337 * 2 = 674kg (table says 675kg), and 337 * 4 = 1348kg (table says 1,350kg).
 - canon: RT Core p.268 (Table 9-33: Carrying, Lifting & Pushing Weights). At sum 10, Lifting is 157 kg and Pushing is 315 kg. At sum 14, Lifting is 675 kg and Pushing is 1,350 kg.
 - fix: New pure helper `src/module/rules/encumbrance-helpers.mjs` tabulates all three Table 9-33 columns (Carrying/Lifting/Pushing) verbatim from RT Core p.268 (RT-DOCS CoreBook-201-401.pdf/markdown.md:3267-3289), keyed by SB+TB clamped to [0,20]. `acolyte.mjs:_computeEncumbrance()` now calls `carryingWeight()`/`liftingWeight()`/`pushingWeight()` (replacing the 66-line carrying switch + the off-canon `max*2`/`max*4` lifting/pushing derivation). Rows that the old shortcut got wrong (sums 0,8,9,10,12,14) now match canon. New node test `tests/chargen/encumbrance_weights.test.mjs` (all 21 rows + the deviating rows + clamp). Gate green (build:check exit 0, 259 node tests). Live-verified on rt-smoke via Playwright (deployed module/, imported encumbrance-helpers.mjs + created a real SB+TB=10 acolyte): helper rows 10/14/0/8/9/12 all canon; actor shows max=78, lifting=157, pushing=315 (was 156/312).
-- verify:
-
+- verify: confirmed: the fix correctly introduces tabulated values for carrying, lifting, and pushing weights exactly matching Table 9-33 on RT Core p.268. This resolves the deviations introduced by the previous x2/x4 multipliers. Safely clamps to the table's bounds ([0, 20]).
 ## BUG-Q-236 — Combat Reactions (`rollReaction`) and Parry tests (`rollSkill`) ignore Prone penalties
 - status: open
 - found-by: agy Gemini 3.1 Pro (High) · iter 1
