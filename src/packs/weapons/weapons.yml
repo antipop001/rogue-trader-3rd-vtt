@@ -71,7 +71,7 @@ data:
     range: 20
     rateOfFire:
         burst: 0
-        full: 0
+        full: 8
         single: 1
     reload: 4 Full
     source: Into the Storm, p.120
@@ -1717,15 +1717,15 @@ data:
     availability: Near Unique
     class: Basic
     clip:
-        max: 1
-        value: 1
+        max: 8
+        value: 8
     craftsmanship: Common
     damage: 1d10+5
     damageType: Energy
     description: 'Special: Accurate'
     equipped: false
     modifications: []
-    penetration: 1
+    penetration: 3
     range: 150
     rateOfFire:
         burst: 0
@@ -2124,8 +2124,8 @@ data:
     penetration: 4
     range: 60
     rateOfFire:
-        burst: 3
-        full: 0
+        burst: 0
+        full: 3
         single: 1
     reload: Full
     source: Into the Storm, p.120
@@ -2459,7 +2459,7 @@ data:
         value: 8
     craftsmanship: Common
     damage: 1d10+3
-    damageType: Impact
+    damageType: Explosive
     description: 'Special: Tearing, Shocking'
     equipped: false
     modifications: []
@@ -2541,26 +2541,24 @@ data:
     availability: Extremely Rare
     class: Basic
     clip:
-        max: 60
-        value: 60
+        max: 1
+        value: 1
     craftsmanship: Common
-    damage: 1d10+5
-    damageType: Explosive
+    damage: 1d10+2
+    damageType: Rending
     description: 'Storm Bolters arose from experiments in combining weapons together to achieve greater rates of fire. Here, two linked bolters form a single weapon which can shred most foes in a single burst. Rarely seen outside of the elite Astartes, most Storm Bolters are relic-weapons covered with glyphs and purity seals that speak of their ancient origin.'
     equipped: false
     modifications: []
-    penetration: '4'
-    range: '90'
+    penetration: 2
+    range: 10
     rateOfFire:
-        burst: 2
-        full: 4
+        burst: 0
+        full: 0
         single: 1
     reload: Full
     source: Rogue Trader Core Rulebook, p.119
     special:
-        storm: true
-        tearing: true
-    type: Bolt
+    type: Exotic
     weight: 9.0
 img: systems/rogue-trader-3rd/icons/items/buckets/basic-bolt.png
 name: Void Speargun
