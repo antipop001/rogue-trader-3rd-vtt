@@ -193,3 +193,13 @@ NotebookLM (full RT corebook) verbatim-confirmed: Melta is NOT a special quality
 
 ## BUG-Q-215 — Astropath Transcendent Perils mitigation (dice interpretation)
 RT Core p.159: an Astropath Transcendent "rolls an additional d10 when rolling on the Perils of the Warp table and may discard any one d10 for a more favourable result." Percentile dice are tens d10 + units d10; the extra d10 stands in for either. The engine (`astropathPerilsResult`) keeps the least-severe of the three readings — discard the extra (tens,units), extra→tens, or extra→units — and 00 reads as 100 (Destruction, the worst row, only chosen if no alternative). Interpretation for RT-rules review: this is the standard physical reading (extra die replaces the discarded one); a looser reading (freely reassigning any 2 of 3 dice to tens/units, 6 candidates) would be marginally more player-favourable but is not what the RAW says. Lower row = more favourable assumes the table is ascending in severity, which it is.
+
+## Cybernetics name typos (found by cybernetics_diff, 2026-07-01)
+Two pack cybernetics have misspelled names that are LOAD-BEARING (referenced by the chargen
+origin-path grants + tests/chargen/effect_wiring_audit.test.mjs) — renaming needs a coordinated
+update of the grant data + the test, so NOT changed in the data-QA pass:
+- "Auger Arrays" → should be "Augur Array" (RT Core Table 5-16; "Augur" = the RT sensor tech).
+- "Vitae Supplacement" → should be "Vitae Supplement" (ItS p.142 Autosanguine).
+Their availability values are CORRECT (Rare / Rare, verified vs source). Also note: the
+ship-components pack carries the same "Auger"→"Augur" typo across several sensor items — a
+separate future ship-components data pass.
