@@ -119,13 +119,14 @@ export function shootingIntoMeleePenalty(targetWaived, adjacentEnemies) {
 
 /**
  * The RT Damage state of a character (RT Core p.262). "Damage taken" is max Wounds minus
- * current Wounds; Critically Damaged means Damage in excess of Wounds (at/below 0). (QA-093.)
+ * current Wounds; Critically Damaged means Damage IN EXCESS of Wounds — i.e. current Wounds
+ * dropped below 0 (exactly 0 is damage EQUAL to Wounds, not in excess). (QA-093, BUG-Q-183.)
  * @returns {'Healthy'|'Lightly Damaged'|'Heavily Damaged'|'Critically Damaged'}
  */
 export function woundDamageState(currentValue, maxValue, toughnessBonus) {
     const cur = Number(currentValue) || 0;
     const damageTaken = Math.max(0, (Number(maxValue) || 0) - cur);
-    if (cur <= 0 && damageTaken > 0) return 'Critically Damaged';
+    if (cur < 0) return 'Critically Damaged';
     if (damageTaken <= 0) return 'Healthy';
     if (damageTaken <= 2 * (Number(toughnessBonus) || 0)) return 'Lightly Damaged';
     return 'Heavily Damaged';
@@ -144,8 +145,8 @@ export function woundDamageState(currentValue, maxValue, toughnessBonus) {
 export function woundRecovery(state, toughnessBonus, rest) {
     const tb = Math.max(0, Number(toughnessBonus) || 0);
     switch (state) {
-        case 'Lightly Damaged': return rest === 'day' ? tb : tb;        // bed-rest day = TB; a week ≥ that
-        case 'Heavily Damaged': return rest === 'week' ? tb : 1;        // 1/day passive, TB for a full week
+        case 'Lightly Damaged': return rest === 'day' ? tb : tb * 7;    // bed-rest day = TB; a week = 7 days of bed rest
+        case 'Heavily Damaged': return rest === 'week' ? tb : 0;        // heals 1/week only; a single day recovers nothing
         case 'Critically Damaged': return rest === 'week' ? 1 : 0;      // 1 Critical/week, day does nothing
         default: return 0;
     }
@@ -575,6 +576,48 @@ export function quadrupedMoveMultiplier(traits) {
 }
 
 /**
+ * RT Core p.364-366 movement-replacing traits. Flyer (N) and Hoverer (N) REPLACE the
+ * Agility-Bonus term of movement with their listed speed N ("This number replaces your
+ * agility bonus for Movement Actions"). Crawler moves at HALF the Agility Bonus. The
+ * number rides in the trait NAME across a range of formats seen in the bestiary packs —
+ * "Flyer (12)", "Hoverer 6", "Flyer (2) (Null gravity conditions only)", the multiplier
+ * form "Flyer (AB x2)", or a bare "Hoverer"/"Crawler" with no number. Trait-gated and
+ * engine-applied by name (NOT an AE — the value replaces the derived Agility Bonus, which
+ * an AE can't read); movement is fully computed in `_computeMovement` so this never
+ * double-counts. Flyer/Hoverer take precedence over Crawler when both are present.
+ * Returns:
+ *   - {mode:'flyer'|'hoverer', value:N}       — replace the Agility Bonus with N
+ *   - {mode:'flyer'|'hoverer', multiplier:N}  — multiply the Agility Bonus by N ("AB x2")
+ *   - {mode:'flyer'|'hoverer'}                — bare trait, no fixed speed (keep natural AgB)
+ *   - {mode:'crawler'}                        — halve the Agility Bonus
+ *   - {mode:null}                             — no movement-replacing trait
+ * @param {Array<{name?: string}>} traits  actor trait items
+ * @returns {{mode: ('flyer'|'hoverer'|'crawler'|null), value?: number, multiplier?: number}}
+ */
+export function movementTraitOverride(traits) {
+    if (!Array.isArray(traits)) return { mode: null };
+    let flyer = null;
+    let crawler = false;
+    for (const t of traits) {
+        const name = String(t?.name || '');
+        if (/^\s*(flyer|hoverer)\b/i.test(name)) {
+            const mode = /^\s*flyer/i.test(name) ? 'flyer' : 'hoverer';
+            // "(AB x2)"/"x2" is a multiplier on the Agility Bonus; a bare number replaces it.
+            const multMatch = name.match(/[x×]\s*(\d+)/i);
+            const numMatch = name.match(/(\d+)/);
+            if (multMatch) flyer = { mode, multiplier: Math.max(1, parseInt(multMatch[1], 10)) };
+            else if (numMatch) flyer = { mode, value: Math.max(0, parseInt(numMatch[1], 10)) };
+            else flyer = { mode };
+        } else if (/^\s*crawler\b/i.test(name)) {
+            crawler = true;
+        }
+    }
+    if (flyer) return flyer;
+    if (crawler) return { mode: 'crawler' };
+    return { mode: null };
+}
+
+/**
  * Unnatural Characteristic (RT Core p.368) multipliers. "Each time this Trait is
  * gained, select a Characteristic, and double its bonus. ... one selection multiplies
  * the Characteristic Bonus by ×2, two selections by ×3, and three selections by ×4."
@@ -611,6 +654,90 @@ export function unnaturalCharacteristicMultipliers(traits) {
         out[label] = Math.max(out[label] ?? 0, mult);
     }
     return out;
+}
+
+/**
+ * RT Core p.368 ("Unnatural Characteristics"): an Unnatural Characteristic (xN) multiplies
+ * the Characteristic Bonus by N, and — crucially — that multiplier applies to the CURRENT
+ * bonus, so it scales when the Characteristic is raised (the book's example: Strength 41 with
+ * Unnatural Strength (x2) → SB 8; raise to 51 → SB 10). Returns the *extra* additive Unnatural
+ * bonus (i.e. `liveRawBonus × (N − 1)`) to add on top of the natural bonus.
+ *
+ * Two sources of the multiplier:
+ *  - `traitMult` — parsed from an "Unnatural <Char> (xN)" trait item (≥2), used when no value is
+ *    pre-baked (the acolyte/creature-with-trait path).
+ *  - `bakedUnnatural` — the NPC pipeline pre-bakes the extra directly on the characteristic (no
+ *    trait item). Recover the implied multiplier from the intrinsic (un-buffed) bonus so it too
+ *    scales with live buffs, instead of staying locked to the baked figure. To guarantee zero
+ *    regression on existing NPC profiles, only scale when the derived multiplier cleanly
+ *    reproduces the baked extra at the intrinsic bonus; otherwise the baked figure is treated as
+ *    data noise and preserved verbatim.
+ *
+ * @param {number} traitMult      multiplier from an Unnatural trait item (≥2), else falsy/1
+ * @param {number} bakedUnnatural pre-baked additive extra on the characteristic (0 if none)
+ * @param {number} baselineBonus  Characteristic Bonus at the intrinsic value = floor((base+advance*5)/10)
+ * @param {number} liveRawBonus   current Characteristic Bonus = floor(total/10), incl. modifiers
+ * @returns {number} extra additive Unnatural bonus to add to the natural bonus
+ */
+export function unnaturalExtra(traitMult, bakedUnnatural, baselineBonus, liveRawBonus) {
+    if (bakedUnnatural > 0) {
+        if (baselineBonus <= 0) return bakedUnnatural;
+        const mult = Math.round((baselineBonus + bakedUnnatural) / baselineBonus);
+        if (mult < 2 || baselineBonus * (mult - 1) !== bakedUnnatural) return bakedUnnatural;
+        return liveRawBonus * (mult - 1);
+    }
+    const mult = traitMult >= 2 ? traitMult : 1;
+    if (mult < 2) return 0;
+    return liveRawBonus * (mult - 1);
+}
+
+/**
+ * RT Core p.368 ("Unnatural Characteristic"): "During Opposed Characteristic Tests, on a
+ * success, the bonus multiplier is added to the degree of success." So a side with an
+ * Unnatural (xN) governing Characteristic adds N to its Degrees of Success when it succeeds
+ * the opposed test (e.g. Feint, Knock-Down, Grapple). Returns 0 on a failure or with no
+ * Unnatural (multiplier < 2). The multiplier is recovered from the computed characteristic:
+ * `unnatural = rawBonus × (N − 1)` ⇒ `N = bonus / (bonus − unnatural)` (rounded — tolerant of
+ * a small flat cyber bonus baked into `bonus`).
+ *
+ * @param {number} bonus      the full characteristic bonus (raw + unnatural)
+ * @param {number} unnatural  the Unnatural additive extra (`characteristic.unnatural`)
+ * @param {boolean} success   whether this side succeeded the test
+ * @returns {number} DoS bonus to add (the multiplier N when Unnatural + success, else 0)
+ */
+export function unnaturalOpposedDoSBonus(bonus, unnatural, success) {
+    if (!success) return 0;
+    const un = Number(unnatural) || 0;
+    const b = Number(bonus) || 0;
+    if (un <= 0) return 0;
+    const rawBonus = b - un;
+    if (rawBonus <= 0) return 0;
+    const mult = Math.round(b / rawBonus);
+    return mult >= 2 ? mult : 0;
+}
+
+/**
+ * Recover the Unnatural multiplier (×N) of a Characteristic from its computed values. The
+ * NPC pipeline pre-bakes Unnatural into `characteristic.unnatural` (the additive extra =
+ * rawBonus × (N − 1)) rather than carrying a physical "Unnatural Agility" trait item, so the
+ * trait-scan (`unnaturalCharacteristicMultipliers`) misses it. Deriving from the baked
+ * additive works for BOTH baked NPCs and trait-carrying PCs (whose `.unnatural` is likewise
+ * folded into `.bonus`): `unnatural = rawBonus × (N − 1)` ⇒ `N = bonus / (bonus − unnatural)`
+ * (rounded — tolerant of a small flat cyber bonus baked into `bonus`). Returns 1 when there
+ * is no Unnatural component. (BUG-Q-249.)
+ *
+ * @param {number} bonus      the full characteristic bonus (raw + unnatural)
+ * @param {number} unnatural  the Unnatural additive extra (`characteristic.unnatural`)
+ * @returns {number} the multiplier N (≥2 when Unnatural, else 1)
+ */
+export function unnaturalMultiplierFromBaked(bonus, unnatural) {
+    const un = Number(unnatural) || 0;
+    const b = Number(bonus) || 0;
+    if (un <= 0) return 1;
+    const rawBonus = b - un;
+    if (rawBonus <= 0) return 1;
+    const mult = Math.round(b / rawBonus);
+    return mult >= 2 ? mult : 1;
 }
 
 /**
@@ -676,6 +803,29 @@ export function fellingToughnessBonus(toughnessBonus, unnatural, fellingLevel) {
  */
 export function hasUnnaturalSpeed(traits) {
     return Array.isArray(traits) && traits.some((t) => t?.name && /^\s*unnatural speed\b/i.test(t.name));
+}
+
+/**
+ * RT Core p.368 Half Move. The Size trait is explicit about ordering: "When calculating a
+ * creature's movement, apply the size modifier first, and then other modifiers from other
+ * Traits or talents. Base movement can never be reduced below 1." So the size modifier
+ * (`size − 4`, Average = 4 ⇒ +0) is added to the Agility Bonus FIRST, and only then do the
+ * trait multipliers scale that adjusted total — Quadruped (×2/×3/×4) then Unnatural Speed (×2).
+ * Applying the multiplier before the size add (as the code did pre-BUG-Q-241) mis-scaled every
+ * Quadruped-with-Size creature. Floored at 1. (QA-076/077/141, BUG-Q-241.)
+ * @param {number} agBonus     movement Agility Bonus (already encumbrance/Unnatural-adjusted)
+ * @param {number} size        Size-trait value (Average = 4)
+ * @param {number} moveMult    Quadruped multiplier (1 when not a Quadruped)
+ * @param {boolean} unnaturalSpeed  doubles the whole base after the size add
+ * @returns {number} Half Move in metres (≥ 1)
+ */
+export function baseHalfMove(agBonus, size, moveMult = 1, unnaturalSpeed = false) {
+    // Guard a missing/malformed size against propagating NaN into every movement rate;
+    // treat an unparseable size as Average (4 → +0 modifier). (BUG-Q-244.)
+    if (!Number.isFinite(size)) size = 4;
+    let base = (agBonus + (size - 4)) * moveMult;
+    if (unnaturalSpeed) base *= 2;
+    return Math.max(1, base);
 }
 
 /**

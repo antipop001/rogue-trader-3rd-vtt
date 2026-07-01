@@ -1,7 +1,7 @@
 import { prepareSimpleRoll } from '../prompts/simple-prompt.mjs';
 import { SimpleSkillData } from '../rolls/action-data.mjs';
 import { toCamelCase } from '../handlebars/handlebars-helpers.mjs';
-import { quadrupedMoveMultiplier, hasUnnaturalSpeed } from '../rolls/roll-helpers.mjs';
+import { quadrupedMoveMultiplier, hasUnnaturalSpeed, baseHalfMove, movementTraitOverride } from '../rolls/roll-helpers.mjs';
 
 export class RogueTraderBaseActor extends Actor {
 
@@ -43,15 +43,23 @@ export class RogueTraderBaseActor extends Actor {
     }
 
     get size() {
-        return Number.parseInt(this.system.size);
+        // Fall back to Average (4) when size is undefined/malformed (newly-initialised
+        // actors, edge-case migrations) so a NaN never propagates into _computeMovement
+        // and zeroes out every movement rate. (BUG-Q-244.)
+        const size = Number.parseInt(this.system.size);
+        return Number.isNaN(size) ? 4 : size;
     }
 
     get movement() {
         return this.system.movement;
     }
 
-    async prepareData() {
-        await super.prepareData();
+    prepareData() {
+        // Foundry's data-preparation pipeline is strictly synchronous — it does not
+        // await prepareData(). Declaring it async would return an unawaited Promise and
+        // let derived data (characteristics/movement) settle in a microtask after the
+        // engine has already read the actor. Keep this method synchronous. (BUG-Q-243.)
+        super.prepareData();
         this._computeCharacteristics();
         this._computeMovement();
     }
@@ -134,12 +142,13 @@ export class RogueTraderBaseActor extends Actor {
     _computeMovement() {
         let agility = this.characteristics.agility;
         let size = this.size;
+        const traits = this.items.filter((i) => i.type === 'trait');
         // Quadruped (RT Core p.366) scales the Agility-Bonus term of movement (×2 base,
         // ×3 six legs, ×4 eight legs); the size modifier stays additive. Trait-gated and
         // applied by name (NOT an AE — it scales the derived AgB, which an AE can't read),
         // so it never double-counts (movement is fully computed here, never baked).
         // ENGINE-UNNATURAL slice.
-        const moveMult = quadrupedMoveMultiplier(this.items.filter((i) => i.type === 'trait'));
+        let moveMult = quadrupedMoveMultiplier(traits);
         // Encumbered: reduce the Agility Bonus by 1 for movement rates (RT Core p.249,
         // "Encumbered Characters"). `encumbrance` is computed before the final movement pass
         // (acolyte prepareData); undefined for actors without a carry track. (QA-078.)
@@ -149,14 +158,33 @@ export class RogueTraderBaseActor extends Actor {
         // result below. (QA-141.)
         const rawAgBonus = Math.floor((agility.total ?? 0) / 10);
         const encPenalty = this.encumbrance?.encumbered ? 1 : 0;
-        const agBonus = Math.max(0, rawAgBonus - encPenalty);
-        let base = agBonus * moveMult + size - 4;
-        // Unnatural Speed (RT Core p.366): double the Agility Bonus for movement, applied
-        // AFTER the size modifier — so double the whole base. (QA-077.)
-        if (hasUnnaturalSpeed(this.items.filter((i) => i.type === 'trait'))) base *= 2;
-        // RT Core p.249: a character always has a minimum Half Move of 1 metre — small or
-        // very low-Agility actors never drop to 0/negative movement. (QA-076.)
-        base = Math.max(1, base);
+        let agBonus = Math.max(0, rawAgBonus - encPenalty);
+        // RT Core p.364-366 movement-replacing traits: Flyer (N)/Hoverer (N) REPLACE the
+        // Agility-Bonus term with their listed speed; Crawler moves at HALF the Agility Bonus
+        // ROUNDED UP (RT Core p.364: "half their Agility Bonus (rounded up)"). Flying does not
+        // use legs, so the Quadruped multiplier must NOT scale any Flyer/Hoverer movement —
+        // suppress it for the whole branch (fixed speed, AB-multiplier, and bare forms alike).
+        // (BUG-Q-253.)
+        const moveTrait = movementTraitOverride(traits);
+        if (moveTrait.mode === 'flyer' || moveTrait.mode === 'hoverer') {
+            moveMult = 1;
+            if (moveTrait.value != null) {
+                agBonus = moveTrait.value;
+            } else if (moveTrait.multiplier != null) {
+                agBonus = agBonus * moveTrait.multiplier;
+            }
+        } else if (moveTrait.mode === 'crawler') {
+            agBonus = Math.ceil(agBonus / 2);
+        }
+        // RT Core p.368: apply the size modifier to the Agility Bonus FIRST, then the trait
+        // multipliers (Quadruped, then Unnatural Speed) scale that adjusted total; floored at 1
+        // (a character always keeps a minimum Half Move of 1m). (QA-076/077, BUG-Q-241.)
+        const base = baseHalfMove(
+            agBonus,
+            size,
+            moveMult,
+            hasUnnaturalSpeed(traits),
+        );
         this.system.movement = {
             half: base,
             full: base * 2,

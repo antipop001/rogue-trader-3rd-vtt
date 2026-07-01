@@ -6,10 +6,12 @@ import { RogueTraderBaseActor } from './base-actor.mjs';
 import { ForceFieldData } from '../rolls/force-field-data.mjs';
 import { prepareForceFieldRoll } from '../prompts/force-field-prompt.mjs';
 import { DHBasicActionManager } from '../actions/basic-action-manager.mjs';
-import { degreesOfSuccess, degreesOfFailure, roll1d100, initiativeCharBonus, woundsMax, reactionBudget, canSpendReaction, unnaturalCharacteristicMultipliers, rapidReloadTime, doubleReloadTime, woundDamageState, woundRecovery } from '../rolls/roll-helpers.mjs';
+import { degreesOfSuccess, degreesOfFailure, roll1d100, initiativeCharBonus, woundsMax, reactionBudget, canSpendReaction, unnaturalCharacteristicMultipliers, unnaturalMultiplierFromBaked, unnaturalExtra, rapidReloadTime, doubleReloadTime, woundDamageState, woundRecovery } from '../rolls/roll-helpers.mjs';
 import { SYSTEM_ID } from '../hooks-manager.mjs';
 import { reactionsLocked } from '../rules/conditions.mjs';
 import { sustainedPsyPenalty } from '../rules/psychic.mjs';
+import { carryingWeight, liftingWeight, pushingWeight } from '../rules/encumbrance-helpers.mjs';
+import { effectiveArmourAP } from '../rules/armour-helpers.mjs';
 import { RogueTraderSettings } from '../rogue-trader-settings.mjs';
 
 const BASIC_SKILLS = new Set([
@@ -69,7 +71,9 @@ export class RogueTraderAcolyte extends RogueTraderBaseActor {
         return this.system.encumbrance;
     }
 
-    async prepareData() {
+    prepareData() {
+        // Synchronous — Foundry does not await prepareData(); see BUG-Q-243 note in
+        // RogueTraderBaseActor.prepareData.
         this._ensureOriginPath();
         this._computeCharacteristics();
         this._computeSkills();
@@ -78,11 +82,32 @@ export class RogueTraderAcolyte extends RogueTraderBaseActor {
         this._computeMovement();
         this._computeEncumbrance();
         this._computeWeaponReload();
-        await super.prepareData();
+        super.prepareData();
         // Active Effects apply during super.prepareData(); recompute skills
         // afterward so `skill.modifier` changes (e.g. Master Chirurgeon's
         // +10 Medicae) feed into `skill.current`.
         this._computeSkills();
+        // Active Effects can modify Strength/Toughness (e.g. a Machinator Array or a
+        // drug comedown), which change the carrying/lifting/pushing limits AND the
+        // `encumbered` flag. `_computeEncumbrance` ran pre-AE above, so recompute it
+        // here against the post-AE characteristics, then re-run `_computeMovement`
+        // (base `prepareData` already ran it once post-AE, but off the STALE pre-AE
+        // encumbrance) so the -1 Agility-Bonus movement penalty reflects the true
+        // encumbered state. (BUG-Q-246.)
+        this._computeEncumbrance();
+        // Initiative also takes the -1 Agility-Bonus encumbered penalty (RT Core p.249),
+        // but `initiative.bonus` was computed inside `_computeCharacteristics()` during
+        // super.prepareData() off the STALE pre-AE encumbrance flag — so re-run the
+        // idempotent initiative helper here against the refreshed flag. (BUG-Q-246 re-fix.)
+        this._computeInitiative();
+        this._computeMovement();
+        // Refresh ONLY the cached per-location `toughnessBonus` so it reflects the
+        // post-AE Toughness Bonus (e.g. a drug comedown's -20 Toughness). It was
+        // baked pre-AE above; assign-damage-data reads this cached value for soak.
+        // Rebuilding the whole `system.armour` here would wipe any AE that directly
+        // modified armour AP (e.g. `system.armour.body.value`), which apply during
+        // super.prepareData() on the object built pre-AE. (BUG-Q-245.)
+        this._refreshArmourToughnessBonus();
     }
 
     /**
@@ -204,9 +229,11 @@ export class RogueTraderAcolyte extends RogueTraderBaseActor {
         if ((skillName === 'dodge' || skillName === 'parry') && this.system.combat?.guardedAttack) {
             rollData.modifiers['Guarded Attack'] = 10;
         }
-        // A Prone character takes −20 to Dodge Tests (RT Core p.248). (BUG-Q-192.)
-        if (skillName === 'dodge' && this.statuses?.has?.('prone')) {
-            rollData.modifiers['Prone'] = -20;
+        // A Prone character takes −20 to Dodge Tests and −10 to Weapon Skill Tests;
+        // Parry is a WS Test (RT Core p.248). (BUG-Q-192, BUG-Q-236.)
+        if (this.statuses?.has?.('prone')) {
+            if (skillName === 'dodge') rollData.modifiers['Prone'] = -20;
+            else if (skillName === 'parry') rollData.modifiers['Prone'] = -10;
         }
         // Surface talents whose `flags.rt.conditionalBonuses` apply to this
         // skill or its driving characteristic, so the prompt can offer them
@@ -350,16 +377,24 @@ export class RogueTraderAcolyte extends RogueTraderBaseActor {
         for (const [name, characteristic] of Object.entries(this.characteristics)) {
             characteristic.total = characteristic.base + characteristic.advance * 5 + characteristic.modifier;
             const rawBonus = Math.floor(characteristic.total / 10);
-            // Derive `.unnatural` (the extra additive = rawBonus×(N−1)) from the trait, but
-            // SET-when-unset only: the NPC pipeline pre-bakes `.unnatural`, so recomputing
-            // it from the trait when a value is already present would double-apply
-            // (ENGINE-UNNATURAL-CHARS). Trait-gated/engine-applied by name — the matched
-            // trait must NOT also be given an AE. (Movement uses the unmodified AgB per
-            // RT Core p.368 — handled in _computeMovement, not here.)
-            if (!(characteristic.unnatural > 0)) {
-                const mult = unnaturalMults[String(characteristic.label ?? '').toLowerCase()];
-                if (mult >= 2) characteristic.unnatural = rawBonus * (mult - 1);
-            }
+            // Derive `.unnatural` (the extra additive = rawBonus×(N−1)). Two paths, both scaling
+            // with the LIVE bonus per RT Core p.368 (Unnatural multiplies the *current* bonus, so
+            // it grows when the Characteristic is raised): a trait item gives the multiplier when
+            // nothing is pre-baked; the NPC pipeline pre-bakes the extra directly (no trait item),
+            // from which `unnaturalExtra` recovers the implied multiplier and re-scales it — but
+            // only when it cleanly reproduces the baked figure, so existing NPC profiles are
+            // preserved verbatim (BUG-Q-237). Engine-applied by name — the matched trait must NOT
+            // also be given an AE. (Movement uses the unmodified AgB — handled in _computeMovement.)
+            const traitMult = unnaturalMults[String(characteristic.label ?? '').toLowerCase()];
+            const baselineBonus = Math.floor((characteristic.base + characteristic.advance * 5) / 10);
+            // Read the *pre-baked* Unnatural extra from immutable source, NOT from the (already
+            // derived) `characteristic.unnatural`. `_computeCharacteristics` runs twice per
+            // prepareData pass (once pre-AE here, once inside super.prepareData post-AE); reading
+            // the live value would make `unnaturalExtra` treat its own first-pass output as the
+            // baked figure on the second pass — failing the multiplier-recovery check and aborting
+            // scaling for any AE that raised the Characteristic between the two calls. (BUG-Q-251.)
+            const bakedUnnatural = Number(this._source?.system?.characteristics?.[name]?.unnatural) || 0;
+            characteristic.unnatural = unnaturalExtra(traitMult, bakedUnnatural, baselineBonus, rawBonus);
             characteristic.bonus = rawBonus + characteristic.unnatural + (name === 'strength' ? cyberStrengthBonus : 0);
 
             // RT 1e: Fatigue does NOT halve characteristics (that was a DH carryover —
@@ -372,33 +407,21 @@ export class RogueTraderAcolyte extends RogueTraderBaseActor {
         // Sustaining penalty only applies at TWO or more maintained powers, then equals the
         // total count (RT Core p.159); one sustained power has no penalty. (BUG-Q-221.)
         this.psy.currentRating = Math.max(0, this.psy.rating - sustainedPsyPenalty(this.psy.sustained));
-        // RT 1e: Initiative bonus = governing characteristic bonus + any additive
-        // modifier (effect-addressable via system.initiative.modifier so talents/gear
-        // like Paranoia "+2 Initiative" / Wary "+1" survive derived-data recompute).
-        // BUG-002. Lightning Reflexes (RT Core p.110) replaces the single AgB term with
-        // the raw Agility Bonus times (Unnatural multiplier + 1) — handled here by name
-        // since an AE can't read AgB; do NOT also give that talent an AE. ENGINE-INIT-EXTRA.
-        // BUG-Q-188: the multiplier scales off the actual Unnatural Agility level (×N → ×N+1),
-        // not a fixed ×3 — so it never under-counts an Unnatural Agility (×3)/(×4) creature.
-        const initChar = this.characteristics[this.initiative.characteristic];
-        const initUnnaturalMult = unnaturalMults[String(initChar.label ?? '').toLowerCase()] ?? 1;
-        // Encumbered: reduce the Agility Bonus by 1 for Initiative (RT Core p.249). Applied
-        // to the AgB INPUT so Lightning Reflexes doubles the already-reduced bonus. (QA-078.)
-        const initEncPenalty = this.encumbrance?.encumbered ? 1 : 0;
-        this.initiative.bonus =
-            initiativeCharBonus(
-                Math.max(0, Math.floor(initChar.total / 10) - initEncPenalty),
-                Math.max(0, initChar.bonus - initEncPenalty),
-                this.hasTalent('Lightning Reflexes'),
-                initUnnaturalMult,
-            )
-            + (this.system.initiative.modifier ?? 0);
+        // Initiative depends on the `encumbered` flag; extracted into an idempotent helper
+        // so it can be re-run after the post-AE `_computeEncumbrance()` in prepareData
+        // without re-running the (non-idempotent, wounds.max-folding) rest of this method.
+        // (BUG-Q-246.)
+        this._computeInitiative();
         // RT 1e: maximum Wounds = the rolled/stored base plus any additive effect
         // modifier (effect-addressable via system.wounds.modifier, mirroring Initiative —
-        // ENGINE-WOUNDS-MOD). wounds.max is a stored value (chargen/NPC-pipeline) and is
-        // not otherwise recomputed, so this fold-in is idempotent. Sound Constitution
-        // (RT Core p.111) writes system.wounds.modifier += 1 via an AE (stackable).
-        this.system.wounds.max = woundsMax(this.system.wounds.max, this.system.wounds.modifier);
+        // ENGINE-WOUNDS-MOD). Sound Constitution (RT Core p.111) writes system.wounds.modifier
+        // += 1 via an AE (stackable). Fold from the IMMUTABLE source base, not the live
+        // `wounds.max`: `_computeCharacteristics` runs twice per prepareData pass (pre-AE here,
+        // post-AE inside super.prepareData), so reading the derived value would add `modifier`
+        // twice whenever it is present in source data. (BUG-Q-251.)
+        const srcWoundsMax = this._source?.system?.wounds?.max;
+        const woundsBase = srcWoundsMax == null ? this.system.wounds.max : srcWoundsMax;
+        this.system.wounds.max = woundsMax(woundsBase, this.system.wounds.modifier);
         // RT Damage state (RT Core p.262) — drives the natural-healing rate. Any Critical
         // Damage makes the character Critically Damaged regardless of remaining Wounds. (QA-093.)
         this.system.wounds.state = (this.system.wounds.critical > 0)
@@ -431,6 +454,40 @@ export class RogueTraderAcolyte extends RogueTraderBaseActor {
             if (rc.dodge) rc.dodge.max = reactions.dodge + reactions.modifier;
             if (rc.parry) rc.parry.max = reactions.parry + reactions.modifier;
         }
+    }
+
+    /**
+     * Compute `system.initiative.bonus`. Idempotent (reads only source/derived inputs;
+     * writes only `initiative.bonus`), so prepareData re-runs it after the post-AE
+     * `_computeEncumbrance()` to pick up the true `encumbered` flag. (BUG-Q-246.)
+     *
+     * RT 1e: Initiative bonus = governing characteristic bonus + any additive modifier
+     * (effect-addressable via system.initiative.modifier so talents/gear like Paranoia
+     * "+2 Initiative" / Wary "+1" survive derived-data recompute). BUG-002. Lightning
+     * Reflexes (RT Core p.110) replaces the single AgB term with the raw Agility Bonus
+     * times (Unnatural multiplier + 1) — handled here by name since an AE can't read AgB;
+     * do NOT also give that talent an AE. ENGINE-INIT-EXTRA. BUG-Q-188: the multiplier
+     * scales off the actual Unnatural Agility level (×N → ×N+1), not a fixed ×3.
+     */
+    _computeInitiative() {
+        const unnaturalMults = unnaturalCharacteristicMultipliers(this.items.filter((i) => i.type === 'trait'));
+        const initChar = this.characteristics[this.initiative.characteristic];
+        const traitMult = unnaturalMults[String(initChar.label ?? '').toLowerCase()] ?? 1;
+        // NPCs pre-bake Unnatural into `characteristic.unnatural` (no trait item), so the
+        // trait-scan misses it — recover the multiplier from the baked additive too. (BUG-Q-249.)
+        const bakedMult = unnaturalMultiplierFromBaked(initChar.bonus, initChar.unnatural);
+        const initUnnaturalMult = Math.max(traitMult, bakedMult);
+        // Encumbered: reduce the Agility Bonus by 1 for Initiative (RT Core p.249). Applied
+        // to the AgB INPUT so Lightning Reflexes doubles the already-reduced bonus. (QA-078.)
+        const initEncPenalty = this.encumbrance?.encumbered ? 1 : 0;
+        this.initiative.bonus =
+            initiativeCharBonus(
+                Math.max(0, Math.floor(initChar.total / 10) - initEncPenalty),
+                Math.max(0, initChar.bonus - initEncPenalty),
+                this.hasTalent('Lightning Reflexes'),
+                initUnnaturalMult,
+            )
+            + (this.system.initiative.modifier ?? 0);
     }
 
     _computeSkills() {
@@ -697,32 +754,25 @@ export class RogueTraderAcolyte extends RogueTraderBaseActor {
                 });
             });
 
-        // object for storing the max armour and its craftsmanship per location
+        // object for storing the max EFFECTIVE armour per location
         let maxArmour = locations.reduce((acc, location) => Object.assign(acc, { [location]: 0 }), {});
-        let maxArmourCraft = locations.reduce((acc, location) => Object.assign(acc, { [location]: 'Common' }), {});
 
-        // for each item, find the maximum armour val per location
+        // For each worn item, find the highest EFFECTIVE AP per location. Best
+        // Craftsmanship's +1 AP (RT Core p.138) is folded into the comparison so
+        // it isn't lost when a Best piece ties the base AP of a lesser-craft piece
+        // (previously the first-processed craftsmanship won an equal-base tie).
         this.items
             .filter((item) => item.type === 'armour' )
             .filter((item) => item.system.equipped)
-            .reduce((acc, armour) => {
+            .forEach((armour) => {
+                const craft = armour.system.craftsmanship || 'Common';
                 locations.forEach((location) => {
-                    let armourVal = armour.system.armourPoints[location] || 0;
-                    armourVal = Number(armourVal);
-                    if (armourVal > acc[location]) {
-                        acc[location] = armourVal;
-                        maxArmourCraft[location] = armour.system.craftsmanship || 'Common';
+                    const armourVal = effectiveArmourAP(armour.system.armourPoints[location], craft);
+                    if (armourVal > maxArmour[location]) {
+                        maxArmour[location] = armourVal;
                     }
                 });
-                return acc;
-            }, maxArmour);
-
-        // Best craftsmanship armour: +1 AP — RT Core p.138
-        locations.forEach((location) => {
-            if (maxArmour[location] > 0 && maxArmourCraft[location] === 'Best') {
-                maxArmour[location] += 1;
-            }
-        });
+            });
 
         // `value` = worn armour AP (also the Best-craftsmanship reference). `total`
         // already holds traitBonus + cybernetic AP; the per-location `total += value`
@@ -739,6 +789,20 @@ export class RogueTraderAcolyte extends RogueTraderBaseActor {
         this.armour.body.total += this.armour.body.value;
         this.armour.leftLeg.total += this.armour.leftLeg.value;
         this.armour.rightLeg.total += this.armour.rightLeg.value;
+    }
+
+    /**
+     * Post-AE refresh of the cached per-location Toughness Bonus. The full
+     * `_computeArmour()` runs pre-AE so armour AP exists when Active Effects
+     * apply; re-running it post-AE would clobber any AE-modified armour AP.
+     * Instead, update just the `toughnessBonus` field that assign-damage-data
+     * reads for soak, so it tracks a post-AE Toughness change. (BUG-Q-245.)
+     */
+    _refreshArmourToughnessBonus() {
+        const tb = this.characteristics.toughness.bonus;
+        for (const location of Object.keys(this.system.armour ?? {})) {
+            this.system.armour[location].toughnessBonus = tb;
+        }
     }
 
     _computeWeaponReload() {
@@ -787,9 +851,12 @@ export class RogueTraderAcolyte extends RogueTraderBaseActor {
                 }
             });
 
-            if (this.backpack.isCombatVest) {
-                currentWeight += backpackCurrentWeight;
-            }
+            // RT Core p.141/p.267: a backpack provides physical capacity (~50 kg) but does
+            // NOT negate the weight of its contents for the wearer's own carry limit. The
+            // ONLY explicit carry-weight exclusion in RT is power armour (p.230). Backpack
+            // contents therefore always count toward the character's encumbrance AND are
+            // tracked separately against the backpack's own capacity. (BUG-Q-242.)
+            currentWeight += backpackCurrentWeight;
         } else {
             // No backpack -- add everything
             this.items.filter((item) => !item.isStorageLocation).forEach((item) => (currentWeight += item.totalWeight));
@@ -804,79 +871,13 @@ export class RogueTraderAcolyte extends RogueTraderBaseActor {
             backpack_value: backpackCurrentWeight,
             backpack_encumbered: false,
         };
-        switch (attributeBonus) {
-            case 0:
-                this.encumbrance.max = 0.9;
-                break;
-            case 1:
-                this.encumbrance.max = 2.25;
-                break;
-            case 2:
-                this.encumbrance.max = 4.5;
-                break;
-            case 3:
-                this.encumbrance.max = 9;
-                break;
-            case 4:
-                this.encumbrance.max = 18;
-                break;
-            case 5:
-                this.encumbrance.max = 27;
-                break;
-            case 6:
-                this.encumbrance.max = 36;
-                break;
-            case 7:
-                this.encumbrance.max = 45;
-                break;
-            case 8:
-                this.encumbrance.max = 56;
-                break;
-            case 9:
-                this.encumbrance.max = 67;
-                break;
-            case 10:
-                this.encumbrance.max = 78;
-                break;
-            case 11:
-                this.encumbrance.max = 90;
-                break;
-            case 12:
-                this.encumbrance.max = 112;
-                break;
-            case 13:
-                this.encumbrance.max = 225;
-                break;
-            case 14:
-                this.encumbrance.max = 337;
-                break;
-            case 15:
-                this.encumbrance.max = 450;
-                break;
-            case 16:
-                this.encumbrance.max = 675;
-                break;
-            case 17:
-                this.encumbrance.max = 900;
-                break;
-            case 18:
-                this.encumbrance.max = 1350;
-                break;
-            case 19:
-                this.encumbrance.max = 1800;
-                break;
-            case 20:
-                this.encumbrance.max = 2250;
-                break;
-            default:
-                this.encumbrance.max = 2250;
-                break;
-        }
-
-        // RT Core Table 9-33: Lifting Weight = 2× and Pushing Weight = 4× the Carrying
-        // Weight (the table is built on doubling; exact for SB+TB ≥ 1). (QA-079.)
-        this.encumbrance.lifting = this.encumbrance.max * 2;
-        this.encumbrance.pushing = this.encumbrance.max * 4;
+        // RT Core p.268 Table 9-33: Carrying, Lifting & Pushing Weights, keyed by SB+TB.
+        // The Lifting/Pushing columns are NOT a clean 2×/4× of Carrying at every row
+        // (e.g. sum 10 → 157/315, sum 14 → 675/1350), so the canon values are tabulated
+        // directly in encumbrance-helpers.mjs rather than derived. (QA-079, BUG-Q-235.)
+        this.encumbrance.max = carryingWeight(attributeBonus);
+        this.encumbrance.lifting = liftingWeight(attributeBonus);
+        this.encumbrance.pushing = pushingWeight(attributeBonus);
 
         if (this.encumbrance.value > this.encumbrance.max) {
             this.encumbrance.encumbered = true;
@@ -961,7 +962,16 @@ export class RogueTraderAcolyte extends RogueTraderBaseActor {
             }
         }
         let target = skill.current ?? 0;
+        // Any level of Fatigue imposes −10 to all Tests (RT Core p.251, BUG-004). Applies to
+        // both Dodge and Parry, mirroring rollSkill. (BUG-Q-247.)
+        if (this.system.fatigue?.value >= 1) target -= 10;
+        // Encumbered: −10 to movement-related Tests such as Dodge (RT Core p.249, QA-078).
+        // Parry is a WS Test, not movement-related, so it is unaffected — matches
+        // MOVEMENT_SKILLS in rollSkill. (BUG-Q-247.)
+        if (type === 'dodge' && this.encumbrance?.encumbered) target -= 10;
         if (this.system.combat?.guardedAttack) target += 10;   // Guarded Attack +10 (QA-071)
+        // A Prone character takes −20 to Dodge and −10 to Parry (a WS Test) (RT Core p.248). (BUG-Q-236.)
+        if (this.statuses?.has?.('prone')) target += (type === 'dodge' ? -20 : -10);
         const result = await this.rollCheck(target);
 
         // Power Field (RT Core p.142): on a successful Parry with a Power-Field weapon, there is

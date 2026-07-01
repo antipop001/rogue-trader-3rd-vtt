@@ -100,6 +100,7 @@ ${discovery_prompt}"
       echo "── discovery dry ($dry/$DRY_LIMIT) — no new findings ──" | tee -a .ralph/loop.log
       if [ "$dry" -ge "$DRY_LIMIT" ] && [ "$(open_count)" -eq 0 ]; then
         echo "agy-qa: discovery dry ${DRY_LIMIT}× with an empty queue — stopping (well is dry, no noise-filling)." | tee -a .ralph/loop.log
+        stopped_dry=1
         break
       fi
     else
@@ -129,6 +130,8 @@ done
 
 if [ -f .ralph/STOP ]; then
   echo "agy-qa halted: .ralph/STOP present after $i iteration(s)." | tee -a .ralph/loop.log
+elif [ "${stopped_dry:-0}" = "1" ]; then
+  echo "agy-qa halted: discovery dry (well exhausted) after $i iteration(s)." | tee -a .ralph/loop.log
 else
   echo "agy-qa halted: hit cap of $MAX_ITERS iteration(s)." | tee -a .ralph/loop.log
 fi

@@ -1,7 +1,8 @@
 import { PsychicRollData, RollData, WeaponRollData } from './roll-data.mjs';
 import { Hit, PsychicDamageData, scatterDirection, WeaponDamageData } from './damage-data.mjs';
-import { astropathPerilsResult, attackTalentExtraHits, degreesOfSuccess, degreesOfFailure, getOpposedDegrees, getOpposedDegreesWithTiebreak, isPsychicDoubles, roll1d100, sendActionDataToChat, stunDefenceBonus, uuid, voidshipWeaponHits, voidshipHullDamage } from './roll-helpers.mjs';
+import { astropathPerilsResult, attackTalentExtraHits, degreesOfSuccess, degreesOfFailure, getOpposedDegrees, getOpposedDegreesWithTiebreak, isPsychicDoubles, roll1d100, sendActionDataToChat, stunDefenceBonus, unnaturalOpposedDoSBonus, uuid, voidshipWeaponHits, voidshipHullDamage } from './roll-helpers.mjs';
 import { refundAmmo, useAmmo } from '../rules/ammo.mjs';
+import { sustainedPhenomenaBonus } from '../rules/psychic.mjs';
 import { DHBasicActionManager } from '../actions/basic-action-manager.mjs';
 import { conditionMeta, meleeAutoHitsHelpless } from '../rules/conditions.mjs';
 import { SYSTEM_ID } from '../hooks-manager.mjs';
@@ -82,7 +83,7 @@ export class ActionData {
         if (triggerPhenomena) {
             // Push makes the Phenomena roll progressively more dangerous (RT Core p.157 Table
             // 6-1): +5 per rating pushed for a Sanctioned psyker, +10 for a Renegade/Unsanctioned
-            // one. Sustaining other powers adds a further +10. The harder you Push, the worse the
+            // one. Sustaining other powers adds +10 per additional power. The harder you Push, the worse the
             // expected result. (QA-039.)
             let phenomBonus = 0;
             const psyClass = String(this.rollData.sourceActor.system?.psy?.class ?? '').toLowerCase();
@@ -97,8 +98,10 @@ export class ActionData {
                 // unmodified. (BUG-Q-229.)
                 if (renegade) phenomBonus += pr * 5;
             }
+            // RT Core p.159: +10 to the Phenomena result PER additional power
+            // maintained (not a flat +10). (BUG-Q-231.)
             const sustained = Number(this.rollData.sourceActor.system?.psy?.sustained ?? 0);
-            if (sustained > 0) phenomBonus += 10;
+            phenomBonus += sustainedPhenomenaBonus(sustained);
             const phenom = await drawFromTable('Psychic Phenomena', phenomBonus);
             const text = phenom ? `The warp convulses with energy! ${phenom}` : 'The warp convulses with energy! — roll Psychic Phenomena manually.';
             const modNote = phenomBonus ? ` [+${phenomBonus} to the roll]` : '';
@@ -137,18 +140,22 @@ export class ActionData {
             // side. Feint opposes Weapon Skill, Knock-Down opposes Strength (both sides use
             // the same Characteristic). (QA-106 / BUG-Q-218.)
             const charKey = this.rollData.opposedChar === 'S' ? 'strength' : 'weaponSkill';
+            // Unnatural Characteristic (RT Core p.368): on a success in an Opposed Characteristic
+            // Test the Unnatural multiplier is added to that side's Degrees of Success. (BUG-Q-238.)
+            const attackerChar = this.rollData.sourceActor?.characteristics?.[charKey];
+            const defenderChar = this.rollData.targetActor?.characteristics?.[charKey];
             const attacker = {
                 success: this.rollData.success,
-                dos: this.rollData.dos,
+                dos: this.rollData.dos + unnaturalOpposedDoSBonus(attackerChar?.bonus ?? 0, attackerChar?.unnatural ?? 0, this.rollData.success),
                 dof: this.rollData.dof,
-                bonus: this.rollData.sourceActor?.characteristics?.[charKey]?.bonus ?? 0,
+                bonus: attackerChar?.bonus ?? 0,
                 roll: this.rollData.roll?.total ?? 0,
             };
             const defender = {
                 success: rollCheck.success,
-                dos: this.rollData.opposedDos,
+                dos: this.rollData.opposedDos + unnaturalOpposedDoSBonus(defenderChar?.bonus ?? 0, defenderChar?.unnatural ?? 0, rollCheck.success),
                 dof: this.rollData.opposedDof,
-                bonus: this.rollData.targetActor?.characteristics?.[charKey]?.bonus ?? 0,
+                bonus: defenderChar?.bonus ?? 0,
                 roll: this.rollData.opposedRoll?.total ?? 0,
             };
             this.rollData.opposedNetDegrees = getOpposedDegreesWithTiebreak(attacker, defender);

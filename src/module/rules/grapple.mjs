@@ -1,4 +1,4 @@
-import { getOpposedDegrees } from '../rolls/roll-helpers.mjs';
+import { getOpposedDegrees, unnaturalOpposedDoSBonus } from '../rolls/roll-helpers.mjs';
 
 // Grappling (RT Core p.246) resolves through Opposed Strength Tests. This is a focused core of
 // the subsystem: START a grapple, then as the controller DAMAGE / THROW DOWN / PUSH the grappled
@@ -23,7 +23,12 @@ export async function rollGrapple(actor, opponent, option) {
     const oTotal = opponent.characteristics?.strength?.total ?? 0;
     const a = await actor.rollCheck(sTotal);
     const o = await opponent.rollCheck(oTotal);
-    const net = getOpposedDegrees(a.success, a.dos, a.dof, o.success, o.dos, o.dof);
+    // Unnatural Strength (RT Core p.368): on a success the Unnatural multiplier is added to the
+    // Degrees of Success of an Opposed Strength Test — so it feeds both the win comparison and the
+    // Push distance below. (BUG-Q-238.)
+    const aDos = a.dos + unnaturalOpposedDoSBonus(actor.characteristics?.strength?.bonus ?? 0, actor.characteristics?.strength?.unnatural ?? 0, a.success);
+    const oDos = o.dos + unnaturalOpposedDoSBonus(opponent.characteristics?.strength?.bonus ?? 0, opponent.characteristics?.strength?.unnatural ?? 0, o.success);
+    const net = getOpposedDegrees(a.success, aDos, a.dof, o.success, oDos, o.dof);
     const actorWins = net > 0;
 
     let outcome;
@@ -52,7 +57,7 @@ export async function rollGrapple(actor, opponent, option) {
                 // RT Core p.246 "Push Opponent": 1 metre + 1 per Degree of Success the ATTACKER
                 // scored — not the opposed net margin (which folds in the defender's failure and
                 // over-pushes vs a badly-failing opponent). actorWins ⇒ a.success. (BUG-Q-224.)
-                const metres = 1 + (a.success ? a.dos : 0);
+                const metres = 1 + (a.success ? aDos : 0);
                 outcome = `${actor.name} shoves ${opponent.name} <strong>${metres} metre(s)</strong> (up to ${actor.name}'s Half Move). ${actor.name} must move with them to keep the Grapple, or release to hold ground.`;
             } else outcome = `${opponent.name} holds their ground.`;
             break;

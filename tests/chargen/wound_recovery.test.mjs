@@ -9,13 +9,14 @@ test('QA-093: damage states by TB thresholds', () => {
     assert.equal(woundDamageState(15, 20, 4), 'Lightly Damaged'); // 5 taken <= 8
     assert.equal(woundDamageState(12, 20, 4), 'Lightly Damaged'); // 8 taken = 2*TB
     assert.equal(woundDamageState(11, 20, 4), 'Heavily Damaged'); // 9 taken > 8
-    assert.equal(woundDamageState(0, 20, 4), 'Critically Damaged'); // at 0
-    assert.equal(woundDamageState(-3, 20, 4), 'Critically Damaged'); // in excess
+    assert.equal(woundDamageState(0, 20, 4), 'Heavily Damaged'); // BUG-Q-183: exactly 0 = damage EQUAL to Wounds, not in excess → not Critical (heals normally)
+    assert.equal(woundDamageState(-3, 20, 4), 'Critically Damaged'); // in excess of Wounds
 });
 
 test('QA-092: recovery amounts per state + rest period', () => {
     assert.equal(woundRecovery('Lightly Damaged', 4, 'day'), 4);   // bed rest day = TB
-    assert.equal(woundRecovery('Heavily Damaged', 4, 'day'), 1);   // 1/day passive
+    assert.equal(woundRecovery('Lightly Damaged', 4, 'week'), 28); // a week = 7 days of bed rest = 7*TB
+    assert.equal(woundRecovery('Heavily Damaged', 4, 'day'), 0);   // heals 1/week only; a day recovers nothing
     assert.equal(woundRecovery('Heavily Damaged', 4, 'week'), 4);  // complete week = TB
     assert.equal(woundRecovery('Critically Damaged', 4, 'week'), 1); // 1 critical/week
     assert.equal(woundRecovery('Critically Damaged', 4, 'day'), 0);  // day insufficient

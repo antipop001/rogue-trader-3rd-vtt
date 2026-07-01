@@ -20,8 +20,11 @@ export class RogueTraderVoidship extends RogueTraderBaseActor {
         this.updateSource(initData)
     }
 
-    async prepareData() {
-        await super.prepareData();
+    prepareData() {
+        // Synchronous — see BUG-Q-243 note in RogueTraderBaseActor.prepareData.
+        // Space/power/component bonuses must be computed inline, not in a post-await
+        // microtask, so the sheet reads settled derived data.
+        super.prepareData();
         this._computeSpace();
         this._computePower();
         this._computeComponentBonuses();
