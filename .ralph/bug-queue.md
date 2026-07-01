@@ -933,7 +933,7 @@ RT Core p.218 (Critical Hits): "If the number of Degrees of Success is equal to 
 
 
 ## BUG-Q-239 — Best craftsmanship armour bonus is lost when evaluated against equal-base-AP armour
-- status: fixed
+- status: verified
 - found-by: agy Gemini 3.1 Pro (High) · iter 2
 - area: armour / rules
 - severity: P0 (wrong result in play)
@@ -941,4 +941,4 @@ RT Core p.218 (Critical Hits): "If the number of Degrees of Success is equal to 
 - canon: `/mnt/project_data/RT/RT-DOCS/CoreBook-1-200.pdf/markdown.md:6879` (RT Core p.138) — "Best: Best Craftsmanship Armour provides an extra Armour Point and weighs half the normal amount."
 - gap: The +1 AP from Best craftsmanship is applied conditionally *after* finding the maximum base AP value, and the tiebreaker logic ignores equal-base-AP items. This means a Best armour will tie with a Common armour of the same base AP, lose the tiebreak if evaluated second, and lose its +1 AP bonus, leaving the character with 3 AP instead of 4.
 - fix: New pure helper `effectiveArmourAP(base, craftsmanship)` in `src/module/rules/armour-helpers.mjs` (RT Core p.138) — returns base+1 for Best (only where base>0), else base. `acolyte.mjs:_computeArmour()` (:704-720) rewritten to select the winning worn piece per location by EFFECTIVE AP (Best +1 folded into the comparison) instead of raw base AP + a post-hoc craftsmanship tiebreak; removed the `maxArmourCraft` tracking and the separate Best +1 block. New node test `tests/chargen/armour_best_craftsmanship.test.mjs` (6 cases: Best +1, Common unchanged, Best-beats-Common tie, 0-coverage no bonus, undefined base, Good/Poor no bonus). Gate green (build:check exit 0, 277 node tests). Live-verified on rt-smoke (/tmp/verify_bugq239.py): actor with Common AP3 + Best AP3 body armour (Common processed FIRST) now yields body.value/total = 4 (was 3); helper returns Best3→4, Common3→3.
-- verify: 
+- verify: confirmed: properly fixes the ordering bug by folding the +1 AP into the effective max-comparison. The verbatim RT Core p.138 rule (actually at markdown.md:7152) is "Best armour weighs half the normal amount and increases the AP by 1"; the helper correctly isolates the AP increase while properly rejecting 0-coverage locations.
