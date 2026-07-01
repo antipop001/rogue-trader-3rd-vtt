@@ -15,10 +15,11 @@ export function shipInitiativeBonus(detection) {
     return Math.floor((Number(detection) || 0) / 10);
 }
 
-/** VUs moved by a Manoeuvre Action: full Speed, or half Speed (rounded down). Ships always move. */
+/** VUs moved by a Manoeuvre Action: full Speed, or half Speed (rounded UP — RT's default fractional
+ *  rounding, RT Core p.17). Ships always move. (BUG-Q-223.) */
 export function shipManoeuvreDistance(speed, fraction = 'full') {
     const s = Math.max(0, Number(speed) || 0);
-    return fraction === 'half' ? Math.floor(s / 2) : s;
+    return fraction === 'half' ? Math.ceil(s / 2) : s;
 }
 
 /** Max turn after moving: 90° for frigate-or-smaller hulls, 45° otherwise (RT Core p.214). */
@@ -171,7 +172,7 @@ export async function shipShootingCheck(ship, weapon) {
     return { ok: true, modifier: res.modifier };
 }
 
-/** Ramming dice by hull size (RT Core p.219): transport/raider 1d5, frigate 1d10, light cruiser 2d5, cruiser 2d10. */
+/** Ramming dice by hull size (RT Core p.219, verbatim): transport/raider 1d5, frigate 1d10, light cruiser 2d5, cruiser 2d10. */
 export function shipRamDice(shipType) {
     const t = String(shipType ?? '').toLowerCase();
     if (t.includes('cruiser') && t.includes('light')) return '2d5';

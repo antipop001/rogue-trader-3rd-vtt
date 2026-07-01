@@ -352,12 +352,13 @@ export function getVoidshipCriticalDamage(type, location) {
  * damage-past-Hull path) escalates to the Catastrophic Damage sub-table. Replaces the
  * homebrew Nonpen/Pen/Crit × component × d10 matrix (QA-043).
  * @param {number} [value] explicit chart index (crippled-ship damage-past-Hull); default 1d5.
+ * @param {number} [bonus] flat bonus added to a rolled 1d5 (e.g. Destructive +1, BFK p.35).
  * @returns {Promise<string>} the rolled critical-effect text
  */
-export async function drawShipCriticalResult(value = null) {
+export async function drawShipCriticalResult(value = null, bonus = 0) {
     const pack = game?.packs?.get('rogue-trader-3rd.tables');
     let n = value;
-    if (n == null) { const r = new Roll('1d5'); await r.evaluate(); n = r.total; }
+    if (n == null) { const r = new Roll('1d5'); await r.evaluate(); n = r.total + (Number(bonus) || 0); }
     if (!pack) return `Roll 1d5 (=${n}) on the Critical Hits to Starships chart.`;
     const idx = pack.index?.size ? pack.index : await pack.getIndex();
     const draw = async (name, v) => {

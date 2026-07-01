@@ -49,7 +49,10 @@ export async function rollGrapple(actor, opponent, option) {
             break;
         case 'push': {
             if (actorWins) {
-                const metres = 1 + Math.abs(net);
+                // RT Core p.246 "Push Opponent": 1 metre + 1 per Degree of Success the ATTACKER
+                // scored — not the opposed net margin (which folds in the defender's failure and
+                // over-pushes vs a badly-failing opponent). actorWins ⇒ a.success. (BUG-Q-224.)
+                const metres = 1 + (a.success ? a.dos : 0);
                 outcome = `${actor.name} shoves ${opponent.name} <strong>${metres} metre(s)</strong> (up to ${actor.name}'s Half Move). ${actor.name} must move with them to keep the Grapple, or release to hold ground.`;
             } else outcome = `${opponent.name} holds their ground.`;
             break;

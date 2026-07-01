@@ -163,6 +163,12 @@ export class AssignDamageData {
                 this.damageTaken = this.integrityDamage;
                 this.hasDamage = this.integrityDamage > 0;
             }
+
+            // Crack Shot / Crippling Strike add extra Critical Damage (QA-149).
+            if (this.hasCriticalDamage && Number(this.hit?.criticalDamageBonus) > 0) {
+                this.integrityCritical += Number(this.hit.criticalDamageBonus);
+            }
+
             if (this.integrityCritical > 0) {
                 // Cumulative chart (ItS Table 5-2): index by the vehicle's TOTAL critical damage.
                 const cumulative = (Number(this.actor.system.integrity?.critical) || 0) + this.integrityCritical;
@@ -181,14 +187,21 @@ export class AssignDamageData {
             // legs concealed, so only Body/Leg hits are intercepted. (QA-111.)
             const coverAp = Number(this.actor.system?.combat?.cover?.ap) || 0;
             const struckLoc = String(this.hit?.location ?? '').replace(/\s/g, '').toUpperCase();
+            let penToArmour = totalPenetration;
             if (coverAp > 0 && ['BODY', 'LEFTLEG', 'RIGHTLEG'].includes(struckLoc)) {
-                const effectiveCover = Math.max(0, coverAp - totalPenetration);
+                // Cover absorbs by its Armour Points — and a Primitive weapon doubles those too
+                // (RT Core p.142, same as worn armour — BUG-Q-201). Penetration is spent against the
+                // cover layer FIRST; only the EXCESS carries to the target's own armour, so it is not
+                // counted twice (BUG-Q-206 — pen was previously subtracted from both cover AND armour).
+                const effCoverAp = this.hit.primitive ? coverAp * 2 : coverAp;
+                const effectiveCover = Math.max(0, effCoverAp - totalPenetration);
+                penToArmour = Math.max(0, totalPenetration - effCoverAp);
                 const excess = Math.max(0, totalDamage - effectiveCover);
                 this.coverApplied = true;
                 this.coverAp = coverAp;
                 this.coverAbsorbed = totalDamage - excess;
                 this.coverDegraded = excess > 0;
-                this.coverApAfter = excess > 0 ? Math.max(0, coverAp - 1) : coverAp;
+                this.coverApAfter = excess > 0 ? Math.max(0, coverAp - 1) : coverAp;  // erode the BASE AP
                 totalDamage = excess;
             }
 
@@ -199,8 +212,8 @@ export class AssignDamageData {
             if (this.hit.primitive && !this._armourIsPrimitive()) {
                 usableArmour = usableArmour * 2;
             }
-            // Reduce Armour by Penetration
-            usableArmour = usableArmour - totalPenetration;
+            // Reduce Armour by the Penetration NOT already spent on cover (BUG-Q-206).
+            usableArmour = usableArmour - penToArmour;
             if (usableArmour < 0) {
                 usableArmour = 0;
             }
@@ -266,7 +279,10 @@ export class AssignDamageData {
     // on the `Critical Hits to Starships` RollTable, not the homebrew penetration×component
     // matrix (QA-043). The struck component (if any) loses a hit point as engine tracking.
     async executeCritical(component) {
-        const result = await drawShipCriticalResult();
+        // Destructive weapons add +1 to the Critical Hits chart roll (Battlefleet Koronus
+        // p.35 — only when a crit is actually generated, which is the precondition here). (BUG-Q-213.)
+        const bonus = this.hit?.voidshipDestructive ? 1 : 0;
+        const result = await drawShipCriticalResult(null, bonus);
         const label = component?.name ? `${component.name}: ` : '';
         this.criticalEffect = this.criticalEffect
             ? `${this.criticalEffect}\n${label}${result}`

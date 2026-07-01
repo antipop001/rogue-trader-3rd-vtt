@@ -8,6 +8,7 @@ import {
     shipRangeBand,
     firingArcAllows,
     shipShootingResolution,
+    shipRamDice,
 } from '../../src/module/rules/ship-combat.mjs';
 
 test('QA-047: initiative bonus = tens digit of Detection', () => {
@@ -17,9 +18,10 @@ test('QA-047: initiative bonus = tens digit of Detection', () => {
     assert.equal(shipInitiativeBonus(undefined), 0);
 });
 
-test('QA-047: manoeuvre distance is full or half Speed (rounded down)', () => {
+test('QA-047: manoeuvre distance is full or half Speed (rounded UP — BUG-Q-223)', () => {
     assert.equal(shipManoeuvreDistance(7, 'full'), 7);
-    assert.equal(shipManoeuvreDistance(7, 'half'), 3);
+    assert.equal(shipManoeuvreDistance(7, 'half'), 4);   // RT default fractional rounding is up
+    assert.equal(shipManoeuvreDistance(8, 'half'), 4);
     assert.equal(shipManoeuvreDistance(0, 'full'), 0);
 });
 
@@ -47,6 +49,16 @@ test('QA-047: firing arc — prow=fore, beam weapons own arc, dorsal/keel any-bu
     assert.equal(firingArcAllows('dorsal', 'aft'), false);
     assert.equal(firingArcAllows('keel', 'starboard'), true);
     assert.equal(firingArcAllows('special', 'aft'), true);
+});
+
+test('BUG-Q-228: ram dice by hull (RT Core p.219 verbatim table)', () => {
+    assert.equal(shipRamDice('Jericho-class Transport'), '1d5');
+    assert.equal(shipRamDice('Hazeroth-class Raider'), '1d5');
+    assert.equal(shipRamDice('Sword-class Frigate'), '1d10');
+    assert.equal(shipRamDice('Dauntless-class Light Cruiser'), '2d5');
+    assert.equal(shipRamDice('Lunar-class Cruiser'), '2d10');
+    assert.equal(shipRamDice('Grand Cruiser'), '2d10');
+    assert.equal(shipRamDice(''), '1d5');
 });
 
 test('QA-047: shooting resolution combines arc eligibility + range band', () => {

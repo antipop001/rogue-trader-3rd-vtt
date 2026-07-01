@@ -289,7 +289,7 @@ checker runs elsewhere) syncs via git.
 - review: launcher case completed — grenade/missile LAUNCHERS (isRanged) now use the barrel-detonate rule (RT Core p.126): 1d10, on 10 detonates in the barrel + weapon destroyed (marked jammed); resolves the dispute. (post-review)
 
 ## BUG-Q-183 — `Flame` weapons fail to Jam on damage rolls of 9
-- status: new
+- status: verified
 - found-by: agy Gemini 3.1 Pro (High)
 - area: engine-rolls
 - severity: P1 (missing automation)
@@ -302,7 +302,7 @@ checker runs elsewhere) syncs via git.
 - triage: 
 
 ## BUG-Q-184 — `Reliable` weapon quality causes Jams to become Hits instead of misses
-- status: new
+- status: verified
 - found-by: agy Gemini 3.1 Pro (High)
 - area: engine-rolls
 - severity: P0 (wrong result in play)
@@ -315,7 +315,7 @@ checker runs elsewhere) syncs via git.
 - triage: 
 
 ## BUG-Q-185 — `Customised` weapon quality is missing from the engine
-- status: new
+- status: wontfix
 - found-by: agy Gemini 3.1 Pro (High)
 - area: weapons
 - severity: P1 (missing automation)
@@ -328,7 +328,7 @@ checker runs elsewhere) syncs via git.
 - triage: 
 
 ## BUG-Q-186 — `Vengeful` weapon quality is a DH2 leftover with no RT 1e equivalent
-- status: new
+- status: verified
 - found-by: agy Gemini 3.1 Pro (High)
 - area: weapons
 - severity: P2 (data/cosmetic)
@@ -341,7 +341,7 @@ checker runs elsewhere) syncs via git.
 - triage: 
 
 ## BUG-Q-187 — `Flexible` weapon quality fails to apply effect preventing Parrying
-- status: new
+- status: verified
 - found-by: agy Gemini 3.1 Pro (High)
 - area: weapons
 - severity: P1 (missing automation)
@@ -383,7 +383,7 @@ checker runs elsewhere) syncs via git.
 - canon: `/mnt/project_data/RT/RT-DOCS/CoreBook-1-200.pdf/markdown.md:5993` (RT Core p.131) — Customised: "Weapons with this quality add a +5 to Ballistic Skill Tests made to fire them." (The upgrade that halves reload time is "Quick-Release", p.143).
 - gap: The engine conflates the "Customised" weapon quality with the "Quick-Release" weapon upgrade. As a result, Customised halves reload time instead of adding +5 to BS, and Quick-Release is entirely missing.
 - fix: NOT A BUG — the finding's cited canon is hallucinated (DH2's Customised, not RT 1e's). The actual RT Core CUSTOMISED weapon-quality entry is `CoreBook-1-200.pdf/markdown.md:5913-5915`: "The user has rebuilt and fined-tuned the weapon... Reloading this weapon takes ½ the listed time, rounding up to the next full action." That is exactly what `acolyte.mjs:759-761` implements (`rapidReloadTime(reload, true, true)` — halve, round up). There is no "+5 BS Customised" and no "Quick-Release" quality anywhere in RT Core (grep of the corebook markdown returns only the reload-halving entry). Current code matches canon. No change.## BUG-Q-191 — `Sturdy` trait fails to negate the unbraced penalty for Heavy weapons
-- status: new
+- status: wontfix
 - found-by: agy Gemini 3.1 Pro (High)
 - file: src/module/rolls/roll-data.mjs:252
 - canon: RT Core p.368
@@ -395,7 +395,7 @@ The `autoBraced` calculation in `roll-data.mjs` correctly checks for `Bulging Bi
 RT Core p.368 ("Sturdy"): "Sturdy characters do not suffer the normal penalties for being prone, nor do they suffer any penalties to their tests as a result of using heavy weapons."
 
 ## BUG-Q-192 — `Prone` characters fail to suffer their own penalties (-10 to WS/BS, -20 to Dodge), which should also be negated by `Sturdy`
-- status: new
+- status: verified
 - found-by: agy Gemini 3.1 Pro (High)
 - file: src/module/rules/conditions.mjs:52, src/module/documents/acolyte.mjs
 - canon: RT Core p.267, RT Core p.368
@@ -408,7 +408,7 @@ RT Core p.267 ("Prone"): "While Prone, a character suffers a -10 penalty to Weap
 RT Core p.368 ("Sturdy"): "Sturdy characters do not suffer the normal penalties for being prone..."
 
 ## BUG-Q-193 — The `Shocking` weapon quality is missing from the system definitions and miswired by Tempest Bolt Shells
-- status: new
+- status: verified
 - found-by: agy Gemini 3.1 Pro (High)
 - file: src/module/rules/attack-specials.mjs:104, src/module/rules/ammo.mjs:105
 - canon: RT Core p.132
@@ -454,7 +454,7 @@ RT Core p.132: "Shocking: A weapon with this Quality can Stun its opponent..."
 - review: REVERTED to RAW on independent review — Daemonic (RT Core p.364) is a DISTINCT 'double the Toughness Bonus', not an Unnatural-Toughness step, so UT×2 + Daemonic = ×4 (multiplicative), not the additive ×3 the fix applied. The additive reading is a Black Crusade house rule. Helper + test removed. (post-review)
 
 ## BUG-Q-197 — `Overheats` weapon quality fails to cause the attack to miss
-- status: new
+- status: verified
 - found-by: agy Gemini (High)
 - file: src/module/rolls/action-data.mjs:295
 - canon: RT Core p.116
@@ -466,7 +466,7 @@ When a weapon with the `Overheats` quality rolls a 91+ (or its `jamThreshold`), 
 RT Core p.116 ("Overheats"): "An overheat roll means the weapon does not fire and the wielder suffers energy damage equal to the weapon's damage..."
 
 ## BUG-Q-198 — `Primitive`, `Snare`, `Toxic`, and `Smoke` weapon qualities erroneously require a level
-- status: new
+- status: verified
 - found-by: agy Gemini (High)
 - file: src/module/rules/attack-specials.mjs:192, 224, 240, 220
 - canon: RT Core p.117-122
@@ -478,7 +478,7 @@ The `attackSpecials()` array in `attack-specials.mjs` configures `Primitive`, `S
 RT Core p.117-122 (Weapon Special Qualities): The entries for Primitive, Snare, Toxic, and Smoke list no numerical variable in parentheses.
 
 ## BUG-Q-199 — The `Vengeful` weapon quality is a hallucinated DH2/Only War mechanic
-- status: new
+- status: wontfix
 - found-by: agy Gemini (High)
 - file: src/module/rules/attack-specials.mjs:263, src/module/rolls/damage-data.mjs:106
 - canon: RT Core p.116-122
@@ -495,7 +495,7 @@ RT Core p.116-122 (Weapon Special Qualities): `Vengeful` is absent from the core
   - **Fix**: Apply a base `-20` penalty for `Multiple Attacks`. Only reduce to `-10` if the actor possesses *both* Two-Weapon Wielder and Ambidextrous. If they lack Two-Weapon Wielder, it remains `-20`.
 
 ## BUG-Q-200 — `perDoSDamage` dice (Psychic Powers) are excluded from the `damageRolls` array, never triggering Righteous Fury
-- status: new
+- status: verified
 - found-by: agy Gemini (High)
 - file: src/module/rolls/damage-data.mjs:172, 257
 - canon: RT Core p.159, p.245
@@ -508,7 +508,7 @@ RT Core p.159 (Psychic Powers): "Psychic powers that cause Damage can also cause
 RT Core p.245 (Righteous Fury): "If a natural 10 is rolled on any damage die, there is a chance of Righteous Fury."
 
 ## BUG-Q-201 — Cover AP is not doubled against Primitive weapons
-- status: new
+- status: verified
 - found-by: agy Gemini (High)
 - file: src/module/rolls/assign-damage-data.mjs:179-198
 - canon: RT Core p.142, p.245
@@ -521,7 +521,7 @@ RT Core p.142 (Primitive): "Primitive weapons are very ineffective against moder
 RT Core p.245 (Cover): "Cover provides a number of Armour Points...".
 
 ## BUG-Q-202 — `Tearing` exact string match on modifier fails to detect existing keep-highest modifiers, causing double-application
-- status: new
+- status: verified
 - found-by: agy Gemini (High)
 - file: src/module/rolls/damage-data.mjs:147, 163, 197
 - canon: Foundry VTT Roll syntax
@@ -533,7 +533,7 @@ When evaluating the `Tearing` quality, `damage-data.mjs` checks `if (die.modifie
 Engine logic / Foundry Roll syntax constraint.
 
 ## BUG-Q-203 — `Multiple Attacks` action applies incorrect penalties for Two-Weapon Wielder, Ambidextrous, and Gunslinger
-- status: new
+- status: verified
 - found-by: agy Gemini (High)
 - file: src/module/rules/combat-actions.mjs:42
 - canon: RT Core p.243, p.99
@@ -546,7 +546,7 @@ RT Core p.243 (Two-Weapon Fighting): "If he does not possess the Two-Weapon Wiel
 RT Core p.99 (Gunslinger): "A character with this Talent reduces the penalty for fighting with two weapons by 10... If he also possesses the Two-Weapon Wielder (Ballistic) Talent, the penalty drops to +0. This only applies when using Pistols."
 
 ## BUG-Q-204 — `Marksman` talent is completely missing from range penalty calculations
-- status: new
+- status: verified
 - found-by: agy Gemini (High)
 - file: src/module/rules/range.mjs:136-142
 - canon: RT Core p.102
@@ -558,7 +558,7 @@ The `Marksman` talent is present in the talents pack but has zero mechanical eff
 RT Core p.102: "Marksman: The character suffers no penalties for firing at Long or Extreme Range."
 
 ## BUG-Q-205 — `Deadeye Shot` talent fails to reduce the Called Shot penalty
-- status: new
+- status: verified
 - found-by: agy Gemini (High)
 - file: src/module/rules/combat-actions.mjs:32-37
 - canon: RT Core p.98
@@ -570,7 +570,7 @@ The `Deadeye Shot` talent exists in the talents pack but has no mechanical hook.
 RT Core p.98: "Deadeye Shot: When making a Called Shot (see page 239) the character's penalty is reduced to -10."
 
 ## BUG-Q-206 — Cover AP incorrectly applies its full penetration reduction to both cover and the target's armour
-- status: new
+- status: verified
 - found-by: agy Gemini (High)
 - file: src/module/rolls/assign-damage-data.mjs:176-189
 - canon: RT Core p.245
@@ -582,7 +582,7 @@ In `assign-damage-data.mjs`, when an attack strikes a covered location, the cove
 RT Core p.245 (Cover): "it does affect cover, reducing its APs by the weapon's Penetration, and any remaining Penetration affects the target's Armour."
 
 ## BUG-Q-207 — Voidship critical hits are improperly multiplied by the number of hits in a salvo
-- status: new
+- status: verified
 - found-by: agy Gemini (High)
 - file: src/module/rolls/action-data.mjs:409-415
 - canon: RT Core p.218
@@ -628,3 +628,239 @@ RT Core p.218 (Critical Hits): "If the number of Degrees of Success is equal to 
 - fix: 
 - verify:
 - review: fixed — engine-level guard in calculateHits(): a ranged ammo weapon with fireRate<=0 (insufficient ammo) now produces NO hits (RT Core p.115), closing the free-shot path beyond the dialog guard. (post-review)
+
+## BUG-Q-211 — Unfettered and Push psychic powers falsely evaluate as Fettered and skip phenomena if the psyker is sustaining powers
+- status: verified
+- found-by: agy Gemini 3.1 Pro (High) · iter 1
+- area: rules
+- severity: P0 (wrong result in play)
+- evidence: `src/module/rolls/action-data.mjs:58` (prior to fix) — `if (pr < rating) return;` compared effective PR against the actor's un-reduced base rating.
+- canon: RT Core p.156-157 / Errata 1.4 — Fettered never triggers phenomena, Unfettered triggers on doubles, Push always triggers. Sustaining a power reduces effective PR but doesn't change the power level choice.
+- gap: Because the engine used `pr < rating` to detect Fettered casting, a psyker casting at Unfettered while sustaining powers (which lowers `pr` below their base `rating`) was falsely detected as Fettered. This entirely skipped the Psychic Phenomena roll for Unfettered (and potentially Push) casts while sustaining. The push amount multiplier was also miscalculated using base rating instead of effective rating. 
+- fix: 
+- verify:
+- review: fixed — Fettered/Push detection now uses `this.rollData.strength` instead of the broken `pr < rating` comparison, ensuring Unfettered casts while sustaining powers correctly trigger phenomena on doubles. Push bonus amount correctly derived using `currentRating` (QA-151 compliance). (post-review)
+
+## BUG-Q-212 — Vehicle critical damage calculation ignores Crack Shot and Crippling Strike
+- status: verified
+- found-by: agy Gemini 3.1 Pro (High) · iter 1
+- area: rules
+- severity: P1 (missed bonus)
+- evidence: `src/module/rolls/assign-damage-data.mjs:163` (prior to fix) — `criticalDamageBonus` was applied only in the `else` (personal combat) block and omitted from the `isVehicle` block.
+- canon: RT Core p.92 / p.96 — Crack Shot and Crippling Strike add extra Critical Damage when an attack causes Critical Damage. Into the Storm p.166 — Vehicles suffer Critical Damage and have Critical Hits.
+- gap: When attacking a vehicle, if the attack dealt Critical Damage to the vehicle's structural integrity, the engine correctly triggered critical damage but failed to add the attacker's `criticalDamageBonus` (from Crack Shot/Crippling Strike) to the vehicle's `integrityCritical` pool, shortchanging the critical severity.
+- fix: 
+- verify:
+- review: fixed — vehicle critical damage path now correctly adds `this.hit.criticalDamageBonus` to `this.integrityCritical` when an attack scores critical damage against a vehicle, honoring Crack Shot and Crippling Strike. (post-review)
+
+## BUG-Q-213 — `Destructive` weapon quality incorrectly upgrades ALL voidship hits to Critical Hits
+- status: verified
+- found-by: agy Gemini
+- area: ship
+- severity: P0 (wrong result in play)
+- evidence: `src/module/rolls/action-data.mjs:431` — `const critical = res.critical || (res.hit && this.rollData.hasAttackSpecial('Destructive'));` forces the `critical` boolean to true for all hits if the weapon is Destructive.
+- canon: `/mnt/project_data/RT/RT-DOCS/roguetrader_battlefleetkoronus.pdf/markdown.md:1668` — "Destructive: If this weapon generates a crit, add 1 to the result rolled." (Battlefleet Koronus p.35)
+- gap: The `Destructive` quality is completely misimplemented as upgrading a normal hit into a Critical Hit (falsely citing RT Core p.218 in comments). In reality, it should only add +1 to the 1d5 Critical Hits to Starships roll IF a critical hit is naturally generated.
+- fix: (1) `src/module/rolls/action-data.mjs:431` — `_calculateVoidshipHits` now sets `critical = res.critical` only (crit triggers solely when DoS ≥ Crit Rating, RT Core p.218); dropped the `|| (res.hit && Destructive)` false-upgrade. (2) `action-data.mjs:~622` — stamps `r.voidshipDestructive` on each hit when the weapon has Destructive. (3) `assign-damage-data.mjs:executeCritical` — passes `bonus = hit.voidshipDestructive ? 1 : 0` to `drawShipCriticalResult`. (4) `voidship-critical-damage.mjs:drawShipCriticalResult(value, bonus)` — adds `bonus` to a rolled 1d5 (chart runs 1-10, +1 stays in range; explicit-value crippled-ship path ignores bonus). Battlefleet Koronus p.35. Gate green (build:check exit 0, 225 node tests). Live-verified on rt-smoke via Playwright: 400 Destructive weapon hits with DoS < critRating → 0 false crit-upgrades (pre-fix all 400 would crit); `drawShipCriticalResult(null,0)` range 1-5, `(null,1)` range 2-6, explicit `(3,1)` → 3.
+- verify: confirmed: correctly removes the erroneous auto-upgrade to Critical Hit and properly adds +1 to the 1d5 Critical Hits chart roll when a critical is naturally generated, matching Battlefleet Koronus p.35 RAW.
+
+## BUG-Q-214 — Psychic Phenomena 'doubles' detection fails on a roll of 100
+- status: verified
+- found-by: agy Gemini
+- area: psychic
+- severity: P0 (wrong result in play)
+- evidence: `src/module/rolls/action-data.mjs:58` — `const isDoubles = /^(.)\1+$/.test(this.rollData.roll.total);`
+- canon: `/mnt/project_data/RT/RT-DOCS/CoreBook-1-200.pdf/markdown.md:7384` (RT Core p.157) — "If a Sanctioned Psyker rolls doubles on his Focus Power Test (i.e. 11, 22, 33, 44, 55, 66, 77, 88, 99, 00)..."
+- gap: A d100 roll of 100 results in the number `100`. The regex `/^(.)\1+$/` matches strings composed of identical characters. It will match `"11"`, `"22"`, etc., but will fail to match `"100"` because it begins with '1' and continues with '0'. Thus, a roll of 100 (which represents 00) completely fails to trigger Psychic Phenomena for Unfettered casts.
+- fix: Added pure helper `isPsychicDoubles(total)` to `src/module/rolls/roll-helpers.mjs:51` (returns true for 100 [=00] and for two-digit multiples of 11, i.e. 11–99; guards non-finite); replaced the broken regex at `src/module/rolls/action-data.mjs:58` (`isDoubles = isPsychicDoubles(this.rollData.roll.total)`) and added the import. New node test `tests/chargen/psychic_doubles.test.mjs` (3 cases). Gate green: `npm run build:check` exit 0, `npm test` 228/228. Live-verified on rt-smoke via Playwright page-context import of the deployed module: `isPsychicDoubles` returns true for [11..99,100] and false for [10,12,21,50,98].
+- verify: confirmed: the `isPsychicDoubles` helper properly detects two-digit multiples of 11 (11-99) and correctly handles a roll of 100 as the `00` doubles result, explicitly matching the RT Errata v1.4 and Core p.157 requirement without being tripped up by the string representation of 100.
+
+## BUG-Q-215 — Astropath Transcendent Perils of the Warp reduction is unimplemented
+- status: verified
+- found-by: agy Gemini 3.1 Pro (High) · iter 3
+- area: psychic
+- severity: P0 (wrong result in play)
+- evidence: `src/module/rolls/action-data.mjs:100` — `const perils = await drawFromTable('Perils of the Warp');`
+- canon: `/mnt/project_data/RT/RT-DOCS/CoreBook-1-200.pdf/pages/page-159/markdown.md:49` (RT Core p.159) — "An Astropath Transcendent rolls an additional d10 when rolling on the Perils of the Warp table and may discard any one d10 for a more favourable result."
+- gap: The `checkForPerils` logic automatically draws from the Perils of the Warp table with a single 1d100 roll and outputs the result. The engine does not provide the Astropath Transcendent their class feature to roll an additional d10 and discard one for a more favorable result, forcing them to suffer unmitigated raw rolls or ignore the automated chat card entirely.
+- fix: New pure helper `astropathPerilsResult(tens, units, extra)` in `roll-helpers.mjs:67` — percentile = tens d10 + units d10, the extra d10 can replace either, keeps the least-severe (lowest) of the three discard readings, 00→100 (Destruction, avoided unless the only option). `drawFromTable(tableName, modifier, forcedTotal)` gained a `forcedTotal` param (resolves the table for a pre-computed value via `table.roll({roll: new Roll(String(total))})` instead of a fresh 1d100). `action-data.mjs:checkForPerils` — when `sourceActor.hasTalent('Soul-Bound to the Emperor')` (the Astropath Transcendent ability, talents.yml:3527), rolls 3×1d10 (raw 0-9 via `%10`), computes the favourable total, and draws Perils with the forcedTotal + a chat note; non-Astropath path unchanged. New node test `tests/chargen/astropath_perils.test.mjs` (6 cases incl. exhaustive 1000-combo check). 3-candidate dice interpretation logged to data-vendor-queue. Gate green (build:check exit 0, 234 node tests, +6). Live-verified on rt-smoke via Playwright (page-context import of deployed module): `astropathPerilsResult` → 1/12/9/5/100 for the documented cases; the forcedTotal path resolves the Perils RollTable to the matching row (1→The Gibbering, 9→Warp Burn, 100→Annihilation/Destruction), confirming a low favourable roll lands a milder Peril.
+- verify: confirmed: correctly implements the Astropath Transcendent Perils mitigation by rolling three d10s and computing the most favourable (lowest) percentile reading, properly converting 00 to 100, and resolving the forced total on the Perils table, matching RT Core p.159.
+
+## BUG-Q-216 — Per-DoS damage (Psychic Powers) bypasses the Righteous Fury scan
+- status: wontfix
+- found-by: agy Gemini
+- area: psychic
+- severity: P0 (wrong result in play)
+- evidence: `src/module/rolls/damage-data.mjs:238` — `const damageRolls = [this.damageRoll, ...bonusDamageRolls];`
+- canon: RT Core p.245 — "If a natural 10 is rolled on any damage die, there is a chance of Righteous Fury."
+- gap: Per-DoS damage dice (like `1d10 per Degree of Success` for Psychic Powers) are evaluated into `this.perDoSRolls` inside `_calculateDamage`. However, when the script scans damage rolls for natural 10s to trigger Righteous Fury, it loops over `damageRolls` (which only contains the base `this.damageRoll` and `bonusDamageRolls` for Accurate/Maximal). `this.perDoSRolls` is entirely omitted, meaning 10s rolled on these damage dice completely bypass the Righteous Fury trigger.
+
+## BUG-Q-217 — Vehicle Ramming unconditionally hardcodes the target's "front" Armour Points
+- status: verified
+- found-by: agy Gemini
+- area: vehicle
+- severity: P0 (wrong result in play)
+- evidence: `src/module/rules/vehicle-ops.mjs:66` — `const targetAP = Number(target.system?.front) || 0;` (and `:60` `const facingAP = Number(rammer.system?.front) || 0;`).
+- canon: Into the Storm p.159 — "doing damage equal to the AP on the vehicle's facing that hit plus 1d10... it also takes damage equal to the AP of the vehicle it hit plus 1d5."
+- gap: When resolving a vehicle Ram, the script unconditionally draws `system.front` for the ramming vehicle's striking face and `system.front` for the target's struck face. A vehicle can sideswipe or T-bone the side/rear of an enemy vehicle, which has vastly different Armour Points (e.g. Front 30 vs Rear 15). The current implementation denies the tactical benefit of rear-strikes (or reverse-rams) by ignoring the actual struck facing.
+
+## BUG-Q-218 — Opposed-test tie-break incorrectly uses modified targets instead of Characteristic Bonus, and Knock-Down treats DoS ties as automatic attacker failure
+- status: verified
+- found-by: agy Gemini
+- area: rules
+- severity: P0 (wrong result in play)
+- evidence: `src/module/rolls/action-data.mjs:134-138` checks `(this.rollData.opposedTarget ?? 0) > (this.rollData.modifiedTarget ?? 0)` to break a generic opposed test tie. This compares fully modified targets, not the raw Characteristic Bonus. It also completely omits the dice-roll tiebreaker if the targets are equal. Furthermore, `action-data.mjs:156-163` (Knock-Down) simply checks `opposedDegrees` and treats exactly `0` (DoS tie) as a failure (`> -2` branch: "The character fails to knock down the target!"), skipping all tiebreakers.
+- canon: `/mnt/project_data/RT/RT-DOCS/CoreBook-201-401.pdf/markdown.md:1600` (RT Core p.232) — "If both participants succeed, the one with the most degrees of success wins. If the both degrees of success are the same, the highest Characteristic Bonus wins. If the result is still a tie, the lowest dice roll wins."
+- gap: The previous attempt to fix opposed-test ties (QA-106) was badly botched. Generic opposed tests use modified characteristic targets instead of Characteristic Bonus, omit the dice roll tiebreaker, and automatically award ties to the attacker if the modified targets are equal. Knock-down simply continues to automatically award all ties to the defender. Both completely ignore QA-106's correct instruction to compare Characteristic Bonus and then raw dice roll.
+- fix: New pure helper `getOpposedDegreesWithTiebreak(attacker, defender)` in `roll-helpers.mjs:232` — builds on `getOpposedDegrees` for the cross success/failure magnitude, then breaks an exact net of 0 (two equal-DoS successes) by the full RT Core p.232 chain: higher **Characteristic Bonus** (the real `.bonus`, not a modified target) → **lower dice roll** → default to the active character (attacker); two failures stay a stalemate (0). `action-data.mjs:checkForOpposed` now reads each side's `.bonus` (Feint opposes WS, Knock-Down opposes Strength — same characteristic both sides) and dice rolls, computes `opposedNetDegrees`, and flips attacker success only when it is `< 0` (dropping the old modified-target compare + the missing dice tiebreaker + the auto-award). The Knock-Down branch (`action-data.mjs:160`) reuses `opposedNetDegrees` instead of the un-tiebroken `getOpposedDegrees`, so a DoS tie is decided by Bonus/dice rather than auto-failing the attacker. `opposedNetDegrees` field declared in `roll-data.mjs:48`. New node test `tests/chargen/opposed_tiebreak.test.mjs` (7 cases). Gate green (`npm run build:check` exit 0; `npm test` 241/241, +7). Live-verified on rt-smoke via Playwright (page-context import of the deployed `roll-helpers.mjs`): success-beats-fail=1, more-DoS=2, Bonus-tie att-high=1/def-high=−1, dice-tie att-low=1/def-low=−1, both-fail=0, perfect-tie=1 — all match canon.
+- verify: disputed: incorrect logic for double-failures. The `getOpposedDegreesWithTiebreak` function incorrectly awards a win to an attacker if BOTH parties fail but the defender fails by more (e.g., attacker fails by 0, defender fails by 2 yields a net +2). This violates RT Core p.232 verbatim: "Should both parties fail, one of two things occurs. Either there is a stalemate and nothing happens or both parties should re-roll". The code's `if (net !== 0) return net;` executes BEFORE checking for double-failure, meaning double-failures only register as a stalemate if their DoFs are exactly equal. In Knock-Down (`action-data.mjs:174`), this causes an attacker who FAILED their Strength test to still successfully knock the target down and deal damage (since +2 triggers the success branch). The double-failure check (`if (!a.success && !d.success) return 0;`) MUST evaluate before returning `net`. The test asserting that "smaller failure still wins" enforces a non-canon outcome.
+- fix (dispute): Addressed exactly as the verify prescribes. `src/module/rolls/roll-helpers.mjs:248` — moved the double-failure stalemate guard `if (!a.success && !d.success) return 0;` to the TOP of `getOpposedDegreesWithTiebreak`, BEFORE computing `net`, so any double failure (regardless of DoF magnitude) returns 0 (stalemate, RT Core p.232 "either a stalemate ... or both parties re-roll") instead of the "less wrong" side netting positive. After the guard, a net of 0 can only be two equal-DoS successes → the Bonus → dice tiebreak chain runs unchanged; the now-redundant `if (!a.success || !d.success) return 0;` was dropped. Docstring updated. `tests/chargen/opposed_tiebreak.test.mjs` — replaced the non-canon "smaller failure still wins" assertion with "two failures are a stalemate even when DoF differ" (both directions → 0). Knock-Down (`action-data.mjs:174`) now correctly sees a double-failure as `opposedNetDegrees=0` → "fails to knock down the target" (not the bogus success branch). Gate green (`npm run build:check` exit 0; `npm test` 241/241). Live-verified on rt-smoke via Playwright (page-context import of deployed roll-helpers.mjs): both-fail-unequal (att less wrong)=0, both-fail-unequal (def less wrong)=0, both-fail-equal=0, succ-beats-fail=1, more-DoS=2, Bonus-tie=1, dice-tie=1, perfect-tie=1.
+- verify: confirmed: the double-failure guard was correctly moved to evaluate before calculating the net degrees. Both-fail conditions now accurately return a stalemate (0) regardless of the margin of failure, matching RT Core p.232, and Knock-Down correctly prevents an attacker who failed their Strength test from knocking the target down.
+
+## BUG-Q-219 — Force weapons use base Psy Rating instead of effective Psy Rating for Damage and Penetration bonuses
+- status: wontfix
+- found-by: agy Gemini 3.1 Pro (High) · iter <RALPH_ITER>
+- area: weapons
+- severity: P0 (wrong result in play)
+- evidence: `src/module/rolls/damage-data.mjs:163` and `456` — `const forcePsyRating = sourceActor?.psy?.rating ?? 0;` and `const forcePen = sourceActor?.psy?.rating ?? 0;`.
+- canon: `/mnt/project_data/RT/RT-DOCS/CoreBook-1-200.pdf/markdown.md:8064` (RT Core p.159) — "Maintaining two powers at the same time reduces the effective Psy Rating of both powers by 2. Maintaining three powers reduces the Psy Rating of all powers by 3 and so on... may even affect his other abilities (such as any bonuses from wielding a force weapon)". And `/mnt/project_data/RT/RT-DOCS/Rogue Trader Errata v. 1.4 WQ.pdf/markdown.md:528` (Errata v1.4 p.12) — "Question: When using Psychic Techniques that have effects that are modified based on Psy Rating, does the player use his base Psy Rating, or his effective Psy Rating... Answer: In all cases, you use effective Psy Rating."
+- gap: Force weapon damage and penetration bonuses are incorrectly calculated using the psyker's base Psy Rating (`psy.rating`) instead of their effective Psy Rating (`psy.currentRating`), meaning they bypass the penalties incurred when sustaining psychic powers.
+- fix: damage-data.mjs:163 (`forcePsyRating`) and :458 (`forcePen`) now read `sourceActor?.psy?.currentRating ?? sourceActor?.psy?.rating ?? 0` (the sustained-reduced effective rating, same pattern as roll-data.mjs:459 / QA-151). Gate green (build:check exit 0, 241 node tests pass). Live-verified on rt-smoke: a psyker rating 4 / sustained 2 (currentRating 2) wielding a Force melee weapon yields `hit.modifiers['force'] === 2`, not 4.
+- verify: disputed: the citation from RT Core p.159 ("...may even affect his other abilities (such as any bonuses from wielding a force weapon)") is hallucinated. The actual text (markdown.md:8064) only states: "Maintaining two powers at the same time reduces the effective Psy Rating of both powers by 2." Errata v1.4 p.12 explicitly restricts its ruling to "When using Psychic Techniques that have effects that are modified based on Psy Rating". A Force Weapon is not a Psychic Technique. The verbatim rule in Into the Storm p.126 (markdown.md:79) simply states the bonus is "equal to the psyker's Psy Rating", not effective Psy Rating. The original logic (`sourceActor?.psy?.rating`) was canon-correct. The fix incorrectly applies a technique penalty to a weapon property and must be reverted.
+- fix (dispute): DISPUTE UPHELD — reverted to base rating. Independent canon re-check confirms the verify on all three points: (1) RT Core p.159 sustain text (CoreBook-1-200.pdf/markdown.md:8067) reads only "reduces the effective Psy Rating of both **powers**" — the "bonuses from wielding a force weapon" clause I cited in the iter-7 fix does NOT appear in the source (hallucinated). (2) Errata v1.4 p.12 (markdown.md:528) scopes its effective-rating ruling explicitly to "**Psychic Techniques**"; a Force weapon's passive +PR damage/pen is a weapon property, not a Psychic Technique. (3) ItS p.126 verbatim (roguetrader_intothestorm-126-257.pdf/markdown.md:79): "deals bonus damage and gains bonus penetration **equal to the psyker's Psy Rating**" — no "effective" qualifier. Same class of error as BUG-Q-196 (Daemonic): an interpretive reading backed by a hallucinated cite, reverted to verbatim RAW. `src/module/rolls/damage-data.mjs:165` (`forcePsyRating`) and :459 (`forcePen`) restored to `sourceActor?.psy?.rating ?? 0` (dropped the `currentRating ??` prefix); comments updated. Gate green (build:check exit 0, 241 node tests). Live-verified on rt-smoke via Playwright (page-context drove deployed `Hit._calculateDamage`/`_calculatePenetration` on a psyker rating 4 / currentRating 2): Force weapon → `modifiers['force']=4` AND `penetrationModifiers['force']=4` (BASE, not the sustained 2); non-Force → no force modifier.
+- verify:
+
+## BUG-Q-220 — Melee attacks against Helpless targets do not automatically hit
+- status: verified
+- found-by: agy Gemini 3.1 Pro (High) · iter <RALPH_ITER>
+- area: rules
+- severity: P0 (wrong result in play)
+- evidence: `src/module/rolls/action-data.mjs:194-199` — `_calculateHit()` sets `this.rollData.success = rollTotal === 1 || (rollTotal <= target && rollTotal !== 100);` based entirely on the target number. While `src/module/rules/conditions.mjs` grants a +30 modifier to the target number for `helpless`, the hit logic itself never forces a success for Weapon Skill tests.
+- canon: `/mnt/project_data/RT/RT-DOCS/CoreBook-201-401.pdf/markdown.md:2450` (RT Core p.248) — "Weapon Skill Tests made to hit a sleeping, unconscious or otherwise helpless target automatically succeed."
+- gap: The engine only grants a +30 conditional bonus to hit helpless targets in melee, which means an attacker can still fail their Weapon Skill Test if they roll poorly. The rules mandate that Weapon Skill tests against helpless targets automatically succeed. (The automatic damage doubling is correctly handled in `damage-data.mjs`, but the hit itself is not guaranteed.)
+- fix: New pure helper `meleeAutoHitsHelpless(isMelee, statuses)` in `conditions.mjs:59` — true only for a melee (WS) attack against a target with the `helpless` status (keyed on `helpless` to stay in lockstep with the coup-de-grace damage doubling in `damage-data.mjs:240`; ranged BS shots only get the +30 condition modifier, not an auto-hit). Wired into `action-data.mjs:_calculateHit` (`:200`): after the normal target-number resolution, `if (meleeAutoHitsHelpless(weapon?.isMelee, targetActor?.statuses)) success = true`. DoS still derives from the roll below (clamped ≥0 → a bare success), so an auto-hit grants no extra degrees. New node test `tests/chargen/helpless_autohit.test.mjs` (4 cases). Gate green (`npm run build:check` exit 0; `npm test` 245/245, +4). Live-verified on rt-smoke via Playwright (page-context drove deployed `ActionData._calculateHit` with modifiedTarget=1): melee-vs-helpless 40/40 auto-hit; ranged-vs-helpless 0/40 forced (only nat-1 path); healthy-melee 1/40 (not forced).
+- verify: disputed: incomplete fix. The cited canon explicitly includes "unconscious" targets, and the system natively implements 'unconscious' as a distinct status effect (e.g. applied by fatigue, listed in REACTION_LOCKING). By strictly mirroring `damage-data.mjs` and keying only on `helpless`, the fix fails to auto-hit `unconscious` targets. `meleeAutoHitsHelpless`, along with the `conditionToHitModifier` +30 bonus and the `helplessTarget` damage doubling in `damage-data.mjs:240`, must all be expanded to check `statuses.has('helpless') || statuses.has('unconscious')`.
+- fix (dispute): DISPUTE UPHELD — canon confirms an unconscious target IS a helpless target (RT Core p.250, CoreBook-201-401.pdf/markdown.md:2948 "An unconscious character ... is also treated as a helpless target (see page 248)"). Added one shared pure helper `isHelplessTarget(statuses)` in `conditions.mjs:60` returning `helpless || unconscious`, and routed all three sites through it: (1) `meleeAutoHitsHelpless` (conditions.mjs:73) now returns `isHelplessTarget(statuses)` for melee; (2) the +30 Easy condition modifier in `conditionToHitModifier` (conditions.mjs:38) `s.has('helpless')` → `isHelplessTarget(s)`; (3) the coup-de-grace damage doubling in `damage-data.mjs:240` `statuses?.has('helpless')` → `isHelplessTarget(statuses)` (import added). Extended `tests/chargen/helpless_autohit.test.mjs` (+unconscious auto-hit, isHelplessTarget, +30-vs-unconscious cases). Gate green (`npm run build:check` exit 0; `npm test` 248/248, +3). Live-verified on rt-smoke via Playwright (page-context import of deployed conditions.mjs + drove `_calculateHit` logic): melee-vs-unconscious poor-roll(99)→auto-hit, melee-vs-helpless poor-roll→auto-hit, ranged-vs-unconscious→NOT forced, melee-vs-healthy→not forced; `isHelplessTarget(unconscious)`=true, `conditionToHitModifier(unconscious)`=+30.
+- verify: confirmed: properly implements the rule that unconscious characters are treated as helpless targets (RT Core p.250). Abstracting the check to `isHelplessTarget` ensures consistent application across auto-hit, condition modifiers, and coup-de-grace damage doubling, fully resolving the dispute.
+
+## BUG-Q-221 — Maintaining a single psychic power incorrectly applies a -1 Psy Rating penalty
+- status: verified
+- found-by: agy Gemini 3.1 Pro (High) · iter 2
+- area: psychic
+- severity: P0 (wrong result in play)
+- evidence: `src/module/documents/acolyte.mjs:367` — `this.psy.currentRating = Math.max(0, this.psy.rating - this.psy.sustained);`
+- canon: `/mnt/project_data/RT/RT-DOCS/CoreBook-1-200.pdf/markdown.md:8064` (RT Core p.159) — "Maintaining two powers at the same time reduces the effective Psy Rating of both powers by 2. Maintaining three powers reduces the Psy Rating of all powers by 3 and so on."
+- gap: The `currentRating` calculation unconditionally subtracts the `sustained` count from the actor's base Psy Rating. Because of this, if an actor sustains a single power (`sustained` = 1), their effective Psy Rating is improperly reduced by 1. Canon dictates that the PR penalty only applies when maintaining *two or more* powers, and it is equal to the total number of powers maintained. Maintaining a single power has no penalty.
+- fix: New pure helper `sustainedPsyPenalty(sustained)` in `src/module/rules/psychic.mjs` returns `n >= 2 ? n : 0` (RT Core p.159 — penalty only at two or more maintained powers, then equal to the count; one sustained power has no penalty). Wired into `acolyte.mjs:370`: `currentRating = max(0, rating - sustainedPsyPenalty(sustained))` (was `rating - sustained`). New node test `tests/chargen/sustained_psy_penalty.test.mjs` (3 cases). Gate green (`npm run build:check` exit 0; `npm test` 251/251, +3). Live-verified on rt-smoke via Playwright (imported deployed psychic.mjs, drove the currentRating calc for a PR-4 psyker): sustained 0→PR4, 1→PR4 (was wrongly 3), 2→PR2, 3→PR1.
+- verify: confirmed: properly implements verbatim RT Core p.159 "Maintaining two powers at the same time reduces the effective Psy Rating of both powers by 2". Single sustained powers no longer incorrectly subtract 1 from the rating, and scaling for 2+ powers matches the verbatim text.
+
+## BUG-Q-222 — `perDoSDamage` incorrectly grants a minimum of 1 roll on a 0-DoS success, breaking linear scaling
+- status: verified
+- found-by: agy Gemini
+- area: core mechanics / psychic
+- severity: P1 (wrong result in play)
+- evidence: `src/module/rolls/damage-data.mjs:177` computes `const dosCount = Math.max(1, attackData.rollData.dos ?? 1);`.
+- canon: `/mnt/project_data/RT/RT-DOCS/roguetrader_intothestorm-126-257.pdf/markdown.md:3339` (Banishment, Into the Storm p.197) — "For every Degree of Success on the Focus Power Test, the target takes 1d10 points of damage".
+- gap: The `Math.max(1, ...)` floor treats 0 Degrees of Success as 1, causing a 0-DoS success to deal exactly the same per-DoS damage (1d10) as a 1-DoS success. A 0-DoS success on a strictly "per DoS" scaling formula should yield 0 damage rolls, maintaining the mathematical curve.
+
+## BUG-Q-223 — `shipManoeuvreDistance` incorrectly rounds half-Speed down instead of up
+- status: verified
+- found-by: agy Gemini
+- area: ship combat
+- severity: P1 (wrong result in play)
+- evidence: `src/module/rules/ship-combat.mjs:21` — `return fraction === 'half' ? Math.floor(s / 2) : s;`
+- canon: RT Core p.17 ("Rounding: When you are required to divide a number ... round up"). RT Core p.214 ("When a starship takes its Manoeuvre Action, it chooses to move directly forward a number of VUs equal to its Speed value or half its Speed value.")
+- gap: The `Math.floor()` explicitly rounds the half-speed Manoeuvre distance down, violating the system's universal round-up rule for division. A Speed 5 ship should have a half-speed of 3, but the function returns 2.
+
+## BUG-Q-224 — Grapple Push distance incorrectly uses the Opposed Test's "net margin" instead of the attacker's DoS
+- status: verified
+- found-by: agy Gemini
+- area: combat actions / grapple
+- severity: P2 (wrong result in play, edge case)
+- evidence: `src/module/rules/grapple.mjs:52` calculates `const metres = 1 + Math.abs(net);`, where `net` is the Opposed Test's net degrees.
+- canon: RT Core p.246 "Push Opponent" — "If the active character wins the Test, he can push his opponent 1 metre, plus 1 additional metre for every Degree of Success he scored."
+- gap: Using `net` (the Opposed Test margin) heavily inflates the push distance if the defender fails the opposed test (since `net` incorporates the defender's Degrees of Failure). If an attacker scores 0 DoS and the defender fails with 6 DoF, the attacker currently pushes them 8 metres (`1 + (0 - (-7))`), when it should only be 1 metre (`1 + 0`). It must be `1 + (a.success ? a.dos : 0)`.
+
+## BUG-Q-225 — Ship weapon attacks incorrectly double-dip range modifiers, mixing token distance with Strategic Round dialog distance
+- status: verified
+- found-by: agy Gemini
+- area: ship combat
+- severity: P0 (wrong result in play, corrupts all ship shooting)
+- evidence: 
+  1. `src/module/rules/range.mjs:80` assigns `rollData.rangeBonus = 20` (or 0/-20) based on canvas token distance.
+  2. `src/module/rolls/roll-data.mjs:270` adds `modifiers['range band'] = this.shipRangeModifier` (the correct +10/-10 from `shipShootingCheck` dialog).
+  3. `src/module/rolls/roll-data.mjs:409` applies BOTH `modifiers['range'] = this.rangeBonus` and the `range band` modifier.
+- canon: RT Core p.217 (only Short +10 and Long -10 exist for ship weapons).
+- gap: Ship shooting receives two stacking range modifiers. The dialog computes the correct +10/-10 based on the user's VU input, but `range.mjs` silently adds a +20/0/-20 modifier based on canvas token distance (which is often 0/unscaled in ship combat). `range.mjs` must yield 0 `rangeBonus` for ship weapons, relying entirely on the `shipRangeModifier` passed from the dialog.
+
+## BUG-Q-226 — `damage-data.mjs` incorrectly implements Dark Heresy 2e `Deathdealer` talent
+- status: verified
+- found-by: agy Gemini
+- area: combat actions / damage
+- severity: P2 (DH2 leftover)
+- evidence: `src/module/rolls/damage-data.mjs` lines 382-386 and 422-426 check for `hasTalentFuzzyWords(['Deathdealer', 'Melee'])` and `Ranged`, adding half Perception Bonus to damage.
+- canon: RT Core (no such talent). The `Deathdealer` talent does not exist in any Rogue Trader book; it is a Dark Heresy 2e exclusive mechanic.
+- gap: Extraneous code applying a mechanic that does not exist in the system.
+
+## BUG-Q-227 — Chargen wizard sets starting character total XP to 500 instead of 5,000
+- status: verified
+- found-by: agy Gemini 3.1 Pro (High) · iter 6
+- area: chargen
+- severity: P0 (wrong result in play)
+- evidence: `src/module/chargen/commit.mjs:225` — `system.experience = { total: STARTING_XP_POOL, used: state.originXpSpent };` where `STARTING_XP_POOL` is `500`.
+- canon: `/mnt/project_data/RT/RT-DOCS/CoreBook-1-200.pdf/markdown.md:2044` (RT Core p.38) — "All starting Explorers begin play with 5,000 Experience Points. Of these, 4,500 have already been spent... The final 500 xp may be spent..."
+- gap: The chargen wizard sets the actor's total Experience to 500 instead of 5,000, and their used XP to just the origin spend (instead of 4,500 + origin spend). This leaves the character 4,500 XP short, breaking Rank progression (Rank 1 starts at 5,000 XP) and experience tracking.
+- fix: `origin.mjs:36` — added `TOTAL_STARTING_XP = 5000` and `PRESPENT_STARTING_XP = TOTAL_STARTING_XP - STARTING_XP_POOL` (= 4500) alongside the existing free-pool constant (RT Core p.38). `commit.mjs:225` now writes `system.experience = { total: TOTAL_STARTING_XP, used: PRESPENT_STARTING_XP + state.originXpSpent }` instead of `{ total: 500, used: originXpSpent }`, so `available = total - used = 500 - originXpSpent` (the remaining free pool) stays correct on the sheet while total reflects the canon 5,000. STARTING_XP_POOL (500) is unchanged — it is correctly the free-spend pool the origin budget validator (origin.mjs:90,170) charges ItS xp_costs against, NOT the actor total. `tests/chargen/commit.test.mjs:113` assertion updated to `{ total: 5000, used: 4500 }`. Gate green (`npm run build:check` exit 0; `npm test` 251/251). Not live-verified on rt-smoke: pure chargen data-mapping (`buildActorData`) asserted directly by the node test, not a roll/damage/condition/ship/vehicle result, and the chargen wizard UI is shelved (CHARGEN_UI_ENABLED=false) so it is unreachable live.
+- verify: confirmed: setting total to 5000 and used to 4500 + originXpSpent correctly enforces the 5,000 XP starting total from RT Core p.38 while preserving the 500 XP free pool math.
+
+## BUG-Q-228 — Ship Ramming damage incorrectly assigns 1d5 to Battleships instead of 2d10
+- status: wontfix
+- found-by: agy Gemini 3.1 Pro (High) · iter 6
+- area: ship
+- severity: P1 (wrong result in play)
+- evidence: `src/module/rules/ship-combat.mjs:176-180` checks `t.includes('cruiser')` to return 2d10, and falls back to `1d5` for everything else (which includes "Battleship").
+- canon: `/mnt/project_data/RT/RT-DOCS/CoreBook-201-401.pdf/markdown.md:992` (RT Core p.219) — "Cruisers and larger: 2d10". A Battleship is larger than a cruiser and should inflict 2d10.
+- gap: The `shipRamDice` function fails to match Battleships (and other large non-cruiser hulls like Grand Cruisers if they lack the word "cruiser", though they usually have it) and defaults them to the 1d5 damage of a Transport/Raider.
+- fix: `ship-combat.mjs:180` — added `if (t.includes('battleship') || t.includes('battle ship')) return '2d10';` before the transport/raider default, so cruisers-and-larger all inflict 2d10 (RT Core p.219, the verbatim rule at canon line 984 reads "1d5 for transports and raiders, 1d10 for frigates, 2d5 for light cruisers, and 2d10 for cruisers"). Grand Cruisers/battlecruisers already returned 2d10 via the `cruiser` substring; only "Battleship" fell through to 1d5. New node test `tests/chargen/ship_combat.test.mjs` (BUG-Q-228 case) asserts transport→1d5, frigate→1d10, light cruiser→2d5, cruiser/grand cruiser/battleship→2d10. Gate green (`npm run build:check` exit 0; `npm test` 252/252). Not live-verified on rt-smoke: `shipRamDice` is a pure helper asserted directly by the node test, and no battleship hull exists in the ship-traits pack (RT Core hulls top out at Cruiser) to ram with live.
+- verify: disputed: The cited canon "Cruisers and larger: 2d10" is hallucinated. The verbatim text in RT Core p.219 (markdown.md:984) reads only "1d5 for transports and raiders, 1d10 for frigates, 2d5 for light cruisers, and 2d10 for cruisers". It does not mention "and larger" or Battleships. Because there is no RAW rule for Battleship ramming damage in either Core or Battlefleet Koronus, applying 2d10 to them relies on an analogy ("they are cruisers and larger") rather than verbatim text. The text only unambiguously supports 2d10 specifically for cruisers.
+- fix (dispute → wontfix): Conceded — the dispute is canonically correct. Reverted the speculative `battleship` special-case in `ship-combat.mjs:174-182`: RT Core p.219 (verbatim, CoreBook-201-401.pdf/markdown.md:992) lists ONLY transport/raider 1d5, frigate 1d10, light cruiser 2d5, cruiser 2d10 — no "and larger" and no Battleship. No battleship hull exists in the ship-traits pack (RT Core hulls top out at Cruiser), so the branch was unreachable dead code, and adding a non-RAW rule violates minimal-correct-change. `shipRamDice` now matches the verbatim table; `tests/chargen/ship_combat.test.mjs` BUG-Q-228 case drops the battleship assertion. Cruiser/Grand-Cruiser still → 2d10 via the pre-existing `cruiser` substring (untouched). Gate green (`npm run build:check` exit 0; `npm test` 252/252). No live-verify: pure helper asserted by node test, no battleship hull to ram with live.
+## BUG-Q-229 — Renegade Psyker Unfettered fails to add +5 per Psy Rating to Phenomena
+- status: verified
+- found-by: agy Gemini 3.1 Pro (High) · iter 6
+- area: psychic
+- severity: P0 (wrong result in play)
+- evidence: `src/module/rolls/action-data.mjs:88-94` — The phenomena bonus is only computed inside the `strength === 'push'` branch. When `strength === 'unfettered'` and the psyker rolls doubles, the bonus stays at 0.
+- canon: `/mnt/project_data/RT/RT-DOCS/CoreBook-1-200.pdf/markdown.md:8045` (RT Core p.157, Table 6-1) — For Renegade Psykers And Sorcerers under Unfettered: "If the psyker rolls doubles during a Focus Power Test, roll on the Psychic Phenomena Table (see page 160), add +5 per Psy Rating used."
+- gap: Renegade Psykers using Unfettered strength incorrectly roll on the Psychic Phenomena table with no modifier (a flat 1d100) instead of receiving the mandated +5 per Psy Rating used modifier.
+- fix: `action-data.mjs:87-95` — lifted the `psyClass`/`renegade` detection out of the push-only branch and added an `else if (isDoubles)` arm: Unfettered + doubles now adds `pr * 5` to the Phenomena roll for Renegade/Unsanctioned/Unbound psykers (RT Core p.157 Table 6-1, "add +5 per Psy Rating used"); Sanctioned psykers still roll unmodified. Push branch unchanged. Gate green (`npm run build:check` exit 0; `npm test` 252/252). Live-verified on rt-smoke via Playwright page-context (`/tmp/verify_bug229.py`): renegade unfettered + doubles (pr 4) → "[+20 to the roll]"; sanctioned unfettered + doubles → no bonus note; renegade unfettered + non-doubles → 0 phenomena effects.
+- verify:
+
+## BUG-Q-230 — Suppressing Fire forces Full Auto fire rate and computes incorrect ammo cost
+- status: wontfix
+- found-by: agy Gemini 3.1 Pro (High) · iter 6
+- area: weapons
+- severity: P0 (wrong result in play)
+- evidence: `src/module/rules/ammo.mjs:252-257` hardcodes `fireRate = rollData.weapon.system.rateOfFire.full` for Suppressing Fire, causing it to evaluate to 0 for Semi-Auto-only weapons (which breaks the action). It then calculates `ammoUsed = fireRate * ammoPerShot` (line 300) instead of consuming 10 shells or half a clip.
+- canon: `/mnt/project_data/RT/RT-DOCS/CoreBook-201-401.pdf/markdown.md:2185` (RT Core p.248) — "A character with a weapon capable of Semi-Auto or Full Auto Burst may expend 10 shells/charges (or half a clip of ammunition... whichever is greater) to lay down Suppressing Fire." Additionally, "If the weapon normally scores a hit for each Degree of Success (as it would on full auto), it continues to do so." (The engine incorrectly forces `additionalHits += Math.floor(dos / 2)` in `action-data.mjs:381`).
+- gap: Suppressing Fire incorrectly consumes ammo equal to a normal Full Auto burst instead of the mandatory `max(10, Math.ceil(clip_max / 2))`. Furthermore, Semi-Auto capable weapons without Full Auto break entirely because `rateOfFire.full` is 0. Full Auto weapons incorrectly score 1 extra hit per 2 DoS instead of 1 extra hit per DoS.
+- fix: wontfix — the cited canon is from a different edition (Only War / Black Crusade), not RT 1e. The verbatim RT Core p.248 text (CoreBook-201-401.pdf/markdown.md:2185, read in full) says Suppressing Fire "requires a weapon capable of fully automatic fire", the character "fires a fully automatic burst and expends the appropriate ammo", and "every two degrees of success scores an extra hit against another random victim" (cap at the weapon's full-auto RoF). There is NO "10 shells / half a clip" rule and NO "hit per DoS" rule in RT 1e. So the current engine is RAW-correct on all three counts: `ammo.mjs:252-253` fireRate=full (a Semi-Auto-only weapon legitimately can't perform the action, full=0), `ammo.mjs:300` ammoUsed = fireRate*ammoPerShot (= a full-auto burst's worth = "the appropriate ammo"), and `action-data.mjs:377-386` groups it with Semi-Auto Burst at floor(dos/2) extra hits (= "every two degrees of success"). No code change.
+- verify:
+
+### BUG-Q-231: Righteous Fury on vehicles inflicts raw damage instead of a Critical Hit roll
+- **canon:** *Into the Storm* p. 177: "Righteous Fury: Against vehicles... NO ADDITIONAL DAMAGE IS ROLLED. Instead, roll 1d5 on the Critical Hit chart, and apply the result."
+- **location:** `src/module/rolls/damage-data.mjs` (Righteous Fury extra damage loop ignores `targetActor?.type === 'vehicle'`) and `src/module/rolls/assign-damage-data.mjs` (fails to roll/apply the 1d5 Critical Hit for a vehicle Righteous Fury).
+- **description:** Righteous Fury on a vehicle incorrectly rolls a second damage die and adds it to the attack's total damage (causing severe structural integrity damage/cumulative crit), entirely skipping the canon rule to forego extra damage and instead trigger a flat 1d5 roll on the Critical Hit chart.
+
+### BUG-Q-232: Flame weapons do not jam on a damage die of 9
+- **canon:** *RT Core* p. 131: "[Flame weapons] will Jam if the firer rolls a 9 on his Damage dice (before adding any bonuses)."
+- **location:** `src/module/rolls/damage-data.mjs` (missing check for result.result === 9 when `hasAttackSpecial('Flame')`) and `src/module/rolls/action-data.mjs` (Line 288 claims it's handled in damage resolution).
+- **description:** `action-data.mjs` explicitly skips the 96+ BS jam check for Flame weapons, claiming it is handled on the damage die of 9 in damage resolution. However, `damage-data.mjs` lacks any logic to trigger a Jam condition when a 9 is rolled on a Flame weapon's damage die, leaving them immune to jamming.
+
+## BUG-Q-231 — Sustaining-multiple-powers phenomena bonus is flat +10, not +10 per additional power
+- status: open
+- found-by: review (independent) · post-agy-qa-3
+- area: psychic
+- severity: P3
+- evidence: `src/module/rolls/action-data.mjs` — `if (sustained > 0) phenomBonus += 10;`
+- canon: RT Core p.159 — "+10 to the result rolled on the chart per additional power he is maintaining"
+- gap: a flat +10 under-counts for 2+ sustained powers (should scale per additional power) and also fires for a single sustained power where "additional" is ambiguous. Adjacent to BUG-Q-221 (which fixed the Psy Rating side). Deferred to a future run — not part of this batch.

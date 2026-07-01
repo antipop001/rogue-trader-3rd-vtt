@@ -49,6 +49,47 @@ export function degreesOfFailure(target, roll) {
 }
 
 /**
+ * Psychic-Phenomena "doubles" detection on a Focus Power Test (RT Core p.157): doubles are
+ * 11, 22, 33, 44, 55, 66, 77, 88, 99, and 00 — the latter being a d100 result of 100. A naive
+ * string-identity test (`/^(.)\1+$/`) matches 11–99 but FAILS on 100 ("1","0","0" differ), so a
+ * Phenomena-triggering 00 was silently missed. The matching values are exactly the two-digit
+ * multiples of 11 plus 100. (BUG-Q-214.)
+ * @param {number} total  the d100 Focus Power Test result (1–100)
+ * @returns {boolean} true if the roll is doubles
+ */
+export function isPsychicDoubles(total) {
+    const t = Number(total);
+    if (!Number.isFinite(t)) return false;
+    if (t === 100) return true;                  // 00
+    return t >= 11 && t <= 99 && t % 11 === 0;   // 11, 22, … 99
+}
+
+/**
+ * Astropath Transcendent Perils mitigation (RT Core p.159): "rolls an additional d10 when
+ * rolling on the Perils of the Warp table and may discard any one d10 for a more favourable
+ * result." Percentile dice are a tens d10 + a units d10; the extra d10 can stand in for
+ * either, so there are three readings — discard the extra (tens,units), discard the tens
+ * (extra fills tens), or discard the units (extra fills units). We keep the least severe
+ * outcome (lowest result), where 00 reads as 100 (Destruction — the worst row, so it is
+ * never chosen unless it is the only option). (BUG-Q-215.)
+ * @param {number} tens   raw tens die digit, 0-9
+ * @param {number} units  raw units die digit, 0-9
+ * @param {number} extra  raw extra die digit, 0-9
+ * @returns {number} the most-favourable Perils result, 1-100
+ */
+export function astropathPerilsResult(tens, units, extra) {
+    const toPercent = (t, u) => {
+        const v = ((Number(t) % 10) + 10) % 10 * 10 + ((Number(u) % 10) + 10) % 10;
+        return v === 0 ? 100 : v;                 // 00 → 100 (Destruction)
+    };
+    return Math.min(
+        toPercent(tens, units),  // discard the extra
+        toPercent(extra, units), // discard the tens — extra fills the tens slot
+        toPercent(tens, extra),  // discard the units — extra fills the units slot
+    );
+}
+
+/**
  * Resolve a void-ship weapon attack as RT RAW (RT Core p.217-219): a SINGLE Ballistic Skill
  * test scores one hit plus one additional hit per Degree of Success, capped at the weapon's
  * Strength (the max hits). The shot is a Critical Hit when the DoS meets or exceeds the
@@ -186,6 +227,37 @@ export function getOpposedDegrees(success, dos, dof, opposedSuccess, opposedDos,
     const attacker = success ? dos : -((dof ?? 0) + 1);
     const defender = opposedSuccess ? opposedDos : -((opposedDof ?? 0) + 1);
     return attacker - defender;
+}
+
+/**
+ * Net Degrees of an Opposed Test with the full RT Core p.232 tiebreak chain applied
+ * (BUG-Q-218 / QA-106): "Whoever succeeds wins. If both succeed, the one with the most
+ * degrees of success wins. If the degrees of success are the same, the highest
+ * Characteristic Bonus wins. If the result is still a tie, the lowest dice roll wins."
+ * Two failures are ALWAYS a stalemate (0, nobody wins — RT Core: "either there is a stalemate
+ * and nothing happens or both parties re-roll"), checked first. Otherwise it builds on
+ * {@link getOpposedDegrees} for the cross success/failure magnitude, then breaks an exact net
+ * of 0 — which can now ONLY be two equal-DoS successes — by Characteristic Bonus → lower dice
+ * roll (returning ±1, a bare tiebreak win). A perfect tie (equal DoS, Bonus, and dice roll)
+ * defaults to the active character (the attacker).
+ * @param {{success:boolean, dos:number, dof:number, bonus:number, roll:number}} a attacker
+ * @param {{success:boolean, dos:number, dof:number, bonus:number, roll:number}} d defender
+ * @returns {number} attacker's net degrees: >0 attacker wins, <0 defender wins, 0 stalemate
+ */
+export function getOpposedDegreesWithTiebreak(a, d) {
+    // RT Core p.232: "Should both parties fail, one of two things occurs. Either there is a
+    // stalemate and nothing happens or both parties should re-roll." A double failure is NEVER
+    // a win for the "less wrong" side, so short-circuit to a stalemate BEFORE consulting the
+    // signed magnitude — otherwise a fail-by-0 vs fail-by-2 would net +2 and wrongly win.
+    if (!a.success && !d.success) return 0;
+    const net = getOpposedDegrees(a.success, a.dos, a.dof, d.success, d.dos, d.dof);
+    if (net !== 0) return net;
+    // net === 0 with at least one success ⇒ two equal-DoS successes: apply the tiebreak chain.
+    const aBonus = Number(a.bonus) || 0, dBonus = Number(d.bonus) || 0;
+    if (aBonus !== dBonus) return aBonus > dBonus ? 1 : -1;
+    const aRoll = Number(a.roll) || 0, dRoll = Number(d.roll) || 0;
+    if (aRoll !== dRoll) return aRoll < dRoll ? 1 : -1;
+    return 1; // perfect tie → the active character (attacker) wins
 }
 
 /**

@@ -29,11 +29,16 @@ export function calculateCombatActionModifier(rollData) {
     const actor = rollData.sourceActor;
     if (rollData.action === 'Called Shot' && actor?.hasTalent?.('Sharpshooter')) {
         rollData.modifiers['attack'] = 0;
+    } else if (rollData.action === 'Called Shot' && actor?.hasTalent?.('Deadeye Shot')) {
+        // Deadeye Shot (RT Core p.98): a Called Shot is −10 instead of −20. Checked AFTER
+        // Sharpshooter (whose prereq is Deadeye Shot) so a Sharpshooter still gets the full
+        // negation. (BUG-Q-205.)
+        rollData.modifiers['attack'] = -10;
     } else if (rollData.action === 'Stun' && actor?.hasTalent?.('Takedown')) {
         rollData.modifiers['attack'] = 0;
     }
 
-    // Two-Weapon Fighting (RT Core p.243): with the Two-Weapon Wielder talent, each attack of
+    // Two-Weapon Fighting (RT Core p.246): with the Two-Weapon Wielder talent, each attack of
     // a Multiple Attacks action (one per weapon — resolve the action once per hand) suffers
     // −20, dropping to −10 with Ambidextrous. (QA-119.)
     if (rollData.action === 'Multiple Attacks') {
@@ -41,6 +46,12 @@ export function calculateCombatActionModifier(rollData) {
         rollData.modifiers['attack'] = -20;
         if (hasTWW && actor?.hasTalent?.('Ambidextrous')) {
             rollData.modifiers['attack'] = -10;
+        }
+        // Gunslinger (RT Core p.99): firing two PISTOLS, reduce the two-weapon penalty by a
+        // further 10 (−20→−10), and to 0 with Ambidextrous. (BUG-Q-203.)
+        const isPistol = String(rollData.weapon?.system?.class ?? '').toLowerCase() === 'pistol';
+        if (isPistol && actor?.hasTalent?.('Gunslinger')) {
+            rollData.modifiers['attack'] = actor?.hasTalent?.('Ambidextrous') ? 0 : -10;
         }
     }
 }

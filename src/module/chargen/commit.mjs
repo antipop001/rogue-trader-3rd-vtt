@@ -22,7 +22,7 @@ import {
     TALENT_ALIAS,
     resolveSkill,
 } from './mapping.mjs';
-import { STARTING_XP_POOL } from './origin.mjs';
+import { TOTAL_STARTING_XP, PRESPENT_STARTING_XP } from './origin.mjs';
 
 const ORIGIN_STEP_KEY = {
     home_world: 'homeWorld',
@@ -220,9 +220,13 @@ export function buildActorData(state, { originLabels = null, itemGaps = null } =
     if (state.insanity) system.insanity = state.insanity;
     if (state.corruption) system.corruption = state.corruption;
 
-    // The 500-xp starting pool, with ItS origin costs already debited.
+    // RT Core p.38: 5,000 total xp, 4,500 already spent on the career; the
+    // remaining 500-xp pool has any ItS origin costs already debited on top.
     if (Object.keys(state.origin).length) {
-        system.experience = { total: STARTING_XP_POOL, used: state.originXpSpent };
+        system.experience = {
+            total: TOTAL_STARTING_XP,
+            used: PRESPENT_STARTING_XP + state.originXpSpent,
+        };
     }
 
     return {

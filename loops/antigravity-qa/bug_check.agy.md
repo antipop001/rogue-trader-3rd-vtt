@@ -53,6 +53,9 @@ quote the rule VERBATIM; do not reason by analogy to a similar-looking rule.
 - Append to the END of `.ralph/bug-queue.md` in the exact format the file's header documents
   (`## BUG-Q-NNN`, `- status: open`, `- found-by: agy <your model> · iter <RALPH_ITER>`, area /
   severity / evidence / canon / gap). Number continuing from the highest existing BUG-Q-NNN.
+  The status line MUST be **exactly `- status: open`** — not the phase name ("discovery"), not a
+  synonym ("new"/"found"). The fixer only picks up findings whose status is literally `open`; any
+  other word strands the finding.
 - **Dedup hard.** Before filing, grep `.ralph/bug-queue.md`, `QA_FINDINGS.md`, and the `CLAUDE.md`
   changelog for the same symptom. If it's already filed, fixed, or a known data-review item, do
   NOT re-file it.

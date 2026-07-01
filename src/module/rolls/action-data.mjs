@@ -1,9 +1,9 @@
 import { PsychicRollData, RollData, WeaponRollData } from './roll-data.mjs';
 import { Hit, PsychicDamageData, scatterDirection, WeaponDamageData } from './damage-data.mjs';
-import { attackTalentExtraHits, degreesOfSuccess, degreesOfFailure, getOpposedDegrees, roll1d100, sendActionDataToChat, stunDefenceBonus, uuid, voidshipWeaponHits, voidshipHullDamage } from './roll-helpers.mjs';
+import { astropathPerilsResult, attackTalentExtraHits, degreesOfSuccess, degreesOfFailure, getOpposedDegrees, getOpposedDegreesWithTiebreak, isPsychicDoubles, roll1d100, sendActionDataToChat, stunDefenceBonus, uuid, voidshipWeaponHits, voidshipHullDamage } from './roll-helpers.mjs';
 import { refundAmmo, useAmmo } from '../rules/ammo.mjs';
 import { DHBasicActionManager } from '../actions/basic-action-manager.mjs';
-import { conditionMeta } from '../rules/conditions.mjs';
+import { conditionMeta, meleeAutoHitsHelpless } from '../rules/conditions.mjs';
 import { SYSTEM_ID } from '../hooks-manager.mjs';
 import { RogueTraderSettings } from '../rogue-trader-settings.mjs';
 
@@ -11,7 +11,7 @@ import { RogueTraderSettings } from '../rogue-trader-settings.mjs';
  * Roll the named RollTable from the system's `tables` compendium and return
  * the result text. Returns null if the table or compendium can't be located.
  */
-async function drawFromTable(tableName, modifier = 0) {
+async function drawFromTable(tableName, modifier = 0, forcedTotal = null) {
     try {
         const pack = game.packs.get(`${SYSTEM_ID}.tables`);
         if (!pack) return null;
@@ -21,8 +21,12 @@ async function drawFromTable(tableName, modifier = 0) {
         const table = await pack.getDocument(entry._id);
         if (!table) return null;
         // A positive modifier pushes the d100 toward the higher (more dangerous) rows — RT's
-        // Push / Sustaining modifiers to the Psychic Phenomena roll (QA-039).
-        const draw = modifier ? await table.roll({ roll: new Roll(`1d100 + ${modifier}`) }) : await table.roll();
+        // Push / Sustaining modifiers to the Psychic Phenomena roll (QA-039). A forcedTotal
+        // resolves the table for a pre-computed value (the Astropath Transcendent's extra-d10
+        // Perils result, BUG-Q-215) instead of rolling a fresh d100.
+        const draw = forcedTotal != null
+            ? await table.roll({ roll: new Roll(String(forcedTotal)) })
+            : modifier ? await table.roll({ roll: new Roll(`1d100 + ${modifier}`) }) : await table.roll();
         const results = draw?.results ?? [];
         return results.map(r => r.text ?? r.description ?? '').filter(Boolean).join(' ');
     } catch (err) {
@@ -52,17 +56,18 @@ export class ActionData {
         // Navigators never roll for Psychic Phenomena or Perils of the Warp (RT Core p.180).
         // Their powers are a separate discipline that doesn't draw on the same warp channel. (QA-041.)
         if (/navigator/i.test(this.rollData.power.system?.discipline ?? '')) return;
-        const rating = this.rollData.sourceActor.psy.rating ?? 0;
+        const baseRating = this.rollData.sourceActor.psy.rating ?? 0;
+        const currentRating = this.rollData.sourceActor.psy.currentRating ?? baseRating;
         const pr = this.rollData.pr ?? 0;
-        const isDoubles = /^(.)\1+$/.test(this.rollData.roll.total);
-        // RT 1e: Fettered (pr < rating) never triggers Psychic Phenomena.
-        if (pr < rating) return;
+        const isDoubles = isPsychicDoubles(this.rollData.roll.total);
+        const strength = this.rollData.strength ?? 'unfettered';
 
-        // Unfettered (pr === rating): trigger on doubles.
-        // Push (pr > rating): trigger on any non-doubles.
+        // RT 1e: Fettered never triggers Psychic Phenomena.
+        if (strength === 'fettered') return;
+
         let triggerPhenomena = false;
         let label = '';
-        if (pr > rating) {
+        if (strength === 'push') {
             // Push (RT Core p.157 Table 6-1): ALWAYS rolls Psychic Phenomena, doubles or
             // not. There is no "Push + doubles → Perils" rule — that was a DH2 leftover.
             // Perils is reached only via a 75+ Phenomena result, escalated below. (QA-038.)
@@ -80,11 +85,17 @@ export class ActionData {
             // one. Sustaining other powers adds a further +10. The harder you Push, the worse the
             // expected result. (QA-039.)
             let phenomBonus = 0;
-            if (pr > rating) {
-                const pushed = pr - rating;
-                const psyClass = String(this.rollData.sourceActor.system?.psy?.class ?? '').toLowerCase();
-                const renegade = psyClass === 'unsanctioned' || psyClass === 'unbound' || psyClass === 'renegade';
+            const psyClass = String(this.rollData.sourceActor.system?.psy?.class ?? '').toLowerCase();
+            const renegade = psyClass === 'unsanctioned' || psyClass === 'unbound' || psyClass === 'renegade';
+            if (strength === 'push') {
+                // Calculate push amount based on current effective rating (QA-151 compliance)
+                const pushed = pr - currentRating;
                 phenomBonus += pushed * (renegade ? 10 : 5);
+            } else if (isDoubles) {
+                // Unfettered + doubles (RT Core p.157 Table 6-1): a Renegade Psyker/Sorcerer
+                // adds +5 per Psy Rating used to the Phenomena roll; Sanctioned psykers roll
+                // unmodified. (BUG-Q-229.)
+                if (renegade) phenomBonus += pr * 5;
             }
             const sustained = Number(this.rollData.sourceActor.system?.psy?.sustained ?? 0);
             if (sustained > 0) phenomBonus += 10;
@@ -95,8 +106,18 @@ export class ActionData {
             // A 75+ Psychic Phenomena result escalates to Perils of the Warp (RT Core
             // p.157 — the 75+ row says "roll on Table 6-3 instead").
             if (phenom && /perils of the warp/i.test(phenom)) {
-                const perils = await drawFromTable('Perils of the Warp');
-                if (perils) this.addEffect('Perils of the Warp', `The Perils of the Warp claim the psyker! ${perils}`);
+                // An Astropath Transcendent (Soul-Bound to the Emperor) rolls an extra d10 on
+                // the Perils table and discards one die for a more favourable result (RT Core
+                // p.159) — resolve the chosen percentile rather than a raw 1d100. (BUG-Q-215.)
+                if (this.rollData.sourceActor?.hasTalent?.('Soul-Bound to the Emperor')) {
+                    const d10 = async () => { const r = new Roll('1d10'); await r.evaluate(); return r.total % 10; };
+                    const total = astropathPerilsResult(await d10(), await d10(), await d10());
+                    const perils = await drawFromTable('Perils of the Warp', 0, total);
+                    if (perils) this.addEffect('Perils of the Warp', `The Perils of the Warp claim the psyker — soul-bound, he rolls an extra d10 and discards one for a more favourable result! ${perils}`);
+                } else {
+                    const perils = await drawFromTable('Perils of the Warp');
+                    if (perils) this.addEffect('Perils of the Warp', `The Perils of the Warp claim the psyker! ${perils}`);
+                }
             }
         }
     }
@@ -110,16 +131,29 @@ export class ActionData {
             this.rollData.opposedDos = rollCheck.dos;
             this.rollData.opposedDof = rollCheck.dof;
             this.rollData.opposedSuccess = rollCheck.success;
-            if(rollCheck.success) {
-                // Opposed test (RT Core p.23): the higher Degrees of Success wins; a TIE is
-                // broken by the higher governing Characteristic, NOT auto-awarded to the
-                // defender. The defender beats the attacker only with strictly more DoS, or on
-                // an equal-DoS tie when its Characteristic (opposedTarget) is higher. (QA-106.)
-                const tieToDefender = this.rollData.opposedDos === this.rollData.dos
-                    && (this.rollData.opposedTarget ?? 0) > (this.rollData.modifiedTarget ?? 0);
-                if(this.rollData.opposedDos > this.rollData.dos || tieToDefender) {
-                    this.rollData.success = false;
-                }
+            // Opposed test (RT Core p.232): whoever succeeds wins; among two successes the
+            // higher Degrees of Success wins; on an equal-DoS tie the higher Characteristic
+            // Bonus wins; if STILL tied the lower dice roll wins — NOT auto-awarded to either
+            // side. Feint opposes Weapon Skill, Knock-Down opposes Strength (both sides use
+            // the same Characteristic). (QA-106 / BUG-Q-218.)
+            const charKey = this.rollData.opposedChar === 'S' ? 'strength' : 'weaponSkill';
+            const attacker = {
+                success: this.rollData.success,
+                dos: this.rollData.dos,
+                dof: this.rollData.dof,
+                bonus: this.rollData.sourceActor?.characteristics?.[charKey]?.bonus ?? 0,
+                roll: this.rollData.roll?.total ?? 0,
+            };
+            const defender = {
+                success: rollCheck.success,
+                dos: this.rollData.opposedDos,
+                dof: this.rollData.opposedDof,
+                bonus: this.rollData.targetActor?.characteristics?.[charKey]?.bonus ?? 0,
+                roll: this.rollData.opposedRoll?.total ?? 0,
+            };
+            this.rollData.opposedNetDegrees = getOpposedDegreesWithTiebreak(attacker, defender);
+            if (this.rollData.opposedNetDegrees < 0) {
+                this.rollData.success = false;
             }
         }
 
@@ -137,7 +171,11 @@ export class ActionData {
 
         if (this.rollData.isKnockDown) {
             if(this.rollData.targetActor) {
-                const opposedDegrees = getOpposedDegrees(this.rollData.success, this.rollData.dos, this.rollData.dof, this.rollData.opposedSuccess, this.rollData.opposedDos, this.rollData.opposedDof);
+                // Reuse the tiebroken net degrees computed above (RT Core p.232): a DoS tie is
+                // decided by Characteristic Bonus then dice roll, not auto-awarded to the
+                // defender. (BUG-Q-218.)
+                const opposedDegrees = this.rollData.opposedNetDegrees
+                    ?? getOpposedDegrees(this.rollData.success, this.rollData.dos, this.rollData.dof, this.rollData.opposedSuccess, this.rollData.opposedDos, this.rollData.opposedDof);
                 if(opposedDegrees >= 2) {
                     const strengthBonus = this.rollData.sourceActor?.characteristics?.strength?.bonus ?? 0;
                     this.addEffect('Knock Down', `The target is knocked Prone and must use a Stand action in his turn to regain his feet! The impact deals [[1d5-3+${strengthBonus}]] (min 0) damage, with armour counting as double, and one level of fatigue to the target!`, ['prone']);
@@ -163,6 +201,13 @@ export class ActionData {
         let rollTotal = this.rollData.roll.total;
         const target = this.rollData.modifiedTarget;
         this.rollData.success = rollTotal === 1 || (rollTotal <= target && rollTotal !== 100);
+        // Helpless targets (RT Core p.248): a Weapon Skill (melee) Test to hit a sleeping,
+        // unconscious or otherwise helpless target automatically succeeds — a poor roll cannot
+        // miss. DoS still derives from the roll below (clamped to ≥0, a bare success). The +30
+        // condition modifier only makes a ranged shot easier; melee is guaranteed. (BUG-Q-220.)
+        if (meleeAutoHitsHelpless(this.rollData.weapon?.isMelee, this.rollData.targetActor?.statuses)) {
+            this.rollData.success = true;
+        }
     }
 
     async calculateSuccessOrFailure() {
@@ -278,43 +323,45 @@ export class ActionData {
                     const isBurstFire = this.rollData.action === 'Semi-Auto Burst'
                         || this.rollData.action === 'Full Auto Burst'
                         || this.rollData.action === 'Suppressing Fire';
-                    let jamThreshold = isBurstFire ? 94 : 96;
-                    if (isBestRanged) {
-                        jamThreshold = 101;
-                    } else if (this.rollData.hasAttackSpecial('Reliable')) {
-                        jamThreshold = 100;
-                    } else if (this.rollData.hasAttackSpecial('Unreliable')) {
-                        jamThreshold = 91;
-                    }
+                    // RT Core p.249: an unmodified 96+ (94+ on Semi/Full/Suppressing burst) is an
+                    // automatic MISS, and normally also a Jam. Craftsmanship / Reliable change only
+                    // whether it ALSO jams — NOT the miss (BUG-Q-184: Reliable/Best previously raised
+                    // the threshold to 100/101, so 96-99 wrongly stayed a HIT). (BUG-Q-181/184.)
+                    const failThreshold = isBurstFire ? 94 : 96;
+                    const unreliableFail = this.rollData.hasAttackSpecial('Unreliable') && rollTotal >= 91;
                     if (isOverheats) {
-                        // RT Core p.116: an Overheats weapon NEVER jams — it overheats at
-                        // 91+, and any roll that WOULD jam overheats instead. Best-craft
-                        // ranged suppresses it. (QA-098/099.)
-                        if (!isBestRanged && (rollTotal >= 91 || rollTotal >= jamThreshold)) {
+                        // RT Core p.116: an Overheats weapon overheats at 91+ instead of jamming,
+                        // and the shot does NOT fire (BUG-Q-197 — overheat previously left it a hit).
+                        // Best-craft ranged suppresses the overheat. (QA-098/099.)
+                        if (!isBestRanged && rollTotal >= 91) {
                             this.effects.push('overheat');
+                            this.rollData.success = false;
                         }
-                    } else if (rollTotal >= jamThreshold) {
-                        // Thrown weapons are propelled by muscle, not a machine spirit, so
-                        // they do not "jam" like fired ranged weapons (RT Core p.249 Weapon
-                        // Jams — the rule is about firing). A jam result from throwing a
-                        // grenade instead resolves the dud/detonate rule (RT Core p.126); an
-                        // ordinary thrown weapon (knife/spear) simply misses. (BUG-Q-182.)
+                    } else if (rollTotal >= failThreshold || unreliableFail) {
+                        // Automatic miss (RT Core p.249) — applies regardless of craftsmanship/quality.
+                        this.rollData.success = false;
+                        // Thrown weapons are propelled by muscle, not a machine spirit, so they do
+                        // not "jam" like fired ranged weapons (RT Core p.249). A jam from throwing a
+                        // grenade resolves the dud/detonate rule (RT Core p.126); an ordinary thrown
+                        // weapon simply misses. (BUG-Q-182.)
                         if (actionItem.isThrown) {
                             if (actionItem.system?.type === 'Grenade') {
                                 this.effects.push('grenade-jam');
                             }
-                            this.rollData.success = false;
                         } else if (actionItem.system?.type === 'Launcher') {
                             // A jam when FIRING a grenade launcher (or similar) follows the same
                             // dud/detonate rule as a thrown grenade, except on a 10 the explosive
                             // detonates IN THE BARREL — its normal effect AND the weapon is
-                            // destroyed (RT Core p.126). (BUG-Q-182 completion — verify caught that
-                            // launchers are isRanged and were falling through to the standard jam.)
+                            // destroyed (RT Core p.126). (BUG-Q-182.)
                             this.effects.push('launcher-jam');
-                            this.rollData.success = false;
+                        } else if (isBestRanged) {
+                            // Best craftsmanship: a miss, but the weapon never jams. (QA-099.)
+                        } else if (this.rollData.hasAttackSpecial('Reliable')) {
+                            // Reliable (RT Core p.116): roll 1d10 — only on a 10 does it actually
+                            // Jam, otherwise it just misses (already set above). (BUG-Q-184.)
+                            this.effects.push('reliable-jam');
                         } else {
                             this.effects.push('jam');
-                            this.rollData.success = false;
                         }
                     }
                 }
@@ -425,11 +472,18 @@ export class ActionData {
             const isLance = this.rollData.weapon?.system?.type === 'Lance';
             const res = voidshipWeaponHits(rollTotal, target, strength, critRating, isLance);
             this.rollData.dos = res.dos;
-            // Destructive: a normal hit is upgraded to a Critical Hit (RT Core p.218).
-            const critical = res.critical || (res.hit && this.rollData.hasAttackSpecial('Destructive'));
+            // A Critical Hit triggers ONLY when DoS ≥ the weapon's Crit Rating (RT Core p.218).
+            // Destructive does NOT upgrade a normal hit to a Critical — it adds +1 to the 1d5
+            // Critical Hits chart roll WHEN a crit is naturally generated (Battlefleet Koronus
+            // p.35: "If this weapon generates a crit, add 1 to the result rolled"). (BUG-Q-213.)
+            const critical = res.critical;
             for (let i = 0; i < res.hits; i++) {
+                // A macrobattery salvo scores exactly ONE Critical Hit, plus normal hits for the
+                // remaining DoS (RT Core p.218) — not one Critical per hit. Flag only the first hit
+                // as critical so `critCount` resolves to 1, not the whole hit count. (BUG-Q-207.)
+                const isCrit = critical && i === 0;
                 this.rollData.voidshipResults.push({
-                    isCritical: critical, isHit: !critical, isMiss: false, isFumble: false,
+                    isCritical: isCrit, isHit: !isCrit, isMiss: false, isFumble: false,
                     penetration: false, overpenetration: false, roll: rollTotal, location: "",
                 });
             }
@@ -613,6 +667,9 @@ export class ActionData {
             }
             const hull = voidshipHullDamage(perHit, facingArmour, isLance);
             const critCount = hits.filter((r) => r.isCritical).length;
+            // Destructive: +1 to the Critical Hits chart roll when a crit is generated
+            // (Battlefleet Koronus p.35). Carried on the hit so executeCritical can apply it.
+            const destructive = this.rollData.hasAttackSpecial('Destructive');
             this.rollData.voidshipHullDamage = hull;
             this.rollData.voidshipCritHits = critCount;
             this.rollData.voidshipDamageRolls = perHit;
@@ -621,6 +678,7 @@ export class ActionData {
             hits.forEach((r, i) => {
                 r.voidshipHull = i === 0 ? hull : 0;
                 r.voidshipCritHits = i === 0 ? critCount : 0;
+                r.voidshipDestructive = destructive;
                 r.penetration = true;   // (legacy flag the card/assign still read; tiering removed)
             });
         }
@@ -701,6 +759,21 @@ export class ActionData {
                         await this.rollData.weapon.update({ 'system.jammed': true });
                     }
                     break;
+                case 'reliable-jam': {
+                    // Reliable (RT Core p.116): a jam result rolls 1d10 — only on a 10 does the
+                    // weapon actually Jam; otherwise the shot just misses (already applied). (BUG-Q-184.)
+                    const rel = new Roll('1d10', {});
+                    await rel.evaluate();
+                    if (rel.total === 10) {
+                        this.addEffect('Jam', `Despite its Reliable quality the weapon jams (1d10 → 10)! It cannot be fired again until cleared — a Full Action Ballistic Skill Test.`);
+                        if (this.rollData.weapon?.update) {
+                            await this.rollData.weapon.update({ 'system.jammed': true });
+                        }
+                    } else {
+                        this.addEffect('Misfire', `The shot fails (96+) but the Reliable weapon does not jam (1d10 → ${rel.total}) — it just misses.`);
+                    }
+                    break;
+                }
                 case 'grenade-jam': {
                     // RT Core p.126 (When a Grenade "Jams"): a jam from throwing a grenade
                     // does not leave the weapon jammed — roll 1d10. On any result other than
