@@ -1126,3 +1126,25 @@ RT Core p.218 (Critical Hits): "If the number of Degrees of Success is equal to 
 - gap: The regex requires an explicit "x" (e.g. `Quadruped (x3)`), completely missing standard canon formats like `Quadruped (8 legs)` used in official Koronus Bestiary and Soul Reaver stat blocks. When it fails to match, it defaults to a multiplier of 2, incorrectly treating an 8-legged creature as having 4 legs and severely nerfing its movement multiplier (x2 instead of x4).
 - fix: WONTFIX — the cited code does not exist and the `(N legs)` format is already handled. The quoted line at :630 is inside `unnaturalCharacteristicMultipliers`'s docstring, not `quadrupedMoveMultiplier`. The real `quadrupedMoveMultiplier` (roll-helpers.mjs:563-575) has a dedicated `legMatch = name.match(/\(\s*(\d+)\s*legs?\s*\)/i)` branch (line 570-571) that maps `(N legs)` → `floor(N/2)` (6→×3, 8→×4), plus the `(xN)` branch and a plain-`Quadruped`→×2 default. Empirically: `Quadruped (8 legs)`⇒4, `(6 legs)`⇒3, `(x3)`⇒3, plain⇒2. This exact `Quadruped (8 legs)`⇒4 case is already asserted in `tests/chargen/quadruped_move.test.mjs:21`. The premise (default ×2 for 8-legged creatures) does not occur. Verified: node repl over the leg/x/plain forms + read of roll-helpers.mjs:563-575 + the existing passing test.
 - verify: 
+
+## BUG-Q-183 — `woundDamageState` treats exactly 0 Wounds as "Critically Damaged", breaking natural healing
+- status: fixed
+- found-by: agy Gemini · iter 1 (Pipeline pass)
+- area: rules
+- severity: P0 (wrong result in play)
+- evidence: `src/module/rolls/roll-helpers.mjs:128` — `if (cur <= 0 && damageTaken > 0) return 'Critically Damaged';`. For a character at exactly 0 Wounds, `cur` is 0 and `damageTaken` equals `maxValue`, so it returns 'Critically Damaged'.
+- canon: `/mnt/project_data/RT/RT-DOCS/CoreBook-201-401.pdf/markdown.md:2997` (RT Core p.262) — "Critically Damaged: If the character has taken Damage in excess of his Wounds he is Critically Damaged. ... After all Critical Damage has been removed, a character becomes Heavily Damaged instead." 
+- gap: Because exactly 0 Wounds with 0 Critical Damage yields state 'Critically Damaged' rather than 'Heavily Damaged', `applyRest` bypasses normal Wound recovery to attempt to heal Critical Damage (which is 0). The character becomes permanently stuck at 0 Wounds and cannot naturally heal.
+- fix: FIXED — `roll-helpers.mjs:128` changed `cur <= 0 && damageTaken > 0` → `cur < 0` so exactly-0 Wounds is damage EQUAL to Wounds (Heavily/Lightly by TB threshold), not in EXCESS of Wounds (RT Core p.262 "Damage in excess of his Wounds"). Critical-Damage forcing still handled by the acolyte caller (`wounds.critical > 0`). Updated `tests/chargen/wound_recovery.test.mjs:12` to assert `woundDamageState(0,20,4)==='Heavily Damaged'`. Verified: gate green (`npm run build:check` exit 0 + `npm test` 300 pass); live on rt-smoke via Playwright page-context — `woundDamageState(0,20,4)`⇒'Heavily Damaged' (recovers 4/week now vs stuck), `(-3,20,4)`⇒'Critically Damaged'.
+- verify: 
+
+## BUG-Q-184 — Unnatural Agility incorrectly scales Initiative and stacks with Lightning Reflexes
+- status: open
+- found-by: agy Gemini · iter 1 (Pipeline pass)
+- area: rules
+- severity: P0 (wrong result in play)
+- evidence: `src/module/documents/acolyte.mjs:483` passes `initChar.bonus` (which includes Unnatural Agility) to `initiativeCharBonus` as `normalBonus`. `src/module/rolls/roll-helpers.mjs:71` explicitly scales the Lightning Reflexes initiative by `rawBonus * (mult + 1)` when Unnatural Agility is present.
+- canon: `/mnt/project_data/RT/RT-DOCS/CoreBook-201-401.pdf/markdown.md:8362` (RT Core p.368, Unnatural Characteristic) — "Note this Trait does not modify the creature's movement. ... Similarly, this Trait does not modify the creature's Initiative."
+- gap: The engine allows Unnatural Agility to incorrectly increase Initiative directly through `normalBonus`, and additionally scales Lightning Reflexes via `mult`. Both directly violate RT Core p.368, which states Unnatural Agility does not modify Initiative at all.
+- fix: 
+- verify: 

@@ -119,13 +119,14 @@ export function shootingIntoMeleePenalty(targetWaived, adjacentEnemies) {
 
 /**
  * The RT Damage state of a character (RT Core p.262). "Damage taken" is max Wounds minus
- * current Wounds; Critically Damaged means Damage in excess of Wounds (at/below 0). (QA-093.)
+ * current Wounds; Critically Damaged means Damage IN EXCESS of Wounds — i.e. current Wounds
+ * dropped below 0 (exactly 0 is damage EQUAL to Wounds, not in excess). (QA-093, BUG-Q-183.)
  * @returns {'Healthy'|'Lightly Damaged'|'Heavily Damaged'|'Critically Damaged'}
  */
 export function woundDamageState(currentValue, maxValue, toughnessBonus) {
     const cur = Number(currentValue) || 0;
     const damageTaken = Math.max(0, (Number(maxValue) || 0) - cur);
-    if (cur <= 0 && damageTaken > 0) return 'Critically Damaged';
+    if (cur < 0) return 'Critically Damaged';
     if (damageTaken <= 0) return 'Healthy';
     if (damageTaken <= 2 * (Number(toughnessBonus) || 0)) return 'Lightly Damaged';
     return 'Heavily Damaged';
