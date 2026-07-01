@@ -1139,12 +1139,12 @@ RT Core p.218 (Critical Hits): "If the number of Degrees of Success is equal to 
 - verify: confirmed: changing the condition to `cur < 0` correctly ensures that only damage strictly IN EXCESS of max Wounds triggers the 'Critically Damaged' state, matching RT Core p.262 RAW. Exactly 0 Wounds represents damage EQUAL to max Wounds and properly falls through to 'Heavily Damaged' (which is also the correct state when Critical Damage drops to 0), allowing natural healing to resume.
 
 ## BUG-Q-184 — Unnatural Agility incorrectly scales Initiative and stacks with Lightning Reflexes
-- status: open
+- status: wontfix
 - found-by: agy Gemini · iter 1 (Pipeline pass)
 - area: rules
 - severity: P0 (wrong result in play)
 - evidence: `src/module/documents/acolyte.mjs:483` passes `initChar.bonus` (which includes Unnatural Agility) to `initiativeCharBonus` as `normalBonus`. `src/module/rolls/roll-helpers.mjs:71` explicitly scales the Lightning Reflexes initiative by `rawBonus * (mult + 1)` when Unnatural Agility is present.
 - canon: `/mnt/project_data/RT/RT-DOCS/CoreBook-201-401.pdf/markdown.md:8362` (RT Core p.368, Unnatural Characteristic) — "Note this Trait does not modify the creature's movement. ... Similarly, this Trait does not modify the creature's Initiative."
 - gap: The engine allows Unnatural Agility to incorrectly increase Initiative directly through `normalBonus`, and additionally scales Lightning Reflexes via `mult`. Both directly violate RT Core p.368, which states Unnatural Agility does not modify Initiative at all.
-- fix: 
+- fix: wontfix — canon quote is FABRICATED. The cited line (markdown.md:8362) is an INDEX page, not the rule. The actual Unnatural Characteristic text (markdown.md:6857, RT Core p.368) excludes ONLY Movement ("Movement is based on a creature's unmodified Agility Bonus") — there is NO "Similarly, this Trait does not modify the creature's Initiative" clause anywhere in RT Core. Conversely, Lightning Reflexes (CoreBook-1-200.pdf/markdown.md:5245, p.110) explicitly says "If he has Unnatural Agility, add +1 to the multiplier before factoring the bonus into the Initiative roll" — proving Initiative DOES use Unnatural Agility in RT 1e. Base Initiative (p.236) uses "his Agility Bonus", which the trait doubles; only Movement is carved out. Current engine (BUG-Q-188, verified) is correct; changing it would contradict that verified fix.
 - verify: 
