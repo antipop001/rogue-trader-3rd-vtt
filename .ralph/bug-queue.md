@@ -942,3 +942,23 @@ RT Core p.218 (Critical Hits): "If the number of Degrees of Success is equal to 
 - gap: The +1 AP from Best craftsmanship is applied conditionally *after* finding the maximum base AP value, and the tiebreaker logic ignores equal-base-AP items. This means a Best armour will tie with a Common armour of the same base AP, lose the tiebreak if evaluated second, and lose its +1 AP bonus, leaving the character with 3 AP instead of 4.
 - fix: New pure helper `effectiveArmourAP(base, craftsmanship)` in `src/module/rules/armour-helpers.mjs` (RT Core p.138) — returns base+1 for Best (only where base>0), else base. `acolyte.mjs:_computeArmour()` (:704-720) rewritten to select the winning worn piece per location by EFFECTIVE AP (Best +1 folded into the comparison) instead of raw base AP + a post-hoc craftsmanship tiebreak; removed the `maxArmourCraft` tracking and the separate Best +1 block. New node test `tests/chargen/armour_best_craftsmanship.test.mjs` (6 cases: Best +1, Common unchanged, Best-beats-Common tie, 0-coverage no bonus, undefined base, Good/Poor no bonus). Gate green (build:check exit 0, 277 node tests). Live-verified on rt-smoke (/tmp/verify_bugq239.py): actor with Common AP3 + Best AP3 body armour (Common processed FIRST) now yields body.value/total = 4 (was 3); helper returns Best3→4, Common3→3.
 - verify: confirmed: properly fixes the ordering bug by folding the +1 AP into the effective max-comparison. The verbatim RT Core p.138 rule (actually at markdown.md:7152) is "Best armour weighs half the normal amount and increases the AP by 1"; the helper correctly isolates the AP increase while properly rejecting 0-coverage locations.
+
+## BUG-Q-240
+- status: wontfix
+- found-by: agy Gemini 3.1 Pro (High) · iter 3
+- area: derived-data / encumbrance
+- severity: high
+- evidence: `src/module/documents/acolyte.mjs:74-88`. `prepareData()` calls `this._computeMovement()` and `this._computeCharacteristics()` BEFORE `this._computeEncumbrance()`.
+- canon: `/mnt/project_data/RT/RT-DOCS/CoreBook-201-401.pdf/markdown.md:3297` (RT Core p.268) — "Encumbered Characters: An Encumbered character takes a -10 penalty to all movement-related tests and reduces his Agility Bonus by one for the purposes of determining movement rates and Initiative."
+- gap: `_computeMovement` evaluates `this.encumbrance?.encumbered ? 1 : 0`, and `_computeCharacteristics` does the same for Initiative. However, `system.encumbrance` is a purely derived object generated during `_computeEncumbrance()`. Because the computation ordering is backwards, `this.encumbrance` is `undefined` when Movement and Initiative are calculated. The canon -1 penalty to Agility Bonus for Movement and Initiative is never applied (it is effectively dead code).
+- fix: NOT A BUG — the finding's premise overlooks the base-actor recompute pass. `acolyte.prepareData()` computes encumbrance (acolyte.mjs:81) BEFORE calling `super.prepareData()` (:83), which runs `RogueTraderBaseActor.prepareData()` (base-actor.mjs:53-57) — that recomputes `_computeCharacteristics()` (initiative) and `_computeMovement()` a SECOND time, now with `this.encumbrance` populated. Foundry's prepareData cycle does not reset `system.encumbrance` between these passes, so the -1 AgB penalty reaches the FINAL derived values. base-actor.mjs:144-145 documents this intent ("encumbrance is computed before the final movement pass"). Acolyte's own early `_computeMovement`/`_computeCharacteristics` produce stale values that are harmlessly overwritten. Live-verified on rt-smoke 0.8.27 (/tmp/verify_bugq240.py): an actor AgB 3 / carry-max 36kg with a 60kg item becomes encumbered → movement.half 3→2 and initiative.bonus 3→2 (the penalty IS applied). No code change.
+- verify:
+
+## BUG-Q-241
+- status: open
+- found-by: agy Gemini 3.1 Pro (High) · iter 3
+- area: movement / traits
+- severity: high
+- evidence: `src/module/documents/base-actor.mjs:153`. `let base = agBonus * moveMult + size - 4;`
+- canon: `/mnt/project_data/RT/RT-DOCS/CoreBook-201-401.pdf/markdown.md:6810` (RT Core p.368) — Size trait: "When calculating a creatures movement, apply the size modifier first, and then other modifiers from other Traits or talents."
+- gap: The `base` movement calculation multiplies the Agility Bonus by the Quadruped trait multiplier (`moveMult`) *before* adding the size modifier. The canon rule explicitly requires the size modifier to be applied *first* (modifying the base AB), and then having multipliers like Quadruped scale that adjusted total. For example, a Quadruped (x2) Hulking (+1) creature with AB 3 currently computes as `3 * 2 + 1 = 7`, when it should be `(3 + 1) * 2 = 8`.
