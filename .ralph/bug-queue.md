@@ -1128,7 +1128,7 @@ RT Core p.218 (Critical Hits): "If the number of Degrees of Success is equal to 
 - verify: 
 
 ## BUG-Q-183 — `woundDamageState` treats exactly 0 Wounds as "Critically Damaged", breaking natural healing
-- status: fixed
+- status: verified
 - found-by: agy Gemini · iter 1 (Pipeline pass)
 - area: rules
 - severity: P0 (wrong result in play)
@@ -1136,7 +1136,7 @@ RT Core p.218 (Critical Hits): "If the number of Degrees of Success is equal to 
 - canon: `/mnt/project_data/RT/RT-DOCS/CoreBook-201-401.pdf/markdown.md:2997` (RT Core p.262) — "Critically Damaged: If the character has taken Damage in excess of his Wounds he is Critically Damaged. ... After all Critical Damage has been removed, a character becomes Heavily Damaged instead." 
 - gap: Because exactly 0 Wounds with 0 Critical Damage yields state 'Critically Damaged' rather than 'Heavily Damaged', `applyRest` bypasses normal Wound recovery to attempt to heal Critical Damage (which is 0). The character becomes permanently stuck at 0 Wounds and cannot naturally heal.
 - fix: FIXED — `roll-helpers.mjs:128` changed `cur <= 0 && damageTaken > 0` → `cur < 0` so exactly-0 Wounds is damage EQUAL to Wounds (Heavily/Lightly by TB threshold), not in EXCESS of Wounds (RT Core p.262 "Damage in excess of his Wounds"). Critical-Damage forcing still handled by the acolyte caller (`wounds.critical > 0`). Updated `tests/chargen/wound_recovery.test.mjs:12` to assert `woundDamageState(0,20,4)==='Heavily Damaged'`. Verified: gate green (`npm run build:check` exit 0 + `npm test` 300 pass); live on rt-smoke via Playwright page-context — `woundDamageState(0,20,4)`⇒'Heavily Damaged' (recovers 4/week now vs stuck), `(-3,20,4)`⇒'Critically Damaged'.
-- verify: 
+- verify: confirmed: changing the condition to `cur < 0` correctly ensures that only damage strictly IN EXCESS of max Wounds triggers the 'Critically Damaged' state, matching RT Core p.262 RAW. Exactly 0 Wounds represents damage EQUAL to max Wounds and properly falls through to 'Heavily Damaged' (which is also the correct state when Critical Damage drops to 0), allowing natural healing to resume.
 
 ## BUG-Q-184 — Unnatural Agility incorrectly scales Initiative and stacks with Lightning Reflexes
 - status: open
