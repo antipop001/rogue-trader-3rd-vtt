@@ -1012,7 +1012,7 @@ RT Core p.218 (Critical Hits): "If the number of Degrees of Success is equal to 
 - verify: confirmed: the re-fix isolates the update to only the `toughnessBonus` field of each armour location. This successfully updates the Toughness Bonus used for damage soaking without clobbering Active Effects applied to armour AP during `super.prepareData()`.
 
 ## BUG-Q-246 — Carrying capacity and encumbrance penalties do not update when Active Effects modify Strength or Toughness
-- status: fixed
+- status: disputed
 - found-by: agy Gemini 3.1 Pro (High) · iter 5
 - area: rules
 - severity: P1 (missing automation)
@@ -1020,7 +1020,7 @@ RT Core p.218 (Critical Hits): "If the number of Degrees of Success is equal to 
 - canon: n/a — code smell (Foundry data lifecycle bug).
 - gap: If an Active Effect modifies Strength or Toughness, the actor's carrying `max`, `lifting`, and `pushing` capacities are not recalculated. Consequently, if the AE drops their limit below their current weight, they will not be marked as `encumbered` and will falsely avoid the -10 Agility / -1 Movement penalties.
 - fix: `src/module/documents/acolyte.mjs:96-97` — after `super.prepareData()` (post-AE), re-run `this._computeEncumbrance()` (recomputes carry/lift/push limits + the `encumbered` flag off post-AE SB+TB) then `this._computeMovement()` (base ran it once but off the stale pre-AE encumbrance, so re-run to propagate the -1 AgB movement penalty). Gate green (build:check exit 0, 283 node tests pass). LIVE-VERIFIED on rt-smoke via Playwright: an AE of -30 STR/-30 TON on an actor carrying 30kg dropped carry `max` 56→4.5 and flipped `encumbered` false→true (pre-fix it stayed 56/false).
-- verify: 
+- verify: disputed: incomplete fix. While `_computeMovement()` correctly uses the updated encumbrance flag because it is re-run, `this.initiative.bonus` (which also suffers a -1 penalty to the Agility Bonus per RT Core p.249, computed at `acolyte.mjs:408` inside `_computeCharacteristics()`) is missed. Because `_computeCharacteristics()` is triggered by `super.prepareData()` (via `baseActor.prepareData()`) *before* the second `_computeEncumbrance()` runs in `acolyte.mjs`, Initiative reads the stale pre-AE encumbrance flag. A correct fix must also re-run the Initiative calculation (e.g. by re-running `_computeCharacteristics()`) after `_computeEncumbrance()` completes.
 
 ## BUG-Q-247 — The fast-path rollReaction() skips Fatigue and Encumbered penalties for Dodge and Parry
 - status: open
