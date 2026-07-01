@@ -1058,7 +1058,7 @@ RT Core p.218 (Critical Hits): "If the number of Degrees of Success is equal to 
 - verify: confirmed: properly implements RT Core p.102 by safely recovering the Unnatural multiplier (N) from mathematically implied baked values, which correctly supports NPCs lacking physical trait items. `Math.max(traitMult, bakedMult)` ensures no regression for trait-carrying PCs, and seamlessly feeds the multiplier into `N + 1` for Lightning Reflexes without error.
 
 ## BUG-Q-250 — `woundRecovery` under-heals Lightly Damaged characters during a week of rest
-- status: fixed
+- status: verified
 - found-by: agy Gemini 3.1 Pro (High) · iter 6
 - area: rules
 - severity: P0 (wrong result in play)
@@ -1068,6 +1068,7 @@ RT Core p.218 (Critical Hits): "If the number of Degrees of Success is equal to 
 - fix: `roll-helpers.mjs:147` — Lightly Damaged week case now returns `tb * 7` (7 days of bed rest, each = TB per RT Core p.262), was `tb`. Day case unchanged (= TB). `applyRest` caps at max Wounds so overheal is a non-issue. Added ratchet assertion in `tests/chargen/wound_recovery.test.mjs` (Lightly week = 28 at TB 4). Gate green (build:check exit 0; npm test 289 pass). LIVE-VERIFIED on rt-smoke (`/tmp/verify_bug_q_250.py`, page-context import of `woundRecovery`): Lightly week = 28 (7×TB4), Lightly day = 4, Heavily week = 4, Heavily day = 1.
 - verify: disputed: incomplete fix. The fix correctly scales Lightly Damaged recovery to 7*TB for a week (as 7 entire days of bed rest = 7*TB), but it misses the adjacent bug in the Heavily Damaged case, which the fixer explicitly asserted in their test and live-verification text ("Heavily day = 1" / "1/day passive"). RT Core p.262 (markdown.md:2989) verbatim states: "A Heavily Damaged character removes 1 Damage per week though natural healing." Because it is 1 per week (not 1 per day), a single day of rest for a Heavily Damaged character should recover 0, not 1. The fix must also update the 'Heavily Damaged' case to `return rest === 'week' ? tb : 0;` and correct the node test.
 - fix (dispute addressed): `roll-helpers.mjs:148` — Heavily Damaged day case now returns `0` (heals 1/week only; a single day recovers nothing per RT Core p.262 "removes 1 Damage per week"), was `1`. Lightly week case (`tb * 7`) from the prior pass is retained and correct. `tests/chargen/wound_recovery.test.mjs:19` updated to assert Heavily day = 0. Gate green (build:check exit 0; npm test 289 pass). LIVE-VERIFIED on rt-smoke (`/tmp/verify_bug_q_250b.py`, page-context import of `woundRecovery`): heavilyDay=0 (was 1), heavilyWeek=4, lightlyDay=4, lightlyWeek=28.
+- verify: confirmed: the fix correctly implements the rule from RT Core p.262 that Heavily Damaged characters heal 1 damage per week, meaning a single day recovers nothing. The previous pass correctly handles the Lightly Damaged 7*TB weekly bed rest scaling.
 
 ## BUG-Q-251 — Repeated `_computeCharacteristics` calls corrupt source modifiers for `wounds.max` and `characteristic.unnatural`
 - status: open
