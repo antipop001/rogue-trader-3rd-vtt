@@ -87,12 +87,13 @@ export class RogueTraderAcolyte extends RogueTraderBaseActor {
         // afterward so `skill.modifier` changes (e.g. Master Chirurgeon's
         // +10 Medicae) feed into `skill.current`.
         this._computeSkills();
-        // Re-run armour so the cached per-location `toughnessBonus` reflects the
+        // Refresh ONLY the cached per-location `toughnessBonus` so it reflects the
         // post-AE Toughness Bonus (e.g. a drug comedown's -20 Toughness). It was
         // baked pre-AE above; assign-damage-data reads this cached value for soak.
-        // `_computeArmour` rebuilds `system.armour` from scratch, so this is
-        // idempotent. (BUG-Q-245.)
-        this._computeArmour();
+        // Rebuilding the whole `system.armour` here would wipe any AE that directly
+        // modified armour AP (e.g. `system.armour.body.value`), which apply during
+        // super.prepareData() on the object built pre-AE. (BUG-Q-245.)
+        this._refreshArmourToughnessBonus();
     }
 
     /**
@@ -745,6 +746,20 @@ export class RogueTraderAcolyte extends RogueTraderBaseActor {
         this.armour.body.total += this.armour.body.value;
         this.armour.leftLeg.total += this.armour.leftLeg.value;
         this.armour.rightLeg.total += this.armour.rightLeg.value;
+    }
+
+    /**
+     * Post-AE refresh of the cached per-location Toughness Bonus. The full
+     * `_computeArmour()` runs pre-AE so armour AP exists when Active Effects
+     * apply; re-running it post-AE would clobber any AE-modified armour AP.
+     * Instead, update just the `toughnessBonus` field that assign-damage-data
+     * reads for soak, so it tracks a post-AE Toughness change. (BUG-Q-245.)
+     */
+    _refreshArmourToughnessBonus() {
+        const tb = this.characteristics.toughness.bonus;
+        for (const location of Object.keys(this.system.armour ?? {})) {
+            this.system.armour[location].toughnessBonus = tb;
+        }
     }
 
     _computeWeaponReload() {
