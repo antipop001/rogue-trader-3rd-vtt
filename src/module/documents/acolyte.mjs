@@ -947,6 +947,13 @@ export class RogueTraderAcolyte extends RogueTraderBaseActor {
             }
         }
         let target = skill.current ?? 0;
+        // Any level of Fatigue imposes −10 to all Tests (RT Core p.251, BUG-004). Applies to
+        // both Dodge and Parry, mirroring rollSkill. (BUG-Q-247.)
+        if (this.system.fatigue?.value >= 1) target -= 10;
+        // Encumbered: −10 to movement-related Tests such as Dodge (RT Core p.249, QA-078).
+        // Parry is a WS Test, not movement-related, so it is unaffected — matches
+        // MOVEMENT_SKILLS in rollSkill. (BUG-Q-247.)
+        if (type === 'dodge' && this.encumbrance?.encumbered) target -= 10;
         if (this.system.combat?.guardedAttack) target += 10;   // Guarded Attack +10 (QA-071)
         // A Prone character takes −20 to Dodge and −10 to Parry (a WS Test) (RT Core p.248). (BUG-Q-236.)
         if (this.statuses?.has?.('prone')) target += (type === 'dodge' ? -20 : -10);

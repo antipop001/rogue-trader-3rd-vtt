@@ -1025,14 +1025,14 @@ RT Core p.218 (Critical Hits): "If the number of Degrees of Success is equal to 
 - verify: confirmed: the re-fix correctly isolates the Initiative computation into an idempotent helper and re-runs it after the post-AE encumbrance update. This safely applies the -1 Agility Bonus penalty for Initiative (RT Core p.268) without re-triggering non-idempotent operations like wound max calculation.
 
 ## BUG-Q-247 — The fast-path rollReaction() skips Fatigue and Encumbered penalties for Dodge and Parry
-- status: open
+- status: fixed
 - found-by: agy Gemini 3.1 Pro (High) · iter 5
 - area: rules
 - severity: P0 (wrong result in play)
 - evidence: `src/module/documents/acolyte.mjs:900-904` constructs the `target` for `rollReaction()` (the quick-reaction button on chat cards). It applies Guarded Attack (+10) and Prone (-20/-10), but completely omits the checks for `this.system.fatigue?.value >= 1` and `this.encumbrance?.encumbered`.
 - canon: `/mnt/project_data/RT/RT-DOCS/CoreBook-201-401.pdf/markdown.md:2583, 2521` (RT Core p.251, 249) — "Fatigued characters suffer a -10% penalty to all Tests." "An Encumbered character suffers a -10 penalty to movement-related Tests, such as Dodge..."
 - gap: `rollSkill()` correctly applies a -10 penalty for Fatigue and a -10 penalty to Dodge when Encumbered. The fast-path `rollReaction()` omits these, allowing a Fatigued or Encumbered character to dodge or parry from the chat card at a 10-20% higher chance than they would from their character sheet.
-- fix: 
+- fix: `src/module/documents/acolyte.mjs:949-956` — in `rollReaction()`, apply `target -= 10` when `this.system.fatigue?.value >= 1` (all Tests, both Dodge & Parry) and `target -= 10` when `type === 'dodge' && this.encumbrance?.encumbered` (Encumbered hits movement Tests only; Parry is a WS Test, so unaffected — matches `MOVEMENT_SKILLS` in `rollSkill`). Gate green (`build:check` exit 0; 283 node tests). LIVE-VERIFIED on rt-smoke (`tests/e2e/verify_bug_q_247.py`, monkey-patching `rollCheck` to capture the effective target): dodge base 20 → fatigued 10, encumbered 10; parry base 40 → fatigued 30, encumbered 40 (parry correctly unaffected by encumbrance).
 - verify: 
 
 ## BUG-Q-248 — Paranoia talent's Unnatural Agility synergy for Initiative is un-implemented
