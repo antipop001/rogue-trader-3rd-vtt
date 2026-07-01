@@ -857,7 +857,7 @@ RT Core p.218 (Critical Hits): "If the number of Degrees of Success is equal to 
 - **description:** `action-data.mjs` explicitly skips the 96+ BS jam check for Flame weapons, claiming it is handled on the damage die of 9 in damage resolution. However, `damage-data.mjs` lacks any logic to trigger a Jam condition when a 9 is rolled on a Flame weapon's damage die, leaving them immune to jamming.
 
 ## BUG-Q-231 — Sustaining-multiple-powers phenomena bonus is flat +10, not +10 per additional power
-- status: disputed
+- status: fixed
 - found-by: review (independent) · post-agy-qa-3
 - area: psychic
 - severity: P3
@@ -866,3 +866,27 @@ RT Core p.218 (Critical Hits): "If the number of Degrees of Success is equal to 
 - gap: a flat +10 under-counts for 2+ sustained powers (should scale per additional power) and also fires for a single sustained power where "additional" is ambiguous. Adjacent to BUG-Q-221 (which fixed the Psy Rating side). Deferred to a future run — not part of this batch.
 - fix: new pure helper `sustainedPhenomenaBonus(sustained)` in `src/module/rules/psychic.mjs:13` returns `sustained*10` (0 when none/invalid); `src/module/rolls/action-data.mjs:103` now `phenomBonus += sustainedPhenomenaBonus(sustained)` instead of a flat `+10`. `sustained` = count of powers maintained (all "additional" to the one being cast), so it scales per-power per RAW. Gate green (build:check exit 0; 255 node tests, +3 new in tests/chargen/sustained_phenomena_bonus.test.mjs). Live-verified on rt-smoke: imported the deployed module in page context → sustainedPhenomenaBonus {0:0,1:10,2:20,3:30,5:50,undefined:0}.
 - verify: disputed: incorrect scaling and failure to enforce the "multiple active powers" condition. The fix implements `sustained * 10`, which applies a +10 penalty when maintaining a SINGLE power (`sustained = 1`). However, the rule explicitly conditions the penalty on "maintaining multiple active powers" (RT Core p.159). Maintaining one power is not "multiple", so `sustained = 1` must yield a 0 bonus (just as it yields a 0 Psy Rating penalty, see BUG-Q-221). For `sustained >= 2`, the bonus is "+10 ... per additional power he is maintaining". The word "additional" implies beyond the first maintained power, meaning `sustained = 2` is 1 additional power (+10), `sustained = 3` is 2 additional (+20). The helper must return `sustained >= 2 ? (sustained - 1) * 10 : 0`.
+- fix (dispute): agreed — the dispute is canon-correct. RT Core p.159 (CoreBook-1-200.pdf/markdown.md:8066, re-read verbatim) gives TWO distinct rules in the same paragraph: the Psy Rating penalty tracks the total count maintained ("Maintaining two powers … reduces … by 2"), but the phenomena bonus fires only "while maintaining multiple active powers" and is "+10 … per additional power he is maintaining". Reading `sustained` as the TOTAL count (consistent with `sustainedPsyPenalty`), that is `sustained >= 2 ? (sustained - 1) * 10 : 0`. `src/module/rules/psychic.mjs:18-21` now returns exactly that (was `n*10`); comment expanded. Test `tests/chargen/sustained_phenomena_bonus.test.mjs` updated: 1→0, 2→10, 3→20, 5→40. Gate green (build:check exit 0; 256 node tests). Live-verified on rt-smoke via Playwright (imported the deployed module in page context): sustainedPhenomenaBonus {0:0, 1:0, 2:10, 3:20, 5:40, undefined:0}.
+- verify:
+
+## BUG-Q-233 — Encumbrance penalties to Initiative and Movement lag by one update due to derived-data ordering
+- status: open
+- found-by: agy Gemini 3.1 Pro (High) · iter 7
+- area: rules
+- severity: P0 (wrong result in play)
+- evidence: `src/module/documents/acolyte.mjs:74-79` — `prepareData()` invokes `this._computeCharacteristics()` (which computes the Initiative encumbrance penalty) and `this._computeMovement()` (which computes the Agility Bonus encumbrance penalty) *before* `this._computeEncumbrance()` is called.
+- canon: `/mnt/project_data/RT/RT-DOCS/CoreBook-201-401.pdf/markdown.md:3276` (RT Core p.249) — "An Encumbered character takes a -10 penalty to all movement-related tests and reduces his Agility Bonus by one for the purposes of determining movement rates and Initiative."
+- gap: Because the functions applying the encumbered penalties read `this.encumbrance?.encumbered` before `_computeEncumbrance` calculates the character's current weight threshold, they consume the stale (previously persisted) state. If a character equips a heavy item, their movement and initiative penalties will not activate until the *next* sheet update cycle.
+- fix: 
+- verify: 
+
+## BUG-Q-234 — Active Effects for Wounds and Initiative modifiers are silently ignored due to prepareData order
+- status: open
+- found-by: agy Gemini 3.1 Pro (High) · iter 7
+- area: rules
+- severity: P0 (wrong result in play)
+- evidence: `src/module/documents/acolyte.mjs:388-400` — `_computeCharacteristics` folds `system.initiative.modifier` into `initiative.bonus` and `system.wounds.modifier` into `system.wounds.max`. However, `_computeCharacteristics()` is executed at line 74, *before* `await super.prepareData()` at line 81. 
+- canon: n/a — code smell / broken automation.
+- gap: The comments state that talents like Sound Constitution write `system.wounds.modifier += 1` via an Active Effect, and Paranoia writes to `system.initiative.modifier`. Because `_computeCharacteristics()` runs before `super.prepareData()` (where Foundry applies Active Effects), these `.modifier` fields are evaluated at `0` (or their raw DB value). The final `.bonus` and `.max` properties are computed without the AE contributions, silently breaking these talents.
+- fix: 
+- verify: 
