@@ -881,12 +881,12 @@ RT Core p.218 (Critical Hits): "If the number of Degrees of Success is equal to 
 - verify: 
 
 ## BUG-Q-234 — Active Effects for Wounds and Initiative modifiers are silently ignored due to prepareData order
-- status: open
+- status: wontfix
 - found-by: agy Gemini 3.1 Pro (High) · iter 7
 - area: rules
 - severity: P0 (wrong result in play)
 - evidence: `src/module/documents/acolyte.mjs:388-400` — `_computeCharacteristics` folds `system.initiative.modifier` into `initiative.bonus` and `system.wounds.modifier` into `system.wounds.max`. However, `_computeCharacteristics()` is executed at line 74, *before* `await super.prepareData()` at line 81. 
 - canon: n/a — code smell / broken automation.
 - gap: The comments state that talents like Sound Constitution write `system.wounds.modifier += 1` via an Active Effect, and Paranoia writes to `system.initiative.modifier`. Because `_computeCharacteristics()` runs before `super.prepareData()` (where Foundry applies Active Effects), these `.modifier` fields are evaluated at `0` (or their raw DB value). The final `.bonus` and `.max` properties are computed without the AE contributions, silently breaking these talents.
-- fix: 
+- fix: WONTFIX — wrong premise (same double-compute pattern as BUG-Q-233). `_computeCharacteristics()` runs TWICE per prepareData: the PASS-1 at acolyte.mjs:74 (pre-AE) is superseded by a PASS-2 inside `await super.prepareData()` (acolyte.mjs:81 → base-actor.mjs:53-55: Foundry's `Actor.prepareData()` at :54 applies Active Effects FIRST, then `this._computeCharacteristics()` at :55 re-runs the acolyte override). Foundry resets `system` from source at the top of each prepareData cycle, so PASS-2 reads the fresh AE-populated `system.{initiative,wounds}.modifier` and folds them into the final `.bonus`/`.max`. The double-compute is exactly why `super.prepareData()` re-invokes both here (mirrors the encumbrance ordering in BUG-Q-233). Live-verified on rt-smoke (/tmp/verify_bugq234b.py): an acolyte with Paranoia (AE `system.initiative.modifier +2`) + Sound Constitution (AE `system.wounds.modifier +1`), prepared naturally by Foundry, ends with initiative.bonus +2 and wounds.max +1 (delta exactly the AE values, applied ONCE) — not 0. No code change.
 - verify: 
