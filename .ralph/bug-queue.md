@@ -1045,3 +1045,25 @@ RT Core p.218 (Critical Hits): "If the number of Degrees of Success is equal to 
 - gap: A character with both Paranoia and Unnatural Agility (x2) should get an effective Unnatural Agility (x3) for their Initiative roll. The code calculates initiative using the base multiplier, depriving the character of the extra Agility Bonus synergy.
 - fix: WONTFIX — wrong-premise. The finding conflates two distinct talents. The cited canon (markdown.md:5245) is the text of LIGHTNING REFLEXES, not Paranoia; the actual Paranoia text (markdown.md:5397, RT Core p.123) is ONLY "+2 bonus on Initiative rolls, and the GM may secretly Test his Perception" — it has NO Unnatural Agility multiplier clause. Paranoia is correctly wired as a flat +2 via an AE on `system.initiative.modifier` (talents.yml:2307-2331). Lightning Reflexes' "×N → ×N+1" Unnatural-Agility synergy is already implemented in `initiativeCharBonus()` (roll-helpers.mjs:340, BUG-Q-188). The claimed `acolyte.mjs` comment with a `BUG-Q-239` marker does not exist (`grep -rn BUG-Q-239 src/` → no match). No change made.
 - verify: 
+
+## BUG-Q-249 — `Lightning Reflexes` Initiative calculation ignores baked Unnatural Agility on NPCs
+- status: fixed
+- found-by: agy Gemini 3.1 Pro (High) · iter 6
+- area: rules
+- severity: P0 (wrong result in play)
+- evidence: `src/module/documents/acolyte.mjs:464, 473` — `const initUnnaturalMult = unnaturalMults[String(initChar.label ?? '').toLowerCase()] ?? 1;` uses `unnaturalCharacteristicMultipliers` which exclusively parses trait items.
+- canon: `/mnt/project_data/RT/RT-DOCS/CoreBook-1-200.pdf/markdown.md:5245` (RT Core p.102) — "If he has Unnatural Agility, add +1 to the multiplier before factoring the bonus into the Initiative roll."
+- gap: The NPC pipeline pre-bakes Unnatural characteristics into `characteristic.unnatural` (as noted in `_computeCharacteristics`), meaning NPCs lack the physical Unnatural Trait items. Consequently, `initUnnaturalMult` resolves to 1, causing `initiativeCharBonus` to multiply `rawBonus * 2` rather than the correct `rawBonus * (N + 1)`. This entirely erases the NPC's Unnatural Agility multiplier for Initiative when they have Lightning Reflexes.
+- fix: New pure helper `unnaturalMultiplierFromBaked(bonus, unnatural)` in `roll-helpers.mjs:687` recovers N from the baked additive (`N = round(bonus / (bonus − unnatural))`, mirroring `unnaturalOpposedDoSBonus`). `acolyte.mjs:_computeInitiative` now takes `Math.max(traitMult, bakedMult)` so baked NPCs (and trait-carrying PCs, whose `.unnatural` is likewise folded into `.bonus`) both resolve the real multiplier. Added node test `tests/chargen/unnatural_multiplier_from_baked.test.mjs` (6 cases incl. the Lightning-Reflexes ×3 feed). Gate green (build:check exit 0; 289→295 node tests). LIVE-VERIFIED on rt-smoke (`tests/e2e/verify_bug_q_249.py`): NPC Ag 41 + baked Unnatural Agility (×2, unnatural 4, bonus 8) + Lightning Reflexes → `initiative.bonus = 12` (= 4×(2+1)), was 8 pre-fix; control without the talent → 8.
+- verify: 
+
+## BUG-Q-250 — `woundRecovery` under-heals Lightly Damaged characters during a week of rest
+- status: open
+- found-by: agy Gemini 3.1 Pro (High) · iter 6
+- area: rules
+- severity: P0 (wrong result in play)
+- evidence: `src/module/rolls/roll-helpers.mjs:147` — `case 'Lightly Damaged': return rest === 'day' ? tb : tb;        // bed-rest day = TB; a week ≥ that`
+- canon: `/mnt/project_data/RT/RT-DOCS/CoreBook-201-401.pdf/markdown.md:2759` (RT Core p.262) — "If a Lightly Damaged character devotes an entire day to bed rest, he removes an amount of Damage equal to his Toughness Bonus."
+- gap: When `rest === 'week'`, the `woundRecovery` function caps the recovery for Lightly Damaged characters at `tb`, which is identical to the amount they recover in a single day (and identical to what Heavily Damaged characters recover in a week). A full week (7 days) of bed rest for a Lightly Damaged character should heal `tb * 7` wounds (capped at max).
+- fix: 
+- verify: 

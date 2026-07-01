@@ -674,6 +674,30 @@ export function unnaturalOpposedDoSBonus(bonus, unnatural, success) {
 }
 
 /**
+ * Recover the Unnatural multiplier (×N) of a Characteristic from its computed values. The
+ * NPC pipeline pre-bakes Unnatural into `characteristic.unnatural` (the additive extra =
+ * rawBonus × (N − 1)) rather than carrying a physical "Unnatural Agility" trait item, so the
+ * trait-scan (`unnaturalCharacteristicMultipliers`) misses it. Deriving from the baked
+ * additive works for BOTH baked NPCs and trait-carrying PCs (whose `.unnatural` is likewise
+ * folded into `.bonus`): `unnatural = rawBonus × (N − 1)` ⇒ `N = bonus / (bonus − unnatural)`
+ * (rounded — tolerant of a small flat cyber bonus baked into `bonus`). Returns 1 when there
+ * is no Unnatural component. (BUG-Q-249.)
+ *
+ * @param {number} bonus      the full characteristic bonus (raw + unnatural)
+ * @param {number} unnatural  the Unnatural additive extra (`characteristic.unnatural`)
+ * @returns {number} the multiplier N (≥2 when Unnatural, else 1)
+ */
+export function unnaturalMultiplierFromBaked(bonus, unnatural) {
+    const un = Number(unnatural) || 0;
+    const b = Number(bonus) || 0;
+    if (un <= 0) return 1;
+    const rawBonus = b - un;
+    if (rawBonus <= 0) return 1;
+    const mult = Math.round(b / rawBonus);
+    return mult >= 2 ? mult : 1;
+}
+
+/**
  * Daemonic (RT Core p.364) Toughness-Bonus multiplier for soaking damage. "Creatures
  * with this Trait double their Toughness Bonus against all damage, except for damage
  * inflicted by force weapons, psychic powers, holy attacks, or other creatures with this

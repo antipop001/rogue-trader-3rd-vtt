@@ -6,7 +6,7 @@ import { RogueTraderBaseActor } from './base-actor.mjs';
 import { ForceFieldData } from '../rolls/force-field-data.mjs';
 import { prepareForceFieldRoll } from '../prompts/force-field-prompt.mjs';
 import { DHBasicActionManager } from '../actions/basic-action-manager.mjs';
-import { degreesOfSuccess, degreesOfFailure, roll1d100, initiativeCharBonus, woundsMax, reactionBudget, canSpendReaction, unnaturalCharacteristicMultipliers, unnaturalExtra, rapidReloadTime, doubleReloadTime, woundDamageState, woundRecovery } from '../rolls/roll-helpers.mjs';
+import { degreesOfSuccess, degreesOfFailure, roll1d100, initiativeCharBonus, woundsMax, reactionBudget, canSpendReaction, unnaturalCharacteristicMultipliers, unnaturalMultiplierFromBaked, unnaturalExtra, rapidReloadTime, doubleReloadTime, woundDamageState, woundRecovery } from '../rolls/roll-helpers.mjs';
 import { SYSTEM_ID } from '../hooks-manager.mjs';
 import { reactionsLocked } from '../rules/conditions.mjs';
 import { sustainedPsyPenalty } from '../rules/psychic.mjs';
@@ -461,7 +461,11 @@ export class RogueTraderAcolyte extends RogueTraderBaseActor {
     _computeInitiative() {
         const unnaturalMults = unnaturalCharacteristicMultipliers(this.items.filter((i) => i.type === 'trait'));
         const initChar = this.characteristics[this.initiative.characteristic];
-        const initUnnaturalMult = unnaturalMults[String(initChar.label ?? '').toLowerCase()] ?? 1;
+        const traitMult = unnaturalMults[String(initChar.label ?? '').toLowerCase()] ?? 1;
+        // NPCs pre-bake Unnatural into `characteristic.unnatural` (no trait item), so the
+        // trait-scan misses it — recover the multiplier from the baked additive too. (BUG-Q-249.)
+        const bakedMult = unnaturalMultiplierFromBaked(initChar.bonus, initChar.unnatural);
+        const initUnnaturalMult = Math.max(traitMult, bakedMult);
         // Encumbered: reduce the Agility Bonus by 1 for Initiative (RT Core p.249). Applied
         // to the AgB INPUT so Lightning Reflexes doubles the already-reduced bonus. (QA-078.)
         const initEncPenalty = this.encumbrance?.encumbered ? 1 : 0;
