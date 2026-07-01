@@ -87,6 +87,15 @@ export class RogueTraderAcolyte extends RogueTraderBaseActor {
         // afterward so `skill.modifier` changes (e.g. Master Chirurgeon's
         // +10 Medicae) feed into `skill.current`.
         this._computeSkills();
+        // Active Effects can modify Strength/Toughness (e.g. a Machinator Array or a
+        // drug comedown), which change the carrying/lifting/pushing limits AND the
+        // `encumbered` flag. `_computeEncumbrance` ran pre-AE above, so recompute it
+        // here against the post-AE characteristics, then re-run `_computeMovement`
+        // (base `prepareData` already ran it once post-AE, but off the STALE pre-AE
+        // encumbrance) so the -1 Agility-Bonus movement penalty reflects the true
+        // encumbered state. (BUG-Q-246.)
+        this._computeEncumbrance();
+        this._computeMovement();
         // Refresh ONLY the cached per-location `toughnessBonus` so it reflects the
         // post-AE Toughness Bonus (e.g. a drug comedown's -20 Toughness). It was
         // baked pre-AE above; assign-damage-data reads this cached value for soak.

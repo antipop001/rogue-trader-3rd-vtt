@@ -1012,14 +1012,14 @@ RT Core p.218 (Critical Hits): "If the number of Degrees of Success is equal to 
 - verify: confirmed: the re-fix isolates the update to only the `toughnessBonus` field of each armour location. This successfully updates the Toughness Bonus used for damage soaking without clobbering Active Effects applied to armour AP during `super.prepareData()`.
 
 ## BUG-Q-246 — Carrying capacity and encumbrance penalties do not update when Active Effects modify Strength or Toughness
-- status: open
+- status: fixed
 - found-by: agy Gemini 3.1 Pro (High) · iter 5
 - area: rules
 - severity: P1 (missing automation)
 - evidence: `src/module/documents/acolyte.mjs:83` calls `this._computeEncumbrance()` BEFORE `super.prepareData()` (where Active Effects apply). Unlike `_computeCharacteristics` or `_computeMovement` (which the base actor re-invokes post-AE), `_computeEncumbrance` is never called again during the prepareData cycle.
 - canon: n/a — code smell (Foundry data lifecycle bug).
 - gap: If an Active Effect modifies Strength or Toughness, the actor's carrying `max`, `lifting`, and `pushing` capacities are not recalculated. Consequently, if the AE drops their limit below their current weight, they will not be marked as `encumbered` and will falsely avoid the -10 Agility / -1 Movement penalties.
-- fix: 
+- fix: `src/module/documents/acolyte.mjs:96-97` — after `super.prepareData()` (post-AE), re-run `this._computeEncumbrance()` (recomputes carry/lift/push limits + the `encumbered` flag off post-AE SB+TB) then `this._computeMovement()` (base ran it once but off the stale pre-AE encumbrance, so re-run to propagate the -1 AgB movement penalty). Gate green (build:check exit 0, 283 node tests pass). LIVE-VERIFIED on rt-smoke via Playwright: an AE of -30 STR/-30 TON on an actor carrying 30kg dropped carry `max` 56→4.5 and flipped `encumbered` false→true (pre-fix it stayed 56/false).
 - verify: 
 
 ## BUG-Q-247 — The fast-path rollReaction() skips Fatigue and Encumbered penalties for Dodge and Parry
