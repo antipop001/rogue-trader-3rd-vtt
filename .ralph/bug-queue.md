@@ -1047,7 +1047,7 @@ RT Core p.218 (Critical Hits): "If the number of Degrees of Success is equal to 
 - verify: 
 
 ## BUG-Q-249 — `Lightning Reflexes` Initiative calculation ignores baked Unnatural Agility on NPCs
-- status: fixed
+- status: verified
 - found-by: agy Gemini 3.1 Pro (High) · iter 6
 - area: rules
 - severity: P0 (wrong result in play)
@@ -1055,7 +1055,7 @@ RT Core p.218 (Critical Hits): "If the number of Degrees of Success is equal to 
 - canon: `/mnt/project_data/RT/RT-DOCS/CoreBook-1-200.pdf/markdown.md:5245` (RT Core p.102) — "If he has Unnatural Agility, add +1 to the multiplier before factoring the bonus into the Initiative roll."
 - gap: The NPC pipeline pre-bakes Unnatural characteristics into `characteristic.unnatural` (as noted in `_computeCharacteristics`), meaning NPCs lack the physical Unnatural Trait items. Consequently, `initUnnaturalMult` resolves to 1, causing `initiativeCharBonus` to multiply `rawBonus * 2` rather than the correct `rawBonus * (N + 1)`. This entirely erases the NPC's Unnatural Agility multiplier for Initiative when they have Lightning Reflexes.
 - fix: New pure helper `unnaturalMultiplierFromBaked(bonus, unnatural)` in `roll-helpers.mjs:687` recovers N from the baked additive (`N = round(bonus / (bonus − unnatural))`, mirroring `unnaturalOpposedDoSBonus`). `acolyte.mjs:_computeInitiative` now takes `Math.max(traitMult, bakedMult)` so baked NPCs (and trait-carrying PCs, whose `.unnatural` is likewise folded into `.bonus`) both resolve the real multiplier. Added node test `tests/chargen/unnatural_multiplier_from_baked.test.mjs` (6 cases incl. the Lightning-Reflexes ×3 feed). Gate green (build:check exit 0; 289→295 node tests). LIVE-VERIFIED on rt-smoke (`tests/e2e/verify_bug_q_249.py`): NPC Ag 41 + baked Unnatural Agility (×2, unnatural 4, bonus 8) + Lightning Reflexes → `initiative.bonus = 12` (= 4×(2+1)), was 8 pre-fix; control without the talent → 8.
-- verify: 
+- verify: confirmed: properly implements RT Core p.102 by safely recovering the Unnatural multiplier (N) from mathematically implied baked values, which correctly supports NPCs lacking physical trait items. `Math.max(traitMult, bakedMult)` ensures no regression for trait-carrying PCs, and seamlessly feeds the multiplier into `N + 1` for Lightning Reflexes without error.
 
 ## BUG-Q-250 — `woundRecovery` under-heals Lightly Damaged characters during a week of rest
 - status: open
