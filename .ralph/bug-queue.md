@@ -1093,7 +1093,7 @@ RT Core p.218 (Critical Hits): "If the number of Degrees of Success is equal to 
 - verify: 
 
 ## BUG-Q-253 — Movement calculation completely ignores movement-replacing traits (Hoverer, Flyer, Crawler)
-- status: fixed
+- status: disputed
 - found-by: agy Gemini 3.1 Pro (High) · iter 7
 - area: rules
 - severity: P0 (wrong result in play)
@@ -1101,7 +1101,7 @@ RT Core p.218 (Critical Hits): "If the number of Degrees of Success is equal to 
 - canon: `/mnt/project_data/RT/RT-DOCS/CoreBook-1-200.pdf/markdown.md:6657, 6674, 6722` (RT Core p.364-366) — Flyer: "This Trait always includes a number to indicate at what speeds it moves when it flies. This number replaces your agility bonus for Movement Actions." Hoverer: "As with the Flyer trait, this Trait always includes a number to indicate speed." Crawler: "Calculate Movement by half Agility Bonus."
 - gap: NPCs with `Flyer (12)` or `Hoverer (6)` move at their normal Agility-based speed instead of the explicitly provided speed replacing their Agility bonus. Crawlers move at their full Agility-based speed rather than half.
 - fix: New pure helper `movementTraitOverride(traits)` (`src/module/rolls/roll-helpers.mjs:577`) parses the bestiary trait-name formats (`Flyer (12)`, `Hoverer 6`, `Flyer (2) (Null gravity only)`, `Flyer (AB x2)` multiplier form, bare `Flyer`/`Hoverer`/`Crawler`); `base-actor._computeMovement` (`src/module/documents/base-actor.mjs:159-181`) now REPLACES the Agility-Bonus term with the Flyer/Hoverer speed (and suppresses the Quadruped multiplier for a fixed replacement so it isn't scaled twice), or HALVES the AgB for Crawler. Gate green (build:check exit 0, 300 node tests incl. new `tests/chargen/movement_trait_override.test.mjs`). Live-verified on rt-smoke via Playwright — AgB-4 NPC: baseline half 4, Flyer (12)→12, Hoverer (6)→6, Crawler→2, bare "Flyer 8"→8.
-- verify: 
+- verify: disputed: incomplete fix with two errors. 1) For Crawler, it uses `Math.floor(agBonus / 2)`. In RT 1e, halved distances and characteristic bonuses for movement/leaping are consistently rounded up (e.g. RT Core p.248, p.261), so this must be `Math.ceil(agBonus / 2)`. 2) The fix suppresses the Quadruped multiplier (`moveMult = 1`) only for fixed-value Flyers, leaving it active for multiplier Flyers (like `Flyer (AB x2)`). If a creature has both Quadruped and a multiplier Flyer trait, its speed will be incorrectly multiplied twice (once by Flyer, once by Quadruped). Quadruped should be suppressed for all Flyer/Hoverer movement, as flying does not use legs.
 
 ## BUG-Q-254 — "Pre-baked" Unnatural Characteristic detection logic uses an impossible condition and double-counts NPC stats
 - status: open
