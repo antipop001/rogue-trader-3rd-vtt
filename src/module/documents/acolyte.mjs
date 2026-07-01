@@ -95,6 +95,11 @@ export class RogueTraderAcolyte extends RogueTraderBaseActor {
         // encumbrance) so the -1 Agility-Bonus movement penalty reflects the true
         // encumbered state. (BUG-Q-246.)
         this._computeEncumbrance();
+        // Initiative also takes the -1 Agility-Bonus encumbered penalty (RT Core p.249),
+        // but `initiative.bonus` was computed inside `_computeCharacteristics()` during
+        // super.prepareData() off the STALE pre-AE encumbrance flag — so re-run the
+        // idempotent initiative helper here against the refreshed flag. (BUG-Q-246 re-fix.)
+        this._computeInitiative();
         this._computeMovement();
         // Refresh ONLY the cached per-location `toughnessBonus` so it reflects the
         // post-AE Toughness Bonus (e.g. a drug comedown's -20 Toughness). It was
@@ -395,27 +400,11 @@ export class RogueTraderAcolyte extends RogueTraderBaseActor {
         // Sustaining penalty only applies at TWO or more maintained powers, then equals the
         // total count (RT Core p.159); one sustained power has no penalty. (BUG-Q-221.)
         this.psy.currentRating = Math.max(0, this.psy.rating - sustainedPsyPenalty(this.psy.sustained));
-        // RT 1e: Initiative bonus = governing characteristic bonus + any additive
-        // modifier (effect-addressable via system.initiative.modifier so talents/gear
-        // like Paranoia "+2 Initiative" / Wary "+1" survive derived-data recompute).
-        // BUG-002. Lightning Reflexes (RT Core p.110) replaces the single AgB term with
-        // the raw Agility Bonus times (Unnatural multiplier + 1) — handled here by name
-        // since an AE can't read AgB; do NOT also give that talent an AE. ENGINE-INIT-EXTRA.
-        // BUG-Q-188: the multiplier scales off the actual Unnatural Agility level (×N → ×N+1),
-        // not a fixed ×3 — so it never under-counts an Unnatural Agility (×3)/(×4) creature.
-        const initChar = this.characteristics[this.initiative.characteristic];
-        const initUnnaturalMult = unnaturalMults[String(initChar.label ?? '').toLowerCase()] ?? 1;
-        // Encumbered: reduce the Agility Bonus by 1 for Initiative (RT Core p.249). Applied
-        // to the AgB INPUT so Lightning Reflexes doubles the already-reduced bonus. (QA-078.)
-        const initEncPenalty = this.encumbrance?.encumbered ? 1 : 0;
-        this.initiative.bonus =
-            initiativeCharBonus(
-                Math.max(0, Math.floor(initChar.total / 10) - initEncPenalty),
-                Math.max(0, initChar.bonus - initEncPenalty),
-                this.hasTalent('Lightning Reflexes'),
-                initUnnaturalMult,
-            )
-            + (this.system.initiative.modifier ?? 0);
+        // Initiative depends on the `encumbered` flag; extracted into an idempotent helper
+        // so it can be re-run after the post-AE `_computeEncumbrance()` in prepareData
+        // without re-running the (non-idempotent, wounds.max-folding) rest of this method.
+        // (BUG-Q-246.)
+        this._computeInitiative();
         // RT 1e: maximum Wounds = the rolled/stored base plus any additive effect
         // modifier (effect-addressable via system.wounds.modifier, mirroring Initiative —
         // ENGINE-WOUNDS-MOD). wounds.max is a stored value (chargen/NPC-pipeline) and is
@@ -454,6 +443,36 @@ export class RogueTraderAcolyte extends RogueTraderBaseActor {
             if (rc.dodge) rc.dodge.max = reactions.dodge + reactions.modifier;
             if (rc.parry) rc.parry.max = reactions.parry + reactions.modifier;
         }
+    }
+
+    /**
+     * Compute `system.initiative.bonus`. Idempotent (reads only source/derived inputs;
+     * writes only `initiative.bonus`), so prepareData re-runs it after the post-AE
+     * `_computeEncumbrance()` to pick up the true `encumbered` flag. (BUG-Q-246.)
+     *
+     * RT 1e: Initiative bonus = governing characteristic bonus + any additive modifier
+     * (effect-addressable via system.initiative.modifier so talents/gear like Paranoia
+     * "+2 Initiative" / Wary "+1" survive derived-data recompute). BUG-002. Lightning
+     * Reflexes (RT Core p.110) replaces the single AgB term with the raw Agility Bonus
+     * times (Unnatural multiplier + 1) — handled here by name since an AE can't read AgB;
+     * do NOT also give that talent an AE. ENGINE-INIT-EXTRA. BUG-Q-188: the multiplier
+     * scales off the actual Unnatural Agility level (×N → ×N+1), not a fixed ×3.
+     */
+    _computeInitiative() {
+        const unnaturalMults = unnaturalCharacteristicMultipliers(this.items.filter((i) => i.type === 'trait'));
+        const initChar = this.characteristics[this.initiative.characteristic];
+        const initUnnaturalMult = unnaturalMults[String(initChar.label ?? '').toLowerCase()] ?? 1;
+        // Encumbered: reduce the Agility Bonus by 1 for Initiative (RT Core p.249). Applied
+        // to the AgB INPUT so Lightning Reflexes doubles the already-reduced bonus. (QA-078.)
+        const initEncPenalty = this.encumbrance?.encumbered ? 1 : 0;
+        this.initiative.bonus =
+            initiativeCharBonus(
+                Math.max(0, Math.floor(initChar.total / 10) - initEncPenalty),
+                Math.max(0, initChar.bonus - initEncPenalty),
+                this.hasTalent('Lightning Reflexes'),
+                initUnnaturalMult,
+            )
+            + (this.system.initiative.modifier ?? 0);
     }
 
     _computeSkills() {
