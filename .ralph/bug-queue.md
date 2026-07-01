@@ -857,10 +857,12 @@ RT Core p.218 (Critical Hits): "If the number of Degrees of Success is equal to 
 - **description:** `action-data.mjs` explicitly skips the 96+ BS jam check for Flame weapons, claiming it is handled on the damage die of 9 in damage resolution. However, `damage-data.mjs` lacks any logic to trigger a Jam condition when a 9 is rolled on a Flame weapon's damage die, leaving them immune to jamming.
 
 ## BUG-Q-231 — Sustaining-multiple-powers phenomena bonus is flat +10, not +10 per additional power
-- status: open
+- status: fixed
 - found-by: review (independent) · post-agy-qa-3
 - area: psychic
 - severity: P3
 - evidence: `src/module/rolls/action-data.mjs` — `if (sustained > 0) phenomBonus += 10;`
-- canon: RT Core p.159 — "+10 to the result rolled on the chart per additional power he is maintaining"
+- canon: RT Core p.159 — "+10 to the result rolled on the chart per additional power he is maintaining" (CoreBook-1-200.pdf/markdown.md:8066, read verbatim)
 - gap: a flat +10 under-counts for 2+ sustained powers (should scale per additional power) and also fires for a single sustained power where "additional" is ambiguous. Adjacent to BUG-Q-221 (which fixed the Psy Rating side). Deferred to a future run — not part of this batch.
+- fix: new pure helper `sustainedPhenomenaBonus(sustained)` in `src/module/rules/psychic.mjs:13` returns `sustained*10` (0 when none/invalid); `src/module/rolls/action-data.mjs:103` now `phenomBonus += sustainedPhenomenaBonus(sustained)` instead of a flat `+10`. `sustained` = count of powers maintained (all "additional" to the one being cast), so it scales per-power per RAW. Gate green (build:check exit 0; 255 node tests, +3 new in tests/chargen/sustained_phenomena_bonus.test.mjs). Live-verified on rt-smoke: imported the deployed module in page context → sustainedPhenomenaBonus {0:0,1:10,2:20,3:30,5:50,undefined:0}.
+- verify:
