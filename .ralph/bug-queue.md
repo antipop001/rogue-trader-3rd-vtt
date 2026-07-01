@@ -1082,12 +1082,12 @@ RT Core p.218 (Critical Hits): "If the number of Degrees of Success is equal to 
 - verify: confirmed: the fix correctly reads the underlying pre-baked base values from the immutable `_source` dataset (falling back securely to `this.system` if absent), enforcing idempotency. By avoiding re-folding the already-derived values across the `prepareData` cycle, this allows characteristics and max Wounds to accurately integrate Active Effect `modifier` adjustments without double-counting the initial source modifier.
 
 ## BUG-Q-252 — Encumbered penalty is erroneously multiplied by Lightning Reflexes for Initiative
-- status: open
+- status: wontfix
 - found-by: Antigravity/Gemini
 - area: rules
 - severity: P0 (wrong result in play)
 - evidence: `src/module/documents/acolyte.mjs:476-481` subtracts `initEncPenalty` from `Math.floor(initChar.total / 10)` before passing it as `rawBonus` to `initiativeCharBonus()`.
 - canon: `/mnt/project_data/RT/RT-DOCS/CoreBook-201-401.pdf/markdown.md:3299` (RT Core p.249) — "An Encumbered character... reduces his Agility Bonus by one for the purposes of determining movement rates and Initiative."
 - gap: When `initiativeCharBonus` processes Lightning Reflexes, it returns `rawBonus * (mult + 1)`. Because the `initEncPenalty` (which represents the -1 reduction to the Agility Bonus) was subtracted from the *raw* tens digit before multiplication, the penalty is inadvertently multiplied by `(mult + 1)` (e.g., creating a -3 Initiative penalty instead of -1). By contrast, when the actor does not have Lightning Reflexes, the code passes `initChar.bonus - initEncPenalty` as `normalBonus`, which correctly applies a flat -1 to the final calculated Agility Bonus.
-- fix: 
+- fix: WONTFIX — not a bug. Canon-faithful. RT Core p.249 reduces the *Agility Bonus* (not final Initiative) for Initiative purposes; RT Core p.110 Lightning Reflexes adds "twice his Agility Bonus". Both operate on the SAME AgB value, so the correct result is 2×(AgB−1) — the encumbrance reduction is legitimately doubled, not a flat −1. acolyte.mjs:485-486 applies the −1 to the AgB input before the multiplier, yielding exactly 2×(AgB−1). The asymmetry with the non-Lightning-Reflexes path (flat −1) is expected: without the talent there is no multiplier. Deliberately documented (QA-078 comment at acolyte.mjs:480-481).
 - verify: 
