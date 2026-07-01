@@ -977,14 +977,14 @@ RT Core p.218 (Critical Hits): "If the number of Degrees of Success is equal to 
 - verify: confirmed: the fix correctly implements RT RAW by removing the `if (isCombatVest)` check, unconditionally adding the weight of the backpack's contents to the character's `currentWeight`. This ensures they count toward the character's encumbrance (as there is no weight-negation rule for backpacks, unlike Power Armour on RT Core p.141) while still properly tracking them against the backpack's own physical capacity.
 
 ## BUG-Q-243 — Data preparation methods improperly declared as async
-- status: open
+- status: fixed
 - found-by: agy Gemini 3.1 Pro (High) · iter 8
 - area: other
 - severity: P1 (missing automation)
 - evidence: `src/module/documents/acolyte.mjs:74` and `src/module/documents/base-actor.mjs:53` — `async prepareData() { await super.prepareData(); ... }`
 - canon: n/a — code smell.
 - gap: Foundry VTT's document data preparation pipeline (including `prepareData`) is strictly synchronous. Declaring it as `async` causes it to return a Promise that the engine does NOT await during document updates or initialization. This creates race conditions where the derived data (like computed characteristics, movement, or AE-modified skills) is not yet ready when the canvas renders or when downstream modules read the actor data immediately following an update. The methods must be synchronous.
-- fix: 
+- fix: Real bug — Foundry's Actor.prepareData() is synchronous and unawaited by the engine; the async wrappers deferred derived-data work (movement, AE-modified skills, voidship space/power) into a post-await microtask. Converted the whole actor prepareData chain to synchronous: `base-actor.mjs:53` (root note added), `acolyte.mjs:74` (all compute steps run inline, then `super.prepareData()` sync, then the AE-recompute of skills), `vehicle.mjs:18`, and `voidship.mjs:23` (space/power/component bonuses now inline, not post-await). No external caller awaits prepareData() (only item-container calls it, sync). Gate green (build:check exit 0, node tests 282 pass). Live-verified on rt-smoke via Playwright: `acolyte.prepareData()` and `voidship.prepareData()` now return `undefined` (synchronous, not a Promise), and derived data is settled — acolyte movement.half present + WS total 55, voidship spaceValue 4.
 - verify: 
 
 ## BUG-Q-244 — Movement derivation fails completely if actor size is missing

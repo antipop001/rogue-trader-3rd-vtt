@@ -50,8 +50,12 @@ export class RogueTraderBaseActor extends Actor {
         return this.system.movement;
     }
 
-    async prepareData() {
-        await super.prepareData();
+    prepareData() {
+        // Foundry's data-preparation pipeline is strictly synchronous — it does not
+        // await prepareData(). Declaring it async would return an unawaited Promise and
+        // let derived data (characteristics/movement) settle in a microtask after the
+        // engine has already read the actor. Keep this method synchronous. (BUG-Q-243.)
+        super.prepareData();
         this._computeCharacteristics();
         this._computeMovement();
     }

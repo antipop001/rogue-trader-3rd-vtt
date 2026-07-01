@@ -71,7 +71,9 @@ export class RogueTraderAcolyte extends RogueTraderBaseActor {
         return this.system.encumbrance;
     }
 
-    async prepareData() {
+    prepareData() {
+        // Synchronous — Foundry does not await prepareData(); see BUG-Q-243 note in
+        // RogueTraderBaseActor.prepareData.
         this._ensureOriginPath();
         this._computeCharacteristics();
         this._computeSkills();
@@ -80,7 +82,7 @@ export class RogueTraderAcolyte extends RogueTraderBaseActor {
         this._computeMovement();
         this._computeEncumbrance();
         this._computeWeaponReload();
-        await super.prepareData();
+        super.prepareData();
         // Active Effects apply during super.prepareData(); recompute skills
         // afterward so `skill.modifier` changes (e.g. Master Chirurgeon's
         // +10 Medicae) feed into `skill.current`.

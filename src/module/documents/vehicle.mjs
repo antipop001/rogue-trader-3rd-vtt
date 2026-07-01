@@ -15,8 +15,9 @@ export class RogueTraderVehicle extends RogueTraderBaseActor {
         this.updateSource(initData)
     }
 
-    async prepareData() {
-        await super.prepareData();
+    prepareData() {
+        // Synchronous — see BUG-Q-243 note in RogueTraderBaseActor.prepareData.
+        super.prepareData();
     }
 
     get subtype() {
