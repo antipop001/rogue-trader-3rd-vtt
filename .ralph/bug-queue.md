@@ -1036,12 +1036,12 @@ RT Core p.218 (Critical Hits): "If the number of Degrees of Success is equal to 
 - verify: confirmed: correctly applies the Fatigue penalty to both reactions (RT Core p.251 verbatim: "Characters suffering from any level of Fatigue suffer a –10 penalty to all Tests") and the Encumbered penalty exclusively to Dodge. While the finding hallucinated the phrase "such as Dodge", Dodge is explicitly classified with the "Movement" subtype in Table 9-1 (RT Core p.238), making it unambiguously a "movement-related test" under the Encumbered rule (RT Core p.268). Parry ("Defence, Melee") is correctly unaffected.
 
 ## BUG-Q-248 — Paranoia talent's Unnatural Agility synergy for Initiative is un-implemented
-- status: open
+- status: wontfix
 - found-by: agy Gemini 3.1 Pro (High) · iter 5
 - area: rules
 - severity: P1 (missing automation)
 - evidence: `src/module/documents/acolyte.mjs:391-402` correctly fetches `initUnnaturalMult` but completely ignores the Paranoia talent multiplier tweak, despite a comment explicitly calling out the rule (with a mis-assigned `BUG-Q-239` marker).
 - canon: `/mnt/project_data/RT/RT-DOCS/CoreBook-1-200.pdf/markdown.md:5245` (RT Core p.102) — "If he has Unnatural Agility, add +1 to the multiplier before factoring the bonus into the Initiative roll."
 - gap: A character with both Paranoia and Unnatural Agility (x2) should get an effective Unnatural Agility (x3) for their Initiative roll. The code calculates initiative using the base multiplier, depriving the character of the extra Agility Bonus synergy.
-- fix: 
+- fix: WONTFIX — wrong-premise. The finding conflates two distinct talents. The cited canon (markdown.md:5245) is the text of LIGHTNING REFLEXES, not Paranoia; the actual Paranoia text (markdown.md:5397, RT Core p.123) is ONLY "+2 bonus on Initiative rolls, and the GM may secretly Test his Perception" — it has NO Unnatural Agility multiplier clause. Paranoia is correctly wired as a flat +2 via an AE on `system.initiative.modifier` (talents.yml:2307-2331). Lightning Reflexes' "×N → ×N+1" Unnatural-Agility synergy is already implemented in `initiativeCharBonus()` (roll-helpers.mjs:340, BUG-Q-188). The claimed `acolyte.mjs` comment with a `BUG-Q-239` marker does not exist (`grep -rn BUG-Q-239 src/` → no match). No change made.
 - verify: 
