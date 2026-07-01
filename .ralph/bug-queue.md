@@ -1058,12 +1058,12 @@ RT Core p.218 (Critical Hits): "If the number of Degrees of Success is equal to 
 - verify: confirmed: properly implements RT Core p.102 by safely recovering the Unnatural multiplier (N) from mathematically implied baked values, which correctly supports NPCs lacking physical trait items. `Math.max(traitMult, bakedMult)` ensures no regression for trait-carrying PCs, and seamlessly feeds the multiplier into `N + 1` for Lightning Reflexes without error.
 
 ## BUG-Q-250 — `woundRecovery` under-heals Lightly Damaged characters during a week of rest
-- status: open
+- status: fixed
 - found-by: agy Gemini 3.1 Pro (High) · iter 6
 - area: rules
 - severity: P0 (wrong result in play)
 - evidence: `src/module/rolls/roll-helpers.mjs:147` — `case 'Lightly Damaged': return rest === 'day' ? tb : tb;        // bed-rest day = TB; a week ≥ that`
 - canon: `/mnt/project_data/RT/RT-DOCS/CoreBook-201-401.pdf/markdown.md:2759` (RT Core p.262) — "If a Lightly Damaged character devotes an entire day to bed rest, he removes an amount of Damage equal to his Toughness Bonus."
 - gap: When `rest === 'week'`, the `woundRecovery` function caps the recovery for Lightly Damaged characters at `tb`, which is identical to the amount they recover in a single day (and identical to what Heavily Damaged characters recover in a week). A full week (7 days) of bed rest for a Lightly Damaged character should heal `tb * 7` wounds (capped at max).
-- fix: 
+- fix: `roll-helpers.mjs:147` — Lightly Damaged week case now returns `tb * 7` (7 days of bed rest, each = TB per RT Core p.262), was `tb`. Day case unchanged (= TB). `applyRest` caps at max Wounds so overheal is a non-issue. Added ratchet assertion in `tests/chargen/wound_recovery.test.mjs` (Lightly week = 28 at TB 4). Gate green (build:check exit 0; npm test 289 pass). LIVE-VERIFIED on rt-smoke (`/tmp/verify_bug_q_250.py`, page-context import of `woundRecovery`): Lightly week = 28 (7×TB4), Lightly day = 4, Heavily week = 4, Heavily day = 1.
 - verify: 

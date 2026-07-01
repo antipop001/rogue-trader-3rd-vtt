@@ -144,7 +144,7 @@ export function woundDamageState(currentValue, maxValue, toughnessBonus) {
 export function woundRecovery(state, toughnessBonus, rest) {
     const tb = Math.max(0, Number(toughnessBonus) || 0);
     switch (state) {
-        case 'Lightly Damaged': return rest === 'day' ? tb : tb;        // bed-rest day = TB; a week ≥ that
+        case 'Lightly Damaged': return rest === 'day' ? tb : tb * 7;    // bed-rest day = TB; a week = 7 days of bed rest
         case 'Heavily Damaged': return rest === 'week' ? tb : 1;        // 1/day passive, TB for a full week
         case 'Critically Damaged': return rest === 'week' ? 1 : 0;      // 1 Critical/week, day does nothing
         default: return 0;
