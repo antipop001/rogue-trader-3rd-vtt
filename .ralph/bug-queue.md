@@ -999,7 +999,7 @@ RT Core p.218 (Critical Hits): "If the number of Degrees of Success is equal to 
 - verify: confirmed: the fix correctly handles `NaN` results from uninitialized or malformed sizes by substituting 4 (Average). This acts as an identity element in the movement calculation `(size - 4)`, neutralizing the size modifier to 0 and preventing NaN from cascading through `_computeMovement`.
 
 ## BUG-Q-245 — Active Effects modifying Toughness are ignored for damage soaking
-- status: fixed
+- status: disputed
 - found-by: agy Gemini 3.1 Pro (High) · iter 5
 - area: armour
 - severity: P0 (wrong result in play)
@@ -1007,7 +1007,7 @@ RT Core p.218 (Critical Hits): "If the number of Degrees of Success is equal to 
 - canon: n/a — code smell (Foundry data lifecycle bug).
 - gap: If a character has an Active Effect modifying their Toughness (e.g., -20 Toughness from a drug comedown, or a psychic buff), their damage soak uses their pre-AE Toughness Bonus instead of their actual post-AE Toughness Bonus. The AE modification is entirely bypassed.
 - fix: `acolyte.mjs:85-91` now re-runs `this._computeArmour()` AFTER `super.prepareData()` (where AEs apply), alongside the existing post-AE `_computeSkills()` re-run. `_computeArmour` rebuilds `system.armour` from scratch (idempotent), so the cached per-location `toughnessBonus` now reflects the post-AE Toughness Bonus that `assign-damage-data.mjs:67` reads for soak. Gate green (`build:check` exit 0; 283 node tests pass). Live-verified on rt-smoke: an acolyte with TB 4 + an AE that drops Toughness by 20 → post-AE TB 2 AND `armour.body.toughnessBonus` = 2 (was stale 4 before the fix).
-- verify: 
+- verify: disputed: rebuilding `system.armour` from scratch on the second pass wipes out any Active Effects that modified armour AP directly (e.g., psychic powers targeting `system.armour.body.value`). A correct fix must either ONLY update the `toughnessBonus` field on the second pass without destroying the object, or introduce an AE-addressable `modifier` field for armour points that is folded into the total during `_computeArmour`.
 
 ## BUG-Q-246 — Carrying capacity and encumbrance penalties do not update when Active Effects modify Strength or Toughness
 - status: open
