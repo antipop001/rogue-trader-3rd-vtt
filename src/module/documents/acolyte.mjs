@@ -87,6 +87,12 @@ export class RogueTraderAcolyte extends RogueTraderBaseActor {
         // afterward so `skill.modifier` changes (e.g. Master Chirurgeon's
         // +10 Medicae) feed into `skill.current`.
         this._computeSkills();
+        // Re-run armour so the cached per-location `toughnessBonus` reflects the
+        // post-AE Toughness Bonus (e.g. a drug comedown's -20 Toughness). It was
+        // baked pre-AE above; assign-damage-data reads this cached value for soak.
+        // `_computeArmour` rebuilds `system.armour` from scratch, so this is
+        // idempotent. (BUG-Q-245.)
+        this._computeArmour();
     }
 
     /**

@@ -997,3 +997,47 @@ RT Core p.218 (Critical Hits): "If the number of Degrees of Success is equal to 
 - gap: If `this.system.size` is undefined or malformed (which can occur for newly initialized actors or during edge case migrations), `get size()` returns `NaN`. This propagates to `baseHalfMove`, causing all calculated movement values to be `NaN`. A fallback value (e.g., `4` for Average) must be provided so movement does not completely break on actors with uninitialized sizes.
 - fix: `base-actor.mjs:45-51` `get size()` now returns 4 (Average) when `Number.parseInt` yields NaN; belt-and-suspenders NaN-guard also added in `roll-helpers.mjs:755` `baseHalfMove` (treats non-finite size as Average). Node test `tests/chargen/base_half_move.test.mjs` covers the NaN/undefined fallback (283 tests pass); `npm run build:check` exit 0. Live-verified on rt-smoke: an acolyte with `system.size = undefined` re-prepares to `{half:1, full:2, charge:3, run:6}` (getter returns 4), identical to the normal path — no NaN.
 - verify: confirmed: the fix correctly handles `NaN` results from uninitialized or malformed sizes by substituting 4 (Average). This acts as an identity element in the movement calculation `(size - 4)`, neutralizing the size modifier to 0 and preventing NaN from cascading through `_computeMovement`.
+
+## BUG-Q-245 — Active Effects modifying Toughness are ignored for damage soaking
+- status: fixed
+- found-by: agy Gemini 3.1 Pro (High) · iter 5
+- area: armour
+- severity: P0 (wrong result in play)
+- evidence: `src/module/documents/acolyte.mjs:682-693` bakes `toughness.bonus` into `this.system.armour[location].toughnessBonus` BEFORE `super.prepareData()` (where Active Effects apply). `src/module/rolls/assign-damage-data.mjs:67` then reads this stale cached value via `this.tb = locationArmour.toughnessBonus;`.
+- canon: n/a — code smell (Foundry data lifecycle bug).
+- gap: If a character has an Active Effect modifying their Toughness (e.g., -20 Toughness from a drug comedown, or a psychic buff), their damage soak uses their pre-AE Toughness Bonus instead of their actual post-AE Toughness Bonus. The AE modification is entirely bypassed.
+- fix: `acolyte.mjs:85-91` now re-runs `this._computeArmour()` AFTER `super.prepareData()` (where AEs apply), alongside the existing post-AE `_computeSkills()` re-run. `_computeArmour` rebuilds `system.armour` from scratch (idempotent), so the cached per-location `toughnessBonus` now reflects the post-AE Toughness Bonus that `assign-damage-data.mjs:67` reads for soak. Gate green (`build:check` exit 0; 283 node tests pass). Live-verified on rt-smoke: an acolyte with TB 4 + an AE that drops Toughness by 20 → post-AE TB 2 AND `armour.body.toughnessBonus` = 2 (was stale 4 before the fix).
+- verify: 
+
+## BUG-Q-246 — Carrying capacity and encumbrance penalties do not update when Active Effects modify Strength or Toughness
+- status: open
+- found-by: agy Gemini 3.1 Pro (High) · iter 5
+- area: rules
+- severity: P1 (missing automation)
+- evidence: `src/module/documents/acolyte.mjs:83` calls `this._computeEncumbrance()` BEFORE `super.prepareData()` (where Active Effects apply). Unlike `_computeCharacteristics` or `_computeMovement` (which the base actor re-invokes post-AE), `_computeEncumbrance` is never called again during the prepareData cycle.
+- canon: n/a — code smell (Foundry data lifecycle bug).
+- gap: If an Active Effect modifies Strength or Toughness, the actor's carrying `max`, `lifting`, and `pushing` capacities are not recalculated. Consequently, if the AE drops their limit below their current weight, they will not be marked as `encumbered` and will falsely avoid the -10 Agility / -1 Movement penalties.
+- fix: 
+- verify: 
+
+## BUG-Q-247 — The fast-path rollReaction() skips Fatigue and Encumbered penalties for Dodge and Parry
+- status: open
+- found-by: agy Gemini 3.1 Pro (High) · iter 5
+- area: rules
+- severity: P0 (wrong result in play)
+- evidence: `src/module/documents/acolyte.mjs:900-904` constructs the `target` for `rollReaction()` (the quick-reaction button on chat cards). It applies Guarded Attack (+10) and Prone (-20/-10), but completely omits the checks for `this.system.fatigue?.value >= 1` and `this.encumbrance?.encumbered`.
+- canon: `/mnt/project_data/RT/RT-DOCS/CoreBook-201-401.pdf/markdown.md:2583, 2521` (RT Core p.251, 249) — "Fatigued characters suffer a -10% penalty to all Tests." "An Encumbered character suffers a -10 penalty to movement-related Tests, such as Dodge..."
+- gap: `rollSkill()` correctly applies a -10 penalty for Fatigue and a -10 penalty to Dodge when Encumbered. The fast-path `rollReaction()` omits these, allowing a Fatigued or Encumbered character to dodge or parry from the chat card at a 10-20% higher chance than they would from their character sheet.
+- fix: 
+- verify: 
+
+## BUG-Q-248 — Paranoia talent's Unnatural Agility synergy for Initiative is un-implemented
+- status: open
+- found-by: agy Gemini 3.1 Pro (High) · iter 5
+- area: rules
+- severity: P1 (missing automation)
+- evidence: `src/module/documents/acolyte.mjs:391-402` correctly fetches `initUnnaturalMult` but completely ignores the Paranoia talent multiplier tweak, despite a comment explicitly calling out the rule (with a mis-assigned `BUG-Q-239` marker).
+- canon: `/mnt/project_data/RT/RT-DOCS/CoreBook-1-200.pdf/markdown.md:5245` (RT Core p.102) — "If he has Unnatural Agility, add +1 to the multiplier before factoring the bonus into the Initiative roll."
+- gap: A character with both Paranoia and Unnatural Agility (x2) should get an effective Unnatural Agility (x3) for their Initiative roll. The code calculates initiative using the base multiplier, depriving the character of the extra Agility Bonus synergy.
+- fix: 
+- verify: 
