@@ -37,3 +37,10 @@ test('Half Move floored at 1 for small / low-Agility actors', () => {
     assert.equal(baseHalfMove(1, 1, 1, false), 1); // Minuscule AB 1 → 1 + (-3) = -2 → 1
     assert.equal(baseHalfMove(0, 4, 1, false), 1); // AB 0 Average → 0 → 1
 });
+
+test('a missing/malformed size falls back to Average, never NaN (BUG-Q-244)', () => {
+    // Undefined or NaN size (uninitialised actor) must not zero out movement.
+    assert.equal(baseHalfMove(3, NaN, 1, false), 3); // treated as Average → AB 3
+    assert.equal(baseHalfMove(3, undefined, 1, false), 3);
+    assert.equal(baseHalfMove(5, undefined, 1, false), 5);
+});

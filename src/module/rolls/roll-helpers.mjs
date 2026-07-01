@@ -753,6 +753,9 @@ export function hasUnnaturalSpeed(traits) {
  * @returns {number} Half Move in metres (≥ 1)
  */
 export function baseHalfMove(agBonus, size, moveMult = 1, unnaturalSpeed = false) {
+    // Guard a missing/malformed size against propagating NaN into every movement rate;
+    // treat an unparseable size as Average (4 → +0 modifier). (BUG-Q-244.)
+    if (!Number.isFinite(size)) size = 4;
     let base = (agBonus + (size - 4)) * moveMult;
     if (unnaturalSpeed) base *= 2;
     return Math.max(1, base);

@@ -43,7 +43,11 @@ export class RogueTraderBaseActor extends Actor {
     }
 
     get size() {
-        return Number.parseInt(this.system.size);
+        // Fall back to Average (4) when size is undefined/malformed (newly-initialised
+        // actors, edge-case migrations) so a NaN never propagates into _computeMovement
+        // and zeroes out every movement rate. (BUG-Q-244.)
+        const size = Number.parseInt(this.system.size);
+        return Number.isNaN(size) ? 4 : size;
     }
 
     get movement() {
