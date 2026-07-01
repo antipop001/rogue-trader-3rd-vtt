@@ -160,19 +160,21 @@ export class RogueTraderBaseActor extends Actor {
         const encPenalty = this.encumbrance?.encumbered ? 1 : 0;
         let agBonus = Math.max(0, rawAgBonus - encPenalty);
         // RT Core p.364-366 movement-replacing traits: Flyer (N)/Hoverer (N) REPLACE the
-        // Agility-Bonus term with their listed speed; Crawler uses HALF the Agility Bonus.
-        // A fixed Flyer/Hoverer speed already IS the movement term, so the Quadruped multiplier
-        // must not scale it again (rare combo). (BUG-Q-253.)
+        // Agility-Bonus term with their listed speed; Crawler moves at HALF the Agility Bonus
+        // ROUNDED UP (RT Core p.364: "half their Agility Bonus (rounded up)"). Flying does not
+        // use legs, so the Quadruped multiplier must NOT scale any Flyer/Hoverer movement —
+        // suppress it for the whole branch (fixed speed, AB-multiplier, and bare forms alike).
+        // (BUG-Q-253.)
         const moveTrait = movementTraitOverride(traits);
         if (moveTrait.mode === 'flyer' || moveTrait.mode === 'hoverer') {
+            moveMult = 1;
             if (moveTrait.value != null) {
                 agBonus = moveTrait.value;
-                moveMult = 1;
             } else if (moveTrait.multiplier != null) {
                 agBonus = agBonus * moveTrait.multiplier;
             }
         } else if (moveTrait.mode === 'crawler') {
-            agBonus = Math.floor(agBonus / 2);
+            agBonus = Math.ceil(agBonus / 2);
         }
         // RT Core p.368: apply the size modifier to the Agility Bonus FIRST, then the trait
         // multipliers (Quadruped, then Unnatural Speed) scale that adjusted total; floored at 1

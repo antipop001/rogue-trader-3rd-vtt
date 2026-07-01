@@ -1093,7 +1093,7 @@ RT Core p.218 (Critical Hits): "If the number of Degrees of Success is equal to 
 - verify: 
 
 ## BUG-Q-253 — Movement calculation completely ignores movement-replacing traits (Hoverer, Flyer, Crawler)
-- status: disputed
+- status: fixed
 - found-by: agy Gemini 3.1 Pro (High) · iter 7
 - area: rules
 - severity: P0 (wrong result in play)
@@ -1102,6 +1102,7 @@ RT Core p.218 (Critical Hits): "If the number of Degrees of Success is equal to 
 - gap: NPCs with `Flyer (12)` or `Hoverer (6)` move at their normal Agility-based speed instead of the explicitly provided speed replacing their Agility bonus. Crawlers move at their full Agility-based speed rather than half.
 - fix: New pure helper `movementTraitOverride(traits)` (`src/module/rolls/roll-helpers.mjs:577`) parses the bestiary trait-name formats (`Flyer (12)`, `Hoverer 6`, `Flyer (2) (Null gravity only)`, `Flyer (AB x2)` multiplier form, bare `Flyer`/`Hoverer`/`Crawler`); `base-actor._computeMovement` (`src/module/documents/base-actor.mjs:159-181`) now REPLACES the Agility-Bonus term with the Flyer/Hoverer speed (and suppresses the Quadruped multiplier for a fixed replacement so it isn't scaled twice), or HALVES the AgB for Crawler. Gate green (build:check exit 0, 300 node tests incl. new `tests/chargen/movement_trait_override.test.mjs`). Live-verified on rt-smoke via Playwright — AgB-4 NPC: baseline half 4, Flyer (12)→12, Hoverer (6)→6, Crawler→2, bare "Flyer 8"→8.
 - verify: disputed: incomplete fix with two errors. 1) For Crawler, it uses `Math.floor(agBonus / 2)`. In RT 1e, halved distances and characteristic bonuses for movement/leaping are consistently rounded up (e.g. RT Core p.248, p.261), so this must be `Math.ceil(agBonus / 2)`. 2) The fix suppresses the Quadruped multiplier (`moveMult = 1`) only for fixed-value Flyers, leaving it active for multiplier Flyers (like `Flyer (AB x2)`). If a creature has both Quadruped and a multiplier Flyer trait, its speed will be incorrectly multiplied twice (once by Flyer, once by Quadruped). Quadruped should be suppressed for all Flyer/Hoverer movement, as flying does not use legs.
+- fix (dispute addressed): Both errors fixed in `base-actor._computeMovement` (`src/module/documents/base-actor.mjs:168-177`). 1) Crawler now uses `Math.ceil(agBonus / 2)` — confirmed against verbatim canon `CoreBook-1-200.pdf/markdown.md:6645` (RT Core p.364 Crawler: "half their Agility Bonus (rounded up)"). 2) `moveMult = 1` moved to the top of the Flyer/Hoverer branch so it is suppressed for ALL flying movement (fixed-value, AB-multiplier, and bare forms) — flying does not use legs. Gate green (build:check exit 0, node tests pass). Live-verified on rt-smoke via Playwright: Crawler AgB5→3 (was floor→2), Crawler AgB4→2, Flyer(10)+Quadruped(8 legs)→10 (not 40), Flyer(AB x2)+Quadruped(8 legs)→AgB4×2=8 (not 32); baseline 4 / Flyer(12)→12 / Hoverer(6)→6 unchanged.
 
 ## BUG-Q-254 — "Pre-baked" Unnatural Characteristic detection logic uses an impossible condition and double-counts NPC stats
 - status: open
