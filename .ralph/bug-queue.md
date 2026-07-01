@@ -870,14 +870,14 @@ RT Core p.218 (Critical Hits): "If the number of Degrees of Success is equal to 
 - verify: confirmed: properly matches RT Core p.159 RAW where maintaining one power does not trigger the "multiple active powers" condition, and the bonus accurately scales at (sustained - 1) * 10 to reflect "per additional power he is maintaining."
 
 ## BUG-Q-233 — Encumbrance penalties to Initiative and Movement lag by one update due to derived-data ordering
-- status: open
+- status: wontfix
 - found-by: agy Gemini 3.1 Pro (High) · iter 7
 - area: rules
 - severity: P0 (wrong result in play)
 - evidence: `src/module/documents/acolyte.mjs:74-79` — `prepareData()` invokes `this._computeCharacteristics()` (which computes the Initiative encumbrance penalty) and `this._computeMovement()` (which computes the Agility Bonus encumbrance penalty) *before* `this._computeEncumbrance()` is called.
 - canon: `/mnt/project_data/RT/RT-DOCS/CoreBook-201-401.pdf/markdown.md:3276` (RT Core p.249) — "An Encumbered character takes a -10 penalty to all movement-related tests and reduces his Agility Bonus by one for the purposes of determining movement rates and Initiative."
 - gap: Because the functions applying the encumbered penalties read `this.encumbrance?.encumbered` before `_computeEncumbrance` calculates the character's current weight threshold, they consume the stale (previously persisted) state. If a character equips a heavy item, their movement and initiative penalties will not activate until the *next* sheet update cycle.
-- fix: 
+- fix: WONTFIX — wrong premise. `_computeCharacteristics()`/`_computeMovement()` run TWICE per prepareData: the pass-1 at acolyte.mjs:74/78 (pre-encumbrance) is superseded by a pass-2 inside `await super.prepareData()` (acolyte.mjs:81 → base-actor.mjs:53-56 re-invokes both) which runs AFTER `_computeEncumbrance()` (acolyte.mjs:79), so the FINAL init/movement values read the fresh encumbered flag. This is the same intentional double-compute documented at base-actor.mjs:144-146 ("encumbrance is computed before the final movement pass") and acolyte.mjs:82-85. Live-verified on rt-smoke (/tmp/verify_bugq233.py): equipping a 500 kg item in a SINGLE update flips encumbered false→true and drops both initBonus 4→3 and moveHalf 4→3 in the SAME cycle; a redundant re-prepare gives identical 3/3 (no lag). No code change.
 - verify: 
 
 ## BUG-Q-234 — Active Effects for Wounds and Initiative modifiers are silently ignored due to prepareData order
