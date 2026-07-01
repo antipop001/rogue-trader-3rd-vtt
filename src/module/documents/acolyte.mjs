@@ -6,7 +6,7 @@ import { RogueTraderBaseActor } from './base-actor.mjs';
 import { ForceFieldData } from '../rolls/force-field-data.mjs';
 import { prepareForceFieldRoll } from '../prompts/force-field-prompt.mjs';
 import { DHBasicActionManager } from '../actions/basic-action-manager.mjs';
-import { degreesOfSuccess, degreesOfFailure, roll1d100, initiativeCharBonus, woundsMax, reactionBudget, canSpendReaction, unnaturalCharacteristicMultipliers, rapidReloadTime, doubleReloadTime, woundDamageState, woundRecovery } from '../rolls/roll-helpers.mjs';
+import { degreesOfSuccess, degreesOfFailure, roll1d100, initiativeCharBonus, woundsMax, reactionBudget, canSpendReaction, unnaturalCharacteristicMultipliers, unnaturalExtra, rapidReloadTime, doubleReloadTime, woundDamageState, woundRecovery } from '../rolls/roll-helpers.mjs';
 import { SYSTEM_ID } from '../hooks-manager.mjs';
 import { reactionsLocked } from '../rules/conditions.mjs';
 import { sustainedPsyPenalty } from '../rules/psychic.mjs';
@@ -353,16 +353,17 @@ export class RogueTraderAcolyte extends RogueTraderBaseActor {
         for (const [name, characteristic] of Object.entries(this.characteristics)) {
             characteristic.total = characteristic.base + characteristic.advance * 5 + characteristic.modifier;
             const rawBonus = Math.floor(characteristic.total / 10);
-            // Derive `.unnatural` (the extra additive = rawBonus×(N−1)) from the trait, but
-            // SET-when-unset only: the NPC pipeline pre-bakes `.unnatural`, so recomputing
-            // it from the trait when a value is already present would double-apply
-            // (ENGINE-UNNATURAL-CHARS). Trait-gated/engine-applied by name — the matched
-            // trait must NOT also be given an AE. (Movement uses the unmodified AgB per
-            // RT Core p.368 — handled in _computeMovement, not here.)
-            if (!(characteristic.unnatural > 0)) {
-                const mult = unnaturalMults[String(characteristic.label ?? '').toLowerCase()];
-                if (mult >= 2) characteristic.unnatural = rawBonus * (mult - 1);
-            }
+            // Derive `.unnatural` (the extra additive = rawBonus×(N−1)). Two paths, both scaling
+            // with the LIVE bonus per RT Core p.368 (Unnatural multiplies the *current* bonus, so
+            // it grows when the Characteristic is raised): a trait item gives the multiplier when
+            // nothing is pre-baked; the NPC pipeline pre-bakes the extra directly (no trait item),
+            // from which `unnaturalExtra` recovers the implied multiplier and re-scales it — but
+            // only when it cleanly reproduces the baked figure, so existing NPC profiles are
+            // preserved verbatim (BUG-Q-237). Engine-applied by name — the matched trait must NOT
+            // also be given an AE. (Movement uses the unmodified AgB — handled in _computeMovement.)
+            const traitMult = unnaturalMults[String(characteristic.label ?? '').toLowerCase()];
+            const baselineBonus = Math.floor((characteristic.base + characteristic.advance * 5) / 10);
+            characteristic.unnatural = unnaturalExtra(traitMult, characteristic.unnatural, baselineBonus, rawBonus);
             characteristic.bonus = rawBonus + characteristic.unnatural + (name === 'strength' ? cyberStrengthBonus : 0);
 
             // RT 1e: Fatigue does NOT halve characteristics (that was a DH carryover —

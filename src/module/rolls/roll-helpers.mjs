@@ -614,6 +614,41 @@ export function unnaturalCharacteristicMultipliers(traits) {
 }
 
 /**
+ * RT Core p.368 ("Unnatural Characteristics"): an Unnatural Characteristic (xN) multiplies
+ * the Characteristic Bonus by N, and — crucially — that multiplier applies to the CURRENT
+ * bonus, so it scales when the Characteristic is raised (the book's example: Strength 41 with
+ * Unnatural Strength (x2) → SB 8; raise to 51 → SB 10). Returns the *extra* additive Unnatural
+ * bonus (i.e. `liveRawBonus × (N − 1)`) to add on top of the natural bonus.
+ *
+ * Two sources of the multiplier:
+ *  - `traitMult` — parsed from an "Unnatural <Char> (xN)" trait item (≥2), used when no value is
+ *    pre-baked (the acolyte/creature-with-trait path).
+ *  - `bakedUnnatural` — the NPC pipeline pre-bakes the extra directly on the characteristic (no
+ *    trait item). Recover the implied multiplier from the intrinsic (un-buffed) bonus so it too
+ *    scales with live buffs, instead of staying locked to the baked figure. To guarantee zero
+ *    regression on existing NPC profiles, only scale when the derived multiplier cleanly
+ *    reproduces the baked extra at the intrinsic bonus; otherwise the baked figure is treated as
+ *    data noise and preserved verbatim.
+ *
+ * @param {number} traitMult      multiplier from an Unnatural trait item (≥2), else falsy/1
+ * @param {number} bakedUnnatural pre-baked additive extra on the characteristic (0 if none)
+ * @param {number} baselineBonus  Characteristic Bonus at the intrinsic value = floor((base+advance*5)/10)
+ * @param {number} liveRawBonus   current Characteristic Bonus = floor(total/10), incl. modifiers
+ * @returns {number} extra additive Unnatural bonus to add to the natural bonus
+ */
+export function unnaturalExtra(traitMult, bakedUnnatural, baselineBonus, liveRawBonus) {
+    if (bakedUnnatural > 0) {
+        if (baselineBonus <= 0) return bakedUnnatural;
+        const mult = Math.round((baselineBonus + bakedUnnatural) / baselineBonus);
+        if (mult < 2 || baselineBonus * (mult - 1) !== bakedUnnatural) return bakedUnnatural;
+        return liveRawBonus * (mult - 1);
+    }
+    const mult = traitMult >= 2 ? traitMult : 1;
+    if (mult < 2) return 0;
+    return liveRawBonus * (mult - 1);
+}
+
+/**
  * Daemonic (RT Core p.364) Toughness-Bonus multiplier for soaking damage. "Creatures
  * with this Trait double their Toughness Bonus against all damage, except for damage
  * inflicted by force weapons, psychic powers, holy attacks, or other creatures with this

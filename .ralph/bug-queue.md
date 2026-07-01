@@ -911,9 +911,11 @@ RT Core p.218 (Critical Hits): "If the number of Degrees of Success is equal to 
 - verify: confirmed: the fix correctly subtracts 20 from Dodge and 10 from Parry (a WS test) targets during rollReaction, and applies the same -20/-10 modifiers during rollSkill, properly reflecting the Prone penalties from RT Core p.248.
 
 ## BUG-Q-237 — Pre-baked NPC Unnatural Characteristic bonuses fail to scale dynamically with live buffs
-- status: open
+- status: fixed
 - found-by: agy Gemini 3.1 Pro (High) · iter 1
 - area: `src/module/documents/acolyte.mjs` characteristics
 - severity: medium
 - evidence: `_computeCharacteristics()` protects pre-baked NPC `unnatural` bonuses by skipping the recalculation if `characteristic.unnatural > 0`. However, this permanently locks the Unnatural extra to its initial static value. If an actor with a baked `unnatural` receives a live buff that increases the characteristic (e.g., Slaught drug `+30 Agility`, which applies to `modifier`), the `rawBonus` correctly increases, but the `unnatural` component fails to scale. For example, an NPC with Base Strength 40 and Unnatural (x2) has a baked `unnatural` = 4. If buffed by +10 Strength, `rawBonus` becomes 5, but `unnatural` remains 4, yielding a total `bonus` of 9 instead of the canon 10.
 - canon: RT Core p.368 ("Unnatural Characteristics"): "For example, a creature with a Strength of 41 and Unnatural Strength (x2) has a Strength Bonus of 8. If the creature’s Strength is increased to 51, its Strength Bonus becomes 10."
+- fix: New pure helper `unnaturalExtra()` in `src/module/rolls/roll-helpers.mjs` (RT Core p.368). `acolyte.mjs:_computeCharacteristics()` (:355-366) now derives the Unnatural extra from it: for a pre-baked NPC value it recovers the implied multiplier from the intrinsic (un-buffed) bonus and re-scales it against the LIVE rawBonus — but only when the derived multiplier cleanly reproduces the baked figure (else preserved verbatim → zero regression on existing NPC profiles); the trait-item path (unnatural==0) still uses the trait multiplier, now also scaled off the live rawBonus. New node test `tests/chargen/unnatural_extra.test.mjs` (6 cases incl. the p.368 Str41→51 example, baked preservation, buffed scaling, noise guard). Gate green (build:check exit 0, 265 node tests). Live-verified on rt-smoke (/tmp/verify_bugq237.py): a baked NPC Str 40/unnatural 4 shows SB 8 baseline (preserved); after a persisted +10 Strength buff (total 50, rawBonus 5) unnatural scales 4→5 → SB 10, matching the canon example (was locked at SB 9).
+- verify:
