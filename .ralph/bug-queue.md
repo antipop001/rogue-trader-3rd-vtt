@@ -1106,14 +1106,14 @@ RT Core p.218 (Critical Hits): "If the number of Degrees of Success is equal to 
 - verify: confirmed: properly addresses the dispute by updating Crawler to use `Math.ceil` to correctly round up half Agility Bonus per RT Core p.364, and by unconditionally suppressing the Quadruped multiplier for all Flyer/Hoverer traits since flying does not use legs.
 
 ## BUG-Q-254 — "Pre-baked" Unnatural Characteristic detection logic uses an impossible condition and double-counts NPC stats
-- status: open
+- status: wontfix
 - found-by: agy Gemini 3.1 Pro (High) · iter 7
 - area: rules
 - severity: P0 (wrong result in play)
 - evidence: `src/module/rolls/roll-helpers.mjs:645-647` (`unnaturalExtra`) — `if (baselineBonus >= rawBonus + extraFromTrait) { return 0; }`
 - canon: `/mnt/project_data/RT/RT-DOCS/CoreBook-201-401.pdf/markdown.md:10034` (RT Core p.368, "Unnatural Characteristic"). A creature with T40 and Unnatural x2 has TB 8. If the stat is pre-baked in the bestiary as T80 to reflect this (TB 8), applying the trait again should not yield TB 16.
 - gap: The check for pre-baked stats is mathematically impossible to satisfy. `baselineBonus` is `floor((base+advance)/10)` while `rawBonus` includes modifiers, so `baselineBonus <= rawBonus`. Since `traitMultiplier >= 2`, `extraFromTrait >= rawBonus`. Thus `rawBonus + extraFromTrait >= 2 * rawBonus`. The condition `baselineBonus >= 2 * rawBonus` always evaluates to false. This massive logic failure causes NPCs or legacy actors with pre-multiplied stats (e.g., T80 instead of T40) to have their Unnatural trait applied a second time, resulting in monstrously high bonuses.
-- fix: 
+- fix: WONTFIX — the cited code does not exist. `grep` finds no `extraFromTrait` / `baselineBonus >= rawBonus` anywhere in src; the quoted line at 645-647 is inside `unnaturalCharacteristicMultipliers`, not `unnaturalExtra`. The current `unnaturalExtra` (roll-helpers.mjs:681-691) was reworked under BUG-Q-237/249/251 and has NO impossible early-return. It handles pre-baked NPC stats correctly: when `bakedUnnatural > 0` it takes a dedicated branch that recovers the implied multiplier and re-scales it with the LIVE bonus, only when the multiplier cleanly reproduces the baked figure (else preserves it verbatim); the trait-multiplier path is only reached when `bakedUnnatural === 0`, so pre-baked NPCs can NEVER have a trait applied a second time. The double-count the finding describes cannot occur. Note also the NPC pipeline pre-bakes the additive into `.unnatural` (an extra of `rawBonus×(N-1)`), NOT into the raw stat (T stays 40, not 80) — so the "T80 in the bestiary" premise does not match the data model. Existing tests `tests/chargen/unnatural_extra.test.mjs` cover exactly the "pre-baked NPC extra is preserved (zero regression)" and "scales when buffed" cases. Verified: `grep` confirms absence of the condition; read of roll-helpers.mjs:681-691 + acolyte.mjs:388-398 confirms the baked branch is exclusive of the trait branch.
 - verify: 
 
 ## BUG-Q-255 — `quadrupedMoveMultiplier` fails to detect standard leg counts in Bestiary trait names (e.g., "8 legs")
