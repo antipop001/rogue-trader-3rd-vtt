@@ -921,7 +921,7 @@ RT Core p.218 (Critical Hits): "If the number of Degrees of Success is equal to 
 - verify: confirmed: although the finding's 'raise to 51' example quote is hallucinated and does not exist in the rulebook, the actual RAW 'double its bonus' (RT Core p.368, CoreBook-201-401.pdf/markdown.md:6855) mathematically implies this dynamic scaling. The fix correctly calculates the extra bonus using liveRawBonus * (mult - 1), achieving the canon-correct result for both trait items and pre-baked NPCs without regression.
 
 ## BUG-Q-238 — Unnatural Characteristic multiplier is not added to Degrees of Success in Opposed Characteristic Tests
-- status: fixed
+- status: verified
 - found-by: agy Gemini 3.1 Pro (High) · iter 1
 - area: rules/action-data
 - severity: high
@@ -929,4 +929,4 @@ RT Core p.218 (Critical Hits): "If the number of Degrees of Success is equal to 
 - canon: `/mnt/project_data/RT/RT-DOCS/CoreBook-201-401.pdf/pages/page-169/markdown.md:26` (RT Core p.368) — Unnatural Characteristic: "During Opposed Characteristic Tests, on a success, the bonus multiplier is added to the degree of success."
 - gap: The engine correctly applies the Unnatural additive extra to the characteristic bonus, but it completely ignores the rule that the literal trait multiplier (e.g., +2 for Unnatural Strength (x2)) must be added directly to the degrees of success for Opposed Characteristic Tests like Feint, Knock-Down, or Grapple (on a success).
 - fix: New pure helper `unnaturalOpposedDoSBonus(bonus, unnatural, success)` in `src/module/rolls/roll-helpers.mjs` (RT Core p.368) — recovers the Unnatural multiplier N from the computed characteristic (`N = bonus/(bonus−unnatural)`, rounded to tolerate a flat cyber bonus) and returns N on a success (≥2), else 0. `action-data.mjs:checkForOpposed()` (:144-160) now adds it to both `attacker.dos` and `defender.dos` (each gated on that side's own success). `grapple.mjs:24-30` adds it to `aDos`/`oDos`, which feed both the opposed win comparison AND the Push distance (`metres = 1 + aDos`). New node test `tests/chargen/unnatural_opposed_dos.test.mjs` (6 cases incl. x2→+2, x3→+3, fail→0, no-unnatural→0, cyber-tolerance, degenerate guards). Gate green (build:check exit 0, 271 node tests). Live-verified on rt-smoke (/tmp/verify_bugq238.py): deployed helper returns x2→2/fail→0/x3→3/none→0/cyber→2, and a real NPC (Clawed Fiend, Unnatural Strength ×3: bonus 15/unnatural 10) yields a +3 DoS bonus.
-- verify: 
+- verify: confirmed: properly implements the RT Core p.368 Unnatural Characteristic rule by recovering the multiplier from the bonus and adding it directly to the degrees of success for Opposed Characteristic Tests (Feint, Knock-Down, Grapple), correctly factoring into both the win comparison and derived outcomes like Grapple Push distance. The multiplier recovery safely accommodates failures and standard flat cybernetic buffs.
