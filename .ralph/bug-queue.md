@@ -890,3 +890,29 @@ RT Core p.218 (Critical Hits): "If the number of Degrees of Success is equal to 
 - gap: The comments state that talents like Sound Constitution write `system.wounds.modifier += 1` via an Active Effect, and Paranoia writes to `system.initiative.modifier`. Because `_computeCharacteristics()` runs before `super.prepareData()` (where Foundry applies Active Effects), these `.modifier` fields are evaluated at `0` (or their raw DB value). The final `.bonus` and `.max` properties are computed without the AE contributions, silently breaking these talents.
 - fix: WONTFIX — wrong premise (same double-compute pattern as BUG-Q-233). `_computeCharacteristics()` runs TWICE per prepareData: the PASS-1 at acolyte.mjs:74 (pre-AE) is superseded by a PASS-2 inside `await super.prepareData()` (acolyte.mjs:81 → base-actor.mjs:53-55: Foundry's `Actor.prepareData()` at :54 applies Active Effects FIRST, then `this._computeCharacteristics()` at :55 re-runs the acolyte override). Foundry resets `system` from source at the top of each prepareData cycle, so PASS-2 reads the fresh AE-populated `system.{initiative,wounds}.modifier` and folds them into the final `.bonus`/`.max`. The double-compute is exactly why `super.prepareData()` re-invokes both here (mirrors the encumbrance ordering in BUG-Q-233). Live-verified on rt-smoke (/tmp/verify_bugq234b.py): an acolyte with Paranoia (AE `system.initiative.modifier +2`) + Sound Constitution (AE `system.wounds.modifier +1`), prepared naturally by Foundry, ends with initiative.bonus +2 and wounds.max +1 (delta exactly the AE values, applied ONCE) — not 0. No code change.
 - verify: 
+
+## BUG-Q-235 — Lifting / Pushing weight derivation hardcodes exact *2/*4 multipliers, deviating from canon Table 9-33 for high TB+SB
+- status: fixed
+- found-by: agy Gemini 3.1 Pro (High) · iter 1
+- area: `src/module/documents/acolyte.mjs` encumbrance
+- severity: medium
+- evidence: `_computeEncumbrance()` computes lifting weight as `this.encumbrance.max * 2` and pushing as `max * 4`. The comment claims "exact for SB+TB ≥ 1". However, for SB+TB = 10, carrying is 78kg. 78 * 2 = 156kg (table says 157kg), and 78 * 4 = 312kg (table says 315kg). For SB+TB = 14, carrying is 337kg. 337 * 2 = 674kg (table says 675kg), and 337 * 4 = 1348kg (table says 1,350kg).
+- canon: RT Core p.268 (Table 9-33: Carrying, Lifting & Pushing Weights). At sum 10, Lifting is 157 kg and Pushing is 315 kg. At sum 14, Lifting is 675 kg and Pushing is 1,350 kg.
+- fix: New pure helper `src/module/rules/encumbrance-helpers.mjs` tabulates all three Table 9-33 columns (Carrying/Lifting/Pushing) verbatim from RT Core p.268 (RT-DOCS CoreBook-201-401.pdf/markdown.md:3267-3289), keyed by SB+TB clamped to [0,20]. `acolyte.mjs:_computeEncumbrance()` now calls `carryingWeight()`/`liftingWeight()`/`pushingWeight()` (replacing the 66-line carrying switch + the off-canon `max*2`/`max*4` lifting/pushing derivation). Rows that the old shortcut got wrong (sums 0,8,9,10,12,14) now match canon. New node test `tests/chargen/encumbrance_weights.test.mjs` (all 21 rows + the deviating rows + clamp). Gate green (build:check exit 0, 259 node tests). Live-verified on rt-smoke via Playwright (deployed module/, imported encumbrance-helpers.mjs + created a real SB+TB=10 acolyte): helper rows 10/14/0/8/9/12 all canon; actor shows max=78, lifting=157, pushing=315 (was 156/312).
+- verify:
+
+## BUG-Q-236 — Combat Reactions (`rollReaction`) and Parry tests (`rollSkill`) ignore Prone penalties
+- status: open
+- found-by: agy Gemini 3.1 Pro (High) · iter 1
+- area: `src/module/documents/acolyte.mjs` reactions / prone
+- severity: medium
+- evidence: `BUG-Q-192` added a −20 Dodge penalty to `rollSkill('dodge')` and a −10 melee attack penalty in `conditions.mjs`. However, it missed `rollReaction` entirely. When resolving a Dodge or Parry Reaction directly from the prompt card, `rollReaction(type)` (`acolyte.mjs:964`) calculates `target = skill.current` but fails to subtract the `prone` penalty (−20 Dodge, −10 Parry). Furthermore, `rollSkill('parry')` (`acolyte.mjs:207`) also fails to apply the −10 Prone penalty since it only checks `skillName === 'dodge'`.
+- canon: RT Core p.248: "A character who is Prone suffers a -10 penalty to Weapon Skill Tests and a -20 penalty to Dodge Tests." (Parry is a Weapon Skill Test).
+
+## BUG-Q-237 — Pre-baked NPC Unnatural Characteristic bonuses fail to scale dynamically with live buffs
+- status: open
+- found-by: agy Gemini 3.1 Pro (High) · iter 1
+- area: `src/module/documents/acolyte.mjs` characteristics
+- severity: medium
+- evidence: `_computeCharacteristics()` protects pre-baked NPC `unnatural` bonuses by skipping the recalculation if `characteristic.unnatural > 0`. However, this permanently locks the Unnatural extra to its initial static value. If an actor with a baked `unnatural` receives a live buff that increases the characteristic (e.g., Slaught drug `+30 Agility`, which applies to `modifier`), the `rawBonus` correctly increases, but the `unnatural` component fails to scale. For example, an NPC with Base Strength 40 and Unnatural (x2) has a baked `unnatural` = 4. If buffed by +10 Strength, `rawBonus` becomes 5, but `unnatural` remains 4, yielding a total `bonus` of 9 instead of the canon 10.
+- canon: RT Core p.368 ("Unnatural Characteristics"): "For example, a creature with a Strength of 41 and Unnatural Strength (x2) has a Strength Bonus of 8. If the creature’s Strength is increased to 51, its Strength Bonus becomes 10."

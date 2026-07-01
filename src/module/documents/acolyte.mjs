@@ -10,6 +10,7 @@ import { degreesOfSuccess, degreesOfFailure, roll1d100, initiativeCharBonus, wou
 import { SYSTEM_ID } from '../hooks-manager.mjs';
 import { reactionsLocked } from '../rules/conditions.mjs';
 import { sustainedPsyPenalty } from '../rules/psychic.mjs';
+import { carryingWeight, liftingWeight, pushingWeight } from '../rules/encumbrance-helpers.mjs';
 import { RogueTraderSettings } from '../rogue-trader-settings.mjs';
 
 const BASIC_SKILLS = new Set([
@@ -804,79 +805,13 @@ export class RogueTraderAcolyte extends RogueTraderBaseActor {
             backpack_value: backpackCurrentWeight,
             backpack_encumbered: false,
         };
-        switch (attributeBonus) {
-            case 0:
-                this.encumbrance.max = 0.9;
-                break;
-            case 1:
-                this.encumbrance.max = 2.25;
-                break;
-            case 2:
-                this.encumbrance.max = 4.5;
-                break;
-            case 3:
-                this.encumbrance.max = 9;
-                break;
-            case 4:
-                this.encumbrance.max = 18;
-                break;
-            case 5:
-                this.encumbrance.max = 27;
-                break;
-            case 6:
-                this.encumbrance.max = 36;
-                break;
-            case 7:
-                this.encumbrance.max = 45;
-                break;
-            case 8:
-                this.encumbrance.max = 56;
-                break;
-            case 9:
-                this.encumbrance.max = 67;
-                break;
-            case 10:
-                this.encumbrance.max = 78;
-                break;
-            case 11:
-                this.encumbrance.max = 90;
-                break;
-            case 12:
-                this.encumbrance.max = 112;
-                break;
-            case 13:
-                this.encumbrance.max = 225;
-                break;
-            case 14:
-                this.encumbrance.max = 337;
-                break;
-            case 15:
-                this.encumbrance.max = 450;
-                break;
-            case 16:
-                this.encumbrance.max = 675;
-                break;
-            case 17:
-                this.encumbrance.max = 900;
-                break;
-            case 18:
-                this.encumbrance.max = 1350;
-                break;
-            case 19:
-                this.encumbrance.max = 1800;
-                break;
-            case 20:
-                this.encumbrance.max = 2250;
-                break;
-            default:
-                this.encumbrance.max = 2250;
-                break;
-        }
-
-        // RT Core Table 9-33: Lifting Weight = 2× and Pushing Weight = 4× the Carrying
-        // Weight (the table is built on doubling; exact for SB+TB ≥ 1). (QA-079.)
-        this.encumbrance.lifting = this.encumbrance.max * 2;
-        this.encumbrance.pushing = this.encumbrance.max * 4;
+        // RT Core p.268 Table 9-33: Carrying, Lifting & Pushing Weights, keyed by SB+TB.
+        // The Lifting/Pushing columns are NOT a clean 2×/4× of Carrying at every row
+        // (e.g. sum 10 → 157/315, sum 14 → 675/1350), so the canon values are tabulated
+        // directly in encumbrance-helpers.mjs rather than derived. (QA-079, BUG-Q-235.)
+        this.encumbrance.max = carryingWeight(attributeBonus);
+        this.encumbrance.lifting = liftingWeight(attributeBonus);
+        this.encumbrance.pushing = pushingWeight(attributeBonus);
 
         if (this.encumbrance.value > this.encumbrance.max) {
             this.encumbrance.encumbered = true;
