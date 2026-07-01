@@ -205,9 +205,11 @@ export class RogueTraderAcolyte extends RogueTraderBaseActor {
         if ((skillName === 'dodge' || skillName === 'parry') && this.system.combat?.guardedAttack) {
             rollData.modifiers['Guarded Attack'] = 10;
         }
-        // A Prone character takes −20 to Dodge Tests (RT Core p.248). (BUG-Q-192.)
-        if (skillName === 'dodge' && this.statuses?.has?.('prone')) {
-            rollData.modifiers['Prone'] = -20;
+        // A Prone character takes −20 to Dodge Tests and −10 to Weapon Skill Tests;
+        // Parry is a WS Test (RT Core p.248). (BUG-Q-192, BUG-Q-236.)
+        if (this.statuses?.has?.('prone')) {
+            if (skillName === 'dodge') rollData.modifiers['Prone'] = -20;
+            else if (skillName === 'parry') rollData.modifiers['Prone'] = -10;
         }
         // Surface talents whose `flags.rt.conditionalBonuses` apply to this
         // skill or its driving characteristic, so the prompt can offer them
@@ -897,6 +899,8 @@ export class RogueTraderAcolyte extends RogueTraderBaseActor {
         }
         let target = skill.current ?? 0;
         if (this.system.combat?.guardedAttack) target += 10;   // Guarded Attack +10 (QA-071)
+        // A Prone character takes −20 to Dodge and −10 to Parry (a WS Test) (RT Core p.248). (BUG-Q-236.)
+        if (this.statuses?.has?.('prone')) target += (type === 'dodge' ? -20 : -10);
         const result = await this.rollCheck(target);
 
         // Power Field (RT Core p.142): on a successful Parry with a Power-Field weapon, there is

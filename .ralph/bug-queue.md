@@ -901,12 +901,14 @@ RT Core p.218 (Critical Hits): "If the number of Degrees of Success is equal to 
 - fix: New pure helper `src/module/rules/encumbrance-helpers.mjs` tabulates all three Table 9-33 columns (Carrying/Lifting/Pushing) verbatim from RT Core p.268 (RT-DOCS CoreBook-201-401.pdf/markdown.md:3267-3289), keyed by SB+TB clamped to [0,20]. `acolyte.mjs:_computeEncumbrance()` now calls `carryingWeight()`/`liftingWeight()`/`pushingWeight()` (replacing the 66-line carrying switch + the off-canon `max*2`/`max*4` lifting/pushing derivation). Rows that the old shortcut got wrong (sums 0,8,9,10,12,14) now match canon. New node test `tests/chargen/encumbrance_weights.test.mjs` (all 21 rows + the deviating rows + clamp). Gate green (build:check exit 0, 259 node tests). Live-verified on rt-smoke via Playwright (deployed module/, imported encumbrance-helpers.mjs + created a real SB+TB=10 acolyte): helper rows 10/14/0/8/9/12 all canon; actor shows max=78, lifting=157, pushing=315 (was 156/312).
 - verify: confirmed: the fix correctly introduces tabulated values for carrying, lifting, and pushing weights exactly matching Table 9-33 on RT Core p.268. This resolves the deviations introduced by the previous x2/x4 multipliers. Safely clamps to the table's bounds ([0, 20]).
 ## BUG-Q-236 — Combat Reactions (`rollReaction`) and Parry tests (`rollSkill`) ignore Prone penalties
-- status: open
+- status: fixed
 - found-by: agy Gemini 3.1 Pro (High) · iter 1
 - area: `src/module/documents/acolyte.mjs` reactions / prone
 - severity: medium
 - evidence: `BUG-Q-192` added a −20 Dodge penalty to `rollSkill('dodge')` and a −10 melee attack penalty in `conditions.mjs`. However, it missed `rollReaction` entirely. When resolving a Dodge or Parry Reaction directly from the prompt card, `rollReaction(type)` (`acolyte.mjs:964`) calculates `target = skill.current` but fails to subtract the `prone` penalty (−20 Dodge, −10 Parry). Furthermore, `rollSkill('parry')` (`acolyte.mjs:207`) also fails to apply the −10 Prone penalty since it only checks `skillName === 'dodge'`.
-- canon: RT Core p.248: "A character who is Prone suffers a -10 penalty to Weapon Skill Tests and a -20 penalty to Dodge Tests." (Parry is a Weapon Skill Test).
+- canon: RT Core p.248: "A character who is Prone suffers a -10 penalty to Weapon Skill Tests and a -20 penalty to Dodge Tests." (Parry is a Weapon Skill Test). Confirmed RT-DOCS CoreBook-201-401.pdf/markdown.md:2486.
+- fix: `acolyte.mjs` — `rollReaction()` (:900) now subtracts −20 (dodge) / −10 (parry) from `target` when the actor `statuses.has('prone')`; `rollSkill()` prone block (:208) extended so `parry` gets −10 alongside the existing dodge −20. Gate green (build:check exit 0, node tests pass). Live-verified on rt-smoke (/tmp/verify_bugq236.py): a Prone acolyte's dodge reaction target = base−20 and parry reaction target = base−10 (stubbed rollCheck to capture the computed target).
+- verify: 
 
 ## BUG-Q-237 — Pre-baked NPC Unnatural Characteristic bonuses fail to scale dynamically with live buffs
 - status: open
