@@ -38,6 +38,10 @@ MIN_OPEN="${MIN_OPEN:-1}"
 # DRY_LIMIT: stop the whole run after this many consecutive discovery passes that find NOTHING new
 # (and nothing left to fix) — loop-until-dry, so the run ends instead of manufacturing noise.
 DRY_LIMIT="${DRY_LIMIT:-2}"
+# FOCUS: optional — aim this run's DISCOVERY at one subsystem (fresh surface beats re-sweeping the
+# picked-over combat core). Prepended to the discovery brief. e.g. FOCUS="the character-creation
+# engine in module/chargen/ (origin.mjs, commit.mjs, mapping.mjs)".
+FOCUS="${FOCUS:-}"
 VERIFY="${VERIFY:-1}"
 
 command -v agy    >/dev/null || { echo "ERROR: 'agy' (Antigravity CLI) not on PATH." >&2; exit 1; }
@@ -82,8 +86,12 @@ while [ ! -f .ralph/STOP ] && [ "$i" -lt "$MAX_ITERS" ]; do
   #    stop, rather than grind out marginal findings to fill iterations.
   if [ "$(open_count)" -lt "$MIN_OPEN" ]; then
     before=$(findings_count)
-    echo "── [agy] discovery (open=$(open_count) < $MIN_OPEN) ──" | tee -a .ralph/loop.log
-    RALPH_ITER="$i" agy -p "$(cat "$KIT/bug_check.agy.md")" \
+    echo "── [agy] discovery (open=$(open_count) < $MIN_OPEN)${FOCUS:+ · focus: $FOCUS} ──" | tee -a .ralph/loop.log
+    discovery_prompt="$(cat "$KIT/bug_check.agy.md")"
+    [ -n "$FOCUS" ] && discovery_prompt="THIS RUN — FOCUS your entire review on: ${FOCUS}. This is fresh, un-swept surface; do NOT review the combat core unless a bug there is glaring. Everything below still applies.
+
+${discovery_prompt}"
+    RALPH_ITER="$i" agy -p "$discovery_prompt" \
         --model "$CHECK_MODEL" --dangerously-skip-permissions --print-timeout 20m 2>&1 \
         | tee -a .ralph/loop.log
     normalize_status   # canonicalise any non-standard status the model wrote → "open"
