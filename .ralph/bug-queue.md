@@ -988,7 +988,7 @@ RT Core p.218 (Critical Hits): "If the number of Degrees of Success is equal to 
 - verify: confirmed: correctly drops `async` and `await` from the `prepareData()` methods across all actor types (acolyte, base-actor, vehicle, voidship), aligning with Foundry VTT's synchronous data preparation pipeline and preventing microtask race conditions for derived data.
 
 ## BUG-Q-244 — Movement derivation fails completely if actor size is missing
-- status: fixed
+- status: verified
 - found-by: agy Gemini 3.1 Pro (High) · iter 8
 - area: movement
 - severity: P0 (wrong result in play)
@@ -996,4 +996,4 @@ RT Core p.218 (Critical Hits): "If the number of Degrees of Success is equal to 
 - canon: n/a — code smell.
 - gap: If `this.system.size` is undefined or malformed (which can occur for newly initialized actors or during edge case migrations), `get size()` returns `NaN`. This propagates to `baseHalfMove`, causing all calculated movement values to be `NaN`. A fallback value (e.g., `4` for Average) must be provided so movement does not completely break on actors with uninitialized sizes.
 - fix: `base-actor.mjs:45-51` `get size()` now returns 4 (Average) when `Number.parseInt` yields NaN; belt-and-suspenders NaN-guard also added in `roll-helpers.mjs:755` `baseHalfMove` (treats non-finite size as Average). Node test `tests/chargen/base_half_move.test.mjs` covers the NaN/undefined fallback (283 tests pass); `npm run build:check` exit 0. Live-verified on rt-smoke: an acolyte with `system.size = undefined` re-prepares to `{half:1, full:2, charge:3, run:6}` (getter returns 4), identical to the normal path — no NaN.
-- verify: 
+- verify: confirmed: the fix correctly handles `NaN` results from uninitialized or malformed sizes by substituting 4 (Average). This acts as an identity element in the movement calculation `(size - 4)`, neutralizing the size modifier to 0 and preventing NaN from cascading through `_computeMovement`.
