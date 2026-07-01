@@ -601,7 +601,7 @@ data:
   backpack:
     inBackpack: false
 img: systems/rogue-trader-3rd/icons/items/buckets/ship-augur-array.png
-name: M-100 Auger Array
+name: M-100 Augur Array
 type: shipComponent
 ---
 data:
@@ -618,7 +618,7 @@ data:
   description: 'A modified version of the Imperial Navy’s standard sensor array, with boosted wideband gain. S04 R-50 Auspex
     Multi-band The sensors of this ship have been optimised for navigation, at the expense of the sensor''s other uses. External:
     This Component does not require hull space. Although it is external, it can only be destroyed or damaged by a Critical
-    Hit. Deep Void Auger Array These, quite simply, are the some of the best sensors created by the Adeptus Mechanicus, and
+    Hit. Deep Void Augur Array These, quite simply, are the some of the best sensors created by the Adeptus Mechanicus, and
     are reserved for their own ships and Imperial Naval scout vessels. External: This Component does not require hull space.
     Although it is external, it can only be destroyed or damaged by a Critical Hit. SUPPLEMENTAL COMPONENTS Supplemental Components
     are not required for a starship to function, though they may be highly recommended. Unlike Essential Components, multiples
@@ -651,7 +651,7 @@ data:
   backpack:
     inBackpack: false
 img: systems/rogue-trader-3rd/icons/items/buckets/ship-augur-array.png
-name: M-201.b Auger Array
+name: M-201.b Augur Array
 type: shipComponent
 ---
 data:
@@ -667,7 +667,7 @@ data:
   shipPoints: 0
   description: 'The sensors of this ship have been optimised for navigation, at the expense of the sensor''s other uses. External:
     This Component does not require hull space. Although it is external, it can only be destroyed or damaged by a Critical
-    Hit. Deep Void Auger Array These, quite simply, are the some of the best sensors created by the Adeptus Mechanicus, and
+    Hit. Deep Void Augur Array These, quite simply, are the some of the best sensors created by the Adeptus Mechanicus, and
     are reserved for their own ships and Imperial Naval scout vessels. External: This Component does not require hull space.
     Although it is external, it can only be destroyed or damaged by a Critical Hit. SUPPLEMENTAL COMPONENTS Supplemental Components
     are not required for a starship to function, though they may be highly recommended. Unlike Essential Components, multiples
@@ -741,7 +741,7 @@ data:
   backpack:
     inBackpack: false
 img: systems/rogue-trader-3rd/icons/items/buckets/ship-augur-array.png
-name: Deep Void Auger Array
+name: Deep Void Augur Array
 type: shipComponent
 ---
 data:
@@ -1511,7 +1511,7 @@ data:
   hitPoints: 2
   shipPoints: 2
   description: 'More than simply an auger array, the Logis-Targeter uses near-heretical cogitator circuitry from the Dark
-    Age of Technology to ensure extremely accurate weaponry.† † This can be used as a ship''s Auger Array. // External: This
+    Age of Technology to ensure extremely accurate weaponry.† † This can be used as a ship''s Augur Array. // External: This
     Component does not require hull space. Although it is external, it can only be destroyed or damaged by a Critical Hit.
     // Image of the Void: Increase the ship''s Detection by +5. // Targeting Matrix: All Ballistic Skill Tests to fire the
     ship''s weapons gain +5.'
