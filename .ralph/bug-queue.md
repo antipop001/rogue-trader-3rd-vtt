@@ -1117,7 +1117,7 @@ RT Core p.218 (Critical Hits): "If the number of Degrees of Success is equal to 
 - verify: 
 
 ## BUG-Q-255 — `quadrupedMoveMultiplier` fails to detect standard leg counts in Bestiary trait names (e.g., "8 legs")
-- status: open
+- status: wontfix
 - found-by: agy Gemini 3.1 Pro (High) · iter 7
 - area: rules
 - severity: P0 (wrong result in play)
