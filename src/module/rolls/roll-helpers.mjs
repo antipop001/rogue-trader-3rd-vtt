@@ -575,6 +575,48 @@ export function quadrupedMoveMultiplier(traits) {
 }
 
 /**
+ * RT Core p.364-366 movement-replacing traits. Flyer (N) and Hoverer (N) REPLACE the
+ * Agility-Bonus term of movement with their listed speed N ("This number replaces your
+ * agility bonus for Movement Actions"). Crawler moves at HALF the Agility Bonus. The
+ * number rides in the trait NAME across a range of formats seen in the bestiary packs —
+ * "Flyer (12)", "Hoverer 6", "Flyer (2) (Null gravity conditions only)", the multiplier
+ * form "Flyer (AB x2)", or a bare "Hoverer"/"Crawler" with no number. Trait-gated and
+ * engine-applied by name (NOT an AE — the value replaces the derived Agility Bonus, which
+ * an AE can't read); movement is fully computed in `_computeMovement` so this never
+ * double-counts. Flyer/Hoverer take precedence over Crawler when both are present.
+ * Returns:
+ *   - {mode:'flyer'|'hoverer', value:N}       — replace the Agility Bonus with N
+ *   - {mode:'flyer'|'hoverer', multiplier:N}  — multiply the Agility Bonus by N ("AB x2")
+ *   - {mode:'flyer'|'hoverer'}                — bare trait, no fixed speed (keep natural AgB)
+ *   - {mode:'crawler'}                        — halve the Agility Bonus
+ *   - {mode:null}                             — no movement-replacing trait
+ * @param {Array<{name?: string}>} traits  actor trait items
+ * @returns {{mode: ('flyer'|'hoverer'|'crawler'|null), value?: number, multiplier?: number}}
+ */
+export function movementTraitOverride(traits) {
+    if (!Array.isArray(traits)) return { mode: null };
+    let flyer = null;
+    let crawler = false;
+    for (const t of traits) {
+        const name = String(t?.name || '');
+        if (/^\s*(flyer|hoverer)\b/i.test(name)) {
+            const mode = /^\s*flyer/i.test(name) ? 'flyer' : 'hoverer';
+            // "(AB x2)"/"x2" is a multiplier on the Agility Bonus; a bare number replaces it.
+            const multMatch = name.match(/[x×]\s*(\d+)/i);
+            const numMatch = name.match(/(\d+)/);
+            if (multMatch) flyer = { mode, multiplier: Math.max(1, parseInt(multMatch[1], 10)) };
+            else if (numMatch) flyer = { mode, value: Math.max(0, parseInt(numMatch[1], 10)) };
+            else flyer = { mode };
+        } else if (/^\s*crawler\b/i.test(name)) {
+            crawler = true;
+        }
+    }
+    if (flyer) return flyer;
+    if (crawler) return { mode: 'crawler' };
+    return { mode: null };
+}
+
+/**
  * Unnatural Characteristic (RT Core p.368) multipliers. "Each time this Trait is
  * gained, select a Characteristic, and double its bonus. ... one selection multiplies
  * the Characteristic Bonus by ×2, two selections by ×3, and three selections by ×4."

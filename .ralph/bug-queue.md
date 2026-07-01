@@ -1091,3 +1091,36 @@ RT Core p.218 (Critical Hits): "If the number of Degrees of Success is equal to 
 - gap: When `initiativeCharBonus` processes Lightning Reflexes, it returns `rawBonus * (mult + 1)`. Because the `initEncPenalty` (which represents the -1 reduction to the Agility Bonus) was subtracted from the *raw* tens digit before multiplication, the penalty is inadvertently multiplied by `(mult + 1)` (e.g., creating a -3 Initiative penalty instead of -1). By contrast, when the actor does not have Lightning Reflexes, the code passes `initChar.bonus - initEncPenalty` as `normalBonus`, which correctly applies a flat -1 to the final calculated Agility Bonus.
 - fix: WONTFIX — not a bug. Canon-faithful. RT Core p.249 reduces the *Agility Bonus* (not final Initiative) for Initiative purposes; RT Core p.110 Lightning Reflexes adds "twice his Agility Bonus". Both operate on the SAME AgB value, so the correct result is 2×(AgB−1) — the encumbrance reduction is legitimately doubled, not a flat −1. acolyte.mjs:485-486 applies the −1 to the AgB input before the multiplier, yielding exactly 2×(AgB−1). The asymmetry with the non-Lightning-Reflexes path (flat −1) is expected: without the talent there is no multiplier. Deliberately documented (QA-078 comment at acolyte.mjs:480-481).
 - verify: 
+
+## BUG-Q-253 — Movement calculation completely ignores movement-replacing traits (Hoverer, Flyer, Crawler)
+- status: fixed
+- found-by: agy Gemini 3.1 Pro (High) · iter 7
+- area: rules
+- severity: P0 (wrong result in play)
+- evidence: `src/module/documents/base-actor.mjs:142-176` (`_computeMovement`) — The `_computeMovement` method computes movement solely using Agility Bonus and Size, passing them to `baseHalfMove()`. It does not check for the `Hoverer`, `Flyer`, or `Crawler` traits.
+- canon: `/mnt/project_data/RT/RT-DOCS/CoreBook-1-200.pdf/markdown.md:6657, 6674, 6722` (RT Core p.364-366) — Flyer: "This Trait always includes a number to indicate at what speeds it moves when it flies. This number replaces your agility bonus for Movement Actions." Hoverer: "As with the Flyer trait, this Trait always includes a number to indicate speed." Crawler: "Calculate Movement by half Agility Bonus."
+- gap: NPCs with `Flyer (12)` or `Hoverer (6)` move at their normal Agility-based speed instead of the explicitly provided speed replacing their Agility bonus. Crawlers move at their full Agility-based speed rather than half.
+- fix: New pure helper `movementTraitOverride(traits)` (`src/module/rolls/roll-helpers.mjs:577`) parses the bestiary trait-name formats (`Flyer (12)`, `Hoverer 6`, `Flyer (2) (Null gravity only)`, `Flyer (AB x2)` multiplier form, bare `Flyer`/`Hoverer`/`Crawler`); `base-actor._computeMovement` (`src/module/documents/base-actor.mjs:159-181`) now REPLACES the Agility-Bonus term with the Flyer/Hoverer speed (and suppresses the Quadruped multiplier for a fixed replacement so it isn't scaled twice), or HALVES the AgB for Crawler. Gate green (build:check exit 0, 300 node tests incl. new `tests/chargen/movement_trait_override.test.mjs`). Live-verified on rt-smoke via Playwright — AgB-4 NPC: baseline half 4, Flyer (12)→12, Hoverer (6)→6, Crawler→2, bare "Flyer 8"→8.
+- verify: 
+
+## BUG-Q-254 — "Pre-baked" Unnatural Characteristic detection logic uses an impossible condition and double-counts NPC stats
+- status: open
+- found-by: agy Gemini 3.1 Pro (High) · iter 7
+- area: rules
+- severity: P0 (wrong result in play)
+- evidence: `src/module/rolls/roll-helpers.mjs:645-647` (`unnaturalExtra`) — `if (baselineBonus >= rawBonus + extraFromTrait) { return 0; }`
+- canon: `/mnt/project_data/RT/RT-DOCS/CoreBook-201-401.pdf/markdown.md:10034` (RT Core p.368, "Unnatural Characteristic"). A creature with T40 and Unnatural x2 has TB 8. If the stat is pre-baked in the bestiary as T80 to reflect this (TB 8), applying the trait again should not yield TB 16.
+- gap: The check for pre-baked stats is mathematically impossible to satisfy. `baselineBonus` is `floor((base+advance)/10)` while `rawBonus` includes modifiers, so `baselineBonus <= rawBonus`. Since `traitMultiplier >= 2`, `extraFromTrait >= rawBonus`. Thus `rawBonus + extraFromTrait >= 2 * rawBonus`. The condition `baselineBonus >= 2 * rawBonus` always evaluates to false. This massive logic failure causes NPCs or legacy actors with pre-multiplied stats (e.g., T80 instead of T40) to have their Unnatural trait applied a second time, resulting in monstrously high bonuses.
+- fix: 
+- verify: 
+
+## BUG-Q-255 — `quadrupedMoveMultiplier` fails to detect standard leg counts in Bestiary trait names (e.g., "8 legs")
+- status: open
+- found-by: agy Gemini 3.1 Pro (High) · iter 7
+- area: rules
+- severity: P0 (wrong result in play)
+- evidence: `src/module/rolls/roll-helpers.mjs:630` (`quadrupedMoveMultiplier`) — The regex `name.match(/x\s*(\d+)/i)` is used to parse the number of legs from the Quadruped trait name to compute the movement multiplier.
+- canon: `/mnt/project_data/RT/RT-DOCS/roguetrader_thesoulreaver.pdf/pages/page-134/markdown.md:42` — "Traits: ... Quadruped (8 legs)". RT Core p.366 (Quadruped): "Creatures with more than four legs... increase the Agility Bonus by 1 multiplier for every extra set of legs (six legs equals AB x 3, eight legs AB x 4, and so on)."
+- gap: The regex requires an explicit "x" (e.g. `Quadruped (x3)`), completely missing standard canon formats like `Quadruped (8 legs)` used in official Koronus Bestiary and Soul Reaver stat blocks. When it fails to match, it defaults to a multiplier of 2, incorrectly treating an 8-legged creature as having 4 legs and severely nerfing its movement multiplier (x2 instead of x4).
+- fix: 
+- verify: 
