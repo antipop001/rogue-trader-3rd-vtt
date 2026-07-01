@@ -11,6 +11,7 @@ import { SYSTEM_ID } from '../hooks-manager.mjs';
 import { reactionsLocked } from '../rules/conditions.mjs';
 import { sustainedPsyPenalty } from '../rules/psychic.mjs';
 import { carryingWeight, liftingWeight, pushingWeight } from '../rules/encumbrance-helpers.mjs';
+import { effectiveArmourAP } from '../rules/armour-helpers.mjs';
 import { RogueTraderSettings } from '../rogue-trader-settings.mjs';
 
 const BASIC_SKILLS = new Set([
@@ -701,32 +702,25 @@ export class RogueTraderAcolyte extends RogueTraderBaseActor {
                 });
             });
 
-        // object for storing the max armour and its craftsmanship per location
+        // object for storing the max EFFECTIVE armour per location
         let maxArmour = locations.reduce((acc, location) => Object.assign(acc, { [location]: 0 }), {});
-        let maxArmourCraft = locations.reduce((acc, location) => Object.assign(acc, { [location]: 'Common' }), {});
 
-        // for each item, find the maximum armour val per location
+        // For each worn item, find the highest EFFECTIVE AP per location. Best
+        // Craftsmanship's +1 AP (RT Core p.138) is folded into the comparison so
+        // it isn't lost when a Best piece ties the base AP of a lesser-craft piece
+        // (previously the first-processed craftsmanship won an equal-base tie).
         this.items
             .filter((item) => item.type === 'armour' )
             .filter((item) => item.system.equipped)
-            .reduce((acc, armour) => {
+            .forEach((armour) => {
+                const craft = armour.system.craftsmanship || 'Common';
                 locations.forEach((location) => {
-                    let armourVal = armour.system.armourPoints[location] || 0;
-                    armourVal = Number(armourVal);
-                    if (armourVal > acc[location]) {
-                        acc[location] = armourVal;
-                        maxArmourCraft[location] = armour.system.craftsmanship || 'Common';
+                    const armourVal = effectiveArmourAP(armour.system.armourPoints[location], craft);
+                    if (armourVal > maxArmour[location]) {
+                        maxArmour[location] = armourVal;
                     }
                 });
-                return acc;
-            }, maxArmour);
-
-        // Best craftsmanship armour: +1 AP — RT Core p.138
-        locations.forEach((location) => {
-            if (maxArmour[location] > 0 && maxArmourCraft[location] === 'Best') {
-                maxArmour[location] += 1;
-            }
-        });
+            });
 
         // `value` = worn armour AP (also the Best-craftsmanship reference). `total`
         // already holds traitBonus + cybernetic AP; the per-location `total += value`
