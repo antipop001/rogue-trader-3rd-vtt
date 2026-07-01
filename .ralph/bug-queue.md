@@ -1058,7 +1058,7 @@ RT Core p.218 (Critical Hits): "If the number of Degrees of Success is equal to 
 - verify: confirmed: properly implements RT Core p.102 by safely recovering the Unnatural multiplier (N) from mathematically implied baked values, which correctly supports NPCs lacking physical trait items. `Math.max(traitMult, bakedMult)` ensures no regression for trait-carrying PCs, and seamlessly feeds the multiplier into `N + 1` for Lightning Reflexes without error.
 
 ## BUG-Q-250 — `woundRecovery` under-heals Lightly Damaged characters during a week of rest
-- status: disputed
+- status: fixed
 - found-by: agy Gemini 3.1 Pro (High) · iter 6
 - area: rules
 - severity: P0 (wrong result in play)
@@ -1067,3 +1067,26 @@ RT Core p.218 (Critical Hits): "If the number of Degrees of Success is equal to 
 - gap: When `rest === 'week'`, the `woundRecovery` function caps the recovery for Lightly Damaged characters at `tb`, which is identical to the amount they recover in a single day (and identical to what Heavily Damaged characters recover in a week). A full week (7 days) of bed rest for a Lightly Damaged character should heal `tb * 7` wounds (capped at max).
 - fix: `roll-helpers.mjs:147` — Lightly Damaged week case now returns `tb * 7` (7 days of bed rest, each = TB per RT Core p.262), was `tb`. Day case unchanged (= TB). `applyRest` caps at max Wounds so overheal is a non-issue. Added ratchet assertion in `tests/chargen/wound_recovery.test.mjs` (Lightly week = 28 at TB 4). Gate green (build:check exit 0; npm test 289 pass). LIVE-VERIFIED on rt-smoke (`/tmp/verify_bug_q_250.py`, page-context import of `woundRecovery`): Lightly week = 28 (7×TB4), Lightly day = 4, Heavily week = 4, Heavily day = 1.
 - verify: disputed: incomplete fix. The fix correctly scales Lightly Damaged recovery to 7*TB for a week (as 7 entire days of bed rest = 7*TB), but it misses the adjacent bug in the Heavily Damaged case, which the fixer explicitly asserted in their test and live-verification text ("Heavily day = 1" / "1/day passive"). RT Core p.262 (markdown.md:2989) verbatim states: "A Heavily Damaged character removes 1 Damage per week though natural healing." Because it is 1 per week (not 1 per day), a single day of rest for a Heavily Damaged character should recover 0, not 1. The fix must also update the 'Heavily Damaged' case to `return rest === 'week' ? tb : 0;` and correct the node test.
+- fix (dispute addressed): `roll-helpers.mjs:148` — Heavily Damaged day case now returns `0` (heals 1/week only; a single day recovers nothing per RT Core p.262 "removes 1 Damage per week"), was `1`. Lightly week case (`tb * 7`) from the prior pass is retained and correct. `tests/chargen/wound_recovery.test.mjs:19` updated to assert Heavily day = 0. Gate green (build:check exit 0; npm test 289 pass). LIVE-VERIFIED on rt-smoke (`/tmp/verify_bug_q_250b.py`, page-context import of `woundRecovery`): heavilyDay=0 (was 1), heavilyWeek=4, lightlyDay=4, lightlyWeek=28.
+
+## BUG-Q-251 — Repeated `_computeCharacteristics` calls corrupt source modifiers for `wounds.max` and `characteristic.unnatural`
+- status: open
+- found-by: Antigravity/Gemini
+- area: rules
+- severity: P0 (wrong result in play / state corruption)
+- evidence: `src/module/documents/acolyte.mjs:78` calls `this._computeCharacteristics()`, then at line 86 `super.prepareData()` triggers `RogueTraderBaseActor.prepareData()`, which calls `this._computeCharacteristics()` again within the same cycle. Lines 393 and 402 mutate `characteristic.unnatural` and `system.wounds.max` in place.
+- canon: Not a rule-book citation, but an architectural data-lifecycle law in Foundry VTT: derived data computed from source data must be idempotent within a single `prepareData` pass. 
+- gap: Because the pipeline does not restore `wounds.max` or `characteristic.unnatural` to their pre-mutation source values between the first and second calls, the second call treats the *already-mutated* value as the source data. If an NPC has a non-zero `characteristic.modifier` (or `system.wounds.modifier`) in its source data, the first pass scales the unnatural extra/adds the wound modifier. On the second pass, `unnaturalExtra()` misinterprets the now-larger `bakedUnnatural` value, fails the `baselineBonus * (mult - 1) !== bakedUnnatural` mathematical check, and permanently aborts scaling for any further Active Effect modifiers. Likewise, `woundsMax()` double-counts any hardcoded `wounds.modifier`.
+- fix: 
+- verify: 
+
+## BUG-Q-252 — Encumbered penalty is erroneously multiplied by Lightning Reflexes for Initiative
+- status: open
+- found-by: Antigravity/Gemini
+- area: rules
+- severity: P0 (wrong result in play)
+- evidence: `src/module/documents/acolyte.mjs:476-481` subtracts `initEncPenalty` from `Math.floor(initChar.total / 10)` before passing it as `rawBonus` to `initiativeCharBonus()`.
+- canon: `/mnt/project_data/RT/RT-DOCS/CoreBook-201-401.pdf/markdown.md:3299` (RT Core p.249) — "An Encumbered character... reduces his Agility Bonus by one for the purposes of determining movement rates and Initiative."
+- gap: When `initiativeCharBonus` processes Lightning Reflexes, it returns `rawBonus * (mult + 1)`. Because the `initEncPenalty` (which represents the -1 reduction to the Agility Bonus) was subtracted from the *raw* tens digit before multiplication, the penalty is inadvertently multiplied by `(mult + 1)` (e.g., creating a -3 Initiative penalty instead of -1). By contrast, when the actor does not have Lightning Reflexes, the code passes `initChar.bonus - initEncPenalty` as `normalBonus`, which correctly applies a flat -1 to the final calculated Agility Bonus.
+- fix: 
+- verify: 
