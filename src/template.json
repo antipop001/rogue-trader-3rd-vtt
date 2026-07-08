@@ -1544,7 +1544,8 @@
           "turrets": 0,
           "detection": 0,
           "speed": 0,
-          "bsShipWeapons": 0
+          "bsShipWeapons": 0,
+          "macrobatteryDamage": 0
         }
       },
       "shipGear": {

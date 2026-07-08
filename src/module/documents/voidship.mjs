@@ -79,7 +79,8 @@ export class RogueTraderVoidship extends RogueTraderBaseActor {
         const bonuses = {
             maneuverability: 0, hullIntegrity: 0, morale: 0,
             armour: 0, armourProw: 0, turrets: 0,
-            detection: 0, speed: 0, bsShipWeapons: 0
+            detection: 0, speed: 0, bsShipWeapons: 0,
+            macrobatteryDamage: 0
         };
         this.items.forEach(item => {
             if (item.type !== 'shipComponent') return;

@@ -117,7 +117,15 @@ export class Hit {
         }
         // Ship weapons store damage as a numeric modifier; each hit rolls 1d10 + that value (RT corebook p.215, lances p.216).
         if (actionItem.type === 'shipWeapon') {
-            const bonus = Number(rollFormula) || 0;
+            let bonus = Number(rollFormula) || 0;
+            // Munitorium (Ordinatus Extremus, RT Core p.196): every MACROBATTERY on the firing
+            // ship gains +1 to its listed Damage. Lances are not macrobatteries, so exclude them.
+            // The bonus is a component bonus summed on the ship in voidship._computeComponentBonuses.
+            const isLance = String(actionItem.system.type ?? '').toLowerCase() === 'lance';
+            const macroDmg = Number(sourceActor?.system?.componentBonuses?.macrobatteryDamage) || 0;
+            // Fold straight into the rolled formula (1d10 + listed + Munitorium); the modifiers
+            // map is summed elsewhere into totalDamage, so tracking it there too would double-count.
+            if (!isLance && macroDmg) bonus += macroDmg;
             rollFormula = bonus >= 0 ? `1d10+${bonus}` : `1d10${bonus}`;
         }
 
