@@ -85,16 +85,9 @@ export async function openAcquisitionDialog({ itemName = '', availability = 'ave
         </div>
       </form>
     `;
-    return new Promise(resolve => {
-        new Dialog({
-            title: 'Acquisition Test',
-            content: html,
-            buttons: {
-                roll: {
-                    label: 'Roll',
-                    icon: '<i class="fas fa-dice"></i>',
-                    callback: async html => {
-                        const form = html.find('form')[0];
+    // Resolve the test from the dialog's form (scoped to the passed form element, never global).
+    const resolveTest = async (form) => {
+                        if (!form) return null;
                         const data = new FormData(form);
                         const availabilityKey = data.get('availability');
                         const craftsmanshipKey = data.get('craftsmanship');
@@ -143,9 +136,33 @@ export async function openAcquisitionDialog({ itemName = '', availability = 'ave
                             content,
                             sound: CONFIG.sounds.dice,
                         });
-                        resolve({ success, target, total, dos, dof });
-                    },
-                },
+                        return { success, target, total, dos, dof };
+    };
+
+    const DialogV2 = foundry.applications?.api?.DialogV2;
+    // DialogV2 so the test dialog layers correctly over an ApplicationV2 sheet (the "Acquire"
+    // button opens it from item sheets). (V1-dialog migration.)
+    if (DialogV2) {
+        let result = null;
+        await DialogV2.wait({
+            window: { title: 'Acquisition Test' },
+            content: html,
+            buttons: [
+                { action: 'roll', label: 'Roll', icon: 'fas fa-dice', default: true,
+                  callback: async (_event, button) => { result = await resolveTest(button.form); } },
+                { action: 'cancel', label: 'Cancel', icon: 'fas fa-times' },
+            ],
+            rejectClose: false,
+        });
+        return result;
+    }
+    return new Promise(resolve => {
+        new Dialog({
+            title: 'Acquisition Test',
+            content: html,
+            buttons: {
+                roll: { label: 'Roll', icon: '<i class="fas fa-dice"></i>',
+                        callback: async (h) => resolve(await resolveTest((h?.[0] ?? h).querySelector('form'))) },
                 cancel: { label: 'Cancel', icon: '<i class="fas fa-times"></i>', callback: () => resolve(null) },
             },
             default: 'roll',

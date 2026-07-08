@@ -76,6 +76,10 @@ export async function openEndeavoursDialog() {
         <div class="rt-endeavour-list">${tableHtml(endeavours)}</div>
         ${newFormHtml()}
       </div>`;
+    // Kept on V1 Dialog: this interactive tracker embeds a NESTED <form class="rt-endeavour-new">
+    // and wires jQuery listeners against it (attachListeners). DialogV2 form-wraps its content, so
+    // the browser strips the nested form and attachListeners can't find it. V1 doesn't form-wrap,
+    // so the nested form + handlers work. (Not a sheet roll, so the V1/V2 layering issue is moot.)
     const dialog = new Dialog({
         title: 'Endeavours',
         content: html,
@@ -182,15 +186,26 @@ async function attachListeners($html, dialog) {
     });
 }
 
-function promptObjective() {
-    const themes = OBJECTIVE_THEMES.map(t => `<option value="${t}">${t}</option>`).join('');
+// Small DialogV2 (falling back to V1) that returns whatever `read(form)` extracts on OK, else null.
+// Reads are scoped to the dialog's own form element. (V1-dialog migration.)
+async function _formPrompt(title, content, okLabel, read) {
+    const DialogV2 = foundry.applications?.api?.DialogV2;
+    if (DialogV2) {
+        let result = null;
+        await DialogV2.wait({
+            window: { title }, content, rejectClose: false,
+            buttons: [
+                { action: 'ok', label: okLabel, default: true, callback: (_e, button) => { result = read(button.form); } },
+                { action: 'cancel', label: 'Cancel' },
+            ],
+        });
+        return result;
+    }
     return new Promise(resolve => {
         new Dialog({
-            title: 'Add Objective',
-            content: `<form><div class="form-group"><label>Theme</label><select name="theme">${themes}</select></div>`
-                + `<div class="form-group"><label>Target Achievement Points</label><input type="number" name="target" value="100" min="1" step="25" autofocus /></div></form>`,
+            title, content,
             buttons: {
-                ok: { label: 'Add', callback: html => resolve({ theme: html.find('select[name="theme"]').val(), target: Number(html.find('input[name="target"]').val()) || 100 }) },
+                ok: { label: okLabel, callback: (h) => resolve(read(h?.[0] ?? h)) },
                 cancel: { label: 'Cancel', callback: () => resolve(null) },
             },
             default: 'ok',
@@ -198,16 +213,17 @@ function promptObjective() {
     });
 }
 
+function promptObjective() {
+    const themes = OBJECTIVE_THEMES.map(t => `<option value="${t}">${t}</option>`).join('');
+    const content = `<form><div class="form-group"><label>Theme</label><select name="theme">${themes}</select></div>`
+        + `<div class="form-group"><label>Target Achievement Points</label><input type="number" name="target" value="100" min="1" step="25" autofocus /></div></form>`;
+    return _formPrompt('Add Objective', content, 'Add', (form) => ({
+        theme: form?.querySelector('select[name="theme"]')?.value,
+        target: Number(form?.querySelector('input[name="target"]')?.value) || 100,
+    }));
+}
+
 function promptNumber(title, label, defaultVal) {
-    return new Promise(resolve => {
-        new Dialog({
-            title,
-            content: `<form><div class="form-group"><label>${label}</label><input type="number" name="value" value="${defaultVal}" step="1" autofocus /></div></form>`,
-            buttons: {
-                ok: { label: 'OK', callback: html => resolve(Number(html.find('input[name="value"]').val()) || 0) },
-                cancel: { label: 'Cancel', callback: () => resolve(null) },
-            },
-            default: 'ok',
-        }).render(true);
-    });
+    const content = `<form><div class="form-group"><label>${label}</label><input type="number" name="value" value="${defaultVal}" step="1" autofocus /></div></form>`;
+    return _formPrompt(title, content, 'OK', (form) => Number(form?.querySelector('input[name="value"]')?.value) || 0);
 }
