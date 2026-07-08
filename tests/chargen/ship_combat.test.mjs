@@ -9,7 +9,19 @@ import {
     firingArcAllows,
     shipShootingResolution,
     shipRamDice,
+    effectiveShipSpeed,
 } from '../../src/module/rules/ship-combat.mjs';
+
+test('effectiveShipSpeed folds componentBonuses.speed into base Speed (Gravity Sails +1)', () => {
+    assert.equal(effectiveShipSpeed({ system: { speed: 8, componentBonuses: { speed: 1 } } }), 9);
+    assert.equal(effectiveShipSpeed({ system: { speed: 8 } }), 8);            // no bonus
+    assert.equal(effectiveShipSpeed({ system: { speed: 8, componentBonuses: {} } }), 8);
+    assert.equal(effectiveShipSpeed(undefined), 0);                          // guarded
+    // and it feeds the manoeuvre distance
+    const s = { system: { speed: 8, componentBonuses: { speed: 1 } } };
+    assert.equal(shipManoeuvreDistance(effectiveShipSpeed(s), 'full'), 9);
+    assert.equal(shipManoeuvreDistance(effectiveShipSpeed(s), 'half'), 5);   // ceil(9/2)
+});
 
 test('QA-047: initiative bonus = tens digit of Detection', () => {
     assert.equal(shipInitiativeBonus(47), 4);

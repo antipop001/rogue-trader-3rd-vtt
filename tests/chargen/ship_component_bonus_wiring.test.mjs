@@ -43,3 +43,26 @@ test('Munitorium carries macrobatteryDamage:1 and Bridge/Augur carry their bonus
     assert.match(around('Bridge of Antiquity'), /maneuverability:\s*5/, 'Bridge of Antiquity must set maneuverability: 5');
     assert.match(around('Deep Void Augur Array'), /detection:\s*10/, 'Deep Void Augur Array must set detection: 10');
 });
+
+test('ship-component-bonus audit: canon-corrected values hold', () => {
+    const pack = read('src/packs/ship-components/ship-components.yml');
+    const around = (name, span = 340) => {
+        const i = pack.indexOf('name: ' + name);
+        return i < 0 ? '' : pack.slice(Math.max(0, i - span), i);
+    };
+    // M-201.b Sensitive +5 Detection; R-50 Stellar Detection -2 Detection (RT Core p.202)
+    assert.match(around('M-201.b Augur Array'), /detection:\s*5/, 'M-201.b Sensitive: +5 Detection');
+    assert.match(around('R-50 Auspex Multi-band'), /detection:\s*-2/, 'R-50 Stellar Detection: -2 Detection');
+    // Micro Laser "Wall of Light" is +2 turret rating (was wired 1)
+    assert.match(around('Micro Laser Defence Grid'), /turrets:\s*2/, 'Micro Laser Defence Grid: +2 turrets');
+    // Auto-stabilised Logis-targeter has BOTH Image of the Void (+5 Det) and Targeting Matrix (+5 BS)
+    const logis = around('Auto-stabilised Logis-targeter');
+    assert.match(logis, /detection:\s*5/, 'Logis-targeter Image of the Void: +5 Detection');
+    assert.match(logis, /bsShipWeapons:\s*5/, 'Logis-targeter Targeting Matrix: +5 BS');
+    // Gravity Sails: +1 Speed AND +5 Manoeuvrability
+    const grav = around('Gravity Sails');
+    assert.match(grav, /speed:\s*1/, 'Gravity Sails: +1 Speed');
+    assert.match(grav, /maneuverability:\s*5/, 'Gravity Sails: +5 Manoeuvrability');
+    // Gyro-stabilisation Matrix is a difficulty-tier effect (ItS) — NOT a flat +5 Manoeuvrability
+    assert.match(around('Gyro-stabilisation Matrix'), /maneuverability:\s*0/, 'Gyro-stabilisation Matrix must NOT wire a flat +Manoeuvrability');
+});

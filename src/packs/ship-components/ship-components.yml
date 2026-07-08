@@ -650,6 +650,17 @@ data:
   effect: ''
   backpack:
     inBackpack: false
+  bonuses:
+    maneuverability: 0
+    hullIntegrity: 0
+    morale: 0
+    armour: 0
+    armourProw: 0
+    turrets: 0
+    detection: 5
+    speed: 0
+    bsShipWeapons: 0
+    macrobatteryDamage: 0
 img: systems/rogue-trader-3rd/icons/items/buckets/ship-augur-array.png
 name: M-201.b Augur Array
 type: shipComponent
@@ -697,6 +708,17 @@ data:
   effect: ''
   backpack:
     inBackpack: false
+  bonuses:
+    maneuverability: 0
+    hullIntegrity: 0
+    morale: 0
+    armour: 0
+    armourProw: 0
+    turrets: 0
+    detection: -2
+    speed: 0
+    bsShipWeapons: 0
+    macrobatteryDamage: 0
 img: systems/rogue-trader-3rd/icons/items/buckets/ship-augur-array.png
 name: R-50 Auspex Multi-band
 type: shipComponent
@@ -1551,7 +1573,7 @@ data:
     armour: 0
     armourProw: 0
     turrets: 0
-    detection: 0
+    detection: 5
     speed: 0
     bsShipWeapons: 5
 img: systems/rogue-trader-3rd/icons/items/buckets/ship-augur-array.png
@@ -1700,7 +1722,7 @@ data:
     morale: 0
     armour: 0
     armourProw: 0
-    turrets: 1
+    turrets: 2
     detection: 0
     speed: 0
     bsShipWeapons: 0
@@ -1742,7 +1764,7 @@ data:
     armourProw: 0
     turrets: 0
     detection: 0
-    speed: 0
+    speed: 1
     bsShipWeapons: 0
 img: systems/rogue-trader-3rd/icons/items/buckets/ship-augur-array.png
 name: Gravity Sails
@@ -2197,7 +2219,7 @@ data:
   backpack:
     inBackpack: false
   bonuses:
-    maneuverability: 5
+    maneuverability: 0
     hullIntegrity: 0
     morale: 0
     armour: 0

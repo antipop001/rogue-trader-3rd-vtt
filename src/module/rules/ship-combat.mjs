@@ -22,6 +22,12 @@ export function shipManoeuvreDistance(speed, fraction = 'full') {
     return fraction === 'half' ? Math.ceil(s / 2) : s;
 }
 
+/** Effective Speed = base Speed + component Speed bonuses (e.g. Gravity Sails +1). componentBonuses.speed
+ *  was computed but never folded into movement; this is the single read-point for manoeuvre distance. */
+export function effectiveShipSpeed(ship) {
+    return (Number(ship?.system?.speed) || 0) + (Number(ship?.system?.componentBonuses?.speed) || 0);
+}
+
 /** Max turn after moving: 90° for frigate-or-smaller hulls, 45° otherwise (RT Core p.214). */
 export function shipMaxTurn(shipType) {
     const t = String(shipType ?? '').toLowerCase();
@@ -110,7 +116,7 @@ export async function shipManoeuvre(ship, fraction = 'full', degrees = 0) {
     if (ship?.type !== 'voidship') { ui.notifications?.warn('Select a voidship to Manoeuvre.'); return; }
     const turn = ship.system?.combat?.strategicTurn ?? blankTurn();
     if (turn.manoeuvre) { ui.notifications?.warn(`${ship.name} has already made its Manoeuvre Action this Strategic Turn.`); return; }
-    const moved = shipManoeuvreDistance(ship.system?.speed, fraction);
+    const moved = shipManoeuvreDistance(effectiveShipSpeed(ship), fraction);
     const maxTurn = shipMaxTurn(ship.system?.shipType);
     const turned = Math.min(Math.abs(Number(degrees) || 0), maxTurn);
     await ship.update({ 'system.combat.strategicTurn': { ...turn, manoeuvre: true, movedVU: moved } });
@@ -211,7 +217,7 @@ export async function shipComeAbout(ship) {
     if (ship?.type !== 'voidship') return;
     const turn = ship.system?.combat?.strategicTurn ?? blankTurn();
     if (turn.manoeuvre) { ui.notifications?.warn(`${ship.name} has already made its Manoeuvre Action this Turn.`); return; }
-    const moved = shipManoeuvreDistance(ship.system?.speed, 'full');
+    const moved = shipManoeuvreDistance(effectiveShipSpeed(ship), 'full');
     await ship.update({ 'system.combat.strategicTurn': { ...turn, manoeuvre: true, movedVU: moved } });
     await ChatMessage.create({
         user: game.user.id,
@@ -226,7 +232,7 @@ export async function shipDisengage(ship) {
     const turn = ship.system?.combat?.strategicTurn ?? blankTurn();
     if (turn.manoeuvre) { ui.notifications?.warn(`${ship.name} has already made its Manoeuvre Action this Turn.`); return; }
     // Disengaging forfeits the Shooting Action and spends the Manoeuvre.
-    await ship.update({ 'system.combat.strategicTurn': { ...turn, manoeuvre: true, shooting: true, movedVU: shipManoeuvreDistance(ship.system?.speed, 'full') } });
+    await ship.update({ 'system.combat.strategicTurn': { ...turn, manoeuvre: true, shooting: true, movedVU: shipManoeuvreDistance(effectiveShipSpeed(ship), 'full') } });
     await ChatMessage.create({
         user: game.user.id,
         speaker: ChatMessage.getSpeaker({ actor: ship }),
