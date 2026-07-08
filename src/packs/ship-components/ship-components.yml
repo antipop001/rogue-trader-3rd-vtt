@@ -913,6 +913,20 @@ data:
   effect: ''
   backpack:
     inBackpack: false
+  bonuses:
+    maneuverability: 0
+    hullIntegrity: 0
+    morale: 0
+    armour: 0
+    armourProw: 0
+    turrets: 0
+    detection: 0
+    speed: 0
+    bsShipWeapons: 0
+    macrobatteryDamage: 0
+    crewRating: 0
+    boardingAttack: 20
+    boardingDefend: 20
 img: systems/rogue-trader-3rd/icons/items/buckets/ship-cargo-hold.png
 name: Barracks
 type: shipComponent
@@ -1088,6 +1102,20 @@ data:
   effect: ''
   backpack:
     inBackpack: false
+  bonuses:
+    maneuverability: 0
+    hullIntegrity: 0
+    morale: 0
+    armour: 0
+    armourProw: 0
+    turrets: 0
+    detection: 0
+    speed: 0
+    bsShipWeapons: 0
+    macrobatteryDamage: 0
+    crewRating: 0
+    boardingAttack: 0
+    boardingDefend: 10
 img: systems/rogue-trader-3rd/icons/items/buckets/ship-augur-array.png
 name: Tenebro-Maze
 type: shipComponent
@@ -1342,6 +1370,20 @@ data:
   effect: ''
   backpack:
     inBackpack: false
+  bonuses:
+    maneuverability: 0
+    hullIntegrity: 0
+    morale: 0
+    armour: 0
+    armourProw: 0
+    turrets: 0
+    detection: 0
+    speed: 0
+    bsShipWeapons: 0
+    macrobatteryDamage: 0
+    crewRating: 0
+    boardingAttack: 20
+    boardingDefend: 0
 img: systems/rogue-trader-3rd/icons/items/buckets/ship-augur-array.png
 name: Murder-Servitors
 type: shipComponent
@@ -1605,6 +1647,20 @@ data:
   effect: ''
   backpack:
     inBackpack: false
+  bonuses:
+    maneuverability: 0
+    hullIntegrity: 0
+    morale: 0
+    armour: 0
+    armourProw: 0
+    turrets: 0
+    detection: 0
+    speed: 0
+    bsShipWeapons: 0
+    macrobatteryDamage: 0
+    crewRating: 0
+    boardingAttack: 20
+    boardingDefend: 0
 img: systems/rogue-trader-3rd/icons/items/buckets/ship-augur-array.png
 name: Teleportarium
 type: shipComponent
@@ -2045,6 +2101,20 @@ data:
   effect: ''
   backpack:
     inBackpack: false
+  bonuses:
+    maneuverability: 0
+    hullIntegrity: 0
+    morale: 0
+    armour: 0
+    armourProw: 0
+    turrets: 0
+    detection: 0
+    speed: 0
+    bsShipWeapons: 0
+    macrobatteryDamage: 0
+    crewRating: 0
+    boardingAttack: 0
+    boardingDefend: 5
 img: systems/rogue-trader-3rd/icons/items/buckets/ship-crew-quarters.png
 name: Clan-kin Quarters
 type: shipComponent
@@ -2160,6 +2230,20 @@ data:
   effect: ''
   backpack:
     inBackpack: false
+  bonuses:
+    maneuverability: 0
+    hullIntegrity: 0
+    morale: 0
+    armour: 0
+    armourProw: 0
+    turrets: 0
+    detection: 0
+    speed: 0
+    bsShipWeapons: 0
+    macrobatteryDamage: 0
+    crewRating: 5
+    boardingAttack: 0
+    boardingDefend: 0
 img: systems/rogue-trader-3rd/icons/items/buckets/ship-augur-array.png
 name: Cogitator Interlink
 type: shipComponent

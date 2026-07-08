@@ -17,10 +17,47 @@ test('shipComponent bonuses schema declares macrobatteryDamage', () => {
     assert.equal(bonuses.macrobatteryDamage, 0, 'template.json shipComponent.bonuses must include macrobatteryDamage');
 });
 
-test('voidship._computeComponentBonuses sums macrobatteryDamage', () => {
+test('voidship._computeComponentBonuses sums macrobatteryDamage / crewRating / boarding', () => {
     const src = read('src/module/documents/voidship.mjs');
-    assert.match(src, /macrobatteryDamage:\s*0/,
-        'the componentBonuses accumulator must initialize macrobatteryDamage so it is summed from components');
+    for (const key of ['macrobatteryDamage', 'crewRating', 'boardingAttack', 'boardingDefend']) {
+        assert.match(src, new RegExp(`${key}:\\s*0`),
+            `the componentBonuses accumulator must initialize ${key} so it is summed from components`);
+    }
+});
+
+test('shipComponent bonuses schema declares crewRating + boarding fields', () => {
+    const b = JSON.parse(read('src/template.json')).Item.templates.shipComponent.bonuses;
+    assert.equal(b.crewRating, 0);
+    assert.equal(b.boardingAttack, 0);
+    assert.equal(b.boardingDefend, 0);
+});
+
+test('rollCrew folds crewRating bonus into the base target; rollBoarding folds crewRating + boarding attack/defend', () => {
+    const src = read('src/module/documents/voidship.mjs');
+    // crewRating improves every crew Test
+    assert.match(src, /baseTarget\s*=\s*\(this\.system\.crewRating\s*\|\|\s*0\)\s*\+\s*\(cb\.crewRating\s*\|\|\s*0\)/,
+        'rollCrew must add cb.crewRating to the base target');
+    // attacker (this) gets boardingAttack; defender (target) gets boardingDefend
+    assert.match(src, /aCB\.boardingAttack/, 'boarding initiator must receive boardingAttack');
+    assert.match(src, /dCB\.boardingDefend/, 'boarding defender must receive boardingDefend');
+    assert.match(src, /aCB\.crewRating/, 'boarding must fold the initiator crewRating bonus');
+    assert.match(src, /dCB\.crewRating/, 'boarding must fold the defender crewRating bonus');
+});
+
+test('pack: crewRating + boarding components carry their bonuses', () => {
+    const pack = read('src/packs/ship-components/ship-components.yml');
+    const around = (name, span = 380) => {
+        const i = pack.indexOf('name: ' + name);
+        return i < 0 ? '' : pack.slice(Math.max(0, i - span), i);
+    };
+    assert.match(around('Cogitator Interlink'), /crewRating:\s*5/, 'Cogitator Interlink +5 Crew Rating');
+    const barracks = around('Barracks');
+    assert.match(barracks, /boardingAttack:\s*20/, 'Barracks +20 boarding (attack)');
+    assert.match(barracks, /boardingDefend:\s*20/, 'Barracks +20 boarding (defend)');
+    assert.match(around('Tenebro-Maze'), /boardingDefend:\s*10/, 'Tenebro-Maze +10 defend');
+    assert.match(around('Clan-kin Quarters'), /boardingDefend:\s*5/, 'Clan-kin Quarters +5 defend');
+    assert.match(around('Murder-Servitors'), /boardingAttack:\s*20/, 'Murder-Servitors +20 attack (hit-and-run)');
+    assert.match(around('Teleportarium'), /boardingAttack:\s*20/, 'Teleportarium +20 attack (hit-and-run)');
 });
 
 test('ship-weapon damage adds the ship macrobatteryDamage bonus (macrobatteries only, not lances)', () => {

@@ -1545,7 +1545,10 @@
           "detection": 0,
           "speed": 0,
           "bsShipWeapons": 0,
-          "macrobatteryDamage": 0
+          "macrobatteryDamage": 0,
+          "crewRating": 0,
+          "boardingAttack": 0,
+          "boardingDefend": 0
         }
       },
       "shipGear": {

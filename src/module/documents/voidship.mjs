@@ -80,7 +80,8 @@ export class RogueTraderVoidship extends RogueTraderBaseActor {
             maneuverability: 0, hullIntegrity: 0, morale: 0,
             armour: 0, armourProw: 0, turrets: 0,
             detection: 0, speed: 0, bsShipWeapons: 0,
-            macrobatteryDamage: 0
+            macrobatteryDamage: 0,
+            crewRating: 0, boardingAttack: 0, boardingDefend: 0
         };
         this.items.forEach(item => {
             if (item.type !== 'shipComponent') return;
@@ -104,8 +105,9 @@ export class RogueTraderVoidship extends RogueTraderBaseActor {
         rollData.actor = this;
         rollData.nameOverride = crewActionName;
         rollData.type = 'Check';
-        rollData.baseTarget = this.system.crewRating;
         const cb = this.system.componentBonuses ?? {};
+        // crewRating component bonus (e.g. Cogitator Interlink +5) improves every crew Test.
+        rollData.baseTarget = (this.system.crewRating || 0) + (cb.crewRating || 0);
         switch (crewActionName){
             case "Maneuver": {
                 rollData.baseTarget = rollData.baseTarget + (this.system.maneuverability || 0) + (cb.maneuverability || 0);
@@ -155,8 +157,16 @@ export class RogueTraderVoidship extends RogueTraderBaseActor {
             turrets: (s.system.turrets || 0) + (s.system.componentBonuses?.turrets || 0),
         });
         const aS = stat(this), dS = stat(target);
-        const aMod = boardingCommandBonus(aS, dS) + (Number(operator) || 0);
-        const dMod = boardingCommandBonus(dS, aS);
+        const aCB = this.system.componentBonuses ?? {};
+        const dCB = target.system.componentBonuses ?? {};
+        // Component Command modifiers: crewRating improves both sides' Command; boardingAttack helps
+        // the initiator (this ship: Barracks, Murder-Servitors, Teleportarium), boardingDefend helps
+        // the defender (target: Barracks, Tenebro-Maze, Clan-kin Quarters). Kept in the modifier so
+        // the chat card's base(=Crew Rating)+mod breakdown stays consistent.
+        const aMod = boardingCommandBonus(aS, dS) + (Number(operator) || 0)
+            + (aCB.crewRating || 0) + (aCB.boardingAttack || 0);
+        const dMod = boardingCommandBonus(dS, aS)
+            + (dCB.crewRating || 0) + (dCB.boardingDefend || 0);
         const aTarget = (this.system.crewRating || 0) + aMod;
         const dTarget = (target.system.crewRating || 0) + dMod;
         const aRoll = await roll1d100(); const dRoll = await roll1d100();
