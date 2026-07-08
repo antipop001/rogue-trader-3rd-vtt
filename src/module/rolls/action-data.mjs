@@ -1,5 +1,5 @@
 import { PsychicRollData, RollData, WeaponRollData } from './roll-data.mjs';
-import { Hit, PsychicDamageData, scatterDirection, WeaponDamageData } from './damage-data.mjs';
+import { DamageData, Hit, PsychicDamageData, scatterDirection, WeaponDamageData } from './damage-data.mjs';
 import { astropathPerilsResult, attackTalentExtraHits, degreesOfSuccess, degreesOfFailure, getOpposedDegrees, getOpposedDegreesWithTiebreak, isPsychicDoubles, roll1d100, sendActionDataToChat, stunDefenceBonus, unnaturalOpposedDoSBonus, uuid, voidshipWeaponHits, voidshipHullDamage } from './roll-helpers.mjs';
 import { refundAmmo, useAmmo } from '../rules/ammo.mjs';
 import { sustainedPhenomenaBonus } from '../rules/psychic.mjs';
@@ -41,7 +41,13 @@ export class ActionData {
     template = '';
     hasDamage = false;
     rollData;
-    damageData;
+    // Default so it is never undefined: SimpleSkillData / PsychicSkillData don't set their own,
+    // yet calculateSuccessOrFailure() touches this.damageData.additionalHits on ANY successful
+    // roll (the Swift/Twin-Linked/Storm hit-count lines sit outside the `if (actionItem)` guard),
+    // and reset() calls this.damageData.reset(). Undefined here threw "Cannot read properties of
+    // undefined (reading 'additionalHits')" and silently dropped successful skill rolls, leaving
+    // the roll dialog stuck open. Weapon/Psychic subclasses override this in their constructors.
+    damageData = new DamageData();
     effects = [];
     effectOutput = [];
 
