@@ -115,6 +115,11 @@ export class Hit {
             // hits this path. (QA-040.)
             rollFormula = '0';
         }
+        // Foundry v13's Roll also rejects any OTHER non-string formula. A power/weapon may store its
+        // damage as a bare NUMBER (e.g. the psychic power "Held in My Gaze" carries damage 1) — the
+        // guard above only catches 0/empty, so coerce whatever survives to a string. Without this a
+        // successful cast threw `The dice roll formula "1" is not a string`. (runtime-exerciser find.)
+        rollFormula = String(rollFormula);
         // Ship weapons store damage as a numeric modifier; each hit rolls 1d10 + that value (RT corebook p.215, lances p.216).
         if (actionItem.type === 'shipWeapon') {
             let bonus = Number(rollFormula) || 0;

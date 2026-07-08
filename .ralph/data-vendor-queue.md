@@ -203,3 +203,10 @@ update of the grant data + the test, so NOT changed in the data-QA pass:
 Their availability values are CORRECT (Rare / Rare, verified vs source). Also note: the
 ship-components pack carries the same "Auger"→"Augur" typo across several sensor items — a
 separate future ship-components data pass.
+
+## Psychic power "Held in My Gaze" — damage 1 (data review)
+Found by the runtime exerciser (2026-07-08): this Telepathy power carries `damage: 1` (a flat 1),
+which the engine now stringifies (0.8.38 robustness fix) so it rolls a flat 1 point. Verify against
+canon whether it should deal damage at all — a flat "1" looks like extraction noise; it is likely
+either no damage (empty) or a dice formula. Engine no longer crashes either way; this is a content
+correctness question only.
