@@ -1219,13 +1219,14 @@ RT Core p.218 (Critical Hits): "If the number of Degrees of Success is equal to 
     In `damage-data.mjs`, the Righteous Fury logic constructs an extra damage roll using the weapon's base damage formula `const extra = new Roll(rollFormula)`. The comment explicitly justifies this with a quote: `"another full damage roll for the weapon" (RT Core p.250)`. This quote is inaccurate. RT Core p.250 explicitly states: "If the attack hits, he may roll an additional 1d10 and add it to his Damage total." Righteous Fury adds exactly 1d10, not the full weapon profile (e.g. 1d10+4 or 2d10).
 
 ## BUG-Q-249
-- status: open
+- status: wontfix
 - found-by: agy Gemini 3.1 Pro · iter 2
 - area: damage-data
 - severity: P2
 - evidence: `src/module/rolls/damage-data.mjs:156` iterates over `Tearing` to apply `+1 die` and `kh` to `this.damageRoll`. Later, for an `Accurate` bonus roll (`:235`) or `Maximal` bonus roll (`:250`), it checks `hasAttackSpecial("Tearing")` again and independently applies `+1 die` and `kh` to those bonus rolls too. Since `damageRoll` and `maximalRoll` are evaluated and tracked separately, this adds ONE extra die to the base roll, and ONE extra die to the bonus roll, discarding the lowest from each independently. For a 1d10 Maximal Tearing weapon, it rolls 2d10kh1 + 2d10kh1 (4 dice total, drop 2), instead of the correct 3d10kh2 (roll 3 dice total, drop 1).
 - canon: RT Core p.144 Tearing — "Tearing weapons roll one extra die for damage, and the lowest roll is discarded."
 - gap: Tearing applies multiplicatively to split-roll damage effects (Accurate, Maximal), rolling and discarding too many dice. The engine should aggregate the `Roll` formulas before applying Tearing, or only apply the extra die/drop-lowest to the final combined term list.
+- fix: DUPLICATE of BUG-Q-247 (commit 2d1cb29), already resolved in the current tree. `damage-data.mjs:225-230` now applies Tearing ONLY to the base `damageRoll` (and the legitimate RF-extra / Helpless full re-rolls), NOT to the Accurate/Maximal bonus rolls — the exact fix this finding asks for. The comment at :230 names both BUG-Q-247/BUG-Q-249. A 1d10 Maximal Tearing weapon now rolls base 2d10kh1 + maximal 1d10 = 3 dice/drop 1 (equivalent to the requested 3d10kh2). No change needed. Verified by reading the current code (Tearing block only at :156 for damageRoll and :266 for the Helpless re-roll; no Tearing re-application in the :231-253 bonus-roll block).
 
 ## BUG-Q-250
 - status: open
