@@ -314,6 +314,13 @@ export class Hit {
         // per-hit talent bonuses (Crushing Blow, Mighty Shot, …) are not re-applied to
         // the extra roll — a minor undercount, noted for follow-up. (BUG-008.)
         const rfToHit = attackData.rollData.modifiedTarget ?? 0;
+        // A pure per-DoS power (base damage empty → rollFormula '0', e.g. Banishment "1d10 per
+        // Degree of Success") has no base dice, so an RF extra rolled from '0' would add nothing.
+        // Righteous Fury adds "another full damage roll for the weapon" (RT Core p.250); for such a
+        // power that roll IS its per-DoS damage die (the die that scored the natural 10), so use the
+        // per-DoS formula as the RF extra formula instead of the empty base. (BUG-Q-250.)
+        const rfFormula = (rollFormula === '0' && perDoSFormula && String(perDoSFormula).trim() !== '')
+            ? String(perDoSFormula) : rollFormula;
         const rfStrengthHit = actionItem.isMelee
             || (actionItem.isThrown && actionItem.system?.type !== 'Grenade');
         const rfMeleeBonus = rfStrengthHit
@@ -332,7 +339,7 @@ export class Hit {
             const confirmHit = autoConfirm || (confirm.total !== 100 && confirm.total <= rfToHit);
             const entry = { confirmRoll: confirm, confirmTarget: rfToHit, hit: confirmHit, extra: 0, extraRoll: null, auto: autoConfirm };
             if (confirmHit) {
-                const extra = new Roll(rollFormula, attackData.rollData);
+                const extra = new Roll(rfFormula, attackData.rollData);
                 // A Righteous Fury extra is "another full damage roll for the weapon"
                 // (RT Core p.250), so it carries the weapon's dice-modifying qualities —
                 // Tearing (extra die, keep highest) and Proven (per-die minimum) — exactly

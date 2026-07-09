@@ -1229,10 +1229,11 @@ RT Core p.218 (Critical Hits): "If the number of Degrees of Success is equal to 
 - fix: DUPLICATE of BUG-Q-247 (commit 2d1cb29), already resolved in the current tree. `damage-data.mjs:225-230` now applies Tearing ONLY to the base `damageRoll` (and the legitimate RF-extra / Helpless full re-rolls), NOT to the Accurate/Maximal bonus rolls — the exact fix this finding asks for. The comment at :230 names both BUG-Q-247/BUG-Q-249. A 1d10 Maximal Tearing weapon now rolls base 2d10kh1 + maximal 1d10 = 3 dice/drop 1 (equivalent to the requested 3d10kh2). No change needed. Verified by reading the current code (Tearing block only at :156 for damageRoll and :266 for the Helpless re-roll; no Tearing re-application in the :231-253 bonus-roll block).
 
 ## BUG-Q-250
-- status: open
+- status: fixed
 - found-by: agy Gemini 3.1 Pro · iter 2
 - area: damage-data
 - severity: P2
 - evidence: `src/module/rolls/damage-data.mjs:111` sets `rollFormula = "0"` for weapons/powers with no base damage (like pure per-DoS psychic powers). `perDoSRolls` correctly evaluates the per-DoS damage (e.g. "1d10") and `rfCount` accurately counts natural 10s from these dice (`:296`). However, if Righteous Fury confirms, `:343` computes `const extra = new Roll(rollFormula, ...)` which evaluates to `new Roll("0")`. So a power with `damage: ""` and `perDoSDamage: "1d10"` that triggers Righteous Fury adds 0 extra damage.
 - canon: RT Core p.159 "Psychic powers that deal damage also cause Righteous Fury... unless their description states otherwise." / RT Core p.250 Righteous Fury "add another full damage roll for the weapon to the total."
 - gap: Righteous Fury adds 0 damage for pure per-DoS powers/weapons because it uses the empty base `rollFormula` rather than the `perDoSFormula` that generated the 10.
+- fix: `damage-data.mjs:317-323` — added `rfFormula`, which falls back to the power's `perDoSDamage` formula when the base `rollFormula` is `'0'` (empty base damage). The Righteous-Fury extra roll at `:341` now uses `rfFormula` instead of `rollFormula`, so a pure per-DoS power (base damage empty) adds its actual damage die on an RF confirm instead of `new Roll('0')` = 0. Verified: `npm run build:check` (exit 0) + `npm test` (316 pass) green; live on rt-smoke — a mocked Telepathy power (damage:'', perDoSDamage:'1d10', dos 2, helpless target, dice forced to 10) posts base per-DoS damage 20 and each RF extra now adds 10 (rfFormula='1d10'), totalDamage 220; before the fix every RF extra was 0.
