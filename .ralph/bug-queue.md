@@ -1204,7 +1204,17 @@ RT Core p.218 (Critical Hits): "If the number of Degrees of Success is equal to 
 
 - id: BUG-Q-248
   title: Righteous Fury rolls full weapon damage instead of the canon 1d10
-  status: open
+  status: wontfix
+  fix: >
+    Not a bug — the current full-weapon-damage-roll behaviour is canon-correct. The finding
+    cited "RT Core p.250" (the Critical Damage section), but the actual Righteous Fury rule
+    (CoreBook-201-401.pdf/markdown.md:2286-2294) reads: "If that second attack hits, the
+    attacker may make an ADDITIONAL DAMAGE ROLL and add it to the damage total." The worked
+    example is unambiguous: a laspistol deals 1d10+2, and on the RF confirm "Grak now makes a
+    second damage roll of 1d10+2" — the FULL weapon profile, not a bare 1d10. The finding
+    conflated this with the Fate-Point-BURN version (:5700 "maximum Damage for the weapon plus
+    1d10"), which is a separate mechanic. Current `new Roll(rollFormula)` (rollFormula = full
+    weapon damage) matches RAW; no change made. (Consistent with BUG-008 in BUGS.md.)
   description: >
     In `damage-data.mjs`, the Righteous Fury logic constructs an extra damage roll using the weapon's base damage formula `const extra = new Roll(rollFormula)`. The comment explicitly justifies this with a quote: `"another full damage roll for the weapon" (RT Core p.250)`. This quote is inaccurate. RT Core p.250 explicitly states: "If the attack hits, he may roll an additional 1d10 and add it to his Damage total." Righteous Fury adds exactly 1d10, not the full weapon profile (e.g. 1d10+4 or 2d10).
 
