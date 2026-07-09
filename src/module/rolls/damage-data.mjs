@@ -218,10 +218,16 @@ export class Hit {
         // dice. They are rolled HERE — before the Righteous-Fury / Proven dice scan — and
         // folded into that scan, so a natural 10 on these dice triggers Righteous Fury and
         // they honour Proven, per RT Core p.245 ("If a natural 10 is rolled on any damage
-        // die, there is a chance of Righteous Fury"). Tearing applies to them as to the base
-        // dice. Their totals still surface as named damage modifiers (display unchanged). They
-        // are NOT folded into the base rollFormula, so RF-extra / helpless re-rolls don't
-        // duplicate these one-shot bonuses.
+        // die, there is a chance of Righteous Fury"). Their totals still surface as named
+        // damage modifiers (display unchanged). They are NOT folded into the base rollFormula,
+        // so RF-extra / helpless re-rolls don't duplicate these one-shot bonuses.
+        //
+        // Tearing (RT Core p.144) is NOT re-applied to these bonus rolls. Tearing grants
+        // "one extra die for damage, and the lowest roll is discarded" ONCE per attack — a
+        // single extra die on the whole damage pool. Applying it again per bonus roll rolled
+        // and discarded too many dice (base 2d10kh1 + maximal 2d10kh1 = 4 dice/drop 2 instead
+        // of the correct 3 dice/drop 1). Tearing is applied only to the base weapon damageRoll
+        // above, so the attack gains exactly one extra die + one drop. (BUG-Q-247/BUG-Q-249.)
         const bonusDamageRolls = [];
         if (actionItem.isRanged) {
             // Accurate — single shot from a Basic Accurate weapon benefiting from Aim:
@@ -232,13 +238,6 @@ export class Hit {
                 const dice = Math.min(Math.floor(attackData.rollData.dos / 2), 2);
                 if (dice > 0) {
                     const accurateRoll = new Roll(`${dice}d10`, attackData.rollData);
-                    if (attackData.rollData.hasAttackSpecial('Tearing')) {
-                        accurateRoll.terms.filter(t => t instanceof foundry.dice.terms.Die).forEach(die => {
-                            if (die.modifiers.some(m => m.startsWith('kh'))) return;  // kh1/kh2, not literal 'kh' (BUG-Q-202)
-                            die.modifiers.push('kh' + die.number);
-                            die.number += 1;
-                        });
-                    }
                     await accurateRoll.evaluate();
                     this.modifiers['accurate'] = accurateRoll.total;
                     bonusDamageRolls.push(accurateRoll);
@@ -247,13 +246,6 @@ export class Hit {
             // Maximal (plasma firing mode): +1d10 Damage.
             if (attackData.rollData.hasAttackSpecial('Maximal')) {
                 const maximalRoll = new Roll('1d10', attackData.rollData);
-                if (attackData.rollData.hasAttackSpecial('Tearing')) {
-                    maximalRoll.terms.filter(t => t instanceof foundry.dice.terms.Die).forEach(die => {
-                        if (die.modifiers.some(m => m.startsWith('kh'))) return;  // kh1/kh2, not literal 'kh' (BUG-Q-202)
-                        die.modifiers.push('kh' + die.number);
-                        die.number += 1;
-                    });
-                }
                 await maximalRoll.evaluate();
                 this.modifiers['maximal'] = maximalRoll.total;
                 bonusDamageRolls.push(maximalRoll);

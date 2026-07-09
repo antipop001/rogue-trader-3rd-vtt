@@ -1148,3 +1148,80 @@ RT Core p.218 (Critical Hits): "If the number of Degrees of Success is equal to 
 - gap: The engine allows Unnatural Agility to incorrectly increase Initiative directly through `normalBonus`, and additionally scales Lightning Reflexes via `mult`. Both directly violate RT Core p.368, which states Unnatural Agility does not modify Initiative at all.
 - fix: wontfix — canon quote is FABRICATED. The cited line (markdown.md:8362) is an INDEX page, not the rule. The actual Unnatural Characteristic text (markdown.md:6857, RT Core p.368) excludes ONLY Movement ("Movement is based on a creature's unmodified Agility Bonus") — there is NO "Similarly, this Trait does not modify the creature's Initiative" clause anywhere in RT Core. Conversely, Lightning Reflexes (CoreBook-1-200.pdf/markdown.md:5245, p.110) explicitly says "If he has Unnatural Agility, add +1 to the multiplier before factoring the bonus into the Initiative roll" — proving Initiative DOES use Unnatural Agility in RT 1e. Base Initiative (p.236) uses "his Agility Bonus", which the trait doubles; only Movement is carved out. Current engine (BUG-Q-188, verified) is correct; changing it would contradict that verified fix.
 - verify: 
+## BUG-Q-226 — `Compact` weapon modification fails to halve range
+- **Observation:** `range.mjs` calculates the weapon's max range by applying `Forearm Weapon Mounting` and `Pistol Grip` (which both modify range), but completely omits the `Compact` weapon modification, so its range remains unhalved.
+- **Canon:** RT Core p.134: "Compact: ... The weapon halves its clip size and range as well as reducing its Damage by 1."
+- **Implication:** Compact weapons report twice their correct maximum range, affecting range band bonuses (-10/+10) in the dice dialog.
+
+## BUG-Q-227 — `Snare Shells` ammo fails to apply its -2 Damage penalty
+- **Observation:** In `ammo.mjs`, `calculateAmmoAttackSpecials()` correctly gives `Snare Shells` the `Snare` quality, and notes "The -2 base damage stays narrative". However, there is no technical reason damage cannot be modified here—`Microburst Flask` and other ammo types successfully modify damage in `calculateAmmoDamageBonuses()`. `Snare Shells` is missing from `calculateAmmoDamageBonuses()`.
+- **Canon:** Into the Storm p.131 (and p.128): "Effects: Snare Shells decrease the weapon's base damage by 2, but give the weapon the Snare Quality."
+- **Implication:** Shotguns firing Snare Shells deal 2 too much damage, frequently allowing them to inflict significant wounds while attempting non-lethal captures.
+## BUG-Q-228 — `Scatter` quality fails to grant extra hits when fired at targets in Melee range
+- **Observation:** In `action-data.mjs`, `Scatter` checks `this.rollData.rangeName === 'Point Blank'` to award extra hits. However, `range.mjs` sets the range name to `'Melee'` (not `'Point Blank'`) for any target at distance <= 1m. This means a pistol with `Scatter` fired at 1m gets no extra hits, despite being closer than 2m.
+- **Canon:** RT Core p.123: "If fired at a target at Point Blank Range, each two Degrees of Success the firer scores indicates another hit..." RT Core p.247 defines Point Blank Range as "two metres away or closer".
+- **Implication:** Scatter weapons fired point-blank at an engaged opponent artificially lose their primary damage-scaling mechanic.
+
+## BUG-Q-229 — `Microburst Flask` ammo fails to strip Overheats and Maximal qualities
+- **Observation:** `ammo.mjs` handles `Microburst Flask` by adding -2 Damage and +2 Pen in `calculateAmmoDamageBonuses` and `calculateAmmoPenetrationBonuses`. However, it is completely absent from `calculateAmmoAttackSpecials` where weapon qualities should be stripped. The qualities remain active on the attack, meaning the weapon can still Overheat and the user can still select the Maximal fire mode.
+- **Canon:** Into the Storm p.131 (and p.128): "Plasma weapons using Microburst ammo... cannot be fired in Maximal Mode. Using microburst ammo keeps the weapon from Overheating as well."
+- **Implication:** Plasma weapons using Microburst Flasks bypass the ammunition's primary trade-off and safety benefit, allowing them to stack Microburst pen with Maximal mode while remaining at risk of Overheating.
+
+## BUG-Q-230 — `Man-stopper Bullets` ammo incorrectly stacks +3 Penetration instead of capping minimum Penetration at 3
+- **Observation:** In `ammo.mjs`, `calculateAmmoPenetrationBonuses()` incorrectly sets `hit.penetrationModifiers['man-stopper bullets'] = 3`, which adds a flat +3 Penetration to whatever the weapon's base penetration is (which `damage-data.mjs` then computes as a sum). 
+- **Canon:** RT Core p.137: "Effects: A weapon using man-stopper rounds increases its Penetration to 3."
+- **Implication:** Weapons with a non-zero base penetration (e.g. Hand Cannon with Pen 2, Hunting Rifle with Pen 3) incorrectly add +3 to their penetration, reaching Pen 5 or Pen 6, instead of being floored at 3.
+
+## BUG-Q-231 — `Dumdum Bullets` doubling of armour points is missing from the damage application pipeline
+- **Observation:** In `ammo.mjs`, `Dumdum Bullets` merely adds a chat effect: "Armour points count double against this hit." It does not add the `Primitive` quality to the attack, nor does it set any flag that the damage assignment pipeline can read. Consequently, `assign-damage-data.mjs` subtracts the target's normal un-doubled Armour Points.
+- **Canon:** RT Core p.137: "Effect: Dumdum bullets add 2 to the weapon's Damage, however Armour Points count double against them."
+- **Implication:** Because damage application is fully automated via `assign-damage-data.mjs`, the target automatically takes too much wound damage (as their armour was not doubled in the math), forcing the GM to manually calculate the difference and refund lost Wounds after the fact.
+
+## BUG-Q-256 — Natural Weapons / Improved Natural Weapons Trait missing +20 WS Bonus
+- **Observation:** `unarmedDamageProfile` in `roll-helpers.mjs` correctly overrides an Unarmed strike's damage to 1d10 if the attacker has the `Natural Weapons` or `Improved Natural Weapons` trait. However, RT Core p.367 explicitly mandates: *"Creatures with Natural Weapons gain a +20 bonus to Weapon Skill when making attacks with them."* There is no logic in `roll-data.mjs` `update()` to apply this +20 WS bonus for an `Unarmed` attack when the attacker possesses the trait.
+- **Effects:** All Natural Weapon attacks (both by creatures and PCs with mutations/cybernetics) are rolling at -20 compared to RAW.
+- **Proposed Fix:** In `roll-data.mjs`, when `this.weapon.system.type === 'Unarmed'`, check `this.sourceActor?.items` for the `Natural Weapons` or `Improved Natural Weapons` trait and apply a `+20` modifier.
+
+## BUG-Q-257 — Jammed and Recharging states lack programmatic guard in `calculateHits`
+- **Observation:** In `action-data.mjs:701` (`calculateHits()`), a guard was added to prevent "Out of Ammo" weapons from resolving hits "for free" via programmatic paths that bypass the weapon dialog UI. However, this same programmatic guard is missing for the `jammed` and `recharging` states. 
+- **Effects:** A programmatic or macro-driven attack roll can bypass the UI's jam/recharge blocks and successfully generate hits with a jammed or recharging weapon.
+- **Proposed Fix:** Add early returns in `calculateHits()` for `this.rollData.weapon?.system?.jammed` and `this.rollData.weapon?.system?.recharging` matching the ammo guard.
+
+- id: BUG-Q-247
+  title: Tearing applies separately to Accurate/Maximal extra damage dice
+  status: fixed
+  fix: >
+    damage-data.mjs:217-252 — removed the Tearing die-add/keep-highest blocks from the Accurate
+    and Maximal bonus rolls in _calculateDamage. Tearing (RT Core p.144) grants ONE extra die +
+    drop-lowest per attack; it is now applied only to the base weapon damageRoll (and the RF-extra
+    / Helpless coup-de-grace full re-rolls, which are legitimately "another full damage roll").
+    A Maximal+Tearing 1d10 weapon now rolls base 2d10kh1 + maximal 1d10 = 3 dice/drop 1 (was
+    2d10kh1 + 2d10kh1 = 4 dice/drop 2). Gate green (build:check exit 0, 316 node tests incl. new
+    tests/chargen/tearing_single_die.test.mjs). Live-verified on rt-smoke via Roll-spy on
+    Hit._calculateDamage: base die number 2 kh1, maximal die number 1 (no kh).
+  description: >
+    Tearing (RT Core p.116) grants "one extra die for Damage, and the lowest roll is discarded" per attack. Because the engine evaluates `damageRoll`, `accurateRoll`, and `maximalRoll` as separate `Roll` objects in `damage-data.mjs`, the Tearing block runs on *each* of them independently. A 1d10 Accurate Tearing weapon with 2 DoS should roll a total pool of 3d10 and drop the lowest 1. Instead, the code rolls `2d10kh1` (base) plus `3d10kh2` (accurate) = 5 dice rolled, keeping 3. Tearing should add exactly one die to the total dice pool.
+
+- id: BUG-Q-248
+  title: Righteous Fury rolls full weapon damage instead of the canon 1d10
+  status: open
+  description: >
+    In `damage-data.mjs`, the Righteous Fury logic constructs an extra damage roll using the weapon's base damage formula `const extra = new Roll(rollFormula)`. The comment explicitly justifies this with a quote: `"another full damage roll for the weapon" (RT Core p.250)`. This quote is inaccurate. RT Core p.250 explicitly states: "If the attack hits, he may roll an additional 1d10 and add it to his Damage total." Righteous Fury adds exactly 1d10, not the full weapon profile (e.g. 1d10+4 or 2d10).
+
+## BUG-Q-249
+- status: open
+- found-by: agy Gemini 3.1 Pro · iter 2
+- area: damage-data
+- severity: P2
+- evidence: `src/module/rolls/damage-data.mjs:156` iterates over `Tearing` to apply `+1 die` and `kh` to `this.damageRoll`. Later, for an `Accurate` bonus roll (`:235`) or `Maximal` bonus roll (`:250`), it checks `hasAttackSpecial("Tearing")` again and independently applies `+1 die` and `kh` to those bonus rolls too. Since `damageRoll` and `maximalRoll` are evaluated and tracked separately, this adds ONE extra die to the base roll, and ONE extra die to the bonus roll, discarding the lowest from each independently. For a 1d10 Maximal Tearing weapon, it rolls 2d10kh1 + 2d10kh1 (4 dice total, drop 2), instead of the correct 3d10kh2 (roll 3 dice total, drop 1).
+- canon: RT Core p.144 Tearing — "Tearing weapons roll one extra die for damage, and the lowest roll is discarded."
+- gap: Tearing applies multiplicatively to split-roll damage effects (Accurate, Maximal), rolling and discarding too many dice. The engine should aggregate the `Roll` formulas before applying Tearing, or only apply the extra die/drop-lowest to the final combined term list.
+
+## BUG-Q-250
+- status: open
+- found-by: agy Gemini 3.1 Pro · iter 2
+- area: damage-data
+- severity: P2
+- evidence: `src/module/rolls/damage-data.mjs:111` sets `rollFormula = "0"` for weapons/powers with no base damage (like pure per-DoS psychic powers). `perDoSRolls` correctly evaluates the per-DoS damage (e.g. "1d10") and `rfCount` accurately counts natural 10s from these dice (`:296`). However, if Righteous Fury confirms, `:343` computes `const extra = new Roll(rollFormula, ...)` which evaluates to `new Roll("0")`. So a power with `damage: ""` and `perDoSDamage: "1d10"` that triggers Righteous Fury adds 0 extra damage.
+- canon: RT Core p.159 "Psychic powers that deal damage also cause Righteous Fury... unless their description states otherwise." / RT Core p.250 Righteous Fury "add another full damage roll for the weapon to the total."
+- gap: Righteous Fury adds 0 damage for pure per-DoS powers/weapons because it uses the empty base `rollFormula` rather than the `perDoSFormula` that generated the 10.
