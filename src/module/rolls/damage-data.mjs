@@ -4,6 +4,7 @@ import { getCriticalDamage } from '../rules/critical-damage.mjs';
 import { calculateWeaponModifiersDamageBonuses, calculateWeaponModifiersPenetrationBonuses } from '../rules/weapon-modifiers.mjs';
 import { weaponMasterBonus, critDamageBonus, brutalChargeBonus, unarmedDamageProfile } from './roll-helpers.mjs';
 import { conditionMeta, isHelplessTarget } from '../rules/conditions.mjs';
+import { getVehicleCritical } from '../rules/vehicle-critical-damage.mjs';
 
 export class DamageData {
     template = '';
@@ -218,10 +219,16 @@ export class Hit {
         // dice. They are rolled HERE — before the Righteous-Fury / Proven dice scan — and
         // folded into that scan, so a natural 10 on these dice triggers Righteous Fury and
         // they honour Proven, per RT Core p.245 ("If a natural 10 is rolled on any damage
-        // die, there is a chance of Righteous Fury"). Tearing applies to them as to the base
-        // dice. Their totals still surface as named damage modifiers (display unchanged). They
-        // are NOT folded into the base rollFormula, so RF-extra / helpless re-rolls don't
-        // duplicate these one-shot bonuses.
+        // die, there is a chance of Righteous Fury"). Their totals still surface as named
+        // damage modifiers (display unchanged). They are NOT folded into the base rollFormula,
+        // so RF-extra / helpless re-rolls don't duplicate these one-shot bonuses.
+        //
+        // Tearing (RT Core p.144) is NOT re-applied to these bonus rolls. Tearing grants
+        // "one extra die for damage, and the lowest roll is discarded" ONCE per attack — a
+        // single extra die on the whole damage pool. Applying it again per bonus roll rolled
+        // and discarded too many dice (base 2d10kh1 + maximal 2d10kh1 = 4 dice/drop 2 instead
+        // of the correct 3 dice/drop 1). Tearing is applied only to the base weapon damageRoll
+        // above, so the attack gains exactly one extra die + one drop. (BUG-Q-247/BUG-Q-249.)
         const bonusDamageRolls = [];
         if (actionItem.isRanged) {
             // Accurate — single shot from a Basic Accurate weapon benefiting from Aim:
@@ -232,13 +239,6 @@ export class Hit {
                 const dice = Math.min(Math.floor(attackData.rollData.dos / 2), 2);
                 if (dice > 0) {
                     const accurateRoll = new Roll(`${dice}d10`, attackData.rollData);
-                    if (attackData.rollData.hasAttackSpecial('Tearing')) {
-                        accurateRoll.terms.filter(t => t instanceof foundry.dice.terms.Die).forEach(die => {
-                            if (die.modifiers.some(m => m.startsWith('kh'))) return;  // kh1/kh2, not literal 'kh' (BUG-Q-202)
-                            die.modifiers.push('kh' + die.number);
-                            die.number += 1;
-                        });
-                    }
                     await accurateRoll.evaluate();
                     this.modifiers['accurate'] = accurateRoll.total;
                     bonusDamageRolls.push(accurateRoll);
@@ -247,13 +247,6 @@ export class Hit {
             // Maximal (plasma firing mode): +1d10 Damage.
             if (attackData.rollData.hasAttackSpecial('Maximal')) {
                 const maximalRoll = new Roll('1d10', attackData.rollData);
-                if (attackData.rollData.hasAttackSpecial('Tearing')) {
-                    maximalRoll.terms.filter(t => t instanceof foundry.dice.terms.Die).forEach(die => {
-                        if (die.modifiers.some(m => m.startsWith('kh'))) return;  // kh1/kh2, not literal 'kh' (BUG-Q-202)
-                        die.modifiers.push('kh' + die.number);
-                        die.number += 1;
-                    });
-                }
                 await maximalRoll.evaluate();
                 this.modifiers['maximal'] = maximalRoll.total;
                 bonusDamageRolls.push(maximalRoll);
@@ -285,6 +278,9 @@ export class Hit {
 
         // Count natural 10s (or the Vengeful threshold) — Righteous Fury is resolved
         // after the loop with a confirming attack + extra damage roll (RT 1e RAW).
+        // Righteous Fury does not apply to shipboard weapons in space combat (canon), so a natural
+        // 10 on a ship-weapon damage die is not counted toward it.
+        const rfApplies = actionItem.type !== 'shipWeapon';
         let rfCount = 0;
 
         for (const dmgRoll of damageRolls)
@@ -293,8 +289,12 @@ export class Hit {
             for (const result of term.results) {
                 game.rt.log('_calculateDamage result:', result);
                 if (result.discarded || !result.active) continue;
+                // Unarmed Combat (RT Core p.250): a natural 10 on any damage die counts as only 5
+                // toward the damage caused. It is the VALUE 10 that is capped (not "whatever triggers
+                // RF"), so key on `=== 10`. The die was summed as 10 into this.damage; dock the surplus 5.
+                if (unarmed && result.result === 10) this.damage -= 5;
                 if (result.result >= righteousFuryThreshold) {
-                    rfCount += 1;
+                    if (rfApplies) rfCount += 1;
                 }
 
                 if (attackData.rollData.hasAttackSpecial('Proven')) {
@@ -315,59 +315,80 @@ export class Hit {
         this.primitive = attackData.rollData.hasAttackSpecial('Primitive')
             && !(unarmed && unarmed.primitive === false);
 
-        // Righteous Fury (RT 1e RAW, RT Core p.250): each natural 10 (or the Vengeful
-        // threshold) on a damage die grants a CONFIRMING attack roll; on a hit, add
-        // another full weapon damage roll to the total. Extra rolls chain (their own
-        // 10s grant further confirms). Melee extras include the Strength Bonus; other
-        // per-hit talent bonuses (Crushing Blow, Mighty Shot, …) are not re-applied to
-        // the extra roll — a minor undercount, noted for follow-up. (BUG-008.)
+        // Righteous Fury (RT 1e, consolidated with Errata v1.4 p.277 which overrides Core p.245/250):
+        // each natural 10 on a damage die grants a CONFIRMING attack roll — an exact repeat of the
+        // original attack roll (same modifiers → same target, new d100) — which AUTO-succeeds if the
+        // original attack required no roll to hit (e.g. Flame). On a confirmed hit:
+        //   • vs individuals/creatures — roll ONE additional Damage die (1d10) and add it to the total;
+        //     if that 1d10 is itself a natural 10, roll another, cascading indefinitely. The extra die
+        //     is a PLAIN 1d10 — it is NOT the weapon's damage roll, and does NOT carry Tearing, Proven,
+        //     or the Strength Bonus. (Errata: "roll one additional Damage die (1d10) and add the result".)
+        //   • vs vehicles — instead roll 1d5 on the Vehicle Critical Hit Chart (no +1d10, no cascade;
+        //     these RF crits are not cumulative with standard Critical Hits).
+        // Ship weapons are exempt (rfCount stays 0 for them, above).
         const rfToHit = attackData.rollData.modifiedTarget ?? 0;
-        const rfStrengthHit = actionItem.isMelee
-            || (actionItem.isThrown && actionItem.system?.type !== 'Grenade');
-        const rfMeleeBonus = rfStrengthHit
-            ? (sourceActor.getCharacteristicFuzzy('Strength')?.bonus ?? 0) : 0;
-        // QA-157: against a Helpless target, two (or more) natural 10s make the first Righteous
-        // Fury AUTOMATIC — no confirming attack roll needed (the extra damage roll is still added).
+        // The confirmation AUTO-succeeds when the original attack had no associated roll to hit
+        // (Errata v1.4 p.245). In this engine every attack rolls a ghost d100, but a Flame weapon
+        // IGNORES it — it makes no Ballistic Skill Test and auto-hits (RT Core p.142) — so Flame is
+        // the "no associated attack roll" case. (Deliberately NOT keyed off a missing/low
+        // modifiedTarget: a genuinely Hard attack has a low target yet DID make a roll. Other cases
+        // are not no-roll: a Blast that scatters still used the original shot's to-hit roll; a psychic
+        // power's Focus Power Test IS its roll; a Helpless auto-hit is handled separately below — per
+        // canon a single triggering 10 vs a Helpless target still needs a normal confirm, only two 10s
+        // auto-confirm.)
+        const rfNoAttackRoll = attackData.rollData.hasAttackSpecial('Flame');
+        const targetIsVehicle = attackData.rollData.targetActor?.type === 'vehicle';
+        // QA-157: against a Helpless target, two (or more) natural 10s make the first Righteous Fury
+        // AUTOMATIC — no confirming roll needed.
         let autoRfRemaining = (helplessTarget && rfCount >= 2) ? 1 : 0;
-        let rfPending = rfCount;
-        let rfGuard = 20; // safety cap against runaway chains
+        // Righteous Fury is ONE event per attack, not one per natural 10. "If any die rolled results
+        // in a natural 10, there is a chance of Righteous Fury" is a boolean trigger; the count of 10s
+        // only decides whether the single RF is AUTOMATIC (a Helpless target with two 10s — RT Core
+        // p.245: "if two dice come up as 10, a Righteous Fury is automatic") versus needing a confirm.
+        // So the loop runs at most once (the cascade is the exploding 1d10, not extra loop passes).
+        let rfPending = rfCount > 0 ? 1 : 0;
+        let rfGuard = 50; // safety backstop (rfPending is 0/1, so this never bites)
         while (rfPending > 0 && rfGuard-- > 0) {
             rfPending -= 1;
-            const autoConfirm = autoRfRemaining > 0;
-            if (autoConfirm) autoRfRemaining -= 1;
+            const autoConfirm = autoRfRemaining > 0 || rfNoAttackRoll;
+            if (autoRfRemaining > 0) autoRfRemaining -= 1;
             const confirm = new Roll('1d100', {});
             await confirm.evaluate();
             const confirmHit = autoConfirm || (confirm.total !== 100 && confirm.total <= rfToHit);
-            const entry = { confirmRoll: confirm, confirmTarget: rfToHit, hit: confirmHit, extra: 0, extraRoll: null, auto: autoConfirm };
+            const entry = { confirmRoll: confirm, confirmTarget: rfToHit, hit: confirmHit, extra: 0, extraRoll: null, auto: autoConfirm, vehicleCrit: null };
             if (confirmHit) {
-                const extra = new Roll(rollFormula, attackData.rollData);
-                // A Righteous Fury extra is "another full damage roll for the weapon"
-                // (RT Core p.250), so it carries the weapon's dice-modifying qualities —
-                // Tearing (extra die, keep highest) and Proven (per-die minimum) — exactly
-                // like the base roll. (BUG-Q-164.)
-                if (attackData.rollData.hasAttackSpecial('Tearing')) {
-                    extra.terms.filter(term => term instanceof foundry.dice.terms.Die).forEach(die => {
-                        if (die.modifiers.some(m => m.startsWith('kh'))) return;  // kh1/kh2, not literal 'kh' (BUG-Q-202)
-                        die.modifiers.push('kh' + die.number);
-                        die.number += 1;
-                    });
-                }
-                await extra.evaluate();
-                entry.extraRoll = extra;
-                entry.extra = extra.total + rfMeleeBonus;
-                this.damage += entry.extra;
-                for (const t of extra.terms) {
-                    if (!t.results) continue;
-                    for (const r of t.results) {
-                        if (r.discarded || !r.active) continue;
-                        if (r.result >= righteousFuryThreshold) rfPending += 1;
-                        if (attackData.rollData.hasAttackSpecial('Proven')) {
-                            const proven = attackData.rollData.getAttackSpecial('Proven');
-                            if (r.result < proven.level) {
-                                this.modifiers['proven'] = (this.modifiers['proven'] || 0) + (proven.level - r.result);
+                if (targetIsVehicle) {
+                    // Vehicle: 1d5 on the Vehicle Critical Hit Chart instead of extra damage (no cascade).
+                    // Errata v1.4: RF is generated against a vehicle ONLY IF the attack actually damages
+                    // it — armour/penetration is resolved defender-side in assign-damage, so this note
+                    // surfaces the crit for the GM to apply once that condition is confirmed.
+                    const critRoll = new Roll('1d5', {});
+                    await critRoll.evaluate();
+                    entry.extraRoll = critRoll;
+                    entry.vehicleCrit = getVehicleCritical(critRoll.total);
+                    this.addEffect('Righteous Fury (Vehicle Critical)', `Righteous Fury! Roll 1d5 on the Vehicle Critical Hit Chart → ${entry.vehicleCrit ?? 'Vehicle Critical Hit'} — applies only if this attack actually damages the vehicle (Errata v1.4).`);
+                } else {
+                    // Individuals/creatures: ONE additional Damage die (1d10) that EXPLODES on another
+                    // natural 10 — "the attacker may roll another die for Damage and add it to the total"
+                    // (RT Core p.245). The cascade adds more dice with NO further confirmation roll (the
+                    // confirm was only for this first extra), so resolve it as one exploding roll (`x10`)
+                    // rather than looping back through the confirm logic.
+                    const extra = new Roll('1d10x10', {});
+                    await extra.evaluate();
+                    entry.extraRoll = extra;
+                    let contribution = extra.total;
+                    // Unarmed Combat: each rolled 10 counts as 5 toward damage (RT Core p.250). extra.total
+                    // summed every 10 as 10, so dock 5 for each active 10 across the exploded results.
+                    if (unarmed) {
+                        for (const t of extra.terms) {
+                            if (!t.results) continue;
+                            for (const r of t.results) {
+                                if (r.active && !r.discarded && r.result === 10) contribution -= 5;
                             }
                         }
                     }
+                    entry.extra = contribution;
+                    this.damage += contribution;
                 }
             }
             this.righteousFury.push(entry);

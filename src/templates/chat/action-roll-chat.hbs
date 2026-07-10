@@ -390,7 +390,11 @@
                                 {{#each righteousFury as |fury|}}
                                     {{#if fury.hit}}
                                         <div class="rt-roll__success">
-                                            <span>Righteous Fury! Confirm {{fury.confirmRoll.total}} vs {{fury.confirmTarget}} — hit! +{{fury.extra}} damage ({{rollFormula fury.extraRoll}})</span>
+                                            {{#if fury.vehicleCrit}}
+                                                <span>Righteous Fury! Confirm {{fury.confirmRoll.total}} vs {{fury.confirmTarget}} — hit! Vehicle Critical (1d5={{fury.extraRoll.total}}): {{fury.vehicleCrit}}</span>
+                                            {{else}}
+                                                <span>Righteous Fury! Confirm {{fury.confirmRoll.total}} vs {{fury.confirmTarget}} — hit! +{{fury.extra}} damage ({{rollFormula fury.extraRoll}})</span>
+                                            {{/if}}
                                         </div>
                                     {{else}}
                                         <div class="rt-roll__fail">
