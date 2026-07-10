@@ -28,3 +28,4 @@ conf
 RT-DOCS
 __pycache__/
 *.pyc
+.agy-check/
