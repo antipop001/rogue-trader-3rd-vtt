@@ -55,6 +55,7 @@ export class Hit {
     righteousFury = [];
     scatter = {};
     primitive = false;
+    scatterLongRange = false;   // Scatter at Long/Extreme range doubles the target's Armour (BUG-Q-259)
     fellingLevel = 0;   // Felling (X): levels of Unnatural Toughness ignored at soak (BUG-Q-195)
 
     /**
@@ -308,12 +309,17 @@ export class Hit {
             }
         }
 
-        // RT 1e Primitive (RT Core p.142) is a DEFENDER-side rule — the target's armour
-        // is doubled in assign-damage (BUG-013), NOT a per-die damage cap (that DH2 cap
-        // is removed). Flag the hit; Unarmed Master / Improved Natural Weapons clear the
-        // Primitive quality from unarmed strikes (`unarmed.primitive === false`).
-        this.primitive = attackData.rollData.hasAttackSpecial('Primitive')
-            && !(unarmed && unarmed.primitive === false);
+        // RT 1e Primitive is a DEFENDER-side rule — the target's armour is doubled in
+        // assign-damage (BUG-013), NOT a per-die damage cap (that DH2 cap is removed).
+        // "Normal unarmed attacks are Primitive" (RT Core p.245) and "Natural weapons always
+        // count as Primitive" (RT Core p.366), so a bare unarmed strike is Primitive even
+        // without the explicit 'Primitive' quality on the weapon; only Unarmed Master /
+        // Improved Natural Weapons clear it (they set `unarmed.primitive === false`).
+        // (BUG-Q-258 — the old `&&` dropped Primitive for any unarmed weapon lacking the
+        // explicit quality.)
+        const isPrimitive = !!(attackData.rollData.hasAttackSpecial('Primitive')
+            || (unarmed && unarmed.primitive !== false));
+        this.primitive = isPrimitive && !(unarmed && unarmed.primitive === false);
 
         // Righteous Fury (RT 1e, consolidated with Errata v1.4 p.277 which overrides Core p.245/250):
         // each natural 10 on a damage die grants a CONFIRMING attack roll — an exact repeat of the
@@ -564,12 +570,14 @@ export class Hit {
             this.damageType = 'Energy';
         }
 
-        // BUG-Q-178: a Scatter weapon firing at Long/Extreme range has the target's Armour Points
-        // DOUBLED against the hit (RT Core p.116). Surfaced as a note for the GM to apply when
-        // assigning damage (the assign-damage flow is defender-entered and has no range context).
+        // BUG-Q-178/259: a Scatter weapon firing at Long/Extreme range has the target's Armour Points
+        // DOUBLED against the hit (RT Core p.116). This is deterministic (no test), so it is now
+        // carried on the Hit and applied automatically in assign-damage (worn armour, vehicle facing,
+        // and cover AP) rather than left as a manual GM note.
         if (attackData.rollData.hasAttackSpecial('Scatter')
             && (attackData.rollData.rangeName === 'Long Range' || attackData.rollData.rangeName === 'Extreme Range')) {
-            this.addEffect('Scatter', "Spread at long range: the target's Armour Points are DOUBLED against this hit (RT Core p.116) — apply when assigning damage.");
+            this.scatterLongRange = true;
+            this.addEffect('Scatter', "Spread at long range: the target's Armour Points are DOUBLED against this hit (RT Core p.116).");
         }
 
         // QA-140: removed a dead All-Out-Attack + Hammer Blow → inject Concussive block —

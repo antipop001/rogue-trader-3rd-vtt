@@ -145,10 +145,14 @@ export class AssignDamageData {
             // Vehicle Critical Hit chart (QA-117).
             const totalDamage = Number.parseInt(this.hit.totalDamage);
             const totalPenetration = Number.parseInt(this.hit.totalPenetration);
-            // Primitive weapons are doubled against modern armour (RT Core p.142) — this applies to
-            // vehicle facing Armour too, not just personal armour. Vehicle armour is never itself
-            // Primitive, so no exception is needed here. (BUG-Q-208.)
-            const facing = this.hit.primitive ? this.facingArmour * 2 : this.facingArmour;
+            // Armour is doubled against Primitive weapons (RT Core p.116) — this applies to vehicle
+            // facing Armour too, not just personal armour (BUG-Q-208). Scatter at Long/Extreme range
+            // ALSO doubles Armour (RT Core p.116, BUG-Q-259). These are two independent "doubled"
+            // rules; the verbatim text has no "does not stack" clause, so a hit that is BOTH doubles
+            // twice (×4). (Edge case — Primitive + Scatter is rare; GM may house-rule ×2.)
+            let facing = this.facingArmour;
+            if (this.hit.primitive) facing *= 2;
+            if (this.hit.scatterLongRange) facing *= 2;
             let armour = this.ignoreArmour ? 0 : Math.max(0, facing - totalPenetration);
             const reduced = totalDamage - armour;
             if (reduced > 0) {
@@ -193,7 +197,11 @@ export class AssignDamageData {
                 // (RT Core p.142, same as worn armour — BUG-Q-201). Penetration is spent against the
                 // cover layer FIRST; only the EXCESS carries to the target's own armour, so it is not
                 // counted twice (BUG-Q-206 — pen was previously subtracted from both cover AND armour).
-                const effCoverAp = this.hit.primitive ? coverAp * 2 : coverAp;
+                // Cover AP doubles against a Primitive weapon (RT Core p.116) and, independently,
+                // against a Scatter weapon at Long/Extreme range (RT Core p.116, BUG-Q-259).
+                let effCoverAp = coverAp;
+                if (this.hit.primitive) effCoverAp *= 2;
+                if (this.hit.scatterLongRange) effCoverAp *= 2;
                 const effectiveCover = Math.max(0, effCoverAp - totalPenetration);
                 penToArmour = Math.max(0, totalPenetration - effCoverAp);
                 const excess = Math.max(0, totalDamage - effectiveCover);
@@ -208,10 +216,13 @@ export class AssignDamageData {
             // RT Core p.142: a Primitive weapon doubles the target's Armour Points
             // (before penetration is applied), unless the struck location's armour is
             // ALSO Primitive (BUG-013).
+            // Armour doubles against a Primitive weapon UNLESS the struck location's armour is also
+            // Primitive (RT Core p.116, BUG-013), and INDEPENDENTLY against a Scatter weapon at
+            // Long/Extreme range (RT Core p.116, BUG-Q-259 — no Primitive-armour exception). Both can
+            // apply (×4); the text has no "does not stack" clause.
             let usableArmour = this.armour;
-            if (this.hit.primitive && !this._armourIsPrimitive()) {
-                usableArmour = usableArmour * 2;
-            }
+            if (this.hit.primitive && !this._armourIsPrimitive()) usableArmour *= 2;
+            if (this.hit.scatterLongRange) usableArmour *= 2;
             // Reduce Armour by the Penetration NOT already spent on cover (BUG-Q-206).
             usableArmour = usableArmour - penToArmour;
             if (usableArmour < 0) {
