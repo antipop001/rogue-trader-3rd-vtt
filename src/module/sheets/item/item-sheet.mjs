@@ -90,7 +90,8 @@ export class DarkHeresyItemSheet extends ItemSheet {
     // surfaced in the chat note; the action-economy cost is the GM's to spend. (QA-104.)
     async _reloadWeapon() {
         const sys = this.item.system ?? {};
-        const max = Number(sys.clip?.max) || 0;
+        // Compact weapons hold half the clip (RT Core p.163) — reload to the EFFECTIVE capacity.
+        const max = Number(this.item.effectiveClipMax) || 0;
         if (max <= 0) return;
         if (Number(sys.clip?.value) >= max) {
             ui.notifications?.info(`${this.item.name} is already fully loaded (${max}/${max}).`);

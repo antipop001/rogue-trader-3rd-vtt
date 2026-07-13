@@ -6,7 +6,10 @@ export function ammoText(item) {
         const ammo = item.items.find((i) => i.isAmmunition);
         const name = ammo ? ammo.name : 'Standard';
         game.rt.log('ammoName', name);
-        return `${name} (${item.system.clip.value}/${item.system.clip.max})`;
+        // Show the EFFECTIVE clip max (halved for a Compact weapon, RT Core p.163) so a fully-loaded
+        // Compact weapon reads e.g. 15/15, not 15/30 (the stored clip.max stays the base capacity).
+        const max = Number(item.effectiveClipMax ?? item.system.clip.max) || 0;
+        return `${name} (${item.system.clip.value}/${max})`;
     }
 }
 

@@ -13,6 +13,19 @@ export class RogueTraderItem extends RogueTraderItemContainer {
         return weight;
     }
 
+    // The Compact weapon upgrade halves the weapon's clip size (RT Core p.163: "halves its clip
+    // size and range as well as reducing its Damage by 1"; range/Damage handled per-roll elsewhere).
+    // This is the EFFECTIVE reload/display capacity — the stored system.clip.max stays the unmodified
+    // value so removing Compact restores it. (BUG-Q loop-backlog follow-up.)
+    get effectiveClipMax() {
+        const max = Number(this.system?.clip?.max) || 0;
+        const hasCompact = this.items?.some((i) => i.isWeaponModification
+            && i.name === 'Compact' && (i.system?.equipped || i.system?.enabled)) ?? false;
+        // Halve, rounding UP (RT's default fractional rounding) so a clip-1 weapon stays at 1 rather
+        // than flooring to 0 and becoming unreloadable.
+        return hasCompact ? Math.ceil(max / 2) : max;
+    }
+
     get equipped() {
         return !!this.system.equipped;
     }
