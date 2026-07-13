@@ -419,11 +419,13 @@ export class ActionData {
                     }
                 }
 
-                // BUG-Q-178: Scatter at Point Blank scores +1 HIT per two Degrees of Success
-                // (RT Core p.116 / Table 9-5 Multiple Hits) — a weapon-spread effect independent
-                // of the fire action (no flat damage or to-hit modifier in RT 1e).
+                // BUG-Q-178: Scatter within Point Blank range scores +1 HIT per two Degrees of Success
+                // (RT Core p.116 / Table 9-5 Multiple Hits) — a weapon-spread effect independent of the
+                // fire action (no flat damage or to-hit modifier in RT 1e). "Point Blank range" is ≤2m
+                // (RT Core p.247); the engine splits that into 'Melee' (≤1m) + 'Point Blank' (1-2m),
+                // so the bonus applies at BOTH close bands, not only 'Point Blank'. (loop backlog.)
                 if (actionItem?.isRanged && this.rollData.hasAttackSpecial('Scatter')
-                    && this.rollData.rangeName === 'Point Blank') {
+                    && (this.rollData.rangeName === 'Point Blank' || this.rollData.rangeName === 'Melee')) {
                     this.damageData.additionalHits += Math.floor(this.rollData.dos / 2);
                 }
 
