@@ -1,0 +1,69 @@
+<div class="rt-panel rt-grid-col-6 rt-paperdoll-panel">
+    <h1 class="rt-panel__header">Armour</h1>
+    <div class="rt-paperdoll__banner">
+        <span class="rt-paperdoll__banner-label">Special Rules</span>
+        <span class="rt-paperdoll__banner-value">
+            {{#each items as |item|}}{{#if item.isArmour}}<span class="rt-paperdoll__armour-name">{{item.name}}</span>{{/if}}{{/each}}
+        </span>
+    </div>
+    <div class="rt-paperdoll" role="group" aria-label="Armour by hit location">
+        <svg class="rt-paperdoll__silhouette" viewBox="0 0 200 320" aria-hidden="true" preserveAspectRatio="xMidYMid meet">
+            <g fill="currentColor" opacity="0.07">
+                <circle cx="100" cy="32" r="24" />
+                <rect x="61" y="58" width="78" height="126" rx="20" />
+                <rect x="27" y="64" width="26" height="112" rx="13" />
+                <rect x="147" y="64" width="26" height="112" rx="13" />
+                <rect x="70" y="180" width="26" height="128" rx="13" />
+                <rect x="104" y="180" width="26" height="128" rx="13" />
+            </g>
+        </svg>
+
+        <div class="rt-loc rt-loc--head">
+            <h4 class="rt-loc__name">Head</h4>
+            <div class="rt-loc__range">01&ndash;10</div>
+            <div class="rt-loc__kv"><span>Toughness</span><span>{{actor.armour.head.toughnessBonus}}</span></div>
+            <div class="rt-loc__kv"><span>Armour</span><span>{{actor.armour.head.total}}</span></div>
+            <div class="rt-loc__total">Total <b>{{actor.armour.head.toughnessBonus}} + {{actor.armour.head.total}} = {{add actor.armour.head.toughnessBonus actor.armour.head.total}}</b></div>
+        </div>
+
+        <div class="rt-loc rt-loc--rarm">
+            <h4 class="rt-loc__name">Right Arm</h4>
+            <div class="rt-loc__range">11&ndash;20</div>
+            <div class="rt-loc__kv"><span>Toughness</span><span>{{actor.armour.rightArm.toughnessBonus}}</span></div>
+            <div class="rt-loc__kv"><span>Armour</span><span>{{actor.armour.rightArm.total}}</span></div>
+            <div class="rt-loc__total">Total <b>{{actor.armour.rightArm.toughnessBonus}} + {{actor.armour.rightArm.total}} = {{add actor.armour.rightArm.toughnessBonus actor.armour.rightArm.total}}</b></div>
+        </div>
+
+        <div class="rt-loc rt-loc--body">
+            <h4 class="rt-loc__name">Body</h4>
+            <div class="rt-loc__range">31&ndash;70</div>
+            <div class="rt-loc__kv"><span>Toughness</span><span>{{actor.armour.body.toughnessBonus}}</span></div>
+            <div class="rt-loc__kv"><span>Armour</span><span>{{actor.armour.body.total}}</span></div>
+            <div class="rt-loc__total">Total <b>{{actor.armour.body.toughnessBonus}} + {{actor.armour.body.total}} = {{add actor.armour.body.toughnessBonus actor.armour.body.total}}</b></div>
+        </div>
+
+        <div class="rt-loc rt-loc--larm">
+            <h4 class="rt-loc__name">Left Arm</h4>
+            <div class="rt-loc__range">21&ndash;30</div>
+            <div class="rt-loc__kv"><span>Toughness</span><span>{{actor.armour.leftArm.toughnessBonus}}</span></div>
+            <div class="rt-loc__kv"><span>Armour</span><span>{{actor.armour.leftArm.total}}</span></div>
+            <div class="rt-loc__total">Total <b>{{actor.armour.leftArm.toughnessBonus}} + {{actor.armour.leftArm.total}} = {{add actor.armour.leftArm.toughnessBonus actor.armour.leftArm.total}}</b></div>
+        </div>
+
+        <div class="rt-loc rt-loc--rleg">
+            <h4 class="rt-loc__name">Right Leg</h4>
+            <div class="rt-loc__range">71&ndash;85</div>
+            <div class="rt-loc__kv"><span>Toughness</span><span>{{actor.armour.rightLeg.toughnessBonus}}</span></div>
+            <div class="rt-loc__kv"><span>Armour</span><span>{{actor.armour.rightLeg.total}}</span></div>
+            <div class="rt-loc__total">Total <b>{{actor.armour.rightLeg.toughnessBonus}} + {{actor.armour.rightLeg.total}} = {{add actor.armour.rightLeg.toughnessBonus actor.armour.rightLeg.total}}</b></div>
+        </div>
+
+        <div class="rt-loc rt-loc--lleg">
+            <h4 class="rt-loc__name">Left Leg</h4>
+            <div class="rt-loc__range">86&ndash;00</div>
+            <div class="rt-loc__kv"><span>Toughness</span><span>{{actor.armour.leftLeg.toughnessBonus}}</span></div>
+            <div class="rt-loc__kv"><span>Armour</span><span>{{actor.armour.leftLeg.total}}</span></div>
+            <div class="rt-loc__total">Total <b>{{actor.armour.leftLeg.toughnessBonus}} + {{actor.armour.leftLeg.total}} = {{add actor.armour.leftLeg.toughnessBonus actor.armour.leftLeg.total}}</b></div>
+        </div>
+    </div>
+</div>

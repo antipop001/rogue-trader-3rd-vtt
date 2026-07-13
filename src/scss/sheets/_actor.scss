@@ -21,17 +21,53 @@
     }
 }
 
-// Acolyte sheet has header / nav / body — pin the first two and scroll the body.
+// Explorer (acolyte) v0.9 layout: header spans the top; a persistent Command Rail
+// on the left holds the every-round combat surface (visible on every tab); the
+// right column is the 4-tab content region that scrolls. See .v9-design/PLAN.md.
 .acolyte .rt-actor {
-    grid-template-rows: auto auto 1fr;
+    grid-template-columns: 252px 1fr;
+    grid-template-rows: auto 1fr;
     overflow: hidden;
 }
 
-.acolyte .rt-body {
+.acolyte .rt-header {
     grid-column: 1 / -1;
+    grid-row: 1;
+}
+
+.acolyte .rt-rail {
+    grid-column: 1;
+    grid-row: 2;
+    min-height: 0;
     overflow-y: auto;
     overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 4px 4px 4px 0;
+    background: rgba(44, 76, 87, 0.10);
+}
+
+// Rail panels always stack full-width regardless of their rt-grid-col-N span.
+.acolyte .rt-rail > .rt-panel {
+    grid-column: auto;
+    grid-row: auto;
+}
+
+.acolyte .rt-main {
+    grid-column: 2;
+    grid-row: 2;
     min-height: 0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.acolyte .rt-main .rt-body {
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 // Skill Basic/Advanced indicators

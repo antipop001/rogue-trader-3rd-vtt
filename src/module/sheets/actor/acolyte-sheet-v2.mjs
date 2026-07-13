@@ -124,7 +124,7 @@ export class AcolyteSheetV2 extends ActorContainerSheetV2 {
         },
     };
 
-    tabGroups = { primary: 'main' };
+    tabGroups = { primary: 'character' };
 
     async _prepareContext(options) {
         const isObserver = this.actor.testUserPermission(game.user, 'OBSERVER');

@@ -54,6 +54,10 @@
 // selectors are unique to this system and don't need .rt-wrapper scoping.
 @import 'sheets/actor';
 
+// Explorer sheet v0.9 visual system (rail + 4-tab shell, rollable affordance,
+// armour paperdoll). Outside .rt-wrapper for the same reason as sheets/actor.
+@import 'sheets/explorer';
+
 // Chargen wizard — its own ApplicationV2 window with its own .rt-chargen
 // content scope; deliberately outside .rt-wrapper.
 @import 'components/chargen';
