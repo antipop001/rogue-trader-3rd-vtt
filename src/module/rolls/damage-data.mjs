@@ -245,7 +245,10 @@ export class Hit {
                     bonusDamageRolls.push(accurateRoll);
                 }
             }
-            // Maximal (plasma firing mode): +1d10 Damage.
+            // Maximal (plasma firing mode): +1d10 Damage. Maximal is definitionally the plasma firing
+            // mode, so — like all the other Maximal effects (Pen, Blast, range, ammo) — the guard is the
+            // Maximal quality itself, applied uniformly. (Not weapon-type-gated: consistency over a
+            // defensive check for a non-canonical mis-flagged weapon.)
             if (attackData.rollData.hasAttackSpecial('Maximal')) {
                 const maximalRoll = new Roll('1d10', attackData.rollData);
                 await maximalRoll.evaluate();
@@ -596,9 +599,16 @@ export class Hit {
 
         for (const special of attackData.rollData.attackSpecials) {
             switch(special.name.toLowerCase()) {
-                case 'blast':
-                    this.addEffect(special.name, `Everyone within ${special.level}m of the location is hit!`);
+                case 'blast': {
+                    // A Blast-quality plasma weapon fired in Maximal mode adds +2 to its Blast radius
+                    // (RT Core, RT-DOCS CoreBook-1-200.pdf:6320: "plasma weapons with the Blast Quality
+                    // firing in Maximal add +2 to the Blast"). Maximal is the plasma firing mode, so the
+                    // guard is the Maximal quality — consistent with the other Maximal effects.
+                    const blastRadius = (Number(special.level) || 0)
+                        + (attackData.rollData.hasAttackSpecial('Maximal') ? 2 : 0);
+                    this.addEffect(special.name, `Everyone within ${blastRadius}m of the location is hit!`);
                     break;
+                }
                 case 'concussive':
                     this.addEffect(special.name, `Target must pass Toughness test with ${special.level * -10} or be Stunned for 1 round per DoF. If the attack did more damage than the targets Strength Bonus, it is knocked Prone!`, ['stunned', 'prone']);
                     break;
