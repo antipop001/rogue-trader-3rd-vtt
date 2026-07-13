@@ -42,6 +42,12 @@ async function calculateWeaponMaxRange(rollData) {
         range = Math.floor(range * .66);
     }
 
+    //Check Compact — RT Core p.163: the Compact upgrade halves the weapon's range (also weight,
+    //clip, and Damage by 1 — handled in weapon-modifiers). (BUG-Q — loop backlog.)
+    if (rollData.hasWeaponModification('Compact')) {
+        range = Math.floor(range * .5);
+    }
+
     //Check Pistol Grip
     if (rollData.hasWeaponModification('Pistol Grip')) {
         range = Math.floor(range * .5);

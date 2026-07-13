@@ -208,6 +208,11 @@ export async function calculateAmmoDamageBonuses(actionData, hit) {
             // ItS: +2 base Damage (targets also take −10 Agility to avoid Damage — GM-applied). (QA-064.)
             hit.modifiers['nephium fuel tank'] = 2;
             break;
+        case 'Snare Shells':
+            // Into the Storm p.130: Snare Shells decrease the weapon's base Damage by 2 (the Snare
+            // quality itself is granted in calculateAmmoAttackSpecials). (BUG-Q — loop backlog.)
+            hit.modifiers['snare shells'] = -2;
+            break;
     }
 }
 
