@@ -529,9 +529,15 @@ export class Hit {
                 this.penetrationModifiers['hammer blow'] = Math.ceil(strBonus / 2);
             }
         } else if (actionItem.isRanged) {
-            // BUG-Q-177: RT 1e Maximal (plasma firing mode, RT Core p.123, NotebookLM-confirmed)
-            // grants +10m range, +1d10 Damage, Recharge, and +2 Blast — but NO Penetration bonus.
-            // The +2 Pen was a DH2 leftover, removed. (The +1d10 Damage is applied below.)
+            // Maximal (plasma firing mode) grants +10m range, +1d10 Damage (applied above), Recharge,
+            // and +2 Penetration; a weapon that ALSO has Blast adds +2 to its Blast radius (a separate
+            // gap, not yet wired). RT Core (RT-DOCS CoreBook-1-200.pdf:6318, verbatim): "…Maximal mode,
+            // gaining an extra 10 metres to range, 1d10 to Damage and +2 Pen, but use 3 rounds of
+            // ammunition." (BUG-Q-177 REVERTED: 0.8.25 removed the +2 Pen as a supposed DH2 leftover
+            // on faulty NotebookLM info; the corebook is explicit that +2 Pen IS RT 1e canon.)
+            if (attackData.rollData.hasAttackSpecial('Maximal')) {
+                this.penetrationModifiers['maximal'] = 2;
+            }
 
             // Las Modes
             if (attackData.rollData.hasAttackSpecial('Overload')) {
