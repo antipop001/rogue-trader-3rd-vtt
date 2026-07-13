@@ -1,0 +1,173 @@
+<div class="rt-panel rt-grid-col-6 rt-skills">
+    <h1 class="rt-panel__header">Skills</h1>
+
+    <div class="rt-skill-filter">
+        <input type="text" class="rt-skill-search" placeholder="Filter skills&hellip;" aria-label="Filter skills" />
+        <button type="button" class="rt-skill-chip is-active" data-filter="all">All</button>
+        <button type="button" class="rt-skill-chip" data-filter="trained">Trained</button>
+        <button type="button" class="rt-skill-chip" data-filter="basic">Basic</button>
+        <button type="button" class="rt-skill-chip" data-filter="advanced">Advanced</button>
+        <button type="button" class="rt-skill-chip" data-filter="specialist">Specialist</button>
+    </div>
+
+    <div class="rt-skill-columns">
+        {{!-- ── BASIC ── --}}
+        <div class="rt-skill-col" data-skill-col="basic">
+            <div class="rt-table--border rt-skilltable--border">
+                <div class="table-row--head">
+                    <div class="table-cell rt-skill-col__title">Basic</div>
+                    <div class="table-cell">Adv.</div>
+                    <div class="table-cell">Char.</div>
+                    <div class="table-cell--last">Total</div>
+                </div>
+                {{#each actor.skills as |skill name|}}
+                    {{#unless skill.isSpecialist}}{{#if skill.isBasic}}
+                        <div class="table-row actor-drag rt-skill-item" data-skill-col="basic" data-skill-trained="{{#if skill.untrained}}0{{else}}1{{/if}}" data-item-type="skill" data-item-id="{{name}}">
+                            <div class="table-cell">
+                                <button class="roll-skill" data-action="rollSkill" data-skill="{{name}}" type="roll">{{localize this.label}}</button>
+                            </div>
+                            <div class="table-cell">
+                                <select name="system.skills.{{name}}.advance">
+                                    {{option "0" this.advance "Untrained"}}
+                                    {{option "1" this.advance "Trained"}}
+                                    {{option "2" this.advance "+10"}}
+                                    {{option "3" this.advance "+20"}}
+                                </select>
+                            </div>
+                            <div class="table-cell">
+                                <select name="system.skills.{{name}}.characteristic">
+                                    {{selectOptions (arrayToObject this.characteristics) selected=this.characteristic}}
+                                </select>
+                            </div>
+                            <div class="table-cell--last table-cell--highlight">
+                                {{#if skill.untrained}}
+                                    <span class="display skill-half">{{this.current}}</span>
+                                {{else}}
+                                    <span class="display">{{this.current}}</span>
+                                {{/if}}
+                            </div>
+                        </div>
+                    {{/if}}{{/unless}}
+                {{/each}}
+            </div>
+        </div>
+
+        {{!-- ── ADVANCED ── --}}
+        <div class="rt-skill-col" data-skill-col="advanced">
+            <div class="rt-table--border rt-skilltable--border">
+                <div class="table-row--head">
+                    <div class="table-cell rt-skill-col__title">Advanced</div>
+                    <div class="table-cell">Adv.</div>
+                    <div class="table-cell">Char.</div>
+                    <div class="table-cell--last">Total</div>
+                </div>
+                {{#each actor.skills as |skill name|}}
+                    {{#unless skill.isSpecialist}}{{#unless skill.isBasic}}
+                        <div class="table-row actor-drag rt-skill-item{{#if skill.untrained}}{{#unless skill.treatAsBasic}} skill-locked{{/unless}}{{/if}}" data-skill-col="advanced" data-skill-trained="{{#if skill.untrained}}0{{else}}1{{/if}}" data-item-type="skill" data-item-id="{{name}}">
+                            <div class="table-cell">
+                                <button class="roll-skill" data-action="rollSkill" data-skill="{{name}}" type="roll">{{localize this.label}}</button>
+                            </div>
+                            <div class="table-cell">
+                                <select name="system.skills.{{name}}.advance">
+                                    {{option "0" this.advance "Untrained"}}
+                                    {{option "-1" this.advance "As Basic"}}
+                                    {{option "1" this.advance "Trained"}}
+                                    {{option "2" this.advance "+10"}}
+                                    {{option "3" this.advance "+20"}}
+                                </select>
+                            </div>
+                            <div class="table-cell">
+                                <select name="system.skills.{{name}}.characteristic">
+                                    {{selectOptions (arrayToObject this.characteristics) selected=this.characteristic}}
+                                </select>
+                            </div>
+                            <div class="table-cell--last table-cell--highlight">
+                                {{#if skill.untrained}}
+                                    {{#if skill.treatAsBasic}}
+                                        <span class="display skill-half">{{this.current}}</span>
+                                    {{else}}
+                                        <span class="display skill-locked-val">&mdash;</span>
+                                    {{/if}}
+                                {{else}}
+                                    <span class="display">{{this.current}}</span>
+                                {{/if}}
+                            </div>
+                        </div>
+                    {{/unless}}{{/unless}}
+                {{/each}}
+            </div>
+        </div>
+
+        {{!-- ── SPECIALIST ── --}}
+        <div class="rt-skill-col" data-skill-col="specialist">
+            <div class="rt-table--border rt-skilltable--border">
+                <div class="table-row--head">
+                    <div class="table-cell rt-skill-col__title">Specialist</div>
+                    <div class="table-cell">Adv.</div>
+                    <div class="table-cell">Char.</div>
+                    <div class="table-cell--last">Total</div>
+                </div>
+                {{#each actor.skills as | skill name |}}
+                    {{#if skill.isSpecialist}}
+                        <div class="table-row--grouped rt-skill-group" data-skill-col="specialist">
+                            <div class="table-cell--settingstoggle">
+                                {{> systems/rogue-trader-3rd/templates/actor/partial/display-toggle.hbs toggle=(concat 'spec_skills_' name)}}
+                            </div>
+                            <div class="table-cell--grouped">
+                                <span>{{localize this.label}}</span>
+                            </div>
+                            <div class="rt-settings spec_skills_{{name}}" {{hideIfNot
+                                (isExpanded (concat 'spec_skills_' name ))}}>
+                                <h2>specialisation display</h2>
+                                {{#each this.specialities as | specialty skey |}}
+                                    <div class="rt-settings__row--invert">
+                                        <div class="rt-settings__label">{{this.label}}</div>
+                                        <input class="rt-settings__checkbox" {{checked specialty.taken}} data-dtype="Boolean"
+                                               type="checkbox" name="system.skills.{{name}}.specialities.{{skey}}.taken" />
+                                    </div>
+                                {{/each}}
+                                <div class="rt-settings__row--invert add-skill" data-action="addSkill" data-skill="{{name}}">
+                                    <button class="rt-settings__label--add">add_box</button>
+                                </div>
+                            </div>
+                        </div>
+                        {{#each this.specialities as | specialty skey |}}
+                            {{#if specialty.taken }}
+                                <div class="table-row actor-drag rt-skill-item{{#if specialty.untrained}}{{#unless specialty.treatAsBasic}} skill-locked{{/unless}}{{/if}}" data-skill-col="specialist" data-skill-trained="{{#if specialty.untrained}}0{{else}}1{{/if}}" data-item-type="skill" data-item-id="{{name}}"
+                                     data-speciality="{{skey}}">
+                                    <div class="table-cell">
+                                        <button class="roll-skill" data-action="rollSkill" data-skill="{{name}}" data-specialty="{{skey}}"
+                                                type="roll">{{localize this.label}}</button>
+                                    </div>
+                                    <div class="table-cell">
+                                        <select name="system.skills.{{name}}.specialities.{{skey}}.advance">
+                                            {{option '0' this.advance 'Untrained'}}
+                                            {{option '-1' this.advance 'As Basic'}}
+                                            {{option '1' this.advance 'Trained'}}
+                                            {{option '2' this.advance '+10'}}
+                                            {{option '3' this.advance '+20'}}
+                                        </select>
+                                    </div>
+                                    <div class="table-cell">
+                                        <span class="display">{{skill.characteristic}}</span>
+                                    </div>
+                                    <div class="table-cell--last table-cell--highlight">
+                                        {{#if specialty.untrained}}
+                                            {{#if specialty.treatAsBasic}}
+                                                <span class="display skill-half">{{this.current}}</span>
+                                            {{else}}
+                                                <span class="display skill-locked-val">&mdash;</span>
+                                            {{/if}}
+                                        {{else}}
+                                            <span class="display">{{this.current}}</span>
+                                        {{/if}}
+                                    </div>
+                                </div>
+                            {{/if}}
+                        {{/each}}
+                    {{/if}}
+                {{/each}}
+            </div>
+        </div>
+    </div>
+</div>

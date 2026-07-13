@@ -59,22 +59,95 @@ $rt-crit: #9c2a24;
     align-content: start;
 }
 
-// Character tab: Characteristics spans the full width on top; the three skill
-// lists flow beneath it as equal columns. This removes the large empty band the
-// tall Basic Skills panel left beside the short Characteristics panel.
-.acolyte .rt-body .tab[data-tab='character'] {
-    > .rt-panel {
-        grid-row: auto;
+// Character tab: Characteristics on top, the merged Skills panel below — both
+// full width. The Skills panel handles its own internal columns.
+.acolyte .rt-body .tab[data-tab='character'] > .rt-panel {
+    grid-column: 1 / -1;
+    grid-row: auto;
+}
+
+// ---- Merged Skills panel: filter bar + three internal columns ----
+.rt-skills {
+    .rt-skill-filter {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 6px;
+        padding: 6px 4px 8px;
     }
 
-    > .rt-panel:first-child {
-        grid-column: 1 / -1;
+    .rt-skill-search {
+        flex: 1 1 160px;
+        min-width: 120px;
+        height: auto;
+        padding: 4px 8px;
+        font-family: 'Lusitana', serif;
+        border: 1px solid rgba(44, 76, 87, 0.5);
+        border-radius: 4px;
     }
 
-    > .rt-panel:nth-child(2),
-    > .rt-panel:nth-child(3),
-    > .rt-panel:nth-child(4) {
-        grid-column: span 2;
+    .rt-skill-chip {
+        flex: 0 0 auto;
+        width: auto;
+        padding: 4px 12px;
+        font-family: 'Lusitana', serif;
+        font-size: 8.5pt;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        color: $rt-slate;
+        background: transparent;
+        border: 1px solid rgba(44, 76, 87, 0.5);
+        border-radius: 20px;
+        cursor: pointer;
+
+        &:hover {
+            color: #000;
+            border-color: $rt-slate;
+        }
+
+        &.is-active {
+            color: #fff;
+            background: $rt-teal;
+            border-color: $rt-teal;
+        }
+    }
+
+    .rt-skill-columns {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0 14px;
+        align-items: start;
+    }
+
+    .rt-skill-col__title {
+        font-family: 'IM Fell DW Pica', serif;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+    }
+}
+
+// ---- Dynamic status tint on the rail vitals (wounds / fate / fatigue) ----
+// A coloured left stripe over the panel border-image, plus a header accent on
+// critical. Neutral state adds nothing.
+.rt-vital {
+    &--good::before,
+    &--warn::before,
+    &--crit::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 4px;
+        z-index: 2;
+    }
+
+    &--good::before { background: $rt-good; }
+    &--warn::before { background: $rt-warn; }
+    &--crit::before { background: $rt-crit; }
+
+    &--crit .rt-panel__header {
+        color: $rt-crit;
     }
 }
 

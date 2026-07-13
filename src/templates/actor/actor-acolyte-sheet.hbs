@@ -31,13 +31,13 @@
 
     {{!-- COMMAND RAIL — always visible; the every-round combat surface. --}}
     <aside class="rt-rail">
+        {{> systems/rogue-trader-3rd/templates/actor/panel/combat-controls-panel.hbs}}
+        {{> systems/rogue-trader-3rd/templates/actor/panel/initiative-panel.hbs}}
         {{> systems/rogue-trader-3rd/templates/actor/panel/wounds-panel.hbs}}
-        {{> systems/rogue-trader-3rd/templates/actor/panel/fatigue-panel.hbs}}
         {{> systems/rogue-trader-3rd/templates/actor/panel/fate-panel.hbs}}
         {{> systems/rogue-trader-3rd/templates/actor/panel/armour-display-panel.hbs}}
-        {{> systems/rogue-trader-3rd/templates/actor/panel/initiative-panel.hbs}}
+        {{> systems/rogue-trader-3rd/templates/actor/panel/fatigue-panel.hbs}}
         {{> systems/rogue-trader-3rd/templates/actor/panel/movement-panel.hbs}}
-        {{> systems/rogue-trader-3rd/templates/actor/panel/combat-controls-panel.hbs}}
         {{> systems/rogue-trader-3rd/templates/actor/panel/characteristic-roller-panel.hbs}}
         {{> systems/rogue-trader-3rd/templates/actor/panel/active-effects-panel.hbs}}
     </aside>
@@ -62,9 +62,7 @@
         <section class="rt-body">
             <div class="tab" data-group="primary" data-tab="character">
                 {{> systems/rogue-trader-3rd/templates/actor/panel/characteristic-panel.hbs}}
-                {{> systems/rogue-trader-3rd/templates/actor/panel/skills-panel.hbs}}
-                {{> systems/rogue-trader-3rd/templates/actor/panel/skills-advanced-panel.hbs}}
-                {{> systems/rogue-trader-3rd/templates/actor/panel/skills-specialist-panel.hbs}}
+                {{> systems/rogue-trader-3rd/templates/actor/panel/skills-merged-panel.hbs}}
             </div>
 
             <div class="tab" data-group="primary" data-tab="abilities">

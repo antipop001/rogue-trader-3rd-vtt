@@ -142,6 +142,21 @@ export function registerHandlebarsHelpers() {
         return (Number(a) || 0) + (Number(b) || 0);
     });
 
+    // Status tint class for a resource panel (wounds/fate/fatigue). Returns a
+    // modifier class the sheet colours: good (>=50% remaining), warn (>25%),
+    // crit (<=25%). Pass invert=true for resources where a HIGH value is bad
+    // (fatigue), so full fatigue reads crit and no fatigue reads good.
+    Handlebars.registerHelper('vitalTint', function(current, max, invert) {
+        const c = Number(current) || 0;
+        const m = Number(max) || 0;
+        if (m <= 0) return 'rt-vital--neutral';
+        let frac = c / m;
+        if (invert === true) frac = 1 - frac;
+        if (frac >= 0.5) return 'rt-vital--good';
+        if (frac > 0.25) return 'rt-vital--warn';
+        return 'rt-vital--crit';
+    });
+
     Handlebars.registerHelper('colorCode', function(positive, negative) {
         // Positive Precedence
         if (positive) {

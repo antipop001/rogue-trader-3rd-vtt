@@ -148,6 +148,59 @@ export class AcolyteSheetV2 extends ActorContainerSheetV2 {
         // V2's tab framework only activates tabs on click; first render needs an explicit pass.
         const initial = this.tabGroups.primary ?? 'main';
         this.changeTab(initial, 'primary', { force: true, updatePosition: false });
+
+        this._wireSkillFilter();
+    }
+
+    /**
+     * Client-side filter for the merged Skills panel: a search box + type chips
+     * (All / Trained / Basic / Advanced / Specialist) show/hide skill rows without
+     * a re-render. Re-wired every render (the DOM is rebuilt). No-op on sheets
+     * without the merged panel (e.g. the NPC template).
+     */
+    _wireSkillFilter() {
+        const root = this.element;
+        const search = root?.querySelector('.rt-skill-search');
+        const chips = root ? Array.from(root.querySelectorAll('.rt-skill-chip')) : [];
+        const columns = root?.querySelector('.rt-skill-columns');
+        if (!columns || !chips.length) return;
+
+        const rows = Array.from(columns.querySelectorAll('.rt-skill-item'));
+        const groups = Array.from(columns.querySelectorAll('.rt-skill-group'));
+        const cols = Array.from(columns.querySelectorAll('.rt-skill-col'));
+        let type = 'all';
+
+        const apply = () => {
+            const q = (search?.value || '').trim().toLowerCase();
+            for (const r of rows) {
+                const nm = (r.querySelector('.roll-skill')?.textContent || '').toLowerCase();
+                const okType = type === 'all'
+                    || (type === 'trained' ? r.dataset.skillTrained === '1' : r.dataset.skillCol === type);
+                r.style.display = (okType && (!q || nm.includes(q))) ? '' : 'none';
+            }
+            // The specialist "pick specialities" group rows only make sense unfiltered.
+            const showGroups = (type === 'all' || type === 'specialist') && !q;
+            for (const g of groups) g.style.display = showGroups ? '' : 'none';
+            // Collapse to only the relevant column(s) when a single type is chosen.
+            let shown = 0;
+            for (const c of cols) {
+                const key = c.dataset.skillCol;
+                const visible = type === 'all' || type === 'trained' || type === key;
+                c.style.display = visible ? '' : 'none';
+                if (visible) shown++;
+            }
+            columns.style.gridTemplateColumns = `repeat(${shown || 1}, 1fr)`;
+        };
+
+        search?.addEventListener('input', apply);
+        for (const c of chips) {
+            c.addEventListener('click', () => {
+                type = c.dataset.filter;
+                chips.forEach((x) => x.classList.toggle('is-active', x === c));
+                apply();
+            });
+        }
+        apply();
     }
 
     /* --------------------------------------------------------- */
