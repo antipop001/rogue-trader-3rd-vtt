@@ -136,6 +136,12 @@ export function registerHandlebarsHelpers() {
         return Number.parseInt(value) + 1;
     });
 
+    // Numeric add — used by the armour paperdoll to sum Toughness Bonus + Armour
+    // Points into the effective per-location soak. Guards non-numeric input to 0.
+    Handlebars.registerHelper('add', function(a, b) {
+        return (Number(a) || 0) + (Number(b) || 0);
+    });
+
     Handlebars.registerHelper('colorCode', function(positive, negative) {
         // Positive Precedence
         if (positive) {

@@ -20,4 +20,8 @@ export class NpcSheetV2 extends AcolyteSheetV2 {
             scrollable: ['.rt-body'],
         },
     };
+
+    // The NPC template keeps the legacy tab set (combat/main/gear/psychic); its
+    // initial tab must stay 'main' rather than inherit the Explorer's 'character'.
+    tabGroups = { primary: 'main' };
 }
