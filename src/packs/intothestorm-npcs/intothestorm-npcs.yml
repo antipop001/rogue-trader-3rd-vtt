@@ -237,17 +237,17 @@ system:
     type: troop
   skills:
     awareness:
-      advance: 0
+      advance: 1
     concealment:
-      advance: 0
+      advance: 1
     dodge:
-      advance: 0
+      advance: 1
     search:
-      advance: 0
+      advance: 1
     shadowing:
-      advance: 0
+      advance: 1
     silentMove:
-      advance: 0
+      advance: 1
   wounds:
     critical: 0
     max: 5
