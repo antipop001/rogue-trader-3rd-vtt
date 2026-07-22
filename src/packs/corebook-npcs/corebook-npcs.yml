@@ -1204,6 +1204,8 @@ system:
       advance: 2
     drive:
       advance: 1
+    inquiry:
+      advance: 1
     intimidate:
       advance: 2
     scrutiny:
@@ -2158,6 +2160,10 @@ system:
       advance: 1
     deceive:
       advance: 1
+    inquiry:
+      advance: 1
+    interrogation:
+      advance: 2
     intimidate:
       advance: 1
     navigate:

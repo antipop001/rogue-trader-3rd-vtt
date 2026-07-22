@@ -1736,6 +1736,8 @@ system:
       advance: 1
     commonLore:
       advance: 1
+    inquiry:
+      advance: 1
     literacy:
       advance: 1
     medicae:
@@ -2253,6 +2255,8 @@ system:
       advance: 3
     evaluate:
       advance: 2
+    inquiry:
+      advance: 1
     intimidate:
       advance: 1
     navigate:
@@ -3114,6 +3118,8 @@ system:
       advance: 1
     scrutiny:
       advance: 3
+    sleightOfHand:
+      advance: 1
     speakLanguage:
       advance: 1
   wounds:
@@ -4111,6 +4117,8 @@ system:
       advance: 2
     evaluate:
       advance: 2
+    inquiry:
+      advance: 1
     literacy:
       advance: 1
     navigate:
@@ -4505,6 +4513,8 @@ system:
     dodge:
       advance: 2
     forbiddenLore:
+      advance: 1
+    inquiry:
       advance: 1
     literacy:
       advance: 1
@@ -5150,6 +5160,8 @@ system:
       advance: 3
     literacy:
       advance: 1
+    logic:
+      advance: 3
     medicae:
       advance: 1
     scholasticLore:
@@ -5738,6 +5750,10 @@ system:
       advance: 1
     drive:
       advance: 1
+    inquiry:
+      advance: 3
+    interrogation:
+      advance: 3
     intimidate:
       advance: 3
     literacy:
@@ -5967,6 +5983,8 @@ system:
     invocation:
       advance: 1
     literacy:
+      advance: 1
+    logic:
       advance: 1
     psyniscience:
       advance: 1

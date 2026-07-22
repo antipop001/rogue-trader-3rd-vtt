@@ -61,14 +61,17 @@ def recovered_by_book():
     return out
 
 
-# ---- minimal doc-structured YAML rewriter (line level, preserves formatting) ----
+# ---- doc-structured YAML rewriter: raises 0->want AND inserts missing skill keys ----
+# Every NPC skill entry is exactly `{advance: N}` (verified), so the skills block can be
+# rebuilt as a sorted key list without losing sub-structure. Only NPCs that gain a raise
+# or an added key are rewritten; the sort matches the pack's existing (generated) order,
+# so diffs are limited to the changed/added lines.
 def process_pack(path, book_recovered, stats):
     text = Path(path).read_text()
     docs = text.split("\n---\n")
     changed = 0
     for di, doc in enumerate(docs):
         lines = doc.split("\n")
-        # NPC name (top-level `name:` — first match at 0 indent)
         name = None
         for l in lines:
             m = re.match(r"^name:\s*(.+?)\s*$", l)
@@ -83,33 +86,51 @@ def process_pack(path, book_recovered, stats):
                 stats["unmatched"].append(f"{Path(path).name} :: {name}")
             continue
         stats["matched"] += 1
-        # locate skills section and rewrite advances
-        in_skills = False
-        cur_key = None
+        # locate the skills block: `  skills:` .. next top-level (2-space or 0-space) key
+        s_start = s_end = None
         for i, l in enumerate(lines):
-            m2 = re.match(r"^  ([A-Za-z]+):\s*$", l)
-            if m2:
-                in_skills = (m2.group(1) == "skills")
-                cur_key = None
+            if s_start is None:
+                if re.match(r"^  skills:\s*$", l):
+                    s_start = i
                 continue
-            if not in_skills:
-                continue
+            if re.match(r"^  [A-Za-z]", l) or re.match(r"^[A-Za-z]", l):
+                s_end = i
+                break
+        if s_start is None:
+            continue
+        if s_end is None:
+            s_end = len(lines)
+        existing, cur = {}, None
+        for l in lines[s_start + 1:s_end]:
             mk = re.match(r"^    ([A-Za-z]+):\s*$", l)
             if mk:
-                cur_key = mk.group(1)
+                cur = mk.group(1)
                 continue
-            ma = re.match(r"^(      )advance:\s*(-?\d+)\s*$", l)
-            if ma and cur_key and cur_key in rec:
-                cur = int(ma.group(2))
-                want = rec[cur_key]
-                if cur == 0 and want >= 1:
-                    lines[i] = f"{ma.group(1)}advance: {want}"
-                    changed += 1
-                    stats["recovered"] += 1
-                elif cur > 0 and want != cur:
+            ma = re.match(r"^      advance:\s*(-?\d+)\s*$", l)
+            if ma and cur:
+                existing[cur] = int(ma.group(1))
+        merged = dict(existing)
+        raised = added = 0
+        for k, want in rec.items():
+            if k in merged:
+                if merged[k] == 0 and want >= 1:
+                    merged[k] = want
+                    raised += 1
+                elif merged[k] > 0 and want != merged[k]:
                     stats["discrepancy"].append(
-                        f"{Path(path).name} :: {name} :: {cur_key} pack={cur} source={want}")
-        docs[di] = "\n".join(lines)
+                        f"{Path(path).name} :: {name} :: {k} pack={merged[k]} source={want}")
+            else:
+                merged[k] = want
+                added += 1
+        if raised or added:
+            block = ["  skills:"]
+            for k in sorted(merged):
+                block += [f"    {k}:", f"      advance: {merged[k]}"]
+            lines = lines[:s_start] + block + lines[s_end:]
+            docs[di] = "\n".join(lines)
+            changed += raised + added
+            stats["recovered"] += raised
+            stats["added"] += added
     if changed and stats["write"]:
         Path(path).write_text("\n---\n".join(docs))
     return changed
@@ -124,7 +145,7 @@ def main():
     rec = recovered_by_book()
     print(f"  books with NPCs: {len(rec)}")
 
-    stats = {"matched": 0, "recovered": 0, "unmatched": [], "discrepancy": [], "write": args.write}
+    stats = {"matched": 0, "recovered": 0, "added": 0, "unmatched": [], "discrepancy": [], "write": args.write}
     pack_files = sorted(glob.glob(str(ROOT / "src/packs/*-npcs/*.yml")) +
                         glob.glob(str(ROOT / "src/packs/npcs/npcs.yml")))
     per_file = {}
@@ -148,6 +169,7 @@ def main():
             print(f"  {n:4d}  {f}")
     print(f"\nNPCs matched to source: {stats['matched']}")
     print(f"Plain-trained skills recovered (0 -> >=1): {stats['recovered']}")
+    print(f"Skills ADDED (missing key inserted): {stats['added']}")
     print(f"Unmatched NPC docs (no source skills applied): {len(stats['unmatched'])}")
     for u in stats["unmatched"][:25]:
         print(f"    - {u}")

@@ -7290,6 +7290,8 @@ system:
       advance: 1
     forbiddenLore:
       advance: 1
+    interrogation:
+      advance: 2
     intimidate:
       advance: 2
     shadowing:
@@ -9658,8 +9660,14 @@ system:
       advance: 3
     forbiddenLore:
       advance: 1
+    inquiry:
+      advance: 2
+    interrogation:
+      advance: 3
     intimidate:
       advance: 2
+    logic:
+      advance: 3
     pilot:
       advance: 3
     scholasticLore:
@@ -15330,6 +15338,8 @@ system:
     forbiddenLore:
       advance: 1
     gamble:
+      advance: 1
+    inquiry:
       advance: 1
     navigate:
       advance: 1

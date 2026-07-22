@@ -474,13 +474,19 @@ system:
       advance: 1
     awareness:
       advance: 2
+    barter:
+      advance: 1
     commerce:
       advance: 0
     deceive:
       advance: 2
     dodge:
       advance: 1
+    evaluate:
+      advance: 2
     forbiddenLore:
+      advance: 1
+    gamble:
       advance: 1
     linguistics:
       advance: 2
@@ -490,6 +496,12 @@ system:
       advance: 1
     operate:
       advance: 0
+    pilot:
+      advance: 1
+    silentMove:
+      advance: 2
+    speakLanguage:
+      advance: 2
     stealth:
       advance: 2
   wounds:
@@ -1409,16 +1421,28 @@ system:
       advance: 2
     awareness:
       advance: 1
+    barter:
+      advance: 1
+    climb:
+      advance: 2
     commerce:
       advance: 0
+    concealment:
+      advance: 3
     dodge:
       advance: 2
     linguistics:
       advance: 0
+    silentMove:
+      advance: 3
+    speakLanguage:
+      advance: 1
     stealth:
       advance: 3
     survival:
       advance: 3
+    tracking:
+      advance: 2
   wounds:
     critical: 0
     max: 12
@@ -1764,10 +1788,14 @@ system:
     threatLevel: 0
     type: troop
   skills:
+    concealment:
+      advance: 3
     dodge:
       advance: 1
     psyniscience:
       advance: 1
+    silentMove:
+      advance: 3
     stealth:
       advance: 3
   wounds:

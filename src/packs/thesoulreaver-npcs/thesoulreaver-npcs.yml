@@ -835,6 +835,8 @@ system:
       advance: 3
     silentMove:
       advance: 1
+    sleightOfHand:
+      advance: 1
   wounds:
     critical: 0
     max: 22
@@ -1678,6 +1680,8 @@ system:
       advance: 1
     forbiddenLore:
       advance: 2
+    interrogation:
+      advance: 3
     intimidate:
       advance: 3
     literacy:
@@ -1687,6 +1691,8 @@ system:
     scholasticLore:
       advance: 2
     silentMove:
+      advance: 1
+    sleightOfHand:
       advance: 1
     techUse:
       advance: 3
@@ -2771,6 +2777,8 @@ system:
       advance: 2
     silentMove:
       advance: 1
+    sleightOfHand:
+      advance: 1
   wounds:
     critical: 0
     max: 10
@@ -3198,6 +3206,8 @@ system:
     intimidate:
       advance: 3
     silentMove:
+      advance: 1
+    sleightOfHand:
       advance: 1
   wounds:
     critical: 0
@@ -4049,6 +4059,8 @@ system:
       advance: 2
     silentMove:
       advance: 1
+    sleightOfHand:
+      advance: 1
   wounds:
     critical: 0
     max: 10
@@ -4603,6 +4615,8 @@ system:
     intimidate:
       advance: 2
     silentMove:
+      advance: 1
+    sleightOfHand:
       advance: 1
   wounds:
     critical: 0
@@ -5193,6 +5207,8 @@ system:
       advance: 1
     silentMove:
       advance: 1
+    sleightOfHand:
+      advance: 1
     wrangling:
       advance: 3
   wounds:
@@ -5644,6 +5660,8 @@ system:
     pilot:
       advance: 2
     silentMove:
+      advance: 1
+    sleightOfHand:
       advance: 1
   wounds:
     critical: 0
@@ -6138,6 +6156,8 @@ system:
       advance: 2
     silentMove:
       advance: 2
+    sleightOfHand:
+      advance: 1
   wounds:
     critical: 0
     max: 10
@@ -6619,6 +6639,8 @@ system:
       advance: 3
     medicae:
       advance: 2
+    sleightOfHand:
+      advance: 1
   wounds:
     critical: 0
     max: 19
@@ -8955,6 +8977,8 @@ system:
       advance: 3
     literacy:
       advance: 2
+    logic:
+      advance: 2
     medicae:
       advance: 1
     speakLanguage:
@@ -9480,6 +9504,8 @@ system:
       advance: 1
     forbiddenLore:
       advance: 2
+    inquiry:
+      advance: 1
     intimidate:
       advance: 1
     navigate:
@@ -9490,6 +9516,8 @@ system:
       advance: 1
     security:
       advance: 1
+    sleightOfHand:
+      advance: 2
     speakLanguage:
       advance: 1
     trade:

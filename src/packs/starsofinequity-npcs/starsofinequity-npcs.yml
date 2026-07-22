@@ -2570,6 +2570,8 @@ system:
       advance: 1
     shadowing:
       advance: 1
+    sleightOfHand:
+      advance: 1
     speakLanguage:
       advance: 1
     tracking:
@@ -4926,6 +4928,8 @@ system:
       advance: 1
     commonLore:
       advance: 1
+    interrogation:
+      advance: 2
     literacy:
       advance: 1
     speakLanguage:
@@ -5297,6 +5301,8 @@ system:
       advance: 3
     literacy:
       advance: 1
+    logic:
+      advance: 2
     speakLanguage:
       advance: 1
     techUse:
@@ -5615,6 +5621,8 @@ system:
       advance: 2
     literacy:
       advance: 1
+    logic:
+      advance: 2
     speakLanguage:
       advance: 1
     techUse:
@@ -6357,6 +6365,8 @@ system:
       advance: 3
     forbiddenLore:
       advance: 3
+    inquiry:
+      advance: 2
     literacy:
       advance: 1
     navigate:

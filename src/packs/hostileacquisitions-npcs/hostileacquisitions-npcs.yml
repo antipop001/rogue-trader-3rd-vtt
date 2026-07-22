@@ -407,8 +407,14 @@ system:
       advance: 1
     dodge:
       advance: 1
+    inquiry:
+      advance: 3
+    interrogation:
+      advance: 3
     literacy:
       advance: 2
+    logic:
+      advance: 1
     scholasticLore:
       advance: 2
     scrutiny:
@@ -660,6 +666,8 @@ system:
       advance: 1
     commonLore:
       advance: 1
+    interrogation:
+      advance: 2
     scholasticLore:
       advance: 2
     scrutiny:
@@ -1441,10 +1449,14 @@ system:
       advance: 3
     forbiddenLore:
       advance: 2
+    interrogation:
+      advance: 2
     intimidate:
       advance: 2
     literacy:
       advance: 2
+    logic:
+      advance: 3
     scholasticLore:
       advance: 3
     secretTongue:
@@ -1910,6 +1922,8 @@ system:
     commonLore:
       advance: 1
     dodge:
+      advance: 1
+    logic:
       advance: 1
     medicae:
       advance: 1
@@ -2846,6 +2860,8 @@ system:
       advance: 2
     literacy:
       advance: 3
+    logic:
+      advance: 1
     scholasticLore:
       advance: 3
     scrutiny:
@@ -3944,6 +3960,8 @@ system:
       advance: 2
     gamble:
       advance: 3
+    inquiry:
+      advance: 3
     intimidate:
       advance: 1
     literacy:
@@ -3964,6 +3982,8 @@ system:
       advance: 2
     silentMove:
       advance: 2
+    sleightOfHand:
+      advance: 3
     speakLanguage:
       advance: 2
     survival:
@@ -4291,6 +4311,8 @@ system:
       advance: 2
     invocation:
       advance: 1
+    logic:
+      advance: 2
     psyniscience:
       advance: 1
     secretTongue:
@@ -5427,6 +5449,8 @@ system:
       advance: 1
     forbiddenLore:
       advance: 3
+    logic:
+      advance: 2
     pilot:
       advance: 1
     speakLanguage:
@@ -6281,6 +6305,10 @@ system:
       advance: 2
     forbiddenLore:
       advance: 2
+    inquiry:
+      advance: 2
+    interrogation:
+      advance: 1
     intimidate:
       advance: 1
     literacy:
@@ -6589,6 +6617,10 @@ system:
       advance: 3
     forbiddenLore:
       advance: 2
+    inquiry:
+      advance: 2
+    interrogation:
+      advance: 1
     scholasticLore:
       advance: 1
     scrutiny:
@@ -6881,6 +6913,10 @@ system:
       advance: 1
     deceive:
       advance: 1
+    inquiry:
+      advance: 2
+    interrogation:
+      advance: 2
     intimidate:
       advance: 2
     literacy:

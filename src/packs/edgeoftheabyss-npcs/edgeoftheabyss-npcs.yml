@@ -3165,6 +3165,8 @@ system:
       advance: 2
     forbiddenLore:
       advance: 1
+    inquiry:
+      advance: 3
     scrutiny:
       advance: 3
     trade:
@@ -5029,6 +5031,8 @@ system:
       advance: 3
     forbiddenLore:
       advance: 3
+    interrogation:
+      advance: 2
     intimidate:
       advance: 3
     literacy:
@@ -6040,6 +6044,8 @@ system:
       advance: 1
     gamble:
       advance: 2
+    interrogation:
+      advance: 1
     intimidate:
       advance: 3
     literacy:
@@ -7724,6 +7730,8 @@ system:
       advance: 1
     forbiddenLore:
       advance: 1
+    logic:
+      advance: 2
     speakLanguage:
       advance: 1
     techUse:
@@ -8081,6 +8089,8 @@ system:
       advance: 1
     drive:
       advance: 1
+    logic:
+      advance: 2
     speakLanguage:
       advance: 1
     techUse:
@@ -8879,6 +8889,8 @@ system:
       advance: 2
     commonLore:
       advance: 1
+    interrogation:
+      advance: 1
     intimidate:
       advance: 1
     speakLanguage:
@@ -9161,6 +9173,8 @@ system:
       advance: 1
     dodge:
       advance: 2
+    inquiry:
+      advance: 1
     intimidate:
       advance: 2
     scrutiny:

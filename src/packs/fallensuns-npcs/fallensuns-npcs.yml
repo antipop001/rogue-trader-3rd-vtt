@@ -549,6 +549,8 @@ system:
       advance: 1
     forbiddenLore:
       advance: 2
+    inquiry:
+      advance: 2
     literacy:
       advance: 1
     scholasticLore:
@@ -5180,6 +5182,8 @@ system:
       advance: 2
     forbiddenLore:
       advance: 3
+    inquiry:
+      advance: 2
     invocation:
       advance: 1
     psyniscience:
@@ -5416,6 +5420,8 @@ system:
     dodge:
       advance: 2
     forbiddenLore:
+      advance: 1
+    inquiry:
       advance: 1
     psyniscience:
       advance: 3
@@ -5730,6 +5736,10 @@ system:
     dodge:
       advance: 2
     forbiddenLore:
+      advance: 1
+    inquiry:
+      advance: 2
+    interrogation:
       advance: 1
     scrutiny:
       advance: 1
@@ -6169,6 +6179,8 @@ system:
       advance: 1
     scrutiny:
       advance: 1
+    sleightOfHand:
+      advance: 2
     speakLanguage:
       advance: 1
   wounds:

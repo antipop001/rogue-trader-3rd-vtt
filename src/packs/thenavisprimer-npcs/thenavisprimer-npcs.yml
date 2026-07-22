@@ -2646,12 +2646,20 @@ system:
       advance: 1
     forbiddenLore:
       advance: 1
+    inquiry:
+      advance: 3
+    interrogation:
+      advance: 3
     intimidate:
       advance: 2
     literacy:
       advance: 1
+    logic:
+      advance: 1
     navigate:
       advance: 1
+    performance:
+      advance: 3
     scrutiny:
       advance: 3
     search:
@@ -3578,6 +3586,8 @@ system:
       advance: 2
     forbiddenLore:
       advance: 1
+    interrogation:
+      advance: 1
     intimidate:
       advance: 3
     literacy:
@@ -3594,6 +3604,8 @@ system:
       advance: 3
     silentMove:
       advance: 3
+    sleightOfHand:
+      advance: 1
     speakLanguage:
       advance: 1
     survival:
@@ -4084,6 +4096,8 @@ system:
     scholasticLore:
       advance: 1
     scrutiny:
+      advance: 1
+    sleightOfHand:
       advance: 1
     speakLanguage:
       advance: 1
@@ -4740,6 +4754,8 @@ system:
       advance: 2
     forbiddenLore:
       advance: 1
+    inquiry:
+      advance: 1
     psyniscience:
       advance: 3
     scrutiny:
@@ -5337,6 +5353,8 @@ system:
       advance: 2
     forbiddenLore:
       advance: 3
+    inquiry:
+      advance: 2
     invocation:
       advance: 1
     psyniscience:
@@ -8637,6 +8655,8 @@ system:
       advance: 1
     forbiddenLore:
       advance: 1
+    inquiry:
+      advance: 2
     psyniscience:
       advance: 1
     scholasticLore:

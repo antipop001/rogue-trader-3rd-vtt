@@ -549,8 +549,14 @@ system:
       advance: 1
     forbiddenLore:
       advance: 3
+    inquiry:
+      advance: 3
+    interrogation:
+      advance: 3
     literacy:
       advance: 2
+    logic:
+      advance: 3
     scholasticLore:
       advance: 2
     scrutiny:
@@ -995,6 +1001,8 @@ system:
     intimidate:
       advance: 2
     literacy:
+      advance: 1
+    logic:
       advance: 1
     medicae:
       advance: 2
@@ -2678,9 +2686,13 @@ system:
       advance: 1
     forbiddenLore:
       advance: 3
+    interrogation:
+      advance: 2
     intimidate:
       advance: 3
     literacy:
+      advance: 3
+    logic:
       advance: 3
     medicae:
       advance: 2
@@ -4935,6 +4947,8 @@ system:
     forbiddenLore:
       advance: 2
     literacy:
+      advance: 1
+    logic:
       advance: 1
     navigate:
       advance: 3
@@ -7391,6 +7405,8 @@ system:
       advance: 3
     evaluate:
       advance: 1
+    inquiry:
+      advance: 2
     literacy:
       advance: 3
     scholasticLore:
@@ -7398,6 +7414,8 @@ system:
     scrutiny:
       advance: 3
     secretTongue:
+      advance: 1
+    sleightOfHand:
       advance: 1
     speakLanguage:
       advance: 1
@@ -7873,6 +7891,10 @@ system:
       advance: 2
     forbiddenLore:
       advance: 3
+    inquiry:
+      advance: 1
+    interrogation:
+      advance: 2
     literacy:
       advance: 1
     scholasticLore:
@@ -8007,6 +8029,10 @@ system:
       advance: 3
     dodge:
       advance: 1
+    inquiry:
+      advance: 3
+    logic:
+      advance: 2
     medicae:
       advance: 1
     scrutiny:
@@ -8619,6 +8645,8 @@ system:
       advance: 1
     literacy:
       advance: 2
+    logic:
+      advance: 1
     medicae:
       advance: 2
     scholasticLore:

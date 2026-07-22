@@ -506,6 +506,8 @@ system:
       advance: 2
     forbiddenLore:
       advance: 1
+    inquiry:
+      advance: 2
     navigate:
       advance: 2
     pilot:
@@ -973,6 +975,8 @@ system:
       advance: 1
     dodge:
       advance: 1
+    interrogation:
+      advance: 2
     navigate:
       advance: 1
     speakLanguage:
@@ -1368,6 +1372,10 @@ system:
     deceive:
       advance: 3
     dodge:
+      advance: 2
+    inquiry:
+      advance: 1
+    interrogation:
       advance: 2
     intimidate:
       advance: 1
@@ -1880,6 +1888,8 @@ system:
       advance: 2
     forbiddenLore:
       advance: 2
+    inquiry:
+      advance: 1
     navigate:
       advance: 2
     pilot:
@@ -2648,6 +2658,8 @@ system:
       advance: 2
     deceive:
       advance: 1
+    inquiry:
+      advance: 1
     navigate:
       advance: 3
     speakLanguage:
@@ -3117,6 +3129,8 @@ system:
       advance: 1
     drive:
       advance: 1
+    logic:
+      advance: 2
     pilot:
       advance: 1
     security:
@@ -4388,6 +4402,8 @@ system:
       advance: 3
     deceive:
       advance: 3
+    inquiry:
+      advance: 1
     intimidate:
       advance: 1
     psyniscience:
@@ -4754,6 +4770,8 @@ system:
     dodge:
       advance: 1
     drive:
+      advance: 1
+    inquiry:
       advance: 1
   wounds:
     critical: 0
@@ -6547,6 +6565,8 @@ system:
       advance: 1
     forbiddenLore:
       advance: 1
+    inquiry:
+      advance: 1
     navigate:
       advance: 1
     scrutiny:
@@ -6815,6 +6835,8 @@ system:
       advance: 1
     forbiddenLore:
       advance: 3
+    inquiry:
+      advance: 1
     psyniscience:
       advance: 3
     scrutiny:
@@ -7076,6 +7098,8 @@ system:
     deceive:
       advance: 1
     forbiddenLore:
+      advance: 1
+    inquiry:
       advance: 1
     psyniscience:
       advance: 2
