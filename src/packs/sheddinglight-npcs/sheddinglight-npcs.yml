@@ -175,7 +175,7 @@ system:
     type: troop
   skills:
     awareness:
-      advance: 0
+      advance: 1
     barter:
       advance: 2
   wounds:
@@ -548,7 +548,7 @@ system:
     concealment:
       advance: 2
     dodge:
-      advance: 0
+      advance: 1
     silentMove:
       advance: 2
     techUse:
@@ -721,7 +721,7 @@ system:
     type: troop
   skills:
     awareness:
-      advance: 0
+      advance: 1
     techUse:
       advance: 3
   wounds:

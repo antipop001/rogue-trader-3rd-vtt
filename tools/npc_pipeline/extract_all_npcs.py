@@ -186,10 +186,14 @@ def parse_skills(line):
     skills = []
     for p in _split_top_commas(text):
         p = p.rstrip(".")
-        adv = 0
+        # Emit the runtime's level-INDEX scale (0=untrained, 1=trained/+0, 2=+10,
+        # 3=+20), NOT the raw bonus magnitude. A skill LISTED in a stat block is
+        # trained even with no bonus, so default to 1. RT caps advances at +20.
+        adv = 1
         m = re.search(r"\+(\d+)\s*$", p)
         if m:
-            adv = int(m.group(1)); p = p[:m.start()].strip()
+            adv = 2 if int(m.group(1)) <= 10 else 3
+            p = p[:m.start()].strip()
         p = re.sub(
             r"\s*\(([A-Z][a-z]?(/[A-Z][a-z]?)?|S|T|Fel|WP|Int|Per|Ag|Ws|Bs)\)\s*$",
             "", p,

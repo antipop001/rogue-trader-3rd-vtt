@@ -288,7 +288,7 @@ system:
     type: troop
   skills:
     awareness:
-      advance: 0
+      advance: 1
     dodge:
       advance: 2
   wounds:

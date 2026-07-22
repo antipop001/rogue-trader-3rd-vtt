@@ -157,19 +157,19 @@ system:
     type: troop
   skills:
     awareness:
-      advance: 0
+      advance: 1
     climb:
-      advance: 0
+      advance: 1
     concealment:
       advance: 2
     dodge:
-      advance: 0
+      advance: 1
     silentMove:
       advance: 2
     speakLanguage:
-      advance: 0
+      advance: 1
     survival:
-      advance: 0
+      advance: 1
     tracking:
       advance: 2
   wounds:
@@ -404,7 +404,7 @@ system:
     type: troop
   skills:
     awareness:
-      advance: 0
+      advance: 1
     concealment:
       advance: 2
   wounds:
@@ -742,7 +742,7 @@ system:
     type: troop
   skills:
     awareness:
-      advance: 0
+      advance: 1
   wounds:
     critical: 0
     max: 20
@@ -981,7 +981,7 @@ system:
     type: troop
   skills:
     awareness:
-      advance: 0
+      advance: 1
   wounds:
     critical: 0
     max: 24

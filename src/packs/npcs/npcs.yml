@@ -471,7 +471,7 @@ system:
     type: troop
   skills:
     acrobatics:
-      advance: 0
+      advance: 1
     awareness:
       advance: 2
     commerce:
@@ -479,15 +479,15 @@ system:
     deceive:
       advance: 2
     dodge:
-      advance: 0
+      advance: 1
     forbiddenLore:
-      advance: 0
+      advance: 1
     linguistics:
       advance: 2
     medicae:
-      advance: 0
+      advance: 1
     navigate:
-      advance: 0
+      advance: 1
     operate:
       advance: 0
     stealth:
@@ -1404,11 +1404,11 @@ system:
     type: troop
   skills:
     acrobatics:
-      advance: 0
+      advance: 1
     athletics:
       advance: 2
     awareness:
-      advance: 0
+      advance: 1
     commerce:
       advance: 0
     dodge:
@@ -1765,9 +1765,9 @@ system:
     type: troop
   skills:
     dodge:
-      advance: 0
+      advance: 1
     psyniscience:
-      advance: 0
+      advance: 1
     stealth:
       advance: 3
   wounds:
