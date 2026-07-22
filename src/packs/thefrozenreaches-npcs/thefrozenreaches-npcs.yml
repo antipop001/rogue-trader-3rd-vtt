@@ -163,9 +163,9 @@ system:
     type: troop
   skills:
     awareness:
-      advance: 10
+      advance: 2
     tracking:
-      advance: 20
+      advance: 3
   wounds:
     critical: 0
     max: 12
@@ -739,13 +739,13 @@ system:
     type: troop
   skills:
     awareness:
-      advance: 10
+      advance: 2
     barter:
-      advance: 10
+      advance: 2
     commonLore:
-      advance: 10
+      advance: 2
     intimidate:
-      advance: 10
+      advance: 2
   wounds:
     critical: 0
     max: 20
@@ -1158,7 +1158,7 @@ system:
     type: troop
   skills:
     awareness:
-      advance: 10
+      advance: 2
     climb:
       advance: 0
     commonLore:
@@ -1495,7 +1495,7 @@ system:
     climb:
       advance: 0
     commonLore:
-      advance: 10
+      advance: 2
     concealment:
       advance: 0
     dodge:
@@ -1731,7 +1731,7 @@ system:
     blather:
       advance: 0
     charm:
-      advance: 10
+      advance: 2
     command:
       advance: 0
     commonLore:
@@ -1741,7 +1741,7 @@ system:
     medicae:
       advance: 0
     scholasticLore:
-      advance: 10
+      advance: 2
     secretTongue:
       advance: 0
     speakLanguage:
@@ -2238,11 +2238,11 @@ system:
     awareness:
       advance: 0
     barter:
-      advance: 10
+      advance: 2
     charm:
-      advance: 20
+      advance: 3
     command:
-      advance: 10
+      advance: 2
     commerce:
       advance: 0
     commonLore:
@@ -2250,15 +2250,15 @@ system:
     deceive:
       advance: 0
     dodge:
-      advance: 20
+      advance: 3
     evaluate:
-      advance: 10
+      advance: 2
     intimidate:
       advance: 0
     navigate:
-      advance: 10
+      advance: 2
     pilot:
-      advance: 20
+      advance: 3
     speakLanguage:
       advance: 0
     techUse:
@@ -2736,23 +2736,23 @@ system:
     charm:
       advance: 0
     command:
-      advance: 20
+      advance: 3
     commonLore:
-      advance: 10
+      advance: 2
     dodge:
       advance: 0
     drive:
       advance: 0
     intimidate:
-      advance: 10
+      advance: 2
     literacy:
       advance: 0
     navigate:
-      advance: 10
+      advance: 2
     scholasticLore:
       advance: 0
     scrutiny:
-      advance: 10
+      advance: 2
     speakLanguage:
       advance: 0
     techUse:
@@ -3095,25 +3095,25 @@ system:
     type: troop
   skills:
     awareness:
-      advance: 10
+      advance: 2
     blather:
-      advance: 10
+      advance: 2
     carouse:
-      advance: 20
+      advance: 3
     charm:
-      advance: 20
+      advance: 3
     command:
       advance: 0
     commonLore:
       advance: 0
     deceive:
-      advance: 20
+      advance: 3
     gamble:
-      advance: 20
+      advance: 3
     literacy:
       advance: 0
     scrutiny:
-      advance: 20
+      advance: 3
     speakLanguage:
       advance: 0
   wounds:
@@ -3464,17 +3464,17 @@ system:
     type: troop
   skills:
     awareness:
-      advance: 10
+      advance: 2
     climb:
       advance: 0
     command:
-      advance: 20
+      advance: 3
     commonLore:
       advance: 0
     navigate:
       advance: 0
     pilot:
-      advance: 20
+      advance: 3
     speakLanguage:
       advance: 0
   wounds:
@@ -4096,29 +4096,29 @@ system:
     awareness:
       advance: 0
     barter:
-      advance: 10
+      advance: 2
     charm:
-      advance: 20
+      advance: 3
     command:
-      advance: 10
+      advance: 2
     commerce:
-      advance: 20
+      advance: 3
     commonLore:
       advance: 0
     deceive:
-      advance: 10
+      advance: 2
     dodge:
-      advance: 10
+      advance: 2
     evaluate:
-      advance: 10
+      advance: 2
     literacy:
       advance: 0
     navigate:
       advance: 0
     pilot:
-      advance: 10
+      advance: 2
     scrutiny:
-      advance: 10
+      advance: 2
   wounds:
     critical: 0
     max: 24
@@ -4497,13 +4497,13 @@ system:
     awareness:
       advance: 0
     carouse:
-      advance: 10
+      advance: 2
     command:
-      advance: 10
+      advance: 2
     commonLore:
       advance: 0
     dodge:
-      advance: 10
+      advance: 2
     forbiddenLore:
       advance: 0
     literacy:
@@ -5147,13 +5147,13 @@ system:
     evaluate:
       advance: 0
     forbiddenLore:
-      advance: 20
+      advance: 3
     literacy:
       advance: 0
     medicae:
       advance: 0
     scholasticLore:
-      advance: 20
+      advance: 3
     speakLanguage:
       advance: 0
     trade:
@@ -5727,11 +5727,11 @@ system:
     type: troop
   skills:
     awareness:
-      advance: 20
+      advance: 3
     ciphers:
       advance: 0
     command:
-      advance: 10
+      advance: 2
     commonLore:
       advance: 0
     dodge:
@@ -5739,13 +5739,13 @@ system:
     drive:
       advance: 0
     intimidate:
-      advance: 20
+      advance: 3
     literacy:
       advance: 0
     scholasticLore:
-      advance: 20
+      advance: 3
     scrutiny:
-      advance: 10
+      advance: 2
     shadowing:
       advance: 0
     tracking:

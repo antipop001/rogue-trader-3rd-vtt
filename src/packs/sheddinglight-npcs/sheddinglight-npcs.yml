@@ -177,7 +177,7 @@ system:
     awareness:
       advance: 0
     barter:
-      advance: 10
+      advance: 2
   wounds:
     critical: 0
     max: 8
@@ -546,13 +546,13 @@ system:
     type: troop
   skills:
     concealment:
-      advance: 10
+      advance: 2
     dodge:
       advance: 0
     silentMove:
-      advance: 10
+      advance: 2
     techUse:
-      advance: 20
+      advance: 3
   wounds:
     critical: 0
     max: 20
@@ -723,7 +723,7 @@ system:
     awareness:
       advance: 0
     techUse:
-      advance: 20
+      advance: 3
   wounds:
     critical: 0
     max: 20
@@ -1218,9 +1218,9 @@ system:
     type: troop
   skills:
     intimidate:
-      advance: 10
+      advance: 2
     techUse:
-      advance: 20
+      advance: 3
   wounds:
     critical: 0
     max: 20
@@ -1284,7 +1284,7 @@ system:
     type: troop
   skills:
     techUse:
-      advance: 20
+      advance: 3
   wounds:
     critical: 0
     max: 20

@@ -17,7 +17,7 @@ Schema per NPC:
         },
         "wounds": int,
         "movement": str,          # e.g. "5/10/15/30"
-        "skills": [               # list of (skill_name, advance) tuples (advance=10/20/30)
+        "skills": [               # list of (skill_name, advance) tuples (advance index 0..3)
             ("Awareness", 10), ("Acrobatics", 0), ...
         ],
         "talents": [str, ...],    # parsed names (specialty in parens kept verbatim)
@@ -138,11 +138,15 @@ def parse_skills(line):
     skills = []
     for p in parts:
         p = p.rstrip(".")
-        # Pull a trailing "+10" / "+20" / "+30".
-        adv = 0
+        # A skill listed in a stat block is TRAINED, even with no bonus. Emit the
+        # runtime's level-INDEX scale (0=untrained, 1=trained/+0, 2=+10, 3=+20),
+        # NOT the raw bonus magnitude — the sheet dropdown + _skillAdvanceToValue
+        # expect 0..3. RT caps skill advances at +20, so +20 and +30 both -> 3.
+        adv = 1  # listed but un-bonused => Trained (+0)
         m = re.search(r"\+(\d+)\s*$", p)
         if m:
-            adv = int(m.group(1))
+            bonus = int(m.group(1))
+            adv = 2 if bonus <= 10 else 3
             p = p[: m.start()].strip()
         # Strip a trailing characteristic-in-parens like "(Ag)" or "(Int)" or "(Per)".
         p = re.sub(r"\s*\(([A-Z][a-z]?(/[A-Z][a-z]?)?|S|T|Fel|WP|Int|Per|Ag|Ws|Bs)\)\s*$", "", p).strip()

@@ -290,7 +290,7 @@ system:
     awareness:
       advance: 0
     dodge:
-      advance: 10
+      advance: 2
   wounds:
     critical: 0
     max: 12

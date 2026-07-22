@@ -473,17 +473,17 @@ system:
     acrobatics:
       advance: 0
     awareness:
-      advance: 10
+      advance: 2
     commerce:
       advance: 0
     deceive:
-      advance: 10
+      advance: 2
     dodge:
       advance: 0
     forbiddenLore:
       advance: 0
     linguistics:
-      advance: 10
+      advance: 2
     medicae:
       advance: 0
     navigate:
@@ -491,7 +491,7 @@ system:
     operate:
       advance: 0
     stealth:
-      advance: 10
+      advance: 2
   wounds:
     critical: 0
     max: 12
@@ -1406,19 +1406,19 @@ system:
     acrobatics:
       advance: 0
     athletics:
-      advance: 10
+      advance: 2
     awareness:
       advance: 0
     commerce:
       advance: 0
     dodge:
-      advance: 10
+      advance: 2
     linguistics:
       advance: 0
     stealth:
-      advance: 20
+      advance: 3
     survival:
-      advance: 20
+      advance: 3
   wounds:
     critical: 0
     max: 12
@@ -1769,7 +1769,7 @@ system:
     psyniscience:
       advance: 0
     stealth:
-      advance: 20
+      advance: 3
   wounds:
     critical: 0
     max: 18

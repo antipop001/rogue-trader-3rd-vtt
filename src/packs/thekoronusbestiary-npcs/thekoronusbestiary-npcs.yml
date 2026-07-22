@@ -488,7 +488,7 @@ system:
     awareness:
       advance: 0
     climb:
-      advance: 10
+      advance: 2
   wounds:
     critical: 0
     max: 48
@@ -857,9 +857,9 @@ system:
     climb:
       advance: 0
     concealment:
-      advance: 20
+      advance: 3
     silentMove:
-      advance: 20
+      advance: 3
   wounds:
     critical: 0
     max: 12
@@ -1329,7 +1329,7 @@ system:
     silentMove:
       advance: 0
     tracking:
-      advance: 20
+      advance: 3
   wounds:
     critical: 0
     max: 21
@@ -1677,7 +1677,7 @@ system:
     silentMove:
       advance: 0
     swim:
-      advance: 20
+      advance: 3
   wounds:
     critical: 0
     max: 41
@@ -2107,15 +2107,15 @@ system:
     type: troop
   skills:
     awareness:
-      advance: 10
+      advance: 2
     concealment:
       advance: 0
     dodge:
       advance: 0
     psyniscience:
-      advance: 20
+      advance: 3
     silentMove:
-      advance: 20
+      advance: 3
     tracking:
       advance: 0
   wounds:
@@ -2849,7 +2849,7 @@ system:
     awareness:
       advance: 0
     concealment:
-      advance: 10
+      advance: 2
   wounds:
     critical: 0
     max: 9
@@ -3064,7 +3064,7 @@ system:
     speakLanguage:
       advance: 0
     survival:
-      advance: 20
+      advance: 3
   wounds:
     critical: 0
     max: 9
@@ -3934,15 +3934,15 @@ system:
     type: troop
   skills:
     acrobatics:
-      advance: 10
+      advance: 2
     awareness:
-      advance: 10
+      advance: 2
     climb:
-      advance: 20
+      advance: 3
     dodge:
       advance: 0
     silentMove:
-      advance: 20
+      advance: 3
     tracking:
       advance: 0
   wounds:
@@ -4362,7 +4362,7 @@ system:
     climb:
       advance: 0
     concealment:
-      advance: 10
+      advance: 2
     dodge:
       advance: 0
     silentMove:
@@ -5082,9 +5082,9 @@ system:
     type: troop
   skills:
     acrobatics:
-      advance: 10
+      advance: 2
     awareness:
-      advance: 20
+      advance: 3
     climb:
       advance: 0
     contortionist:
@@ -5092,9 +5092,9 @@ system:
     dodge:
       advance: 0
     silentMove:
-      advance: 10
+      advance: 2
     tracking:
-      advance: 20
+      advance: 3
   wounds:
     critical: 0
     max: 16
@@ -5563,21 +5563,21 @@ system:
     type: troop
   skills:
     acrobatics:
-      advance: 10
+      advance: 2
     awareness:
-      advance: 10
+      advance: 2
     climb:
-      advance: 10
+      advance: 2
     concealment:
       advance: 0
     dodge:
-      advance: 10
+      advance: 2
     forbiddenLore:
       advance: 0
     intimidate:
-      advance: 20
+      advance: 3
     scrutiny:
-      advance: 20
+      advance: 3
     silentMove:
       advance: 0
     speakLanguage:
@@ -6011,13 +6011,13 @@ system:
     type: troop
   skills:
     acrobatics:
-      advance: 10
+      advance: 2
     awareness:
-      advance: 10
+      advance: 2
     climb:
-      advance: 10
+      advance: 2
     dodge:
-      advance: 10
+      advance: 2
     forbiddenLore:
       advance: 0
     speakLanguage:
@@ -6648,21 +6648,21 @@ system:
     type: troop
   skills:
     acrobatics:
-      advance: 20
+      advance: 3
     awareness:
-      advance: 10
+      advance: 2
     climb:
-      advance: 10
+      advance: 2
     concealment:
-      advance: 10
+      advance: 2
     dodge:
-      advance: 20
+      advance: 3
     forbiddenLore:
       advance: 0
     pilot:
-      advance: 20
+      advance: 3
     scrutiny:
-      advance: 20
+      advance: 3
     search:
       advance: 0
     silentMove:
@@ -7279,25 +7279,25 @@ system:
     type: troop
   skills:
     acrobatics:
-      advance: 10
+      advance: 2
     awareness:
-      advance: 10
+      advance: 2
     climb:
-      advance: 20
+      advance: 3
     concealment:
-      advance: 20
+      advance: 3
     dodge:
       advance: 0
     forbiddenLore:
       advance: 0
     intimidate:
-      advance: 10
+      advance: 2
     shadowing:
-      advance: 20
+      advance: 3
     silentMove:
-      advance: 20
+      advance: 3
     tracking:
-      advance: 10
+      advance: 2
   wounds:
     critical: 0
     max: 18
@@ -7801,19 +7801,19 @@ system:
     type: troop
   skills:
     acrobatics:
-      advance: 20
+      advance: 3
     awareness:
-      advance: 10
+      advance: 2
     climb:
-      advance: 10
+      advance: 2
     dodge:
-      advance: 20
+      advance: 3
     forbiddenLore:
       advance: 0
     pilot:
-      advance: 20
+      advance: 3
     scrutiny:
-      advance: 20
+      advance: 3
     search:
       advance: 0
     silentMove:
@@ -9643,31 +9643,31 @@ system:
     type: troop
   skills:
     acrobatics:
-      advance: 20
+      advance: 3
     awareness:
-      advance: 10
+      advance: 2
     charm:
-      advance: 20
+      advance: 3
     climb:
-      advance: 10
+      advance: 2
     command:
-      advance: 20
+      advance: 3
     deceive:
-      advance: 20
+      advance: 3
     dodge:
-      advance: 20
+      advance: 3
     forbiddenLore:
       advance: 0
     intimidate:
-      advance: 10
+      advance: 2
     pilot:
-      advance: 20
+      advance: 3
     scholasticLore:
-      advance: 20
+      advance: 3
     scrutiny:
-      advance: 10
+      advance: 2
     silentMove:
-      advance: 10
+      advance: 2
     techUse:
       advance: 0
   wounds:
@@ -10282,15 +10282,15 @@ system:
     type: troop
   skills:
     awareness:
-      advance: 10
+      advance: 2
     barter:
       advance: 0
     carouse:
-      advance: 10
+      advance: 2
     climb:
       advance: 0
     commonLore:
-      advance: 20
+      advance: 3
     dodge:
       advance: 0
     navigate:
@@ -10663,11 +10663,11 @@ system:
     type: troop
   skills:
     concealment:
-      advance: 10
+      advance: 2
     intimidate:
       advance: 0
     shadowing:
-      advance: 10
+      advance: 2
     silentMove:
       advance: 0
     survival:
@@ -11213,13 +11213,13 @@ system:
     type: troop
   skills:
     command:
-      advance: 10
+      advance: 2
     intimidate:
-      advance: 10
+      advance: 2
     medicae:
-      advance: 10
+      advance: 2
     techUse:
-      advance: 10
+      advance: 2
   wounds:
     critical: 0
     max: 25
@@ -11757,9 +11757,9 @@ system:
     type: troop
   skills:
     command:
-      advance: 10
+      advance: 2
     techUse:
-      advance: 20
+      advance: 3
   wounds:
     critical: 0
     max: 22
@@ -12193,9 +12193,9 @@ system:
     type: troop
   skills:
     drive:
-      advance: 10
+      advance: 2
     pilot:
-      advance: 10
+      advance: 2
   wounds:
     critical: 0
     max: 15
@@ -14229,13 +14229,13 @@ system:
     awareness:
       advance: 0
     climb:
-      advance: 10
+      advance: 2
     command:
-      advance: 10
+      advance: 2
     dodge:
-      advance: 10
+      advance: 2
     intimidate:
-      advance: 10
+      advance: 2
   wounds:
     critical: 0
     max: 35
@@ -14919,7 +14919,7 @@ system:
     carouse:
       advance: 0
     climb:
-      advance: 10
+      advance: 2
     commerce:
       advance: 0
     concealment:
@@ -14931,7 +14931,7 @@ system:
     forbiddenLore:
       advance: 0
     silentMove:
-      advance: 20
+      advance: 3
     speakLanguage:
       advance: 0
     survival:
@@ -15326,7 +15326,7 @@ system:
     barter:
       advance: 0
     deceive:
-      advance: 10
+      advance: 2
     forbiddenLore:
       advance: 0
     gamble:
@@ -16324,7 +16324,7 @@ system:
     type: troop
   skills:
     psyniscience:
-      advance: 10
+      advance: 2
   wounds:
     critical: 0
     max: 62
@@ -16675,7 +16675,7 @@ system:
     awareness:
       advance: 0
     dodge:
-      advance: 10
+      advance: 2
   wounds:
     critical: 0
     max: 25
@@ -16950,7 +16950,7 @@ system:
     type: troop
   skills:
     awareness:
-      advance: 10
+      advance: 2
   wounds:
     critical: 0
     max: 40
@@ -17409,9 +17409,9 @@ system:
     awareness:
       advance: 0
     climb:
-      advance: 10
+      advance: 2
     shadowing:
-      advance: 10
+      advance: 2
   wounds:
     critical: 0
     max: 54
@@ -18319,7 +18319,7 @@ system:
     acrobatics:
       advance: 0
     awareness:
-      advance: 20
+      advance: 3
     dodge:
       advance: 0
     psyniscience:
@@ -21280,7 +21280,7 @@ system:
     awareness:
       advance: 0
     survival:
-      advance: 10
+      advance: 2
     wrangling:
       advance: 0
   wounds:
