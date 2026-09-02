@@ -6,7 +6,7 @@ import { RogueTraderBaseActor } from './base-actor.mjs';
 import { ForceFieldData } from '../rolls/force-field-data.mjs';
 import { prepareForceFieldRoll } from '../prompts/force-field-prompt.mjs';
 import { DHBasicActionManager } from '../actions/basic-action-manager.mjs';
-import { degreesOfSuccess, degreesOfFailure, roll1d100, initiativeCharBonus, woundsMax, woundsBase, reactionBudget, canSpendReaction, unnaturalCharacteristicMultipliers, unnaturalMultiplierFromBaked, unnaturalExtra, rapidReloadTime, doubleReloadTime, woundDamageState, woundRecovery } from '../rolls/roll-helpers.mjs';
+import { degreesOfSuccess, degreesOfFailure, roll1d100, initiativeCharBonus, woundsMax, woundsBase, resolveWoundsBase, reactionBudget, canSpendReaction, unnaturalCharacteristicMultipliers, unnaturalMultiplierFromBaked, unnaturalExtra, rapidReloadTime, doubleReloadTime, woundDamageState, woundRecovery } from '../rolls/roll-helpers.mjs';
 import { SYSTEM_ID } from '../hooks-manager.mjs';
 import { reactionsLocked } from '../rules/conditions.mjs';
 import { sustainedPsyPenalty } from '../rules/psychic.mjs';
@@ -412,19 +412,20 @@ export class RogueTraderAcolyte extends RogueTraderBaseActor {
         // without re-running the (non-idempotent, wounds.max-folding) rest of this method.
         // (BUG-Q-246.)
         this._computeInitiative();
-        // RT 1e: maximum Wounds is fully DERIVED (read-only on the sheet) = the rolled/stored
-        // base (`system.wounds.base`, the one editable field) plus any additive effect modifier
-        // (effect-addressable via system.wounds.modifier, mirroring Initiative — ENGINE-WOUNDS-MOD).
-        // Sound Constitution (RT Core p.111) writes system.wounds.modifier += 1 via an AE
-        // (stackable), so each copy raises Max by 1 automatically.
-        // Read the base from the IMMUTABLE source, not the live `wounds.max`/`wounds.base`:
-        // `_computeCharacteristics` runs twice per prepareData pass (pre-AE here, post-AE inside
-        // super.prepareData), so reading a derived value would fold `modifier` twice. (BUG-Q-251.)
-        // Legacy fallback: actors/NPCs created before the `base` field stored the rolled value in
-        // `wounds.max`; when `base` is absent in source, treat the source `max` as the base. On the
-        // next sheet save the `base` input persists it, lazily migrating the actor.
+        // RT 1e: maximum Wounds is fully DERIVED (read-only on the sheet). Base (rolled/starting)
+        // Wounds = 2 × the STARTING Toughness Bonus + a Home-World roll, entered on the Chronicle
+        // tab (system.wounds.startingTB + system.wounds.roll) and fixed at creation — later
+        // Toughness ADVANCES never change Wounds (RT Core pp.18-26). Max = base + any additive
+        // effect modifier (system.wounds.modifier, effect-addressable — Sound Constitution
+        // RT Core p.111 writes += 1 per stacked copy via an AE, so each raises Max automatically).
+        // Read from the IMMUTABLE source, not the live derived values: `_computeCharacteristics`
+        // runs twice per prepareData pass (pre-AE here, post-AE inside super.prepareData), so
+        // reading a derived value would fold `modifier` twice. (BUG-Q-251.)
+        // Legacy fallback (inside resolveWoundsBase): actors/NPCs with no startingTB recorded keep
+        // their old stored base/max until a GM fills in the origin fields.
         const srcWounds = this._source?.system?.wounds ?? {};
-        const resolvedBase = woundsBase(srcWounds.base, srcWounds.max);
+        const resolvedBase = resolveWoundsBase(
+            srcWounds.startingTB, srcWounds.roll, srcWounds.base, srcWounds.max);
         this.system.wounds.base = resolvedBase;
         this.system.wounds.max = woundsMax(resolvedBase, this.system.wounds.modifier);
         // RT Damage state (RT Core p.262) — drives the natural-healing rate. Any Critical

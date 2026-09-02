@@ -9,6 +9,8 @@
     "templates": {
       "base": {
         "wounds": {
+          "startingTB": 0,
+          "roll": 0,
           "base": 0,
           "max": 0,
           "value": 0,

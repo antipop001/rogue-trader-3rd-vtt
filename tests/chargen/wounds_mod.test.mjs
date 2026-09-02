@@ -5,7 +5,7 @@
 
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { woundsMax, woundsBase } from '../../src/module/rolls/roll-helpers.mjs';
+import { woundsMax, woundsBase, resolveWoundsBase } from '../../src/module/rolls/roll-helpers.mjs';
 
 test('woundsMax adds the modifier to the base', () => {
     assert.equal(woundsMax(12, 1), 13);   // one Sound Constitution
@@ -55,4 +55,28 @@ test('woundsBase + woundsMax: Sound Constitution stacks on both new and legacy a
     assert.equal(woundsMax(woundsBase(12, null), 2), 14);
     // Legacy actor (only source max=12) with the same two AEs — same result, no double-count.
     assert.equal(woundsMax(woundsBase(null, 12), 2), 14);
+});
+
+test('resolveWoundsBase: origin model = 2×startingTB + roll', () => {
+    // RT Core pp.18-26: base Wounds = 2 × starting Toughness Bonus + Home-World roll.
+    assert.equal(resolveWoundsBase(3, 5, 0, 0), 11);   // TB 3, roll 5 -> 6 + 5
+    assert.equal(resolveWoundsBase(4, 3, 0, 0), 11);   // TB 4, roll 3 -> 8 + 3
+    assert.equal(resolveWoundsBase(3, 0, 0, 0), 6);    // roll 0 still counts once TB is set
+    assert.equal(resolveWoundsBase('3', '5', null, null), 11);
+});
+
+test('resolveWoundsBase: Toughness advances do NOT change Wounds (startingTB is frozen)', () => {
+    // The origin field holds the STARTING TB; a later Toughness advance never feeds this.
+    const roll = 5;
+    assert.equal(resolveWoundsBase(3, roll, 0, 0), 11);   // startingTB 3 at creation
+    // Same character after raising Toughness — startingTB field is still 3, so base is unchanged.
+    assert.equal(resolveWoundsBase(3, roll, 0, 0), 11);
+});
+
+test('resolveWoundsBase: falls back to legacy base/max until startingTB is entered', () => {
+    // startingTB 0 (not yet filled on Chronicle) -> use the legacy stored base/max chain.
+    assert.equal(resolveWoundsBase(0, 0, 21, 0), 21);    // 0.9.5/0.9.6 stored base
+    assert.equal(resolveWoundsBase(0, 0, 0, 21), 21);    // pre-0.9.5 legacy source max (Isshan)
+    assert.equal(resolveWoundsBase(0, 99, 0, 21), 21);   // stray roll ignored while startingTB 0
+    assert.equal(resolveWoundsBase(0, 0, 0, 0), 0);
 });

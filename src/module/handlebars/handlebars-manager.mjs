@@ -45,6 +45,7 @@ export class HandlebarManager {
             'systems/rogue-trader-3rd/templates/actor/panel/trait-panel.hbs',
             'systems/rogue-trader-3rd/templates/actor/panel/weapon-panel.hbs',
             'systems/rogue-trader-3rd/templates/actor/panel/wounds-panel.hbs',
+            'systems/rogue-trader-3rd/templates/actor/panel/wounds-origin-panel.hbs',
 
             'systems/rogue-trader-3rd/templates/actor/panel/vehicle-armour-panel.hbs',
             'systems/rogue-trader-3rd/templates/actor/panel/vehicle-integrity-panel.hbs',

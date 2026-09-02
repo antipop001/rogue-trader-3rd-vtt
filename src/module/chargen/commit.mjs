@@ -209,10 +209,20 @@ export function buildActorData(state, { originLabels = null, itemGaps = null } =
     }
 
     // Wounds / Fate: the wizard stores FINAL totals (incl. Endurance wound
-    // bonus and fate adjustment) once rolled/entered. Wounds go to `base` (the
-    // rolled starting value); Max is derived = base + talent/effect modifiers.
+    // bonus and fate adjustment) once rolled/entered. The sheet derives Base from the
+    // Chronicle origin fields (startingTB + roll) — base = 2×startingTB + roll — and Max
+    // = base + talent/effect modifiers. Populate startingTB from the character's starting
+    // Toughness Bonus and back-solve `roll` so 2×startingTB + roll == the wizard's total
+    // (roll thus also carries any fixed origin Wound bonus, e.g. Endurance +1).
     if (state.wounds !== null && state.wounds !== undefined) {
-        system.wounds = { base: state.wounds, value: state.wounds, rolled: true };
+        const t = system.characteristics.toughness ?? {};
+        const startingTB = Math.floor(((t.base ?? 0) + (t.modifier ?? 0)) / 10);
+        system.wounds = {
+            startingTB,
+            roll: state.wounds - 2 * startingTB,
+            value: state.wounds,
+            rolled: true,
+        };
     }
     if (state.fate !== null && state.fate !== undefined) {
         system.fate = { max: state.fate, value: state.fate, rolled: true };

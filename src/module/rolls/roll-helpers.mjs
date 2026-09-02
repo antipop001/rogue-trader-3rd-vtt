@@ -383,6 +383,32 @@ export function woundsBase(srcBase, srcMax) {
 }
 
 /**
+ * Resolve the base (rolled/starting) Wounds for a character.
+ *
+ * RT 1e (RT Core pp.18-26): starting Wounds = 2 × the character's STARTING Toughness Bonus +
+ * a Home-World roll (1d5 / 1d5+1 / 1d5+2), fixed once at creation. The "starting" TB is
+ * deliberate — later Toughness ADVANCES do NOT change Wounds; only XP talents (Sound
+ * Constitution, +1 each, RT Core p.111) raise the total, applied on top via `wounds.modifier`.
+ *
+ * The origin model is the source of truth when a starting Toughness Bonus (>0) has been entered
+ * on the Chronicle tab: base = 2 × startingTB + roll (the roll may legitimately push the total,
+ * and also absorbs fixed origin Wound bonuses like Endurance +1 folded in at chargen). When no
+ * startingTB is recorded yet, fall back to the legacy stored base/max chain via `woundsBase`
+ * (so pre-existing actors/NPCs keep their Wounds until a GM fills in the origin fields).
+ *
+ * @param {number|string|null|undefined} startingTB  system.wounds.startingTB
+ * @param {number|string|null|undefined} roll        system.wounds.roll (Home-World die + origin bonuses)
+ * @param {number|string|null|undefined} srcBase     legacy _source.system.wounds.base
+ * @param {number|string|null|undefined} srcMax      legacy _source.system.wounds.max
+ * @returns {number} the base Wounds before effect modifiers
+ */
+export function resolveWoundsBase(startingTB, roll, srcBase, srcMax) {
+    const stb = Number(startingTB) || 0;
+    if (stb > 0) return 2 * stb + (Number(roll) || 0);
+    return woundsBase(srcBase, srcMax);
+}
+
+/**
  * Crack Shot / Crippling Strike crit-damage bonus (RT Core p.96). Crack Shot: "When
  * his ranged attack causes Critical Damage, add +2 to the Damage." Crippling Strike:
  * "When the character's melee attack causes Critical Damage, add +4 Damage." These are

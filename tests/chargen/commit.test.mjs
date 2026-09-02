@@ -11,6 +11,7 @@ import { ChargenState } from '../../src/module/chargen/state.mjs';
 import { fixedSet } from '../../src/module/chargen/characteristics.mjs';
 import { applyOption, buildRegistry } from '../../src/module/chargen/origin.mjs';
 import { buildActorData, buildSkillData, planItems } from '../../src/module/chargen/commit.mjs';
+import { resolveWoundsBase } from '../../src/module/rolls/roll-helpers.mjs';
 
 const DATA_DIR = path.join(path.dirname(fileURLToPath(import.meta.url)),
     '../../src/module/chargen/data');
@@ -127,7 +128,15 @@ test('buildActorData: ItS label prefix-match, wounds/fate, insanity, PF note', (
     });
     assert.equal(data.system.bio.originPath.homeWorld.value,
         'Frontier World (ItS — replaces Death World)');
-    assert.deepEqual(data.system.wounds, { base: 11, value: 11, rolled: true });
+    // Wounds go to the Chronicle origin model: startingTB (from starting Toughness Bonus) +
+    // roll back-solved so 2×startingTB + roll == the wizard total (11). value + rolled preserved.
+    {
+        const t = data.system.characteristics.toughness;
+        const stb = Math.floor(((t.base ?? 0) + (t.modifier ?? 0)) / 10);
+        assert.deepEqual(data.system.wounds,
+            { startingTB: stb, roll: 11 - 2 * stb, value: 11, rolled: true });
+        assert.equal(resolveWoundsBase(data.system.wounds.startingTB, data.system.wounds.roll), 11);
+    }
     assert.deepEqual(data.system.fate, { max: 3, value: 3, rolled: true });
     assert.equal(data.system.insanity, 5);
     assert.match(data.system.bio.notes, /Profit Factor contribution \(dynasty\): 20/);

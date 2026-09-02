@@ -1,0 +1,15 @@
+<div class='rt-panel rt-grid-col-2 rt-grid-row-1'>
+    <h1 class="rt-panel__header">Starting Wounds</h1>
+    <div class="rt-field__wrapper">
+        <span class="rt-field__header" data-tooltip="Toughness Bonus at character creation (before XP advances). RT Core pp.18-26: starting Wounds = 2 × starting TB + Home-World roll.">Starting Toughness Bonus</span>
+        <input type="number" data-dtype="Number" class="rt-field__input" name="system.wounds.startingTB" value="{{actor.system.wounds.startingTB}}" />
+    </div>
+    <div class="rt-field__wrapper">
+        <span class="rt-field__header" data-tooltip="Home-World Wounds roll (Death 1d5+2, Forge/Hive 1d5+1, others 1d5), plus any fixed origin Wound bonus (e.g. Endurance +1).">Home-World Roll</span>
+        <input type="number" data-dtype="Number" class="rt-field__input" name="system.wounds.roll" value="{{actor.system.wounds.roll}}" />
+    </div>
+    <div class="rt-field__wrapper">
+        <span class="rt-field__header" data-tooltip="Calculated: 2 × starting Toughness Bonus + roll. This is the Base on the Wounds panel; talents like Sound Constitution add on top into Max.">Base Wounds</span>
+        <span class="rt-field__span">{{actor.wounds.base}}</span>
+    </div>
+</div>
