@@ -832,3 +832,98 @@ data:
 img: systems/rogue-trader-3rd/icons/items/buckets/armour-void-suit.png
 name: Thermal Armour
 type: armour
+---
+data:
+    armourPoints:
+        body: 7
+        head: 7
+        leftArm: 7
+        leftLeg: 7
+        rightArm: 7
+        rightLeg: 7
+    availability: Rare
+    craftsmanship: Common
+    description: 'Covers All. AP 7. This armour is primarily used to protect against the hostile environments and physical hazards of a starship''s enginarium, though more martially minded Tech-Priests serving aboard the Navy patrol vessels in the Koronus Expanse have been known to repurpose suits to serve in combat.'
+    maxAgility: 0
+    source: Hostile Acquisitions, p.61
+    type: Power
+    weight: 20
+img: systems/rogue-trader-3rd/icons/items/buckets/armour-power.png
+name: Augmetic Engine-Plate
+type: armour
+---
+data:
+    armourPoints:
+        body: 3
+        head: 0
+        leftArm: 3
+        leftLeg: 3
+        rightArm: 3
+        rightLeg: 3
+    availability: Extremely Rare
+    craftsmanship: Common
+    description: 'Covers Arms, Body, Legs. AP 3. Favoured by the wealthy and paranoid, as well as any others who must keep up a particular appearance without leaving themselves completely vulnerable, mesh-woven clothing is extremely expensive and difficult to obtain. There are perhaps only a dozen individuals in the entire Calixis Sector, and maybe only two in the Koronus Expanse, whose skills allow them to craft clothing which is both protective and sophisticated.'
+    maxAgility: 0
+    source: Hostile Acquisitions, p.61
+    type: Other
+    weight: 1
+img: systems/rogue-trader-3rd/icons/items/buckets/armour-flak.png
+name: Mesh-Weave Clothing
+type: armour
+---
+data:
+    armourPoints:
+        body: 6
+        head: 6
+        leftArm: 6
+        leftLeg: 6
+        rightArm: 6
+        rightLeg: 6
+    availability: Very Rare
+    craftsmanship: Common
+    description: 'Covers All. AP 6. Designed for the rigours of ship-to-ship combat, a pressure carapace is armour first and a voidsuit second. Constructed from lightweight ceramic plating over a thin, multilayered, sealed undersuit, pressure carapace is not really designed to protect from the hazards of the void long-term, instead serving more as an incidental safeguard against accidental exposure.'
+    maxAgility: 0
+    source: Hostile Acquisitions, p.61
+    type: Carapace
+    weight: 16
+img: systems/rogue-trader-3rd/icons/items/buckets/armour-carapace.png
+name: Pressure Carapace
+type: armour
+---
+data:
+    armourPoints:
+        body: 2
+        head: 2
+        leftArm: 2
+        leftLeg: 2
+        rightArm: 2
+        rightLeg: 2
+    availability: Scarce
+    craftsmanship: Common
+    description: 'Covers All. AP 2.'
+    maxAgility: 0
+    source: Hostile Acquisitions, p.61
+    type: Other
+    weight: 10
+img: systems/rogue-trader-3rd/icons/items/buckets/armour-void-suit.png
+name: Voidsuit (Footfall)
+type: armour
+---
+data:
+    armourPoints:
+        body: 5
+        head: 0
+        leftArm: 0
+        leftLeg: 0
+        rightArm: 0
+        rightLeg: 0
+    availability: Near Unique
+    craftsmanship: Common
+    description: 'Covers Body. AP 5. Extremely rare and utterly blasphemous, this carefully-wrought armour is composed of pieces of the chitinous exoskeleton of Tyranid creatures. Given the scarcity of Tyranids within the Calixis Sector and Koronus Expanse, obtaining the materials is difficult, but the resilience of their carapace, and the chance to own something so rare and distinctive is often incentive enough for well-connected pirates and ne''er-dowells.'
+    maxAgility: 0
+    source: Hostile Acquisitions, p.61
+    type: Carapace
+    weight: 3
+img: systems/rogue-trader-3rd/icons/items/buckets/armour-carapace.png
+name: Xenos Chitin Armour
+type: armour

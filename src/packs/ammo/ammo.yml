@@ -612,3 +612,311 @@ data:
 img: systems/rogue-trader-3rd/icons/items/buckets/ammo-charge-pack.png
 name: Hot-Shot Charge Pack
 type: ammunition
+---
+data:
+    craftsmanship: common
+    availability: Rare
+    weight: 0
+    equipped: false
+    inBackpack: false
+    description: 'See the Hostile Acquisitions source book for full rules.'
+    source: Hostile Acquisitions, p.60
+    damage: ''
+    damageType: ''
+    penetration: ''
+    special: {}
+    range: ''
+    attackType: ''
+    attackBonus: 0
+    rateOfFire:
+        single: 1
+        burst: 0
+        full: 0
+    target: ''
+    effect: ''
+    weaponType: ''
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/ammo-stub-rounds.png
+name: Bolt Shells
+type: ammunition
+---
+data:
+    craftsmanship: common
+    availability: Rare
+    weight: 0
+    equipped: false
+    inBackpack: false
+    description: 'See the Hostile Acquisitions source book for full rules.'
+    source: Hostile Acquisitions, p.60
+    damage: ''
+    damageType: ''
+    penetration: ''
+    special: {}
+    range: ''
+    attackType: ''
+    attackBonus: 0
+    rateOfFire:
+        single: 1
+        burst: 0
+        full: 0
+    target: ''
+    effect: ''
+    weaponType: ''
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/ammo-stub-rounds.png
+name: Flechette Shells
+type: ammunition
+---
+data:
+    craftsmanship: common
+    availability: Very Rare
+    weight: 0
+    equipped: false
+    inBackpack: false
+    description: 'See the Hostile Acquisitions source book for full rules.'
+    source: Hostile Acquisitions, p.60
+    damage: ''
+    damageType: ''
+    penetration: ''
+    special: {}
+    range: ''
+    attackType: ''
+    attackBonus: 0
+    rateOfFire:
+        single: 1
+        burst: 0
+        full: 0
+    target: ''
+    effect: ''
+    weaponType: ''
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/ammo-stub-rounds.png
+name: Flechette Shells (Toxic)
+type: ammunition
+---
+data:
+    craftsmanship: common
+    availability: Very Rare
+    weight: 0
+    equipped: false
+    inBackpack: false
+    description: 'See the Hostile Acquisitions source book for full rules.'
+    source: Hostile Acquisitions, p.60
+    damage: ''
+    damageType: ''
+    penetration: ''
+    special: {}
+    range: ''
+    attackType: ''
+    attackBonus: 0
+    rateOfFire:
+        single: 1
+        burst: 0
+        full: 0
+    target: ''
+    effect: ''
+    weaponType: ''
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/ammo-stub-rounds.png
+name: Fyceline-tipped Rounds
+type: ammunition
+---
+data:
+    craftsmanship: common
+    availability: Special
+    weight: 0
+    equipped: false
+    inBackpack: false
+    description: 'See the Hostile Acquisitions source book for full rules.'
+    source: Hostile Acquisitions, p.60
+    damage: ''
+    damageType: ''
+    penetration: ''
+    special: {}
+    range: ''
+    attackType: ''
+    attackBonus: 0
+    rateOfFire:
+        single: 1
+        burst: 0
+        full: 0
+    target: ''
+    effect: ''
+    weaponType: ''
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/ammo-stub-rounds.png
+name: Gas Rounds
+type: ammunition
+---
+data:
+    craftsmanship: common
+    availability: Extremely Rare
+    weight: 0
+    equipped: false
+    inBackpack: false
+    description: 'Extremely small examples of conventional weaponry, these devices are beyond the skills of all but the most talented artisan to create, be they sanctioned or heretical. Allowing a pistol-sized weapon to unleash firepower equivalent to a rifle, such technology is desired by warriors in either side of the law. This upgrade reduces the range and weight of the weapon to one-quarter its normal value, but also reduces the damage by 2.'
+    source: Hostile Acquisitions, p.60
+    damage: ''
+    damageType: ''
+    penetration: ''
+    special: {}
+    range: ''
+    attackType: ''
+    attackBonus: 0
+    rateOfFire:
+        single: 1
+        burst: 0
+        full: 0
+    target: ''
+    effect: ''
+    weaponType: ''
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/ammo-stub-rounds.png
+name: Micro-blast Needles
+type: ammunition
+---
+data:
+    craftsmanship: common
+    availability: Rare
+    weight: 0
+    equipped: false
+    inBackpack: false
+    description: 'See the Hostile Acquisitions source book for full rules.'
+    source: Hostile Acquisitions, p.60
+    damage: ''
+    damageType: ''
+    penetration: ''
+    special: {}
+    range: ''
+    attackType: ''
+    attackBonus: 0
+    rateOfFire:
+        single: 1
+        burst: 0
+        full: 0
+    target: ''
+    effect: ''
+    weaponType: ''
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/ammo-stub-rounds.png
+name: Incendiary Rounds
+type: ammunition
+---
+data:
+    craftsmanship: common
+    availability: Unique
+    weight: 0
+    equipped: false
+    inBackpack: false
+    description: 'See the Hostile Acquisitions source book for full rules.'
+    source: Hostile Acquisitions, p.60
+    damage: ''
+    damageType: ''
+    penetration: ''
+    special: {}
+    range: ''
+    attackType: ''
+    attackBonus: 0
+    rateOfFire:
+        single: 1
+        burst: 0
+        full: 0
+    target: ''
+    effect: ''
+    weaponType: ''
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/ammo-stub-rounds.png
+name: Shrinker Ammunition
+type: ammunition
+---
+data:
+    craftsmanship: common
+    availability: Common
+    weight: 0
+    equipped: false
+    inBackpack: false
+    description: 'Perhaps the most common alternate form of shotgun ammunition, a solid slug is literally just a solid lump of dense metal. While not quite as devastating at extremely close ranges, the slugs pack a considerable punch and are more effective at longer ranges than the normal cloud of shot. Effect: Shotguns loaded with solid slugs lose the Scatter quality, and increase Damage by 1 and Pen by 2. Used With: Shotguns (all kinds).'
+    source: Hostile Acquisitions, p.60
+    damage: ''
+    damageType: ''
+    penetration: ''
+    special: {}
+    range: ''
+    attackType: ''
+    attackBonus: 0
+    rateOfFire:
+        single: 1
+        burst: 0
+        full: 0
+    target: ''
+    effect: ''
+    weaponType: ''
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/ammo-stub-rounds.png
+name: Solid Slugs
+type: ammunition
+---
+data:
+    craftsmanship: common
+    availability: Scarce
+    weight: 0
+    equipped: false
+    inBackpack: false
+    description: 'Used by some enforcers, Arbitrators, bounty hunters and game hunters to subdue targets rather than kill them, these shells contain a small, single-use shock generator connected to a collection of sharp metal prongs. The shell discharges into an enemy struck, expending its entire charge in one go. Effect: Shotguns loaded with stun shells lose the Scatter quality, but gain the Shocking quality. Used With: Shotguns (all kinds).'
+    source: Hostile Acquisitions, p.60
+    damage: ''
+    damageType: ''
+    penetration: ''
+    special: {}
+    range: ''
+    attackType: ''
+    attackBonus: 0
+    rateOfFire:
+        single: 1
+        burst: 0
+        full: 0
+    target: ''
+    effect: ''
+    weaponType: ''
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/ammo-stub-rounds.png
+name: Stun Shells
+type: ammunition
+---
+data:
+    craftsmanship: common
+    availability: Rare
+    weight: 0
+    equipped: false
+    inBackpack: false
+    description: 'Dangerous toxic chemicals are mixed with weapons-grade promethium, intended to burn off and produce noxious fumes when a weapon filled with such fuel fires. These fumes are often as deadly as the flames themselves. Flamers loaded with this fuel are frequently used to scour the lower decks of starships of the vermin that often come to infest them, but they are commonly turned against enemies by ruthless armsmen and pirates.'
+    source: Hostile Acquisitions, p.60
+    damage: ''
+    damageType: ''
+    penetration: ''
+    special: {}
+    range: ''
+    attackType: ''
+    attackBonus: 0
+    rateOfFire:
+        single: 1
+        burst: 0
+        full: 0
+    target: ''
+    effect: ''
+    weaponType: ''
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/ammo-stub-rounds.png
+name: Toxin-saturated Promethium
+type: ammunition

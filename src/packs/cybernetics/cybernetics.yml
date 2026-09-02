@@ -924,3 +924,87 @@ data:
 img: systems/rogue-trader-3rd/icons/items/buckets/cyber-implant-system.png
 name: Vox Implant
 type: cybernetic
+---
+data:
+    craftsmanship: common
+    availability: Very Rare
+    weight: 0
+    equipped: false
+    inBackpack: false
+    description: 'Grafted to the spine and affixed by thick cables to heavy metal vambraces, these metre-long poles are designed to conduct psychic energy, allowing a psyker to channel more greedily and aggressively, bleeding away some of the excess power.'
+    source: Hostile Acquisitions, p.68
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/cyber-implant-system.png
+name: Aetheric Wave-spars
+type: cybernetic
+---
+data:
+    craftsmanship: common
+    availability: Scarce
+    weight: 0
+    equipped: false
+    inBackpack: false
+    description: 'A simple skinplant, a thief’s light is a simple luminescent panel housed in the palm of the hand, almost invisible until activated. When switched on, usually through squeezing the hand shut for a few moments, the panel glows with a soft light, enough to illuminate objects within a few centimetres clearly enough to perform intricate tasks without producing large amounts of light which would give the user’s presence away.'
+    source: Hostile Acquisitions, p.68
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/cyber-implant-system.png
+name: 'Thief''s Light'
+type: cybernetic
+---
+data:
+    craftsmanship: common
+    availability: Scarce
+    weight: 0
+    equipped: false
+    inBackpack: false
+    description: 'Crude bionic limbs fitted with heavy industrial tools are common in the depths of hive cities, forced upon heavy bond-labourers and other unfortunates for whom normal tools are insufficient. These tools are often repurposed into crude weapons and used in brutal pit-fights.'
+    source: Hostile Acquisitions, p.68
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/cyber-implant-system.png
+name: Servo-limb
+type: cybernetic
+---
+data:
+    craftsmanship: common
+    availability: Rare
+    weight: 0
+    equipped: false
+    inBackpack: false
+    description: 'An articulated, powered network of cables, hydraulic support struts and locking mechanisms are built up the recipient’s arm, beneath the skin and connecting between both muscle and bone all the way up to the shoulder and upper back. All the way along, but concentrated mostly on the forearms and hands, are magnetic clamps that push up beneath or even through the skin, and can affix to specially-altered weapons.'
+    source: Hostile Acquisitions, p.68
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/cyber-implant-system.png
+name: Weapon Bracing
+type: cybernetic
+---
+data:
+    craftsmanship: common
+    availability: Scarce
+    weight: 0
+    equipped: false
+    inBackpack: false
+    description: 'These implants consist of additional layers built into the cornea of the recipient, whether gene-altered organic matter just beneath the surface, or advanced photo-augur technology implanted over the surface of the eye. Regardless of the source, the implant enhances the vision of the recipient, allowing him to see in ways he would otherwise be unable to.'
+    source: Hostile Acquisitions, p.68
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/cyber-implant-system.png
+name: Interkeratic Implants
+type: cybernetic
+---
+data:
+    craftsmanship: common
+    availability: Very Rare
+    weight: 0
+    equipped: false
+    inBackpack: false
+    description: 'A complex network of micro-servos and subskin synth-flesh dispensers, twitch-masks allow the user to adjust his facial features at will, altering shape and texture in a matter of moments. Rare and difficult to implant, they are nonetheless favoured by confidence tricksters and any others for whom being recognised is a liability. A character with a twitch-mask gains a +10 bonus on all Disguise Tests.'
+    source: Hostile Acquisitions, p.68
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/cyber-implant-system.png
+name: Twitch-mask
+type: cybernetic

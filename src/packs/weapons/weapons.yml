@@ -5882,3 +5882,1348 @@ data:
 img: systems/rogue-trader-3rd/icons/items/buckets/melee-exotic.png
 name: Force Sword (Naduesh)
 type: weapon
+---
+data:
+    availability: Very Rare
+    class: Basic
+    clip:
+        max: 10
+        value: 10
+    craftsmanship: Common
+    damage: 1d10+3
+    damageType: Energy
+    description: 'Special: Accurate.'
+    equipped: false
+    modifications: []
+    penetration: 0
+    range: 90
+    rateOfFire:
+        burst: 0
+        full: 0
+        single: 1
+    reload: Full
+    source: Hostile Acquisitions, p.48
+    special:
+        accurate: true
+    type: Las
+    weight: 4
+img: systems/rogue-trader-3rd/icons/items/buckets/basic-las.png
+name: Retribution
+type: weapon
+---
+data:
+    availability: Scarce
+    class: Basic
+    clip:
+        max: 40
+        value: 40
+    craftsmanship: Common
+    damage: 1d10+4
+    damageType: Energy
+    description: 'An illegal modification of a standard lasgun popular amongst the techwrights and armour-mongers of Footfall, the ''shotlas'' is rigged to discharge more energy per shot, at the cost of beam coherence, with shots swiftly losing power and becoming ineffective at longer ranges. The weapon deals +3 damage at point-blank range, but its maximum range is only twice the listed range, rather than four times (as is normally the case).'
+    equipped: false
+    modifications: []
+    penetration: 1
+    range: 20
+    rateOfFire:
+        burst: 3
+        full: 0
+        single: 1
+    reload: 2 Full
+    source: Hostile Acquisitions, p.48
+    special: {}
+    type: Las
+    weight: 4
+img: systems/rogue-trader-3rd/icons/items/buckets/basic-las.png
+name: Shotlas
+type: weapon
+---
+data:
+    availability: Average
+    class: Pistol
+    clip:
+        max: 25
+        value: 25
+    craftsmanship: Common
+    damage: 1d10+2
+    damageType: Energy
+    description: 'Special: Inaccurate. Another common illegal modification, stutter-las pistols trade accuracy and reliability for rate of fire, charging quickly to unleash a hail of lasblasts. Though seldom as potent as the discharges of most las-weapons, the spray of light and heat is effective at close quarters.'
+    equipped: false
+    modifications: []
+    penetration: 0
+    range: 35
+    rateOfFire:
+        burst: 0
+        full: 5
+        single: 1
+    reload: Full
+    source: Hostile Acquisitions, p.48
+    special:
+        inaccurate: true
+    type: Las
+    weight: 2
+img: systems/rogue-trader-3rd/icons/items/buckets/pistol-las.png
+name: Stutter-las
+type: weapon
+---
+data:
+    availability: Scarce
+    class: Basic
+    clip:
+        max: 20
+        value: 20
+    craftsmanship: Common
+    damage: 1d10+3
+    damageType: Impact
+    description: 'Special: Inaccurate. Auto-carbines are a fairly common version of solid projectile weapons, utilised by those who prefer a more easily conceivable weapon than the bulky autoguns. Shorter barrels, removed stocks, and pistol grips make these weapons conceivable 48 II: PLAYING THE ROGUE'
+    equipped: false
+    modifications: []
+    penetration: 0
+    range: 35
+    rateOfFire:
+        burst: 0
+        full: 5
+        single: 0
+    reload: Full
+    source: Hostile Acquisitions, p.48
+    special:
+        inaccurate: true
+    type: SP
+    weight: 3
+img: systems/rogue-trader-3rd/icons/items/buckets/basic-sp.png
+name: Auto-carbine
+type: weapon
+---
+data:
+    availability: Scarce
+    class: Basic
+    clip:
+        max: 20
+        value: 20
+    craftsmanship: Common
+    damage: 1d10+4
+    damageType: Impact
+    description: 'Special: Inaccurate, Tearing, Unreliable. Sometimes found in Battlefleet Calixis arms lockers as an alternative to shotguns, the so-called Wrath-pattern stubbers utilise a similar fragmenting round to the more common Naval Pistols. This increases stopping power, while reducing the chance of dangerous ricochets or damage to important components when repelling a boarding action.'
+    equipped: false
+    modifications: []
+    penetration: 0
+    range: 60
+    rateOfFire:
+        burst: 3
+        full: 0
+        single: 1
+    reload: 2 Full
+    source: Hostile Acquisitions, p.48
+    special:
+        inaccurate: true
+        tearing: true
+        unreliable: true
+    type: SP
+    weight: 4
+img: systems/rogue-trader-3rd/icons/items/buckets/basic-sp.png
+name: Auto-Stubber
+type: weapon
+---
+data:
+    availability: Scarce
+    class: Basic
+    clip:
+        max: 3
+        value: 3
+    craftsmanship: Common
+    damage: 1d10+5
+    damageType: Impact
+    description: 'Special: Inaccurate, Reliable, Scatter. Essentially a large-bore, triple-barrelled shotgun, the weight and hitting power of Lathe-pattern boarding guns has made them infamous across the Calixis Sector and Koronus Expanse. Loaded with heavier, more powerful shells than most shotguns, the weapon has punishing recoil that, combined with its weight, makes it impractical for any but the strongest men to wield.'
+    equipped: false
+    modifications: []
+    penetration: 1
+    range: 30
+    rateOfFire:
+        burst: 3
+        full: 0
+        single: 1
+    reload: 2 Full
+    source: Hostile Acquisitions, p.48
+    special:
+        inaccurate: true
+        reliable: true
+        scatter: true
+    type: SP
+    weight: 6
+img: systems/rogue-trader-3rd/icons/items/buckets/basic-sp.png
+name: Boarding Gun
+type: weapon
+---
+data:
+    availability: Rare
+    class: Basic
+    clip:
+        max: 1
+        value: 1
+    craftsmanship: Common
+    damage: 1d10+4
+    damageType: Rending
+    description: 'Special: Snare, Tearing. A significantly larger and heavier version of the void speargun (INTO THE STORM, page 112), these weapons violently propel long, heavy, barbed spears that can easily puncture most voidsuits and leave deep wounds in their wearers. Harpoon guns may not use any special ammunition.'
+    equipped: false
+    modifications: []
+    penetration: 2
+    range: 60
+    rateOfFire:
+        burst: 0
+        full: 0
+        single: 1
+    reload: Full
+    source: Hostile Acquisitions, p.48
+    special:
+        snare: true
+        tearing: true
+    type: SP
+    weight: 5
+img: systems/rogue-trader-3rd/icons/items/buckets/basic-sp.png
+name: Harpoon Gun
+type: weapon
+---
+data:
+    availability: Average
+    class: Basic
+    clip:
+        max: 1
+        value: 1
+    craftsmanship: Common
+    damage: 1d10+2
+    damageType: Rending
+    description: 'Special: Scatter, Tearing. Cobbled together from scrap and spare parts, these weapons spew hails of jagged, razor-sharp blades which tear and lacerate anything in their path. While not particularly powerful, the spread of blades are ideal for tearing open voidsuits and leaving ragged gashes that are difficult to quickly repair.'
+    equipped: false
+    modifications: []
+    penetration: 1
+    range: 35
+    rateOfFire:
+        burst: 0
+        full: 0
+        single: 1
+    reload: Full
+    source: Hostile Acquisitions, p.48
+    special:
+        scatter: true
+        tearing: true
+    type: SP
+    weight: 5
+img: systems/rogue-trader-3rd/icons/items/buckets/basic-sp.png
+name: Razorhail Gun
+type: weapon
+---
+data:
+    availability: Rare
+    class: Basic
+    clip:
+        max: 20
+        value: 20
+    craftsmanship: Common
+    damage: 1d10+4
+    damageType: Impact
+    description: 'Special: Reliable, Scatter.'
+    equipped: false
+    modifications: []
+    penetration: 0
+    range: 35
+    rateOfFire:
+        burst: 3
+        full: 0
+        single: 1
+    reload: Full
+    source: Hostile Acquisitions, p.48
+    special:
+        reliable: true
+        scatter: true
+    type: SP
+    weight: 6
+img: systems/rogue-trader-3rd/icons/items/buckets/basic-sp.png
+name: Shotgun (Persecutor)
+type: weapon
+---
+data:
+    availability: Very Rare
+    class: Basic
+    clip:
+        max: 12
+        value: 12
+    craftsmanship: Common
+    damage: 1d10+5
+    damageType: Explosive
+    description: 'Special: Reliable, Tearing. Relatively uncommon weapons (the design was said to have been rescued from a space hulk and pressed into production specifically for the long ago Angevin Crusade), Bolt Carbines are typically easier to wield than full-size Boltguns, due to lighter, simpler construction and a lower rate of fire.'
+    equipped: false
+    modifications: []
+    penetration: 4
+    range: 90
+    rateOfFire:
+        burst: 2
+        full: 0
+        single: 1
+    reload: 2 Full
+    source: Hostile Acquisitions, p.50
+    special:
+        reliable: true
+        tearing: true
+    type: Bolt
+    weight: 5
+img: systems/rogue-trader-3rd/icons/items/buckets/basic-bolt.png
+name: Bolt Carbine (Ceres)
+type: weapon
+---
+data:
+    availability: Scarce
+    class: Pistol
+    clip:
+        max: 6
+        value: 6
+    craftsmanship: Common
+    damage: 1d10+4
+    damageType: Explosive
+    description: 'Special: Tearing, Unreliable.'
+    equipped: false
+    modifications: []
+    penetration: 2
+    range: 25
+    rateOfFire:
+        burst: 2
+        full: 0
+        single: 1
+    reload: Full
+    source: Hostile Acquisitions, p.50
+    special:
+        tearing: true
+        unreliable: true
+    type: Bolt
+    weight: 4.5
+img: systems/rogue-trader-3rd/icons/items/buckets/pistol-bolt.png
+name: Bolt Pistol (Footfall)
+type: weapon
+---
+data:
+    availability: Rare
+    class: Basic
+    clip:
+        max: 18
+        value: 18
+    craftsmanship: Common
+    damage: 1d10+4
+    damageType: Explosive
+    description: 'Special: Tearing, Unreliable.'
+    equipped: false
+    modifications: []
+    penetration: 2
+    range: 80
+    rateOfFire:
+        burst: 3
+        full: 0
+        single: 1
+    reload: Full
+    source: Hostile Acquisitions, p.50
+    special:
+        tearing: true
+        unreliable: true
+    type: Bolt
+    weight: 8
+img: systems/rogue-trader-3rd/icons/items/buckets/basic-bolt.png
+name: Boltgun (Footfall)
+type: weapon
+---
+data:
+    availability: Near Unique
+    class: Basic
+    clip:
+        max: 30
+        value: 30
+    craftsmanship: Common
+    damage: 1d10+9
+    damageType: Explosive
+    description: 'Special: Reliable, Tearing.'
+    equipped: false
+    modifications: []
+    penetration: 4
+    range: 120
+    rateOfFire:
+        burst: 3
+        full: 0
+        single: 1
+    reload: Full
+    source: Hostile Acquisitions, p.50
+    special:
+        reliable: true
+        tearing: true
+    type: Bolt
+    weight: 10
+img: systems/rogue-trader-3rd/icons/items/buckets/basic-bolt.png
+name: Boltgun (Archeotech)
+type: weapon
+---
+data:
+    availability: Rare
+    class: Basic
+    clip:
+        max: 5
+        value: 5
+    craftsmanship: Common
+    damage: 3d10+8
+    damageType: Energy
+    description: 'Special: Inaccurate, Scatter.'
+    equipped: false
+    modifications: []
+    penetration: 13
+    range: 5
+    rateOfFire:
+        burst: 0
+        full: 0
+        single: 1
+    reload: 2 Full
+    source: Hostile Acquisitions, p.51
+    special:
+        inaccurate: true
+        scatter: true
+    type: Melta
+    weight: 8
+img: systems/rogue-trader-3rd/icons/items/buckets/basic-melta.png
+name: Melta Cutter
+type: weapon
+---
+data:
+    availability: Rare
+    class: Basic
+    clip:
+        max: 6
+        value: 6
+    craftsmanship: Common
+    damage: 1d10+4
+    damageType: Energy
+    description: 'Special: Flame, Recharge.'
+    equipped: false
+    modifications: []
+    penetration: 2
+    range: 40
+    rateOfFire:
+        burst: 0
+        full: 0
+        single: 1
+    reload: 2 Full
+    source: Hostile Acquisitions, p.52
+    special:
+        flame: true
+        recharge: true
+    type: Flame
+    weight: 7
+img: systems/rogue-trader-3rd/icons/items/buckets/basic-flame.png
+name: Flameburst
+type: weapon
+---
+data:
+    availability: Very Rare
+    class: Basic
+    clip:
+        max: 60
+        value: 60
+    craftsmanship: Common
+    damage: 1d10+4
+    damageType: Rending
+    description: 'Special: Scatter, Tearing.'
+    equipped: false
+    modifications: []
+    penetration: 4
+    range: 40
+    rateOfFire:
+        burst: 3
+        full: 0
+        single: 1
+    reload: 6 Full
+    source: Hostile Acquisitions, p.53
+    special:
+        scatter: true
+        tearing: true
+    type: Exotic
+    weight: 5
+img: systems/rogue-trader-3rd/icons/items/buckets/basic-exotic.png
+name: Shardcaster
+type: weapon
+---
+data:
+    availability: Unique
+    class: Basic
+    clip:
+        max: 20
+        value: 20
+    craftsmanship: Common
+    damage: 2d10+10
+    damageType: Energy
+    description: 'Special: Reliable.'
+    equipped: false
+    modifications: []
+    penetration: 13
+    range: 60
+    rateOfFire:
+        burst: 0
+        full: 0
+        single: 1
+    reload: 4 Full
+    source: Hostile Acquisitions, p.53
+    special:
+        reliable: true
+    type: Exotic
+    weight: 6
+img: systems/rogue-trader-3rd/icons/items/buckets/basic-exotic.png
+name: Firepike
+type: weapon
+---
+data:
+    availability: Near Unique
+    class: Basic
+    clip:
+        max: 10
+        value: 10
+    craftsmanship: Common
+    damage: 2d10+6
+    damageType: Energy
+    description: 'Special: Reliable.'
+    equipped: false
+    modifications: []
+    penetration: 13
+    range: 20
+    rateOfFire:
+        burst: 0
+        full: 0
+        single: 1
+    reload: 2 Full
+    source: Hostile Acquisitions, p.53
+    special:
+        reliable: true
+    type: Exotic
+    weight: 3
+img: systems/rogue-trader-3rd/icons/items/buckets/basic-exotic.png
+name: Fusion Gun
+type: weapon
+---
+data:
+    availability: Unique
+    class: Basic
+    clip:
+        max: 60
+        value: 60
+    craftsmanship: Common
+    damage: 2d10+2
+    damageType: Energy
+    description: 'Special: Reliable.'
+    equipped: false
+    modifications: []
+    penetration: 4
+    range: 100
+    rateOfFire:
+        burst: 3
+        full: 10
+        single: 1
+    reload: Full
+    source: Hostile Acquisitions, p.53
+    special:
+        reliable: true
+    type: Exotic
+    weight: 4
+img: systems/rogue-trader-3rd/icons/items/buckets/basic-exotic.png
+name: 'Hawk''s Talon'
+type: weapon
+---
+data:
+    availability: Common
+    class: Melee
+    clip:
+        max: 0
+        value: 0
+    craftsmanship: Common
+    damage: 1d10+3
+    damageType: Energy
+    description: 'Special: Power Field, Unbalanced.'
+    equipped: false
+    modifications: []
+    penetration: 7
+    range: 0
+    rateOfFire:
+        burst: 0
+        full: 0
+        single: 0
+    reload: ''
+    source: Hostile Acquisitions, p.53
+    special:
+        powerField: true
+        unbalanced: true
+    type: Exotic
+    weight: 0
+img: systems/rogue-trader-3rd/icons/items/buckets/melee-exotic.png
+name: 'Hawk''s Talon (Melee)'
+type: weapon
+---
+data:
+    availability: Near Unique
+    class: Basic
+    clip:
+        max: 12
+        value: 12
+    craftsmanship: Common
+    damage: 3d10+5
+    damageType: Rending
+    description: 'Special: Reliable, Blast (4), Tearing.'
+    equipped: false
+    modifications: []
+    penetration: 2
+    range: 60
+    rateOfFire:
+        burst: 0
+        full: 0
+        single: 1
+    reload: 2 Full
+    source: Hostile Acquisitions, p.53
+    special:
+        blast: 4
+        reliable: true
+        tearing: true
+    type: Exotic
+    weight: 2
+img: systems/rogue-trader-3rd/icons/items/buckets/basic-exotic.png
+name: Shredder
+type: weapon
+---
+data:
+    availability: Extremely Rare
+    class: Heavy
+    clip:
+        max: 200
+        value: 200
+    craftsmanship: Common
+    damage: 2d10+6
+    damageType: Rending
+    description: 'Special: Reliable.'
+    equipped: false
+    modifications: []
+    penetration: 3
+    range: 110
+    rateOfFire:
+        burst: 0
+        full: 6
+        single: 0
+    reload: 3 Full
+    source: Hostile Acquisitions, p.53
+    special:
+        reliable: true
+    type: Exotic
+    weight: 25
+img: systems/rogue-trader-3rd/icons/items/buckets/heavy-exotic.png
+name: Shuriken Cannon
+type: weapon
+---
+data:
+    availability: Unique
+    class: Basic
+    clip:
+        max: 1
+        value: 1
+    craftsmanship: Common
+    damage: 1d10+1
+    damageType: Rending
+    description: 'Special: Accurate, Tearing.'
+    equipped: false
+    modifications: []
+    penetration: 10
+    range: 60
+    rateOfFire:
+        burst: 0
+        full: 0
+        single: 1
+    reload: Half
+    source: Hostile Acquisitions, p.53
+    special:
+        accurate: true
+        tearing: true
+    type: Exotic
+    weight: 4
+img: systems/rogue-trader-3rd/icons/items/buckets/basic-exotic.png
+name: Spinneret Rifle
+type: weapon
+---
+data:
+    availability: Near Unique
+    class: Heavy
+    clip:
+        max: 300
+        value: 300
+    craftsmanship: Common
+    damage: 1d10+5
+    damageType: Rending
+    description: 'Special: Toxic.'
+    equipped: false
+    modifications: []
+    penetration: 4
+    range: 110
+    rateOfFire:
+        burst: 0
+        full: 10
+        single: 0
+    reload: 3 Full
+    source: Hostile Acquisitions, p.53
+    special:
+        toxic: true
+    type: Exotic
+    weight: 10
+img: systems/rogue-trader-3rd/icons/items/buckets/heavy-exotic.png
+name: Splinter Cannon
+type: weapon
+---
+data:
+    availability: Near Unique
+    class: Basic
+    clip:
+        max: 1
+        value: 1
+    craftsmanship: Common
+    damage: ''
+    damageType: Impact
+    description: See the Hostile Acquisitions source book for full rules.
+    equipped: false
+    modifications: []
+    penetration: 0
+    range: 40
+    rateOfFire:
+        burst: 0
+        full: 0
+        single: 1
+    reload: Full
+    source: Hostile Acquisitions, p.53
+    special: {}
+    type: Exotic
+    weight: 2
+img: systems/rogue-trader-3rd/icons/items/buckets/basic-exotic.png
+name: Terrorfex
+type: weapon
+---
+data:
+    availability: Near Unique
+    class: Basic
+    clip:
+        max: 0
+        value: 0
+    craftsmanship: Common
+    damage: 2d10+5
+    damageType: Energy
+    description: 'Special: Recharge, Shocking, Toxic. Bizarre constructions of obsidian-like stone and an unknown metal that glistens with an oily sheen, so-called Foul Sceptres seem to languish in perpetual shade, even when held in direct sunlight, as if they exude gloom.'
+    equipped: false
+    modifications: []
+    penetration: 10
+    range: 70
+    rateOfFire:
+        burst: 0
+        full: 0
+        single: 1
+    reload: ''
+    source: Hostile Acquisitions, p.53
+    special:
+        recharge: true
+        shocking: true
+        toxic: true
+    type: Exotic
+    weight: 4
+img: systems/rogue-trader-3rd/icons/items/buckets/basic-exotic.png
+name: Foul Sceptre
+type: weapon
+---
+data:
+    availability: Very Rare
+    class: Basic
+    clip:
+        max: 7
+        value: 7
+    craftsmanship: Common
+    damage: 2d10+8
+    damageType: Energy
+    description: 'Special: Inaccurate, Overheats, Unreliable, Unstable.'
+    equipped: false
+    modifications: []
+    penetration: 8
+    range: 90
+    rateOfFire:
+        burst: 0
+        full: 0
+        single: 1
+    reload: 4 Full
+    source: Hostile Acquisitions, p.53
+    special:
+        inaccurate: true
+        overheats: true
+        unreliable: true
+        unstable: true
+    type: Exotic
+    weight: 15
+img: systems/rogue-trader-3rd/icons/items/buckets/basic-exotic.png
+name: Kustom Blasta
+type: weapon
+---
+data:
+    availability: Rare
+    class: Pistol
+    clip:
+        max: 15
+        value: 15
+    craftsmanship: Common
+    damage: 1d10+6
+    damageType: Explosive
+    description: 'Special: Reliable, Tearing.'
+    equipped: false
+    modifications: []
+    penetration: 4
+    range: 20
+    rateOfFire:
+        burst: 0
+        full: 0
+        single: 1
+    reload: Full
+    source: Hostile Acquisitions, p.53
+    special:
+        reliable: true
+        tearing: true
+    type: Exotic
+    weight: 1
+img: systems/rogue-trader-3rd/icons/items/buckets/pistol-exotic.png
+name: Ripper Ray
+type: weapon
+---
+data:
+    availability: Rare
+    class: Basic
+    clip:
+        max: 6
+        value: 6
+    craftsmanship: Common
+    damage: 1d10+4
+    damageType: Energy
+    description: 'Special: Overheats.'
+    equipped: false
+    modifications: []
+    penetration: 2
+    range: 80
+    rateOfFire:
+        burst: 0
+        full: 0
+        single: 1
+    reload: Full
+    source: Hostile Acquisitions, p.53
+    special:
+        overheats: true
+    type: Exotic
+    weight: 6
+img: systems/rogue-trader-3rd/icons/items/buckets/basic-exotic.png
+name: Lightburner
+type: weapon
+---
+data:
+    availability: Near Unique
+    class: Thrown
+    clip:
+        max: 0
+        value: 0
+    craftsmanship: Common
+    damage: 1d10+6
+    damageType: Energy
+    description: 'Special: Blast (4). Range: SBx3.'
+    equipped: false
+    modifications: []
+    penetration: 0
+    range: 0
+    rateOfFire:
+        burst: 0
+        full: 0
+        single: 1
+    reload: ''
+    source: Hostile Acquisitions, p.52
+    special:
+        blast: 4
+    type: Thrown
+    weight: 1
+img: systems/rogue-trader-3rd/icons/items/buckets/thrown-grenade.png
+name: Aetherflare
+type: weapon
+---
+data:
+    availability: Extremely Rare
+    class: Thrown
+    clip:
+        max: 0
+        value: 0
+    craftsmanship: Common
+    damage: 2d10
+    damageType: Explosive
+    description: 'Special: Blast (2). Range: SBx3. Extremely small examples of conventional weaponry, these devices are beyond the skills of all but the most talented artisan to create, be they sanctioned or heretical. Allowing a pistol-sized weapon to unleash firepower equivalent to a rifle, such technology is desired by warriors in either side of the law. This upgrade reduces the range and weight of the weapon to one-quarter its normal value, but also reduces the damage by 2.'
+    equipped: false
+    modifications: []
+    penetration: 0
+    range: 0
+    rateOfFire:
+        burst: 4
+        full: 0
+        single: 1
+    reload: ''
+    source: Hostile Acquisitions, p.52
+    special:
+        blast: 2
+    type: Thrown
+    weight: 0.5
+img: systems/rogue-trader-3rd/icons/items/buckets/thrown-grenade.png
+name: Microgrenade (Frag)
+type: weapon
+---
+data:
+    availability: Extremely Rare
+    class: Thrown
+    clip:
+        max: 0
+        value: 0
+    craftsmanship: Common
+    damage: 2d10+2
+    damageType: Explosive
+    description: 'Range: SBx3. Extremely small examples of conventional weaponry, these devices are beyond the skills of all but the most talented artisan to create, be they sanctioned or heretical. Allowing a pistol-sized weapon to unleash firepower equivalent to a rifle, such technology is desired by warriors in either side of the law. This upgrade reduces the range and weight of the weapon to one-quarter its normal value, but also reduces the damage by 2.'
+    equipped: false
+    modifications: []
+    penetration: 5
+    range: 0
+    rateOfFire:
+        burst: 4
+        full: 0
+        single: 1
+    reload: ''
+    source: Hostile Acquisitions, p.52
+    special: {}
+    type: Thrown
+    weight: 0.5
+img: systems/rogue-trader-3rd/icons/items/buckets/thrown-grenade.png
+name: Microgrenade (Krak)
+type: weapon
+---
+data:
+    availability: Extremely Rare
+    class: Thrown
+    clip:
+        max: 0
+        value: 0
+    craftsmanship: Common
+    damage: 1d10
+    damageType: Energy
+    description: 'Special: Blast (10). Range: SBx3.'
+    equipped: false
+    modifications: []
+    penetration: 0
+    range: 0
+    rateOfFire:
+        burst: 0
+        full: 0
+        single: 1
+    reload: ''
+    source: Hostile Acquisitions, p.52
+    special:
+        blast: 10
+    type: Thrown
+    weight: 1
+img: systems/rogue-trader-3rd/icons/items/buckets/thrown-grenade.png
+name: Rad
+type: weapon
+---
+data:
+    availability: Scarce
+    class: Thrown
+    clip:
+        max: 0
+        value: 0
+    craftsmanship: Common
+    damage: ''
+    damageType: Explosive
+    description: 'Range: SBx3. Containing fast-acting psychotropic toxins that induce intense feelings of dread and paranoia, scare grenades are prized by pirates and raiders seeking to terrify their prey into submission. Anyone within 10 metres of a detonating scare grenade must succeed on a Difficult (–10) Toughness Test or be overcome with feelings of terror, as if they had failed a Fear test, with each Degree of Failure adding +10 to the roll on Table 10–4: The Shock Table on page 2…'
+    equipped: false
+    modifications: []
+    penetration: 0
+    range: 0
+    rateOfFire:
+        burst: 0
+        full: 0
+        single: 1
+    reload: ''
+    source: Hostile Acquisitions, p.52
+    special: {}
+    type: Thrown
+    weight: 1
+img: systems/rogue-trader-3rd/icons/items/buckets/thrown-grenade.png
+name: Scare
+type: weapon
+---
+data:
+    availability: Scarce
+    class: Thrown
+    clip:
+        max: 0
+        value: 0
+    craftsmanship: Common
+    damage: ''
+    damageType: Explosive
+    description: 'Special: Blast (4), Snare. Range: SBx3. Essentially just a highly-compressed canister of Webber adhesive and a detonator, web grenades and missiles swiftly ensnare targets in a sticky, rapidly-thickening mass of constricting filaments.'
+    equipped: false
+    modifications: []
+    penetration: 0
+    range: 0
+    rateOfFire:
+        burst: 0
+        full: 0
+        single: 1
+    reload: ''
+    source: Hostile Acquisitions, p.52
+    special:
+        blast: 4
+        snare: true
+    type: Thrown
+    weight: 1
+img: systems/rogue-trader-3rd/icons/items/buckets/thrown-grenade.png
+name: Web
+type: weapon
+---
+data:
+    availability: Rare
+    class: Thrown
+    clip:
+        max: 0
+        value: 0
+    craftsmanship: Common
+    damage: ''
+    damageType: Explosive
+    description: 'Special: Blast (6), Snare. Essentially just a highly-compressed canister of Webber adhesive and a detonator, web grenades and missiles swiftly ensnare targets in a sticky, rapidly-thickening mass of constricting filaments.'
+    equipped: false
+    modifications: []
+    penetration: 0
+    range: 0
+    rateOfFire:
+        burst: 0
+        full: 0
+        single: 1
+    reload: ''
+    source: Hostile Acquisitions, p.52
+    special:
+        blast: 6
+        snare: true
+    type: Thrown
+    weight: 2
+img: systems/rogue-trader-3rd/icons/items/buckets/thrown-grenade.png
+name: Web Missile
+type: weapon
+---
+data:
+    availability: Scarce
+    class: Melee
+    clip:
+        max: 0
+        value: 0
+    craftsmanship: Common
+    damage: 1d10+3
+    damageType: Rending
+    description: 'Special: Tearing.'
+    equipped: false
+    modifications: []
+    penetration: 2
+    range: 0
+    rateOfFire:
+        burst: 0
+        full: 0
+        single: 1
+    reload: ''
+    source: Hostile Acquisitions, p.54
+    special:
+        tearing: true
+    type: Chain
+    weight: 9
+img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-sword.png
+name: Chainsword (Hydraphur)
+type: weapon
+---
+data:
+    availability: Near Unique
+    class: Melee
+    clip:
+        max: 0
+        value: 0
+    craftsmanship: Common
+    damage: 1d10+4
+    damageType: Rending
+    description: 'Special: Balanced, Tearing.'
+    equipped: false
+    modifications: []
+    penetration: 3
+    range: 0
+    rateOfFire:
+        burst: 0
+        full: 0
+        single: 1
+    reload: ''
+    source: Hostile Acquisitions, p.54
+    special:
+        balanced: true
+        tearing: true
+    type: Chain
+    weight: 3
+img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-sword.png
+name: Chainsword (Eldar)
+type: weapon
+---
+data:
+    availability: Unique
+    class: Melee
+    clip:
+        max: 0
+        value: 0
+    craftsmanship: Common
+    damage: 1d10+6
+    damageType: Rending
+    description: 'Special: Tearing, Unbalanced. Reminiscent of the massive eviscerators used by zealots within the Imperium, Biting Blades are long-bladed, two-handed chainswords. However, where eviscerators are heavy, noisy machines, Biting Blades are slender and quiet, but no less deadly for their relatively light weight. Wielded properly, the razor-sharp teeth can tear through flesh and bone with horrific speed, and a skilled warrior can cleave a man in two without difficulty.'
+    equipped: false
+    modifications: []
+    penetration: 2
+    range: 0
+    rateOfFire:
+        burst: 0
+        full: 0
+        single: 1
+    reload: ''
+    source: Hostile Acquisitions, p.55
+    special:
+        tearing: true
+        unbalanced: true
+    type: Exotic
+    weight: 7
+img: systems/rogue-trader-3rd/icons/items/buckets/melee-exotic.png
+name: Eldar Biting Blade
+type: weapon
+---
+data:
+    availability: Unique
+    class: Melee
+    clip:
+        max: 0
+        value: 0
+    craftsmanship: Common
+    damage: 1d10+5
+    damageType: Energy
+    description: 'Special: Balanced, Power Field. Exquisitely balanced for dual-wielding, Mirrorswords are extremely lightweight power swords, capable of gliding through all but the toughest armour with ease. Wielded only by the most nimble amongst a species renowned for their grace and speed, these blades become a deadly wall of glittering steel.'
+    equipped: false
+    modifications: []
+    penetration: 8
+    range: 0
+    rateOfFire:
+        burst: 0
+        full: 0
+        single: 1
+    reload: ''
+    source: Hostile Acquisitions, p.55
+    special:
+        balanced: true
+        powerField: true
+    type: Exotic
+    weight: 2
+img: systems/rogue-trader-3rd/icons/items/buckets/melee-exotic.png
+name: Eldar Mirrorswords
+type: weapon
+---
+data:
+    availability: Near Unique
+    class: Melee
+    clip:
+        max: 0
+        value: 0
+    craftsmanship: Common
+    damage: 3d5
+    damageType: Rending
+    description: 'Special: Tearing. Resembling a pair of surgical shears, Scissorhands are most commonly wielded by the Haemonculi sometimes encountered alongside Dark Eldar raiders during their attacks. Each talon is impregnated with a variety of potent venoms and toxins, all of them capable of inflicting terrible, debilitating pain.'
+    equipped: false
+    modifications: []
+    penetration: 2
+    range: 0
+    rateOfFire:
+        burst: 0
+        full: 0
+        single: 1
+    reload: ''
+    source: Hostile Acquisitions, p.55
+    special:
+        tearing: true
+    type: Exotic
+    weight: 0.5
+img: systems/rogue-trader-3rd/icons/items/buckets/melee-exotic.png
+name: Dark Eldar Scissorhand
+type: weapon
+---
+data:
+    availability: Rare
+    class: Melee
+    clip:
+        max: 0
+        value: 0
+    craftsmanship: Common
+    damage: 1d10+6
+    damageType: Rending
+    description: 'Special: Balanced, Tearing. Long, slender blades constructed from unknown, lightweight alloys, the outer casing of these non-STC swords conceals a pair of chains mounting serrated blades far finer than the hooked teeth of an Imperial chain weapon. Running in opposite directions, these razor-sharp blades slice and tear anything caught between them. Though less effective against armour, Twinblades cut more swiftly and cleanly through flesh and bone.'
+    equipped: false
+    modifications: []
+    penetration: 0
+    range: 0
+    rateOfFire:
+        burst: 0
+        full: 0
+        single: 1
+    reload: ''
+    source: Hostile Acquisitions, p.55
+    special:
+        balanced: true
+        tearing: true
+    type: Exotic
+    weight: 5
+img: systems/rogue-trader-3rd/icons/items/buckets/melee-exotic.png
+name: Nadueshi Twinblade
+type: weapon
+---
+data:
+    availability: Near Unique
+    class: Melee
+    clip:
+        max: 0
+        value: 0
+    craftsmanship: Common
+    damage: 2d5
+    damageType: Rending
+    description: 'Special: Flexible. Reach: 3m. Crafted from the same warp-based technology used in many Stryxis weapons, an Aetherlash appears as nothing more than a short handle of blue-grey metal, grown rather than manufactured. When activated, however, a metres-long stream of flickering, iridescent mist lashes out, striking like a whip yet passing through any matter it touches. Where it strikes the living, they recoil as if wounded, yet no mark is left behind.'
+    equipped: false
+    modifications: []
+    penetration: 0
+    range: 0
+    rateOfFire:
+        burst: 0
+        full: 0
+        single: 1
+    reload: ''
+    source: Hostile Acquisitions, p.55
+    special:
+        flexible: true
+    type: Exotic
+    weight: 1
+img: systems/rogue-trader-3rd/icons/items/buckets/melee-exotic.png
+name: Stryxis Aetherlash
+type: weapon
+---
+data:
+    availability: Extremely Rare
+    class: Melee
+    clip:
+        max: 0
+        value: 0
+    craftsmanship: Common
+    damage: 1d10-1
+    damageType: Rending
+    description: 'Special: Balanced. Seemingly grown from a dark blue-grey metal, these strangely-curved blades are only slightly longer than a man''s forearm, and seem to hum with a distant, atonal noise. Designed to be clutched in the slender talons of a Stryxis, they do not sit easily in human hands, never resting comfortably as if rebelling from the foreign grip. So-called ''Curseblades'' have a vile reputation, entwined with the unsettling reputation of the Stryxis themselves.'
+    equipped: false
+    modifications: []
+    penetration: 2
+    range: 0
+    rateOfFire:
+        burst: 0
+        full: 0
+        single: 1
+    reload: ''
+    source: Hostile Acquisitions, p.55
+    special:
+        balanced: true
+    type: Exotic
+    weight: 2
+img: systems/rogue-trader-3rd/icons/items/buckets/melee-exotic.png
+name: Stryxis Curseblade
+type: weapon
+---
+data:
+    availability: Very Rare
+    class: Melee
+    clip:
+        max: 0
+        value: 0
+    craftsmanship: Common
+    damage: 2d10+6
+    damageType: Energy
+    description: 'Special: Power Field, Tearing, Unbalanced. Large and deadly chainblades, these two-handed swords are wreathed with a flickering power field that significantly increases their effectiveness. Favoured by the greatest clan warriors of the city-engines of Zayth, these weapons are relics of a lost age, and bear a resemblance to a number of advanced chainblades from the very earliest days of the Imperium, fuelling theories amongst Explorators of the ''synchronism of the holy mechanism'' and ''convergent des…'
+    equipped: false
+    modifications: []
+    penetration: 6
+    range: 0
+    rateOfFire:
+        burst: 0
+        full: 0
+        single: 1
+    reload: ''
+    source: Hostile Acquisitions, p.55
+    special:
+        powerField: true
+        tearing: true
+        unbalanced: true
+    type: Exotic
+    weight: 9
+img: systems/rogue-trader-3rd/icons/items/buckets/melee-exotic.png
+name: Zaythan Warblade
+type: weapon
+---
+data:
+    availability: Rare
+    class: Thrown
+    clip:
+        max: 0
+        value: 0
+    craftsmanship: Common
+    damage: 1d10
+    damageType: Impact
+    description: 'Special: Shocking. Reach: SBx3m. Designed to be thrown, these dense metal spheres are the size of a human fist, and contain a shock generator designed to discharge at the moment of impact. These devices are of unknown origin, their appearance in the hands of weapons traders across the Expanse and within the Calixis Sector a mystery to all.'
+    equipped: false
+    modifications: []
+    penetration: 0
+    range: 0
+    rateOfFire:
+        burst: 0
+        full: 0
+        single: 1
+    reload: ''
+    source: Hostile Acquisitions, p.56
+    special:
+        shocking: true
+    type: Shock
+    weight: 0.2
+img: systems/rogue-trader-3rd/icons/items/buckets/thrown-grenade.png
+name: Stunsphere
+type: weapon
+---
+data:
+    availability: Average
+    class: Thrown
+    clip:
+        max: 0
+        value: 0
+    craftsmanship: Common
+    damage: ''
+    damageType: Impact
+    description: 'Special: Shocking, Snare. Reach: 5m.'
+    equipped: false
+    modifications: []
+    penetration: 0
+    range: 0
+    rateOfFire:
+        burst: 0
+        full: 0
+        single: 1
+    reload: ''
+    source: Hostile Acquisitions, p.56
+    special:
+        shocking: true
+        snare: true
+    type: Shock
+    weight: 1
+img: systems/rogue-trader-3rd/icons/items/buckets/thrown-grenade.png
+name: Shock Net
+type: weapon

@@ -1792,3 +1792,179 @@ data:
 img: systems/rogue-trader-3rd/icons/items/buckets/tool-multi-key.png
 name: Strait-Cape
 type: tool
+---
+data:
+    craftsmanship: common
+    availability: Near Unique
+    weight: 1
+    equipped: false
+    inBackpack: false
+    description: 'Using the forbidden artifice of Stryxis-tech adapted for human use, the lenses of aetherscrye goggles do not show the light of reality, but rather the hellish illumination of the warp, filtered by arcane devices within the housing of the lens so that this light does little harm to those who look upon it.'
+    source: Hostile Acquisitions, p.64
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/tool-multi-key.png
+name: Aetherscrye Goggles
+type: tool
+---
+data:
+    craftsmanship: common
+    availability: Common
+    weight: 50
+    equipped: false
+    inBackpack: false
+    description: 'An invaluable tool for anyone who seeks to capture the great beasts and xenos monstrosities that exist on worlds across the Imperium, the most common cages are simple constructions of sturdy metal bars. More advanced versions tend to be fitted with potent shock generators or be reinforced with adamantium plating. The finest examples lack bars altogether, instead using stasis fields to contain dangerous creatures.'
+    source: Hostile Acquisitions, p.64
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/tool-multi-key.png
+name: Beast Cage (Average)
+type: tool
+---
+data:
+    craftsmanship: common
+    availability: Scarce
+    weight: 100
+    equipped: false
+    inBackpack: false
+    description: 'An invaluable tool for anyone who seeks to capture the great beasts and xenos monstrosities that exist on worlds across the Imperium, the most common cages are simple constructions of sturdy metal bars. More advanced versions tend to be fitted with potent shock generators or be reinforced with adamantium plating. The finest examples lack bars altogether, instead using stasis fields to contain dangerous creatures.'
+    source: Hostile Acquisitions, p.64
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/tool-multi-key.png
+name: Beast Cage (Hulking)
+type: tool
+---
+data:
+    craftsmanship: common
+    availability: Rare
+    weight: 200
+    equipped: false
+    inBackpack: false
+    description: 'An invaluable tool for anyone who seeks to capture the great beasts and xenos monstrosities that exist on worlds across the Imperium, the most common cages are simple constructions of sturdy metal bars. More advanced versions tend to be fitted with potent shock generators or be reinforced with adamantium plating. The finest examples lack bars altogether, instead using stasis fields to contain dangerous creatures.'
+    source: Hostile Acquisitions, p.64
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/tool-multi-key.png
+name: Beast Cage (Enormous)
+type: tool
+---
+data:
+    craftsmanship: common
+    availability: Rare
+    weight: 400
+    equipped: false
+    inBackpack: false
+    description: 'An invaluable tool for anyone who seeks to capture the great beasts and xenos monstrosities that exist on worlds across the Imperium, the most common cages are simple constructions of sturdy metal bars. More advanced versions tend to be fitted with potent shock generators or be reinforced with adamantium plating. The finest examples lack bars altogether, instead using stasis fields to contain dangerous creatures.'
+    source: Hostile Acquisitions, p.64
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/tool-multi-key.png
+name: Beast Cage (Massive)
+type: tool
+---
+data:
+    craftsmanship: common
+    availability: Unique
+    weight: 20
+    equipped: false
+    inBackpack: false
+    description: 'Commonly used by the Guardian forces of the mysterious Craftworld Eldar to carry heavy weaponry, grav-platforms seem to require no obvious power source in order to maintain their perpetual lift, and are quite capable of supporting considerable weights without suffering any particular detriment. While most commonly fitted with Eldar heavy weapons, a few Rogue Traders have "obtained" them during interactions with this xenos race.'
+    source: Hostile Acquisitions, p.64
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/tool-multi-key.png
+name: Eldar Grav-platform
+type: tool
+---
+data:
+    craftsmanship: common
+    availability: Extremely Rare
+    weight: 1
+    equipped: false
+    inBackpack: false
+    description: 'Proscribed in the Koronus Expanse due to ancient compacts and treaties with the first Rogue Traders to open the Maw, elseways charts are folios full of ancient maps and warp-lore that allow a Navigator to plot a course without the aid of the Astronomicon, moving along hidden routes unknown to most.'
+    source: Hostile Acquisitions, p.64
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/tool-multi-key.png
+name: Elseways Charts
+type: tool
+---
+data:
+    craftsmanship: common
+    availability: Near Unique
+    weight: 15
+    equipped: false
+    inBackpack: false
+    description: 'See the Hostile Acquisitions source book for full rules.'
+    source: Hostile Acquisitions, p.64
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/tool-multi-key.png
+name: Occlusive Vault
+type: tool
+---
+data:
+    craftsmanship: common
+    availability: Extremely Rare
+    weight: 150
+    equipped: false
+    inBackpack: false
+    description: 'See the Hostile Acquisitions source book for full rules.'
+    source: Hostile Acquisitions, p.64
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/tool-multi-key.png
+name: Prognosticator
+type: tool
+---
+data:
+    craftsmanship: common
+    availability: Rare
+    weight: 40
+    equipped: false
+    inBackpack: false
+    description: 'See the Hostile Acquisitions source book for full rules.'
+    source: Hostile Acquisitions, p.64
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/tool-multi-key.png
+name: Voidbait (Augur)
+type: tool
+---
+data:
+    craftsmanship: common
+    availability: Extremely Rare
+    weight: 75
+    equipped: false
+    inBackpack: false
+    description: 'See the Hostile Acquisitions source book for full rules.'
+    source: Hostile Acquisitions, p.64
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/tool-multi-key.png
+name: Voidbait (Warp)
+type: tool

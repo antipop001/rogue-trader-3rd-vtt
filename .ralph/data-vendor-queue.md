@@ -210,3 +210,28 @@ which the engine now stringifies (0.8.38 robustness fix) so it rolls a flat 1 po
 canon whether it should deal damage at all — a flat "1" looks like extraction noise; it is likely
 either no damage (empty) or a dice formula. Engine no longer crashes either way; this is a content
 correctness question only.
+
+---
+
+## Hostile Acquisitions player-gear import (0.9.13, 2026-09-01) — 102 items, needs RT-rules review
+
+Deterministically extracted from `RT-DOCS/roguetrader_hostileacquisitions.pdf/markdown.md` Chapter II
+"Tools of the Trade" tables (parser: scratchpad `extract_ha.py` / `extract_ha2.py`, table-column mapping,
+no LLM value guessing) and appended to the packs. Counts: weapons +47, armour +5, ammo +11,
+weapon-mods +14, tools +11, consumables +8, cybernetics +6. Each tagged `source: "Hostile Acquisitions, p.XX"`
+(section pages: Ranged 48, Melee 54, Upgrades 57, Ammo 60, Armour 61, Gear 64, Drugs 66, Cybernetics 68).
+
+**Review needed:**
+- **Weapon stats** (damage/pen/RoF/clip/qualities) were parsed from the printed tables and should be
+  spot-checked with `tools/compendium_qa/weapons_diff.py`-style verification against the source (the
+  extractor handled OCR dashes and the `S–/–` RoF glitch, but verify edge rows: Hawk's Talon (Melee)
+  alt-profile, Terrorfex/Scare/Web no-damage entries, Shock Net).
+- **Prose descriptions** were pulled from each item's markdown heading paragraph; ~15 items whose stat-block
+  had no markdown heading (Bolt Shells, Gas Rounds, Beast Cage variants, Barrage/Geist drugs, etc.) got a
+  "See the Hostile Acquisitions source book for full rules." placeholder — fill these in from the book.
+- **Weapon-mod / ammo / drug / cybernetic MECHANICS are description-only** (no ActiveEffects/automation),
+  same as most existing supplement gear.
+- **Armour type/icon** inferred from the name (carapace/void/plate/other); confirm Augmetic Engine-Plate
+  (mapped Power) and Mesh-Weave Clothing (Other) classifications.
+- **Armour Upgrades table (p.63)** was NOT imported (no dedicated armour-modification pack exists) — TODO.
+- Weight fields for weapon-mods are the printed relative modifiers (+2, +1/4, etc.) reduced to a number.

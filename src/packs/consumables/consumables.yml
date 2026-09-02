@@ -567,3 +567,115 @@ data:
 img: systems/rogue-trader-3rd/icons/items/buckets/consumable-drug-vial.png
 name: Wideawake
 type: drug
+---
+data:
+    craftsmanship: common
+    availability: Rare
+    weight: 0
+    equipped: false
+    inBackpack: false
+    description: 'See the Hostile Acquisitions source book for full rules.'
+    source: Hostile Acquisitions, p.66
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/consumable-drug-vial.png
+name: Barrage
+type: drug
+---
+data:
+    craftsmanship: common
+    availability: Very Rare
+    weight: 0
+    equipped: false
+    inBackpack: false
+    description: 'See the Hostile Acquisitions source book for full rules.'
+    source: Hostile Acquisitions, p.66
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/consumable-drug-vial.png
+name: Burnscour Rain
+type: drug
+---
+data:
+    craftsmanship: common
+    availability: Very Rare
+    weight: 0
+    equipped: false
+    inBackpack: false
+    description: 'See the Hostile Acquisitions source book for full rules.'
+    source: Hostile Acquisitions, p.66
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/consumable-drug-vial.png
+name: Geist
+type: drug
+---
+data:
+    craftsmanship: common
+    availability: Rare
+    weight: 0
+    equipped: false
+    inBackpack: false
+    description: 'A particularly unusual narcotic, Glimmer is a mildly toxic substance which seems to have no other discernible effects when injected, inhaled or ingested. However, when light is filtered through a small quantity of this orange-red fluid, it induces a state of extreme relaxation and apparent intoxication upon any who are exposed to the light.'
+    source: Hostile Acquisitions, p.66
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/consumable-drug-vial.png
+name: Glimmer
+type: drug
+---
+data:
+    craftsmanship: common
+    availability: Rare
+    weight: 0
+    equipped: false
+    inBackpack: false
+    description: 'Though this drug is not as common as Obscura, Haze dealers nonetheless become extremely prosperous within the Calixis Sector’s many hive worlds, and other locations where crime is rife. Normally inhaled or ingested, Haze can produce an addictive delirium that lasts for hours. A single dose of Haze causes 1d5 Intelligence, Perception and Willpower damage, rolled separately for each.'
+    source: Hostile Acquisitions, p.66
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/consumable-drug-vial.png
+name: Haze
+type: drug
+---
+data:
+    craftsmanship: common
+    availability: Near Unique
+    weight: 0
+    equipped: false
+    inBackpack: false
+    description: 'A rare example of a machine-poison, Silver Anathema’s discovery quickly resulted in it being banned by the Mechanicus leaders of every Forge world in the Calixis Sector. The method by which it functions is a secret known only to very few within the Cult of the Machine, but what can be determined from rumour and hearsay is that it somehow reacts with the victim’s body, leaving metallic thorns protruding from their body where it has done its deadly work.'
+    source: Hostile Acquisitions, p.66
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/consumable-drug-vial.png
+name: Silver Anathema
+type: drug
+---
+data:
+    craftsmanship: common
+    availability: Extremely Rare
+    weight: 0
+    equipped: false
+    inBackpack: false
+    description: 'Another deadly substance from Burnscour, the sap of the Spinebark tree is an extremely potent neurotoxin. The Spinebark tree, from which this sap exudes, proceeds to grow over and consume the paralysed, still-living victim. A contact poison, Spinebark Sap must be handled extremely carefully: it takes a Difficult (–10) Chem-Use Test to successfully apply it to a weapon, load it into a dispenser or otherwise handle a dose of Spinebark Sap.'
+    source: Hostile Acquisitions, p.66
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/consumable-drug-vial.png
+name: Spinebark Sap
+type: drug
+---
+data:
+    craftsmanship: common
+    availability: Scarce
+    weight: 0.1
+    equipped: false
+    inBackpack: false
+    description: 'A tiny device that vaguely resembles a hypo-spray unit, tox-misters convert liquid poisons into sprays of mist that quickly disperse and evaporate, making them effective tools for delivering a poison swiftly at close range and leaving little evidence behind. The small size and portability of the device makes it a valuable tool for assassins, and a useful last-ditch weapon for pirates and other ruthless criminals.'
+    source: Hostile Acquisitions, p.66
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/consumable-drug-vial.png
+name: Tox-Mister
+type: drug

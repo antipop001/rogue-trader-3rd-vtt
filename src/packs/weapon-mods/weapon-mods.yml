@@ -932,3 +932,227 @@ data:
 img: systems/rogue-trader-3rd/icons/items/buckets/mod-scope.png
 name: Tox Dispenser
 type: weaponModification
+---
+data:
+    craftsmanship: common
+    availability: Special
+    weight: 0
+    equipped: false
+    inBackpack: false
+    description: 'Weight modifier: +0. The work of aliens is looked upon by some with envy, rather than the scorn the Imperium would prefer. Because of the scarcity of alien weapons, those who regard them with greed must often satisfy themselves with copies of human manufacture, inferior to the exotic and blasphemous technologies that make the originals so deadly. The more scarce and sophisticated a weapon, the more lacking the counterfeit version will be.'
+    source: Hostile Acquisitions, p.57
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/mod-ammo-pack.png
+name: Counterfeit Xenos Weapon
+type: weaponModification
+---
+data:
+    craftsmanship: common
+    availability: Scarce
+    weight: 0
+    equipped: false
+    inBackpack: false
+    description: 'Weight modifier: +0.'
+    source: Hostile Acquisitions, p.57
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/mod-ammo-pack.png
+name: Loyalty Spirit (Vox)
+type: weaponModification
+---
+data:
+    craftsmanship: common
+    availability: Rare
+    weight: 0
+    equipped: false
+    inBackpack: false
+    description: 'Weight modifier: +0.'
+    source: Hostile Acquisitions, p.57
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/mod-ammo-pack.png
+name: Loyalty Spirit (Dermprint)
+type: weaponModification
+---
+data:
+    craftsmanship: common
+    availability: Extremely Rare
+    weight: 0
+    equipped: false
+    inBackpack: false
+    description: 'Weight modifier: +0.'
+    source: Hostile Acquisitions, p.57
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/mod-ammo-pack.png
+name: Loyalty Spirit (Genelock)
+type: weaponModification
+---
+data:
+    craftsmanship: common
+    availability: Unique
+    weight: 0
+    equipped: false
+    inBackpack: false
+    description: 'Weight modifier: +0.'
+    source: Hostile Acquisitions, p.57
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/mod-ammo-pack.png
+name: Loyalty Spirit (Arcane)
+type: weaponModification
+---
+data:
+    craftsmanship: common
+    availability: Very Rare
+    weight: 2
+    equipped: false
+    inBackpack: false
+    description: 'Weight modifier: +2. Thanks to technologies no longer commonplace on such small devices, these projectile weapons are not reliant on the chemical reactions that normally propel bullets and shells, instead using powerful magnetic fields to hurl projectiles at great speed.'
+    source: Hostile Acquisitions, p.57
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/mod-ammo-pack.png
+name: Maglev Impeller
+type: weaponModification
+---
+data:
+    craftsmanship: common
+    availability: Extremely Rare
+    weight: 1
+    equipped: false
+    inBackpack: false
+    description: 'Weight modifier: +1/4. Extremely small examples of conventional weaponry, these devices are beyond the skills of all but the most talented artisan to create, be they sanctioned or heretical. Allowing a pistol-sized weapon to unleash firepower equivalent to a rifle, such technology is desired by warriors in either side of the law. This upgrade reduces the range and weight of the weapon to one-quarter its normal value, but also reduces the damage by 2.'
+    source: Hostile Acquisitions, p.57
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/mod-ammo-pack.png
+name: Micro
+type: weaponModification
+---
+data:
+    craftsmanship: common
+    availability: Scarce
+    weight: 1
+    equipped: false
+    inBackpack: false
+    description: 'Weight modifier: +1. A mono-sight consists of an augmetic monocle connected by a thick cable to a pict-thief attached in place of a weapon''s sight. This device allows a warrior to fire his weapon without exposing himself to enemy fire, using the pict-thief to aim from the weapon''s perspective. A character using a mono-sight may aim and fire at a target that he cannot directly see with his own eyes by using the pict-thief.'
+    source: Hostile Acquisitions, p.57
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/mod-scope.png
+name: Mono-sight
+type: weaponModification
+---
+data:
+    craftsmanship: common
+    availability: Scarce
+    weight: 5
+    equipped: false
+    inBackpack: false
+    description: 'Weight modifier: +5. A fairly ubiquitous upgrade, this simply modifies a weapon to add an extra (or ''pistol'') grip to a Basic ranged weapon. This allows the weapon to be wielded in one hand without suffering the usual -20 penalty. However, when wielding a Basic weapon with a pistol grip one-handed, the weapon''s range is halved. Note that the weapon can still be wielded two-handed without the penalty. The GM has final say as to what weapons can benefit from a pistol grip.'
+    source: Hostile Acquisitions, p.57
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/mod-ammo-pack.png
+name: Pistol Grip
+type: weaponModification
+---
+data:
+    craftsmanship: common
+    availability: Rare
+    weight: 0.5
+    equipped: false
+    inBackpack: false
+    description: 'Weight modifier: +0.5. An adaptation to the nozzle of the weapon, this upgrade focuses and contains the blast of heat more tightly, allowing it to affect targets much farther away. However, the process is inefficient, requiring much more fuel to generate the same effect. The weapon gains +10 metres range, but halves its clip size. Upgrades: Any Melta weapon.'
+    source: Hostile Acquisitions, p.57
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/mod-ammo-pack.png
+name: Pyre-lance Nozzle
+type: weaponModification
+---
+data:
+    craftsmanship: common
+    availability: Rare
+    weight: 1.5
+    equipped: false
+    inBackpack: false
+    description: 'Weight modifier: +1.5. The sophisticated targeting cogitator built into this advanced telescopic sight can swiftly determine the distance to a target and assist the wielder''s aim accordingly, allowing him to hit targets much farther away than would normally be possible.'
+    source: Hostile Acquisitions, p.57
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/mod-scope.png
+name: Rangefinder
+type: weaponModification
+---
+data:
+    craftsmanship: common
+    availability: Scarce
+    weight: 6
+    equipped: false
+    inBackpack: false
+    description: 'Weight modifier: +6. This powered, articulated metal arm extends from a bulky and awkward harness, supporting a weapon''s weight and spreading it across the wielder''s body. The harness is difficult to move around in, and difficult to remove. Often used as a cheap alternative to the extremely rare suspensors, they allow warriors to wield heavy weaponry with some degree of mobility, and prevent them from being easily disarmed.'
+    source: Hostile Acquisitions, p.57
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/mod-ammo-pack.png
+name: Stabiliser Harness
+type: weaponModification
+---
+data:
+    craftsmanship: common
+    availability: Very Rare
+    weight: 0.5
+    equipped: false
+    inBackpack: false
+    description: 'Weight modifier: +0.5. These dangerous modifications alter the muzzles of plasma weapons, lessening the magnetic containment that allows coherent bolts of plasma to form. Instead, these weapons project short, intense jets of superheated, ionised gas, operating in a KUSTOM JOBZ Ork Mekboyz are nothing if not imaginative, capable of creating all manner of strange devices and bizarre modifications.'
+    source: Hostile Acquisitions, p.57
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/mod-ammo-pack.png
+name: Starflare Vents
+type: weaponModification
+---
+data:
+    craftsmanship: common
+    availability: Rare
+    weight: 0.5
+    equipped: false
+    inBackpack: false
+    description: 'Weight modifier: +0.5.'
+    source: Hostile Acquisitions, p.57
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/mod-ammo-pack.png
+name: Whisper-bolt Discharger
+type: weaponModification
