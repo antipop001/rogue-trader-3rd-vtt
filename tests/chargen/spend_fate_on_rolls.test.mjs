@@ -21,12 +21,18 @@ test('the spend-fate chat control is bound and handled in basic-action-manager',
         '_spendFate must route to actor.spendFate (which subtracts 1 from current Fate)');
 });
 
-test('skill/characteristic (simple) and force-field roll cards render a Spend Fate button', () => {
-    for (const tpl of ['templates/chat/simple-roll-chat.hbs', 'templates/chat/force-field-roll-chat.hbs']) {
+test('every roll-type card renders a Spend Fate button, guarded to Fate-bearing actors', () => {
+    const cards = [
+        'templates/chat/simple-roll-chat.hbs',      // skills + characteristics
+        'templates/chat/force-field-roll-chat.hbs', // force fields
+        'templates/chat/action-roll-chat.hbs',      // weapon attacks (alongside auto Re-roll)
+        'templates/chat/psychic-action-chat.hbs',   // psychic powers (alongside auto Re-roll)
+    ];
+    for (const tpl of cards) {
         const html = read(tpl);
         assert.match(html, /roll-control__spend-fate/, `${tpl} must include the Spend Fate control`);
         assert.match(html, /data-actor-uuid=/, `${tpl} Spend Fate control must carry the actor uuid`);
-        assert.match(html, /\{\{#if\s+actor\.system\.fate\}\}/,
+        assert.match(html, /\{\{#if\s+[^}]*system\.fate\}\}/,
             `${tpl} must only show Spend Fate for Fate-bearing actors`);
     }
 });

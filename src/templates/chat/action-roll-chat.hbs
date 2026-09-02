@@ -306,6 +306,14 @@
                                     <span class="rt-control-button__span material-icons">casino</span>
                                     <span class="rt-control-button__label">Re-roll</span>
                                 </div>
+                                {{#if @root.rollData.sourceActor.system.fate}}
+                                    <div class="rt-control-button roll-control__spend-fate"
+                                         data-actor-uuid="{{@root.rollData.sourceActor.uuid}}"
+                                         data-tooltip="Spend a Fate Point (re-roll / +10 / +1 Degree) — subtracts 1 from current Fate">
+                                        <span class="rt-control-button__span material-icons">auto_awesome</span>
+                                        <span class="rt-control-button__label">Spend Fate</span>
+                                    </div>
+                                {{/if}}
                                 {{!-- Defender Reactions (QA-113): roll Dodge/Parry to negate the hit --}}
                                 {{#if success}}
                                     {{#if targetActor.uuid}}
