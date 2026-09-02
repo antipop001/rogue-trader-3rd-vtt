@@ -209,9 +209,10 @@ export function buildActorData(state, { originLabels = null, itemGaps = null } =
     }
 
     // Wounds / Fate: the wizard stores FINAL totals (incl. Endurance wound
-    // bonus and fate adjustment) once rolled/entered.
+    // bonus and fate adjustment) once rolled/entered. Wounds go to `base` (the
+    // rolled starting value); Max is derived = base + talent/effect modifiers.
     if (state.wounds !== null && state.wounds !== undefined) {
-        system.wounds = { max: state.wounds, value: state.wounds, rolled: true };
+        system.wounds = { base: state.wounds, value: state.wounds, rolled: true };
     }
     if (state.fate !== null && state.fate !== undefined) {
         system.fate = { max: state.fate, value: state.fate, rolled: true };

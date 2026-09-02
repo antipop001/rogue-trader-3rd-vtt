@@ -362,6 +362,21 @@ export function woundsMax(base, modifier) {
 }
 
 /**
+ * Resolve the rolled/stored Wounds BASE from the actor's immutable source data.
+ * Wounds Max is now fully derived (base + modifier), so `system.wounds.base` is the
+ * single editable field. Actors/NPCs created before the `base` field stored the rolled
+ * value in `system.wounds.max`; when `base` is absent from source, fall back to the
+ * source `max` (the sheet's Base input then persists it on the next save — lazy migration).
+ *
+ * @param {number|string|null|undefined} srcBase  _source.system.wounds.base
+ * @param {number|string|null|undefined} srcMax   _source.system.wounds.max (legacy)
+ * @returns {number} the base Wounds before effect modifiers
+ */
+export function woundsBase(srcBase, srcMax) {
+    return srcBase != null ? (Number(srcBase) || 0) : (Number(srcMax) || 0);
+}
+
+/**
  * Crack Shot / Crippling Strike crit-damage bonus (RT Core p.96). Crack Shot: "When
  * his ranged attack causes Critical Damage, add +2 to the Damage." Crippling Strike:
  * "When the character's melee attack causes Critical Damage, add +4 Damage." These are

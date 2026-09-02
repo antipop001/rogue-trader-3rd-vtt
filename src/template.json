@@ -9,6 +9,7 @@
     "templates": {
       "base": {
         "wounds": {
+          "base": 0,
           "max": 0,
           "value": 0,
           "critical": 0,

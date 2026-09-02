@@ -127,7 +127,7 @@ test('buildActorData: ItS label prefix-match, wounds/fate, insanity, PF note', (
     });
     assert.equal(data.system.bio.originPath.homeWorld.value,
         'Frontier World (ItS — replaces Death World)');
-    assert.deepEqual(data.system.wounds, { max: 11, value: 11, rolled: true });
+    assert.deepEqual(data.system.wounds, { base: 11, value: 11, rolled: true });
     assert.deepEqual(data.system.fate, { max: 3, value: 3, rolled: true });
     assert.equal(data.system.insanity, 5);
     assert.match(data.system.bio.notes, /Profit Factor contribution \(dynasty\): 20/);
