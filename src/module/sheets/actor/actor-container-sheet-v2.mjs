@@ -21,6 +21,7 @@ export class ActorContainerSheetV2 extends HandlebarsApplicationMixin(ActorSheet
             itemRoll: ActorContainerSheetV2._onItemRoll,
             itemDamage: ActorContainerSheetV2._onItemDamage,
             itemCreate: ActorContainerSheetV2._onItemCreate,
+            addFromCompendium: ActorContainerSheetV2._onAddFromCompendium,
             itemEdit: ActorContainerSheetV2._onItemEdit,
             itemDelete: ActorContainerSheetV2._onItemDelete,
             itemVocalize: ActorContainerSheetV2._onItemVocalize,
@@ -179,6 +180,83 @@ export class ActorContainerSheetV2 extends HandlebarsApplicationMixin(ActorSheet
         const type = target.dataset.type;
         const data = { name: `New ${type.capitalize()}`, type };
         await this.actor.createEmbeddedDocuments('Item', [data], { renderSheet: true });
+    }
+
+    /**
+     * Add one or more items to the actor from a compendium via a searchable picker — a
+     * reliable, drag-and-drop-independent path (native HTML5 DnD onto the tabbed content can
+     * be flaky in some browsers/sessions). `data-pack` names the compendium and `data-type`
+     * filters/labels it. Supports a quantity so stackable talents (e.g. Sound Constitution,
+     * RT Core p.111) can be added multiple times in one go. Uses the same createEmbeddedDocuments
+     * path a drop would, with fresh ids per copy.
+     */
+    static async _onAddFromCompendium(event, target) {
+        const packId = target.dataset.pack;
+        const type = target.dataset.type || 'item';
+        const pack = game.packs.get(packId);
+        if (!pack) { ui.notifications.warn(`Compendium "${packId}" not found.`); return; }
+        const index = await pack.getIndex();
+        const entries = [...index]
+            .filter(e => !e.type || e.type === type)
+            .sort((a, b) => a.name.localeCompare(b.name));
+        if (!entries.length) { ui.notifications.warn(`No entries found in "${packId}".`); return; }
+
+        const esc = (s) => String(s).replace(/[&<>"]/g,
+            c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+        const label = type.charAt(0).toUpperCase() + type.slice(1);
+        const opts = entries.map(e => `<option value="${e._id}">${esc(e.name)}</option>`).join('');
+        const content = `
+            <div class="rt-add-compendium">
+                <input type="search" name="filter" placeholder="Filter ${esc(label)}s…" autofocus
+                       style="width:100%;box-sizing:border-box;margin-bottom:6px;">
+                <select name="pick" size="12" style="width:100%;box-sizing:border-box;">${opts}</select>
+                <label style="display:block;margin-top:6px;">Quantity
+                    <input type="number" name="qty" value="1" min="1" step="1" style="width:70px;">
+                </label>
+                <p class="notes" style="margin-top:4px;">Stackable talents (e.g. Sound Constitution) can be added more than once — set a quantity.</p>
+            </div>`;
+        const actor = this.actor;
+
+        await foundry.applications.api.DialogV2.wait({
+            window: { title: `Add ${label}` },
+            position: { width: 420 },
+            content,
+            render: (ev, dialog) => {
+                const root = dialog.element;
+                const filter = root.querySelector('input[name="filter"]');
+                const select = root.querySelector('select[name="pick"]');
+                if (select?.options.length) select.options[0].selected = true;
+                filter?.addEventListener('keyup', () => {
+                    const q = filter.value.toLowerCase();
+                    for (const o of select.options) o.hidden = !!q && !o.textContent.toLowerCase().includes(q);
+                    if (select.selectedOptions[0]?.hidden) {
+                        const firstVisible = [...select.options].find(o => !o.hidden);
+                        if (firstVisible) firstVisible.selected = true;
+                    }
+                });
+            },
+            buttons: [
+                {
+                    action: 'add', label: 'Add', default: true, icon: 'fa-solid fa-plus',
+                    callback: async (ev, button, dialog) => {
+                        const form = button.form ?? dialog.element;
+                        const id = form.querySelector('select[name="pick"]')?.value;
+                        const qty = Math.max(1, parseInt(form.querySelector('input[name="qty"]')?.value, 10) || 1);
+                        if (!id) return;
+                        const doc = await pack.getDocument(id);
+                        if (!doc) { ui.notifications.warn('Could not load the selected entry.'); return; }
+                        const datas = Array.from({ length: qty }, () => {
+                            const o = doc.toObject();
+                            delete o._id;           // fresh id per copy — never collide with an existing item
+                            return o;
+                        });
+                        await actor.createEmbeddedDocuments('Item', datas);
+                        ui.notifications.info(`Added ${qty}× ${doc.name} to ${actor.name}.`);
+                    },
+                },
+                { action: 'close', label: 'Close', icon: 'fa-solid fa-xmark' },
+            ],
+        });
     }
 
     static async _onItemEdit(event, target) {

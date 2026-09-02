@@ -5,7 +5,10 @@
             <div class="table-cell--span2">Name</div>
             <div class="table-cell">Tier</div>
             <div class="table-cell--last">
-                <label class="rt-control-button item-create" data-action="itemCreate" data-type="talent">
+                <label class="rt-control-button" data-action="addFromCompendium" data-type="talent" data-pack="rogue-trader-3rd.talents" data-tooltip="Add a talent from the compendium (searchable; supports quantity for stackable talents)">
+                    <span class="rt-control-button__span material-icons">library_add</span>
+                </label>
+                <label class="rt-control-button item-create" data-action="itemCreate" data-type="talent" data-tooltip="Create a blank talent">
                     <span class="rt-control-button__span material-icons">{{defaultVal icon 'add_circle'}}</span>
                 </label>
             </div>
