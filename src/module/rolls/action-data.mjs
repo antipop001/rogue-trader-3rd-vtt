@@ -12,7 +12,7 @@ import { RogueTraderSettings } from '../rogue-trader-settings.mjs';
  * Roll the named RollTable from the system's `tables` compendium and return
  * the result text. Returns null if the table or compendium can't be located.
  */
-async function drawFromTable(tableName, modifier = 0, forcedTotal = null) {
+async function drawFromTable(tableName, modifier = 0, forcedTotal = null, { showRoll = false, actor = null } = {}) {
     try {
         const pack = game.packs.get(`${SYSTEM_ID}.tables`);
         if (!pack) return null;
@@ -28,6 +28,22 @@ async function drawFromTable(tableName, modifier = 0, forcedTotal = null) {
         const draw = forcedTotal != null
             ? await table.roll({ roll: new Roll(String(forcedTotal)) })
             : modifier ? await table.roll({ roll: new Roll(`1d100 + ${modifier}`) }) : await table.roll();
+        // Surface the actual dice to chat when asked (e.g. Perils of the Warp) so players see
+        // what was rolled instead of only the outcome text. Posts the evaluated Roll as its own
+        // message (drives Dice So Nice); non-fatal if it can't post.
+        if (showRoll && draw?.roll) {
+            try {
+                await draw.roll.toMessage(
+                    {
+                        flavor: tableName,
+                        speaker: actor ? ChatMessage.getSpeaker({ actor }) : undefined,
+                    },
+                    { rollMode: game.settings.get('core', 'rollMode') },
+                );
+            } catch (postErr) {
+                console.warn(`[rt] drawFromTable("${tableName}") could not post the roll:`, postErr);
+            }
+        }
         const results = draw?.results ?? [];
         return results.map(r => r.text ?? r.description ?? '').filter(Boolean).join(' ');
     } catch (err) {
@@ -121,10 +137,10 @@ export class ActionData {
                 if (this.rollData.sourceActor?.hasTalent?.('Soul-Bound to the Emperor')) {
                     const d10 = async () => { const r = new Roll('1d10'); await r.evaluate(); return r.total % 10; };
                     const total = astropathPerilsResult(await d10(), await d10(), await d10());
-                    const perils = await drawFromTable('Perils of the Warp', 0, total);
+                    const perils = await drawFromTable('Perils of the Warp', 0, total, { showRoll: true, actor: this.rollData.sourceActor });
                     if (perils) this.addEffect('Perils of the Warp', `The Perils of the Warp claim the psyker — soul-bound, he rolls an extra d10 and discards one for a more favourable result! ${perils}`);
                 } else {
-                    const perils = await drawFromTable('Perils of the Warp');
+                    const perils = await drawFromTable('Perils of the Warp', 0, null, { showRoll: true, actor: this.rollData.sourceActor });
                     if (perils) this.addEffect('Perils of the Warp', `The Perils of the Warp claim the psyker! ${perils}`);
                 }
             }
