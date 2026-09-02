@@ -920,3 +920,255 @@ data:
 img: systems/rogue-trader-3rd/icons/items/buckets/ammo-stub-rounds.png
 name: Toxin-saturated Promethium
 type: ammunition
+---
+data:
+    craftsmanship: common
+    availability: Extremely Rare
+    weight: 0
+    equipped: false
+    inBackpack: false
+    description: 'The prayers and blessings of those with true faith in the Emperor of Mankind, coupled with the ancient lore of Ecclesiastic alchemistry, can turn mere mundane bullets into sacred rounds capable of harming the foul denizens of the Warp. Some rounds are forged from relics of ancient saints, tempered in the spilt blood of martyrs, or wrought with prayers to the Emperor to banish His foes.'
+    source: Faith and Coin, p.92
+    damage: ''
+    damageType: ''
+    penetration: ''
+    special: {}
+    range: ''
+    attackType: ''
+    attackBonus: 0
+    rateOfFire:
+        single: 1
+        burst: 0
+        full: 0
+    target: ''
+    effect: ''
+    weaponType: ''
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/ammo-bolt-rounds.png
+name: Blessed Ammunition
+type: ammunition
+---
+data:
+    craftsmanship: common
+    availability: Rare
+    weight: 0
+    equipped: false
+    inBackpack: false
+    description: 'Intended to incapacitate rather than kill, capacitor rounds send a high voltage shock through their target. Frequently used by enforcers to put down riots among workers deemed too valuable for lethal measures, capacitor rounds have also found use among bounty hunters who desire to capture rather than kill their targets. **Effects:** Capacitor rounds grant a weapon the Shocking Quality and reduce its Damage by 4.'
+    source: Faith and Coin, p.92
+    damage: ''
+    damageType: ''
+    penetration: ''
+    special: {}
+    range: ''
+    attackType: ''
+    attackBonus: 0
+    rateOfFire:
+        single: 1
+        burst: 0
+        full: 0
+    target: ''
+    effect: ''
+    weaponType: ''
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/ammo-bolt-rounds.png
+name: Capacitor Rounds
+type: ammunition
+---
+data:
+    craftsmanship: common
+    availability: Very Rare
+    weight: 0
+    equipped: false
+    inBackpack: false
+    description: 'Filled with superheated gas that explodes in a gout of flame, cover offers little protection from bolters spewing dragonfire rounds. While they are manufactured on several forge worlds in the segmentum, these bolts are still a rare commodity, sought after by Rogue Traders, militias, renegades, and pirates alike throughout the Koronus Expanse. **Effects:** Dragonfire bolts grant the weapon the Blast (2) Quality and reduce its Damage by 1.'
+    source: Faith and Coin, p.92
+    damage: ''
+    damageType: ''
+    penetration: ''
+    special: {}
+    range: ''
+    attackType: ''
+    attackBonus: 0
+    rateOfFire:
+        single: 1
+        burst: 0
+        full: 0
+    target: ''
+    effect: ''
+    weaponType: ''
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/ammo-bolt-rounds.png
+name: Dragonfire Bolts
+type: ammunition
+---
+data:
+    craftsmanship: common
+    availability: Extremely Rare
+    weight: 0
+    equipped: false
+    inBackpack: false
+    description: 'Created to combat threats far from the Koronus Expanse, hellfire rounds have proven their deadly effect on countless battlefields across the galaxy. Hellfire rounds are specially modified to replace the standard explosive shell with an extremely potent bio-acid capable of eating through flesh and bone with frightening efficiency. **Effects:** Hellfire bolts grant the weapon the Toxic Quality and reduce its Penetration by 2.'
+    source: Faith and Coin, p.92
+    damage: ''
+    damageType: ''
+    penetration: ''
+    special: {}
+    range: ''
+    attackType: ''
+    attackBonus: 0
+    rateOfFire:
+        single: 1
+        burst: 0
+        full: 0
+    target: ''
+    effect: ''
+    weaponType: ''
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/ammo-bolt-rounds.png
+name: Hellfire Bolts
+type: ammunition
+---
+data:
+    craftsmanship: common
+    availability: Scarce
+    weight: 0
+    equipped: false
+    inBackpack: false
+    description: 'Replacing normal solid shot ammunition in autocannons, these shells are filled with high explosives that detonate on impact with a target. While not quite as effective as bolter rounds, high explosive rounds pack a serious punch. III. INSTRUMENTS OF THE CREED Effects: High explosive rounds change an autocannon''s Damage Type to Explosive, grant it the Blast (1) Quality, and reduce the weapon''s Penetration by 2. Used With: Autocannons.'
+    source: Faith and Coin, p.92
+    damage: ''
+    damageType: ''
+    penetration: ''
+    special: {}
+    range: ''
+    attackType: ''
+    attackBonus: 0
+    rateOfFire:
+        single: 1
+        burst: 0
+        full: 0
+    target: ''
+    effect: ''
+    weaponType: ''
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/ammo-bolt-rounds.png
+name: High Explosive Rounds
+type: ammunition
+---
+data:
+    craftsmanship: common
+    availability: Extremely Rare
+    weight: 0
+    equipped: false
+    inBackpack: false
+    description: 'See the Faith and Coin source book for full rules.'
+    source: Faith and Coin, p.92
+    damage: ''
+    damageType: ''
+    penetration: ''
+    special: {}
+    range: ''
+    attackType: ''
+    attackBonus: 0
+    rateOfFire:
+        single: 1
+        burst: 0
+        full: 0
+    target: ''
+    effect: ''
+    weaponType: ''
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/ammo-bolt-rounds.png
+name: Kraken Rounds
+type: ammunition
+---
+data:
+    craftsmanship: common
+    availability: Extremely Rare
+    weight: 0
+    equipped: false
+    inBackpack: false
+    description: 'These long stakes are crafted from a silver-adamantium alloy and etched with prayers and invocations that are anathema to the witch and the Daemon alike. The barbed, diamantine tip of the stake breaks open upon impact and releases a well of holy water and sacred oils lethal to creatures bound to the Empyrean. Effects: Purgatus stake-bolts grant the weapon the Sanctified Quality.'
+    source: Faith and Coin, p.92
+    damage: ''
+    damageType: ''
+    penetration: ''
+    special: {}
+    range: ''
+    attackType: ''
+    attackBonus: 0
+    rateOfFire:
+        single: 1
+        burst: 0
+        full: 0
+    target: ''
+    effect: ''
+    weaponType: ''
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/ammo-bolt-rounds.png
+name: Purgatus Stake-Bolts
+type: ammunition
+---
+data:
+    craftsmanship: common
+    availability: Near Unique
+    weight: 0
+    equipped: false
+    inBackpack: false
+    description: 'Bullets with a core created from the powdered bones of a nameless saint and with casings inscribed with words of detestation and abjuration of the witch, pyre rounds are incredibly rare shells created expressly for killing psykers. When a pyre round strikes a Warp-dabbler, it immolates the target, burning it alive in the flames of its own heresy. Effects: Pyre rounds grant the weapon the Cleansing Fire and Sanctified Qualities.'
+    source: Faith and Coin, p.92
+    damage: ''
+    damageType: ''
+    penetration: ''
+    special: {}
+    range: ''
+    attackType: ''
+    attackBonus: 0
+    rateOfFire:
+        single: 1
+        burst: 0
+        full: 0
+    target: ''
+    effect: ''
+    weaponType: ''
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/ammo-bolt-rounds.png
+name: Pyre Rounds
+type: ammunition
+---
+data:
+    craftsmanship: common
+    availability: Very Rare
+    weight: 0
+    equipped: false
+    inBackpack: false
+    description: 'Originally designed during the Great Scouring for use against Traitor Marines, Vengeance rounds are incredibly rare bolter shells that utilise unstable flux core technology. Inherently dangerous to discharge, they are nonetheless devastatingly effective at punching through armour and delivering gruesome injury to their target. Effects: A weapon using Vengeance Rounds gains the Unstable Quality and adds +3 to its Damage and Penetration.'
+    source: Faith and Coin, p.92
+    damage: ''
+    damageType: ''
+    penetration: ''
+    special: {}
+    range: ''
+    attackType: ''
+    attackBonus: 0
+    rateOfFire:
+        single: 1
+        burst: 0
+        full: 0
+    target: ''
+    effect: ''
+    weaponType: ''
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/ammo-bolt-rounds.png
+name: Vengeance Rounds
+type: ammunition

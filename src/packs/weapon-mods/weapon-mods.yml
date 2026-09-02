@@ -1156,3 +1156,83 @@ data:
 img: systems/rogue-trader-3rd/icons/items/buckets/mod-ammo-pack.png
 name: Whisper-bolt Discharger
 type: weaponModification
+---
+data:
+    craftsmanship: common
+    availability: Rare
+    weight: 1
+    equipped: false
+    inBackpack: false
+    description: 'More than a simple crossguards or quillons, some sword hilts provide significant protection to the hand that wields them. The best of these are basket-hilt guards crafted from adamantium alloys that effectively shield the whole hand. Some hilts are elaborately fashioned with intricate designs, effigies of Imperial saints, or even the noble visage of the Emperor Himself.'
+    source: Faith and Coin, p.90
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/mod-ammo-pack.png
+name: Adamantine Hilt Guard
+type: weaponModification
+---
+data:
+    craftsmanship: common
+    availability: Very Rare
+    weight: 0
+    equipped: false
+    inBackpack: false
+    description: 'A melee weapon can be consecrated, dipped in sacred oils and unguents or inscribed with tiny, immaculate marks of purity. It might even have the tooth of a martyred saint worked in an ornate reliquary on its hilt, or be wrapped in pages of scripture when not in use. Regardless of the methods the smiths and priests who labour over this weapon employ, the end result is a melee weapon meant to devastate the foes of humanity wherever they might lurk.'
+    source: Faith and Coin, p.90
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/mod-ammo-pack.png
+name: Blessed Edge
+type: weaponModification
+---
+data:
+    craftsmanship: common
+    availability: Rare
+    weight: 1
+    equipped: false
+    inBackpack: false
+    description: 'This small canister can be attached to almost any flamer and contains scared oils and blessed promethium consecrated by the Ecclesiarchy. A single shot from a flamer with this attachment can unleash a torrent of holy fire, searing not only the flesh, but the soul of its target as well. A character wielding a flamer equipped with a consecrated filter canister can use it to have the weapon gain the Cleansing Fire and Sanctified Qualities for 1d5 Rounds.'
+    source: Faith and Coin, p.90
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/mod-ammo-pack.png
+name: Consecrated Filter Canister
+type: weaponModification
+---
+data:
+    craftsmanship: common
+    availability: Scarce
+    weight: 1
+    equipped: false
+    inBackpack: false
+    description: 'A relatively simply device that can be affixed to nearly any melee weapon, a discharge pack is little more than a primary cell and electrode. With a flip of a switch, the user can charge the weapon with a potentially lethal surge of electricity. A character wielding a melee weapon equipped with a discharge pack can use it to have the weapon gain the Shocking Quality for 1d5 Rounds.'
+    source: Faith and Coin, p.90
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/mod-ammo-pack.png
+name: Discharge Pack
+type: weaponModification
+---
+data:
+    craftsmanship: common
+    availability: Extremely Rare
+    weight: 1.5
+    equipped: false
+    inBackpack: false
+    description: 'The psyocculum uses psycho-sensitive crystal lenses to allow the user to track targets with Warp signatures. These eyepieces are often linked to weapons, to enable the operator to track psykers even in pitch darkness. Weapons fitted with a psyocculum grant a +10 bonus to the user''s Ballistic Skills Tests made to hit psykers and Daemons.'
+    source: Faith and Coin, p.90
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/mod-ammo-pack.png
+name: Psyocculum
+type: weaponModification

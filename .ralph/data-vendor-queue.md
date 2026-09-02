@@ -235,3 +235,20 @@ weapon-mods +14, tools +11, consumables +8, cybernetics +6. Each tagged `source:
   (mapped Power) and Mesh-Weave Clothing (Other) classifications.
 - **Armour Upgrades table (p.63)** was NOT imported (no dedicated armour-modification pack exists) — TODO.
 - Weight fields for weapon-mods are the printed relative modifiers (+2, +1/4, etc.) reduced to a number.
+
+---
+
+## Faith and Coin player-gear import (0.9.14, 2026-09-02) — 99 items, needs RT-rules review
+
+Same deterministic pipeline as the Hostile Acquisitions import (scratchpad `extract_fc.py`). From
+`RT-DOCS/roguetrader_faithandcoin.pdf/markdown.md` Ch.III "Weapons of the Righteous" tables (pp.80-98).
+Counts: weapons +47, armour +5, ammo +9, weapon-mods +5, tools +28, consumables +5. Dedup by exact name.
+
+**Review / follow-up:**
+- New weapon qualities **Sanctified**, **Cleansing Fire**, **Stun** are stored as flags (`sanctified`,
+  `cleansingFire`, `stun`) but NOT yet automated in the damage engine — description-only for now.
+  (Sanctified is in the attack-specials catalog already; wire cleansingFire/stun if desired.)
+- Prose descriptions from markdown headings; items without a heading got the "see source book" placeholder.
+- Holy Relics chapter (unique named artefacts, ~p.100+) NOT imported (plot artefacts, like HA's treasures).
+- Stat spot-check recommended (Conversion Beamer range profiles, shield Defensive entries, Missiles with
+  no class/range).

@@ -679,3 +679,73 @@ data:
 img: systems/rogue-trader-3rd/icons/items/buckets/consumable-drug-vial.png
 name: Tox-Mister
 type: drug
+---
+data:
+    craftsmanship: common
+    availability: Scarce
+    weight: 0.5
+    equipped: false
+    inBackpack: false
+    description: 'The root of the aletheias plant is well-known to have certain narcotic effects. While relatively short-acting and not particularly addictive, the aletheias root can be distilled into a virtually tasteless substance used by some in the Expanse as a truth serum. If properly administered, aletheias root can lower a person''s inhibitions to such a degree that he spills his deepest secrets and confesses his wickedest sins.'
+    source: Faith and Coin, p.95
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/consumable-drug-vial.png
+name: Aletheias Root
+type: drug
+---
+data:
+    craftsmanship: common
+    availability: Rare
+    weight: 1
+    equipped: false
+    inBackpack: false
+    description: 'A peculiar fungus native to a few oases on Sideria II, azure cap has bizarre hallucinogenic and physiological effects on humans. Consumed by certain tribes of the indigenous population as part of spiritual or religious rituals, the strange aftereffects of eating the brightly-hued blue mushroom have been noted by certain traders who have visited the world.'
+    source: Faith and Coin, p.95
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/consumable-drug-vial.png
+name: Azure Cap
+type: drug
+---
+data:
+    craftsmanship: common
+    availability: Rare
+    weight: 0.5
+    equipped: false
+    inBackpack: false
+    description: 'Extracted from the bark of the apate tree of Biryonox Prime, deadfall had a peculiar toxic effect. If ingested in the proper dosage, deadfall can place a person in a comatose state, slowing their heart rate, breathing, and other vital signs so as to be virtually indistinguishable from death. An Explorer who ingests deadfall must make a Hard (–20) Toughness Test; if he fails, he immediately falls into a temporary, death-like state for 3d10 hours.'
+    source: Faith and Coin, p.95
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/consumable-drug-vial.png
+name: Deadfall
+type: drug
+---
+data:
+    craftsmanship: common
+    availability: Very Rare
+    weight: 4
+    equipped: false
+    inBackpack: false
+    description: 'Prized by those who tend to the sick and wounded, the medicus ministorum is a superb medikit containing some of the finest medicae supplies the Imperium can offer. An Explorer using a medicus ministorum scores an additional 2 Degrees of Success on successful Medicae Tests and reduces his Degrees of Failure on failed Medicae Tests by 2 (to a minimum of a failed Test with 0 Degrees of Failure).'
+    source: Faith and Coin, p.95
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/consumable-drug-vial.png
+name: Medicus Ministorum
+type: drug
+---
+data:
+    craftsmanship: common
+    availability: Scarce
+    weight: 0.5
+    equipped: false
+    inBackpack: false
+    description: 'Distilled from the rhodopis plant that grows on Everharvest, this strange brew has peculiar effects on human physiology. Quickening the neurotransmission of synaptic impulses and increasing the levels of serotonin in the brain, rhodopis juice can temporarily increase the mental acuity and memory retention of the imbiber, as well as alter his social interactions with others, generally in a positive (albeit slightly more aggressive) manner.'
+    source: Faith and Coin, p.95
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/consumable-drug-vial.png
+name: Rhodopis Juice
+type: drug

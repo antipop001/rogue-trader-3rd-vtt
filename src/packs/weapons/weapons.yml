@@ -7227,3 +7227,1367 @@ data:
 img: systems/rogue-trader-3rd/icons/items/buckets/thrown-grenade.png
 name: Shock Net
 type: weapon
+---
+data:
+    availability: Average
+    class: Pistol
+    clip:
+        max: 1
+        value: 1
+    craftsmanship: Common
+    damage: 1d10+4
+    damageType: Energy
+    description: 'Special: Unreliable.'
+    equipped: false
+    modifications: []
+    penetration: 0
+    range: 20
+    rateOfFire:
+        burst: 0
+        full: 0
+        single: 1
+    reload: Full
+    source: Faith and Coin, p.80
+    special:
+        unreliable: true
+    type: Las
+    weight: 0.5
+img: systems/rogue-trader-3rd/icons/items/buckets/pistol-las.png
+name: Clovis Twist Pistol
+type: weapon
+---
+data:
+    availability: Scarce
+    class: Basic
+    clip:
+        max: 30
+        value: 30
+    craftsmanship: Common
+    damage: 1d10+2
+    damageType: Energy
+    description: 'Special: Inaccurate.'
+    equipped: false
+    modifications: []
+    penetration: 0
+    range: 40
+    rateOfFire:
+        burst: 3
+        full: 10
+        single: 1
+    reload: Full
+    source: Faith and Coin, p.80
+    special:
+        inaccurate: true
+    type: Las
+    weight: 3.5
+img: systems/rogue-trader-3rd/icons/items/buckets/basic-las.png
+name: Persuader Lasgun
+type: weapon
+---
+data:
+    availability: Scarce
+    class: Pistol
+    clip:
+        max: 18
+        value: 18
+    craftsmanship: Common
+    damage: 1d10+2
+    damageType: Impact
+    description: 'Special: Reliable.'
+    equipped: false
+    modifications: []
+    penetration: 0
+    range: 30
+    rateOfFire:
+        burst: 2
+        full: 6
+        single: 1
+    reload: Full
+    source: Faith and Coin, p.80
+    special:
+        reliable: true
+    type: SP
+    weight: 3
+img: systems/rogue-trader-3rd/icons/items/buckets/pistol-sp.png
+name: Volcano Autopistol
+type: weapon
+---
+data:
+    availability: Scarce
+    class: Basic
+    clip:
+        max: 8
+        value: 8
+    craftsmanship: Common
+    damage: 1d10+5
+    damageType: Impact
+    description: 'Special: Scatter, Unreliable.'
+    equipped: false
+    modifications: []
+    penetration: 0
+    range: 30
+    rateOfFire:
+        burst: 3
+        full: 0
+        single: 1
+    reload: 2 Full
+    source: Faith and Coin, p.80
+    special:
+        scatter: true
+        unreliable: true
+    type: SP
+    weight: 5.5
+img: systems/rogue-trader-3rd/icons/items/buckets/basic-sp.png
+name: Lucius Shotgun
+type: weapon
+---
+data:
+    availability: Common
+    class: Basic
+    clip:
+        max: 5
+        value: 5
+    craftsmanship: Common
+    damage: 1d10+4
+    damageType: Impact
+    description: 'Special: Unreliable. A catchall term for a wide variety of high-calibre rifles produced by thousands of manufacturers and forge worlds across the Calixis Sector, Grox guns are so called for their ability to drop a Grox with a single shot. Grox guns come in many shapes and sizes, though they tend to be long-barrelled rifles suitable for hunting.'
+    equipped: false
+    modifications: []
+    penetration: 4
+    range: 110
+    rateOfFire:
+        burst: 0
+        full: 0
+        single: 1
+    reload: 2 Full
+    source: Faith and Coin, p.80
+    special:
+        unreliable: true
+    type: SP
+    weight: 6
+img: systems/rogue-trader-3rd/icons/items/buckets/basic-sp.png
+name: Grox Gun
+type: weapon
+---
+data:
+    availability: Very Rare
+    class: Heavy
+    clip:
+        max: 20
+        value: 20
+    craftsmanship: Common
+    damage: 3d10+8
+    damageType: Impact
+    description: 'Special: Reliable.'
+    equipped: false
+    modifications: []
+    penetration: 6
+    range: 300
+    rateOfFire:
+        burst: 3
+        full: 0
+        single: 1
+    reload: 2 Full
+    source: Faith and Coin, p.80
+    special:
+        reliable: true
+    type: SP
+    weight: 40
+img: systems/rogue-trader-3rd/icons/items/buckets/heavy-sp.png
+name: Autocannon
+type: weapon
+---
+data:
+    availability: Extremely Rare
+    class: Basic
+    clip:
+        max: 24
+        value: 24
+    craftsmanship: Common
+    damage: 1d10+5
+    damageType: Explosive
+    description: 'Special: Tearing, Sanctified.'
+    equipped: false
+    modifications: []
+    penetration: 4
+    range: 90
+    rateOfFire:
+        burst: 2
+        full: 4
+        single: 1
+    reload: 2 Full
+    source: Faith and Coin, p.80
+    special:
+        sanctified: true
+        tearing: true
+    type: Bolt
+    weight: 7.5
+img: systems/rogue-trader-3rd/icons/items/buckets/basic-bolt.png
+name: Condemnor (Bolt)
+type: weapon
+---
+data:
+    availability: Extremely Rare
+    class: Basic
+    clip:
+        max: 1
+        value: 1
+    craftsmanship: Common
+    damage: 1d10+3
+    damageType: Rending
+    description: 'Special: Accurate, Sanctified.'
+    equipped: false
+    modifications: []
+    penetration: 2
+    range: 45
+    rateOfFire:
+        burst: 0
+        full: 0
+        single: 1
+    reload: 2 Full
+    source: Faith and Coin, p.80
+    special:
+        accurate: true
+        sanctified: true
+    type: Bolt
+    weight: 7.5
+img: systems/rogue-trader-3rd/icons/items/buckets/basic-bolt.png
+name: Condemnor (Crossbow)
+type: weapon
+---
+data:
+    availability: Scarce
+    class: Basic
+    clip:
+        max: 24
+        value: 24
+    craftsmanship: Common
+    damage: 1d10+5
+    damageType: Explosive
+    description: 'Special: Tearing, Reliable.'
+    equipped: false
+    modifications: []
+    penetration: 4
+    range: 90
+    rateOfFire:
+        burst: 2
+        full: 4
+        single: 1
+    reload: Full
+    source: Faith and Coin, p.80
+    special:
+        reliable: true
+        tearing: true
+    type: Bolt
+    weight: 9
+img: systems/rogue-trader-3rd/icons/items/buckets/basic-bolt.png
+name: Scourge Boltgun
+type: weapon
+---
+data:
+    availability: Very Rare
+    class: Pistol
+    clip:
+        max: 6
+        value: 6
+    craftsmanship: Common
+    damage: 1d10+6
+    damageType: Explosive
+    description: 'Special: Tearing, Reliable.'
+    equipped: false
+    modifications: []
+    penetration: 4
+    range: 30
+    rateOfFire:
+        burst: 2
+        full: 0
+        single: 1
+    reload: Full
+    source: Faith and Coin, p.80
+    special:
+        reliable: true
+        tearing: true
+    type: Bolt
+    weight: 3.5
+img: systems/rogue-trader-3rd/icons/items/buckets/pistol-bolt.png
+name: Sacristan Bolt Pistol
+type: weapon
+---
+data:
+    availability: Rare
+    class: Heavy
+    clip:
+        max: 6
+        value: 6
+    craftsmanship: Common
+    damage: 2d10+4
+    damageType: Energy
+    description: 'Special: Scatter.'
+    equipped: false
+    modifications: []
+    penetration: 11
+    range: 10
+    rateOfFire:
+        burst: 0
+        full: 0
+        single: 1
+    reload: 3 Full
+    source: Faith and Coin, p.80
+    special:
+        scatter: true
+    type: Melta
+    weight: 36
+img: systems/rogue-trader-3rd/icons/items/buckets/heavy-melta.png
+name: Mining Melta (Broad)
+type: weapon
+---
+data:
+    availability: Rare
+    class: Heavy
+    clip:
+        max: 6
+        value: 6
+    craftsmanship: Common
+    damage: 3d10+8
+    damageType: Energy
+    description: 'Special: Overheats.'
+    equipped: false
+    modifications: []
+    penetration: 13
+    range: 5
+    rateOfFire:
+        burst: 0
+        full: 0
+        single: 1
+    reload: 3 Full
+    source: Faith and Coin, p.80
+    special:
+        overheats: true
+    type: Melta
+    weight: 36
+img: systems/rogue-trader-3rd/icons/items/buckets/heavy-melta.png
+name: Mining Melta (Focused)
+type: weapon
+---
+data:
+    availability: Near Unique
+    class: Heavy
+    clip:
+        max: 20
+        value: 20
+    craftsmanship: Common
+    damage: 2d10+10
+    damageType: Energy
+    description: 'Special: Blast (1), Overheat.'
+    equipped: false
+    modifications: []
+    penetration: 8
+    range: 150
+    rateOfFire:
+        burst: 0
+        full: 0
+        single: 1
+    reload: 5 Full
+    source: Faith and Coin, p.80
+    special:
+        blast: 1
+        overheats: true
+    type: Plasma
+    weight: 45
+img: systems/rogue-trader-3rd/icons/items/buckets/heavy-plasma.png
+name: M31 Plasma Cannon
+type: weapon
+---
+data:
+    availability: Very Rare
+    class: Basic
+    clip:
+        max: 40
+        value: 40
+    craftsmanship: Common
+    damage: 1d10+7
+    damageType: Energy
+    description: 'Special: Overheat, Unstable. Working from records compiled from previous explorer reports, Marquette was aware that Asandre had a sizeable human population, along with some remaining fragments of knowledge from the Dark Age of Technology. He knew that they still possessed basic vox communications and had jury-rigged an erratic network for passing missives this way, though they lacked the tools to travel off world.'
+    equipped: false
+    modifications: []
+    penetration: 6
+    range: 90
+    rateOfFire:
+        burst: 2
+        full: 0
+        single: 1
+    reload: 5 Full
+    source: Faith and Coin, p.80
+    special:
+        overheats: true
+        unstable: true
+    type: Plasma
+    weight: 18
+img: systems/rogue-trader-3rd/icons/items/buckets/basic-plasma.png
+name: Asandre Plasma Gun
+type: weapon
+---
+data:
+    availability: Extremely Rare
+    class: Basic
+    clip:
+        max: 6
+        value: 6
+    craftsmanship: Common
+    damage: 1d10+8
+    damageType: Energy
+    description: 'Special: Cleansing Fire, Flame, Sanctified. A heavily modified flamer, the incinerator''s fire projectors and containment vessels have been significantly altered to accommodate its unique fuel, psychically charged promethium. Designed and crafted exclusively on the moon of Deimos by the techno-artisans of the Adeptus Mechanicus these weapons were originally meant only for use by the holy warriors of Titan, the Grey Knights.'
+    equipped: false
+    modifications: []
+    penetration: 4
+    range: 20
+    rateOfFire:
+        burst: 0
+        full: 0
+        single: 1
+    reload: 2 Full
+    source: Faith and Coin, p.80
+    special:
+        cleansingFire: true
+        flame: true
+        sanctified: true
+    type: Flame
+    weight: 6
+img: systems/rogue-trader-3rd/icons/items/buckets/basic-flame.png
+name: Incinerator
+type: weapon
+---
+data:
+    availability: Very Rare
+    class: Pistol
+    clip:
+        max: 2
+        value: 2
+    craftsmanship: Common
+    damage: 1d10+4
+    damageType: Energy
+    description: 'Special: Flame, Toxic. Footfall is described on page 342 of the **ROGUE TRADER** Core Rulebook. As a seething den of criminality and vice, Footfall is an ideal setting for the Explorers to pick up the latest gossip from the Expanse. The problem is, such gossip is rife amongst the void-addled and burned-out crew who skulk in the bars and criminal haunts, and very little they say can be trusted.'
+    equipped: false
+    modifications: []
+    penetration: 2
+    range: 10
+    rateOfFire:
+        burst: 0
+        full: 0
+        single: 1
+    reload: 2 Full
+    source: Faith and Coin, p.80
+    special:
+        flame: true
+        toxic: true
+    type: Flame
+    weight: 4
+img: systems/rogue-trader-3rd/icons/items/buckets/pistol-flame.png
+name: Footfall Hand Flamer
+type: weapon
+---
+data:
+    availability: Average
+    class: Basic
+    clip:
+        max: 1
+        value: 1
+    craftsmanship: Common
+    damage: 1d5
+    damageType: Rending
+    description: 'Special: Accurate, Primitive, Toxic. Blowguns are simple tubes or pipes that fire darts powered by the user''s own breath. Typically made from carved hardwoods or cane shoots but sometimes cut from iron tubes found inside of a ship or even from hollowed bones, blowguns can be found among countless cultures throughout the galaxy, as well as in the hands of assassins who value the weapon''s silent efficiency when firing toxin-coated darts.'
+    equipped: false
+    modifications: []
+    penetration: 0
+    range: 20
+    rateOfFire:
+        burst: 0
+        full: 0
+        single: 1
+    reload: Half
+    source: Faith and Coin, p.80
+    special:
+        accurate: true
+        primitive: true
+        toxic: true
+    type: Primitive
+    weight: 0.5
+img: systems/rogue-trader-3rd/icons/items/buckets/basic-primitive.png
+name: Blowgun
+type: weapon
+---
+data:
+    availability: Scarce
+    class: Thrown
+    clip:
+        max: 1
+        value: 1
+    craftsmanship: Common
+    damage: 1d10+1
+    damageType: Rending
+    description: 'Special: Primitive, Tearing. A heavy javelin with a long, thin iron or steel tip and shank attached to a wooden haft, the falarica is commonly used as a shock weapon by the warriors of Setabi V. Thrown with considerable force, the sharp metal head is able to penetrate light armour. The Setabians often bind combustible materials to the metal shaft, in order to use the falarica as an incendiary weapon, making it all the more dangerous in combat.'
+    equipped: false
+    modifications: []
+    penetration: 1
+    range: 10
+    rateOfFire:
+        burst: 0
+        full: 0
+        single: 1
+    reload: ''
+    source: Faith and Coin, p.80
+    special:
+        primitive: true
+        tearing: true
+    type: Primitive
+    weight: 2.5
+img: systems/rogue-trader-3rd/icons/items/buckets/thrown-grenade.png
+name: Falarica
+type: weapon
+---
+data:
+    availability: Average
+    class: Thrown
+    clip:
+        max: 1
+        value: 1
+    craftsmanship: Common
+    damage: 1d10
+    damageType: Rending
+    description: 'Special: Primitive. A spear-thrower is a simple tool that uses leverage to allow a warrior to hurl his missiles with greater velocity and range when throwing javelins or spears. Little more than a shaft with a notch or spur at the end to support the javelin, which acts as a lever with the throwing arm. These weapons extend the length of the throw and impart significantly more energy into it.'
+    equipped: false
+    modifications: []
+    penetration: 2
+    range: 20
+    rateOfFire:
+        burst: 0
+        full: 0
+        single: 1
+    reload: Full
+    source: Faith and Coin, p.80
+    special:
+        primitive: true
+    type: Primitive
+    weight: 1.5
+img: systems/rogue-trader-3rd/icons/items/buckets/thrown-grenade.png
+name: Spear-thrower
+type: weapon
+---
+data:
+    availability: Extremely Rare
+    class: Heavy
+    clip:
+        max: 1
+        value: 1
+    craftsmanship: Common
+    damage: 3d10+10
+    damageType: Explosive
+    description: 'Special: Accurate, Blast (1), Overheats.'
+    equipped: false
+    modifications: []
+    penetration: 10
+    range: 500
+    rateOfFire:
+        burst: 0
+        full: 0
+        single: 1
+    reload: 3 Full
+    source: Faith and Coin, p.80
+    special:
+        accurate: true
+        blast: 1
+        overheats: true
+    type: Launcher
+    weight: 38
+img: systems/rogue-trader-3rd/icons/items/buckets/heavy-launcher.png
+name: Sollex Electo-pult
+type: weapon
+---
+data:
+    availability: Extremely Rare
+    class: Basic
+    clip:
+        max: 8
+        value: 8
+    craftsmanship: Common
+    damage: 1d10+6
+    damageType: Energy
+    description: 'Special: Inaccurate. A strange weapon likely of xenos design, the dessicator fusil is an enigma even to the adepts of the Mechanicus. As its name suggests, the dessicator literally sucks the water from its target, evaporating moisture at an alarming rate. The weapon fires a concentrated yellow beam of energy that rapidly vaporises virtually any liquid with which it comes in contact.'
+    equipped: false
+    modifications: []
+    penetration: 2
+    range: 40
+    rateOfFire:
+        burst: 0
+        full: 0
+        single: 1
+    reload: Full
+    source: Faith and Coin, p.80
+    special:
+        inaccurate: true
+    type: Exotic
+    weight: 6.5
+img: systems/rogue-trader-3rd/icons/items/buckets/basic-exotic.png
+name: Dessicator Fusil
+type: weapon
+---
+data:
+    availability: Near Unique
+    class: Heavy
+    clip:
+        max: 6
+        value: 6
+    craftsmanship: Common
+    damage: 1d10+6
+    damageType: Energy
+    description: 'Special: Blast (1), Recharge. Incredibly rare artefacts whose true inner workings are ill-understood by all but the most learned acolytes of the Omnissiah, conversion beam projectors fire high energy beams that induce a contained subatomic reaction in their targets, converting matter into energy. The beams intensify as they pass through the air, paradoxically making them far more deadly at longer ranges as the blasts gains energy and penetrating power.'
+    equipped: false
+    modifications: []
+    penetration: 4
+    range: 150
+    rateOfFire:
+        burst: 0
+        full: 0
+        single: 1
+    reload: 2 Full
+    source: Faith and Coin, p.80
+    special:
+        blast: 1
+        recharge: true
+    type: Exotic
+    weight: 55
+img: systems/rogue-trader-3rd/icons/items/buckets/heavy-exotic.png
+name: Conversion Beamer (Short Range or closer)
+type: weapon
+---
+data:
+    availability: Near Unique
+    class: Heavy
+    clip:
+        max: 6
+        value: 6
+    craftsmanship: Common
+    damage: 2d10+8
+    damageType: Energy
+    description: 'Special: Blast (2), Recharge. Incredibly rare artefacts whose true inner workings are ill-understood by all but the most learned acolytes of the Omnissiah, conversion beam projectors fire high energy beams that induce a contained subatomic reaction in their targets, converting matter into energy. The beams intensify as they pass through the air, paradoxically making them far more deadly at longer ranges as the blasts gains energy and penetrating power.'
+    equipped: false
+    modifications: []
+    penetration: 8
+    range: 150
+    rateOfFire:
+        burst: 0
+        full: 0
+        single: 1
+    reload: 2 Full
+    source: Faith and Coin, p.80
+    special:
+        blast: 2
+        recharge: true
+    type: Exotic
+    weight: 55
+img: systems/rogue-trader-3rd/icons/items/buckets/heavy-exotic.png
+name: Conversion Beamer (Medium Range)
+type: weapon
+---
+data:
+    availability: Near Unique
+    class: Heavy
+    clip:
+        max: 6
+        value: 6
+    craftsmanship: Common
+    damage: 3d10+10
+    damageType: Energy
+    description: 'Special: Blast (3), Recharge. Incredibly rare artefacts whose true inner workings are ill-understood by all but the most learned acolytes of the Omnissiah, conversion beam projectors fire high energy beams that induce a contained subatomic reaction in their targets, converting matter into energy. The beams intensify as they pass through the air, paradoxically making them far more deadly at longer ranges as the blasts gains energy and penetrating power.'
+    equipped: false
+    modifications: []
+    penetration: 12
+    range: 150
+    rateOfFire:
+        burst: 0
+        full: 0
+        single: 1
+    reload: 2 Full
+    source: Faith and Coin, p.80
+    special:
+        blast: 3
+        recharge: true
+    type: Exotic
+    weight: 55
+img: systems/rogue-trader-3rd/icons/items/buckets/heavy-exotic.png
+name: Conversion Beamer (Long Range or farther)
+type: weapon
+---
+data:
+    availability: Extremely Rare
+    class: Basic
+    clip:
+        max: 0
+        value: 0
+    craftsmanship: Common
+    damage: ''
+    damageType: Impact
+    description: 'Special: Scatter. A strange and rare weapon, the neural shredder uses agonising and little-understood technology to inflict incredible harm upon its victims. As its name indicates, the neural shredder is able to disrupt the neural synapses of living brains, resulting in violent seizures, memory loss, unconsciousness, and horrific death.'
+    equipped: false
+    modifications: []
+    penetration: 0
+    range: 30
+    rateOfFire:
+        burst: 0
+        full: 0
+        single: 1
+    reload: 2 Full
+    source: Faith and Coin, p.80
+    special:
+        scatter: true
+    type: Exotic
+    weight: 4
+img: systems/rogue-trader-3rd/icons/items/buckets/basic-exotic.png
+name: Neural Shredder
+type: weapon
+---
+data:
+    availability: Extremely Rare
+    class: Thrown
+    clip:
+        max: 0
+        value: 0
+    craftsmanship: Common
+    damage: ''
+    damageType: Explosive
+    description: 'Special: Blast (3), Stun. Range: SBx3. A peculiar grenade often used by Witch Finders and Imperial agents tasked with hunting psykers and creatures of the Warp, psyk-out grenades are produced using extremely rare and secret components. On detonation, psyk-out grenades spew forth a cloud of psy-reactive particles that disrupt the invisible bonds between reality and the Warp.'
+    equipped: false
+    modifications: []
+    penetration: 0
+    range: 0
+    rateOfFire:
+        burst: 0
+        full: 0
+        single: 1
+    reload: ''
+    source: Faith and Coin, p.84
+    special:
+        blast: 3
+        stun: true
+    type: Thrown
+    weight: 0.5
+img: systems/rogue-trader-3rd/icons/items/buckets/thrown-grenade.png
+name: Psyk-out Grenade
+type: weapon
+---
+data:
+    availability: Rare
+    class: Thrown
+    clip:
+        max: 0
+        value: 0
+    craftsmanship: Common
+    damage: 2d10
+    damageType: Explosive
+    description: 'Special: Blast (3), Toxic. Range: SBx3. Rad grenades expose those caught in their blast to a shower of crippling radiation. Though the radioactive particles have a half-life of mere milliseconds, allowing the thrower to charge into close combat without exposing himself to the contamination, those struck by the initial blast quickly feel the debilitating effects of the radiation.'
+    equipped: false
+    modifications: []
+    penetration: 0
+    range: 0
+    rateOfFire:
+        burst: 0
+        full: 0
+        single: 1
+    reload: ''
+    source: Faith and Coin, p.84
+    special:
+        blast: 3
+        toxic: true
+    type: Thrown
+    weight: 1
+img: systems/rogue-trader-3rd/icons/items/buckets/thrown-grenade.png
+name: Rad Grenade
+type: weapon
+---
+data:
+    availability: Near Unique
+    class: Thrown
+    clip:
+        max: 0
+        value: 0
+    craftsmanship: Common
+    damage: ''
+    damageType: Explosive
+    description: 'Special: Blast (3). Range: SBx3. Rare and terrible weapons, vortex grenades contain mechanisms capable of creating small rifts between reality and the Warp. A weighty sphere about the size of a man''s clenched fist, a vortex grenades is too large and too delicate to be loaded into a grenade launcher. Anyone or anything caught in the vortex created by the grenade is utterly destroyed, dragged from the universe into the nightmarish Empyrean.'
+    equipped: false
+    modifications: []
+    penetration: 0
+    range: 0
+    rateOfFire:
+        burst: 0
+        full: 0
+        single: 1
+    reload: ''
+    source: Faith and Coin, p.84
+    special:
+        blast: 3
+    type: Thrown
+    weight: 1.5
+img: systems/rogue-trader-3rd/icons/items/buckets/thrown-grenade.png
+name: Vortex Grenade
+type: weapon
+---
+data:
+    availability: Near Unique
+    class: Thrown
+    clip:
+        max: 0
+        value: 0
+    craftsmanship: Common
+    damage: 5d10+10
+    damageType: Explosive
+    description: 'Special: Blast (15). Cyclonic missiles operate on a principle similar to their much larger cousins, the cyclonic torpedoes used by Inquisitors to deliver the ultimate sanction against a planet: Exterminatus. These munitions are jealously guarded by the Holy Ordos, and it is a capital crime for even a Rogue Trader to possess one.'
+    equipped: false
+    modifications: []
+    penetration: 1
+    range: 0
+    rateOfFire:
+        burst: 0
+        full: 0
+        single: 1
+    reload: ''
+    source: Faith and Coin, p.84
+    special:
+        blast: 15
+    type: Thrown
+    weight: 1
+img: systems/rogue-trader-3rd/icons/items/buckets/thrown-grenade.png
+name: Cyclonic Missile
+type: weapon
+---
+data:
+    availability: Very Rare
+    class: Thrown
+    clip:
+        max: 0
+        value: 0
+    craftsmanship: Common
+    damage: 2d10+4
+    damageType: Explosive
+    description: 'Special: Blast (1). Containing advanced sensoriums and guidance cogitators that lock on their target and help guide the missile to its target, life-seeker missiles are heavily-modified Krak missiles. Condemned by most orthodox Tech-Priests of the Adeptus Mechanicus as heretical and an affront to the Omnissiah, these missiles are only manufactured in a few places in the Calixis Sector and are consequently very difficult to acquire.'
+    equipped: false
+    modifications: []
+    penetration: 8
+    range: 0
+    rateOfFire:
+        burst: 0
+        full: 0
+        single: 1
+    reload: ''
+    source: Faith and Coin, p.84
+    special:
+        blast: 1
+    type: Thrown
+    weight: 1
+img: systems/rogue-trader-3rd/icons/items/buckets/thrown-grenade.png
+name: Life-Seeker Missile
+type: weapon
+---
+data:
+    availability: Near Unique
+    class: Melee
+    clip:
+        max: 0
+        value: 0
+    craftsmanship: Common
+    damage: 2d10
+    damageType: Rending
+    description: 'Special: Primitive, Unbalanced, Sanctified. Crafted shortly after the liberation of Nazhdureyah from its psychic masters, these resplendent two-handed swords were given to three hundred of Genevieve Almace''s most ardent followers. Forming her personal bodyguard, this cadre came to be known as Almace''s Companions, and the swords that they bore were known colloquially as soul blades.'
+    equipped: false
+    modifications: []
+    penetration: 2
+    range: 0
+    rateOfFire:
+        burst: 0
+        full: 0
+        single: 1
+    reload: ''
+    source: Faith and Coin, p.87
+    special:
+        primitive: true
+        sanctified: true
+        unbalanced: true
+    type: Primitive
+    weight: 5.5
+img: systems/rogue-trader-3rd/icons/items/buckets/melee-primitive-sword.png
+name: Soul Blade
+type: weapon
+---
+data:
+    availability: Extremely Rare
+    class: Melee
+    clip:
+        max: 0
+        value: 0
+    craftsmanship: Common
+    damage: 2d10+3
+    damageType: Rending
+    description: 'Special: Flexible, Primitive, Sanctified, Snare, Tearing. Reach: 5m. Most often wielded by zealous missionaries and other agents of the Ecclesiarchy, these thrice-blessed weapons consist of several heavy steel balls attached by lengths of chains to an elaborately crafted handle of ivory and silver. The heads of these weapons are spiked, and the chains feature wicked barbs and hooks intended to grasp a target''s flesh and constrict as he struggles. A flail of chastisement is a two-handed weapon.'
+    equipped: false
+    modifications: []
+    penetration: 0
+    range: 0
+    rateOfFire:
+        burst: 0
+        full: 0
+        single: 1
+    reload: ''
+    source: Faith and Coin, p.87
+    special:
+        flexible: true
+        primitive: true
+        sanctified: true
+        snare: true
+        tearing: true
+    type: Primitive
+    weight: 4
+img: systems/rogue-trader-3rd/icons/items/buckets/melee-primitive-sword.png
+name: Flail of Chastisement
+type: weapon
+---
+data:
+    availability: Rare
+    class: Melee
+    clip:
+        max: 0
+        value: 0
+    craftsmanship: Common
+    damage: 1d10+4
+    damageType: Rending
+    description: 'Special: Primitive, Tearing, Unbalanced. The verdant world of Ntharis is known for the bounty of its crop yield. For millennia prior to opening of the Koronus Passage, the inhabitants of this world used primitive scythes to harvest their crops. The falx is essentially that simple tool turned to war. A long, two-handed weapon, the falx is a pole with a large, curved blade, honed to razor sharpness on the inside edge.'
+    equipped: false
+    modifications: []
+    penetration: 2
+    range: 0
+    rateOfFire:
+        burst: 0
+        full: 0
+        single: 1
+    reload: ''
+    source: Faith and Coin, p.87
+    special:
+        primitive: true
+        tearing: true
+        unbalanced: true
+    type: Primitive
+    weight: 6.5
+img: systems/rogue-trader-3rd/icons/items/buckets/melee-primitive-sword.png
+name: Ntharian Falx
+type: weapon
+---
+data:
+    availability: Scarce
+    class: Melee
+    clip:
+        max: 0
+        value: 0
+    craftsmanship: Common
+    damage: 1d5+2
+    damageType: Impact
+    description: 'Special: Defensive, Primitive. A large shield, usually made of wood sheathed in metal, the apsis is most commonly used by soldiers on well-regimented feudal worlds where armies form into large phalanxes and fight en masse. Protected behind a wall of shields, the phalanx steadily advances, rolling over anything that stands in its way.'
+    equipped: false
+    modifications: []
+    penetration: 0
+    range: 0
+    rateOfFire:
+        burst: 0
+        full: 0
+        single: 1
+    reload: ''
+    source: Faith and Coin, p.87
+    special:
+        defensive: true
+        primitive: true
+    type: Primitive
+    weight: 4
+img: systems/rogue-trader-3rd/icons/items/buckets/melee-primitive-sword.png
+name: Apsis Shield
+type: weapon
+---
+data:
+    availability: Very Rare
+    class: Melee
+    clip:
+        max: 0
+        value: 0
+    craftsmanship: Common
+    damage: 2d10
+    damageType: Rending
+    description: 'Special: Tearing, Unbalanced. A chainfist is a power fist fitted with a chainblade attachment designed to cut through armour and metal plating. Originally intended for use during boarding actions to carve open hulls and bulkheads, the vicious adamantine blades of these weapons are equally useful in close combat, and with enough strength behind them are capable of slicing through even the thickest personal armour. A chainfist is a one-handed weapon.'
+    equipped: false
+    modifications: []
+    penetration: 12
+    range: 0
+    rateOfFire:
+        burst: 0
+        full: 0
+        single: 1
+    reload: ''
+    source: Faith and Coin, p.87
+    special:
+        tearing: true
+        unbalanced: true
+    type: Chain
+    weight: 15
+img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-sword.png
+name: Chainfist
+type: weapon
+---
+data:
+    availability: Very Rare
+    class: Melee
+    clip:
+        max: 0
+        value: 0
+    craftsmanship: Common
+    damage: 2d10+3
+    damageType: Rending
+    description: 'Special: Tearing, Unwieldy. Favoured by Ecclesiarchy zealots and witch-hunters, the eviscerator is a grotesquely large double-handed chainsword. Although unwieldy and difficult to use, the eviscerator is capable of cutting an armoured man in half or ripping through the hide of the most hideously corrupted mutant with a single bloody stroke.'
+    equipped: false
+    modifications: []
+    penetration: 5
+    range: 0
+    rateOfFire:
+        burst: 0
+        full: 0
+        single: 1
+    reload: ''
+    source: Faith and Coin, p.87
+    special:
+        tearing: true
+        unwieldy: true
+    type: Chain
+    weight: 12
+img: systems/rogue-trader-3rd/icons/items/buckets/melee-chain-sword.png
+name: Eviscerator
+type: weapon
+---
+data:
+    availability: Very Rare
+    class: Melee
+    clip:
+        max: 0
+        value: 0
+    craftsmanship: Common
+    damage: 1d10+8
+    damageType: Energy
+    description: 'Special: Power Field, Unwieldy. Commissioned by the monastic order known as the Order of the Hammer, these weapons are reproductions of the famous archeotech power hammer of Nicomedes Keefe. Exactly how many of these replicas exist or why they were created in the first place is something of a mystery, given their limited resources on Foulstone. A Cognatine hammer is a one-handed weapon. If an Explorer wields a Cognatine hammer in two hands, it inflicts an additional +2 Damage.'
+    equipped: false
+    modifications: []
+    penetration: 5
+    range: 0
+    rateOfFire:
+        burst: 0
+        full: 0
+        single: 1
+    reload: ''
+    source: Faith and Coin, p.87
+    special:
+        powerField: true
+        unwieldy: true
+    type: Power
+    weight: 14
+img: systems/rogue-trader-3rd/icons/items/buckets/melee-power-sword.png
+name: Cognatine Hammer
+type: weapon
+---
+data:
+    availability: Extremely Rare
+    class: Melee
+    clip:
+        max: 0
+        value: 0
+    craftsmanship: Common
+    damage: 1d10+8
+    damageType: Energy
+    description: 'Special: Power Field, Tearing. Lighting claws are among the most fearsome close combat weapons available. Often wielded in pairs, these power gloves feature razor-sharp, adamantine blades sheathed in a power field, and are capable of impaling a man or slicing through most armour with contemptuous ease. Though difficult to come by in the Koronus Expanse, the sight of an Arch-militant or Witch Finder armed a pair of lightning claws is enough to make most foes think twice.'
+    equipped: false
+    modifications: []
+    penetration: 8
+    range: 0
+    rateOfFire:
+        burst: 0
+        full: 0
+        single: 1
+    reload: ''
+    source: Faith and Coin, p.87
+    special:
+        powerField: true
+        tearing: true
+    type: Power
+    weight: 12
+img: systems/rogue-trader-3rd/icons/items/buckets/melee-power-sword.png
+name: Lightning Claws
+type: weapon
+---
+data:
+    availability: Very Rare
+    class: Melee
+    clip:
+        max: 0
+        value: 0
+    craftsmanship: Common
+    damage: 1d10+4
+    damageType: Energy
+    description: 'Special: Cleansing Fire, Power Field, Sanctified. Reach: -/10m. A potent weapon in the Witch Finder''s arsenal, the witch lance is a combination of the techno-arcane and the sacred. Also known as the "power stake" and the "excoriator," the witch lance is designed to destroy psykers and witches utterly and without mercy. A metre-and-a-half long spear or stake of iron and adamantium, the weapon contains a reservoir of promethium mixed with sacred oils and rare anti-psy compounds.'
+    equipped: false
+    modifications: []
+    penetration: 6
+    range: 0
+    rateOfFire:
+        burst: 0
+        full: 0
+        single: 1
+    reload: ''
+    source: Faith and Coin, p.87
+    special:
+        cleansingFire: true
+        powerField: true
+        sanctified: true
+    type: Power
+    weight: 5
+img: systems/rogue-trader-3rd/icons/items/buckets/melee-power-sword.png
+name: Witch Lance
+type: weapon
+---
+data:
+    availability: Unique
+    class: Melee
+    clip:
+        max: 0
+        value: 0
+    craftsmanship: Common
+    damage: 1d10
+    damageType: Energy
+    description: 'Special: Defensive, Power Field, Sanctified. Believed to contain within them tiny shards of the armour worn by the Emperor Himself, these shields are incredibly rare and deeply revered. Legends claim that Saint Cognatius bore a praesidium protectiva, though as with most tales surrounding the saint, it is difficult to tell truth from fiction.'
+    equipped: false
+    modifications: []
+    penetration: 0
+    range: 0
+    rateOfFire:
+        burst: 0
+        full: 0
+        single: 1
+    reload: ''
+    source: Faith and Coin, p.87
+    special:
+        defensive: true
+        powerField: true
+        sanctified: true
+    type: Power
+    weight: 7
+img: systems/rogue-trader-3rd/icons/items/buckets/melee-power-sword.png
+name: Praesidium Protectiva
+type: weapon
+---
+data:
+    availability: Extremely Rare
+    class: Melee
+    clip:
+        max: 0
+        value: 0
+    craftsmanship: Common
+    damage: 1d10+1
+    damageType: Energy
+    description: 'Special: Defensive, Power Field, Shocking. Storm shields are large, heavy shields with power generators built into them. When activated, these shields shimmer and crackle with energy, which is discharged with a clap like thunder when struck, giving the shields their name. The energy field surrounding the shield is capable of absorbing significant damage, and the sheer size of the device also provides considerable protection to anyone with the strength to hold one.'
+    equipped: false
+    modifications: []
+    penetration: 0
+    range: 0
+    rateOfFire:
+        burst: 0
+        full: 0
+        single: 1
+    reload: ''
+    source: Faith and Coin, p.87
+    special:
+        defensive: true
+        powerField: true
+        shocking: true
+    type: Power
+    weight: 10
+img: systems/rogue-trader-3rd/icons/items/buckets/melee-power-sword.png
+name: Storm Shield
+type: weapon
+---
+data:
+    availability: Extremely Rare
+    class: Melee
+    clip:
+        max: 0
+        value: 0
+    craftsmanship: Common
+    damage: 2d10
+    damageType: Rending
+    description: 'Special: Shocking, Tearing, Unbalanced. Said to be crafted in the image of Saint Jason of Huale''s double-headed axe, these massive weapons are studded with conductive jewels that have been cut to a deadly edge and crackle with electricity, making them as lethal as they are beautiful. There are even those who say the weapons are so sharp that they cleave impurities from the air and sin from a man''s soul.'
+    equipped: false
+    modifications: []
+    penetration: 6
+    range: 0
+    rateOfFire:
+        burst: 0
+        full: 0
+        single: 1
+    reload: ''
+    source: Faith and Coin, p.87
+    special:
+        shocking: true
+        tearing: true
+        unbalanced: true
+    type: Shock
+    weight: 10
+img: systems/rogue-trader-3rd/icons/items/buckets/melee-shock.png
+name: Axe of Retribution
+type: weapon
+---
+data:
+    availability: Rare
+    class: Melee
+    clip:
+        max: 0
+        value: 0
+    craftsmanship: Common
+    damage: 1d10+3
+    damageType: Impact
+    description: 'Special: Flexible, Shocking. Reach: 4m. A military adaptation of the simple farmer''s tool used for threshing grain, a flail is often nothing more than two large sticks or batons connected by a short chain. The electro-flail is a cruel modification of this broad archetype of weapon wielded by archoflagellants, terrifying creatures created from irredeemable sinners through unspeakable processes by the Adeptus Ministorum.'
+    equipped: false
+    modifications: []
+    penetration: 1
+    range: 0
+    rateOfFire:
+        burst: 0
+        full: 0
+        single: 1
+    reload: ''
+    source: Faith and Coin, p.87
+    special:
+        flexible: true
+        shocking: true
+    type: Shock
+    weight: 6
+img: systems/rogue-trader-3rd/icons/items/buckets/melee-shock.png
+name: Electro-Flail
+type: weapon
+---
+data:
+    availability: Very Rare
+    class: Melee
+    clip:
+        max: 0
+        value: 0
+    craftsmanship: Common
+    damage: 1d10+5
+    damageType: Impact
+    description: 'Special: Cleansing Fire, Sanctified, Unbalanced. Said to light the faces of the faithful and leave the impure in utter darkness, the brazier of holy fire is both a weapon and symbol of divine authority. Large, heavy maces that can unleash jets of burning promethium fuel from their wickedly spiked heads, these weapons are blessed and sanctified by cardinals of the Ministorum and granted to missionaries and confessors-militant to aid them in bringing the light of the Emperor into the darkest corners of…'
+    equipped: false
+    modifications: []
+    penetration: 0
+    range: 0
+    rateOfFire:
+        burst: 0
+        full: 0
+        single: 1
+    reload: ''
+    source: Faith and Coin, p.87
+    special:
+        cleansingFire: true
+        sanctified: true
+        unbalanced: true
+    type: Exotic
+    weight: 6
+img: systems/rogue-trader-3rd/icons/items/buckets/melee-exotic.png
+name: Brazier of Holy Fire
+type: weapon
+---
+data:
+    availability: Extremely Rare
+    class: Melee
+    clip:
+        max: 0
+        value: 0
+    craftsmanship: Common
+    damage: 1d5+5
+    damageType: Rending
+    description: 'Special: Toxic. A devious race of warrior-monks, the xenos known as the Scythians are all but extinct following a short but brutal war with the Crimson Fists Chapter of Space Marines. Known to use deceitful tactics and poisoned weapons, the deviant xenos managed to assassinate the Crimson Fists'' first Chapter Master Polux before the bloody retribution of the Space Marines nearly wiped them from the galaxy.'
+    equipped: false
+    modifications: []
+    penetration: 3
+    range: 0
+    rateOfFire:
+        burst: 0
+        full: 0
+        single: 1
+    reload: ''
+    source: Faith and Coin, p.87
+    special:
+        toxic: true
+    type: Exotic
+    weight: 1
+img: systems/rogue-trader-3rd/icons/items/buckets/melee-exotic.png
+name: Scythian Venom Talon
+type: weapon
+---
+data:
+    availability: Very Rare
+    class: Melee
+    clip:
+        max: 0
+        value: 0
+    craftsmanship: Common
+    damage: 1d5+4
+    damageType: Rending
+    description: 'Special: Tearing, Unbalanced.'
+    equipped: false
+    modifications: []
+    penetration: 2
+    range: 0
+    rateOfFire:
+        burst: 0
+        full: 0
+        single: 1
+    reload: ''
+    source: Faith and Coin, p.87
+    special:
+        tearing: true
+        unbalanced: true
+    type: Exotic
+    weight: 2.5
+img: systems/rogue-trader-3rd/icons/items/buckets/melee-exotic.png
+name: 'Corruptors'' Kris'
+type: weapon
+---
+data:
+    availability: Rare
+    class: Melee
+    clip:
+        max: 0
+        value: 0
+    craftsmanship: Common
+    damage: 1d10+3
+    damageType: Rending
+    description: 'Special: Flexible, Primitive, Snare, Tearing. Reach: -/10m.'
+    equipped: false
+    modifications: []
+    penetration: 2
+    range: 0
+    rateOfFire:
+        burst: 0
+        full: 0
+        single: 1
+    reload: ''
+    source: Faith and Coin, p.87
+    special:
+        flexible: true
+        primitive: true
+        snare: true
+        tearing: true
+    type: Exotic
+    weight: 1.5
+img: systems/rogue-trader-3rd/icons/items/buckets/melee-exotic.png
+name: Flying Claw
+type: weapon

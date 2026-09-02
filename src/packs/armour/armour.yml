@@ -927,3 +927,98 @@ data:
 img: systems/rogue-trader-3rd/icons/items/buckets/armour-carapace.png
 name: Xenos Chitin Armour
 type: armour
+---
+data:
+    armourPoints:
+        body: 5
+        head: 0
+        leftArm: 5
+        leftLeg: 5
+        rightArm: 5
+        rightLeg: 5
+    availability: Very Rare
+    craftsmanship: Common
+    description: 'Covers Arms, Body, Legs. AP 5.'
+    maxAgility: 0
+    source: Faith and Coin, p.93
+    type: Other
+    weight: 15
+img: systems/rogue-trader-3rd/icons/items/buckets/armour-flak.png
+name: Mirror Armour
+type: armour
+---
+data:
+    armourPoints:
+        body: 6
+        head: 6
+        leftArm: 6
+        leftLeg: 6
+        rightArm: 6
+        rightLeg: 6
+    availability: Very Rare
+    craftsmanship: Common
+    description: 'Covers All. AP 6.'
+    maxAgility: 0
+    source: Faith and Coin, p.93
+    type: Power
+    weight: 45
+img: systems/rogue-trader-3rd/icons/items/buckets/armour-power.png
+name: Engine Armour
+type: armour
+---
+data:
+    armourPoints:
+        body: 10
+        head: 10
+        leftArm: 10
+        leftLeg: 10
+        rightArm: 10
+        rightLeg: 10
+    availability: Extremely Rare
+    craftsmanship: Common
+    description: 'Covers All. AP 10. The finest personal armour available in the galaxy, artificer armour is highly modified power armour. Usually at least several thousand years old, these ancient suits of armour have been altered by craftsmen of incomparable skill with superdense materials and cunningly wrought damage control mechanisms that allow the wearer to shrug off even the most devastating attacks.'
+    maxAgility: 0
+    source: Faith and Coin, p.93
+    type: Power
+    weight: 70
+img: systems/rogue-trader-3rd/icons/items/buckets/armour-power.png
+name: Artificer Armour
+type: armour
+---
+data:
+    armourPoints:
+        body: 10
+        head: 10
+        leftArm: 10
+        leftLeg: 10
+        rightArm: 10
+        rightLeg: 10
+    availability: Near Unique
+    craftsmanship: Common
+    description: 'Covers All. AP 10. The finest personal armour available in the galaxy, artificer armour is highly modified power armour. Usually at least several thousand years old, these ancient suits of armour have been altered by craftsmen of incomparable skill with superdense materials and cunningly wrought damage control mechanisms that allow the wearer to shrug off even the most devastating attacks.'
+    maxAgility: 0
+    source: Faith and Coin, p.93
+    type: Power
+    weight: 75
+img: systems/rogue-trader-3rd/icons/items/buckets/armour-power.png
+name: Artificer Armour (Consecrated)
+type: armour
+---
+data:
+    armourPoints:
+        body: 0
+        head: 5
+        leftArm: 0
+        leftLeg: 0
+        rightArm: 0
+        rightLeg: 0
+    availability: Extremely Rare
+    craftsmanship: Common
+    description: 'Covers Head. AP 5. The standard pattern helm used by the Sisters of Battle since the mid-38th Millennium, the helm''s advanced systems contain a built-in rebreather and photo-visor, allowing the wearer to function in even the most adverse battlefield conditions. The helm is also crafted of psy-nullifying materials, providing the wearer some defence against psykers and witches. This helmet includes a rebreather and a Good Craftsmanship photo-visor.'
+    maxAgility: 0
+    source: Faith and Coin, p.93
+    type: Carapace
+    weight: 2.5
+img: systems/rogue-trader-3rd/icons/items/buckets/armour-carapace.png
+name: Sabbat-pattern Helm
+type: armour

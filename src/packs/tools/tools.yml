@@ -1968,3 +1968,451 @@ data:
 img: systems/rogue-trader-3rd/icons/items/buckets/tool-multi-key.png
 name: Voidbait (Warp)
 type: tool
+---
+data:
+    craftsmanship: common
+    availability: Rare
+    weight: 1.5
+    equipped: false
+    inBackpack: false
+    description: 'Frequently worn by thieves and assassins, whisper boots contain sound dampeners in their soles, which hush the wearer''s footsteps. Though regulated on several planets in the Calixis Sector, whisper boots are popular in the Expanse among those who prefer not to attract too much attention. Whisper boots grant their wearer an additional two Degrees of Success on successful Silent Move Tests.'
+    source: Faith and Coin, p.94
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/tool-multi-key.png
+name: Whisper Boots
+type: tool
+---
+data:
+    craftsmanship: common
+    availability: Very Rare
+    weight: 1.5
+    equipped: false
+    inBackpack: false
+    description: 'Worn by the self-titled Adherents of Aleynikov, these symbolic aprons, which hang front and back from the shoulders, outwardly represent the wearer''s commitment to that missionary''s cause. They were adopted by the Adherents of Aleynikov within a century after her untimely demise.'
+    source: Faith and Coin, p.94
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/tool-multi-key.png
+name: Scapular Incorruptus
+type: tool
+---
+data:
+    craftsmanship: common
+    availability: Extremely Rare
+    weight: 0.1
+    equipped: false
+    inBackpack: false
+    description: 'Traditionally given to the aristocratic youth of Nazhdureyah at the age of maturity, the Djesset is a talisman that was worn by that world''s psychic nobility. Taking the form of a single stylised eye, most often inlaid with precious rubies or carnelian, the Djesset was the outward symbol of the supremacy of psykers.'
+    source: Faith and Coin, p.94
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/tool-multi-key.png
+name: Djesset Talisman
+type: tool
+---
+data:
+    craftsmanship: common
+    availability: Extremely Rare
+    weight: 0.5
+    equipped: false
+    inBackpack: false
+    description: 'Made from phosphorescent crystals gathered from the remnants of a small comet that struck Asandre just prior to the arrival of Jollus Marquette, Eos shards are highly valued among the people of Asandre. The Eos star, as the comet was later named, is said to have heralded a new dawn for the whole world. Folk belief holds that wearing one of these golden, glowing shards against the bare skin grants one the golden tongue of the Marquette.'
+    source: Faith and Coin, p.94
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/tool-multi-key.png
+name: Eos Star Amulet
+type: tool
+---
+data:
+    craftsmanship: common
+    availability: Very Rare
+    weight: 1
+    equipped: false
+    inBackpack: false
+    description: 'An almost universally recognised symbol of the authority of the Adeptus Ministorum, the Rosarius is a potent icon borne by the favoured agents of the Ecclesiarchy. Usually worn prominently at the neck or waist on a chain, a simple cord, or a string of prayer beads, the Rosarius garners the wearer immediate respect and fear from those who live by the Imperial Creed and strike terror into the hearts of those who defy it.'
+    source: Faith and Coin, p.94
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/tool-multi-key.png
+name: Rosarius
+type: tool
+---
+data:
+    craftsmanship: common
+    availability: Extremely Rare
+    weight: 1
+    equipped: false
+    inBackpack: false
+    description: 'The Halo Stars are a dark and mysterious region of the galaxy, and those who dare journey into their ominous depths often seek out means to protect not only their bodies but their souls as well. Among those who explore the dark and ominous reaches of the Koronus Expanse, the rare relics known colloquially as ashen skulls are considered to be a particularly potent safeguard against the spiritual dangers of the vast unknown.'
+    source: Faith and Coin, p.96
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/tool-multi-key.png
+name: Ashen Skull
+type: tool
+---
+data:
+    craftsmanship: common
+    availability: Rare
+    weight: 90
+    equipped: false
+    inBackpack: false
+    description: 'A clacking, wheezing contraption of brass, steel, and wood, the auto-ledger can do the job of a hundred clerks. The calculus logi, variable cogitators, and data recorders built into the auto-ledger can greatly assist Rogue Traders and Seneschals in managing cargos and inventories, as well as the accountancy of the myriad business ventures and trade pacts traders in the Koronus Expanse are likely to undertake.'
+    source: Faith and Coin, p.96
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/tool-multi-key.png
+name: Auto-Ledger
+type: tool
+---
+data:
+    craftsmanship: common
+    availability: Rare
+    weight: 0.5
+    equipped: false
+    inBackpack: false
+    description: 'Bypass spikes are machine interfaces intended to circumvent electronic security systems. The complex matrices and algorithms embedded in the spike assail the machine spirit of any cogitator or electronic device it is connected to, seeking a weakness it can exploit.'
+    source: Faith and Coin, p.96
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/tool-multi-key.png
+name: Bypass Spike
+type: tool
+---
+data:
+    craftsmanship: common
+    availability: Average
+    weight: 1.5
+    equipped: false
+    inBackpack: false
+    description: 'Few orators in the history of the Imperium have equalled the fiery rhetoric of Saint Lucius of Agatha. The sermons of the famed Confessor have been published and republished countless times on thousands of the worlds across the galaxy. The righteousness of the revered saint’s words echo through the long centuries and continue to inspire the faithful to greater acts of devotion.'
+    source: Faith and Coin, p.96
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/tool-multi-key.png
+name: Book of Saint Lucius
+type: tool
+---
+data:
+    craftsmanship: common
+    availability: Scarce
+    weight: 1
+    equipped: false
+    inBackpack: false
+    description: 'No Imperial saint holds greater sway over the Calixis Sector and the Koronus Expanse than Drusus, the determined warmaster who completed the Angevin Crusade and brought the Sector back into the fold of the Imperium of Man. The great man''s military acumen was only surpassed by his intense piety and devotion to the God-Emperor.'
+    source: Faith and Coin, p.96
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/tool-multi-key.png
+name: Catechism of Saint Drusus
+type: tool
+---
+data:
+    craftsmanship: common
+    availability: Rare
+    weight: 5
+    equipped: false
+    inBackpack: false
+    description: 'Implements of either salvation or torture, these superb sets of surgical instruments includes all of the scalpels, lancets, forceps, clamps, needles, dilators, retractors, and probes necessary to conduct most general surgery. While of little application to those not trained to use such tools, in the hands of a skilled chirurgeon, these instruments can be the difference between life and death.'
+    source: Faith and Coin, p.96
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/tool-multi-key.png
+name: 'Chirurgeon''s Tools'
+type: tool
+---
+data:
+    craftsmanship: common
+    availability: Very Rare
+    weight: 1
+    equipped: false
+    inBackpack: false
+    description: 'A legend in the Koronus Expanse renowned for both his piety and brutality, Kobras Aquairre was a Rogue Trader with the almost unprecedented distinction of possessing both a Greater Warrant of Trade and the status of an Inquisitor.'
+    source: Faith and Coin, p.96
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/tool-multi-key.png
+name: Confessions of Kobras Aquairre
+type: tool
+---
+data:
+    craftsmanship: common
+    availability: Rare
+    weight: 200
+    equipped: false
+    inBackpack: false
+    description: 'Based on STC design principles, the decryption cogitator is intended to assist in cracking enemy ciphers and battle codes. The chugging, hissing cogitator is about the size of a massive ammo crate and able to run incredibly complex algorithms over which only the red-robed adepts of Mars claim understanding or mastery.'
+    source: Faith and Coin, p.96
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/tool-multi-key.png
+name: Decryption Cogitator
+type: tool
+---
+data:
+    craftsmanship: common
+    availability: Average
+    weight: 1.5
+    equipped: false
+    inBackpack: false
+    description: 'Within the Koronus Expanse, the laws of the Imperium are rarely applied and trade is usually conducted at the barrel of a gun. However, there are times when Rogue Traders find it more practical to resort to legal agreements and contracts to conduct business.'
+    source: Faith and Coin, p.96
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/tool-multi-key.png
+name: Digesta Emporia Calixia
+type: tool
+---
+data:
+    craftsmanship: common
+    availability: Rare
+    weight: 0.5
+    equipped: false
+    inBackpack: false
+    description: 'Said to be derived from a prescript laid down by the warrior-saint Drusus himself during the warn-torn days of the Angevin Crusade, this incense—a mixture of frankincense, myrrh, camphor, galbanum, and the crushed blossoms of the rare Iocanthine rose—is ritually prepared in the vaults of the Cathedral of Illumination in Hive Tarsus on Scintilla and is renowned for its purifying effect.'
+    source: Faith and Coin, p.96
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/tool-multi-key.png
+name: Drusine Incense
+type: tool
+---
+data:
+    craftsmanship: common
+    availability: Very Rare
+    weight: 0.5
+    equipped: false
+    inBackpack: false
+    description: 'For ten thousand years the Emperor has sat atop the Golden Throne, still and silent as a corpse. Despite his morbid rest, the wise know that the Emperor communicates His divine will through omens, signs, and oracles, and in particular the Emperor’s Tarot. While many are at least familiar with the paper reproductions of the sacred images on the cards, few have ever held the psychoactive crystal wafers of the genuine item.'
+    source: Faith and Coin, p.96
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/tool-multi-key.png
+name: 'The Emperor''s Tarot'
+type: tool
+---
+data:
+    craftsmanship: common
+    availability: Very Rare
+    weight: 2
+    equipped: false
+    inBackpack: false
+    description: 'These small devices are used in the questioning and interrogation of heretics, traitors, and other enemies of the Imperium, and are the tool of choice for eliciting confessions from witches and recidivists.'
+    source: Faith and Coin, p.96
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/tool-multi-key.png
+name: Excruciator
+type: tool
+---
+data:
+    craftsmanship: common
+    availability: Rare
+    weight: 0.5
+    equipped: false
+    inBackpack: false
+    description: 'Using a high-energy arc discharge to create a small amount of plasma, the krytron-plasma detonator is simple to use and exceptionally reliable. Manufactured in the Lathe Worlds of the Calixis Sector by arcane means, these eerily dependable detonators are much sought after beyond the Maw by those whose work requires handling explosives. Krytron-plasma detonators provide a +20 bonus to Tests made for the Place Explosives Special Use of the Demolition Skill.'
+    source: Faith and Coin, p.96
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/tool-multi-key.png
+name: Krytron-plasma Detonator
+type: tool
+---
+data:
+    craftsmanship: common
+    availability: Rare
+    weight: 4
+    equipped: false
+    inBackpack: false
+    description: 'Often incorporated into mono-tasked servo-skulls, servitor drones, or other minor attendants, or mounted onto a vehicle, laud hailers loudly proclaim the greatness and divinity of the Emperor of Mankind. Startlingly loud and strident, the ear-splitting testament booms forth in a thunderous voice meant to cow the hated foes of the Imperium of Mankind. An Explorer wearing a laud hailer can activate it as a Half Action.'
+    source: Faith and Coin, p.96
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/tool-multi-key.png
+name: Laud Hailer
+type: tool
+---
+data:
+    craftsmanship: common
+    availability: Extremely Rare
+    weight: 1.5
+    equipped: false
+    inBackpack: false
+    description: 'Encompassing the wisdom of countless generations of Witch Hunters and Inquisitors, this tome provides priceless insight into the schemes and machinations of heretics, witches, psykers, and sorcerers. Armed with the knowledge contained in the pages of the *Liber Heresius*, those who seek to thwart the wicked are better prepared to expose and combat the devious servants of the Great Enemy.'
+    source: Faith and Coin, p.96
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/tool-multi-key.png
+name: Liber Heresius
+type: tool
+---
+data:
+    craftsmanship: common
+    availability: Scarce
+    weight: 1
+    equipped: false
+    inBackpack: false
+    description: 'Penned during his passage through the Maw aboard the destroyer *Boundless Valour*, Jollus Marquette’s journals were published posthumously and provide deep insight into the missionary’s philosophies and methods. Combined with some of his later writings, these journals have come to be known as the *Maxims of Marquette*, in reference to the many sagely aphorisms scattered throughout.'
+    source: Faith and Coin, p.96
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/tool-multi-key.png
+name: Maxims of Marquette
+type: tool
+---
+data:
+    craftsmanship: common
+    availability: Rare
+    weight: 1
+    equipped: false
+    inBackpack: false
+    description: 'Allegedly penned by the infamous Seven Witches of Footfall, the *Notarikon* contains within its pages a vast amount of occult lore, as well as systems of astrological and numerological divination. Covering a variety of forms of isopsephy, gematria, and astrologia relating to the celestial bodies of the Expanse and the Rifts of Hecaton in particular, the esoteric knowledge contained in the *Notarikon* of the Seven is prized by those who trade in secrets of…'
+    source: Faith and Coin, p.96
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/tool-multi-key.png
+name: Notarikon of the Seven
+type: tool
+---
+data:
+    craftsmanship: common
+    availability: Rare
+    weight: 4
+    equipped: false
+    inBackpack: false
+    description: 'Including several elegantly wrought lock picks, sound amplification and nullification devices, and specialised drills, such kits are designed to aid the user in opening even the most complicated locks. Though they are most often used for skullduggery (both in the underworld in the Koronus Expanse and in the intrigue-ridden circles of politics that surround Rogue Traders), there are more legitimate uses for these items.'
+    source: Faith and Coin, p.96
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/tool-multi-key.png
+name: 'Saboteur''s Supplies'
+type: tool
+---
+data:
+    craftsmanship: common
+    availability: Scarce
+    weight: 1.5
+    equipped: false
+    inBackpack: false
+    description: 'Equipped with a remote trigger, shock collars contain variable electrical nodes capable of delivering non-lethal jolts of electricity to a beast wearing the collar. Though negative reinforcement might only be part of a training regime, shock collars can significantly aid in keeping savage beasts under control. Of course, some creatures respond better to the threat of pain than others, and some can react violently indeed to a sudden shock.'
+    source: Faith and Coin, p.96
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/tool-multi-key.png
+name: Shock Collar
+type: tool
+---
+data:
+    craftsmanship: common
+    availability: Average
+    weight: 1
+    equipped: false
+    inBackpack: false
+    description: 'Also known as the “Book of Hours,” the *Thorian Missal* is an illuminated book containing prayers, liturgies, sermons, and a calendar of Imperial feast days. This collection of writings is attributed by some to Sebastian Thor, an ancient holy man who came into his ascendency during a time of great conflict in ages past.'
+    source: Faith and Coin, p.96
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/tool-multi-key.png
+name: Thorian Missal
+type: tool
+---
+data:
+    craftsmanship: common
+    availability: Extremely Rare
+    weight: 2.5
+    equipped: false
+    inBackpack: false
+    description: 'A strange device created by a xenos race on the Eastern Fringe of the galaxy, the crystals of the plasma syphon resonate on frequencies that disrupt plasma weaponry, causing plasma guns to fire wildly off target and making it difficult to achieve any sort of accuracy with them. Few of these devices have made their way into the Koronus Expanse from the distant Uluméathic League, but those that have are in high demand.'
+    source: Faith and Coin, p.96
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/tool-multi-key.png
+name: Uluméathi Plasma Syphon
+type: tool
+---
+data:
+    craftsmanship: common
+    availability: Scarce
+    weight: 2
+    equipped: false
+    inBackpack: false
+    description: 'Having travelled far and wide across much of the Koronus Expanse as Seneschal to the Rogue Trader Zhorne, Grigory van Heuring visited scores of planets and managed countless wares passing through the cavernous holds of the *Lux Salvationis*. A studious chronicler and prolific writer, van Heuring complied a great deal of his vast knowledge into a compendium cataloguing virtually everything of value that came into his possession during his storied career.'
+    source: Faith and Coin, p.96
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/tool-multi-key.png
+name: 'Van Heuring''s Compendium'
+type: tool
+---
+data:
+    craftsmanship: common
+    availability: Extremely Rare
+    weight: 1000
+    equipped: false
+    inBackpack: false
+    description: 'Void coffers are chests or safes, often elaborately decorated, that are sealed by an internally powered void shield. Thus protected, void coffers are nearly impenetrable and virtually indestructible—tales tell of void coffers surviving the complete destruction of starships and being recovered intact amidst the floating debris.'
+    source: Faith and Coin, p.96
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/tool-multi-key.png
+name: Void Coffer
+type: tool
