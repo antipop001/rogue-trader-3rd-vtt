@@ -171,21 +171,25 @@ export class BasicActionManager {
 
         const targetUuid = div.data('targetUuid');
 
+        // Resolve the target: the attack-time target first, else the currently-targeted token.
+        // A stale uuid returns null from fromUuid — unlinked NPC token uuids are
+        // `Scene.Token.Actor` and stop resolving once the token is removed or the scene changes
+        // (PC `Actor.<id>` uuids don't), so guard the null and fall back instead of throwing on
+        // `.actor`. That uncaught TypeError died silently in this jQuery click handler, which is
+        // exactly the "assigning damage to NPCs does nothing" report. (BUG: NPC assign-damage.)
         let targetActor;
         if (targetUuid) {
-            targetActor = await fromUuid(targetUuid);
-            if (targetActor.actor != undefined) {
-                targetActor = targetActor.actor;
-            }
-        } else {
+            const resolved = await fromUuid(targetUuid);
+            targetActor = resolved?.actor ?? resolved ?? null;
+        }
+        if (!targetActor) {
             const targetedObjects = game.user.targets;
             if (targetedObjects && targetedObjects.size > 0) {
-                const target = targetedObjects.values().next().value;
-                targetActor = target.actor;
+                targetActor = targetedObjects.values().next().value?.actor ?? null;
             }
         }
         if (!targetActor) {
-            ui.notifications.warn(`Cannot determine target actor to assign hit.`);
+            ui.notifications.warn(`Cannot determine the target to assign hit — the original target token may no longer exist. Target the token and click Assign Damage again.`);
             return;
         }
 
@@ -344,7 +348,6 @@ export class BasicActionManager {
     async _applyDamage(event) {
         event.preventDefault();
         const div = $(event.currentTarget);
-        console.log(div);
         const uuid = div.data('uuid');
         const damageType = div.data('type');
         const ignoreArmour = div.data('ignoreArmour');
@@ -353,7 +356,14 @@ export class BasicActionManager {
         const penetration = div.data('penetration');
         const fatigue = div.data('fatigue');
 
-        const actor = (await fromUuid(uuid)).actor;
+        // Guard a stale/unresolvable uuid (null from fromUuid) and fall back to the current
+        // target — same NPC-token-uuid staleness class as _assignDamage (BUG: NPC assign-damage).
+        const resolved = uuid ? await fromUuid(uuid) : null;
+        let actor = resolved?.actor ?? resolved ?? null;
+        if (!actor) {
+            const targeted = game.user.targets;
+            if (targeted && targeted.size > 0) actor = targeted.values().next().value?.actor ?? null;
+        }
         if (!actor) {
             ui.notifications.warn(`Cannot determine actor to assign hit.`);
             return;
