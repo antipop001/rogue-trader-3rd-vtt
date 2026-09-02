@@ -33,18 +33,20 @@ test('woundsMax is idempotent across recompute (base never includes the modifier
     assert.equal(woundsMax(base, mod), 14);
 });
 
-test('woundsBase prefers the explicit base field', () => {
+test('woundsBase prefers a real (positive) base over the legacy max', () => {
     assert.equal(woundsBase(12, 0), 12);
-    assert.equal(woundsBase(12, 99), 12);   // legacy max ignored once base is set
+    assert.equal(woundsBase(12, 99), 12);   // legacy max ignored once a real base is set
     assert.equal(woundsBase('15', null), 15);
-    assert.equal(woundsBase(0, 12), 0);     // an explicit 0 base is honoured, not overridden
 });
 
-test('woundsBase falls back to the legacy source max when base is absent', () => {
-    // Actors/NPCs created before the `base` field: rolled value lives in source `max`.
+test('woundsBase treats a non-positive base as unmigrated and uses the legacy max', () => {
+    // Adding the `base` field back-fills the template default 0 into existing actors' source,
+    // so a stored base of 0 means "not migrated yet" — recover the rolled value from `max`.
+    assert.equal(woundsBase(0, 21), 21);        // the Isshan Jahan regression: base 0, max 21
     assert.equal(woundsBase(undefined, 12), 12);
     assert.equal(woundsBase(null, 12), 12);
     assert.equal(woundsBase(null, '18'), 18);
+    assert.equal(woundsBase(0, 0), 0);          // brand-new empty actor — nothing to recover
     assert.equal(woundsBase(undefined, undefined), 0);
 });
 

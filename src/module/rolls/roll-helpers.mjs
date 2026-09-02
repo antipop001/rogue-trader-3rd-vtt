@@ -373,7 +373,13 @@ export function woundsMax(base, modifier) {
  * @returns {number} the base Wounds before effect modifiers
  */
 export function woundsBase(srcBase, srcMax) {
-    return srcBase != null ? (Number(srcBase) || 0) : (Number(srcMax) || 0);
+    // A character can never have 0 base Wounds, AND adding the `base` field to template.json
+    // makes Foundry back-fill the default (0) into every existing actor's stored source — so a
+    // stored `base` of 0 (or missing/negative) means "not yet migrated": fall back to the legacy
+    // source `max` (where pre-`base` actors/NPCs kept the rolled value). Once a real base (>0) is
+    // stored — by chargen or the sheet's Base input — it wins and the legacy max is ignored.
+    const b = Number(srcBase) || 0;
+    return b > 0 ? b : (Number(srcMax) || 0);
 }
 
 /**
