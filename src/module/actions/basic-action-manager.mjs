@@ -20,6 +20,7 @@ export class BasicActionManager {
             $html.find('.roll-control__hide-control').click(async (ev) => await this._toggleExpandChatMessage(ev));
             $html.find('.roll-control__refund').click(async (ev) => await this._refundResources(ev));
             $html.find('.roll-control__fate-reroll').click(async (ev) => await this._fateReroll(ev));
+            $html.find('.roll-control__spend-fate').click(async (ev) => await this._spendFate(ev));
             $html.find('.roll-control__assign-damage').click(async (ev) => await this._assignDamage(ev));
             $html.find('.roll-control__apply-damage').click(async (ev) => await this._applyDamage(ev));
             $html.find('.roll-control__apply-condition').click(async (ev) => await this._applyCondition(ev));
@@ -81,6 +82,54 @@ export class BasicActionManager {
             no: () => {},
             defaultYes: false,
         });
+    }
+
+    /**
+     * Spend a Fate Point from a roll's chat card (RT Core p.233). Available on every roll type
+     * that belongs to a Fate-bearing actor. Prompts for the roll-time use (re-roll / +10 / +1
+     * Degree of Success) and routes to actor.spendFate(kind), which subtracts 1 from current
+     * Fate and posts the note. Owner/GM only. Weapon/psychic cards also keep their automated
+     * "Re-roll" button (which spends Fate and re-runs the whole action).
+     */
+    async _spendFate(event) {
+        event.preventDefault();
+        const div = $(event.currentTarget);
+        const actorUuid = div.data('actorUuid');
+        let actor = actorUuid ? await fromUuid(actorUuid) : null;
+        actor = actor?.actor ?? actor ?? null;   // TokenDocument -> actor; Actor -> itself
+        if (!actor) {
+            ui.notifications.warn('Cannot determine the actor to spend Fate.');
+            return;
+        }
+        if (!actor.isOwner) {
+            ui.notifications.warn(`Only ${actor.name}'s owner or the GM can spend their Fate.`);
+            return;
+        }
+        if (typeof actor.spendFate !== 'function' || !actor.system?.fate) {
+            ui.notifications.warn(`${actor.name} has no Fate Points.`);
+            return;
+        }
+        if ((actor.system.fate.value ?? 0) <= 0) {
+            ui.notifications.warn(`${actor.name} has no Fate Points to spend.`);
+            return;
+        }
+        let kind;
+        try {
+            kind = await foundry.applications.api.DialogV2.wait({
+                window: { title: `Spend Fate — ${actor.name}` },
+                content: `<p>${actor.name} has <strong>${actor.system.fate.value}/${actor.system.fate.max}</strong> Fate. Spend one to:</p>`,
+                buttons: [
+                    { action: 'reroll', label: 'Re-roll the Test', icon: 'fa-solid fa-dice', default: true },
+                    { action: 'plus10', label: 'Add +10', icon: 'fa-solid fa-plus' },
+                    { action: 'degree', label: '+1 Degree of Success', icon: 'fa-solid fa-angles-up' },
+                    { action: 'cancel', label: 'Cancel', icon: 'fa-solid fa-xmark' },
+                ],
+            });
+        } catch (err) {
+            return;   // dismissed
+        }
+        if (!kind || kind === 'cancel') return;
+        await actor.spendFate(kind);
     }
 
     async _fateReroll(event) {

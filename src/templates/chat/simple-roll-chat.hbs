@@ -139,6 +139,15 @@
                     {{/if}}
                 {{/if}}
             </div>
+            {{#if actor.system.fate}}
+                <div class="rt-roll__controls-1">
+                    <div class="rt-control-button roll-control__spend-fate" data-actor-uuid="{{actor.uuid}}"
+                         data-tooltip="Spend a Fate Point (re-roll / +10 / +1 Degree) — subtracts 1 from current Fate">
+                        <span class="rt-control-button__span material-icons">auto_awesome</span>
+                        <span class="rt-control-button__label">Spend Fate</span>
+                    </div>
+                </div>
+            {{/if}}
             <div class="dice-rolls" style="display:none">
                 <div class="dice-roll-render">
                     {{{render}}}
