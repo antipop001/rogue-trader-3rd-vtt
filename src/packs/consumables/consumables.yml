@@ -749,3 +749,171 @@ data:
 img: systems/rogue-trader-3rd/icons/items/buckets/consumable-drug-vial.png
 name: Rhodopis Juice
 type: drug
+---
+data:
+    craftsmanship: common
+    availability: Scarce
+    weight: 0.1
+    equipped: false
+    inBackpack: false
+    description: 'This stimulant alters the warrior’s adrenal glands, producing a substance that is far more potent. Harvested from the brain of a small, multi-legged, and extremely aggressive predator found on the ruined shell of the *Light of Terra* and certain space hulks that drift through the Koronus Expanse, Accelerai accelerates the user’s attacks to a blistering tempo.'
+    source: The Soul Reaver
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/consumable-drug-vial.png
+name: Accelerai
+type: drug
+---
+data:
+    craftsmanship: common
+    availability: Rare
+    weight: 0.1
+    equipped: false
+    inBackpack: false
+    description: 'First found growing amidst the corpses of fallen warriors during the taking of the Nexus of Shadows, Corpse Obmulen appears to be a cousin of the better-known Dusk Lotus and seems, against all odds, to have been on the Gaelan Sphere longer than the Dark Eldar. Since their arrival, however, the blood-drinking plant has flourished, and covers many pits of discarded corpses with an ashen veil.'
+    source: The Soul Reaver
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/consumable-drug-vial.png
+name: Corpse Obmulen
+type: drug
+---
+data:
+    craftsmanship: common
+    availability: Scarce
+    weight: 0.1
+    equipped: false
+    inBackpack: false
+    description: 'Eviscerine is a derivative of the rare but seemingly uninteresting viperleaf found on certain worlds within the Koronus Expanse. Though The Sutured Helix does not share exactly how it transforms this barbed vine into a drug as effective as Eviscerine, the raw material nonetheless commands a high price on the Nexus of Shadows.'
+    source: The Soul Reaver
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/consumable-drug-vial.png
+name: Eviscerine
+type: drug
+---
+data:
+    craftsmanship: common
+    availability: Scarce
+    weight: 0.1
+    equipped: false
+    inBackpack: false
+    description: 'Distilled from the cranial fluid of slaves who have been poisoned with a combination of other drugs and toxins including Corpse Obmulen and Liquid Agony, Murder’s Boon amplifies a warrior’s killer instincts. The warrior gains the Proven (4) Quality on all melee attacks for the duration of the drug''s effect.'
+    source: The Soul Reaver
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/consumable-drug-vial.png
+name: 'Murder''s Boon'
+type: drug
+---
+data:
+    craftsmanship: common
+    availability: Rare
+    weight: 0.1
+    equipped: false
+    inBackpack: false
+    description: 'Tailored from a number of incredibly dangerous ingredients, including grass harvested from specific Yu’Vath grave worlds and miniscule quantities of the stasis venom of the Ariadne Helspider, Shudderstep is designed to hyper-stimulate fast-twitch muscle fibres. A dose of Shudderstep enables a warrior to run at incredible speeds. The character gains the Unnatural Speed Trait for the duration of the drug’s effect.'
+    source: The Soul Reaver
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/consumable-drug-vial.png
+name: Shudderstep
+type: drug
+---
+data:
+    craftsmanship: common
+    availability: Extremely Rare
+    weight: 0.1
+    equipped: false
+    inBackpack: false
+    description: 'The coalesced essence of a being who has been tortured not only unto death but far beyond it, Soul Echo is almost pure pain, containing the last tormented gasp of a spirit bound in eternal agony. On the Nexus of Shadows, the only producer of Soul Echo is Drecarus himself, and his exact arcane processes are a jealously guarded secret.'
+    source: The Soul Reaver
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/consumable-drug-vial.png
+name: Soul Echo
+type: drug
+---
+data:
+    craftsmanship: common
+    availability: Scarce
+    weight: 0.1
+    equipped: false
+    inBackpack: false
+    description: 'Perfect Vitriol is the universal solvent, a corrosive agent capable of dissolving absolutely everything. Created by the Stryxis for reasons they refuse to explain and traded to the denizens of the Nexus of Shadows for use in their arenas and shadowy plots, no substance is proof against this liquid''s fury, and it must be stored in magnetic suspension because no material container exists that can hold it.'
+    source: The Soul Reaver
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/consumable-drug-vial.png
+name: Essence of Perfect Vitriol
+type: drug
+---
+data:
+    craftsmanship: common
+    availability: Rare
+    weight: 0.1
+    equipped: false
+    inBackpack: false
+    description: 'A targeted paralytic agent that is derived from a plant native to Burnscour and brought to the Nexus of Shadows accidentally along with several beasts for the pits, Final Breath causes rapid respiratory shutdown, swiftly making it impossible for the target to breathe. The Dark Eldar first discovered the effect of the plant when a number of slaves tasked with cleaning the pen of a Clawed Fiend were discovered dying after inhaling its deadly pollen.'
+    source: The Soul Reaver
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/consumable-drug-vial.png
+name: Final Breath
+type: drug
+---
+data:
+    craftsmanship: common
+    availability: Very Rare
+    weight: 0.1
+    equipped: false
+    inBackpack: false
+    description: 'Heartfire is a substance produced by the razor-spined fungi that inhabit certain parts of the Gaelan Sphere, and is found in the greatest concentrations in those specimens that have made their home in the shafts that house the coolant for many of the sphere''s mysterious processes.'
+    source: The Soul Reaver
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/consumable-drug-vial.png
+name: Heartfire
+type: drug
+---
+data:
+    craftsmanship: common
+    availability: Scarce
+    weight: 0.1
+    equipped: false
+    inBackpack: false
+    description: 'Popular amongst nobles of the Kabal of the Splintered Talon involved in realspace raids against particularly valuable targets and those fighting rivals at home alike, Liquid Agony is a potent neurotoxin that amplifies nerve conductivity to extreme levels, turning even the weight of clothing and the caress of the air into torturous sensations.'
+    source: The Soul Reaver
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/consumable-drug-vial.png
+name: Liquid Agony
+type: drug
+---
+data:
+    craftsmanship: common
+    availability: Very Rare
+    weight: 0.1
+    equipped: false
+    inBackpack: false
+    description: 'This toxin creates terror in its victims, nothing more or less. Though the exact composition of this poison is a jealously guarded secret of The Sutured Helix, dark whispers tell of how Salaine Morn commissioned Drecarus to create it shortly after her forces slew a Rak''Gol raiding party that had simultaneously attacked the human settlement she was in the midst of pillaging.'
+    source: The Soul Reaver
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/consumable-drug-vial.png
+name: Nightmare Philtre
+type: drug
+---
+data:
+    craftsmanship: common
+    availability: Rare
+    weight: 0.1
+    equipped: false
+    inBackpack: false
+    description: 'This toxin causes the victim to begin exsanguinating rapidly, his blood pouring from every wound as if seeking to escape from his body. Sanguine Exodus in part on the saliva of the Culamia Bloodsucker that is all too common on the world of Burnscour and certain other Death Worlds in the Koronus Expanse, and has become popular amongst the Wyches of the Withered Blade Cult, as it allows them to kill with even greater elegance and conservation of motion.'
+    source: The Soul Reaver
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/consumable-drug-vial.png
+name: Sanguine Exodus
+type: drug

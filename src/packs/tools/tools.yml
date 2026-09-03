@@ -2416,3 +2416,163 @@ data:
 img: systems/rogue-trader-3rd/icons/items/buckets/tool-multi-key.png
 name: Void Coffer
 type: tool
+---
+data:
+    craftsmanship: common
+    availability: Very Rare
+    weight: 0.5
+    equipped: false
+    inBackpack: false
+    description: 'A blacksun filter comprises several unique sensors and lenses, similar in function to the photo visor of the Imperium. These filters are often built into helmets, or the complex sensor suites of Tau battlesuits. Some Tau Pathfinders have been seen to wear the filters independently, often taking the form of elaborate goggles or visors.'
+    source: Tau Character Guide, p.26
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/tool-multi-key.png
+name: Blacksun Filter
+type: tool
+---
+data:
+    craftsmanship: common
+    availability: Very Rare
+    weight: 0.5
+    equipped: false
+    inBackpack: false
+    description: 'The Tau make extensive use of drone technology in many aspects of their life, and often the rudimentary artificial intelligence programs controlling these drones is enough to achieve their aims. However, in many complex situations—particularly in battle—a more direct method of control is required. To activate a drone controller, a character must make a Challenging (+0) Tech-Use Test, which requires Two Full Actions.'
+    source: Tau Character Guide, p.26
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/tool-multi-key.png
+name: Drone Controller
+type: tool
+---
+data:
+    craftsmanship: common
+    availability: Near Unique
+    weight: 4
+    equipped: false
+    inBackpack: false
+    description: 'Constructed to assist in repelling enemy assault troops, the gravity wave projector emits a powerful burst of high-powered gravitons. The effects of this wave striking a living being are quite profound. Many of those affected are severely disoriented by the wave, experiencing vertigo and nausea. Others may be physically hurled to the ground, their bodies unable to cope with the sudden and unpredictable shift in gravity.'
+    source: Tau Character Guide, p.26
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/tool-multi-key.png
+name: Gravity Wave Projector
+type: tool
+---
+data:
+    craftsmanship: common
+    availability: Extremely Rare
+    weight: 0.5
+    equipped: false
+    inBackpack: false
+    description: 'One of the reasons that Tau firepower is so feared is this piece of equipment. Resembling a large, thin gunsight, the markerlight is a revolutionary weapon in the fight for the Greater Good. The markerlight projects a beam of light, invisible to the naked eye. This beam is capable of highlighting key strategic targets and relaying their position back to the shooter, his allies, and any other warrior equipped to perceive it.'
+    source: Tau Character Guide, p.26
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/tool-multi-key.png
+name: Markerlight
+type: tool
+---
+data:
+    craftsmanship: common
+    availability: Near Unique
+    weight: 0.5
+    equipped: false
+    inBackpack: false
+    description: 'This device can be attached to any standard Pulse weapon (carbine, pistol, or rifle). It creates a powerful induction field accelerating the pulse charge to extremely high levels. The end result of this is increased range on an already long-ranged weapon. A pulse weapon equipped with a pulse accelerator increases its Range by half. TABLE 1-3: TAU EQUIPITIENT'
+    source: Tau Character Guide, p.26
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/tool-multi-key.png
+name: Pulse Accelerator
+type: tool
+---
+data:
+    craftsmanship: common
+    availability: Near Unique
+    weight: 4.5
+    equipped: false
+    inBackpack: false
+    description: 'The Tau use these bulky devices to transmit sensitive information to and from warzones. Using a heavily encrypted tight burst radio signal, an operator can relay vital intelligence to reserve forces from deep within a fire zone or other hot spot. The encryption protocols and narrow signal combine to make listening in or tapping the radio signals very difficult.'
+    source: Tau Character Guide, p.26
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/tool-multi-key.png
+name: Positional Relay
+type: tool
+---
+data:
+    craftsmanship: common
+    availability: Extremely Rare
+    weight: 0.5
+    equipped: false
+    inBackpack: false
+    description: 'This device is designed to allow Tau Fire Warriors and battlesuit pilots to rapidly shift their attention from one target to the next. The target lock provides the user with accurate firing plans and tracks the location of individual targets, allowing for complex patterns of fire to be established by a single gunner. Originally found only on platforms mounting multiple weapons, it quickly made its way into use by Fire Warrior Shas’ui.'
+    source: Tau Character Guide, p.26
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/tool-multi-key.png
+name: Target Lock
+type: tool
+---
+data:
+    craftsmanship: common
+    availability: Extremely Rare
+    weight: 0.5
+    equipped: false
+    inBackpack: false
+    description: 'Farseers often embellish their equipment with defensive runes that interfere with the psychic powers of their foes, and thus protect the Farseer from harm. On the field of battle, these baleful runes cast their gaze upon the Farseer’s foes, cursing these adversaries with ill fortune.'
+    source: The Navis Primer, p.123
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/tool-multi-key.png
+name: Runes of Warding
+type: tool
+---
+data:
+    craftsmanship: common
+    availability: Extremely Rare
+    weight: 0.5
+    equipped: false
+    inBackpack: false
+    description: 'Farseers carry countless trinkets, esoteric devices, and runes to assist in their divinations and panoply of other rituals and powers. Runes of witnessing are designed to help lead the Farseer to the destinies he chooses, without becoming lost in the ineffable web of fate.'
+    source: The Navis Primer, p.123
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/tool-multi-key.png
+name: Runes of Witnessing
+type: tool
+---
+data:
+    craftsmanship: common
+    availability: Near Unique
+    weight: 1
+    equipped: false
+    inBackpack: false
+    description: 'Craftworld Eldar carry empty spirit stones to capture their spirits as their essence departs their bodies, snatching them from the thirsting maw of Slaanesh. These empty spirit stones have no effect besides providing this psychic assurance to the wearer. Farseers carry spirit stones that have taken on the spirits of their powerful predecessors into battle, so that they may call upon the psychic might of those who came before them in battle.'
+    source: The Navis Primer, p.123
+    target: ''
+    effect: ''
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/tool-multi-key.png
+name: Spirit Stone
+type: tool

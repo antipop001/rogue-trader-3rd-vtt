@@ -1172,3 +1172,31 @@ data:
 img: systems/rogue-trader-3rd/icons/items/buckets/ammo-bolt-rounds.png
 name: Vengeance Rounds
 type: ammunition
+---
+data:
+    craftsmanship: common
+    availability: Extremely Rare
+    weight: 0.1
+    equipped: false
+    inBackpack: false
+    description: 'Some Kroot Carnivores working within the Tau military have taken to using these highly specialised sniper rounds in their rifles. Designed for increased accuracy and stopping power, they have proven extremely popular with the Kroot fighting style of disruption and disorganisation.'
+    source: Tau Character Guide, p.26
+    damage: ''
+    damageType: ''
+    penetration: ''
+    special: {}
+    range: ''
+    attackType: ''
+    attackBonus: 0
+    rateOfFire:
+        single: 1
+        burst: 0
+        full: 0
+    target: ''
+    effect: ''
+    weaponType: ''
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/ammo-stub-rounds.png
+name: Kroot Sniper Rounds
+type: ammunition

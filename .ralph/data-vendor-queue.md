@@ -273,3 +273,14 @@ grabbing non-gear tables). Source cited by book name only (no per-item page — 
 Parameterized qualities Proven(N)/Felling(N)/Blast(N) map to valued flags; Overcharge/Razor-Sharp/Crippling
 to boolean flags; a few OCR-merged qualities (Accurate Overheat, Blast (1d5-3)) kept in description only.
 Xenos gear (Tau/Ork/DE/Eldar) is GM/loot-facing; stat spot-check recommended.
+
+---
+
+## Small gear tables from the last 4 books (0.9.17, 2026-09-02) — 23 items
+
+Completes the supplement gear import: the ambiguous 2-3-col tables the 0.9.15 auto-detector skipped,
+extracted explicitly (scratchpad `extract_small.py`) once surveyed. Tau Character Guide "Tau Equipment"
+(p.26 — Blacksun Filter, Drone Controller, Gravity Wave Projector, Markerlight, Pulse Accelerator,
+Positional Relay, Target Lock -> tools; Kroot Sniper Rounds -> ammo), The Navis Primer "Eldar Psychic
+Wargear" (p.123 — Runes of Warding/Witnessing, Spirit Stone -> tools), The Soul Reaver "Drugs and Poisons"
+(12 Dark Eldar combat drugs -> consumables). Description-only (mechanics in prose). QA gate + report clean.
