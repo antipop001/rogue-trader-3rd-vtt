@@ -17,8 +17,11 @@ WCLASS={'pistol','basic','heavy','melee','thrown','exotic','launcher',''}
 # quality flags the engine actually reads (from damage-data.mjs / attack-specials handling)
 ENGINE_QUALS={'accurate','balanced','blast','flame','proven','tearing','scatter','snare','shocking',
  'toxic','primitive','powerfield','power field','unbalanced','unwieldy','reliable','unreliable',
- 'inaccurate','recharge','overheats','maximal','felling','razorsharp','lance','defensive','sanctified',
- 'storm','twinlinked','concussive','crippling','graviton','hallucinogenic','smoke','flexible','vengeful'}
+ 'inaccurate','recharge','overheats','overload','maximal','felling','razorsharp','lance','defensive',
+ 'sanctified','storm','twinlinked','concussive','crippling','graviton','hallucinogenic','smoke',
+ 'flexible','vengeful','haywire','unstable','force','corrosive','indirect','warp','customised',
+ # wired in 0.9.19 (direct system.special flag reads)
+ 'cleansingfire','stun','overcharge','gyrostabilised'}
 
 def load(pack):
     import yaml

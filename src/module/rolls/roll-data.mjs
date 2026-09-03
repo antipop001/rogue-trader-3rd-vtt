@@ -255,7 +255,12 @@ export class WeaponRollData extends RollData {
             || this.sourceActor?.items?.some?.((i) => i.type === 'trait' && i.name === 'Auto-Stabilised')
             || this.weapon?.items?.some?.((i) => i.isWeaponModification && i.name === 'Suspensors' && (i.system?.equipped || i.system?.enabled))
         );
-        this.modifiers['unbraced'] = (this.isHeavyWeapon && !this.braced && !autoBraced) ? -30 : 0;
+        // Gyro-Stabilised (Tau Character Guide): a Heavy weapon with this Quality reduces the
+        // unbraced penalty from -30 to -20 (it also "never counts its target as further than
+        // Long Range" — a range-band note, GM-applied since personal range bands aren't auto-scored).
+        const gyroStabilised = !!this.weapon?.system?.special?.gyroStabilised;
+        this.modifiers['unbraced'] = (this.isHeavyWeapon && !this.braced && !autoBraced)
+            ? (gyroStabilised ? -20 : -30) : 0;
         // Vehicle move-then-shoot (ItS Ch.V): firing from a vehicle that moved its tactical speed
         // this turn is at −10 BS, twice its tactical speed −20. Read from the operator's active
         // vehicle (set via the Operate Vehicle dialog). (QA-117 follow-up.)

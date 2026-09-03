@@ -674,6 +674,32 @@ export class Hit {
 
             }
         }
+
+        // Supplement weapon qualities stored as camelCase `system.special` flags don't survive the
+        // capitalize()→attack-specials-pack match in `_getAttackSpecials` (that pipeline is single-word
+        // only), so read them directly off the weapon — same pattern as the Scatter/Maximal checks above.
+        const wSpecial = actionItem?.system?.special ?? {};
+        if (wSpecial.cleansingFire) {
+            // Faith and Coin p.82: on a hit the target makes a Challenging (+0) Willpower Test or catches
+            // fire; if the weapon also has Flame, a burning target takes +1d10 Energy (ignoring Armour & TB)
+            // each time it fails to extinguish the flames.
+            const flameRider = wSpecial.flame
+                ? ' As this weapon also has Flame, a burning target suffers an additional [[1d10]] Energy Damage (ignoring Armour and Toughness Bonus) each time it fails the Test to extinguish the flames.'
+                : '';
+            this.addEffect('Cleansing Fire', `The target must make a Challenging (+0) Willpower Test or catch on fire (RT Core pp.260-261).${flameRider}`, ['onFire']);
+        }
+        if (wSpecial.stun) {
+            // Stun quality (e.g. Psyk-out / Stun grenades): a struck target makes a Toughness Test or is
+            // Stunned for 1 Round.
+            this.addEffect('Stun', `A target struck must make a Toughness Test or be Stunned for 1 Round.`, ['stunned']);
+        }
+        if (wSpecial.overcharge) {
+            // Overcharge (X) (Tau Character Guide): the wielder MAY increase the weapon's Damage by X for a
+            // shot, but the weapon gains the Overheats Quality for that shot. Surfaced as a note (per-shot
+            // player choice — not auto-applied so it can't force the Overheats downside).
+            const x = Number(wSpecial.overcharge) || 1;
+            this.addEffect('Overcharge', `Optional: the wielder may overcharge for +${x} Damage on this shot, but the weapon gains the Overheats Quality for that shot.`);
+        }
     }
 
     addEffect(name, effect, conditions = null) {
