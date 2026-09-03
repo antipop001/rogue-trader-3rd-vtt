@@ -917,3 +917,17 @@ data:
 img: systems/rogue-trader-3rd/icons/items/buckets/consumable-drug-vial.png
 name: Sanguine Exodus
 type: drug
+---
+data:
+    craftsmanship: common
+    availability: Extremely Rare
+    weight: 0.1
+    equipped: false
+    inBackpack: false
+    description: 'A cruel and savage toxin, Vitae Rebellion is a genetic serum of incredible potency created in the laboratories of The Sutured Helix and sold to Dark Eldar nobles on the Nexus of Shadows who desire a certain explosive flair to their kills. Vitae Rebellion aggressively transforms the biochemistry of its victims, transmogrifying critical fluids into chemicals and compounds that react violently with one another. The end result is gruesome and spectacular, as t'
+    source: The Soul Reaver
+    backpack:
+        inBackpack: false
+img: systems/rogue-trader-3rd/icons/items/buckets/consumable-drug-vial.png
+name: Vitae Rebellion
+type: drug
