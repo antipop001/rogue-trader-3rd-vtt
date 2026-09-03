@@ -1056,3 +1056,108 @@ data:
 img: systems/rogue-trader-3rd/icons/items/buckets/ship-lance.png
 name: Voidsunder Lance Battery
 type: shipWeapon
+---
+data:
+  attackBonus: 0
+  availability: very rare
+  backpack:
+    inBackpack: false
+  class: Prow
+  componentClass: Supplemental
+  componentType: Nova Cannon
+  craftsmanship: common
+  critRating: 0
+  damage: 4
+  description: '[Ship weapon (Nova Cannon) — Damage 2d5+4, Range 6-40, Power 3, Space 7, SP 3. Nova Cannons use special targeting; see the book.]'
+  effect: ''
+  hitPoints: 2
+  isDepressurized: false
+  isDestroyed: false
+  isOnFire: false
+  isUnpowered: false
+  location: Main
+  power: 3
+  rangeLong: 6
+  rangeMedium: 0
+  rangeSmall: 0
+  shipPoints: 3
+  size: Massive
+  slot: Prow
+  source: Battlefleet Koronus
+  space: 7
+  strength: 0
+  target: ''
+  type: Nova Cannon
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-macrobattery.png
+name: Mars-pattern Nova Cannon
+type: shipWeapon
+---
+data:
+  attackBonus: 0
+  availability: very rare
+  backpack:
+    inBackpack: false
+  class: Prow
+  componentClass: Supplemental
+  componentType: Nova Cannon
+  craftsmanship: common
+  critRating: 0
+  damage: 5
+  description: '[Ship weapon (Nova Cannon) — Damage 2d5+5, Range 6-36, Power 4, Space 7, SP 4. Nova Cannons use special targeting; see the book.]'
+  effect: ''
+  hitPoints: 2
+  isDepressurized: false
+  isDestroyed: false
+  isOnFire: false
+  isUnpowered: false
+  location: Main
+  power: 4
+  rangeLong: 6
+  rangeMedium: 0
+  rangeSmall: 0
+  shipPoints: 4
+  size: Massive
+  slot: Prow
+  source: Battlefleet Koronus
+  space: 7
+  strength: 0
+  target: ''
+  type: Nova Cannon
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-macrobattery.png
+name: Ryza-pattern Nova Cannon
+type: shipWeapon
+---
+data:
+  attackBonus: 0
+  availability: very rare
+  backpack:
+    inBackpack: false
+  class: Prow
+  componentClass: Supplemental
+  componentType: Nova Cannon
+  craftsmanship: common
+  critRating: 0
+  damage: 7
+  description: 'One of the rarest of all Nova Cannons, the Jovian pattern replaces the explosive shells with vortex warheads. The resultant rifts into the warp have been known to rend target vessels cleanly in half. This follows all the rules for Nova Cannons. Vortex Warhead: The terrifying nature of vortex weaponry means a ship hit by a shot from this weapon (even if it does not do damage) immediately loses 1d5 Morale. Core Architecture: This weapon Component is always revealed by successful Active Augury—it is too large to be concealed. [Ship weapon (Nova Cannon) — Damage 2d5+7, Range 6-35, Power 5, Space 7, SP 5. Nova Cannons use special targeting; see the book.]'
+  effect: ''
+  hitPoints: 2
+  isDepressurized: false
+  isDestroyed: false
+  isOnFire: false
+  isUnpowered: false
+  location: Main
+  power: 5
+  rangeLong: 6
+  rangeMedium: 0
+  rangeSmall: 0
+  shipPoints: 5
+  size: Massive
+  slot: Prow
+  source: Battlefleet Koronus
+  space: 7
+  strength: 0
+  target: ''
+  type: Nova Cannon
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-macrobattery.png
+name: Jovian-pattern Nova Cannon
+type: shipWeapon

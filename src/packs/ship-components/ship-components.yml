@@ -2315,3 +2315,1230 @@ data:
 img: systems/rogue-trader-3rd/icons/items/buckets/ship-augur-array.png
 name: Gyro-stabilisation Matrix
 type: shipComponent
+---
+data:
+  availability: rare
+  backpack:
+    inBackpack: false
+  componentClass: Essential
+  componentType: Plasma Drive
+  craftsmanship: common
+  description: 'The "Class 8" drives produced by the Jovian shipyards are a constructed from an incomplete STC discovered less than a millennia ago. Although they burn cooler than other Jovian drives, they are far more robust, able to absorb crippling damage without performance loss. These engines are typically reserved for military vessels, and the 8.1 is designed for frigates. Reliable Construction: If this Component becomes damaged, depressurized, or suffers a Critical Hit (including a 4 or 6 result on the chart), roll 1d10. On a 4 or higher, the effect is ignored. [Ship component — Power 44 Generated, Space 11, SP +1, Hulls: Frigates.]'
+  effect: ''
+  hitPoints: 2
+  isDepressurized: false
+  isDestroyed: false
+  isOnFire: false
+  isUnpowered: false
+  location: Main
+  power: -44
+  shipPoints: 1
+  source: Battlefleet Koronus
+  space: 11
+  target: ''
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-plasma-drive.png
+name: Jovian-pattern Class 8.1 Drive
+type: shipComponent
+---
+data:
+  availability: rare
+  backpack:
+    inBackpack: false
+  componentClass: Essential
+  componentType: Plasma Drive
+  craftsmanship: common
+  description: 'Second in the "Class 8" series of drives produced by the Jovian shipyards the 8.2 is designed for light cruisers. Reliable Construction: If this Component becomes damaged, depressurized, or suffers a Critical Hit (including a 4 or 6 result on the chart), roll 1d10. On a 4 or higher, the effect is ignored. [Ship component — Power 59 Generated, Space 13, SP +1, Hulls: Light Cruisers.]'
+  effect: ''
+  hitPoints: 2
+  isDepressurized: false
+  isDestroyed: false
+  isOnFire: false
+  isUnpowered: false
+  location: Main
+  power: -59
+  shipPoints: 1
+  source: Battlefleet Koronus
+  space: 13
+  target: ''
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-plasma-drive.png
+name: Jovian-pattern Class 8.2 Drive
+type: shipComponent
+---
+data:
+  availability: rare
+  backpack:
+    inBackpack: false
+  componentClass: Essential
+  componentType: Plasma Drive
+  craftsmanship: common
+  description: 'Third in the "Class 8" series of drives produced by the Jovian shipyards the 8.3 is designed for cruisers. Reliable Construction: If this Component becomes damaged, depressurized, or suffers a Critical Hit (including a 4 or 6 result on the chart), roll 1d10. On a 4 or higher, the effect is ignored. [Ship component — Power 74 Generated, Space 15, SP +1, Hulls: Cruisers.]'
+  effect: ''
+  hitPoints: 2
+  isDepressurized: false
+  isDestroyed: false
+  isOnFire: false
+  isUnpowered: false
+  location: Main
+  power: -74
+  shipPoints: 1
+  source: Battlefleet Koronus
+  space: 15
+  target: ''
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-plasma-drive.png
+name: Jovian-pattern Class 8.3 Drive
+type: shipComponent
+---
+data:
+  availability: rare
+  backpack:
+    inBackpack: false
+  componentClass: Essential
+  componentType: Plasma Drive
+  craftsmanship: common
+  description: 'Fourth in the "Class 8" series of drives produced by the Jovian shipyards the 8.4 is designed for grand cruisers. It is rarely produced due to the lack of new grand cruisers in the Imperium. Reliable Construction: If this Component becomes damaged, depressurized, or suffers a Critical Hit (including a 4 or 6 result on the chart), roll 1d10. On a 4 or higher, the effect is ignored. [Ship component — Power 93 Generated, Space 20, SP +1, Hulls: Grand Cruisers.]'
+  effect: ''
+  hitPoints: 2
+  isDepressurized: false
+  isDestroyed: false
+  isOnFire: false
+  isUnpowered: false
+  location: Main
+  power: -93
+  shipPoints: 1
+  source: Battlefleet Koronus
+  space: 20
+  target: ''
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-plasma-drive.png
+name: Jovian-pattern Class 8.4 Drive
+type: shipComponent
+---
+data:
+  availability: rare
+  backpack:
+    inBackpack: false
+  componentClass: Essential
+  componentType: Plasma Drive
+  craftsmanship: common
+  description: '[Ship component — Power 90 Generated, Space 14, SP -, Hulls: Battlecruisers.]'
+  effect: ''
+  hitPoints: 2
+  isDepressurized: false
+  isDestroyed: false
+  isOnFire: false
+  isUnpowered: false
+  location: Main
+  power: -90
+  shipPoints: 0
+  source: Battlefleet Koronus
+  space: 14
+  target: ''
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-plasma-drive.png
+name: Saturine-pattern Class 4A "Ultra" Drive
+type: shipComponent
+---
+data:
+  availability: rare
+  backpack:
+    inBackpack: false
+  componentClass: Essential
+  componentType: Plasma Drive
+  craftsmanship: common
+  description: '[Ship component — Power 95 Generated, Space 18, SP -, Hulls: Grand Cruisers.]'
+  effect: ''
+  hitPoints: 2
+  isDepressurized: false
+  isDestroyed: false
+  isOnFire: false
+  isUnpowered: false
+  location: Main
+  power: -95
+  shipPoints: 0
+  source: Battlefleet Koronus
+  space: 18
+  target: ''
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-plasma-drive.png
+name: Saturine-pattern Class 5 Drive
+type: shipComponent
+---
+data:
+  availability: rare
+  backpack:
+    inBackpack: false
+  componentClass: Essential
+  componentType: Warp Engine
+  craftsmanship: common
+  description: 'Many ancient vessels, particularly cruisers, heavy cruisers and grand cruisers of the early Imperium utilised a variety of highly advanced experimental technologies. Many of these technological advances have since been discredited in the eyes of the adepts of Mars, and are now regarded as unreliable and prone to catastrophic malfunction. The H-616.b warp engine sits on the border of such suspect designs, not quite heretical, but somehow tainted with the scent of the profane. Capable of great speed during warp transits, the engine is notably less secure than later designs. [Ship component — Power 10, Space 12, SP -, Hulls: Light Cruisers, Cruisers.]'
+  effect: ''
+  hitPoints: 2
+  isDepressurized: false
+  isDestroyed: false
+  isOnFire: false
+  isUnpowered: false
+  location: Main
+  power: 10
+  shipPoints: 0
+  source: Battlefleet Koronus
+  space: 12
+  target: ''
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-warp-engine.png
+name: Miloslav H-616.b Warp Engine
+type: shipComponent
+---
+data:
+  availability: rare
+  backpack:
+    inBackpack: false
+  componentClass: Essential
+  componentType: Warp Engine
+  craftsmanship: common
+  description: '[Ship component — Power 8, Space 10, SP -, Hulls: Transports, Raiders, Frigates.]'
+  effect: ''
+  hitPoints: 2
+  isDepressurized: false
+  isDestroyed: false
+  isOnFire: false
+  isUnpowered: false
+  location: Main
+  power: 8
+  shipPoints: 0
+  source: Battlefleet Koronus
+  space: 10
+  target: ''
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-warp-engine.png
+name: Miloslav G-616.b Warp Engine
+type: shipComponent
+---
+data:
+  availability: rare
+  backpack:
+    inBackpack: false
+  componentClass: Essential
+  componentType: Gellar Field
+  craftsmanship: common
+  description: 'The Forge world Belecane in the Calixis Sector has long been associated with the construction of protective barriers, void shields, stasis fields, and Gellar fields. The 90.r was an experimental type of warp field which offered enhanced warp-handling capabilities, allowing the ship to slip through the warp like a predatory razorfish. Unfortunately it was prone to an inexplicable “flicker” during prolonged use which would allow daemonic entities ingress to the vessel during warp transit, meaning it is rarely used. [Ship component — Power 1, Space 0, SP -, Hulls: All Ships.]'
+  effect: ''
+  hitPoints: 2
+  isDepressurized: false
+  isDestroyed: false
+  isOnFire: false
+  isUnpowered: false
+  location: Main
+  power: 1
+  shipPoints: 0
+  source: Battlefleet Koronus
+  space: 0
+  target: ''
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-geller-field.png
+name: Belecane-pattern 90.r Gellar Field
+type: shipComponent
+---
+data:
+  availability: rare
+  backpack:
+    inBackpack: false
+  componentClass: Essential
+  componentType: Void Shields
+  craftsmanship: common
+  description: 'The ancient grand cruisers occasionally still operated by the Imperial Navy and certain fabulously wealthy Rogue Trader Dynasties possess titanic layered banks of antique void shields that fill cavernous field decks the size of small towns. These are hellish compartments, rank with the stench of ozone and prone to unpredictably deadly arcs of lightening from copper discharge points as the onion-layered void shields are pounded by enemy ordnance. Grand cruisers are capable of mounting triple layers of void shields, making them more durable than all but battleships. [Ship component — Power 9, Space 3, SP -, Hulls: Grand Cruisers.]'
+  effect: ''
+  hitPoints: 2
+  isDepressurized: false
+  isDestroyed: false
+  isOnFire: false
+  isUnpowered: false
+  location: Main
+  power: 9
+  shipPoints: 0
+  source: Battlefleet Koronus
+  space: 3
+  target: ''
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-void-shield.png
+name: Triple Void Shield Array
+type: shipComponent
+---
+data:
+  availability: rare
+  backpack:
+    inBackpack: false
+  componentClass: Essential
+  componentType: Void Shields
+  craftsmanship: common
+  description: '[Ship component — Power 3, Space 1, SP -, Hulls: All Ships.]'
+  effect: ''
+  hitPoints: 2
+  isDepressurized: false
+  isDestroyed: false
+  isOnFire: false
+  isUnpowered: false
+  location: Main
+  power: 3
+  shipPoints: 0
+  source: Battlefleet Koronus
+  space: 1
+  target: ''
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-void-shield.png
+name: Voss "Glimmer"-pattern Void Shield Array
+type: shipComponent
+---
+data:
+  availability: rare
+  backpack:
+    inBackpack: false
+  componentClass: Essential
+  componentType: Void Shields
+  craftsmanship: common
+  description: '[Ship component — Power 5, Space 1, SP -, Hulls: Cruisers.]'
+  effect: ''
+  hitPoints: 2
+  isDepressurized: false
+  isDestroyed: false
+  isOnFire: false
+  isUnpowered: false
+  location: Main
+  power: 5
+  shipPoints: 0
+  source: Battlefleet Koronus
+  space: 1
+  target: ''
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-void-shield.png
+name: Voss "Glimmer"-pattern Multiple Void Shield Array
+type: shipComponent
+---
+data:
+  availability: rare
+  backpack:
+    inBackpack: false
+  componentClass: Essential
+  componentType: Bridge
+  craftsmanship: common
+  description: 'This bridge is designed to command not just a single vessel, but to oversee the glory of a fleet of vessels. Enhanced vox systems, autocogitating holopict projectors, and trophies of past victories consume the space available. Fleet Command: As long as the bridge remained undamaged, all Command Tests made by the ship’s commanding officers (any officer on the bridge) gain +10. In addition, any Piloting and Navigation Tests made by this vessel or an allied vessel within 30 VUs gain +5. [Ship component — Power 4, Space 4, SP +1, Hulls: Battlecruisers, Grand Cruisers.]'
+  effect: ''
+  hitPoints: 2
+  isDepressurized: false
+  isDestroyed: false
+  isOnFire: false
+  isUnpowered: false
+  location: Main
+  power: 4
+  shipPoints: 1
+  source: Battlefleet Koronus
+  space: 4
+  target: ''
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-bridge.png
+name: Fleet Flag Bridge
+type: shipComponent
+---
+data:
+  availability: rare
+  backpack:
+    inBackpack: false
+  componentClass: Essential
+  componentType: Bridge
+  craftsmanship: common
+  description: 'Coordinating multiple wings of attack craft requires constant updates and extensive tactical resources. This bridge adds constantly updated read outs, plotting systems, and vox networks so that multiple attack wings may be directed at once. Flight Command: As long as the bridge remains undamaged, all Command Tests dealing with attack craft gain +5, and tests to ready new squadrons are automatically passed. Flight Control: All Trade objectives involving ground to orbit or small craft operations gain +25 Achievement Points. [Ship component — Power 2, Space 2, SP -, Hulls: Light Cruisers, Cruisers.]'
+  effect: ''
+  hitPoints: 2
+  isDepressurized: false
+  isDestroyed: false
+  isOnFire: false
+  isUnpowered: false
+  location: Main
+  power: 2
+  shipPoints: 0
+  source: Battlefleet Koronus
+  space: 2
+  target: ''
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-bridge.png
+name: Flight Command Bridge
+type: shipComponent
+---
+data:
+  availability: rare
+  backpack:
+    inBackpack: false
+  componentClass: Essential
+  componentType: Bridge
+  craftsmanship: common
+  description: 'Adapted from designs used by the Imperial planet-razer squadrons, this bridge is built to support planetary invasions by delivering pinpoint bombardments to ground-based targets. Improved bombardment directions: All Ballistic Skills Tests against planetary based targets gain a +10 bonus. Additionally, ground-based forces in vox communication with a ship equipped with an Invasion Bridge count as being equipped with a Multicompass (Page 146, ROGUE TRADER core rulebook). [Ship component — Power 4, Space 3, SP -, Hulls: Cruisers.]'
+  effect: ''
+  hitPoints: 2
+  isDepressurized: false
+  isDestroyed: false
+  isOnFire: false
+  isUnpowered: false
+  location: Main
+  power: 4
+  shipPoints: 0
+  source: Battlefleet Koronus
+  space: 3
+  target: ''
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-bridge.png
+name: Invasion Bridge
+type: shipComponent
+---
+data:
+  availability: rare
+  backpack:
+    inBackpack: false
+  componentClass: Essential
+  componentType: Life Sustainer
+  craftsmanship: common
+  description: 'This sustainer augments the traditional water filters and air purifiers with thousands of individual emergency-oxygen tanks and void suits stored in pressure-sensitive lockers at regular intervals throughout the ship. Such extensive redundancies as well as multiple pressure bulkheads reduce the impact of hull breaches upon a ship, allowing the crew to rush to patch them before too many are lost to the void. Lifeline: Increase Morale permanently by +1. This starship reduces Crew Population and Morale losses due to Depressurization by 4, to a minimum of 0. [Ship component — Power 4, Space 4, SP -, Hulls: Transports, Raiders, Frigates.]'
+  effect: ''
+  hitPoints: 2
+  isDepressurized: false
+  isDestroyed: false
+  isOnFire: false
+  isUnpowered: false
+  location: Main
+  power: 4
+  shipPoints: 0
+  source: Battlefleet Koronus
+  space: 4
+  target: ''
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-life-sustainer.png
+name: Clemency-pattern Life sustainer
+type: shipComponent
+---
+data:
+  availability: rare
+  backpack:
+    inBackpack: false
+  componentClass: Essential
+  componentType: Crew Quarters
+  craftsmanship: common
+  description: 'Most ratings bunk near their posts. However, some captains insist upon their crew using hammocks and camp beds to sleep near the core of the vessel, where they are more protected from the vulnerable decks abutting the cold void. This somewhat reduces crew casualties in the event of hull breaches, but the squalid, rat-infested conditions are unpopular with the crew. Living in Squalor: Reduce Morale permanently by 3. However, reduce all Crew Population losses due to depressurisation by 2, to a minimum of 0. [Ship component — Power 1, Space 2, SP -, Hulls: Transports, Raiders, Frigates.]'
+  effect: ''
+  hitPoints: 2
+  isDepressurized: false
+  isDestroyed: false
+  isOnFire: false
+  isUnpowered: false
+  location: Main
+  power: 1
+  shipPoints: 0
+  source: Battlefleet Koronus
+  space: 2
+  target: ''
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-crew-quarters.png
+name: Bilge-Rat Quarters
+type: shipComponent
+---
+data:
+  availability: rare
+  backpack:
+    inBackpack: false
+  componentClass: Essential
+  componentType: Augur Array
+  craftsmanship: common
+  description: 'Optimised for the support of planetary invasions, these scanners are designed to pinpoint the power sources of both planetary and orbital installations, the better to rain fire upon them. External: This Component does not require hull space. Although it is external, it can only be destroyed or Damaged by a Critical hit. Incoming: All Ballistic Skills Tests against planetary based targets gain a +5 bonus. Mark your targets: When working towards a Military objective, the players earn an additional 50 Achievement Points towards completing that objective. [Ship component — Power 5, Space 0, SP -, Hulls: All Ships.]'
+  effect: ''
+  hitPoints: 2
+  isDepressurized: false
+  isDestroyed: false
+  isOnFire: false
+  isUnpowered: false
+  location: Main
+  power: 5
+  shipPoints: 0
+  source: Battlefleet Koronus
+  space: 0
+  target: ''
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-augur-array.png
+name: BG-15 Assault Scanners
+type: shipComponent
+---
+data:
+  availability: rare
+  backpack:
+    inBackpack: false
+  componentClass: Essential
+  componentType: Augur Array
+  craftsmanship: common
+  description: 'This system of sensors provides the vessel with a broad spectrum of constant data of all events in the void beyond its hull. This is accomplished through a series of high-powered emitters sending out a huge array of electromagnetic wavelengths and subatomic particles. External: This Component does not require hull space. Although it is external, it can only be destroyed or damaged by a Critical Hit. Active Scanning: The broad array of systems grants +10 to the ship''s Detection, and a +15 to detect vessels on Silent Running when using Active Augury. [Ship component — Power 6, Space 0, SP -, Hulls: All Ships.]'
+  effect: ''
+  hitPoints: 2
+  isDepressurized: false
+  isDestroyed: false
+  isOnFire: false
+  isUnpowered: false
+  location: Main
+  power: 6
+  shipPoints: 0
+  source: Battlefleet Koronus
+  space: 0
+  target: ''
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-augur-array.png
+name: X-470 Ultimo Array
+type: shipComponent
+---
+data:
+  availability: rare
+  backpack:
+    inBackpack: false
+  componentClass: Supplemental
+  componentType: Torpedo Tubes
+  craftsmanship: common
+  description: '[Ship component — Power 2, Space 8, SP 3, Hulls: Light Cruisers, Cruisers.]'
+  effect: ''
+  hitPoints: 2
+  isDepressurized: false
+  isDestroyed: false
+  isOnFire: false
+  isUnpowered: false
+  location: Main
+  power: 2
+  shipPoints: 3
+  source: Battlefleet Koronus
+  space: 8
+  target: ''
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-macrobattery.png
+name: Fortis-pattern Torpedo Tubes
+type: shipComponent
+---
+data:
+  availability: rare
+  backpack:
+    inBackpack: false
+  componentClass: Supplemental
+  componentType: Torpedo Tubes
+  craftsmanship: common
+  description: '[Ship component — Power 2, Space 6, SP 1, Hulls: Raiders, Frigates, Light Cruisers, Cruisers.]'
+  effect: ''
+  hitPoints: 2
+  isDepressurized: false
+  isDestroyed: false
+  isOnFire: false
+  isUnpowered: false
+  location: Main
+  power: 2
+  shipPoints: 1
+  source: Battlefleet Koronus
+  space: 6
+  target: ''
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-macrobattery.png
+name: Gryphonne-pattern Torpedo Tubes
+type: shipComponent
+---
+data:
+  availability: rare
+  backpack:
+    inBackpack: false
+  componentClass: Supplemental
+  componentType: Torpedo Tubes
+  craftsmanship: common
+  description: '[Ship component — Power 2, Space 8, SP 2, Hulls: Light Cruisers, Cruisers.]'
+  effect: ''
+  hitPoints: 2
+  isDepressurized: false
+  isDestroyed: false
+  isOnFire: false
+  isUnpowered: false
+  location: Main
+  power: 2
+  shipPoints: 2
+  source: Battlefleet Koronus
+  space: 8
+  target: ''
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-macrobattery.png
+name: Mars-pattern Torpedo Tubes
+type: shipComponent
+---
+data:
+  availability: rare
+  backpack:
+    inBackpack: false
+  componentClass: Supplemental
+  componentType: Torpedo Tubes
+  craftsmanship: common
+  description: '[Ship component — Power 1, Space 5, SP 1, Hulls: All Ships.]'
+  effect: ''
+  hitPoints: 2
+  isDepressurized: false
+  isDestroyed: false
+  isOnFire: false
+  isUnpowered: false
+  location: Main
+  power: 1
+  shipPoints: 1
+  source: Battlefleet Koronus
+  space: 5
+  target: ''
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-macrobattery.png
+name: Voss-pattern Torpedo Tubes
+type: shipComponent
+---
+data:
+  availability: rare
+  backpack:
+    inBackpack: false
+  componentClass: Supplemental
+  componentType: Landing Bay
+  craftsmanship: common
+  description: 'When a transport hull is repurposed for exploration or needs additional security, its captain may take the extreme measure of adapting the Main Cargo Hold to carry attack craft. Though the massive carrying capacity of a transport is not entirely eliminated, it is substantially reduced. Jury-Rigged: These adaptations are less than ideal for the craft launched and landed in the makeshift bays. Attack craft launched from a Hold Landing Bay reduce their movement on the turn launched by $-2$ VU. Craft attempting to land in a Hold Landing Bay must pass an Ordinary (+10) Piloting+Manoeuvrability Test to land safely (squadrons should make one test per squadron). Success means they land safely. Three degrees of failure or less means they veered off to make another attempt. Failure by four or more degrees indicates that the craft has crashed into the bay (or one craft for every degree of failure, in the case of squadrons). The Component is immediately considered Damaged. Outside of
+    combat, craft can spend more time landing. In this case, there is no a Test, but it takes a half hour for each squadron to land. [Ship component — Power 1, Space -, SP 2, Hulls: Transports.]'
+  effect: ''
+  hitPoints: 2
+  isDepressurized: false
+  isDestroyed: false
+  isOnFire: false
+  isUnpowered: false
+  location: Main
+  power: 1
+  shipPoints: 2
+  source: Battlefleet Koronus
+  space: 0
+  target: ''
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-cargo-hold.png
+name: Hold Landing Bay
+type: shipComponent
+---
+data:
+  availability: rare
+  backpack:
+    inBackpack: false
+  componentClass: Supplemental
+  componentType: Landing Bay
+  craftsmanship: common
+  description: '[Ship component — Power 1, Space 4, SP 1, Hulls: Light Cruisers, Cruisers.]'
+  effect: ''
+  hitPoints: 2
+  isDepressurized: false
+  isDestroyed: false
+  isOnFire: false
+  isUnpowered: false
+  location: Main
+  power: 1
+  shipPoints: 1
+  source: Battlefleet Koronus
+  space: 4
+  target: ''
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-cargo-hold.png
+name: Jovian-pattern Escort Bay
+type: shipComponent
+---
+data:
+  availability: rare
+  backpack:
+    inBackpack: false
+  componentClass: Supplemental
+  componentType: Landing Bay
+  craftsmanship: common
+  description: '[Ship component — Power 1, Space 6, SP 2, Hulls: Cruisers.]'
+  effect: ''
+  hitPoints: 2
+  isDepressurized: false
+  isDestroyed: false
+  isOnFire: false
+  isUnpowered: false
+  location: Main
+  power: 1
+  shipPoints: 2
+  source: Battlefleet Koronus
+  space: 6
+  target: ''
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-cargo-hold.png
+name: Jovian-pattern Landing Bay
+type: shipComponent
+---
+data:
+  availability: rare
+  backpack:
+    inBackpack: false
+  componentClass: Supplemental
+  componentType: Landing Bay
+  craftsmanship: common
+  description: 'Lathe-pattern Landing Bays are characterised by the huge opening that offers an unobstructed view of the void. Only the occasional crackle of an energy field disrupts the view of the yawning black. Prior to entering the warp, a vessel equipped with this Component must engage the huge security hatches to seal off this opening from any view of the warp. Energy Field: The security hatches on this bay must be open during the Strategic Turn when small craft are landing or taking off. If this Component ever loses power when the hatches are open, this Component becomes Depressurised. [Ship component — Power 1, Space 5, SP 2, Hulls: Cruisers.]'
+  effect: ''
+  hitPoints: 2
+  isDepressurized: false
+  isDestroyed: false
+  isOnFire: false
+  isUnpowered: false
+  location: Main
+  power: 1
+  shipPoints: 2
+  source: Battlefleet Koronus
+  space: 5
+  target: ''
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-cargo-hold.png
+name: Lathe-pattern Landing Bay
+type: shipComponent
+---
+data:
+  availability: rare
+  backpack:
+    inBackpack: false
+  componentClass: Supplemental
+  componentType: Cargo Hold
+  craftsmanship: common
+  description: '[Ship component — Power 1, Space 1, SP 1, Hulls: All Ships.]'
+  effect: ''
+  hitPoints: 2
+  isDepressurized: false
+  isDestroyed: false
+  isOnFire: false
+  isUnpowered: false
+  location: Main
+  power: 1
+  shipPoints: 1
+  source: Battlefleet Koronus
+  space: 1
+  target: ''
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-cargo-hold.png
+name: Brig
+type: shipComponent
+---
+data:
+  availability: rare
+  backpack:
+    inBackpack: false
+  componentClass: Supplemental
+  componentType: Cargo Hold
+  craftsmanship: common
+  description: '[Ship component — Power 1, Space 5, SP 2, Hulls: Light Cruisers, Cruisers.]'
+  effect: ''
+  hitPoints: 2
+  isDepressurized: false
+  isDestroyed: false
+  isOnFire: false
+  isUnpowered: false
+  location: Main
+  power: 1
+  shipPoints: 2
+  source: Battlefleet Koronus
+  space: 5
+  target: ''
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-cargo-hold.png
+name: Ship's Stores
+type: shipComponent
+---
+data:
+  availability: rare
+  backpack:
+    inBackpack: false
+  componentClass: Supplemental
+  componentType: Augments and Enhancement
+  craftsmanship: common
+  description: 'The vessel is equipped with a package of false auspex reflectors, thermal buoys, vox screamers, and other devices designed to keep an enemy vessel from accurately firing on it. Single Use: When deployed, the countermeasures apply a -20 penalty to all Ballistic Skill Tests made to attack the ship for the next 1d5+1 Strategic Turns. Torpedoes suffer a -30 penalty instead. Once used, the countermeasures must be refilled and refurbished with a successful Upkeep Test outside of combat (and at a technological system with void yards) before it can be used again. [Ship component — Power 1, Space 1, SP 2, Hulls: All Ships.]'
+  effect: ''
+  hitPoints: 2
+  isDepressurized: false
+  isDestroyed: false
+  isOnFire: false
+  isUnpowered: false
+  location: Main
+  power: 1
+  shipPoints: 2
+  source: Battlefleet Koronus
+  space: 1
+  target: ''
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-augur-array.png
+name: Defensive Countermeasures
+type: shipComponent
+---
+data:
+  availability: rare
+  backpack:
+    inBackpack: false
+  componentClass: Supplemental
+  componentType: Augments and Enhancement
+  craftsmanship: common
+  description: 'Designed to dump as much ammunition into the space surrounding a vessel as possible, Flak Turrets dump a steady barrage of explosive shells that strike incoming craft by chance more than by design. Because of the massive ammunition expenditure and the flak-wall''s interference with ship sensors, these batteries are not always used. The ship''s commander must decide at the start of each strategic turn (as a Free Action) if the Flak Turrets are in use or inactive that turn. Scattershot: When in use, Flak Turrets increase the ship''s Turret Rating by +1. [Ship component — Power 1, Space 1, SP 1, Hulls: All Ships.]'
+  effect: ''
+  hitPoints: 2
+  isDepressurized: false
+  isDestroyed: false
+  isOnFire: false
+  isUnpowered: false
+  location: Main
+  power: 1
+  shipPoints: 1
+  source: Battlefleet Koronus
+  space: 1
+  target: ''
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-augur-array.png
+name: Flak Turrets
+type: shipComponent
+---
+data:
+  availability: rare
+  backpack:
+    inBackpack: false
+  componentClass: Supplemental
+  componentType: Augments and Enhancement
+  craftsmanship: common
+  description: 'The ship''s hull and structural supports are ribbed with power-field generators, which can greatly reinforce the vessel''s structural integrity as long as they are powered. Hull Support: As long as Power is supplied to his Component, the ship''s Hull Integrity is increased by twice the Power supplied, up to +6. Should this Component be Damaged or supplied with less Power, the hull loses this bonus value proportionally. This cannot bring the ship''s Hull Integrity below 0. The amount of power supplied to this Component may be increased with a Challenging (+0) Tech Use Test (this counts as a Free Action in starship combat) and may Unpower other Components at the GM''s discretion. [Ship component — Power 1-3, Space 1, SP 2, Hulls: All Ships.]'
+  effect: ''
+  hitPoints: 2
+  isDepressurized: false
+  isDestroyed: false
+  isOnFire: false
+  isUnpowered: false
+  location: Main
+  power: 1
+  shipPoints: 2
+  source: Battlefleet Koronus
+  space: 1
+  target: ''
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-augur-array.png
+name: Field Bracing
+type: shipComponent
+---
+data:
+  availability: rare
+  backpack:
+    inBackpack: false
+  componentClass: Supplemental
+  componentType: Augments and Enhancement
+  craftsmanship: common
+  description: 'The vessel is equipped with additional systems such as specialised extinguisher gases all designed to combat flames and keep them from spreading. Flame Extinguisher: If the Bridge is powered and undamaged, a character may activate this system to extinguish one Component on fire by making a Difficult (-10) Tech-Use Test (this counts as an Extended Action in starship combat). If successful the fire is extinguished. This Component may be used once per Strategic Turn. [Ship component — Power 1, Space 1, SP 2, Hulls: Transports, Raiders, Frigates.]'
+  effect: ''
+  hitPoints: 2
+  isDepressurized: false
+  isDestroyed: false
+  isOnFire: false
+  isUnpowered: false
+  location: Main
+  power: 1
+  shipPoints: 2
+  source: Battlefleet Koronus
+  space: 1
+  target: ''
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-augur-array.png
+name: Fire Suppression System
+type: shipComponent
+---
+data:
+  availability: rare
+  backpack:
+    inBackpack: false
+  componentClass: Supplemental
+  componentType: Augments and Enhancement
+  craftsmanship: common
+  description: 'Not all Rogue Traders are able to make their way back to proper port facilities to repair damages from combat, and often they must make do in safe asteroid fields or backwater systems—quiet areas to afford them uninterrupted time to complete essential refurbishment. In order to hasten their repairs, they call on auxiliary power sources such as Lux Nets. These huge solar energy collectors use micro-thin sheets spread across hundreds of square kilometres to generate additional power. They are especially useful when the main drives are damaged, but can draw unwanted attention to a crippled vessel. [Ship component — Power 10 generated, Space 2, SP 2, Hulls: All Ships.]'
+  effect: ''
+  hitPoints: 2
+  isDepressurized: false
+  isDestroyed: false
+  isOnFire: false
+  isUnpowered: false
+  location: Main
+  power: -10
+  shipPoints: 2
+  source: Battlefleet Koronus
+  space: 2
+  target: ''
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-augur-array.png
+name: Lux Net
+type: shipComponent
+---
+data:
+  availability: rare
+  backpack:
+    inBackpack: false
+  componentClass: Supplemental
+  componentType: Augments and Enhancement
+  craftsmanship: common
+  description: 'An often-used tactic among pirate fleets is to strew a heavily-trafficked shipping lane with mines, and then pounce on any unfortunate ship crippled by their massive explosions. Starship mines are huge and can explode with catastrophic effect. Most are automatically triggered via an on-board passive auspex to home in on nearby vessels, but some can be remotely operated to achieve greater effectiveness. For starships plying common transit lanes through a system, they are a frequent worry that requires constant vigilance. [Ship component — Power 1, Space 4, SP 1, Hulls: Transports, Light Cruisers, Cruisers.]'
+  effect: ''
+  hitPoints: 2
+  isDepressurized: false
+  isDestroyed: false
+  isOnFire: false
+  isUnpowered: false
+  location: Main
+  power: 1
+  shipPoints: 1
+  source: Battlefleet Koronus
+  space: 4
+  target: ''
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-augur-array.png
+name: Minelayer Bay
+type: shipComponent
+---
+data:
+  availability: rare
+  backpack:
+    inBackpack: false
+  componentClass: Supplemental
+  componentType: Augments and Enhancement
+  craftsmanship: common
+  description: 'Whereas some traders desire the obvious intimidation of a huge armoured prow, others prefer a more subtle approach and sheath an otherwise unremarkable ram beneath their ship''s prow with power-field generators. When activated, the ship''s ram glows with hazy light and is often the last thing an enemy captain will see before impact. I: THE WEAPONS OF WAR # MINEFIELDS A minefield reacts to a vessel inside its boundaries by making a Scrutiny Test with a Skill of 40 with +10 modifier for every full 20 Space the vessel has (the larger the ship, the more mines it activates). The mines suffer a –40 to the Test if the vessel is on Silent Running. If the mines detect a vessel, they strike it with 1d1+2 explosive hits, with this test being done each round the vessel is in the field. Each hit deals 1d10+2 damage, and the hits are combined as though from a macrobattery salvo. Armour and void shields protects against mines as normal. [Ship component — Power 2, Space 0, SP 2, Hulls: Light
+    Cruisers, Cruisers.]'
+  effect: ''
+  hitPoints: 2
+  isDepressurized: false
+  isDestroyed: false
+  isOnFire: false
+  isUnpowered: false
+  location: Main
+  power: 2
+  shipPoints: 2
+  source: Battlefleet Koronus
+  space: 0
+  target: ''
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-augur-array.png
+name: Power Ram
+type: shipComponent
+---
+data:
+  availability: rare
+  backpack:
+    inBackpack: false
+  componentClass: Supplemental
+  componentType: Additional Facilitie
+  craftsmanship: common
+  description: 'The ship is equipped with specialised tethering, grapples and distillation holds, so that it can process valuable comets discovered in their lonely orbits surrounding a star. The resulting waters and minerals can be used to replenish the crew and ship, or more profitably left as frozen chunks and sold to connoisseurs who value the luxury of pure cloud ice. Gelt in the Clouds: This Component allows the ship to conduct ice mining in a suitable comet field far outside a solar system. Comets must be first located with a Challenging (+0) Scrutiny + Detection Test via the ship''s augur arrays. Mining then takes 1d10+5 days and once complete the additional fresh water and air restore 1d5 Morale as well as extending deep void operations one additional month. Alternatively, this can grant the Explorers +50 Achievement Points to an ongoing Endeavour (the refined plasma can either be used in the Endeavour, or sold to generate funds), or can be used in the construction of a full Endeavour
+    to mine comets at the GM''s discretion. [Ship component — Power 3, Space 4, SP 1, Hulls: Transports.]'
+  effect: ''
+  hitPoints: 2
+  isDepressurized: false
+  isDestroyed: false
+  isOnFire: false
+  isUnpowered: false
+  location: Main
+  power: 3
+  shipPoints: 1
+  source: Battlefleet Koronus
+  space: 4
+  target: ''
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-augur-array.png
+name: Cloudmining Facility
+type: shipComponent
+---
+data:
+  availability: rare
+  backpack:
+    inBackpack: false
+  componentClass: Supplemental
+  componentType: Additional Facilitie
+  craftsmanship: common
+  description: '[Ship component — Power 4, Space 0, SP 1, Hulls: All Ships.]'
+  effect: ''
+  hitPoints: 2
+  isDepressurized: false
+  isDestroyed: false
+  isOnFire: false
+  isUnpowered: false
+  location: Main
+  power: 4
+  shipPoints: 1
+  source: Battlefleet Koronus
+  space: 0
+  target: ''
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-augur-array.png
+name: Hydraphuran Jamming System
+type: shipComponent
+---
+data:
+  availability: rare
+  backpack:
+    inBackpack: false
+  componentClass: Supplemental
+  componentType: Additional Facilitie
+  craftsmanship: common
+  description: '[Ship component — Power 2, Space 1, SP 2, Hulls: Light Cruisers, Cruisers.]'
+  effect: ''
+  hitPoints: 2
+  isDepressurized: false
+  isDestroyed: false
+  isOnFire: false
+  isUnpowered: false
+  location: Main
+  power: 2
+  shipPoints: 2
+  source: Battlefleet Koronus
+  space: 1
+  target: ''
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-augur-array.png
+name: Manufactorum
+type: shipComponent
+---
+data:
+  availability: rare
+  backpack:
+    inBackpack: false
+  componentClass: Supplemental
+  componentType: Additional Facilitie
+  craftsmanship: common
+  description: 'A life of exploration invariably leads to encounters with unexpected life. This unexpected life can lead to unexpected injuries as well as novel diseases. Every living quarters includes a basic infirmary, but those are not equipped for every variety of injury or disease. Similarly, an infirmary is not equipped to treat the number of badly injured survivors from a badly damaged ship or planet-wide epidemic. A Medicae Deck offers the facilities and staff to address both of these possibilities. Diagnostics and Treatment: The Medicae Deck adds a +20 bonus to all Medicae Skill Tests performed within this Component. The number of patients that may be treated without penalty is increased to three times the character''s Intelligence Bonus. [Ship component — Power 2, Space 1, SP 1, Hulls: All Ships.]'
+  effect: ''
+  hitPoints: 2
+  isDepressurized: false
+  isDestroyed: false
+  isOnFire: false
+  isUnpowered: false
+  location: Main
+  power: 2
+  shipPoints: 1
+  source: Battlefleet Koronus
+  space: 1
+  target: ''
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-augur-array.png
+name: Medicae Deck
+type: shipComponent
+---
+data:
+  availability: rare
+  backpack:
+    inBackpack: false
+  componentClass: Supplemental
+  componentType: Additional Facilitie
+  craftsmanship: common
+  description: 'For the Rogue Trader who desires only the finest in shipboard accoutrements, a Melodium is ideal. Most are fashioned as grandiose chambers covered with all manner of gilded pipes, horns, and other instruments which can produce an endless variety of musical tunes. The room itself alters shape via clever brass sidings and panels as it plays, the better to accompany the melodies and vox-repeaters throughout the ship carry selected tunes into its farthest depths. A Melodium provides uplifting tones designed to instil feelings of duty and loyalty throughout the vessel, from the lowly ratings and voidmen to the officers. That sometimes this is due to subliminal infra-harmonics lacing the melodies is kept a guarded secret. The hall itself can be configured in a variety of ways to produce the desired internal music and background effects, greatly aiding in many a difficult negotiation. [Ship component — Power 1, Space 1, SP 1, Hulls: All Ships.]'
+  effect: ''
+  hitPoints: 2
+  isDepressurized: false
+  isDestroyed: false
+  isOnFire: false
+  isUnpowered: false
+  location: Main
+  power: 1
+  shipPoints: 1
+  source: Battlefleet Koronus
+  space: 1
+  target: ''
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-augur-array.png
+name: Melodium
+type: shipComponent
+---
+data:
+  availability: rare
+  backpack:
+    inBackpack: false
+  componentClass: Supplemental
+  componentType: Additional Facilitie
+  craftsmanship: common
+  description: '[Ship component — Power 2, Space 3, SP 3, Hulls: Raiders, Frigates.]'
+  effect: ''
+  hitPoints: 2
+  isDepressurized: false
+  isDestroyed: false
+  isOnFire: false
+  isUnpowered: false
+  location: Main
+  power: 2
+  shipPoints: 3
+  source: Battlefleet Koronus
+  space: 3
+  target: ''
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-augur-array.png
+name: Plasma Scoop
+type: shipComponent
+---
+data:
+  availability: rare
+  backpack:
+    inBackpack: false
+  componentClass: Supplemental
+  componentType: Additional Facilitie
+  craftsmanship: common
+  description: '[Ship component — Power 1, Space 1, SP 1, Hulls: All Ships.]'
+  effect: ''
+  hitPoints: 2
+  isDepressurized: false
+  isDestroyed: false
+  isOnFire: false
+  isUnpowered: false
+  location: Main
+  power: 1
+  shipPoints: 1
+  source: Battlefleet Koronus
+  space: 1
+  target: ''
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-augur-array.png
+name: Pilot's Chamber
+type: shipComponent
+---
+data:
+  availability: rare
+  backpack:
+    inBackpack: false
+  componentClass: Supplemental
+  componentType: Additional Facilitie
+  craftsmanship: common
+  description: '[Ship component — Power 5, Space 3, SP 3, Hulls: Transport, Light Cruiser, Cruiser.]'
+  effect: ''
+  hitPoints: 2
+  isDepressurized: false
+  isDestroyed: false
+  isOnFire: false
+  isUnpowered: false
+  location: Main
+  power: 5
+  shipPoints: 3
+  source: Battlefleet Koronus
+  space: 3
+  target: ''
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-augur-array.png
+name: Salvage Systems
+type: shipComponent
+---
+data:
+  availability: rare
+  backpack:
+    inBackpack: false
+  componentClass: Supplemental
+  componentType: Additional Facilitie
+  craftsmanship: common
+  description: 'As with torpedoes, starships carry a finite supply of small craft, although they often are equipped with large stocks of spare parts, and may even scavenge damaged and derelict interceptors and bombers after battles to refit and reuse them. However, being an attack craft pilot is an extraordinarily dangerous job. The number of possible ways a pilot may meet his end is considerable, and it is no surprise that the Navy''s pilots are a superstitious lot, adorning their craft in lucky trinkets, holy relics and non-regulation paint-jobs all intended to bring fortune and longevity to their pilots. There are two ways to track the losses in starship squadrons—the Abstract Method and the Detailed Method. [Ship component — Power 2, Space 2, SP 1, Hulls: Light Cruisers, Cruisers.]'
+  effect: ''
+  hitPoints: 2
+  isDepressurized: false
+  isDestroyed: false
+  isOnFire: false
+  isUnpowered: false
+  location: Main
+  power: 2
+  shipPoints: 1
+  source: Battlefleet Koronus
+  space: 2
+  target: ''
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-augur-array.png
+name: Small Craft Repair Deck
+type: shipComponent
+---
+data:
+  availability: rare
+  backpack:
+    inBackpack: false
+  componentClass: Supplemental
+  componentType: Additional Facilitie
+  craftsmanship: common
+  description: '[Ship component — Power 7, Space 14, SP 4, Hulls: Transports with 50+ Space, Grand Cruisers.]'
+  effect: ''
+  hitPoints: 2
+  isDepressurized: false
+  isDestroyed: false
+  isOnFire: false
+  isUnpowered: false
+  location: Main
+  power: 7
+  shipPoints: 4
+  source: Battlefleet Koronus
+  space: 14
+  target: ''
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-augur-array.png
+name: Spacedock Piers
+type: shipComponent
+---
+data:
+  availability: very rare
+  backpack:
+    inBackpack: false
+  componentClass: Supplemental
+  componentType: Plasma Drive
+  craftsmanship: common
+  description: '[Ship component — Power 30 Generated, Space 10, SP 2, Hulls: Transports.]'
+  effect: ''
+  hitPoints: 2
+  isDepressurized: false
+  isDestroyed: false
+  isOnFire: false
+  isUnpowered: false
+  location: Main
+  power: -30
+  shipPoints: 2
+  source: Battlefleet Koronus
+  space: 10
+  target: ''
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-plasma-drive.png
+name: Cypra-pattern Class 1 Drive
+type: shipComponent
+---
+data:
+  availability: very rare
+  backpack:
+    inBackpack: false
+  componentClass: Supplemental
+  componentType: Plasma Drive
+  craftsmanship: common
+  description: '[Ship component — Power 40 Generated, Space 12, SP 2, Hulls: Raiders, Frigates.]'
+  effect: ''
+  hitPoints: 2
+  isDepressurized: false
+  isDestroyed: false
+  isOnFire: false
+  isUnpowered: false
+  location: Main
+  power: -40
+  shipPoints: 2
+  source: Battlefleet Koronus
+  space: 12
+  target: ''
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-plasma-drive.png
+name: Cypra-pattern Class 2 Drive
+type: shipComponent
+---
+data:
+  availability: very rare
+  backpack:
+    inBackpack: false
+  componentClass: Supplemental
+  componentType: Torpedo Tubes
+  craftsmanship: common
+  description: 'In the early days of the Imperium, certain Forge worlds produced weapons and starship components of a quality now lost to mankind, and torpedoes were no exception. "Plasma accelerated" torpedo tubes refer to a type of torpedo launch system, rather than a specific pattern. These weapon systems utilize plasma from the ship''s drives to "hot launch" the torpedoes, while integral guidance systems constantly update target profiles to the torpedoes'' machine spirits. They are even safer than their counterparts, with multiple reinforced adamantium-alloy blast hatches. This component can store sixteen torpedoes, plus an additional four if the ship''s captain does not mind keeping four "in the tubes." This follows all the rules for torpedo tubes. [Ship component — Power 2, Space 6, SP 2, Hulls: All Ships.]'
+  effect: ''
+  hitPoints: 2
+  isDepressurized: false
+  isDestroyed: false
+  isOnFire: false
+  isUnpowered: false
+  location: Main
+  power: 2
+  shipPoints: 2
+  source: Battlefleet Koronus
+  space: 6
+  target: ''
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-macrobattery.png
+name: Plasma Accelerated Torpedo Tubes
+type: shipComponent
+---
+data:
+  availability: very rare
+  backpack:
+    inBackpack: false
+  componentClass: Supplemental
+  componentType: Augur Array
+  craftsmanship: common
+  description: 'As the Imperium first began to expand away from the glowing light of the Astronomican, many navigators were much less adept at finding their way through the warp. To assist in this technique, massive force staves were added to the exterior of some vessels. These functioned as antennae, allowing a navigator to more easily hone in on the Astronomican''s signal. His Holy Light: The Navigator receives a +20 bonus to all tests to Locate the Astronomican. Beacon: In addition to increasing the navigator''s sensitivity, this Component also makes the vessel much more noticeable to others in the warp. Vessels equipped with a Warp Antenna suffer a –10 modifier on Warp Travel Encounter Tests. [Ship component — Power 1, Space 1, SP 2, Hulls: All Ships.]'
+  effect: ''
+  hitPoints: 2
+  isDepressurized: false
+  isDestroyed: false
+  isOnFire: false
+  isUnpowered: false
+  location: Main
+  power: 1
+  shipPoints: 2
+  source: Battlefleet Koronus
+  space: 1
+  target: ''
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-warp-engine.png
+name: Warp Antenna
+type: shipComponent
+---
+data:
+  availability: very rare
+  backpack:
+    inBackpack: false
+  componentClass: Supplemental
+  componentType: Augur Array
+  craftsmanship: common
+  description: 'This massive submersion tank enhances a Navigator''s ability to safely sense the ebb and flow of the warp outside of the vessel. A broad spectrum of sensors measures the intensities and currents in the warp outside of the starship. This information is then relayed safely to the Navigator so that it can be more easily analysed and addressed. The Sextant''s array of cogitators further aids the Navigator in identifying known routes and calculating their current stability. The True Path: When using a Warp Sextant, the Navigator receives a +20 bonus on any Perception Tests or Navigation (Warp) Tests made to steer the vessel through the warp. [Ship component — Power 4, Space 1, SP 2, Hulls: All Ships.]'
+  effect: ''
+  hitPoints: 2
+  isDepressurized: false
+  isDestroyed: false
+  isOnFire: false
+  isUnpowered: false
+  location: Main
+  power: 4
+  shipPoints: 2
+  source: Battlefleet Koronus
+  space: 1
+  target: ''
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-warp-engine.png
+name: Warp Sextant
+type: shipComponent

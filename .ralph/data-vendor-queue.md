@@ -366,3 +366,20 @@ prose fuzzy-matched from the `## NAME` blocks.
   Bays, and all SHIP COMPONENTS (essential/supplemental/archeotech — power-generation & hull-gating
   semantics), plus the xeno component/weapon sections (Ork/Eldar/Stryxis/Rak'Gol/Chaos) and Drydock. A
   larger ship-components pass.
+
+---
+
+## Battlefleet Koronus ship components + nova cannons (0.9.24, 2026-09-02) — 54 items
+
+Part A: **51 ship components** (essential drives/warp engines/gellar/void shields/bridges/life sustainers/
+crew quarters/augur arrays; supplemental torpedo tubes/landing bays/cargo/augments/facilities; archeotech
+Cypra drives/warp antenna/sextant) from BK tables 1557/1989/2052 (extract_shipcomp.py, cloning a drive
+template). Drives store negative power ("X Generated"). Part B: **3 nova cannons** (Mars/Ryza/Jovian) ->
+ship-weapons. **Drydock fully deduped** (reprint of CoreBook components; apostrophe- and Auger/Augur-spelling
+normalization added to the dedup after QA caught near-duplicates). Xeno sections (Ork/Eldar/Stryxis/Rak'Gol/
+Chaos) have NO stat tables in the markdown (prose-only) — NOT extractable, skipped.
+
+**Follow-up:** componentType for some supplemental groups is the raw group name ("Additional Facilitie",
+"Augments and Enhancement") — cosmetic. Nova cannon rangeLong stores the min of the "6-40" band (special
+targeting noted in description). class/size/slot heuristic. bonuses (BS/manoeuvre/etc.) NOT wired for the
+new components (description-only) — a separate wiring pass like 0.8.35-0.8.37.
