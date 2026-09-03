@@ -383,3 +383,24 @@ Chaos) have NO stat tables in the markdown (prose-only) — NOT extractable, ski
 "Augments and Enhancement") — cosmetic. Nova cannon rangeLong stores the min of the "6-40" band (special
 targeting noted in description). class/size/slot heuristic. bonuses (BS/manoeuvre/etc.) NOT wired for the
 new components (description-only) — a separate wiring pass like 0.8.35-0.8.37.
+
+---
+
+## Wiring passes (0.9.25, 2026-09-02) — psychic damage + source fix; ship/talent analysis
+
+Three requested wiring categories, QA-gated:
+1. **Psychic power damage** — WIRED 9 direct-damage powers (Focus-Power-Test-then-deal): Frazzle 1d10+@pr,
+   Zzap 1d5+@pr, Deff Wave 2d5+@pr, Krump 'Em All 1d10, Telekinetic Sledge 1d10+@pr, Distort Function
+   1d10+@pr, Realm of Decay 1d5, Plaguebearer 1d5, Sorcerer's Tribute 1d10. Opposed/conditional Navigator
+   powers deliberately NOT given a damage field (their damage hinges on the opposed outcome the engine's
+   damage field can't gate). **Also FIXED a real bug:** the 26 psyker powers (0.9.22) had kept the clone
+   template's source ("Rogue Trader Core Rulebook, p.168") — corrected to "The Navis Primer".
+2. **Ship component bonuses** — NO change. The new BK components' effects are situational/conditional/dynamic
+   (Fleet Flag Bridge +10 Command / +5 Piloting; Invasion Bridge +10 BS vs planetary only; Field Bracing
+   hull = 2×power supplied; Flak Turrets per-turn activation; Defensive Countermeasures single-use -20 enemy
+   BS) — none map to the flat always-on `componentBonuses` fields, so folding them would be incorrect
+   (same call the 0.8.36 audit made for such effects). Left description-only.
+3. **Talent/trait AEs** — NO change. The new supplement talents/traits are all conditional/narrative
+   (Vile Intrusion +20 Tech-Use vs machine spirits during a hack; Cold Reading opposed social; Killer's Eye
+   Called-Shot conditional) — no flat always-on bonuses to AE-wire, consistent with most existing supplement
+   talents being description-only.
