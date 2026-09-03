@@ -935,7 +935,7 @@ type: weaponModification
 ---
 data:
     craftsmanship: common
-    availability: Special
+    availability: Rare
     weight: 0
     equipped: false
     inBackpack: false

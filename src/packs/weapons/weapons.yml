@@ -5784,7 +5784,7 @@ data:
         inaccurate: true
     type: Primitive
     weight: 1.5
-img: systems/rogue-trader-3rd/icons/items/buckets/thrown-primitive.png
+img: systems/rogue-trader-3rd/icons/items/buckets/thrown-knife.png
 name: Bolas
 type: weapon
 ---
@@ -9470,7 +9470,7 @@ type: weapon
 ---
 data:
     availability: Unique
-    class: Exotic, Basic
+    class: Basic
     clip:
         max: 40
         value: 40
