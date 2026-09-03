@@ -324,3 +324,23 @@ format), discipline Navigator, range Gaze/Special (heuristic), source The Navis 
   raised to 3000. All 11 now have all three tiers.
 - Other Navis Primer powers (Ork Weirdboy, Rak'Gol, Chaos Sorcerer "Servants of the Ruinous Powers")
   are separate non-Navigator disciplines — NOT imported this pass.
+
+---
+
+## The Navis Primer — non-Navigator psyker powers (0.9.22, 2026-09-02) — 26 powers
+
+Extracted the three non-Navigator psychic disciplines (scratchpad `extract_psy.py`, cloning a neutral
+non-opposed power as the schema template; line-based metadata parse for Value/Prerequisites/Focus Power/
+Range/Sustained): **Weirdboy Waaagh! (+12)** — Frazzle, Up an' at 'Em!, Warpath, Dis iz Takin' Too Long!,
+Smash da Gitz, We'z Gotta Be Lucky, Zzap, 'Ere We Go, Deff Wave, Krump 'Em All, 'Ead to 'Ead, I'z Gunna
+Squig Ya!; **Rak'Gol (+7)** — Seize the Machine, Telekinetic Sledge, Distort Function, Reap the Flesh,
+Reweave, Open the Mind's Eye, Flay Reality; **Daemon Techniques (+7)** — Siren's Whisper, Call to Ecstasy,
+Realm of Decay, Breath of the Plaguelord, Plaguebearer, Sorcerer's Tribute, Fires of Revelation.
+disciplines: Weirdboy / Rak'Gol / Daemon. psychic-powers 90→116.
+
+- Description-only; range parsed from "Range:" (e.g. "5m x Psy Rating"), prerequisite from "Prerequisites:".
+  No per-power damage-formula automation (would need @pr Roll formulas per power — a follow-up).
+- QA caught a range-truncation bug pre-release (twice): Weirdboy section end was cut short (lost Deff Wave/
+  Krump 'Em All/'Ead to 'Ead/I'z Gunna Squig Ya!), and a too-wide Daemon range pulled in NPC stat-block
+  headings (Characteristics/Skills/Talents) — both fixed, re-verified live.
+- NPC daemon heralds (T'Zar, The Luminary, The Carrier, The Huntsman) are stat blocks, not powers — skipped.

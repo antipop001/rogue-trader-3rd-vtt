@@ -3676,3 +3676,800 @@ data:
 img: systems/rogue-trader-3rd/icons/psykana/beam-magenta-2.jpg
 name: Warp Vigil
 type: psychicPower
+---
+data:
+  action: Full Action
+  attackBonus: 0
+  attackType: Concentration
+  cost: 0
+  damage: 0
+  damageType: Energy
+  description: With a thunderous roar, the Weirdboy unleashes a blast of energy that courses through his target and leaps to those unfortunate enough to be standing near it. If he succeeds on his Focus Power Test, the psyker hits his target with a bolt of crackling energy that deals 1d10 + Psy Rating Energy Damage with the Shocking Quality. For each Degree of Success on the Focus Power Test, the attack may affect another additional target within 3 metres of the original target for half of the Damage of the original attack. The bolt can be Dodged like any other ranged attack.
+  discipline: Weirdboy
+  penetration: 0
+  prerequisite: None
+  range: 10m x Psy Rating
+  source: Rogue Trader Core Rulebook, p.168
+  special: {}
+  subtype: Concentration
+  sustained: Free Action
+  target:
+    bonus: 0
+    characteristic: willpower
+    isOpposed: false
+    opposed: willpower
+    opposedBonus: 0
+    opposedSkill: None
+    skill: psyniscience
+    useOpposedSkill: false
+    useSkill: true
+img: systems/rogue-trader-3rd/icons/psykana/air-burst-sky-2.jpg
+name: Frazzle
+type: psychicPower
+---
+data:
+  action: Full Action
+  attackBonus: 0
+  attackType: Concentration
+  cost: 0
+  damage: 0
+  damageType: Energy
+  description: 'The Weirdboy leads by insane example, psychically (and psychotically) inspiring his comrades to charge along with him even as he rushes towards a certain, grisly end. As long as the Weirdboy sustains this power, all allied Orks within range ignore the effects of Fatigue, gain a bonus equal to the Weirdboy''s Psy Rating times 5 (to a maximum of +30) to all Tests to resist Pinning and Fear, and may re-roll any rolls they must make on Table 10-4: The Shock Table (See ROGUE TRADER Core Rulebook, page 294). IV: IIIENTAL ARSENAL'
+  discipline: Weirdboy
+  penetration: 0
+  prerequisite: None
+  range: 1m x Psy Rating
+  source: Rogue Trader Core Rulebook, p.168
+  special: {}
+  subtype: Concentration
+  sustained: Free Action
+  target:
+    bonus: 0
+    characteristic: willpower
+    isOpposed: false
+    opposed: willpower
+    opposedBonus: 0
+    opposedSkill: None
+    skill: psyniscience
+    useOpposedSkill: false
+    useSkill: true
+img: systems/rogue-trader-3rd/icons/psykana/air-burst-sky-2.jpg
+name: Up An' at 'Em!
+type: psychicPower
+---
+data:
+  action: Full Action
+  attackBonus: 0
+  attackType: Concentration
+  cost: 0
+  damage: 0
+  damageType: Energy
+  description: Crackling green energy surges out from the Weirdboy, striking the nearby Orks and stoking the fires of their battle frenzy to devastating new heights. As long as the psyker sustains this power, allied Orks (including the psyker) within the radius gain a bonus to the Damage of their melee attacks equal to half of the Weirdboy's Psy Rating (rounded up). Additionally, each allied Ork within the radius may re-roll one failed Weapon Skill Test per Round.
+  discipline: Weirdboy
+  penetration: 0
+  prerequisite: None
+  range: 1m x Psy Rating
+  source: Rogue Trader Core Rulebook, p.168
+  special: {}
+  subtype: Concentration
+  sustained: Free Action
+  target:
+    bonus: 0
+    characteristic: willpower
+    isOpposed: false
+    opposed: willpower
+    opposedBonus: 0
+    opposedSkill: None
+    skill: psyniscience
+    useOpposedSkill: false
+    useSkill: true
+img: systems/rogue-trader-3rd/icons/psykana/air-burst-sky-2.jpg
+name: Warpath
+type: psychicPower
+---
+data:
+  action: Full Action
+  attackBonus: 0
+  attackType: Concentration
+  cost: 0
+  damage: 0
+  damageType: Energy
+  description: The Weirdboy calls upon the Waaagh!, channelling his impatience to accelerate whatever mode of transportation he happens to be using (be that his feet or a mighty voidship) in a swell of brilliant, crackling energy. If the psyker succeeds on his Focus Power Test, he immediately surges forward. If he is on foot, he may immediately make a Run or Charge Action as a Free Action, increasing the maximum range of this move by an extra two metres for every Degree of Success he scored on the Focus Power Test. If he is on any sort of vehicle or voidship, he may instead use this power to grant any Explorer on board a bonus equal to 5 x his Psy Rating (to a maximum of +30) to the next Test that increases the transport's speed.
+  discipline: Weirdboy
+  penetration: 0
+  prerequisite: Up an' at 'Em!
+  range: Special
+  source: Rogue Trader Core Rulebook, p.168
+  special: {}
+  subtype: Concentration
+  sustained: Free Action
+  target:
+    bonus: 0
+    characteristic: willpower
+    isOpposed: false
+    opposed: willpower
+    opposedBonus: 0
+    opposedSkill: None
+    skill: psyniscience
+    useOpposedSkill: false
+    useSkill: true
+img: systems/rogue-trader-3rd/icons/psykana/air-burst-sky-2.jpg
+name: Dis iz Takin' Too Long!
+type: psychicPower
+---
+data:
+  action: Full Action
+  attackBonus: 0
+  attackType: Concentration
+  cost: 0
+  damage: 0
+  damageType: Energy
+  description: The Weirdboy energises his weapon (or just his fist) with a voracious green charge that shreds through metal and flesh alike when he strikes. As long as the psyker sustains this power, melee attacks that he makes lose the Primitive Quality if they have it, gain the Tearing Quality, and gain a bonus to Penetration equal to his Psy Rating. Additionally, he may extend this bonus to one additional allied Ork within range, plus one additional allied Ork per Degree of Success he scores on the Focus Power Test.
+  discipline: Weirdboy
+  penetration: 0
+  prerequisite: Warpath
+  range: 5m x Psy Rating
+  source: Rogue Trader Core Rulebook, p.168
+  special: {}
+  subtype: Concentration
+  sustained: Free Action
+  target:
+    bonus: 0
+    characteristic: willpower
+    isOpposed: false
+    opposed: willpower
+    opposedBonus: 0
+    opposedSkill: None
+    skill: psyniscience
+    useOpposedSkill: false
+    useSkill: true
+img: systems/rogue-trader-3rd/icons/psykana/air-burst-sky-2.jpg
+name: Smash da Gitz
+type: psychicPower
+---
+data:
+  action: Full Action
+  attackBonus: 0
+  attackType: Concentration
+  cost: 0
+  damage: 0
+  damageType: Energy
+  description: 'The Weirdboy appeals to the primal force of the Waaagh! for good fortune, an unearthly glow filling his eyes and those of his allies as they rush forward, heedless of risk. As long as the psyker sustains this power, he may choose to re-roll (or have any allied Orks in range re-roll) a number of Characteristic Tests per Round equal to his Psy Rating. If, however, the psyker or one of his allies fails a Test re-rolled this way, the Weirdboy has aroused the ire of Gork (or possibly Mork) for squandering an opportunity. The power ends, and the Weirdboy must immediately roll once on Table 3-2: Weird Fings (see page 58) and loses any unused re-rolls for that Round.'
+  discipline: Weirdboy
+  penetration: 0
+  prerequisite: Smash da Gitz, Up an' at Em!
+  range: 5m x Psy Rating
+  source: Rogue Trader Core Rulebook, p.168
+  special: {}
+  subtype: Concentration
+  sustained: Free Action
+  target:
+    bonus: 0
+    characteristic: willpower
+    isOpposed: false
+    opposed: willpower
+    opposedBonus: 0
+    opposedSkill: None
+    skill: psyniscience
+    useOpposedSkill: false
+    useSkill: true
+img: systems/rogue-trader-3rd/icons/psykana/air-burst-sky-2.jpg
+name: We'z Gotta Be Lucky
+type: psychicPower
+---
+data:
+  action: Full Action
+  attackBonus: 0
+  attackType: Concentration
+  cost: 0
+  damage: 0
+  damageType: Energy
+  description: The Weirdboy unleashes a burst of ravening green electricity that surges forward, turning organic tissue to ash and the hardest alloys to molten slag. If the psyker succeeds on his Focus Power Test, he strikes his target with a searing beam that deals 1d5 + Psy Rating IV. HENTAL ARSENAL Energy Damage, with a Penetration of 4, plus an additional 2 Penetration per Degree of Success he scores on the Focus Power Test. If the target is within half of the maximum range for the Technique, double its Penetration value.
+  discipline: Weirdboy
+  penetration: 0
+  prerequisite: Frazzle
+  range: 5m x Psy Rating
+  source: Rogue Trader Core Rulebook, p.168
+  special: {}
+  subtype: Concentration
+  sustained: Free Action
+  target:
+    bonus: 0
+    characteristic: willpower
+    isOpposed: false
+    opposed: willpower
+    opposedBonus: 0
+    opposedSkill: None
+    skill: psyniscience
+    useOpposedSkill: false
+    useSkill: true
+img: systems/rogue-trader-3rd/icons/psykana/air-burst-sky-2.jpg
+name: Zzap
+type: psychicPower
+---
+data:
+  action: Full Action
+  attackBonus: 0
+  attackType: Concentration
+  cost: 0
+  damage: 0
+  damageType: Energy
+  description: The Weirdboy opens a temporary rift through the Warp, helping his allies get to battle more quickly in a flash of green luminescence and an instant of screaming terror. The Weirdboy teleports himself and a number of Ork allies equal to his Psy Rating to a location no more than 10 times his Psy Rating in metres away. Each traveller must succeed at a Challenging (+0) Willpower Test or be Stunned for the next Round as he violently revisits his lunch. Anyone who fails this Test by three or more Degrees of Failure gains 1d5 Insanity Points.
+  discipline: Weirdboy
+  penetration: 0
+  prerequisite: Dis is Takin’ Too Long, Frazzle
+  range: 10m x Psy Rating
+  source: Rogue Trader Core Rulebook, p.168
+  special: {}
+  subtype: Concentration
+  sustained: Free Action
+  target:
+    bonus: 0
+    characteristic: willpower
+    isOpposed: false
+    opposed: willpower
+    opposedBonus: 0
+    opposedSkill: None
+    skill: psyniscience
+    useOpposedSkill: false
+    useSkill: true
+img: systems/rogue-trader-3rd/icons/psykana/air-burst-sky-2.jpg
+name: '''Ere We Go'
+type: psychicPower
+---
+data:
+  action: Full Action
+  attackBonus: 0
+  attackType: Concentration
+  cost: 0
+  damage: 0
+  damageType: Energy
+  description: 'The Ork philosophy of warfare typically ascribes to a simple maxim: more is better and you can never have enough. A roiling shockwave of manifest emotion, the Deff Wave churns through the Materium as a testament to this belief, scourging all organic matter in its path. The Deff Wave fires in a cone in front of the Weirdboy, like a weapon with the Flame Quality, and ignores cover and even solid objects such as walls between the Weirdboy and his targets (but not Armour Points granted by worn armour or Toughness Bonus). Each target caught in the Deff Wave must make a Challenging (+0) Agility Test to evade or a Difficult (-10) Toughness Test to endure or suffer 2d5 + Psy Rating Rending Damage with the Unstable Quality, as its flesh is twisted and crushed by the unleashed power of the Waaagh! Inanimate objects are unaffected by this psychic assault and creatures with the Daemonic and Machine Traits suffer only half Damage (rounded up) from Deff Wave.'
+  discipline: Weirdboy
+  penetration: 0
+  prerequisite: Zzap, Warpath
+  range: 5m x Psy Rating
+  source: Rogue Trader Core Rulebook, p.168
+  special: {}
+  subtype: Concentration
+  sustained: Free Action
+  target:
+    bonus: 0
+    characteristic: willpower
+    isOpposed: false
+    opposed: willpower
+    opposedBonus: 0
+    opposedSkill: None
+    skill: psyniscience
+    useOpposedSkill: false
+    useSkill: true
+img: systems/rogue-trader-3rd/icons/psykana/air-burst-sky-2.jpg
+name: Deff Wave
+type: psychicPower
+---
+data:
+  action: Full Action
+  attackBonus: 0
+  attackType: Concentration
+  cost: 0
+  damage: 0
+  damageType: Energy
+  description: The Weirdboy unleashes the fury of the Waaagh! upon his enemies (along with anyone else with the poor luck to be standing nearby), calling upon the primordial gods of the Orks to "Krump all 'dese gitz good!" With a savage crash, everything within range (including the Weirdboy) suffers 1d10 Impact Damage with a bonus to Damage and Penetration equal to the Weirdboy's Psy Rating and is knocked prone. Anyone in the area (including the Weirdboy himself) may make a Challenging (+0) Agility Test with -5 Penalty for each Degree of Success that the Weirdboy scored on his Focus Power Test to drop prone and thus avoid the Damage.
+  discipline: Weirdboy
+  penetration: 0
+  prerequisite: Smash da Gitz, Zzap
+  range: 2m x Psy Rating
+  source: Rogue Trader Core Rulebook, p.168
+  special: {}
+  subtype: Concentration
+  sustained: Free Action
+  target:
+    bonus: 0
+    characteristic: willpower
+    isOpposed: false
+    opposed: willpower
+    opposedBonus: 0
+    opposedSkill: None
+    skill: psyniscience
+    useOpposedSkill: false
+    useSkill: true
+img: systems/rogue-trader-3rd/icons/psykana/air-burst-sky-2.jpg
+name: Krump 'Em All
+type: psychicPower
+---
+data:
+  action: Full Action
+  attackBonus: 0
+  attackType: Concentration
+  cost: 0
+  damage: 0
+  damageType: Energy
+  description: Orks resolve almost all problems and quandaries through violence, especially questions of leadership and succession. As such, a display of brute savagery against a notable foe can help to rally the entire mob, inspiring each Ork in the mob. The Weirdboy pits the raw might of the Waaagh! against a single foe, attempting to psychically bludgeon him into submission and thus instill new fervour in other nearby Orks. The psyker makes an Opposed Willpower Test against a single foe within range. If he wins the Opposed Test, the psyker stuns his opponent for one Round, plus one additional Round per Degree of Success he achieves. If the target also has a Psy Rating, it also suffers 1d5 Energy Damage for each Degree of Success that the psyker scores, which ignores Armour (but not Toughness Bonus). Additionally, if the Weirdboy achieves three or more Degrees of Success on the Focus Power Test, each allied Ork within 10 metres who witnessed the attack is so inspired by his display that
+    he may make an immediate Charge Action as a Free Action.
+  discipline: Weirdboy
+  penetration: 0
+  prerequisite: Dis is Takin’ Too Long, Smash da Gitz
+  range: 2m x Psy Rating
+  source: Rogue Trader Core Rulebook, p.168
+  special: {}
+  subtype: Concentration
+  sustained: Free Action
+  target:
+    bonus: 0
+    characteristic: willpower
+    isOpposed: false
+    opposed: willpower
+    opposedBonus: 0
+    opposedSkill: None
+    skill: psyniscience
+    useOpposedSkill: false
+    useSkill: true
+img: systems/rogue-trader-3rd/icons/psykana/air-burst-sky-2.jpg
+name: '''Ead to ''Ead'
+type: psychicPower
+---
+data:
+  action: Full Action
+  attackBonus: 0
+  attackType: Concentration
+  cost: 0
+  damage: 0
+  damageType: Energy
+  description: 'Of all the many powers available to a Weirdboy, this is undoubtedly one of the strangest. Called the "Zogwurt Speshul" by some Orks, the Weirdboy summons up the bizarre and incomprehensible energies of the Waaagh! and attempts to transform one of his enemies into a Squig. The psyker makes an Opposed Willpower Test against a single target within range. If he succeeds, the target suffers 1d5 Rending Damage per Degree of Success that is not reduced by Armour or Toughness Bonus as the target''s body is warped and wracked by baleful energies. Further, if the target suffers Damage (after reduction for Armour and Toughness Bonus) in excess of twice its Toughness Bonus from the attack and does not have the Daemonic or Machine Trait, it is also transformed into a rampaging, hostile Squig (see page 57 for profile). Characters with Fate Points may "burn" a Fate Point to avoid ending up as a hyper-carnivorous ball of teeth for the rest of their (presumably short) lives. 1007 IV: IIIENTAL
+    ARSENAL 1003'
+  discipline: Weirdboy
+  penetration: 0
+  prerequisite: Zzap, Dis is Takin’ Too Long
+  range: 1m x Psy Rating
+  source: Rogue Trader Core Rulebook, p.168
+  special: {}
+  subtype: Concentration
+  sustained: Free Action
+  target:
+    bonus: 0
+    characteristic: willpower
+    isOpposed: false
+    opposed: willpower
+    opposedBonus: 0
+    opposedSkill: None
+    skill: psyniscience
+    useOpposedSkill: false
+    useSkill: true
+img: systems/rogue-trader-3rd/icons/psykana/air-burst-sky-2.jpg
+name: I'z Gunna Squig Ya!
+type: psychicPower
+---
+data:
+  action: Full Action
+  attackBonus: 0
+  attackType: Concentration
+  cost: 0
+  damage: 0
+  damageType: Energy
+  description: Techno-Shamans have an unholy affinity for technological devices. Even those guided by a machine spirit may fall prey to their corruptive advances. It is unclear if this is due to the strange and forbidding technology that they integrate into their bodies or some other eldritch source of power. However, it is certain that these psykers are capable of exploiting this affinity in ways that are inordinately destructive to those they face. Those who have attempted to use automated defences against Rak'Gol attacks have learned their folly, often in explosive fashion. The psyker activates this Technique by selecting a target mechanical or electronic weapon and making a Focus Power Test. The selected target may mass no more than 50 kg x Psy Rating. If it succeeds, the psyker seizes control of the armament as long as he sustains the Technique. If a machine spirit typically automates the device, this Technique immediately destroys that spirit and the device falls silent until a Tech-Priest
+    can coax a new machine spirit to take up the task of the one that was annihilated.
+  discipline: Rak'Gol
+  penetration: 0
+  prerequisite: ''
+  range: 3m x Psy Rating
+  source: Rogue Trader Core Rulebook, p.168
+  special: {}
+  subtype: Concentration
+  sustained: Free Action
+  target:
+    bonus: 0
+    characteristic: willpower
+    isOpposed: false
+    opposed: willpower
+    opposedBonus: 0
+    opposedSkill: None
+    skill: psyniscience
+    useOpposedSkill: false
+    useSkill: true
+img: systems/rogue-trader-3rd/icons/psykana/air-burst-sky-2.jpg
+name: Seize the Machine
+type: psychicPower
+---
+data:
+  action: Full Action
+  attackBonus: 0
+  attackType: Concentration
+  cost: 0
+  damage: 0
+  damageType: Energy
+  description: The Rak'Gol are a species that knows little of subtlety. Their combat actions are generally every bit as direct as they are savage. At least some of their confirmed psychic abilities reflect this; Techno-Shamans are reported to savagely beat their foes with raw bursts of telekinetic force, the blasts invisible except for the waves of gore they carry. The psyker activates this power by choosing a target and unleashing his mind at it with a Focus Power Test. The strength is sufficient to abruptly move 100 x Psy Rating kilograms 10 metres in any direction. If the psyker uses the blast of force to attack a foe directly, it deals 1d10 + Psy Rating Impact Damage. Every 2 Degrees of Success on the Focus Power Test adds another 1d10 Damage to the attack or allows the psyker to move another 100 kgs. The attack hits automatically but may be Dodged like other Ranged Attacks.
+  discipline: Rak'Gol
+  penetration: 0
+  prerequisite: ''
+  range: 3m x Psy Rating
+  source: Rogue Trader Core Rulebook, p.168
+  special: {}
+  subtype: Concentration
+  sustained: Free Action
+  target:
+    bonus: 0
+    characteristic: willpower
+    isOpposed: false
+    opposed: willpower
+    opposedBonus: 0
+    opposedSkill: None
+    skill: psyniscience
+    useOpposedSkill: false
+    useSkill: true
+img: systems/rogue-trader-3rd/icons/psykana/air-burst-sky-2.jpg
+name: Telekinetic Sledge
+type: psychicPower
+---
+data:
+  action: Full Action
+  attackBonus: 0
+  attackType: Concentration
+  cost: 0
+  damage: 0
+  damageType: Energy
+  description: After a Rak'Gol attack, vessels are seldom in adequate condition for repair. Rather, the ships are often scrapped and various components used for salvage. Rumours circulate that the machine spirits in some of the salvaged components have begun to share stories of the Rak'Gol. Only the Explorators who have interacted with the damaged devices know the truth of the matter, but the stories state that Rak'Gol psykers can combine seemingly mundane devices into deadly killing machines. The psyker activates this Technique by selecting two or more mechanical or electronic devices in range and making a Focus Power Test. The selected targets may mass no more than a total of 100 kg x Psy Rating. If he succeeds, the psyker seizes control of the devices and merges them into a single new creation and it remains functional as long as he sustains the Technique. He may effectively direct his newly created technobomination to move and execute attacks. Its base movement is equal to the psyker's
+    Psy Rating, and it is armed with a melee weapon that deals 1d10 + Psy Rating Damage and any ranged weapons that were integrated during its construction. It shares the psyker's Characteristics and has a number of Wounds equal to the psyker's Psy Rating, but its ramshackle construction means that it has no Armour Points.
+  discipline: Rak'Gol
+  penetration: 0
+  prerequisite: ''
+  range: 2m x Psy Rating
+  source: Rogue Trader Core Rulebook, p.168
+  special: {}
+  subtype: Concentration
+  sustained: Free Action
+  target:
+    bonus: 0
+    characteristic: willpower
+    isOpposed: false
+    opposed: willpower
+    opposedBonus: 0
+    opposedSkill: None
+    skill: psyniscience
+    useOpposedSkill: false
+    useSkill: true
+img: systems/rogue-trader-3rd/icons/psykana/air-burst-sky-2.jpg
+name: Distort Function
+type: psychicPower
+---
+data:
+  action: Full Action
+  attackBonus: 0
+  attackType: Concentration
+  cost: 0
+  damage: 0
+  damageType: Energy
+  description: 'The Rak''Gol go to extremes when they overcome their opponents. Vessels are gutted, bodies are left in shambles, and supplies are destroyed. Techno-Shamans are also seldom satisfied with merely besting foes; survivors claim that these psykers may have a psychokinetic attack that tears the skin from its victims. The psyker activates this Technique by choosing a target location and making a Focus Power Test. If he succeeds, all characters within 1 metre x Psy Rating of the location are subject to 1d10 + Psy Rating Rending Damage with Pen 4 and the Tearing Quality. Each Degree of Success increases the radius of the attack by 1 metre. Characters may attempt to Dodge the effect as one evades an Area Effect Attack (see page 239 of the ROGUE TRADER Core Rulebook). V. PSYCHIC ADVERSARIES TABLE 5-9: TECHNO-SHAIJIAN TECHNIQUES | Name | Focus Time | Sustain | Focus Power Test | | --- | --- | --- | --- | | Seize the Machine | Full Action | Yes | Willpower | | Telekinetic Sledge | Half
+    Action | No | Willpower | | Distort Function | Full Action | Yes | Willpower | | Reap the Flesh | Half Action | No | Willpower | | Reweave | Full Action | No | Willpower | | Open the Mind''s Eye | Full Action | No | Opposed Willpower | | Flay Reality | Full Action | No | Opposed Willpower |'
+  discipline: Rak'Gol
+  penetration: 0
+  prerequisite: ''
+  range: 3m x Psy Rating
+  source: Rogue Trader Core Rulebook, p.168
+  special: {}
+  subtype: Concentration
+  sustained: Free Action
+  target:
+    bonus: 0
+    characteristic: willpower
+    isOpposed: false
+    opposed: willpower
+    opposedBonus: 0
+    opposedSkill: None
+    skill: psyniscience
+    useOpposedSkill: false
+    useSkill: true
+img: systems/rogue-trader-3rd/icons/psykana/air-burst-sky-2.jpg
+name: Reap the Flesh
+type: psychicPower
+---
+data:
+  action: Full Action
+  attackBonus: 0
+  attackType: Concentration
+  cost: 0
+  damage: 0
+  damageType: Energy
+  description: Rak'Gol frequently incorporate cybernetic devices into their bodies. Recordings recovered from encounters, along with survivor's reports, consistently indicate that the largest of these hideous xenos appear almost mechanical. Little corroborating data suggests that the species has any particular medical knowledge beside field treatment (and even such basic care has never been observed firsthand). Anecdotal reports suggest that Techno-Shamans install some cybernetic devices through the psychic talents they have prised from other artefacts of lost predecessors. The psyker may activate this Technique by selecting a target character and a target device that weighs no more than Psy Rating x 2 kg, and then making a Focus Power Test. If he succeeds, he permanently integrates the device into the subject's body and the subject's mind gains complete and intuitive control over the device. As a side-effect of the "installation," Reweave removes 1d5 + Psy Rating Damage, but also causes
+    1d5 permanent Toughness and Fellowship Damage. Each Degree of Success on the Focus Power Test increases the amount of Damage removed by 2.
+  discipline: Rak'Gol
+  penetration: 0
+  prerequisite: ''
+  range: Touch
+  source: Rogue Trader Core Rulebook, p.168
+  special: {}
+  subtype: Concentration
+  sustained: Free Action
+  target:
+    bonus: 0
+    characteristic: willpower
+    isOpposed: false
+    opposed: willpower
+    opposedBonus: 0
+    opposedSkill: None
+    skill: psyniscience
+    useOpposedSkill: false
+    useSkill: true
+img: systems/rogue-trader-3rd/icons/psykana/air-burst-sky-2.jpg
+name: Reweave
+type: psychicPower
+---
+data:
+  action: Full Action
+  attackBonus: 0
+  attackType: Concentration
+  cost: 0
+  damage: 0
+  damageType: Energy
+  description: Rak'Gol are known to be horrific, but their Techno-Shamans display abilities that go beyond mundane fears. Rather than attempting to overcome an foes with finesse and delicacy, they often use brute terror, unleashing the raw fury of the Warp. The psyker selects a single living creature within range with an Intelligence Characteristic of 15 or greater and makes a Focus Power Test to activate this Technique. If the psyker wins the Opposed Test, the target immediately suffers 1d5 Impact Damage that ignores Armour and Toughness Bonus to the Head Location, plus an additional 1d5 Damage per two Degrees by which the psyker wins the Opposed Test. If the creature suffers Critical Damage from this attack, it must make a Challenging (+0) Willpower Test; if it fails, its head explodes in a shower of gore, instantly slaying it. Any living creature that suffers Damage from this Technique (and survives) gains a number of Insanity Points equal to the Damage it suffered from the power minus
+    its Willpower Bonus (to a minimum of 0).
+  discipline: Rak'Gol
+  penetration: 0
+  prerequisite: ''
+  range: 2m x Psy Rating
+  source: Rogue Trader Core Rulebook, p.168
+  special: {}
+  subtype: Concentration
+  sustained: Free Action
+  target:
+    bonus: 0
+    characteristic: willpower
+    isOpposed: false
+    opposed: willpower
+    opposedBonus: 0
+    opposedSkill: None
+    skill: psyniscience
+    useOpposedSkill: false
+    useSkill: true
+img: systems/rogue-trader-3rd/icons/psykana/air-burst-sky-2.jpg
+name: Open the Mind's Eye
+type: psychicPower
+---
+data:
+  action: Full Action
+  attackBonus: 0
+  attackType: Concentration
+  cost: 0
+  damage: 0
+  damageType: Energy
+  description: It is clear that many psykers perceive reality differently to those who lack psychic talents. Among the Rak'Gol, where many members perceive the world through cybernetic implants or radiation spawned mutations, the baseline for perceptions is decidedly variable. For those who are neither Rak'Gol nor a psyker, the world as perceived and understood by these creatures is a horrifying experience. Even more horrifying is the effect of the Rak'Gol psyker overlaying its dread perceptions onto the world around it, and those unfortunate enough to be caught within the blast can only watch in abject terror as reality itself frays and tatters, breaking apart at the most elemental level. Objects and individuals within the blast begin to break apart in incomprehensible ways, and madness seems the only escape from this realm of absolute terror. The psyker makes a Focus Power Test to activate the Technique. This Technique affects each enemy within range (other than the psyker himself). Each
+    target that loses its Opposed Test against the psyker suffers 1d10 + Psy Rating Characteristic Damage to a randomly chosen Characteristic. Every Degree of Success inflicts an additional 2 points of Characteristic Damage and 1 additional Insanity Point. Characters may attempt to Dodge the effect as one. Dodges an Area Effect Attack (see page 239 of the ROGUE TRADER Core Rulebook). 113
+  discipline: Rak'Gol
+  penetration: 0
+  prerequisite: ''
+  range: 1m x Psy Rating
+  source: Rogue Trader Core Rulebook, p.168
+  special: {}
+  subtype: Concentration
+  sustained: Free Action
+  target:
+    bonus: 0
+    characteristic: willpower
+    isOpposed: false
+    opposed: willpower
+    opposedBonus: 0
+    opposedSkill: None
+    skill: psyniscience
+    useOpposedSkill: false
+    useSkill: true
+img: systems/rogue-trader-3rd/icons/psykana/air-burst-sky-2.jpg
+name: Flay Reality
+type: psychicPower
+---
+data:
+  action: Full Action
+  attackBonus: 0
+  attackType: Concentration
+  cost: 0
+  damage: 0
+  damageType: Energy
+  description: In order to successfully corrupt humanity, Daemons pursue a broad range of different approaches. For some individuals, punishment and agony is the most effective tool available. For others, the offer of pleasure can be incredibly addictive. Those Daemons that most commonly induce euphoria in their prey often begin with psychic techniques that fog the mind as they simultaneously overwhelm the sensory organs. This technique represents one method of overcoming the defences of a single individual for these purposes. Under its influence, a target may become far easier to manipulate and thus bind to the cause of the Ruinous Powers. Alternatively, a Daemon might use this against a foe that must be quickly overcome—after all, in a euphoric state, a target is seldom capable of mounting an effective defence. The Daemon selects a target within range and makes an Opposed Fellowship Test, which the target resists with his Willpower. If the Daemon wins the Opposed Test, it inflicts 1d10
+    Willpower Damage on the target, plus an additional 1d5 Willpower Damage for every two Degrees by which it won the Opposed Test. If the target's Willpower drops to zero because of this power, it falls under the sway of the Daemon (instead of suffering the normal effects of having zero Willpower) as long as the Daemon sustains the Technique. The target loses the ability to act of its own volition and simply remains standing, catatonic. Each Round, at the start of the Daemon's Turn, it may spend a Free Action to make a Challenging (+0) Fellowship Test to convince the target to take any action of the Daemon's choosing, which it obeys without question. If any of the target's allies are present, any single ally may attempt to appeal to his erstwhile friend, spending his Reaction to make this Fellowship Test into an Opposed Fellowship Test against the Daemon. The winner of this Opposed Fellowship Test then issues the order to the victim of this power. When the Daemon stops sustaining this power,
+    the target is released from its grasp and immediately suffers all of the effects of having zero Willpower until it can recover from this Characteristic Damage (see page 251 of the ROGUE TRADER Core Rulebook).
+  discipline: Daemon
+  penetration: 0
+  prerequisite: Daemonic Trait
+  range: 20m x Psy Rating
+  source: Rogue Trader Core Rulebook, p.168
+  special: {}
+  subtype: Concentration
+  sustained: Free Action
+  target:
+    bonus: 0
+    characteristic: willpower
+    isOpposed: false
+    opposed: willpower
+    opposedBonus: 0
+    opposedSkill: None
+    skill: psyniscience
+    useOpposedSkill: false
+    useSkill: true
+img: systems/rogue-trader-3rd/icons/psykana/air-burst-sky-2.jpg
+name: Siren's Whisper
+type: psychicPower
+---
+data:
+  action: Full Action
+  attackBonus: 0
+  attackType: Concentration
+  cost: 0
+  damage: 0
+  damageType: Energy
+  description: 'The power of the Immaterium is vastly potent and its applications are boundless. Just as the Warp can rend a body with raw energy, it can also fill it with joy and pleasure. Those who serve the Ruinous Powers often have a knack for turning anything into an effective weapon. The battlefield applications for pain and destruction are abundantly clear. An exhibition of joy in the midst of a violent confrontation has the potential to be a deadly application of a technique that also has tremendous potential applications in more peaceful encounters. The Call to Ecstasy causes its victims to experience and exhibit a near fanatical degree of euphoria. Its most common application may be in the realm of politics or negotiation, where such a spectacle could be disastrous. However, when the air is littered with gunfire, cavorting joyfully through the firing lanes can be terminal. The Daemon selects a target within range and makes an Opposed Fellowship Test, which the target resists with
+    his Willpower. If the Daemon wins, the subject is immediately compelled to spend all of its Actions dancing and singing at the top of his lungs for as long as the Daemon sustains the power. The subject may not take any other Actions or Reactions while under the Technique''s effects, but at the beginning of each of its Turns, it may attempt to wrest its mind from the Daemon''s control and make a Challenging (+0) Willpower Test with a -5 Penalty for each Degree V: PSYCHIC ADVERSARIES TABLE 5-10: DAEMONIC TECHNIQUES | Name | Focus Time | Sustain | Focus Power Test | | --- | --- | --- | --- | | Siren''s Whisper | Half Action | Yes | Opposed Willpower | | Call to Ecstasy | Full Action | Yes | Opposed Willpower | | Realm of Decay | Half Action | Yes | Willpower | | Breath of the Plaguelord | Full Action | No | Willpower | | Sorcerer''s Tribute | Half Action | No | Willpower | | Fires of Revelation | Full Action | Yes | Opposed Willpower | by which the Daemon won the Opposed Test. If the target
+    succeeds, the target escapes the Daemon''s grip, but if it fails, it suffers 1 level of Fatigue from the mental effort it expends to try to rip free. The target does not benefit from extra Armour Points granted by cover that does not fully block line of sight while under the effects of this power.'
+  discipline: Daemon
+  penetration: 0
+  prerequisite: Daemonic Trait
+  range: 10m x Psy Rating
+  source: Rogue Trader Core Rulebook, p.168
+  special: {}
+  subtype: Concentration
+  sustained: Free Action
+  target:
+    bonus: 0
+    characteristic: willpower
+    isOpposed: false
+    opposed: willpower
+    opposedBonus: 0
+    opposedSkill: None
+    skill: psyniscience
+    useOpposedSkill: false
+    useSkill: true
+img: systems/rogue-trader-3rd/icons/psykana/air-burst-sky-2.jpg
+name: Call to Ecstasy
+type: psychicPower
+---
+data:
+  action: Full Action
+  attackBonus: 0
+  attackType: Concentration
+  cost: 0
+  damage: 0
+  damageType: Energy
+  description: At times, the Warp's corruption may be almost invisible as it inflicts its damage through treachery and concealment. However, when its unholy nature is fully unleashed, its merest hint can be devastating to a mortal psyche. A Daemon in service to Nurgle may choose to expose the faintest hint of his dark god's power into the material world. In doing so, those exposed are completely overwhelmed by its presence, such that they may become incapable of normal function. The Daemon makes a Focus Power Test to exude a hideously foul cloud of corruption about itself. As long as the Daemon sustains this power, any creature without the Daemonic Trait within range suffers a penalty equal to the Daemon's Psy Rating to all Tests, with an additional -2 penalty for each Degree of Success that the Daemon scored on its Focus Power Test. Additionally, whenever a creature within range fails a Toughness Test (regardless of the cause of the Test), it suffers 1d5 Impact Damage that is not reduced
+    by Armour or Toughness Bonus. This stench is a direct product of the Warp, so no amount of mundane shielding or air filtration is capable of overcoming its effects.
+  discipline: Daemon
+  penetration: 0
+  prerequisite: Daemonic Trait
+  range: 3m x Psy Rating
+  source: Rogue Trader Core Rulebook, p.168
+  special: {}
+  subtype: Concentration
+  sustained: Free Action
+  target:
+    bonus: 0
+    characteristic: willpower
+    isOpposed: false
+    opposed: willpower
+    opposedBonus: 0
+    opposedSkill: None
+    skill: psyniscience
+    useOpposedSkill: false
+    useSkill: true
+img: systems/rogue-trader-3rd/icons/psykana/air-burst-sky-2.jpg
+name: Realm of Decay
+type: psychicPower
+---
+data:
+  action: Full Action
+  attackBonus: 0
+  attackType: Concentration
+  cost: 0
+  damage: 0
+  damageType: Energy
+  description: Among the horrors that dwell within the Warp are creatures that embrace the essence of corruption and decay for its own sake. They revel in the very process of destruction. These entities long to see those who would dare oppose them reduced to a
+  discipline: Daemon
+  penetration: 0
+  prerequisite: Daemonic Trait
+  range: 10m x Psy Rating
+  source: Rogue Trader Core Rulebook, p.168
+  special: {}
+  subtype: Concentration
+  sustained: Free Action
+  target:
+    bonus: 0
+    characteristic: willpower
+    isOpposed: false
+    opposed: willpower
+    opposedBonus: 0
+    opposedSkill: None
+    skill: psyniscience
+    useOpposedSkill: false
+    useSkill: true
+img: systems/rogue-trader-3rd/icons/psykana/air-burst-sky-2.jpg
+name: Breath of the Plaguelord
+type: psychicPower
+---
+data:
+  action: Full Action
+  attackBonus: 0
+  attackType: Concentration
+  cost: 0
+  damage: 0
+  damageType: Energy
+  description: 'These servants of Nurgle are devoted to spreading his corruption throughout their travels. Their exposed intestines, cyclopean eye, and horns strike fear in those who face them, while their plagueswords infect anyone they wound. Plaguebearer Profile | WS | BS | S | T | Ag | Int | Per | WP | Fel | | --- | --- | --- | --- | --- | --- | --- | --- | --- | | | | (8) | (15) | | | | | | | 4S | 30 | 43 | 5S | 30 | 30 | 30 | 30 | 10 | Movement: 3/6/9/18 Wounds: 30 Armour: None Total TB: 15 Skills: Awareness (Per), Psyniscience (Per), Scholastic Lore (Numerology) (Int), Speak Language (any one). Talents: Crippling Strike. Traits: Cloud of Flies†, Daemonic (TB 10), Daemonic Presence††, Fear (2), From Beyond, Improved Natural Weapons, Natural Weapons (Claws), Regeneration (1), Strange Physiology, Unnatural Strength (x2), Unnatural Toughness (x2), Warp Instability. Weapons: Plaguesword (Melee: 1d10+13; Pen 1; Toxic), Claws (Melee: 1d10+8; Pen 2; Toxic). †Cloud of Flies: All foes within
+    metres of the Plaguebearer suffer a -10 penalty to Weapon Skill and Ballistic Skill Tests as choking clouds of buzzing, biting flies attack every exposed inch of flesh. ††Daemonic Presence: All enemies within 20 metres of a Plaguebearer suffer a -10 penalty to Willpower Tests. feeble state prior to their complete defeat. Nurgle''s Embrace is a wasting disease that can destroy its victims and may even transform them into Daemons. This potent attack is duly feared as the disease is nearly always fatal. The Daemon activates this power by selecting a target area and making a Focus Power Test. If the Daemon succeeds, all creatures within 2 metres x Psy Rating of the target area are afflicted by Nurgle''s Rot. Targets may attempt to Dodge the cloud of disease, treating it as an Area Effect Attack. Those within range must immediately pass a Hard (–20) Toughness Test. Each Degree of Success on the Focus Power Test inflicts an additional –5 penalty to the Toughness Test. If a target succeeds,
+    it has shrugged off the effects. If it fails the Test, the target becomes infected with Nurgle''s Embrace. When a living creature catches Nurgle''s Embrace, it suffers 1d5 Impact Damage not reduced by Armour or Toughness immediately. It then suffers an additional 1d5 Impact Damage not reduced by Armour or Toughness Bonus at the start of each of its Turns for a number of Rounds equal to the Degrees of Failure it sc'
+  discipline: Daemon
+  penetration: 0
+  prerequisite: ''
+  range: Special
+  source: Rogue Trader Core Rulebook, p.168
+  special: {}
+  subtype: Concentration
+  sustained: Free Action
+  target:
+    bonus: 0
+    characteristic: willpower
+    isOpposed: false
+    opposed: willpower
+    opposedBonus: 0
+    opposedSkill: None
+    skill: psyniscience
+    useOpposedSkill: false
+    useSkill: true
+img: systems/rogue-trader-3rd/icons/psykana/air-burst-sky-2.jpg
+name: Plaguebearer
+type: psychicPower
+---
+data:
+  action: Full Action
+  attackBonus: 0
+  attackType: Concentration
+  cost: 0
+  damage: 0
+  damageType: Energy
+  description: Some Daemons are capable of inflicting the twisting nature of the Warp directly upon their material targets. Those subjected to such attacks may become dramatically transformed by the Warp energy that wreathes them. Often, such an attack may appear as a searing blast of Warp-flame, symbolic of the many-coloured fires of Tzeentch. The Daemon activates this Technique by selecting a target within range and making a Focus Power Test. The attack deals 1d10 Energy Damage with a Pen of 5, plus an additional 1d10 Energy Damage per two Degrees of Success on the Focus Power Test. Any living creature affected by the Technique must immediately make a Challenging (+0) Toughness Test. Failure indicates that the target gains 1d5 Corruption Points, plus an additional Corruption Point for every Degree of Failure. A target that fails this Test by five or more Degrees of Failure becomes subject to swift and catastrophic mutation, transforming irreversibly into a Chaos Spawn. Characters with
+    Fate Points may "burn" a Fate Point to avoid the unsavoury doom that is Spawndom.
+  discipline: Daemon
+  penetration: 0
+  prerequisite: Daemonic Trait
+  range: 20m x Psy Rating
+  source: Rogue Trader Core Rulebook, p.168
+  special: {}
+  subtype: Concentration
+  sustained: Free Action
+  target:
+    bonus: 0
+    characteristic: willpower
+    isOpposed: false
+    opposed: willpower
+    opposedBonus: 0
+    opposedSkill: None
+    skill: psyniscience
+    useOpposedSkill: false
+    useSkill: true
+img: systems/rogue-trader-3rd/icons/psykana/air-burst-sky-2.jpg
+name: Sorcerer's Tribute
+type: psychicPower
+---
+data:
+  action: Full Action
+  attackBonus: 0
+  attackType: Concentration
+  cost: 0
+  damage: 0
+  damageType: Energy
+  description: 'Those who put their trust in the Warp are constantly compelled to draw others under its influence. This strategy is as fundamental to the nature of mortal cultists as it is to the most powerful Daemonic entities. Some of these beings are capable of using their Warp-spawned powers to twist mortal minds into completely new systems of belief. By exploiting their inherently psychic nature, they can delicately manipulate an individual''s core personality so that it assumes an entirely new outlook, sometimes without their subject''s knowledge. The Daemon selects a target and makes a Focus Power Test. On success, the Daemon is able to dominate the target''s thoughts and alter some aspect of their belief system. The severity of this change is directly proportionate to the Psy Rating of the Daemon (see Table 5–11: Fire of Revelation Transformations). On 3+ Degrees of Success, the subject does not realise that the change in beliefs has occurred. If a character with Fate Points falls
+    under the sway of this power, he may "burn" a Fate Point to permanently remove the Daemon''s mystical influence over him. If he does so, he also becomes immune to any future uses of this power by the same Daemon.'
+  discipline: Daemon
+  penetration: 0
+  prerequisite: Daemonic Trait
+  range: 2m x Psy Rating
+  source: Rogue Trader Core Rulebook, p.168
+  special: {}
+  subtype: Concentration
+  sustained: Free Action
+  target:
+    bonus: 0
+    characteristic: willpower
+    isOpposed: false
+    opposed: willpower
+    opposedBonus: 0
+    opposedSkill: None
+    skill: psyniscience
+    useOpposedSkill: false
+    useSkill: true
+img: systems/rogue-trader-3rd/icons/psykana/air-burst-sky-2.jpg
+name: Fires of Revelation
+type: psychicPower
