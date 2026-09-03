@@ -3335,3 +3335,344 @@ data:
 img: systems/rogue-trader-3rd/icons/psykana/beam-blue-1.jpg
 name: Sensory Deprivation
 type: psychicPower
+---
+data:
+  action: Half Action
+  attackBonus: 0
+  attackType: Concentration
+  cost: 0
+  damage: 0
+  damageType: Energy
+  description: 'By gazing directly into the mind of a psyker, the Navigator is able to pierce the barrier between the psyker and the Warp, opening a door to the Empyrean and unleashing a storm a chaos that devastates his victim from within. Novice: The Navigator chooses a psyker or Daemon in line of sight and within a number of metres equal to 3 times his Perception Bonus. He then makes an Opposed Willpower Test against the target. If he is successful, the target suffers 1d10 Energy Damage, ignoring Armour and Toughness Bonus. The target may not use Psychic Techniques at the Fettered level until the end of the next Round, plus one Round per Degree by which the Navigator wins the Opposed Test. A single foe may only ever suffer from the negative effects of one instance of this power at a time. If the Navigator has the Hatred Talent that includes his target, he gains a +10 bonus to his Opposed Willpower Test. Adept: As per Novice, but the psyker also cannot use Psychic Techniques at the Unfettered
+    level for the duration that he is affected by this power. If the Navigator has the Hatred Talent that includes his target, he gains an additional +10 bonus to his Opposed Willpower Test (to a total of +20). Master: As per Adept, but the power also affects all other psykers and Daemons within a number of metres around the target equal to the Navigator’s Perception Bonus. If the Navigator has the Hatred Talent that includes his target, increase the Damage that the target suffers from this power by an amount equal to Navigator’s Perception Bonus.'
+  discipline: Navigator
+  penetration: 0
+  prerequisite: ''
+  range: Special
+  source: The Navis Primer
+  special: {}
+  subtype: Concentration
+  sustained: 'No'
+  target:
+    bonus: 0
+    characteristic: willpower
+    isOpposed: true
+    opposed: willpower
+    opposedBonus: 0
+    opposedSkill: None
+    skill: None
+    useOpposedSkill: false
+    useSkill: false
+img: systems/rogue-trader-3rd/icons/psykana/beam-magenta-2.jpg
+name: The Warp Unbound
+type: psychicPower
+---
+data:
+  action: Half Action
+  attackBonus: 0
+  attackType: Concentration
+  cost: 0
+  damage: 0
+  damageType: Energy
+  description: 'A skilled Navigator can use this power to mark a point of calm in even the most tumultuous Warp storm. On a smaller scale, they can also use this ability to find a stillness in the Immaterium flowing around them that dampens psychic powers and even pushes Daemons back towards the edge of the dark pit from whence they came. Many Navigator Houses teach their progeny how to seek this calm in the Warp, as it may be the only thing that stops the Navigator from being torn to shreds and their soul devoured by Daemons in the case of a flicker in the Gellar Field. Novice: On a successful Difficult (-10) Willpower Test, the Navigator causes an area with a radius of his Perception Bonus times 5 metres to fall into a Warp lull for two Rounds, plus one Round per Degrees of Success on the Willpower Test. The Navigator may also choose to dismiss the calm as a Free Action at the beginning of his Turn. At the end of each of his Turns that he does not choose to dismiss the calm, the Navigator
+    must make a Challenging (+0) Toughness Test or gain one level of Fatigue. Psykers in this area suffer a -10 penalty to all Focus Power Tests. Daemons that end their Turns within this area must make a Challenging (+0) Toughness Test or be Stunned for 1 Round. Adept: As per Novice, but Psykers do not add any bonus from their Psy Rating to their Focus Power Tests and Daemons who fail their Toughness Test to resist this power also suffer 1d5 plus the Navigator''s Perception Bonus in Energy Damage that ignores Toughness Bonus, Armour, and the Daemonic Trait. Master: As per Adept, but the calm lasts for four Rounds plus two Rounds per Degree of Success that the Navigator scores on his Willpower Test.'
+  discipline: Navigator
+  penetration: 0
+  prerequisite: ''
+  range: Special
+  source: The Navis Primer
+  special: {}
+  subtype: Concentration
+  sustained: 'No'
+  target:
+    bonus: 0
+    characteristic: willpower
+    isOpposed: true
+    opposed: willpower
+    opposedBonus: 0
+    opposedSkill: None
+    skill: None
+    useOpposedSkill: false
+    useSkill: false
+img: systems/rogue-trader-3rd/icons/psykana/beam-magenta-2.jpg
+name: Aether Doldrums
+type: psychicPower
+---
+data:
+  action: Half Action
+  attackBonus: 0
+  attackType: Concentration
+  cost: 0
+  damage: 0
+  damageType: Energy
+  description: 'The power sometimes called "Baleful Watcher" or "Piercing Gaze" is a technique taught to Navigators to help them to penetrate the densest of Warpstorms and find a safe path. However, when turned on an individual, this power allows the Navigator to look past the facade of material reality, and thus exploit the knowledge he gains from staring so deeply into his foe''s soul. Novice: As a Half Action, the Navigator applies his supernatural levels of perception to discerning the nature of one foe he can see, peeling back all lies to reveal its true nature. The Navigator makes a Challenging (+0) Perception Test. If he succeeds, he learns his foe''s Armour Points on each location, total Toughness Bonus, and Psy Rating (if it has one). Adept: As Novice, but if he succeeds, he also learns of any invisible defences protecting his foe, such as force fields and sustained defensive Psychic Techniques (if it has any). Master: As Adept, but if he succeeds, he also learns which (if any)
+    Psychic Techniques or Navigator powers his target knows.'
+  discipline: Navigator
+  penetration: 0
+  prerequisite: ''
+  range: Special
+  source: The Navis Primer
+  special: {}
+  subtype: Concentration
+  sustained: 'No'
+  target:
+    bonus: 0
+    characteristic: willpower
+    isOpposed: true
+    opposed: willpower
+    opposedBonus: 0
+    opposedSkill: None
+    skill: None
+    useOpposedSkill: false
+    useSkill: false
+img: systems/rogue-trader-3rd/icons/psykana/beam-magenta-2.jpg
+name: Baleful Watcher
+type: psychicPower
+---
+data:
+  action: Half Action
+  attackBonus: 0
+  attackType: Concentration
+  cost: 0
+  damage: 0
+  damageType: Energy
+  description: 'Time can flow in a strange manner when travelling through the Immaterium, and over the years many Navigators have learned to move with the temporal unpredictability of the Immaterium that underlies reality. By unleashing a vision that strips away the presumptuous facade of linear time before an attacker''s eyes, the Navigator can slow an enemy to a crawl. Even if the power''s effect is extraordinarily subtle, many have found it to be just enough to stay an assassin''s blade by a few precious moments or prevent a foe escaping the judgement of the Navis Nobilite. Novice: The Navigator makes an Opposed Willpower Test against a single target within his line of sight who can see his Warp Eye. If he succeeds on the Test, so long as the target remains within line of sight, it may not perform Reactions as its movements slow. Anyone attempting to Dodge or Parry an attack made by the target gains a +10 bonus to his Skill Test. This power lasts as long as the Navigator chooses to maintain
+    it, although he must devote his first Half Action on each of his Turns to maintaining it or the power fades at the end of the Turn. Adept: As per Novice, except that the effects extend the Navigator''s Willpower Bonus in metres around the target, slowing every creature in the radius that fails the Opposed Willpower Test. The bonus to Dodge and Parry Tests increases to +20. Master: As per Adept, except that anyone caught in this area completely loses his grip on the flow of time for a few fleeting moments. For the first Round that the power takes effect, all creatures caught within the radius that fail the Opposed Willpower Test are Stunned.'
+  discipline: Navigator
+  penetration: 0
+  prerequisite: ''
+  range: Gaze
+  source: The Navis Primer
+  special: {}
+  subtype: Concentration
+  sustained: 'No'
+  target:
+    bonus: 0
+    characteristic: willpower
+    isOpposed: true
+    opposed: willpower
+    opposedBonus: 0
+    opposedSkill: None
+    skill: None
+    useOpposedSkill: false
+    useSkill: false
+img: systems/rogue-trader-3rd/icons/psykana/beam-magenta-2.jpg
+name: Ebb and Flow
+type: psychicPower
+---
+data:
+  action: Half Action
+  attackBonus: 0
+  attackType: Concentration
+  cost: 0
+  damage: 0
+  damageType: Energy
+  description: 'On many worlds, three-eyed mutants who can peer into your soul are thought of as bogey-men to scare children into obedience and people whisper that they are a tainted breed that can curse good, Emperor-fearing citizens with but a glance. These legends likely do not truly refer to Navigators, but they do echo with the truth of the matter, as techniques exist that can cause a person to attract the malign spirits of the Warp, drawing hungry things to them that slowly siphon away at their very mind and soul. This power is reserved for the Navigator House''s most loathed enemies, and these unfortunates soon find that their luck fails them and their allies treat them with disdain. Novice: The Navigator chooses a target that is no further away than his Perception Bonus in metres and then makes an Opposed Willpower Test. If he succeeds, any weapons the target uses gain the Unreliable Trait and the target suffers a -10 penalty on all Tests. The effects of this power last for 1d5 days
+    plus one extra day per Degree of Success that the Navigator scored on the Opposed Willpower Test, or until the "cursed" character spends a Fate Point to end the effect. Only one instance of this power may be active at any one time. Adept: As per Novice, but the target also suffers an additional-10 penalty to all Interaction Tests it makes (to a total of -20 on Interaction Tests). Further, the next time the target or anyone within five metres of him uses a Psychic Technique, the psyker automatically manifests Psychic Phenomena even if he would not normally do so (such as on a Fettered level power), and must roll on Table 6-3: Psychic Phenomena (see page 160 of the ROGUE TRADER Core Rulebook). Master: As per Adept, but the psyker incurs a significant Warp breach and must roll on Table 6-4: Perils of the Warp instead of Table 6-3: Psychic Phenomena (see page 160-161 of the ROGUE TRADER Core Rulebook).'
+  discipline: Navigator
+  penetration: 0
+  prerequisite: ''
+  range: Special
+  source: The Navis Primer
+  special: {}
+  subtype: Concentration
+  sustained: 'No'
+  target:
+    bonus: 0
+    characteristic: willpower
+    isOpposed: true
+    opposed: willpower
+    opposedBonus: 0
+    opposedSkill: None
+    skill: None
+    useOpposedSkill: false
+    useSkill: false
+img: systems/rogue-trader-3rd/icons/psykana/beam-magenta-2.jpg
+name: Evil Eye
+type: psychicPower
+---
+data:
+  action: Half Action
+  attackBonus: 0
+  attackType: Concentration
+  cost: 0
+  damage: 0
+  damageType: Energy
+  description: 'The Navigator snaps open his Warp eye and traces the vital lines that bind a creature''s animating force to its mortal shell. By striking these places with the utmost precision, the Navigator can inflict harm on his target''s very essence, and thus defeat foes that might otherwise seem inviolable. Novice: As a Full Action, the Navigator may activate this power by choosing one opponent within range and line of sight and making a Challenging (+0) Perception Test. He focuses his Warp Eye on the paths through which the Immaterium flows in and around a single creature, pinpointing those places most vital to its very existence. Until the end of his next Turn, plus one additional Turn per Degree of Success on his Perception Test, the Navigator deals additional Damage equal to his Perception Bonus the first time he hits the chosen foe with a Melee or Ranged Attack each Turn (this does not include his Navigator Powers). Adept: As Novice, except that the extra Damage that the Navigator
+    deals from this power ignores Armour and Toughness Bonus (the Damage from the attack itself is reduced as normal). Master: As per Adept, except that the extra Damage that the Navigator deals with this power increases by an amount equal to his Perception Bonus (to a total of twice his Perception Bonus). Further, the Navigator''s first successful Melee or Ranged Attack (this does not include his Navigator powers) each Turn against the chosen foe ignores any force fields or psychic defences that the target might possess.'
+  discipline: Navigator
+  penetration: 0
+  prerequisite: ''
+  range: Gaze
+  source: The Navis Primer
+  special: {}
+  subtype: Concentration
+  sustained: 'No'
+  target:
+    bonus: 0
+    characteristic: willpower
+    isOpposed: true
+    opposed: willpower
+    opposedBonus: 0
+    opposedSkill: None
+    skill: None
+    useOpposedSkill: false
+    useSkill: false
+img: systems/rogue-trader-3rd/icons/psykana/beam-magenta-2.jpg
+name: Eye of Oblivion
+type: psychicPower
+---
+data:
+  action: Half Action
+  attackBonus: 0
+  attackType: Concentration
+  cost: 0
+  damage: 0
+  damageType: Energy
+  description: 'There are many myths about the "third eye" into the soul, their origins supposedly harking from Old Terra itself. The Navis Nobilite knows that such stories are not wholly mythical, though, and that it is entirely possible to discover hidden knowledge and a degree of inner calm using its own unique brand of introspective meditation. Many of the older, more cloistered members of the Navigator dynasties spend prolonged periods in their Reclusiam Chapels, meditating upon philosophical issues and esoteric lore. Novice: The Navigator makes a Challenging (+0) Willpower Test. If successful, he removes up to one level of Fatigue and adds +10 to the first Investigation Skill Test that he makes in the next hour. It takes five minutes for a Navigator to establish himself in the physical and mental posture for this rapid meditation and he can only use this power once every 24 hours. IV: IIIENTAL ARSENAL Adept: As per Novice, but the Navigator removes up to two levels of Fatigue and adds
+    a +5 bonus to all Navigation (Warp) Tests that he is required to make in the next hour. Master: As per Adept, but the Navigator removes up to three levels of Fatigue and adds a +10 bonus to all Navigation (Warp) Tests that he is required to take for the next eight hours.'
+  discipline: Navigator
+  penetration: 0
+  prerequisite: ''
+  range: Special
+  source: The Navis Primer
+  special: {}
+  subtype: Concentration
+  sustained: 'No'
+  target:
+    bonus: 0
+    characteristic: willpower
+    isOpposed: true
+    opposed: willpower
+    opposedBonus: 0
+    opposedSkill: None
+    skill: None
+    useOpposedSkill: false
+    useSkill: false
+img: systems/rogue-trader-3rd/icons/psykana/beam-magenta-2.jpg
+name: Inward View
+type: psychicPower
+---
+data:
+  action: Half Action
+  attackBonus: 0
+  attackType: Concentration
+  cost: 0
+  damage: 0
+  damageType: Energy
+  description: 'Being so closely linked with the Warp, it is no surprise that Navigators have developed techniques to avoid its corrupting influence on both themselves and those around them. With a great deal of effort, the Navigator can slow the insidious effects of the Warp for a short period of time, relying on his mental fortitude to touch the poison of Chaos without being corrupted by it. Novice: The Navigator must choose a target within his Perception Bonus x 3 metres and then make a Difficult (-10) Willpower Test. If he is successful, the power lasts a number of minutes equal to his Willpower Bonus. While the power is active, if his target would gain any amount of Corruption Points, it gains that amount minus 1 (to a minimum of 1) Corruption Points instead. The Navigator can only have one instance of this power active at any one time. The Navigator must pass a Challenging (+0) Toughness Test or gain 1 level of Fatigue after using this power. Adept: As per Novice, but the number of
+    targets that the Navigator can shield with this power increases to his Perception Bonus, and if any of his targets would gain any amount of Corruption Points, it instead gains that amount minus 2 (to a minimum of 0). Master: As per Adept, but the amount of time the power lasts increases to the Navigator''s Willpower Bonus x 2 in minutes.'
+  discipline: Navigator
+  penetration: 0
+  prerequisite: ''
+  range: Special
+  source: The Navis Primer
+  special: {}
+  subtype: Concentration
+  sustained: 'No'
+  target:
+    bonus: 0
+    characteristic: willpower
+    isOpposed: true
+    opposed: willpower
+    opposedBonus: 0
+    opposedSkill: None
+    skill: None
+    useOpposedSkill: false
+    useSkill: false
+img: systems/rogue-trader-3rd/icons/psykana/beam-magenta-2.jpg
+name: Pass Unscathed
+type: psychicPower
+---
+data:
+  action: Half Action
+  attackBonus: 0
+  attackType: Concentration
+  cost: 0
+  damage: 0
+  damageType: Energy
+  description: 'The Navigator uses his pineal eye to peer through the Immaterium around him, piercing the churning clouds of the Warp to find the causeways of least resistance to his target and assessing the paths of its reaction before it can even move to defend itself. In this way, the Navigator guides his own attacks to their destination while circumventing his foe''s desperate attempts at defence. Novice: As a Half Action, the Navigator can activate this power by making a Challenging (+0) Perception Test. Until the end of his next Turn, plus one additional Turn per Degree of Success on his Perception Test, the Navigator may use his Perception Characteristic in place of his Weapon Skill and/or Ballistic Skill Characteristic for the purposes of Tests. Adept: As Novice, but the Navigator''s Melee and Ranged Attacks impose a -10 penalty to Dodge and Parry Tests opponents make to avoid them. Master: As Adept, but the Navigator''s Melee and Ranged Attacks impose a -20 penalty to Dodge and
+    Parry Tests opponents make to avoid them (in place of the -10 penalty from Adept level).'
+  discipline: Navigator
+  penetration: 0
+  prerequisite: ''
+  range: Special
+  source: The Navis Primer
+  special: {}
+  subtype: Concentration
+  sustained: 'No'
+  target:
+    bonus: 0
+    characteristic: willpower
+    isOpposed: true
+    opposed: willpower
+    opposedBonus: 0
+    opposedSkill: None
+    skill: None
+    useOpposedSkill: false
+    useSkill: false
+img: systems/rogue-trader-3rd/icons/psykana/beam-magenta-2.jpg
+name: Seek the Path
+type: psychicPower
+---
+data:
+  action: Half Action
+  attackBonus: 0
+  attackType: Concentration
+  cost: 0
+  damage: 0
+  damageType: Energy
+  description: 'While many Navigators simply focus on wreaking as much destruction as possible by revealing the Warp to their foes with powers like Lidless Stare, some Navigators prefer to act with more subtlety and train themselves to cast projections of the true face of that hellish dimension, causing even the most stout-hearted of warriors to collapse to their knees and weep as their sanity unravels. Novice: This is a gaze power, as described on page 180 of the ROGUE TRADER Core Rulebook. The Navigator makes an Opposed Willpower Test versus any living creature (which excludes Daemons, machines, and other non-living creatures) that looks into his Warp Eye. If a target is unable to avoid the Navigator''s baleful stare, it must immediately roll on Table 5-5: Hallucinogen Effects (see page 126 of the ROGUE TRADER Core Rulebook); the effects of the power last for a number of Rounds equal to the Degrees of Success by which the Navigator won the Opposed Test. Due to the strain of containing
+    his power to mere visions, the Navigator gains 1 level of Fatigue. Adept: As per Novice, but if the target is affected it must add +20 to the result of its roll on Table 5-5: Hallucinogen Effects and automatically gains 2 Insanity Points. If the Navigator fails the Test, he gains 1 Insanity Point in addition to the other effects. Master: As per Adept, but if the target is affected it must instead roll twice on Table 5-5: Warp Travel Hallucinations with a +50 to each result and gains 1d5+1 Insanity Points. If the Navigator fails the Test, he rolls on Table 5-5: Hallucinogen Effects and suffers the result of his roll in addition to the other effects.'
+  discipline: Navigator
+  penetration: 0
+  prerequisite: ''
+  range: Gaze
+  source: The Navis Primer
+  special: {}
+  subtype: Concentration
+  sustained: 'No'
+  target:
+    bonus: 0
+    characteristic: willpower
+    isOpposed: true
+    opposed: willpower
+    opposedBonus: 0
+    opposedSkill: None
+    skill: None
+    useOpposedSkill: false
+    useSkill: false
+img: systems/rogue-trader-3rd/icons/psykana/beam-magenta-2.jpg
+name: Vision of Hell
+type: psychicPower
+---
+data:
+  action: Half Action
+  attackBonus: 0
+  attackType: Concentration
+  cost: 0
+  damage: 0
+  damageType: Energy
+  description: 'Navigators must be ever watchful for danger when guiding a vessel through the Warp, and be capable of reacting at a moment''s notice to the caprices of the shifting realm of Chaos. On the battlefield, a Navigator can turn this power to his advantage, reacting to strikes seconds before they arrive or even calling allies to move from harm''s way moments before an enemy can land a telling blow. Novice: As a Full Action, the Navigator may make a Challenging (+0) Perception Test. If he succeeds, for the remainder of the encounter, he may make one additional Dodge Reaction per Round. Whenever he does so, however, he loses one Half Action from his next Turn. Adept: As Novice, but he may also make a Half Move as a Free Action when he makes his Dodge Reaction. Master: As Adept, but he may also now instead have any ally within a number of metres equal to his Perception Bonus make the Dodge Reaction and Half Move instead of himself (this still expends the Navigator''s extra Reaction
+    and costs the Navigator a Half Action from his next Turn instead of costing his ally the Half Action).'
+  discipline: Navigator
+  penetration: 0
+  prerequisite: ''
+  range: Special
+  source: The Navis Primer
+  special: {}
+  subtype: Concentration
+  sustained: 'No'
+  target:
+    bonus: 0
+    characteristic: willpower
+    isOpposed: true
+    opposed: willpower
+    opposedBonus: 0
+    opposedSkill: None
+    skill: None
+    useOpposedSkill: false
+    useSkill: false
+img: systems/rogue-trader-3rd/icons/psykana/beam-magenta-2.jpg
+name: Warp Vigil
+type: psychicPower

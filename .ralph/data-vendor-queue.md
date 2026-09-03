@@ -306,3 +306,21 @@ Vigilance, Mindlinked, Accursed, Untouchable (X), Eldritch Mastery, Resonator Im
   pickable-target variants of existing talents).
 - **The Navis Primer Navigator powers (~large) were NOT imported** — they're a distinct discipline with
   Novice/Adept/Master tiers and a different schema; a separate psychic-powers pass.
+
+---
+
+## The Navis Primer — Navigator powers (0.9.21, 2026-09-02) — 11 powers
+
+Extracted the 11 tiered Navigator powers (scratchpad `extract_nav.py`, cloning an existing Navigator
+psychic-power entry as the schema template): The Warp Unbound, Aether Doldrums, Baleful Watcher, Ebb and
+Flow, Evil Eye, Eye of Oblivion, Inward View, Pass Unscathed, Seek the Path, Vision of Hell, Warp Vigil.
+Each carries its Novice/Adept/Master tiers in the description (matching the existing Navigator-power
+format), discipline Navigator, range Gaze/Special (heuristic), source The Navis Primer.
+
+- Description-only (the tier text is the rule); no per-tier damage-formula automation (Navigator powers
+  are mostly Opposed-WP / Perception tests, not damage rolls). range is a rough Gaze/Special guess —
+  spot-check.
+- QA caught a truncation bug pre-release: a 1600-char description cap dropped Evil Eye's Master tier;
+  raised to 3000. All 11 now have all three tiers.
+- Other Navis Primer powers (Ork Weirdboy, Rak'Gol, Chaos Sorcerer "Servants of the Ruinous Powers")
+  are separate non-Navigator disciplines — NOT imported this pass.
