@@ -252,3 +252,24 @@ Counts: weapons +47, armour +5, ammo +9, weapon-mods +5, tools +28, consumables 
 - Holy Relics chapter (unique named artefacts, ~p.100+) NOT imported (plot artefacts, like HA's treasures).
 - Stat spot-check recommended (Conversion Beamer range profiles, shield Defensive entries, Missiles with
   no class/range).
+
+---
+
+## Remaining-supplements player-gear import (0.9.15, 2026-09-02) — 73 items, needs review
+
+Generalized auto-detecting extractor (scratchpad `extract_gen.py`) — finds gear tables across books by
+FFG header signature (ranged/thrown/melee/armour), same deterministic parse. Ran across the 6 remaining
+books with gear tables; yielded weapons+armour from 4:
+- **Tau Character Guide** (+21: Tau ranged/melee weapons + Combat/Recon Armour)
+- **The Koronus Bestiary** (+16: Ork Grot Blasta/Shokk Attack Gun/Snazzgun, Rak'Gol, Yu'vath Æther weapons)
+- **The Navis Primer** (+3 Eldar armour: Rune Armour, Void Armour, Ghosthelm)
+- **The Soul Reaver** (+33: full Dark Eldar arsenal — Blaster, Dark Lance, Agonisers, Kabalite/Ghostplate
+  Armour, Shadow Field, Clone Field, etc.)
+Lure of the Expanse / Twilight Crusade: header matches were NPC/reference tables, no gear extracted (0).
+
+Only WEAPONS + ARMOUR imported this pass (the 4 header-unambiguous table types). Follow-up: the small
+2-3-col gear/ammo/mod/drug/cyber tables in these books were NOT auto-imported (ambiguous headers — risk of
+grabbing non-gear tables). Source cited by book name only (no per-item page — auto-detect doesn't track pages).
+Parameterized qualities Proven(N)/Felling(N)/Blast(N) map to valued flags; Overcharge/Razor-Sharp/Crippling
+to boolean flags; a few OCR-merged qualities (Accurate Overheat, Blast (1d5-3)) kept in description only.
+Xenos gear (Tau/Ork/DE/Eldar) is GM/loot-facing; stat spot-check recommended.

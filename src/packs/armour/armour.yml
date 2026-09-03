@@ -1022,3 +1022,231 @@ data:
 img: systems/rogue-trader-3rd/icons/items/buckets/armour-carapace.png
 name: Sabbat-pattern Helm
 type: armour
+---
+data:
+    armourPoints:
+        body: 6
+        head: 6
+        leftArm: 6
+        leftLeg: 6
+        rightArm: 6
+        rightLeg: 6
+    availability: Near Unique
+    craftsmanship: Common
+    description: 'Covers All. AP 6. From Tau Character Guide.'
+    maxAgility: 0
+    source: Tau Character Guide
+    type: Other
+    weight: 12
+img: systems/rogue-trader-3rd/icons/items/buckets/armour-flak.png
+name: Combat Armour
+type: armour
+---
+data:
+    armourPoints:
+        body: 4
+        head: 4
+        leftArm: 4
+        leftLeg: 4
+        rightArm: 4
+        rightLeg: 4
+    availability: Near Unique
+    craftsmanship: Common
+    description: 'Covers All. AP 4. From Tau Character Guide.'
+    maxAgility: 0
+    source: Tau Character Guide
+    type: Other
+    weight: 3
+img: systems/rogue-trader-3rd/icons/items/buckets/armour-flak.png
+name: Recon Armour
+type: armour
+---
+data:
+    armourPoints:
+        body: 6
+        head: 6
+        leftArm: 6
+        leftLeg: 6
+        rightArm: 6
+        rightLeg: 6
+    availability: Near Unique
+    craftsmanship: Common
+    description: 'Covers All. AP 6. From The Navis Primer.'
+    maxAgility: 0
+    source: The Navis Primer
+    type: Other
+    weight: 6
+img: systems/rogue-trader-3rd/icons/items/buckets/armour-flak.png
+name: Eldar Rune Armour
+type: armour
+---
+data:
+    armourPoints:
+        body: 4
+        head: 4
+        leftArm: 4
+        leftLeg: 4
+        rightArm: 4
+        rightLeg: 4
+    availability: Very Rare
+    craftsmanship: Common
+    description: 'Covers All. AP 4. From The Navis Primer.'
+    maxAgility: 0
+    source: The Navis Primer
+    type: Other
+    weight: 12
+img: systems/rogue-trader-3rd/icons/items/buckets/armour-void-suit.png
+name: Eldar Void Armour
+type: armour
+---
+data:
+    armourPoints:
+        body: 0
+        head: 6
+        leftArm: 0
+        leftLeg: 0
+        rightArm: 0
+        rightLeg: 0
+    availability: Unique
+    craftsmanship: Common
+    description: 'Covers Head. AP 6. From The Navis Primer.'
+    maxAgility: 0
+    source: The Navis Primer
+    type: Carapace
+    weight: 1
+img: systems/rogue-trader-3rd/icons/items/buckets/armour-carapace.png
+name: Ghosthelm
+type: armour
+---
+data:
+    armourPoints:
+        body: 3
+        head: 0
+        leftArm: 0
+        leftLeg: 0
+        rightArm: 0
+        rightLeg: 0
+    availability: Plentiful
+    craftsmanship: Common
+    description: 'Covers Body. AP 3. From The Soul Reaver.'
+    maxAgility: 0
+    source: The Soul Reaver
+    type: Other
+    weight: 1
+img: systems/rogue-trader-3rd/icons/items/buckets/armour-flak.png
+name: Xenohide Tunic
+type: armour
+---
+data:
+    armourPoints:
+        body: 2
+        head: 2
+        leftArm: 2
+        leftLeg: 2
+        rightArm: 2
+        rightLeg: 2
+    availability: Common
+    craftsmanship: Common
+    description: 'Covers All. AP 2. From The Soul Reaver.'
+    maxAgility: 0
+    source: The Soul Reaver
+    type: Other
+    weight: 3
+img: systems/rogue-trader-3rd/icons/items/buckets/armour-flak.png
+name: Xenohide Cloak
+type: armour
+---
+data:
+    armourPoints:
+        body: 4
+        head: 4
+        leftArm: 4
+        leftLeg: 4
+        rightArm: 4
+        rightLeg: 4
+    availability: Average
+    craftsmanship: Common
+    description: 'Covers All. AP 4. From The Soul Reaver.'
+    maxAgility: 0
+    source: The Soul Reaver
+    type: Other
+    weight: 5
+img: systems/rogue-trader-3rd/icons/items/buckets/armour-flak.png
+name: Kabalite Armour
+type: armour
+---
+data:
+    armourPoints:
+        body: 6
+        head: 6
+        leftArm: 6
+        leftLeg: 6
+        rightArm: 6
+        rightLeg: 6
+    availability: Rare
+    craftsmanship: Common
+    description: 'Covers All. AP 6. From The Soul Reaver.'
+    maxAgility: 0
+    source: The Soul Reaver
+    type: Other
+    weight: 2
+img: systems/rogue-trader-3rd/icons/items/buckets/armour-flak.png
+name: Ghostplate Armour
+type: armour
+---
+data:
+    armourPoints:
+        body: 2
+        head: 2
+        leftArm: 2
+        leftLeg: 2
+        rightArm: 2
+        rightLeg: 2
+    availability: Common
+    craftsmanship: Common
+    description: 'Covers All. AP 2. From The Soul Reaver.'
+    maxAgility: 0
+    source: The Soul Reaver
+    type: Other
+    weight: 0.5
+img: systems/rogue-trader-3rd/icons/items/buckets/armour-void-suit.png
+name: Wychsuit
+type: armour
+---
+data:
+    armourPoints:
+        body: 0
+        head: 0
+        leftArm: 0
+        leftLeg: 0
+        rightArm: 0
+        rightLeg: 0
+    availability: Near Unique
+    craftsmanship: Common
+    description: 'Covers -. AP 0. From The Soul Reaver.'
+    maxAgility: 0
+    source: The Soul Reaver
+    type: Other
+    weight: 0.5
+img: systems/rogue-trader-3rd/icons/items/buckets/armour-flak.png
+name: Shadow Field
+type: armour
+---
+data:
+    armourPoints:
+        body: 0
+        head: 0
+        leftArm: 0
+        leftLeg: 0
+        rightArm: 0
+        rightLeg: 0
+    availability: Near Unique
+    craftsmanship: Common
+    description: 'Covers -. AP 0. From The Soul Reaver.'
+    maxAgility: 0
+    source: The Soul Reaver
+    type: Other
+    weight: 0.5
+img: systems/rogue-trader-3rd/icons/items/buckets/armour-flak.png
+name: Clone Field
+type: armour
