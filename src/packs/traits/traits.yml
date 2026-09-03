@@ -1713,3 +1713,87 @@ flags:
     rt:
         category: 'Background'
         originStep: 'Warrant'
+---
+data:
+    description: 'The Cold Trade has many paths and each Broker must choose his own way in the trade. Some Brokers choose to deal with the xenos that populate the Expanse. These Brokers are often accepted amongst their xenos peers as welcome outsiders or even bonded brothers. This, of course, often leads the staunch members of the Inquisition to suspect, rightfully, that the Broker has allied himself to one of the myriad forces arrayed against the Imperium. Other Brokers actually work against the aliens whose artefacts they peddle. These men and women either raid the living civilisations or delve into the deserted ruins of the xenos of their particular interest. These members of the Cold Trade avoid much of the suspicion that comes from dealing directly with the xenos threat, but earn an enemy the equal of the Inquisition. When an Explorer acquires this Trait, he must choose one of two paths, to either de'
+    source: Hostile Acquisitions
+img: systems/rogue-trader-3rd/icons/talents/blue/b_01.png
+name: Cold Trader
+type: trait
+---
+data:
+    description: 'The Manhunter advances contains a single entry which cannot actually be purchased under normal circumstances—this advance grants the characters the Fear 1 Trait, and requires Skills and Talents which are not available through this advance scheme. This is entirely deliberate. For a character to gain such a terrifying reputation requires he be well-known and feared, and this is something that cannot be obtained solely through the expenditure of experience points. Even then, it should not be easily obtainable. Meeting the prerequisites for this advance should be something obtained through play, an accomplishment for the character, worked towards over time. It takes both a grand reputation and a considerable degree of personal presence to be able to make your enemies flee before you; they must know without doubt that the enemy they face is someone to be feared...and such a feat is not easily'
+    source: Hostile Acquisitions
+img: systems/rogue-trader-3rd/icons/talents/blue/b_01.png
+name: Fearful Reputation
+type: trait
+---
+data:
+    description: 'Some creatures move in ravenous, overwhelming swarms, washing over and devouring everything in their wake as an inexorable tide of countless tiny maws. A creature with the Swarm Trait is different from a normal creature in the following ways: - A mass of creatures with this Trait are treated as a single creature for all intents and purposes in combat. - A creature with the Swarm Trait reduces all Damage it would suffer from attacks without the Blast, Flame, or Scatter Quality by half. - A creature with the Swarm Trait cannot be Knocked Down, Grappled, or Pinned. - A creature with the Swarm Trait can “pour” through small openings its Size Trait would not normally allow at the Game Master’s discretion. - A creature with the Swarm Trait cannot Jump. - A creature with the Swarm Trait’s Size Trait varies based on its remaining Wounds as follows: an Average Size Swarm has 10 Wounds, and for ev'
+    source: Faith and Coin
+img: systems/rogue-trader-3rd/icons/talents/blue/b_01.png
+name: Swarm
+type: trait
+---
+data:
+    description: 'Implanted with a Stryxis psy-motivator at the base of his cerebellum, this character can control specifically fitted servitors as though they were extensions of his own body. When actively controlled, the servitors use the Explorer''s WS and BS and can perform more complicated actions that might otherwise be beyond their normal mental capabilities (a battle servitor could open a door or a drone could pick up a delicate object without breaking it, for instance). The Explorer can control one servitor for each time this Talent is taken, but is limited to controlling one servitor for every 10 points of his Intelligence Characteristic (rounded up), up to a maximum of 5 servitors. For instance, a character with an Intelligence of 36 could only ever control 3 servitors at once, even if he takes this Talent a fourth time. The range of control extends 20m x the character''s Willpower Bonus (so a ch'
+    source: The Navis Primer
+img: systems/rogue-trader-3rd/icons/talents/blue/b_01.png
+name: Mastermind
+type: trait
+---
+data:
+    description: 'The Explorer’s faith in the Emperor allows him to stand confident that the witch will never escape judgement nor redemption, even in the face of overwhelming odds. When the Explorer spends a Fate Point to re-roll a Weapon Skill, Ballistic Skill, or Opposed Willpower Test against a psyker, he adds a bonus equal to his Willpower Bonus multiplied by five (to a maximum of +38) to the result of the re-roll.'
+    source: The Navis Primer
+img: systems/rogue-trader-3rd/icons/talents/blue/b_01.png
+name: Unfaltering Redemption
+type: trait
+---
+data:
+    description: 'The Explorer’s is well aware that his vigil never ends, and remains ready to smite those who stray from the Emperor’s light at all times. Once per game session, an Explorer with this Talent may nominate another single character within line of sight as the target of his vigil. He may only have one such character targeted this way at a time. Once per Encounter, he may make a Standard Attack Action against the target of his vigil as a Reaction. He gains the benefits of a Full Action Aim Action for this attack (see page 238 of the ROGUE TRADER Core Rulebook). III: PATH OF THE HUND'
+    source: The Navis Primer
+img: systems/rogue-trader-3rd/icons/talents/blue/b_01.png
+name: Eternal Vigilance
+type: trait
+---
+data:
+    description: 'When a Warder and his charge undergo the Ritual of Psylakis, each ones'' mind is forever psychically linked to that of the other. While not a direct telepathic link allowing complex verbal communication, the Warder and his charge are constantly aware of the other''s presence, and any strong emotions the other feels. The Warder unerringly knows the location of the psyker in his care if they are within 1km x the Warder''s Perception Bonus of one another, and he can sense his charge''s presence and general, relative position up to 1,000 km away. Additionally, when a Psychic Technique is used against the protected psyker, add the sum of the Warder''s Willpower Bonus and Perception Bonus to the result of the psyker''s Opposed Tests, the Warder may also add the sum of the protected psyker''s Willpower and Perception Bonuses to Opposed Tests to resist psychic attacks directed at him. If the telepathic'
+    source: The Navis Primer
+img: systems/rogue-trader-3rd/icons/talents/blue/b_01.png
+name: Mindlinked
+type: trait
+---
+data:
+    description: 'Beings that are afflicted with this malediction draw much unwelcome interest from the powers of the Warp, but through harsh experience, some learn to turn these attentions elsewhere. Whenever a being with this Trait uses a Psychic Technique at the Push level, he may add an additional 1 to his Psy Rating and an additional +10 to any rolls he must make on Table 6-3: Psychic Phenomena and Table 6-4: Perils of the Warp (see pages 161-162 in the Rogue Trader Core Rulebook). However, whenever he suffers the effects of a roll on Table 6-3: Psychic Phenomena) or Table 6-4: Perils of the Warp, he may attempt an Ordinary (+10) Willpower Test with a -3 penalty per point of Psy Rating he used for the Focus Power Test. If he succeeds, he does not suffer the effects of the result; instead inflicting the result upon another target of his choosing within Psy Rating x 3 metres (if the result affects an a'
+    source: The Navis Primer
+img: systems/rogue-trader-3rd/icons/talents/blue/b_01.png
+name: Accursed
+type: trait
+---
+data:
+    description: 'Untouchables have no presence in the warp and inhibit psychic energy in the immediate area. This Trait has different levels of effect. The number in parentheses indicates the Untouchable''s level of power. Psychic Invulnerability: An Untouchable is completely immune to Psychic Powers and Psychic energy and effects directed against them (as well as special abilities used by creatures with the Daemonic Trait, the Warp Weapon Quality, possession, sorcery, Corruption Points from warp shock, and so forth). Untouchables cannot be detected by means of Psyniscience and similar abilities. Powers of this type directed at an Untouchable, even if successfully manifested, simply fail. If an Untouchable is caught in the effect of a Psychic Power, Psychic Phenomena, or Perils of the Warp over a wide area, it simply fails to affect him, although it may affect other people normally, subject to the Psychic'
+    source: The Navis Primer
+img: systems/rogue-trader-3rd/icons/talents/blue/b_01.png
+name: Untouchable (X)
+type: trait
+---
+data:
+    description: 'The Eldar are a race with immense psychic potential, and the finesse and subtlety with which they can manipulate the Warp surpasses believability and comprehension. Those who tread the harsh, ascetic Path of the Seer often do so for untold acons, slowly but surely unlocking the secrets of each technique and mastering it to a degree impossible in short human lives. However, the Eldar do not rely on these slow and steady methods simply for tradition''s sake, or because their life-spans permit it; the maw of Slaanesh, the Doom of the Eldar, ever gapes open before them, and those who devote themselves to psychic Talents must be most careful of all, for She Who Thirsts can never truly be slaked nor definitively avoided. Consequently, Eldar psykers use psychic powers in a somewhat different—and usually much more guarded—way than reckless Renegade Psykers or even than cautious Astropaths. When m'
+    source: The Navis Primer
+img: systems/rogue-trader-3rd/icons/talents/blue/b_01.png
+name: Eldritch Mastery
+type: trait
+---
+data:
+    description: 'Rak''Gol Techno-Shamans seek out the technology left behind by long-extinct species and implant these often horrifying artefacts into their bodies. Imperial scholars have no insight into why they seek out the cursed machines of the Yu''Vath and other dead empires, and most scholars of the Koronus Expanse deny that these monstrosities even exist. The implants grant their bearers certain supernatural abilities akin to psychic powers, even if the bearer''s species does not otherwise display such potential. Creatures with Resonator Implants use the rules for Renegade Psykers (see page 157 of the ROGUE TRADER Core Rulebook).'
+    source: The Navis Primer
+img: systems/rogue-trader-3rd/icons/talents/blue/b_01.png
+name: Resonator Implants
+type: trait
+---
+data:
+    description: 'The creature''s anatomy and biochemical composition have been so radically altered that they may only superficially resemble their original species. The creature''s toughened, scarred, flesh—known as gnarlskin—grants it Natural Armour 2 (or a +2 to any existing Natural Armour), and the creature cannot be harmed by diseases, poisons, or toxic effects. Furthermore, if the creature also has the Power Through Pain Trait, then it automatically regains 1d5 lost Wounds every time it gains a Pain Token. Finally, no creature with Altered Physique can benefit from Dark Eldar combat drugs. IV: THE TREACHEROUS PATH'
+    source: The Soul Reaver
+img: systems/rogue-trader-3rd/icons/talents/blue/b_01.png
+name: Altered Physique
+type: trait

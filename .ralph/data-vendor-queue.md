@@ -284,3 +284,25 @@ extracted explicitly (scratchpad `extract_small.py`) once surveyed. Tau Characte
 Positional Relay, Target Lock -> tools; Kroot Sniper Rounds -> ammo), The Navis Primer "Eldar Psychic
 Wargear" (p.123 — Runes of Warding/Witnessing, Spirit Stone -> tools), The Soul Reaver "Drugs and Poisons"
 (12 Dark Eldar combat drugs -> consumables). Description-only (mechanics in prose). QA gate + report clean.
+
+---
+
+## Supplement character options — talents & traits (0.9.20, 2026-09-02) — 28 items
+
+Extracted the `(TALENT)`/`(TRAIT)` prose entries from the supplements (scratchpad `extract_chars.py`):
+paragraph-aware parse → name (title-cased, OCR "Eedritch"→"Eldritch" fixed), Prerequisites split from
+benefit, source = book. **Talents +16** (HA alternate-career talents: Apostate Mechanic, Subversive
+Programming, Luminen Desecration, Vile Intrusion, Cold Reading, Operative Conditioning, Killer's Eye,
+Take Them Alive, Combat Flair, Grand Oratory, Touched by the Fates; Navis Primer: Corrupted Charge,
+Unhallowed Discovery, Psychic Awakening, Secrets of the Seers; Soul Reaver: Delicate Lethality).
+**Traits +12** (Cold Trader, Fearful Reputation, Swarm, Mastermind, Unfaltering Redemption, Eternal
+Vigilance, Mindlinked, Accursed, Untouchable (X), Eldritch Mastery, Resonator Implants, Altered Physique).
+
+**Review / follow-up:**
+- Description-only (benefit text) — NO ActiveEffect automation, like most supplement talents/traits.
+- Prerequisites are best-effort parsed from prose; spot-check the short ones (e.g. "Perception 35 and either").
+- Cost = 0 (supplement talents' XP is set by their career advance tables, not a flat value).
+- Career variant talents (Peer/Hatred/Good Reputation "(X)" and " AND " compounds) were SKIPPED (they're
+  pickable-target variants of existing talents).
+- **The Navis Primer Navigator powers (~large) were NOT imported** — they're a distinct discipline with
+  Novice/Adept/Master tiers and a different schema; a separate psychic-powers pass.

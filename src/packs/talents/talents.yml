@@ -3772,3 +3772,195 @@ flags:
 img: systems/rogue-trader-3rd/icons/talents/blue/b_18.png
 name: Weapon Training
 type: talent
+---
+data:
+    aptitudes: ''
+    benefit: 'The Explorer modifies himself with arcane technology and now wields techno-arcane powers normally the preserve of the Priesthood of Mars. For the purpose of fulfilling prerequisites, the Explorer counts as possessing the Mechanicus Implants Trait. He does not gain any of the normal effects of the Trait, and he may not necessarily have the same implants, but rather equivalent devices of his own devising.'
+    cost: 0
+    prerequisites: Tech-Use +10
+    source: Hostile Acquisitions
+    tier: '1'
+    category: Supplement
+img: systems/rogue-trader-3rd/icons/items/swords/swords_01_b.png
+name: Apostate Mechanic
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: 'The Explorer has devised a binary argot that confuses and subverts the programming of servitors and other machine-creatures, allowing him to direct their actions. As a Half Action, the Explorer may attempt to command a creature with the Machine Trait and an Intelligence of 20 or less. Make an Opposed Challenging (+0) Tech-Use vs. Willpower Test. If he succeeds, the creature must follow the Explorer''s commands for the following Round. The Explorer may continue to maintain control by spending a Half Action in subsequent Rounds. If he chooses to do this, he must make another opposed Test after four Rounds to maintain the link. The commands must be simple and achievable in one round. Some examples include "Flee," "Fall," and "Attack the closest target."'
+    cost: 0
+    prerequisites: Mechanics Implants
+    source: Hostile Acquisitions
+    tier: '1'
+    category: Supplement
+img: systems/rogue-trader-3rd/icons/items/swords/swords_01_b.png
+name: Subversive Programming
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: 'The Explorer''s implants generate a violent techsorcism pulse, allowing him to disable technology in his presence. A single gesture and most sophisticated devices simply cease to function. A successful Challenging (+0) Ballistic Skill Test allows him to direct the energy against a single target within 10 metres. This is a ranged attack and can be Dodged but not blocked by Fields or other protective devices. If the target is carrying any electrical devices—including energy weapons and bionic systems—then they cease to operate for 1d5 rounds, as if their power had run out. If the target is a vehicle, then it immediately suffers a Critical Hit as if the user had scored Righteous Fury, subtracting one to the Critical Hit result (a result of zero results in no Critical Hit).'
+    cost: 0
+    prerequisites: Mechanicus Implants
+    source: Hostile Acquisitions
+    tier: '1'
+    category: Supplement
+img: systems/rogue-trader-3rd/icons/items/swords/swords_01_b.png
+name: Luminen Desecration
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: 'The Explorer is skilled at gaining access to the knowledge of the most sophisticated machine spirits, assailing them with scrap-code and malicious spirits of his own creation, until they break under the strain. The Explorer gains a +20 bonus on all Tech-Use and Security Tests made to gain unauthorised access to an electronic system such as a Cogitator or an electronic lock, so long as the character can connect directly to it using his implants. 59 II: PLAYING THE ROUGE'
+    cost: 0
+    prerequisites: Electrograft Use
+    source: Hostile Acquisitions
+    tier: '1'
+    category: Supplement
+img: systems/rogue-trader-3rd/icons/items/swords/swords_01_b.png
+name: Vile Intrusion
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: 'Utilising a combination of fast-talking and body language interpretation, the Charlatan can quickly assess attentive crowds and potential customers. Preying on the fears and superstitions of the populace, the Charlatan draws his crowds into unwittingly telling him exactly what it is they believe will save them from the horrors of everyday life in the Expanse. Prior to making a Commerce, Barter, or Charm Test, the Charlatan may make a Blather Test opposed by the target''s Willpower or Scrutiny. If the Blather Test is a success, the Charlatan has hooked the target into giving up some vital information and the Charlatan may then make a Challenging (+0) Scrutiny Test to assess the importance of the information gained. If successful, the Charlatan gains a +5 bonus to his next Commerce, Barter, or Charm Test against the target for each point of Perception Bonus. He has ascertained information a'
+    cost: 0
+    prerequisites: Blather +10
+    source: Hostile Acquisitions
+    tier: '1'
+    category: Supplement
+img: systems/rogue-trader-3rd/icons/items/swords/swords_01_b.png
+name: Cold Reading
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: 'The Explorer gains the benefits of the Chem-geld and Orthoproxy talents (mental conditioning replacing the surgery these would normally require). In addition to being resistant to seduction and interrogation, House Operatives are often trained to use a captor''s inquiries against him. The Explorer may utilise an interrogator''s questions and techniques to garner detailed information about the nature, aims, and motivations of the interrogator himself and those he works for. If the Explorer is subjected to interrogation, and wins the opposed Interrogation versus Willpower Test, he may immediately make a Challenging (+0) Scrutiny Test. On a success and for every additional degree of success, he can learn one detail about his captors (what he can and cannot learn is ultimately up the GM, but it should be something valuable). II: PLAYING THE ROGUE'
+    cost: 0
+    prerequisites: ''
+    source: Hostile Acquisitions
+    tier: '1'
+    category: Supplement
+img: systems/rogue-trader-3rd/icons/items/swords/swords_01_b.png
+name: Operative Conditioning
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: 'Sure Strike or Deadeye Shot The Explorer can find the weaknesses of his prey with only a few moments of observation. When he makes a Called Shot attack and scores a number of Degrees of Success on the attack roll equal to or greater than the target''s Agility Bonus, he immediately inflicts a 1d5 critical damage result on the target in addition to any normal damage. Roll on the appropriate Critical Hit table for the damage type and location struck. Any modifiers to critical damage from Talents or other sources apply as normal. However, the Critical Damage inflicted from this ability does not stack with actual Critical Hits.'
+    cost: 0
+    prerequisites: Perception 35 and either
+    source: Hostile Acquisitions
+    tier: '1'
+    category: Supplement
+img: systems/rogue-trader-3rd/icons/items/swords/swords_01_b.png
+name: 'Killer''s Eye'
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: 'Sure Strike or Deadeye Shot The Explorer is well versed in laying his enemies low without killing them, able to incapacitate his targets and limit the damage he inflicts to them. When the Explorer makes a Called Shot attack against an enemy, he may choose to reduce the damage he inflicts after reduction by the target''s Armour or Toughness Bonus by a number equal to his Perception Bonus, and inflict a level of Fatigue for each point of damage reduced in this way. In addition, the Explorer''s familiarity with non-lethal weaponry means that enemies do not gain the usual bonuses from armour to resist the stunning effect of Shocking weapons, and suffer a -10 penalty to avoid or escape any attack with the Snare quality.'
+    cost: 0
+    prerequisites: Perception 35 and either
+    source: Hostile Acquisitions
+    tier: '1'
+    category: Supplement
+img: systems/rogue-trader-3rd/icons/items/swords/swords_01_b.png
+name: Take Them Alive
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: 'The Explorer''s skills in melee are without parallel, but more importantly he fights with a stylish jaunty confidence guaranteed to impress even his foes. Fast on your feet and faster with witty repartee, if your blade does not pierce their flesh then your barbed banter will surely pierce their composure. This Talent allows the Explorer to make an opposed Challenging (+0) Charm versus Willpower Test as a Half Action against any foes in close combat each combat round. Should he win, his he imposes a -10 penalty to his foes'' Weapon Skill, increasing by 5 for every degree of success. This penalty applies for one full Round. Multiple Explorers may use this Talent with a cumulative effect. At the GM''s discretion, opponents with the Bestial, Daemonic, From Beyond, or Machine Trait are immune to this Talent. To Rogue Trader Sarvus Trask. As a matter of fact, I did encounter the so-called Droad C'
+    cost: 0
+    prerequisites: Blademaster
+    source: Hostile Acquisitions
+    tier: '1'
+    category: Supplement
+img: systems/rogue-trader-3rd/icons/items/swords/swords_01_b.png
+name: Combat Flair
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: ', Command +10, Master Orator The Explorer''s words inspire loyalty and dissent in equal measure, and can influence hundreds of individuals at once. His Fellowship Tests and Fellowship-based Skill Tests affect 100 times the normal number of targets.'
+    cost: 0
+    prerequisites: Charm +10
+    source: Hostile Acquisitions
+    tier: '1'
+    category: Supplement
+img: systems/rogue-trader-3rd/icons/items/swords/swords_01_b.png
+name: Grand Oratory
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: 'Characters only, must have free will, may not be applied to Daemons or other non-living creatures The NPC has a number of Fate Points equal to half his Willpower Bonus (rounding up). He may use these Fate Points in the exact same way as an Explorer, and may even “burn” a Fate Point to survive death and destruction. In addition, the rules for Righteous Fury apply to this character. profile could be constructed based on choices from the Nemesis Path, to help provide a GM with guidance if he wants to construct his own profiles.'
+    cost: 0
+    prerequisites: Non-player
+    source: Hostile Acquisitions
+    tier: '1'
+    category: Supplement
+img: systems/rogue-trader-3rd/icons/items/swords/swords_01_b.png
+name: Touched by the Fates
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: 'Integrated Psychically-Charged Xenos Artefacts Some Acolytes of Abraxas have spent a great deal of time mastering the art of channelling their internal energies through their unsanctioned acquisitions, and have found that it can have unexpected—and deadly—results. Damage from this character''s Luminen Shock and Luminen Blast Talents gains the Force Quality. If the character fails his Focus Power Test to activate the Force Quality, however, he suffers 1d5 Energy Damage not reduced by Armour or Toughness Bonus.'
+    cost: 0
+    prerequisites: Intelligence 45, 2+
+    source: The Navis Primer
+    tier: '1'
+    category: Supplement
+img: systems/rogue-trader-3rd/icons/items/swords/swords_01_b.png
+name: Corrupted Charge
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: ', Integrated Psychically-Charged Xenos Artefact By integrating psychically charged xenos artefacts into his bionic form through arcane processes, an Acolyte of Abraxas can channel the power of the artefact through his mind, performing feats much like those of true psykers by virtue of their tainted reflex. The Psychic Technique that the Explorer can use depends on the origin and nature of the artefact; the player and the GM should work together to choose an appropriate power from this volume, the ROGUE TRADER Core Rulebook, or another ROGUE TRADER supplement that contains relevant powers (such as EDGE OF THE ARTER). The character gains Psy Rating 1 (or his Psy Rating increases by 1 if he already has a Psy Rating), and uses the Renegade Psykers and Sorecress section of Table 6-1: Psychic Strength on page 157 of the ROGUE TRADER Core Rulebook. When an Explorer gains this Talent, he immedia'
+    cost: 0
+    prerequisites: Intelligence 40
+    source: The Navis Primer
+    tier: '1'
+    category: Supplement
+img: systems/rogue-trader-3rd/icons/items/swords/swords_01_b.png
+name: Unhallowed Discovery
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: 'This character was either a minor unsanctioned psyker hiding his abilities from those around him or a nascent psyker completely unaware of his own status. In either case, an Explorer with this Talent has experienced the realisation of a terrible new power of the mind, and must come to grips with his situation or die trying. The character gains Psy Rating 1, and uses the Renegade Psykers and Sorcerers section of Table 6-1: Psychic Strength on page 157 of the ROGUE TRADER Core Rulebook. If the character already possessed a Psy Rating, thanks to his Origin Path or for any other reason, he increases his Psy Rating by 1 instead. When an Explorer gains this Talent, he also selects a Psychic Discipline (or other grouping of Psychic Techniques, such as the Renegade Psyker Techniques on page 100) from which he can learn Techniques, and immediately learns a single Psychic Technique with a Value of'
+    cost: 0
+    prerequisites: WP 35
+    source: The Navis Primer
+    tier: '1'
+    category: Supplement
+img: systems/rogue-trader-3rd/icons/items/swords/swords_01_b.png
+name: Psychic Awakening
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: 'Eldar possess an innate connection to the substance known as Wraithbone, and those initiated in the Path of the Seer can interact with artefacts sculpted from it in a way that strangers to these mystic secrets cannot hope to understand. Those with the Secrets of the Seers Talent can access the Witch-Edge Quality of the weapons they wield, which lie dormant in the hands of untrained users.'
+    cost: 0
+    prerequisites: ''
+    source: The Navis Primer
+    tier: '1'
+    category: Supplement
+img: systems/rogue-trader-3rd/icons/items/swords/swords_01_b.png
+name: Secrets of the Seers
+type: talent
+---
+data:
+    aptitudes: ''
+    benefit: 'The warriors of the Withered Blade are well-versed in the art of slaying with the tiniest wounds, leaving their prey bleeding and crippled upon the ground with only the smallest and most precise cuts. When a character with this Talent makes a Called Shot attack with a melee weapon or unarmed attack, the weapon counts as having the Crippling (5) Quality. In addition, this character''s unarmed attacks deal Rending Damage instead of Impact Damage. IV: THE TREACHEROUS PATH'
+    cost: 0
+    prerequisites: ''
+    source: The Soul Reaver
+    tier: '1'
+    category: Supplement
+img: systems/rogue-trader-3rd/icons/items/swords/swords_01_b.png
+name: Delicate Lethality
+type: talent
