@@ -344,3 +344,25 @@ disciplines: Weirdboy / Rak'Gol / Daemon. psychic-powers 90→116.
   Krump 'Em All/'Ead to 'Ead/I'z Gunna Squig Ya!), and a too-wide Daemon range pulled in NPC stat-block
   headings (Characteristics/Skills/Talents) — both fixed, re-verified live.
 - NPC daemon heralds (T'Zar, The Luminary, The Carrier, The Huntsman) are stat blocks, not powers — skipped.
+
+---
+
+## Battlefleet Koronus ship weapons (0.9.23, 2026-09-02) — 12 macrobatteries + lances
+
+Extracted from BK's supplemental-weapon summary table (scratchpad `extract_ship.py`, cloning the CoreBook
+Mars Macrocannon as the shipWeapon template). **+12 ship weapons** (ship-weapons 17→29): Macrobatteries —
+Bombardment Cannons, Disruption Macrocannons (+Broadside), Hecutor-pattern Plasma Battery (+Broadside),
+Stygies-pattern Macrocannons; Lances — Godsbane Lance (+Battery), Las-burner, Mezoa Lance Weapon (+Battery),
+Voidsunder Lance Battery. Stats (Strength/Damage-bonus/Crit/Range/Power/Space/SP) parsed from the table;
+`damage` = the flat bonus (engine rolls 1d10+damage), full formula kept in the description; special-rules
+prose fuzzy-matched from the `## NAME` blocks.
+
+**Review / follow-up:**
+- class/size/slot are HEURISTIC (Broadside if the name says so, else Turret; size Light; slot Dorsal) —
+  spot-check against canon mounting rules.
+- `damage` semantics: fine for 1d10+X macrobatteries/lances; Las-burner is 1d5+1 (engine will roll 1d10+1,
+  slightly high) — full formula is in the description.
+- NOT imported this pass: Nova Cannons (2d5, special † range/scatter), Torpedo Tubes + torpedoes, Landing
+  Bays, and all SHIP COMPONENTS (essential/supplemental/archeotech — power-generation & hull-gating
+  semantics), plus the xeno component/weapon sections (Ork/Eldar/Stryxis/Rak'Gol/Chaos) and Drydock. A
+  larger ship-components pass.

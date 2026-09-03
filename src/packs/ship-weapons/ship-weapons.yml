@@ -635,3 +635,424 @@ data:
 img: systems/rogue-trader-3rd/icons/items/buckets/ship-lance.png
 name: Star-flare Lance
 type: shipWeapon
+---
+data:
+  attackBonus: 0
+  availability: rare
+  backpack:
+    inBackpack: false
+  class: Turret
+  componentClass: Supplemental
+  componentType: Macrocannon
+  craftsmanship: common
+  critRating: 2
+  damage: 6
+  description: 'As the name suggests, these devastating weapons are designed to reduce planetary defences to rubble and support military landings. Most often they use linear accelerators to launch massed salvoes of heavy magma bomb warheads, and though relatively short ranged can also be used in naval combat. Often the rumour that orbiting vessels carry them is enough to force a quick surrender. Destructive: If this weapon generates a crit, add 1 to the result rolled. Death from Above: Bombardment Cannons act as macrobatteries and can only be mounted in a Prow, Dorsal, or Keel weapons slot. When in orbit, the players gain +20 towards any Intimidate tests against planetary based characters. When working toward a Military Objective against a planet, the players earn an additional 50 Achievement Points. When used as part of a planetary bombardment, bombardment cannons double the affected area, do an additional 20 damage to large units, and deal an additional 10 damage to individuals and vehicles.
+    [Ship weapon — Str 3, Damage 1d10+6, Crit 2, Range 4, Power 5, Space 5, SP 3, Hulls: Light Cruisers, Cruisers.]'
+  effect: ''
+  hitPoints: 2
+  isDepressurized: false
+  isDestroyed: false
+  isOnFire: false
+  isUnpowered: false
+  location: Main
+  power: 5
+  rangeLong: 4
+  rangeMedium: 0
+  rangeSmall: 0
+  shipPoints: 3
+  size: Light
+  slot: Dorsal
+  source: Battlefleet Koronus
+  space: 5
+  strength: 3
+  target: ''
+  type: Macrocannon
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-macrobattery.png
+name: Bombardment Cannons
+type: shipWeapon
+---
+data:
+  attackBonus: 0
+  availability: rare
+  backpack:
+    inBackpack: false
+  class: Turret
+  componentClass: Supplemental
+  componentType: Macrocannon
+  craftsmanship: common
+  critRating: 0
+  damage: 1
+  description: 'This macrocannon variant fires a "shell" of highly charged, ionized deuterium atoms. These particles cause minimal physical damage to their targets. Instead, they are intended to overload and shut down power transfer systems throughout the target vessels. These weapons are particularly useful for vessels that need to capture their prey intact. Short the Flow: Disruption weapons compromise the circuitry and wiring required to transfer power from the ship''s engine to her other components. For every five damage that exceeds the target''s Void Shields, one randomly selected Component on the target ship becomes Unpowered. This weapon''s damage is not affected by Armour. [Ship weapon — Str 3, Damage 1d10+1, Crit -, Range 5, Power 4, Space 2, SP 2, Hulls: All Ships.]'
+  effect: ''
+  hitPoints: 2
+  isDepressurized: false
+  isDestroyed: false
+  isOnFire: false
+  isUnpowered: false
+  location: Main
+  power: 4
+  rangeLong: 5
+  rangeMedium: 0
+  rangeSmall: 0
+  shipPoints: 2
+  size: Light
+  slot: Dorsal
+  source: Battlefleet Koronus
+  space: 2
+  strength: 3
+  target: ''
+  type: Macrocannon
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-macrobattery.png
+name: Disruption Macrocannons
+type: shipWeapon
+---
+data:
+  attackBonus: 0
+  availability: rare
+  backpack:
+    inBackpack: false
+  class: Broadside
+  componentClass: Supplemental
+  componentType: Macrocannon
+  craftsmanship: common
+  critRating: 0
+  damage: 1
+  description: 'These larger variants of the Disruption Macrocannon must be mounted on a warship''s extended broadside. Short the Flow: Disruption weapons compromise the circuitry and wiring required to transfer power from the ship''s engine to her other components. For every five damage that exceeds the target''s Void Shields, one randomly selected Component on the target ship becomes Unpowered. This weapon''s damage is not affected by Armour. Ionic Blast: These weapons never cause critical hits, nor do they deal damage to Hull Integrity. These weapons may only be combined into a salvo with other Disruption Macrocannon weapons. [Ship weapon — Str 6, Damage 1d10+1, Crit -, Range 5, Power 6, Space 5, SP 2, Hulls: Light Cruisers, Cruisers.]'
+  effect: ''
+  hitPoints: 2
+  isDepressurized: false
+  isDestroyed: false
+  isOnFire: false
+  isUnpowered: false
+  location: Main
+  power: 6
+  rangeLong: 5
+  rangeMedium: 0
+  rangeSmall: 0
+  shipPoints: 2
+  size: Light
+  slot: Dorsal
+  source: Battlefleet Koronus
+  space: 5
+  strength: 6
+  target: ''
+  type: Macrocannon
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-macrobattery.png
+name: Disruption Macrocannon Broadside
+type: shipWeapon
+---
+data:
+  attackBonus: 0
+  availability: rare
+  backpack:
+    inBackpack: false
+  class: Turret
+  componentClass: Supplemental
+  componentType: Macrocannon
+  craftsmanship: common
+  critRating: 4
+  damage: 2
+  description: 'The Hecutor Pattern plasma battery is an ancient variant of plasma macroweaponry that refocuses the power of the plasma "blast," concentrating it into a compressed photonic packet that can be fired over extremely long distances. It is rare to see these on any but the oldest vessels, meaning many are found on heretic vessels lost to the forces of Chaos millennia ago. Vapourisation: When this Weapon Component rolls a 1 or 2 on the Critical Hit Chart, it effects two Components instead of one. [Ship weapon — Str 3, Damage 1d10+2, Crit 4, Range 11, Power 8, Space 3, SP 2, Hulls: Light Cruisers, Cruisers.]'
+  effect: ''
+  hitPoints: 2
+  isDepressurized: false
+  isDestroyed: false
+  isOnFire: false
+  isUnpowered: false
+  location: Main
+  power: 8
+  rangeLong: 11
+  rangeMedium: 0
+  rangeSmall: 0
+  shipPoints: 2
+  size: Light
+  slot: Dorsal
+  source: Battlefleet Koronus
+  space: 3
+  strength: 3
+  target: ''
+  type: Macrocannon
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-macrobattery.png
+name: Hecutor-pattern Plasma Battery
+type: shipWeapon
+---
+data:
+  attackBonus: 0
+  availability: rare
+  backpack:
+    inBackpack: false
+  class: Broadside
+  componentClass: Supplemental
+  componentType: Macrocannon
+  craftsmanship: common
+  critRating: 4
+  damage: 2
+  description: 'Few ships can match the power requirements necessary to equip a full broadside of these weapons, so these weapons are almost exclusively the providence of battlecruisers and larger warships. Vapourisation: When this Weapon Component rolls a 1 or 2 on the Critical Hit Chart, it effects two Components instead of one. [Ship weapon — Str 5, Damage 1d10+2, Crit 4, Range 11, Power 12, Space 5, SP 2, Hulls: Battlecruisers, Grand Cruisers.]'
+  effect: ''
+  hitPoints: 2
+  isDepressurized: false
+  isDestroyed: false
+  isOnFire: false
+  isUnpowered: false
+  location: Main
+  power: 12
+  rangeLong: 11
+  rangeMedium: 0
+  rangeSmall: 0
+  shipPoints: 2
+  size: Light
+  slot: Dorsal
+  source: Battlefleet Koronus
+  space: 5
+  strength: 5
+  target: ''
+  type: Macrocannon
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-macrobattery.png
+name: Hecutor-pattern Plasma Broadside
+type: shipWeapon
+---
+data:
+  attackBonus: 0
+  availability: rare
+  backpack:
+    inBackpack: false
+  class: Turret
+  componentClass: Supplemental
+  componentType: Macrocannon
+  craftsmanship: common
+  critRating: 5
+  damage: 2
+  description: '[Ship weapon — Str 3, Damage 1d10+2, Crit 5, Range 5, Power 4, Space 3, SP 1, Hulls: All Ships.]'
+  effect: ''
+  hitPoints: 2
+  isDepressurized: false
+  isDestroyed: false
+  isOnFire: false
+  isUnpowered: false
+  location: Main
+  power: 4
+  rangeLong: 5
+  rangeMedium: 0
+  rangeSmall: 0
+  shipPoints: 1
+  size: Light
+  slot: Dorsal
+  source: Battlefleet Koronus
+  space: 3
+  strength: 3
+  target: ''
+  type: Macrocannon
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-macrobattery.png
+name: Stygies-pattern Macrocannons
+type: shipWeapon
+---
+data:
+  attackBonus: 0
+  availability: rare
+  backpack:
+    inBackpack: false
+  class: Turret
+  componentClass: Supplemental
+  componentType: Lance
+  craftsmanship: common
+  critRating: 3
+  damage: 2
+  description: 'The Godsbane lance is a near archeotech relic-weapon. The lengthened focus apertures and quad lense-arrays give the weapon extreme range, to the point that beam dispersion becomes a problem. The technological demands of these weapons is intense, and only the older grand cruisers or the most powerful warships possess the structural requirements to mount them. In fact, similar weapons are more often found amongst the forces of the Archenemy, as they tend to possess older vessels. Beam Dispersion Effect: When firing at targets over 20 VUs away, the damage of this weapon decreases to 1d10. [Ship weapon — Str 1, Damage 1d10+2, Crit 3, Range 12, Power 9, Space 4, SP 3, Hulls: Battlecruisers, Grand Cruisers.]'
+  effect: ''
+  hitPoints: 2
+  isDepressurized: false
+  isDestroyed: false
+  isOnFire: false
+  isUnpowered: false
+  location: Main
+  power: 9
+  rangeLong: 12
+  rangeMedium: 0
+  rangeSmall: 0
+  shipPoints: 3
+  size: Light
+  slot: Dorsal
+  source: Battlefleet Koronus
+  space: 4
+  strength: 1
+  target: ''
+  type: Lance
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-lance.png
+name: Godsbane Lance
+type: shipWeapon
+---
+data:
+  attackBonus: 0
+  availability: rare
+  backpack:
+    inBackpack: false
+  class: Turret
+  componentClass: Supplemental
+  componentType: Lance
+  craftsmanship: common
+  critRating: 3
+  damage: 2
+  description: 'Battlecruisers and grand cruisers tend to mount their lances in paired turrets for increased firepower. This is especially true for the Godsbane, as a single hit tends to do insufficient damage. Beam Dispersion Effect: When firing at targets over 20 VUs away, the damage of this weapon decreases to 1d10. [Ship weapon — Str 2, Damage 1d10+2, Crit 3, Range 12, Power 13, Space 6, SP 3, Hulls: Battlecruisers, Grand Cruisers.]'
+  effect: ''
+  hitPoints: 2
+  isDepressurized: false
+  isDestroyed: false
+  isOnFire: false
+  isUnpowered: false
+  location: Main
+  power: 13
+  rangeLong: 12
+  rangeMedium: 0
+  rangeSmall: 0
+  shipPoints: 3
+  size: Light
+  slot: Dorsal
+  source: Battlefleet Koronus
+  space: 6
+  strength: 2
+  target: ''
+  type: Lance
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-lance.png
+name: Godsbane Lance Battery
+type: shipWeapon
+---
+data:
+  attackBonus: 0
+  availability: rare
+  backpack:
+    inBackpack: false
+  class: Turret
+  componentClass: Supplemental
+  componentType: Lance
+  craftsmanship: common
+  critRating: 3
+  damage: 1
+  description: 'Las-burners are a scaled down version of true lances, utilising focused, high power las beams to cut through a ship’s armoured plating. Though these weapons do far less damage, the turrets are smaller as well, allowing smaller ships to carry them. However, their relatively small size also allows them to be used in boarding actions, cutting open the outer adamantium hull to allow armsmen access to an opponent’s vitals. Small Weapon: Las-burners may be installed in Dorsal or Keel weapon capacity slots in ships of frigate size or smaller. [Ship weapon — Str 2, Damage 1d5+1, Crit 3, Range 3, Power 7, Space 3, SP 2, Hulls: All Ships.]'
+  effect: ''
+  hitPoints: 2
+  isDepressurized: false
+  isDestroyed: false
+  isOnFire: false
+  isUnpowered: false
+  location: Main
+  power: 7
+  rangeLong: 3
+  rangeMedium: 0
+  rangeSmall: 0
+  shipPoints: 2
+  size: Light
+  slot: Dorsal
+  source: Battlefleet Koronus
+  space: 3
+  strength: 2
+  target: ''
+  type: Lance
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-lance.png
+name: Las-burner
+type: shipWeapon
+---
+data:
+  attackBonus: 0
+  availability: rare
+  backpack:
+    inBackpack: false
+  class: Turret
+  componentClass: Supplemental
+  componentType: Lance
+  craftsmanship: common
+  critRating: 4
+  damage: 5
+  description: '[Ship weapon — Str 1, Damage 1d10+5, Crit 4, Range 4, Power 9, Space 4, SP 3, Hulls: All Ships.]'
+  effect: ''
+  hitPoints: 2
+  isDepressurized: false
+  isDestroyed: false
+  isOnFire: false
+  isUnpowered: false
+  location: Main
+  power: 9
+  rangeLong: 4
+  rangeMedium: 0
+  rangeSmall: 0
+  shipPoints: 3
+  size: Light
+  slot: Dorsal
+  source: Battlefleet Koronus
+  space: 4
+  strength: 1
+  target: ''
+  type: Lance
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-lance.png
+name: Mezoa Lance Weapon
+type: shipWeapon
+---
+data:
+  attackBonus: 0
+  availability: rare
+  backpack:
+    inBackpack: false
+  class: Turret
+  componentClass: Supplemental
+  componentType: Lance
+  craftsmanship: common
+  critRating: 4
+  damage: 5
+  description: '[Ship weapon — Str 2, Damage 1d10+5, Crit 4, Range 4, Power 13, Space 6, SP 3, Hulls: Light Cruisers, Cruisers.]'
+  effect: ''
+  hitPoints: 2
+  isDepressurized: false
+  isDestroyed: false
+  isOnFire: false
+  isUnpowered: false
+  location: Main
+  power: 13
+  rangeLong: 4
+  rangeMedium: 0
+  rangeSmall: 0
+  shipPoints: 3
+  size: Light
+  slot: Dorsal
+  source: Battlefleet Koronus
+  space: 6
+  strength: 2
+  target: ''
+  type: Lance
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-lance.png
+name: Mezoa Lance Battery
+type: shipWeapon
+---
+data:
+  attackBonus: 0
+  availability: rare
+  backpack:
+    inBackpack: false
+  class: Turret
+  componentClass: Supplemental
+  componentType: Lance
+  craftsmanship: common
+  critRating: 3
+  damage: 4
+  description: 'Commonly mounted on the Dauntless-class light cruisers constructed in the Calixis and neighbouring sectors, the Voidsunder Lance Battery sacrifices flexibility for raw power. Mounted in massive housings hanging off a ship’s prow and rear fins, these weapons provide a light cruiser with a ship-breaking punch. However, only grand cruisers are large enough to potentially mount these weapons on dorsal turrets instead, limiting their usefulness. Heavy Weapon: This Component may only be mounted in a Prow Weapon Capacity Slot unless the ship is a grand cruiser or larger, in which case it may be mounted in a Dorsal slot as well. In Prow slots, the weapon may only fire forward. [Ship weapon — Str 1, Damage 1d10+4, Crit 3, Range 6, Power 15, Space 8, SP 3, Hulls: Light Cruisers, Cruisers.]'
+  effect: ''
+  hitPoints: 2
+  isDepressurized: false
+  isDestroyed: false
+  isOnFire: false
+  isUnpowered: false
+  location: Main
+  power: 15
+  rangeLong: 6
+  rangeMedium: 0
+  rangeSmall: 0
+  shipPoints: 3
+  size: Light
+  slot: Dorsal
+  source: Battlefleet Koronus
+  space: 8
+  strength: 1
+  target: ''
+  type: Lance
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-lance.png
+name: Voidsunder Lance Battery
+type: shipWeapon
