@@ -16,7 +16,7 @@ const roll = readFileSync(join(ROOT, 'src/module/rolls/roll-data.mjs'), 'utf8');
 test('Cleansing Fire is wired (Willpower test -> on fire, +1d10 with Flame)', () => {
     assert.match(dmg, /wSpecial\.cleansingFire/, 'must read the cleansingFire flag directly');
     assert.match(dmg, /Cleansing Fire[\s\S]{0,120}Willpower Test/, 'must post the WP-test-or-catch-fire effect');
-    assert.match(dmg, /wSpecial\.flame[\s\S]{0,160}1d10 Energy Damage/, 'Flame rider adds +1d10 ignoring armour/TB');
+    assert.match(dmg, /wSpecial\.flame[\s\S]{0,200}Energy Damage \(ignoring Armour and Toughness/, 'Flame rider adds +1d10 ignoring armour/TB');
     assert.match(dmg, /addEffect\('Cleansing Fire'[\s\S]{0,220}\['onFire'\]/, 'applies the On Fire condition button');
 });
 
