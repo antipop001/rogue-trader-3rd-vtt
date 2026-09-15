@@ -3542,3 +3542,80 @@ data:
 img: systems/rogue-trader-3rd/icons/items/buckets/ship-warp-engine.png
 name: Warp Sextant
 type: shipComponent
+---
+_id: QKMGVJNIpplBrIOD
+data:
+  availability: Very Rare
+  backpack:
+    inBackpack: false
+  bonuses:
+    armour: 0
+    armourProw: 0
+    bsShipWeapons: 0
+    detection: 0
+    hullIntegrity: 0
+    maneuverability: -3
+    morale: 0
+    speed: -2
+    turrets: 0
+  componentClass: Supplemental
+  componentType: Augments and Enhancements
+  craftsmanship: common
+  description: 'Heavy plates layered over existing armour build a formidable defence
+    at the cost of speed and manoeuvrability. More Dead Weight: Decrease this vessel''s
+    Manoeuvrability by 3 and its Speed by 2. // Hull-size variants: Raiders/Frigates/Transports
+    Power 0, Space 2, SP 2; Light Cruisers/Cruisers Power 0, Space 3, SP 2.'
+  effect: ''
+  hitPoints: 2
+  isDepressurized: false
+  isDestroyed: false
+  isOnFire: false
+  isUnpowered: false
+  location: Main
+  power: 0
+  shipPoints: 2
+  source: Lure of the Expanse, p.122
+  space: 2
+  target: ''
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-armour-plating.png
+name: Excess Void Armour
+type: shipComponent
+---
+_id: ZAOAH0z6iVFcZYl0
+data:
+  availability: Very Rare
+  backpack:
+    inBackpack: false
+  bonuses:
+    armour: -3
+    armourProw: 0
+    bsShipWeapons: 0
+    detection: 0
+    hullIntegrity: 0
+    maneuverability: 0
+    morale: 0
+    speed: 0
+    turrets: 0
+  componentClass: Supplemental
+  componentType: Augments and Enhancements
+  craftsmanship: common
+  description: 'Opulence over substance: the vessel''s armour plating is gilded to
+    the point that it sacrifices protection for grandeur. Armour: Decreases this vessel''s
+    Armour by 3. Impressive: Any Fellowship Test made by the captain of the ship (while
+    on or in sight of it) gains a +10 bonus. // Hull-size variants: Raiders/Frigates/Transports
+    Power 0, Space 1, SP 2; Light Cruisers/Cruisers Power 0, Space 2, SP 2.'
+  effect: ''
+  hitPoints: 2
+  isDepressurized: false
+  isDestroyed: false
+  isOnFire: false
+  isUnpowered: false
+  location: Main
+  power: 0
+  shipPoints: 2
+  source: Lure of the Expanse, p.122
+  space: 1
+  target: ''
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-armour-plating.png
+name: Gilded Hull
+type: shipComponent

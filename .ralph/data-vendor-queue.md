@@ -404,3 +404,32 @@ Three requested wiring categories, QA-gated:
    (Vile Intrusion +20 Tech-Use vs machine spirits during a hack; Cold Reading opposed social; Killer's Eye
    Called-Shot conditional) — no flat always-on bonuses to AE-wire, consistent with most existing supplement
    talents being description-only.
+
+---
+
+## Lure of the Expanse gear the auto-detector missed (0.9.26, 2026-09-15) — 14 items
+
+User caught that LotE gear was absent ("Don't have the equipment... things like Void Weave Cloak"). The
+0.9.15 generalized auto-detector recorded LotE as "0 gear" — WRONG: it only matched the four FFG stat-table
+header signatures, so it missed (a) TABLE 2-2 "Treasures of the Hidden Holds" (a d10 table of unique prose
+reward items — "counts as a Best-craftsmanship X with Y") and (b) the Eldar Gear section (Table 3-1 + prose).
+All stats are explicitly in the text or reference a named CoreBook item to clone — deterministic, no guessing.
+
+**Category 1 — personal gear (11):** weapons Hand of Retribution (concealable Best power weapon 1d10+4/Pen6),
+Darloth Chain Cannon (Best Heavy Stubber + Tearing + Storm + Half reload), Consort Honour Blade (Best 2-h
+Power Axe + built-in Hellgun), Witchblade (Eldar power sword; triples SB, Pen = Psy Rating for an Eldar
+psyker), Wraithcannon (Heavy Exotic, 2d10 ignoring Armour/TB, 19-20 destroys, 2-10 teleports); armour Stalker
+Carapace (AP5 all + Concealment), Void Weave Cloak (3 AP Body/Arms/Legs, counts vs fire, never reduced by
+Energy); ammo Retribution Bolt Shells; tools Book of Imperial Graces (+20 Fel with faithful), Ghost Voice
+Auspex (100m unblockable, no Surprise, +4 Init); cybernetics Skitarii Cyber Weapon (arm w/ hidden hellpistol
++ grenade launcher). **Category 2 — ship (3):** Dragon's Breath Lance Weapon (ship-weapon, Prow-only),
+Excess Void Armour + Gilded Hull (supplemental components; -3 Man/-2 Speed and -3 Armour/+10 Fel).
+
+**Follow-ups / notes:** Witchblade Table 3-1 Wt 40kg is an OCR misalignment with the Wraithcannon row →
+used power-sword 3kg (noted in desc). Special effects (Witchblade triple-SB/Pen=PsyRating; Wraithcannon
+ignore-armour/teleport; Void Weave anti-Energy AP; Consort dual glaive/gun mode) are DESCRIPTION-ONLY — a
+potential wiring pass. **SKIPPED (by design):** Crusade Combat Servitor (an NPC statblock, belongs in an NPC
+pack); the Eldar Components (Table 3-3: Aconite Solar Sails, Starcannon Cluster Battery, Holo Field — Eldar-
+only NPC ship parts, Power/Space only, no full stats — same call as the 0.9.24 xeno-ship skip). **Other
+adventure books (Stars of Inequity, Soul Reaver, Frozen Reaches, etc.) very likely have similar prose
+"treasure/reward" item tables the auto-detector also skipped — a follow-up survey worth doing.**

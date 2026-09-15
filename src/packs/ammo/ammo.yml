@@ -1,1202 +1,1122 @@
+---
 data:
-    craftsmanship: common
-    availability: Rare
-    weight: 0
-    equipped: false
+  attackBonus: 0
+  attackType: ''
+  availability: Rare
+  backpack:
     inBackpack: false
-    description: These shells contain a volatile, clinging gel that ignites on contact
-        with the target. **Effects:** A target hit by an inferno shell must make an
-        Agility Test or catch on fire, in addition to suffering damage as normal.
-        **Used With:** Shotguns, pump-action shotguns, combat shotguns, and all bolt
-        weapons.
-    source: Rogue Trader Core Rulebook
-    damage: ''
-    damageType: ''
-    penetration: ''
-    special: {}
-    range: ''
-    attackType: ''
-    attackBonus: 0
-    rateOfFire:
-        single: 1
-        burst: 0
-        full: 0
-    target: ''
-    effect: ''
-    weaponType: ''
-    backpack:
-        inBackpack: false
+  craftsmanship: common
+  damage: ''
+  damageType: ''
+  description: These shells contain a volatile, clinging gel that ignites on contact with the target. **Effects:** A target hit by an inferno shell must make an Agility Test or catch on fire, in addition to suffering damage as normal. **Used With:** Shotguns, pump-action shotguns, combat shotguns, and all bolt weapons.
+  effect: ''
+  equipped: false
+  inBackpack: false
+  penetration: ''
+  range: ''
+  rateOfFire:
+    burst: 0
+    full: 0
+    single: 1
+  source: Rogue Trader Core Rulebook
+  special: {}
+  target: ''
+  weaponType: ''
+  weight: 0
 img: systems/rogue-trader-3rd/icons/items/buckets/ammo-stub-rounds.png
 name: Inferno Shells
 type: ammunition
 ---
 data:
-    craftsmanship: common
-    availability: Scarce
-    weight: 0
-    equipped: false
+  attackBonus: 0
+  attackType: ''
+  availability: Scarce
+  backpack:
     inBackpack: false
-    description: These densely tipped bullets are designed to punch through armour.
-        **Effects:** A weapon using man-stopper rounds increases its Penetration to
-        3. **Used With:** Stub revolvers, stub automatics, hand cannons, hunting rifles,
-        autopistols, and autoguns.
-    source: Rogue Trader Core Rulebook
-    damage: ''
-    damageType: ''
-    penetration: ''
-    special: {}
-    range: ''
-    attackType: ''
-    attackBonus: 0
-    rateOfFire:
-        single: 1
-        burst: 0
-        full: 0
-    target: ''
-    effect: ''
-    weaponType: ''
-    backpack:
-        inBackpack: false
+  craftsmanship: common
+  damage: ''
+  damageType: ''
+  description: These densely tipped bullets are designed to punch through armour. **Effects:** A weapon using man-stopper rounds increases its Penetration to 3. **Used With:** Stub revolvers, stub automatics, hand cannons, hunting rifles, autopistols, and autoguns.
+  effect: ''
+  equipped: false
+  inBackpack: false
+  penetration: ''
+  range: ''
+  rateOfFire:
+    burst: 0
+    full: 0
+    single: 1
+  source: Rogue Trader Core Rulebook
+  special: {}
+  target: ''
+  weaponType: ''
+  weight: 0
 img: systems/rogue-trader-3rd/icons/items/buckets/ammo-stub-rounds.png
 name: Man-Stopper Bullets
 type: ammunition
 ---
 data:
-    craftsmanship: common
-    availability: Near Unique
-    weight: 0
-    equipped: false
+  attackBonus: 0
+  attackType: ''
+  availability: Near Unique
+  backpack:
     inBackpack: false
-    description: The mass-reactive explosive bolt shell is among the deadliest kind
-        of round in the Imperial arsenal. Tempest bolt shells are perhaps the rarest
-        variety, manufactured only in the temples of Mars. They contain a powerful
-        miniaturised plasma-shock generator that releases a pulse of electromagnetic
-        and thermal energy as the shell detonates. They are particularly effective
-        against machine targets, but obtaining them from the Machine Cult is a nigh-impossible
-        task. **Effect:** Change the weapon's damage class to Energy and the weapon
-        gains the Shock quality. The weapon adds 3 Damage when used against a target
-        with the Machine Trait. **Used With:** Bolt pistols, bolters, and heavy bolters.
-    source: Rogue Trader Core Rulebook
-    damage: ''
-    damageType: ''
-    penetration: ''
-    special: {}
-    range: ''
-    attackType: ''
-    attackBonus: 0
-    rateOfFire:
-        single: 1
-        burst: 0
-        full: 0
-    target: ''
-    effect: ''
-    weaponType: ''
-    backpack:
-        inBackpack: false
+  craftsmanship: common
+  damage: ''
+  damageType: ''
+  description: The mass-reactive explosive bolt shell is among the deadliest kind of round in the Imperial arsenal. Tempest bolt shells are perhaps the rarest variety, manufactured only in the temples of Mars. They contain a powerful miniaturised plasma-shock generator that releases a pulse of electromagnetic and thermal energy as the shell detonates. They are particularly effective against machine targets, but obtaining them from the Machine Cult is a nigh-impossible task. **Effect:** Change the weapon's damage class to Energy and the weapon gains the Shock quality. The weapon adds 3 Damage when used against a target with the Machine Trait. **Used With:** Bolt pistols, bolters, and heavy bolters.
+  effect: ''
+  equipped: false
+  inBackpack: false
+  penetration: ''
+  range: ''
+  rateOfFire:
+    burst: 0
+    full: 0
+    single: 1
+  source: Rogue Trader Core Rulebook
+  special: {}
+  target: ''
+  weaponType: ''
+  weight: 0
 img: systems/rogue-trader-3rd/icons/items/buckets/ammo-bolt-rounds.png
 name: Tempest Bolt Shells
 type: ammunition
 ---
 data:
-    craftsmanship: common
-    availability: very rare
-    weight: 0
-    equipped: false
+  attackBonus: 0
+  attackType: ''
+  availability: very rare
+  backpack:
     inBackpack: false
-    description: As the name suggests, these specialised shells contain vials of powerful
-        acids, strong enough to eat through almost any material. Against armours they
-        can dissolve deep into casings, greatly reducing any protection they might
-        provide. Against exposed flesh they can melt tissue down to the bone in moments.
-        Only extremely large-bore weapons can use these shells. **Effects:** Acid
-        Shells cause 2d10 E Damage, 0 Penetration. If the target takes damage it suffers
-        the same effects as being set on Fire. Each hit against an armoured target
-        will reduce its AP value by 1 (down to a minimum of 0); any armour damaged
-        in this way must be repaired to regain its effectiveness. **Used With:** Shotguns,
-        pump-action shotguns, shotgun pistols, shotcannons, bolt pistols, and bolters.
-    source: Into the Storm, p.131
-    damage: ''
-    damageType: ''
-    penetration: ''
-    special: {}
-    range: ''
-    attackType: ''
-    attackBonus: 0
-    rateOfFire:
-        single: 1
-        burst: 0
-        full: 0
-    target: ''
-    effect: ''
-    weaponType: ''
-    backpack:
-        inBackpack: false
+  craftsmanship: common
+  damage: ''
+  damageType: ''
+  description: As the name suggests, these specialised shells contain vials of powerful acids, strong enough to eat through almost any material. Against armours they can dissolve deep into casings, greatly reducing any protection they might provide. Against exposed flesh they can melt tissue down to the bone in moments. Only extremely large-bore weapons can use these shells. **Effects:** Acid Shells cause 2d10 E Damage, 0 Penetration. If the target takes damage it suffers the same effects as being set on Fire. Each hit against an armoured target will reduce its AP value by 1 (down to a minimum of 0); any armour damaged in this way must be repaired to regain its effectiveness. **Used With:** Shotguns, pump-action shotguns, shotgun pistols, shotcannons, bolt pistols, and bolters.
+  effect: ''
+  equipped: false
+  inBackpack: false
+  penetration: ''
+  range: ''
+  rateOfFire:
+    burst: 0
+    full: 0
+    single: 1
+  source: Into the Storm, p.131
+  special: {}
+  target: ''
+  weaponType: ''
+  weight: 0
 img: systems/rogue-trader-3rd/icons/items/buckets/ammo-stub-rounds.png
 name: Acid Shells
 type: ammunition
 ---
 data:
-    craftsmanship: common
-    availability: extremely rare
-    weight: 0
-    equipped: false
+  attackBonus: 0
+  attackType: ''
+  availability: extremely rare
+  backpack:
     inBackpack: false
-    description: Whilst regular melta weapons are known for the tight focus of the
-        superheated blasts they generate, Airtorch ammunition allows them to burn
-        even hotter in a barely-controlled reaction that can almost set the air itself
-        on fire. Indeed, the heat is so intense that it generally overwhelms the barrel
-        allowing the blast to escape in a wide swath. **Effects:** Airtorch canisters
-        fire in a wide swath and gain the Scatter quality, but cause the weapon to
-        suffer from the Overheating quality, as the heat is more than most melta weapons
-        can withstand safely. The more rapid dispersal halves the weapon's Range as
-        well. **Used With:** Inferno pistols and meltaguns.
-    source: Into the Storm, p.131
-    damage: ''
-    damageType: ''
-    penetration: ''
-    special: {}
-    range: ''
-    attackType: ''
-    attackBonus: 0
-    rateOfFire:
-        single: 1
-        burst: 0
-        full: 0
-    target: ''
-    effect: ''
-    weaponType: ''
-    backpack:
-        inBackpack: false
+  craftsmanship: common
+  damage: ''
+  damageType: ''
+  description: Whilst regular melta weapons are known for the tight focus of the superheated blasts they generate, Airtorch ammunition allows them to burn even hotter in a barely-controlled reaction that can almost set the air itself on fire. Indeed, the heat is so intense that it generally overwhelms the barrel allowing the blast to escape in a wide swath. **Effects:** Airtorch canisters fire in a wide swath and gain the Scatter quality, but cause the weapon to suffer from the Overheating quality, as the heat is more than most melta weapons can withstand safely. The more rapid dispersal halves the weapon's Range as well. **Used With:** Inferno pistols and meltaguns.
+  effect: ''
+  equipped: false
+  inBackpack: false
+  penetration: ''
+  range: ''
+  rateOfFire:
+    burst: 0
+    full: 0
+    single: 1
+  source: Into the Storm, p.131
+  special: {}
+  target: ''
+  weaponType: ''
+  weight: 0
 img: systems/rogue-trader-3rd/icons/items/buckets/ammo-fuel-canister.png
 name: Airtorch Canister
 type: ammunition
 ---
 data:
-    craftsmanship: common
-    availability: extremely rare
-    weight: 0
-    equipped: false
+  attackBonus: 0
+  attackType: ''
+  availability: extremely rare
+  backpack:
     inBackpack: false
-    description: 'Filled with much higher concentrations of heavy ions, Microburst
-        flasks allow a plasma weapon to fire smaller but denser bursts at farther
-        ranges and with greater armour penetration. Microburst plasmas are cooler,
-        however, but many users prefer it this way, given the normal thermal temperament
-        of the weapon. **Effects:** Plasma weapons using Microburst ammo add -2 Damage,
-        +2 Penetration and +10 metres to the weapon''s Range but cannot be fired in
-        Maximal Mode. Using microburst ammo keeps the weapon from Overheating as well.
-        Flasks add 1kg to the weapon weight. **Used With:** Plasma pistols and plasma
-        guns.'
-    source: Into the Storm, p.131
-    damage: ''
-    damageType: ''
-    penetration: ''
-    special: {}
-    range: ''
-    attackType: ''
-    attackBonus: 0
-    rateOfFire:
-        single: 1
-        burst: 0
-        full: 0
-    target: ''
-    effect: ''
-    weaponType: ''
-    backpack:
-        inBackpack: false
+  craftsmanship: common
+  damage: ''
+  damageType: ''
+  description: Filled with much higher concentrations of heavy ions, Microburst flasks allow a plasma weapon to fire smaller but denser bursts at farther ranges and with greater armour penetration. Microburst plasmas are cooler, however, but many users prefer it this way, given the normal thermal temperament of the weapon. **Effects:** Plasma weapons using Microburst ammo add -2 Damage, +2 Penetration and +10 metres to the weapon's Range but cannot be fired in Maximal Mode. Using microburst ammo keeps the weapon from Overheating as well. Flasks add 1kg to the weapon weight. **Used With:** Plasma pistols and plasma guns.
+  effect: ''
+  equipped: false
+  inBackpack: false
+  penetration: ''
+  range: ''
+  rateOfFire:
+    burst: 0
+    full: 0
+    single: 1
+  source: Into the Storm, p.131
+  special: {}
+  target: ''
+  weaponType: ''
+  weight: 0
 img: systems/rogue-trader-3rd/icons/items/buckets/ammo-plasma-flask.png
 name: Microburst Flask
 type: ammunition
 ---
 data:
-    craftsmanship: common
-    availability: very rare
-    weight: 0
-    equipped: false
+  attackBonus: 0
+  attackType: ''
+  availability: very rare
+  backpack:
     inBackpack: false
-    description: 'Flame weapons use liquid fuel, commonly promethium. When promethium
-        is laced with encapsulated nephium motes, a potent secondary ignition takes
-        place a few seconds after the promethium is lit. Few groups make use of this
-        knowledge, for it greatly increases the chance of accidental ignition of flamer
-        fuel stores, requiring expensive safeguards. **Effect:** Agility Tests made
-        by targets to avoid Damage suffer a -10 penalty and the weapon''s base damage
-        is increased by 2. **Used With:** Any Flame weapons.'
-    source: Into the Storm, p.131
-    damage: ''
-    damageType: ''
-    penetration: ''
-    special: {}
-    range: ''
-    attackType: ''
-    attackBonus: 0
-    rateOfFire:
-        single: 1
-        burst: 0
-        full: 0
-    target: ''
-    effect: ''
-    weaponType: ''
-    backpack:
-        inBackpack: false
+  craftsmanship: common
+  damage: ''
+  damageType: ''
+  description: Flame weapons use liquid fuel, commonly promethium. When promethium is laced with encapsulated nephium motes, a potent secondary ignition takes place a few seconds after the promethium is lit. Few groups make use of this knowledge, for it greatly increases the chance of accidental ignition of flamer fuel stores, requiring expensive safeguards. **Effect:** Agility Tests made by targets to avoid Damage suffer a -10 penalty and the weapon's base damage is increased by 2. **Used With:** Any Flame weapons.
+  effect: ''
+  equipped: false
+  inBackpack: false
+  penetration: ''
+  range: ''
+  rateOfFire:
+    burst: 0
+    full: 0
+    single: 1
+  source: Into the Storm, p.131
+  special: {}
+  target: ''
+  weaponType: ''
+  weight: 0
 img: systems/rogue-trader-3rd/icons/items/buckets/ammo-fuel-canister.png
 name: Nephium Fuel Tank
 type: ammunition
 ---
 data:
-    craftsmanship: common
-    availability: extremely rare
-    weight: 0
-    equipped: false
+  attackBonus: 0
+  attackType: ''
+  availability: extremely rare
+  backpack:
     inBackpack: false
-    description: Where most ammunition types are designed to either kill or subdue,
-        organgrinder shells are designed for a lingering, excruciatingly painful death.
-        If the round penetrates into the flesh, spiralled ridges emerge and the shell
-        slowly twists its way through the body, slicing tissue and bone in a pulp
-        of viscera. There are rumours that this horrific ammunition was an attempt
-        to recreate an actual xenos round, and those who have seen organgrinder shells
-        in action know they are not in a hurry to meet anything that they might be
-        patterned after. **Effects:** These shells do damage equal to the weapon's
-        regular damage. If the target takes Damage from this shell, after reduction
-        for Armour and Toughness Bonus, he must make a Toughness Test with a -10 penalty
-        for every point of Damage taken. Success means the shell has either failed
-        or is not powerful enough to cause further injury. Failure deals an immediate
-        2d5 points of Rending Damage to the victim with no reduction from Armour or
-        Toughness Bonus. **Used With:** Hand cannons, heavy stubbers, and any Bolt
-        weapons.
-    source: Into the Storm, p.131
-    damage: ''
-    damageType: ''
-    penetration: ''
-    special: {}
-    range: ''
-    attackType: ''
-    attackBonus: 0
-    rateOfFire:
-        single: 1
-        burst: 0
-        full: 0
-    target: ''
-    effect: ''
-    weaponType: ''
-    backpack:
-        inBackpack: false
+  craftsmanship: common
+  damage: ''
+  damageType: ''
+  description: Where most ammunition types are designed to either kill or subdue, organgrinder shells are designed for a lingering, excruciatingly painful death. If the round penetrates into the flesh, spiralled ridges emerge and the shell slowly twists its way through the body, slicing tissue and bone in a pulp of viscera. There are rumours that this horrific ammunition was an attempt to recreate an actual xenos round, and those who have seen organgrinder shells in action know they are not in a hurry to meet anything that they might be patterned after. **Effects:** These shells do damage equal to the weapon's regular damage. If the target takes Damage from this shell, after reduction for Armour and Toughness Bonus, he must make a Toughness Test with a -10 penalty for every point of Damage taken. Success means the shell has either failed or is not powerful enough to cause further injury. Failure deals an immediate 2d5 points of Rending Damage to the victim with no reduction from Armour or
+    Toughness Bonus. **Used With:** Hand cannons, heavy stubbers, and any Bolt weapons.
+  effect: ''
+  equipped: false
+  inBackpack: false
+  penetration: ''
+  range: ''
+  rateOfFire:
+    burst: 0
+    full: 0
+    single: 1
+  source: Into the Storm, p.131
+  special: {}
+  target: ''
+  weaponType: ''
+  weight: 0
 img: systems/rogue-trader-3rd/icons/items/buckets/ammo-stub-rounds.png
 name: Organgrinder Rounds
 type: ammunition
 ---
 data:
-    craftsmanship: common
-    availability: rare
-    weight: 0
-    equipped: false
+  attackBonus: 0
+  attackType: ''
+  availability: rare
+  backpack:
     inBackpack: false
-    description: These shells contain a fluid similar to that used in webber weapons,
-        and on impact explode in a mass of ensnaring sticky filaments. Contact with
-        air causes them to solidify, making it almost impossible for the target to
-        escape. While not as capable as a proper web gun, snare shells are a handy
-        accessory for any shotgun user as no extra training is needed to use them.
-        **Effects:** Snare Shells decrease the weapon's base damage by 2, but give
-        the weapon the Snare Quality. **Used With:** Shotguns, pump-action shotguns,
-        shotgun pistols, and shotcannons.
-    source: Into the Storm, p.131
-    damage: ''
-    damageType: ''
-    penetration: ''
-    special: {}
-    range: ''
-    attackType: ''
-    attackBonus: 0
-    rateOfFire:
-        single: 1
-        burst: 0
-        full: 0
-    target: ''
-    effect: ''
-    weaponType: ''
-    backpack:
-        inBackpack: false
+  craftsmanship: common
+  damage: ''
+  damageType: ''
+  description: These shells contain a fluid similar to that used in webber weapons, and on impact explode in a mass of ensnaring sticky filaments. Contact with air causes them to solidify, making it almost impossible for the target to escape. While not as capable as a proper web gun, snare shells are a handy accessory for any shotgun user as no extra training is needed to use them. **Effects:** Snare Shells decrease the weapon's base damage by 2, but give the weapon the Snare Quality. **Used With:** Shotguns, pump-action shotguns, shotgun pistols, and shotcannons.
+  effect: ''
+  equipped: false
+  inBackpack: false
+  penetration: ''
+  range: ''
+  rateOfFire:
+    burst: 0
+    full: 0
+    single: 1
+  source: Into the Storm, p.131
+  special: {}
+  target: ''
+  weaponType: ''
+  weight: 0
 img: systems/rogue-trader-3rd/icons/items/buckets/ammo-stub-rounds.png
 name: Snare Shells
 type: ammunition
 ---
 data:
-    craftsmanship: common
-    availability: scarce
-    weight: 0
-    equipped: false
+  attackBonus: 0
+  attackType: ''
+  availability: scarce
+  backpack:
     inBackpack: false
-    description: 'Some feudal cultures have the unpleasant habit of preparing shot
-        with vermin poison, deadly spores, or worse. Many travellers in the Expanse
-        adopt this practice with more modern weapons, with horrifying results. Of
-        course, utilising such dangerous substances can be just as risky to the wielder.
-        **Effects:** The weapon gains the Toxic special quality. If the weapon ever
-        jams, the wielder takes 1d5 damage, ignoring Armour and Toughness. **Used
-        With:** Any Solid Projectile and Flame Weapons.'
-    source: Into the Storm, p.131
-    damage: ''
-    damageType: ''
-    penetration: ''
-    special: {}
-    range: ''
-    attackType: ''
-    attackBonus: 0
-    rateOfFire:
-        single: 1
-        burst: 0
-        full: 0
-    target: ''
-    effect: ''
-    weaponType: ''
-    backpack:
-        inBackpack: false
+  craftsmanship: common
+  damage: ''
+  damageType: ''
+  description: Some feudal cultures have the unpleasant habit of preparing shot with vermin poison, deadly spores, or worse. Many travellers in the Expanse adopt this practice with more modern weapons, with horrifying results. Of course, utilising such dangerous substances can be just as risky to the wielder. **Effects:** The weapon gains the Toxic special quality. If the weapon ever jams, the wielder takes 1d5 damage, ignoring Armour and Toughness. **Used With:** Any Solid Projectile and Flame Weapons.
+  effect: ''
+  equipped: false
+  inBackpack: false
+  penetration: ''
+  range: ''
+  rateOfFire:
+    burst: 0
+    full: 0
+    single: 1
+  source: Into the Storm, p.131
+  special: {}
+  target: ''
+  weaponType: ''
+  weight: 0
 img: systems/rogue-trader-3rd/icons/items/buckets/ammo-stub-rounds.png
 name: Toxic Shot
 type: ammunition
 ---
 data:
-    craftsmanship: common
-    availability: average
-    weight: 0
-    equipped: false
+  attackBonus: 0
+  attackType: ''
+  availability: average
+  backpack:
     inBackpack: false
-    description: 'Many heavy weapon teams favour special rounds designed to brightly
-        flare once projected from their gun, the better to guide their aim when firing
-        long, sustained bursts. Effects: The user gains a +5 to Ballistic Skill Tests
-        when firing the weapon on Full Auto. On a turn where the user has fired Tracer
-        Shells, all subsequent Ballistic Skill Tests made to hit the user in fog,
-        mist, shadow, smoke, and darkness also gain a +5 as the user gives away his
-        position. Used With: Any Solid Projectile and Bolt weapons.'
-    source: Into the Storm, p.131
-    damage: ''
-    damageType: ''
-    penetration: ''
-    special: {}
-    range: ''
-    attackType: ''
-    attackBonus: 0
-    rateOfFire:
-        single: 1
-        burst: 0
-        full: 0
-    target: ''
-    effect: ''
-    weaponType: ''
-    backpack:
-        inBackpack: false
+  craftsmanship: common
+  damage: ''
+  damageType: ''
+  description: 'Many heavy weapon teams favour special rounds designed to brightly flare once projected from their gun, the better to guide their aim when firing long, sustained bursts. Effects: The user gains a +5 to Ballistic Skill Tests when firing the weapon on Full Auto. On a turn where the user has fired Tracer Shells, all subsequent Ballistic Skill Tests made to hit the user in fog, mist, shadow, smoke, and darkness also gain a +5 as the user gives away his position. Used With: Any Solid Projectile and Bolt weapons.'
+  effect: ''
+  equipped: false
+  inBackpack: false
+  penetration: ''
+  range: ''
+  rateOfFire:
+    burst: 0
+    full: 0
+    single: 1
+  source: Into the Storm, p.131
+  special: {}
+  target: ''
+  weaponType: ''
+  weight: 0
 img: systems/rogue-trader-3rd/icons/items/buckets/ammo-stub-rounds.png
 name: Tracer Shells
 type: ammunition
 ---
 data:
-    craftsmanship: common
-    availability: rare
-    weight: 0
-    equipped: false
+  attackBonus: 0
+  attackType: ''
+  availability: rare
+  backpack:
     inBackpack: false
-    description: 'As most solid projectile weapons rely on a chemical detonation to
-        provide thrust for the ammunition, they are normally ineffective in a void
-        where the gas pressure in the barrel leaks away. Void Rounds contain special
-        sabot-like coatings around each shell to ensure a better seal when fired,
-        ensuring each round emerges at maximum velocity. Effects: The firearm operates
-        as it normally would, even when used in an atmosphere-free environment. When
-        used in a normal atmosphere, the added weight of the coating isn''t offset
-        by the lack of atmosphere, and they suffer -1 Damage to the weapon''s normal
-        effects.'
-    source: Into the Storm, p.131
-    damage: ''
-    damageType: ''
-    penetration: ''
-    special: {}
-    range: ''
-    attackType: ''
-    attackBonus: 0
-    rateOfFire:
-        single: 1
-        burst: 0
-        full: 0
-    target: ''
-    effect: ''
-    weaponType: ''
-    backpack:
-        inBackpack: false
+  craftsmanship: common
+  damage: ''
+  damageType: ''
+  description: 'As most solid projectile weapons rely on a chemical detonation to provide thrust for the ammunition, they are normally ineffective in a void where the gas pressure in the barrel leaks away. Void Rounds contain special sabot-like coatings around each shell to ensure a better seal when fired, ensuring each round emerges at maximum velocity. Effects: The firearm operates as it normally would, even when used in an atmosphere-free environment. When used in a normal atmosphere, the added weight of the coating isn''t offset by the lack of atmosphere, and they suffer -1 Damage to the weapon''s normal effects.'
+  effect: ''
+  equipped: false
+  inBackpack: false
+  penetration: ''
+  range: ''
+  rateOfFire:
+    burst: 0
+    full: 0
+    single: 1
+  source: Into the Storm, p.131
+  special: {}
+  target: ''
+  weaponType: ''
+  weight: 0
 img: systems/rogue-trader-3rd/icons/items/buckets/ammo-stub-rounds.png
 name: Void Rounds
 type: ammunition
 ---
 data:
-    craftsmanship: common
-    availability: Extremely Rare
-    weight: 0
-    equipped: false
+  attackBonus: 0
+  attackType: ''
+  availability: Extremely Rare
+  backpack:
     inBackpack: false
-    description: 'Filled with explosive micro-shrapnel, these bullets are designed
-        to shear flesh and shatter bone, causing limbs to be blown away. Effects:
-        Amputator Shells add 2 to the weapon''s Damage. Used With: Stub revolvers,
-        stub automatics, shotguns (all types), hand cannons, autopistols, and autoguns.'
-    source: Rogue Trader Core Rulebook
-    damage: ''
-    damageType: ''
-    penetration: ''
-    special: {}
-    range: ''
-    attackType: ''
-    attackBonus: 0
-    rateOfFire:
-        single: 1
-        burst: 0
-        full: 0
-    target: ''
-    effect: ''
-    weaponType: ''
-    backpack:
-        inBackpack: false
+  craftsmanship: common
+  damage: ''
+  damageType: ''
+  description: 'Filled with explosive micro-shrapnel, these bullets are designed to shear flesh and shatter bone, causing limbs to be blown away. Effects: Amputator Shells add 2 to the weapon''s Damage. Used With: Stub revolvers, stub automatics, shotguns (all types), hand cannons, autopistols, and autoguns.'
+  effect: ''
+  equipped: false
+  inBackpack: false
+  penetration: ''
+  range: ''
+  rateOfFire:
+    burst: 0
+    full: 0
+    single: 1
+  source: Rogue Trader Core Rulebook
+  special: {}
+  target: ''
+  weaponType: ''
+  weight: 0
 img: systems/rogue-trader-3rd/icons/items/buckets/ammo-stub-rounds.png
 name: Amputator Shells
 type: ammunition
 ---
 data:
-    craftsmanship: common
-    availability: Rare
-    weight: 0
-    equipped: false
+  attackBonus: 0
+  attackType: ''
+  availability: Rare
+  backpack:
     inBackpack: false
-    description: 'This ammunition is treated with toxins to prevent coagulation and
-        keep wounds bleeding freely. These shells are designed to burst on penetration
-        and spread the anti-coagulants quickly. Effect: Bleeder rounds add 3 to the
-        weapon''s Damage against living ''biological'' targets (targets with the Daemonic
-        or Machine Traits do not suffer the additional Damage). Used With: Stub revolvers,
-        stub automatics, hand cannons, autopistols, and autoguns.'
-    source: Rogue Trader Core Rulebook
-    damage: ''
-    damageType: ''
-    penetration: ''
-    special: {}
-    range: ''
-    attackType: ''
-    attackBonus: 0
-    rateOfFire:
-        single: 1
-        burst: 0
-        full: 0
-    target: ''
-    effect: ''
-    weaponType: ''
-    backpack:
-        inBackpack: false
+  craftsmanship: common
+  damage: ''
+  damageType: ''
+  description: 'This ammunition is treated with toxins to prevent coagulation and keep wounds bleeding freely. These shells are designed to burst on penetration and spread the anti-coagulants quickly. Effect: Bleeder rounds add 3 to the weapon''s Damage against living ''biological'' targets (targets with the Daemonic or Machine Traits do not suffer the additional Damage). Used With: Stub revolvers, stub automatics, hand cannons, autopistols, and autoguns.'
+  effect: ''
+  equipped: false
+  inBackpack: false
+  penetration: ''
+  range: ''
+  rateOfFire:
+    burst: 0
+    full: 0
+    single: 1
+  source: Rogue Trader Core Rulebook
+  special: {}
+  target: ''
+  weaponType: ''
+  weight: 0
 img: systems/rogue-trader-3rd/icons/items/buckets/ammo-stub-rounds.png
 name: Bleeder Rounds
 type: ammunition
 ---
 data:
-    craftsmanship: common
-    availability: Scarce
-    weight: 0
-    equipped: false
+  attackBonus: 0
+  attackType: ''
+  availability: Scarce
+  backpack:
     inBackpack: false
-    description: 'These heavy blunt bullets are designed to cause maximum tissue damage
-        and can tear apart soft targets, though they are less effective against armour.
-        Effect: Dumdum bullets add 2 to the weapon''s Damage, however Armour Points
-        count double against them. Used With: Stub revolvers, stub automatics, and
-        hand cannons.'
-    source: Rogue Trader Core Rulebook
-    damage: ''
-    damageType: ''
-    penetration: ''
-    special: {}
-    range: ''
-    attackType: ''
-    attackBonus: 0
-    rateOfFire:
-        single: 1
-        burst: 0
-        full: 0
-    target: ''
-    effect: ''
-    weaponType: ''
-    backpack:
-        inBackpack: false
+  craftsmanship: common
+  damage: ''
+  damageType: ''
+  description: 'These heavy blunt bullets are designed to cause maximum tissue damage and can tear apart soft targets, though they are less effective against armour. Effect: Dumdum bullets add 2 to the weapon''s Damage, however Armour Points count double against them. Used With: Stub revolvers, stub automatics, and hand cannons.'
+  effect: ''
+  equipped: false
+  inBackpack: false
+  penetration: ''
+  range: ''
+  rateOfFire:
+    burst: 0
+    full: 0
+    single: 1
+  source: Rogue Trader Core Rulebook
+  special: {}
+  target: ''
+  weaponType: ''
+  weight: 0
 img: systems/rogue-trader-3rd/icons/items/buckets/ammo-stub-rounds.png
 name: Dumdum Bullets
 type: ammunition
 ---
 data:
-    craftsmanship: common
-    availability: Scarce
-    weight: 0
-    equipped: false
+  attackBonus: 0
+  attackType: ''
+  availability: Scarce
+  backpack:
     inBackpack: false
-    description: 'Vicious and outlawed on some worlds, these dense shells are designed
-        to shred open after impact, creating huge exit wounds. Effect: Shots fired
-        with these rounds add 1 to both Damage and Penetration. Used With: Stub revolvers,
-        stub automatics, autopistols, and autoguns.'
-    source: Rogue Trader Core Rulebook
-    damage: ''
-    damageType: ''
-    penetration: ''
-    special: {}
-    range: ''
-    attackType: ''
-    attackBonus: 0
-    rateOfFire:
-        single: 1
-        burst: 0
-        full: 0
-    target: ''
-    effect: ''
-    weaponType: ''
-    backpack:
-        inBackpack: false
+  craftsmanship: common
+  damage: ''
+  damageType: ''
+  description: 'Vicious and outlawed on some worlds, these dense shells are designed to shred open after impact, creating huge exit wounds. Effect: Shots fired with these rounds add 1 to both Damage and Penetration. Used With: Stub revolvers, stub automatics, autopistols, and autoguns.'
+  effect: ''
+  equipped: false
+  inBackpack: false
+  penetration: ''
+  range: ''
+  rateOfFire:
+    burst: 0
+    full: 0
+    single: 1
+  source: Rogue Trader Core Rulebook
+  special: {}
+  target: ''
+  weaponType: ''
+  weight: 0
 img: systems/rogue-trader-3rd/icons/items/buckets/ammo-stub-rounds.png
 name: Expander Rounds
 type: ammunition
 ---
 data:
-    craftsmanship: common
-    availability: common
-    weight: 0
-    equipped: false
+  attackBonus: 0
+  attackType: ''
+  availability: common
+  backpack:
     inBackpack: false
-    description: 'Explosive arrows and quarrels might be crudely tipped with shells,
-        or treated with one of a variety of unstable alchemical compounds. Effects:
-        Attacks are made with a -10 penalty, the weapon''s Damage type becomes Explosive,
-        and the weapon loses the Primitive quality. Used With: Bows, crossbows, and
-        hand bows.'
-    source: Rogue Trader Core Rulebook
-    damage: ''
-    damageType: ''
-    penetration: ''
-    special: {}
-    range: ''
-    attackType: ''
-    attackBonus: 0
-    rateOfFire:
-        single: 1
-        burst: 0
-        full: 0
-    target: ''
-    effect: ''
-    weaponType: ''
-    backpack:
-        inBackpack: false
+  craftsmanship: common
+  damage: ''
+  damageType: ''
+  description: 'Explosive arrows and quarrels might be crudely tipped with shells, or treated with one of a variety of unstable alchemical compounds. Effects: Attacks are made with a -10 penalty, the weapon''s Damage type becomes Explosive, and the weapon loses the Primitive quality. Used With: Bows, crossbows, and hand bows.'
+  effect: ''
+  equipped: false
+  inBackpack: false
+  penetration: ''
+  range: ''
+  rateOfFire:
+    burst: 0
+    full: 0
+    single: 1
+  source: Rogue Trader Core Rulebook
+  special: {}
+  target: ''
+  weaponType: ''
+  weight: 0
 img: systems/rogue-trader-3rd/icons/items/buckets/ammo-stub-rounds.png
 name: Explosive Arrows and Quarrels
 type: ammunition
 ---
 data:
-    craftsmanship: common
-    availability: Scarce
-    weight: 0
-    equipped: false
+  attackBonus: 0
+  attackType: ''
+  availability: Scarce
+  backpack:
     inBackpack: false
-    description: 'This is a powerful charge pack for a las weapon, favoured by snipers
-        in some Imperial Guard regiments. Each hot-shot charge pack is good for only
-        a single shot. Effects: A weapon using a hot-shot charge adds 1 to its Damage,
-        rolls two dice for its Damage and picks the highest, and gains a Penetration
-        of 4. However the weapon loses its Reliable special quality, and its clip
-        is reduced to 1. Used With: Laspistols, lascarbines, lasguns, and long-las.'
-    source: Rogue Trader Core Rulebook
-    damage: ''
-    damageType: ''
-    penetration: ''
-    special: {}
-    range: ''
-    attackType: ''
-    attackBonus: 0
-    rateOfFire:
-        single: 1
-        burst: 0
-        full: 0
-    target: ''
-    effect: ''
-    weaponType: ''
-    backpack:
-        inBackpack: false
+  craftsmanship: common
+  damage: ''
+  damageType: ''
+  description: 'This is a powerful charge pack for a las weapon, favoured by snipers in some Imperial Guard regiments. Each hot-shot charge pack is good for only a single shot. Effects: A weapon using a hot-shot charge adds 1 to its Damage, rolls two dice for its Damage and picks the highest, and gains a Penetration of 4. However the weapon loses its Reliable special quality, and its clip is reduced to 1. Used With: Laspistols, lascarbines, lasguns, and long-las.'
+  effect: ''
+  equipped: false
+  inBackpack: false
+  penetration: ''
+  range: ''
+  rateOfFire:
+    burst: 0
+    full: 0
+    single: 1
+  source: Rogue Trader Core Rulebook
+  special: {}
+  target: ''
+  weaponType: ''
+  weight: 0
 img: systems/rogue-trader-3rd/icons/items/buckets/ammo-charge-pack.png
 name: Hot-Shot Charge Pack
 type: ammunition
 ---
 data:
-    craftsmanship: common
-    availability: Rare
-    weight: 0
-    equipped: false
+  attackBonus: 0
+  attackType: ''
+  availability: Rare
+  backpack:
     inBackpack: false
-    description: 'See the Hostile Acquisitions source book for full rules.'
-    source: Hostile Acquisitions, p.60
-    damage: ''
-    damageType: ''
-    penetration: ''
-    special: {}
-    range: ''
-    attackType: ''
-    attackBonus: 0
-    rateOfFire:
-        single: 1
-        burst: 0
-        full: 0
-    target: ''
-    effect: ''
-    weaponType: ''
-    backpack:
-        inBackpack: false
+  craftsmanship: common
+  damage: ''
+  damageType: ''
+  description: See the Hostile Acquisitions source book for full rules.
+  effect: ''
+  equipped: false
+  inBackpack: false
+  penetration: ''
+  range: ''
+  rateOfFire:
+    burst: 0
+    full: 0
+    single: 1
+  source: Hostile Acquisitions, p.60
+  special: {}
+  target: ''
+  weaponType: ''
+  weight: 0
 img: systems/rogue-trader-3rd/icons/items/buckets/ammo-stub-rounds.png
 name: Bolt Shells
 type: ammunition
 ---
 data:
-    craftsmanship: common
-    availability: Rare
-    weight: 0
-    equipped: false
+  attackBonus: 0
+  attackType: ''
+  availability: Rare
+  backpack:
     inBackpack: false
-    description: 'See the Hostile Acquisitions source book for full rules.'
-    source: Hostile Acquisitions, p.60
-    damage: ''
-    damageType: ''
-    penetration: ''
-    special: {}
-    range: ''
-    attackType: ''
-    attackBonus: 0
-    rateOfFire:
-        single: 1
-        burst: 0
-        full: 0
-    target: ''
-    effect: ''
-    weaponType: ''
-    backpack:
-        inBackpack: false
+  craftsmanship: common
+  damage: ''
+  damageType: ''
+  description: See the Hostile Acquisitions source book for full rules.
+  effect: ''
+  equipped: false
+  inBackpack: false
+  penetration: ''
+  range: ''
+  rateOfFire:
+    burst: 0
+    full: 0
+    single: 1
+  source: Hostile Acquisitions, p.60
+  special: {}
+  target: ''
+  weaponType: ''
+  weight: 0
 img: systems/rogue-trader-3rd/icons/items/buckets/ammo-stub-rounds.png
 name: Flechette Shells
 type: ammunition
 ---
 data:
-    craftsmanship: common
-    availability: Very Rare
-    weight: 0
-    equipped: false
+  attackBonus: 0
+  attackType: ''
+  availability: Very Rare
+  backpack:
     inBackpack: false
-    description: 'See the Hostile Acquisitions source book for full rules.'
-    source: Hostile Acquisitions, p.60
-    damage: ''
-    damageType: ''
-    penetration: ''
-    special: {}
-    range: ''
-    attackType: ''
-    attackBonus: 0
-    rateOfFire:
-        single: 1
-        burst: 0
-        full: 0
-    target: ''
-    effect: ''
-    weaponType: ''
-    backpack:
-        inBackpack: false
+  craftsmanship: common
+  damage: ''
+  damageType: ''
+  description: See the Hostile Acquisitions source book for full rules.
+  effect: ''
+  equipped: false
+  inBackpack: false
+  penetration: ''
+  range: ''
+  rateOfFire:
+    burst: 0
+    full: 0
+    single: 1
+  source: Hostile Acquisitions, p.60
+  special: {}
+  target: ''
+  weaponType: ''
+  weight: 0
 img: systems/rogue-trader-3rd/icons/items/buckets/ammo-stub-rounds.png
 name: Flechette Shells (Toxic)
 type: ammunition
 ---
 data:
-    craftsmanship: common
-    availability: Very Rare
-    weight: 0
-    equipped: false
+  attackBonus: 0
+  attackType: ''
+  availability: Very Rare
+  backpack:
     inBackpack: false
-    description: 'See the Hostile Acquisitions source book for full rules.'
-    source: Hostile Acquisitions, p.60
-    damage: ''
-    damageType: ''
-    penetration: ''
-    special: {}
-    range: ''
-    attackType: ''
-    attackBonus: 0
-    rateOfFire:
-        single: 1
-        burst: 0
-        full: 0
-    target: ''
-    effect: ''
-    weaponType: ''
-    backpack:
-        inBackpack: false
+  craftsmanship: common
+  damage: ''
+  damageType: ''
+  description: See the Hostile Acquisitions source book for full rules.
+  effect: ''
+  equipped: false
+  inBackpack: false
+  penetration: ''
+  range: ''
+  rateOfFire:
+    burst: 0
+    full: 0
+    single: 1
+  source: Hostile Acquisitions, p.60
+  special: {}
+  target: ''
+  weaponType: ''
+  weight: 0
 img: systems/rogue-trader-3rd/icons/items/buckets/ammo-stub-rounds.png
 name: Fyceline-tipped Rounds
 type: ammunition
 ---
 data:
-    craftsmanship: common
-    availability: Rare
-    weight: 0
-    equipped: false
+  attackBonus: 0
+  attackType: ''
+  availability: Rare
+  backpack:
     inBackpack: false
-    description: 'See the Hostile Acquisitions source book for full rules.'
-    source: Hostile Acquisitions, p.60
-    damage: ''
-    damageType: ''
-    penetration: ''
-    special: {}
-    range: ''
-    attackType: ''
-    attackBonus: 0
-    rateOfFire:
-        single: 1
-        burst: 0
-        full: 0
-    target: ''
-    effect: ''
-    weaponType: ''
-    backpack:
-        inBackpack: false
+  craftsmanship: common
+  damage: ''
+  damageType: ''
+  description: See the Hostile Acquisitions source book for full rules.
+  effect: ''
+  equipped: false
+  inBackpack: false
+  penetration: ''
+  range: ''
+  rateOfFire:
+    burst: 0
+    full: 0
+    single: 1
+  source: Hostile Acquisitions, p.60
+  special: {}
+  target: ''
+  weaponType: ''
+  weight: 0
 img: systems/rogue-trader-3rd/icons/items/buckets/ammo-stub-rounds.png
 name: Gas Rounds
 type: ammunition
 ---
 data:
-    craftsmanship: common
-    availability: Extremely Rare
-    weight: 0
-    equipped: false
+  attackBonus: 0
+  attackType: ''
+  availability: Extremely Rare
+  backpack:
     inBackpack: false
-    description: 'Extremely small examples of conventional weaponry, these devices are beyond the skills of all but the most talented artisan to create, be they sanctioned or heretical. Allowing a pistol-sized weapon to unleash firepower equivalent to a rifle, such technology is desired by warriors in either side of the law. This upgrade reduces the range and weight of the weapon to one-quarter its normal value, but also reduces the damage by 2.'
-    source: Hostile Acquisitions, p.60
-    damage: ''
-    damageType: ''
-    penetration: ''
-    special: {}
-    range: ''
-    attackType: ''
-    attackBonus: 0
-    rateOfFire:
-        single: 1
-        burst: 0
-        full: 0
-    target: ''
-    effect: ''
-    weaponType: ''
-    backpack:
-        inBackpack: false
+  craftsmanship: common
+  damage: ''
+  damageType: ''
+  description: Extremely small examples of conventional weaponry, these devices are beyond the skills of all but the most talented artisan to create, be they sanctioned or heretical. Allowing a pistol-sized weapon to unleash firepower equivalent to a rifle, such technology is desired by warriors in either side of the law. This upgrade reduces the range and weight of the weapon to one-quarter its normal value, but also reduces the damage by 2.
+  effect: ''
+  equipped: false
+  inBackpack: false
+  penetration: ''
+  range: ''
+  rateOfFire:
+    burst: 0
+    full: 0
+    single: 1
+  source: Hostile Acquisitions, p.60
+  special: {}
+  target: ''
+  weaponType: ''
+  weight: 0
 img: systems/rogue-trader-3rd/icons/items/buckets/ammo-stub-rounds.png
 name: Micro-blast Needles
 type: ammunition
 ---
 data:
-    craftsmanship: common
-    availability: Rare
-    weight: 0
-    equipped: false
+  attackBonus: 0
+  attackType: ''
+  availability: Rare
+  backpack:
     inBackpack: false
-    description: 'See the Hostile Acquisitions source book for full rules.'
-    source: Hostile Acquisitions, p.60
-    damage: ''
-    damageType: ''
-    penetration: ''
-    special: {}
-    range: ''
-    attackType: ''
-    attackBonus: 0
-    rateOfFire:
-        single: 1
-        burst: 0
-        full: 0
-    target: ''
-    effect: ''
-    weaponType: ''
-    backpack:
-        inBackpack: false
+  craftsmanship: common
+  damage: ''
+  damageType: ''
+  description: See the Hostile Acquisitions source book for full rules.
+  effect: ''
+  equipped: false
+  inBackpack: false
+  penetration: ''
+  range: ''
+  rateOfFire:
+    burst: 0
+    full: 0
+    single: 1
+  source: Hostile Acquisitions, p.60
+  special: {}
+  target: ''
+  weaponType: ''
+  weight: 0
 img: systems/rogue-trader-3rd/icons/items/buckets/ammo-stub-rounds.png
 name: Incendiary Rounds
 type: ammunition
 ---
 data:
-    craftsmanship: common
-    availability: Unique
-    weight: 0
-    equipped: false
+  attackBonus: 0
+  attackType: ''
+  availability: Unique
+  backpack:
     inBackpack: false
-    description: 'See the Hostile Acquisitions source book for full rules.'
-    source: Hostile Acquisitions, p.60
-    damage: ''
-    damageType: ''
-    penetration: ''
-    special: {}
-    range: ''
-    attackType: ''
-    attackBonus: 0
-    rateOfFire:
-        single: 1
-        burst: 0
-        full: 0
-    target: ''
-    effect: ''
-    weaponType: ''
-    backpack:
-        inBackpack: false
+  craftsmanship: common
+  damage: ''
+  damageType: ''
+  description: See the Hostile Acquisitions source book for full rules.
+  effect: ''
+  equipped: false
+  inBackpack: false
+  penetration: ''
+  range: ''
+  rateOfFire:
+    burst: 0
+    full: 0
+    single: 1
+  source: Hostile Acquisitions, p.60
+  special: {}
+  target: ''
+  weaponType: ''
+  weight: 0
 img: systems/rogue-trader-3rd/icons/items/buckets/ammo-stub-rounds.png
 name: Shrinker Ammunition
 type: ammunition
 ---
 data:
-    craftsmanship: common
-    availability: Common
-    weight: 0
-    equipped: false
+  attackBonus: 0
+  attackType: ''
+  availability: Common
+  backpack:
     inBackpack: false
-    description: 'Perhaps the most common alternate form of shotgun ammunition, a solid slug is literally just a solid lump of dense metal. While not quite as devastating at extremely close ranges, the slugs pack a considerable punch and are more effective at longer ranges than the normal cloud of shot. Effect: Shotguns loaded with solid slugs lose the Scatter quality, and increase Damage by 1 and Pen by 2. Used With: Shotguns (all kinds).'
-    source: Hostile Acquisitions, p.60
-    damage: ''
-    damageType: ''
-    penetration: ''
-    special: {}
-    range: ''
-    attackType: ''
-    attackBonus: 0
-    rateOfFire:
-        single: 1
-        burst: 0
-        full: 0
-    target: ''
-    effect: ''
-    weaponType: ''
-    backpack:
-        inBackpack: false
+  craftsmanship: common
+  damage: ''
+  damageType: ''
+  description: 'Perhaps the most common alternate form of shotgun ammunition, a solid slug is literally just a solid lump of dense metal. While not quite as devastating at extremely close ranges, the slugs pack a considerable punch and are more effective at longer ranges than the normal cloud of shot. Effect: Shotguns loaded with solid slugs lose the Scatter quality, and increase Damage by 1 and Pen by 2. Used With: Shotguns (all kinds).'
+  effect: ''
+  equipped: false
+  inBackpack: false
+  penetration: ''
+  range: ''
+  rateOfFire:
+    burst: 0
+    full: 0
+    single: 1
+  source: Hostile Acquisitions, p.60
+  special: {}
+  target: ''
+  weaponType: ''
+  weight: 0
 img: systems/rogue-trader-3rd/icons/items/buckets/ammo-stub-rounds.png
 name: Solid Slugs
 type: ammunition
 ---
 data:
-    craftsmanship: common
-    availability: Scarce
-    weight: 0
-    equipped: false
+  attackBonus: 0
+  attackType: ''
+  availability: Scarce
+  backpack:
     inBackpack: false
-    description: 'Used by some enforcers, Arbitrators, bounty hunters and game hunters to subdue targets rather than kill them, these shells contain a small, single-use shock generator connected to a collection of sharp metal prongs. The shell discharges into an enemy struck, expending its entire charge in one go. Effect: Shotguns loaded with stun shells lose the Scatter quality, but gain the Shocking quality. Used With: Shotguns (all kinds).'
-    source: Hostile Acquisitions, p.60
-    damage: ''
-    damageType: ''
-    penetration: ''
-    special: {}
-    range: ''
-    attackType: ''
-    attackBonus: 0
-    rateOfFire:
-        single: 1
-        burst: 0
-        full: 0
-    target: ''
-    effect: ''
-    weaponType: ''
-    backpack:
-        inBackpack: false
+  craftsmanship: common
+  damage: ''
+  damageType: ''
+  description: 'Used by some enforcers, Arbitrators, bounty hunters and game hunters to subdue targets rather than kill them, these shells contain a small, single-use shock generator connected to a collection of sharp metal prongs. The shell discharges into an enemy struck, expending its entire charge in one go. Effect: Shotguns loaded with stun shells lose the Scatter quality, but gain the Shocking quality. Used With: Shotguns (all kinds).'
+  effect: ''
+  equipped: false
+  inBackpack: false
+  penetration: ''
+  range: ''
+  rateOfFire:
+    burst: 0
+    full: 0
+    single: 1
+  source: Hostile Acquisitions, p.60
+  special: {}
+  target: ''
+  weaponType: ''
+  weight: 0
 img: systems/rogue-trader-3rd/icons/items/buckets/ammo-stub-rounds.png
 name: Stun Shells
 type: ammunition
 ---
 data:
-    craftsmanship: common
-    availability: Rare
-    weight: 0
-    equipped: false
+  attackBonus: 0
+  attackType: ''
+  availability: Rare
+  backpack:
     inBackpack: false
-    description: 'Dangerous toxic chemicals are mixed with weapons-grade promethium, intended to burn off and produce noxious fumes when a weapon filled with such fuel fires. These fumes are often as deadly as the flames themselves. Flamers loaded with this fuel are frequently used to scour the lower decks of starships of the vermin that often come to infest them, but they are commonly turned against enemies by ruthless armsmen and pirates.'
-    source: Hostile Acquisitions, p.60
-    damage: ''
-    damageType: ''
-    penetration: ''
-    special: {}
-    range: ''
-    attackType: ''
-    attackBonus: 0
-    rateOfFire:
-        single: 1
-        burst: 0
-        full: 0
-    target: ''
-    effect: ''
-    weaponType: ''
-    backpack:
-        inBackpack: false
+  craftsmanship: common
+  damage: ''
+  damageType: ''
+  description: Dangerous toxic chemicals are mixed with weapons-grade promethium, intended to burn off and produce noxious fumes when a weapon filled with such fuel fires. These fumes are often as deadly as the flames themselves. Flamers loaded with this fuel are frequently used to scour the lower decks of starships of the vermin that often come to infest them, but they are commonly turned against enemies by ruthless armsmen and pirates.
+  effect: ''
+  equipped: false
+  inBackpack: false
+  penetration: ''
+  range: ''
+  rateOfFire:
+    burst: 0
+    full: 0
+    single: 1
+  source: Hostile Acquisitions, p.60
+  special: {}
+  target: ''
+  weaponType: ''
+  weight: 0
 img: systems/rogue-trader-3rd/icons/items/buckets/ammo-stub-rounds.png
 name: Toxin-saturated Promethium
 type: ammunition
 ---
 data:
-    craftsmanship: common
-    availability: Extremely Rare
-    weight: 0
-    equipped: false
+  attackBonus: 0
+  attackType: ''
+  availability: Extremely Rare
+  backpack:
     inBackpack: false
-    description: 'The prayers and blessings of those with true faith in the Emperor of Mankind, coupled with the ancient lore of Ecclesiastic alchemistry, can turn mere mundane bullets into sacred rounds capable of harming the foul denizens of the Warp. Some rounds are forged from relics of ancient saints, tempered in the spilt blood of martyrs, or wrought with prayers to the Emperor to banish His foes.'
-    source: Faith and Coin, p.92
-    damage: ''
-    damageType: ''
-    penetration: ''
-    special: {}
-    range: ''
-    attackType: ''
-    attackBonus: 0
-    rateOfFire:
-        single: 1
-        burst: 0
-        full: 0
-    target: ''
-    effect: ''
-    weaponType: ''
-    backpack:
-        inBackpack: false
+  craftsmanship: common
+  damage: ''
+  damageType: ''
+  description: The prayers and blessings of those with true faith in the Emperor of Mankind, coupled with the ancient lore of Ecclesiastic alchemistry, can turn mere mundane bullets into sacred rounds capable of harming the foul denizens of the Warp. Some rounds are forged from relics of ancient saints, tempered in the spilt blood of martyrs, or wrought with prayers to the Emperor to banish His foes.
+  effect: ''
+  equipped: false
+  inBackpack: false
+  penetration: ''
+  range: ''
+  rateOfFire:
+    burst: 0
+    full: 0
+    single: 1
+  source: Faith and Coin, p.92
+  special: {}
+  target: ''
+  weaponType: ''
+  weight: 0
 img: systems/rogue-trader-3rd/icons/items/buckets/ammo-bolt-rounds.png
 name: Blessed Ammunition
 type: ammunition
 ---
 data:
-    craftsmanship: common
-    availability: Rare
-    weight: 0
-    equipped: false
+  attackBonus: 0
+  attackType: ''
+  availability: Rare
+  backpack:
     inBackpack: false
-    description: 'Intended to incapacitate rather than kill, capacitor rounds send a high voltage shock through their target. Frequently used by enforcers to put down riots among workers deemed too valuable for lethal measures, capacitor rounds have also found use among bounty hunters who desire to capture rather than kill their targets. **Effects:** Capacitor rounds grant a weapon the Shocking Quality and reduce its Damage by 4.'
-    source: Faith and Coin, p.92
-    damage: ''
-    damageType: ''
-    penetration: ''
-    special: {}
-    range: ''
-    attackType: ''
-    attackBonus: 0
-    rateOfFire:
-        single: 1
-        burst: 0
-        full: 0
-    target: ''
-    effect: ''
-    weaponType: ''
-    backpack:
-        inBackpack: false
+  craftsmanship: common
+  damage: ''
+  damageType: ''
+  description: Intended to incapacitate rather than kill, capacitor rounds send a high voltage shock through their target. Frequently used by enforcers to put down riots among workers deemed too valuable for lethal measures, capacitor rounds have also found use among bounty hunters who desire to capture rather than kill their targets. **Effects:** Capacitor rounds grant a weapon the Shocking Quality and reduce its Damage by 4.
+  effect: ''
+  equipped: false
+  inBackpack: false
+  penetration: ''
+  range: ''
+  rateOfFire:
+    burst: 0
+    full: 0
+    single: 1
+  source: Faith and Coin, p.92
+  special: {}
+  target: ''
+  weaponType: ''
+  weight: 0
 img: systems/rogue-trader-3rd/icons/items/buckets/ammo-bolt-rounds.png
 name: Capacitor Rounds
 type: ammunition
 ---
 data:
-    craftsmanship: common
-    availability: Very Rare
-    weight: 0
-    equipped: false
+  attackBonus: 0
+  attackType: ''
+  availability: Very Rare
+  backpack:
     inBackpack: false
-    description: 'Filled with superheated gas that explodes in a gout of flame, cover offers little protection from bolters spewing dragonfire rounds. While they are manufactured on several forge worlds in the segmentum, these bolts are still a rare commodity, sought after by Rogue Traders, militias, renegades, and pirates alike throughout the Koronus Expanse. **Effects:** Dragonfire bolts grant the weapon the Blast (2) Quality and reduce its Damage by 1.'
-    source: Faith and Coin, p.92
-    damage: ''
-    damageType: ''
-    penetration: ''
-    special: {}
-    range: ''
-    attackType: ''
-    attackBonus: 0
-    rateOfFire:
-        single: 1
-        burst: 0
-        full: 0
-    target: ''
-    effect: ''
-    weaponType: ''
-    backpack:
-        inBackpack: false
+  craftsmanship: common
+  damage: ''
+  damageType: ''
+  description: Filled with superheated gas that explodes in a gout of flame, cover offers little protection from bolters spewing dragonfire rounds. While they are manufactured on several forge worlds in the segmentum, these bolts are still a rare commodity, sought after by Rogue Traders, militias, renegades, and pirates alike throughout the Koronus Expanse. **Effects:** Dragonfire bolts grant the weapon the Blast (2) Quality and reduce its Damage by 1.
+  effect: ''
+  equipped: false
+  inBackpack: false
+  penetration: ''
+  range: ''
+  rateOfFire:
+    burst: 0
+    full: 0
+    single: 1
+  source: Faith and Coin, p.92
+  special: {}
+  target: ''
+  weaponType: ''
+  weight: 0
 img: systems/rogue-trader-3rd/icons/items/buckets/ammo-bolt-rounds.png
 name: Dragonfire Bolts
 type: ammunition
 ---
 data:
-    craftsmanship: common
-    availability: Extremely Rare
-    weight: 0
-    equipped: false
+  attackBonus: 0
+  attackType: ''
+  availability: Extremely Rare
+  backpack:
     inBackpack: false
-    description: 'Created to combat threats far from the Koronus Expanse, hellfire rounds have proven their deadly effect on countless battlefields across the galaxy. Hellfire rounds are specially modified to replace the standard explosive shell with an extremely potent bio-acid capable of eating through flesh and bone with frightening efficiency. **Effects:** Hellfire bolts grant the weapon the Toxic Quality and reduce its Penetration by 2.'
-    source: Faith and Coin, p.92
-    damage: ''
-    damageType: ''
-    penetration: ''
-    special: {}
-    range: ''
-    attackType: ''
-    attackBonus: 0
-    rateOfFire:
-        single: 1
-        burst: 0
-        full: 0
-    target: ''
-    effect: ''
-    weaponType: ''
-    backpack:
-        inBackpack: false
+  craftsmanship: common
+  damage: ''
+  damageType: ''
+  description: Created to combat threats far from the Koronus Expanse, hellfire rounds have proven their deadly effect on countless battlefields across the galaxy. Hellfire rounds are specially modified to replace the standard explosive shell with an extremely potent bio-acid capable of eating through flesh and bone with frightening efficiency. **Effects:** Hellfire bolts grant the weapon the Toxic Quality and reduce its Penetration by 2.
+  effect: ''
+  equipped: false
+  inBackpack: false
+  penetration: ''
+  range: ''
+  rateOfFire:
+    burst: 0
+    full: 0
+    single: 1
+  source: Faith and Coin, p.92
+  special: {}
+  target: ''
+  weaponType: ''
+  weight: 0
 img: systems/rogue-trader-3rd/icons/items/buckets/ammo-bolt-rounds.png
 name: Hellfire Bolts
 type: ammunition
 ---
 data:
-    craftsmanship: common
-    availability: Scarce
-    weight: 0
-    equipped: false
+  attackBonus: 0
+  attackType: ''
+  availability: Scarce
+  backpack:
     inBackpack: false
-    description: 'Replacing normal solid shot ammunition in autocannons, these shells are filled with high explosives that detonate on impact with a target. While not quite as effective as bolter rounds, high explosive rounds pack a serious punch. III. INSTRUMENTS OF THE CREED Effects: High explosive rounds change an autocannon''s Damage Type to Explosive, grant it the Blast (1) Quality, and reduce the weapon''s Penetration by 2. Used With: Autocannons.'
-    source: Faith and Coin, p.92
-    damage: ''
-    damageType: ''
-    penetration: ''
-    special: {}
-    range: ''
-    attackType: ''
-    attackBonus: 0
-    rateOfFire:
-        single: 1
-        burst: 0
-        full: 0
-    target: ''
-    effect: ''
-    weaponType: ''
-    backpack:
-        inBackpack: false
+  craftsmanship: common
+  damage: ''
+  damageType: ''
+  description: 'Replacing normal solid shot ammunition in autocannons, these shells are filled with high explosives that detonate on impact with a target. While not quite as effective as bolter rounds, high explosive rounds pack a serious punch. III. INSTRUMENTS OF THE CREED Effects: High explosive rounds change an autocannon''s Damage Type to Explosive, grant it the Blast (1) Quality, and reduce the weapon''s Penetration by 2. Used With: Autocannons.'
+  effect: ''
+  equipped: false
+  inBackpack: false
+  penetration: ''
+  range: ''
+  rateOfFire:
+    burst: 0
+    full: 0
+    single: 1
+  source: Faith and Coin, p.92
+  special: {}
+  target: ''
+  weaponType: ''
+  weight: 0
 img: systems/rogue-trader-3rd/icons/items/buckets/ammo-bolt-rounds.png
 name: High Explosive Rounds
 type: ammunition
 ---
 data:
-    craftsmanship: common
-    availability: Extremely Rare
-    weight: 0
-    equipped: false
+  attackBonus: 0
+  attackType: ''
+  availability: Extremely Rare
+  backpack:
     inBackpack: false
-    description: 'See the Faith and Coin source book for full rules.'
-    source: Faith and Coin, p.92
-    damage: ''
-    damageType: ''
-    penetration: ''
-    special: {}
-    range: ''
-    attackType: ''
-    attackBonus: 0
-    rateOfFire:
-        single: 1
-        burst: 0
-        full: 0
-    target: ''
-    effect: ''
-    weaponType: ''
-    backpack:
-        inBackpack: false
+  craftsmanship: common
+  damage: ''
+  damageType: ''
+  description: See the Faith and Coin source book for full rules.
+  effect: ''
+  equipped: false
+  inBackpack: false
+  penetration: ''
+  range: ''
+  rateOfFire:
+    burst: 0
+    full: 0
+    single: 1
+  source: Faith and Coin, p.92
+  special: {}
+  target: ''
+  weaponType: ''
+  weight: 0
 img: systems/rogue-trader-3rd/icons/items/buckets/ammo-bolt-rounds.png
 name: Kraken Rounds
 type: ammunition
 ---
 data:
-    craftsmanship: common
-    availability: Extremely Rare
-    weight: 0
-    equipped: false
+  attackBonus: 0
+  attackType: ''
+  availability: Extremely Rare
+  backpack:
     inBackpack: false
-    description: 'These long stakes are crafted from a silver-adamantium alloy and etched with prayers and invocations that are anathema to the witch and the Daemon alike. The barbed, diamantine tip of the stake breaks open upon impact and releases a well of holy water and sacred oils lethal to creatures bound to the Empyrean. Effects: Purgatus stake-bolts grant the weapon the Sanctified Quality.'
-    source: Faith and Coin, p.92
-    damage: ''
-    damageType: ''
-    penetration: ''
-    special: {}
-    range: ''
-    attackType: ''
-    attackBonus: 0
-    rateOfFire:
-        single: 1
-        burst: 0
-        full: 0
-    target: ''
-    effect: ''
-    weaponType: ''
-    backpack:
-        inBackpack: false
+  craftsmanship: common
+  damage: ''
+  damageType: ''
+  description: 'These long stakes are crafted from a silver-adamantium alloy and etched with prayers and invocations that are anathema to the witch and the Daemon alike. The barbed, diamantine tip of the stake breaks open upon impact and releases a well of holy water and sacred oils lethal to creatures bound to the Empyrean. Effects: Purgatus stake-bolts grant the weapon the Sanctified Quality.'
+  effect: ''
+  equipped: false
+  inBackpack: false
+  penetration: ''
+  range: ''
+  rateOfFire:
+    burst: 0
+    full: 0
+    single: 1
+  source: Faith and Coin, p.92
+  special: {}
+  target: ''
+  weaponType: ''
+  weight: 0
 img: systems/rogue-trader-3rd/icons/items/buckets/ammo-bolt-rounds.png
 name: Purgatus Stake-Bolts
 type: ammunition
 ---
 data:
-    craftsmanship: common
-    availability: Near Unique
-    weight: 0
-    equipped: false
+  attackBonus: 0
+  attackType: ''
+  availability: Near Unique
+  backpack:
     inBackpack: false
-    description: 'Bullets with a core created from the powdered bones of a nameless saint and with casings inscribed with words of detestation and abjuration of the witch, pyre rounds are incredibly rare shells created expressly for killing psykers. When a pyre round strikes a Warp-dabbler, it immolates the target, burning it alive in the flames of its own heresy. Effects: Pyre rounds grant the weapon the Cleansing Fire and Sanctified Qualities.'
-    source: Faith and Coin, p.92
-    damage: ''
-    damageType: ''
-    penetration: ''
-    special: {}
-    range: ''
-    attackType: ''
-    attackBonus: 0
-    rateOfFire:
-        single: 1
-        burst: 0
-        full: 0
-    target: ''
-    effect: ''
-    weaponType: ''
-    backpack:
-        inBackpack: false
+  craftsmanship: common
+  damage: ''
+  damageType: ''
+  description: 'Bullets with a core created from the powdered bones of a nameless saint and with casings inscribed with words of detestation and abjuration of the witch, pyre rounds are incredibly rare shells created expressly for killing psykers. When a pyre round strikes a Warp-dabbler, it immolates the target, burning it alive in the flames of its own heresy. Effects: Pyre rounds grant the weapon the Cleansing Fire and Sanctified Qualities.'
+  effect: ''
+  equipped: false
+  inBackpack: false
+  penetration: ''
+  range: ''
+  rateOfFire:
+    burst: 0
+    full: 0
+    single: 1
+  source: Faith and Coin, p.92
+  special: {}
+  target: ''
+  weaponType: ''
+  weight: 0
 img: systems/rogue-trader-3rd/icons/items/buckets/ammo-bolt-rounds.png
 name: Pyre Rounds
 type: ammunition
 ---
 data:
-    craftsmanship: common
-    availability: Very Rare
-    weight: 0
-    equipped: false
+  attackBonus: 0
+  attackType: ''
+  availability: Very Rare
+  backpack:
     inBackpack: false
-    description: 'Originally designed during the Great Scouring for use against Traitor Marines, Vengeance rounds are incredibly rare bolter shells that utilise unstable flux core technology. Inherently dangerous to discharge, they are nonetheless devastatingly effective at punching through armour and delivering gruesome injury to their target. Effects: A weapon using Vengeance Rounds gains the Unstable Quality and adds +3 to its Damage and Penetration.'
-    source: Faith and Coin, p.92
-    damage: ''
-    damageType: ''
-    penetration: ''
-    special: {}
-    range: ''
-    attackType: ''
-    attackBonus: 0
-    rateOfFire:
-        single: 1
-        burst: 0
-        full: 0
-    target: ''
-    effect: ''
-    weaponType: ''
-    backpack:
-        inBackpack: false
+  craftsmanship: common
+  damage: ''
+  damageType: ''
+  description: 'Originally designed during the Great Scouring for use against Traitor Marines, Vengeance rounds are incredibly rare bolter shells that utilise unstable flux core technology. Inherently dangerous to discharge, they are nonetheless devastatingly effective at punching through armour and delivering gruesome injury to their target. Effects: A weapon using Vengeance Rounds gains the Unstable Quality and adds +3 to its Damage and Penetration.'
+  effect: ''
+  equipped: false
+  inBackpack: false
+  penetration: ''
+  range: ''
+  rateOfFire:
+    burst: 0
+    full: 0
+    single: 1
+  source: Faith and Coin, p.92
+  special: {}
+  target: ''
+  weaponType: ''
+  weight: 0
 img: systems/rogue-trader-3rd/icons/items/buckets/ammo-bolt-rounds.png
 name: Vengeance Rounds
 type: ammunition
 ---
 data:
-    craftsmanship: common
-    availability: Extremely Rare
-    weight: 0.1
-    equipped: false
+  attackBonus: 0
+  attackType: ''
+  availability: Extremely Rare
+  backpack:
     inBackpack: false
-    description: 'Some Kroot Carnivores working within the Tau military have taken to using these highly specialised sniper rounds in their rifles. Designed for increased accuracy and stopping power, they have proven extremely popular with the Kroot fighting style of disruption and disorganisation.'
-    source: Tau Character Guide, p.26
-    damage: ''
-    damageType: ''
-    penetration: ''
-    special: {}
-    range: ''
-    attackType: ''
-    attackBonus: 0
-    rateOfFire:
-        single: 1
-        burst: 0
-        full: 0
-    target: ''
-    effect: ''
-    weaponType: ''
-    backpack:
-        inBackpack: false
+  craftsmanship: common
+  damage: ''
+  damageType: ''
+  description: Some Kroot Carnivores working within the Tau military have taken to using these highly specialised sniper rounds in their rifles. Designed for increased accuracy and stopping power, they have proven extremely popular with the Kroot fighting style of disruption and disorganisation.
+  effect: ''
+  equipped: false
+  inBackpack: false
+  penetration: ''
+  range: ''
+  rateOfFire:
+    burst: 0
+    full: 0
+    single: 1
+  source: Tau Character Guide, p.26
+  special: {}
+  target: ''
+  weaponType: ''
+  weight: 0.1
 img: systems/rogue-trader-3rd/icons/items/buckets/ammo-stub-rounds.png
 name: Kroot Sniper Rounds
 type: ammunition
+---
+_id: oQNX3XKrJPBEziMk
+data:
+  attackBonus: 0
+  attackType: ''
+  availability: Extremely Rare
+  backpack:
+    inBackpack: false
+  craftsmanship: common
+  damage: ''
+  damageType: ''
+  description: Extremely rare bolt shells with dual explosive tips designed to finish off targets that survive the initial impact. They count as bolt shells and load into any boltgun or bolt pistol. In the round following a successful hit they deal their damage AGAIN as the secondary charge explodes; this secondary damage gains no benefit from Talents or Traits that increase damage. There are enough to equip one individual.
+  effect: ''
+  equipped: false
+  inBackpack: false
+  penetration: ''
+  range: ''
+  rateOfFire:
+    burst: 0
+    full: 0
+    single: 1
+  source: Lure of the Expanse, p.42
+  special: {}
+  target: ''
+  weaponType: ''
+  weight: 0
+img: systems/rogue-trader-3rd/icons/items/buckets/ammo-bolt-rounds.png
+name: Retribution Bolt Shells
+type: ammo

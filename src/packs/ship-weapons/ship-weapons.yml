@@ -1161,3 +1161,42 @@ data:
 img: systems/rogue-trader-3rd/icons/items/buckets/ship-macrobattery.png
 name: Jovian-pattern Nova Cannon
 type: shipWeapon
+---
+_id: QcRy8k3PgxGp3WLC
+data:
+  attackBonus: 0
+  availability: Very Rare
+  backpack:
+    inBackpack: false
+  class: Lance
+  componentClass: Supplemental
+  componentType: Lance
+  craftsmanship: common
+  critRating: 3
+  damage: 6
+  description: 'A rare and ancient variation of the Titanforge, designed for short-range
+    power in close engagements (Lance; Strength 3; Damage 1d10+6; Crit 3; Range 3
+    VU). Fore Weapon: it may only be equipped in Prow slots, even on cruiser-size
+    ships and larger.'
+  effect: ''
+  hitPoints: 2
+  isDepressurized: false
+  isDestroyed: false
+  isOnFire: false
+  isUnpowered: false
+  location: Prow
+  power: 13
+  rangeLong: 3
+  rangeMedium: 0
+  rangeSmall: 0
+  shipPoints: 3
+  size: Light
+  slot: Prow
+  source: Lure of the Expanse, p.122
+  space: 8
+  strength: 3
+  target: ''
+  type: Lance
+img: systems/rogue-trader-3rd/icons/items/buckets/ship-lance.png
+name: Dragon's Breath Lance Weapon
+type: shipWeapon
