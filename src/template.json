@@ -1493,7 +1493,8 @@
           "body": 0,
           "leftLeg": 0,
           "rightLeg": 0
-        }
+        },
+        "stacksArmour": false
       },
       "itemDescription": {
         "description": "",

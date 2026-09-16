@@ -1257,6 +1257,7 @@ data:
   description: An unnaturally dark cloak woven from the hair of some unknown beast, highly resistant to damage and especially to fire. Worn OVER other armour, it provides 3 AP to Body, Arms and Legs. These armour points also count against fire damage (which normally ignores armour) and are never reduced by weapons dealing Energy damage.
   maxAgility: 0
   source: Lure of the Expanse, p.42
+  stacksArmour: true
   type: Other
   weight: 2.0
 img: systems/rogue-trader-3rd/icons/items/buckets/armour-void-suit.png

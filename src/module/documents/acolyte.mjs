@@ -760,6 +760,21 @@ export class RogueTraderAcolyte extends RogueTraderBaseActor {
                 });
             });
 
+        // Add "worn over" STACKING armour (RT canon items worn OVER other armour,
+        // e.g. the Void Weave Cloak). Like cybernetic armour, these ADD their AP to
+        // the location instead of competing in the highest-AP-wins comparison below,
+        // so a low-AP cloak worn over a Carapace still contributes its points.
+        this.items
+            .filter((item) => item.type === 'armour')
+            .filter((item) => item.system.equipped)
+            .filter((item) => item.system.stacksArmour)
+            .forEach((armour) => {
+                const craft = armour.system.craftsmanship || 'Common';
+                locations.forEach((location) => {
+                    this.armour[location].total += effectiveArmourAP(armour.system.armourPoints[location], craft);
+                });
+            });
+
         // object for storing the max EFFECTIVE armour per location
         let maxArmour = locations.reduce((acc, location) => Object.assign(acc, { [location]: 0 }), {});
 
@@ -767,9 +782,12 @@ export class RogueTraderAcolyte extends RogueTraderBaseActor {
         // Craftsmanship's +1 AP (RT Core p.138) is folded into the comparison so
         // it isn't lost when a Best piece ties the base AP of a lesser-craft piece
         // (previously the first-processed craftsmanship won an equal-base tie).
+        // STACKING "worn over" armour is excluded here (it was added to `total`
+        // above) so it neither wins nor loses the max.
         this.items
             .filter((item) => item.type === 'armour' )
             .filter((item) => item.system.equipped)
+            .filter((item) => !item.system.stacksArmour)
             .forEach((armour) => {
                 const craft = armour.system.craftsmanship || 'Common';
                 locations.forEach((location) => {
