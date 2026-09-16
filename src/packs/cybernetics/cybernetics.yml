@@ -797,3 +797,33 @@ data:
 img: systems/rogue-trader-3rd/icons/items/buckets/cyber-bionic-arm.png
 name: Skitarii Cyber Weapon
 type: cybernetic
+---
+_id: Pr6qtfgLBdTq57KG
+data:
+  availability: Rare
+  backpack:
+    inBackpack: false
+  craftsmanship: common
+  description: A mechadendrite that stores up to 10 physical samples and carries a built-in auspex, chrono, glow-lamp and compass. It grants its user a +5 bonus to Awareness and Search Tests and a +10 bonus to Chem-Use and Trade (Chymist) Tests. In a pinch the user can eject any samples it contains as a Ranged Attack (Pistol; 5m; S/-/-; 1d5+2 I; Pen 0; Clip 1; Reload 2 Full); depending on the sample this attack may also have the Toxic, Snare, or Unstable Qualities at the GM's discretion.
+  equipped: false
+  inBackpack: false
+  source: Stars of Inequity
+  weight: 0
+img: systems/rogue-trader-3rd/icons/items/buckets/cyber-mechadendrite.png
+name: Exploration Mechadendrite
+type: cybernetic
+---
+_id: 2UOW0NlRrPVOuI0C
+data:
+  availability: Very Rare
+  backpack:
+    inBackpack: false
+  craftsmanship: common
+  description: 'Surgical augmentation of the joints. The recipient gains a +20 bonus to all Contortionist Tests, halves the time required for the Squeeze Through use of the Contortionist Skill, and gains a +5 bonus to Dodge Tests. The surgery is invasive: the Explorer permanently loses 1d5 from both his Strength and Toughness Characteristics.'
+  equipped: false
+  inBackpack: false
+  source: Stars of Inequity
+  weight: 0
+img: systems/rogue-trader-3rd/icons/items/buckets/cyber-implant-system.png
+name: Joint Reconfiguration Augmentics
+type: cybernetic

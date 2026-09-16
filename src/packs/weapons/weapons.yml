@@ -10458,3 +10458,91 @@ data:
 img: systems/rogue-trader-3rd/icons/items/buckets/heavy-exotic.png
 name: Wraithcannon
 type: weapon
+---
+_id: NiPW4tqJpaj3xJvW
+data:
+  availability: Extremely Rare
+  class: Melee
+  clip:
+    max: 0
+    value: 0
+  craftsmanship: Common
+  damage: 2d10+10
+  damageType: Energy
+  description: 'An ancient excavation tool rediscovered alongside the Delphis Lifter Armour — a device of continuous short-ranged melta emissions fed by a backpack fuel source, excellent for fast excavation into all but the hardest materials. It always requires both hands; a wielder with a Strength Bonus of 5 or lower gains 1 level of Fatigue per minute of use. When wielded in combat it counts as a melee weapon (Melee; 2d10+10 E; Pen 13; Unwieldy), but is not truly suited to it: −20 to all Weapon Skill Tests to use it, and it cannot be used as part of a Multiple Attacks Action.'
+  equipped: false
+  modifications: []
+  penetration: 13
+  range: 0
+  rateOfFire:
+    burst: 0
+    full: 0
+    single: 1
+  reload: ''
+  source: Stars of Inequity
+  special:
+    unwieldy: true
+  type: Exotic
+  weight: 15.0
+img: systems/rogue-trader-3rd/icons/items/buckets/melee-exotic.png
+name: Melta-drill
+type: weapon
+---
+_id: 3I7HnPnZ2E5Q0zbx
+data:
+  availability: Rare
+  class: Pistol
+  clip:
+    max: 1
+    value: 1
+  craftsmanship: Common
+  damage: 1d10+6
+  damageType: Energy
+  description: 'A ceremonial torch that burns for months. Holding one while lit grants a +5 bonus to Intimidate and Command Tests. Those who know their secrets can bring down the Emperor''s fiery justice: it counts as an Exotic weapon (Pistol; 6m; S/-/-; 1d10+6 E; Pen 2; Flame; Clip 1; Reload 2 Full).'
+  equipped: false
+  modifications: []
+  penetration: 2
+  range: 6
+  rateOfFire:
+    burst: 0
+    full: 0
+    single: 1
+  reload: 2 Full
+  source: Stars of Inequity
+  special:
+    flame: true
+  type: Exotic
+  weight: 6.0
+img: systems/rogue-trader-3rd/icons/items/buckets/pistol-exotic.png
+name: Light-bringer Torch
+type: weapon
+---
+_id: UVcj1KX8hsY3bFUa
+data:
+  availability: Rare
+  class: Melee
+  clip:
+    max: 0
+    value: 0
+  craftsmanship: Common
+  damage: 1d10+2
+  damageType: Rending
+  description: 'A whip-and-grapnel tool: a Challenging (+0) Weapon Skill Test latches it onto an object within 5 metres. It can also be used as an Exotic weapon (Melee; 5m reach; 1d10+2 R; Pen 0; Flexible, Snare). If a user without the appropriate training attacks with it and misses, it snaps back and strikes the wielder in a randomly determined location.'
+  equipped: false
+  modifications: []
+  penetration: 0
+  range: 0
+  rateOfFire:
+    burst: 0
+    full: 0
+    single: 1
+  reload: ''
+  source: Stars of Inequity
+  special:
+    flexible: true
+    snare: true
+  type: Exotic
+  weight: 3.0
+img: systems/rogue-trader-3rd/icons/items/buckets/melee-exotic.png
+name: Grapplewhip
+type: weapon

@@ -2053,3 +2053,83 @@ data:
 img: systems/rogue-trader-3rd/icons/items/buckets/tool-auspex.png
 name: Ghost Voice Auspex
 type: tool
+---
+_id: 9rbJrgJnCEiSratF
+data:
+  availability: Rare
+  backpack:
+    inBackpack: false
+  craftsmanship: common
+  description: A dataslate-sized archeotech archive holding a wealth of information on a single planet. A successful Arduous (−40) Tech-Use Test provides access to this data; having the Forbidden Lore (Archeotech) Skill reduces the difficulty of the Test to Difficult (−10). Each Codex covers only one world.
+  equipped: false
+  inBackpack: false
+  source: Stars of Inequity
+  target: ''
+  weight: 0
+img: systems/rogue-trader-3rd/icons/items/buckets/tool-data-slate.png
+name: Planetary Codex
+type: tool
+---
+_id: h1fky2371c9hGT6e
+data:
+  availability: Scarce
+  backpack:
+    inBackpack: false
+  craftsmanship: common
+  description: An extendable rod that reaches 4 metres and bears a 150kg load; Good and Best Craftsmanship versions add 1 metre of range each and raise the load limit to 175kg and 200kg respectively. In its retracted 30cm form it can be used as a hefty club (Melee; 1d10 I; Pen 0).
+  equipped: false
+  inBackpack: false
+  source: Stars of Inequity
+  target: ''
+  weight: 0
+img: systems/rogue-trader-3rd/icons/items/buckets/tool-grapnel.png
+name: Mezoa-pattern Long-Distance Extendable Retraction Rod
+type: tool
+---
+_id: lnQ2gLyJCXKHcJKd
+data:
+  availability: Average
+  backpack:
+    inBackpack: false
+  craftsmanship: common
+  description: Each panel affects a 1m × 1m square of space extending 10 metres above it, and can be remotely activated to manipulate gravity within that zone to anywhere between 0.1 and 10× standard Terran gravity. A single remote can be keyed to a single panel or up to ten panels; activation takes one full Round.
+  equipped: false
+  inBackpack: false
+  source: Stars of Inequity
+  target: ''
+  weight: 0
+img: systems/rogue-trader-3rd/icons/items/buckets/tool-multi-key.png
+name: Portable Gravity Adjustment Panels
+type: tool
+---
+_id: F8WzCjyrYiDYDjP2
+data:
+  availability: Very Rare
+  backpack:
+    inBackpack: false
+  craftsmanship: common
+  description: Boots that support up to 250kg across the surface of a liquid without sinking. Moving faster than a Full Move requires a Challenging (+0) Agility Test, and they impose a −10 penalty to all Silent Move and Shadowing Tests while worn. Heat-, cold- and chemical-resistant variants are Very Rare.
+  equipped: false
+  inBackpack: false
+  source: Stars of Inequity
+  target: ''
+  weight: 0
+img: systems/rogue-trader-3rd/icons/items/buckets/tool-climbing-kit.png
+name: Tenvis-pattern Hydromotion Boots
+type: tool
+---
+_id: yS2sj2JxubatSKpZ
+data:
+  availability: Scarce
+  backpack:
+    inBackpack: false
+  craftsmanship: common
+  description: A shelter that assembles in about half an hour (a Challenging (+0) Tech-Use Test speeds this). It provides a haven against extremes of atmosphere, temperature and radiation, and grants 15 APs of Cover against attacks made from outside to anyone within its walls. Once per encounter an Explorer inside may make a Challenging (+0) Tech-Use Test to raise this to 30 APs for 1d5 Rounds. Built-in rad-scrubbers; operates for 1d10 months without power replenishment.
+  equipped: false
+  inBackpack: false
+  source: Stars of Inequity
+  target: ''
+  weight: 0
+img: systems/rogue-trader-3rd/icons/items/buckets/tool-climbing-kit.png
+name: Synford-pattern Rapid Deployment Shelter
+type: tool

@@ -433,3 +433,37 @@ pack); the Eldar Components (Table 3-3: Aconite Solar Sails, Starcannon Cluster 
 only NPC ship parts, Power/Space only, no full stats — same call as the 0.9.24 xeno-ship skip). **Other
 adventure books (Stars of Inequity, Soul Reaver, Frozen Reaches, etc.) very likely have similar prose
 "treasure/reward" item tables the auto-detector also skipped — a follow-up survey worth doing.**
+
+---
+
+## Adventure-book gear sweep (0.9.27, 2026-09-15) — Stars of Inequity Explorer's Equipment (12 items)
+
+Swept ALL remaining adventure/source books (parallel survey agents, verbatim quotes, no value-guessing) for
+prose gear the 0.9.15 auto-detector skipped. Result: only **Stars of Inequity** yielded importable gear —
+its **"Explorer's Equipment"** section (Tables 2-36/2-37), 12 named fixed-stat items:
+- weapons (3): Melta-drill (Melee 2d10+10 Pen13 Unwieldy; -20 WS, no Multiple Attacks), Light-bringer Torch
+  (Pistol 1d10+6 Pen2 Flame, +5 Intimidate/Command lit), Grapplewhip (Melee 1d10+2 Pen0 Flexible/Snare, 5m
+  grapnel).
+- armour (2): Delphis Mark II "Prensio" Lifter Armour (Power, All 9, +20 Str + Unnatural Strength x2 + Sturdy,
+  +1 size, -40 Ag/-20 WS/BS), Resciscum Exploration Suit (All 4, -10 penalties).
+- tools (5): Planetary Codex, Mezoa Extendable Retraction Rod (club 1d10 I), Portable Gravity Adjustment
+  Panels, Tenvis Hydromotion Boots, Synford Rapid Deployment Shelter (15 AP cover).
+- cybernetics (2): Exploration Mechadendrite (+5 Awareness/Search, sample-eject Pistol 1d5+2), Joint
+  Reconfiguration Augmentics (+20 Contortionist, -1d5 Str & Tou permanent).
+
+**All other adventure books yielded NO extractable player gear** (surveyed, confirmed):
+- Citadel of Skulls, GM's Kit, Edge of the Abyss: "artefact/archeotech" sections are explicitly GM-open
+  ("exact nature left up to the GM") — nothing statted.
+- Shedding Light: only the Gauss weapon quality (auto-RF, ~= existing errata RF); its weapon stat lines are
+  NPC/Necron (Tomb Stalker), no player gear. Gauss NOT wired (redundant with corrected RF; no player weapon
+  carries it).
+- Twilight Crusade: 0 net-new — a fallback restatement of Tau Character Guide gear; all 6 weapon names
+  (Ion Rifle, Pulse Carbine/Pistol/Rifle, Rail Rifle, Tau Photon Grenade) + Blacksun Filter + Target Lock
+  already in the packs; the 4 weapon qualities already wired (0.9.19).
+- Fallen Suns, The Frozen Reaches: no gear — the "relic" is a plot spirit-stone/stasis-casket, NPC-only.
+- Dark Frontier, Epoch Koronus, Forsaken Bounty: no gear sections at all.
+
+**SKIPPED by design:** Stars of Inequity's Treasure GENERATOR base-profile tables (2-25/2-26/2-27) — generic
+weapon/armour templates the GM layers random modifiers onto, many duplicating Core weapons; NOT unique named
+treasures, so not imported. The archeotech/xenos/quirk MODIFIER tables are pure random mechanics, no items.
+Source cited "Stars of Inequity" (page markers in the OCR were chapter-relative/unreliable).

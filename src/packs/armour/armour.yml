@@ -1262,3 +1262,43 @@ data:
 img: systems/rogue-trader-3rd/icons/items/buckets/armour-void-suit.png
 name: Void Weave Cloak
 type: armour
+---
+_id: F9NHkYZWNwqomAD2
+data:
+  armourPoints:
+    body: 9
+    head: 9
+    leftArm: 9
+    leftLeg: 9
+    rightArm: 9
+    rightLeg: 9
+  availability: Extremely Rare
+  craftsmanship: Common
+  description: 'A rediscovered archeotech Power Armour variant built for heavy excavation. In addition to the usual +20 to Strength granted by Power Armour, the Prensio variant grants the wearer the Unnatural Strength (x2) and Sturdy Traits, and increases the wearer''s size by one (Average → Hulking). These come at a steep price in mobility: −40 to all Agility-based Tests, −20 to all Weapon Skill- and Ballistic Skill-based Tests, and the wearer cannot take the Run Action. Built-in auspex, chrono, vox, microbead and rebreather; counts as a sealed environment / void suit with the helmet on, operating for 24 hours.'
+  maxAgility: 0
+  source: Stars of Inequity
+  type: Power
+  weight: 155.0
+img: systems/rogue-trader-3rd/icons/items/buckets/armour-power.png
+name: Delphis Mark II "Prensio" Lifter Armour
+type: armour
+---
+_id: mcyGpnuItUgKFcgd
+data:
+  armourPoints:
+    body: 4
+    head: 4
+    leftArm: 4
+    leftLeg: 4
+    rightArm: 4
+    rightLeg: 4
+  availability: Rare
+  craftsmanship: Common
+  description: An intricate, durable environmental examination-and-protection suit for the enterprising (or paranoid) Explorer. Its bulk inflicts a −10 penalty on all Climb, Swim, Weapon Skill-, Ballistic Skill-, and Agility-based Tests. Built-in auspex, vox, rebreather, and microbead plus sampling/analysis instruments; supports roughly a week of continuous use.
+  maxAgility: 0
+  source: Stars of Inequity
+  type: Other
+  weight: 22.0
+img: systems/rogue-trader-3rd/icons/items/buckets/armour-void-suit.png
+name: Resciscum Exploration Suit
+type: armour
