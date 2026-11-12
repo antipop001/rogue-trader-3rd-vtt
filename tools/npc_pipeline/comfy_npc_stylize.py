@@ -38,7 +38,9 @@ NPC_ROOT = REPO / "src/images/npcs"
 API = "http://192.168.11.22:8188"
 WHISPERX_INPUT_DIR = "/home/ahermon/comfyui/input/rt_npc_stylize"
 SSH_HOST = "ahermon@192.168.11.22"
-SSH_KEY = "/mnt/project_data/RT/whisperx/id_rsa"
+# 2026-09-03: the old key at /mnt/project_data/RT/whisperx/id_rsa was pve's ROOT key, was
+# readable over NFS, and has been rotated and shredded — that path no longer exists.
+SSH_KEY = "/home/ahermon/.ssh/skynet_ed25519"
 
 BASE_CKPT = "Juggernaut-XL_v9_RunDiffusionPhoto_v2.safetensors"
 OLDHAMMER = "Oldhammer.safetensors"
