@@ -85,11 +85,16 @@ The in-Foundry chargen wizard (Stage A characteristics + Stage B origin path) is
    sudo systemctl start foundry.service
    ```
    (`*/` removes only the root-owned LevelDB dirs, not the `.db` files.)
-4. If a stop/start drops Foundry to the SETUP screen, relaunch from an admin page session: `fetch('/setup',{method:'POST',body:JSON.stringify({action:'launchWorld',world:'rt-smoke'})})`.
+4. A restart drops Foundry to the SETUP screen (rt-smoke no longer auto-launches). Relaunch from an admin page session: `fetch('/setup',{method:'POST',body:JSON.stringify({action:'launchWorld',world:'rt-smoke'})})`.
 
 ### Headless debugging (Playwright)
 
-Use the RTT_MAKER venv python (`~/RTT_MAKER/.venv/bin/python`) or `~/.venvs/playwright/` — system python has no playwright. Export `PLAYWRIGHT_BROWSERS_PATH=/mnt/project_data/playwright` in non-login shells (parent §1). Log in at `/join` as Gamemaster; the GM seat is single-occupancy, so the user must log out of their tab first. Weapon/psychic attacks need a controlled token and an equipped weapon.
+Use **`/mnt/project_data/tools/playwright-venv/bin/python`**: the older 3.12 venvs (`~/.venvs/playwright`, `~/RTT_MAKER/.venv`) broke when the host moved to Python 3.14 (parent §1). Export `PLAYWRIGHT_BROWSERS_PATH=/mnt/project_data/playwright` in non-login shells. Log in at `/join` as Gamemaster. Since v14 build 370 the user select is `select[name='userId']` (it was `userid`). The GM seat is single-occupancy, so the user must log out of their tab first. Weapon/psychic attacks need a controlled token and an equipped weapon. Template: `tests/e2e/verify_reaction_fate.py`.
+
+- **Disable the canvas for real clicks:** headless Chromium rendering the WebGL canvas starves the main thread, so `click()`, `bounding_box()` and screenshots hang. Run `game.settings.set('core','noCanvas',true)` and reload; it's a client setting, so only the test browser is affected.
+- **Expand the sidebar:** it starts collapsed off-screen (buttons report "outside of the viewport"). Call `ui.sidebar.changeTab('chat','primary'); ui.sidebar.expand()`.
+- **Activate test combats:** a test `Combat` must be `activate()`d as well as `startCombat()`ed, or `game.combat` is a different combat and Reaction-budget code silently doesn't run.
+- **Relaunching the world:** the box now hosts other systems' worlds and rt-smoke does **not** auto-launch after a restart. After restarting Foundry, relaunch it from `/setup` with the admin password (ask the user; never write it into a file).
 
 RNG forcing: `CONFIG.Dice.randomUniform=()=>0.05` forces MAX; `modifiedTarget` is a getter — set `baseTarget`; forcing every die to 10 makes `1d10x10` throw max-recursion — force only the base die.
 
