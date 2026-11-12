@@ -1,0 +1,8 @@
+I have reviewed the brief, the current sheet architecture, templates, and the visual system SCSS. My Round-1 proposal has been written to [agy_r1.md](file:///home/ahermon/rogue-trader-3rd-vtt/.v9-design/agy_r1.md), adhering strictly to the presentation-only data compatibility requirement.
+
+Here is the summary of my proposal:
+
+**Summary**
+My core thesis is that a mid-session player needs immediate, simultaneous access to a cross-section of data—like Wounds, an equipped Weapon, and their Ballistic Skill—that the current 7-tab architecture artificially fragments and hides. By abandoning tabs entirely in favor of a single-scroll dashboard, we remove the cognitive friction of navigating menus during high-stakes combat and roleplay. 
+
+My single boldest move is the **Sticky Context Sidebar**. By permanently pinning the character's core vitals, active effects, and immediate reactions (Dodge/Parry) to a fixed column on the screen, the player is never blind to their survivability. Regardless of whether they are reading a dense talent description or checking their encumbrance deep within the main scroll area, their life-or-death stats and defensive triggers remain instantly accessible at all times.
