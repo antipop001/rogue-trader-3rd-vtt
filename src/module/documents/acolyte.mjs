@@ -970,13 +970,16 @@ export class RogueTraderAcolyte extends RogueTraderBaseActor {
      * NOTE: the quick-reaction Parry uses the flat skill value — weapon Parry modifiers
      * (Balanced/Defensive) only apply via the full sheet Parry control.
      * @param {'dodge'|'parry'} type
+     * @param {{fateReroll?: boolean}} [options]  fateReroll: a Fate Point re-roll of a Reaction
+     *        already taken (RT Core p.233) — the same Reaction, so it neither spends the budget
+     *        again nor re-checks the lockouts that were checked on the original roll.
      * @returns {Promise<{attempted:boolean, blocked?:boolean, reason?:string, success?:boolean, dos?:number, roll?:number, target?:number}>}
      */
-    async rollReaction(type) {
+    async rollReaction(type, { fateReroll = false } = {}) {
         if (type !== 'dodge' && type !== 'parry') return { attempted: false, blocked: true, reason: 'bad-type' };
         const skill = this.system.skills?.[type];
         if (!skill) return { attempted: false, blocked: true, reason: 'no-skill' };
-        if (game.combat?.started && game.combat.combatants?.some((c) => c.actorId === this.id)) {
+        if (!fateReroll && game.combat?.started && game.combat.combatants?.some((c) => c.actorId === this.id)) {
             if (reactionsLocked(this.statuses)) return { attempted: false, blocked: true, reason: 'locked' };
             if (this.system.combat?.allOutAttack) return { attempted: false, blocked: true, reason: 'all-out' };
             const rc = this.system.combat?.reactions;

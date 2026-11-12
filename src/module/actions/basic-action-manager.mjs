@@ -1,5 +1,5 @@
 import { refundAmmo } from '../rules/ammo.mjs';
-import { uuid } from '../rolls/roll-helpers.mjs';
+import { uuid, degreesOfSuccess } from '../rolls/roll-helpers.mjs';
 import { AssignDamageData } from '../rolls/assign-damage-data.mjs';
 import { prepareAssignDamageRoll } from '../prompts/assign-damage-prompt.mjs';
 import { DHTargetedActionManager } from './targeted-action-manager.mjs';
@@ -26,6 +26,7 @@ export class BasicActionManager {
             $html.find('.roll-control__apply-condition').click(async (ev) => await this._applyCondition(ev));
             $html.find('.roll-control__pinning-test').click(async (ev) => await this._rollPinningTest(ev));
             $html.find('.roll-control__evade').click(async (ev) => await this._evadeAttack(ev));
+            $html.find('.roll-control__reaction-fate').click(async (ev) => await this._reactionFate(ev));
             $html.find('.roll-control__roll-opposed').click(async (ev) => await this._rollOpposed(ev));
             $html.find('.roll-control__drug-expire').click(async (ev) => await this._drugExpire(ev));
         });
@@ -328,21 +329,120 @@ export class BasicActionManager {
             return;
         }
 
-        let negated = 0;
-        if (res.success) {
-            const perHit = type === 'parry' ? 1 : (1 + (res.dos ?? 0));
-            const card = div.closest('.chat-message');
-            const assignBtns = card.find('.roll-control__assign-damage');
-            negated = assignBtns.length ? Math.min(perHit, assignBtns.length) : perHit;
-            assignBtns.slice(0, negated).each(function () {
-                $(this).css({ opacity: 0.4, 'pointer-events': 'none' });
-                $(this).find('.rt-control-button__label').text('Negated');
-            });
-        }
+        const attackMessageId = div.closest('[data-message-id]').data('messageId') ?? null;
+        await this._postReactionOutcome({ actor, type, res, attackMessageId, negatedSoFar: 0, fateUsed: false });
+    }
+
+    /**
+     * Hits a successful Reaction negates: Parry 1, Dodge 1 + DoS vs auto-fire (RT Core p.238).
+     */
+    _reactionNegates(type, res) {
+        if (!res.success) return 0;
+        return type === 'parry' ? 1 : 1 + (res.dos ?? 0);
+    }
+
+    /**
+     * Grey out up to `count` more not-yet-negated assign-damage buttons on the attack card.
+     * Returns how many were actually negated (capped by the hits on the card).
+     */
+    _negateHitsOnCard(attackMessageId, count) {
+        if (count <= 0) return 0;
+        const card = attackMessageId ? $(`.chat-message[data-message-id="${attackMessageId}"], [data-message-id="${attackMessageId}"]`) : $();
+        const live = card.find('.roll-control__assign-damage').filter(function () { return !$(this).data('negated'); });
+        if (!card.length || !card.find('.roll-control__assign-damage').length) return count;   // card not in view: report the rule count
+        const n = Math.min(count, live.length);
+        live.slice(0, n).each(function () {
+            $(this).data('negated', true).css({ opacity: 0.4, 'pointer-events': 'none' });
+            $(this).find('.rt-control-button__label').text('Negated');
+        });
+        return n;
+    }
+
+    /**
+     * Post a Dodge/Parry outcome and apply its negation to the attack card. While the defender
+     * has Fate and hasn't yet spent one on this Reaction, the outcome carries a "Spend Fate"
+     * control — the attack card's own Fate button belongs to the ATTACKER, so without this the
+     * defender had no way to spend Fate on their Reaction (and clicking Dodge again was refused
+     * because the Reaction was already spent).
+     */
+    async _postReactionOutcome({ actor, type, res, attackMessageId, negatedSoFar, fateUsed }) {
+        const label = type === 'parry' ? 'Parry' : 'Dodge';
+        const extra = Math.max(0, this._reactionNegates(type, res) - negatedSoFar);
+        const negated = negatedSoFar + this._negateHitsOnCard(attackMessageId, extra);
         const outcome = res.success
             ? `<strong>${label} SUCCESS</strong> (${res.roll} vs ${res.target}${res.dos ? `, ${res.dos} DoS` : ''}) — the attack is negated${negated > 1 ? ` (${negated} hits)` : ''}; do not assign that damage.`
             : `<strong>${label} FAILED</strong> (${res.roll} vs ${res.target}) — the hit stands.`;
-        await ChatMessage.create({ speaker: ChatMessage.getSpeaker({ actor }), content: `<p>${outcome}</p>` });
+        let fateButton = '';
+        if (!fateUsed && (actor.system?.fate?.value ?? 0) > 0 && typeof actor.spendFate === 'function') {
+            fateButton = `<div class="rt-control-button roll-control__reaction-fate" data-actor-uuid="${actor.uuid}"`
+                + ` data-reaction-type="${type}" data-roll="${res.roll}" data-target="${res.target}"`
+                + ` data-success="${res.success ? 1 : 0}" data-dos="${res.dos ?? 0}" data-negated="${negated}"`
+                + ` data-attack-message-id="${attackMessageId ?? ''}" data-tooltip="Spend a Fate Point on this ${label}">`
+                + `<span class="rt-control-button__label">Spend Fate</span></div>`;
+        }
+        await ChatMessage.create({ speaker: ChatMessage.getSpeaker({ actor }), content: `<p>${outcome}</p>${fateButton}` });
+    }
+
+    /**
+     * Spend a Fate Point on a Dodge/Parry Reaction (RT Core p.233): re-roll it (accept the new
+     * result), add +10, or add one Degree of Success. The result is re-resolved and any newly
+     * negated hits are greyed on the attack card. One Fate per Reaction.
+     */
+    async _reactionFate(event) {
+        event.preventDefault();
+        const div = $(event.currentTarget);
+        let actor = await fromUuid(div.data('actorUuid'));
+        actor = actor?.actor ?? actor ?? null;
+        if (!actor) { ui.notifications.warn('Cannot determine the actor to spend Fate.'); return; }
+        if (!actor.isOwner) { ui.notifications.warn(`Only ${actor.name}'s owner or the GM can spend their Fate.`); return; }
+        if ((actor.system?.fate?.value ?? 0) <= 0) { ui.notifications.warn(`${actor.name} has no Fate Points to spend.`); return; }
+
+        const type = div.data('reactionType');
+        const prev = {
+            roll: Number(div.data('roll')),
+            target: Number(div.data('target')),
+            success: Number(div.data('success')) === 1,
+            dos: Number(div.data('dos')) || 0,
+        };
+        const buttons = [
+            { action: 'reroll', label: 'Re-roll', icon: 'fa-solid fa-dice', default: !prev.success },
+            { action: 'plus10', label: 'Add +10', icon: 'fa-solid fa-plus' },
+        ];
+        if (prev.success) buttons.push({ action: 'degree', label: '+1 Degree of Success', icon: 'fa-solid fa-angles-up', default: true });
+        buttons.push({ action: 'cancel', label: 'Cancel', icon: 'fa-solid fa-xmark' });
+        let kind;
+        try {
+            kind = await foundry.applications.api.DialogV2.wait({
+                window: { title: `Spend Fate — ${actor.name}` },
+                content: `<p>${actor.name} has <strong>${actor.system.fate.value}/${actor.system.fate.max}</strong> Fate. Spend one on this ${type === 'parry' ? 'Parry' : 'Dodge'} to:</p>`,
+                buttons,
+            });
+        } catch (err) {
+            return;   // dismissed
+        }
+        if (!kind || kind === 'cancel') return;
+
+        // One Fate per Reaction: retire this control before anything async can double-fire it.
+        div.css({ opacity: 0.4, 'pointer-events': 'none' });
+        await actor.spendFate(kind);
+
+        let res;
+        if (kind === 'reroll') {
+            res = await actor.rollReaction(type, { fateReroll: true });
+            if (!res.attempted) { ui.notifications.warn(`${actor.name} cannot re-roll that Reaction.`); return; }
+        } else if (kind === 'plus10') {
+            const target = prev.target + 10;
+            const success = prev.roll === 1 || (prev.roll <= target && prev.roll !== 100);
+            res = { attempted: true, roll: prev.roll, target, success, dos: success ? degreesOfSuccess(target, prev.roll) : 0 };
+        } else {
+            res = { ...prev, attempted: true, dos: prev.dos + 1 };
+        }
+        await this._postReactionOutcome({
+            actor, type, res,
+            attackMessageId: div.data('attackMessageId') || null,
+            negatedSoFar: Number(div.data('negated')) || 0,
+            fateUsed: true,
+        });
     }
 
     /**
