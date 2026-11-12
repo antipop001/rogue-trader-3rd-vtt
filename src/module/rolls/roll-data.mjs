@@ -8,7 +8,7 @@ import { calculateWeaponModifiersAttackBonuses, updateWeaponModifiers } from '..
 import { hitDropdown } from '../rules/hit-locations.mjs';
 import { DarkHeresy } from '../rules/config.mjs';
 import { shipFacings } from '../rules/ship-facings.mjs';
-import { weaponMasterBonus, weaponUntrainedPenalty, shootingIntoMeleePenalty } from './roll-helpers.mjs';
+import { weaponMasterBonus, weaponUntrainedPenalty, shootingIntoMeleePenalty, psychicStrengthFromPr } from './roll-helpers.mjs';
 import { conditionToHitModifier, attackerConditionModifier } from '../rules/conditions.mjs';
 
 export class RollData {
@@ -490,6 +490,7 @@ export class PsychicRollData extends RollData {
         // Unfettered/Push already applied). Replaces the non-canon flat `hasFocus`+10
         // (BUG-011 / QA-037 — there is no inherent +10 for focusing in RT 1e).
         this.modifiers['psy rating'] = 5 * this.pr;
+        this.updateStrength();
         this.modifiers['power'] = this.power.system.target.bonus ?? 0;
         this.hasDamage = this.power.system.subtype.includes('Attack');
         await updateAttackSpecials(this);
@@ -530,7 +531,18 @@ export class PsychicRollData extends RollData {
         }
     }
 
+    /**
+     * The PR the player settles on in the dialog decides the Psychic Strength (and so whether
+     * Phenomena can trigger), not the sticky sheet select that seeded it. Re-run at finalize
+     * too, in case Roll is clicked before the PR field's change handler has finished.
+     */
+    updateStrength() {
+        const rating = this.sourceActor.psy.currentRating ?? this.sourceActor.psy.rating ?? 0;
+        this.strength = psychicStrengthFromPr(this.pr, rating, this.sourceActor.psy.strength);
+    }
+
     async finalize() {
+        this.updateStrength();
         await calculateAttackSpecialAttackBonuses(this);
         this.modifiers = { ...this.modifiers, ...this.specialModifiers };
         await this.calculateTotalModifiers();

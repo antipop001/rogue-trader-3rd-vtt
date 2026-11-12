@@ -49,6 +49,28 @@ export function degreesOfFailure(target, roll) {
 }
 
 /**
+ * The Psychic Strength a cast was actually made at, from the Psy Rating USED (RT Core p.157
+ * Table 6-1): below the rating = Fettered, equal = Unfettered, above = Push. The sheet's
+ * Fettered/Unfettered/Push select only seeds the cast dialog's PR; the player can change the PR
+ * there, so it is the PR that decides. Previously the sticky sheet select decided — a psyker left
+ * on "Push" who cast at their normal PR still got Phenomena on every roll.
+ * The one ambiguous case: Fettered at rating 1 is PR 1 (half, rounded up, min 1) — equal to the
+ * rating — so the sheet's choice breaks that tie.
+ * @param {number} pr             the Psy Rating used for this cast
+ * @param {number} rating         the psyker's effective (sustain-reduced) Psy Rating
+ * @param {string} [sheetStrength] the sheet select, used only for the rating-1 Fettered tie
+ * @returns {'fettered'|'unfettered'|'push'}
+ */
+export function psychicStrengthFromPr(pr, rating, sheetStrength = 'unfettered') {
+    const p = Number(pr) || 0;
+    const r = Number(rating) || 0;
+    if (p > r) return 'push';
+    if (p < r) return 'fettered';
+    if (String(sheetStrength).toLowerCase() === 'fettered' && Math.max(1, Math.ceil(r / 2)) === r) return 'fettered';
+    return 'unfettered';
+}
+
+/**
  * Psychic-Phenomena "doubles" detection on a Focus Power Test (RT Core p.157): doubles are
  * 11, 22, 33, 44, 55, 66, 77, 88, 99, and 00 — the latter being a d100 result of 100. A naive
  * string-identity test (`/^(.)\1+$/`) matches 11–99 but FAILS on 100 ("1","0","0" differ), so a
