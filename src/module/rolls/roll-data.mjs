@@ -250,9 +250,12 @@ export class WeaponRollData extends RollData {
         this.isHeavyWeapon = this.weapon?.system?.class === 'Heavy';
         // Auto-counts-as-braced (RT Core p.116/123): the Auto-Stabilised trait, the Bulging
         // Biceps talent, or a Suspensor-equipped weapon cancel the unbraced -30. (QA-130.)
+        // The trait name is matched loosely: the NPC packs carry OCR'd "Auto-stabilised" /
+        // "Auto-stabilized" (e.g. the Lure of the Expanse Wraithguard, whose Wraithcannon is
+        // Heavy), and an exact match silently denied them the trait.
         const autoBraced = !!(
             this.sourceActor?.hasTalent?.('Bulging Biceps')
-            || this.sourceActor?.items?.some?.((i) => i.type === 'trait' && i.name === 'Auto-Stabilised')
+            || this.sourceActor?.items?.some?.((i) => i.type === 'trait' && /^auto-stabili[sz]ed$/i.test(String(i.name ?? '').trim()))
             || this.weapon?.items?.some?.((i) => i.isWeaponModification && i.name === 'Suspensors' && (i.system?.equipped || i.system?.enabled))
         );
         // Gyro-Stabilised (Tau Character Guide): a Heavy weapon with this Quality reduces the
