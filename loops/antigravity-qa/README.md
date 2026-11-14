@@ -4,7 +4,7 @@ A second-opinion correctness pass that pits **two different models** against the
 
 | Role | Tool | Model |
 |---|---|---|
-| Bug **checker** + **verifier** | `agy` (Google Antigravity) | Gemini 3.1 Pro (High) |
+| Bug **checker** + **verifier** | `agy` (Google Antigravity) | Gemini 4 Hydrogen (High) |
 | Bug **fixer** | `claude` (Claude Code) | Opus |
 
 The value is *independence*: Claude wrote most of this system, so a Gemini reviewer catches
@@ -44,7 +44,7 @@ full sweep re-checks the gate.
 ## Env overrides
 | Var | Default | Meaning |
 |---|---|---|
-| `CHECK_MODEL` | `Gemini 3.1 Pro (High)` | agy model for discovery + verify (see `agy models`) |
+| `CHECK_MODEL` | `Gemini 4 Hydrogen (High)` | agy model for discovery + verify (see `agy models`) |
 | `FIX_MODEL` | `opus` | claude model for fixes |
 | `MIN_OPEN` | `1` | run discovery when open findings drop below this (1 = only on an empty queue) |
 | `DRY_LIMIT` | `2` | stop the run after this many consecutive discovery passes that find nothing new |

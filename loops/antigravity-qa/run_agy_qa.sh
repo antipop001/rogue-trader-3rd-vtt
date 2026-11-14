@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Antigravity-driven QA / bug-pass Ralph loop — CROSS-MODEL.
 #
-#   agy   (Google Antigravity, Gemini 3.1 Pro)  = the BUG CHECKER + VERIFIER
+#   agy   (Google Antigravity, Gemini 4 Hydrogen)  = the BUG CHECKER + VERIFIER
 #   claude (Claude Code, Opus)                   = the FIXER
 #
 # A second-opinion correctness pass over the system: a DIFFERENT model hunts for bugs,
@@ -15,7 +15,7 @@
 # Run on a dedicated branch (it commits per-iteration):  git switch -c ralph/agy-qa
 #
 # Env overrides:
-#   CHECK_MODEL  (default "Gemini 3.1 Pro (High)")  — agy model for discovery + verify
+#   CHECK_MODEL  (default "Gemini 4 Hydrogen (High)")  — agy model for discovery + verify
 #   FIX_MODEL    (default "opus")                    — claude model for fixes
 #   MIN_OPEN     (default 3)   — replenish discovery when open findings drop below this
 #   VERIFY       (default 1)   — run the agy cross-model verify phase (0 to skip)
@@ -30,7 +30,7 @@ KIT="loops/antigravity-qa"
 QUEUE=".ralph/bug-queue.md"
 
 MAX_ITERS="${1:-15}"
-CHECK_MODEL="${CHECK_MODEL:-Gemini 3.1 Pro (High)}"
+CHECK_MODEL="${CHECK_MODEL:-Gemini 4 Hydrogen (High)}"
 FIX_MODEL="${FIX_MODEL:-opus}"
 # MIN_OPEN=1: only run discovery when the queue is EMPTY (was 3 — topping up to a backlog of 3
 # pressured the model to keep filing marginal findings on a picked-over codebase; quality > quota).
