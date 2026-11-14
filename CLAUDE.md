@@ -6,7 +6,7 @@ Forked from mrkeathley's Dark Heresy 2 system. Authored by MortarionUA. Compatib
 
 Shared homelab conventions (drive layout, `agy` review gate, Ralph loop contract, skynet/ComfyUI hosts) live in the parent `/mnt/project_data/projects/CLAUDE.md` — this file carries only what is specific to this project.
 
-**Current version: 0.9.28** (2026-09-15). Release history: **`CHANGELOG.md`** (newest first, one entry per release with root cause / canon cite / verification). Open engine bugs: `BUGS.md`; QA audit backlog: `QA_FINDINGS.md`; authored content awaiting RT-rules review: `.ralph/data-vendor-queue.md`; pre-0.5.0 audit snapshot: `docs/history/2026-05-system-audit.md` (superseded — context only).
+**Current version: 0.9.29** (2026-11-13). Release history: **`CHANGELOG.md`** (newest first, one entry per release with root cause / canon cite / verification). Open engine bugs: `BUGS.md`; QA audit backlog: `QA_FINDINGS.md`; authored content awaiting RT-rules review: `.ralph/data-vendor-queue.md`; pre-0.5.0 audit snapshot: `docs/history/2026-05-system-audit.md` (superseded — context only).
 
 ## Where things live
 
