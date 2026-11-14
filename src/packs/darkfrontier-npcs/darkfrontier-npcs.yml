@@ -301,7 +301,7 @@ system:
       unnatural: 0
     strength:
       base: 54
-      unnatural: 10
+      unnatural: 5
     toughness:
       base: 41
       unnatural: 0

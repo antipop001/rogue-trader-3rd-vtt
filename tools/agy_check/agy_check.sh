@@ -12,7 +12,7 @@
 #   4. Read .agy-check/verdict.md. On REVISE: address it and re-run. Only implement (commit/deploy)
 #      once the verdict is APPROVE (or you have a documented reason to override a specific point).
 #
-# Env: CHECK_MODEL (default "Gemini 3.1 Pro (High)").
+# Env: CHECK_MODEL (default "Gemini 4 Hydrogen (High)").
 set -uo pipefail
 cd "$(dirname "$0")/../.." || exit 1
 KIT="tools/agy_check"; OUT=".agy-check"
@@ -36,7 +36,7 @@ if [ ! -s "$OUT/proposed.diff" ]; then
   exit 1
 fi
 
-MODEL="${CHECK_MODEL:-Gemini 3.1 Pro (High)}"
+MODEL="${CHECK_MODEL:-Gemini 4 Hydrogen (High)}"
 # Hard wall-clock ceiling — agy's own --print-timeout has been observed to NOT fire (a run once hung
 # ~22h producing nothing). `timeout` SIGKILLs the whole process group so it can never hang the workflow.
 WALL="${AGY_CHECK_TIMEOUT:-1500}"   # seconds (25 min)

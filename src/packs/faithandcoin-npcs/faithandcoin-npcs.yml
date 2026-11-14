@@ -387,10 +387,10 @@ system:
       unnatural: 0
     strength:
       base: 58
-      unnatural: 10
+      unnatural: 5
     toughness:
       base: 46
-      unnatural: 8
+      unnatural: 4
     weaponSkill:
       base: 56
       unnatural: 0
@@ -964,10 +964,10 @@ system:
       unnatural: 0
     strength:
       base: 48
-      unnatural: 8
+      unnatural: 4
     toughness:
       base: 36
-      unnatural: 6
+      unnatural: 3
     weaponSkill:
       base: 45
       unnatural: 0
@@ -1422,10 +1422,10 @@ system:
       unnatural: 0
     strength:
       base: 48
-      unnatural: 8
+      unnatural: 4
     toughness:
       base: 46
-      unnatural: 8
+      unnatural: 4
     weaponSkill:
       base: 46
       unnatural: 0

@@ -426,7 +426,7 @@ system:
       unnatural: 0
     toughness:
       base: 44
-      unnatural: 8
+      unnatural: 4
     weaponSkill:
       base: 32
       unnatural: 0
@@ -637,7 +637,7 @@ system:
       unnatural: 0
     toughness:
       base: 18
-      unnatural: 2
+      unnatural: 1
     weaponSkill:
       base: 20
       unnatural: 0
@@ -832,7 +832,7 @@ system:
       unnatural: 0
     toughness:
       base: 22
-      unnatural: 4
+      unnatural: 2
     weaponSkill:
       base: 35
       unnatural: 0
@@ -5306,7 +5306,7 @@ system:
   characteristics:
     agility:
       base: 57
-      unnatural: 10
+      unnatural: 5
     ballisticSkill:
       base: 45
       unnatural: 0
@@ -5330,7 +5330,7 @@ system:
       unnatural: 0
     willpower:
       base: 59
-      unnatural: 10
+      unnatural: 5
   npc:
     faction: Eldar
     subfaction: ''
@@ -5932,7 +5932,7 @@ system:
   characteristics:
     agility:
       base: 45
-      unnatural: 8
+      unnatural: 4
     ballisticSkill:
       base: 55
       unnatural: 0
@@ -5956,7 +5956,7 @@ system:
       unnatural: 0
     willpower:
       base: 53
-      unnatural: 10
+      unnatural: 5
   npc:
     faction: Eldar
     subfaction: ''
@@ -6375,7 +6375,7 @@ system:
       unnatural: 0
     toughness:
       base: 40
-      unnatural: 8
+      unnatural: 4
     weaponSkill:
       base: 39
       unnatural: 0
@@ -6897,7 +6897,7 @@ system:
       unnatural: 0
     toughness:
       base: 48
-      unnatural: 8
+      unnatural: 4
     weaponSkill:
       base: 46
       unnatural: 0
@@ -7531,11 +7531,11 @@ system:
       base: 35
       unnatural: 0
     strength:
-      base: 12
-      unnatural: 0
+      base: 60
+      unnatural: 6
     toughness:
-      base: 30
-      unnatural: 0
+      base: 54
+      unnatural: 5
     weaponSkill:
       base: 46
       unnatural: 0
@@ -7903,10 +7903,10 @@ system:
       unnatural: 0
     strength:
       base: 40
-      unnatural: 8
+      unnatural: 4
     toughness:
       base: 42
-      unnatural: 8
+      unnatural: 4
     weaponSkill:
       base: 53
       unnatural: 0
@@ -9002,10 +9002,10 @@ system:
       unnatural: 0
     strength:
       base: 43
-      unnatural: 8
+      unnatural: 4
     toughness:
       base: 61
-      unnatural: 11
+      unnatural: 0
     weaponSkill:
       base: 43
       unnatural: 0
@@ -9565,10 +9565,10 @@ system:
       unnatural: 0
     strength:
       base: 62
-      unnatural: 12
+      unnatural: 6
     toughness:
       base: 44
-      unnatural: 8
+      unnatural: 0
     weaponSkill:
       base: 62
       unnatural: 0
@@ -9974,10 +9974,10 @@ system:
       unnatural: 0
     strength:
       base: 45
-      unnatural: 8
+      unnatural: 4
     toughness:
       base: 40
-      unnatural: 8
+      unnatural: 0
     weaponSkill:
       base: 45
       unnatural: 0

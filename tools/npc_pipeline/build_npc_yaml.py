@@ -13,6 +13,8 @@ import re
 import secrets
 from pathlib import Path
 
+from npc_hand_fixes import TRAIT_RENAMES, corrected, daemonic_tb_printed, stored_unnatural
+
 REPO = Path("/home/ahermon/rogue-trader-3rd-vtt")
 OUT = REPO / "src/packs/npcs/npcs.yml"
 IN = Path("/tmp/npcs_parsed.json")
@@ -567,8 +569,18 @@ def build_actor(npc, talent_idx, trait_idx, weapon_idx, book_slug=None):
     abs_local = Path(__file__).resolve().parent.parent.parent / "src" / rel_path
     img_path = f"systems/rogue-trader-3rd/{rel_path}" if abs_local.is_file() else ""
 
-    chars = {k: {"base": npc["characteristics"][k]["base"],
-                 "unnatural": npc["characteristics"][k]["unnatural"]} for k in CHAR_KEYS}
+    # The extracted `unnatural` is the PRINTED "(N)" — the TOTAL bonus after the multiplier;
+    # the engine reads `unnatural` as the EXTRA. npc_hand_fixes converts it and applies the
+    # hand-verified OCR corrections (0.9.29).
+    pack = f"{book_slug}-npcs" if book_slug else "npcs"
+    chars = {}
+    for k in CHAR_KEYS:
+        c = npc["characteristics"][k]
+        base, printed = corrected(pack, npc["name"], k, c["base"], c["unnatural"])
+        extra = stored_unnatural(base, printed)
+        if k == "toughness" and daemonic_tb_printed(npc["traits"]):
+            extra = 0  # printed (N) is the Daemonic soak TB, applied by the engine at soak
+        chars[k] = {"base": base, "unnatural": extra}
 
     skills = {}
     for sname, adv in npc["skills"]:
@@ -591,6 +603,7 @@ def build_actor(npc, talent_idx, trait_idx, weapon_idx, book_slug=None):
         if not hit:
             talent_miss.append(t)
     for t in npc["traits"]:
+        t = TRAIT_RENAMES.get((pack, npc["name"], t), t)
         it, hit = resolve_or_stub(t, trait_idx, "trait", trait_default_img)
         items.append(_wrap_item(it))
         if not hit:

@@ -467,3 +467,11 @@ its **"Explorer's Equipment"** section (Tables 2-36/2-37), 12 named fixed-stat i
 weapon/armour templates the GM layers random modifiers onto, many duplicating Core weapons; NOT unique named
 treasures, so not imported. The archeotech/xenos/quirk MODIFIER tables are pure random mechanics, no items.
 Source cited "Stars of Inequity" (page markers in the OCR were chapter-relative/unreliable).
+
+## 2026-11-13 — NPC Unnatural bonus conversion + OCR stat restores (0.9.29, agy APPROVE)
+- All NPC packs: `characteristics.<c>.unnatural` converted from the printed "(N)" total to the
+  engine extra (printed − floor(base/10)); Daemonic-without-Unnatural-Toughness → 0.
+- Hand restores in `tools/npc_pipeline/npc_hand_fixes.py` (each cited there). Human pass wanted on:
+  Forgefiend/Maulerfiend T (14) (Maulerfiend's Daemon Engine (6) implies 12 — book misprint?),
+  Gretchin Headhunter "T (8) 19" kept verbatim.
+- Open: Koronus "Flesh Hound of Khorne" has no trait items (Traits line lost in extraction).

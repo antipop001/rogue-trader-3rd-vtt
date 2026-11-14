@@ -788,7 +788,7 @@ system:
   characteristics:
     agility:
       base: 66
-      unnatural: 18
+      unnatural: 12
     ballisticSkill:
       base: 61
       unnatural: 0
@@ -1637,7 +1637,7 @@ system:
   characteristics:
     agility:
       base: 49
-      unnatural: 12
+      unnatural: 8
     ballisticSkill:
       base: 59
       unnatural: 0
@@ -1655,7 +1655,7 @@ system:
       unnatural: 0
     toughness:
       base: 49
-      unnatural: 8
+      unnatural: 4
     weaponSkill:
       base: 53
       unnatural: 0
@@ -2368,7 +2368,7 @@ system:
   characteristics:
     agility:
       base: 66
-      unnatural: 18
+      unnatural: 12
     ballisticSkill:
       base: 61
       unnatural: 0
@@ -2730,7 +2730,7 @@ system:
   characteristics:
     agility:
       base: 52
-      unnatural: 10
+      unnatural: 5
     ballisticSkill:
       base: 41
       unnatural: 0
@@ -3160,7 +3160,7 @@ system:
   characteristics:
     agility:
       base: 57
-      unnatural: 10
+      unnatural: 5
     ballisticSkill:
       base: 46
       unnatural: 0
@@ -3535,7 +3535,7 @@ system:
   characteristics:
     agility:
       base: 62
-      unnatural: 12
+      unnatural: 6
     ballisticSkill:
       base: 43
       unnatural: 0
@@ -5156,7 +5156,7 @@ system:
   characteristics:
     agility:
       base: 57
-      unnatural: 10
+      unnatural: 5
     ballisticSkill:
       base: 41
       unnatural: 0
@@ -5612,7 +5612,7 @@ system:
   characteristics:
     agility:
       base: 59
-      unnatural: 10
+      unnatural: 5
     ballisticSkill:
       base: 41
       unnatural: 0
@@ -6113,7 +6113,7 @@ system:
   characteristics:
     agility:
       base: 55
-      unnatural: 10
+      unnatural: 5
     ballisticSkill:
       base: 48
       unnatural: 0
@@ -6596,7 +6596,7 @@ system:
   characteristics:
     agility:
       base: 41
-      unnatural: 8
+      unnatural: 4
     ballisticSkill:
       base: 43
       unnatural: 0
@@ -6614,7 +6614,7 @@ system:
       unnatural: 0
     toughness:
       base: 41
-      unnatural: 8
+      unnatural: 4
     weaponSkill:
       base: 47
       unnatural: 0
@@ -7148,10 +7148,10 @@ system:
       unnatural: 0
     strength:
       base: 47
-      unnatural: 12
+      unnatural: 8
     toughness:
       base: 56
-      unnatural: 10
+      unnatural: 5
     weaponSkill:
       base: 49
       unnatural: 0
@@ -7654,10 +7654,10 @@ system:
       unnatural: 0
     strength:
       base: 49
-      unnatural: 12
+      unnatural: 8
     toughness:
       base: 59
-      unnatural: 15
+      unnatural: 10
     weaponSkill:
       base: 35
       unnatural: 0
@@ -10174,10 +10174,10 @@ system:
       unnatural: 0
     strength:
       base: 49
-      unnatural: 8
+      unnatural: 4
     toughness:
       base: 53
-      unnatural: 10
+      unnatural: 5
     weaponSkill:
       base: 58
       unnatural: 0
@@ -10606,10 +10606,10 @@ system:
       unnatural: 0
     perception:
       base: 53
-      unnatural: 10
+      unnatural: 5
     strength:
       base: 51
-      unnatural: 10
+      unnatural: 5
     toughness:
       base: 46
       unnatural: 0
@@ -11372,7 +11372,7 @@ system:
   characteristics:
     agility:
       base: 62
-      unnatural: 12
+      unnatural: 6
     ballisticSkill:
       base: 33
       unnatural: 0
@@ -11672,10 +11672,10 @@ system:
       unnatural: 0
     strength:
       base: 38
-      unnatural: 6
+      unnatural: 3
     toughness:
       base: 32
-      unnatural: 6
+      unnatural: 3
     weaponSkill:
       base: 48
       unnatural: 0
@@ -12079,10 +12079,10 @@ system:
       unnatural: 0
     strength:
       base: 65
-      unnatural: 12
+      unnatural: 6
     toughness:
       base: 58
-      unnatural: 15
+      unnatural: 10
     weaponSkill:
       base: 42
       unnatural: 0
@@ -12567,7 +12567,7 @@ system:
   characteristics:
     agility:
       base: 51
-      unnatural: 15
+      unnatural: 10
     ballisticSkill:
       base: 33
       unnatural: 0
@@ -13053,10 +13053,10 @@ system:
       unnatural: 0
     strength:
       base: 35
-      unnatural: 6
+      unnatural: 3
     toughness:
       base: 43
-      unnatural: 8
+      unnatural: 4
     weaponSkill:
       base: 48
       unnatural: 0
@@ -13476,7 +13476,7 @@ system:
   characteristics:
     agility:
       base: 54
-      unnatural: 10
+      unnatural: 5
     ballisticSkill:
       base: 0
       unnatural: 0
@@ -13494,7 +13494,7 @@ system:
       unnatural: 0
     toughness:
       base: 36
-      unnatural: 6
+      unnatural: 3
     weaponSkill:
       base: 45
       unnatural: 0
@@ -14336,7 +14336,7 @@ system:
   characteristics:
     agility:
       base: 64
-      unnatural: 12
+      unnatural: 6
     ballisticSkill:
       base: 6
       unnatural: 0
@@ -14351,10 +14351,10 @@ system:
       unnatural: 0
     strength:
       base: 38
-      unnatural: 6
+      unnatural: 3
     toughness:
       base: 39
-      unnatural: 6
+      unnatural: 3
     weaponSkill:
       base: 55
       unnatural: 0

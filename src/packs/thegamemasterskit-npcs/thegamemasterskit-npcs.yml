@@ -170,10 +170,10 @@ system:
       unnatural: 0
     strength:
       base: 44
-      unnatural: 8
+      unnatural: 4
     toughness:
       base: 41
-      unnatural: 8
+      unnatural: 4
     weaponSkill:
       base: 43
       unnatural: 0

@@ -2429,10 +2429,10 @@ system:
       unnatural: 0
     strength:
       base: 44
-      unnatural: 8
+      unnatural: 4
     toughness:
       base: 42
-      unnatural: 12
+      unnatural: 8
     weaponSkill:
       base: 34
       unnatural: 0
@@ -5350,7 +5350,7 @@ system:
       unnatural: 0
     perception:
       base: 38
-      unnatural: 6
+      unnatural: 3
     strength:
       base: 31
       unnatural: 0
@@ -5861,10 +5861,10 @@ system:
       unnatural: 0
     strength:
       base: 40
-      unnatural: 8
+      unnatural: 4
     toughness:
       base: 40
-      unnatural: 8
+      unnatural: 4
     weaponSkill:
       base: 36
       unnatural: 0
@@ -6523,8 +6523,8 @@ prototypeToken:
 system:
   characteristics:
     agility:
-      base: 10
-      unnatural: 0
+      base: 55
+      unnatural: 5
     ballisticSkill:
       base: 60
       unnatural: 0
@@ -6793,8 +6793,8 @@ prototypeToken:
 system:
   characteristics:
     agility:
-      base: 10
-      unnatural: 0
+      base: 57
+      unnatural: 5
     ballisticSkill:
       base: 57
       unnatural: 0
@@ -6817,8 +6817,8 @@ system:
       base: 59
       unnatural: 0
     willpower:
-      base: 10
-      unnatural: 0
+      base: 59
+      unnatural: 5
   npc:
     faction: ''
     subfaction: ''
@@ -7434,8 +7434,8 @@ prototypeToken:
 system:
   characteristics:
     agility:
-      base: 6
-      unnatural: 0
+      base: 30
+      unnatural: 3
     ballisticSkill:
       base: 45
       unnatural: 0
@@ -7449,11 +7449,11 @@ system:
       base: 25
       unnatural: 0
     strength:
-      base: 10
-      unnatural: 0
+      base: 50
+      unnatural: 5
     toughness:
-      base: 12
-      unnatural: 0
+      base: 60
+      unnatural: 6
     weaponSkill:
       base: 40
       unnatural: 0
